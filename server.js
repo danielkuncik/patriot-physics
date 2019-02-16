@@ -17,10 +17,61 @@ app.engine('hbs', hbs.express4({
 app.get('/',(req,res) => {
     res.render('home.hbs', {
         layout:'default',
-        template:'home-template',
+       // template:'home-template',
         title: 'Home Page'
     });
 });
+app.get('/about',(req,res) => {
+    res.render('about.hbs', {
+        layout:'default',
+       // template:'about-template',
+        title:'About'
+    })
+});
+app.get('/calendars', (req, res) => {
+    res.render('calendars.hbs', {
+        layout:'default',
+        title:'Calendars'
+    })
+});
+app.get('/units', (req, res) => {
+    res.render('units.hbs', {
+        layout:'default',
+        title:'Units'
+    })
+});
+app.get('/labs', (req, res) => {
+    res.render('labs.hbs', {
+        layout:'default',
+        title:'Labs'
+    })
+});
+app.get('/writing', (req, res) => {
+    res.render('writing.hbs', {
+        layout:'default',
+        title:'Writing'
+    })
+});
+app.get('/computation', (req, res) => {
+    res.render('computation.hbs', {
+        layout:'default',
+        title:'Computational Physics'
+    })
+});
+app.get('/enrichment', (req, res) => {
+    res.render('enrichment.hbs', {
+        layout:'default',
+        title:'Enrichment'
+    })
+});
+app.get('/jokes', (req, res) => {
+    res.render('jokes.hbs', {
+        layout:'default',
+        title:'Jokes'
+    })
+});
+
+
 
 
 
