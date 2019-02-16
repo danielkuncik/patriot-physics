@@ -1,0 +1,14 @@
+{
+  "name": "patriot-physics",
+  "version": "1.0.0",
+  "description": "Website containing the physics curriculum for Old Rochester Regional High School in Mattapoisett, MA",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "physics"
+  ],
+  "author": "Daniel Kuncik",
+  "license": "ISC"
+}
