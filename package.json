@@ -10,5 +10,9 @@
     "physics"
   ],
   "author": "Daniel Kuncik",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.1"
+  }
 }
