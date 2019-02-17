@@ -1,0 +1,152 @@
+{
+  "mathematics": {
+    "name": "Mathematics",
+    "units": {
+      "algebra": {
+        "name": "Algebra",
+        "pods": {
+          "numeric_1": {
+            "name": "Numeric Algebra 1",
+            "level": 1,
+            "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
+          },
+          "slope_1": {
+            "name": "Finding Slope 1",
+            "level": 1,
+            "objective": "Find slope of a line on graphs with integer scales."
+          },
+          "numeric_2": {
+            "name": "Numeric Algebra 2",
+            "level": 2,
+            "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
+          },
+          "symbolic_algebra_1": {
+            "name": "Symbolic Algebra 1",
+            "level": 2,
+            "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
+          },
+          "slope_2": {
+            "name": "Finding Slope 2",
+            "level": 2,
+            "objective": "Find slope of a line on graphs with decimal scales."
+          },
+          "area_under_a_curve_1": {
+            "name": "Area Under a Curve 1",
+            "level": 2,
+            "objective": "Find area under a curve that includes only rectangles."
+          },
+          "symbolic_algebra_2": {
+            "name": "Symbolic Algebra 2",
+            "level": 3,
+            "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
+          },
+          "system_of_equations_numeric": {
+            "name": "Numeric System of Equations",
+            "level": 3,
+            "objective": "Solve a system of equations numerically."
+          },
+          "area_under_a_curve_2": {
+            "name": "Area Under a Curve 2",
+            "level": 3,
+            "objective": "Find the area under a curve that includes rectangles, triangles, and trapezoids."
+          },
+          "representing_lines": {
+            "name": "Representing Lines with an Equation",
+            "level": 3,
+            "objective": "Represent lines with an algebraic equation."
+          },
+          "system_of_equations_symbolic": {
+            "name": "Symbolic System of Equations",
+            "level": 4,
+            "objective": "Solve a system of equations symbolically."
+          },
+          "representing_parabolas": {
+            "name": "Representing Parabolas with an Equation",
+            "level": 4,
+            "objective": "Represent parabolas with an algebraic equation."
+          }
+      }
+    },
+    "geometry": {
+      "name": "Geometry",
+      "pods": {
+      "pi": {
+        "name": "Memorize Pi to 15 decimal places",
+        "level": 1,
+        "objective": "Know pi to at least 15 decimal places."
+      },
+      "circle_replationships_1": {
+        "name": "Circle Relationships 1",
+        "level": 1,
+        "objective": "Memorize basic circle relationships."
+      },
+      "circle_math_1": {
+        "name": "Circle Math 1",
+        "level": 1,
+        "objective": "Solve very simple problems relating elements of a circle."
+      },
+      "trigonometry_1": {
+        "name": "The Pythagorean Theorem",
+        "level": 1,
+        "objective": "Solve numerical problems using the Pythagorean Theorem"
+      },
+      "area_1": {
+        "name": "Area 1",
+        "level": 1,
+        "objective": "Find the area of rectanges, squares, right triangles, and trapezoids."
+      },
+      "circle_math_2": {
+        "name": "Circle Math 2",
+        "level": 2,
+        "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps."
+      },
+      "trigonometry_2": {
+        "name": "Trigonometry 2",
+        "level": 2,
+        "objective": "Solve for pieces of a triangle using sine, cosine, and tangent."
+      },
+      "trigonometry_3": {
+        "name": "Trigonometry 3",
+        "level": 3,
+        "objective": "Solve trigonometric problems with variables in the denominator; given two pieces of information determine all other information regarding a triangle."
+      }
+    }
+    }
+  }
+  },
+  "mechanics": {
+    "name": "Mechanics",
+    "units": {
+      "kinematics_1": {
+        "name": "Kinematics 1",
+        "pods": {
+          "speed_formula": {
+            "name": "The Speed Formula",
+            "level": 1,
+            "objective": "Solve problems using the formula distance equals speed multipled by time."
+          },
+          "kinematic_graphs_1": {
+            "name": "Position Time Graphs",
+            "level": 1,
+            "objective": "Identify position-time graphs and motion maps."
+          }
+        }
+      },
+      "dynamics_math": {
+        "name": "Dynamics Math",
+        "pods": {
+          "newtons_second_law": {
+            "name": "Newton's Second Law",
+            "level": 1,
+            "objective": "Use Newton's Second Law to solve simple numeric problems."
+          },
+          "finding_net_force": {
+            "name": "Finding Net Force",
+            "level": 1,
+            "objective": "Given a free-body diagram, determine the vector net force acting on an object."
+          }
+        }
+      }
+    }
+  }
+}
