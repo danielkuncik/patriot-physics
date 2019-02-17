@@ -1,0 +1,641 @@
+<h1>Welcome to Physics Coding!</h1>
+<h3>Why are we coding in physics?</h3>
+<p>
+    Because real scientists don't just solve problems on pen and paper!
+    Almost all scientists these days are spending a considerable portion of time writing
+    computer code.
+    Almost all the problems that people would want to sovle today require it.
+    For example, we've solved many problems that involve a car moving at a constant acceleration.
+    Imagine now you have a rocket ship taking off. Is its acceleration constant? Certainly not.
+    How many different equations and calculations do you think you need to explain the motion of a rocket taking off?
+    Thousands, if not millions or billions! Humans can't do that many equations at once, but what can? A computer!
+    That's why real scientists today do so many of their calculations by writing a computer program.
+</p>
+<p>
+    For more information, see <a href = 'https://www.wired.com/2015/08/coding-physics-course/'>here</a>
+    or <a href = 'https://www.wired.com/2014/02/isnt-physics-computer-science/'>here</a>.
+</p>
+
+<h3>
+    What are the particulars?
+</h3>
+<ul>
+    <li>
+        Language: Python
+    </li>
+    <li>
+        IDE: <a href = 'https://c9.io/login'>Cloud9</a>
+    </li>
+</ul>
+
+<p>
+    We are going to be using a programming language called Python.
+    Python is one of the most popular languages in the world today.
+    It is the most commonly used in scientific computing (which is what we are doing)
+    and one of the top five in software development (by companies like Google, Apple, and Amazon).
+</p>
+<p>
+    Every programmer needs an Integrated Development Environment (IDE), which is a program that combines
+    unix terminals, text editors, visual representations of the file tree, and often some other features.
+    We are going to use an online, Cloud Computing IDE called Cloud9.
+    Essentially , when you log into Cloud9 you are using another computer somewhere on the internet.
+    For now, it is free for students.
+    This also means it is completely online, so you can log into your files from any computer, anywhere in the world.
+</p>
+
+
+<h3>
+    Objectives
+</h3>
+
+<ol>
+    <li>
+        <h4>
+            Get Into Cloud 9
+        </h4>
+        <a href = 'https://c9.io/login'>Link to Cloud9</a>
+        <ol>
+            <li>
+                I should have sent you an email with an invite link. Click that link to get started!
+            </li>
+            <li>
+                You need to enter a series of information, such as your name and a username. Pick a good username.
+            </li>
+            <li>
+                After that, check your email again! You need to set your password over a link on the email.
+            </li>
+            <li>
+                Try signing out and then back in to make sure your password works!
+            </li>
+            <li>
+                Once your in and all set, click on "Create a New Workspace"
+            </li>
+            <li>
+                Call the workspace "learning-physics-coding". Make it public.
+                For your template, chose "Python".
+            </li>
+            <li>
+                When you click "Create a new workspace" you should get to a workspace that looks like the picture below.
+                Then you're in!
+            </li>
+
+        </ol>
+    </li>
+    <li>
+        <h4>
+            Get Familiar with the Cloud 9 Interface
+        </h4>
+        <img src = '../images/cloud9_screenshot.png' width = '600px' height = 'auto'>
+        <p>
+            The three most important parts of the cloud 9 interface for you to understand are the
+            terminal, the text editor, and the file system.
+        </p>
+        <ul>
+            <li>
+                The <strong>file system</strong> is probably what will come most intuitively to you, as it
+                works similarly to a MacOSX or Windows file system.
+            </li>
+            <li>
+                The <strong>text editor</strong> is where you write programs that will accomplish what you need.
+                Try typing something totally random in the text editor right now!
+            </li>
+            <li>
+                The <strong>terminal</strong> is where you direct the entire operation. It is where you can create new files
+                or directories, read files, run a console for a programming language, access a database, download data from
+                the internet, etc. etc.
+                The terminal runs using an operating system called Unix.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h4>
+            Very Basic Unix BASH Commands
+        </h4>
+        <p>
+            Computer programmers frequently use an operating system called Unix.
+            Your Cloud9 computer, which you are currently accessing, is a unix computer.
+            Unlike operating systems like Windows or MacOSX, you need to use typed commands to work with a unix system.
+            In this case, you enter Unix commands and reiceve the output in the terminal area of the Cloud 9 interface.
+            The type of UNIX you are using is also called BASH.
+            Try out each of the following commands!
+        </p>
+        <ul>
+            <li>
+                <code>pwd</code>: "Print Working Directory" prints what directory you are currently.
+            </li>
+            <li>
+                <code>ls</code>: "List" lists everything in the directory you are currently in.
+            </li>
+            <li>
+                <code>mkdir</code>: "Make Directory" Makes a new directory. A directory is just like a file in Windows or MacOSX.
+            </li>
+            <li>
+                <code>cd</code>: "Change directory" Changes what directory you are working in.
+            </li>
+            <li>
+                <code>cd ..</code> : This changes to the directory one above where you are in the file tree.
+            </li>
+            <li>
+                <code>cd ~ </code>: this returns to your home directory (where you started).
+            </li>
+            <li>
+                <code>rm</code>: "Remove" gets rid of a file
+            </li>
+            <li>
+                <code>rmdir</code>: "Remove Directory" gets rid of a directory
+            </li>
+            <li>
+                <code>clear</code>: clears your terminal screen
+            </li>
+        </ul>
+        <p>
+            See if you can use these commands to do the following!
+        </p>
+        <ol>
+            <li>
+                First, see what directory you are in with <code>pwd</code>.
+                If you haven't done anything yet,
+                you should be in a directory called <code>/home/ubuntu/workspace</code>.
+            </li>
+            <li>
+                Make a new directory called <code>physics_problems</code>. To do this, you need to type
+                <code>mkdir physics_problems</code>.
+            </li>
+            <li>
+                Use <code>ls</code> to confirm that you made it. It should be in the list.
+            </li>
+            <li>
+                Go into that directory with <code>cd physics_problems</code>.
+            </li>
+            <li>
+                Use <code>pwd</code> to confirm you are in the <code>physics_problems</code> directory.
+            </li>
+            <li>
+                Type <code>ls</code>, which lists everything in the <code>physics_problems</code> directory.
+                But, you won't get any output back, because there isn't anything in there!
+            </li>
+            <li>
+                Go back to the directory you were in before with <code>cd ..</code>.
+                Then, type <code>pwd</code> to confirm you are there.
+                The directory is probably <code>/home/ubuntu/workspace</code>.
+            </li>
+            <li>
+                Type <code>ls</code> again, to confirm taht the <code>physics_problems</code> directory is there.
+            </li>
+            <li>
+                Let's get rid of the <code>physics_problems</code> directory!
+                To do this, type <code>rmdir physics_problems</code>.
+            </li>
+            <li>
+                Confirm that its gone. Type <code>ls</code>, and you should not see the <code>phyiscs_problems</code>
+                directory there.
+                Try typing <code>cd physics_problems</code>, and you should get an error,
+                that says <code>bash: cd: physics_problems: No such file or directory</code>.
+                That's because it isn't there!
+            </li>
+        </ol>
+        <p>
+            If you have any interest at all in any career that involves coding and program,
+            it behooves you to become as comfortable as possible with unix commands.
+        </p>
+    </li>
+    <li>
+        <h4>
+            Running The Python Console and generating a "Hello World" program.
+        </h4>
+        <p>
+            We will be coding using a programming language called <strong>Python</strong>.
+            Python is the one of most commonly used languages for scientific computing!
+            Scientific computing just means solving scientific problems by computing, which is what we are going to do.
+        </p>
+        <p>
+            To begin running Python, we are going to use the <strong>Python Console</strong>.
+            The console allows you to enter commands and immediately get a result, as opposed to the more common
+            method of coding in which you write several lines of code (we are going to do that also!).
+        </p>
+        <p>
+            To start running the Python console, type <code>python</code> into your terminal and click enter.
+            You will know you are inside because you see a <code> >>> </code>.
+        </p>
+        <p>
+            Before doing anything else, know how to exit the Python Console, so you don't get trapped inside!
+            To exit, just type <br>
+            <code>exit()</code> <br>
+            Before doing anything else, exit and reenter the Python Console multiple times by typing
+            <code>python</code> and <code>exit()</code>. That way, you know you're in control of where you are!
+        </p>
+        <p>
+            Whenver someone is learning a new computer language, the first thing they do is create
+            a <i>Hello World Program</i>. The program is one that simply prints the words "Hello World!"
+            to the screen. You can create a Hello World Program in python by typing the following line:
+            <br>
+            <code>print('Hello World!')</code>.
+        </p>
+        <p>
+            Or, you can try it with anything else you want to say. Note that youse can use double quotes or single qoutes,
+            but it doesn't work if you have no quotes.
+        </p>
+        <ul>
+            <li>
+                <code>print('hello physics class')</code>
+            </li>
+            <li>
+                <code>print("Brady is the GOAT")</code>
+            </li>
+            <li>
+                <code>print("The capital of Maine is Augusta")</code>
+            </li>
+            <li>
+                <code>print(hello mr kuncik)</code> This returns an error! Why?
+            </li>
+        </ul>
+
+        <p>
+            Bonus Question:
+            <br>
+            <code>print('Hello it's me. I was wondering if after all these years you'd like to meet.')</code>
+            <br>
+            This code returns an error. What's wrong? How can you fix it?
+        </p>
+
+    </li>
+    <li>
+        <h4>
+            Using Python as a Calculator
+        </h4>
+        <p>
+            To practice with how Python works, try typing the following commands into the console.
+            what happens with each of them? Was it what you expected?
+        </p>
+        <ul>
+            <li>
+                <code>2 + 2</code>
+            </li>
+            <li>
+                <code>4 * 5</code>
+            </li>
+            <li>
+                <code>30 - 80</code>
+            </li>
+            <li>
+                <code>5 + 8 * 6</code>
+            </li>
+            <li>
+                <code>4 / 2</code>
+            </li>
+            <li>
+                <code>5 / 3</code>
+            </li>
+            <li>
+                <code>(4 + 6)/2</code>
+            </li>
+        </ul>
+        <p>Here's some other things you should know:</p>
+        <ul>
+            <li>
+                For an exponent, you need to use two mulitplcation signs <code>**</code>.
+                <ul>
+                    <li>
+                        <code>2**4</code>
+                    </li>
+                    <li>
+                        <code>5**2</code>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                For more advanced mathematical functions, you need to use a Math package.
+                First type <code>import math</code>, then you have a whole new setup of functions to run
+                <ul>
+                    <li>
+                        <code>math.sqrt(9)</code>
+                    </li>
+                    <li>
+                        <code>math.sqrt(144)</code>
+                    </li>
+                    <li>
+                        <code>math.pi</code>
+                    </li>
+                    <li>
+                        <code>math.sin(math.pi / 2)</code>
+                    </li>
+                    <li>
+                        <code>math.tan(math.pi / 4)</code> (That's an interesting result. What might have happend?)
+                    </li>
+                    <li>
+                        <code>math.acos(0.5) / math.pi</code>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    You can try these and many more! To see all of the options under <code>math</code>,
+                    try entering <code>dir(math)</code>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You can also read help pages on pretty much any function,
+                    for example:
+                </p>
+                <ul>
+                    <li>
+                        <code>math.gamma --help</code>
+                    </li>
+                </ul>
+                <p>
+                    brings you to a page explaining how to use the gama function in Python.
+                    To exit this page, click <code>q</code>.
+                </p>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h4>
+            Running programs from files
+        </h4>
+        <p>
+            Exit the console by typing <code>exit()</code>.
+            The console is great for playing around and trying out new functions,
+            but to make serious programs we need to make them in separate text files and then run them.
+            You'll make your first real program that runs from a file and run it.
+            It'll be another "Hello World!" program.
+        </p>
+        <ol>
+            <li>
+                Create a new file called <code>my_first_program.py</code>. You can do this by right-clicking in the File System.
+                But a better way is to make the file on the command line.
+                Make sure you have exited the Python console and are back onto your UNIX command line.
+                Make sure you are in the correct directory. Then type:
+                <code>touch my_first_program.py</code>
+            </li>
+            <li>
+                Open up your program in the <strong>text editor</strong> by finding it an clicking on it
+                in the <strong>file system</strong>. It should be a blank text file to begin.
+            </li>
+            <li>
+                In the file type <code>print('Hello World!')</code>
+                Make sure you save the file by cliking File => Save.
+            </li>
+            <li>
+                On your UNIX command line, in the <strong>terminal</strong>, make sure you are in the same directory
+                as your my_first_program.py file.
+                Then, type <code>python my_first_program.py</code>
+            </li>
+            <li>
+                If you see <code>Hello World!</code> (or whatever else you printed)
+                in your terminal, you did it right. Congratulations!
+            </li>
+            <li>
+                Try some other very simple programs, that print very simple sentences
+                or that complete some simple arithmetic.
+            </li>
+        </ol>
+        <p>How about a joke break?</p>
+        <ul>
+            <li><code>How do you get a computer program to dance?</code></li>
+            <li><code>With an algo-rhythm!</code></li>
+        </ul>
+
+    </li>
+    <li>
+        <h4>
+            Defining Functions
+        </h4>
+        <p>
+            When programming, we will almost always create functions that accomplish
+            the physics goals we have. First, we need to learn how to write and define functions.
+        </p>
+        <ol>
+            <li>
+                Create a new file called <code>my_first_functions.py</code>.
+                To do so, make sure you are in the <code>/home/ubuntu/workspace</code>
+                directory, and then type <code>touch my_first_functions.py</code>.
+            </li>
+            <li>
+                Open <code>my_first_functions.py</code> in your <strong>file system</strong>.
+                Then, in the <strong>text editor</strong>, write the following:
+                <p>
+                    <code>
+                        def sum(a,b): <br>
+                        &nbsp &nbsp &nbsp return a + b <br>
+                        <br>
+                        x = sum(2,2)<br>
+                        print(x)<br>
+                    </code>
+                </p>
+            </li>
+            <li>
+                In your <strong>terminal</strong>, run the file by typing
+                <code>python my_first_functions.py</code>.
+                What does it print out? Is this logical?
+            </li>
+            <li>
+                Try adding a new function to your program called <code>difference</code>:
+                <p>
+                    <code>
+                        def sum(a,b): <br>
+                        &nbsp &nbsp &nbsp return a + b <br>
+                        <br>
+                        x = sum(2,2)<br>
+                        print(x)<br>
+                        <br>
+                        def difference(c,d): <br>
+                        &nbsp &nbsp &nbsp return c - d <br>
+                        <br>
+                        y = difference(5,3)<br>
+                        print(y)
+                    </code>
+                </p>
+                Run this program in the <strong>terminal</strong> with <code>python my_first_program.py</code>.
+                What does it return?
+            </li>
+            <li>
+                See if you can create an test a new functions of your own!
+                Call it <code>product</code> and have it return the product of two numbers.
+            </li>
+            <li>
+                Now, try to make a function called <code>sqaure_root</code> that returns the square root of a number.
+                For this program, you will need to add <code>import math</code> as the first line of your program.
+            </li>
+        </ol>
+    </li>
+    <li>
+        <h4>
+            What is a function?
+        </h4>
+        <p>
+            A function in a computer program works just like a function in math class.
+            You put in a certain number of variables (arguments)
+            and you get out some single variable (result).
+        </p>
+        <img src = '../images/functionConceptualDiagram.png' width = '250px' height = 'auto' style = "border: 1px black solid" }>
+    </li>
+    <li>
+        <h4>
+            The Syntax of a Function
+        </h4>
+        <p>
+            When defining a function in Python you need to follow a very specific <strong>syntax</strong>.
+            It looks like this:
+        </p>
+        <img src = '../images/pictureOfPythonFunction.png' width = '400px' height = 'auto' style = "border: 1px black solid">
+        <ul>
+            <li>
+                <code>def</code> statement:
+                Every Python function begins with the statement <code>def</code>.
+            </li>
+            <li>
+                title:
+                This is the title of the function.
+                It should be something short that describes what the function does.
+            </li>
+            <li>
+                arguments:
+                These are all of the inputs into the function.
+                For this function there are four inputs.
+            </li>
+            <li>
+                colon:
+                The first line of the function, after the arguments, must end with a colon.
+            </li>
+            <li>
+                indentation:
+                In Python, the function is shown by the indentation.
+                After the first line, every indented line is a part of the function.
+                The first line that is not indented is not a part of the function.
+            </li>
+            <li>
+                statements:
+                These are all of the lines that are a part of the function and
+                represent how it works.
+            </li>
+            <li>
+                <code>return</code> statement:
+                The return statement ends the function.
+                The function outputs the value that comes after the return statement.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h4>
+            Physics Function Challenges
+        </h4>
+        <p class = 'directions'>
+            The goal here is to create functions that help us solve simple physics problems.
+            First, look at the most common of kinematic equations (The King):
+            $$ \Delta x = v_i \cdot \Delta t + \frac{1}{2} a \cdot \left( \Delta t \right)^2  $$
+        </p>
+        <ol>
+            <li>
+                Use this formula to create a function that finds displacement. Name your function like this:
+                <ul>
+                    <li>
+                        <code>def findDisplacement(changeInTime, initialVelocity, acceleration):</code>
+                    </li>
+                </ul>
+                Now, test that your function works.
+                Below the function in your program, write the following four tests:
+                <ul>
+                    <li>
+                        <code>print(findDisplacement(5.67,3.14,2.15)) ## should return 52.3638675</code><!-- 17.8038 if all integers-->
+                    </li>
+                    <li>
+                        <code>print(findDisplacement(6.43, 0, 9.81) ## should return 202.7967345</code>
+                    </li>
+                    <li>
+                        <code>print(findDisplacement(1,1,1)) ## should return 1.5</code> <!--1 if all integers -->
+                    </li>
+                    <li>
+                        <code>print(findDisplacement(4,10,3)) ## should return 64.0</code><!-- 40 if all integers-->
+                    </li>
+                </ul>
+                <p>
+                    Try running your program. If it returns these three values, you succeeded!
+                    (Note: You may run into some problems if you represented the one-half with 1/2, instead of 0.5
+                    If this happened, change it into a 0.5, and then try again. This problem has to do with
+                    concepts called <strong>integers</strong> and <strong>floats</strong>.)
+                </p>
+
+            </li>
+            <li>
+                Using a pen and paper, solve the formula above for acceleration algebraically.
+                Then, create the following function:
+                <ul>
+                    <li>
+                        <code>def findAcceleration(changeInTime, displacement, initialVelocity):</code>
+                    </li>
+                </ul>
+                <p>
+                    Test your code with by putting the following commands in your file and seeing how they work:
+                </p>
+                <ul>
+                    <li>
+                        <code>
+                            print(findAcceleration(2.34,5.43,6.87)) ## should return -3.88845058076
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            print(findAcceleration(4.039, 80.0, 0)) ## should return 9.80781524724
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            print(findAcceleration(1.0,1.0,1.0)) ## should return 0
+                        </code>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Create a new function called
+                <code>def findSlope(x1,y1,x2,y2):</code>
+                Create your own tests of this function.
+            </li>
+        </ol>
+    </li>
+    <li>
+        <h4>More Resources!</h4>
+        <p>If you want more information, here are some places to look:</p>
+        <ul>
+            <li>
+                <a href = 'https://docs.python.org/3/'>Python Documentation</a>
+                This is the official place to look up any information about Python functions and methods.
+            </li>
+            <li>
+                <a href = 'https://docs.python.org/3/tutorial/'>The official Python Tutorial</a>
+                Written by the actual Python software foundation that makes Python, it goes through all the most
+                important methods and functions pedagogically.
+            </li>
+            <li>
+                <a href = 'https://www.codecademy.com/learn/learn-python'>Python Tutorial on Code Academy</a>
+                Gives a sequence of simple tasks to help you learn Python.
+            </li>
+            <li>
+                <a href = 'https://learnpythonthehardway.org'>Learn Python the Hard Way</a>.
+                You need to pay for this online book, but it is another great option for how
+                to learn Python.
+            </li>
+            <li>
+                If you just Google "Python Tutorial," you'll find tons of other options as well.
+            </li>
+            <li>
+                If you Google any specific question, for example, "How do I write functions in Python?"
+                an answer should pop up right away.
+            </li>
+            <li>
+                If you get an error message and you simply copy it an Google it, you will
+                usually end up at a page that explains what is going on and how to fix it.
+            </li>
+
+            <li>
+                <a href = 'https://www.learnenough.com/command-line-tutorial'>Learn Enough Command Line to be Dangerous</a>
+                This is a book (you need to pay) that reviews many of the most important UNIX commands.
+            </li>
+            <li>
+                <a href = 'https://people.ischool.berkeley.edu/~kevin/unix-tutorial/toc.html'>UNIX Tutorial from Berkely School of Information</a>
+                This is a well written tutorial on UNIX commands from Berkeley.
+            </li>
+        </ul>
+    </li>
+</ol>

@@ -1,0 +1,8 @@
+id,type,fileName,title,description
+1,tutorial,physicsCoding1,First Tutorial,a
+2,tutorial,physicsCoding2,Second Tutorial,b
+3,tutorial,physicsCoding3,Third Tutorial,c
+4,challenge,physicsCodingAssignments,First Challenge,d
+5,challenge,physicsCodingChallenges1,Second Challenge,e
+6,challenge,physicsCodingChallenges2,Third Challenge,f
+7,project,computationalPhysicsProject1,First Project,g
