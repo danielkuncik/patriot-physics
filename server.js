@@ -85,6 +85,10 @@ app.get('/jokes', (req, res) => {
         title:'Jokes'
     })
 });
+// sending a joke image image
+app.get('/getJoke/:imageName', (req,res)=>{
+    res.sendFile(__dirname + '/content/jokes/' + req.params.imageName);
+});
 
 
 
