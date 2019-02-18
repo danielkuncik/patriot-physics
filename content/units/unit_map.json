@@ -1,118 +1,208 @@
 {
-  "mathematics": {
+  "mathematics":
+  {
     "name": "Mathematics",
-    "units": {
-      "algebra": {
-        "name": "Algebra",
-        "pods": {
-          "numeric_1": {
-            "name": "Numeric Algebra 1",
-            "level": 1,
-            "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
-          },
-          "slope_1": {
-            "name": "Finding Slope 1",
-            "level": 1,
-            "objective": "Find slope of a line on graphs with integer scales."
-          },
-          "numeric_2": {
-            "name": "Numeric Algebra 2",
-            "level": 2,
-            "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
-          },
-          "symbolic_algebra_1": {
-            "name": "Symbolic Algebra 1",
-            "level": 2,
-            "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
-          },
-          "slope_2": {
-            "name": "Finding Slope 2",
-            "level": 2,
-            "objective": "Find slope of a line on graphs with decimal scales."
-          },
-          "area_under_a_curve_1": {
-            "name": "Area Under a Curve 1",
-            "level": 2,
-            "objective": "Find area under a curve that includes only rectangles."
-          },
-          "symbolic_algebra_2": {
-            "name": "Symbolic Algebra 2",
-            "level": 3,
-            "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
-          },
-          "system_of_equations_numeric": {
-            "name": "Numeric System of Equations",
-            "level": 3,
-            "objective": "Solve a system of equations numerically."
-          },
-          "area_under_a_curve_2": {
-            "name": "Area Under a Curve 2",
-            "level": 3,
-            "objective": "Find the area under a curve that includes rectangles, triangles, and trapezoids."
-          },
-          "representing_lines": {
-            "name": "Representing Lines with an Equation",
-            "level": 3,
-            "objective": "Represent lines with an algebraic equation."
-          },
-          "system_of_equations_symbolic": {
-            "name": "Symbolic System of Equations",
-            "level": 4,
-            "objective": "Solve a system of equations symbolically."
-          },
-          "representing_parabolas": {
-            "name": "Representing Parabolas with an Equation",
-            "level": 4,
-            "objective": "Represent parabolas with an algebraic equation."
+      "units":
+      {
+        "algebra":
+        {
+          "name": "Algebra",
+          "pods":
+          {
+            "numeric_1":
+            {
+              "name": "Numeric Algebra 1",
+              "level": 1,
+              "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
+            },
+            "slope_1": {
+              "name": "Finding Slope 1",
+              "level": 1,
+              "objective": "Find slope of a line on graphs with integer scales."
+            },
+            "numeric_2": {
+              "name": "Numeric Algebra 2",
+              "level": 2,
+              "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
+            },
+            "symbolic_algebra_1": {
+              "name": "Symbolic Algebra 1",
+              "level": 2,
+              "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
+            },
+            "slope_2": {
+              "name": "Finding Slope 2",
+              "level": 2,
+              "objective": "Find slope of a line on graphs with decimal scales."
+            },
+            "area_under_a_curve_1": {
+              "name": "Area Under a Curve 1",
+              "level": 2,
+              "objective": "Find area under a curve that includes only rectangles."
+            },
+            "symbolic_algebra_2": {
+              "name": "Symbolic Algebra 2",
+              "level": 3,
+              "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
+            },
+            "system_of_equations_numeric": {
+              "name": "Numeric System of Equations",
+              "level": 3,
+              "objective": "Solve a system of equations numerically."
+            },
+            "area_under_a_curve_2": {
+              "name": "Area Under a Curve 2",
+              "level": 3,
+              "objective": "Find the area under a curve that includes rectangles, triangles, and trapezoids."
+            },
+            "representing_lines": {
+              "name": "Representing Lines with an Equation",
+              "level": 3,
+              "objective": "Represent lines with an algebraic equation."
+            },
+            "system_of_equations_symbolic": {
+              "name": "Symbolic System of Equations",
+              "level": 4,
+              "objective": "Solve a system of equations symbolically."
+            },
+            "representing_parabolas": {
+              "name": "Representing Parabolas with an Equation",
+              "level": 4,
+              "objective": "Represent parabolas with an algebraic equation."
+            }
           }
-      }
-    },
-    "geometry": {
-      "name": "Geometry",
-      "pods": {
-      "pi": {
-        "name": "Memorize Pi to 15 decimal places",
-        "level": 1,
-        "objective": "Know pi to at least 15 decimal places."
+        },
+      "geometry": {
+        "name": "Geometry",
+          "pods": {
+          "pi": {
+            "name": "Memorize Pi to 15 decimal places",
+            "level": 1,
+            "objective": "Know pi to at least 15 decimal places."
+          },
+          "circle_replationships_1": {
+            "name": "Circle Relationships 1",
+            "level": 1,
+            "objective": "Memorize basic circle relationships."
+          },
+          "circle_math_1":
+          {
+            "name": "Circle Math 1",
+            "level": 1,
+            "objective": "Solve very simple problems relating elements of a circle."
+          },
+          "trigonometry_1":
+          {
+            "name": "The Pythagorean Theorem",
+            "level": 1,
+            "objective": "Solve numerical problems using the Pythagorean Theorem"
+          },
+          "area_1":
+          {
+            "name": "Area 1",
+            "level": 1,
+            "objective": "Find the area of rectanges, squares, right triangles, and trapezoids."
+          },
+          "circle_math_2":
+          {
+            "name": "Circle Math 2",
+            "level": 2,
+            "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi."
+          },
+          "trigonometry_2":
+          {
+            "name": "Trigonometry 2",
+            "level": 2,
+            "objective": "Solve for pieces of a triangle using sine, cosine, and tangent."
+          },
+          "trigonometry_3":
+          {
+            "name": "Trigonometry 3",
+            "level": 3,
+            "objective": "Solve trigonometric problems with variables in the denominator; given necessary pieces of information determine all other information regarding a triangle."
+          },
+          "algbraic_circle_problems":
+          {
+            "name": "Algebraic Circle Problems",
+            "level": 3,
+            "objective": "Drive algebraic formulas to relate different pieces of a circle."
+          },
+          "algebraic_area_problems":
+          {
+            "name": "Algebraic Area and Trigonometric Problems",
+            "level": 3,
+            "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
+          },
+          "area_problems_with_nontradiational_information":
+          {
+            "name": "Area Problems with Nontraditional Information",
+            "level": 4,
+            "objective": "Figure out the area of a triangle or trapezoid with different types of area given."
+          },
+          "trigonometric_identities":
+          {
+            "name": "Trigonometric Identities",
+            "level": 5,
+            "objective": "Derive trigonometric identities, such as the sum and difference angle formulas."
+          }
+        }
       },
-      "circle_replationships_1": {
-        "name": "Circle Relationships 1",
-        "level": 1,
-        "objective": "Memorize basic circle relationships."
-      },
-      "circle_math_1": {
-        "name": "Circle Math 1",
-        "level": 1,
-        "objective": "Solve very simple problems relating elements of a circle."
-      },
-      "trigonometry_1": {
-        "name": "The Pythagorean Theorem",
-        "level": 1,
-        "objective": "Solve numerical problems using the Pythagorean Theorem"
-      },
-      "area_1": {
-        "name": "Area 1",
-        "level": 1,
-        "objective": "Find the area of rectanges, squares, right triangles, and trapezoids."
-      },
-      "circle_math_2": {
-        "name": "Circle Math 2",
-        "level": 2,
-        "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps."
-      },
-      "trigonometry_2": {
-        "name": "Trigonometry 2",
-        "level": 2,
-        "objective": "Solve for pieces of a triangle using sine, cosine, and tangent."
-      },
-      "trigonometry_3": {
-        "name": "Trigonometry 3",
-        "level": 3,
-        "objective": "Solve trigonometric problems with variables in the denominator; given two pieces of information determine all other information regarding a triangle."
+      "dimensionalAnalysis": {
+        "name": "Unit Conversion and Dimensional Analysis",
+        "pods": {
+          "single_step_conversions": {
+            "name": "One-Step Conversions",
+            "level": 1,
+            "objective": "Complete one-step conversion problems using the conversion factor method."
+          },
+          "double_step_converions": {
+            "name": "Two- and Three-Step Conversions",
+            "level": 2,
+            "objective": "Complete two- and three-step conversiosn using the conversion factor method. "
+          },
+          "very_fast_conversions": {
+            "name": "Very Fast Conversions",
+            "level": 2,
+            "objective": "Solve the most common conversion problems very quickly: grams and kilograms, meters and centimeters, seconds and milliseconds."
+          },
+          "simplifying_dimensions": {
+            "name": "Simplifying Dimensions",
+            "level": 2,
+            "objective": "Simplify theoretical dimensions made of meters, kilograms, and seconds of different powers in the numerator and denominator."
+          },
+          "four_step_conversiosn": {
+            "name": "Four-Step Conversions",
+            "level": 3,
+            "objective": "Solve conversion problems involving four conversion factors, especially converting between m/s and mph."
+          },
+          "simplifying_dimensions_of_quantities": {
+            "name": "Simplifying Dimensions of Quantities",
+            "level": 3,
+            "objective": "Simplify dimensions made of different quantities, such as velocity and force, in numerators and denominators."
+          },
+          "inventing_formulas_conversion_factors": {
+            "name": "Inventing New Formulas with Conversion Factors",
+            "level": 4,
+            "objective": "Use conversion factors to solve novel and nondirect problems."
+          },
+          "dimensional_analysis_with_algebra": {
+            "name": "Using Dimensional Analysis to Confirm Formulas",
+            "level": 4,
+            "objective": "Confirm formulas and answers to symbolic algebra porblems with dimensional analysis."
+          },
+          "derive_and_categorize_units": {
+            "name": "Derive and categorize units",
+            "level": 5,
+            "objective": "Using physics formulas, derive all relevant physics quantities; cateogrize these quantities by their dimensions."
+          },
+          "google_interview_questions": {
+            "name": "Google Interview Questions",
+            "level": 5,
+            "objective": "Use dimensional analysis to invent solutions to random, outside the box questions."
+          }
+        }
       }
     }
-    }
-  }
   },
   "mechanics": {
     "name": "Mechanics",
@@ -148,5 +238,21 @@
         }
       }
     }
+  },
+  "electric_circles":
+  {
+    "name": "Electric Circuits"
+  },
+  "waves":
+  {
+    "name": "Waves"
+  },
+  "thermodynamics":
+  {
+    "name": "Thermodynamics"
+  },
+  "modern_physics":
+  {
+    "name": "Modern Physics"
   }
 }

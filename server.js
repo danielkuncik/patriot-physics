@@ -66,20 +66,20 @@ app.get('/unitsEntryPage', (req, res) => {
     });
 });
 app.get('/unitcluster/:unitClusterKey', (req, res) => {
-    res.render('units/' + req.params.unitClusterKey + '/unit_cluster_home_page.hbs', {
+    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitClusterKey + '_unit_cluster_page.hbs', {
         layout: 'unitClusterPageLayout.hbs',
         title: 'Unit Cluster'
     })
 });
 app.get('/unit/:unitClusterKey/:unitKey', (req, res) =>{
-    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/unit_home_page.hbs', {
+    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
         layout: 'unitPageLayout.hbs',
         title: "Unit"
     });
     //res.render('units/')
 });
 app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
-    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey, {
+    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/' + req.params.podKey + '_pod_page.hbs', {
         layout: "podPageLayout.hbs",
         title: "Pod"
     });
