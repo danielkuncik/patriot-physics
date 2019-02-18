@@ -4,7 +4,6 @@ var unitMap = require(__dirname + '/content/units/unit_map');
 
 var app = express();
 
-
 app.set('view engine', 'hbs');
 app.set('views', [__dirname + '/views',__dirname + '/content']);
 app.engine('hbs', hbs.express4({
@@ -14,26 +13,25 @@ app.engine('hbs', hbs.express4({
     layoutsDir: __dirname + '/views/layouts'
 }));
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static(__dirname + '/content'));
 
 
-hbs.registerHelper('listUnits', () => {
+hbs.registerHelper('listUnitLinks', () => {
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod;
     var unitList = "<ul>";
-    Object.values(unitMap).forEach((unitCluster) => {
-        unitList = unitList + `<li>${unitCluster.name}`;
-        unitList = unitList + "<ul>";
-        Object.values(unitCluster.units).forEach((unit) => {
-            unitList = unitList + `<li>${unit.name}`;
-            unitList = unitList + "<ul>";
-            Object.values(unit.pods).forEach((pod) => {
-                unitList = unitList + `<li>${pod.name}</li>`
-            });
-            unitList = unitList + "</ul>";
-            unitList = unitList + "</li>";
-        });
-        unitList = unitList + "</ul>";
-        unitList = unitList + "</li>";
-    });
+    for (unitClusterKey in unitMap) {
+        unitCluster = unitMap[unitClusterKey];
+        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a><ul>`;
+        for (unitKey in unitCluster.units) {
+            unit = unitCluster.units[unitKey];
+            unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a><ul>`;
+            for (podKey in unit.pods) {
+                pod = unit.pods[podKey];
+                unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.name}</a></li>`
+            }
+            unitList = unitList + "</ul></li>";
+        }
+        unitList = unitList + "</ul></li>";
+    }
     unitList = unitList + "</ul>";
     return new hbs.SafeString(unitList);
 });
@@ -60,11 +58,30 @@ app.get('/calendars', (req, res) => {
         title:'Calendars'
     });
 });
-app.get('/units', (req, res) => {
+app.get('/unitsEntryPage', (req, res) => {
     res.render('unitsEntryPage.hbs', {
         layout:'default',
         title:'Units',
         unitMap:unitMap
+    });
+});
+app.get('/unitcluster/:unitClusterKey', (req, res) => {
+    res.render('units/' + req.params.unitClusterKey + '/unit_cluster_home_page.hbs', {
+        layout: 'unitClusterPageLayout.hbs',
+        title: 'Unit Cluster'
+    })
+});
+app.get('/unit/:unitClusterKey/:unitKey', (req, res) =>{
+    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/unit_home_page.hbs', {
+        layout: 'unitPageLayout.hbs',
+        title: "Unit"
+    });
+    //res.render('units/')
+});
+app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
+    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey, {
+        layout: "podPageLayout.hbs",
+        title: "Pod"
     });
 });
 app.get('/labs', (req, res) => {
