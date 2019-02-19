@@ -206,34 +206,153 @@
   },
   "mechanics": {
     "name": "Mechanics",
-    "units": {
-      "kinematics_1": {
+    "units":
+    {
+      "kinematics_1":
+      {
         "name": "Kinematics 1",
-        "pods": {
-          "speed_formula": {
+        "pods":
+        {
+          "speed_formula":
+          {
             "name": "The Speed Formula",
             "level": 1,
             "objective": "Solve problems using the formula distance equals speed multipled by time."
           },
-          "kinematic_graphs_1": {
+          "kinematic_graphs_1":
+          {
             "name": "Position Time Graphs",
             "level": 1,
             "objective": "Identify position-time graphs and motion maps."
           }
         }
       },
-      "dynamics_math": {
+      "dynamics_math":
+      {
         "name": "Dynamics Math",
-        "pods": {
-          "newtons_second_law": {
+        "pods":
+        {
+          "newtons_second_law":
+          {
             "name": "Newton's Second Law",
             "level": 1,
             "objective": "Use Newton's Second Law to solve simple numeric problems."
           },
-          "finding_net_force": {
+          "finding_net_force":
+          {
             "name": "Finding Net Force",
             "level": 1,
             "objective": "Given a free-body diagram, determine the vector net force acting on an object."
+          }
+        }
+      },
+      "projectile_motion":
+      {
+        "name": "Projectile Motion",
+        "pods":
+        {
+          "parabolic_arcs":
+          {
+            "name": "Parabolic Arcs",
+            "level": 1,
+            "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectil motion always occurs in parabolic arcs."
+
+          },
+          "falling_problems_numeric":
+          {
+            "name": "Falling: Numeric Problems",
+            "level": 1,
+            "objective": "Solve numeric problems about objects falling down and objects thrown downards."
+          },
+          "falling_kinematic_graphs":
+          {
+            "name": "Falling: Kinematic Graphs",
+            "level": 1,
+            "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
+          },
+          "pop_up_problems_numeric":
+          {
+            "name": "Pop-Up: Numeric Problems",
+            "level": 2,
+            "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
+          },
+          "horizontal_launch_concept":
+          {
+            "name": "Horizontal Launch: Conceptual",
+            "level": 2,
+            "objective": "In writing, describe motion in different dimensions when an object is launched horizontally; relate this motion to the free-body diagram using Newton's Model"
+          },
+          "horizontal_launch_numeric":
+          {
+            "name": "Horizontal Launch: Numeric",
+            "level": 2,
+            "objective": "Solve for unknown numeric quantities when an object is launched from a cliff horizontally."
+          },
+          "pop_up_newtons_model":
+          {
+            "name": "Pop-Up: Newton's Model",
+            "level": 3,
+            "objective": "Relate the motion of an object thrown directly to the free-body diagram using Newton's Model."
+          },
+          "pop_up_kinematic_graphs":
+          {
+            "name": "Pop-Up: Kinematic Graphs",
+            "level": 3,
+            "objective": "Draw qualitative kinematic graphs of an object thrown directly upward."
+          },
+          "bullet_drop":
+          {
+            "name": "Bullet Drop Conundrum",
+            "level": 3,
+            "objective": "Explain the bullet drop conundrum in words."
+          },
+          "pop_up_algebraic":
+          {
+            "name": "Pop-Up: Symbolic",
+            "level": 3,
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air."
+          },
+          "horizontal_launch_kinematic_graphs":
+          {
+            "name": "Horizontal Launch: Kinematic Graphs",
+            "level": 4,
+            "objective": "Draw qualitative kinematic graphs in each dimension for an object launched horizontally."
+          },
+          "angled_launch_conceptual":
+          {
+            "name": "Angled Launch Conceptual",
+            "level": 4,
+            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; relate this motion to the free-body diagram using Newton's Model."
+          },
+          "angled_launch_numeric":
+          {
+            "name": "Angled Launch Numeric",
+            "level": 4,
+            "objective": "Solve for relevant unknown numeric quantities when an object is launched upward at an angle."
+          },
+          "angled_launch_algebraic":
+          {
+            "name": "Angled Launch: Symbolic",
+            "level": 5,
+            "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities."
+          },
+          "angled_launch_kinematic_graphs":
+          {
+            "name": "Angled Launch: Kinematic Graphs",
+            "level": 5,
+            "objective": "Draw qualitative kinematic graphs for an object fired from a cannon at an upward angle."
+          },
+          "angled_launch_from_high_ground":
+          {
+            "name": "Cannon Fired From High Ground",
+            "level": 5,
+            "objective": "Determine the range of a cannon fired at an angle from a high ground."
+          },
+          "aiming_a_cannon_with_laser_pointers":
+          {
+            "name": "Aim a cannon with laser pointers.",
+            "level": 6,
+            "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           }
         }
       }

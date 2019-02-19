@@ -37,6 +37,7 @@ hbs.registerHelper('listUnitLinks', () => {
 });
 
 
+var unitCluster, unit, pod;
 // ROUTES
 app.get('/',(req,res) => {
     res.render('home.hbs', {
@@ -66,22 +67,32 @@ app.get('/unitsEntryPage', (req, res) => {
     });
 });
 app.get('/unitcluster/:unitClusterKey', (req, res) => {
+    unitCluster = unitMap[req.params.unitClusterKey];
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitClusterKey + '_unit_cluster_page.hbs', {
         layout: 'unitClusterPageLayout.hbs',
-        title: 'Unit Cluster'
+        title: unitCluster.name
     })
 });
 app.get('/unit/:unitClusterKey/:unitKey', (req, res) =>{
+    unitCluster = unitMap[req.params.unitClusterKey];
+    unit = unitCluster.units[req.params.unitKey];
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
         layout: 'unitPageLayout.hbs',
-        title: "Unit"
+        title: unit.name,
+        unitClusterName: unitCluster.name
     });
     //res.render('units/')
 });
 app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
+    unitCluster = unitMap[req.params.unitClusterKey];
+    unit = unitCluster.units[req.params.unitKey];
+    pod = unit.pods[req.params.podKey];
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/' + req.params.podKey + '_pod_page.hbs', {
         layout: "podPageLayout.hbs",
-        title: "Pod"
+        unitName: unit.name,
+        title: pod.name,
+        level: pod.level,
+        objective: pod.objective
     });
 });
 app.get('/labs', (req, res) => {
