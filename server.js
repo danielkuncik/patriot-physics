@@ -15,6 +15,8 @@ app.engine('hbs', hbs.express4({
 app.use(express.static(__dirname + '/public'));
 
 
+
+/// helpers to make lists of links on each unit page!
 hbs.registerHelper('listAllUnitsAndPods', () => {
     var unitClusterKey, unitCluster, unitKey, unit, podKey, pod;
     var unitList = "<ul>";
@@ -172,6 +174,13 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
         objective: pod.objective
     });
 });
+
+/// accessing pod assets
+app.get('/podAssets/:unitClusterKey/:unitKey/:podKey/:assetKey', (req, res) => {
+    var data = require(__dirname + '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey  + '/assets/' + req.params.assetKey);
+    res.send(data);
+});
+
 app.get('/labs', (req, res) => {
     res.render('labsEntryPage.hbs', {
         layout:'default',
