@@ -1,0 +1,31 @@
+td {
+    border: 1px solid black;
+    margin: 0;
+    vertical-align: text-top;
+}
+
+th {
+    border: 1px solid black;
+    margin: 0;
+    vertical-align: text-top;
+}
+
+td.lookingForBox {
+
+}
+
+td.alreadyKnowBox {
+
+}
+
+td.formulaBox {
+
+}
+
+td.workBox {
+
+}
+
+td.answerBox {
+
+}

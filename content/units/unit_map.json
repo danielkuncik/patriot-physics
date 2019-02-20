@@ -355,6 +355,67 @@
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           }
         }
+      },
+      "collisions":
+      {
+        "name": "Collisions and Explosions",
+        "pods":
+        {
+          "momentum_formula":
+          {
+            "name": "The Momentum Formula",
+            "level": 1,
+            "objective": "Use the momentum formula to solve numerical problems."
+          },
+          "memorize_conservation_of_momentum":
+          {
+            "name": "Memorize the Conservation of Momentum",
+            "level": 1,
+            "objective": "Memorize, word for word, the conservation of momentum."
+          },
+          "explaining_newtons_cradle":
+          {
+            "name": "Explaining Newton's Cradle",
+            "level": 5,
+            "objective": "Use the conservation of momentum to explain how a Newton's Cradle works."
+          },
+          "elastic_formula_equation_derivation":
+          {
+            "name": "Elastic Formula Equation Derivation",
+            "level": 3,
+            "objective": "Derive and explain formulas that describe an elastic collision."
+          },
+          "conservation_of_momentum_one":
+          {
+            "name": "Conservation of Momentum 1",
+            "level": 2,
+            "objective": "Use the conservation of momentum to solve simple collision problems."
+          },
+          "conservation_of_momentum_two":
+          {
+            "name": "Conservation of Momentum 2",
+            "level": 2,
+            "objective": "Use the conservation of momentum to solve explosion problems and perfectly inelastic colision problems."
+          },
+          "advanced_pool_ball_collision":
+          {
+            "name": "Advanced Pool Ball Collision",
+            "level": 5,
+            "objective": "Derive formulas that explain pool ball collisions and use relate these formulas to the actual reality in a pool ball collision."
+          },
+          "conservation_of_momentum_formula_derivation_one":
+          {
+            "name": "Conservation of Momentum Formula Derivation 1",
+            "level": 3,
+            "objective": "Derive the formula that explains a collision problem and explain what each term of that formula represents."
+          },
+          "conservation_of_momentum_formula_derivation_two":
+          {
+            "name": "Conservation of Momentum Formula Derivation 2",
+            "level": 3,
+            "objective": "Derive a formula that explains explosion or perfectly inelastic collision problems and explin what each term of that formula represents."
+          }
+        }
       }
     }
   },

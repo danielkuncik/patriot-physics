@@ -1,0 +1,304 @@
+// The goal of this file is to format and create
+// graphic specific to certain types of physics problems
+// for example: boxes to help plug into formula problems
+// boxes to guide students through momentum, conservatio of energy, or electric circuit problems
+
+// arguments should adjust how large i want the table to be etc.
+function formulaBox(width, height, unit) {
+    if (width === undefined) {
+        width = 400;
+    }
+    if (height === undefined) {
+        height = 300;
+    }
+    if (unit === undefined) {
+        unit = 'px'
+    }
+    this.numericalWidth = width;
+    this.numericalHeight = height;
+    this.unit = unit;
+
+    this.totalWidth = String(this.numericalWidth) + this.unit;
+    this.totalHeight = String(this.numericalHeight) + this.unit;
+
+    this.firstColumnWidth = String(this.numericalWidth * 0.4) + this.unit;
+    this.secondColumnWidth = String(this.numericalWidth * 0.3)  + this.unit;
+    this.thirdColumnWidth = String(this.numericalWidth * 0.3) + this.unit;
+
+    this.firstRowHeight = String(this.numericalHeight * 0.3) + this.unit;
+    this.secondRowHeight = String(this.numericalHeight * 0.4) + this.unit;
+    this.thirdRowHeight = String(this.numericalHeight * 0.3) + this.unit;
+
+
+    var table = $(`<table width = '${this.totalWidth}' height = '${this.totalHeight}' cellspacing = '1px'></table>`);
+
+    var firstRow = $(`<tr height = '${this.firstRowHeight}' ></tr>`);
+    var secondRow = $(`<tr height = '${this.secondRowHeight}' ></tr>`);
+    var thirdRow = $(`<tr height = '${this.thirdRowHeight}' ></tr>`);
+
+    $(firstRow).append(`<td width = '${this.firstColumnWidth}' class = 'lookingForBox'>Looking For</td>`);
+    $(firstRow).append(`<td width = '${this.secondColumnWidth}' class = 'formulaBox'>Formula</td>`);
+    $(firstRow).append(`<td width = '${this.thirdColumnWidth}' ></td>`);
+
+    $(secondRow).append(`<td class = 'alreadyKnowBox'>Already Know</td>`);
+    $(secondRow).append(`<td colspan = '2'></td>`);
+
+    $(thirdRow).append(`<td class = 'answerBox' colspan = '3'>Answer in a complete sentence with unit</td>`);
+
+    $(table).append(firstRow);
+    $(table).append(secondRow);
+    $(table).append(thirdRow);
+
+    this.table = table;
+
+    this.insertTable = function(insertID) {
+        $("#" + insertID).append(this.table);
+    }
+}
+// well, that's a start
+// some things to do: fix the issue with the thick border lines
+// make it more nicely proportioned
+
+
+// makes tables to help analyze a circuit with resistors in series or parallel
+function circuitTable(numResistors, width, height, unit, powerRow) {
+    if (width === undefined) {
+        width = 400;
+    }
+    if (height === undefined) {
+        height = 300;
+    }
+    if (unit === undefined) {
+        unit = 'px'
+    }
+    if (powerRow === undefined) {
+        powerRow = true;
+    }
+    this.numResistors = numResistors;
+    this.numericalWidth = width;
+    this.numericalHeight = height;
+    this.unit = unit;
+    this.powerRow = powerRow;
+
+    this.totalWidth = String(this.numericalWidth) + this.unit;
+    this.totalHeight = String(this.numericalHeight) + this.unit;
+
+    /// even rows and columns
+    var numericalRowHeight;
+    if (this.powerRow) {
+        numericalRowHeight = this.numericalHeight / 5;
+    } else {
+        numericalRowHeight = this.numericalHeight / 4;
+    }
+    this.rowHeight = String(numericalRowHeight) + this.unit;
+    var numericalColumnWidth = this.numericalWidth / (this.numResistors + 2);
+    this.columnWidth = String(numericalColumnWidth) + this.unit;
+
+    var table = $(`<table width = ${this.totalWidth} height = ${this.totalHeight} cellspacing = '1px'></table>`);
+
+    var headerRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var voltageRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var currentRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var resistanceRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var powerRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+
+    var i;
+    headerRow.append(`<td width = '${this.columnWidth}'></td>`); // first column
+    voltageRow.append("<td>Voltage (V)</td>");
+    currentRow.append("<td>Current (A)</td>");
+    resistanceRow.append("<td>Resistance (Ohms)</td>");
+    powerRow.append("<td>Power (W)</td>");
+    for (i = 0; i < this.numResistors; i++) {
+        headerRow.append(`<td width = '${this.columnWidth}'>Resistor ${i + 1}</td>`); // each individual resistor column
+        voltageRow.append("<td></td>");
+        currentRow.append("<td></td>");
+        resistanceRow.append("<td></td>");
+        powerRow.append("<td></td>");
+    }
+    headerRow.append(`<td width = '${this.columnWidth}'>Total Circuit</td>`); // total column
+    voltageRow.append("<td></td>");
+    currentRow.append("<td></td>");
+    resistanceRow.append("<td></td>");
+    powerRow.append("<td></td>");
+
+    $(table).append(headerRow);
+    $(table).append(voltageRow);
+    $(table).append(currentRow);
+    $(table).append(resistanceRow);
+    $(table).append(powerRow);
+
+    this.table = table;
+
+    this.insertTable = function (insertID) {
+        $("#" + insertID).append(this.table);
+    };
+}
+
+
+function collisionTable(itemNames, width, height, unit, totallyInelastic) {
+    if (itemNames === undefined) {
+        itemNames = ['Car A', 'Car B'];
+    }
+    if (width === undefined) {
+        width = 400;
+    }
+    if (height === undefined) {
+        height = 300;
+    }
+    if (unit === undefined) {
+        unit = 'px'
+    }
+    if (totallyInelastic === undefined) {
+        totallyInelastic = false
+    }
+
+    this.itemNames = itemNames;
+    this.numericalWidth = width;
+    this.numericalHeight = height;
+    this.unit = unit;
+    this.totallyInelastic = totallyInelastic;
+
+    this.totalWidth = String(this.numericalWidth) + this.unit;
+    this.totalHeight = String(this.numericalHeight) + this.unit;
+
+    this.numColumns = undefined;
+    if (totallyInelastic) {
+        this.numColumns = 3 + itemNames.length;
+    } else {
+        this.numColumns = 2 + itemNames.length * 2;
+    }
+    this.numRows = 4;
+
+    this.columnWidth = String(this.numericalWidth / this.numColumns) + this.unit;
+    this.rowHeight = String(this.numericalHeight / this.numRows) + this.unit;
+
+
+    var table = $(`<table width = '${this.totalWidth}' height = '${this.totalHeight}' cellspacing = '1px'></table>`);
+
+    var headerRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var massRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var velocityRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+    var momentumRow = $(`<tr height = '${this.rowHeight}'></tr>`);
+
+
+    // organize header row
+    $(headerRow).append(`<td width = '${this.columnWidth}'></td>`);
+    this.itemNames.forEach((item) => {
+        $(headerRow).append(`<td width = '${this.columnWidth}'>${item}</td>`)
+    });
+    $(headerRow).append(`<td width = '${this.columnWidth}'>Total</td>`);
+    if (this.totallyInelastic) {
+        var combinedName = '', i;
+        for (i = 0; i < this.itemNames.length - 1; i ++) {
+            combinedName += this.itemNames[i];
+            combinedName += ' and ';
+        }
+        combinedName += this.itemNames[this.itemNames.length - 1];
+        $(headerRow).append(`<td width = '${this.columnWidth}'>${combinedName}</td>`);
+    } else {
+        this.itemNames.forEach((item) => {
+            $(headerRow).append(`<td width = '${this.columnWidth}'>${item}</td>`)
+        });
+    }
+    $(massRow).append("<td>Mass (kg)</td>");
+    $(velocityRow).append("<td>Velocity (m/s)</td>");
+    $(momentumRow).append("<td>Momentum (kg m/s)</td>");
+    var j;
+    for (j = 1; j < this.numColumns; j++ ) {
+        $(massRow).append("<td></td>");
+        $(velocityRow).append("<td></td>");
+        $(momentumRow).append("<td></td>");
+    }
+
+
+    $(table).append(headerRow);
+    $(table).append(massRow);
+    $(table).append(velocityRow);
+    $(table).append(momentumRow);
+
+
+    this.table = table;
+
+    this.insertTable = function (insertID) {
+        $("#" + insertID).append(this.table);
+    };
+}
+
+// one more type of table!!!
+// a conservation of energy table!
+function energyTable(pointArray, typesOfEnergyArray, width, height, unit) {
+    if (pointArray === undefined) {
+        pointArray = ['A','B','C','D'];
+    }
+    if (typesOfEnergyArray === undefined) {
+        typesOfEnergyArray = ['KE', 'GPE'];
+    }
+    if (width === undefined) {
+        width = 400;
+    }
+    if (height === undefined) {
+        height = 300;
+    }
+    if (unit === undefined) {
+        unit = 'px'
+    }
+    this.pointArray = pointArray;
+    this.typesOfEnergyArray = typesOfEnergyArray;
+    this.numericalWidth = width;
+    this.numericalHeight = height;
+    this.unit = unit;
+
+    this.numColumns = 2 + this.typesOfEnergyArray.length;
+    this.numRows = 1 + pointArray.length;
+
+    this.totalWidth = String(this.numericalWidth) + this.unit;
+    this.totalHeight = String(this.numericalHeight) + this.unit;
+
+    this.rowHeight = String(this.numericalHeight / this.numRows) + this.unit;
+    this.columnWidth = String(this.numericalWidth / this.numColumns) + this.unit;
+
+    var table = $(`<table width = '${this.totalWidth}' height = '${this.totalHeight}' cellspacing = '1px'></table>`);
+
+    var headerRow = $("<tr></tr>");
+    $(headerRow).append("<td>Point</td>");
+    this.typesOfEnergyArray.forEach((type) => {
+        $(headerRow).append(`<td>${type}</td>`);
+    });
+    $(headerRow).append("<td>Total</td>");
+
+    $(table).append(headerRow);
+
+    // add other rows
+    var nextRow, k;
+    this.pointArray.forEach((point) => {
+        nextRow = $("<tr></tr>");
+        $(nextRow).append(`<td>${point}</td>`); // the header column
+        for (k = 0; k < this.typesOfEnergyArray.length; k++) {
+            $(nextRow).append("<td></td>"); // each individual column
+        }
+        $(nextRow).append("<td></td>"); // the total column
+        table.append(nextRow);
+    });
+
+    this.table = table;
+
+    this.insertTable = function (insertID) {
+        $("#" + insertID).append(this.table);
+    };
+
+}
+/*
+Things to add to this file
+2-20-19
+- should there be a single 'physics table' class, and then within that different types of tables?
+- refactor significantly in order to make it much easier and readable
+- is there a specific javascript function for default values?
+- change the insert function to allow inserting by class or other items, rather than always inserting by id
+- make sure all of the length and width numbers are precisely correct...i don't think my current system includes the space between or borders in them
+- reformat heights of columns and rows to make more seemly
+- use table headers and not only table cells <th> not just <td>
+- move more of the functionality out of automatic functions and into called functions
+- have ways to change values of the table after it is initially created
+- add a way to add values to the specific cells of a table
+- add a way to include numerical input in the specific cells of a table [to allow for future problems in which kids enter numbers]
+ */
