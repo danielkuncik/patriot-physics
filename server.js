@@ -171,9 +171,11 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
         selectedPodKey: req.params.podKey,
-        objective: pod.objective
+        objective: pod.objective,
+        assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/'
     });
 });
+// on the asset path, for some reason it does not work if i do not beign with a slash
 
 /// accessing pod assets
 app.get('/podAssets/:unitClusterKey/:unitKey/:podKey/:assetKey', (req, res) => {

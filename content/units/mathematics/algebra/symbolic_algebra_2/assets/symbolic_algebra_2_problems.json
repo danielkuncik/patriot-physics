@@ -1,0 +1,37 @@
+{
+  "name": "symbolic_algebra_2",
+  "mathStrings": true,
+  "problems":
+  [
+    {
+      "questionLine1": "Solve for \\( v \\)",
+      "questionLine2": "E = \\frac{1}{2} m v^2",
+      "answer": "v = \\sqrt{ \\frac{2E}{m} }"
+    },
+    {
+      "questionLine1": "Solve for \\( v \\)",
+      "questionLine2": "a = \\frac{v^2}{r}",
+      "answer": "\\sqrt{ar}"
+    },
+    {
+      "questionLine1": "Solve for \\( r \\)",
+      "questionLine2": "a = \\frac{v^2}{r}",
+      "answer": "\\frac{v^2}{a}"
+    },
+    {
+      "questionLine1": "Solve for \\( m_1 \\)",
+      "questionLine2": "F = \\frac{G m_1 m_2}{r^2}",
+      "answer": "m_1 = \\frac{F r^2}{G m_2} "
+    },
+    {
+      "questionLine1": "Solve for \\( m_2 \\)",
+      "questionLine2": "F = \\frac{G m_1 m_2}{r^2}",
+      "answer": "m_2 = \\frac{F r^2}{G m_1} "
+    },
+    {
+      "questionLine1": "Solve for \\( r \\)",
+      "questionLine2": "F = \\frac{G m_1 m_2}{r^2}",
+      "answer": "r = \\sqrt \\frac{G m_1 m_2}{R}"
+    }
+  ]
+}

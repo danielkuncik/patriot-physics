@@ -4,7 +4,7 @@
         Problems
     </h3>
     <p class = 'directions'>
-        In each problem, solve for \( x \(.
+        In each problem, solve for \( x \).
         If the answer is a decimal, please round to two decimal places.
     </p>
 </div>
@@ -16,18 +16,13 @@
 
 <script>
     var myProblems = new writtenProblemList();
-    $.getJSON('/podAssets/mathematics/algebra/numeric_2/numeric_2_problems.json',(data)=>{
+    $.getJSON( '{{assetPath}}' + 'numeric_2_problems.json',(data)=>{
         console.log(data);
         data.problems.forEach((problem) => {
-            myProblems.addProblem(problem.question, problem.answer);
+            myProblems.addProblem('\\(' + problem.question + '\\)', '\\(' + problem.answer + '\\)');
         });
         console.log(myProblems);
         myProblems.insertLists('putQuestionsHere','putAnswersHere');
     });
-    // myProblems.addProblem('\\( 4 + 11 = 3x - 6 \\)', '\\( x = 7 \\)');
-    // myProblems.addProblem('\\( 55 = 12 x^2 - 53 \\(', '\\( x = 3 \\)');
-    // myProblems.addProblem('\\( 19x = 24x - 15 \\(', '\\( x = 3 \\)');
-    // myProblems.addProblem('\\( 6 = \\frac{24}{x} \\(','\\( x = 4 \\)');
-    // myProblems.addProblem('\\( 19 = \frac{31}{x} \\(','\\( x = 1.63 \\)');
     myProblems.insertLists('putQuestionsHere','putAnswersHere');
 </script>

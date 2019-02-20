@@ -10,6 +10,78 @@
     {
       "question": "55 = 12x^2 - 53",
       "answer": "x = 3"
+    },
+    {
+      "question": "19x = 24x - 15",
+      "answer": "x = 3"
+    },
+    {
+      "question": "6 = \\frac{24}{x}",
+      "answer": "x = 4"
+    },
+    {
+      "question": "19 = \\frac{31}{x}",
+      "answer": "x = 1.63"
+    },
+    {
+      "question": "36 = 16 + 2 \\cdot 12 \\left( x - 12 \\right)",
+      "answer": "x = 12.83"
+    },
+    {
+      "question": "100 = 64 + 2 \\cdot 10 \\left(x - 30 \\right)",
+      "answer": "x = 31.8"
+    },
+    {
+      "question": "81 = 25 + 2 \\cdot 4 \\left( 18 - x \\right)",
+      "answer": "x = 11"
+    },
+    {
+      "question": "64 = 16 + 2 \\cdot 7 \\left( 20 - x \\right)",
+      "answer": "x = 16.57"
+    },
+    {
+      "question": "100 = \\frac{2 \\cdot 4 \\cdot 6}{x}",
+      "answer": "x = 0.48"
+    },
+    {
+      "question": "24 = 6 \\sqrt{\\frac{x}{3}}",
+      "answer": "x = 48"
+    },
+    {
+      "question": "40 = \\frac{1}{4} \\sqrt{\\frac{x + 10}{3}}",
+      "answer": "x = 76,790"
+    },
+    {
+      "question": "50 = \\frac{2}{3} \\sqrt{\\frac{x + 13}{0.4}}",
+      "answer": "x = 2,247"
+    },
+    {
+      "question": "500 = \\frac{1}{2} \\cdot 4 \\cdot x^2 + 4 \\cdot 10 \\cdot 12",
+      "answer": "x = 3.16"
+    },
+    {
+      "question": "200 = \\frac{1}{2} \\cdot x \\cdot 5^2 + x \\cdot 10 \\cdot 14",
+      "answer": "x = 1.31"
+    },
+    {
+      "question": "120 = \\frac{3 \\cdot 9 \\cdot 12}{x^2}",
+      "answer": "x = 1.64"
+    },
+    {
+      "question": "300 = \\frac{12 \\cdot 3x}{9^2}",
+      "answer": "x = 675"
+    },
+    {
+      "question": "400 = \\frac{3 \\cdot 2 \\left( 10 - 2 \\right)}{x^2}",
+      "answer": "x = 0.34"
+    },
+    {
+      "question": "\\frac{1}{x} = \\frac{1}{2} + \\frac{1}{4}",
+      "answer": "x = 1.33"
+    },
+    {
+      "question": "\\frac{1}{10} = \\frac{1}{x} + \\frac{1}{20}",
+      "answer": "x = 20"
     }
   ]
 }

@@ -1,0 +1,62 @@
+<p>
+    In a quiz on symbolic algebra problems,
+    you would not expected only to use find an answer
+    but to illustrate the steps necessary to reach the answer.
+</p>
+
+<p>
+    Symbols like \( x \), \( y \), and \( z \) can be manipuatd just like numbers can.
+
+    You can add, subtract, multiple, or divide both sides of an equation by a symbol.
+
+    To "sovle and equation" means that you have a single variable on one
+    side of the equation.
+    For example, if you have solved for \( x \),
+    you have manipulated the equation until it looks like this:
+    $$
+    x = \ldots.
+    $$
+</p>
+<p>
+    If there are varaibels on the other side of the equation,
+    we say you have solved for one variable "in terms of"
+    the other variables.
+    For example, if you have the equation
+    $$
+    y = mx + b
+    $$
+    you have solved for \( y \) in terms of \( m \), \( x \), and \( b \).
+</p>
+
+
+
+<!--
+There needs to be a short explanation before problems
+involving dividin in the denominator
+-->
+
+<div id = 'putQuestionsHere'>
+    <h3>
+        Problems
+    </h3>
+    <p class = 'directions'>
+        In each problem, solve for the stated variable in terms of the others.
+    </p>
+</div>
+<div id = 'putAnswersHere'>
+    <h3>
+        Answers
+    </h3>
+</div>
+
+<script>
+    var myProblems = new writtenProblemList();
+    $.getJSON( '{{assetPath}}' + 'symbolic_algebra_1_problems.json',(data)=>{
+        data.problems.forEach((problem) => {
+            myProblems.addProblem( [problem.questionLine1, "\\(" + problem.questionLine2 + "\\)"], '\\(' + problem.answer + '\\)');
+        });
+        console.log(myProblems);
+        myProblems.insertLists('putQuestionsHere','putAnswersHere');
+    });
+    myProblems.insertLists('putQuestionsHere','putAnswersHere');
+</script>

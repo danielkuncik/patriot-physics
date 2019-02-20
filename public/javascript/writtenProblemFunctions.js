@@ -2,7 +2,15 @@ function writtenProblem(question,answer) {
     this.question = question;
     this.answer = answer;
 
-    this.questionElement = $("<li></li>").text(String(question));
+    if (typeof(question) === 'object') {
+        this.questionElement = $("<li></li>");
+        question.forEach((line) => {
+            this.questionElement.append(line);
+            this.questionElement.append('<br>')
+        })
+    } else {
+        this.questionElement = $("<li></li>").text(String(question));
+    }
     this.answerElement = $("<li></li>").text(String(answer));
 
     this.insert = function(questionID, answerID) {
