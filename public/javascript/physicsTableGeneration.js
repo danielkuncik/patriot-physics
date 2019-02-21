@@ -219,8 +219,12 @@ function collisionTable(itemNames, width, height, unit, totallyInelastic) {
 
     this.table = table;
 
-    this.insertTable = function (insertID) {
+    this.insertTableByID = function (insertID) {
         $("#" + insertID).append(this.table);
+    };
+
+    this.insertTableByClass = function (insertClass) {
+        $("." + insertClass).append(this.table);
     };
 }
 

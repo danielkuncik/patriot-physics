@@ -219,7 +219,7 @@
             "level": 1,
             "objective": "Solve problems using the formula distance equals speed multipled by time."
           },
-          "kinematic_graphs_1":
+          "kinemtc_graphs_1":
           {
             "name": "Position Time Graphs",
             "level": 1,
@@ -227,7 +227,7 @@
           }
         }
       },
-      "dynamics_math":
+      "dynamcs_math":
       {
         "name": "Dynamics Math",
         "pods":
@@ -246,43 +246,43 @@
           }
         }
       },
-      "projectile_motion":
+      "projectle_motion":
       {
         "name": "Projectile Motion",
         "pods":
         {
-          "parabolic_arcs":
+          "parablc_arcs":
           {
             "name": "Parabolic Arcs",
             "level": 1,
             "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectil motion always occurs in parabolic arcs."
 
           },
-          "falling_problems_numeric":
+          "falling_problems_numerc":
           {
             "name": "Falling: Numeric Problems",
             "level": 1,
             "objective": "Solve numeric problems about objects falling down and objects thrown downards."
           },
-          "falling_kinematic_graphs":
+          "falling_kinemtc_graphs":
           {
             "name": "Falling: Kinematic Graphs",
             "level": 1,
             "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
           },
-          "pop_up_problems_numeric":
+          "pop_up_problems_numerc":
           {
             "name": "Pop-Up: Numeric Problems",
             "level": 2,
             "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
           },
-          "horizontal_launch_concept":
+          "horizntl_launch_conceptl":
           {
             "name": "Horizontal Launch: Conceptual",
             "level": 2,
             "objective": "In writing, describe motion in different dimensions when an object is launched horizontally; relate this motion to the free-body diagram using Newton's Model"
           },
-          "horizontal_launch_numeric":
+          "horizntl_launch_numerc":
           {
             "name": "Horizontal Launch: Numeric",
             "level": 2,
@@ -294,7 +294,7 @@
             "level": 3,
             "objective": "Relate the motion of an object thrown directly to the free-body diagram using Newton's Model."
           },
-          "pop_up_kinematic_graphs":
+          "pop_up_kinemtc_graphs":
           {
             "name": "Pop-Up: Kinematic Graphs",
             "level": 3,
@@ -306,49 +306,49 @@
             "level": 3,
             "objective": "Explain the bullet drop conundrum in words."
           },
-          "pop_up_algebraic":
+          "pop_up_algebrc":
           {
             "name": "Pop-Up: Symbolic",
             "level": 3,
             "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air."
           },
-          "horizontal_launch_kinematic_graphs":
+          "horizontal_launch_kinemtc_graphs":
           {
             "name": "Horizontal Launch: Kinematic Graphs",
             "level": 4,
             "objective": "Draw qualitative kinematic graphs in each dimension for an object launched horizontally."
           },
-          "angled_launch_conceptual":
+          "angled_launch_conceptl":
           {
             "name": "Angled Launch Conceptual",
             "level": 4,
             "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; relate this motion to the free-body diagram using Newton's Model."
           },
-          "angled_launch_numeric":
+          "angled_launch_numerc":
           {
             "name": "Angled Launch Numeric",
             "level": 4,
             "objective": "Solve for relevant unknown numeric quantities when an object is launched upward at an angle."
           },
-          "angled_launch_algebraic":
+          "angled_launch_algebrc":
           {
             "name": "Angled Launch: Symbolic",
             "level": 5,
             "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities."
           },
-          "angled_launch_kinematic_graphs":
+          "angled_launch_kinemtc_graphs":
           {
             "name": "Angled Launch: Kinematic Graphs",
             "level": 5,
             "objective": "Draw qualitative kinematic graphs for an object fired from a cannon at an upward angle."
           },
-          "angled_launch_from_high_ground":
+          "angled_launch_high_ground":
           {
             "name": "Cannon Fired From High Ground",
             "level": 5,
             "objective": "Determine the range of a cannon fired at an angle from a high ground."
           },
-          "aiming_a_cannon_with_laser_pointers":
+          "aiming_cannon_laser_pointers":
           {
             "name": "Aim a cannon with laser pointers.",
             "level": 6,

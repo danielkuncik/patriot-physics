@@ -100,5 +100,8 @@ def look_for_extraneous_files_in_units_folder():
     print('-----------')
     for file in all_extraneous_files:
         print('EXTRANEOUS FILE: ' + file)
+    if len(all_extraneous_files) == 0:
+        print('No Extraneous Files')
 
+#create_all_necessary_files_in_units_folder()
 look_for_extraneous_files_in_units_folder()

@@ -1,6 +1,6 @@
 {
   "name": "symbolic_algebra_1",
-  "mathStrings": true,
+  "mathJaxStrings": true,
   "problems":
   [
     {
