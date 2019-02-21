@@ -1,0 +1,40 @@
+{
+  "name": "The Momentum Formula",
+  "mathJaxStrings": "true",
+  "table": "momentumTables",
+  "problems":
+  [
+    {
+      "question":
+      [
+        "Car A has a mass of 400 kg.",
+        "Car B has a mass of 300 kg.",
+        "",
+        "Before the collision:",
+        "Car A is moving to the right at a velocity of 20 m/s.",
+        "Car B is stationary.",
+        "",
+        "After the collision.",
+        "Car A is stationary.",
+        "How fast is car B moving?"
+      ],
+      "answer": "26.7 m/s"
+    },
+    {
+      "question":
+      [
+        "Car A has a mass of 200 kg.",
+        "Car B has a mass of 400 kg.",
+        "",
+        "Before the collision:",
+        "Car A is stationary",
+        "Car B is moving right with a speed of 10 m/s.",
+        "",
+        "After the collision:",
+        "Car B is stationary",
+        "How fast is car A moving?"
+      ],
+      "answer": "20 m/s"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ function writtenProblem(question,answer) {
     this.question = question;
     this.answer = answer;
 
+    console.log(question);
     if (typeof(question) === 'object') {
         this.questionElement = $("<li></li>");
         question.forEach((line) => {

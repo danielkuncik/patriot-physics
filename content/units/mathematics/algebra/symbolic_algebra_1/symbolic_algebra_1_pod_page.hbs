@@ -53,7 +53,7 @@ involving dividin in the denominator
     var myProblems = new writtenProblemList();
     $.getJSON( '{{assetPath}}' + 'symbolic_algebra_1_problems.json',(data)=>{
         data.problems.forEach((problem) => {
-            myProblems.addProblem( [problem.questionLine1, "\\(" + problem.questionLine2 + "\\)"], '\\(' + problem.answer + '\\)');
+            myProblems.addProblem( problem.question, problem.answer );
         });
         console.log(myProblems);
         myProblems.insertLists('putQuestionsHere','putAnswersHere');
