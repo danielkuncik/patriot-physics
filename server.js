@@ -228,7 +228,7 @@ app.get('/jokes', (req, res) => {
 });
 // sending a joke image image
 app.get('/getJoke/:imageName', (req,res)=>{
-    res.sendFile(__dirname + '/content/jokes/' + req.params.imageName);
+    res.sendFile(__dirname + '/content/jokes/memedPictures/' + req.params.imageName);
 });
 
 
