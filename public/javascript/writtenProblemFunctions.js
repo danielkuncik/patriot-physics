@@ -1,8 +1,7 @@
-function writtenProblem(question,answer) {
+function writtenProblem(question,answer, questionTable) {
     this.question = question;
     this.answer = answer;
 
-    console.log(question);
     if (typeof(question) === 'object') {
         this.questionElement = $("<li></li>");
         question.forEach((line) => {
@@ -14,6 +13,11 @@ function writtenProblem(question,answer) {
     }
     this.answerElement = $("<li></li>").text(String(answer));
 
+    if (questionTable) {
+        this.questionTable = addTable(questionTable.type, questionTable.arguments);
+        $(this.questionElement).append(this.questionTable.draw());
+    }
+
     this.insert = function(questionID, answerID) {
         if (questionID) {
             $("#" + questionID).append(this.questionElement);
@@ -24,6 +28,12 @@ function writtenProblem(question,answer) {
     };
 }
 
+function addTable(type,arguments) {
+    if (type === 'collision') {
+        return makeCollisionTable(arguments.itemNames, arguments.width, arguments.height, arguments.unit, arguments.totallyInelasticBoolean)
+    }
+}
+
 
 // creates a list of problems and answers
 function writtenProblemList() {
@@ -31,8 +41,8 @@ function writtenProblemList() {
     this.questionList = undefined;
     this.answerList = undefined;
 
-    this.addProblem = function(question, answer) {
-        var nextProblem = new writtenProblem(question, answer);
+    this.addProblem = function(question, answer, table) {
+        var nextProblem = new writtenProblem(question, answer, table);
         this.problems.push(nextProblem);
         this.makeLists()
     };

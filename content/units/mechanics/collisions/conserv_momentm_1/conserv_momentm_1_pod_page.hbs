@@ -15,7 +15,7 @@
     var myProblems = new writtenProblemList();
     $.getJSON( '{{assetPath}}' + 'conserv_momentm_1_problems.json',(data)=>{
         data.problems.forEach((problem) => {
-            myProblems.addProblem(problem.question, problem.answer);
+            myProblems.addProblem(problem.question, problem.answer, problem.table);
         });
         myProblems.insertLists('putQuestionsHere','putAnswersHere');
     });

@@ -18,7 +18,13 @@
         "Car A is stationary.",
         "How fast is car B moving?"
       ],
-      "answer": "26.7 m/s"
+      "answer": "26.7 m/s",
+      "table":
+      {
+        "type": "collision",
+        "arguments": {
+        }
+      }
     },
     {
       "question":

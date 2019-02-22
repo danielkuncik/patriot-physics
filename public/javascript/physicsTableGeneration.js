@@ -307,12 +307,12 @@ function circuitTable(numResistors, width, height, unit, powerRow) {
 }
 
 
-function makeCollisionTable(itemNames, width, height, unit, totallyInelastic) {
+function makeCollisionTable(itemNames, width, height, unit, totallyInelasticBoolean) {
     if (itemNames === undefined) {
         itemNames = ['Car A', 'Car B'];
     }
-    if (totallyInelastic === undefined) {
-        totallyInelastic = false
+    if (totallyInelasticBoolean === undefined) {
+        totallyInelasticBoolean = false
     }
     var numColumns = 2 + 2 * itemNames.length;
     var numRows = 4;
@@ -321,7 +321,6 @@ function makeCollisionTable(itemNames, width, height, unit, totallyInelastic) {
     myTable.addTextToCell('velocity (m/s)', 3,1);
     myTable.addTextToCell('momentum (kg m/s)', 4,1);
     itemNames.forEach((item, index) => {
-        console.log(index);
         myTable.addTextToCell(item, 1, 2 + index);
         myTable.addTextToCell(item, 1, 3 + itemNames.length + index);
     });
