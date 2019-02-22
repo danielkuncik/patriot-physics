@@ -1,0 +1,1 @@
+$("body").append($("<p>This is a test that the diagram generation file exists and is linked</p>"));
