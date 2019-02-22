@@ -1,6 +1,6 @@
 {
-  "name": "The Momentum Formula",
-  "mathJaxStrings": "true",
+  "name": "Conservation of Momentum 1",
+  "mathJaxStrings": "false",
   "table": "momentumTables",
   "problems":
   [
@@ -35,6 +35,38 @@
         "How fast is car A moving?"
       ],
       "answer": "20 m/s"
+    },
+    {
+      "question":
+      [
+        "Car A has a mass of 200 kg.",
+        "Car B has a mass of 150 kg",
+        "",
+        "Before the collision:",
+        "Car A is moving 5 m/s to the right",
+        "Car B is moving 7 m/s to the left",
+        "",
+        "After the collision:",
+        "Car A is stationary",
+        "What is the velocity of car B (magnitude and direction)?"
+      ],
+      "answer": "0.3 m/s left",
+      "directions": "This problem requires extra directions on how to represent motion in different directions."
+    },
+    {
+      "question":
+      [
+        "Car A has a mass of 220 kg",
+        "Car B has a mass of 180 kg",
+        "",
+        "Before the collision:",
+        "Car A is moving 6.0 m/s to the right.",
+        "Car B is moving 4.0 m/s to the left.",
+        "",
+        "After the collision",
+        "Car A is moving 2.0 m/s to the left.",
+        "What is the velocity of car B to (direction and magnitude)?"
+      ]
     }
   ]
 }

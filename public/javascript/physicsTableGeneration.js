@@ -3,6 +3,178 @@
 // for example: boxes to help plug into formula problems
 // boxes to guide students through momentum, conservatio of energy, or electric circuit problems
 
+// converts arrays of any numbers into an array of the same proportion that sums to 1
+function normalizeArray(array) {
+    var sum = 0, q;
+    for (q = 0; q < array.length; q++) {
+        sum += array[q];
+    }
+    for (q = 0; q < array.length; q++) {
+        array[q] /= sum;
+    }
+    return array;
+}
+
+
+function cellObject(width, height, unit, text) {
+    this.width = width;
+    this.height = height;
+    this.unit = unit;
+    if (!text) {text = ''}
+    this.text = String(text);
+    this.class = 'nonShaded';
+    this.shade = function() {
+        this.class = 'shaded';
+    };
+    this.draw = function() {
+        var cell = $(`<td class = ${this.class} width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'>${this.text}</td>`)
+        return cell
+    };
+}
+
+function rowObject(width, height, unit) {
+    this.width = width;
+    this.height = height;
+    this.unit = unit;
+    this.cells = [];
+
+    this.addCell = function(width, text) {
+        this.cells.push(new cellObject(width, this.height, this.unit, text));
+    };
+
+    this.draw = function() {
+        var row = $(`<tr width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'></tr>`);
+        this.cells.forEach((cell) => {
+            $(row).append(cell.draw());
+        });
+        return row
+    };
+
+    this.setHeight = function(newHeight) {
+        this.height = newHeight;
+        this.cells.forEach((cell) => {
+            cell.height = newHeight;
+        })
+    };
+
+}
+
+function tableObject(width, height, unit, numRows, numColumns) {
+    /// variables
+    this.width;
+    this.height;
+    this.unit;
+    this.tableMatrix = [];
+
+    /// setting crucial sections
+    this.setUnit = function (unit) {
+        if (typeof(unit) !== 'string') {
+            unit = 'px'
+        }
+        this.unit = unit
+    };
+    this.setHeight = function (height) {
+        if (typeof(height) !== 'number') {
+            height = 300
+        }
+        this.height = height
+    };
+    this.setWidth = function (width) {
+        if (typeof(width) !== 'number') {
+            width = 400
+        }
+        this.width = width
+    };
+
+
+    this.addRow = function(height) {
+        this.tableMatrix.push(new rowObject(this.width, height, this.unit));
+    };
+
+    /// setting the basic objects
+    this.reset = function(numRows, numColumns) {
+        this.tableMatrix = [];
+        var i, j, nextRow, rowHeight = this.height / numRows, columnWidth = this.width / numColumns;
+        for (i = 0; i < numRows; i++ ) {
+            this.addRow(rowHeight);
+            for (j = 0; j < numColumns; j++ ) {
+                this.tableMatrix[this.tableMatrix.length - 1].addCell(columnWidth);
+            }
+        }
+    };
+
+    this.setWidth(width);
+    this.setHeight(height);
+    this.setUnit(unit);
+    this.reset(numRows, numColumns);
+    this.numRows = numRows;
+    this.numColumns = numColumns;
+
+    this.selectCell = function(i,j) {
+        if (i > numRows || i <= 0) {console.log('ERROR: index outside vertical range selected')}
+        if (j > numColumns || j <= 0) {console.log('ERROR: index outside horizontal range selected')}
+        i -= 1;
+        j -= 1;
+        return this.tableMatrix[i].cells[j]
+    };
+
+
+    this.addTextToCell = function(text,i,j) {
+        this.selectCell(i,j).text = text;
+    };
+
+    this.shadeCell = function(i, j) {
+        this.selectCell(i,j).shade();
+    };
+
+    this.reporportionRows = function(porportionArray) {
+        const normalizedProportions = normalizeArray(porportionArray);
+        this.tableMatrix.forEach((row, index) => {
+            console.log(index);
+            row.setHeight(normalizedProportions[index] * this.height);
+        });
+    };
+
+    this.reporportionColumns = function(proportionArray) {
+        const normalizedProportions = normalizeArray(proportionArray);
+        var w;
+        for (w = 0; w < this.numColumns; w++) {
+            this.tableMatrix.forEach((row) => {
+                row.cells[w].width = normalizedProportions[w] * this.height;
+            });
+        }
+    };
+
+    this.draw = function() {
+        var table = $(`<table width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'></table>`);
+        this.tableMatrix.forEach((row) => {
+            $(table).append(row.draw());
+        });
+        return table;
+    };
+
+    this.insertIntoDomObject = function(domObject) {$(domObject).append(this.draw())};
+    this.insertTableByID = function(insertID) {$('#' + insertID).append(this.draw());};
+    this.insertTableByClass = function(insertClass) {$('.' + insertClass).append(this.draw());};
+
+}
+/// i need to create variables for all sorts of things
+/// column width - array  =[where do i want these set?]
+/// row height - array
+/// colspans and rowspans
+/// information inside fo columns and rows - array of arrays
+/// shaded rows and arrays
+/// buttons within arrays
+/// create functions that set each of these values...
+/// then, create default table setups for my situations...based on these values
+
+
+/// what if i had an actualy javascript matrix...which contained objects
+
+
+
+
+
 // arguments should adjust how large i want the table to be etc.
 function formulaBox(width, height, unit) {
     if (width === undefined) {
@@ -135,97 +307,29 @@ function circuitTable(numResistors, width, height, unit, powerRow) {
 }
 
 
-function collisionTable(itemNames, width, height, unit, totallyInelastic) {
+function makeCollisionTable(itemNames, width, height, unit, totallyInelastic) {
     if (itemNames === undefined) {
         itemNames = ['Car A', 'Car B'];
-    }
-    if (width === undefined) {
-        width = 400;
-    }
-    if (height === undefined) {
-        height = 300;
-    }
-    if (unit === undefined) {
-        unit = 'px'
     }
     if (totallyInelastic === undefined) {
         totallyInelastic = false
     }
-
-    this.itemNames = itemNames;
-    this.numericalWidth = width;
-    this.numericalHeight = height;
-    this.unit = unit;
-    this.totallyInelastic = totallyInelastic;
-
-    this.totalWidth = String(this.numericalWidth) + this.unit;
-    this.totalHeight = String(this.numericalHeight) + this.unit;
-
-    this.numColumns = undefined;
-    if (totallyInelastic) {
-        this.numColumns = 3 + itemNames.length;
-    } else {
-        this.numColumns = 2 + itemNames.length * 2;
-    }
-    this.numRows = 4;
-
-    this.columnWidth = String(this.numericalWidth / this.numColumns) + this.unit;
-    this.rowHeight = String(this.numericalHeight / this.numRows) + this.unit;
-
-
-    var table = $(`<table width = '${this.totalWidth}' height = '${this.totalHeight}' cellspacing = '1px'></table>`);
-
-    var headerRow = $(`<tr height = '${this.rowHeight}'></tr>`);
-    var massRow = $(`<tr height = '${this.rowHeight}'></tr>`);
-    var velocityRow = $(`<tr height = '${this.rowHeight}'></tr>`);
-    var momentumRow = $(`<tr height = '${this.rowHeight}'></tr>`);
-
-
-    // organize header row
-    $(headerRow).append(`<td width = '${this.columnWidth}'></td>`);
-    this.itemNames.forEach((item) => {
-        $(headerRow).append(`<td width = '${this.columnWidth}'>${item}</td>`)
+    var numColumns = 2 + 2 * itemNames.length;
+    var numRows = 4;
+    var myTable = new tableObject(width, height, unit, numRows, numColumns);
+    myTable.addTextToCell('mass (kg)',2,1);
+    myTable.addTextToCell('velocity (m/s)', 3,1);
+    myTable.addTextToCell('momentum (kg m/s)', 4,1);
+    itemNames.forEach((item, index) => {
+        console.log(index);
+        myTable.addTextToCell(item, 1, 2 + index);
+        myTable.addTextToCell(item, 1, 3 + itemNames.length + index);
     });
-    $(headerRow).append(`<td width = '${this.columnWidth}'>Total</td>`);
-    if (this.totallyInelastic) {
-        var combinedName = '', i;
-        for (i = 0; i < this.itemNames.length - 1; i ++) {
-            combinedName += this.itemNames[i];
-            combinedName += ' and ';
-        }
-        combinedName += this.itemNames[this.itemNames.length - 1];
-        $(headerRow).append(`<td width = '${this.columnWidth}'>${combinedName}</td>`);
-    } else {
-        this.itemNames.forEach((item) => {
-            $(headerRow).append(`<td width = '${this.columnWidth}'>${item}</td>`)
-        });
-    }
-    $(massRow).append("<td>Mass (kg)</td>");
-    $(velocityRow).append("<td>Velocity (m/s)</td>");
-    $(momentumRow).append("<td>Momentum (kg m/s)</td>");
-    var j;
-    for (j = 1; j < this.numColumns; j++ ) {
-        $(massRow).append("<td></td>");
-        $(velocityRow).append("<td></td>");
-        $(momentumRow).append("<td></td>");
-    }
+    myTable.addTextToCell('Total Momentum',3,2 + itemNames.length);
+    myTable.shadeCell(1,2 + itemNames.length);
+    myTable.shadeCell(2,2 + itemNames.length);
 
-
-    $(table).append(headerRow);
-    $(table).append(massRow);
-    $(table).append(velocityRow);
-    $(table).append(momentumRow);
-
-
-    this.table = table;
-
-    this.insertTableByID = function (insertID) {
-        $("#" + insertID).append(this.table);
-    };
-
-    this.insertTableByClass = function (insertClass) {
-        $("." + insertClass).append(this.table);
-    };
+    return myTable;
 }
 
 // one more type of table!!!

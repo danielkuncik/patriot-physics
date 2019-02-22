@@ -2,6 +2,15 @@ td {
     border: 1px solid black;
     margin: 0;
     vertical-align: text-top;
+    font-size: 10px;
+}
+
+td.nonShaded {
+    background-color: white;
+}
+
+td.shaded {
+    background-color: darkgrey;
 }
 
 th {
