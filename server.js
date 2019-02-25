@@ -113,11 +113,11 @@ app.get('/',(req,res) => {
         title: 'Home Page'
     });
 });
-app.get('/about',(req,res) => {
-    res.render('aboutEntryPage.hbs', {
+app.get('/info',(req,res) => {
+    res.render('infoEntryPage.hbs', {
         layout:'default',
        // template:'about-template',
-        title:'About'
+        title:'Information'
     });
 });
 app.get('/calendars', (req, res) => {

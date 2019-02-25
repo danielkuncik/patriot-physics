@@ -455,7 +455,101 @@
     "name": "Waves",
     "units":
     {
-
+      "electrmgntc_spectrm":
+      {
+        "name": "The Electromagnetic Spectrum",
+        "pods":
+        {
+          "memorz_electrmgntc_spectrm_1":
+          {
+            "name":"Electromagnetic Spectrum 1",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency (multiple choice)",
+          },
+          "chosing_color_by_wavelngth":
+          {
+            "name": "Choosing Colors by Wavelength",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "objective": "For visible electromagnetic waves of specific wavelengths, determine the color of that wave."
+          },
+          "memorz_electromgntc_spectrm_2":
+          {
+            "name": "Electromagnetic Spectrum 2",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "C",
+            "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer)."
+          },
+          "chosing_electrmgntc_by_wavelgnth":
+          {
+            "name": "Choosing Electromagnetic Wave by Wavelength",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "D",
+            "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented."
+          },
+          "identify_real_world_applications":
+          {
+            "name": "Identify Applications of Electromagnetic Waves",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "E",
+            "objective": "In writing, identify human applications of different types of electromagnetic wave."
+          },
+          "wave_formulas_1":
+          {
+            "name": "Wave Formulas 1",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "F",
+            "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step"
+          },
+          "wave_formula_2":
+          {
+            "name": "Wave Formula 2",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "G",
+            "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form"
+          },
+          "identify_astronomical_occuranaces":
+          {
+            "name": "Identify Astronomical Occurances of Electromagnetic Waves",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "H",
+            "objective": "Identify examples of how electromagnetic waves apply to astronomy."
+          },
+          "hydrogen_spectrum":
+          {
+            "name": "The Hydrogen Spectrum",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "I",
+            "objective": "Identify the wavelengths and colors of photons released by a hydrogen atom as an electron moves within the atom."
+          },
+          "visible_portion_of_light_wave":
+          {
+            "name": "Visible Light and the Human Experience",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "J",
+            "objective": ""
+          },
+          "galaxy_in_all_wavelengths":
+          {
+            "name": "A Galaxy in All Wavelengths",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "K",
+            "objective": ""
+          }
+        }
+      }
     }
   },
   "thermodynamics":
