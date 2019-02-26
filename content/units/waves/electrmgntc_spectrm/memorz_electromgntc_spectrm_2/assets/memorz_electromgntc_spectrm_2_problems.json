@@ -1,0 +1,30 @@
+{
+  "name": "Memorize Electromagnetic Spectrum 2",
+  "problems":
+  [
+    {
+      "question": "Using the terms wavelength and frequency, compare blue light with red light.",
+      "answer": "Blue light has a shorter wavelength and a higher frequency than red light."
+    },
+    {
+      "question": "Using the terms wavelength and frequency, compare green light and yellow light.",
+      "answer": "Green light has a shorter wavelength and a higher frequency than yellow light."
+    },
+    {
+      "question": "Using the terms wavelength and frequency, compare orange light and violet light.",
+      "answer": "Orange light has a longer wavelength and a lower frequency than violet light."
+    },
+    {
+      "question": "Using the terms wavelength, frequency, and photon energy, compare radio waves and microwaves.",
+      "answer": "Radio wwaves have a longer wavelength, a lower frequency, and a lower photon energy than microwaves."
+    },
+    {
+      "question": "Using the terms wavelength, frequency, and photon energy, compare X-rays and infrared waves.",
+      "answer": "X-rays have a shorter wavelength, a higher frequency, and a higher photon energy than infrared waves."
+    },
+    {
+      "question": "Using the terms wavelegnth, frequency, and photon energy, compare ultraviolet light and gamma rays.",
+      "answer": "Ultraviolet light has a longer wavelegnth, a lower frequency, and a lower photon energy than gamma rays."
+    }
+  ]
+}
