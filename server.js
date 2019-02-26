@@ -76,7 +76,7 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
 });
 
 hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey) => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod;
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter;
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
@@ -90,7 +90,8 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                     unitList = unitList + "<ul>";
                     for (podKey in unit.pods) {
                         pod = unit.pods[podKey];
-                        unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.name}</a></li>`
+                        if (pod.letter) {letter = pod.letter} else {letter = ''}
+                        unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${pod.name}</a></li>`
                     }
                     unitList = unitList + "</ul>";
                 }
@@ -172,7 +173,8 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
         selectedUnitKey: req.params.unitKey,
         selectedPodKey: req.params.podKey,
         objective: pod.objective,
-        assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/'
+        assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
+        letter: pod.letter
     });
 });
 // on the asset path, for some reason it does not work if i do not beign with a slash

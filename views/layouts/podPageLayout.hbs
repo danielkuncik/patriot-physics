@@ -15,7 +15,7 @@
     {{>header}}
 </header>
 <h3>
-    Pod: {{title}}
+    {{letter}}: {{title}}
 </h3>
 <ul>
     <li>
@@ -31,6 +31,31 @@
 <div>
     {{{body}}}
 </div>
+<div id = 'putQuestionsHere'>
+    <h3>
+        Problems
+    </h3>
+</div>
+<div class = 'container'>
+    <h3>
+        Answers
+    </h3>
+    <button class = 'btn btn-info' data-toggle = "collapse" data-target = "#putAnswersHere">Show Answers</button>
+    <div id = 'putAnswersHere' class = 'collapse'>
+    </div>
+</div>
+<script>
+    var myProblems = new writtenProblemList();
+    $.getJSON( '{{assetPath}}' + '{{selectedPodKey}}' +'_problems.json',(data)=>{
+        console.log(data);
+        data.problems.forEach((problem) => {
+            myProblems.addProblem(problem.question, problem.answer, problem.questionTable);
+        });
+        console.log(myProblems);
+        myProblems.insertLists('putQuestionsHere','putAnswersHere');
+    });
+    myProblems.insertLists('putQuestionsHere','putAnswersHere');
+</script>
 <div>
     {{listAllPodsWithinUnit selectedUnitClusterKey selectedUnitKey}}
  </div>
