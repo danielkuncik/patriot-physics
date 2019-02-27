@@ -57,7 +57,6 @@ hbs.registerHelper('createUnitNavbar', () => {
         htmlString += "</ul>";
         htmlString += "</li>"
     }
-
     htmlString += "</ul>";
     htmlString += "</div>";
     htmlString += "</nav>";

@@ -46,11 +46,9 @@
 <script>
     var myProblems = new writtenProblemList();
     $.getJSON( '{{assetPath}}' + '{{selectedPodKey}}' +'_problems.json',(data)=>{
-        console.log(data);
         data.problems.forEach((problem) => {
-            myProblems.addProblem(problem.question, problem.answer, problem.questionTable);
+            myProblems.addProblem(problem);
         });
-        console.log(myProblems);
         myProblems.insertLists('putQuestionsHere','putAnswersHere');
     });
     myProblems.insertLists('putQuestionsHere','putAnswersHere');

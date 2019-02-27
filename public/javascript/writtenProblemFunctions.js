@@ -1,4 +1,5 @@
-function writtenProblem(question,answer, questionTable) {
+/*
+function writtenProblem(question,answer,subQuestions,questionTable) {
     this.question = question;
     this.answer = answer;
 
@@ -6,7 +7,7 @@ function writtenProblem(question,answer, questionTable) {
         this.questionElement = $("<li></li>");
         question.forEach((line) => {
             this.questionElement.append(line);
-            this.questionElement.append('<br>')
+            this.questionElement.append('<br>');
         })
     } else {
         this.questionElement = $("<li></li>").text(String(question));
@@ -27,14 +28,146 @@ function writtenProblem(question,answer, questionTable) {
         }
     };
 }
+*/
+
+
+function writtenProblem(problemObject) {
+    this.problemObject = problemObject;
+
+    //this.questionElement = $("<li></li>");
+    //this.answerElement = $("<li></li>");
+
+    this.renderText = function(text) {
+        var element = $("<li></li>");
+        if (typeof(text) === 'object') {
+            text.forEach((line) => {
+                element.append(line);
+                element.append("<br>");
+            });
+        } else if (typeof(text) === 'string') {
+            element.append(text);
+        }
+        return element;
+    };
+
+    this.renderQuestion = function() {
+        if (this.problemObject.question) {
+            return this.renderText(this.problemObject.question);
+        }
+    };
+
+    this.renderAnswer = function() {
+        if (this.problemObject.answer) {
+            return this.renderText(this.problemObject.answer);
+        }
+    };
+
+    this.renderDirections = function() {
+        if (this.problemObject.directions) {
+            return this.renderText(this.problemObject.answer);
+        }
+    };
+
+    this.renderQuestionTable = function() {
+        if (this.problemObject.questionTable) {
+            return addTable(this.problemObject.questionTable.type, this.problemObject.questionTable.arguments);
+        }
+    };
+
+    this.renderAnswerTable = function() {
+        if (this.problemObject.answerTable) {
+            return addTable(this.problemObject.answerTable.type, this.problemObject.answerTable.arguments);
+        }
+    };
+
+    this.renderSubQuestionList = function() {
+        if (this.problemObject.subquestions) {
+            var subQuestionList = $("<ol type = 'a'></ol>");
+            var subAnswerList = $("<ol type = 'a'></ol>");
+            this.problemObject.subquestions.forEach((subQuestionObject) => {
+                if (subQuestionObject.subquestion) {
+                    $(subQuestionList).append(this.renderText(subQuestionObject.subquestion));
+                }
+                if (subQuestionObject.subanswer) {
+                    $(subAnswerList).append(this.renderText(subQuestionObject.subanswer));
+                }
+            });
+        }
+        return [subQuestionList, subAnswerList];
+    };
+
+    this.render = function() {
+        var mainQuestionElement = this.renderQuestion();
+        var mainAnswerElement= this.renderAnswer();
+        var subQuestionList;
+
+        if (this.renderDirections()) {
+            $(mainQuestionElement).append(this.renderDirections());
+        }
+        if (this.renderQuestionTable()) {
+            console.log(this.renderQuestionTable());
+            $(mainQuestionElement).append(this.renderQuestionTable().draw());
+        }
+        if (this.renderAnswerTable()) {
+            $(mainAnswerElement).append(this.renderAnswerTable().draw());
+        }
+        if (this.renderSubQuestionList()) {
+            var obj = this.renderSubQuestionList();
+            $(mainQuestionElement).append(obj[0]);
+            $(mainAnswerElement).append(obj[1]);
+        }
+        var finalList = {
+            "questionElement": mainQuestionElement,
+            "answerElement": mainAnswerElement
+        };
+        return finalList;
+    };
+
+    return this.render();
+}
 
 function addTable(type,arguments) {
     if (type === 'collision') {
         return makeCollisionTable(arguments.itemNames, arguments.width, arguments.height, arguments.unit, arguments.totallyInelasticBoolean)
+    } else {
+        return undefined
     }
 }
 
+function writtenProblemList() {
+    this.problems = [];
+    this.questionList = undefined;
+    this.answerList = undefined;
 
+    this.addProblem = function(problemObject) {
+        var nextProblem = new writtenProblem(problemObject);
+        this.problems.push(nextProblem);
+        this.makeLists()
+    };
+
+    this.makeLists = function() {
+        var questionList = $("<ol></ol>");
+        var answerList = $("<ol></ol>");
+        this.problems.forEach((problem) => {
+            questionList.append(problem.questionElement);
+            answerList.append(problem.answerElement);
+        });
+        this.questionList = questionList;
+        this.answerList = answerList;
+    };
+
+    this.insertLists = function(questionID, answerID) {
+        if (questionID) {
+            $("#" + questionID).append(this.questionList);
+        }
+        if (answerID) {
+            $('#' + answerID).append(this.answerList);
+        }
+    };
+}
+
+
+/*
 // creates a list of problems and answers
 function writtenProblemList() {
     this.problems = [];
@@ -67,3 +200,4 @@ function writtenProblemList() {
         }
     };
 }
+*/
