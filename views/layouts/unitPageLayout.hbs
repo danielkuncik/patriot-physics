@@ -18,11 +18,18 @@
 <div>
     {{{body}}}
 </div>
+<div id = 'putUnitMapHere'></div>
 <div>
     {{listAllPodsWithinUnit selectedUnitClusterKey selectedUnitKey}}
 </div>
 <footer>
     {{>footer}}
 </footer>
+<script>
+    var myUnitMap = new unitMap();
+    {{addAllPodsToMap selectedUnitClusterKey selectedUnitKey}}
+    var myUnitMapCanvas = myUnitMap.drawCanvas(500,500);
+    $("#putUnitMapHere").append(myUnitMapCanvas);
+</script>
 </body>
 </html>

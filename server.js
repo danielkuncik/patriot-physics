@@ -105,6 +105,16 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
 });
 
 
+hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
+    const myPods = unitMap[unitClusterKey]["units"][unitKey]["pods"];
+    var podAddString = "", pod;
+    Object.keys(myPods).forEach((key) => {
+        pod = myPods[key];
+        podAddString += (`myUnitMap.addPod('${pod.letter}',${pod.level},${pod.horizontal});`);
+    });
+    return new hbs.SafeString(podAddString);
+});
+
 var unitCluster, unit, pod;
 // ROUTES
 app.get('/',(req,res) => {
