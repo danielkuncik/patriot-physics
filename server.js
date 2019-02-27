@@ -16,6 +16,54 @@ app.use(express.static(__dirname + '/public'));
 
 
 
+hbs.registerHelper('createUnitNavbar', () => {
+    var unitCluster, unitClusterKey, unitClusterID, unitKey, unitID, pod, podKey, podID;
+    var htmlString = "<nav class = 'navbar navbar-light bg-light'>";
+    htmlString += "<div class = 'container'>";
+    htmlString += "<a class = 'navbar-brand' href = '/unitsEntryPage'>Units</a>";
+    htmlString += "<ul class = 'navbar-Nav'>";
+    for (unitClusterKey in unitMap) {
+        unitCluster = unitMap[unitClusterKey];
+        unitClusterID = "ID" + unitClusterKey;
+        htmlString += "<li class = 'nav-item'>";
+        htmlString += `<a class = 'nav-link' href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a>`;
+        htmlString += `<button class = 'navbar-toggler' data-toggle='collapse' data-target = '#${unitClusterID}'>`;
+        htmlString += "<span class = 'navbar-toggler-icon'></span>";
+        htmlString += "</button>";
+        htmlString += `<div class = 'collapse navbar-collapse' id = '${unitClusterID}'>`;
+        htmlString += "<ul class = 'navbar-nav'>";
+        for (unitKey in unitCluster.units) {
+            unit = unitCluster.units[unitKey];
+            unitID = "ID" + unitKey;
+            htmlString += "<li class = 'nav-item'>";
+            htmlString += `<a class = 'nav-link' href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a>`;
+            htmlString += `<button class = 'navbar-toggler' data-toggle='collapse' data-target = '#${unitID}'>`;
+            htmlString += "<span class = 'navbar-toggler-icon'></span>";
+            htmlString += "</button>";
+            htmlString += `<div class = 'collapse navbar-collapse' id = '${unitID}'>`;
+            htmlString += "<ul class = 'navbar-nav'>";
+            for (podKey in unit.pods) {
+                pod = unit.pods[podKey];
+                podID = "ID" + podKey;
+                htmlString += "<li class = 'nav-item'>";
+                htmlString += `<a class = 'nav-link' href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.name}</a>`;
+                htmlString += "</li>";
+            }
+            htmlString += "</ul>";
+            htmlString += "</div>";
+            htmlString += "</li>";
+        }
+        htmlString += "</div>";
+        htmlString += "</ul>";
+        htmlString += "</li>"
+    }
+
+    htmlString += "</ul>";
+    htmlString += "</div>";
+    htmlString += "</nav>";
+    return new hbs.SafeString(htmlString);
+});
+
 /// helpers to make lists of links on each unit page!
 hbs.registerHelper('listAllUnitsAndPods', () => {
     var unitClusterKey, unitCluster, unitKey, unit, podKey, pod;

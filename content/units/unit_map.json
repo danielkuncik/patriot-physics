@@ -157,7 +157,7 @@
           {
             "name": "Trigonometry 3",
             "level": 3,
-            "horizontal": 3,
+            "horizontal": 1,
             "letter": "H",
             "objective": "Solve trigonometric problems with variables in the denominator; given necessary pieces of information determine all other information regarding a triangle."
           },
@@ -165,7 +165,7 @@
           {
             "name": "Algebraic Circle Problems",
             "level": 3,
-            "horizontal": 4,
+            "horizontal": 2,
             "letter": "I",
             "objective": "Drive algebraic formulas to relate different pieces of a circle."
           },
@@ -173,7 +173,7 @@
           {
             "name": "Algebraic Area and Trigonometric Problems",
             "level": 3,
-            "horizontal": 5,
+            "horizontal": 3,
             "letter": "J",
             "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
           },
@@ -300,7 +300,7 @@
             "name": "The Speed Formula",
             "level": 1,
             "horizontal": 1,
-            "letter": "B",
+            "letter": "A",
             "objective": "Solve problems using the formula distance equals speed multipled by time."
           },
           "kinemtc_graphs_1":
@@ -595,7 +595,10 @@
     "name": "Electric Circuits",
     "units":
     {
-
+      "DC_circuit_math":
+      {
+        "name": "DC_circuit_math"
+      }
     }
   },
   "waves":
