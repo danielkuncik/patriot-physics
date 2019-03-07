@@ -4,9 +4,10 @@
     "name": "Mathematics",
       "units":
       {
-        "algebra":
+      "algebra":
         {
           "name": "Algebra",
+          "level": 1,
           "pods":
           {
             "numeric_1":
@@ -96,9 +97,12 @@
             }
           }
         },
-      "geometry": {
+      "geometry":
+      {
         "name": "Geometry",
-          "pods": {
+        "level": 1,
+          "pods":
+          {
           "pi": {
             "name": "Memorize Pi to 15 decimal places",
             "level": 1,
@@ -195,8 +199,110 @@
           }
         }
       },
-      "dimensionalAnalysis": {
+      "function":
+      {
+        "name": "Functions and Periodic Functions",
+        "level": 2
+      },
+      "calculus":
+      {
+        "name": "Calculus",
+        "level": 2
+      },
+      "scientific_notation":
+      {
+        "name": "Scientific Notation and Orders of Magnitude",
+        "level": 1,
+        "pods":
+        {
+          "powers_of_ten":
+          {
+            "name": "Powers of Ten",
+            "level": 1
+          },
+          "sci_to_stan":
+          {
+            "name": "Scientific to Standard Notation",
+            "level": 1
+          },
+          "stan_to_sci":
+          {
+            "name": "Standard to Scientific Notation",
+            "level": 1
+          },
+          "limbo_to_sci":
+          {
+            "name": "Putting numbers in correct scientific notation",
+            "level": 2
+          },
+          "metric_prefixes":
+          {
+            "name": "Memorize metric prefixes",
+            "level": 2
+          },
+          "sci_not_calc_1":
+          {
+            "name": "Scientific Notation on a Calculator 1",
+            "level": 2,
+            "parameters":
+                    [
+                      "Inclues single step problems like multiplying, dividing, and squaring."
+                    ]
+          },
+          "sci_not_ineq":
+          {
+            "name": "Scientific Notation Inequalities",
+            "level": 2
+          },
+          "metric_to_SI":
+          {
+            "name": "Convert from Metric to SI",
+            "level": 3
+          },
+          "SI_to_metric":
+          {
+            "name": "Convert from SI to Metric",
+            "level": 3
+          },
+          "sci_not_calc_2":
+          {
+            "name": "Scientific Notation on a Calculator 2",
+            "level": 3,
+            "parameters":
+                    [
+                      "More complex operations with multiple steps."
+                    ]
+          },
+          "memorz_length_scales":
+          {
+            "name": "Memorizing Length Scales",
+            "level": 4,
+            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in length."
+          },
+          "memorz_mass_scales":
+          {
+            "name": "Memorizing Mass Scales",
+            "level": 4,
+            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in mass."
+          },
+          "convert_betwween_metic":
+          {
+            "name": "Convert Between Metric Units",
+            "level": 4,
+            "objective": "Convert from one metric unit to a different metric unit; in particular, from other masses to kilograms."
+          },
+          "memorz_other_scales":
+          {
+            "name": "Memorizing Other Scales",
+            "level": 5,
+            "objective": "Recall, whenever necessary, various instances in the universe with particular orders of magnitude in speed, acceleration, energy, temperature, or time."
+          }
+        }
+      },
+      "dimensionalAnalysis":
+      {
         "name": "Unit Conversion and Dimensional Analysis",
+        "level": 1,
         "pods": {
           "single_step_conversions": {
             "name": "One-Step Conversions",
@@ -290,6 +396,71 @@
             "objective": "Use dimensional analysis to derive a set of units in which all physical constants are equal to one; Derive conversion factors between SI units and these units; Explain the significance of these units."
           }
         }
+      },
+      "error_approximation":
+      {
+        "name": "Error Approximation",
+        "level": 2,
+        "pods":
+        {
+          "comp_ord_of_mag":
+          {
+            "name": "Comparing Order of Magnitude",
+            "level": 1
+          },
+          "count_sig_figs":
+          {
+            "name": "Counting Significant Figures",
+            "level": 1
+          },
+          "percent_error":
+          {
+            "name": "Calculating Percent Difference and Percent Error",
+            "level": 2
+          },
+          "sig_fig_round":
+          {
+            "name": "Rounding to a specific number of significant figures",
+            "level": 2
+          },
+          "sig_fig_prob_solving":
+          {
+            "name": "Solving Problems with the Correct Number of Significant Figures",
+            "level": 3
+          },
+          "error_estimate":
+          {
+            "name": "Estimating Error and Siginificant Figures in a Measurement",
+            "level": 3,
+            "objective": "Given a measurement and method of measuring, estimate the amount of error in that measurement and estimate how many sigificant figures would be appropriate to report."
+          },
+          "sig_fig_purp":
+          {
+            "name": "Explaining the purpose of significant figures.",
+            "level": 4
+          },
+          "error_prop_1":
+          {
+            "name": "Error Propagation 1",
+            "level": 4
+          },
+          "error_prop_2":
+          {
+            "name": "Error Propagation 2",
+            "level": 5
+          }
+        }
+      },
+      "back_of_envelp_calc":
+      {
+        "name": "Back of the Envelope Calcuations",
+        "level": 2,
+        "enduring_understandings":
+                [
+                  "When presented with some novel sitaution or problem,",
+                  "A good scientist can, in a small amount of space and without a calcualtor,",
+                  "figure out an order of magnitude estimate of the answer."
+                ]
       }
     }
   },
@@ -506,27 +677,23 @@
             "letter": "B",
             "objective": "Given a free-body diagram, determine the vector net force acting on an object."
           }
-        },
-        "dynamics_concept":
-        {
-          "name": "Dynamics Concepts",
-          "pods":
-          {
-            "newtons_third_law":
-            {
-              "name": "Newton's Third Law 1",
-              "level": 1,
-              "horizontal": 1,
-              "letter": "A",
-              "objective": "X"
-            }
-          }
         }
       },
       "dynamics_concepts":
       {
         "name": "Dynamics Concepts",
-        "level": 1
+        "level": 1,
+        "pods":
+        {
+          "newtons_third_law":
+          {
+            "name": "Newton's Third Law 1",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "X"
+          }
+        }
       },
       "collisions":
       {
@@ -740,6 +907,16 @@
           }
         }
       },
+      "system_dynamics":
+      {
+        "name": "System Dynamics",
+        "level": 2
+      },
+      "work_and_power":
+      {
+        "name": "Work and Power",
+        "level": 2
+      },
       "projectle_motion":
       {
         "name": "Projectile Motion",
@@ -884,6 +1061,36 @@
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           }
         }
+      },
+      "circular_motion":
+      {
+        "name": "Circular Motion",
+        "level": 3
+      },
+      "springs_and_pendulms":
+      {
+        "name": "Spring and Pendulum Mechanics",
+        "level": 3
+      },
+      "gravitation":
+      {
+        "name": "Gravitation and Fundamental Forces",
+        "level": 3
+      },
+      "rot_kine":
+      {
+        "name": "Rotational Kinematics",
+        "level": 4
+      },
+      "rot_dyna":
+      {
+        "name": "Rotational Dynamics",
+        "level": 4
+      },
+      "rot_conserv":
+      {
+        "name": "Rotation Conservation Laws",
+        "level": 4
       }
     }
   },
