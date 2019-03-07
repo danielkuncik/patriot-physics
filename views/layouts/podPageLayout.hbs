@@ -31,14 +31,8 @@
     {{{body}}}
 </div>
 <div id = 'putQuestionsHere'>
-    <h3>
-        Problems
-    </h3>
 </div>
 <div class = 'container'>
-    <h3>
-        Answers
-    </h3>
     <button class = 'btn btn-info' data-toggle = "collapse" data-target = "#putAnswersHere">Show Answers</button>
     <div id = 'putAnswersHere' class = 'collapse'>
     </div>
@@ -49,7 +43,6 @@
         data.problems.forEach((problem) => {
             myProblems.addProblem(problem);
         });
-        myProblems.insertLists('putQuestionsHere','putAnswersHere');
     });
     myProblems.insertLists('putQuestionsHere','putAnswersHere');
 </script>

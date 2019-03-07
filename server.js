@@ -16,26 +16,32 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-hbs.registerHelper('createUnitNavbar', () => {
+hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
     var unitCluster, unitClusterKey, unitClusterID, unitKey, unitID, pod, podKey, podID;
-    var htmlString = "<nav class = 'navbar navbar-light bg-light'>";
-    htmlString += "<div class = 'container'>";
+    var htmlString = "<nav class = 'navbar navbar-light bg-light' style: 'text-indent: 0px'>";
+   // htmlString += "<div class = 'container' style: 'text-indent: 0px'>";
     htmlString += "<a class = 'navbar-brand' href = '/unitsEntryPage'>Units</a>";
     htmlString += "<ul class = 'navbar-Nav'>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
         unitClusterID = "ID" + unitClusterKey;
         htmlString += "<li class = 'nav-item'>";
+        htmlString += "<div class = 'row'>";
         htmlString += `<a class = 'nav-link' href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a>`;
         htmlString += `<button class = 'navbar-toggler' data-toggle='collapse' data-target = '#${unitClusterID}'>`;
         htmlString += "<span class = 'navbar-toggler-icon'></span>";
         htmlString += "</button>";
-        htmlString += `<div class = 'collapse navbar-collapse' id = '${unitClusterID}'>`;
+        htmlString += `<div class = 'collapse `;
+        if (unitClusterKey === selectedUnitClusterKey) {
+            htmlString += "show "
+        }
+        htmlString += `navbar-collapse' id = '${unitClusterID}'>`;
         htmlString += "<ul class = 'navbar-nav'>";
         for (unitKey in unitCluster.units) {
             unit = unitCluster.units[unitKey];
             unitID = "ID" + unitKey;
             htmlString += "<li class = 'nav-item'>";
+            htmlString += "<div class = 'row'>";
             htmlString += `<a class = 'nav-link' href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a>`;
             htmlString += `<button class = 'navbar-toggler' data-toggle='collapse' data-target = '#${unitID}'>`;
             htmlString += "<span class = 'navbar-toggler-icon'></span>";
@@ -51,14 +57,15 @@ hbs.registerHelper('createUnitNavbar', () => {
             }
             htmlString += "</ul>";
             htmlString += "</div>";
+            htmlString += "</div>";
             htmlString += "</li>";
         }
-        htmlString += "</div>";
         htmlString += "</ul>";
+        htmlString += "</div>";
         htmlString += "</li>"
     }
     htmlString += "</ul>";
-    htmlString += "</div>";
+   // htmlString += "</div>";
     htmlString += "</nav>";
     return new hbs.SafeString(htmlString);
 });

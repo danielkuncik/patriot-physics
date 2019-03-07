@@ -34,9 +34,6 @@ function writtenProblem(question,answer,subQuestions,questionTable) {
 function writtenProblem(problemObject) {
     this.problemObject = problemObject;
 
-    //this.questionElement = $("<li></li>");
-    //this.answerElement = $("<li></li>");
-
     this.renderText = function(text) {
         var element = $("<li></li>");
         if (typeof(text) === 'object') {
@@ -148,6 +145,8 @@ function writtenProblemList() {
     this.makeLists = function() {
         var questionList = $("<ol></ol>");
         var answerList = $("<ol></ol>");
+
+
         this.problems.forEach((problem) => {
             questionList.append(problem.questionElement);
             answerList.append(problem.answerElement);
@@ -157,11 +156,20 @@ function writtenProblemList() {
     };
 
     this.insertLists = function(questionID, answerID) {
+        var questionListDiv = $("<div></div>");
+        var answerListDiv = $("<div></div>");
+        var questionHeader = $("<h3>Problems</h3>");
+        console.log(questionHeader);
+        $(questionListDiv).append(questionHeader);
+        $(answerListDiv).append($("<h3>Answers</h3>"));
+        $(questionListDiv).append(this.questionList);
+        $(answerListDiv).append(this.answerList);
+
         if (questionID) {
-            $("#" + questionID).append(this.questionList);
+            $("#" + questionID).append(questionListDiv);
         }
         if (answerID) {
-            $('#' + answerID).append(this.answerList);
+            $('#' + answerID).append(answerListDiv);
         }
     };
 }

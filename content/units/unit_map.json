@@ -270,17 +270,24 @@
           },
           "derive_and_categorize_units": {
             "name": "Derive and categorize units",
-            "level": 5,
-            "horizontal": 1,
+            "level":4,
+            "horizontal": 3,
             "letter": "K",
             "objective": "Using physics formulas, derive all relevant physics quantities; cateogrize these quantities by their dimensions."
           },
           "google_interview_questions": {
             "name": "Google Interview Questions",
             "level": 5,
-            "horizontal": 2,
+            "horizontal": 1,
             "letter": "L",
             "objective": "Use dimensional analysis to invent solutions to random, outside the box questions."
+          },
+          "planck_units": {
+            "name": "Derive the Planck units",
+            "level": 5,
+            "horizontal": 1,
+            "letter":"M",
+            "objective": "Use dimensional analysis to derive a set of units in which all physical constants are equal to one; Derive conversion factors between SI units and these units; Explain the significance of these units."
           }
         }
       }
@@ -292,7 +299,13 @@
     {
       "kinematics_1":
       {
-        "name": "Kinematics 1",
+        "name": "Forward Kinematics",
+        "level": 1,
+        "enduring_understandings":
+        [
+          "Quantitative modeling of motion is at the core of physics.",
+          "Creating mathematical graphs, equations, and functions that accurately describe how an object moves."
+        ],
         "pods":
         {
           "speed_formula":
@@ -301,21 +314,180 @@
             "level": 1,
             "horizontal": 1,
             "letter": "A",
-            "objective": "Solve problems using the formula distance equals speed multipled by time."
+            "objective": "Solve problems using the formula distance equals speed multiplied by time."
+          },
+          "accelrtn_formula":
+          {
+            "name": "The Acceleration Formula",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Solve for acceleration using the definition of acceleration formula."
           },
           "kinemtc_graphs_1":
           {
             "name": "Position Time Graphs",
             "level": 1,
-            "horizontal": 2,
+            "horizontal": 3,
             "letter": "B",
-            "objective": "Identify position-time graphs and motion maps."
+            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
+          },
+          "kinemtc_graphs_2":
+          {
+            "name": "Velocity and Acceleration Graphs",
+            "level": 1,
+            "horizontal": 4,
+            "letter": "A",
+            "objective": "Identify velocity-time and acceleration-time graphs for single step descriptions of motion"
+          },
+          "kinematc_graphs_connectn":
+          {
+            "name": "Kinematic Graphs Connection",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "For single step descriptions of motion, identify all three kinematic graphs that describe that motion."
+          },
+          "kine_eq_1":
+          {
+            "name": "Kinematic Equations 1",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Solve numerical algebraic problems with the kinematic equations",
+            "parameters":
+            [
+              "Equations are given.",
+              "Information is presented in very straightfoward language.",
+              "Problems involve no more than 2 algebraic steps to solve."
+            ]
+          },
+          "kine_graph_informtn_1":
+          {
+            "name": "Kinematic Graph Quantitative Information",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "A",
+            "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement."
+          },
+          "kine_graph_informtn_2":
+          {
+            "name": "Kinematic Graph Quantitative Information",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "A",
+            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
+          },
+          "kine_eq_2":
+          {
+            "name": "Kinematic Equations 2",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Solve numerical algebraic problems with the kinematic equations",
+            "parameters":
+                    [
+                      "Equations are given.",
+                      "Information is presented in realistic langauge",
+                      "Problems involve no more than 3 algebraic stpes to solve"
+                    ]
+          },
+          "kine_eq_3":
+          {
+            "name": "Kinematic Equations 3",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Solve numerical algebraic problems with the kinematic equations",
+            "parameters":
+            [
+              "Equations are given.",
+              "Information is presented in straightfoward language",
+              "Problems involve many algebraic steps, including variables within parentheses."
+            ]
+          },
+          "kine_eq_memorz":
+          {
+            "name": "Memorize the Kinematic Equations",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "A",
+            "objective": "Memorize the kinematic equations."
+          },
+          "kine_graph_two_step":
+          {
+            "name": "Kinematic Graphs 2-step motion",
+            "level": 3,
+            "horizontal": 5,
+            "letter": "A",
+            "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs that match that motion."
+          },
+          "kine_graph_story":
+          {
+            "name": "Kinematic Graph Story",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs that match that motion."
+          },
+          "kine_graph_quant_1":
+          {
+            "name": "Kinematic Graphs Quant 1",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
+          },
+          "kine_graph_quant_2":
+          {
+            "name": "Kinematic Graphs Quant 2",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "A",
+            "objective": "Given a quantitative acceleration-time or velocity-time graph for single-step motion, draw the other two relevant kinematic graphs."
+          },
+          "kine_eq_algebraic":
+          {
+            "name": "Kinematic Equations Algebraic",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "A",
+            "objective": "Solve the kinematic equations algebraically.",
+            "parameters":
+                    [
+                      "Equations not given."
+                    ]
+          },
+          "kine_eq_stepwise":
+          {
+            "name": "Kinematic Equations Stepwise",
+            "level": 4,
+            "horizontal": 5,
+            "letter": "A",
+            "objective": "Solve the kinematic equations for step-wise motion"
+          },
+          "kine_graph_stepwise":
+          {
+            "name": "Quantitative Kinematic Graph Stepwise",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "For a quantitative description of step-wise motion, create three quantitative kinematic graphs."
+          },
+          "flying_to_mars":
+          {
+            "name": "Flying to Mars",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Demonstrate using kinematic equations and graphs how a spaceship can get to Mars faster through constant acceleration and deceleration."
           }
         }
       },
       "dynamcs_math":
       {
         "name": "Dynamics Math",
+        "level": 1,
         "pods":
         {
           "newtons_second_law":
@@ -334,11 +506,244 @@
             "letter": "B",
             "objective": "Given a free-body diagram, determine the vector net force acting on an object."
           }
+        },
+        "dynamics_concept":
+        {
+          "name": "Dynamics Concepts",
+          "pods":
+          {
+            "newtons_third_law":
+            {
+              "name": "Newton's Third Law 1",
+              "level": 1,
+              "horizontal": 1,
+              "letter": "A",
+              "objective": "X"
+            }
+          }
+        }
+      },
+      "dynamics_concepts":
+      {
+        "name": "Dynamics Concepts",
+        "level": 1
+      },
+      "collisions":
+      {
+        "name": "Collisions and Explosions",
+        "level": 1,
+        "pods":
+        {
+          "momentm_formula":
+          {
+            "name": "The Momentum Formula",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Use the momentum formula to solve numerical problems."
+          },
+          "memorz_conserv_momentm":
+          {
+            "name": "Memorize the Conservation of Momentum",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "objective": "Memorize, word for word, the conservation of momentum."
+          },
+          "conserv_momentm_1":
+          {
+            "name": "Conservation of Momentum 1",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "C",
+            "objective": "Use the conservation of momentum to solve simple collision problems."
+          },
+          "conserv_momentm_2":
+          {
+            "name": "Conservation of Momentum 2",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "D",
+            "objective": "Use the conservation of momentum to solve explosion problems and perfectly inelastic colision problems."
+          },
+          "conserv_momentm_derivatn_1":
+          {
+            "name": "Conservation of Momentum Formula Derivation 1",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "E",
+            "objective": "Derive the formula that explains a collision problem and explain what each term of that formula represents."
+          },
+          "conserv_momentm_derivatn_2":
+          {
+            "name": "Conservation of Momentum Formula Derivation 2",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "F",
+            "objective": "Derive a formula that explains explosion or perfectly inelastic collision problems and explin what each term of that formula represents."
+          },
+          "elastc_collisn_derivatn":
+          {
+            "name": "Elastic Collision Equation Derivation",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "G",
+            "objective": "Derive and explain formulas that describe an elastic collision."
+          },
+          "pool_ball_collisn":
+          {
+            "name": "Advanced Pool Ball Collision",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "H",
+            "objective": "Derive formulas that explain pool ball collisions and use relate these formulas to the actual reality in a pool ball collision."
+          },
+          "newtons_cradle":
+          {
+            "name": "Explaining Newton's Cradle",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "I",
+            "objective": "Use the conservation of momentum to explain how a Newton's Cradle works."
+          }
+        }
+      },
+      "conservation_of_energy_math":
+      {
+        "name": "Conservation of Energy: Quantiative",
+        "level": 1,
+        "pods":
+        {
+          "consrv_energy_box_1":
+          {
+            "name": "Simple Conservation of Energy Box",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A"
+          },
+          "energy_formulas_1":
+          {
+            "name": "Energy Formulas 1",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B"
+          },
+          "memorz_consvr_energy":
+          {
+            "name": "Memorize The Conservation of Energy",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "objective": "Recite the conservation of energy word for word."
+          }
+        }
+      },
+      "forward_and_backward_kinematics":
+      {
+        "name": "Forward and Backwards Kinematics",
+        "pods":
+        {
+          "distance_displacement":
+          {
+            "name": "Distance and Displacement",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Find the distance and displacement of simple descriptions of 1-D motion."
+          },
+          "very_basic_vectors_and_scalars":
+          {
+            "name": "Very Basic Vectors and Scalars",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Give very basic definitions and examples of vectors and scalars."
+          },
+          "avg_speed_avg_vel":
+          {
+            "name": "Average Speed and Average Velocity",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "A",
+            "objectives": "Given simple descriptions of 1-dimensional motion determine distance, displacement, average speed, and average velocity.",
+            "parameters":
+            [
+              "Equations are not given on quiz."
+            ]
+          },
+          "axis_positn":
+          {
+            "name": "Defining Axis and Position",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "A",
+            "objectives": "Determine the position and displacement of a walking man with different origins and direction of axes."
+          },
+          "direct_vel_acc":
+          {
+            "name": "Direction of Velocity and Acceleration",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "A",
+            "objectives": "For different descriptions of motion and motion maps, determine the correct directions of velocity and acceleration."
+          },
+          "two_directn_graphs":
+          {
+            "name": "Kinematic Graphs of Two-Direction Motion",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "A",
+            "objectives":"Select qualitative kinematic graphs related to description of single step, accelerated and decelerated motion in two different directions.",
+            "note": "Traffic light problems"
+          },
+          "two_directn_eq":
+          {
+            "name": "Two-Direction Kinematic Equations",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Model two direction motion using positive and negative values and use this to solve kinematic equations involving motion in two different directions; interpret results of equations.",
+            "parameters":
+            [
+              "Equations are not given on quiz.",
+              "Focus on simplest kinematic wquation."
+            ]
+          },
+          "two_directn_eq_2":
+          {
+            "name": "Two-Direction Kinematic Equations 2",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Model two direction motion using positive and negative values and use this to solve kinematic equations involving motion in two different directions; interpret results of equations.",
+            "parameters":
+            [
+              "Equations are not given on quiz.",
+              "Focus on all kinematic equations."
+            ]
+          },
+          "two_directn_multstp_graphs":
+          {
+            "name": "Kinematic Graphs of Multi-Step Two-Direction Motion",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Given a story that involevs motion in mulitple-steps in different directions, identify kinematic graphs that best reflect this motion."
+          },
+          "full_model":
+          {
+            "name": "Create a Full Model of Two-Direction Motion",
+            "level": 6,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Create a full graphical and functional model of a complex two-direction motion situation, such as a suicide spring."
+          }
         }
       },
       "projectle_motion":
       {
         "name": "Projectile Motion",
+        "level": 3,
         "pods":
         {
           "parablc_arcs":
@@ -479,114 +884,6 @@
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           }
         }
-      },
-      "collisions":
-      {
-        "name": "Collisions and Explosions",
-        "pods":
-        {
-          "momentm_formula":
-          {
-            "name": "The Momentum Formula",
-            "level": 1,
-            "horizontal": 1,
-            "letter": "A",
-            "objective": "Use the momentum formula to solve numerical problems."
-          },
-          "memorz_conserv_momentm":
-          {
-            "name": "Memorize the Conservation of Momentum",
-            "level": 1,
-            "horizontal": 2,
-            "letter": "B",
-            "objective": "Memorize, word for word, the conservation of momentum."
-          },
-          "conserv_momentm_1":
-          {
-            "name": "Conservation of Momentum 1",
-            "level": 2,
-            "horizontal": 1,
-            "letter": "C",
-            "objective": "Use the conservation of momentum to solve simple collision problems."
-          },
-          "conserv_momentm_2":
-          {
-            "name": "Conservation of Momentum 2",
-            "level": 2,
-            "horizontal": 2,
-            "letter": "D",
-            "objective": "Use the conservation of momentum to solve explosion problems and perfectly inelastic colision problems."
-          },
-          "conserv_momentm_derivatn_1":
-          {
-            "name": "Conservation of Momentum Formula Derivation 1",
-            "level": 3,
-            "horizontal": 1,
-            "letter": "E",
-            "objective": "Derive the formula that explains a collision problem and explain what each term of that formula represents."
-          },
-          "conserv_momentm_derivatn_2":
-          {
-            "name": "Conservation of Momentum Formula Derivation 2",
-            "level": 3,
-            "horizontal": 2,
-            "letter": "F",
-            "objective": "Derive a formula that explains explosion or perfectly inelastic collision problems and explin what each term of that formula represents."
-          },
-          "elastc_collisn_derivatn":
-          {
-            "name": "Elastic Collision Equation Derivation",
-            "level": 4,
-            "horizontal": 1,
-            "letter": "G",
-            "objective": "Derive and explain formulas that describe an elastic collision."
-          },
-          "pool_ball_collisn":
-          {
-            "name": "Advanced Pool Ball Collision",
-            "level": 5,
-            "horizontal": 1,
-            "letter": "H",
-            "objective": "Derive formulas that explain pool ball collisions and use relate these formulas to the actual reality in a pool ball collision."
-          },
-          "newtons_cradle":
-          {
-            "name": "Explaining Newton's Cradle",
-            "level": 5,
-            "horizontal": 2,
-            "letter": "I",
-            "objective": "Use the conservation of momentum to explain how a Newton's Cradle works."
-          }
-        }
-      },
-      "conservation_of_energy_math":
-      {
-        "name": "Conservation of Energy: Quantiative",
-        "pods":
-        {
-          "consrv_energy_box_1":
-          {
-            "name": "Simple Conservation of Energy Box",
-            "level": 1,
-            "horizontal": 1,
-            "letter": "A"
-          },
-          "energy_formulas_1":
-          {
-            "name": "Energy Formulas 1",
-            "level": 1,
-            "horizontal": 2,
-            "letter": "B"
-          },
-          "memorz_consvr_energy":
-          {
-            "name": "Memorize The Conservation of Energy",
-            "level": 1,
-            "horizontal": 3,
-            "letter": "C",
-            "objective": "Recite the conservation of energy word for word."
-          }
-        }
       }
     }
   },
@@ -608,7 +905,15 @@
     {
       "electrmgntc_spectrm":
       {
-        "name": "The Electromagnetic Spectrum",
+        "name": "The Electromagnetic Spectrum: Analytical",
+        "enduring_understandings":
+        [
+          "The electromagnetic spectrum contains seven types of electromagnetic waves, including visible light.",
+          "While all waves are experienced and applied in qualitatively different waves, they are all the same thing: oscillating electric and magnetic energy.",
+          "The only true differences amongst electromagnetic waves are quantitative values: wavelength, frequency, and photon energy",
+          "These three values are related by fundamental constants.",
+          "Frequency and energy are directly proportional, while wavelength is inversely proportional to both."
+        ],
         "pods":
         {
           "memorz_electrmgntc_spectrm_1":
@@ -643,14 +948,6 @@
             "letter": "D",
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented."
           },
-          "identfy_applictns":
-          {
-            "name": "Identify Applications of Electromagnetic Waves",
-            "level": 3,
-            "horizontal": 1,
-            "letter": "E",
-            "objective": "In writing, identify human applications of different types of electromagnetic wave."
-          },
           "wave_formulas_1":
           {
             "name": "Wave Formulas 1",
@@ -659,21 +956,29 @@
             "letter": "F",
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step"
           },
+          "wave_proportionality":
+          {
+            "name": "Wave proportionality",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "A",
+            "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules."
+          },
           "wave_formulas_2":
           {
-            "name": "Wave Formula 2",
+            "name": "Wave Formulas 2",
             "level": 4,
             "horizontal": 1,
             "letter": "G",
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form"
           },
-          "identfy_astronmcl":
+          "logarthmc_graph":
           {
-            "name": "Identify Astronomical Occurrences of Electromagnetic Waves",
+            "name":"Logarithmic Graph of the EM Spectrum",
             "level": 4,
             "horizontal": 2,
             "letter": "H",
-            "objective": "Identify examples of how electromagnetic waves apply to astronomy."
+            "objective": "Create a logarithmic graph which shows the range of each type of electromagnetic wave with scales in wavelength, eneergy, and frequency."
           },
           "hydrogen_spectrum":
           {
@@ -686,10 +991,33 @@
           "visible_experience":
           {
             "name": "Visible Light and the Human Experience",
-            "level": 5,
+            "level": 6,
             "horizontal": 1,
             "letter": "J",
-            "objective": ""
+            "objective": "From your knowledge of the electromagnetic spectrum, surmise philosophical conclucions on the human expereince and the role of humans in the universe."
+          }
+        }
+      },
+      "electrmgntc_spectrm_concept":
+      {
+        "name": "Electromagnetic Spectrum Conceptual",
+        "pods":
+        {
+          "basic_infrared_camera":
+          {
+            "name": "Basic Infrared Camera",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Explain an infrared camera very simply."
+          },
+          "identfy_applictns":
+          {
+          "name": "Identify Applications of Electromagnetic Waves",
+          "level": 3,
+          "horizontal": 1,
+          "letter": "E",
+          "objective": "In writing, identify human applications of different types of electromagnetic wave."
           },
           "galaxy_in_all_wavelengths":
           {
@@ -698,6 +1026,14 @@
             "horizontal": 2,
             "letter": "K",
             "objective": ""
+          },
+          "identfy_astronmcl":
+          {
+            "name": "Identify Astronomical Occurrences of Electromagnetic Waves",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "H",
+            "objective": "Identify examples of how electromagnetic waves apply to astronomy."
           }
         }
       }
