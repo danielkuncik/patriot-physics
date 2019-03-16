@@ -453,7 +453,7 @@
       },
       "back_of_envelp_calc":
       {
-        "name": "Back of the Envelope Calcuations",
+        "name": "Back of the Envelope Calculations",
         "level": 2,
         "enduring_understandings":
                 [
@@ -464,7 +464,8 @@
       }
     }
   },
-  "mechanics": {
+  "mechanics":
+  {
     "name": "Mechanics",
     "units":
     {
@@ -1072,10 +1073,11 @@
         "name": "Spring and Pendulum Mechanics",
         "level": 3
       },
-      "gravitation":
+      "potential_energy_functions":
       {
-        "name": "Gravitation and Fundamental Forces",
-        "level": 3
+        "name": "Potential Energy Functions",
+        "level": 4,
+        "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics."
       },
       "rot_kine":
       {
@@ -1099,9 +1101,187 @@
     "name": "Electric Circuits",
     "units":
     {
-      "DC_circuit_math":
+      "DC_circuit_math_1":
       {
-        "name": "DC_circuit_math"
+        "name": "DC circuit math: Batteries and Resistors",
+        "limits": "Only contains circuits including batteries and ressitors",
+        "pods":
+        {
+          "ohms_law":
+          {
+            "name": "Ohm's Law",
+            "level": 1
+          },
+          "power_formula":
+          {
+            "name": "The Power Formula",
+            "level": 1
+          },
+          "analyze_circuits_1":
+          {
+            "name": "Using a Table to Analyze Circuits: Traditional Information",
+            "level": 2
+          },
+          "analyze_circuits_2":
+          {
+            "name": "Using a Table to Analyze Circuits: Nontradiational Information",
+            "level": 2
+          },
+          "analyze_circuits_3":
+          {
+            "name": "Answer questions abotu circuits without tables provided",
+            "level": 2
+          },
+          "one_step_accordion":
+          {
+            "name": "One-Step Accordion Circuit",
+            "level": 3,
+            "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
+          },
+          "electric_pot_diagrams_1":
+          {
+            "name": "Simple Electric Potential Diagrams",
+            "level": 3,
+            "objective": "Draw electric potential diagrams of simple series and parallel circuits."
+          },
+          "multi_step_accordion":
+          {
+            "name": "Multiple-Step Accordion Method",
+            "level": 4,
+            "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
+          },
+          "electric_pot_diagrams_2":
+          {
+            "name": "Complex Electric Potential Diagrams",
+            "level": 4,
+            "objective": "Draw electric potential diagrams of series and parallel circuits within each other. "
+          },
+          "algebraic_simple_circuits":
+          {
+            "name": "Algebraic Simple Circuits",
+            "level": 4,
+            "objective": "Algebraically solve simple circuits; derive the parallel resistance formula."
+          },
+          "use_kirchoff_laws":
+          {
+            "name": "Use Kirchoff's Laws",
+            "lavel": 4,
+            "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
+          },
+          "algebraic_complex_circuits":
+          {
+            "name": "Algebraic Accordion Circuits",
+            "level": 5,
+            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate how yoru answers are dimensionally correct."
+          },
+          "demonstrate_kirchoff_laws":
+          {
+            "name": "Demonstrate Kirchoff Laws",
+            "level": 5,
+            "objective": "Solve a complex circuit without using Kirchoff's Laws, create an electric potential diagram of that circuit, use that diagram to demonstrate how Kirchoff's Laws are followed."
+          },
+          "a_very_challening_circuit":
+          {
+            "name": "A very challenging circuit",
+            "level": 5,
+            "objective": "Solve a single, very complex and challenging circuit."
+          }
+        }
+      },
+      "dc_circuit_concepts_1":
+      {
+        "name": "DC Circuit Concepts 1",
+        "pods":
+        {
+          "insulators_and_conductors":
+          {
+            "name": "Insulators and Conductors",
+            "level": 1
+          },
+          "memrz_defintions_mc":
+          {
+            "name": "Memorizing Definitions of voltage, current, resistance, and power: Multiple Choice",
+            "level": 1
+          },
+          "very_basic_electrons":
+          {
+            "name": "Very Basic Electrons",
+            "level": 1,
+            "objective": "Draw and explain atomic structure"
+          },
+          "energy_change_in_circuit":
+          {
+            "name": "Energy Change in a Circuit",
+            "level": 2,
+            "objective": "Describe how energy changes in a simple electric circuit."
+          },
+          "memrz_definitions_or":
+          {
+            "name": "Memorizing Definitions of voltage, current, resistance, and power: Open Response",
+            "level": 2
+          },
+          "why_electrons_move":
+          {
+            "name": "Why electrons move?",
+            "level": 2,
+            "objective": "Explain why electrons, not other pieces of a circuit move."
+          },
+          "how_atoms_organized":
+          {
+            "name": "Organization of Atoms",
+            "level": 3,
+            "objective": "Draw how atoms are organized in insulators and conductors; explain how this makes them specifically insulators and conductors."
+          },
+          "potato_battery":
+          {
+            "name": "The Potato Battery",
+            "level": 3,
+            "objective": "Explain, chemically, why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery."
+          },
+          "effect_of_resistor":
+          {
+            "name": "Effect of a Resistor on a Circuit",
+            "level": 3,
+            "objective": "Explain the effect of a resistor on the motion of electrons in an electric circuit; define ohmic and non-ohmic resistors; identify ohmic and non-ohmic resistors"
+          },
+          "electrons_vs_current":
+          {
+            "name": "Moving Electrons vs. Current",
+            "level": 4,
+            "objective": "Explain how moving electrons sum together to make current; explain the effect of free-electrons on resistivity."
+          },
+          "electron_drift":
+          {
+            "name": "Electron Drift",
+            "level": 4,
+            "objective": "Explain how electrons actually move in a drift; recognize not all electrons, only valence electrons, are move in an electric current."
+          },
+          "conventional_current":
+          {
+            "name": "Conventional Current",
+            "level": 4,
+            "objective": "Untangle the conundrum that, mathematically, current flows the opposite way that electrons actually move."
+          },
+          "rigrous_definitions":
+          {
+            "name": "Rigorous Defintions",
+            "level": 5,
+            "objective": "Define 'rigorus' and create rigorous defintions of each electrical quantity",
+            "parameters":
+              [
+                "Ohm's Law is the rigorous definition of resistance for ohmic resistors",
+                "Derive and explain the equation that connects current to electron motion",
+                "Relate voltage to the electric potential diagrams",
+                "Relate electric power to energy transfer, mechanical power, and the conservation of energy."
+              ]
+          },
+          "advanced_current_model":
+          {
+            "name": "Advanced Current Model",
+            "level": 6,
+            "objective": "Design some sort of model, such as a diagram, a video, or a skit, that accurately describes the motion of electrons on a complex circuit with mulitple resistors and switches in series and parallel."
+          }
+        }
       }
     }
   },
@@ -1110,6 +1290,395 @@
     "name": "Waves",
     "units":
     {
+      "wave_structure":
+      {
+        "name": "Wave Structure",
+        "pods":
+        {
+          "em_v_mech_1":
+          {
+            "name": "Electromagnetic vs. Mechanical Waves 1",
+            "level": 1,
+            "objective": "Recognize electromagnetic and mechanical waves from a list; answer multiple choice questions on differences between electromagnetic and mechanical waves."
+          },
+          "parts_of_a_wave":
+          {
+            "name": "Parts of a Wave",
+            "level": 1,
+            "objective": "Identify important parts of a wave."
+          },
+          "draw_waves_1":
+          {
+            "name": "Drawing Waves 1",
+            "level": 1,
+            "objective": "Draw waves with a particular wavelength or a particular amplitude (not both)."
+          },
+          "wave_equation":
+          {
+            "name": "The Wave Equation",
+            "level": 1,
+            "objective": "Use the equation v = lambda f in simple contexts related to waves."
+          },
+          "em_v_mech_2":
+          {
+            "name": "Electromagnetic vs. Mechanical Waves 2",
+            "level": 2,
+            "objective": "Write definitions of electromagnetic and mechancial waves; write differences between electromagnetic and mechanical waves.",
+            "notes": "This is the quiz in which students formally define a wave."
+          },
+          "speed_of_sound_and_light":
+          {
+            "name": "Speed of Sound and Light",
+            "level": 2,
+            "objective": "Identify the difference between the speeds of sound and light; identify real world implications of this."
+          },
+          "oscillation_during_wave":
+          {
+            "name": "Oscillation During a Wave",
+            "level": 2,
+            "objective": "Diagram how an object oscillates as a transverse or longitudinal wave passes through."
+          },
+          "wave_categorization":
+          {
+            "name": "Wave Categorization",
+            "level": 2,
+            "objective": "Categorize waves using a matrix as electromagnetic or mechanical and as longitudinal or transverse."
+          },
+          "parts_of_a_lognitudinal_wave":
+          {
+            "name": "Parts of a Wave: Longitudinal",
+            "level": 2,
+            "objective": "Identify parts of a longitudinal wave; briefly measure wavelength and amplitude of a longitudinal wave."
+          },
+          "drawing_waves_2":
+          {
+            "name": "Drawing Waves 2",
+            "level": 2,
+            "objective": "Draw waves of particular wavelength AND amplitude, with a particular focus on the crests of a wave.",
+            "limits": "Grading is generous if the troughs of a wave are not perfectly drawn."
+          },
+          "drawing_waves_3":
+          {
+            "name": "Drawing Waves 3",
+            "level": 3,
+            "objective": "Draw waves of particular wavelength AND ampltidue with every crest, trough, and center point correctly positioned."
+          },
+          "transverse_v_longitudinal_x":
+          {
+            "name": "Making Transverse and Longitudinal Waves",
+            "level": 3,
+            "objective": "Explain how to create transverse and longitudinal waves in multiple contexts; explain logically why sound is longitudinal and light is transverse."
+          },
+          "speed_of_sound_and_light_media":
+          {
+            "name": "Speed of Sound and Light in Media",
+            "level": 3,
+            "objective": "Identify how mdia change the speed of sound and the speed of light; identify why media has opposite effects on the speed of sound and of light.",
+            "notes": "Also deals with the ideas of transverse and longitudinal waves.."
+          },
+          "drawing_waves_4":
+          {
+            "name": "Drawing Waves 4",
+            "level": 4,
+            "objective": "Draw waves with a particular wavelength, amplitude, and phase, with all crests, troughs, and center points drawn correctly."
+          },
+          "combined_tranverse_longitudinal":
+          {
+            "name": "Combined Transverse-Longitudinal Waves",
+            "level": 4,
+            "objective": "Analyze waves that combine transverse and longitudinal components."
+          }
+        }
+      },
+      "sound_properties":
+      {
+        "name": "Sound Properties",
+        "pods":
+        {
+          "speed_of_sound_in_materials":
+          {
+            "name": "Speed of Sound in Materials",
+            "level": 1,
+            "objective": "Identify how the speed of sound changes in different media; define the term 'medium' in the content of waves"
+          },
+          "doppler_effect":
+          {
+            "name": "The Doppler Effect",
+            "level": 2,
+            "objective": "Identify how the Doppler effect changes sound; identify real world examples of the Doppler effect"
+          },
+          "octave_1":
+          {
+            "name": "Octaves 1",
+            "level": 2,
+            "objective": "Solve for all wavelengths and frequencies of a particular octave, with notes given."
+          },
+          "octave_2":
+          {
+            "name": "Octaves 2: Musical Scales",
+            "level": 3,
+            "objective": "Solve for all wavelengths and frequencies of a particular octave, with ratios of the octave given."
+          },
+          "doppler_equation":
+          {
+            "name": "Doppler Effect Equation",
+            "level": 3,
+            "objective": "Numerically solve the Doppler effect equation and relate the result to a real life experience."
+          },
+          "doppler_diagrams":
+          {
+            "name": "Doppler Diagrams",
+            "level": 3,
+            "objective": "Analyze diagrams of the Doppler effect to explain why the effect occurs."
+          },
+          "explain_speed_of_sound":
+          {
+            "name": "Explain The Speed of Sound",
+            "level": 3,
+            "objective": "Explain why the speed of sound changes within different media."
+          },
+          "doppler_algebra":
+          {
+            "name": "Doppler Algebra",
+            "level": 4,
+            "objective": "Algebraically solve the Doppler effect equation."
+          },
+          "doppler_proportionality":
+          {
+            "name": "Doppler Proportionality",
+            "level": 4,
+            "objective": "Use proportionality to analyze the Doppler effect equation."
+          },
+          "sound_barrier":
+          {
+            "name": "The Sound Barrier",
+            "level": 4,
+            "objective": "Use diagrams of sound waves to explain the existence of the sound barrier, and what occurs when it is broken."
+          }
+        }
+      },
+      "harmonics":
+      {
+        "name": "Harmonics",
+        "notes": "Co-requisite with sound properties.",
+        "pods":
+        {
+          "finding_wavelength":
+          {
+            "name": "Finding Wavelength from Diagrams",
+            "level": 1,
+            "objective": "From a of waves of a given length, find the wavelength of the wave; includes fractional wavelengths"
+          },
+          "traveling_v_standing_wave":
+          {
+            "name": "Traveling vs. Standing Waves",
+            "level": 1,
+            "objective": "Identify examples of and differences between traveling and standing wave; identify parts of a standing wave."
+          },
+          "harmonics_table_1":
+          {
+            "name": "Harmonics on a String Table",
+            "level": 2,
+            "objective": "Using a table, draw a series of harmonics on a string and find the wavelength and frequency of each."
+          },
+          "harmonics_table_2":
+          {
+            "name": "Quarter Wavelength Harmonics",
+            "level": 3,
+            "objective": "Using a table, draw a series of harmonics and find the wavelength and frequency of each; harmonics include a node on one end and an antinode on the other."
+          },
+          "harmonics_unguided_math":
+          {
+            "name": "Harmonics Unguided Math",
+            "level": 3,
+            "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic."
+          },
+          "harmonics_algebra":
+          {
+            "name": "Algebraic Harmonics",
+            "level": 4,
+            "objective": "Create algebraic formulas and an algebraic series that determine the properties of different harmonics."
+          },
+          "haromnics_proportionality":
+          {
+            "name": "Harmonics Proportionality",
+            "level": 4,
+            "objective": "Use proportionality to further analyze harmonics."
+          },
+          "speed_of_sound":
+          {
+            "name": "Speed of Sound",
+            "level": 5,
+            "objective": "Determine the speed of sound by identifying different harmonics. "
+          },
+          "tension_of_string":
+          {
+            "name": "String Tension Harmonics",
+            "level": 5,
+            "objective": "Analye harmonics on a string with a different tensions of the string"
+          },
+          "hanging_string_harmonics":
+          {
+            "name": "Hanging String Harmonics",
+            "level": 5,
+            "objective": "Analyze harmonics in a hanging string."
+          },
+          "musical_instrument":
+          {
+            "name": "Musical Instrument",
+            "level": 6,
+            "objective": "Use knowledge of harmonics to design a musical instrument that plays different musical scales."
+          }
+        }
+      },
+      "geoemtric_optics":
+      {
+        "name": "Geometric Optics",
+        "notes": "All quizzes involve drawing ray diagrams AND using the lens formulas.",
+        "pods":
+        {
+          "covex_lens_1":
+          {
+            "name": "Convex Lens: Object Outside Focal Length",
+            "level": 1
+          },
+          "concave_mirror_1":
+          {
+            "name": "Concave Mirror: Objecti Outside Focal Range",
+            "level": 1
+          },
+          "convex_lens_2":
+          {
+            "name": "Convex Lens: Object Inside Focal Rnage",
+            "level": 2
+          },
+          "concave_mirror_2":
+          {
+            "name": "Concave Mirror: Objecti inside of Focal Range",
+            "level": 2
+          },
+          "plane_mirrors":
+          {
+            "name": "Plane Mirrors",
+            "level": 3,
+            "objective": "Draw Ray Diagrams for plane mirrors; describe the double speed phenomenon"
+          },
+          "concave_lenses":
+          {
+            "name": "Concave Lenses",
+            "level": 3
+          },
+          "convex_mirrors":
+          {
+            "name": "Convex Mirrors",
+            "level": 3
+          },
+          "multiple_lens_and_mirrors":
+          {
+            "name": "Multiple Lenses and Mirrors",
+            "level": 4
+          }
+        }
+      },
+      "wave_phenomena":
+      {
+        "name": "Wave Phenomena",
+        "notes": "Potentially: Reflection and refraction should be seperated from diffraction and interference",
+        "pods":
+        {
+          "wave_phenomena_basics":
+          {
+            "name": "Wave Phenomena Basics",
+            "level": 1,
+            "objective": "Identify real-world examples of reflection, refraction, interference, scattering, diffraction, and absorpotion of waves."
+          },
+          "reflection_refraction_diagrams_1":
+          {
+            "name": "Wave Phenomena Diagrams 1",
+            "level": 1,
+            "objective": "Identify the pieces of a diagram of reflection and refraction."
+          },
+          "reflection_refraction_diagrams_2":
+          {
+            "name": "Wave Phenomena Diagrams 2",
+            "level": 2,
+            "objective": "From memory, create diagrams of reflection and refraction."
+          },
+          "diffraction_scattering_diagrams":
+          {
+            "name": "Diffraction and Scattering Diagrams",
+            "level": 2,
+            "objective": "Draw diagams that illustrate the phenomena of diffraction and scattering."
+          },
+          "wave_interference_diagrams_1":
+          {
+            "name": "Wave Intereference Diagrams 1",
+            "level": 2,
+            "objective": "Draw and recgonize diagrams that show examples of normally-shaped waves passing through each other."
+          },
+          "wave_intereference_diagrams_2":
+          {
+            "name": "Wave Intereference Diagrams 2",
+            "level": 3,
+            "objective": "Draw and recognize diagrams that show non-regular examples of waves passing through each other."
+          },
+          "reflection_refraction_multiple_diagrams":
+          {
+            "name": "Diagrams with Multiple Instances of Reflection and Refraction",
+            "level": 3,
+            "objective": "Draw and label diagrams that include multiple instances of reflection and refraction."
+          },
+          "snells_law_basic":
+          {
+            "name": "Snell's Law Basic",
+            "level": 3,
+            "objective": "Draw and label quantiattive diagrams of refraction using Snell's Law."
+          },
+          "huygens_principle":
+          {
+            "name": "Huygen's Principle",
+            "level": 3,
+            "objective": "Use and diagram Huygen's Principle to explain why refraction occurs."
+          },
+          "diffraction_grating_diagram":
+          {
+            "name": "Diffraction Grating Diagrams",
+            "level": 3,
+            "objective": "Draw diagrams that illustrate interference patterns as light travels through a diffractino grating."
+          },
+          "snells_law_prism":
+          {
+            "name": "Snell's Law Prism",
+            "level": 4,
+            "objective": "Use Snell's law to explain how a prism splits light into colors."
+          },
+          "speed_of_light_discovery":
+          {
+            "name": "Finding the speed of light",
+            "level": 4,
+            "objective": "Explain how the speed of light can be determined.",
+            "notes": "Should be moved to lab unit?"
+          },
+          "diffraction_grating_formula":
+          {
+            "name": "Diffraction Grating Formula",
+            "level": 4,
+            "objective": "Use the diffraciton grating formula to derive the wavelength of light."
+          },
+          "discovery_of_dna_structure":
+          {
+            "name": "Discovery_of_DNA_structure",
+            "level": 5,
+            "objective": "Use the diffraction grating principles and formula to explain the structure of DNA."
+          },
+          "rainbows_quantiative":
+          {
+            "name": "Rainbows Quantiative",
+            "level": 5,
+            "objective": "Use Snell's Law and diagrams of refraction and reflection to quantiatively and qualitatively explain how a rainbow is made from raindrops."
+          }
+        }
+      },
       "electrmgntc_spectrm":
       {
         "name": "The Electromagnetic Spectrum: Analytical",
@@ -1121,6 +1690,7 @@
           "These three values are related by fundamental constants.",
           "Frequency and energy are directly proportional, while wavelength is inversely proportional to both."
         ],
+        "notes": "This unit needs work.",
         "pods":
         {
           "memorz_electrmgntc_spectrm_1":
@@ -1185,15 +1755,15 @@
             "level": 4,
             "horizontal": 2,
             "letter": "H",
-            "objective": "Create a logarithmic graph which shows the range of each type of electromagnetic wave with scales in wavelength, eneergy, and frequency."
+            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, eneergy, and frequency; express the logarthmic value on the axis"
           },
-          "hydrogen_spectrum":
+          "logarthmc_graph_2":
           {
-            "name": "The Hydrogen Spectrum",
-            "level": 4,
-            "horizontal": 3,
+            "name": "Logarithmic Graph of the EM Spectrum 2",
+            "level": 5,
+            "horizontal": 1,
             "letter": "I",
-            "objective": "Identify the wavelengths and colors of photons released by a hydrogen atom as an electron moves within the atom."
+            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, eneergy, and frequency; express graph using a lograthmic scale but numbers written in linear"
           },
           "visible_experience":
           {
@@ -1208,6 +1778,10 @@
       "electrmgntc_spectrm_concept":
       {
         "name": "Electromagnetic Spectrum Conceptual",
+        "notes":
+                [
+                  "I still need to add goals related to additive and subtractive processes"
+                ],
         "pods":
         {
           "basic_infrared_camera":
@@ -1217,6 +1791,14 @@
             "horizontal": 1,
             "letter": "A",
             "objective": "Explain an infrared camera very simply."
+          },
+          "reflection_and_color":
+          {
+            "name": "Reflection and Color",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Predict how objects of different color will reflect different photons of light."
           },
           "identfy_applictns":
           {
@@ -1241,9 +1823,341 @@
             "horizontal": 2,
             "letter": "H",
             "objective": "Identify examples of how electromagnetic waves apply to astronomy."
+          },
+          "climate_change":
+          {
+            "name": "Climate Change",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "A",
+            "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect."
+          },
+          "why_is_the_sky_blue":
+          {
+            "name": "Why is the sky blue?",
+            "level": 3,
+            "horizontal": 5,
+            "letter": 1,
+            "objective": "Use basic principles of electromagnetic waves and human vision to explain why the sky is blue."
           }
         }
       }
     }
+  },
+  "funamental_forces":
+  {
+    "name": "Fundamental Forces",
+    "units":
+    {
+      "concpt_gravity":
+      {
+        "name": "Conceptual Gravitation",
+        "pods":
+        {
+          "basic_gravity":
+          {
+            "name": "Basic Gravity",
+            "level": 1
+          },
+          "basic_orbits":
+          {
+            "name": "Basic Orbits",
+            "level": 1
+          },
+          "mass_v_weight_1":
+          {
+            "name": "Mass vs. Weight 1",
+            "level": 1
+          },
+          "gravitation_examples":
+          {
+            "name": "Astronomical Examples of Gravitation",
+            "level": 2,
+            "objective": "Explain star formation, planet formatino, and the existence of earth's atmopshere, and the absence of an atmosphere on other planets."
+          },
+          "comet_energy":
+          {
+            "name": "Energy of a comet",
+            "level": 2,
+            "objective": "Explain how energy changes between GPE and KE in a comet"
+          },
+          "earth_is_round":
+          {
+            "name": "The Earth is Round?",
+            "level": 3,
+            "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple."
+          },
+          "ellipse_geometry":
+          {
+            "name": "Ellipse Geometry",
+            "level": 3,
+            "objective": "Explain the geometry of ellipses and how they relate to orbits."
+          },
+          "keplers_second_law":
+          {
+            "name": "Kepler's Second Law",
+            "level": 4,
+            "objective": "Explain Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy."
+          },
+          "grav_v_inertial_mass":
+          {
+            "name": "Gravitational vs. Inertial Mass",
+            "level": 4,
+            "objective": "Differentiate between gravitational and inertial mass while recognizing their equality."
+          },
+          "through_center":
+          {
+            "name": "Thought Experiment: Jumping through the center of the earth.",
+            "level": 5
+          },
+          "different_earths":
+          {
+            "name": "Thought Experiment: What if the earth had anotehr shape?",
+            "level": 5
+          }
+        }
+      },
+      "concpt_electrstatc":
+      {
+        "name": "Conceptual Electrostatics",
+        "pods":
+        {
+          "basic_charging":
+          {
+            "name": "Charging by friction and electrostatic discharge",
+            "level": 1
+          },
+          "shocks":
+          {
+            "name": "Explaining shocks and lightning",
+            "level": 2,
+            "notes": "Gas station fires will be included here."
+          },
+          "static_v_current":
+          {
+            "name": "Electrostatics vs. Electric Current",
+            "level": 3
+          },
+          "electrostatic_induction":
+          {
+            "name": "Electrostatic Induction",
+            "level": 3
+          },
+          "van_de_graaf":
+          {
+            "name": "The van de Graaf Generator",
+            "level": 4
+          },
+          "positives_1":
+          {
+            "name": "Positive or negative charge?",
+            "level": 5,
+            "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict."
+          }
+        }
+      },
+      "inv_sqr_laws":
+      {
+        "name": "Inverse Square Laws",
+        "pods":
+        {
+          "which_has_more_force_basic":
+          {
+            "name": "Which has more force?: Basic Examples",
+            "level": 1,
+            "objective": "For two masses or charges, identify the force involved, whether they attract or repel, and which pair experiences more force."
+          },
+          "fields_1":
+          {
+            "name": "Fields 1",
+            "level": 1,
+            "objective": "Draw electric or gravitational fields of a single object."
+          },
+          "which_has_more_force_written":
+          {
+            "name": "Which has more force?: Written Examples",
+            "level": 2,
+            "objective": "For written descriptions of pairs of masses or chages, identify which pairs experience more force and why."
+          },
+          "fields_2":
+          {
+            "name": "Fields 2",
+            "level": 2,
+            "objective": "Draw electric or gravitational fields of two charged or massive objects."
+          },
+          "law_of_gravitation":
+          {
+            "name": "Law of Gravitation",
+            "level": 3,
+            "objective": "Numerically solve Newton's Law of Universal Gravitation."
+          },
+          "coulombs_law":
+          {
+            "name": "Coulombs Law",
+            "level": 3,
+            "objective": "Numerically solve Coulomb's Law"
+          },
+          "fields_3":
+          {
+            "name": "Fields 3",
+            "level": 3,
+            "objective": "Draw gravitational or electric fields for several objectis."
+          },
+          "explain_inverse_square":
+          {
+            "name": "Why inverse square?",
+            "level": 4,
+            "objective": "Use field diagrams and geometry to explain why inverse square laws are inverse square laws."
+          },
+          "algebraic_inverse_square":
+          {
+            "name": "Algebraic Inverse Square",
+            "level": 4,
+            "objective": "Solve inverse square laws algebraically; determine the dimensions of the gravitational and electric constants"
+          },
+          "formula_for_g":
+          {
+            "name": "Derive Free-Fall Acceleration",
+            "level": 4,
+            "objective": "Derive, defend, and apply the formula for free-fall acceleration on a planet."
+          },
+          "proportionality_inverse_square":
+          {
+            "name": "Inverse Square Law Proportionality",
+            "level": 4,
+            "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values."
+          },
+          "universal_grav_pot_energy":
+          {
+            "name": "Universal Gravitational Potential Energy",
+            "level": 4,
+            "objective": "Explain and use the formula for universal gravitational potential energy to quantitatively describe the motion of a comet or planet."
+          },
+          "force_within_atoms":
+          {
+            "name": "The Force Within Atoms",
+            "level": 5,
+            "objective": "Prove why electrostatic, not gravitaional force, determines the action of electrons within atoms."
+          }
+        }
+      },
+      "concept_magnet":
+      {
+        "name": "Conceptual Magnetism",
+        "pods":
+        {
+          "simple_magnet":
+          {
+            "name": "Simple magnet Questions",
+            "level": 1,
+            "notes": "north and south poles, earth's magnetic field, how a compass works."
+          },
+          "build_a_magnet":
+          {
+            "name": "Simple Eletromagnet",
+            "level": 1,
+            "objective": "Explain how to build a simple electromagnet"
+          },
+          "magnet_laws":
+          {
+            "name": "Magnet Laws",
+            "level": 1,
+            "objective": "State Faraday's and Ampere's Laws"
+          },
+          "simple_magnetic_fields":
+          {
+            "name": "Simple Magnetic Fields",
+            "level": 2,
+            "objective": "Draw a magnetic field of a single bar magnet and of the earth."
+          },
+          "why_magnets":
+          {
+            "name": "How do magnets work?",
+            "level": 2,
+            "objective": "Explain and diagram how a magnet works."
+          },
+          "electron_magnet":
+          {
+            "name": "Electron motion in a magnetic field",
+            "level": 3,
+            "objective": "Determine, using right-hand rules, how an electron moves within a magnetic field; recogniezze why a bar magnet lines up in an electric field."
+          },
+          "magnetization":
+          {
+            "name": "Magnetization of metal",
+            "level": 3,
+            "objective": "Explain what happens on a subatomic level when a piece of metal is magnetized"
+          },
+          "earths_magnetic_field":
+          {
+            "name": "Earth's Magnetic Field",
+            "level": 3,
+            "objective": "Explain why the earth has a magnetic field and identify crucial consequences of the earth's magnetic field."
+          },
+          "motors_and_generators":
+          {
+            "name": "DC Motors and Electrical Generators",
+            "level": 4,
+            "objective": "Using concepts of magnetic fields and electric current, explain how a DC motor and an electrical generator works."
+          },
+          "multiple_magnetic_fields":
+          {
+            "name": "Multiple Magnets",
+            "level": 4,
+            "objective": "Draw the magnetic field of two magnets and explain why they would attract or repel."
+          },
+          "what_is_light":
+          {
+            "name": "What is light?",
+            "level": 4,
+            "objective": "Explain conceptually why light exists using Faraday's and Ampere's Laws"
+          }
+        }
+      },
+      "maxwells_eq":
+      {
+        "name": "Maxwell's Equations"
+      },
+      "cosmology":
+      {
+        "name": "Cosmology"
+      },
+      "calculus_gratity":
+      {
+        "name": "Calculus Based Gravitation"
+      }
+    }
+  },
+  "thermodynamics":
+  {
+    "name": "Thermodynamics"
+  },
+  "atomic_physics":
+  {
+    "name": "Atomic Physics",
+    "units":
+    {
+      "nuclear_reaction_formulas":
+      {
+        "name": "Nuclear Reaction Formulas"
+      },
+      "nuclear_reaction_concepts":
+      {
+        "name": "Nuclear Reaction Concepts"
+      },
+      "atomic_spectra":
+      {
+        "name": "Atomic Spectra"
+      },
+      "qunantum_theory_basics":
+      {
+        "name": "Basic Quantum Theory",
+        "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation."
+      }
+    }
+  },
+  "relativity":
+  {
+    "name": "Relativity"
   }
 }
