@@ -8,6 +8,8 @@
         {
           "name": "Algebra",
           "level": 1,
+          "completed": true,
+          "AP": true,
           "pods":
           {
             "numeric_1":
@@ -18,7 +20,8 @@
               "letter": "A",
               "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
             },
-            "slope_1": {
+            "slope_1":
+            {
               "name": "Finding Slope 1",
               "level": 1,
               "horizontal": 2,
@@ -101,7 +104,9 @@
       {
         "name": "Geometry",
         "level": 1,
-          "pods":
+        "completed": true,
+        "AP": true,
+        "pods":
           {
           "pi": {
             "name": "Memorize Pi to 15 decimal places",
@@ -202,17 +207,22 @@
       "function":
       {
         "name": "Functions and Periodic Functions",
+        "completed": false,
+        "AP": true,
         "level": 2
       },
       "calculus":
       {
         "name": "Calculus",
-        "level": 2
+        "level": 2,
+        "completed": true
       },
       "scientific_notation":
       {
         "name": "Scientific Notation and Orders of Magnitude",
         "level": 1,
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "powers_of_ten":
@@ -303,6 +313,8 @@
       {
         "name": "Unit Conversion and Dimensional Analysis",
         "level": 1,
+        "completed": true,
+        "AP": true,
         "pods": {
           "single_step_conversions": {
             "name": "One-Step Conversions",
@@ -401,6 +413,8 @@
       {
         "name": "Error Approximation",
         "level": 2,
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "comp_ord_of_mag":
@@ -455,12 +469,21 @@
       {
         "name": "Back of the Envelope Calculations",
         "level": 2,
+        "completed": false,
         "enduring_understandings":
                 [
                   "When presented with some novel sitaution or problem,",
                   "A good scientist can, in a small amount of space and without a calcualtor,",
                   "figure out an order of magnitude estimate of the answer."
-                ]
+                ],
+        "pods":
+        {
+          "slap_a_chicken":
+          {
+            "name": "How hard do you need to slap a chicken to cook it?",
+            "level": 2
+          }
+        }
       }
     }
   },
@@ -473,6 +496,8 @@
       {
         "name": "Forward Kinematics",
         "level": 1,
+        "completed": true,
+        "AP": true,
         "enduring_understandings":
         [
           "Quantitative modeling of motion is at the core of physics.",
@@ -660,6 +685,8 @@
       {
         "name": "Dynamics Math",
         "level": 1,
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "newtons_second_law":
@@ -677,6 +704,86 @@
             "horizontal": 2,
             "letter": "B",
             "objective": "Given a free-body diagram, determine the vector net force acting on an object."
+          },
+          "finding_acceleration_from_forces":
+          {
+            "name": "Finding Acceleration from Forces",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object."
+          },
+          "dragging_without_friction":
+          {
+            "name": "Blocks without Friction",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Given a block of a certain mass, draw free-body diagrams for this block when it is not moving or being pushed on a surfaced without friction."
+          },
+          "block_dragging_with_kinetic_friction":
+          {
+            "name": "Blocks with kinetic friction",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Analyze the motion of a block on a surface with only kinetic friction; accelerating and moving at a constant velocity"
+          },
+          "elevators_1":
+          {
+            "name": "Elevator Problems 1",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person."
+          },
+          "block_dragging_3":
+          {
+            "name": "Block Dragging 3",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Given a blcok being dragged on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
+          },
+          "elevators_2":
+          {
+            "name": "Elevator Problems 2",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and describe what that person will feel using the free-body diagram"
+          },
+          "elevators_3":
+          {
+            "name": "Elevator Problems 3",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Draw kinematic graphs representing a person moving in a hypothetical elevator, draw free-body diagrams representing the froces on that person at a particular time, defend the free-body diagrams, and describe what the person will feel using the free-body diagram."
+          },
+          "block_dragging_graphical_analysis":
+          {
+            "name": "Block Dragging Graphical Analysis",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Given a force-time graph of a block on a surface, draw free-body diagrmas for the block at different times and defend them; quantitatively analyze the surface based on the block.."
+          },
+          "block_dragging_algebra":
+          {
+            "name": "Block Dragging Algebra",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "A",
+            "objective": "Given a block being dragged on a surface, draw an algebraic free-body diagram on the block, reflect the motion of th eblock using algebraic conditions."
+          },
+          "elevator_rockets":
+          {
+            "name": "Elevator Rockets",
+            "level": 6,
+            "horizontal": 1,
+            "letter": "A",
+            "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness"
           }
         }
       },
@@ -684,6 +791,8 @@
       {
         "name": "Dynamics Concepts",
         "level": 1,
+        "completed": false,
+        "AP": true,
         "pods":
         {
           "newtons_third_law":
@@ -693,13 +802,38 @@
             "horizontal": 1,
             "letter": "A",
             "objective": "X"
+          },
+          "pressing_into_you":
+          {
+            "name": "Pressing into you",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "A",
+            "objective": "Drescibe the experience of the seat back pressing into you as you drive, relate this to Newton's model."
+          },
+          "how_do_you_walk":
+          {
+            "name": "Walking",
+            "level": 2,
+            "horizontal":1,
+            "letter": "A",
+            "objective": "Apply Newton's Laws to walking."
           }
         }
+      },
+      "newtons_model":
+      {
+        "name": "Newton's Model",
+        "level": 1,
+        "completed": false,
+        "AP": true
       },
       "collisions":
       {
         "name": "Collisions and Explosions",
         "level": 1,
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "momentm_formula":
@@ -780,6 +914,8 @@
       {
         "name": "Conservation of Energy: Quantiative",
         "level": 1,
+        "completed": false,
+        "AP": true,
         "pods":
         {
           "consrv_energy_box_1":
@@ -809,6 +945,8 @@
       "forward_and_backward_kinematics":
       {
         "name": "Forward and Backwards Kinematics",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "distance_displacement":
@@ -911,17 +1049,35 @@
       "system_dynamics":
       {
         "name": "System Dynamics",
+        "completed": false,
+        "AP": true,
         "level": 2
       },
       "work_and_power":
       {
         "name": "Work and Power",
+        "completed": false,
+        "AP": true,
         "level": 2
       },
-      "projectle_motion":
+      "impulse":
+      {
+        "name": "Impulse",
+        "completed": false,
+        "AP": true
+      },
+      "two_dimensional_dynamics":
+      {
+        "name": "Two-dimensional Dynamics",
+        "completed": false,
+        "AP": true
+      },
+      "projectile_motion":
       {
         "name": "Projectile Motion",
         "level": 3,
+        "completed": true,
+        "AP": true
         "pods":
         {
           "parablc_arcs":
@@ -1066,32 +1222,260 @@
       "circular_motion":
       {
         "name": "Circular Motion",
-        "level": 3
+        "level": 3,
+        "completed": true,
+        "AP": true,
+        "pods":
+        {
+          "circular_motion_basics":
+          {
+            "name": "Circular Motion Basics",
+            "level": 1,
+            "objective": "Draw objects in circular motion; identify the centripetal force; predict what happens if the centripetal force is released"
+          },
+          "circular_vs_rot_motion":
+          {
+            "name": "Circular vs. Rotational Motion",
+            "level": 1
+          },
+          "circular_kinematics_1":
+          {
+            "name": "Circular Kinematics 1",
+            "level": 1,
+            "objective": "Find the speed of an object in circular motion."
+          },
+          "circular_motion_newt_model":
+          {
+            "name": "Newton's Model fro Circular Motion",
+            "level": 2,
+            "objective": "Explain why an object in circular motion is accelerating; extend Newton's Model to include turning"
+          },
+          "circular_motion_vectors":
+          {
+            "name": "Circular Motion Vectors",
+            "level": 2,
+            "objective": "Identify the four relevant vectors for an object in circular motion: position, velocity, acceleration, and force."
+          },
+          "centripetal_acceleration_formula":
+          {
+            "name": "Centripetal Acceleration Formula",
+            "level": 2,
+            "objective": "Use the centripetal acceleration formula alone."
+          },
+          "centripetal_motion_counterintuitive":
+          {
+            "name": "Counterintuitive Realities of Circular Motion",
+            "level": 3,
+            "objective": "Using Newton's Model, explain why objects in a shopping bag do not fall out when it is flipped over and why the earth does not move towards the sun if it is attracted to it."
+          },
+          "centripetal_acceleration_math":
+          {
+            "name": "Centripetal Acceleration Math",
+            "level": 3,
+            "objective": "Given a radius and period of circular motion, determine necessary quantitative information about that motion."
+          },
+          "centripetal_acc_form_extra":
+          {
+            "name": "Algebra and Proportionality in the Centripetal Acceleration Formula",
+            "level": 4
+          },
+          "finding_mass_of_sun":
+          {
+            "name": "Finding Mass of Sun",
+            "level": 4,
+            "objective": "Use the formulas for centripetal acceleration and gravitation to find the mass of the sun and earth."
+          },
+          "loop-de-loop_problems":
+          {
+            "name": "Loop-de-loop Problems",
+            "level": 4,
+            "objective": "Analyze the forces acting on a pilot while he loops his plane over."
+          },
+          "prove_centri_acc_form":
+          {
+            "name": "Proving the Centripetal Acceleration Formula",
+            "level": 5
+          }
+        }
       },
-      "springs_and_pendulms":
+      "periodic_kinematics":
       {
-        "name": "Spring and Pendulum Mechanics",
-        "level": 3
+        "name": "Periodic Kinematics",
+        "level": 2,
+        "completed": true,
+        "AP": true,
+        "pods":
+        {
+          "period_and_frequency_1":
+          {
+            "name": "Period and Frequency 1",
+            "level": 1,
+            "objective": "Define and calculate period and frequency."
+          },
+          "harmonic_v_linear":
+          {
+            "name": "Harmonic vs. Linear Motion",
+            "level": 1,
+            "objective": "Define and give examples of harmonic and linear motion."
+          },
+          "period_freq_relationship":
+          {
+            "name": "Period and Frequency Relationship",
+            "level": 2,
+            "objective": "Correctly use the formula T = 1 /f, including with proportionality"
+          },
+          "pt_graphs_periodic":
+          {
+            "name": "Position-Time Graphs of Periodic Motion",
+            "level": 3,
+            "objective": "Draw simple position-time graphs of periodic motion."
+          },
+          "period_freq_formulas":
+          {
+            "name": "Period and Frequency Formulas",
+            "level": 3,
+            "objective": "Numerically solve the formulas for period and frequency of a spring or pendulum."
+          },
+          "periodic_position_function":
+          {
+            "name": "Periodic Position Function",
+            "level": 4,
+            "objective": "Use a trigonometric function to represent the position of an object in harmonic motion, wiht period and amplitude correct but phase not considered."
+          },
+          "period_freq_formulas_algebra":
+          {
+            "name": "Period and Frequency Formula Algebra",
+            "level": 4,
+            "objective": "Algebraically solve the period and frequency formulas for springs and pendulums"
+          },
+          "period_freq_formulas_prorportionaity":
+          {
+            "name": "period_and_frequency_formulas_proportionality",
+            "level": 4,
+            "objective": "Use proportionality to analyze the formulas for frequency and period of a pendulum."
+          },
+          "periodic_position_function_2":
+          {
+            "name": "Periodic Position Function 2",
+            "level": 5,
+            "objective": "Use trigonometric formulas to preresent the position of an object in harmonic motion, including correct amplitude, period, and phase."
+          }
+        }
+      },
+      "periodic_dynamics":
+      {
+        "name": "Periodic Dynamics",
+        "level": 3,
+        "completed": true,
+        "AP": true,
+        "pods":
+        {
+          "qual_energy_springs_pendulums":
+          {
+            "name": "Qualitative Energy Analysis of Springs and Pendulums",
+            "level": 1,
+            "objective": "In diagrams or sentences, explain how energy changesi n a psring or pendulum; explain the 'pendulum nose' phenomnenon"
+          },
+          "hookes_law":
+          {
+            "name": "Hooke's Law and Proportionality with Hooke's Law",
+            "level": 1
+          },
+          "fbd_pendulum":
+          {
+            "name": "Free-Body Diagrams and Newton's Model of Pendulums",
+            "level": 2
+          },
+          "fbd_spring":
+          {
+            "name": "Free-Body Diagrams and Newton's Model of Springs",
+            "level": 2
+          },
+          "energy_equations_springs_pendulums":
+          {
+            "name": "Energy Equations for Springs and Pendulums",
+            "level": 2,
+            "objective": "Create and explain energy equations for springs and pendulums."
+          },
+          "quan_energy_probs_springs_pendulums":
+          {
+            "name": "Quantitative Energy Problems for Springs and Pendulums",
+            "level":2,
+            "notes": "energy equations is a same level pre-requisite"
+          },
+          "energy_algebra_spring":
+          {
+            "name": "Energy Algebra for a Spring",
+            "level": 3,
+            "objective": "Algebraically solving solving the energy equations for springs; derive equations that relate amplitude and max-speed"
+          },
+          "energy_algebra_pendulum":
+          {
+            "name": "Energy Algebra for a Pendulum",
+            "level": 3,
+            "objective": "Algebraically solving the energy equations for pendulums; derive equations that relate amplitude and max-speed"
+          },
+          "periodic_kinematic_functions":
+          {
+            "name": "Periodic Kinematic Functions",
+            "level": 4,
+            "objective": "Using the periodic functions for position from the previous unit and the energy equations from level 3, derive velocity-time and acceleration-time kinematic equations for harmonic motion.",
+            "limits": "Functions developed need not include phase or damping."
+          },
+          "vertical_spring":
+          {
+            "name": "Vertical Springs",
+            "level": 4,
+            "objective": "Prove that a vertical spring works identically to a horizontal spring."
+          },
+          "damping":
+          {
+            "name": "Damping",
+            "level": 4,
+            "objective": "Examine the effect of damping on the position-time graph of springs and pendulums."
+          },
+          "periodic_kinematic_functions_2":
+          {
+            "name": "Periodic Kinematic Functions",
+            "level": 5,
+            "objective": "Without using calculus, create position-time, velocity-time, and acceleration-time graphs for simple harmonic motion in terms of amplitude and phase.",
+            "limits": "Does not include damping or differential equations."
+          }
+        }
+      },
+      "periodic_diff_eqs":
+      {
+        "name": "Differential Equations for Periodic Motion",
+        "level": 5,
+        "completed": true,
+        "notes": "Solving differential equations for simple harmonic motion and analyzing the result."
       },
       "potential_energy_functions":
       {
         "name": "Potential Energy Functions",
         "level": 4,
+        "completed": true,
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics."
       },
       "rot_kine":
       {
         "name": "Rotational Kinematics",
+        "completed": false,
+        "AP": true,
         "level": 4
       },
       "rot_dyna":
       {
         "name": "Rotational Dynamics",
+        "completed": false,
+        "AP": true,
         "level": 4
       },
       "rot_conserv":
       {
         "name": "Rotation Conservation Laws",
+        "completed": false,
+        "AP": true,
         "level": 4
       }
     }
@@ -1104,7 +1488,9 @@
       "DC_circuit_math_1":
       {
         "name": "DC circuit math: Batteries and Resistors",
-        "limits": "Only contains circuits including batteries and ressitors",
+        "limits": "Only contains circuits including batteries and resistors",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "ohms_law":
@@ -1191,6 +1577,8 @@
       "dc_circuit_concepts_1":
       {
         "name": "DC Circuit Concepts 1",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "insulators_and_conductors":
@@ -1293,6 +1681,8 @@
       "wave_structure":
       {
         "name": "Wave Structure",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "em_v_mech_1":
@@ -1393,6 +1783,8 @@
       "sound_properties":
       {
         "name": "Sound Properties",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "speed_of_sound_in_materials":
@@ -1461,6 +1853,8 @@
       {
         "name": "Harmonics",
         "notes": "Co-requisite with sound properties.",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "finding_wavelength":
@@ -1535,6 +1929,7 @@
       {
         "name": "Geometric Optics",
         "notes": "All quizzes involve drawing ray diagrams AND using the lens formulas.",
+        "completed": true,
         "pods":
         {
           "covex_lens_1":
@@ -1584,6 +1979,7 @@
       {
         "name": "Wave Phenomena",
         "notes": "Potentially: Reflection and refraction should be seperated from diffraction and interference",
+        "completed": true,
         "pods":
         {
           "wave_phenomena_basics":
@@ -1691,6 +2087,7 @@
           "Frequency and energy are directly proportional, while wavelength is inversely proportional to both."
         ],
         "notes": "This unit needs work.",
+        "completed": false,
         "pods":
         {
           "memorz_electrmgntc_spectrm_1":
@@ -1782,6 +2179,7 @@
                 [
                   "I still need to add goals related to additive and subtractive processes"
                 ],
+        "completed": false,
         "pods":
         {
           "basic_infrared_camera":
@@ -1852,6 +2250,8 @@
       "concpt_gravity":
       {
         "name": "Conceptual Gravitation",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "basic_gravity":
@@ -1920,6 +2320,8 @@
       "concpt_electrstatc":
       {
         "name": "Conceptual Electrostatics",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "basic_charging":
@@ -1959,6 +2361,8 @@
       "inv_sqr_laws":
       {
         "name": "Inverse Square Laws",
+        "completed": true,
+        "AP": true,
         "pods":
         {
           "which_has_more_force_basic":
@@ -2044,6 +2448,7 @@
       "concept_magnet":
       {
         "name": "Conceptual Magnetism",
+        "completed": true,
         "pods":
         {
           "simple_magnet":
@@ -2116,21 +2521,56 @@
       },
       "maxwells_eq":
       {
-        "name": "Maxwell's Equations"
+        "name": "Maxwell's Equations",
+        "completed": true
       },
       "cosmology":
       {
-        "name": "Cosmology"
+        "name": "Cosmology",
+        "completed": true
       },
-      "calculus_gratity":
+      "calculus_gravity":
       {
-        "name": "Calculus Based Gravitation"
+        "name": "Calculus Based Gravitation",
+        "completed": true
       }
     }
   },
   "thermodynamics":
   {
-    "name": "Thermodynamics"
+    "name": "Thermodynamics",
+    "units":
+    {
+      "kinetic_theory_of_matter_conceptual":
+      {
+        "name": "Kinetic Theory of Matter Conceptual",
+        "completed": false
+      },
+      "gas_laws_mathematical":
+      {
+        "name": "Gas Laws Mathematical",
+        "completed": false
+      },
+      "heat_transfer_and_temp_mathematical":
+      {
+        "name": "Heat Transfer and Temperature: Mathematical",
+        "completed": false
+      },
+      "heat_processes":
+      {
+        "name": "Heat Processes",
+        "completed": true
+      },
+      "statistical_mechanics":
+      {
+        "name": "Statistical Mechanics",
+        "completed": true
+      }
+    }
+  },
+  "fluid_dynamics":
+  {
+    "name": "Fluid Dynamics"
   },
   "atomic_physics":
   {
@@ -2139,25 +2579,37 @@
     {
       "nuclear_reaction_formulas":
       {
-        "name": "Nuclear Reaction Formulas"
+        "name": "Nuclear Reaction Formulas",
+        "completed": false
       },
       "nuclear_reaction_concepts":
       {
-        "name": "Nuclear Reaction Concepts"
+        "name": "Nuclear Reaction Concepts",
+        "completed": false
       },
       "atomic_spectra":
       {
-        "name": "Atomic Spectra"
+        "name": "Atomic Spectra",
+        "completed": false
       },
       "qunantum_theory_basics":
       {
         "name": "Basic Quantum Theory",
-        "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation."
+        "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
+        "completed": false
       }
     }
   },
   "relativity":
   {
-    "name": "Relativity"
+    "name": "Relativity",
+    "units":
+    {
+      "special_relativity":
+      {
+        "name": "Special Relativity",
+        "completed": false
+      }
+    }
   }
 }
