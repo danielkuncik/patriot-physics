@@ -2206,6 +2206,12 @@
           "letter": "E",
           "objective": "In writing, identify human applications of different types of electromagnetic wave."
           },
+          "define_radioactive":
+          {
+            "name": "Define Radioactivity",
+            "level": 2,
+            "objective": "Define all the terms that make electromagnetic waves seem scary, such as radioactivity; analyze the relative value of these terms."
+          },
           "galaxy_in_all_wavelengths":
           {
             "name": "A Galaxy in All Wavelengths",
@@ -2580,12 +2586,157 @@
       "nuclear_reaction_formulas":
       {
         "name": "Nuclear Reaction Formulas",
-        "completed": false
+        "completed": true,
+        "pods":
+        {
+          "counting_parts_of_a_nucleus":
+          {
+            "name": "Counting Parts of a Nucleus",
+            "level": 1,
+            "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation"
+          },
+          "atomic_mass_v_mass_number":
+          {
+            "name": "Atomic Mass vs. Mass Number",
+            "level": 2,
+            "objective": "Differentiate between atomic mass and mass number; explain when each is useful"
+          },
+          "alpha_and_beta_decay":
+          {
+            "name": "Alpha and Beta Decay",
+            "level": 2,
+            "objective": "Draw reactions involving alpha or beta decay of an isotope."
+          },
+          "complete_nuclear_reaction":
+          {
+            "name": "Complete a Nuclear Reaction",
+            "level": 2,
+            "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fuision, or decay."
+          },
+          "simple_half_life":
+          {
+            "name": "Simple Half Life",
+            "level": 2,
+            "objective": "Define half-life; answer simple questions",
+            "limits": "Problems in this seciton do not require the half-life to be represented as a function.",
+            "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?"
+          },
+          "written_description_of_reactions_1":
+          {
+            "name": "Written Reactions 1",
+            "level": 3,
+            "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula.",
+            "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction"
+          },
+          "written_description_of_reactions_2":
+          {
+            "name": "Written Reactions 2",
+            "level": 3,
+            "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula; determine energy released by a nuclear reaction.",
+            "notes": "This crucial topic should be broken into two sections"
+          },
+          "half_life_formulas":
+          {
+            "name": "Half-Life Formulas",
+            "level": 3,
+            "objective": "Represent half-life through an exponential decay function; use these formulas properly"
+          },
+          "calculate_atomic_mass":
+          {
+            "name": "Calculate Atomic Mass",
+            "level": 3,
+            "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation."
+          },
+          "decay_chain":
+          {
+            "name": "Decay Chain",
+            "level": 4,
+            "objective": "Use a table of isotopes to draft a decay chain for a particular isotope."
+          },
+          "nuclear_reactions_in_sun":
+          {
+            "name": "Nuclear Reactions in the Sun",
+            "level": 4,
+            "objective": "Write and analyze the nuclear reactions occuring inside the sun; explain how they produce energy."
+          },
+          "decay_chain_and_half_life":
+          {
+            "name": "Remnants of an Isotope",
+            "level": 5,
+            "objective": "Based upon the decay chain and the half-life of a particular isotope, identify at particualr times what different products you will have and what radiation they will give off.",
+            "notes": "Good lead-in to a computation problem."
+          }
+        }
       },
       "nuclear_reaction_concepts":
       {
         "name": "Nuclear Reaction Concepts",
-        "completed": false
+        "completed": true,
+        "pods":
+        {
+          "nuclear_reaction_basic_concepts":
+          {
+            "name": "Nuclear Reaction Basic Concepts",
+            "level": 1,
+            "objective": "Identify parts of an atom; know that nuclear reactions occur only in the nucleus of the atom; define terms 'radioactive' and 'radioactivity"
+          },
+          "fission_fuision_and_decay":
+          {
+            "name": "Fission, Fuision, and Decay",
+            "level": 1,
+            "objective": "Differentiate between three types of nuclear reactions: fission, fuision, and decay"
+          },
+          "why_a_nucleus_decays":
+          {
+            "name": "Why a nucleus decays",
+            "level": 2,
+            "objective": "Explain why a nucleus decays"
+          },
+          "nuclear_v_chemical_reactions":
+          {
+            "name": "Nuclear vs. Chemical Reactions",
+            "level": 2,
+            "objective": "Differentiate between nuclear and chemical reactions"
+          },
+          "nuclear_reaction_danger":
+          {
+            "name": "Nuclear Reaction Danger",
+            "level": 2,
+            "objective": "Assess the danger of different types of nuclear reactions",
+            "notes": "Requires previous knowledge of the electromagnetic spectrum."
+          },
+          "nuclear_reactions_in_stars":
+          {
+            "name": "Nuclear Reaction Stars",
+            "level": 3,
+            "objective": "Explain the processes of stars by using the concept of nuclear reaction.",
+            "notes": "Requires previous knowledge of gravity."
+          },
+          "artificially_created_elements_1":
+          {
+            "name": "Artificially Created Elements 1",
+            "level": 3,
+            "objective": "Explain how new elements can be artificially created; draw reactions that go with those examples."
+          },
+          "artificially_created_elements_2":
+          {
+            "name": "Artificially Created Elements 2",
+            "level": 4,
+            "objective": "Explain more complex examples of how new elements can be artificially created; draw reactions that go with those examples."
+          },
+          "isotopes_of_uranium":
+          {
+            "name": "Isotopes of Uranium",
+            "level": 4,
+            "objective": "Explain the importance of different isotopes of uranium for the creation of a nuclear reactor or a nuclear bomb; examine how different isotopes are isolated."
+          },
+          "periodic_table_cosmology":
+          {
+            "name": "Periodic Table Cosmology",
+            "level": 4,
+            "objective": "Explain, using descriptions of reactions, how heavier elements within the universe can be created."
+          }
+        }
       },
       "atomic_spectra":
       {
