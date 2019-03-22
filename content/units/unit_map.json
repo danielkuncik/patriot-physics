@@ -1058,7 +1058,111 @@
         "name": "Work and Power",
         "completed": false,
         "AP": true,
-        "level": 2
+        "level": 2,
+        "pods":
+        {
+          "work_and_power_formulas":
+          {
+            "name": "Work and Power Formulas",
+            "level": 1
+          },
+          "mechanical_energy":
+          {
+            "name": "Defining Mechanical Energy",
+            "level": 1
+          },
+          "is_work_done":
+          {
+            "name": "Is work done?",
+            "level": 1,
+            "objective": "Identify situations in which positive work, negative work, and zero work is done."
+          },
+          "weightlifter_problem":
+          {
+            "name": "The Weightlifter Problem",
+            "level": 2,
+            "objective": "Analyze how work and power are different for weightlifters lifting weights at diffferent speeds."
+          },
+
+          "conservative_v_nonconservative_forces":
+          {
+            "name": "Conservative vs. Nonconservative Forces",
+            "level": 2,
+            "objective": "Identify conservative and non-conservative forces and explain how they can be analyzed differently."
+          },
+          "work_energy_theorem_A":
+          {
+            "name": "The Work-Energy Theorem A",
+            "level": 3,
+            "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
+            "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet."
+          },
+          "work_energy_theorem_B":
+          {
+            "name": "The Work-Energy Theorem B",
+            "level": 3,
+            "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
+            "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet."
+          },
+          "graphical_calculations_of_work":
+          {
+            "name": "Graphical Calculations of Work",
+            "level": 3,
+            "objective": "Caculate Work using a force-position graph."
+          },
+          "block_on_a_ramp_multiple_points":
+          {
+            "name": "Block on a Ramp from Two Points of View",
+            "level": 4,
+            "objective": "Analyze, algebraically and graphically, a block on a frictionless ramp with different definitions of the system and surroundings.",
+            "systems":
+                    [
+                      "block-earth system",
+                      "block-alone system"
+                    ]
+          },
+          "comet_from_multiple_points_of_view":
+          {
+            "name": "Come from Multiple Points of View",
+            "level": 4,
+            "objective": "Analyze, algebraically and graphically, a comet orbitting the sun with different definitions of the system and the surroundigns.",
+            "systems":
+                    [
+                      "comet-sun system"
+                      "comet-alone system"
+                    ]
+          },
+          "graphical_work_energy_theorem":
+          {
+            "name": "Graphical Work-Energy Theorem",
+            "level": 4,
+            "objective": "Use a force-position graph together with the work-energy theorem to find dynamic and kinematic quantities."
+          },
+          "prove_work_energy_theorem_special_case":
+          {
+            "name": "Proving the Work Energy Theorem: Special Case",
+            "level": 5,
+            "objective": "Algebraically prove the work-energy theorem in cases of constant acceleration."
+          },
+          "derive_potential_energy_formulas":
+          {
+            "name": "Derive Potential Energy Formulas",
+            "level": 5,
+            "objective": "Use the work-energy theorem to derive potential energy formulas."
+          },
+          "spidey_string_multiple_points_of_view":
+          {
+            "name": "The Spidey String Problem From Multiple Points of View",
+            "level": 4,
+            "objective": "Analyze, algebraically and graphically, spiderman swinging from his spidey-string with different definitions of the system and surroundings.",
+            "systems":
+                    [
+                      "spiderman only",
+                      "spdierman earth",
+                      "spiderman spidey-string"
+                    ]
+          }
+        }
       },
       "impulse":
       {
@@ -1069,6 +1173,87 @@
       "two_dimensional_dynamics":
       {
         "name": "Two-dimensional Dynamics",
+        "completed": true,
+        "AP": true,
+        "pods":
+        {
+          "vector_form_conversions":
+          {
+            "name": "Vector Form Conversions",
+            "level": 1,
+            "objective": "Convert a vector between standard form and component form and back"
+          },
+          "dragging_at_and_angle_kf_only":
+          {
+            "name": "Dragging at and Angle: Kinetic Friction Only",
+            "level": 2,
+            "objective": "Analyze the motion of a block dragged at an angle with only kinetic friction; explain why the drag influences the normal force."
+          },
+          "dragging_at_an_angle_all_friction":
+          {
+            "name": "Dragging at an Angle: Static and Kinetic Friction",
+            "level": 3,
+            "objective": "Analyze the motion of a block dragged at an angle under both static and kinetic friction."
+          },
+          "hanging_two_ropes":
+          {
+            "name": "Hanging a Sign with Two Ropes",
+            "level": 2,
+            "objective": "Draw a quantitative free-body diagram of a sign hanging from two ropes, both at an angle."
+          },
+          "hanging_three_ropes":
+          {
+            "name": "Hanging Three Ropes",
+            "level": 3,
+            "objective": "Draw a quantitative free-body diagram of a sign hanging from three ropes at angles."
+          },
+          "ramp_problems_1":
+          {
+            "name": "Ramp Problems Numeric 1",
+            "level": 2,
+            "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only."
+          },
+          "ramp_problems_2":
+          {
+            "name": "Ramp Problems Numeric 2",
+            "level": 3,
+            "objective": "Numerically analyeze the motion of a block on a ramp with both static and kinetic friction."
+          },
+          "pulling_a_cordon":
+          {
+            "name": "Pulling a Cordon",
+            "level": 5,
+            "objective": "Create an algebraic model of a person pulling on a cordon rope."
+          },
+          "dragging_on_a_ramp":
+          {
+            "name": "Dragging on a ramp",
+            "level": 5,
+            "objective": "Algebraically model a block being dragged on a ramp with friction."
+          },
+          "algebraic_dragging_at_angle":
+          {
+            "name": "Algebraic Dragging at an Angle",
+            "level": 4,
+            "objective": "Algebraically model a block being dragged at an angle; create algebraic conditions for the block to experience different types of motion."
+          },
+          "ramp_problems_algebraic_1":
+          {
+            "name": "Ramp Problems Algebraic 1",
+            "level": 3,
+            "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model"
+          },
+          "ramp_problems_algebraic_2":
+          {
+            "name": "Ramp Problem Algebraic 2",
+            "level": 4,
+            "objective": "Algebraically model a block on a ramp with both static and kinetic friction"
+          }
+        }
+      },
+      "relative_velocity":
+      {
+        "name": "Relative Velocity",
         "completed": false,
         "AP": true
       },
@@ -1077,7 +1262,7 @@
         "name": "Projectile Motion",
         "level": 3,
         "completed": true,
-        "AP": true
+        "AP": true,
         "pods":
         {
           "parablc_arcs":
