@@ -10,6 +10,7 @@
           "level": 1,
           "completed": true,
           "AP": true,
+          "honors": false,
           "pods":
           {
             "numeric_1":
@@ -106,6 +107,7 @@
         "level": 1,
         "completed": true,
         "AP": true,
+        "honors": false,
         "pods":
           {
           "pi": {
@@ -209,6 +211,7 @@
         "name": "Functions and Periodic Functions",
         "completed": false,
         "AP": true,
+        "honors": false,
         "level": 2
       },
       "calculus":
@@ -223,6 +226,7 @@
         "level": 1,
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "powers_of_ten":
@@ -315,6 +319,7 @@
         "level": 1,
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods": {
           "single_step_conversions": {
             "name": "One-Step Conversions",
@@ -351,7 +356,7 @@
             "letter": "E",
             "objective": "Simplify theoretical dimensions made of meters, kilograms, and seconds of different powers in the numerator and denominator."
           },
-          "four_step_conversiosn": {
+          "four_step_conversions": {
             "name": "Four-Step Conversions",
             "level": 3,
             "horizontal": 1,
@@ -372,12 +377,27 @@
             "letter": "H",
             "objective": "Simplify dimensions made of different quantities, such as velocity and force, in numerators and denominators."
           },
-          "inventing_formulas_conversion_factors": {
-            "name": "Inventing New Formulas with Conversion Factors",
+          "mathematical_foundations_of_dimensional_analysis": {
+            "name": "Mathematical Foundations of Dimensional Analysis",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "A",
+            "objective": "State and describe the mathematical principles behind dimensional analysis.",
+            "notes":
+                    [
+                      "Units are written inside a formula; quantities are actually a number multiplied by a unit",
+                      "Units are treated similarly to numbers or variables, they can be added, multiplied, divided, etc.",
+                      "The unit of your answer is based on the unit your provide",
+                      "All physics are based on a few basic units: meters, kilograms, seconds, a coulombs",
+                      "All conversion factors are equal to 1, and can be multiplied to manipulate units as you want."
+                    ]
+          },
+          "using_conversion_factors_with_formulas": {
+            "name": "Using Conversion Factors with Formulas",
             "level": 4,
             "horizontal": 1,
             "letter": "I",
-            "objective": "Use conversion factors to solve novel and nondirect problems."
+            "objective": "Use conversion factors together with formulas to solve novel and nondirect problems."
           },
           "dimensional_analysis_with_algebra": {
             "name": "Using Dimensional Analysis to Confirm Formulas",
@@ -400,6 +420,13 @@
             "letter": "L",
             "objective": "Use dimensional analysis to invent solutions to random, outside the box questions."
           },
+          "SI_unit_system": {
+            "name": "SI Unit System",
+            "level": 5,
+            "horizontal": 4,
+            "letter": "A",
+            "objective": "Explain the development, function, and purpose of the SI unit system."
+          },
           "planck_units": {
             "name": "Derive the Planck units",
             "level": 5,
@@ -415,6 +442,7 @@
         "level": 2,
         "completed": true,
         "AP": true,
+        "honors": false,
         "pods":
         {
           "comp_ord_of_mag":
@@ -498,6 +526,7 @@
         "level": 1,
         "completed": true,
         "AP": true,
+        "honors": true,
         "enduring_understandings":
         [
           "Quantitative modeling of motion is at the core of physics.",
@@ -687,6 +716,7 @@
         "level": 1,
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "newtons_second_law":
@@ -793,6 +823,7 @@
         "level": 1,
         "completed": false,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "newtons_third_law":
@@ -826,7 +857,8 @@
         "name": "Newton's Model",
         "level": 1,
         "completed": false,
-        "AP": true
+        "AP": true,
+        "honors": true
       },
       "collisions":
       {
@@ -834,6 +866,7 @@
         "level": 1,
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "momentm_formula":
@@ -914,8 +947,9 @@
       {
         "name": "Conservation of Energy: Quantiative",
         "level": 1,
-        "completed": false,
+        "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "consrv_energy_box_1":
@@ -923,14 +957,16 @@
             "name": "Simple Conservation of Energy Box",
             "level": 1,
             "horizontal": 1,
-            "letter": "A"
+            "letter": "A",
+            "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time."
           },
           "energy_formulas_1":
           {
             "name": "Energy Formulas 1",
             "level": 1,
             "horizontal": 2,
-            "letter": "B"
+            "letter": "B",
+            "objective": "Solve problems involving the KE and GPE formulas with only 1 -2 algebraic steps."
           },
           "memorz_consvr_energy":
           {
@@ -939,6 +975,71 @@
             "horizontal": 3,
             "letter": "C",
             "objective": "Recite the conservation of energy word for word."
+          },
+          "energy_formulas_2":
+          {
+            "name": "Energy Formulas 2",
+            "level": 2,
+            "objective": "Solve problems involving the KE, GPE, and EPE formulas with 2 - 4 algebraic steps."
+          },
+          "conservation_energy_box_2":
+          {
+            "name": "Conservation of Energy Box 2",
+            "level": 2,
+            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations"
+          },
+          "KE_GPE_graphs":
+          {
+            "name": "KE and GPE graphs",
+            "level": 2,
+            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls."
+          },
+          "conservation_of_energy_box_3":
+          {
+            "name": "Conservation of Energy Box 3",
+            "level": 3,
+            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, sovle numerical questions based upon the result"
+          },
+          "conservation_of_energy_box_4":
+          {
+            "name": "Conservation of Energy Box with Heat Loss",
+            "level": 3,
+            "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss"
+          },
+          "energy_formulas_algebra":
+          {
+            "name": "Energy Formulas Algebra",
+            "level": 3,
+            "objective": "Algebraically solve the formulas for KE, GPE, and EPE"
+          },
+          "conservation_of_energy_box_5":
+          {
+            "name": "Conservation of Energy Box Algebraic",
+            "level": 4,
+            "objective": "Fill out a table describing how kinetic and potential energy change algebraically"
+          },
+          "KE_GPE_proportionality":
+          {
+            "name": "KE and GPE proportionality",
+            "level": 4,
+            "objective": "Use proportionality to analzye the kinetic and potential energy formulas; make inferences regarding real world situations with this knowledge"
+          },
+          "KE_GPE_graph_heat_loss":
+          {
+            "name": "KE and GPE graph with heat loss",
+            "level": 4,
+            "objective": "Make a graph showing how kinetic and potential energy change as something moves down a hill; including the effect of heat loss"
+          },
+          "algebraic_energy_problems":
+          {
+            "name": "Algebraic energy Problems",
+            "level": 5,
+            "objective": "Solve algebraic problems using the conservation of energy with little to no guidance",
+            "examples":
+                    [
+                      "Determine the maximum speed of a pendulum in terms of the initial height of the pendulum",
+                      "Determine the amplitude of a spring-oscillator in terms of the maximum speed of the mass."
+                    ]
           }
         }
       },
@@ -947,6 +1048,7 @@
         "name": "Forward and Backwards Kinematics",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "distance_displacement":
@@ -1049,15 +1151,104 @@
       "system_dynamics":
       {
         "name": "System Dynamics",
-        "completed": false,
+        "completed": true,
         "AP": true,
-        "level": 2
+        "honors": false,
+        "level": 2,
+        "pods":
+        {
+          "identify_internal_external_forces":
+          {
+            "name": "Identify Internal and External Forces",
+            "level": 1,
+            "objective": "Identify internal and external forces acting on a defined system."
+          },
+          "calculate_center_of_mass_1":
+          {
+            "name": "Calculate Center of Mass 1",
+            "level": 1,
+            "objective": "Calculate center of mass of a series of spheres with integer values for position and mass."
+          },
+          "atwood_machines_1":
+          {
+            "name": "Atwood Machines 1",
+            "level": 2,
+            "objective": "Find the numerical acceleration of a frictionless Atwood machine with two masses."
+          },
+          "calculate_center_of_mass_2":
+          {
+            "name": "Calculate Center of Mass 2",
+            "level": 2,
+            "objective": "Find the center of mass of a series of spheres with inconvienient masses and positions, such as planets and moons."
+          },
+          "approximate_center_of_mass":
+          {
+            "name": "Approximate Center of Mass",
+            "level": 2,
+            "objective": "Approximate the center of mass of a system with an irregular shape, such as a human being."
+          },
+          "atwood_machines_2":
+          {
+            "name": "Atwood Machines 2",
+            "level": 3,
+            "objective": "Create a free-body diagram and find the acceleration of an Atwood machine with three blocks and/or subject to friction."
+          },
+          "stacking_problems_2":
+          {
+            "name": "Stacking Problems 1",
+            "level": 3,
+            "objective": "Draw correct numerical free-body diagrams for two blocks stacked on top of each other."
+          },
+          "apply_center_of_mass":
+          {
+            "name": "Applications of Center of Mass",
+            "level": 3,
+            "objective": "Apply the concept of center of mass to real world situations, such as a higher jumper, or understanding a difference in center of mass between sexes."
+          },
+          "reduce_to_point_mass":
+          {
+            "name": "Reduce a System to a Point Mass",
+            "level": 3,
+            "objective": "Apply the concept of center of mass in order to treat a rotating projectile as a point mass; anlayze the earth-moon system as a point mass."
+          },
+          "algebraic_atwood_machine":
+          {
+            "name": "Algebraic Atwood Machine",
+            "level": 4,
+            "objective": "Solve a frictionless and more complex Atwood machine algebraically."
+          },
+          "atwood_machine_proportionality":
+          {
+            "name": "Atwood Machine Proportionality",
+            "level": 4,
+            "objective": "Use proportionality to predict the functioning of an Atwood machine (knowledge that can be used to demonstrate Newton's Second Law)"
+          },
+          "algebraic_stacking_problems":
+          {
+            "name": "Algebraic Stacking Problems",
+            "level": 4,
+            "objective": "Create algebraic free-body diagrams for two blocks stacked upon each other"
+          },
+          "prove_system_method_atwood":
+          {
+            "name": "Atwood Machine Proof",
+            "level": 5,
+            "objective": "Prove, in the case of an Atwood machine, that a system can be analyzed only by external forces and not internal forces."
+          },
+          "algebraic_stacking_three_blocks":
+          {
+            "name": "Algebraic Stacking Three Blocks",
+            "level": 5,
+            "objective": "Create algebraic free-body diagrams for three blocks stacked upon each other."
+          }
+        }
       },
       "work_and_power":
       {
         "name": "Work and Power",
-        "completed": false,
+        "completed": true,
         "AP": true,
+        "honors": false,
         "level": 2,
         "pods":
         {
@@ -1128,7 +1319,7 @@
             "objective": "Analyze, algebraically and graphically, a comet orbitting the sun with different definitions of the system and the surroundigns.",
             "systems":
                     [
-                      "comet-sun system"
+                      "comet-sun system",
                       "comet-alone system"
                     ]
           },
@@ -1168,13 +1359,15 @@
       {
         "name": "Impulse",
         "completed": false,
-        "AP": true
+        "AP": true,
+        "honors": false
       },
       "two_dimensional_dynamics":
       {
         "name": "Two-dimensional Dynamics",
         "completed": true,
         "AP": true,
+        "honors": false,
         "pods":
         {
           "vector_form_conversions":
@@ -1255,7 +1448,8 @@
       {
         "name": "Relative Velocity",
         "completed": false,
-        "AP": true
+        "AP": true,
+        "honors": false
       },
       "projectile_motion":
       {
@@ -1263,6 +1457,7 @@
         "level": 3,
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "parablc_arcs":
@@ -1410,6 +1605,7 @@
         "level": 3,
         "completed": true,
         "AP": true,
+        "honors": false,
         "pods":
         {
           "circular_motion_basics":
@@ -1489,6 +1685,7 @@
         "level": 2,
         "completed": true,
         "AP": true,
+        "honors": false,
         "pods":
         {
           "period_and_frequency_1":
@@ -1553,6 +1750,7 @@
         "level": 3,
         "completed": true,
         "AP": true,
+        "honors": false,
         "pods":
         {
           "qual_energy_springs_pendulums":
@@ -1647,6 +1845,7 @@
         "name": "Rotational Kinematics",
         "completed": false,
         "AP": true,
+        "honors": false,
         "level": 4
       },
       "rot_dyna":
@@ -1654,6 +1853,7 @@
         "name": "Rotational Dynamics",
         "completed": false,
         "AP": true,
+        "honors": false,
         "level": 4
       },
       "rot_conserv":
@@ -1661,6 +1861,7 @@
         "name": "Rotation Conservation Laws",
         "completed": false,
         "AP": true,
+        "honors": false,
         "level": 4
       }
     }
@@ -1676,6 +1877,7 @@
         "limits": "Only contains circuits including batteries and resistors",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "ohms_law":
@@ -1764,6 +1966,7 @@
         "name": "DC Circuit Concepts 1",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "insulators_and_conductors":
@@ -1868,6 +2071,7 @@
         "name": "Wave Structure",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "em_v_mech_1":
@@ -1970,6 +2174,7 @@
         "name": "Sound Properties",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "speed_of_sound_in_materials":
@@ -2165,6 +2370,7 @@
         "name": "Wave Phenomena",
         "notes": "Potentially: Reflection and refraction should be seperated from diffraction and interference",
         "completed": true,
+        "honors": true,
         "pods":
         {
           "wave_phenomena_basics":
@@ -2273,6 +2479,7 @@
         ],
         "notes": "This unit needs work.",
         "completed": false,
+        "honors": true,
         "pods":
         {
           "memorz_electrmgntc_spectrm_1":
@@ -2365,6 +2572,7 @@
                   "I still need to add goals related to additive and subtractive processes"
                 ],
         "completed": false,
+        "honors": true,
         "pods":
         {
           "basic_infrared_camera":
@@ -2443,6 +2651,7 @@
         "name": "Conceptual Gravitation",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "basic_gravity":
@@ -2513,6 +2722,7 @@
         "name": "Conceptual Electrostatics",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "basic_charging":
@@ -2554,6 +2764,7 @@
         "name": "Inverse Square Laws",
         "completed": true,
         "AP": true,
+        "honors": true,
         "pods":
         {
           "which_has_more_force_basic":
@@ -2640,6 +2851,7 @@
       {
         "name": "Conceptual Magnetism",
         "completed": true,
+        "honors": true,
         "pods":
         {
           "simple_magnet":
@@ -2713,17 +2925,20 @@
       "maxwells_eq":
       {
         "name": "Maxwell's Equations",
-        "completed": true
+        "completed": true,
+        "honors": false
       },
       "cosmology":
       {
         "name": "Cosmology",
-        "completed": true
+        "completed": true,
+        "honors": false
       },
       "calculus_gravity":
       {
         "name": "Calculus Based Gravitation",
-        "completed": true
+        "completed": true,
+        "honors": false
       }
     }
   },
@@ -2735,27 +2950,32 @@
       "kinetic_theory_of_matter_conceptual":
       {
         "name": "Kinetic Theory of Matter Conceptual",
-        "completed": false
+        "completed": false,
+        "honors": true
       },
       "gas_laws_mathematical":
       {
         "name": "Gas Laws Mathematical",
-        "completed": false
+        "completed": false,
+        "honors": false
       },
       "heat_transfer_and_temp_mathematical":
       {
         "name": "Heat Transfer and Temperature: Mathematical",
-        "completed": false
+        "completed": false,
+        "honors": true
       },
       "heat_processes":
       {
         "name": "Heat Processes",
-        "completed": true
+        "completed": true,
+        "honors": false
       },
       "statistical_mechanics":
       {
         "name": "Statistical Mechanics",
-        "completed": true
+        "completed": true,
+        "honors": false
       }
     }
   },
@@ -2772,6 +2992,7 @@
       {
         "name": "Nuclear Reaction Formulas",
         "completed": true,
+        "honors": true,
         "pods":
         {
           "counting_parts_of_a_nucleus":
@@ -2857,6 +3078,7 @@
       {
         "name": "Nuclear Reaction Concepts",
         "completed": true,
+        "honors": true,
         "pods":
         {
           "nuclear_reaction_basic_concepts":
@@ -2926,7 +3148,8 @@
       "atomic_spectra":
       {
         "name": "Atomic Spectra",
-        "completed": false
+        "completed": false,
+        "honors": true
       },
       "qunantum_theory_basics":
       {
