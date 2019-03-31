@@ -712,7 +712,7 @@
       },
       "dynamcs_math":
       {
-        "name": "Dynamics Math",
+        "name": "Dynamics Math (Newton's Second Law)",
         "level": 1,
         "completed": true,
         "AP": true,
@@ -819,20 +819,98 @@
       },
       "dynamics_concepts":
       {
-        "name": "Dynamics Concepts",
+        "name": "Identifying and Describing Forces (Newton's Third Law)",
         "level": 1,
         "completed": false,
         "AP": true,
         "honors": true,
         "pods":
         {
-          "newtons_third_law":
+          "newtons_third_law_1":
           {
             "name": "Newton's Third Law 1",
             "level": 1,
             "horizontal": 1,
             "letter": "A",
-            "objective": "X"
+            "objective": "State Newton's Third Law and recognize examples of how it applies."
+          },
+          "fbd_1":
+          {
+            "name": "Free-Body Diagrams 1",
+            "level": 1,
+            "objective": "Recognize the forces in the most common free-body diagrams."
+          },
+          "newtons_third_law_2":
+          {
+            "name": "Newton's Third Law 2",
+            "level": 2,
+            "objective": "State Newton's Third Law and write exmaples of how it applies; in particular describe how Newton's Laws apply to walking."
+          },
+          "fbd_2":
+          {
+            "name": "Free-Body Diagrams 2",
+            "level": 2,
+            "objective": "Draw from memory the most common free-body diagrams."
+          },
+          "fbd_3A":
+          {
+            "name": "Free-Body Diagrams 3A",
+            "level": 3,
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs."
+          },
+          "fbd_3B": {
+            "name": "Free-Body Diagrams 3N",
+            "level": 3,
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs.",
+            "note": "2 more questions on the same topic as 3A"
+          },
+          "breaking_boards":
+          {
+            "name": "Breaking Boards and Smashing Flies",
+            "level": 3,
+            "objective": "Defend how Newton's Third Law still applies when an object is broken by a force."
+          },
+          "lazy_donkey":
+          {
+            "name": "The Lazy Donkey Paradox",
+            "level": 4,
+            "objective": "Using free-body diagrams, defend the statement that motion in still possible given action reaction forces."
+          },
+          "newtons_third_law_4":
+          {
+            "name": "Newtons Third Law Level 4",
+            "level": 4,
+            "objective": "Complete a series of objectives related to more abstract applications of Newton's Third Law.",
+            "notes":
+                    [
+                      "Restate Newton's Third Law in which forces are not 'actions' and 'reactions' but always come in equal pairs.",
+                      "Show how Newton's Third Law applies to gravity on earth.",
+                      "Relate contact forces to electrostatic forces and use this relationship to defend Newton's Third Law for contact forces."
+                    ]
+          }
+        }
+      },
+      "vector_force_analysis":
+      {
+        "name": "Vector Force Analysis: Newton's Model (Newton's First Law)",
+        "level": 1,
+        "essential_quetions": "When, how, and why do items move?",
+        "completed": false,
+        "AP": true,
+        "honors": true,
+        "pods":
+        {
+          "newtons_model_1":
+          {
+            "name": "Newton's Model 1",
+            "level": 2,
+            "objective": "Identify when net force is zero and when it is not; determine whether an abstract object accelerates, decelerates of moves at a constant speed based on its free-body diagrams"
+          },
+          "inertia":
+          {
+            "name": "Inertia",
+            "level": 1,
+            "objective": "Define inertia and relate inertia to mass."
           },
           "pressing_into_you":
           {
@@ -840,25 +918,89 @@
             "level": 2,
             "horizontal": 2,
             "letter": "A",
-            "objective": "Drescibe the experience of the seat back pressing into you as you drive, relate this to Newton's model."
+            "objective": "Use Newton's Laws to describe the experience of your car pressing into your back when a car accelerates."
           },
-          "how_do_you_walk":
+          "space_dynamics_2":
           {
-            "name": "Walking",
+            "name": "Space Dynamics 2",
             "level": 2,
-            "horizontal":1,
-            "letter": "A",
-            "objective": "Apply Newton's Laws to walking."
+            "objective": "Describe how objects move in space, contrast this motion with how objects move on earth, and give intuitive explanations for the difference."
+          },
+          "newtons_model_2":
+          {
+            "name": "Newton's Model 2",
+            "level": 2,
+            "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a gien free-body diagram determine and defend the motion of that objecti",
+            "limits": "Limited to single step motion"
+          },
+          "air_resistance_2":
+          {
+            "name": "Air Resistance 2",
+            "level": 2,
+            "objective": "Explain what factors determine how crucial air resistance is in analyzing a situation."
+          },
+          "space_motion_lv_3":
+          {
+            "name": "Space Motion Level 3",
+            "level": 3,
+            "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces"
+          },
+          "newtons_model_lv_3":
+          {
+            "name": "Newton's Model Level 3",
+            "level": 3,
+            "objective": "Connect motino to free-body diagrams in abstract cases; for a given motion draw and defend a dfree-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
+            "notes": "Includes two-step motion; in particular, focuses on objects taht are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples."
+          },
+          "air_resistance_lv_3":
+          {
+            "name": "Air Resistance Level 3",
+            "level": 3,
+            "objective": "Explain when and why air resistance matters; relate the concept of inertia to the effects of friction and air resistance."
+          },
+          "space_motion_lv_4":
+          {
+            "name": "Space Motion Level 4",
+            "level": 4,
+            "objective": "Defend the statement that all laws of motion are the same on earth, in space, and in all areas of the universe; and defend this notion using principles and examples."
+          },
+          "fbs_lv_4A":
+          {
+            "name": "Free-Body Diagrams Level 4-A",
+            "level": 4,
+            "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: kicking a box and shooting an arrow."
+          },
+          "fbs_lv_4B":
+          {
+            "name": "Free-Body Diagrams Level 4-B",
+            "level": 4,
+            "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: lifting a weight and throwing a ball upward."
+          },
+          "terminal_velocity":
+          {
+            "name": "Terminal Velocity",
+            "level": 4,
+            "objective": "Using Newton's First and Second Laws, describe why falling objects reach terminal velocity and discuss what factors determine terminal velocity."
+          },
+          "why_is_physics_hard":
+          {
+            "name": "Why is Physics Hard?",
+            "level": 5,
+            "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrms of objects that are slowing down or moving at a constant speed. "
+          },
+          "free_fall_survivors":
+          {
+            "name": "Free-Fall Survivors",
+            "level": 5,
+            "objective": "Use Newton's laws and knowledge of air resistance to describe how falling from several miles in the air is possible."
+          },
+          "spaceship_vs_earth":
+          {
+            "name": "Accelerating Spaceship to Planet Earth",
+            "level": 5,
+            "objective": "Compare life on an accelerating spaceship and on planet earth."
           }
         }
-      },
-      "newtons_model":
-      {
-        "name": "Newton's Model",
-        "level": 1,
-        "completed": false,
-        "AP": true,
-        "honors": true
       },
       "collisions":
       {
@@ -1925,15 +2067,107 @@
         "completed": false,
         "AP": true,
         "honors": false,
-        "level": 4
+        "level": 4,
+        "pods":
+        {
+        }
       },
       "rot_dyna":
       {
         "name": "Rotational Dynamics",
-        "completed": false,
+        "completed": true,
         "AP": true,
         "honors": false,
-        "level": 4
+        "level": 4,
+        "pods":
+        {
+          "rotational_dynamics_analogies":
+          {
+            "name": "Rotational Dynamics Analogies",
+            "level": 1,
+            "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia"
+          },
+          "rotational_dynamic_formulas_simple":
+          {
+            "name": "Rotational Dynamic Formulas Simple",
+            "level": 1,
+            "objective": "Solve straightforward numerical questions using the rotational dynamics formulas, including the definition of torque and basic equations for rotational inertia."
+          },
+          "rotational_dynamic_dimensional_anlaysis":
+          {
+            "name": "Rotational Dynamic Dimensional Analysis",
+            "level": 2,
+            "objective": "Determine the dimensions of all rotational dynamic quantities, particularly torque and rotational inertia"
+          },
+          "rotational_inertia_examples":
+          {
+            "name": "Rotational Inertia Conceptual Examples",
+            "level": 2,
+            "objective": "Explain several conceptual examples of items with different rotational inertia",
+            "examples":
+                    [
+                      "Why is it easier to balance a meter stick with a weight on the end?",
+                      "Why does a disc roll faster than a hoop of the same mass?",
+                      "Why does liquid soup roll faster than cream soup, but cream soup faster still than noodle soup?"
+                    ]
+          },
+          "same_force_diff_torque":
+          {
+            "name": "Same Force Different Torque",
+            "level": 2,
+            "objective": "Identify and explain times when the same force acting in different directions and locations results in different torques on a rotating object; describe why a lineman must hit low to make a good block."
+          },
+          "torque_with_cross_product":
+          {
+            "name": "Torque with Cross Product",
+            "level": 2,
+            "objective": "Use the torque formula in situations requiring a single cross product; determine angular acceleration."
+          },
+          "net_torque":
+          {
+            "name": "Determine Net Torque and Angular Acceleration",
+            "level": 3,
+            "objective": "For a rotating object experiencing multiple torques, some requiring cross products, determine the net torque and angualr acceleraiton of the object."
+          },
+          "basic_rolling":
+          {
+            "name": "Basic Rolling",
+            "level": 3,
+            "objective": "Draw free-body diagrams and analyze the torque of a rollign object; identify the type of friction that causes rolling; differentiate between rolling with and without slipping."
+          },
+          "rolling_down_a_hill_numerical":
+          {
+            "name": "Rolling down a Hill Numerical",
+            "level": 4,
+            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a ball rolling down a hill."
+          },
+          "numerical_car_tire":
+          {
+            "name": "Numerical Car Tire",
+            "level": 4,
+            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a spinning car tire."
+          },
+          "weight_hanging_numerical":
+          {
+            "name": "Numerical Weight Hanging",
+            "level": 4,
+            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and [where necessary] linear acceleration of a wheel with a weight hanging from it."
+          },
+          "raiders_of_the_lost_arc":
+          {
+            "name": "Radiers of the Lost Arc",
+            "level": 5,
+            "objective": "Analyze why the giant ball designed to roll and kill Indiana Jones failed to do so, and redesign the setup to accomplish this task.",
+            "notes": "Extra credit will be awarded if quiz is accomplished while wearing a fedora and humming Indiana Jones theme."
+          },
+          "wheel_of_fortune":
+          {
+            "name": "Wheel of Fortune",
+            "level": 6,
+            "objective": "Design a mathematical model to predict where the wheel of fortune will land after having been spun.",
+            "notes": "Includes making some basic assumption about torques acting on the wheel; will probably need to use the concept of rotational impulse"
+          }
+        }
       },
       "rot_conserv":
       {
@@ -1941,7 +2175,82 @@
         "completed": false,
         "AP": true,
         "honors": false,
-        "level": 4
+        "level": 4,
+        "pods":
+        {
+          "rotational_conservation_analogies":
+          {
+            "name": "Rotational Conservation Analogies",
+            "level": 1,
+            "objective": "Draw analogies between conserved quantities for linear motion and rotational motion"
+          },
+          "rotational_conserved_quantitites_formula_basics":
+          {
+            "name": "Rotational Conserved Quantities Formula Basics",
+            "level": 1,
+            "objective": "Use the formulas for rotational conserved quantities to sovle simple numerical questions."
+          },
+          "rotational_conserved_quantities_formula_analysis":
+          {
+            "name": "Rotational Conserved Quantities Dimensional Analysis and Proportionality",
+            "level": 2,
+            "objective": "Determine the dimensions of all rotation conserved quantities using the formulas to define them; use proportionality to analyze conserved rotational quantities."
+          },
+          "ice_skater_spin_qual":
+          {
+            "name": "Ice Skater Spin Qualitative",
+            "level": 2,
+            "objective": "Using the formulas realated to angular momentum, describe how an ice skater (or other athlete) changes her rotational speed."
+          },
+          "knuckleball_qual":
+          {
+            "name": "Spirals and Knuckelballs",
+            "level": 2,
+            "objective": "Qualitatively explain the phenomena of a football thrown with a sprial and a knuckelball by referring to the conservation of angular momentum."
+          },
+          "ice_skater_spin_quant":
+          {
+            "name": "Ice Skater Spin Quantitative",
+            "level": 3,
+            "objective": "Use a quantitative model to predict how much spin will change when a spinner person moves their arms"
+          },
+          "Rotational_kinetic_energy_on_ramp":
+          {
+            "name": "Rotational Kinetic Energy on a Ramp",
+            "level": 3,
+            "objective": "Describe real-world situations using the conservation of energy, including rotational kinetic energy.",
+            "examples":
+                    [
+                      "A block sliding withotu friction goes faster than a wheel",
+                      "Why do the dynamics cars have small wheels?"
+                    ]
+          },
+          "work_energy_theorem_rot":
+          {
+            "name": "Rotation and the Work-Energy Theorem",
+            "level": 4,
+            "objective": "Analyze situations including rotational kinetic energy using the work-energy theorem."
+          },
+          "rot_kine_different_points_of_view":
+          {
+            "name": "Rotational Kinetic Energy from Different Points of View",
+            "level": 4,
+            "objective": "Analyze sitations incluindg rotational kinetic energy using differen definitions of the system and surroundings",
+            "example": "A ball rolls down a ramp; analyze the types of energy in which only the ball is the system and when there is a ball-earth system."
+          },
+          "reinvent_the_wheel":
+          {
+            "name": "Reinventing the Wheel",
+            "level": 5,
+            "objective": "Compare how energy changes in a block sliding down a ramp with friction and a wheel rolling down the same rampe; make a conclusion regarding the use of wheels."
+          },
+          "precession_of_axes":
+          {
+            "name": "Precession of Axes",
+            "level": 5,
+            "objective": "Use conservation of angular momentum to explain why the earth's axes precess and the consequences of this precession."
+          }
+        }
       }
     }
   },
@@ -3105,6 +3414,12 @@
             "objective": "Define half-life; answer simple questions",
             "limits": "Problems in this seciton do not require the half-life to be represented as a function.",
             "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?"
+          },
+          "identify_crucial_particles":
+          {
+            "name": "Identify Crucial Particles",
+            "level": 2,
+            "objective": "Identify the particles most crucial to understanding nuclear reactions."
           },
           "written_description_of_reactions_1":
           {
