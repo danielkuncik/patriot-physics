@@ -218,7 +218,7 @@
       {
         "name": "Calculus",
         "level": 2,
-        "completed": true
+        "completed": null
       },
       "scientific_notation":
       {
@@ -741,7 +741,13 @@
             "level": 2,
             "horizontal": 1,
             "letter": "A",
-            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object."
+            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object"
+          },
+          "state_newtons_second_law":
+          {
+            "name": "Memorize Newton's Second Law",
+            "level": 2,
+            "objective": "State Newton's Second Law from memory; describe what each variable within the law truly means."
           },
           "dragging_without_friction":
           {
@@ -821,7 +827,7 @@
       {
         "name": "Identifying and Describing Forces (Newton's Third Law)",
         "level": 1,
-        "completed": false,
+        "completed": true,
         "AP": true,
         "honors": true,
         "pods":
@@ -844,7 +850,7 @@
           {
             "name": "Newton's Third Law 2",
             "level": 2,
-            "objective": "State Newton's Third Law and write exmaples of how it applies; in particular describe how Newton's Laws apply to walking."
+            "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking."
           },
           "fbd_2":
           {
@@ -895,7 +901,7 @@
         "name": "Vector Force Analysis: Newton's Model (Newton's First Law)",
         "level": 1,
         "essential_quetions": "When, how, and why do items move?",
-        "completed": false,
+        "completed": true,
         "AP": true,
         "honors": true,
         "pods":
@@ -910,7 +916,7 @@
           {
             "name": "Inertia",
             "level": 1,
-            "objective": "Define inertia and relate inertia to mass."
+            "objective": "Define inertia and relate inertia to mass; state Newton's First Law from memory"
           },
           "pressing_into_you":
           {
@@ -1500,7 +1506,7 @@
       "impulse":
       {
         "name": "Impulse",
-        "completed": false,
+        "completed": true,
         "AP": true,
         "honors": false,
         "pods":
@@ -1530,7 +1536,7 @@
             {
               "name": "Conceptual Impulse 2",
               "level": 2,
-              "objective": "Answer more complex real-world written questions by referring to the impulse formula."
+              "objective": "Answer more complex real-world written questions by referring to the impulse formula; describe whath the term 'breaking a fall' means."
             },
             "momentum_graphs_1":
             {
@@ -2051,7 +2057,7 @@
       {
         "name": "Differential Equations for Periodic Motion",
         "level": 5,
-        "completed": true,
+        "completed": null,
         "notes": "Solving differential equations for simple harmonic motion and analyzing the result."
       },
       "potential_energy_functions":
@@ -2172,7 +2178,7 @@
       "rot_conserv":
       {
         "name": "Rotation Conservation Laws",
-        "completed": false,
+        "completed": true,
         "AP": true,
         "honors": false,
         "level": 4,
@@ -3313,19 +3319,19 @@
       "maxwells_eq":
       {
         "name": "Maxwell's Equations",
-        "completed": true,
+        "completed": null,
         "honors": false
       },
       "cosmology":
       {
         "name": "Cosmology",
-        "completed": true,
+        "completed": null,
         "honors": false
       },
       "calculus_gravity":
       {
         "name": "Calculus Based Gravitation",
-        "completed": true,
+        "completed": null,
         "honors": false
       }
     }
@@ -3356,13 +3362,13 @@
       "heat_processes":
       {
         "name": "Heat Processes",
-        "completed": true,
+        "completed": null,
         "honors": false
       },
       "statistical_mechanics":
       {
         "name": "Statistical Mechanics",
-        "completed": true,
+        "completed": null,
         "honors": false
       }
     }
@@ -3545,11 +3551,11 @@
         "completed": false,
         "honors": true
       },
-      "qunantum_theory_basics":
+      "quantum_theory_basics":
       {
         "name": "Basic Quantum Theory",
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
-        "completed": false
+        "completed": null
       }
     }
   },
@@ -3561,7 +3567,7 @@
       "special_relativity":
       {
         "name": "Special Relativity",
-        "completed": false
+        "completed": null
       }
     }
   }
