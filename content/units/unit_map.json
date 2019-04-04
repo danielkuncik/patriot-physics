@@ -640,7 +640,7 @@
       {
         "name": "Back of the Envelope Calculations",
         "level": 2,
-        "completed": false,
+        "completed": true,
         "enduring_understandings":
                 [
                   "When presented with some novel sitaution or problem,",
@@ -3970,8 +3970,53 @@
       "atomic_spectra":
       {
         "name": "Atomic Spectra",
-        "completed": false,
-        "honors": true
+        "completed": true,
+        "honors": true,
+        "pods":
+        {
+          "energy_levels":
+          {
+            "name": "Energy Levels",
+            "level": 1,
+            "objective": "Determine the difference between different energy levels of an atom."
+          },
+          "photons_and_atoms":
+          {
+            "name": "Photons and Atoms",
+            "level": 1,
+            "objective": "Explain how and why photons of a precise energy can be emitted or absorbed by an atom, refer to electrons and energy levels in your answer"
+          },
+          "energy_levels_and_photons":
+          {
+            "name": "Energy Levels and Photons",
+            "level": 2,
+            "objective": "Given an atom of various energy levels, determine the wavelength, frequency, and color or type of wave that can be emitted by that atom."
+          },
+          "ionizing_radiation":
+          {
+            "name": "Ionizing Radiation",
+            "level": 2,
+            "objective": "Differentiate between ionizing and non-ionizing radiation"
+          },
+          "cell_phone_controversy":
+          {
+            "name": "Cell Phone Controversy",
+            "level": 3,
+            "objective": "Evaluate the danger of devices that emit electromagnetic waves such as cellphones; defend choices using knowledge of atomic structure and electromagnetic waves."
+          },
+          "bands_in_spectrum":
+          {
+            "name": "Bands in Spectrum",
+            "level": 4,
+            "objective": "Given a spectrum showing bands of particualr wavelengths, recognize the bands by consutling a table of energy levels."
+          },
+          "astrochemistry":
+          {
+            "name": "Astrochemistry",
+            "level": 5,
+            "objective": "Determine the chemical composition of an astronomical body using a spectrum of taht body and a table of energy levels between atoms; defend choices."
+          }
+        }
       },
       "quantum_theory_basics":
       {
