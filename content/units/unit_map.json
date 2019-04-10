@@ -1289,7 +1289,7 @@
           {
             "name": "Conservation of Energy Box 3",
             "level": 3,
-            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, sovle numerical questions based upon the result"
+            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, sovle numerical questions based upon the result; consider zero point as a part of the GPE formula"
           },
           "conservation_of_energy_box_4":
           {
@@ -1307,7 +1307,7 @@
           {
             "name": "Conservation of Energy Box Algebraic",
             "level": 4,
-            "objective": "Fill out a table describing how kinetic and potential energy change algebraically"
+            "objective": "Fill out a table describing how kinetic and potential energy change algebraically; explain why the GPE formula technically can only be for a change, not an absolute value."
           },
           "KE_GPE_proportionality":
           {
@@ -1645,6 +1645,12 @@
                     ]
           }
         }
+      },
+      "machines":
+      {
+        "name": "Machines",
+        "completed": null,
+        "AP": false
       },
       "impulse":
       {
@@ -2283,12 +2289,66 @@
       "rot_kine":
       {
         "name": "Rotational Kinematics",
-        "completed": false,
+        "completed": true,
         "AP": true,
         "honors": false,
         "level": 4,
         "pods":
         {
+          "basic_rotational_kinematic_formulas":
+          {
+            "name": "Basic Rotational Kinematic Formulas",
+            "level": 1,
+            "objective": "Convert between rpm or other similar quantities and radians per second; relate rotational and linear velocity"
+          },
+          "advanced_angular_acceleration":
+          {
+            "name": "Advanced Angular Acceleration",
+            "level": 4,
+            "objective": "Determine the angular acceleration of a wheel as a car accelerates; determine angular acceleration if a planet were to speed up or slow down."
+          },
+          "angular_velocity_of_real_things":
+          {
+            "name": "Angular Velocity of Real Things",
+            "level": 2,
+            "objective": "Determine the angular velocity in radians per second of the hands of a clock, a rotating planet, a revolving planet"
+          },
+          "linear_velocity_on_a_planet":
+          {
+            "name": "Linear Velocity on a Planet",
+            "level": 3,
+            "objective": "Determine the lienar velocity of a person located at a particular latitude on a planet."
+          },
+          "rotational_kinematic_equations_1":
+          {
+            "name": "Rotational Kinematic Equations 1",
+            "level": 1,
+            "objective": "Solve kinematic equations for rotational motion with quantities given."
+          },
+          "rotational_kinematic_equations_2":
+          {
+            "name": "Rotational Kinematic Equations 2",
+            "level": 2,
+            "objective": "Relate the kinematic quantitaies and equations for linear and rotational motion"
+          },
+          "rotational_kinematic_equations_3":
+          {
+            "name": "Rotational Kinematic Equations 3",
+            "level": 3,
+            "objective": "When rotational kinematic quantities are given in inconvienient ways (such as rpm, or time per rotation, or linear motion is given), determine the rotational quantities in correct units and then use the rotational kinematic equations."
+          },
+          "rotational_vs_linear_velocity":
+          {
+            "name": "Rotational vs. Linear Velocity"
+            "level": 3,
+            "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc."
+          },
+          "rotational_kinematics_advanced":
+          {
+            "name": "Rotational Kinematics Advanced",
+            "level": 5,
+            "objective": "Make inferences using algebraic and proportionality analysis regarding the rotaitonal and linear speeds of a person located at different points on the earth"
+          }
         }
       },
       "rot_dyna":
@@ -3194,7 +3254,7 @@
                 [
                   "I still need to add goals related to additive and subtractive processes"
                 ],
-        "completed": false,
+        "completed": true,
         "honors": true,
         "pods":
         {
@@ -3225,12 +3285,6 @@
             "level": 2,
             "objective": "Explain how colors of light combine to make different colors; relate this fact to light from the sun and flourescent lights"
           },
-          "subtractive_color":
-          {
-            "name": "Subtractive Color",
-            "level": 3,
-            "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color."
-          },
           "long_vs_short_wavelength":
           {
             "name": "Long vs. Short Wavelength",
@@ -3243,18 +3297,11 @@
             "level": 2,
             "objective": "Explain how different objects emit different wavelengths; ex",
             "examples":
-                    [
-                      "The wires inside a toaster appear red, why?",
-                      "How are the wires inside of a toaster similar to humans, how are they different, and how can different types of camera examine this difference."
-                    ]
-          },
-          "identfy_applictns":
-          {
-          "name": "Identify Applications of Electromagnetic Waves",
-          "level": 3,
-          "horizontal": 1,
-          "letter": "E",
-          "objective": "In writing, identify human applications each of types of nonvisible electromagnetic wave."
+            [
+              "The wires inside a toaster appear red, why?",
+              "How are the wires inside of a toaster similar to humans, how are they different, and how can different types of camera examine this difference."
+              "How do objects of different human color appear on an infrared camera."
+            ]
           },
           "define_radioactive":
           {
@@ -3262,13 +3309,34 @@
             "level": 2,
             "objective": "Define all the terms that make electromagnetic waves seem scary, such as radioactivity; analyze the relative value of these terms."
           },
-          "galaxy_in_all_wavelengths":
+          "subtractive_color":
           {
-            "name": "A Galaxy in All Wavelengths",
-            "level": 5,
-            "horizontal": 2,
-            "letter": "K",
-            "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum."
+            "name": "Subtractive Color",
+            "level": 3,
+            "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color."
+          },
+          "identfy_applictns":
+          {
+          "name": "Identify Applications of Electromagnetic Waves",
+          "level": 3,
+          "horizontal": 1,
+          "letter": "E",
+          "objective": "In writing, identify human applications each of types of invisible electromagnetic waves; relate the particular uses of each wave to wavelength, frequency and energy",
+          "examples":
+                  [
+                    "What types of wave are most used for communicatio and why?",
+                    "How does X-rays allow you to see within your body?",
+                    "Which types of waves are dangerous and why?",
+                    "Can dangerous waves be useful, and how."
+                  ]
+          },
+          "why_is_the_sky_blue":
+          {
+            "name": "Why is the sky blue?",
+            "level": 3,
+            "horizontal": 5,
+            "letter": 1,
+            "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue."
           },
           "climate_change":
           {
@@ -3278,13 +3346,13 @@
             "letter": "A",
             "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect."
           },
-          "why_is_the_sky_blue":
+          "galaxy_in_all_wavelengths":
           {
-            "name": "Why is the sky blue?",
-            "level": 3,
-            "horizontal": 5,
-            "letter": 1,
-            "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue."
+            "name": "A Galaxy in All Wavelengths",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "K",
+            "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum."
           }
         }
       }
@@ -3599,7 +3667,7 @@
       "kinetic_theory_of_matter_conceptual":
       {
         "name": "Kinetic Theory of Matter Conceptual",
-        "completed": false,
+        "completed": true,
         "honors": true,
         "notes": [
           "Many of these quizzes and examples need to be combined!",
@@ -3619,30 +3687,24 @@
             "level": 1,
             "objective": "Recognize how molecules move differently within different states of matter."
           },
-          "thermal_expansion_1":
+          "conduction_convection_radiation_1":
           {
-            "name": "Thermal Expansion 1",
+            "name": "Conduction, Convection, Radiation 1",
             "level": 1,
-            "objective": "Explain thermal expansion using the kinetic theory of matter; describe consequecnes of thermal expansion of solids"
+            "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation"
           },
-          "gas_laws_kinetic_theory":
-          {
-            "name": "Gas Laws and kinetic theory",
-            "level": 1,
-            "objective": "Use kinetic theory to intuitively explain gas laws"
-          },
-          "where_molecules_are_faster_1":
+          "where_molecules_are_faster_2":
           {
             "name": "Where Molecules are faster 2",
             "level": 2,
-            "objective": "Describe wehre molecuels move faster and give consequences of this",
+            "objective": "Describe where molecules move faster and give consequences of this; define temperature as average kinetic energy of molecules",
             "idea": "Incorporate some of the level 1 quizzes into this."
           },
           "states_of_matter_2":
           {
             "name": "States of Matter 2",
             "level": 2,
-            "objective": "Describe and draw diagrams showing "
+            "objective": "Describe and draw diagrams showing how molecules move within each state of matter."
           },
           "kinetic_theory_applications":
           {
@@ -3652,7 +3714,9 @@
             "examples":
                     [
                       "Food coloring spreads faster in hot water",
-                      "Smells spread faster in hot air."
+                      "Smells spread faster in hot air.",
+                      "Apply to thermal expansion",
+                      "Apply to basic gas laws"
                     ]
           },
           "entropy_1":
@@ -3660,6 +3724,66 @@
             "name": "Entropy 1",
             "level": "2",
             "objective": "Define entropy, give examples of high and low entropy, and state the second law of thermodynamics."
+          },
+          "entropy_2":
+          {
+            "name": "Entropy 2",
+            "level": 3,
+            "objective": "Answer more complex questions on entropy"
+          },
+          "define_kinetic_theory":
+          {
+            "name": "Defining the Kinetic Theory of Matter",
+            "level": 3,
+            "objective": "Define the kinetic theory of matter; relate to changes in temperature",
+          },
+          "changes_of_state":
+          {
+            "name": "Changes of state",
+            "level": 3,
+            "objective": "Explain what occurs on a molecular level during a change of state; explain why temperature does not change during a change of state"
+          },
+          "conduction_and_the_zeroth_law":
+          {
+            "name": "Conduction and the Zeroth Law",
+            "level": 3,
+            "objective": "Relate heat transfer by conduction to the zeroth law of thermodynamics, kinetic theory, and the mechanics of collisions"
+          },
+          "evaporation":
+          {
+            "name": "Evaporation",
+            "level": 3,
+            "objective": "Contrast evaporation and boiling; explain how water cools due to evaporation; explain evaporation in open and closed containers."
+          },
+          "advanced_convection_and_radiation":
+          {
+            "name": "Advanced Convection and Radiation",
+            "level": 3,
+            "objective": "Relate heat radiation to our knowledge of electromagnetic waves"
+          },
+          "entropy_3":
+          {
+            "name": "Entropy 3",
+            "level": 4,
+            "objective": "Compare random and non-random motion of molecules; describe entropy change in common examples of energy transfer"
+          },
+          "brownian_motion":
+          {
+            "name": "Brownian Motion",
+            "level": 4,
+            "objective": "Describe how molecuels appear to be moving by not traveling in a random walk model."
+          },
+          "entropy_and_statistics":
+          {
+            "name": "Entropy and Probability",
+            "level": 5,
+            "objective": "Relate common processes to probability theory",
+            "exmamples":
+                    [
+                      "spreading purfume",
+                      "jam mixed in pudding"
+                    ],
+            "enrichment": "Students should read/see the play 'Arcadia' by Tom Stoppard as a part of this lesson."
           }
         }
       },
@@ -4009,6 +4133,12 @@
             "name": "Bands in Spectrum",
             "level": 4,
             "objective": "Given a spectrum showing bands of particualr wavelengths, recognize the bands by consutling a table of energy levels."
+          },
+          "neon_lights":
+          {
+            "name": "Neon Lights",
+            "level": 4,
+            "objective": "Use the chemical composition of a neon tube to determine what color a neon light will shine."
           },
           "astrochemistry":
           {
