@@ -42,13 +42,17 @@ function getAngleToHorizontal(point1, point2) {
     return Math.atan(getSlope(point1, point2));
 }
 
-// returns integer 1 to 4
-// if point is on an axis, returns false
+// returns a string indicating the quadrant of a point, an axis the point is on, or the origin
 function getQuadrantOfPoint(point) {
-    if      (point[0] > 0 && point[1] > 0) {return 1;}
-    else if (point[0] < 0 && point[1] > 0) {return 2;}
-    else if (point[0] < 0 && point[1] < 0) {return 3;}
-    else if (point[0] > 0 && point[1] < 0) {return 4;}
+    if (Math.abs(point[0]) < 1e-10 && Math.abs(point[1]) < 1e-10) {return 'origin';}
+    else if (point[0] > 0 && Math.abs(point[1]) < 1e-10 ) {return '+X';}
+    else if (point[0] < 0 && Math.abs(point[1]) < 1e-10 ) {return '-X';}
+    else if (Math.abs(point[0]) < 1e-10 && point[1] > 0) {return '+Y';}
+    else if (Math.abs(point[0]) < 1e-10 && point[1] < 0) {return '-Y';}
+    else if (point[0] > 0 && point[1] > 0) {return '1';}
+    else if (point[0] < 0 && point[1] > 0) {return '2';}
+    else if (point[0] < 0 && point[1] < 0) {return '3';}
+    else if (point[0] > 0 && point[1] < 0) {return '4';}
     else {return false;}
 }
 
@@ -149,12 +153,14 @@ function diagram() {
         // returns value from -pi/2 to pi/2
         // appropriate for an arrowhead in quadrants 1 or 4, but not in quadrant 2 or 3
         const arrowheadQuadrant = getQuadrantOfPoint(point2);
-        if (arrowheadQuadrant === 2) {
+        if (arrowheadQuadrant === '2') {
             angleToHorizontal = Math.PI + angleToHorizontal;
-        } else if (arrowheadQuadrant === 3) {
+        } else if (arrowheadQuadrant === '3') {
             angleToHorizontal = Math.PI + angleToHorizontal;
-        } else if (!arrowheadQuadrant && point2[0] < 0 && point2[1] === 0) { // if arrow is on the -x axis
+        } else if (arrowheadQuadrant === '-X') { // if arrow is on the -x axis
             angleToHorizontal = Math.PI
+        } else if (arrowheadQuadrant === '-Y') { // if arrow is on the -y axis
+            angleToHorizontal = -1 * Math.PI / 2
         }
 
         const L = getLength(point1, point2);
