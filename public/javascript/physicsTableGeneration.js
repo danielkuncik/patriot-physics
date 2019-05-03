@@ -4,6 +4,46 @@
 // boxes to guide students through momentum, conservatio of energy, or electric circuit problems
 
 // converts arrays of any numbers into an array of the same proportion that sums to 1
+
+
+/*
+Directions
+
+to create a table, entuer
+
+var physicsTable = new tableObject(300,600,'px',4,3);
+argument 1: width of table
+argument 2: height of table
+argument 3: unit that will be used for all measurements, default is 'px'
+argument 4: number of rows in table
+argument 5: number of columns in table
+
+this creates a table that is completely equal
+to change the proportion of the width and height that is devoted to particular columns and rows, use
+
+physicsTable.reproportionRows([1,2,1,2])
+physicsTable.reproportionColumns([5,4,5])
+
+in which the only argument are arrays that give the relative height of each row or width of each column
+note that the numerical values in these arrays need not sum to the numerical width and height of the table
+
+to add text to a cell, use
+
+physicsTable.addTextToCell('E = mc^2', 2,3)
+argument 1: the text to be added to the cell
+argument 2: the vertical position of the cell
+argument 3: the horizontal position of the cell
+
+note that the index of all vertical and horizontal positions begin with 1, not with 0
+
+to add the table into an html file, use one of these three options
+
+physicsTable.insertIntoDomObject(domObject)
+physicsTable.insertTableByID(insertID)
+physicsTable.insertTableByClass(insertClass)
+
+
+ */
 function normalizeArray(array) {
     var sum = 0, q;
     for (q = 0; q < array.length; q++) {

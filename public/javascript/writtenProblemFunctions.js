@@ -31,6 +31,34 @@ function writtenProblem(question,answer,subQuestions,questionTable) {
 */
 
 
+/*
+For, creating lists of problems on a physics webpage
+
+Use:
+
+To create a new list of problems:
+var physicsProblems = new writtenProblemList()
+
+To add a new problem:
+
+physicsProblems.addProblem(problemObject)
+the problem object has the following properties:
+question:
+
+answer:
+
+-- there are also subquestions
+
+To insert into a page
+
+physicsProblems.insertLists(questionID, answerID)
+
+argument1: The id of the <div> into which the list of questions will be inserted
+argument 2: The id of the <div> into which the list of answers will beinserted
+
+ */
+
+
 function writtenProblem(problemObject) {
     this.problemObject = problemObject;
 
@@ -158,10 +186,8 @@ function writtenProblemList() {
     this.insertLists = function(questionID, answerID) {
         var questionListDiv = $("<div></div>");
         var answerListDiv = $("<div></div>");
-        var questionHeader = $("<h3>Problems</h3>");
-        console.log(questionHeader);
-        $(questionListDiv).append(questionHeader);
-        $(answerListDiv).append($("<h3>Answers</h3>"));
+      //  $(questionListDiv).append("<h3>Problems</h3>");
+      //  $(answerListDiv).append($("<h3>Answers</h3>"));
         $(questionListDiv).append(this.questionList);
         $(answerListDiv).append(this.answerList);
 

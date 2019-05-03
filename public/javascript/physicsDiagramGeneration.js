@@ -5,8 +5,10 @@ I NEED TO FIGURE OUT HOW TO ACCOUNT FOR THE RANGE OF A ROTATED BOX
 I NEED TO FIGURE OUT HOW TO ACCOUNT FOR THE RANGE OF A ROTATED BOX
 I NEED TO FIGURE OUT HOW TO ACCOUNT FOR THE RANGE OF A ROTATED BOX
 I NEED TO FIGURE OUT HOW TO ACCOUNT FOR THE RANGE OF A ROTATED BOX
-
 [i jsut really want to make sure i don't forget this]
+
+
+IT ALWAYS INCLUDES THE ORIGIN... DO I WANT THAT???
  */
 function minOfTwoValues(val1, val2) {
     if (val1 <= val2) {
@@ -35,9 +37,19 @@ function getSlope(point1, point2) {
 
 // returns angle to horizontal between two points
 // note angle returned in is radians
-// will this work properly if slope is negative????
-function getAngle(point1, point2) {
+// always returns  angle in range - pi/2 to pi / 2,
+function getAngleToHorizontal(point1, point2) {
     return Math.atan(getSlope(point1, point2));
+}
+
+// returns integer 1 to 4
+// if point is on an axis, returns false
+function getQuadrantOfPoint(point) {
+    if      (point[0] > 0 && point[1] > 0) {return 1;}
+    else if (point[0] < 0 && point[1] > 0) {return 2;}
+    else if (point[0] < 0 && point[1] < 0) {return 3;}
+    else if (point[0] > 0 && point[1] < 0) {return 4;}
+    else {return false;}
 }
 
 function rotateClockwise90(angle) {
@@ -48,10 +60,26 @@ function rotateCounterClockwise90(angle) {
     return angle + Math.PI / 2
 }
 
+function convertDegreeToRadian(angle) {
+    return angle / 180 * Math.PI;
+}
+
+function rotatePointClockwiseAboutOrigin(point, angleInRadians) {
+    const x = point[0];
+    const y = point[1];
+    const x_prime = x * Math.cos(angleInRadians) - y * Math.sin(angleInRadians);
+    const y_prime = y * Math.cos(angleInRadians) + x * Math.sin(angleInRadians);
+    return [x_prime, y_prime];
+}
+
+function translatePoint(point, x_translation, y_translation) {
+    return [point[0] + x_translation, point[1] + y_translation];
+}
+
 // gets a point some porportion between two points
 function interpolatePoint(point1, point2, proportion) {
     const hypotenuse = getLength(point1, point2) * proportion;
-    const angle = getAngle(point1, point2);
+    const angle = getAngleToHorizontal(point1, point2);
     return getNewPointWithTrig(point1, hypotenuse, angle);
 }
 
@@ -114,14 +142,49 @@ function diagram() {
         return true
     };
 
-    this.addCircle = function(centerPoint, radius) {
+    this.addArrow = function(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
+        const phi = convertDegreeToRadian(arrowheadAngleInDegrees);
+
+        var angleToHorizontal = getAngleToHorizontal(point1, point2);
+        // returns value from -pi/2 to pi/2
+        // appropriate for an arrowhead in quadrants 1 or 4, but not in quadrant 2 or 3
+        const arrowheadQuadrant = getQuadrantOfPoint(point2);
+        if (arrowheadQuadrant === 2) {
+            angleToHorizontal = Math.PI + angleToHorizontal;
+        } else if (arrowheadQuadrant === 3) {
+            angleToHorizontal = Math.PI + angleToHorizontal;
+        } else if (!arrowheadQuadrant && point2[0] < 0 && point2[1] === 0) { // if arrow is on the -x axis
+            angleToHorizontal = Math.PI
+        }
+
+        const L = getLength(point1, point2);
+        var arrowheadEnd1_untransformed = [L - arrowheadLength * Math.cos((phi)), arrowheadLength * Math.sin(phi)]; // location of the arrowhead end if the arrow were a straight line on the x-axis
+        var arrowheadEnd2_untransformed = [L - arrowheadLength * Math.cos((phi)), -1 * arrowheadLength * Math.sin(phi)]; // location of the arrowhead end if the arrow were a straight line on the x-axis
+
+        var arrowheadEnd1 = translatePoint(rotatePointClockwiseAboutOrigin(arrowheadEnd1_untransformed, angleToHorizontal), point1[0], point1[1]);
+        var arrowheadEnd2 = translatePoint(rotatePointClockwiseAboutOrigin(arrowheadEnd2_untransformed, angleToHorizontal), point1[0], point1[1]);
+
+        this.addLine(point1, point2); // main line
+        this.addLine(point2, arrowheadEnd1); // half of arrowhead
+        this.addLine(point2, arrowheadEnd2); // half of arrowhead
+
+        return true;
+    };
+
+
+    this.addCircle = function(centerPoint, radius, isItFilled) {
         this.addBox(centerPoint[0] + radius, centerPoint[0] - radius, centerPoint[1] + radius, centerPoint[1] - radius);
         this.circles.push(
             {
                 "centerPoint": centerPoint,
-                "radius": radius
+                "radius": radius,
+                "filled": isItFilled
             }
         )
+    };
+
+    this.deleteLastCircle = function() {
+        if (this.circles.length > 0) {this.circles.pop();}
     };
 
 
@@ -194,7 +257,11 @@ function diagram() {
         this.circles.forEach((circle) => {
             centerPoint = transformPoint(circle.centerPoint, fitObject.scaleFactor, fitObject.xTranslationFactor, fitObject.yTranslationFactor, wiggleRoom);
             radius = transformLength(circle.radius, fitObject.scaleFactor);
-            newCanvas.drawCircle(centerPoint, radius);
+            if (!circle.filled) {
+                newCanvas.drawEmptyCircle(centerPoint, radius);
+            } else {
+                newCanvas.drawFilledCircle(centerPoint, radius);
+            }
         });
         var text, fontSize;
         this.text.forEach((textElement) => {
@@ -245,7 +312,7 @@ function canvas(width, height, unit) {
         ctx.stroke();
     };
 
-    this.drawCircle = function(centerPoint, radius) {
+    this.drawEmptyCircle = function(centerPoint, radius) {
         var ctx = this.c.getContext("2d");
 
         ctx.lineWidth = 2;
@@ -257,6 +324,16 @@ function canvas(width, height, unit) {
         ctx.beginPath();
         ctx.arc(centerPoint[0], this.height - centerPoint[1], radius, 0, Math.PI * 2);
         ctx.stroke();
+
+    };
+
+    this.drawFilledCircle = function(centerPoint, radius) {
+        var ctx = this.c.getContext("2d");
+        ctx.fillStyle = "black";
+        ctx.moveTo(centerPoint[0] + radius, this.height - centerPoint[1]);
+        ctx.beginPath();
+        ctx.arc(centerPoint[0], this.height - centerPoint[1], radius, 0, Math.PI * 2);
+        ctx.fill();
 
     };
 
@@ -295,7 +372,7 @@ function electricCircuit() {
     // inefficient to use the interpolate point function mulitple times!
     this.addZigZag = function(endPoint1, endPoint2, width) {
         const length = getLength(endPoint1, endPoint2);
-        const angle = getAngle(endPoint1, endPoint2);
+        const angle = getAngleToHorizontal(endPoint1, endPoint2);
         const point1 = endPoint1;
         const point2 = getNewPointWithTrig(interpolatePoint(endPoint1, endPoint2, 0.3333333), width, rotateCounterClockwise90(angle));
         const point3 = getNewPointWithTrig(interpolatePoint(endPoint1, endPoint2, 0.6666667), width, rotateClockwise90(angle));
@@ -329,7 +406,7 @@ function electricCircuit() {
         if (width === undefined) {width = getLength(endPoint1, endPoint2) * 0.5;} /// should be proportioned by numbatteries
 
         const numLines = numBatteries * 2;
-        const angle = getAngle(endPoint1, endPoint2);
+        const angle = getAngleToHorizontal(endPoint1, endPoint2);
         var j, centerPoint, lineWidth, pointA, pointB;
         for (j = 0; j < numLines; j++) {
             centerPoint = interpolatePoint(endPoint1, endPoint2, j / (numLines - 1) );
@@ -351,6 +428,49 @@ function electricCircuit() {
 /// my old code for electric circuit diagrams required me to explicitly specify directions of pieces
 /// and then needed long if...then clauses to work, no more, direciton is determined automatically now
 
+
+function freeBodyDiagram() {
+    this.diagram = new diagram();
+    this.forces = [];
+
+    this.maxForce = 0;
+    this.arrowheadAngle = 20; // in degrees
+    this.circleRadius = 0;
+    this.arrowheadLength = 0;
+
+    /// i shoudl redo this so that you add forces, and then the
+    // actual diagram is not drawn until you have added all the forces...
+    // that would be better
+
+
+    this.addForce = function(relativeMagnitude,angle,label) {
+        if (this.maxForce < relativeMagnitude) {this.maxForce = relativeMagnitude;}
+        var endPoint = [relativeMagnitude * Math.cos(convertDegreeToRadian(angle)), relativeMagnitude * Math.sin(convertDegreeToRadian(angle))]
+        this.forces.push(
+            {
+                "relativeMagnitude": relativeMagnitude,
+                "angle": angle,
+                "label": label,
+                "endPoint": endPoint
+            }
+        );
+    };
+
+
+    // i need to find a way to add labels to my forces!!!
+    // and, to have multiple forces going the same direction!!!
+
+
+    this.drawCanvas = function(maxWidth, maxHeight, unit, wiggleRoom) {
+        this.circleRadius = this.maxForce * 0.1;
+        this.arrowheadLength = this.maxForce * 0.05;
+        this.forces.forEach((force) => {
+            this.diagram.addArrow([0,0],force.endPoint,this.arrowheadLength,this.arrowheadAngle);
+        });
+        this.diagram.addCircle([0,0], this.circleRadius,true);
+        return this.diagram.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
+}
 
 function unitMap() {
     this.map = new diagram();
