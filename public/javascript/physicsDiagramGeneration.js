@@ -42,6 +42,33 @@ function getAngleToHorizontal(point1, point2) {
     return Math.atan(getSlope(point1, point2));
 }
 
+
+// if point1 were the origin, and point2 were on the unit circle, it gives the angle where point2 would be from 0 to 2pi
+// note that the 'atan' function always returns a value between -pi/2 and +pi/2
+function smartAngleToHorizontal(point1, point2) {
+    const quadrant = getQuadrantOfPoint([point2[0] - point1[0], point2[1] - point1[0]]);
+    var theta;
+    if (quadrant === '1') {
+        theta = Math.atan(getSlope(point1, point2));
+    } else if (quadrant === '2') {
+        theta = Math.PI + Math.atan(getSlope(point1, point2));
+    } else if (quadrant === '3') {
+        theta = Math.PI + Math.atan(getSlope(point1, point2));
+    } else if (quadrant === '4') {
+        theta = 2 * Math.PI + Math.atan(getSlope(point1, point2)); // atan will return a negative value here!
+    } else if (quadrant === '+X') {
+        theta = 0
+    } else if (quadrant === '-X') { // if arrow is on the -x axis
+        theta = Math.PI
+    } else if (quadrant === '+Y') {
+        theta = Math.PI / 2
+    } else if (quadrant === '-Y') { // if arrow is on the -y axis
+        theta = 3 * Math.PI / 2
+    }
+    // the only other case is if the two poitns are identical, and undefined will be returned
+    return theta;
+}
+
 // returns a string indicating the quadrant of a point, an axis the point is on, or the origin
 function getQuadrantOfPoint(point) {
     if (Math.abs(point[0]) < 1e-10 && Math.abs(point[1]) < 1e-10) {return 'origin';}
@@ -83,7 +110,7 @@ function translatePoint(point, x_translation, y_translation) {
 // gets a point some porportion between two points
 function interpolatePoint(point1, point2, proportion) {
     const hypotenuse = getLength(point1, point2) * proportion;
-    const angle = getAngleToHorizontal(point1, point2);
+    const angle = smartAngleToHorizontal(point1, point2);
     return getNewPointWithTrig(point1, hypotenuse, angle);
 }
 
@@ -104,6 +131,7 @@ function getRangeOfACircle(centerPoint, radius) {
         yMax: 0
     }
 }
+
 
 
 function diagram() {
@@ -149,7 +177,8 @@ function diagram() {
     this.addArrow = function(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
         const phi = convertDegreeToRadian(arrowheadAngleInDegrees);
 
-        var angleToHorizontal = getAngleToHorizontal(point1, point2);
+        var angleToHorizontal = smartAngleToHorizontal(point1,point2);
+        /*var angleToHorizontal = getAngleToHorizontal(point1, point2);
         // returns value from -pi/2 to pi/2
         // appropriate for an arrowhead in quadrants 1 or 4, but not in quadrant 2 or 3
         const arrowheadQuadrant = getQuadrantOfPoint(point2);
@@ -161,7 +190,7 @@ function diagram() {
             angleToHorizontal = Math.PI
         } else if (arrowheadQuadrant === '-Y') { // if arrow is on the -y axis
             angleToHorizontal = -1 * Math.PI / 2
-        }
+        }*/
 
         const L = getLength(point1, point2);
         var arrowheadEnd1_untransformed = [L - arrowheadLength * Math.cos((phi)), arrowheadLength * Math.sin(phi)]; // location of the arrowhead end if the arrow were a straight line on the x-axis
@@ -208,6 +237,66 @@ function diagram() {
             "relativeFontSize": relativeFontSize,
             "rotation": rotation /// rotation must be measured in radians
         });
+
+    };
+
+
+    // creates text above and below a line
+    // if line is vertical "text above" is to the left and "textBelow" is to the right
+    this.labelLine = function(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize) {
+        var centerOfLine = [(point1[0] + point2[0])/2, (point1[1] + point2[1])/2]; // more efficient than using interpolate point
+        var theta = smartAngleToHorizontal(point1, point2); // on this function!
+        var textRotation;
+
+        var phi;
+        const quadrant = getQuadrantOfPoint([point2[0] - point1[0], point2[1] - point1[1]]);
+
+        if (quadrant === '1') {
+            phi = Math.PI /2 - theta;
+            textRotation = -1 * theta;
+        } else if (quadrant === '2') {
+            phi = Math.PI - theta;
+            textRotation = theta + 3 * Math.PI / 2; // i don't know why this works, but it does!
+        } else if (quadrant === '3') {
+            textRotation = theta + Math.PI / 2;
+            phi = 3 * Math.PI / 2 - theta;
+        } else if (quadrant === '4') {
+            textRotation = -1 * theta;
+            phi = 2* Math.PI - theta;
+        } else if (quadrant === '+Y' || quadrant === '-Y') {
+            textRotation = 3 * Math.PI / 2;
+            // phi undefined
+        } else if (quadrant === '+X' || quadrant === 'X') {
+            textRotation = 0
+            // phi undefined
+        }
+
+        /// it works!
+
+        var aboveX = centerOfLine[0], belowX = centerOfLine[0];
+        var aboveY = centerOfLine[1], belowY = centerOfLine[1];
+
+        // i know this is inefficient, but it is easy to understand
+        if (quadrant === '1' || quadrant === '3') { // up right line
+            aboveX -= textDisplacement * Math.cos(phi);
+            aboveY += textDisplacement * Math.sin(phi);
+            belowX += textDisplacement * Math.cos(phi);
+            belowY -= textDisplacement * Math.sin(phi);
+        } else if (quadrant === '2' || quadrant === '4') { // up left line
+            aboveX += textDisplacement * Math.cos(phi);
+            aboveY += textDisplacement * Math.sin(phi);
+            belowX -= textDisplacement * Math.cos(phi);
+            belowY -= textDisplacement * Math.sin(phi);
+        } else if (quadrant === '+Y' || quadrant === '-Y') { // vertical line
+            aboveX -= textDisplacement;
+            belowX += textDisplacement;
+        } else if (quadrant === "+X" || quadrant === '-X') { // horizontal line
+            aboveY += textDisplacement;
+            belowY -= textDisplacement;
+        }
+
+        this.addText(textAbove, [aboveX, aboveY], relativeFontSize, textRotation);
+        this.addText(textBelow, [belowX, belowY], relativeFontSize, textRotation);
     };
 
     this.getHorizontalRange = function() {
@@ -271,7 +360,6 @@ function diagram() {
         });
         var text, fontSize;
         this.text.forEach((textElement) => {
-            console.log(textElement);
             centerPoint = transformPoint(textElement.centerPoint, fitObject.scaleFactor, fitObject.xTranslationFactor, fitObject.yTranslationFactor, wiggleRoom);
             text = textElement.text;
             fontSize = transformLength(textElement.relativeFontSize,fitObject.scaleFactor);
@@ -347,9 +435,7 @@ function canvas(width, height, unit) {
     this.drawText = function(text, centerPoint, fontSize, rotation) {
         var ctx = this.c.getContext("2d");
 
-        console.log(fontSize);
         ctx.font = String(fontSize) + "px Arial";
-        console.log(ctx.font);
         ctx.fillStyle = "#000000";
         ctx.textAlign = "center"; // on the unit maps, why isn't the text directly in the center of the circle?
         ctx.textBaseline = "middle";
@@ -357,12 +443,11 @@ function canvas(width, height, unit) {
         if (rotation === undefined) {
             ctx.fillText(text, centerPoint[0], this.height - centerPoint[1]);
         } else {
-            console.log(rotation);
-            ctx.translate(centerPoint[0], centerPoint[1]);
+            ctx.translate(centerPoint[0], this.height - centerPoint[1]);
             ctx.rotate(rotation);
             ctx.fillText(text, 0, 0);
             ctx.rotate(-1 * rotation);
-            ctx.translate(-1 * centerPoint[0], -1 * centerPoint[1]);
+            ctx.translate(-1 * centerPoint[0], -1 * (this.height - centerPoint[1]));
         }
     }
 }
@@ -443,34 +528,46 @@ function freeBodyDiagram() {
     this.arrowheadAngle = 20; // in degrees
     this.circleRadius = 0;
     this.arrowheadLength = 0;
+    this.relativeFontSize = 0;
 
     /// i shoudl redo this so that you add forces, and then the
     // actual diagram is not drawn until you have added all the forces...
     // that would be better
 
 
-    this.addForce = function(relativeMagnitude,angle,label) {
+    // if force is vertical, label above will add text on the left and label below will ad text on the right
+    this.addForce = function(relativeMagnitude,angle,labelAbove, labelBelow) {
         if (this.maxForce < relativeMagnitude) {this.maxForce = relativeMagnitude;}
         var endPoint = [relativeMagnitude * Math.cos(convertDegreeToRadian(angle)), relativeMagnitude * Math.sin(convertDegreeToRadian(angle))]
         this.forces.push(
             {
                 "relativeMagnitude": relativeMagnitude,
                 "angle": angle,
-                "label": label,
+                "labelAbove": labelAbove,
+                "labelBelow": labelBelow,
                 "endPoint": endPoint
             }
         );
     };
 
 
+    /// issues with labels
+    /// determining position of label
+    /// determining font size of label
+
     // i need to find a way to add labels to my forces!!!
     // and, to have multiple forces going the same direction!!!
 
+    var textCenterPosition;
+    var textAbovePosition;
+    var textBelowPosition;
 
     this.drawCanvas = function(maxWidth, maxHeight, unit, wiggleRoom) {
         this.circleRadius = this.maxForce * 0.1;
         this.arrowheadLength = this.maxForce * 0.05;
+        this.relativeFontSize = this.maxForce * 0.02;
         this.forces.forEach((force) => {
+           // var textCenterPosition = interpolatePoint([0,0],force.endPoint,0.5);
             this.diagram.addArrow([0,0],force.endPoint,this.arrowheadLength,this.arrowheadAngle);
         });
         this.diagram.addCircle([0,0], this.circleRadius,true);
