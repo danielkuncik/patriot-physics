@@ -1,3 +1,9 @@
 p.testClass {
     font-size: 50px;
 }
+
+div.definitionBox {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+}

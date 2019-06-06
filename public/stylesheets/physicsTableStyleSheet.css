@@ -19,6 +19,10 @@ th {
     vertical-align: text-top;
 }
 
+th.greenHeader {
+    color: green;
+}
+
 td.lookingForBox {
 
 }

@@ -66,8 +66,14 @@ function cellObject(width, height, unit, text) {
     this.shade = function() {
         this.class = 'shaded';
     };
+    this.isItAHeader = false;
     this.draw = function() {
-        var cell = $(`<td class = ${this.class} width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'>${this.text}</td>`)
+        var cell;
+        if (this.isItAHeader) {
+            cell = $(`<th class = ${this.class} width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'>${this.text}</th>`);
+        } else {
+            cell = $(`<td class = ${this.class} width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'>${this.text}</td>`);
+        }
         return cell
     };
 }
@@ -163,8 +169,20 @@ function tableObject(width, height, unit, numRows, numColumns) {
         this.selectCell(i,j).text = text;
     };
 
+    this.makeCellAHeader = function(i,j) {
+        this.selectCell(i,j).isItAHeader = true;
+    };
+
+    this.makeCellNotAHeader = function(i,j) {
+        this.selectCell(i,j).isItAHeader = false;
+    };
+
     this.shadeCell = function(i, j) {
         this.selectCell(i,j).shade();
+    };
+
+    this.setCellClass = function(cellClass, i, j) {
+        this.selectCell(i,j).class = cellClass;
     };
 
     this.reporportionRows = function(porportionArray) {
@@ -434,6 +452,90 @@ function energyTable(pointArray, typesOfEnergyArray, width, height, unit) {
     };
 
 }
+
+function formulaInformationBox(width, height, unit) {
+    if (width === undefined) {width = 400;}
+    if (height === undefined) {height = 300;}
+    if (unit === undefined) {unit = 'px';}
+    this.width = width;
+    this.height = height;
+    this.unit = unit;
+    this.symbols = [];
+    this.areThereComments = false;
+
+    this.addSymbol = function(symbol, quantity, SIunit, SIunitAbbreviation, comment) {
+        var nextSymbol = {
+                "symbol": symbol,
+                "quantity": quantity,
+                "SIunit": SIunit,
+        };
+        if (SIunitAbbreviation) {
+            nextSymbol["unitAbbreviation"] = SIunitAbbreviation;
+            var unitAbbreviationWithParentheses;
+            if (SIunitAbbreviation.substring(0,2) === "\\(") { // maxjax string
+                unitAbbreviationWithParentheses = SIunitAbbreviation.substring(0,2) + " \\left( "+ SIunitAbbreviation.substring(2, SIunitAbbreviation.length - 2) + " \\right) " + SIunitAbbreviation.substring(SIunitAbbreviation.length - 2, SIunitAbbreviation.length);
+                console.log(unitAbbreviationWithParentheses);
+            } else { // non-math jax string
+                unitAbbreviationWithParentheses = `(${SIunitAbbreviation})`;
+            }
+            nextSymbol["unitAbbreviationWithParentheses"] = unitAbbreviationWithParentheses;
+        }
+        if (comment) {
+            this.areThereComments = true;
+            nextSymbol["comment"] = comment;
+        }
+        this.symbols.push(nextSymbol);
+
+    };
+
+    this.makeTable = function() {
+        const numRows = 1 + this.symbols.length;
+        var numColumns = 3;
+        if (this.areThereComments) {numColumns = 4;}
+
+        var formulaTable = new tableObject(this.width, this.height, this.unit, numRows, numColumns);
+
+        if (!this.areThereComments) {
+            formulaTable.reporportionColumns(1,1,2);
+        } else {
+            formulaTable.reporportionColumns(1,1,1,3);
+        }
+        // default column proportions for a formula information table
+
+        formulaTable.addTextToCell('Symbol',1,1);
+        formulaTable.makeCellAHeader(1,1);
+        formulaTable.addTextToCell('Quantity',1,2);
+        formulaTable.makeCellAHeader(1,2);
+        formulaTable.addTextToCell('SI Unit',1,3);
+        formulaTable.makeCellAHeader(1,3);
+        if (this.areThereComments) {
+            formulaTable.addTextToCell('Comment',1,4);
+            formulaTable.makeCellAHeader(1,4);
+        }
+
+
+        var rowIndex, unitText;
+        this.symbols.forEach((symbol,index) => {
+            rowIndex = 2 + index;
+            formulaTable.addTextToCell(symbol.symbol,rowIndex,1);
+            formulaTable.addTextToCell(symbol.quantity,rowIndex,2);
+
+            if (symbol.unitAbbreviation) {unitText = `${symbol.SIunit} ${symbol.unitAbbreviationWithParentheses}`;}
+            else {unitText = symbol.SIunit;}
+            formulaTable.addTextToCell(unitText, rowIndex,3);
+            if (symbol.comment) {formulaTable.addTextToCell(symbol.comment,rowIndex,4);}
+        });
+
+        return formulaTable;
+    };
+}
+
+// var myTable = new formulaInformationBox();
+// myTable.addSymbol("F","force","Newton","N");
+// myTable.addSymbol("m","mass","kilogram","kg");
+// myTable.addSymbol("a","acceleration","meter per second squared",'m/s<sup>2</sup>');
+// myTable.makeTable();
+
 /*
 Things to add to this file
 2-20-19

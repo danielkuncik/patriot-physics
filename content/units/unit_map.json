@@ -115,9 +115,9 @@
             "level": 1,
             "horizontal": 1,
             "letter": "A",
-            "objective": "Know pi to at least 15 decimal places."
+            "objective": "Know pi to at least 15 decimal places; explain the significance of pi."
           },
-          "circle_replationships_1": {
+          "circle_relationships_1": {
             "name": "Circle Relationships 1",
             "level": 1,
             "horizontal": 2,

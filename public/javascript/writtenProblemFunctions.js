@@ -159,20 +159,29 @@ function addTable(type,arguments) {
     }
 }
 
-function writtenProblemList() {
+// i added 'theListBefore' so that multiple lists could be strung together
+// but i think there will be an error if you add questions not in order.... i need to fix that
+function writtenProblemList(theListBefore) {
+    if (theListBefore) {this.theListBefore = theListBefore;}
+    else {this.theListBefore = {"lastQuestionNumber": 0};}
+
     this.problems = [];
     this.questionList = undefined;
     this.answerList = undefined;
+    this.numQuestions = 0;
+    this.lastQuestionNumber = 0;
 
     this.addProblem = function(problemObject) {
         var nextProblem = new writtenProblem(problemObject);
         this.problems.push(nextProblem);
+        this.numQuestions = this.problems.length;
+        this.lastQuestionNumber = this.numQuestions + this.theListBefore.lastQuestionNumber;
         this.makeLists()
     };
 
     this.makeLists = function() {
-        var questionList = $("<ol></ol>");
-        var answerList = $("<ol></ol>");
+        var questionList = $(`<ol start = '${this.theListBefore.lastQuestionNumber + 1}'></ol>`);
+        var answerList = $(`<ol start = '${this.theListBefore.lastQuestionNumber + 1}'></ol>`);
 
 
         this.problems.forEach((problem) => {
@@ -235,3 +244,9 @@ function writtenProblemList() {
     };
 }
 */
+
+/*
+What i should add
+--- a way to have mulitple lists that beign with each other
+so 'previous list' can be an input
+ */
