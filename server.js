@@ -1,6 +1,6 @@
 const express = require('express');
 const hbs = require('express-hbs');
-var unitMap = require(__dirname + '/content/units/unit_map');
+var unitMap = require(__dirname + '/public/unit_map');
 
 var app = express();
 

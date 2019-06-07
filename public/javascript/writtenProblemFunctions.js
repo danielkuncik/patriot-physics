@@ -56,6 +56,12 @@ physicsProblems.insertLists(questionID, answerID)
 argument1: The id of the <div> into which the list of questions will be inserted
 argument 2: The id of the <div> into which the list of answers will beinserted
 
+i want to refactor this completely!
+
+there should be a problem class
+
+
+
  */
 
 
@@ -99,6 +105,12 @@ function writtenProblem(problemObject) {
         }
     };
 
+    this.renderQuestionCanvas = function() {
+        if (this.problemObject.questionCanvas) {
+            return this.problemObject.questionCanvas;
+        }
+    };
+
     this.renderAnswerTable = function() {
         if (this.problemObject.answerTable) {
             return addTable(this.problemObject.answerTable.type, this.problemObject.answerTable.arguments);
@@ -136,6 +148,11 @@ function writtenProblem(problemObject) {
         if (this.renderAnswerTable()) {
             $(mainAnswerElement).append(this.renderAnswerTable().draw());
         }
+
+        if (this.renderQuestionCanvas()) {
+            $(mainQuestionElement).append(this.renderQuestionCanvas());
+        }
+
         if (this.renderSubQuestionList()) {
             var obj = this.renderSubQuestionList();
             $(mainQuestionElement).append(obj[0]);

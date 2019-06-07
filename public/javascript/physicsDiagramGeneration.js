@@ -852,12 +852,13 @@ class quantitativeGraph extends diagram {
 
     addSegmentAndTwoPoints(x1,y1,x2,y2) {
         try {
-            if (x1 < this.xMinOnGraph || x1 > this.xMaxOnGraph) {throw "ERROR: segment given out of range";}
-            if (x2 < this.xMinOnGraph || x2 > this.xMaxOnGraph) {throw "ERROR: segment given out of range";}
-            if (y1 < this.yMinOnGraph || y1 > this.yMaxOnGraph) {throw "ERROR: segment given out of range";}
-            if (y2 < this.yMinOnGraph || y2 > this.yMaxOnGraph) {throw "ERROR: segment given out of range";}
+            if (x1 < this.xMinOnGraph || x1 > this.xMaxOnGraph) {throw "ERROR: segment given out of range (x1)";}
+            if (x2 < this.xMinOnGraph || x2 > this.xMaxOnGraph) {throw "ERROR: segment given out of range (x2)";}
+            if (y1 < this.yMinOnGraphOriginal || y1 > this.yMaxOnGraphOriginal) {throw "ERROR: segment given out of range (y1)";}
+            if (y2 < this.yMinOnGraphOriginal || y2 > this.yMaxOnGraphOriginal) {throw "ERROR: segment given out of range (y2)";}
         }
         catch (err) {
+            console.log(y1, this.yMinOnGraph, this.yMaxOnGraph);
             console.log(err);
             return false
         }
@@ -1015,43 +1016,6 @@ class freeBodyDiagram extends diagram {
 
 
 }
-
-/*
-function unitMap() {
-    this.map = new diagram();
-    this.pods = []; /// will need this later
-
-    // only three hardwired parameters
-    // i am not hardwiring the wiggle room, that is set above
-    this.radius = 1;
-    this.horizontalSpaceBetween = 1;
-    this.verticalSpaceBetween = 1;
-
-
-    var x, y;
-    this.addPod = function(letter, verticalPosition, horizontalPosition) {
-        this.pods.push(
-            {
-                "letter": letter,
-                "verticalPosition": verticalPosition,
-                "horizontalPosition": horizontalPosition
-            }
-        );
-        x = horizontalPosition * (this.horizontalSpaceBetween + this.radius * 2);
-        y = verticalPosition * (this.verticalSpaceBetween + this.radius * 2);
-
-        this.map.addCircle([x,y],this.radius);
-        this.map.addText(letter, [x,y], this.radius * 1.3);
-    };
-
-    this.drawCanvas = function(maxWidth, maxHeight, unit, wiggleRoom) {
-        return this.map.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
-    }
-}
-// why aren't the letter perfectly centered in the circle???
-
- */
-
 
 class unitMap extends diagram {
     constructor() {
