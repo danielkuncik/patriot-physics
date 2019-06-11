@@ -1,8 +1,14 @@
 const express = require('express');
 const hbs = require('express-hbs');
-var unitMap = require(__dirname + '/public/unit_map');
+const unitMap = require(__dirname + '/public/unit_map');
+const shell = require('shelljs');
 
 var app = express();
+
+function isItThere(filename) {
+    let process = shell.ls(`${__dirname}/${filename}`);
+    return !process.stderr;
+}
 
 app.set('view engine', 'hbs');
 app.set('views', [__dirname + '/views',__dirname + '/content']);
@@ -15,7 +21,36 @@ app.engine('hbs', hbs.express4({
 app.use(express.static(__dirname + '/public'));
 
 
+/// indicates which itmes in the unit map are available and which are not!
+function prepareUnitMap() {
+    Object.keys(unitMap).forEach((superUnitKey) => {
+        if (!isItThere(`content/units/${superUnitKey}`) || !isItThere(`content/units/${superUnitKey}/${superUnitKey}_unit_cluster_page.hbs`)) {
+            unitMap[superUnitKey].available = false;
+        } else {
+            console.log(`content/units/${superUnitKey}/${superUnitKey}_unit_cluster_page.hbs`);
+            unitMap[superUnitKey].available = true;
+            Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+                if (!isItThere(`units_copy/${superUnitKey}/${unitKey}`) || !isItThere(`units_copy/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
+                    unitMap[superUnitKey].units[unitKey].available = false;
+                } else {
+                    unitMap[superUnitKey].units[unitKey].available = true;
+                    Object.keys(unitMap[superUnitKey].units[unitKey].goals).forEach((goalKey) => {
+                        if (!isItThere(`units_copy/${superUnitKey}/${unitKey}/${goalKey}.hbs`)) {
+                            unitMap[superUnitKey].units[unitKey].goals[goalKey].available = false;
+                        } else {
+                            unitMap[superUnitKey].units[unitKey].goals[goalKey].available = true;
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+prepareUnitMap();
 
+
+
+/// NOT READY YET!
 hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
     var unitCluster, unitClusterKey, unitClusterID, unitKey, unitID, pod, podKey, podID;
     var htmlString = "<nav class = 'navbar navbar-light bg-light' style: 'text-indent: 0px'>";
@@ -27,7 +62,7 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
         unitClusterID = "ID" + unitClusterKey;
         htmlString += "<li class = 'nav-item'>";
         htmlString += "<div class = 'row'>";
-        htmlString += `<a class = 'nav-link' href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a>`;
+        htmlString += `<a class = 'nav-link' href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
         htmlString += `<button class = 'navbar-toggler' data-toggle='collapse' data-target = '#${unitClusterID}'>`;
         htmlString += "<span class = 'navbar-toggler-icon'></span>";
         htmlString += "</button>";
@@ -42,7 +77,7 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
             unitID = "ID" + unitKey;
             htmlString += "<li class = 'nav-item'>";
             htmlString += "<div class = 'row'>";
-            htmlString += `<a class = 'nav-link' href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a>`;
+            htmlString += `<a class = 'nav-link' href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
             htmlString += `<button class = 'navbar-toggler' data-toggle='collapse' data-target = '#${unitID}'>`;
             htmlString += "<span class = 'navbar-toggler-icon'></span>";
             htmlString += "</button>";
@@ -52,7 +87,7 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
                 pod = unit.pods[podKey];
                 podID = "ID" + podKey;
                 htmlString += "<li class = 'nav-item'>";
-                htmlString += `<a class = 'nav-link' href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.name}</a>`;
+                htmlString += `<a class = 'nav-link' href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.title}</a>`;
                 htmlString += "</li>";
             }
             htmlString += "</ul>";
@@ -76,17 +111,25 @@ hbs.registerHelper('listAllUnitsAndPods', () => {
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
-        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a><ul>`;
-        for (unitKey in unitCluster.units) {
-            unit = unitCluster.units[unitKey];
-            unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a><ul>`;
-            for (podKey in unit.pods) {
-                pod = unit.pods[podKey];
-                unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.name}</a></li>`
+        if (unitCluster.available) {
+            unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a><ul>`;
+            for (unitKey in unitCluster.units) {
+                unit = unitCluster.units[unitKey];
+                if (unit.available) {
+                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a><ul>`;
+                    for (podKey in unit.pods) {
+                        pod = unit.pods[podKey];
+                        if (pod.available) {
+                            unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${pod.title}</a></li>`
+                        } else {
+                            unitList = unitList + `<li>${pod.title}</li>`
+                        }
+                    }
+                    unitList = unitList + "</ul></li>";
+                }
             }
             unitList = unitList + "</ul></li>";
         }
-        unitList = unitList + "</ul></li>";
     }
     unitList = unitList + "</ul>";
     return new hbs.SafeString(unitList);
@@ -97,13 +140,17 @@ hbs.registerHelper('listAllUnits', () => {
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
-        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a><ul>`;
-        for (unitKey in unitCluster.units) {
-            unit = unitCluster.units[unitKey];
-            unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a>`;
-            unitList = unitList + "</li>";
+        if (unitCluster.available) {
+            unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a><ul>`;
+            for (unitKey in unitCluster.units) {
+                unit = unitCluster.units[unitKey];
+                if (unit.available) {
+                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
+                    unitList = unitList + "</li>";
+                }
+            }
+            unitList = unitList + "</ul></li>";
         }
-        unitList = unitList + "</ul></li>";
     }
     unitList = unitList + "</ul>";
     return new hbs.SafeString(unitList);
@@ -114,15 +161,19 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
-        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a>`;
-        if (unitClusterKey === selectedUnitClusterKey) {
-            unitList = unitList + '<ul>';
-            for (unitKey in unitCluster.units) {
-                unit = unitCluster.units[unitKey];
-                unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a>`;
-                unitList = unitList + "</li>";
+        if (unitCluster.available) {
+            unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
+            if (unitClusterKey === selectedUnitClusterKey) {
+                unitList = unitList + '<ul>';
+                for (unitKey in unitCluster.units) {
+                    unit = unitCluster.units[unitKey];
+                    if (unit.available) {
+                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
+                        unitList = unitList + "</li>";
+                    }
+                }
+                unitList = unitList + "</ul></li>";
             }
-            unitList = unitList + "</ul></li>";
         }
     }
     unitList = unitList + "</ul>";
@@ -134,18 +185,18 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
-        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.name}</a>`;
+        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
         if (unitClusterKey === selectedUnitClusterKey) {
             unitList = unitList + '<ul>';
             for (unitKey in unitCluster.units) {
                 unit = unitCluster.units[unitKey];
-                unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.name}</a>`;
+                unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
                 if (unitKey === selectedUnitKey) {
                     unitList = unitList + "<ul>";
                     for (podKey in unit.pods) {
                         pod = unit.pods[podKey];
                         if (pod.letter) {letter = pod.letter} else {letter = ''}
-                        unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${pod.name}</a></li>`
+                        unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${pod.title}</a></li>`
                     }
                     unitList = unitList + "</ul>";
                 }
@@ -205,7 +256,7 @@ app.get('/unitcluster/:unitClusterKey', (req, res) => {
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitClusterKey + '_unit_cluster_page.hbs', {
         layout: 'unitClusterPageLayout.hbs',
         selectedUnitClusterKey: req.params.unitClusterKey,
-        title: unitCluster.name
+        title: unitCluster.title
     })
 });
 
@@ -215,10 +266,10 @@ app.get('/unit/:unitClusterKey/:unitKey', (req, res) =>{
     unit = unitCluster.units[req.params.unitKey];
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
         layout: 'unitPageLayout.hbs',
-        title: unit.name,
+        title: unit.title,
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
-        unitClusterName: unitCluster.name
+        unitClusterName: unitCluster.title
     });
     //res.render('units/')
 });
@@ -231,7 +282,7 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/' + req.params.podKey + '_pod_page.hbs', {
         layout: "podPageLayout.hbs",
         unitName: unit.name,
-        title: pod.name,
+        title: pod.title,
         level: pod.level,
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,

@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "express-hbs": "^2.0.2"
+    "express-hbs": "^2.1.2",
+    "shelljs": "^0.8.3"
   }
 }
