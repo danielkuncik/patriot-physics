@@ -8,8 +8,6 @@
 </head>
 <body>
 {{>commonJavascriptAssets}}
-<script src = "/javascript/physicsTableGeneration.js"></script>
-<script src = "/javascript/writtenProblemFunctions.js"></script>
 <header>
     {{>header}}
 </header>
@@ -32,6 +30,7 @@
 </div>
 <div id = 'putQuestionsHere'>
 </div>
+<!--
 <div class = 'container'>
     <button class = 'btn btn-info' data-toggle = "collapse" data-target = "#putAnswersHere">Show Answers</button>
     <div id = 'putAnswersHere' class = 'collapse'>
@@ -46,6 +45,7 @@
     });
     myProblems.insertLists('putQuestionsHere','putAnswersHere');
 </script>
+-->
 <div>
     {{listAllPodsWithinUnit selectedUnitClusterKey selectedUnitKey}}
  </div>

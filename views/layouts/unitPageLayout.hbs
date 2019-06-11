@@ -31,6 +31,7 @@
 <script>
     var myUnitMap = new unitMap();
     {{addAllPodsToMap selectedUnitClusterKey selectedUnitKey}}
+    myUnitMap.connectPrerequisites();
     var myUnitMapCanvas = myUnitMap.drawCanvas(500,500);
     $("#putUnitMapHere").append(myUnitMapCanvas);
 </script>

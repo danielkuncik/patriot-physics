@@ -226,8 +226,16 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
     const myPods = unitMap[unitClusterKey]["units"][unitKey]["pods"];
     var podAddString = "", pod;
     Object.keys(myPods).forEach((key) => {
+        let prerequisiteString = "";
         pod = myPods[key];
-        podAddString += (`myUnitMap.addPod('${pod.letter}',${pod.level},${pod.horizontal});`);
+        if (pod.prerequisites) {
+            pod.prerequisites.forEach((preReq) => {
+                prerequisiteString = prerequisiteString.concat("\"" + preReq + "\"" +  ",");
+            });
+        }
+        if (prerequisiteString[prerequisiteString.length - 1] === ",") {prerequisiteString = prerequisiteString.slice(0,-1)}
+        console.log(prerequisiteString);
+        podAddString += (`myUnitMap.addPod('${key}','${pod.letter}',${pod.level},${pod.horizontal},[${prerequisiteString}]);`);
     });
     return new hbs.SafeString(podAddString);
 });

@@ -1020,28 +1020,44 @@ class freeBodyDiagram extends diagram {
 class unitMap extends diagram {
     constructor() {
         super();
-        this.pods = [];
+        this.pods = {};
         this.radius = 1;
         this.horizontalSpaceBetween = 1;
         this.verticalSpaceBetween = 1;
     }
 
-    addPod(letter, verticalPosition, horizontalPosition) {
+    addPod(key, letter, verticalPosition, horizontalPosition, prerequisites) {
         let x, y, center;
-        this.pods.push(
+        this.pods[key] =
             {
                 "letter": letter,
                 "verticalPosition": verticalPosition,
-                "horizontalPosition": horizontalPosition
-            }
-        );
+                "horizontalPosition": horizontalPosition,
+                "prerequisites": prerequisites
+            };
         x = horizontalPosition * (this.horizontalSpaceBetween + this.radius * 2);
         y = verticalPosition * (this.verticalSpaceBetween + this.radius * 2);
         center = new point(x,y);
 
         super.addCircle(center,this.radius);
         super.addText(letter, center, this.radius * 1.3);
+
+        return this.pods[key];
     };
+
+    // function to add segments between all pods and prerequisite pods
+    connectPrerequisites() {
+        console.log('hello there mate');
+        /// add a function here that connects each pod to its prerequisite!!!!
+    }
+
+    getMaxLevel() {
+        // add function here
+    }
+
+    getMaxHorizontalPosition() {
+        // add function here
+    }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);

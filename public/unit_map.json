@@ -17,51 +17,51 @@
             {
               "title": "Numeric Algebra 1",
               "level": 1,
-              "horizontal": 1,
+              "horizontal": 2,
               "letter": "A",
-              "prerequisites": "",
+              "prerequisites": [],
               "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
             },
             "numeric_algebra_2": {
               "title": "Numeric Algebra 2",
               "level": 2,
               "horizontal": 1,
-              "letter": "C",
-              "prerequisites": "",
+              "letter": "B",
+              "prerequisites": ["numeric_algebra_1"],
               "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
             },
             "symbolic_algebra_1": {
               "title": "Symbolic Algebra 1",
               "level": 2,
-              "horizontal": 2,
-              "letter": "D",
-              "prerequisites": "",
+              "horizontal": 3,
+              "letter": "C",
+              "prerequisites": ["numeric_algebra_1"],
               "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
-            },
-            "symbolic_algebra_2": {
-              "title": "Symbolic Algebra 2",
-              "level": 3,
-              "horizontal": 1,
-              "letter": "G",
-              "prerequisites": "",
-              "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
             },
             "system_of_equations_1": {
               "title": "System of Equations 1",
               "subtitle": "Numeric Solutions",
               "level": 3,
-              "horizontal": 2,
-              "letter": "H",
-              "prerequisites": "",
+              "horizontal": 1,
+              "letter": "D",
+              "prerequisites": ["numeric_algebra_1"],
               "objective": "Solve a system of 2-3 equations and an equal number of variables numerically."
+            },
+            "symbolic_algebra_2": {
+              "title": "Symbolic Algebra 2",
+              "level": 3,
+              "horizontal": 3,
+              "letter": "E",
+              "prerequisites": ["symbolic_algebra_1"],
+              "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
             },
             "system_of_equations_2": {
               "title": "System of Equations 2",
               "subtitle": "Symbolic Solution",
               "level": 4,
-              "horizontal": 1,
-              "letter": "K",
-              "prerequisites": "",
+              "horizontal": 2,
+              "letter": "F",
+              "prerequisites": ["system_of_equations_1", "symbolic_algebra_2"],
               "objective": "Solve a system of 2-3 equations with an equal number of variables symbolically."
             }
           }
@@ -75,60 +75,60 @@
         "honors": false,
         "pods":
           {
-          "pi": {
-            "title": "Pi",
-            "level": 1,
-            "horizontal": 1,
-            "letter": "A",
-            "prerequisites": "",
-            "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle."
-          },
-          "circle_math_1":
-          {
-            "title": "Circle Math 1",
-            "level": 1,
-            "horizontal": 3,
-            "letter": "C",
-            "prerequisites": "",
-            "objective": "Solve numeric problems with one step relating elements of a circle, such as radius, diameter, area, and circumference"
-          },
           "trigonometry_1":
           {
             "title": "Trigonometry 1",
             "subtitle": "The Pythagorean Theorem",
             "level": 1,
-            "horizontal": 4,
-            "letter": "D",
-            "prerequisites": "",
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
             "objective": "Solve numerical problems using the Pythagorean Theorem"
           },
           "area_1":
           {
             "title": "Area 1",
             "level": 1,
-            "horizontal": 5,
-            "letter": "E",
-            "prerequisites": "",
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": [],
             "objective": "Memorize and use the formula for the area of rectangles, squares, right triangles, and trapezoids"
           },
-          "circle_math_2":
+          "pi": {
+            "title": "Pi",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": [],
+            "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle."
+          },
+          "circle_math_1":
           {
-            "title": "Circle Math 2",
-            "level": 2,
-            "horizontal": 1,
-            "letter": "F",
-            "prerequisites": "",
-            "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi."
+            "title": "Circle Math 1",
+            "level": 1,
+            "horizontal": 5,
+            "letter": "D",
+            "prerequisites": [],
+            "objective": "Solve numeric problems with one step relating elements of a circle, such as radius, diameter, area, and circumference"
           },
           "trigonometry_2":
           {
             "title": "Trigonometry 2",
             "subtitle": "One-Step SOHCAHTOA",
             "level": 2,
-            "horizontal": 2,
-            "letter": "G",
-            "prerequisites": "",
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["trigonometry_1"],
             "objective": "Solve for pieces of a triangle using sine, cosine, and tangent."
+          },
+          "circle_math_2":
+          {
+            "title": "Circle Math 2",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["pi", "circle_math_1"],
+            "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi."
           },
           "trigonometry_3":
           {
@@ -136,38 +136,38 @@
             "subtitle": "Two-Step SOHCAHTOA",
             "level": 3,
             "horizontal": 1,
-            "letter": "H",
-            "prerequisites": "",
+            "letter": "G",
+            "prerequisites": ["trigonometry_2"],
             "objective": "Solve trigonometric problems with variables in the denominator; given the minimum necessary pieces of information determine all other information regarding a triangle."
           },
           "algebraic_geometry_1":
           {
             "title": "Algebraic Geometry 1",
-            "subtitle": "Circles",
+            "subtitle": "Polygons",
             "level": 3,
             "horizontal": 2,
-            "letter": "I",
-            "prerequisites": "",
-            "objective": "Drive algebraic formulas to relate elements of a circle, such as radius, circumference, diameter, and area."
+            "letter": "H",
+            "prerequisites": ["trigonometry_3"],
+            "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
           },
           "algebraic_geometry_2":
           {
             "title": "Algebraic Geometry 2",
-            "subtitle": "Polygons",
+            "subtitle": "Circles",
             "level": 3,
             "horizontal": 3,
-            "letter": "J",
-            "prerequisites": "",
-            "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
+            "letter": "I",
+            "prerequisites": ["circle_math_2"],
+            "objective": "Drive algebraic formulas to relate elements of a circle, such as radius, circumference, diameter, and area."
           },
           "algebraic_geometry_3":
           {
             "title": "Algebraic Geometry 3",
             "subtitle": "Nontraditional Information",
             "level": 4,
-            "horizontal": 1,
-            "letter": "K",
-            "prerequisites": "",
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["trigonometry_3","algebraic_geometry_1", "algebraic_geometry_2"],
             "objective": "Figure out the area of a triangle or trapezoid in which given information requires sevearl steps of analysis.",
             "example": "Determine the area of a trapezoid if the base and a single angle are known."
           },
@@ -175,9 +175,9 @@
           {
             "title": "Trigonometric Identities",
             "level": 5,
-            "horizontal": 1,
-            "letter": "L",
-            "prerequisites": "",
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["algebraic_geometry_3"],
             "objective": "Derive trigonometric identities, such as the sum and difference angle formulas."
           }
         }
