@@ -30,15 +30,15 @@ function prepareUnitMap() {
             console.log(`content/units/${superUnitKey}/${superUnitKey}_unit_cluster_page.hbs`);
             unitMap[superUnitKey].available = true;
             Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
-                if (!isItThere(`units_copy/${superUnitKey}/${unitKey}`) || !isItThere(`units_copy/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
+                if (!isItThere(`content/units/${superUnitKey}/${unitKey}`) || !isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
                     unitMap[superUnitKey].units[unitKey].available = false;
                 } else {
                     unitMap[superUnitKey].units[unitKey].available = true;
-                    Object.keys(unitMap[superUnitKey].units[unitKey].goals).forEach((goalKey) => {
-                        if (!isItThere(`units_copy/${superUnitKey}/${unitKey}/${goalKey}.hbs`)) {
-                            unitMap[superUnitKey].units[unitKey].goals[goalKey].available = false;
+                    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((goalKey) => {
+                        if (!isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.hbs`)) {
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
                         } else {
-                            unitMap[superUnitKey].units[unitKey].goals[goalKey].available = true;
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
                         }
                     });
                 }
@@ -185,24 +185,36 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
-        unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
-        if (unitClusterKey === selectedUnitClusterKey) {
-            unitList = unitList + '<ul>';
-            for (unitKey in unitCluster.units) {
-                unit = unitCluster.units[unitKey];
-                unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
-                if (unitKey === selectedUnitKey) {
-                    unitList = unitList + "<ul>";
-                    for (podKey in unit.pods) {
-                        pod = unit.pods[podKey];
-                        if (pod.letter) {letter = pod.letter} else {letter = ''}
-                        unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${pod.title}</a></li>`
+        if (unitCluster.available) {
+            unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
+            if (unitClusterKey === selectedUnitClusterKey) {
+                unitList = unitList + '<ul>';
+                for (unitKey in unitCluster.units) {
+                    unit = unitCluster.units[unitKey];
+                    if (unit.available) {
+                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
+                        if (unitKey === selectedUnitKey) {
+                            unitList = unitList + "<ul>";
+                            for (podKey in unit.pods) {
+                                pod = unit.pods[podKey];
+                                if (pod.letter) {
+                                    letter = pod.letter
+                                } else {
+                                    letter = ''
+                                }
+                                if (pod.available) {
+                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${pod.title}</a></li>`
+                                } else {
+                                    unitList = unitList + `<li>${letter}: ${pod.title}</li>`
+                                }
+                            }
+                            unitList = unitList + "</ul>";
+                        }
+                        unitList = unitList + "</li>";
                     }
-                    unitList = unitList + "</ul>";
                 }
-                unitList = unitList + "</li>";
+                unitList = unitList + "</ul></li>";
             }
-            unitList = unitList + "</ul></li>";
         }
     }
     unitList = unitList + "</ul>";
@@ -279,7 +291,7 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     unitCluster = unitMap[req.params.unitClusterKey];
     unit = unitCluster.units[req.params.unitKey];
     pod = unit.pods[req.params.podKey];
-    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/' + req.params.podKey + '_pod_page.hbs', {
+    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.hbs', {
         layout: "podPageLayout.hbs",
         unitName: unit.name,
         title: pod.title,
@@ -288,7 +300,7 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
         selectedUnitKey: req.params.unitKey,
         selectedPodKey: req.params.podKey,
         objective: pod.objective,
-        assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
+        //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
         letter: pod.letter
     });
 });
