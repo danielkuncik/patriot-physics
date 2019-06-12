@@ -44,7 +44,7 @@
               "level": 3,
               "horizontal": 1,
               "letter": "D",
-              "prerequisites": ["numeric_algebra_1"],
+              "prerequisites": ["numeric_algebra_2"],
               "objective": "Solve a system of 2-3 equations and an equal number of variables numerically."
             },
             "symbolic_algebra_2": {
@@ -147,7 +147,7 @@
             "level": 3,
             "horizontal": 2,
             "letter": "H",
-            "prerequisites": ["trigonometry_3"],
+            "prerequisites": ["trigonometry_3", "area_1"],
             "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
           },
           "algebraic_geometry_2":
@@ -197,14 +197,14 @@
           {
             "title": "What is a function?",
             "level": 1,
-            "prerequisites": "",
+            "prerequisites": [],
             "objective": "Define a function, give and recognize examples of functinos and non-functions."
           },
           "linear_functions":
           {
             "title": "Linear Functions",
             "level": 1,
-            "prerequisites": "",
+            "prerequisites": [],
             "objective": "Given a graph of a linear function, write equations for that function; given an equation create a graph of a linear function."
           },
           "quadratic_functions_1":
@@ -326,7 +326,7 @@
             "prerequisites": "",
             "objective": "Given a square, square root, inverse square, or inverse square root proportion between two variables, solve numerical problems on how one variable changes as the other does."
           },
-          "graphical_porportionality_2":
+          "graphical_proportionality_2":
           {
             "title": "Graphical Proportionality 2",
             "level": 2,

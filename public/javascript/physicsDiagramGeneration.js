@@ -75,8 +75,10 @@ class point {
         let theta;
         const quadrant = this.getQuadrant();
         if (quadrant === '1') {theta = Math.atan(this.y / this.x);}
-        else if (quadrant === '2' || quadrant === '3') {theta = Math.PI + Math.atan(this.x, this.y);}
-        else if (quadrant === '4') {theta = 2 * Math.PI + Math.atan(this.x, this.y);}
+        /// inefficient, but very reliable
+        else if (quadrant === '2') {theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
+        else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.x) / (-1 * this.y));}
+        else if (quadrant === '4') {theta = Math.PI * 3 / 2 + Math.atan(this.x / -1 *  this.y);}
         else if (quadrant === '+X') {theta = 0;}
         else if (quadrant === '-X') {theta = Math.PI;}
         else if (quadrant === '+Y') {theta = Math.PI / 2;}
@@ -123,8 +125,15 @@ class point {
         let y = this.y + L * Math.sin(theta);
         return new point(x, y);
     }
-}
 
+    // returns a new point which is a particular length away at angle theta
+    getAnotherPointWithTrig(length, thetaInRadians) {
+        let newx, newy;
+        newx = this.x + length * Math.cos(thetaInRadians);
+        newy = this.y + length * Math.sin(thetaInRadians);
+        return new point(newx,newy)
+    }
+}
 
 // global variable origin
 const origin = new point(0,0);
@@ -1026,40 +1035,64 @@ class unitMap extends diagram {
         this.verticalSpaceBetween = 1;
     }
 
-    addPod(key, letter, verticalPosition, horizontalPosition, prerequisites) {
-        let x, y, center;
-        this.pods[key] =
+    addPod(key, letter, level, horizontalPosition, prerequisites) {
+        let x, y, newPod;
+        newPod =
             {
                 "letter": letter,
-                "verticalPosition": verticalPosition,
+                "level": level,
                 "horizontalPosition": horizontalPosition,
                 "prerequisites": prerequisites
             };
-        x = horizontalPosition * (this.horizontalSpaceBetween + this.radius * 2);
-        y = verticalPosition * (this.verticalSpaceBetween + this.radius * 2);
-        center = new point(x,y);
+        x = (horizontalPosition - 1) * (this.horizontalSpaceBetween + this.radius * 2);
+        y = (level - 1) * (this.verticalSpaceBetween + this.radius * 2);
+        newPod.center = new point(x,y);
 
-        super.addCircle(center,this.radius);
-        super.addText(letter, center, this.radius * 1.3);
+        this.pods[key] = newPod;
+
+        super.addCircle(newPod.center,this.radius);
+        super.addText(letter, newPod.center, this.radius * 1.3);
 
         return this.pods[key];
     };
 
+    // draws a segement between two existing pods
+    connectTwoPods(podKey1, podKey2) {
+        // add something that breaks it if podKeys can't be found?
+        let theta = this.pods[podKey1].center.getAngleToAnotherPoint(this.pods[podKey2].center);
+        let startPoint = this.pods[podKey1].center.getAnotherPointWithTrig(this.radius, theta);
+        let endPoint = this.pods[podKey2].center.getAnotherPointWithTrig(this.radius, theta + Math.PI);
+        let newSegment = super.addSegment(startPoint,endPoint);
+        newSegment.setThickness(2);
+    };
+
     // function to add segments between all pods and prerequisite pods
     connectPrerequisites() {
-        console.log('hello there mate');
-        /// add a function here that connects each pod to its prerequisite!!!!
+        Object.keys(this.pods).forEach((podKey) => {
+            let thisPod = this.pods[podKey];
+            thisPod.prerequisites.forEach((preReq) => {
+                this.connectTwoPods(preReq, podKey);
+            });
+        });
     }
 
     getMaxLevel() {
-        // add function here
+        let currentMaxLevel = 0;
+        Object.keys(this.pods).forEach((podKey) => {
+            if (this.pods[podKey].level > currentMaxLevel) {currentMaxLevel = this.pods[podKey].level;}
+        });
+        return currentMaxLevel
     }
 
     getMaxHorizontalPosition() {
-        // add function here
+        let currentMaxHorizontalPosition = 0;
+        Object.keys(this.pods).forEach((podKey) => {
+            if (this.pods[podKey].level > currentMaxHorizontalPosition) {currentMaxHorizontalPosition = this.pods[podKey].level;}
+        });
+        return currentMaxHorizontalPosition
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
-        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom)
     }
 }
