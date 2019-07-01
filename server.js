@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('express-hbs');
+const fs = require('fs');
 const unitMap = require(__dirname + '/public/unit_map');
 const shell = require('shelljs');
 
@@ -35,6 +36,40 @@ function prepareUnitMap() {
                 } else {
                     unitMap[superUnitKey].units[unitKey].available = true;
                     Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((goalKey) => {
+                        if (isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.hbs`)) {
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'hbs';
+                            console.log('hello its me');
+                        } else if (isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.pdf`)) {
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'pdf';
+                            console.log('ive been wondering if after all these years youd like to meet');
+                        } else {
+                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
+                        }
+                    });
+                }
+
+/*
+                if (isItThere(`content/units/${superUnitKey}/${unitKey}`)) {
+                    if (isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
+                        unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                        unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'hbs';
+                    } else if (isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.pdf`)) {
+                        unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                        unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'pdf';
+                    } else {
+                        unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
+                    }
+                } else {
+                    unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
+                }
+
+                if (!isItThere(`content/units/${superUnitKey}/${unitKey}`) || !isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
+                    unitMap[superUnitKey].units[unitKey].available = false;
+                } else {
+                    unitMap[superUnitKey].units[unitKey].available = true;
+                    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((goalKey) => {
                         if (!isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.hbs`)) {
                             unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
                         } else {
@@ -42,6 +77,7 @@ function prepareUnitMap() {
                         }
                     });
                 }
+                */
             });
         }
     });
@@ -299,18 +335,34 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     unitCluster = unitMap[req.params.unitClusterKey];
     unit = unitCluster.units[req.params.unitKey];
     pod = unit.pods[req.params.podKey];
-    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.hbs', {
-        layout: "podPageLayout.hbs",
-        unitName: unit.name,
-        title: pod.title,
-        level: pod.level,
-        selectedUnitClusterKey: req.params.unitClusterKey,
-        selectedUnitKey: req.params.unitKey,
-        selectedPodKey: req.params.podKey,
-        objective: pod.objective,
-        //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
-        letter: pod.letter
-    });
+    if (pod.fileType === 'hbs') {
+        res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.hbs', {
+            layout: "podPageLayout.hbs",
+            unitName: unit.name,
+            title: pod.title,
+            level: pod.level,
+            selectedUnitClusterKey: req.params.unitClusterKey,
+            selectedUnitKey: req.params.unitKey,
+            selectedPodKey: req.params.podKey,
+            objective: pod.objective,
+            //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
+            letter: pod.letter
+        });
+    } else if (pod.fileType === 'pdf') {
+        let filePath = '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
+        fs.readFile(__dirname + filePath , function (err,data){
+            console.log(__dirname + filePath);
+            res.contentType("application/pdf");
+            res.send(data);
+        });
+        /* var file = fs.createReadStream(filePath);
+        var stat = fs.statSync(filePath);
+        res.setHeader('Content-Length', stat.size);
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'attachment; filename=quote.pdf');
+        file.pipe(res);
+        */
+    }
 });
 // on the asset path, for some reason it does not work if i do not beign with a slash
 

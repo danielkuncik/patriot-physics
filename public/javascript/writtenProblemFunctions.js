@@ -69,7 +69,7 @@ function writtenProblem(problemObject) {
     this.problemObject = problemObject;
 
     this.renderText = function(text) {
-        var element = $("<li></li>");
+        var element = $("<li class = 'physicsQuestion'></li>");
         if (typeof(text) === 'object') {
             text.forEach((line) => {
                 element.append(line);
