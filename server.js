@@ -4,6 +4,8 @@ const fs = require('fs');
 const unitMap = require(__dirname + '/public/unit_map');
 const shell = require('shelljs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 function isItThere(filename) {
@@ -421,7 +423,4 @@ app.get('/getJoke/:imageName', (req,res)=>{
 });
 
 
-
-
-
-app.listen(3000);
+app.listen(port);
