@@ -3983,97 +3983,162 @@
         "honors": true,
         "pods":
         {
-          "em_v_mech_1":
+          "electromagnetic_vs_mechanical_waves_1":
           {
             "title": "Electromagnetic vs. Mechanical Waves 1",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize electromagnetic and mechanical waves from a list; answer multiple choice questions on differences between electromagnetic and mechanical waves."
           },
-          "parts_of_a_wave":
+          "parts_of_a_wave_1":
           {
-            "title": "Parts of a Wave",
+            "title": "Parts of a Wave 1: Transverse Waves",
             "level": 1,
-            "objective": "Identify important parts of a wave."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Identify important parts of a traveling transverse wave."
           },
-          "draw_waves_1":
+          "transverse_vs_longitudinal_waves":
           {
-            "title": "Drawing Waves 1",
+            "title": "Transverse vs. Longitudinal Waves",
             "level": 1,
-            "objective": "Draw waves with a particular wavelength or a particular amplitude (not both)."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Differentiate between pictures and examples of transverse and longitudinal waves."
+          },
+          "drawing_waves_1A":
+          {
+            "title": "Drawing Waves 1A: Wavelength",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw transverse waves with a particular wavelength and each crest correctly positioned"
+          },
+          "drawing_waves_1B":
+          {
+            "title": "Drawing Waves 1B: Amplitude",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw transverse waves with a particular amplitude."
           },
           "wave_equation":
           {
             "title": "The Wave Equation",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use the equation v = lambda f in simple contexts related to waves."
           },
-          "em_v_mech_2":
+          "electromagnetic_vs_mechanical_waves_2":
           {
             "title": "Electromagnetic vs. Mechanical Waves 2",
             "level": 2,
-            "objective": "Write definitions of electromagnetic and mechancial waves; write differences between electromagnetic and mechanical waves.",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Write definitions of electromagnetic and mechanical waves; write differences between electromagnetic and mechanical waves.",
             "notes": "This is the quiz in which students formally define a wave."
           },
-          "speed_of_sound_and_light":
+          "speed_of_sound_and_light_1":
           {
-            "title": "Speed of Sound and Light",
+            "title": "Speed of Sound and Light 1",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify the difference between the speeds of sound and light; identify real world implications of this."
           },
-          "oscillation_during_wave":
+          "oscillation_particles_during_wave":
           {
-            "title": "Oscillation During a Wave",
+            "title": "Oscillation of Particles During a Wave",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Diagram how an object oscillates as a transverse or longitudinal wave passes through."
           },
           "wave_categorization":
           {
             "title": "Wave Categorization",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Categorize waves using a matrix as electromagnetic or mechanical and as longitudinal or transverse."
           },
-          "parts_of_a_lognitudinal_wave":
+          "parts_of_a_wave_2":
           {
-            "title": "Parts of a Wave: Longitudinal",
+            "title": "Parts of a Wave 2: Longitudinal Waves",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify parts of a longitudinal wave; briefly measure wavelength and amplitude of a longitudinal wave."
           },
           "drawing_waves_2":
           {
-            "title": "Drawing Waves 2",
+            "title": "Drawing Waves 2: Wavelength and amplitude",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw waves of particular wavelength AND amplitude, with a particular focus on the crests of a wave.",
             "limits": "Grading is generous if the troughs of a wave are not perfectly drawn."
           },
           "drawing_waves_3":
           {
-            "title": "Drawing Waves 3",
+            "title": "Drawing Waves 3: Crests and Troughs positioned",
             "level": 3,
-            "objective": "Draw waves of particular wavelength AND ampltidue with every crest, trough, and center point correctly positioned."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw waves of particular wavelength AND ampltidue with every crest, trough, and center point correctly positioned.",
+            "note": "Crest, troughs, and middle points must all be correctly positoned, horizontally and vertically, for full credit."
           },
-          "transverse_v_longitudinal_x":
+          "making_transverse_longitudinal_waves":
           {
             "title": "Making Transverse and Longitudinal Waves",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how to create transverse and longitudinal waves in multiple contexts; explain logically why sound is longitudinal and light is transverse."
           },
-          "speed_of_sound_and_light_media":
+          "speed_of_sound_and_light_in_media":
           {
             "title": "Speed of Sound and Light in Media",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify how mdia change the speed of sound and the speed of light; identify why media has opposite effects on the speed of sound and of light.",
             "notes": "Also deals with the ideas of transverse and longitudinal waves.."
           },
           "drawing_waves_4":
           {
-            "title": "Drawing Waves 4",
+            "title": "Drawing Waves 4: Phase",
             "level": 4,
-            "objective": "Draw waves with a particular wavelength, amplitude, and phase, with all crests, troughs, and center points drawn correctly."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw waves with a particular wavelength, amplitude, and phase, with all crests, troughs, and center points drawn correctly.",
+            "notes": "The wave must begin on a particular phase for full credit. Phases presented are 0, pi/2, pi, and 3pi/2"
           },
-          "combined_tranverse_longitudinal":
+          "combined_transverse_longitudinal_waves":
           {
             "title": "Combined Transverse-Longitudinal Waves",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Analyze waves that combine transverse and longitudinal components."
           }
         }
@@ -4090,60 +4155,90 @@
           {
             "title": "Speed of Sound in Materials",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify how the speed of sound changes in different media; define the term 'medium' in the content of waves"
           },
           "doppler_effect":
           {
             "title": "The Doppler Effect",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify how the Doppler effect changes sound; identify real world examples of the Doppler effect"
           },
-          "octave_1":
+          "octaves_1":
           {
             "title": "Octaves 1",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve for all wavelengths and frequencies of a particular octave, with notes given."
           },
-          "octave_2":
+          "octaves_2":
           {
             "title": "Octaves 2: Musical Scales",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve for all wavelengths and frequencies of a particular octave, with ratios of the octave given."
           },
-          "doppler_equation":
+          "doppler_efffect_equation":
           {
             "title": "Doppler Effect Equation",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Numerically solve the Doppler effect equation and relate the result to a real life experience."
           },
           "doppler_diagrams":
           {
             "title": "Doppler Diagrams",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Analyze diagrams of the Doppler effect to explain why the effect occurs."
           },
           "explain_speed_of_sound":
           {
             "title": "Explain The Speed of Sound",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain why the speed of sound changes within different media."
           },
           "doppler_algebra":
           {
             "title": "Doppler Algebra",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Algebraically solve the Doppler effect equation."
           },
           "doppler_proportionality":
           {
             "title": "Doppler Proportionality",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use proportionality to analyze the Doppler effect equation."
           },
           "sound_barrier":
           {
             "title": "The Sound Barrier",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use diagrams of sound waves to explain the existence of the sound barrier, and what occurs when it is broken."
           }
         }
@@ -4156,128 +4251,236 @@
         "AP": true,
         "pods":
         {
-          "finding_wavelength":
+          "finding_wavelength_from_diagrams":
           {
             "title": "Finding Wavelength from Diagrams",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "From a of waves of a given length, find the wavelength of the wave; includes fractional wavelengths"
           },
-          "traveling_v_standing_wave":
+          "traveling_vs_standing_wave":
           {
             "title": "Traveling vs. Standing Waves",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify examples of and differences between traveling and standing wave; identify parts of a standing wave."
           },
-          "harmonics_table_1":
+          "harmonics_1":
           {
-            "title": "Harmonics on a String Table",
+            "title": "Harmonics 1: Harmonics on a String Table",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Using a table, draw a series of harmonics on a string and find the wavelength and frequency of each."
           },
-          "harmonics_table_2":
+          "harmonics_2":
           {
-            "title": "Quarter Wavelength Harmonics",
+            "title": "Harmonics 2: Quarter Wavelength Harmonics",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Using a table, draw a series of harmonics and find the wavelength and frequency of each; harmonics include a node on one end and an antinode on the other."
           },
-          "harmonics_unguided_math":
+          "harmonics_3":
           {
-            "title": "Harmonics Unguided Math",
+            "title": "Harmonics 3: Harmonics Unguided Math",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic."
           },
-          "harmonics_algebra":
+          "harmonics_4":
           {
-            "title": "Algebraic Harmonics",
+            "title": "Harmonics 4: Symbolic Harmonics",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Create algebraic formulas and an algebraic series that determine the properties of different harmonics."
           },
-          "haromnics_proportionality":
+          "harmonics_5":
           {
-            "title": "Harmonics Proportionality",
+            "title": "Harmonics 5: Harmonics Proportionality",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use proportionality to further analyze harmonics."
           },
           "speed_of_sound":
           {
             "title": "Speed of Sound",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine the speed of sound by identifying different harmonics. "
           },
-          "tension_of_string":
+          "string_tension_harmonics":
           {
             "title": "String Tension Harmonics",
             "level": 5,
-            "objective": "Analye harmonics on a string with a different tensions of the string"
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze harmonics on a string with a different tensions of the string"
           },
           "hanging_string_harmonics":
           {
             "title": "Hanging String Harmonics",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Analyze harmonics in a hanging string."
           },
           "musical_instrument":
           {
             "title": "Musical Instrument",
             "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use knowledge of harmonics to design a musical instrument that plays different musical scales."
           }
         }
       },
-      "geoemtric_optics":
+      "geometric_optics":
       {
         "title": "Geometric Optics",
-        "notes": "All quizzes involve drawing ray diagrams AND using the lens formulas.",
         "completed": true,
         "pods":
         {
-          "covex_lens_1":
+          "lens_1":
           {
-            "title": "Convex Lens: Object Outside Focal Length",
-            "level": 1
+            "title": "Lens 1: Convex Lens Object Outside Focal Length",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a convex lens with an object outside the focal length."
           },
-          "concave_mirror_1":
+          "mirror_1":
           {
-            "title": "Concave Mirror: Objecti Outside Focal Range",
-            "level": 1
+            "title": "Mirror 1: Concave Mirror Object Outside Focal Range",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a concave mirror with an object inside the focal range"
           },
-          "convex_lens_2":
+          "lens_mirror_equations_1":
           {
-            "title": "Convex Lens: Object Inside Focal Rnage",
-            "level": 2
+            "title": "Lens and Mirror Equations 1",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Predict the location of an image from the position of an object and the focal length of a lens or mirror."
           },
-          "concave_mirror_2":
+          "lens_mirror_equations_2":
           {
-            "title": "Concave Mirror: Objecti inside of Focal Range",
-            "level": 2
+            "title": "Lens and Mirror Equations 2",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Given the location and height of an object and the focal length of a lens or mirror, predict the location of the image, the height of the image, if the image is real or virtual, if the image is upright or inverted"
+          },
+          "lens_2":
+          {
+            "title": "Lens 2: Convex Lens Object Inside Focal Rnage",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a convex lens with an object inside the focal range"
+          },
+          "mirror_2":
+          {
+            "title": "Mirror 2: Concave Mirror Object inside of Focal Range",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a concave mirror with an object inside the focal range"
+          },
+          "lens_3":
+          {
+            "title": "Lens 3: Concave Lenses",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a concave lens with an object inside or outside of the focal range"
+          },
+          "mirror_3":
+          {
+            "title": "Mirror 3: Convex Mirrors",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a convex mirror with an object inside or outside of the focal range"
+          },
+          "lens_4":
+          {
+            "title": "Lens 4: Diagrams and Equations",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "For a convex or concave lenses with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the lens equations."
+          },
+          "mirror_4":
+          {
+            "title": "Mirror 4: Diagrams and Equations",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "For a convex or concave mirror with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the lens equations."
           },
           "plane_mirrors":
           {
             "title": "Plane Mirrors",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw Ray Diagrams for plane mirrors; describe the double speed phenomenon"
           },
-          "concave_lenses":
+          "multiple_lens_and_mirrors_A":
           {
-            "title": "Concave Lenses",
-            "level": 3
+            "title": "Multiple Lenses and Mirrors A",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a setup involving multiple lenses and mirrors linked together. Confirm this diagram mathces the results given from the equations."
           },
-          "convex_mirrors":
+          "multiple_lens_and_mirrors_B":
           {
-            "title": "Convex Mirrors",
-            "level": 3
-          },
-          "multiple_lens_and_mirrors":
-          {
-            "title": "Multiple Lenses and Mirrors",
-            "level": 4
+            "title": "Multiple Lenses and Mirrors B",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a ray diagram for a setup involving multiple lenses and mirrors linked together. Confirm this diagram mathces the results given from the equations."
           }
         }
       },
       "wave_phenomena":
       {
         "title": "Wave Phenomena",
-        "notes": "Potentially: Reflection and refraction should be seperated from diffraction and interference",
+        "notes": "Potentially: Reflection and refraction should be seperated from diffraction and interference; 8-22-19 DEFINITELY necessary",
         "completed": true,
         "honors": true,
         "pods":
@@ -4288,39 +4491,52 @@
             "level": 1,
             "objective": "Identify real-world examples of reflection, refraction, interference, scattering, diffraction, and absorpotion of waves."
           },
-          "reflection_refraction_diagrams_1":
+          "reflection_diagram_1":
           {
-            "title": "Wave Phenomena Diagrams 1",
+            "title": "Reflection Diagram 1: Identification",
             "level": 1,
-            "objective": "Identify the pieces of a diagram of reflection and refraction."
+            "objective": "Given a diagram of reflection, identify elements of the diagrams. Identify the law of reflection"
           },
-          "reflection_refraction_diagrams_2":
+          "reflection_diagram_2":
           {
-            "title": "Wave Phenomena Diagrams 2",
+            "title": "Reflection Diagram 2: From Memory",
             "level": 2,
-            "objective": "From memory, create diagrams of reflection and refraction."
+            "objective": "From memory, create diagrams A diagram of reflection. Demonstrate that this diagram illustrates the law of reflection."
+          },
+          "refraction_diagrams_1":
+          {
+            "title": "Refraction Diagrams 1: Identification",
+            "level": 1,
+            "objective": "Given a diagram of refraction, identify elements of the diagrams. Indicate whether light speeds of slows in the situation and what it could represent."
+          },
+          "refraction_diagrams_2":
+          {
+            "title": "Refraction Diagrams 2: From Memory",
+            "level": 2,
+            "objective": "Given a diagram of refraction, identify elements of the diagrams. Indicate whether light speeds of slows in the situation and what it could represent.",
+            "idea": "should the quiz not indicate whether light must speed or slow, and leave that to be identified seperately?"
           },
           "diffraction_scattering_diagrams":
           {
             "title": "Diffraction and Scattering Diagrams",
             "level": 2,
-            "objective": "Draw diagams that illustrate the phenomena of diffraction and scattering."
+            "objective": "Draw diagrams that illustrate the phenomena of diffraction and scattering."
           },
-          "wave_interference_diagrams_1":
+          "interference_diagrams_1":
           {
-            "title": "Wave Intereference Diagrams 1",
+            "title": "Interference Diagrams 1: Interference in Regularly Shaped Waves",
             "level": 2,
-            "objective": "Draw and recgonize diagrams that show examples of normally-shaped waves passing through each other."
+            "objective": "Draw and recognize diagrams that show examples of normally-shaped waves passing through each other."
           },
-          "wave_intereference_diagrams_2":
+          "interference_diagrams_2":
           {
-            "title": "Wave Intereference Diagrams 2",
+            "title": "Interference Diagrams 2: Interference in Non-Regularly Shaped Waves",
             "level": 3,
             "objective": "Draw and recognize diagrams that show non-regular examples of waves passing through each other."
           },
-          "reflection_refraction_multiple_diagrams":
+          "wave_diagrams_3":
           {
-            "title": "Diagrams with Multiple Instances of Reflection and Refraction",
+            "title": "Wave Diagrams 3: Multiple Instances of Reflection and Refraction",
             "level": 3,
             "objective": "Draw and label diagrams that include multiple instances of reflection and refraction."
           },
@@ -4328,7 +4544,7 @@
           {
             "title": "Snell's Law Basic",
             "level": 3,
-            "objective": "Draw and label quantiattive diagrams of refraction using Snell's Law."
+            "objective": "Draw and label quantitative diagrams of refraction using Snell's Law."
           },
           "huygens_principle":
           {
@@ -4340,7 +4556,7 @@
           {
             "title": "Diffraction Grating Diagrams",
             "level": 3,
-            "objective": "Draw diagrams that illustrate interference patterns as light travels through a diffractino grating."
+            "objective": "Draw diagrams that illustrate interference patterns as light travels through a diffraction grating."
           },
           "snells_law_prism":
           {
@@ -4348,7 +4564,7 @@
             "level": 4,
             "objective": "Use Snell's law to explain how a prism splits light into colors."
           },
-          "speed_of_light_discovery":
+          "finding_speed_of_light":
           {
             "title": "Finding the speed of light",
             "level": 4,
@@ -4363,19 +4579,19 @@
           },
           "discovery_of_dna_structure":
           {
-            "title": "Discovery_of_DNA_structure",
+            "title": "Discovery of the DNA Structure",
             "level": 5,
-            "objective": "Use the diffraction grating principles and formula to explain the structure of DNA."
+            "objective": "Using a diagram of X-Ray diffraction, describe the structure of DNA and defend your answer."
           },
-          "rainbows_quantiative":
+          "rainbows_quantitative":
           {
-            "title": "Rainbows Quantiative",
+            "title": "Rainbows Quantitative",
             "level": 5,
             "objective": "Use Snell's Law and diagrams of refraction and reflection to quantiatively and qualitatively explain how a rainbow is made from raindrops."
           }
         }
       },
-      "electrmgntc_spectrm":
+      "the_electromagnetic_spectrum_analytical":
       {
         "title": "The Electromagnetic Spectrum: Analytical",
         "enduring_understandings":
@@ -4391,45 +4607,50 @@
         "honors": true,
         "pods":
         {
-          "memorz_electrmgntc_spectrm_1":
+          "electromagnetic_spectrum_1":
           {
             "title":"Electromagnetic Spectrum 1",
             "level": 1,
-            "horizontal": 1,
-            "letter": "A",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency (multiple choice)"
           },
-          "chosing_color_by_wavelngth":
+          "choosing_color_by_wavelength":
           {
             "title": "Choosing Colors by Wavelength",
             "level": 1,
-            "horizontal": 2,
-            "letter": "B",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "For visible electromagnetic waves of specific wavelengths, determine the color of that wave."
           },
-          "memorz_electromgntc_spectrm_2":
+          "electromagnetic_spectrum_2":
           {
             "title": "Electromagnetic Spectrum 2",
             "level": 2,
-            "horizontal": 1,
-            "letter": "C",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer)."
           },
-          "chosing_electrmgntc_by_wavelgnth_1":
+          "choosing_electromagnetic_wave_by_wavelength_A":
           {
-            "title": "Choosing Electromagnetic Wave by Wavelength",
-            "level": 2,
-            "horizontal": 2,
-            "letter": "D",
+            "title": "Choosing Electromagnetic Wave by Wavelength A",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "All values are given in SI scientific notation and not in metric units"
           },
-          "chosing_electrmgntc_by_wavelgnth_2":
+          "choosing_electromagnetic_wave_by_wavelength B":
           {
-            "title": "Choosing Electromagnetic Wave by Wavelength",
-            "level": 2,
-            "horizontal": 2,
-            "letter": "D",
+            "title": "Choosing Electromagnetic Wave by Wavelength B",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "Includes values in metric units."
           },
@@ -4437,61 +4658,70 @@
           {
             "title": "Wave Formulas 1",
             "level": 3,
-            "horizontal": 2,
-            "letter": "F",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step"
           },
           "wave_proportionality":
           {
             "title": "Wave proportionality",
             "level": 3,
-            "horizontal": 3,
-            "letter": "A",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules."
           },
           "wave_formulas_2":
           {
             "title": "Wave Formulas 2",
             "level": 4,
-            "horizontal": 1,
-            "letter": "G",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form"
           },
-          "logarthmc_graph":
+          "logarithmic_graph_electromagnetic_spectrum_1":
           {
-            "title":"Logarithmic Graph of the EM Spectrum",
+            "title":"Logarithmic Graph of the Electromagnetic Spectrum 1",
             "level": 4,
-            "horizontal": 2,
-            "letter": "H",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, eneergy, and frequency; express the logarthmic value on the axis"
           },
-          "logarthmc_graph_2":
+          "logarithmic_graph_electromagnetic_spectrum_2":
           {
             "title": "Logarithmic Graph of the EM Spectrum 2",
             "level": 5,
-            "horizontal": 1,
-            "letter": "I",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, eneergy, and frequency; express graph using a lograthmic scale but numbers written in linear"
           },
           "space_photos":
           {
             "title": "Space Photos",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain, and do some examples, how photos are made of non-visible light objects in space."
           },
-          "visible_experience":
+          "visible_experience_human_experience":
           {
             "title": "Visible Light and the Human Experience",
             "level": 6,
-            "horizontal": 1,
-            "letter": "J",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "From your knowledge of the electromagnetic spectrum, surmise philosophical conclucions on the human expereince and the role of humans in the universe."
           }
         }
       },
-      "electrmgntc_spectrm_concept":
+      "the_electromagnetic_spectrum_conceptual":
       {
-        "title": "Electromagnetic Spectrum Conceptual",
+        "title": "The Electromagnetic Spectrum: Conceptual",
         "notes":
                 [
                   "I still need to add goals related to additive and subtractive processes"
@@ -4504,8 +4734,9 @@
           {
             "title": "Basic Infrared Camera",
             "level": 1,
-            "horizontal": 1,
-            "letter": "A",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain an infrared camera very simply.",
             "examples":
                     [
@@ -4513,30 +4744,40 @@
                       "Why does ice appear black on an infrared cameara?"
                     ]
           },
-          "reflection_and_color":
+          "reflection_color":
           {
             "title": "Reflection and Color",
             "level": 1,
-            "horizontal": 2,
-            "letter": "A",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Predict how objects of different color will reflect different photons of light."
           },
           "additive_color":
           {
             "title": "Additive Color",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how colors of light combine to make different colors; relate this fact to light from the sun and flourescent lights"
           },
           "long_vs_short_wavelength":
           {
             "title": "Long vs. Short Wavelength",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify long and short wavelength electromagnetic waves and explain difference in how they would interact."
           },
           "infrared_camera_advanced":
           {
             "title": "Infrared Camera Advanced",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how different objects emit different wavelengths; ex",
             "examples":
             [
@@ -4545,25 +4786,32 @@
               "How do objects of different human color appear on an infrared camera."
             ]
           },
-          "define_radioactive":
+          "define_radioactivity":
           {
             "title": "Define Radioactivity",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Define all the terms that make electromagnetic waves seem scary, such as radioactivity; analyze the relative value of these terms."
           },
           "subtractive_color":
           {
             "title": "Subtractive Color",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color."
           },
-          "identfy_applictns":
+          "identify_applications_electromagnetic_waves":
           {
           "title": "Identify Applications of Electromagnetic Waves",
           "level": 3,
-          "horizontal": 1,
-          "letter": "E",
-          "objective": "In writing, identify human applications each of types of invisible electromagnetic waves; relate the particular uses of each wave to wavelength, frequency and energy",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "In writing, identify human applications each of types of invisible electromagnetic waves; relate the particular uses of each wave to wavelength, frequency and energy",
           "examples":
                   [
                     "What types of wave are most used for communicatio and why?",
@@ -4576,31 +4824,34 @@
           {
             "title": "Why is the sky blue?",
             "level": 3,
-            "horizontal": 5,
-            "letter": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue."
           },
           "climate_change":
           {
             "title": "Climate Change",
             "level": 4,
-            "horizontal": 3,
-            "letter": "A",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect."
           },
           "galaxy_in_all_wavelengths":
           {
             "title": "A Galaxy in All Wavelengths",
             "level": 5,
-            "horizontal": 2,
-            "letter": "K",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum."
           }
         }
       }
     }
   },
-  "funamental_forces":
+  "fundamental_forces":
   {
     "title": "Fundamental Forces",
     "units":
