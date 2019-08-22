@@ -983,7 +983,7 @@
           }
         }
       },
-      "error_approximation_significant_sigures":
+      "error_approximation_significant_figures":
       {
         "title": "Error Approximation and Significant Figures",
         "level": 2,
@@ -1142,7 +1142,7 @@
     "title": "Mechanics",
     "units":
     {
-      "kinematics_1":
+      "forward_kinematics":
       {
         "title": "Forward Kinematics",
         "level": 1,
@@ -1174,7 +1174,7 @@
             "prerequisites": [],
             "objective": "Solve for acceleration using its definition."
           },
-          "kinemtc_graphs_1":
+          "position_graphs":
           {
             "title": "Position Graphs",
             "level": 1,
@@ -1183,7 +1183,7 @@
             "prerequisites": [],
             "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
           },
-          "kinematic_graphs_2":
+          "velocity_acceleration_graphs":
           {
             "title": "Velocity and Acceleration Graphs",
             "level": 1,
@@ -1216,7 +1216,7 @@
               "Problems involve 1 or 2 algebraic steps to solve."
             ]
           },
-          "kine_graph_informtn_1":
+          "quantitative_kinematic_graphs_1":
           {
             "title": "Quantitative Kinematic Graphs 1",
             "level": 2,
@@ -1225,7 +1225,7 @@
             "prerequisites": [],
             "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement."
           },
-          "kine_graph_informtn_2":
+          "quantitative_kinematic_graphs_2":
           {
             "title": "Quantitative Kinematic Graphs 2",
             "level": 3,
@@ -1234,7 +1234,7 @@
             "prerequisites": [],
             "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
           },
-          "kine_eq_2":
+          "kinematic_equations_2":
           {
             "title": "Kinematic Equations 2",
             "level": 3,
@@ -1249,7 +1249,7 @@
                       "Problems involve no more than 3 algebraic stpes to solve"
                     ]
           },
-          "kine_eq_3":
+          "kinematic_equations_3":
           {
             "title": "Kinematic Equations 3",
             "level": 3,
@@ -1264,7 +1264,7 @@
               "Problems involve many algebraic steps, including variables within parentheses."
             ]
           },
-          "kine_eq_memorz":
+          "memorize_kinematic_equations":
           {
             "title": "Memorize Kinematic Equations",
             "level": 3,
@@ -1273,16 +1273,16 @@
             "prerequisites": [],
             "objective": "Memorize the kinematic equations."
           },
-          "kine_graph_two_step":
+          "2_step_kinematic_graphs":
           {
-            "title": "2-step Kinematic Graphs 2-step",
+            "title": "2-step Kinematic Graphs",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs that match that motion."
           },
-          "kine_graph_story":
+          "kinematic_graph_story":
           {
             "title": "Kinematic Graph Story",
             "level": 4,
@@ -1300,7 +1300,7 @@
             "prerequisites": [],
             "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
           },
-          "quantative_kinematic_graphs_4":
+          "quantitative_kinematic_graphs_4":
           {
             "title": "Quantitative Kinematic Graphs 4",
             "level": 4,
@@ -1331,7 +1331,7 @@
             "prerequisites": [],
             "objective": "Solve the kinematic equations for step-wise motion"
           },
-          "kine_graph_stepwise":
+          "quantitative_kinematic_graphs_5":
           {
             "title": "Quantitative Kinematic Graphs 5: Stepwise Kinematic Graphs",
             "level": 5,
@@ -1351,7 +1351,7 @@
           }
         }
       },
-      "dynamcs_math":
+      "dynamics_math":
       {
         "title": "Dynamics Math (Newton's Second Law)",
         "level": 1,
@@ -1387,7 +1387,7 @@
             "prerequisites": [],
             "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object"
           },
-          "state_newtons_second_law":
+          "memorize_newtons_second_law":
           {
             "title": "Memorize Newton's Second Law",
             "level": 2,
@@ -1479,7 +1479,7 @@
           }
         }
       },
-      "dynamics_concepts":
+      "qualitative_forces":
       {
         "title": "Qualitative Forces (Newton's Third Law)",
         "level": 1,
@@ -1497,7 +1497,7 @@
             "prerequisites": [],
             "objective": "State Newton's Third Law and recognize examples of how it applies."
           },
-          "fbd_1":
+          "free_body_diagrams_1":
           {
             "title": "Free-Body Diagrams 1",
             "level": 1,
@@ -1515,7 +1515,7 @@
             "prerequisites": [],
             "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking."
           },
-          "fbd_2":
+          "free_body_diagrams_2":
           {
             "title": "Free-Body Diagrams 2",
             "level": 2,
@@ -1524,7 +1524,7 @@
             "prerequisites": [],
             "objective": "Draw from memory the most common free-body diagrams."
           },
-          "fbd_3A":
+          "free_body_diagrams_3A":
           {
             "title": "Free-Body Diagrams 3A: Multiple Item Free-Body Diagrams",
             "level": 3,
@@ -1533,7 +1533,7 @@
             "prerequisites": [],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs."
           },
-          "fbd_3B": {
+          "free_body_diagrams_3B": {
             "title": "Free-Body Diagrams 3B: Multiple Item Free-Body Diagrams",
             "level": 3,
             "horizontal": null,
@@ -1551,7 +1551,7 @@
             "prerequisites": [],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force."
           },
-          "lazy_donkey":
+          "lazy_donkey_paradox":
           {
             "title": "The Lazy Donkey Paradox",
             "level": 4,
@@ -1560,7 +1560,7 @@
             "prerequisites": [],
             "objective": "Using free-body diagrams, defend the statement that motion in still possible given action reaction forces."
           },
-          "newtons_third_law_4":
+          "newtons_third_law_3":
           {
             "title": "Newtons Third Law 3",
             "level": 4,
@@ -1614,7 +1614,7 @@
             "prerequisites": [],
             "objective": "Use Newton's Laws to describe the experience of your car pressing into your back when a car accelerates."
           },
-          "space_dynamics_2":
+          "space_motion_1":
           {
             "title": "Space Motion 1",
             "level": 2,
@@ -1633,7 +1633,7 @@
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a gien free-body diagram determine and defend the motion of that objecti",
             "limits": "Limited to single step motion"
           },
-          "air_resistance_2":
+          "air_resistance_1":
           {
             "title": "Air Resistance 1",
             "level": 2,
@@ -1642,7 +1642,7 @@
             "prerequisites": [],
             "objective": "Explain what factors determine how crucial air resistance is in analyzing a situation."
           },
-          "space_motion_lv_3":
+          "space_motion_2":
           {
             "title": "Space Motion 2",
             "level": 3,
@@ -1651,7 +1651,7 @@
             "prerequisites": [],
             "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces"
           },
-          "newtons_model_lv_3":
+          "newtons_model_3":
           {
             "title": "Newton's Model 3",
             "level": 3,
@@ -1661,16 +1661,16 @@
             "objective": "Connect motino to free-body diagrams in abstract cases; for a given motion draw and defend a dfree-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
             "notes": "Includes two-step motion; in particular, focuses on objects taht are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples."
           },
-          "air_resistance_lv_3":
+          "air_resistance_2":
           {
-            "title": "Air Resistance Level 2",
+            "title": "Air Resistance 2",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Explain when and why air resistance matters; relate the concept of inertia to the effects of friction and air resistance."
           },
-          "space_motion_lv_4":
+          "space_motion_3":
           {
             "title": "Space Motion 3",
             "level": 4,
@@ -1679,7 +1679,7 @@
             "prerequisites": [],
             "objective": "Defend the statement that all laws of motion are the same on earth, in space, and in all areas of the universe; and defend this notion using principles and examples."
           },
-          "fbs_lv_4A":
+          "newtons_model_4A":
           {
             "title": "Newton's Model 4A",
             "level": 4,
@@ -1688,9 +1688,9 @@
             "prerequisites": [],
             "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: kicking a box and shooting an arrow."
           },
-          "fbs_lv_4B":
+          "newtons_model_4B":
           {
-            "title": "Newton's Model 4-B",
+            "title": "Newton's Model 4B",
             "level": 4,
             "horizontal": null,
             "letter": "",
@@ -1724,9 +1724,9 @@
             "prerequisites": [],
             "objective": "Use Newton's laws and knowledge of air resistance to describe how falling from several miles in the air is possible."
           },
-          "spaceship_vs_earth":
+          "artificial_gravity":
           {
-            "title": "Artifical Gravity",
+            "title": "Artificial Gravity",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -1735,7 +1735,7 @@
           }
         }
       },
-      "collisions":
+      "collisions_explosions":
       {
         "title": "Collisions and Explosions",
         "level": 1,
@@ -1744,7 +1744,7 @@
         "honors": true,
         "pods":
         {
-          "momentm_formula":
+          "momentum_formula":
           {
             "title": "The Momentum Formula",
             "level": 1,
@@ -1753,7 +1753,7 @@
             "prerequisites": [],
             "objective": "Use the momentum formula to solve numerical problems."
           },
-          "memorz_conserv_momentm":
+          "memorize_conservation_of_momentum":
           {
             "title": "Memorize the Conservation of Momentum",
             "level": 1,
@@ -1762,7 +1762,7 @@
             "prerequisites": [],
             "objective": "Memorize, word for word, the conservation of momentum."
           },
-          "conserv_momentm_1":
+          "conservation_of_momentum_1":
           {
             "title": "Conservation of Momentum 1",
             "level": 2,
@@ -1771,7 +1771,7 @@
             "prerequisites": [],
             "objective": "Use the conservation of momentum to solve simple collision problems."
           },
-          "conserv_momentm_2":
+          "conservation_of_momentum_2":
           {
             "title": "Conservation of Momentum 2",
             "level": 2,
@@ -1780,7 +1780,7 @@
             "prerequisites": [],
             "objective": "Use the conservation of momentum to solve explosion problems and perfectly inelastic colision problems."
           },
-          "conserv_momentm_derivatn_1":
+          "collision_formula_derivation_1":
           {
             "title": "Collision Formula Derivation 1",
             "level": 3,
@@ -1789,7 +1789,7 @@
             "prerequisites": [],
             "objective": "Derive the formula that explains a collision problem and explain what each term of that formula represents."
           },
-          "conserv_momentm_derivatn_2":
+          "collision_formula_derivation_2":
           {
             "title": "Collision Formula Derivation 2: Perfectly Inelastic Collisions",
             "level": 3,
@@ -1798,7 +1798,7 @@
             "prerequisites": [],
             "objective": "Derive a formula that explains explosion or perfectly inelastic collision problems and explain what each term of that formula represents."
           },
-          "elastc_collisn_derivatn":
+          "collision_formula_derivation_3":
           {
             "title": " Collision Formula Derivation 3: Perfectly Elastic Collisions",
             "level": 4,
@@ -1807,7 +1807,7 @@
             "prerequisites": [],
             "objective": "Derive and explain formulas that describe an elastic collision."
           },
-          "pool_ball_collisn":
+          "advanced_pool_ball_collision":
           {
             "title": "Advanced Pool Ball Collision",
             "level": 5,
@@ -1827,16 +1827,16 @@
           }
         }
       },
-      "conservation_of_energy_math":
+      "conservation_of_energy_quantitative":
       {
-        "title": "Conservation of Energy: Quantitative",
+        "title": "Conservation of Energy Quantitative",
         "level": 1,
         "completed": true,
         "AP": true,
         "honors": true,
         "pods":
         {
-          "consrv_energy_box_1":
+          "energy_table_1":
           {
             "title": "Energy Table 1",
             "level": 1,
@@ -1854,7 +1854,7 @@
             "prerequisites": [],
             "objective": "Solve problems involving the KE and GPE formulas with only 1 -2 algebraic steps."
           },
-          "memorz_consvr_energy":
+          "memorize_conservation_of_energy":
           {
             "title": "Memorize The Conservation of Energy",
             "level": 1,
@@ -1872,7 +1872,7 @@
             "prerequisites": [],
             "objective": "Solve problems involving the KE, GPE, and EPE formulas with 2 - 4 algebraic steps."
           },
-          "conservation_energy_box_2":
+          "energy_table_2":
           {
             "title": "Energy Table 2",
             "level": 2,
@@ -1881,7 +1881,7 @@
             "prerequisites": [],
             "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations"
           },
-          "KE_GPE_graphs":
+          "kinetic_potential_energy_graphs_1":
           {
             "title": "Kinetic and Potential Energy Graphs 1",
             "level": 2,
@@ -1890,7 +1890,7 @@
             "prerequisites": [],
             "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls."
           },
-          "conservation_of_energy_box_3":
+          "energy_table_3":
           {
             "title": "Energy Table 3",
             "level": 3,
@@ -1899,7 +1899,7 @@
             "prerequisites": [],
             "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, solve numerical questions based upon the result; consider zero point as a part of the GPE formula"
           },
-          "conservation_of_energy_box_4":
+          "energy_table_4":
           {
             "title": "Energy Table 4: Heat Loss",
             "level": 3,
@@ -1908,7 +1908,7 @@
             "prerequisites": [],
             "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss"
           },
-          "energy_formulas_algebra":
+          "energy_formulas_3":
           {
             "title": "Energy Formulas 3: Symbolic Solutions",
             "level": 3,
@@ -1917,7 +1917,7 @@
             "prerequisites": [],
             "objective": "Algebraically solve the formulas for KE, GPE, and EPE"
           },
-          "conservation_of_energy_box_5":
+          "energy_table_5":
           {
             "title": "Energy Table 5: Symbolic Table",
             "level": 4,
@@ -1926,7 +1926,7 @@
             "prerequisites": [],
             "objective": "Fill out a table describing how kinetic and potential energy change algebraically; explain why the GPE formula technically can only be for a change, not an absolute value."
           },
-          "KE_GPE_proportionality":
+          "energy_formulas_4":
           {
             "title": "Energy Formulas 4: Proportionality",
             "level": 4,
@@ -1935,7 +1935,7 @@
             "prerequisites": [],
             "objective": "Use proportionality to analzye the kinetic and potential energy formulas; make inferences regarding real world situations with this knowledge"
           },
-          "KE_GPE_graph_heat_loss":
+          "KE_GPE_graph_with_heat_loss":
           {
             "title": "KE and GPE graph with heat loss",
             "level": 4,
@@ -1944,7 +1944,7 @@
             "prerequisites": [],
             "objective": "Make a graph showing how kinetic and potential energy change as something moves down a hill; including the effect of heat loss"
           },
-          "algebraic_energy_problems":
+          "algebraic_energy_analysis":
           {
             "title": "Algebraic Energy Analysis",
             "level": 5,
@@ -1977,7 +1977,7 @@
             "prerequisites": [],
             "objective": "Find the distance and displacement of simple descriptions of 1-D motion."
           },
-          "very_basic_vectors_and_scalars":
+          "very_basic_vectors_scalars":
           {
             "title": "Very Basic Vectors and Scalars",
             "level": 1,
@@ -1986,7 +1986,7 @@
             "prerequisites": [],
             "objective": "Give very basic definitions and examples of vectors and scalars."
           },
-          "avg_speed_avg_vel":
+          "average_speed_average_velocity":
           {
             "title": "Average Speed and Average Velocity",
             "level": 2,
@@ -1999,7 +1999,7 @@
               "Equations are not given on quiz."
             ]
           },
-          "axis_positn":
+          "defining_axis_position_vectors":
           {
             "title": "Defining an Axis and Position Vectors",
             "level": 2,
@@ -2008,7 +2008,7 @@
             "prerequisites": [],
             "objectives": "Determine the position and displacement of a walking man with different origins and direction of axes."
           },
-          "direct_vel_acc":
+          "direction_velocity_acceleration":
           {
             "title": "Direction of Velocity and Acceleration",
             "level": 2,
@@ -2017,7 +2017,7 @@
             "prerequisites": [],
             "objectives": "For different descriptions of motion and motion maps, determine the correct directions of velocity and acceleration."
           },
-          "two_directn_graphs":
+          "kinematic_graphs_two_direction_motion":
           {
             "title": "Kinematic Graphs of Two-Direction Motion",
             "level": 3,
@@ -2027,7 +2027,7 @@
             "objectives":"Select qualitative kinematic graphs related to description of single step, accelerated and decelerated motion in two different directions.",
             "note": "Traffic light problems"
           },
-          "two_directn_eq":
+          "kinematic_equations_two_direction_motion":
           {
             "title": "Kinematic Equations of Two-Direction Motion",
             "level": 3,
@@ -2041,7 +2041,7 @@
               "Focus on simplest kinematic wquation."
             ]
           },
-          "two_directn_eq_2":
+          "two_direction_kinematic_equations_2":
           {
             "title": "Two-Direction Kinematic Equations 2",
             "level": 4,
@@ -2055,7 +2055,7 @@
               "Focus on all kinematic equations."
             ]
           },
-          "two_directn_multstp_graphs":
+          "kinematic_graphs_multi_step_two_direction_motion":
           {
             "title": "Kinematic Graphs of Multi-Step Two-Direction Motion",
             "level": 4,
@@ -2093,7 +2093,7 @@
             "prerequisites": [],
             "objective": "Identify internal and external forces acting on a defined system."
           },
-          "calculate_center_of_mass_1":
+          "center_of_mass_1":
           {
             "title": "Center of Mass 1: Simple Calculations",
             "level": 1,
@@ -2111,7 +2111,7 @@
             "prerequisites": [],
             "objective": "Find the numerical acceleration of a frictionless Atwood machine with two masses."
           },
-          "calculate_center_of_mass_2":
+          "center_of_mass_2":
           {
             "title": "Center of Mass 2: Inconvenient Calculations",
             "level": 2,
@@ -2120,7 +2120,7 @@
             "prerequisites": [],
             "objective": "Find the center of mass of a series of spheres with inconvienient masses and positions, such as planets and moons."
           },
-          "approximate_center_of_mass":
+          "center_of_mass_3":
           {
             "title": "Center of Mass 3: Approximations",
             "level": 2,
@@ -2138,7 +2138,7 @@
             "prerequisites": [],
             "objective": "Create a free-body diagram and find the acceleration of an Atwood machine with three blocks and/or subject to friction."
           },
-          "stacking_problems_2":
+          "stacking_problems_1":
           {
             "title": "Stacking Problems 1: Numeric Stacking Problems",
             "level": 3,
@@ -2147,7 +2147,7 @@
             "prerequisites": [],
             "objective": "Draw correct numerical free-body diagrams for two blocks stacked on top of each other."
           },
-          "apply_center_of_mass":
+          "center_of_mass_4":
           {
             "title": "Center of Mass 4: Applications",
             "level": 3,
@@ -2156,7 +2156,7 @@
             "prerequisites": [],
             "objective": "Apply the concept of center of mass to real world situations, such as a higher jumper, or understanding a difference in center of mass between sexes."
           },
-          "reduce_to_point_mass":
+          "reduce_system_point_mass":
           {
             "title": "Reduce a System to a Point Mass",
             "level": 3,
@@ -2165,7 +2165,7 @@
             "prerequisites": [],
             "objective": "Apply the concept of center of mass in order to treat a rotating projectile as a point mass; anlayze the earth-moon system as a point mass."
           },
-          "algebraic_atwood_machine":
+          "atwood_machine_3":
           {
             "title": "Atwood Machine 3: Symbolic Solutions",
             "level": 4,
@@ -2175,7 +2175,7 @@
 
             "objective": "Solve a frictionless and more complex Atwood machine algebraically."
           },
-          "atwood_machine_proportionality":
+          "atwood_machine_4":
           {
             "title": "Atwood Machine 4: Proportionality",
             "level": 4,
@@ -2184,7 +2184,7 @@
             "prerequisites": [],
             "objective": "Use proportionality to predict the functioning of an Atwood machine (knowledge that can be used to demonstrate Newton's Second Law)"
           },
-          "algebraic_stacking_problems":
+          "stacking_problems_2":
           {
             "title": "Stacking Problems 2: Symbolic Stacking Problems",
             "level": 4,
@@ -2193,7 +2193,7 @@
             "prerequisites": [],
             "objective": "Create algebraic free-body diagrams for two blocks stacked upon each other"
           },
-          "prove_system_method_atwood":
+          "atwood_machine_proof":
           {
             "title": "Atwood Machine Proof",
             "level": 5,
@@ -2202,7 +2202,7 @@
             "prerequisites": [],
             "objective": "Prove, in the case of an Atwood machine, that a system can be analyzed only by external forces and not internal forces."
           },
-          "algebraic_stacking_three_blocks":
+          "stacking_problems_3":
           {
             "title": "Stacking Problems 3: Three Blocks",
             "level": 5,
@@ -2222,7 +2222,7 @@
         "level": 2,
         "pods":
         {
-          "work_and_power_formulas":
+          "work_power_formulas":
           {
             "title": "Work and Power Formulas",
             "level": 1,
@@ -2231,7 +2231,7 @@
             "prerequisites": [],
             "objective": "Solve the work and power formulas, including in situations in which an object does not move."
           },
-          "mechanical_energy":
+          "defining_mechanical_energy":
           {
             "title": "Defining Mechanical Energy",
             "level": 1,
@@ -2258,9 +2258,9 @@
             "prerequisites": [],
             "objective": "Analyze how work and power are different for weightlifters lifting weights at diffferent speeds."
           },
-          "conservative_v_nonconservative_forces":
+          "conservative_vs_nonconservative_forces":
           {
-            "title": "Conservative Forces vs. Nonconservative Forces",
+            "title": "Conservative vs. Nonconservative Forces",
             "level": 2,
             "horizontal": null,
             "letter": "",
@@ -2287,7 +2287,7 @@
             "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
             "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet."
           },
-          "graphical_calculations_of_work":
+          "force_position_graphs_1":
           {
             "title": "Force-Position Graphs 1: Calculating Work",
             "level": 3,
@@ -2296,9 +2296,9 @@
             "prerequisites": [],
             "objective": "Calculate Work using a force-position graph."
           },
-          "block_on_a_ramp_multiple_points":
+          "multiple_viewpoints_1":
           {
-            "title": "Multiple Viewpoints: Block on a Ramp",
+            "title": "Multiple Viewpoints 1: Block on a Ramp",
             "level": 4,
             "horizontal": null,
             "letter": "",
@@ -2310,9 +2310,9 @@
                       "block-alone system"
                     ]
           },
-          "comet_from_multiple_points_of_view":
+          "multiple_viewpoints_2":
           {
-            "title": "Multiple Viewpoints: Comet",
+            "title": "Multiple Viewpoints 2: Comet",
             "level": 4,
             "horizontal": null,
             "letter": "",
@@ -2324,7 +2324,7 @@
                       "comet-alone system"
                     ]
           },
-          "graphical_work_energy_theorem":
+          "force_position_graphs_2":
           {
             "title": "Force-Position Graphs 2: Work-Energy Theorem",
             "level": 4,
@@ -2333,9 +2333,9 @@
             "prerequisites": [],
             "objective": "Use a force-position graph together with the work-energy theorem to find dynamic and kinematic quantities."
           },
-          "prove_work_energy_theorem_special_case":
+          "prove_work_energy_theorem":
           {
-            "title": "Proving the Work Energy Theorem: Special Case",
+            "title": "Prove the Work Energy Theorem: Special Case",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -2351,9 +2351,9 @@
             "prerequisites": [],
             "objective": "Use the work-energy theorem to derive potential energy formulas."
           },
-          "spidey_string_multiple_points_of_view":
+          "multiple_viewpoints_3":
           {
-            "title": "Multiple Viewpoints: Spidey String",
+            "title": "Multiple Viewpoints 3: Spidey String",
             "level": 4,
             "horizontal": null,
             "letter": "",
@@ -2391,7 +2391,7 @@
             "prerequisites": [],
             "objective": "Solve straightforward numerical problems using the impulse formula."
           },
-          "conceptual_impulse_1":
+          "impulse_concepts_1":
           {
             "title": "Impulse Concepts 1",
             "level": 1,
@@ -2420,7 +2420,7 @@
             "objective": "Answer questions that require inferences combined with use of the impulse formula.",
             "example": "Information is given about momentum; an object stops or beigns stopped"
           },
-          "conceptual_impulse_2":
+          "impulse_concepts_2":
           {
             "title": "Impulse Concepts 2",
             "level": 2,
@@ -2438,7 +2438,7 @@
             "prerequisites": [],
             "objective": "Qualitatively relate simple (1-2 step) momentum-time and force-time graphs"
           },
-          "impulse_proof":
+          "impulse_formula_3":
           {
             "title": "Impulse Formula 3: Algebraic Proof",
             "level": 3,
@@ -2465,7 +2465,7 @@
             "prerequisites": [],
             "objective": "Quantitatively relate momentum-time and force-time graphs with 1-2 steps to consider; use the concept of impulse in making this connection."
           },
-          "kinematic_and_dynamic_graphs_1":
+          "kinematic_dynamics_graphs_1":
           {
             "title": "Kinematic and Dynamic Graphs 1",
             "level": 3,
@@ -2474,7 +2474,7 @@
             "prerequisites": [],
             "objective": "Relate the five 'time' graphs of kinematic and dynamic quantities: position, velocity, acceleration, momentum, force."
           },
-          "impulse_proportionality":
+          "impulse_formula_4":
           {
             "title": "Impulse Formula 4: Proportionality and Inferences",
             "level": 4,
@@ -2483,7 +2483,7 @@
             "prerequisites": [],
             "objective": "Analyze impulse by using proportionality; make real world inferences using this analysis."
           },
-          "kinematic_and_dynamic_graphs_2":
+          "kinematic_dynamics_graphs_2":
           {
             "title": "Kinematic and Dynamic Graphs 2",
             "level": 4,
@@ -2492,7 +2492,7 @@
             "prerequisites": [],
             "objective": "Quantitatively relate the five graphs of kinematic and dynamic values."
           },
-          "kinematic_and_dynamic_graphs_3":
+          "kinematic_dynamic_graphs_3":
           {
             "title": "Kinematic and Dynamic Graphs 3",
             "level": 5,
@@ -2520,16 +2520,16 @@
             "prerequisites": [],
             "objective": "Convert a vector between standard form and component form and back"
           },
-          "dragging_at_and_angle_kf_only":
+          "dragging_at_angle_1":
           {
-            "title": "Dragging at and Angle 1: Kinetic Friction Only",
+            "title": "Dragging at an Angle 1: Kinetic Friction Only",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Analyze the motion of a block dragged at an angle with only kinetic friction; explain why the drag influences the normal force."
           },
-          "dragging_at_an_angle_all_friction":
+          "dragging_at_angle_2":
           {
             "title": "Dragging at an Angle 2: Static and Kinetic Friction",
             "level": 3,
@@ -2538,7 +2538,7 @@
             "prerequisites": [],
             "objective": "Analyze the motion of a block dragged at an angle under both static and kinetic friction."
           },
-          "hanging_two_ropes":
+          "hanging_sign_1":
           {
             "title": "Hanging a Sign 1: Two Ropes",
             "level": 2,
@@ -2547,7 +2547,7 @@
             "prerequisites": [],
             "objective": "Draw a quantitative free-body diagram of a sign hanging from two ropes, both at an angle."
           },
-          "hanging_three_ropes":
+          "hanging_sign_2":
           {
             "title": "Hanging a Sign 2: Three Ropes",
             "level": 3,
@@ -2592,7 +2592,7 @@
             "prerequisites": [],
             "objective": "Create an algebraic model of a person pulling on a cordon rope."
           },
-          "dragging_on_a_ramp":
+          "ramp_problems_6":
           {
             "title": "Ramp Problems 6: Draging and Object while on a ramp",
             "level": 5,
@@ -2601,7 +2601,7 @@
             "prerequisites": [],
             "objective": "Algebraically model a block being dragged on a ramp with friction."
           },
-          "algebraic_dragging_at_angle":
+          "dragging_at_angle_3":
           {
             "title": "Dragging at an Angle 3: Algebraic Solutions",
             "level": 4,
@@ -2610,7 +2610,7 @@
             "prerequisites": [],
             "objective": "Algebraically model a block being dragged at an angle; create algebraic conditions for the block to experience different types of motion."
           },
-          "ramp_problems_algebraic_1":
+          "ramp_problems_4":
           {
             "title": "Ramp Problems 4: Algebraic with No frictino or Kinetic Friction",
             "level": 3,
@@ -2619,7 +2619,7 @@
             "prerequisites": [],
             "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model"
           },
-          "ramp_problems_algebraic_2":
+          "ramp_problems_5":
           {
             "title": "Ramp Problems 5: ALgebraic with Kinetic and Static Friction",
             "level": 4,
@@ -2638,7 +2638,7 @@
         "honors": false,
         "pods":
         {
-          "one_dimensional_galilean_relativity":
+          "galilean_relativity_1":
           {
             "title": "Galilean Relativity 1: One-Dimensional Problems",
             "level": 1,
@@ -2656,7 +2656,7 @@
             "prerequisites": [],
             "objective": "Define reference frames; define velocity as relative to a particular reference frame."
           },
-          "two_dimensional_galilean_relativity":
+          "galilean_relativity_2":
           {
             "title": "Galilean Relativity 2: Crossing the River (2-D)",
             "level": 2,
@@ -2666,7 +2666,7 @@
             "objective": "Determine the motion of objects in two dimensions relative to particular reference frames",
             "example": "Cross a river and end up in th ecorrecct spot on the opposite shore while accounting for current in the river."
           },
-          "jumping_out_of_a_car":
+          "jumping_out_of_car":
           {
             "title": "Jumping out of a Car",
             "level": 2,
@@ -2684,9 +2684,9 @@
             "prerequisites": [],
             "objective": "Define and identify inertial and non-inertial reference frames."
           },
-          "cup_on_dash_baord_two_points_of_view":
+          "cup_on_dashboard_two_points_view":
           {
-            "title": "Cup on the Dashboard: Two Points of View",
+            "title": "Cup on the Dashboard from Two Points of View",
             "level": 3,
             "horizontal": null,
             "letter": "",
@@ -2703,7 +2703,7 @@
             "objective": "Use knowledge of physics within each reference frame to argue that it is possible for the earth to move while humans live without feeling its motion; analye the motion of an object shot vertically out from a car.",
             "note": "Sun Roof cannon problem included in this pod."
           },
-          "earths_refernce_frame":
+          "earths_reference_frame":
           {
             "title": "Earth's Reference Frame",
             "level": 4,
@@ -2741,7 +2741,7 @@
         "honors": true,
         "pods":
         {
-          "parablc_arcs":
+          "parabolic_arcs":
           {
             "title": "Parabolic Arcs",
             "level": 1,
@@ -2751,7 +2751,7 @@
             "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectile motion always occurs in parabolic arcs"
 
           },
-          "falling_problems_numerc":
+          "falling_1":
           {
             "title": "Falling 1: Numeric Problems",
             "level": 1,
@@ -2760,7 +2760,7 @@
             "prerequisites": [],
             "objective": "Solve numeric problems about objects falling down and objects thrown downards."
           },
-          "falling_kinemtc_graphs":
+          "falling_2":
           {
             "title": "Falling 2: Kinematic Graphs",
             "level": 1,
@@ -2769,7 +2769,7 @@
             "prerequisites": [],
             "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
           },
-          "pop_up_problems_numerc":
+          "pop_up_1":
           {
             "title": "Pop-Up 1: Numeric Problems",
             "level": 2,
@@ -2778,7 +2778,7 @@
             "prerequisites": [],
             "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
           },
-          "horizntl_launch_conceptl":
+          "horizontal_launch_1":
           {
             "title": "Horizontal Launch 1: Conceptual",
             "level": 2,
@@ -2787,7 +2787,7 @@
             "prerequisites": [],
             "objective": "In writing, describe motion in different dimensions when an object is launched horizontally; relate this motion to the free-body diagram using Newton's Model"
           },
-          "horizntl_launch_numerc":
+          "horizontal_launch_2":
           {
             "title": "Horizontal Launch 2: Numeric",
             "level": 2,
@@ -2796,7 +2796,7 @@
             "prerequisites": [],
             "objective": "Solve for unknown numeric quantities when an object is launched from a cliff horizontally."
           },
-          "pop_up_newtons_model":
+          "pop_up_2":
           {
             "title": "Pop-Up 2: Newton's Model",
             "level": 3,
@@ -2805,7 +2805,7 @@
             "prerequisites": [],
             "objective": "Relate the motion of an object thrown directly to the free-body diagram using Newton's Model."
           },
-          "pop_up_kinemtc_graphs":
+          "pop_up_3":
           {
             "title": "Pop-Up 3: Kinematic Graphs",
             "level": 3,
@@ -2814,7 +2814,7 @@
             "prerequisites": [],
             "objective": "Draw qualitative kinematic graphs of an object thrown directly upward."
           },
-          "bullet_drop":
+          "bullet_drop_conundrum":
           {
             "title": "Bullet Drop Conundrum",
             "level": 3,
@@ -2823,7 +2823,7 @@
             "prerequisites": [],
             "objective": "Explain the bullet drop conundrum in words."
           },
-          "pop_up_algebrc":
+          "pop_up_4":
           {
             "title": "Pop-Up 4: Symbolic Algebra",
             "level": 3,
@@ -2832,7 +2832,7 @@
             "prerequisites": [],
             "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air."
           },
-          "horizontal_launch_kinemtc_graphs":
+          "horizontal_launch_3":
           {
             "title": "Horizontal Launch 3: Kinematic Graphs",
             "level": 4,
@@ -2841,7 +2841,7 @@
             "prerequisites": [],
             "objective": "Draw qualitative kinematic graphs in each dimension for an object launched horizontally."
           },
-          "angled_launch_conceptl":
+          "cannon_problem_1":
           {
             "title": "Cannon Problem 1: Conceptual",
             "level": 4,
@@ -2850,7 +2850,7 @@
             "prerequisites": [],
             "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; relate this motion to the free-body diagram using Newton's Model."
           },
-          "angled_launch_numerc":
+          "cannon_problem_2":
           {
             "title": "Cannon Problem 2: Numeric",
             "level": 4,
@@ -2859,7 +2859,7 @@
             "prerequisites": [],
             "objective": "Solve for relevant unknown numeric quantities when an object is launched upward at an angle."
           },
-          "angled_launch_algebrc":
+          "cannon_problem_3":
           {
             "title": "Cannon Problem 3: Symbolic Algebra",
             "level": 5,
@@ -2868,7 +2868,7 @@
             "prerequisites": [],
             "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities."
           },
-          "angled_launch_kinemtc_graphs":
+          "cannon_problem_4":
           {
             "title": "Cannon Problem 4: Kinematic Graphs",
             "level": 5,
@@ -2877,9 +2877,9 @@
             "prerequisites": [],
             "objective": "Draw qualitative kinematic graphs for an object fired from a cannon at an upward angle."
           },
-          "angled_launch_high_ground":
+          "cannon_problem_5":
           {
-            "title": "Cannon Fired From High Ground",
+            "title": "Cannon Problem 5: Fired From High Ground",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -2895,7 +2895,7 @@
             "prerequisites": [],
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           },
-          "wr_in_motion":
+          "wide_receiver_motion":
           {
             "title": "Wide Receiver in Motion",
             "level": 6,
@@ -2924,7 +2924,7 @@
             "prerequisites": [],
             "objective": "Draw objects in circular motion; identify the centripetal force; predict what happens if the centripetal force is released"
           },
-          "circular_vs_rot_motion":
+          "circular_vs_rotational_motion":
           {
             "title": "Circular vs. Rotational Motion",
             "level": 1,
@@ -2942,7 +2942,7 @@
             "prerequisites": [],
             "objective": "Find the speed of an object in circular motion."
           },
-          "circular_motion_newt_model":
+          "newtons_model_circular_motion_1":
           {
             "title": "Newton's Model for Circular Motion 1",
             "level": 3,
@@ -2960,7 +2960,7 @@
             "prerequisites": [],
             "objective": "Identify the four relevant vectors for an object in circular motion: position, velocity, acceleration, and force."
           },
-          "centripetal_acceleration_formula":
+          "centripetal_acceleration_formula_1":
           {
             "title": "Centripetal Acceleration Formula 1",
             "level": 2,
@@ -2978,7 +2978,7 @@
             "prerequisites": [],
             "objective": "Using Newton's Model, explain why objects in a shopping bag do not fall out when it is flipped over and why the earth does not move towards the sun if it is attracted to it."
           },
-          "centripetal_acceleration_math":
+          "centripetal_acceleration_formula_2":
           {
             "title": "Centripetal Acceleration Formula 2",
             "level": 3,
@@ -3014,7 +3014,7 @@
             "prerequisites": [],
             "objective": "Use the formulas for centripetal acceleration and gravitation to find the mass of the sun and earth."
           },
-          "loop-de-loop_problems":
+          "loop_de_loop_problems":
           {
             "title": "Loop-de-loop Problems",
             "level": 4,
@@ -3023,13 +3023,14 @@
             "prerequisites": [],
             "objective": "Analyze the forces acting on a pilot while he loops his plane over."
           },
-          "prove_centri_acc_form":
+          "proving_centripetal_acceleration_formula":
           {
             "title": "Proving the Centripetal Acceleration Formula",
             "level": 5,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
+            "objective": "Argue the formula for centripetal accereletion is numerically accurate using a conceptual geometry and limit-based argument."
           },
           "gravitron":
           {
@@ -3038,7 +3039,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Analyze the forecs acting on a person in the gravitron amusement park ride; describe why a person feels 'pressed into' the wall during the ride."
+            "objective": "Analyze the forces acting on a person in the gravitron amusement park ride; describe why a person feels 'pressed into' the wall during the ride."
           }
         }
       },
@@ -3060,7 +3061,7 @@
             "prerequisites": [],
             "objective": "Define and calculate period and frequency."
           },
-          "harmonic_v_linear":
+          "harmonic_v_linear_motion":
           {
             "title": "Harmonic vs. Linear Motion",
             "level": 1,
@@ -3069,7 +3070,7 @@
             "prerequisites": [],
             "objective": "Define and give examples of harmonic and linear motion."
           },
-          "period_freq_relationship":
+          "period_frequency_2":
           {
             "title": "Period and Frequency 2",
             "level": 2,
@@ -3078,7 +3079,7 @@
             "prerequisites": [],
             "objective": "Correctly use the formula T = 1 /f, including with proportionality"
           },
-          "pt_graphs_periodic":
+          "position_time_graphs_periodic_motion":
           {
             "title": "Position-Time Graphs of Periodic Motion",
             "level": 3,
@@ -3087,7 +3088,7 @@
             "prerequisites": [],
             "objective": "Draw simple position-time graphs of periodic motion."
           },
-          "period_freq_formulas":
+          "periodic_frequency_3":
           {
             "title": "Period and Frequency 3: Specific Formulas",
             "level": 3,
@@ -3105,7 +3106,7 @@
             "prerequisites": [],
             "objective": "Use a trigonometric function to represent the position of an object in harmonic motion, wiht period and amplitude correct but phase not considered."
           },
-          "period_freq_formulas_algebra":
+          "period_frequency_4":
           {
             "title": "Period and Frequency 4: Symbolic Solutions Algebra",
             "level": 4,
@@ -3114,7 +3115,7 @@
             "prerequisites": [],
             "objective": "Algebraically solve the period and frequency formulas for springs and pendulums"
           },
-          "period_freq_formulas_prorportionaity":
+          "period_frequency_5":
           {
             "title": "Period and Frequency 5: Proportionality",
             "level": 4,
@@ -3143,7 +3144,7 @@
         "honors": false,
         "pods":
         {
-          "qual_energy_springs_pendulums":
+          "spring_pendulum_energy_1":
           {
             "title": "Spring and Pendulum Energy 1",
             "level": 1,
@@ -3161,7 +3162,7 @@
             "prerequisites": [],
             "objective": "Use Hooke's Law to predict forces acting on a spring, and analyze Hooke's Law with proportionality."
           },
-          "fbd_pendulum":
+          "newtons_model_pendulums":
           {
             "title": "Newton's Model for Pendulums",
             "level": 2,
@@ -3170,7 +3171,7 @@
             "prerequisites": [],
             "objective": "Draw free-body diagrams of a pendulum at different points in its motion and relate these free-body didagrms tot he motion of the pendulum using Newton's Model."
           },
-          "fbd_spring":
+          "newtons_model_springs":
           {
             "title": "Newton's Model for Springs",
             "level": 2,
@@ -3179,7 +3180,7 @@
             "prerequisites": [],
             "objective": "Draw free-body diagrams of a pendulum at different points in its motion and relate these free-body didagrms tot he motion of the pendulum using Newton's Model."
           },
-          "energy_equations_springs_pendulums":
+          "spring_pendulum_energy_2":
           {
             "title": "Spring and Pendulum Energy 2: Energy Equations for Springs and Pendulums",
             "level": 2,
@@ -3188,7 +3189,7 @@
             "prerequisites": [],
             "objective": "Create equations of motion for springs and pendulums using the conservation of energy; explain the terms of these equations; defend these equations using dimensional analysis."
           },
-          "quan_energy_probs_springs_pendulums":
+          "spring_pendulum_energy_3":
           {
             "title": "Spring and Pendulum Energy 3: Quantitative Energy Problems for Springs and Pendulums",
             "level": 2,
@@ -3197,7 +3198,7 @@
             "prerequisites": [],
             "notes": "Create and solve equations of motion for springs and pendulums using the conservation of energy."
           },
-          "energy_algebra_spring":
+          "spring_pendulum_energy_4":
           {
             "title": "Spring and Pendulum Energy 4: Energy Algebra for a Spring",
             "level": 3,
@@ -3206,7 +3207,7 @@
             "prerequisites": [],
             "objective": "Create an algebraically solve equations of motion for a spring from the conservation of energy; derive equations that relate amplitude and max-speed"
           },
-          "energy_algebra_pendulum":
+          "spring_pendulum_energy_5":
           {
             "title": "Spring and Pendulum Energy 5: Energy Algebra for a Pendulum",
             "level": 3,
@@ -3215,7 +3216,7 @@
             "prerequisites": [],
             "objective": "Create an algebraically solve equations of motion for a pendulum from the conservation of energy; derive equations that relate amplitude and max-speed"
           },
-          "periodic_kinematic_functions":
+          "periodic_kinematic_functions_1":
           {
             "title": "Periodic Kinematic Functions 1",
             "level": 4,
@@ -3225,7 +3226,7 @@
             "objective": "Using the periodic functions for position from the previous unit and the energy equations from level 3, derive velocity-time and acceleration-time kinematic equations for harmonic motion.",
             "limits": "Functions developed need not include phase or damping."
           },
-          "vertical_spring":
+          "vertical_springs":
           {
             "title": "Vertical Springs",
             "level": 4,
@@ -3245,7 +3246,7 @@
           },
           "periodic_kinematic_functions_2":
           {
-            "title": "Periodic Kinematic Functions",
+            "title": "Periodic Kinematic Functions 2",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -3255,7 +3256,7 @@
           }
         }
       },
-      "periodic_diff_eqs":
+      "differential_equations_periodic_motion":
       {
         "title": "Differential Equations for Periodic Motion",
         "level": 5,
@@ -3269,7 +3270,7 @@
         "completed": null,
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics."
       },
-      "rot_kine":
+      "rotational_kinematics":
       {
         "title": "Rotational Kinematics",
         "completed": true,
@@ -3305,7 +3306,7 @@
             "prerequisites": [],
             "objective": "Use conversion factors to convert rotational velocity from non-SI units to radians per second."
           },
-          "basic_rotational_kinematic_formulas":
+          "rotational_linear_velocity":
           {
             "title": "Rotational and Linear Velocity",
             "level": 1,
@@ -3342,7 +3343,7 @@
             "objective": "Relate the kinematic quantities and equations for linear and rotational motion",
             "note": "This pod was once flagged as redundant, but when editing I couldn't see why"
           },
-          "linear_velocity_on_a_planet":
+          "linear_velocity_on_planet":
           {
             "title": "Linear Velocity on a Planet",
             "level": 3,
@@ -3389,7 +3390,7 @@
           }
         }
       },
-      "rot_dyna":
+      "rotational_dynamics":
       {
         "title": "Rotational Dynamics",
         "completed": true,
@@ -3407,7 +3408,7 @@
             "prerequisites": [],
             "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia"
           },
-          "rotational_dynamic_formulas_simple":
+          "rotational_dynamic_formulas":
           {
             "title": "Rotational Dynamic Formulas",
             "level": 1,
@@ -3416,7 +3417,7 @@
             "prerequisites": [],
             "objective": "Solve straightforward numerical questions using the rotational dynamics formulas, including the definition of torque and basic equations for rotational inertia."
           },
-          "rotational_dynamic_dimensional_anlaysis":
+          "rotational_dynamic_dimensional_analysis":
           {
             "title": "Rotational Dynamic Dimensional Analysis",
             "level": 2,
@@ -3425,7 +3426,7 @@
             "prerequisites": [],
             "objective": "Determine the dimensions of all rotational dynamic quantities, particularly torque and rotational inertia"
           },
-          "rotational_inertia_examples":
+          "rotational_inertia_conceptual_examples":
           {
             "title": "Rotational Inertia Conceptual Examples",
             "level": 2,
@@ -3440,7 +3441,7 @@
                       "Why does liquid soup roll faster than cream soup, but cream soup faster still than noodle soup?"
                     ]
           },
-          "same_force_diff_torque":
+          "same_force_different_torque":
           {
             "title": "Same Force Different Torque",
             "level": 2,
@@ -3458,7 +3459,7 @@
             "prerequisites": [],
             "objective": "Use the torque formula in situations requiring a single cross product; determine angular acceleration."
           },
-          "net_torque":
+          "determine_net_torque_angular_acceleration":
           {
             "title": "Determine Net Torque and Angular Acceleration",
             "level": 3,
@@ -3476,7 +3477,7 @@
             "prerequisites": [],
             "objective": "Draw free-body diagrams and analyze the torque of a rollign object; identify the type of friction that causes rolling; differentiate between rolling with and without slipping."
           },
-          "rolling_down_a_hill_numerical":
+          "rolling_down_a_hill":
           {
             "title": "Rolling down a Hill",
             "level": 4,
@@ -3505,7 +3506,7 @@
           },
           "raiders_of_the_lost_arc":
           {
-            "title": "Radiers of the Lost Arc",
+            "title": "Raiders of the Lost Arc",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -3525,7 +3526,7 @@
           }
         }
       },
-      "rot_conserv":
+      "rotational_conservation_laws":
       {
         "title": "Rotation Conservation Laws",
         "completed": true,
@@ -3543,7 +3544,7 @@
             "prerequisites": [],
             "objective": "Draw analogies between conserved quantities for linear motion and rotational motion"
           },
-          "rotational_conserved_quantitites_formula_basics":
+          "rotational_conserved_quantites_1":
           {
             "title": "Rotational Conserved Quantities 1: Formula Basics",
             "level": 1,
@@ -3552,7 +3553,7 @@
             "prerequisites": [],
             "objective": "Use the formulas for rotational conserved quantities to sovle simple numerical questions."
           },
-          "rotational_conserved_quantities_formula_analysis":
+          "rotational_conserved_quantities_2":
           {
             "title": "Rotational Conserved Quantities 2: Dimensional Analysis and Proportionality",
             "level": 2,
@@ -3561,7 +3562,7 @@
             "prerequisites": [],
             "objective": "Determine the dimensions of all rotation conserved quantities using the formulas to define them; use proportionality to analyze conserved rotational quantities."
           },
-          "ice_skater_spin_qual":
+          "ice_skater_spin_qualitative":
           {
             "title": "Ice Skater Spin Qualitative",
             "level": 2,
@@ -3570,7 +3571,7 @@
             "prerequisites": [],
             "objective": "Using the formulas realated to angular momentum, describe how an ice skater (or other athlete) changes her rotational speed."
           },
-          "knuckleball_qual":
+          "sprials_knukleballs":
           {
             "title": "Spirals and Knuckleballs",
             "level": 2,
@@ -3579,7 +3580,7 @@
             "prerequisites": [],
             "objective": "Qualitatively explain the phenomena of a football thrown with a sprial and a knuckelball by referring to the conservation of angular momentum."
           },
-          "ice_skater_spin_quant":
+          "ice_skater_spin_quantitative":
           {
             "title": "Ice Skater Spin Quantitative",
             "level": 3,
@@ -3588,7 +3589,7 @@
             "prerequisites": [],
             "objective": "Use a quantitative model to predict how much spin will change when a spinner person moves their arms"
           },
-          "Rotational_kinetic_energy_on_ramp":
+          "rotational_kinetic_energy_on_ramp":
           {
             "title": "Rotational Kinetic Energy on a Ramp",
             "level": 3,
@@ -3602,7 +3603,7 @@
                       "Why do the dynamics cars have small wheels?"
                     ]
           },
-          "work_energy_theorem_rot":
+          "rotation_work_energy_theorem":
           {
             "title": "Rotation and the Work-Energy Theorem",
             "level": 4,
@@ -3611,7 +3612,7 @@
             "prerequisites": [],
             "objective": "Analyze situations including rotational kinetic energy using the work-energy theorem."
           },
-          "rot_kine_different_points_of_view":
+          "rotational_kinetic_energy_different_points_of_view":
           {
             "title": "Rotational Kinetic Energy from Different Points of View",
             "level": 4,
@@ -3623,7 +3624,7 @@
           },
           "reinvent_the_wheel":
           {
-            "title": "Reinventing the Wheel",
+            "title": "Reinvent the Wheel",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -3650,7 +3651,7 @@
     {
       "DC_circuit_math_1":
       {
-        "title": "DC circuit math: Batteries and Resistors",
+        "title": "DC Circuit Math 1: Batteries and Resistors",
         "limits": "Only contains circuits including batteries and resistors",
         "completed": true,
         "AP": true,
@@ -3702,7 +3703,7 @@
             "prerequisites": [],
             "objective": "Determine the voltage, current, resistance, or power of particular elements of a simple series or parallel circuit, no table is explicitly provided for guidance"
           },
-          "one_step_accordion":
+          "analyze_circuits_4":
           {
             "title": "Analyze Circuits 4: One Step Accordion Circuits",
             "level": 3,
@@ -3711,7 +3712,7 @@
             "prerequisites": [],
             "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
           },
-          "electric_pot_diagrams_1":
+          "electric_potential_diagrams_1":
           {
             "title": "Electric Potential Diagrams 1",
             "level": 3,
@@ -3729,7 +3730,7 @@
             "prerequisites": [],
             "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula seperately and together; prove that answers are dimensionally correct"
           },
-          "multi_step_accordion":
+          "analyze_circuits_5":
           {
             "title": "Analyze Circuits 5: Multiple-Step Accordion Circuits",
             "level": 4,
@@ -3738,7 +3739,7 @@
             "prerequisites": [],
             "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
           },
-          "electric_pot_diagrams_2":
+          "electric_potential_diagrams_2":
           {
             "title": "Electric Potential Diagrams 2",
             "level": 4,
@@ -3747,7 +3748,7 @@
             "prerequisites": [],
             "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for circuits with series and parallel elements inside of each other."
           },
-          "algebraic_simple_circuits":
+          "analyze_circuits_6":
           {
             "title": "Analyze Circuits 6: Algebraic Simple Circuits",
             "level": 4,
@@ -3756,7 +3757,7 @@
             "prerequisites": [],
             "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
           },
-          "use_kirchoff_laws":
+          "use_kirchoffs_laws":
           {
             "title": "Use Kirchoff's Laws",
             "lavel": 4,
@@ -3765,7 +3766,7 @@
             "prerequisites": [],
             "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
           },
-          "algebraic_complex_circuits":
+          "algebraic_accordion_circuits":
           {
             "title": "Algebraic Accordion Circuits",
             "level": 5,
@@ -3774,9 +3775,9 @@
             "prerequisites": [],
             "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
           },
-          "demonstrate_kirchoff_laws":
+          "demonstrate_kirchoffs_laws":
           {
-            "title": "Demonstrate Kirchoff Laws",
+            "title": "Demonstrate Kirchoff's Laws",
             "level": 5,
             "horizontal": null,
             "letter": "",
@@ -3812,7 +3813,7 @@
         "note": "8-21-19 i feel like parallel circuit concepts and short circuit concepts belong in a different quiz ladder, and there need to be more quiz ladders on circuits certainly",
         "pods":
         {
-          "insulators_and_conductors":
+          "insulators_conductors":
           {
             "title": "Insulators and Conductors",
             "level": 1,
@@ -3821,7 +3822,7 @@
             "prerequisites": [],
             "objective": "Recognize different insulators and conductors"
           },
-          "memrz_defintions_mc":
+          "circuit_definitions_1":
           {
             "title": "Circuit Definitions 1: Multiple Choice",
             "level": 1,
@@ -3830,7 +3831,7 @@
             "prerequisites": [],
             "objective": "Recognize the definitions and properties of voltage, current, resistance, and power."
           },
-          "very_basic_electrons":
+          "very_basic_atoms":
           {
             "title": "Very Basic Atoms",
             "level": 1,
@@ -3848,7 +3849,7 @@
             "prerequisites": [],
             "objective": "Describe how energy changes in an electric circuit consisting of only a battery, a lightbulb, and a wire."
           },
-          "memrz_definitions_or":
+          "circuit_definitions_2":
           {
             "title": "Circuit Definitions 2: Open Response",
             "level": 2,
@@ -3866,7 +3867,7 @@
             "prerequisites": [],
             "objective": "Explain and draw why electrons move within a circuit and why neutrons and protons do not."
           },
-          "how_atoms_organized":
+          "organization_atoms":
           {
             "title": "Organization of Atoms",
             "level": 3,
@@ -3875,7 +3876,7 @@
             "prerequisites": [],
             "objective": "Draw how atoms are organized in insulators and conductors; relate this organization to how circuits operate within an electric circuit."
           },
-          "potato_battery":
+          "advanced_voltage":
           {
             "title": "Advanced Voltage: The Potato Battery",
             "level": 3,
@@ -3884,7 +3885,7 @@
             "prerequisites": [],
             "objective": "Explain by referring to chemical princples why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery."
           },
-          "effect_of_resistor":
+          "advanced_resistance":
           {
             "title": "Advanced Resistance: Effect of a Resistor on a Circuit",
             "level": 3,
@@ -3913,7 +3914,7 @@
             "objective": "Explain how voltage, current, resistance, and power are related in a short circuit."
 
           },
-          "electrons_vs_current":
+          "advanced_current_1":
           {
             "title": "Advanced Current 1: Moving Electrons vs. Current",
             "level": 4,
@@ -3922,7 +3923,7 @@
             "prerequisites": [],
             "objective": "Explain how moving electrons sum together to make current; explain the effect of free-electrons on resistivity."
           },
-          "electron_drift":
+          "advanced_current_2":
           {
             "title": "Advanced Current 2: Electron Drift",
             "level": 4,
@@ -3931,7 +3932,7 @@
             "prerequisites": [],
             "objective": "Explain how electrons actually move in a drift; recognize not all electrons, only valence electrons, are move in an electric current."
           },
-          "conventional_current":
+          "advanced_current_3":
           {
             "title": "Advanced Current 3: Conventional Current",
             "level": 4,
@@ -3940,7 +3941,7 @@
             "prerequisites": [],
             "objective": "Untangle the conundrum that, mathematically, current flows the opposite way that electrons actually move."
           },
-          "rigrous_definitions":
+          "rigorous_definitions":
           {
             "title": "Rigorous Definitions",
             "level": 5,
@@ -3956,7 +3957,7 @@
                 "Relate electric power to energy transfer, mechanical power, and the conservation of energy."
               ]
           },
-          "advanced_current_model":
+          "advanced_current_4":
           {
             "title": "Advanced Current 4: Current Model",
             "level": 6,
