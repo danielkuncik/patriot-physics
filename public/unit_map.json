@@ -4856,7 +4856,7 @@
     "title": "Fundamental Forces",
     "units":
     {
-      "concpt_gravity":
+      "conceptual_gravitation":
       {
         "title": "Conceptual Gravitation",
         "completed": true,
@@ -4867,67 +4867,116 @@
           "basic_gravity":
           {
             "title": "Basic Gravity",
-            "level": 1
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Recognize examples of gravity on earth and in space; know gravity exists in space; define gravity as masses attracting rather than simply falling."
           },
           "basic_orbits":
           {
             "title": "Basic Orbits",
-            "level": 1
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Recognize basic facts about orbits: they are elliptical etc. Recognize the orbits of objects such as planets and comets"
           },
-          "mass_v_weight_1":
+          "mass_vs_weight_1":
           {
             "title": "Mass vs. Weight 1",
-            "level": 1
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Differentiate between mass and weight, including how weight changes in different areas."
           },
-          "gravitation_examples":
+          "astronomical_examples_gravitation":
           {
             "title": "Astronomical Examples of Gravitation",
             "level": 2,
-            "objective": "Explain star formation, planet formatino, and the existence of earth's atmopshere, and the absence of an atmosphere on other planets."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Explain star formation, planet formation, and the existence of earth's atmopshere, and the absence of an atmosphere on other planets."
           },
-          "comet_energy":
+          "energy_of_comet":
           {
             "title": "Energy of a comet",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how energy changes between GPE and KE in a comet"
+          },
+          "universal_attraction":
+          {
+            "title": "Universal Attraction",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt."
           },
           "earth_is_round":
           {
             "title": "The Earth is Round?",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple."
           },
           "ellipse_geometry":
           {
             "title": "Ellipse Geometry",
             "level": 3,
-            "objective": "Explain the geometry of ellipses and how they relate to orbits."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Rigorously define an ellipse and relate this definition to orbits; compare orbits of different eccentricity.",
+            "notes": "Must recognize that earth's orbit is nearly spherical and eccentricity is NOT responsible for the seasons."
           },
           "keplers_second_law":
           {
             "title": "Kepler's Second Law",
             "level": 4,
-            "objective": "Explain Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "State Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy."
           },
-          "grav_v_inertial_mass":
+          "gravitational_vs_inertial_mass":
           {
             "title": "Gravitational vs. Inertial Mass",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Differentiate between gravitational and inertial mass while recognizing their equality."
           },
-          "through_center":
+          "jumping_through_center_of_earth":
           {
-            "title": "Thought Experiment: Jumping through the center of the earth.",
-            "level": 5
+            "title": "Jumping through the center of the earth. (A thought experiment)",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Examine using rigorous terminology, free-body diagrams, and kinetmatic graphs what would happen if you jumped through the center of the earth",
+            "notes": "Must refer to Newton's Shell Principle"
           },
-          "different_earths":
+          "non_round_earth":
           {
-            "title": "Thought Experiment: What if the earth had anotehr shape?",
-            "level": 5
+            "title": "A non-round Earth (A thought experiment)",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Describe how life on earth might be different if the shape of earth were different but the force of gravity was still proportional to mass."
           }
         }
       },
-      "concpt_electrstatc":
+      "conceptual_electrostatics":
       {
         "title": "Conceptual Electrostatics",
         "completed": true,
@@ -4935,37 +4984,61 @@
         "honors": true,
         "pods":
         {
-          "basic_charging":
+          "charging_by_friction_electrostatic_discharge":
           {
             "title": "Charging by friction and electrostatic discharge",
-            "level": 1
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw diagrams charging by friction and electrostatic discharge; recgonize real-life examples of each."
           },
-          "shocks":
+          "shocks_lightning":
           {
-            "title": "Explaining shocks and lightning",
+            "title": "Shocks and lightning",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw diagrams and write narrative explaining how an electric shock, a bolt of lightning, and/or a gas station fire occurs",
             "notes": "Gas station fires will be included here."
           },
-          "static_v_current":
+          "electrostatics_vs_electric_current":
           {
             "title": "Electrostatics vs. Electric Current",
-            "level": 3
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Compare and contrast between static and current electricity; recognize examples of both"
           },
           "electrostatic_induction":
           {
             "title": "Electrostatic Induction",
-            "level": 3
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Define electrostatic polarization; draw diagrams and write narrative to show how electric charge can be acquired without exchange of electrons; recall real world examples of electrostatic induction."
           },
-          "van_de_graaf":
+          "van_de_graaf_generator":
           {
             "title": "The van de Graaf Generator",
-            "level": 4
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw diagrams and give narrative explaining how a van de Graaf Generator generates large shocks, causes hair to raise, and causes other effects."
           },
-          "positives_1":
+          "positives_or_negative_charge":
           {
             "title": "Positive or negative charge?",
             "level": 5,
-            "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict.",
+            "notes": "In particular, describe how a van de Graaf generator works opporsite of how it is often described."
           }
         }
       },
