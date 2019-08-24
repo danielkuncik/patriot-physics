@@ -5042,7 +5042,7 @@
           }
         }
       },
-      "inv_sqr_laws":
+      "inverse_square_laws":
       {
         "title": "Inverse Square Laws",
         "completed": true,
@@ -5050,162 +5050,235 @@
         "honors": true,
         "pods":
         {
-          "which_has_more_force_basic":
+          "which_has_more_force_1":
           {
-            "title": "Which has more force?: Basic Examples",
+            "title": "Which has more force? 1: Basic Examples",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "For two masses or charges, identify the force involved, whether they attract or repel, and which pair experiences more force."
           },
           "fields_1":
           {
-            "title": "Fields 1",
+            "title": "Fields 1: Fields of One Object",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw electric or gravitational fields of a single object."
           },
-          "which_has_more_force_written":
+          "which_has_more_force_2":
           {
-            "title": "Which has more force?: Written Examples",
+            "title": "Which has more force? 2: Written Examples",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "For written descriptions of pairs of masses or chages, identify which pairs experience more force and why."
           },
           "fields_2":
           {
-            "title": "Fields 2",
+            "title": "Fields 2: Fields of two Objects",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw electric or gravitational fields of two charged or massive objects."
           },
           "law_of_gravitation":
           {
             "title": "Law of Gravitation",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Numerically solve Newton's Law of Universal Gravitation."
           },
           "coulombs_law":
           {
             "title": "Coulombs Law",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Numerically solve Coulomb's Law"
           },
           "fields_3":
           {
-            "title": "Fields 3",
+            "title": "Fields 3: Fields of Multiple Objects",
             "level": 3,
-            "objective": "Draw gravitational or electric fields for several objectis."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw gravitational or electric fields for several objects."
           },
-          "explain_inverse_square":
+          "why_inverse_square":
           {
             "title": "Why inverse square?",
             "level": 4,
-            "objective": "Use field diagrams and geometry to explain why inverse square laws are inverse square laws."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use field diagrams and spherical geometry to explain why inverse square laws are inverse square laws."
           },
           "algebraic_inverse_square":
           {
             "title": "Algebraic Inverse Square",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve inverse square laws algebraically; determine the dimensions of the gravitational and electric constants"
           },
-          "formula_for_g":
+          "derive_free_fall_acceleration":
           {
             "title": "Derive Free-Fall Acceleration",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Derive, defend, and apply the formula for free-fall acceleration on a planet."
           },
-          "proportionality_inverse_square":
+          "inverse_square_law_proportionality":
           {
             "title": "Inverse Square Law Proportionality",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values."
           },
-          "universal_grav_pot_energy":
+          "universal_gravitational_potential_energy":
           {
             "title": "Universal Gravitational Potential Energy",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain and use the formula for universal gravitational potential energy to quantitatively describe the motion of a comet or planet."
           },
           "force_within_atoms":
           {
             "title": "The Force Within Atoms",
             "level": 5,
-            "objective": "Prove why electrostatic, not gravitaional force, determines the action of electrons within atoms."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Demonstrate why electrostatic, not gravitational force, determines the action of electrons within atoms."
           }
         }
       },
-      "concept_magnet":
+      "conceptual_magnetism":
       {
         "title": "Conceptual Magnetism",
         "completed": true,
         "honors": true,
         "pods":
         {
-          "simple_magnet":
+          "simple_magnets":
           {
-            "title": "Simple magnet Questions",
+            "title": "Simple Magnets",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Recognize North and South poles of a magnet, predict attraction and repulsion in a magnet, recognize earth's magnetic field, explain how a compass works",
             "notes": "north and south poles, earth's magnetic field, how a compass works."
           },
-          "build_a_magnet":
+          "simple_electromagnet":
           {
-            "title": "Simple Eletromagnet",
+            "title": "Simple Electromagnet",
             "level": 1,
-            "objective": "Explain how to build a simple electromagnet"
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Explain how to build a simple electromagnet."
           },
           "magnet_laws":
           {
             "title": "Magnet Laws",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "State Faraday's and Ampere's Laws"
           },
           "simple_magnetic_fields":
           {
             "title": "Simple Magnetic Fields",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw a magnetic field of a single bar magnet and of the earth."
           },
-          "why_magnets":
+          "how_do_magnets_work":
           {
             "title": "How do magnets work?",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain and diagram how a magnet works."
           },
-          "electron_magnet":
+          "electron_motion_in_magnetic_field":
           {
             "title": "Electron motion in a magnetic field",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine, using right-hand rules, how an electron moves within a magnetic field; recogniezze why a bar magnet lines up in an electric field."
           },
-          "magnetization":
+          "magnetization_of_metal":
           {
             "title": "Magnetization of metal",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain what happens on a subatomic level when a piece of metal is magnetized"
           },
           "earths_magnetic_field":
           {
             "title": "Earth's Magnetic Field",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain why the earth has a magnetic field and identify crucial consequences of the earth's magnetic field."
           },
-          "motors_and_generators":
+          "dc_motors_electrical_generators":
           {
             "title": "DC Motors and Electrical Generators",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Using concepts of magnetic fields and electric current, explain how a DC motor and an electrical generator works."
           },
           "multiple_magnetic_fields":
           {
-            "title": "Multiple Magnets",
+            "title": "Multiple Magnetic Fields",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw the magnetic field of two magnets and explain why they would attract or repel."
           },
           "what_is_light":
           {
             "title": "What is light?",
             "level": 4,
-            "objective": "Explain conceptually why light exists using Faraday's and Ampere's Laws"
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Narrate qualitatively why light exists using Faraday's Law, Ampere's Law, and other electromagnetic laws."
           }
         }
       },
-      "maxwells_eq":
+      "maxwells_equations":
       {
         "title": "Maxwell's Equations",
         "completed": null,
@@ -5217,7 +5290,7 @@
         "completed": null,
         "honors": false
       },
-      "calculus_gravity":
+      "calculus_based_gravitation":
       {
         "title": "Calculus Based Gravitation",
         "completed": null,
