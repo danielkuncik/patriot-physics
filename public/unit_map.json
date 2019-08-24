@@ -5301,6 +5301,7 @@
   "thermodynamics":
   {
     "title": "Thermodynamics",
+    "notes": "These units need to be done together to be understood...for example, pods on definitions of temperature and pressure I wasn't sure where to include",
     "units":
     {
       "kinetic_theory_of_matter_conceptual":
@@ -5316,39 +5317,75 @@
         {
           "where_are_molecules_faster":
           {
-            "title": "Where are molecules faster?",
+            "title": "Where are the molecules faster?",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize where molecules move faster between different options."
           },
           "states_of_matter_1":
           {
             "title": "States of Matter 1",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize how molecules move differently within different states of matter."
           },
           "conduction_convection_radiation_1":
           {
-            "title": "Conduction, Convection, Radiation 1",
+            "title": "Conduction, Convection, and Radiation 1",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation"
+          },
+          "air_pressure":
+          {
+            "title": "Air Pressure",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Define air pressure, give examples of how air pressure applies, explain why humans do not feel air pressure, define atmospheric pressure."
           },
           "where_molecules_are_faster_2":
           {
-            "title": "Where Molecules are faster 2",
+            "title": "Where are the molecules faster 2",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Describe where molecules move faster and give consequences of this; define temperature as average kinetic energy of molecules",
             "idea": "Incorporate some of the level 1 quizzes into this."
+          },
+          "define_temperature":
+          {
+            "title": "Define Temperature",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Define temperature as the average kinetic enregy of molecules."
           },
           "states_of_matter_2":
           {
             "title": "States of Matter 2",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Describe and draw diagrams showing how molecules move within each state of matter."
           },
           "kinetic_theory_applications":
           {
             "title": "Kinetic Theory Applications",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize and describe applications of the kinetic theory of matter",
             "examples":
                     [
@@ -5361,72 +5398,102 @@
           "entropy_1":
           {
             "title": "Entropy 1",
-            "level": "2",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Define entropy, give examples of high and low entropy, and state the second law of thermodynamics."
           },
           "entropy_2":
           {
             "title": "Entropy 2",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Answer more complex questions on entropy"
           },
           "define_kinetic_theory":
           {
-            "title": "Defining the Kinetic Theory of Matter",
+            "title": "Define the Kinetic Theory of Matter",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Define the kinetic theory of matter; relate to changes in temperature"
           },
           "changes_of_state":
           {
             "title": "Changes of state",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain what occurs on a molecular level during a change of state; explain why temperature does not change during a change of state"
           },
-          "conduction_and_the_zeroth_law":
+          "conduction_zeroth_law":
           {
             "title": "Conduction and the Zeroth Law",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Relate heat transfer by conduction to the zeroth law of thermodynamics, kinetic theory, and the mechanics of collisions"
           },
           "evaporation":
           {
             "title": "Evaporation",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Contrast evaporation and boiling; explain how water cools due to evaporation; explain evaporation in open and closed containers."
           },
           "advanced_convection_and_radiation":
           {
             "title": "Advanced Convection and Radiation",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Relate heat radiation to our knowledge of electromagnetic waves"
           },
           "entropy_3":
           {
             "title": "Entropy 3",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Compare random and non-random motion of molecules; describe entropy change in common examples of energy transfer"
           },
           "brownian_motion":
           {
             "title": "Brownian Motion",
             "level": 4,
-            "objective": "Describe how molecuels appear to be moving by not traveling in a random walk model."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Describe how molecules appear to be moving by not traveling in a random walk model."
           },
-          "entropy_and_statistics":
+          "entropy_probability":
           {
             "title": "Entropy and Probability",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Relate common processes to probability theory",
-            "exmamples":
+            "examples":
                     [
-                      "spreading purfume",
+                      "spreading perfume",
                       "jam mixed in pudding"
                     ],
             "enrichment": "Students should read/see the play 'Arcadia' by Tom Stoppard as a part of this lesson."
           }
         }
       },
-      "gas_laws_mathematical":
+      "quantitative_gas_laws_thermal_expansion":
       {
         "title": "Quantitative Gas Laws and Thermal Expansion",
         "completed": true,
@@ -5438,12 +5505,18 @@
           {
             "title": "Thermal Expansion Formulas",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use the formulas for thermal expansion of a solid or liquid."
           },
           "gas_laws_1":
           {
             "title": "Gas Laws 1",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use gas laws built only on proportionality.",
             "limits": "Very straightforward mathematical problems; no solving for a denominator"
           },
@@ -5451,6 +5524,9 @@
           {
             "title": "Gas Laws 2",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use gas laws built only on proportionality",
             "limits": "Includes more inconvientient numbers and mathematical situaitons, such as solving for the denominator"
           },
@@ -5458,23 +5534,41 @@
           {
             "title": "Ideal Gas Law",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve the ideal gas law."
           },
           "combined_gas_law":
           {
             "title": "Combined Gas Law",
             "level": 3,
-            "objective": "Defend and solve the combined gas law; differentiate between the combined gas law and the ideal gas law."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Defend and solve the combined gas law; differentiate between the combined gas law and the ideal gas law; explain why gas laws are ueful and necessary"
           },
           "thermal_expansion_advanced":
           {
             "title": "Thermal Expansion Advanced",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve complex real world thermal expansion problems, such as the thermal expansion of the oceans."
+          },
+          "prove_ideal_gas_law":
+          {
+            "title": "Prove the Ideal Gas Law",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Through both mathematical and conceptual arguments, prove the ideal gas law from the combined gas law."
           }
         }
       },
-      "heat_transfer_and_temp_mathematical":
+      "heat_transfer_temperature_mathematical":
       {
         "title": "Heat Transfer and Temperature: Mathematical",
         "completed": true,
@@ -5485,60 +5579,114 @@
           {
             "title": "Heat Formula 1",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine the heat energy necessary to cause a temperature change."
           },
           "thermal_contact_1":
           {
             "title": "Thermal Contact 1: Zeroth Law of Thermodynamics",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends."
+          },
+          "temperature_scales":
+          {
+            "title": "Temperature Scales",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Define the three (or four) temperature scales; give guidelines on temperature scale, know the difference between scales and units",
+            "examples":[
+              "Where does water boil on each scale?",
+              "What would a hot day be on each scale?",
+              "What would a cold day be on each scale?",
+              "Why do we say 'degrees Celsius' and 'degrees Fahrenheit' but never 'degrees Kelvin', just 'Kelvin'"
+            ]
+          },
+          "temperature_conversions":
+          {
+            "title": "Temperature Conversions",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use formulas to convert temperatures between the three temperature scales."
           },
           "heat_formula_2":
           {
             "title": "Heat Formula 2",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat."
           },
           "heat_graphs":
           {
             "title": "Heat Graphs",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw qualitative graphs of temperature as heat is added; describe and explain what happens when state changes in these graphs."
           },
           "thermal_contact_2":
           {
             "title": "Thermal Contact 2",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends."
-          },
-          "heat_formula_multi_step":
-          {
-            "title": "Heat Formula Multi_Step",
-            "level": 3,
-            "objective": "Determine the amount of heat necessary to both ehat an object and change the state of matter of that object."
           },
           "heat_formula_3":
           {
-            "title": "Heat Formual 3",
+            "title": "Heat Formula 3",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve heat formula problems asking for final or initial temperature."
+          },
+          "heat_formula_4":
+          {
+            "title": "Heat Formula 4: Multi-Step Problems",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object."
           },
           "newtons_law_of_cooling":
           {
             "title": "Newton's Law of Cooling",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics."
           },
-          "heat_formula_multistep_2":
+          "heat_formula_5":
           {
-            "title": "Heat Formula Multistep 2",
+            "title": "Heat Formula 5: Multi-Step solve for tmperature",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature."
           },
           "heat_formula_mixture":
           {
             "title": "Heat Formula Mixtures",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water."
           }
         }
