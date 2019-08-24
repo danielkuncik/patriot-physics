@@ -5722,34 +5722,49 @@
         "honors": true,
         "pods":
         {
-          "counting_parts_of_a_nucleus":
+          "counting_parts_nucleus":
           {
             "title": "Counting Parts of a Nucleus",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation"
           },
-          "atomic_mass_v_mass_number":
+          "atomic_mass_vs_mass_number":
           {
             "title": "Atomic Mass vs. Mass Number",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Differentiate between atomic mass and mass number; explain when each is useful"
           },
-          "alpha_and_beta_decay":
+          "alpha_beta_decay":
           {
             "title": "Alpha and Beta Decay",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Draw reactions involving alpha or beta decay of an isotope."
           },
           "complete_nuclear_reaction":
           {
             "title": "Complete a Nuclear Reaction",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fuision, or decay."
           },
           "simple_half_life":
           {
             "title": "Simple Half Life",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Define half-life; answer simple questions",
             "limits": "Problems in this seciton do not require the half-life to be represented as a function.",
             "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?"
@@ -5758,19 +5773,28 @@
           {
             "title": "Identify Crucial Particles",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify the particles most crucial to understanding nuclear reactions."
           },
-          "written_description_of_reactions_1":
+          "written_reactions_1":
           {
             "title": "Written Reactions 1",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula.",
             "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction"
           },
-          "written_description_of_reactions_2":
+          "written_reactions_2":
           {
             "title": "Written Reactions 2",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula; determine energy released by a nuclear reaction.",
             "notes": "This crucial topic should be broken into two sections"
           },
@@ -5778,30 +5802,45 @@
           {
             "title": "Half-Life Formulas",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Represent half-life through an exponential decay function; use these formulas properly"
           },
           "calculate_atomic_mass":
           {
             "title": "Calculate Atomic Mass",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation."
           },
           "decay_chain":
           {
             "title": "Decay Chain",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use a table of isotopes to draft a decay chain for a particular isotope."
           },
-          "nuclear_reactions_in_sun":
+          "nuclear_reactions_sun":
           {
             "title": "Nuclear Reactions in the Sun",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Write and analyze the nuclear reactions occuring inside the sun; explain how they produce energy."
           },
-          "decay_chain_and_half_life":
+          "remnants_isotope":
           {
             "title": "Remnants of an Isotope",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Based upon the decay chain and the half-life of a particular isotope, identify at particualr times what different products you will have and what radiation they will give off.",
             "notes": "Good lead-in to a computation problem."
           }
@@ -5818,37 +5857,55 @@
           {
             "title": "Nuclear Reaction Basic Concepts",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Identify parts of an atom; know that nuclear reactions occur only in the nucleus of the atom; define terms 'radioactive' and 'radioactivity"
           },
-          "fission_fuision_and_decay":
+          "fission_fusion_decay":
           {
-            "title": "Fission, Fuision, and Decay",
+            "title": "Fission, Fusion, and Decay",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Differentiate between three types of nuclear reactions: fission, fuision, and decay"
           },
-          "why_a_nucleus_decays":
+          "why_nucleus_decays":
           {
             "title": "Why a nucleus decays",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain why a nucleus decays"
           },
-          "nuclear_v_chemical_reactions":
+          "nuclear_vs_chemical_reactions":
           {
             "title": "Nuclear vs. Chemical Reactions",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Differentiate between nuclear and chemical reactions"
           },
           "nuclear_reaction_danger":
           {
             "title": "Nuclear Reaction Danger",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Assess the danger of different types of nuclear reactions",
             "notes": "Requires previous knowledge of the electromagnetic spectrum."
           },
-          "nuclear_reactions_in_stars":
+          "nuclear_reactions_stars":
           {
-            "title": "Nuclear Reaction Stars",
+            "title": "Nuclear Reaction in the Stars",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain the processes of stars by using the concept of nuclear reaction.",
             "notes": "Requires previous knowledge of gravity."
           },
@@ -5856,24 +5913,36 @@
           {
             "title": "Artificially Created Elements 1",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how new elements can be artificially created; draw reactions that go with those examples."
           },
           "artificially_created_elements_2":
           {
             "title": "Artificially Created Elements 2",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain more complex examples of how new elements can be artificially created; draw reactions that go with those examples."
           },
-          "isotopes_of_uranium":
+          "isotopes_uranium":
           {
             "title": "Isotopes of Uranium",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain the importance of different isotopes of uranium for the creation of a nuclear reactor or a nuclear bomb; examine how different isotopes are isolated."
           },
           "periodic_table_cosmology":
           {
             "title": "Periodic Table Cosmology",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain, using descriptions of reactions, how heavier elements within the universe can be created."
           }
         }
@@ -5889,53 +5958,77 @@
           {
             "title": "Energy Levels",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine the difference between different energy levels of an atom."
           },
-          "photons_and_atoms":
+          "photons_atoms":
           {
             "title": "Photons and Atoms",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Explain how and why photons of a precise energy can be emitted or absorbed by an atom, refer to electrons and energy levels in your answer"
           },
-          "energy_levels_and_photons":
+          "energy_levels_photons":
           {
             "title": "Energy Levels and Photons",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Given an atom of various energy levels, determine the wavelength, frequency, and color or type of wave that can be emitted by that atom."
           },
           "ionizing_radiation":
           {
             "title": "Ionizing Radiation",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Differentiate between ionizing and non-ionizing radiation"
           },
           "cell_phone_controversy":
           {
             "title": "Cell Phone Controversy",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Evaluate the danger of devices that emit electromagnetic waves such as cellphones; defend choices using knowledge of atomic structure and electromagnetic waves."
           },
-          "bands_in_spectrum":
+          "bands_spectrum":
           {
             "title": "Bands in Spectrum",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Given a spectrum showing bands of particualr wavelengths, recognize the bands by consutling a table of energy levels."
           },
           "neon_lights":
           {
             "title": "Neon Lights",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Use the chemical composition of a neon tube to determine what color a neon light will shine."
           },
           "astrochemistry":
           {
             "title": "Astrochemistry",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Determine the chemical composition of an astronomical body using a spectrum of taht body and a table of energy levels between atoms; defend choices."
           }
         }
       },
-      "quantum_theory_basics":
+      "basic_quantum_theory":
       {
         "title": "Basic Quantum Theory",
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
@@ -5955,9 +6048,9 @@
       }
     }
   },
-  "overarching":
+  "overarching_topics":
   {
-    "title": "Overarching topic",
+    "title": "Overarching topics",
     "units":
     {
       "conceptual_energy_conservation":
@@ -5970,36 +6063,54 @@
           {
             "title": "Recognize Energy Types",
             "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize (multiple choice) single examples of different types of energy"
           },
           "write_energy_types":
           {
             "title": "Write Energy Types",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Write the names of different types of energy."
           },
-          "state_law_of_conservation_of_energy":
+          "state_law_conservation_of_energy":
           {
             "title": "State the Law of Conservation of Energy",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "State, from memory, the law of conservation of energy."
           },
           "recognize_energy_transfer":
           {
             "title": "Recognize Energy Transfer",
             "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes"
           },
           "describe_energy_transfer_1":
           {
             "title": "Describe Energy Transfer 1",
             "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Write, using tables as guidance, processes of 2 - 3 steps in which energy changes from one type to another; name these processes."
           },
           "describe_energy_transfer_2":
           {
             "title": "Describe Energy Transfer 2",
             "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Write without guidance energy transfer in four or more steps; name processes involved.",
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb."
           },
@@ -6007,6 +6118,9 @@
           {
             "title": "Connect Energy to Sun",
             "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Connect (nearly) all forms of energy on earth back to light from the sun.",
             "notes": "The exceptions, which should be noted, are geothermal and nuclear energy."
           },
@@ -6014,6 +6128,9 @@
           {
             "title": "Connect Energy to Dust",
             "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
             "objective": "Connect energy of the earth back to the gravitational potential energy of space dust (which would eventually form the sun)",
             "connections": "Requires knowledge of gravitation and nuclear physics"
           }
