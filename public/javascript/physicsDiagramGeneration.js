@@ -6,7 +6,16 @@
 // this would cause the point to fit into a box with width no greater than maxwidth and height no greater than max height
 // and for all points to be positive (as though all in quadrant 1)
 
-
+// from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
+function create_UUID(){
+    var dt = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*16)%16 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
 
 function minOfTwoValues(val1, val2) {
     if (val1 <= val2) {
@@ -28,6 +37,7 @@ class point {
     constructor(x, y) {
         this.x = x;
         this.y = y;
+    //    this.uuid = create_UUID();
     }
 
     translate(xTranslation, yTranslation) {
@@ -360,6 +370,7 @@ class diagram {
     }
 
     // i added a line to prevent creating duplicates!
+    // 8-25-19: circle function was breaking because of the duplicates
     addNewPoint(x,y) {
         let pointAlreadyExists = this.searchForPoint(x,y);
         if (pointAlreadyExists) {
@@ -457,7 +468,7 @@ class diagram {
     // point must already exist? NO
     addCircle(centerPoint, radius) {
         let center = this.addExistingPoint(centerPoint);
-        let thisCircle = new circle(centerPoint, radius);
+        let thisCircle = new circle(center, radius);
         this.addExistingPoint(thisCircle.rectangle.lowerLeftPoint);
         this.addExistingPoint(thisCircle.rectangle.upperLeftPoint);
         this.addExistingPoint(thisCircle.rectangle.lowerRightPoint);
@@ -465,6 +476,8 @@ class diagram {
         this.circles.push(thisCircle);
         return thisCircle;
     }
+    /// if the point already exists, eg. because it is the end of a line,
+    /// then this functino does not work properly!
 
 
     /// center point need not already exist
@@ -606,7 +619,7 @@ class diagram {
     rescale(scaleFactor) {
         this.points.forEach((point) => {point.rescale(scaleFactor)});
         this.texts.forEach((text) => {text.rescale(scaleFactor)});
-        this.circles.forEach((circle) => circle.rescale(scaleFactor));
+        this.circles.forEach((circle) => {circle.rescale(scaleFactor)});
     }
 
     reflectAboutXAxis() {
@@ -888,9 +901,32 @@ class quantitativeGraph extends diagram {
     }
 
     addPointAsACircle(x,y) {
-        let newCircle = super.addCircle(new point(x,y), this.pointRadius);
+        // doens't work, i think it might have something to do witht he fact that
+        // in this function the new point is declared here
+        // but in the one above (which works) the new point is decaled in the super function
+        // but new points are declared here in many functinos of this class...a mystery
+        // look at super.addCircle
+        let centerPoint = new point(x,y * this.yMultiplier);
+        let newCircle = super.addCircle(centerPoint, this.pointRadius);
         newCircle.fill();
         return newCircle;
+    }
+
+    addSegmentWithCirclesOnEnds(x1,y1,x2,y2) {
+        this.addSegmentAndTwoPoints(x1,y1,x2,y2);
+        this.addPointAsACircle(x1,y1);
+        this.addPointAsACircle(x2,y2);
+    }
+
+    addStepwiseFunction(arrayOfPoints, circlesBoolean) {
+        if (circlesBoolean === undefined) {circlesBoolean = true;}
+        let k;
+        for (k = 0; k < arrayOfPoints.length - 1; k++) {
+            this.addSegmentAndTwoPoints(arrayOfPoints[k][0], arrayOfPoints[k][1], arrayOfPoints[k + 1][0], arrayOfPoints[k + 1][1]);
+        }
+        if (circlesBoolean) {
+            arrayOfPoints.forEach((point) => {this.addPointAsACircle(point[0], point[1]);});
+        }
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {

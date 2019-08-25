@@ -1202,7 +1202,7 @@
           },
           "memorize_kinematic_equations":
           {
-            "title": "Memorize Kinematic Equations",
+            "title": "Memorize the Kinematic Equations (and some other things)",
             "level": 3,
             "horizontal": 1,
             "letter": "H",
@@ -1305,6 +1305,15 @@
             "letter": "S",
             "prerequisites": ["quantitative_kinematic_graphs_5"],
             "objective": "For a quantitative description of step-wise motion, create three quantitative kinematic graphs."
+          },
+          "derive_kinematic_equations":
+          {
+            "title": "Derive the Kinematic Equations",
+            "level": 5,
+            "horizontal": 6,
+            "letter": "Z",
+            "prerequisites": [],
+            "objective": "Use the core mathematical principles of kinematics to prove each of the four kinematic equations is true under the special case of constant acceleration."
           },
           "flying_to_mars":
           {
