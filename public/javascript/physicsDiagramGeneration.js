@@ -1074,9 +1074,10 @@ class unitMap extends diagram {
         let startPoint = this.pods[podKey1].center.getAnotherPointWithTrig(this.radius, theta);
         let endPoint = this.pods[podKey2].center.getAnotherPointWithTrig(this.radius, theta + Math.PI);
         let newSegment = super.addSegment(startPoint,endPoint);
-        if (this.pods[podKey1].level === this.pods[podKey2].level) { // add arrowhead for horizontal connection lines
-            super.addArrowHeadBetweenPoints(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
-        }
+        // if (this.pods[podKey1].level === this.pods[podKey2].level) { // add arrowhead for horizontal connection lines
+        //     super.addArrowHeadBetweenPoints(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
+        // }
+        super.addArrowHeadBetweenPoints(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30); // add arrowhead on lines
         newSegment.setThickness(2);
     };
 

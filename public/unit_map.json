@@ -1142,9 +1142,9 @@
     "title": "Mechanics",
     "units":
     {
-      "forward_kinematics":
+      "forward_kinematics_quantitative":
       {
-        "title": "Forward Kinematics",
+        "title": "Forward Kinematics Quantitative",
         "level": 1,
         "completed": true,
         "AP": true,
@@ -1163,7 +1163,7 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve problems using the formula relating distance, speed, and time."
+            "objective": "Solve problems using the formula relating distance, speed, and time; always write the appropriate units for distance, speed, and time."
           },
           "acceleration_formula":
           {
@@ -1174,26 +1174,6 @@
             "prerequisites": [],
             "objective": "Solve for acceleration using its definition."
           },
-          "qualitative_kinematic_graphs_1":
-          {
-            "title": "Qualitative Kinematic Graphs 1",
-            "subtitle": "Position Graphs and Motion Maps",
-            "level": 1,
-            "horizontal": 6,
-            "letter": "C",
-            "prerequisites": [],
-            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
-          },
-          "qualitative_kinematic_graphs_2":
-          {
-            "title": "Qualitative Kinematic Graphs 2",
-            "subtitle": "Velocity and Acceleration Graphs",
-            "level": 1,
-            "horizontal": 8,
-            "letter": "D",
-            "prerequisites": [],
-            "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
-          },
           "kinematic_equations_1":
           {
             "title": "Kinematic Equations 1",
@@ -1202,23 +1182,13 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["speed_formula", "acceleration_formula"],
-            "objective": "Solve numerical problems with the kinematic equations",
+            "objective": "Solve 1-2 step numerical algebraic problems with the kinematic equations with equations and information given.",
             "parameters":
             [
               "Equations are given.",
-              "Information is presented in very straightfoward language.",
+              "Information is presented in very straightforward language.",
               "Problems involve 1 or 2 algebraic steps to solve."
             ]
-          },
-          "qualitative_kinematic_graphs_3":
-          {
-            "title": "Qualitative Kinematic Graphs 3",
-            "subtitle": "Kinematic Graphs Connection",
-            "level": 2,
-            "horizontal": 7,
-            "letter": "F",
-            "prerequisites": ["qualitative_kinematic_graphs_1","qualitative_kinematic_graphs_2"],
-            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
           },
           "quantitative_kinematic_graphs_1":
           {
@@ -1227,7 +1197,7 @@
             "level": 2,
             "horizontal": 5,
             "letter": "G",
-            "prerequisites": ["qualitative_kinematic_graphs_3"],
+            "prerequisites": [],
             "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement."
           },
           "memorize_kinematic_equations":
@@ -1243,11 +1213,11 @@
           {
             "title": "Kinematic Equations 2",
             "subtitle": "Real World Kinematic Problems",
-            "level": 3,
+            "level": 2,
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["kinematic_equations_1"],
-            "objective": "Solve numerical algebraic problems with the kinematic equations",
+            "objective": "Solve numerical algebraic problems with the kinematic equations; use all four kinematic equations interchangeably; know the acceleration of a falling object.",
             "parameters":
             [
               "Equations are given.",
@@ -1275,31 +1245,15 @@
             "prerequisites": ["kinematic_equations_2","quantitative_kinematic_graphs_1"],
             "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
           },
-          "qualitative_kinematic_graphs_4":
-          {
-            "title": "Qualitative Kinematic Graphs 4",
-            "subtitle": "2-step Kinematic Graphs",
-            "level": 3,
-            "horizontal": 7,
-            "letter": "L",
-            "prerequisites": ["qualitative_kinematic_graphs_3"],
-            "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs and motion maps that match that motion."
-          },
           "kinematic_equations_3":
           {
             "title": "Kinematic Equations 3",
-            "subtitle": "Many-Step Problems",
-            "level": 4,
+            "subtitle": "Real World Problems",
+            "level": 3,
             "horizontal": 2,
             "letter": "M",
             "prerequisites": ["memorize_kinematic_equations","kinematic_equations_2"],
-            "objective": "Solve numerical algebraic problems with the kinematic equations and without equations given",
-            "parameters":
-            [
-              "Equations are given.",
-              "Information is presented in straightfoward language",
-              "Problems involve many algebraic steps, including variables within parentheses."
-            ]
+            "objective": "Solve numerical algebraic problems in which information is ont explicitly given but must be inferred"
           },
           "kinematic_equations_4":
           {
@@ -1310,16 +1264,6 @@
             "letter": "N",
             "prerequisites": ["kinematic_equations_3"],
             "objective": "Solve the kinematic equations for step-wise motion"
-          },
-          "qualitative_kinematic_graphs_5":
-          {
-            "title": "Qualitative Kinematic Graphs 5",
-            "subtitle": "Kinematic Graph Story",
-            "level": 4,
-            "horizontal": 7,
-            "letter": "O",
-            "prerequisites": ["qualitative_kinematic_graphs_4"],
-            "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs and motion maps that match that motion."
           },
           "quantitative_kinematic_graphs_4":
           {
@@ -1352,7 +1296,6 @@
             "prerequisites": ["quantitative_kinematic_graphs_4","kinematic_equations_4"],
             "objective": "Given a quantitative acceleration-time or velocity-time graph for single-step motion, draw the other two relevant kinematic graphs."
           },
-
           "quantitative_kinematic_graphs_6":
           {
             "title": "Quantitative Kinematic Graphs 6",
@@ -1360,7 +1303,7 @@
             "level": 5,
             "horizontal": 4,
             "letter": "S",
-            "prerequisites": ["quantitative_kinematic_graphs_5","qualitative_kinematic_graphs_5"],
+            "prerequisites": ["quantitative_kinematic_graphs_5"],
             "objective": "For a quantitative description of step-wise motion, create three quantitative kinematic graphs."
           },
           "flying_to_mars":
@@ -1371,6 +1314,66 @@
             "letter": "T",
             "prerequisites": ["quantitative_kinematic_graphs_6","kinematic_equations_symbolic"],
             "objective": "Demonstrate using kinematic equations and graphs how a spaceship can get to Mars faster through constant acceleration and deceleration."
+          }
+        }
+      },
+      "forward_kinematics_qualitative":
+      {
+        "title": "Forward Kinematics Qualitative",
+        "completed": false,
+        "AP": true,
+        "honors": true,
+        "pods":
+        {
+          "qualitative_kinematic_graphs_1":
+          {
+            "title": "Qualitative Kinematic Graphs 1",
+            "subtitle": "Position Graphs and Motion Maps",
+            "level": 1,
+            "horizontal": 6,
+            "letter": "C",
+            "prerequisites": [],
+            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
+          },
+          "qualitative_kinematic_graphs_2":
+          {
+            "title": "Qualitative Kinematic Graphs 2",
+            "subtitle": "Velocity and Acceleration Graphs",
+            "level": 1,
+            "horizontal": 8,
+            "letter": "D",
+            "prerequisites": [],
+            "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
+          },
+          "qualitative_kinematic_graphs_3":
+          {
+            "title": "Qualitative Kinematic Graphs 3",
+            "subtitle": "Kinematic Graphs Connection",
+            "level": 2,
+            "horizontal": 7,
+            "letter": "F",
+            "prerequisites": ["qualitative_kinematic_graphs_1","qualitative_kinematic_graphs_2"],
+            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
+          },
+          "qualitative_kinematic_graphs_4":
+          {
+            "title": "Qualitative Kinematic Graphs 4",
+            "subtitle": "2-step Kinematic Graphs",
+            "level": 3,
+            "horizontal": 7,
+            "letter": "L",
+            "prerequisites": ["qualitative_kinematic_graphs_3"],
+            "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs and motion maps that match that motion."
+          },
+          "qualitative_kinematic_graphs_5":
+          {
+            "title": "Qualitative Kinematic Graphs 5",
+            "subtitle": "Kinematic Graph Story",
+            "level": 4,
+            "horizontal": 7,
+            "letter": "O",
+            "prerequisites": ["qualitative_kinematic_graphs_4"],
+            "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs and motion maps that match that motion."
           }
         }
       },
@@ -1387,8 +1390,8 @@
           {
             "title": "Newton's Second Law",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 3,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Use Newton's Second Law to solve simple numeric problems."
           },
@@ -1396,8 +1399,8 @@
           {
             "title": "Finding Net Force",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 5,
+            "letter": "B",
             "prerequisites": [],
             "objective": "Given a free-body diagram, determine the vector net force acting on an object."
           },
@@ -1405,99 +1408,99 @@
           {
             "title": "Finding Acceleration",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "C",
+            "prerequisites": ["newtons_second_law","finding_net_force"],
             "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object"
-          },
-          "memorize_newtons_second_law":
-          {
-            "title": "Memorize Newton's Second Law",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "State Newton's Second Law from memory; describe what each variable within the law truly means."
           },
           "block_dragging_1":
           {
             "title": "Block Dragging 1: Dragging Without Friction",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "D",
+            "prerequisites": ["finding_acceleration"],
             "objective": "Given a block of a certain mass, draw free-body diagrams for this block when it is not moving or being pushed on a surfaced without friction."
+          },
+          "memorize_newtons_second_law":
+          {
+            "title": "Memorize Newton's Second Law",
+            "level": 2,
+            "horizontal": 6,
+            "letter": "E",
+            "prerequisites": ["finding_acceleration"],
+            "objective": "State Newton's Second Law from memory; describe what each variable within the law truly means."
           },
           "block_dragging_2":
           {
             "title": "Block Dragging 2: Dragging With Kinetic Friction",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["block_dragging_1"],
             "objective": "Analyze the motion of a block on a surface with only kinetic friction; accelerating and moving at a constant velocity"
           },
           "elevators_1":
           {
             "title": "Elevators 1",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "G",
+            "prerequisites": ["memorize_newtons_second_law"],
             "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person."
           },
           "block_dragging_3":
           {
             "title": "Block Dragging 3",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["block_dragging_2"],
             "objective": "Given a blcok being dragged on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
           },
           "elevators_2":
           {
             "title": "Elevators 2",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "I",
+            "prerequisites": ["elevators_1"],
             "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and describe what that person will feel using the free-body diagram"
-          },
-          "elevators_3":
-          {
-            "title": "Elevator Problems 3",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw kinematic graphs representing a person moving in a hypothetical elevator, draw free-body diagrams representing the froces on that person at a particular time, defend the free-body diagrams, and describe what the person will feel using the free-body diagram."
           },
           "block_dragging_4":
           {
             "title": "Block Dragging 4: Graphical Analysis",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "J",
+            "prerequisites": ["block_dragging_3"],
             "objective": "Given a force-time graph of a block on a surface, draw free-body diagrmas for the block at different times and defend them; quantitatively analyze the surface based on the block.."
           },
           "block_dragging_algebra":
           {
             "title": "Block Dragging Algebra",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["block_dragging_3"],
             "objective": "Given a block being dragged on a surface, draw an algebraic free-body diagram on the block, reflect the motion of th eblock using algebraic conditions."
+          },
+          "elevators_3":
+          {
+            "title": "Elevator Problems 3",
+            "level": 5,
+            "horizontal": 6,
+            "letter": "L",
+            "prerequisites": ["elevators_2"],
+            "objective": "Draw kinematic graphs representing a person moving in a hypothetical elevator, draw free-body diagrams representing the froces on that person at a particular time, defend the free-body diagrams, and describe what the person will feel using the free-body diagram."
           },
           "elevator_rockets":
           {
             "title": "Elevator Rockets",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "M",
+            "prerequisites": ["elevators_3"],
             "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness"
           }
         }
@@ -3672,7 +3675,7 @@
     "title": "Electric Circuits",
     "units":
     {
-      "DC_circuit_math_1":
+      "dc_circuit_math_1":
       {
         "title": "DC Circuit Math 1: Batteries and Resistors",
         "limits": "Only contains circuits including batteries and resistors",
@@ -3685,8 +3688,8 @@
           {
             "title": "Ohm's Law",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 2,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Solve Ohm's law for either resistance, current, or power."
           },
@@ -3694,136 +3697,137 @@
           {
             "title": "The Power Formula",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "B",
+            "prerequisites": ["ohms_law"],
             "objective": "Use both the power formula and Ohm's Law to solve for power or other quantities."
           },
           "analyze_circuits_1":
           {
             "title": "Analyze Circuits 1",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["power_formula"],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor."
           },
           "analyze_circuits_2":
           {
             "title": "Analyze Circuits 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "D",
+            "prerequisites": ["analyze_circuits_1"],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information."
+          },
+          "electric_potential_diagrams_1":
+        {
+          "title": "Electric Potential Diagrams 1",
+          "level": 3,
+          "horizontal": 1,
+          "letter": "E",
+          "prerequisites": ["analyze_circuits_2"],
+          "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits."
+        },
+          "algebraic_circuit_formulas":
+          {
+            "title": "Algebraic Circuit Formulas",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["analyze_circuits_2"],
+            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula seperately and together; prove that answers are dimensionally correct"
           },
           "analyze_circuits_3":
           {
             "title": "Analyze Circuits 3",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["analyze_circuits_2"],
             "objective": "Determine the voltage, current, resistance, or power of particular elements of a simple series or parallel circuit, no table is explicitly provided for guidance"
           },
           "analyze_circuits_4":
           {
-            "title": "Analyze Circuits 4: One Step Accordion Circuits",
+            "title": "Analyze Circuits 4: One-Step Accordion Circuits",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["analyze_circuits_3"],
             "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
           },
-          "electric_potential_diagrams_1":
-          {
-            "title": "Electric Potential Diagrams 1",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits."
-          },
-          "algebraic_circuit_formulas":
-          {
-            "title": "Algebraic Circuit Formulas",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula seperately and together; prove that answers are dimensionally correct"
-          },
-          "analyze_circuits_5":
-          {
-            "title": "Analyze Circuits 5: Multiple-Step Accordion Circuits",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
-          },
+
           "electric_potential_diagrams_2":
           {
             "title": "Electric Potential Diagrams 2",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["electric_potential_diagrams_1"],
             "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for circuits with series and parallel elements inside of each other."
+          },
+          "use_kirchoffs_laws":
+          {
+            "title": "Use Kirchoff's Laws",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["electric_potential_diagrams_2"],
+            "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
           },
           "analyze_circuits_6":
           {
             "title": "Analyze Circuits 6: Algebraic Simple Circuits",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["algebraic_circuit_formulas","analyze_circuits_4"],
             "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
           },
-          "use_kirchoffs_laws":
+          "analyze_circuits_5":
           {
-            "title": "Use Kirchoff's Laws",
-            "lavel": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
-          },
-          "algebraic_accordion_circuits":
-          {
-            "title": "Algebraic Accordion Circuits",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
+            "title": "Analyze Circuits 5: Multiple-Step Accordion Circuits",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "L",
+            "prerequisites": ["analyze_circuits_4"],
+            "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
           },
           "demonstrate_kirchoffs_laws":
           {
             "title": "Demonstrate Kirchoff's Laws",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["use_kirchoffs_laws", "analyze_circuits_6"],
             "objective": "Solve a circuit  that includes series and parallel elements within each other without using Kirchoff's Laws, create an electric potential diagram of that circuit, use that diagram to demonstrate how Kirchoff's Laws are followed."
           },
-          "demonstrate_basic_circuit_rules":
+          "algebraic_accordion_circuits":
           {
-            "title": "Demonstrate Basic Circuit Rules",
+            "title": "Algebraic Accordion Circuits",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Demonstrate how the rules for series and parallel elements used to sovle circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
+            "horizontal": 4,
+            "letter": "N",
+            "prerequisites": ["analyze_circuits_6","analyze_circuits_5"],
+            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
           },
           "very_challenging_circuit":
           {
             "title": "A very challenging circuit",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "O",
+            "prerequisites": ["analyze_circuits_5"],
             "objective": "Solve a single, very complex and challenging circuit."
+          },
+          "demonstrate_basic_circuit_rules":
+          {
+            "title": "Demonstrate Basic Circuit Rules",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "P",
+            "prerequisites": ["demonstrate_kirchoffs_laws"],
+            "objective": "Demonstrate how the rules for series and parallel elements used to sovle circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
           }
         }
       },
