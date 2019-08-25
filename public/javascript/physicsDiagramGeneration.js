@@ -441,6 +441,17 @@ class diagram {
         return true;
     };
 
+    // in case you want a line with an arrowhead in the middle of it
+    addArrowHeadBetweenPoints(point1, point2, length, angleInDegrees) {
+        let angleInRadians = convertDegreesToRadians(angleInDegrees);
+        let centerPoint = new point((point1.x + point2.x)/2, (point1.y + point2.y)/2);
+        let theta = point1.getAngleToAnotherPoint(point2) + Math.PI;
+        let end1 = centerPoint.getAnotherPointWithTrig(length, theta + angleInRadians);
+        let end2 = centerPoint.getAnotherPointWithTrig(length, theta - angleInRadians);
+        this.addSegment(centerPoint, end1);
+        this.addSegment(centerPoint, end2);
+    }
+
 
     // add circle
     // point must already exist? NO
@@ -1063,8 +1074,12 @@ class unitMap extends diagram {
         let startPoint = this.pods[podKey1].center.getAnotherPointWithTrig(this.radius, theta);
         let endPoint = this.pods[podKey2].center.getAnotherPointWithTrig(this.radius, theta + Math.PI);
         let newSegment = super.addSegment(startPoint,endPoint);
+        if (this.pods[podKey1].level === this.pods[podKey2].level) { // add arrowhead for horizontal connection lines
+            super.addArrowHeadBetweenPoints(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
+        }
         newSegment.setThickness(2);
     };
+
 
     // function to add segments between all pods and prerequisite pods
     connectPrerequisites() {
