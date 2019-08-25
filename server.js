@@ -30,7 +30,7 @@ function prepareUnitMap() {
         if (!isItThere(`content/units/${superUnitKey}`) || !isItThere(`content/units/${superUnitKey}/${superUnitKey}_unit_cluster_page.hbs`)) {
             unitMap[superUnitKey].available = false;
         } else {
-            console.log(`content/units/${superUnitKey}/${superUnitKey}_unit_cluster_page.hbs`);
+           // console.log(`content/units/${superUnitKey}/${superUnitKey}_unit_cluster_page.hbs`);
             unitMap[superUnitKey].available = true;
             Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
                 if (!isItThere(`content/units/${superUnitKey}/${unitKey}`) || !isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
@@ -41,11 +41,11 @@ function prepareUnitMap() {
                         if (isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.hbs`)) {
                             unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
                             unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'hbs';
-                            console.log('hello its me');
+                    //        console.log('hello its me');
                         } else if (isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.pdf`)) {
                             unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
                             unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'pdf';
-                            console.log('ive been wondering if after all these years youd like to meet');
+                    //        console.log('ive been wondering if after all these years youd like to meet');
                         } else {
                             unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
                         }

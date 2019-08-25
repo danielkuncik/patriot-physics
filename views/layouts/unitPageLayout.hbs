@@ -31,6 +31,7 @@
 <script>
     var myUnitMap = new unitMap();
     {{addAllPodsToMap selectedUnitClusterKey selectedUnitKey}}
+    console.log(myUnitMap);
     myUnitMap.connectPrerequisites();
     var myUnitMapCanvas = myUnitMap.drawCanvas(myUnitMap.getMaxHorizontalPosition()*120,myUnitMap.getMaxLevel()*120);
     $("#putUnitMapHere").append(myUnitMapCanvas);

@@ -1160,54 +1160,48 @@
           {
             "title": "The Speed Formula",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Solve problems using the formula relating distance, speed, and time."
           },
-          "acceleration_formula_1":
+          "acceleration_formula":
           {
-            "title": "The Acceleration Formula 1",
+            "title": "The Acceleration Formula",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 3,
+            "letter": "B",
             "prerequisites": [],
             "objective": "Solve for acceleration using its definition."
           },
-          "position_graphs":
+          "qualitative_kinematic_graphs_1":
           {
-            "title": "Position Graphs",
+            "title": "Qualitative Kinematic Graphs 1",
+            "subtitle": "Position Graphs and Motion Maps",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 6,
+            "letter": "C",
             "prerequisites": [],
             "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
           },
-          "velocity_acceleration_graphs":
+          "qualitative_kinematic_graphs_2":
           {
-            "title": "Velocity and Acceleration Graphs",
+            "title": "Qualitative Kinematic Graphs 2",
+            "subtitle": "Velocity and Acceleration Graphs",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 8,
+            "letter": "D",
             "prerequisites": [],
             "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
-          },
-          "kinematic_graphs_connection":
-          {
-            "title": "Kinematic Graphs Connection",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
           },
           "kinematic_equations_1":
           {
             "title": "Kinematic Equations 1",
+            "subtitle": "Kinematic Equations with Information Given",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["speed_formula", "acceleration_formula"],
             "objective": "Solve numerical problems with the kinematic equations",
             "parameters":
             [
@@ -1216,47 +1210,90 @@
               "Problems involve 1 or 2 algebraic steps to solve."
             ]
           },
+          "qualitative_kinematic_graphs_3":
+          {
+            "title": "Qualitative Kinematic Graphs 3",
+            "subtitle": "Kinematic Graphs Connection",
+            "level": 2,
+            "horizontal": 7,
+            "letter": "F",
+            "prerequisites": ["qualitative_kinematic_graphs_1","qualitative_kinematic_graphs_2"],
+            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
+          },
           "quantitative_kinematic_graphs_1":
           {
             "title": "Quantitative Kinematic Graphs 1",
+            "subtitle": "Learning Information from Kinematic Graphs at a Constant Velocity",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "G",
+            "prerequisites": ["qualitative_kinematic_graphs_3"],
             "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement."
           },
-          "quantitative_kinematic_graphs_2":
+          "memorize_kinematic_equations":
           {
-            "title": "Quantitative Kinematic Graphs 2",
+            "title": "Memorize Kinematic Equations",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
+            "horizontal": 1,
+            "letter": "H",
+            "prerequisites": ["kinematic_equations_1"],
+            "objective": "Memorize the kinematic equations."
           },
           "kinematic_equations_2":
           {
             "title": "Kinematic Equations 2",
+            "subtitle": "Real World Kinematic Problems",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["kinematic_equations_1"],
             "objective": "Solve numerical algebraic problems with the kinematic equations",
             "parameters":
-                    [
-                      "Equations are given.",
-                      "Information is presented in realistic langauge",
-                      "Problems involve no more than 3 algebraic stpes to solve"
-                    ]
+            [
+              "Equations are given.",
+              "Information is presented in realistic langauge",
+              "Problems involve no more than 3 algebraic stpes to solve"
+            ]
+          },
+          "quantitative_kinematic_graphs_2":
+          {
+            "title": "Quantitative Kinematic Graphs 2",
+            "subtitle": "Connecting Position and Velocity Graphs",
+            "level": 3,
+            "horizontal": 6,
+            "letter": "J",
+            "prerequisites": ["quantitative_kinematic_graphs_1"],
+            "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process."
+          },
+          "quantitative_kinematic_graphs_3":
+          {
+            "title": "Quantitative Kinematic Graphs 3",
+            "subtitle": "Learning Information from Accelerating Kinematic Graphs",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "K",
+            "prerequisites": ["kinematic_equations_2","quantitative_kinematic_graphs_1"],
+            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
+          },
+          "qualitative_kinematic_graphs_4":
+          {
+            "title": "Qualitative Kinematic Graphs 4",
+            "subtitle": "2-step Kinematic Graphs",
+            "level": 3,
+            "horizontal": 7,
+            "letter": "L",
+            "prerequisites": ["qualitative_kinematic_graphs_3"],
+            "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs and motion maps that match that motion."
           },
           "kinematic_equations_3":
           {
             "title": "Kinematic Equations 3",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve numerical algebraic problems with the kinematic equations",
+            "subtitle": "Many-Step Problems",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["memorize_kinematic_equations","kinematic_equations_2"],
+            "objective": "Solve numerical algebraic problems with the kinematic equations and without equations given",
             "parameters":
             [
               "Equations are given.",
@@ -1264,89 +1301,75 @@
               "Problems involve many algebraic steps, including variables within parentheses."
             ]
           },
-          "memorize_kinematic_equations":
+          "kinematic_equations_4":
           {
-            "title": "Memorize Kinematic Equations",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Memorize the kinematic equations."
-          },
-          "2_step_kinematic_graphs":
-          {
-            "title": "2-step Kinematic Graphs",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs that match that motion."
-          },
-          "kinematic_graph_story":
-          {
-            "title": "Kinematic Graph Story",
+            "title": "Kinematic Equations 4",
+            "subtitle": "Stepwise Kinematic Equations",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs that match that motion."
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["kinematic_equations_3"],
+            "objective": "Solve the kinematic equations for step-wise motion"
           },
-          "quantitative_kinematic_graphs_3":
+          "qualitative_kinematic_graphs_5":
           {
-            "title": "Quantitative Kinematic Graphs 3",
+            "title": "Qualitative Kinematic Graphs 5",
+            "subtitle": "Kinematic Graph Story",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
+            "horizontal": 7,
+            "letter": "O",
+            "prerequisites": ["qualitative_kinematic_graphs_4"],
+            "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs and motion maps that match that motion."
           },
           "quantitative_kinematic_graphs_4":
           {
             "title": "Quantitative Kinematic Graphs 4",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a quantitative acceleration-time or velocity-time graph for single-step motion, draw the other two relevant kinematic graphs."
+            "horizontal": 5,
+            "letter": "P",
+            "prerequisites": ["quantitative_kinematic_graphs_2","quantitative_kinematic_graphs_3"],
+            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
           },
           "kinematic_equations_symbolic":
           {
             "title": "Kinematic Equations Symbolic",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "Q",
+            "prerequisites": ["kinematic_equations_3"],
             "objective": "Solve the kinematic equations algebraically.",
             "parameters":
-                    [
-                      "Equations not given."
-                    ]
-          },
-          "kinematic_equations_4":
-          {
-            "title": "Kinematic Equations 4: Stepwise Kinematic Equations",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve the kinematic equations for step-wise motion"
+            [
+              "Equations not given."
+            ]
           },
           "quantitative_kinematic_graphs_5":
           {
-            "title": "Quantitative Kinematic Graphs 5: Stepwise Kinematic Graphs",
+            "title": "Quantitative Kinematic Graphs 5",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "R",
+            "prerequisites": ["quantitative_kinematic_graphs_4","kinematic_equations_4"],
+            "objective": "Given a quantitative acceleration-time or velocity-time graph for single-step motion, draw the other two relevant kinematic graphs."
+          },
+
+          "quantitative_kinematic_graphs_6":
+          {
+            "title": "Quantitative Kinematic Graphs 6",
+            "subtitle": "Stepwise Kinematic Graphs",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "S",
+            "prerequisites": ["quantitative_kinematic_graphs_5","qualitative_kinematic_graphs_5"],
             "objective": "For a quantitative description of step-wise motion, create three quantitative kinematic graphs."
           },
           "flying_to_mars":
           {
             "title": "Flying to Mars",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2.5,
+            "letter": "T",
+            "prerequisites": ["quantitative_kinematic_graphs_6","kinematic_equations_symbolic"],
             "objective": "Demonstrate using kinematic equations and graphs how a spaceship can get to Mars faster through constant acceleration and deceleration."
           }
         }
