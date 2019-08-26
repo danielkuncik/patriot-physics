@@ -272,7 +272,6 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
             });
         }
         if (prerequisiteString[prerequisiteString.length - 1] === ",") {prerequisiteString = prerequisiteString.slice(0,-1)}
-        console.log(prerequisiteString);
         podAddString += (`myUnitMap.addPod('${key}','${pod.letter}',${pod.level},${pod.horizontal},[${prerequisiteString}]);`);
     });
     return new hbs.SafeString(podAddString);
@@ -353,7 +352,6 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     } else if (pod.fileType === 'pdf') {
         let filePath = '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
         fs.readFile(__dirname + filePath , function (err,data){
-            console.log(__dirname + filePath);
             res.contentType("application/pdf");
             res.send(data);
         });

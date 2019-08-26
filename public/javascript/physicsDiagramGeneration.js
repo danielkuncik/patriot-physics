@@ -236,6 +236,10 @@ class rectangle {
 
     rotateCounterClockwiseAboutCenter(angleInRadians) {
         this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint);
+        this.upperLeftPoint.rotate(angleInRadians, this.centerPoint);
+        this.lowerRightPoint.rotate(angleInRadians, this.centerPoint);
+        this.upperRightPoint.rotate(angleInRadians, this.centerPoint);
+
     }
 
 
@@ -762,7 +766,9 @@ class quantitativeGraph extends diagram {
 
         // correct aspect ratio
         // to set the axis ratio to the desired value, multiple all y values by the multiplier
-        this.yMultiplier = desiredAspectRatio / (yMaxOnGraph - yMinOnGraph) * (xMaxOnGraph - xMinOnGraph);
+        this.yMultiplier = ( (xMaxOnGraph - xMinOnGraph) / (yMaxOnGraph - yMinOnGraph) ) / desiredAspectRatio ;
+        //the y multiplier is the aspect ratio i would get if i did nothing divided by the aspect ratio i want
+        // mulitply all y values by this number
 
         this.xMinOnGraph = xMinOnGraph;
         this.xMaxOnGraph = xMaxOnGraph;
