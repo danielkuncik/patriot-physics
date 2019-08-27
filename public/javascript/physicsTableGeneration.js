@@ -27,10 +27,10 @@ physicsTable.reproportionColumns([5,4,5])
 in which the only argument are arrays that give the relative height of each row or width of each column
 note that the numerical values in these arrays need not sum to the numerical width and height of the table
 
-to add text to a cell, use
+to add Text to a cell, use
 
 physicsTable.addTextToCell('E = mc^2', 2,3)
-argument 1: the text to be added to the cell
+argument 1: the Text to be added to the cell
 argument 2: the vertical position of the cell
 argument 3: the horizontal position of the cell
 
@@ -56,19 +56,28 @@ function normalizeArray(array) {
 }
 
 
-function cellObject(width, height, unit, text) {
-    this.width = width;
-    this.height = height;
-    this.unit = unit;
-    if (!text) {text = ''}
-    this.text = String(text);
-    this.class = 'nonShaded';
-    this.shade = function() {
-        this.class = 'shaded';
-    };
-    this.isItAHeader = false;
-    this.draw = function() {
-        var cell;
+class CellObject{
+    constructor(width, height, unit, text) {
+        this.width = width;
+        this.height = height;
+        this.unit = unit;
+        if (!text) {
+            text = ''
+        }
+        this.text = String(text);
+        this.class = 'nonShaded';
+        this.shade = function () {
+            this.class = 'shaded';
+        };
+        this.isItAHeader = false;
+    }
+
+    makeIntoHeader() {
+        this.isItAHeader = true;
+    }
+
+    draw() {
+        let cell;
         if (this.isItAHeader) {
             cell = $(`<th class = ${this.class} width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'>${this.text}</th>`);
         } else {
@@ -78,67 +87,78 @@ function cellObject(width, height, unit, text) {
     };
 }
 
-function rowObject(width, height, unit) {
-    this.width = width;
-    this.height = height;
-    this.unit = unit;
-    this.cells = [];
 
-    this.addCell = function(width, text) {
-        this.cells.push(new cellObject(width, this.height, this.unit, text));
-    };
 
-    this.draw = function() {
+class RowObject {
+    constructor(width, height, unit) {
+        this.width = width;
+        this.height = height;
+        this.unit = unit;
+        this.cells = [];
+    }
+
+    addCell(width, text) {
+        this.cells.push(new CellObject(width, this.height, this.unit, text));
+    }
+
+    draw() {
         var row = $(`<tr width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'></tr>`);
         this.cells.forEach((cell) => {
             $(row).append(cell.draw());
         });
         return row
-    };
+    }
 
-    this.setHeight = function(newHeight) {
+    setHeight(newHeight) {
         this.height = newHeight;
         this.cells.forEach((cell) => {
             cell.height = newHeight;
         })
-    };
+    }
 
 }
 
-function tableObject(width, height, unit, numRows, numColumns) {
-    /// variables
-    this.width;
-    this.height;
-    this.unit;
-    this.tableMatrix = [];
+class TableObject {
+    constructor(width, height, unit, numRows, numColumns) {
+        /// variables
+        this.width = undefined;
+        this.height = undefined;
+        this.unit = undefined;
+        this.tableMatrix = [];
+        this.setWidth(width);
+        this.setHeight(height);
+        this.setUnit(unit);
+        this.reset(numRows, numColumns);
+        this.numRows = numRows;
+        this.numColumns = numColumns;
+    }
 
     /// setting crucial sections
-    this.setUnit = function (unit) {
+    setUnit(unit) {
         if (typeof(unit) !== 'string') {
-            unit = 'px'
+            unit = 'px';
         }
         this.unit = unit
     };
-    this.setHeight = function (height) {
+    setHeight(height) {
         if (typeof(height) !== 'number') {
-            height = 300
+            height = 300;
         }
         this.height = height
     };
-    this.setWidth = function (width) {
+    setWidth(width) {
         if (typeof(width) !== 'number') {
-            width = 400
+            width = 400;
         }
         this.width = width
     };
 
-
-    this.addRow = function(height) {
-        this.tableMatrix.push(new rowObject(this.width, height, this.unit));
+    addRow(height) {
+        this.tableMatrix.push(new RowObject(this.width, height, this.unit));
     };
 
     /// setting the basic objects
-    this.reset = function(numRows, numColumns) {
+    reset(numRows, numColumns) {
         this.tableMatrix = [];
         var i, j, nextRow, rowHeight = this.height / numRows, columnWidth = this.width / numColumns;
         for (i = 0; i < numRows; i++ ) {
@@ -149,43 +169,41 @@ function tableObject(width, height, unit, numRows, numColumns) {
         }
     };
 
-    this.setWidth(width);
-    this.setHeight(height);
-    this.setUnit(unit);
-    this.reset(numRows, numColumns);
-    this.numRows = numRows;
-    this.numColumns = numColumns;
 
-    this.selectCell = function(i,j) {
-        if (i > numRows || i <= 0) {console.log('ERROR: index outside vertical range selected')}
-        if (j > numColumns || j <= 0) {console.log('ERROR: index outside horizontal range selected')}
+
+    selectCell(i,j) {
+        if (i > this.numRows || i <= 0) {console.log('ERROR: index outside vertical range selected')}
+        if (j > this.numColumns || j <= 0) {console.log('ERROR: index outside horizontal range selected')}
         i -= 1;
         j -= 1;
         return this.tableMatrix[i].cells[j]
     };
 
 
-    this.addTextToCell = function(text,i,j) {
-        this.selectCell(i,j).text = text;
+    addTextToCell(text,i,j) {
+        this.selectCell(i,j).Text = text;
     };
 
-    this.makeCellAHeader = function(i,j) {
+    makeCellAHeader(i,j) {
         this.selectCell(i,j).isItAHeader = true;
     };
 
-    this.makeCellNotAHeader = function(i,j) {
+    makeCellNotAHeader(i,j) {
         this.selectCell(i,j).isItAHeader = false;
     };
 
-    this.shadeCell = function(i, j) {
+    shadeCell(i, j) {
         this.selectCell(i,j).shade();
     };
 
-    this.setCellClass = function(cellClass, i, j) {
+    // i need a 'merge cells' function ??
+    ///
+
+    setCellClass(cellClass, i, j) {
         this.selectCell(i,j).class = cellClass;
     };
 
-    this.reporportionRows = function(porportionArray) {
+    reporportionRows(porportionArray) {
         const normalizedProportions = normalizeArray(porportionArray);
         this.tableMatrix.forEach((row, index) => {
             console.log(index);
@@ -193,7 +211,7 @@ function tableObject(width, height, unit, numRows, numColumns) {
         });
     };
 
-    this.reporportionColumns = function(proportionArray) {
+    reporportionColumns(proportionArray) {
         const normalizedProportions = normalizeArray(proportionArray);
         var w;
         for (w = 0; w < this.numColumns; w++) {
@@ -203,7 +221,7 @@ function tableObject(width, height, unit, numRows, numColumns) {
         }
     };
 
-    this.draw = function() {
+    draw() {
         var table = $(`<table width = '${String(this.width) + this.unit}' height = '${String(this.height) + this.unit}'></table>`);
         this.tableMatrix.forEach((row) => {
             $(table).append(row.draw());
@@ -211,9 +229,9 @@ function tableObject(width, height, unit, numRows, numColumns) {
         return table;
     };
 
-    this.insertIntoDomObject = function(domObject) {$(domObject).append(this.draw())};
-    this.insertTableByID = function(insertID) {$('#' + insertID).append(this.draw());};
-    this.insertTableByClass = function(insertClass) {$('.' + insertClass).append(this.draw());};
+    insertIntoDomObject(domObject) {$(domObject).append(this.draw())};
+    insertTableByID(insertID) {$('#' + insertID).append(this.draw());};
+    insertTableByClass(insertClass) {$('.' + insertClass).append(this.draw());};
 
 }
 /// i need to create variables for all sorts of things
@@ -229,7 +247,18 @@ function tableObject(width, height, unit, numRows, numColumns) {
 
 /// what if i had an actualy javascript matrix...which contained objects
 
+//     constructor(width, height, unit, numRows, numColumns) {
 
+class formulaBox extends TableObject {
+    constructor(width, height, unit) {
+        super(width, height, unit, 3, 3);
+
+        super.reporportionColumns([0.4,0.3,0.3]);
+        super.reporportionRows([0.3,0.4,0.3]);
+
+
+    }
+}
 
 
 

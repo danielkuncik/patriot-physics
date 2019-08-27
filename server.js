@@ -55,27 +55,27 @@ function prepareUnitMap() {
 /*
                 if (isItThere(`content/units/${superUnitKey}/${unitKey}`)) {
                     if (isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
-                        unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
-                        unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'hbs';
+                        UnitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                        UnitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'hbs';
                     } else if (isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.pdf`)) {
-                        unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
-                        unitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'pdf';
+                        UnitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                        UnitMap[superUnitKey].units[unitKey].pods[goalKey].fileType = 'pdf';
                     } else {
-                        unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
+                        UnitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
                     }
                 } else {
-                    unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
+                    UnitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
                 }
 
                 if (!isItThere(`content/units/${superUnitKey}/${unitKey}`) || !isItThere(`content/units/${superUnitKey}/${unitKey}/${unitKey}_unit_page.hbs`)) {
-                    unitMap[superUnitKey].units[unitKey].available = false;
+                    UnitMap[superUnitKey].units[unitKey].available = false;
                 } else {
-                    unitMap[superUnitKey].units[unitKey].available = true;
-                    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((goalKey) => {
+                    UnitMap[superUnitKey].units[unitKey].available = true;
+                    Object.keys(UnitMap[superUnitKey].units[unitKey].pods).forEach((goalKey) => {
                         if (!isItThere(`content/units/${superUnitKey}/${unitKey}/pods/${goalKey}.hbs`)) {
-                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
+                            UnitMap[superUnitKey].units[unitKey].pods[goalKey].available = false;
                         } else {
-                            unitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
+                            UnitMap[superUnitKey].units[unitKey].pods[goalKey].available = true;
                         }
                     });
                 }
@@ -91,8 +91,8 @@ prepareUnitMap();
 /// NOT READY YET!
 hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
     var unitCluster, unitClusterKey, unitClusterID, unitKey, unitID, pod, podKey, podID;
-    var htmlString = "<nav class = 'navbar navbar-light bg-light' style: 'text-indent: 0px'>";
-   // htmlString += "<div class = 'container' style: 'text-indent: 0px'>";
+    var htmlString = "<nav class = 'navbar navbar-light bg-light' style: 'Text-indent: 0px'>";
+   // htmlString += "<div class = 'container' style: 'Text-indent: 0px'>";
     htmlString += "<a class = 'navbar-brand' href = '/unitsEntryPage'>Units</a>";
     htmlString += "<ul class = 'navbar-Nav'>";
     for (unitClusterKey in unitMap) {

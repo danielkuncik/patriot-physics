@@ -10,9 +10,9 @@ function writtenProblem(question,answer,subQuestions,questionTable) {
             this.questionElement.append('<br>');
         })
     } else {
-        this.questionElement = $("<li></li>").text(String(question));
+        this.questionElement = $("<li></li>").Text(String(question));
     }
-    this.answerElement = $("<li></li>").text(String(answer));
+    this.answerElement = $("<li></li>").Text(String(answer));
 
     if (questionTable) {
         this.questionTable = addTable(questionTable.type, questionTable.arguments);

@@ -1,9 +1,9 @@
-// the goal here is to recreate the physics diagram generation file
+// the goal here is to recreate the physics Diagram generation file
 // but with classes more carefully defined
 
 
 // returns a scale Factor, an Xtranslation factor, a yTranslationfactor
-// this would cause the point to fit into a box with width no greater than maxwidth and height no greater than max height
+// this would cause the Point to fit into a box with width no greater than maxwidth and height no greater than max height
 // and for all points to be positive (as though all in quadrant 1)
 
 // from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
@@ -33,7 +33,7 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
     return scale;
 }
 
-class point {
+class Point {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -45,8 +45,8 @@ class point {
         this.y += yTranslation;
     }
 
-    // rotates a point around the center point by a certain angle
-    // default center point is origin
+    // rotates a Point around the center Point by a certain angle
+    // default center Point is origin
     rotate(rotationAngleInRadians, centerRotationPoint) {
         if (centerRotationPoint === undefined) {centerRotationPoint = origin;}
         this.translate(-1 * centerRotationPoint.x, -1 * centerRotationPoint.y);
@@ -79,7 +79,7 @@ class point {
         else {return false;}
     }
 
-    // returns the angle in radians between the x-axis and a line segment from the origin to this point
+    // returns the angle in radians between the x-axis and a line Segment from the origin to this Point
     // returns angles theta such that 0 <= theta < 2pi
     getAngleToHorizontal() {
         let theta;
@@ -105,7 +105,7 @@ class point {
         return Math.sqrt((this.x - anotherPoint.x)**2 + (this.y - anotherPoint.y)**2);
     }
 
-    /// if this point were the origin, returns the angle to the horizontal of the other point
+    /// if this Point were the origin, returns the angle to the horizontal of the other Point
     // returns angles theta such that 0 <= theta < 2pi
     getAngleToAnotherPoint(anotherPoint) {
         anotherPoint.translate(-1 * this.x, -1 * this.y);
@@ -114,8 +114,8 @@ class point {
         return theta;
     }
 
-    // if this point were the origin
-    // in what quadrant woul the other point be?
+    // if this Point were the origin
+    // in what quadrant woul the other Point be?
     getQuadrantOfAnotherPoint(anotherPoint) {
         anotherPoint.translate(-1 * this.x, -1 * this.y);
         let quadrant = anotherPoint.getQuadrant();
@@ -123,40 +123,40 @@ class point {
         return quadrant;
     }
 
-    // returns a new point
-    // on the ray beginning at this point and pointing toward anotherPoint
+    // returns a new Point
+    // on the ray beginning at this Point and pointing toward anotherPoint
     // at a distance the length between the points * proportion
     // so if propotion = 0.5, it will be halfway between the points
-    // and if proportion = 2, it will be twice as far away as the other point (so it can actually interpolate and extrapolate)
+    // and if proportion = 2, it will be twice as far away as the other Point (so it can actually interpolate and extrapolate)
     interpolate(anotherPoint, proportion) {
         let theta = this.getAngleToAnotherPoint(anotherPoint);
         let L = this.getDistanceToAnotherPoint(anotherPoint) * proportion;
         let x = this.x + L * Math.cos(theta);
         let y = this.y + L * Math.sin(theta);
-        return new point(x, y);
+        return new Point(x, y);
     }
 
-    // returns a new point which is a particular length away at angle theta
+    // returns a new Point which is a particular length away at angle theta
     getAnotherPointWithTrig(length, thetaInRadians) {
         let newx, newy;
         newx = this.x + length * Math.cos(thetaInRadians);
         newy = this.y + length * Math.sin(thetaInRadians);
-        return new point(newx,newy)
+        return new Point(newx,newy)
     }
 }
 
 // global variable origin
-const origin = new point(0,0);
+const origin = new Point(0,0);
 
 function constructPointWithMagnitude(magnitude, angleInDegrees) {
     let x = magnitude * Math.cos(convertDegreeToRadian(angleInDegrees));
     let y = magnitude * Math.sin(convertDegreeToRadian(angleInDegrees));
-    let newPoint = new point(x, y);
+    let newPoint = new Point(x, y);
     return newPoint;
 }
 
 
-class segment {
+class Segment {
     constructor(point1, point2) {
         this.point1 = point1;
         this.point2 = point2;
@@ -179,7 +179,7 @@ class segment {
         return this.point1.getDistanceToAnotherPoint(this.point2);
     }
 
-    // if point 1 were the origin, returns the angle to the horizontal of point 2
+    // if Point 1 were the origin, returns the angle to the horizontal of Point 2
     // returns angles theta such that 0 <= theta < 2pi
     getAngleToHorizontal() {
         return this.point1.getAngleToHorizontal(this.point2);
@@ -196,14 +196,14 @@ class segment {
     // gets the slope of a line perpendicular to this line
     getPerpendicularSlope(point1, point2) {
         const originalSlope = getSlope(point1, point2);
-        if (originalSlope >= 1e10) {return 0;} // due to floating point arithmetic, a slope zero usually doesn't actually come out as zero!
+        if (originalSlope >= 1e10) {return 0;} // due to floating Point arithmetic, a slope zero usually doesn't actually come out as zero!
         else if (originalSlope <= 1e-10) {return 1e10;} // if it returned Infinity, could lead to NaNs in later calculations
         else {return -1 / originalSlope;}
     }
 
     /* A BAD FUNCTION, MUST FIX
     // if two segments were to continue infinitely
-    // gets the angle with which this segment intersects another
+    // gets the angle with which this Segment intersects another
     // of two possible angles, always returns smaller angle
     getAngleWithAnotherSegment(anotherSegment) {
         let theta1 = this.getAngleToHorizontal();
@@ -225,13 +225,13 @@ function convertRadiansToDegrees(angle) {
 }
 
 // the box should always belong to an object!
-class rectangle {
+class Rectangle {
     constructor(lowerLeftPoint, width, height) {
         this.lowerLeftPoint = lowerLeftPoint;
-        this.upperLeftPoint = new point(lowerLeftPoint.x, lowerLeftPoint.y + height);
-        this.lowerRightPoint = new point(lowerLeftPoint.x + width, lowerLeftPoint.y);
-        this.upperRightPoint = new point(lowerLeftPoint.x + width, lowerLeftPoint.y + height);
-        this.centerPoint = new point(lowerLeftPoint.x + width / 2, lowerLeftPoint.y + height / 2);
+        this.upperLeftPoint = new Point(lowerLeftPoint.x, lowerLeftPoint.y + height);
+        this.lowerRightPoint = new Point(lowerLeftPoint.x + width, lowerLeftPoint.y);
+        this.upperRightPoint = new Point(lowerLeftPoint.x + width, lowerLeftPoint.y + height);
+        this.centerPoint = new Point(lowerLeftPoint.x + width / 2, lowerLeftPoint.y + height / 2);
     }
 
     rotateCounterClockwiseAboutCenter(angleInRadians) {
@@ -244,30 +244,30 @@ class rectangle {
 
 
 }
-// does this make a duplicate of the center point??
+// does this make a duplicate of the center Point??
 function constructRectangleFromCenter(centerPoint, width, height) {
     let lowerLeftX = centerPoint.x - width/2;
     let lowerLeftY = centerPoint.y - height/2;
-    var lowerLeftPoint = new point(lowerLeftX, lowerLeftY);
-    var newRectangle = new rectangle(lowerLeftPoint, width, height);
+    var lowerLeftPoint = new Point(lowerLeftX, lowerLeftY);
+    var newRectangle = new Rectangle(lowerLeftPoint, width, height);
     return newRectangle;
 }
 
-class text {
+class Text {
     constructor(letters, centerPoint, relativeFontSize, rotationAngleInRadians) {
         this.letters = letters;
         this.relativeFontSize = relativeFontSize;
         if (rotationAngleInRadians === undefined) {this.rotationAngleInRadians = 0} else {this.rotationAngleInRadians = rotationAngleInRadians}
 
         //this.referencePoint = centerPoint;
-        // reference point will be different if the alignment is different!
+        // reference Point will be different if the alignment is different!
 
         this.font = 'Arial';
         this.alignment = 'center'; // default
         this.baseline = 'middle';
         this.color = "#000000";
         this.centerPoint = centerPoint;
-        this.referencePoint = this.centerPoint; // default, text in center
+        this.referencePoint = this.centerPoint; // default, Text in center
 
         this.width = letters.length * this.relativeFontSize;
         this.height = this.relativeFontSize / 2;
@@ -278,7 +278,7 @@ class text {
 
     rescale(scaleFactor) {
         this.relativeFontSize *= scaleFactor;
-        // i won't change anything else because they are all tied to the point array with the diagram
+        // i won't change anything else because they are all tied to the Point array with the Diagram
     }
 
     setRelativeFontSize(newRelativeFontSize) {
@@ -325,7 +325,7 @@ class text {
 
 }
 
-class circle {
+class Circle {
     constructor(centerPoint, radius) {
         //this.centerPoint = centerPoint;
         this.radius = radius;
@@ -351,15 +351,15 @@ class circle {
 
 }
 
-// alternative to constructing text with a center point, the default
+// alternative to constructing Text with a center Point, the default
 function constructTextFromLowerLeftPoint() {}
 
-// constructs a parallel segment
+// constructs a parallel Segment
 function constructParallelSegment(originalSegment, startPoint, length) {
 
 }
 
-class diagram {
+class Diagram {
     constructor() {
         this.points = [];
         this.segments = [];
@@ -374,13 +374,13 @@ class diagram {
     }
 
     // i added a line to prevent creating duplicates!
-    // 8-25-19: circle function was breaking because of the duplicates
+    // 8-25-19: Circle function was breaking because of the duplicates
     addNewPoint(x,y) {
         let pointAlreadyExists = this.searchForPoint(x,y);
         if (pointAlreadyExists) {
             return pointAlreadyExists
         } else {
-            let newPoint = new point(x,y);
+            let newPoint = new Point(x,y);
             this.points.push(newPoint);
             return newPoint
         }
@@ -408,16 +408,16 @@ class diagram {
     }
 
 
-    /// points must already be in the array of poitns before adding the segment!
+    /// points must already be in the array of poitns before adding the Segment!
     addSegment(point1, point2) {
         let pointA = this.addExistingPoint(point1);
         let pointB = this.addExistingPoint(point2);
-        var newSegment = new segment(pointA, pointB);
+        var newSegment = new Segment(pointA, pointB);
         this.segments.push(newSegment);
         return newSegment
     }
 
-    // shortcut, makes it easier to add a segment witout creating each point first
+    // shortcut, makes it easier to add a Segment witout creating each Point first
     addTwoPointsAndSegement(x1,y1,x2,y2) {
         let pointA = this.addNewPoint(x1,y1);
         let pointB = this.addNewPoint(x2,y2);
@@ -437,8 +437,8 @@ class diagram {
 
         let L = point1.getDistanceToAnotherPoint(point2);
         if (arrowheadLength === undefined) {arrowheadLength = L * 0.1;}
-        let arrowheadEnd1 = new point(L - arrowheadLength * Math.cos((phi)), arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
-        let arrowheadEnd2 = new point(L - arrowheadLength * Math.cos((phi)), -1 * arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
+        let arrowheadEnd1 = new Point(L - arrowheadLength * Math.cos((phi)), arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
+        let arrowheadEnd2 = new Point(L - arrowheadLength * Math.cos((phi)), -1 * arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
 
         arrowheadEnd1.rotate(angleToHorizontal);
         arrowheadEnd1.translate(point1.x, point1.y);
@@ -459,7 +459,7 @@ class diagram {
     // in case you want a line with an arrowhead in the middle of it
     addArrowHeadBetweenPoints(point1, point2, length, angleInDegrees) {
         let angleInRadians = convertDegreesToRadians(angleInDegrees);
-        let centerPoint = new point((point1.x + point2.x)/2, (point1.y + point2.y)/2);
+        let centerPoint = new Point((point1.x + point2.x)/2, (point1.y + point2.y)/2);
         let theta = point1.getAngleToAnotherPoint(point2) + Math.PI;
         let end1 = centerPoint.getAnotherPointWithTrig(length, theta + angleInRadians);
         let end2 = centerPoint.getAnotherPointWithTrig(length, theta - angleInRadians);
@@ -468,11 +468,11 @@ class diagram {
     }
 
 
-    // add circle
-    // point must already exist? NO
+    // add Circle
+    // Point must already exist? NO
     addCircle(centerPoint, radius) {
         let center = this.addExistingPoint(centerPoint);
-        let thisCircle = new circle(center, radius);
+        let thisCircle = new Circle(center, radius);
         this.addExistingPoint(thisCircle.rectangle.lowerLeftPoint);
         this.addExistingPoint(thisCircle.rectangle.upperLeftPoint);
         this.addExistingPoint(thisCircle.rectangle.lowerRightPoint);
@@ -480,29 +480,29 @@ class diagram {
         this.circles.push(thisCircle);
         return thisCircle;
     }
-    /// if the point already exists, eg. because it is the end of a line,
+    /// if the Point already exists, eg. because it is the end of a line,
     /// then this functino does not work properly!
 
 
-    /// center point need not already exist
+    /// center Point need not already exist
     addText(letters, centerPoint, relativeFontSize, rotation) {
         let center = this.addExistingPoint(centerPoint);
-        let newText = new text(letters, center, relativeFontSize, rotation);
+        let newText = new Text(letters, center, relativeFontSize, rotation);
         this.addExistingPoint(newText.rectangle.lowerLeftPoint);
         this.addExistingPoint(newText.rectangle.upperLeftPoint);
         this.addExistingPoint(newText.rectangle.lowerRightPoint);
         this.addExistingPoint(newText.rectangle.upperRightPoint);
-        // this.addExistingPoint(newText.rectangle.centerPoint); /// shoudl center point already exist though???
+        // this.addExistingPoint(newText.Rectangle.centerPoint); /// shoudl center Point already exist though???
         this.texts.push(newText);
         return newText
     }
 
-    // creates text above and below a line
-    // if line is vertical "text above" is to the left and "textBelow" is to the right
+    // creates Text above and below a line
+    // if line is vertical "Text above" is to the left and "textBelow" is to the right
     // returns textAbove if it exists
     // if only textBelow exists, returns textBelow
     labelLine(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize) {
-        let centerOfLine = new point( (point1.x + point2.x)/2, (point1.y + point2.y)/2);
+        let centerOfLine = new Point( (point1.x + point2.x)/2, (point1.y + point2.y)/2);
         let theta = point1.getAngleToAnotherPoint(point2);
         let textRotation;
 
@@ -555,10 +555,10 @@ class diagram {
 
         let textAboveObject, textBelowObject;
         if (textAbove) {
-            textAboveObject = this.addText(textAbove, new point(aboveX, aboveY), relativeFontSize, textRotation);
+            textAboveObject = this.addText(textAbove, new Point(aboveX, aboveY), relativeFontSize, textRotation);
         }
         if (textBelow) {
-            textBelowObject = this.addText(textBelow, new point(belowX, belowY), relativeFontSize, textRotation);
+            textBelowObject = this.addText(textBelow, new Point(belowX, belowY), relativeFontSize, textRotation);
         }
 
         if (textAbove) {
@@ -585,7 +585,7 @@ class diagram {
     // adds a dashed line between point1 and point2 in which there are numDashes of dashes,
     // canvas has a built in dashed line funciton, but it has never worked properly for me
     // so i am creating my own instead
-    // the line will always start and end with a solid segment!
+    // the line will always start and end with a solid Segment!
     addDashedLine(point1, point2, numDashes, thickness) {
         if (thickness === undefined) {thickness = 1;}
         let totalLength = point1.getDistanceToAnotherPoint(point2);
@@ -657,7 +657,7 @@ class diagram {
         return true
     }
 
-    // returns an html canvas of the diagram
+    // returns an html canvas of the Diagram
     // maxWidth and maxHeight are the maximum width and height of the canvas
     // unit is the unit for the maxWidth and maxHeight variabales, default is px
     // wiggle room is the space around the outside of the canvas in which nothing will be drawn,
@@ -750,7 +750,7 @@ class diagram {
 
 
 
-class quantitativeGraph extends diagram {
+class QuantitativeGraph extends Diagram {
     constructor(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio) {
         super();
         // these variables are different than those for the canvas
@@ -807,9 +807,9 @@ class quantitativeGraph extends diagram {
     }
 
     labelAxes(xLabel, yLabel) {
-        let lowerLeftCorner = new point(this.xMinOnGraph, this.yMinOnGraph);
-        let lowerRightCorner = new point(this.xMaxOnGraph, this.yMinOnGraph);
-        let upperLeftCorner = new point(this.xMinOnGraph, this.yMaxOnGraph);
+        let lowerLeftCorner = new Point(this.xMinOnGraph, this.yMinOnGraph);
+        let lowerRightCorner = new Point(this.xMaxOnGraph, this.yMinOnGraph);
+        let upperLeftCorner = new Point(this.xMinOnGraph, this.yMaxOnGraph);
 
         this.xAxisLabel = super.labelLineBelow(lowerLeftCorner, lowerRightCorner, xLabel, this.axisTextDisplacement, this.axisLabelFontSize);
         this.yAxisLabel = super.labelLineAbove(lowerLeftCorner, upperLeftCorner, yLabel, this.axisTextDisplacement, this.axisLabelFontSize);
@@ -834,9 +834,9 @@ class quantitativeGraph extends diagram {
 
         let newLabel;
         if (doYouWantTheLabelFarAway) {
-            newLabel = super.addText(label, new point(position, -1 * this.hashLabelDisplacement - this.yMinOnGraph), this.hashLabelFontSize, 0);
+            newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement - this.yMinOnGraph), this.hashLabelFontSize, 0);
         } else {
-            newLabel = super.addText(label, new point(position, -1 * this.hashLabelDisplacement), this.hashLabelFontSize, 0);
+            newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement), this.hashLabelFontSize, 0);
         }
         return newHash
     }
@@ -855,9 +855,9 @@ class quantitativeGraph extends diagram {
 
         let newLabel;
         if (doYouWantTheLabelFarAway) {
-            let newLabel = super.addText(label, new point(-1 * this.hashLabelDisplacement + this.xMinOnGraph, position * this.yMultiplier), this.hashLabelFontSize, 0);
+            let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement + this.xMinOnGraph, position * this.yMultiplier), this.hashLabelFontSize, 0);
         } else {
-            let newLabel = super.addText(label, new point(-1 * this.hashLabelDisplacement, position * this.yMultiplier), this.hashLabelFontSize, 0);
+            let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement, position * this.yMultiplier), this.hashLabelFontSize, 0);
         }
         return newHash;
     }
@@ -865,13 +865,13 @@ class quantitativeGraph extends diagram {
     /// i will need to put some thought into how the dotted lines work so that they look nice!
     // adds a dotted line
     addXAxisReferenceLine(position) {
-        super.addDashedLine(new point(position, this.yMinOnGraph), new point(position, this.yMaxOnGraph), 15);
+        super.addDashedLine(new Point(position, this.yMinOnGraph), new Point(position, this.yMaxOnGraph), 15);
         // function here
         // adds a vertical dotted line at this position on the axis
     }
 
     addYAxisReferenceLine(position) {
-        super.addDashedLine(new point(this.xMinOnGraph, position * this.yMultiplier), new point(this.xMaxOnGraph, position * this.yMultiplier), 15);
+        super.addDashedLine(new Point(this.xMinOnGraph, position * this.yMultiplier), new Point(this.xMaxOnGraph, position * this.yMultiplier), 15);
         // function here
         // adds a horizontal dotted line at this position on the y axis
     }
@@ -891,10 +891,10 @@ class quantitativeGraph extends diagram {
 
     addSegmentAndTwoPoints(x1,y1,x2,y2) {
         try {
-            if (x1 < this.xMinOnGraph || x1 > this.xMaxOnGraph) {throw "ERROR: segment given out of range (x1)";}
-            if (x2 < this.xMinOnGraph || x2 > this.xMaxOnGraph) {throw "ERROR: segment given out of range (x2)";}
-            if (y1 < this.yMinOnGraphOriginal || y1 > this.yMaxOnGraphOriginal) {throw "ERROR: segment given out of range (y1)";}
-            if (y2 < this.yMinOnGraphOriginal || y2 > this.yMaxOnGraphOriginal) {throw "ERROR: segment given out of range (y2)";}
+            if (x1 < this.xMinOnGraph || x1 > this.xMaxOnGraph) {throw "ERROR: Segment given out of range (x1)";}
+            if (x2 < this.xMinOnGraph || x2 > this.xMaxOnGraph) {throw "ERROR: Segment given out of range (x2)";}
+            if (y1 < this.yMinOnGraphOriginal || y1 > this.yMaxOnGraphOriginal) {throw "ERROR: Segment given out of range (y1)";}
+            if (y2 < this.yMinOnGraphOriginal || y2 > this.yMaxOnGraphOriginal) {throw "ERROR: Segment given out of range (y2)";}
         }
         catch (err) {
             console.log(y1, this.yMinOnGraph, this.yMaxOnGraph);
@@ -908,11 +908,11 @@ class quantitativeGraph extends diagram {
 
     addPointAsACircle(x,y) {
         // doens't work, i think it might have something to do witht he fact that
-        // in this function the new point is declared here
-        // but in the one above (which works) the new point is decaled in the super function
+        // in this function the new Point is declared here
+        // but in the one above (which works) the new Point is decaled in the super function
         // but new points are declared here in many functinos of this class...a mystery
         // look at super.addCircle
-        let centerPoint = new point(x,y * this.yMultiplier);
+        let centerPoint = new Point(x,y * this.yMultiplier);
         let newCircle = super.addCircle(centerPoint, this.pointRadius);
         newCircle.fill();
         return newCircle;
@@ -941,7 +941,7 @@ class quantitativeGraph extends diagram {
 
 }
 
-class circuitDiagram extends diagram {
+class CircuitDiagram extends Diagram {
     constructor() {
         super();
     }
@@ -1031,7 +1031,7 @@ class circuitDiagram extends diagram {
     }
 }
 
-class freeBodyDiagram extends diagram {
+class FreeBodyDiagram extends Diagram {
     constructor() {
         super();
         this.forces = [];
@@ -1045,10 +1045,10 @@ class freeBodyDiagram extends diagram {
 
     /// do i want to make forces their own class??????
 
-    // if force is vertical, label above will add text on the left and label below will ad text on the right
+    // if force is vertical, label above will add Text on the left and label below will ad Text on the right
     addForce(relativeMagnitude,angle,labelAbove, labelBelow) {
         if (this.maxForce < relativeMagnitude) {this.maxForce = relativeMagnitude;}
-        let endPoint = new point(relativeMagnitude * Math.cos(convertDegreesToRadians(angle)), relativeMagnitude * Math.sin(convertDegreesToRadians(angle)));
+        let endPoint = new Point(relativeMagnitude * Math.cos(convertDegreesToRadians(angle)), relativeMagnitude * Math.sin(convertDegreesToRadians(angle)));
         this.forces.push(
             {
                 "relativeMagnitude": relativeMagnitude,
@@ -1079,7 +1079,7 @@ class freeBodyDiagram extends diagram {
 
 }
 
-class unitMap extends diagram {
+class UnitMap extends Diagram {
     constructor() {
         super();
         this.pods = {};
@@ -1099,7 +1099,7 @@ class unitMap extends diagram {
             };
         x = (horizontalPosition - 1) * (this.horizontalSpaceBetween + this.radius * 2);
         y = (level - 1) * (this.verticalSpaceBetween + this.radius * 2);
-        newPod.center = new point(x,y);
+        newPod.center = new Point(x,y);
 
         this.pods[key] = newPod;
 

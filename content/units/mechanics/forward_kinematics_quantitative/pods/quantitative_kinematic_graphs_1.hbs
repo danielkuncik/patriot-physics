@@ -100,7 +100,7 @@
 
 
 <script>
-    // class quantitativeGraph extends diagram {
+    // class QuantitativeGraph extends Diagram {
     //     constructor(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio) {
     //     labelAxes(xLabel, yLabel) {
     //     addReferenceArray(xReferenceArray, yReferenceArray) {
@@ -109,7 +109,7 @@
     //     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) { [will return a canvas]
 
     // two problems finding a positive speed on a position-time graph
-    let problem1 = new quantitativeGraph(0,10,0,10,1,4);
+    let problem1 = new QuantitativeGraph(0,10,0,10,1,4);
     problem1.labelAxes('time (s)', 'position (m)');
     problem1.addReferenceArray([2,4,6,8,10],[2,4,6,8,10]);
     problem1.addSegmentAndTwoPoints(0,0,10,5);
@@ -119,58 +119,58 @@
     /// PROBLEM::: it does make take non-square graphs, it just shrinks it to a square!
     /// i need to look at how the function handles the aspect ratio!
 
-    let problem2 = new quantitativeGraph(0,10,0,100,2);
+    let problem2 = new QuantitativeGraph(0,10,0,100,2);
     problem2.labelAxes('time (s)', 'position (m)');
     problem2.addReferenceArray([5,10],[30,60,90]);
     problem2.addSegmentWithCirclesOnEnds(0,30,10,90);
     $("#problem2Canvas").append(problem2.drawCanvas(300,300));
 
     /// two problems with a position-time graph in which velocity is negative!!!
-    let problem3 = new quantitativeGraph(0,20,0,200);
+    let problem3 = new QuantitativeGraph(0,20,0,200);
     problem3.labelAxes('time (s)', 'position (m)');
     problem3.addReferenceArray([5,10,15,20],[40,80,120,160,200]);
     problem3.addSegmentWithCirclesOnEnds(0,160,20,40);
     $("#problem3Canvas").append(problem3.drawCanvas(300,300));
 
-    let problem4 = new quantitativeGraph(0,60,0,500);
+    let problem4 = new QuantitativeGraph(0,60,0,500);
     problem4.labelAxes('time (s)', 'position (m)');
     problem4.addReferenceArray([20,40,60],[100,200,300,400,500]);
     problem4.addSegmentWithCirclesOnEnds(0,500,60,200);
     $("#problem4Canvas").append(problem4.drawCanvas(300,300));
 
-    let problem5 = new quantitativeGraph(0,50,0,10);
+    let problem5 = new QuantitativeGraph(0,50,0,10);
     problem5.labelAxes('time (s)', 'velocity (m/s)');
     problem5.addReferenceArray([10,20,30,40,50],[4,8]);
     problem5.addSegmentWithCirclesOnEnds(0,4,50,4);
     $("#problem5Canvas").append(problem5.drawCanvas(300,300));
 
-    let problem6 = new quantitativeGraph(0,80,0,20);
+    let problem6 = new QuantitativeGraph(0,80,0,20);
     problem6.labelAxes('time (s)', 'velocity (m/s)');
     problem6.addReferenceArray([20,40,60,80],[5,10,15,20]);
     problem6.addSegmentWithCirclesOnEnds(0,15,80,15);
     $("#problem6Canvas").append(problem6.drawCanvas(300,300));
 
     // find velocities of simple stepwise functions
-    let problem7 = new quantitativeGraph(0,100,0,100);
+    let problem7 = new QuantitativeGraph(0,100,0,100);
     problem7.labelAxes('time (s)', 'position (m)');
     problem7.addReferenceArray([20,40,60,80,100],[20,40,60,80,100]);
     problem7.addStepwiseFunction([[0,0],[20,60],[100,100]], true);
     $("#problem7Canvas").append(problem7.drawCanvas(300,300));
 
-    let problem8 = new quantitativeGraph(0,200,0,500);
+    let problem8 = new QuantitativeGraph(0,200,0,500);
     problem8.labelAxes('time (s)', 'position (m)');
     problem8.addReferenceArray([50,100,150,200], [100,200,300,400,500]);
     problem8.addStepwiseFunction([[0,0],[100,400],[200,300]]);
     $("#problem8Canvas").append(problem8.drawCanvas(300,300));
 
     // two problems find displacement of simple positive-velocity functions
-    let problem9 = new quantitativeGraph(0,60,0,10);
+    let problem9 = new QuantitativeGraph(0,60,0,10);
     problem9.labelAxes('time (s)', 'position (m)');
     problem9.addReferenceArray([20,40,60],[3,6,9]);
     problem9.addStepwiseFunction([[0,3],[20,3],[20,6],[60,6]]);
     $("#problem9Canvas").append(problem9.drawCanvas(300,300));
 
-    let problem10 = new quantitativeGraph(0,100,0,8);
+    let problem10 = new QuantitativeGraph(0,100,0,8);
     problem10.labelAxes('time (s)', 'position (m)');
     problem10.addReferenceArray([20,40,60,80,100],[2,4,6,8]);
     problem10.addStepwiseFunction([[0,8],[40,8],[40,2],[100,2]]);
