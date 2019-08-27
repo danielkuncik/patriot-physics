@@ -1265,14 +1265,32 @@
             "prerequisites": ["kinematic_equations_3"],
             "objective": "Solve the kinematic equations for step-wise motion"
           },
-          "quantitative_kinematic_graphs_4":
+          "quantitative_kinematic_graphs_4A":
           {
-            "title": "Quantitative Kinematic Graphs 4",
+            "title": "Quantitative Kinematic Graphs 4A",
             "level": 4,
             "horizontal": 5,
             "letter": "P",
             "prerequisites": ["quantitative_kinematic_graphs_2","quantitative_kinematic_graphs_3"],
             "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
+          },
+          "quantitative_kinematic_graphs_4B":
+          {
+            "title": "Quantitative Kinematic Graphs 4B",
+            "level": 4,
+            "horizontal": 6,
+            "letter": "X",
+            "prerequisites": ["quantitative_kinematic_graphs_2","quantitative_kinematic_graphs_3"],
+            "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs."
+          },
+          "quantitative_kinematic_graphs_4C":
+          {
+            "title": "Quantitative Kinematic Graphs 4C",
+            "level": 4,
+            "horizontal": 7,
+            "letter": "Y",
+            "prerequisites": ["quantitative_kinematic_graphs_2","quantitative_kinematic_graphs_3"],
+            "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs."
           },
           "kinematic_equations_symbolic":
           {
@@ -1293,7 +1311,7 @@
             "level": 4,
             "horizontal": 4,
             "letter": "R",
-            "prerequisites": ["quantitative_kinematic_graphs_4","kinematic_equations_4"],
+            "prerequisites": ["quantitative_kinematic_graphs_4A","kinematic_equations_4"],
             "objective": "Given a quantitative acceleration-time or velocity-time graph for single-step motion, draw the other two relevant kinematic graphs."
           },
           "quantitative_kinematic_graphs_6":
