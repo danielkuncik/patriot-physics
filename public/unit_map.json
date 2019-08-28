@@ -1203,7 +1203,7 @@
           "kinematic_equations_2":
           {
             "title": "Kinematic Equations 2",
-            "subtitle": "Real World Kinematic Problems",
+            "subtitle": "All Four Together",
             "level": 2,
             "horizontal": 5,
             "letter": "E",
@@ -1238,7 +1238,7 @@
           },
           "memorize_kinematic_equations":
           {
-            "title": "Memorize the Kinematic Equations (and some other things)",
+            "title": "Memorize the Kinematic Equations (and other things)",
             "level": 3,
             "horizontal": 2.33,
             "letter": "H",
@@ -3883,7 +3883,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw and explain atomic structure"
+            "objective": "Draw and explain atomic structure; recognize AC and DC current"
           },
           "energy_change_in_circuit":
           {

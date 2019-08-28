@@ -30,6 +30,7 @@
         <ol type = 'a'>
             <li>Determine the velocity of the object from 0 s to 20 s.</li>
             <li>Determine the velocity of the object from 20 s to 100 s.</li>
+            <li>Determine the average velocity of the object from 0 to 100 s. Remember that average velocity = total displacement / total time.</li>
         </ol>
         <div id = 'problem7Canvas'></div>
     </li>
@@ -37,6 +38,7 @@
         <ol type = 'a'>
             <li>Determine the velocity of the object from 0 s to 100 s.</li>
             <li>Determine the velocity of the object from 100 s to 200 s.</li>
+            <li>Determine the average velocity of the object from 0 to 200 s.</li>
         </ol>
         <div id = 'problem8Canvas'></div>
     </li>
@@ -72,12 +74,14 @@
         <ol  type = 'a'>
             <li>3 m/s</li>
             <li>0.5 m/s</li>
+            <li>1 m/s</li>
         </ol>
     </li>
     <li>
         <ol  type = 'a'>
             <li>4 m/s</li>
             <li>-0.25 m/s</li>
+            <li>1.5 m/s</li>
         </ol>
     </li>
     <li>
@@ -165,13 +169,13 @@
 
     // two problems find displacement of simple positive-velocity functions
     let problem9 = new QuantitativeGraph(0,60,0,10);
-    problem9.labelAxes('time (s)', 'position (m)');
+    problem9.labelAxes('time (s)', 'velocity (m/s)');
     problem9.addReferenceArray([20,40,60],[3,6,9]);
     problem9.addStepwiseFunction([[0,3],[20,3],[20,6],[60,6]]);
     $("#problem9Canvas").append(problem9.drawCanvas(300,300));
 
     let problem10 = new QuantitativeGraph(0,100,0,8);
-    problem10.labelAxes('time (s)', 'position (m)');
+    problem10.labelAxes('time (s)', 'velocity (m/s)');
     problem10.addReferenceArray([20,40,60,80,100],[2,4,6,8]);
     problem10.addStepwiseFunction([[0,8],[40,8],[40,2],[100,2]]);
     $("#problem10Canvas").append(problem10.drawCanvas(300,300));

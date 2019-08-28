@@ -351,6 +351,34 @@ class Circle {
 
 }
 
+class FunctionGraph {
+    constructor(func, xMin, xMax) {
+        this.function = func;
+        this.xMin = xMin;
+        this.xMax = xMax;
+        // error if xMin is less than xMax
+        let range = this.getRange();
+        this.yMin = range[0];
+        this.yMax = range[1];
+        this.rectangle = new Rectangle(new Point(this.xMin,this.yMin),(this.xMax - this.xMin), (this.yMax - this.yMin));
+    }
+
+    getRange(Nsteps) {
+        if (Nsteps === undefined) {Nsteps = 500;}
+        let i, xVal, yVal;
+        let yMax = this.function(this.xMin);
+        let yMin = yMax;
+        let xStep = (this.xMax - this.xMin) / Nsteps;
+        for (i = 0; i <= Nsteps; i++) {
+            xVal = this.xMin + i * xStep;
+            yVal = this.function(xVal);
+            if (yVal < yMin) {yMin = yVal;}
+            if (yVal > yMax) {yMax = yVal;}
+        }
+        return [yMin, yMax];
+    }
+}
+
 // alternative to constructing Text with a center Point, the default
 function constructTextFromLowerLeftPoint() {}
 
@@ -371,6 +399,7 @@ class Diagram {
         this.yMin = undefined;
         this.horizontalRange = undefined;
         this.verticalRange = undefined;
+        this.functionGraphs = [];
     }
 
     // i added a line to prevent creating duplicates!
@@ -483,6 +512,16 @@ class Diagram {
     /// if the Point already exists, eg. because it is the end of a line,
     /// then this functino does not work properly!
 
+    addFunctionGraph(func, xMin, xMax) {
+        let thisFunctionGraph = new FunctionGraph(func, xMin, xMax);
+        this.addExistingPoint(thisFunctionGraph.rectangle.lowerLeftPoint);
+        this.addExistingPoint(thisFunctionGraph.rectangle.upperLeftPoint);
+        this.addExistingPoint(thisFunctionGraph.rectangle.lowerRightPoint);
+        this.addExistingPoint(thisFunctionGraph.rectangle.upperRightPoint);
+        this.functionGraphs.push(thisFunctionGraph);
+        return thisFunctionGraph;
+    }
+
 
     /// center Point need not already exist
     addText(letters, centerPoint, relativeFontSize, rotation) {
@@ -496,6 +535,7 @@ class Diagram {
         this.texts.push(newText);
         return newText
     }
+
 
     // creates Text above and below a line
     // if line is vertical "Text above" is to the left and "textBelow" is to the right
@@ -739,6 +779,34 @@ class Diagram {
             if (circleObject.filled) {ctx.fill();}
         });
 
+        this.functionGraphs.forEach((FunctionGraphObject) => {
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'butt';
+            ctx.strokeStyle = 'black'; // can change later!
+            let Nsteps = 200;
+            let k, thisXVal, thisYVal, lastXVal, lastYval;
+            let range = FunctionGraphObject.xMax - FunctionGraphObject.xMin;
+            let xSteps = range / Nsteps;
+            lastXVal = FunctionGraphObject.xMin;
+            lastYval = FunctionGraphObject.function(lastXVal);
+            for (k = 1; k <= Nsteps; k++) {
+                thisXVal = FunctionGraphObject.xMin + xSteps * k;
+                thisYVal = FunctionGraphObject.function(thisXVal);
+
+                /// the function was not transformed yet!
+                // so there are transformations are included here!
+                ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
+                console.log(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
+                //ctx.beginPath();
+                ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                ctx.stroke();
+
+                lastXVal = thisXVal;
+                lastYval = thisYVal;
+            }
+
+        });
+
         // before finishing, undo transformations
         this.rescale(1 / scaleFactor);
         this.translate(this.xMin, this.yMin);
@@ -922,6 +990,11 @@ class QuantitativeGraph extends Diagram {
         this.addSegmentAndTwoPoints(x1,y1,x2,y2);
         this.addPointAsACircle(x1,y1);
         this.addPointAsACircle(x2,y2);
+    }
+
+    // add a graph of a function
+    addFunctionGraph(func, xMin, xMax) {
+        super.addFunctionGraph(func, xMin, xMax);
     }
 
     addStepwiseFunction(arrayOfPoints, circlesBoolean) {
