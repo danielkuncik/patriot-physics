@@ -817,7 +817,11 @@ class Diagram {
 }
 
 
-
+///problems:
+// 1 - there needs to be a function taht rescales the x and y axis values
+/// without actualyl changing anything about the graph
+/// 2 - i need to redo the dashed/dotted line function above!
+//// so that it does not make a million points, and it makes lines that look a whole lot better!
 class QuantitativeGraph extends Diagram {
     constructor(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio) {
         super();
