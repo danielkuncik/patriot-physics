@@ -829,25 +829,6 @@ class Diagram {
             ctx.stroke();
         });
 
-        this.texts.forEach((textObject) => {
-            ctx.font = String(textObject.relativeFontSize) + unit + " " + String(textObject.font);
-            ctx.fillStyle = textObject.color;
-            ctx.textAlign = textObject.alignment;
-            ctx.textBaseline = textObject.baseline;
-
-            //// MUST ADD IF/THEN STATEMENT TO SET THE REFERENCE POINT BASED UPON THE TEXT ALIGNMENT AND BASELINE
-
-            if (Math.abs(textObject.rotationAngleInRadians) > 1e-10) {
-                ctx.translate(wiggleRoom + textObject.centerPoint.x, canvasHeight - textObject.centerPoint.y - wiggleRoom);
-                ctx.rotate(textObject.rotationAngleInRadians);
-                ctx.fillText(textObject.letters, 0, 0);
-                ctx.rotate(-1 * textObject.rotationAngleInRadians);
-                ctx.translate(-1 * (wiggleRoom + textObject.centerPoint.x), -1 * ( canvasHeight - textObject.centerPoint.y - wiggleRoom));
-            } else {
-                ctx.fillText(textObject.letters, wiggleRoom + textObject.centerPoint.x, canvasHeight - textObject.centerPoint.y - wiggleRoom);
-            }
-
-        });
 
         this.circles.forEach((circleObject) => {
             ctx.fillStyle = circleObject.fillColor;
@@ -887,6 +868,27 @@ class Diagram {
             }
 
         });
+        /// texts come last so they are not written over
+        this.texts.forEach((textObject) => {
+            ctx.font = String(textObject.relativeFontSize) + unit + " " + String(textObject.font);
+            ctx.fillStyle = textObject.color;
+            ctx.textAlign = textObject.alignment;
+            ctx.textBaseline = textObject.baseline;
+
+            //// MUST ADD IF/THEN STATEMENT TO SET THE REFERENCE POINT BASED UPON THE TEXT ALIGNMENT AND BASELINE
+
+            if (Math.abs(textObject.rotationAngleInRadians) > 1e-10) {
+                ctx.translate(wiggleRoom + textObject.centerPoint.x, canvasHeight - textObject.centerPoint.y - wiggleRoom);
+                ctx.rotate(textObject.rotationAngleInRadians);
+                ctx.fillText(textObject.letters, 0, 0);
+                ctx.rotate(-1 * textObject.rotationAngleInRadians);
+                ctx.translate(-1 * (wiggleRoom + textObject.centerPoint.x), -1 * ( canvasHeight - textObject.centerPoint.y - wiggleRoom));
+            } else {
+                ctx.fillText(textObject.letters, wiggleRoom + textObject.centerPoint.x, canvasHeight - textObject.centerPoint.y - wiggleRoom);
+            }
+
+        });
+
 
         // before finishing, undo transformations
         this.rescale(1 / scaleFactor);
@@ -1248,6 +1250,7 @@ class UnitMap extends Diagram {
 
     addPod(key, letter, level, horizontalPosition, prerequisites, score) {
         let x, y, newPod;
+        if (score === undefined) {score = 0;}
         let fillColor = grayscale0to20(score);
         let textColor = "#000000"; // text is black if score is 10 or less and white if 10 or more
         if (score > 10) {textColor = "#FFFFFF";}
@@ -1270,6 +1273,7 @@ class UnitMap extends Diagram {
         let podText = super.addText(letter, newPod.center, this.radius * 1.3);
         podText.setColor(newPod.textColor);
         podCircle.setFillColor(newPod.fillColor);
+        podCircle.fill();
 
         return this.pods[key];
     };
