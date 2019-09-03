@@ -33,6 +33,83 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
     return scale;
 }
 
+// given a number zero to 20, returns a proportionate shade of gray
+// with 0 = white
+// and 20 = black
+function grayscale0to20(score) {
+    var grayShade;
+    switch(score) {
+        case 20:
+            grayShade = "#000000";
+            break;
+        case 19:
+            grayShade = "#101010";
+            break;
+        case 18:
+            grayShade = "#202020";
+            break;
+        case 17:
+            grayShade = "#303030";
+            break;
+        case 16:
+            grayShade = "#404040";
+            break;
+        case 15:
+            grayShade = "#505050";
+            break;
+        case 14:
+            grayShade = "#606060";
+            break;
+        case 13:
+            grayShade = "#696969";
+            break;
+        case 12:
+            grayShade = "#787878";
+            break;
+        case 11:
+            grayShade = "#888888";
+            break;
+        case 10:
+            grayShade = "#989898";
+            break;
+        case 9:
+            grayShade = "#A8A8A8";
+            break;
+        case 8:
+            grayShade = "#B0B0B0";
+            break;
+        case 7:
+            grayShade = "#BEBEBE";
+            break;
+        case 6:
+            grayShade = "#C8C8C8";
+            break;
+        case 5:
+            grayShade = "#D3D3D3";
+            break;
+        case 4:
+            grayShade = "#DCDCDC";
+            break;
+        case 3:
+            grayShade = "#E8E8E8";
+            break;
+        case 2:
+            grayShade = "#F5F5F5";
+            break;
+        case 1:
+            grayShade = "#F8F8F8";
+            break;
+        case 0:
+            grayShade = "#FFFFFF";
+            break;
+        default:
+            grayShade = "#FFFFFF";
+            break
+    }
+    return grayShade;
+}
+
+
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -335,6 +412,10 @@ class Circle {
         this.fillColor = "#000000";
         this.center = centerPoint;
         this.rectangle = constructRectangleFromCenter(centerPoint, radius * 2, radius * 2);
+    }
+
+    setFillColor(newColor) {
+        this.fillColor = newColor;
     }
 
     fill() {
@@ -1165,14 +1246,19 @@ class UnitMap extends Diagram {
         this.verticalSpaceBetween = 1;
     }
 
-    addPod(key, letter, level, horizontalPosition, prerequisites) {
+    addPod(key, letter, level, horizontalPosition, prerequisites, score) {
         let x, y, newPod;
+        let fillColor = grayscale0to20(score);
+        let textColor = "#000000"; // text is black if score is 10 or less and white if 10 or more
+        if (score > 10) {textColor = "#FFFFFF";}
         newPod =
             {
                 "letter": letter,
                 "level": level,
                 "horizontalPosition": horizontalPosition,
-                "prerequisites": prerequisites
+                "prerequisites": prerequisites,
+                "fillColor": fillColor,
+                "textColor": textColor
             };
         x = (horizontalPosition - 1) * (this.horizontalSpaceBetween + this.radius * 2);
         y = (level - 1) * (this.verticalSpaceBetween + this.radius * 2);
@@ -1180,8 +1266,10 @@ class UnitMap extends Diagram {
 
         this.pods[key] = newPod;
 
-        super.addCircle(newPod.center,this.radius);
-        super.addText(letter, newPod.center, this.radius * 1.3);
+        let podCircle = super.addCircle(newPod.center,this.radius);
+        let podText = super.addText(letter, newPod.center, this.radius * 1.3);
+        podText.setColor(newPod.textColor);
+        podCircle.setFillColor(newPod.fillColor);
 
         return this.pods[key];
     };
