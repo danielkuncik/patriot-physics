@@ -3754,7 +3754,7 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["analyze_circuits_2"],
-            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula seperately and together; prove that answers are dimensionally correct"
+            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together; prove that answers are dimensionally correct"
           },
           "analyze_circuits_3":
           {

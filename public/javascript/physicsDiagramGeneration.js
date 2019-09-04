@@ -319,6 +319,10 @@ class Rectangle {
 
     }
 
+    rescaleVertically(yMultiplier) {
+        // used to fit a function graph in
+    }
+
 
 }
 // does this make a duplicate of the center Point??
@@ -457,6 +461,10 @@ class FunctionGraph {
             if (yVal > yMax) {yMax = yVal;}
         }
         return [yMin, yMax];
+    }
+
+    rescaleVertically(yMultiplier) {
+        /// rescales the function so that it fits
     }
 }
 
@@ -857,10 +865,13 @@ class Diagram {
 
                 /// the function was not transformed yet!
                 // so there are transformations are included here!
+                // ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
+                // ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+
                 ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
-                console.log(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
-                //ctx.beginPath();
                 ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+
+
                 ctx.stroke();
 
                 lastXVal = thisXVal;
@@ -925,15 +936,19 @@ class QuantitativeGraph extends Diagram {
         //the y multiplier is the aspect ratio i would get if i did nothing divided by the aspect ratio i want
         // mulitply all y values by this number
 
-        this.xMinOnGraph = xMinOnGraph;
+        this.xMinOnGraph = xMinOnGraph; // differentiates from xMin of the diagram, defined above
         this.xMaxOnGraph = xMaxOnGraph;
         this.yMinOnGraphOriginal = yMinOnGraph;
         this.yMaxOnGraphOriginal = yMaxOnGraph;
         this.yMinOnGraph = yMinOnGraph * this.yMultiplier;
         this.yMaxOnGraph = yMaxOnGraph * this.yMultiplier;
 
-        this.xAxis = super.addTwoPointsAndSegement(this.xMinOnGraph, 0, this.xMaxOnGraph, 0);
-        this.yAxis = super.addTwoPointsAndSegement(0, this.yMinOnGraph, 0, this.yMaxOnGraph);
+        // x axis
+        super.addTwoPointsAndSegement(this.xMinOnGraph, 0, this.xMaxOnGraph, 0);
+
+        // y axis
+        super.addTwoPointsAndSegement(0, this.yMinOnGraph, 0, this.yMaxOnGraph);
+
         this.axisLabelFontSize = undefined;
         this.hashLabelFontSize = undefined;
         this.hashLength = undefined;
@@ -1081,7 +1096,11 @@ class QuantitativeGraph extends Diagram {
 
     // add a graph of a function
     addFunctionGraph(func, xMin, xMax) {
-        super.addFunctionGraph(func, xMin, xMax);
+        let yMultipler = this.yMultiplier;
+        let rescaledFunction = function(x) {
+            return func(x) * yMultipler
+        };
+        super.addFunctionGraph(rescaledFunction, xMin, xMax);
     }
 
     addStepwiseFunction(arrayOfPoints, circlesBoolean) {
