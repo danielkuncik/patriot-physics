@@ -1120,9 +1120,16 @@ class QuantitativeGraph extends Diagram {
 
 }
 
+/*
+To do:
+- add plus and minus signs to battery
+- add meters
+- add a line with current labeled
+ */
 class CircuitDiagram extends Diagram {
     constructor() {
         super();
+        this.cursor = origin;
     }
 
     addNewPoint(x,y) {
@@ -1151,12 +1158,13 @@ class CircuitDiagram extends Diagram {
         this.addWire(intermediatePoint2, endPoint2);
     }
 
-    addResistor(endPoint1, endPoint2, width, numZigZags) {
+    addResistor(endPoint1, endPoint2, labelAbove, labelBelow, width, numZigZags) {
         if (numZigZags === undefined) {
             numZigZags = 3;
         }
+        let length = endPoint1.getDistanceToAnotherPoint(endPoint2);
         if (width === undefined) {
-            width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 0.25;
+            width = length * 0.25;
         }
         let j;
         let startPoint = endPoint1, finishPoint;
@@ -1165,32 +1173,44 @@ class CircuitDiagram extends Diagram {
             this.addZigZag(startPoint, finishPoint, width);
             startPoint = finishPoint;
         }
+        if (labelAbove !== undefined) {
+            super.labelLineAbove(endPoint1, endPoint2, labelAbove, width * 1.5, length * 0.2);
+        }
+        if (labelBelow !== undefined) {
+            super.labelLineBelow(endPoint1, endPoint2, labelBelow, width * 1.5, length * 0.2);
+        }
     }
 
-    /*
-        this.addCell = function(endPoint1, endPoint2, numBatteries, width) {
-        if (numBatteries === undefined) {numBatteries = 2;}
-        if (width === undefined) {width = getLength(endPoint1, endPoint2) * 0.5;} /// should be proportioned by numbatteries
+    ///I want to replace 'addListOfElements' with more of a cursor type program
 
-        const numLines = numBatteries * 2;
-        const angle = getAngleToHorizontal(endPoint1, endPoint2);
-        var j, centerPoint, lineWidth, pointA, pointB;
-        for (j = 0; j < numLines; j++) {
-            centerPoint = interpolatePoint(endPoint1, endPoint2, j / (numLines - 1) );
-            if (j % 2 === 0) {lineWidth = width / 2;} else {lineWidth = width;}
-            pointA = getNewPointWithTrig(centerPoint, lineWidth / 2, rotateCounterClockwise90(angle));
-            pointB = getNewPointWithTrig(centerPoint, lineWidth / 2, rotateClockwise90(angle));
-            this.addWire(pointA, pointB);
+    moveCursor(X, Y) {
+        this.cursor = new Point(X, Y);
+    }
+
+    /// creates an element
+    addElementWithCursor(elementType, endPointX, endPointY, labelAbove, labelBelow) {
+        let nextPoint = new Point(endPointX, endPointY);
+        if (elementType === 'wire') {
+            this.addWire(this.cursor, nextPoint);
+        } else if (elementType === 'resistor') {
+            this.addResistor(this.cursor, nextPoint, labelAbove, labelBelow);
+        } else if (elementType === 'battery') {
+            this.addCell(this.cursor, nextPoint, labelAbove, labelBelow);
         }
-    };
-    // i need to add the positive and negative signs!
+        this.cursor = nextPoint;
+        return true
+    }
 
-     */
 
-    addCell(endPoint1, endPoint2, numBatteries, width) {
+    labelElement(endPoint1, endPoint2, elementLength, elementWidth, labelAbove, labelBelow) {
+        // could make it more DRY by adding a function here
+    }
+
+    addCell(endPoint1, endPoint2, labelAbove, labelBelow, numBatteries, width) {
         if (numBatteries === undefined) {numBatteries = 2;}
         if (width === undefined) {width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 0.5;} /// should be proportioned by numbatteries
 
+        let length = endPoint1.getDistanceToAnotherPoint(endPoint2);
         let numLines = numBatteries * 2;
         let theta = endPoint1.getAngleToAnotherPoint(endPoint2);
         let j, pointA, pointB, lineWidth;
@@ -1203,6 +1223,15 @@ class CircuitDiagram extends Diagram {
             super.addSegment(pointA, pointB);
         }
         // still need to add + and - signs on the cathode and anode
+        if (labelAbove !== undefined) {
+            super.labelLineAbove(endPoint1, endPoint2, labelAbove, width * 1.5, length * 0.2);
+        }
+        if (labelBelow !== undefined) {
+            super.labelLineBelow(endPoint1, endPoint2, labelBelow, width * 1.5, length * 0.2);
+        }
+
+        // add plus and minus signs
+
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
