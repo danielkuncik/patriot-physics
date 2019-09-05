@@ -16,3 +16,10 @@ li.physicsQuestion {
     font-size: 14px;
     margin-bottom: 20px;
 }
+
+a.importantLink {
+    font-size: 18px;
+    border-color: palegreen;
+    border-width: 2px;
+    border-style: solid;
+}

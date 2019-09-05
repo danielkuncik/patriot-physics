@@ -31,6 +31,7 @@ function makeParabolicPTgraph(tMax, positionMax, acceleration, initialVelocity, 
 }
 
 
+
 /// #########################################################################################
 //// CIRCUIT DIAGRAMS
 /*
@@ -71,6 +72,7 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
     let leftEndX = 0;
 
     let myCircuit = new CircuitDiagram();
+    // need to change this so i have more control over the battery voltage
     myCircuit.addElementWithCursor('battery', leftEndX, 3, `${batteryVoltage} Volts`);
     myCircuit.addElementWithCursor('wire', leftEndX, topLineY);
     myCircuit.addElementWithCursor('wire', leftEndX + 3, topLineY);
@@ -82,6 +84,8 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
             outputString = "1 Ohm";
         } else if (resistorArray[this.resistorArrayIndex] === undefined) {
             outputString = ''; // in case i want one of them to be empty and have no information
+        } else if (typeof(resistorArray[this.resistorArrayIndex]) === 'string') {
+            outputString = resistorArray[this.resistorArrayIndex]; /// you can write the resistance as a string and it jsut comes in fine
         } else {
             outputString = `${resistorArray[this.resistorArrayIndex]} Ohms`
         }

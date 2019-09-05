@@ -33,19 +33,11 @@
         The graph below is flat at \( t = 144 \text{seconds} \).
         <ol type = 'a'>
             <li>Determine the acceleration of the object in the graph below.</li>
-            <li>Determine the inital velocity of the object in the graph below.</li>
+            <li>Determine the initial velocity of the object in the graph below.</li>
         </ol>
         <div id = 'problem4'></div>
     </li>
 
-    <p>
-        Problems 5 - 12, involving position-time and velocity-time graphs, are coming soon!
-    </p>
-
-</ol>
-
-<script>
-    /*
 <!--- 5 - 8 Velocity-Time graphs--->
 <li>
     <ol type = 'a'>
@@ -57,28 +49,30 @@
 
 <li>
     <ol type = 'a'>
+        <li>Determine the displacement of the object in the graph below.</li>
         <li>Determine the acceleration of the object in the graph below.</li>
-        <li>Determine the final velocity of the object in the graph below.</li>
     </ol>
     <div id = 'problem6'></div>
 </li>
 
 <li>
     <ol type = 'a'>
+        <li>Determine the displacement of the object in the graph below.</li>
         <li>Determine the acceleration of the object in the graph below.</li>
-        <li>Determine the final velocity of the object in the graph below.</li>
     </ol>
     <div id = 'problem7'></div>
 </li>
 
 <li>
     <ol type = 'a'>
+        <li>Determine the displacement of the object in the graph below.</li>
         <li>Determine the acceleration of the object in the graph below.</li>
-        <li>Determine the final velocity of the object in the graph below.</li>
     </ol>
     <div id = 'problem8'></div>
 </li>
 
+    <script>
+        /*
 <!---9 - 12 Acceleration-Time Graphs ---->
 <li>
     <ol type = 'a'>
@@ -110,11 +104,10 @@
         <li>Determine the final velocity of the object in the graph below.</li>
     </ol>
     <div id = 'problem12'></div>
-</li>
-*/
-</script>
+</li> */
+    </script>
 
-
+</ol>
 
 <script>
 
@@ -129,5 +122,30 @@
 
     var problem4 = makeParabolicPTgraph(48,undefined,-0.125,6,0);
     $("#problem4").append(problem4.drawCanvas(300,300));
+
+    var problem5 = new QuantitativeGraph(0,12,0,48,1);
+    problem5.labelAxes('time (s)', 'velocity (m/s)');
+    problem5.addSegmentAndTwoPoints(0,0,12,36);
+    problem5.addReferenceArray([4,8,12],[12,24,36,48]);
+    $("#problem5").append(problem5.drawCanvas(300,300));
+
+    var problem6 = new QuantitativeGraph(0,100,0,80,1.25);
+    problem6.labelAxes('time (s)', 'velocity (m/s)');
+    problem6.addSegmentAndTwoPoints(0,0,100,80);
+    problem6.addReferenceArray([50,100],[20,40,60,80]);
+    $("#problem6").append(problem6.drawCanvas(400,300));
+
+    var problem7 = new QuantitativeGraph(0,20,0,40);
+    problem7.labelAxes('time (s)', 'velocity (m/s)');
+    problem7.addReferenceArray([10,20],[10,20,30,40]);
+    problem7.addSegmentAndTwoPoints(0,40,20,0);
+    $("#problem7").append(problem7.drawCanvas(300,300));
+
+    var problem8 = new QuantitativeGraph(0,10,0,20);
+    problem8.labelAxes('time (s)', 'velocity (m/s)');
+    problem8.addReferenceArray([5,10],[5,10,15,20]);
+    problem8.addSegmentAndTwoPoints(0,15,10,10);
+    $("#problem8").append(problem8.drawCanvas(300,300));
+
 
 </script>

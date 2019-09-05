@@ -971,8 +971,8 @@ class QuantitativeGraph extends Diagram {
         this.axisLabelFontSize = sizeFactor / 8;
         this.hashLabelFontSize = sizeFactor / 10;
         this.hashLength = sizeFactor / 5;
-        this.axisTextDisplacement = this.hashLength / 2 + this.hashLabelFontSize + this.axisLabelFontSize * 0.5; /// should automatically increase when the first hash is added
-        this.hashLabelDisplacement = this.hashLength /2  + this.hashLabelFontSize * 0.5;
+        this.axisTextDisplacement = this.hashLength / 2 + this.hashLabelFontSize + this.axisLabelFontSize * 0.8; /// should automatically increase when the first hash is added
+        this.hashLabelDisplacement = this.hashLength /2  + this.hashLabelFontSize * 0.8;
         this.pointRadius = sizeFactor / 30;
     }
 
@@ -1174,10 +1174,10 @@ class CircuitDiagram extends Diagram {
             startPoint = finishPoint;
         }
         if (labelAbove !== undefined) {
-            super.labelLineAbove(endPoint1, endPoint2, labelAbove, width * 1.5, length * 0.2);
+            super.labelLineAbove(endPoint1, endPoint2, labelAbove, width * 1.5, length * 0.3);
         }
         if (labelBelow !== undefined) {
-            super.labelLineBelow(endPoint1, endPoint2, labelBelow, width * 1.5, length * 0.2);
+            super.labelLineBelow(endPoint1, endPoint2, labelBelow, width * 1.5, length * 0.3);
         }
     }
 
