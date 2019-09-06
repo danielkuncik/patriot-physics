@@ -21,7 +21,7 @@
     </li>
 
     <li>
-        The graph below is flat at \( t = 18 \text{seconds} \).
+        The graph below is flat at \( t = 18 \text{ seconds} \).
         <ol type = 'a'>
             <li>Determine the acceleration of the object in the graph below.</li>
             <li>Determine the initial velocity of the object in the graph below.</li>
@@ -30,7 +30,7 @@
     </li>
 
     <li>
-        The graph below is flat at \( t = 144 \text{seconds} \).
+        The graph below is flat at \( t = 144 \text{ seconds} \).
         <ol type = 'a'>
             <li>Determine the acceleration of the object in the graph below.</li>
             <li>Determine the initial velocity of the object in the graph below.</li>
@@ -71,10 +71,10 @@
     <div id = 'problem8'></div>
 </li>
 
-    <script>
-        /*
+
 <!---9 - 12 Acceleration-Time Graphs ---->
 <li>
+    Initial Velocity = 0
     <ol type = 'a'>
         <li>Determine the final velocity of the object in the graph below.</li>
         <li>Determine the displacement of the object in the graph below.</li>
@@ -83,29 +83,31 @@
 </li>
 
 <li>
+    Initial Velocity = 0
     <ol type = 'a'>
-        <li>Determine the acceleration of the object in the graph below.</li>
         <li>Determine the final velocity of the object in the graph below.</li>
+        <li>Determine the displacement of the object in the graph below.</li>
     </ol>
     <div id = 'problem10'></div>
 </li>
 
 <li>
+    Initial Velocity = 30 m/s
     <ol type = 'a'>
-        <li>Determine the acceleration of the object in the graph below.</li>
         <li>Determine the final velocity of the object in the graph below.</li>
+        <li>Determine the displacement of the object in the graph below.</li>
     </ol>
     <div id = 'problem11'></div>
 </li>
 
 <li>
+    Initial Velocity = 16 m/s
     <ol type = 'a'>
-        <li>Determine the acceleration of the object in the graph below.</li>
         <li>Determine the final velocity of the object in the graph below.</li>
+        <li>Determine the displacement of the object in the graph below.</li>
     </ol>
     <div id = 'problem12'></div>
-</li> */
-    </script>
+</li>
 
 </ol>
 
@@ -125,27 +127,53 @@
 
     var problem5 = new QuantitativeGraph(0,12,0,48,1);
     problem5.labelAxes('time (s)', 'velocity (m/s)');
-    problem5.addSegmentAndTwoPoints(0,0,12,36);
+    problem5.addSegmentWithCirclesOnEnds(0,0,12,36);
     problem5.addReferenceArray([4,8,12],[12,24,36,48]);
     $("#problem5").append(problem5.drawCanvas(300,300));
 
     var problem6 = new QuantitativeGraph(0,100,0,80,1.25);
     problem6.labelAxes('time (s)', 'velocity (m/s)');
-    problem6.addSegmentAndTwoPoints(0,0,100,80);
+    problem6.addSegmentWithCirclesOnEnds(0,0,100,80);
     problem6.addReferenceArray([50,100],[20,40,60,80]);
     $("#problem6").append(problem6.drawCanvas(400,300));
 
     var problem7 = new QuantitativeGraph(0,20,0,40);
     problem7.labelAxes('time (s)', 'velocity (m/s)');
     problem7.addReferenceArray([10,20],[10,20,30,40]);
-    problem7.addSegmentAndTwoPoints(0,40,20,0);
+    problem7.addSegmentWithCirclesOnEnds(0,40,20,0);
     $("#problem7").append(problem7.drawCanvas(300,300));
 
     var problem8 = new QuantitativeGraph(0,10,0,20);
     problem8.labelAxes('time (s)', 'velocity (m/s)');
     problem8.addReferenceArray([5,10],[5,10,15,20]);
-    problem8.addSegmentAndTwoPoints(0,15,10,10);
+    problem8.addSegmentWithCirclesOnEnds(0,15,10,10);
     $("#problem8").append(problem8.drawCanvas(300,300));
 
+    var problem9 = new QuantitativeGraph(0,8,0,8);
+    problem9.labelAxes('time (s)', 'acceleration (m/s/s)');
+    problem9.addReferenceArray([4,8],[5]);
+    problem9.addSegmentWithCirclesOnEnds(0,5,8,5);
+    $("#problem9").append(problem9.drawCanvas(300,300));
+
+    var problem10 = new QuantitativeGraph(0,6,0,1);
+    problem10.labelAxes('time (s)', 'acceleration (m/s/s)');
+    problem10.addReferenceArray([3,6],[0.4]);
+    problem10.addSegmentWithCirclesOnEnds(0,0.4,6,0.4);
+    $("#problem10").append(problem10.drawCanvas(300,300));
+
+    var problem11 = new QuantitativeGraph(0,10,-5,0);
+    problem11.labelAxes('time (s)', 'acceleration (m/s/s)');
+    problem11.addReferenceArray([5,10],[-3]);
+    problem11.addSegmentWithCirclesOnEnds(0,-3,10,-3);
+    $("#problem11").append(problem11.drawCanvas(300,300));
+
+    var problem12 = new QuantitativeGraph(0,8,-2,0);
+    problem12.labelAxes('time (s)', 'acceleration (m/s/s)');
+    problem12.addReferenceArray([4,8],[-1.5]);
+    problem12.addSegmentWithCirclesOnEnds(0,-1.5,8,-1.5);
+    $("#problem12").append(problem12.drawCanvas(300,300));
+
+    // minor problem: 11 and 12 have large space above
+    // something is wrong with the graphing program when it y is going from zero down
 
 </script>

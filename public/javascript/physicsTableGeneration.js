@@ -248,17 +248,17 @@ class TableObject {
 /// what if i had an actualy javascript matrix...which contained objects
 
 //     constructor(width, height, unit, numRows, numColumns) {
-
-class formulaBox extends TableObject {
-    constructor(width, height, unit) {
-        super(width, height, unit, 3, 3);
-
-        super.reporportionColumns([0.4,0.3,0.3]);
-        super.reporportionRows([0.3,0.4,0.3]);
-
-
-    }
-}
+//
+// class formulaBox extends TableObject {
+//     constructor(width, height, unit) {
+//         super(width, height, unit, 3, 3);
+//
+//         super.reporportionColumns([0.4,0.3,0.3]);
+//         super.reporportionRows([0.3,0.4,0.3]);
+//
+//
+//     }
+// }
 
 
 
