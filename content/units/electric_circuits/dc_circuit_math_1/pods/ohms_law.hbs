@@ -1,0 +1,121 @@
+
+<table>
+    <tr>
+        <td>Symbol</td>
+        <td>Quantity</td>
+        <td>SI Unit</td>
+    </tr>
+    <tr>
+        <td>\(V\)</td>
+        <td>Voltage</td>
+        <td>Volts (V)</td>
+    </tr>
+    <tr>
+        <td>\(I\)</td>
+        <td>Current</td>
+        <td>Amperes (A)</td>
+    </tr>
+    <tr>
+        <td>\(R\)</td>
+        <td>Resistance</td>
+        <td>Ohms \( \Omega \)</td>
+    </tr>
+</table>
+
+<h5>Notes:</h5>
+<ul>
+    <li>
+        The symbol for current is \(I\), NOT C!
+        This is because current used to be called "intensity of current."
+    </li>
+    <li>
+        The symbol for an Ohm, the SI unit of resistance, is (\(\Omega\)).
+    </li>
+</ul>
+
+<h3>Questions!</h3>
+
+<script>
+
+    //function formulaInformationBox(width, height, unit) {
+    //this.addSymbol = function(symbol, quantity, SIunit, SIunitAbbreviation, comment) {
+
+    /*
+    NOT WORKING
+    let myInformationBox = new formulaInformationBox();
+    myInformationBox.addSymbol('\\(V\\)','Voltage','Volts','V');
+    myInformationBox.addSymbol('\\(I\\)','Current','Amperes','A');
+    myInformationBox.addSymbol('\\(R\\)','Resistance','Ohms','\\(\\Omega\\)');
+    $("#formulaInformationBox").append(myInformationBox.makeTable());
+    */
+
+</script>
+
+<ol>
+    <li>
+        I hook up a battery with a voltage of 10 volts to a resistance of 5 Ohms. What is the current?
+        {{>formulaSolvingTable}}
+    </li>
+    <li>
+        I hook up a battery with a voltage of 30 volts to a resistance of 6 Ohms. What is the current?
+        {{>formulaSolvingTable}}
+    </li>
+    <li>
+        When I hook up a battery with a voltage of 12 volts, I get 3 amps of current. What is the resistance?
+        {{>formulaSolvingTable}}
+    </li>
+    <li>
+        I have 5 amps of current going through a 10 Ohm resistor. What is the voltage of my battery?
+        {{>formulaSolvingTable}}
+    </li>
+    <li>
+        I have 3 amps of current going through a 5 Ohm resistor. What is the voltage of my circuit?
+        {{>formulaSolvingTable}}
+    </li>
+    <li>
+        I hook up a 12 volt battery to a 36 Ohm resistor. What is the current of my circuit?
+        {{>formulaSolvingTable}}
+    </li>
+</ol>
+
+
+<!--- Part 2 Ohms Law Table--->
+<p>
+    Each row of the table below contains two numbers given and one number still unknown.
+    Fill in the unknown number so each row satisfies the equation $$ V = IR. $$
+</p>
+
+<table>
+    <tr>
+        <td>
+            Voltage (V)
+        </td>
+        <td>
+            Current (I)
+        </td>
+        <td>
+            Resistance (\(\Omega\))
+        </td>
+    </tr>
+    <tr>
+        <td>24</td><td></td><td>4</td>
+    </tr>
+    <tr>
+        <td>15</td><td>5</td><td></td>
+    </tr>
+    <tr>
+        <td>24</td><td></td><td>12</td>
+    </tr>
+    <tr>
+        <td>20</td><td>4</td><td></td>
+    </tr>
+    <tr>
+        <td></td><td>2</td><td>9</td>
+    </tr>
+    <tr>
+        <td></td><td>3</td><td>12</td>
+    </tr>
+    <tr>
+        <td>10</td><td></td><td>20</td>
+    </tr>
+</table>

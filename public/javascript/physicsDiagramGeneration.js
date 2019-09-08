@@ -246,6 +246,7 @@ class Segment {
         this.thickness = 2;
         this.color = "#000000";
         this.cap = "butt";
+        this.dotted = false;
     }
 
     // do i want thickness to scale with the rest of the image??
@@ -262,10 +263,17 @@ class Segment {
         return this.point1.getDistanceToAnotherPoint(this.point2);
     }
 
+    /// i need a way to customize dot sizes and dash sizes!!!
+    /// right now, it is set to 1/30 times the average of the width and height of the whole canvas!
+    turnIntoDottedLine() {
+        this.dotted = true;
+        this.setThickness(1);
+    };
+
     // if Point 1 were the origin, returns the angle to the horizontal of Point 2
     // returns angles theta such that 0 <= theta < 2pi
     getAngleToHorizontal() {
-        return this.point1.getAngleToHorizontal(this.point2);
+        return this.point1.getAngleToAnotherPoint(this.point2);
     }
 
     // gets slope of line
@@ -722,26 +730,31 @@ class Diagram {
     // so i am creating my own instead
     // the line will always start and end with a solid Segment!
     addDashedLine(point1, point2, numDashes, thickness) {
-        if (thickness === undefined) {thickness = 1;}
-        let totalLength = point1.getDistanceToAnotherPoint(point2);
-        if (numDashes === undefined || isNaN(numDashes)) {numDashes = 10;}
-        let numSteps = 2 * numDashes - 1;
-        let stepLength = totalLength / numSteps;
-        let theta = point1.getAngleToAnotherPoint(point2);
-        let xDisplacementPerDash = stepLength * Math.cos(theta);
-        let yDisplacementPerDash = stepLength * Math.sin(theta);
-        //     if (isNaN(numSteps)) {numSteps = 1;} // to prevent potential of an infinite loop
-        let n = 0;
-        let thisSegment;
-        // let isThisSegmentSolid = true;
-        while (n < numSteps) {
-            if (n % 2 === 0) {
-                thisSegment = this.addTwoPointsAndSegement(point1.x + xDisplacementPerDash * n,point1.y + yDisplacementPerDash * n, point1.x + xDisplacementPerDash * (n + 1),point1.y + yDisplacementPerDash * (n + 1));
-                thisSegment.setThickness(thickness);
-            }
-            //   isThisSegmentSolid = !isThisSegmentSolid;
-            n++;
-        }
+        // if (thickness === undefined) {thickness = 1;}
+        // let totalLength = point1.getDistanceToAnotherPoint(point2);
+        // if (numDashes === undefined || isNaN(numDashes)) {numDashes = 10;}
+        // let numSteps = 2 * numDashes - 1;
+        // let stepLength = totalLength / numSteps;
+        // let theta = point1.getAngleToAnotherPoint(point2);
+        // let xDisplacementPerDash = stepLength * Math.cos(theta);
+        // let yDisplacementPerDash = stepLength * Math.sin(theta);
+        // //     if (isNaN(numSteps)) {numSteps = 1;} // to prevent potential of an infinite loop
+        // let n = 0;
+        // let thisSegment;
+        // // let isThisSegmentSolid = true;
+        // while (n < numSteps) {
+        //     if (n % 2 === 0) {
+        //         thisSegment = this.addTwoPointsAndSegement(point1.x + xDisplacementPerDash * n,point1.y + yDisplacementPerDash * n, point1.x + xDisplacementPerDash * (n + 1),point1.y + yDisplacementPerDash * (n + 1));
+        //         thisSegment.setThickness(thickness);
+        //     }
+        //     //   isThisSegmentSolid = !isThisSegmentSolid;
+        //     n++;
+        // }
+
+
+        let newLine = this.addSegment(point1, point2);
+        newLine.turnIntoDottedLine();
+        return newLine
     };
 
 
@@ -834,13 +847,31 @@ class Diagram {
         c.setAttribute("height", String(canvasHeight) + unit);
         var ctx = c.getContext('2d');
 
+        // should i make this variable?
+        let dotSize = (this.horizontalRange + this.verticalRange) / 2 / 30;
         this.segments.forEach((segment) => {
             ctx.lineWidth = segment.thickness;
             ctx.lineCap = segment.lineCap;
             ctx.strokeStyle = segment.color;
-            ctx.moveTo(wiggleRoom + segment.point1.x, canvasHeight - wiggleRoom - segment.point1.y);
-            ctx.lineTo(wiggleRoom + segment.point2.x, canvasHeight - wiggleRoom - segment.point2.y);
-            ctx.stroke();
+            if (segment.dotted) {
+                let q;
+                let length = segment.getLength();
+                let theta = segment.getAngleToHorizontal();
+                let Ndots = length / dotSize;
+                for (q = 0; q < Ndots; q++) {
+                    if (q % 2 === 0) {
+                        ctx.beginPath();
+                        ctx.moveTo(wiggleRoom + segment.point1.x + length * q / Ndots * Math.cos(theta), canvasHeight - wiggleRoom - segment.point1.y - length * q / Ndots * Math.sin(theta));
+                        ctx.lineTo(wiggleRoom + segment.point1.x + length * (q + 1) / Ndots * Math.cos(theta), canvasHeight - wiggleRoom - segment.point1.y - length * (q + 1) / Ndots * Math.sin(theta));
+                        ctx.stroke();
+                    }
+                }
+            } else { /// normal (not dotted) lines
+                ctx.beginPath();
+                ctx.moveTo(wiggleRoom + segment.point1.x, canvasHeight - wiggleRoom - segment.point1.y);
+                ctx.lineTo(wiggleRoom + segment.point2.x, canvasHeight - wiggleRoom - segment.point2.y);
+                ctx.stroke();
+            }
         });
 
 
@@ -1208,7 +1239,6 @@ class CircuitDiagram extends Diagram {
         this.cursor = nextPoint;
         return true
     }
-
 
     labelElement(endPoint1, endPoint2, elementLength, elementWidth, labelAbove, labelBelow) {
         // could make it more DRY by adding a function here

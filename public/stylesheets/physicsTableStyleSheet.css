@@ -5,6 +5,7 @@ td {
     font-size: 10px;
 }
 
+
 td.nonShaded {
     background-color: white;
 }
@@ -23,22 +24,47 @@ th.greenHeader {
     color: green;
 }
 
-td.lookingForBox {
 
+
+/*
+Style for a formula solving table
+
+table width = 400px
+table height = 400px
+
+ */
+
+
+td.lookingForBox {
+    width: 150px;
+    height: 100px;
 }
 
 td.alreadyKnowBox {
-
+    width: 150px;
+    height: 200px;
 }
 
 td.formulaBox {
+    width: 150px;
+    height: 100px
+}
 
+td.littleBoxOnTheSide {
+    width: 100px;
+    border-bottom-color: #FFFFFF;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 td.workBox {
-
+    width: 250px;
+    height: 200px;
 }
 
 td.answerBox {
-
+    width: 400px;
+    height: 100px;
 }
+
+

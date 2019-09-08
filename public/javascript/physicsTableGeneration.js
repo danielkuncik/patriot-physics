@@ -262,6 +262,12 @@ class TableObject {
 
 
 
+/*
+Here is the function I created to make a formula solving table
+I decided to work my formula solving tables with an hbs partial instead
+But, in case I want it later, I am keeping this
+There may be advantages to using this method in the future
+
 // arguments should adjust how large i want the table to be etc.
 function formulaBox(width, height, unit) {
     if (width === undefined) {
@@ -317,6 +323,8 @@ function formulaBox(width, height, unit) {
 // well, that's a start
 // some things to do: fix the issue with the thick border lines
 // make it more nicely proportioned
+
+*/
 
 
 // makes tables to help analyze a circuit with resistors in series or parallel
@@ -522,7 +530,7 @@ function formulaInformationBox(width, height, unit) {
         var numColumns = 3;
         if (this.areThereComments) {numColumns = 4;}
 
-        var formulaTable = new tableObject(this.width, this.height, this.unit, numRows, numColumns);
+        var formulaTable = new TableObject(this.width, this.height, this.unit, numRows, numColumns);
 
         if (!this.areThereComments) {
             formulaTable.reporportionColumns(1,1,2);
