@@ -1324,13 +1324,22 @@
             "prerequisites": ["quantitative_kinematic_graphs_5"],
             "objective": "Use the core mathematical principles of kinematics to prove each of the four kinematic equations is true under the special case of constant acceleration."
           },
-          "flying_to_mars":
+          "fundamental_theorem_calculus":
           {
-            "title": "Flying to Mars",
+            "title": "Fundamental Theorem of Calculus: Special Case",
             "level": 5,
             "horizontal": 1.5,
             "letter": "Q",
             "prerequisites": ["derive_kinematic_equations"],
+            "objective": "Using only algebra and a conceptual understanding of calculus, demonstrate the fundamental theorem of calculus for the special case of motion with a constant acceleration by using graphs, defining derivaitives and integrals, and relating the graphs to the kinematic equations."
+          },
+          "flying_to_mars":
+          {
+            "title": "Flying to Mars",
+            "level": 6,
+            "horizontal": 1.5,
+            "letter": "R",
+            "prerequisites": ["fundamental_theorem_calculus"],
             "objective": "Demonstrate using kinematic equations and graphs how a spaceship can get to Mars faster through constant acceleration and deceleration."
           }
         }
@@ -3706,7 +3715,7 @@
           {
             "title": "Ohm's Law",
             "level": 1,
-            "horizontal": 2,
+            "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
             "objective": "Solve Ohm's law for either resistance, current, or power."
@@ -3715,7 +3724,7 @@
           {
             "title": "The Power Formula",
             "level": 1,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "B",
             "prerequisites": ["ohms_law"],
             "objective": "Use both the power formula and Ohm's Law to solve for power or other quantities."
@@ -3724,7 +3733,7 @@
           {
             "title": "Analyze Circuits 1",
             "level": 2,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "C",
             "prerequisites": ["power_formula"],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor."
@@ -3738,112 +3747,102 @@
             "prerequisites": ["analyze_circuits_1"],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information."
           },
-          "electric_potential_diagrams_1":
-        {
-          "title": "Electric Potential Diagrams 1",
-          "level": 3,
-          "horizontal": 1,
-          "letter": "E",
-          "prerequisites": ["analyze_circuits_2"],
-          "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits."
-        },
           "algebraic_circuit_formulas":
           {
             "title": "Algebraic Circuit Formulas",
             "level": 3,
             "horizontal": 2,
-            "letter": "F",
+            "letter": "E",
             "prerequisites": ["analyze_circuits_2"],
             "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together; prove that answers are dimensionally correct"
           },
+          "electric_potential_diagrams_1":
+          {
+            "title": "Electric Potential Diagrams 1",
+            "level": 3,
+            "horizontal": 3.5,
+            "letter": "F",
+            "prerequisites": ["algebraic_circuit_formulas"],
+            "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits."
+          },
           "analyze_circuits_3":
           {
-            "title": "Analyze Circuits 3",
+            "title": "Analyze Circuits 3: One-Step Accordion Circuits",
             "level": 3,
-            "horizontal": 3,
+            "horizontal": 5,
             "letter": "G",
-            "prerequisites": ["analyze_circuits_2"],
-            "objective": "Determine the voltage, current, resistance, or power of particular elements of a simple series or parallel circuit, no table is explicitly provided for guidance"
+            "prerequisites": ["electric_potential_diagrams_1"],
+            "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
           },
           "analyze_circuits_4":
           {
-            "title": "Analyze Circuits 4: One-Step Accordion Circuits",
-            "level": 3,
-            "horizontal": 4,
+            "title": "Analyze Circuits 4: Multiple-Step Accordion Circuits",
+            "level": 4,
+            "horizontal": 5,
             "letter": "H",
             "prerequisites": ["analyze_circuits_3"],
-            "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
+            "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
           },
-
           "electric_potential_diagrams_2":
           {
             "title": "Electric Potential Diagrams 2",
             "level": 4,
-            "horizontal": 1,
+            "horizontal": 4,
             "letter": "I",
-            "prerequisites": ["electric_potential_diagrams_1"],
+            "prerequisites": ["analyze_circuits_4"],
             "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for circuits with series and parallel elements inside of each other."
+          },
+          "analyze_circuits_5":
+          {
+            "title": "Analyze Circuits 5: Algebraic Simple Circuits",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "J",
+            "prerequisites": ["electric_potential_diagrams_2"],
+            "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
           },
           "use_kirchoffs_laws":
           {
             "title": "Use Kirchoff's Laws",
             "level": 4,
             "horizontal": 2,
-            "letter": "J",
-            "prerequisites": ["electric_potential_diagrams_2"],
-            "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
-          },
-          "analyze_circuits_6":
-          {
-            "title": "Analyze Circuits 6: Algebraic Simple Circuits",
-            "level": 4,
-            "horizontal": 3,
             "letter": "K",
-            "prerequisites": ["algebraic_circuit_formulas","analyze_circuits_4"],
-            "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
-          },
-          "analyze_circuits_5":
-          {
-            "title": "Analyze Circuits 5: Multiple-Step Accordion Circuits",
-            "level": 4,
-            "horizontal": 4,
-            "letter": "L",
-            "prerequisites": ["analyze_circuits_4"],
-            "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
-          },
-          "demonstrate_kirchoffs_laws":
-          {
-            "title": "Demonstrate Kirchoff's Laws",
-            "level": 5,
-            "horizontal": 2,
-            "letter": "M",
-            "prerequisites": ["use_kirchoffs_laws", "analyze_circuits_6"],
-            "objective": "Solve a circuit  that includes series and parallel elements within each other without using Kirchoff's Laws, create an electric potential diagram of that circuit, use that diagram to demonstrate how Kirchoff's Laws are followed."
-          },
-          "algebraic_accordion_circuits":
-          {
-            "title": "Algebraic Accordion Circuits",
-            "level": 5,
-            "horizontal": 4,
-            "letter": "N",
-            "prerequisites": ["analyze_circuits_6","analyze_circuits_5"],
-            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
+            "prerequisites": ["analyze_circuits_5"],
+            "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
           },
           "very_challenging_circuit":
           {
             "title": "A very challenging circuit",
             "level": 5,
-            "horizontal": 5,
-            "letter": "O",
-            "prerequisites": ["analyze_circuits_5"],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["use_kirchoffs_laws"],
             "objective": "Solve a single, very complex and challenging circuit."
+          },
+          "algebraic_accordion_circuits":
+          {
+            "title": "Algebraic Accordion Circuits",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["very_challenging_circuit"],
+            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
+          },
+          "demonstrate_kirchoffs_laws":
+          {
+            "title": "Demonstrate Kirchoff's Laws",
+            "level": 5,
+            "horizontal": 4,
+            "letter": "N",
+            "prerequisites": ["algebraic_accordion_circuits"],
+            "objective": "Solve a circuit  that includes series and parallel elements within each other without using Kirchoff's Laws, create an electric potential diagram of that circuit, use that diagram to demonstrate how Kirchoff's Laws are followed."
           },
           "demonstrate_basic_circuit_rules":
           {
             "title": "Demonstrate Basic Circuit Rules",
             "level": 5,
-            "horizontal": 3,
-            "letter": "P",
+            "horizontal": 5,
+            "letter": "O",
             "prerequisites": ["demonstrate_kirchoffs_laws"],
             "objective": "Demonstrate how the rules for series and parallel elements used to sovle circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
           }

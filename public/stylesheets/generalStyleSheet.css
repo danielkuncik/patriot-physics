@@ -8,12 +8,28 @@ div.definitionBox {
     border-color: #000000;
 }
 
+div.pageBreak {
+    page-break-after: always;
+}
+
+h3.newQuizHeading {
+    page-break-before: always;
+}
+
 p.directions {
     font-size: 14px;
 }
 
+p.formula {
+    font-size: 20px;
+}
+
 li.physicsQuestion {
     font-size: 14px;
+    margin-bottom: 20px;
+}
+
+li.circuitProblem {
     margin-bottom: 20px;
 }
 

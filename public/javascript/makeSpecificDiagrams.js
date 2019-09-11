@@ -47,7 +47,6 @@ class CircuitDiagram extends Diagram {
  */
 
 
-
 /*
 Next steps:
 - instead of functions that simply create a series or parallel circuit,
@@ -57,6 +56,44 @@ Next steps:
 
 but for now these are not bad
  */
+
+// if given a numerical value, a string, or an empty set for any quantity
+// it returns the required thing to print
+/// undefined will return an empty string
+// a string will return the same string
+// a number will return the value with the unit
+function printQuantity(item, singularUnit, pluralUnit) {
+    let outputString;
+    if (item === undefined) {
+        outputString = ''
+    } else if (typeof(item) === 'string') {
+        outputString = item;
+    } else if (typeof(item) === 'number') {
+        if (item === 1) {
+            outputString = `${item} ${singularUnit}`;
+        } else {
+            outputString = `${item} ${pluralUnit}`;
+        }
+    }
+    return outputString
+}
+
+function printResistance(item) {
+    return printQuantity(item, 'Ohm', 'Ohms');
+}
+
+function printVoltage(item) {
+    return printQuantity(item, 'Volt', 'Volts');
+}
+
+function printCurrent(item) {
+    return printQuantity(item, 'Amp', 'Amps');
+}
+
+function printPower(item) {
+    return printQuantity(item, 'Watt', 'Watts');
+}
+
 
 function makeSeriesCircuit(batteryVoltage, resistorArray) {
     let numResistors = resistorArray.length;
@@ -73,30 +110,22 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
 
     let myCircuit = new CircuitDiagram();
     // need to change this so i have more control over the battery voltage
-    myCircuit.addElementWithCursor('battery', leftEndX, 3, `${batteryVoltage} Volts`);
+    myCircuit.addElementWithCursor('battery', leftEndX, 3, printVoltage(batteryVoltage));
     myCircuit.addElementWithCursor('wire', leftEndX, topLineY);
     myCircuit.addElementWithCursor('wire', leftEndX + 3, topLineY);
 
     this.resistorArrayIndex = 0;
-    this.printResistance = function() {
-        let outputString;
-        if (resistorArray[this.resistorArrayIndex] === 1) {
-            outputString = "1 Ohm";
-        } else if (resistorArray[this.resistorArrayIndex] === undefined) {
-            outputString = ''; // in case i want one of them to be empty and have no information
-        } else if (typeof(resistorArray[this.resistorArrayIndex]) === 'string') {
-            outputString = resistorArray[this.resistorArrayIndex]; /// you can write the resistance as a string and it jsut comes in fine
-        } else {
-            outputString = `${resistorArray[this.resistorArrayIndex]} Ohms`
-        }
+    this.printNextResistor = function() {
+        let output = printResistance(resistorArray[this.resistorArrayIndex]);
         this.resistorArrayIndex += 1;
-        return outputString
+        return output
     };
+
 
     let k, currentX = leftEndX + 3;
     for (k = 0; k < resistorsOnTop; k++) {
         currentX += 2;
-        myCircuit.addElementWithCursor("resistor", currentX, topLineY, this.printResistance());
+        myCircuit.addElementWithCursor("resistor", currentX, topLineY, this.printNextResistor());
         currentX += 2;
         myCircuit.addElementWithCursor("wire", currentX, topLineY);
     }
@@ -104,7 +133,7 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
 
     myCircuit.addElementWithCursor("wire", rightEndX, topLineY - 2);
     if (resistorOnRightEnd) {
-        myCircuit.addElementWithCursor("resistor", rightEndX, topLineY - 4, undefined, this.printResistance());
+        myCircuit.addElementWithCursor("resistor", rightEndX, topLineY - 4, undefined, this.printNextResistor());
     }
     myCircuit.addElementWithCursor("wire", rightEndX, topLineY - 6);
     let bottomLineY = topLineY - 6;
@@ -114,7 +143,7 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
         currentX -= 2;
         myCircuit.addElementWithCursor("wire", currentX, bottomLineY);
         currentX -= 2;
-        myCircuit.addElementWithCursor("resistor", currentX, bottomLineY, undefined, this.printResistance());
+        myCircuit.addElementWithCursor("resistor", currentX, bottomLineY, undefined, this.printNextResistor());
     }
 
     myCircuit.addElementWithCursor("wire", leftEndX, bottomLineY);
@@ -127,20 +156,12 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
     let numResistors = resistorArray.length;
 
     this.resistorArrayIndex = 0;
-    this.printResistance = function() {
-        let outputString;
-        if (resistorArray[this.resistorArrayIndex] === 1) {
-            outputString = "1 Ohm";
-        } else if (resistorArray[this.resistorArrayIndex] === undefined) {
-            outputString = ''; // in case i want one of them to be empty and have no information
-        } else if (typeof(resistorArray[this.resistorArrayIndex]) === 'string') {
-            outputString = resistorArray[this.resistorArrayIndex]; /// you can write the resistance as a string and it jsut comes in fine
-        } else {
-            outputString = `${resistorArray[this.resistorArrayIndex]} Ohms`
-        }
+    this.printNextResistor = function() {
+        let output = printResistance(resistorArray[this.resistorArrayIndex]);
         this.resistorArrayIndex += 1;
-        return outputString
+        return output
     };
+
 
     let topLineY = 6;
     let bottomLineY = topLineY - 8;
@@ -149,7 +170,7 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
     let widthBetweenResistors = 3;
 
     let myCircuit = new CircuitDiagram();
-    myCircuit.addElementWithCursor('battery', leftEndX, 3, `${batteryVoltage} Volts`);
+    myCircuit.addElementWithCursor('battery', leftEndX, 3, printVoltage(batteryVoltage));
     myCircuit.addElementWithCursor('wire', leftEndX, topLineY);
     myCircuit.addElementWithCursor('wire', firstResistorX - widthBetweenResistors, topLineY);
 
@@ -159,7 +180,7 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
         myCircuit.moveCursor(X - widthBetweenResistors, topLineY);
         myCircuit.addElementWithCursor("wire", X, topLineY);
         myCircuit.addElementWithCursor("wire", X, topLineY - 3);
-        myCircuit.addElementWithCursor("resistor", X, topLineY - 5, undefined, this.printResistance());
+        myCircuit.addElementWithCursor("resistor", X, topLineY - 5, undefined, this.printNextResistor());
         myCircuit.addElementWithCursor("wire", X, bottomLineY);
         myCircuit.addElementWithCursor("wire", X - widthBetweenResistors, bottomLineY);
     }
@@ -169,3 +190,4 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
 
     return myCircuit
 }
+

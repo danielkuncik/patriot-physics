@@ -42,8 +42,18 @@ physicsTable.insertIntoDomObject(domObject)
 physicsTable.insertTableByID(insertID)
 physicsTable.insertTableByClass(insertClass)
 
-
  */
+
+/*
+I need to rework this like i did the diagram
+1. get rid of the 'insert' functions, have a 'draw' function that generates a table object and returns it
+2. the specific types of tables should be subclasses of the main table class
+3. i should be able to scale it when i draw it, like i do with the diagrams
+--- height and width should NOT be set when initially making the table, but when drawing the table
+--- everything is only a javascript object until you run the 'draw' command, which makes it into an html table object
+[and it has no width or height until then, at that point the width and height are set!]
+ */
+
 function normalizeArray(array) {
     var sum = 0, q;
     for (q = 0; q < array.length; q++) {
@@ -170,7 +180,6 @@ class TableObject {
     };
 
 
-
     selectCell(i,j) {
         if (i > this.numRows || i <= 0) {console.log('ERROR: index outside vertical range selected')}
         if (j > this.numColumns || j <= 0) {console.log('ERROR: index outside horizontal range selected')}
@@ -181,7 +190,7 @@ class TableObject {
 
 
     addTextToCell(text,i,j) {
-        this.selectCell(i,j).Text = text;
+        this.selectCell(i,j).text = text;
     };
 
     makeCellAHeader(i,j) {
@@ -262,22 +271,22 @@ class TableObject {
 
 
 
-/*
-Here is the function I created to make a formula solving table
-I decided to work my formula solving tables with an hbs partial instead
-But, in case I want it later, I am keeping this
-There may be advantages to using this method in the future
+
+// Here is the function I created to make a formula solving table
+// I decided to work my formula solving tables with an hbs partial instead
+// But, in case I want it later, I am keeping this
+// There may be advantages to using this method in the future
 
 // arguments should adjust how large i want the table to be etc.
 function formulaBox(width, height, unit) {
     if (width === undefined) {
-        width = 400;
+        width = 800;
     }
     if (height === undefined) {
-        height = 300;
+        height = 2;
     }
     if (unit === undefined) {
-        unit = 'px'
+        unit = 'in'
     }
     this.numericalWidth = width;
     this.numericalHeight = height;
@@ -303,7 +312,7 @@ function formulaBox(width, height, unit) {
 
     $(firstRow).append(`<td width = '${this.firstColumnWidth}' class = 'lookingForBox'>Looking For</td>`);
     $(firstRow).append(`<td width = '${this.secondColumnWidth}' class = 'formulaBox'>Formula</td>`);
-    $(firstRow).append(`<td width = '${this.thirdColumnWidth}' ></td>`);
+    $(firstRow).append(`<td width = '${this.thirdColumnWidth}'  class = 'littleBoxOnTheSide'></td>`);
 
     $(secondRow).append(`<td class = 'alreadyKnowBox'>Already Know</td>`);
     $(secondRow).append(`<td colspan = '2'></td>`);
@@ -316,19 +325,23 @@ function formulaBox(width, height, unit) {
 
     this.table = table;
 
-    this.insertTable = function(insertID) {
+    this.insertTableByID = function(insertID) {
         $("#" + insertID).append(this.table);
+    };
+
+    this.insertTableByClass = function(insertClass) {
+        $("." + insertClass).append(this.table);
     }
 }
 // well, that's a start
 // some things to do: fix the issue with the thick border lines
 // make it more nicely proportioned
 
-*/
+
 
 
 // makes tables to help analyze a circuit with resistors in series or parallel
-function circuitTable(numResistors, width, height, unit, powerRow) {
+function CircuitTable(numResistors, powerRowBoolean, width, height, unit) {
     if (width === undefined) {
         width = 400;
     }
@@ -338,21 +351,21 @@ function circuitTable(numResistors, width, height, unit, powerRow) {
     if (unit === undefined) {
         unit = 'px'
     }
-    if (powerRow === undefined) {
-        powerRow = true;
+    if (powerRowBoolean === undefined) {
+        powerRowBoolean = true;
     }
     this.numResistors = numResistors;
     this.numericalWidth = width;
     this.numericalHeight = height;
     this.unit = unit;
-    this.powerRow = powerRow;
+    this.powerRowBoolean = powerRowBoolean;
 
     this.totalWidth = String(this.numericalWidth) + this.unit;
     this.totalHeight = String(this.numericalHeight) + this.unit;
 
     /// even rows and columns
     var numericalRowHeight;
-    if (this.powerRow) {
+    if (this.powerRowBoolean) {
         numericalRowHeight = this.numericalHeight / 5;
     } else {
         numericalRowHeight = this.numericalHeight / 4;
@@ -392,9 +405,22 @@ function circuitTable(numResistors, width, height, unit, powerRow) {
     $(table).append(voltageRow);
     $(table).append(currentRow);
     $(table).append(resistanceRow);
-    $(table).append(powerRow);
-
+    if (this.powerRowBoolean) {
+        $(table).append(powerRow);
+    }
     this.table = table;
+
+
+    // /// i need functions to fill in the table with values
+    // this.fillInVoltage = function(voltageArray, totalVoltage) {
+    //     let row = 2;
+    //     let j;
+    //     for (j = 2; j < voltageArray.length; j++) {
+    //         this.table.addTextToCell(voltageArray[j], j, row);
+    //     }
+    //     this.table.addTextToCell(totalVoltage, j, row)
+    // };
+
 
     this.insertTable = function (insertID) {
         $("#" + insertID).append(this.table);

@@ -36,34 +36,38 @@ table height = 400px
 
 
 td.lookingForBox {
-    width: 150px;
+    font-size: 14px;
+    width: 300px;
     height: 100px;
 }
 
 td.alreadyKnowBox {
-    width: 150px;
+    font-size: 14px;
+    width: 300px;
     height: 200px;
 }
 
 td.formulaBox {
-    width: 150px;
+    font-size: 14px;
+    width: 300px;
     height: 100px
 }
 
 td.littleBoxOnTheSide {
-    width: 100px;
+    width: 200px;
     border-bottom-color: #FFFFFF;
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
 
 td.workBox {
-    width: 250px;
+    width: 500px;
     height: 200px;
 }
 
 td.answerBox {
-    width: 400px;
+    font-size: 14px;
+    width: 800px;
     height: 100px;
 }
 

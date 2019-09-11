@@ -1,0 +1,130 @@
+<p>
+    In the level 1 sections, we determined how to calculate the voltage, current, resistance, and power
+    of a circuit with just a battery and a single resistor using two formulas:
+    $$ V = IR $$,
+    $$ P = IV $$.
+    In this section, we will determine the voltage, current, resistance, and power
+    of <i>each</i> resistor within a circuit. Based on how the circuit is connected,
+    these quantities follow logical mathematical rules.
+</p>
+<p>
+    There are two ways for a circuit to be connected called <i>series</i> and <i>parallel</i> circuits.
+    Each of these circuits follows particular rules.
+</p>
+
+<h3>
+    Solving a Series Circuit
+</h3>
+
+<div class = 'definitionBox'>
+    <h5>
+        Series Circuit Rules:
+    </h5>
+    <ul>
+        <li>
+            The <strong>voltage</strong> of each element adds to the total voltage.
+        </li>
+        <li>
+            The <strong>current</strong> is the same for every element of the circuit.
+        </li>
+        <li>
+            The <strong>resistance</strong> of each element adds to the total resistance.
+        </li>
+        <li>
+            For each element, the formula \( V = IR \) applies.
+        </li>
+    </ul>
+</div>
+
+<ol>
+    <li class = 'circuitProblem'><br>
+       <div id = 'problem1'></div>
+    </li>
+    <li class = 'circuitProblem'><br>
+        <div id = 'problem2'></div>
+    </li>
+    <li class = 'circuitProblem'><br>
+        <div id = 'problem3'></div>
+    </li>
+    <li class = 'circuitProblem'><br>
+        <div id = 'problem4'></div>
+    </li>
+    <li class = 'circuitProblem'><br>
+        <div id = 'problem5'></div>
+    </li>
+</ol>
+
+<h3>
+    Solving a Parallel Circuit
+</h3>
+
+<div class = 'definitionBox'>
+    <h5>
+        Series Circuit Rules:
+    </h5>
+    <ul>
+        <li>
+            The <strong>voltage</strong> is the same for every element of the circuit.
+        </li>
+        <li>
+            The <strong>current</strong> of each element adds up to the total.
+        </li>
+        <li>
+            The <strong>resistance</strong> of each element DOES NOT add to the total. (There is a more complex formula we will learn later).
+        </li>
+        <li>
+            For each element, the formula \( V = IR \) applies.
+        </li>
+    </ul>
+</div>
+
+<ol start = '6'>
+
+</ol>
+
+
+<h3>
+    Solving for Power of Circuits
+</h3>
+
+<div class = 'definitionBox'>
+    <h5>Power Rule</h5>
+    <p>
+        In all circuits, series or parallel, you can use the formula \( P = IV \) to find power.
+    </p>
+</div>
+
+<ol start = '20'>
+    <li class = 'circuitProblem'><br>
+        <div id = 'problem20'></div>
+    </li>
+    <li class = 'circuitProblem'><br>
+        <div id = 'problem21'></div>
+    </li>
+</ol>
+
+<h3>
+    Answers
+</h3>
+<ol>
+    <li>
+        <div id = 'problem1Answers'></div>
+    </li>
+</ol>
+
+<script>
+    $("#problem1").append(makeCircuitProblem('series', 12, [2,4], false));
+    $("#problem2").append(makeCircuitProblem('series', 20, [2,3], false));
+    $("#problem3").append(makeCircuitProblem('series', 30, [3,7], false));
+    $("#problem4").append(makeCircuitProblem('series', 18, [1,2,3], false));
+    $("#problem5").append(makeCircuitProblem('series', 21.23, [4.47, 5.36, 2.94], false));
+
+    $("#problem20").append((makeCircuitProblem('series', 50, [10,15], true)));
+    $("#problem21").append(makeCircuitProblem('series', 12, [4,6], true));
+
+
+    let problem1Answer = new CircuitTable(2, false);
+    problem1Answer.fillInVoltage([4,8],12);
+    $("#problem1Answers").append(problem1Answer.table);
+
+</script>
