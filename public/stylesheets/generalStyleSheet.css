@@ -12,20 +12,51 @@ div.pageBreak {
     page-break-after: always;
 }
 
+div.smallSpace {
+    height: 50px;
+}
+
+div.mediumSpace {
+    height: 100px;
+}
+
+div.bigSpace {
+    height: 150px;
+}
+
 h3.newQuizHeading {
     page-break-before: always;
 }
 
 p.directions {
-    font-size: 14px;
+    font-size: 18px;
 }
 
-p.formula {
+p.equation {
+    font-size: 30px;
+}
+
+td.equation {
     font-size: 20px;
+    padding: 10px;
+}
+
+li.bigQuestion {
+    font-size: 20px;
+    margin-bottom: 300px;
+}
+li.mediumQuestion {
+    font-size: 20px;
+    margin-bottom: 150px;
+}
+
+li.smallQuestion {
+    font-size: 20px;
+    margin-bottom: 80px;
 }
 
 li.physicsQuestion {
-    font-size: 14px;
+    font-size: 22px;
     margin-bottom: 20px;
 }
 
@@ -38,4 +69,8 @@ a.importantLink {
     border-color: palegreen;
     border-width: 2px;
     border-style: solid;
+}
+
+div.formulaBoxDiv {
+
 }
