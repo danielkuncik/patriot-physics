@@ -1213,7 +1213,7 @@
             [
               "Equations are given.",
               "Information is presented in realistic langauge",
-              "Problems involve no more than 3 algebraic stpes to solve"
+              "Problems involve no more than 3 algebraic steps to solve"
             ]
           },
           "quantitative_kinematic_graphs_2":
@@ -1234,7 +1234,7 @@
             "horizontal": 3.67,
             "letter": "G",
             "prerequisites": ["quantitative_kinematic_graphs_2"],
-            "objective": "Solve numerical algebraic problems in which information is ont explicitly given but must be inferred"
+            "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred"
           },
           "memorize_kinematic_equations":
           {
@@ -1263,7 +1263,7 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["quantitative_kinematic_graphs_3"],
-            "objective": "Solve the kinematic equations for step-wise motion"
+            "objective": "Numerically solve the kinematic equations for step-wise motion."
           },
           "quantitative_kinematic_graphs_4A":
           {
@@ -1299,7 +1299,7 @@
             "horizontal": 5,
             "letter": "N",
             "prerequisites": ["quantitative_kinematic_graphs_4C"],
-            "objective": "Solve the kinematic equations algebraically.",
+            "objective": "Solve the kinematic equations symbolically and defend answers using dimensional analysis.",
             "parameters":
             [
               "Equations not given."
@@ -1331,7 +1331,7 @@
             "horizontal": 1.5,
             "letter": "Q",
             "prerequisites": ["derive_kinematic_equations"],
-            "objective": "Using only algebra and a conceptual understanding of calculus, demonstrate the fundamental theorem of calculus for the special case of motion with a constant acceleration by using graphs, defining derivaitives and integrals, and relating the graphs to the kinematic equations."
+            "objective": "Using only algebra and a conceptual understanding of calculus, demonstrate the fundamental theorem of calculus for the special case of motion with a constant acceleration by using graphs, defining derivatives and integrals, and relating the graphs to the kinematic equations."
           },
           "flying_to_mars":
           {
@@ -1390,7 +1390,7 @@
             "horizontal": 7,
             "letter": "L",
             "prerequisites": ["qualitative_kinematic_graphs_3"],
-            "objective": "Given a straightfoward description of 2-step motion, identify kinematic graphs and motion maps that match that motion."
+            "objective": "Given an explicit description of 2-step motion, identify kinematic graphs and motion maps that match that motion."
           },
           "qualitative_kinematic_graphs_5":
           {
@@ -1465,7 +1465,7 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["block_dragging_1"],
-            "objective": "Analyze the motion of a block on a surface with only kinetic friction; accelerating and moving at a constant velocity"
+            "objective": "Analyze the motion of a block on a surface with only kinetic friction; accelerating and moving at a constant velocity."
           },
           "elevators_1":
           {
@@ -1483,7 +1483,7 @@
             "horizontal": 2,
             "letter": "H",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Given a blcok being dragged on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
+            "objective": "Given a block being dragged on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
           },
           "elevators_2":
           {
@@ -1492,7 +1492,7 @@
             "horizontal": 6,
             "letter": "I",
             "prerequisites": ["elevators_1"],
-            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and describe what that person will feel using the free-body diagram"
+            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and describe what that person will feel using the free-body diagram."
           },
           "block_dragging_4":
           {
@@ -1501,7 +1501,7 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["block_dragging_3"],
-            "objective": "Given a force-time graph of a block on a surface, draw free-body diagrmas for the block at different times and defend them; quantitatively analyze the surface based on the block.."
+            "objective": "Given a force-time graph of a block on a surface, draw free-body diagrams for the block at different times and defend them; quantitatively analyze the surface based on the block."
           },
           "block_dragging_algebra":
           {
@@ -1510,7 +1510,7 @@
             "horizontal": 3,
             "letter": "K",
             "prerequisites": ["block_dragging_3"],
-            "objective": "Given a block being dragged on a surface, draw an algebraic free-body diagram on the block, reflect the motion of th eblock using algebraic conditions."
+            "objective": "Given a block being dragged on a surface, draw an algebraic free-body diagram on the block, reflect the motion of the block using algebraic conditions."
           },
           "elevators_3":
           {
@@ -1519,7 +1519,7 @@
             "horizontal": 6,
             "letter": "L",
             "prerequisites": ["elevators_2"],
-            "objective": "Draw kinematic graphs representing a person moving in a hypothetical elevator, draw free-body diagrams representing the froces on that person at a particular time, defend the free-body diagrams, and describe what the person will feel using the free-body diagram."
+            "objective": "Draw kinematic graphs representing a person moving in a hypothetical elevator, draw free-body diagrams representing the forces on that person at a particular time, defend the free-body diagrams, and describe what the person will feel using the free-body diagram."
           },
           "elevator_rockets":
           {
@@ -1528,7 +1528,7 @@
             "horizontal": 6,
             "letter": "M",
             "prerequisites": ["elevators_3"],
-            "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness"
+            "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness."
           }
         }
       },
@@ -1611,7 +1611,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Using free-body diagrams, defend the statement that motion in still possible given action reaction forces."
+            "objective": "Defend how Newton's Third Law still applies when an object is broken by a force."
           },
           "newtons_third_law_3":
           {
@@ -1634,7 +1634,7 @@
       {
         "title": "Vector Force Analysis (Newton's First Law)",
         "level": 1,
-        "essential_quetions": "When, how, and why do items move?",
+        "essential_questions": "When, how, and why do items move?",
         "completed": true,
         "AP": true,
         "honors": true,
@@ -1702,7 +1702,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces"
+            "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces."
           },
           "newtons_model_3":
           {
@@ -1711,7 +1711,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Connect motino to free-body diagrams in abstract cases; for a given motion draw and defend a dfree-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
+            "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
             "notes": "Includes two-step motion; in particular, focuses on objects taht are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples."
           },
           "air_resistance_2":
@@ -1766,7 +1766,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrms of objects that are slowing down or moving at a constant speed. "
+            "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrams of objects that are slowing down or moving at a constant speed."
           },
           "free_fall_survivors":
           {
@@ -1784,7 +1784,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "By using Newton's Laws, knowledge of perception of forces, and relative motion, Demonstrate how life on an accelerating spaceship could be identical to that on earth."
+            "objective": "By using Newton's Laws, knowledge of perception of forces, and relative motion, Demonstrate how astronauts on an accelerating spaceship could experience apparent weight similarly to people on earth."
           }
         }
       },
@@ -2115,7 +2115,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a story that involevs motion in mulitple-steps in different directions, identify kinematic graphs that best reflect this motion."
+            "objective": "Given a story that involves motion in multiple-steps in different directions, identify kinematic graphs that best reflect this motion."
           },
           "full_model_two_direction_motion":
           {
@@ -2753,7 +2753,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use knowledge of physics within each reference frame to argue that it is possible for the earth to move while humans live without feeling its motion; analye the motion of an object shot vertically out from a car.",
+            "objective": "Use knowledge of physics within each reference frame to argue that it is possible for the earth to move while humans live without feeling its motion; analyze the motion of an object shot vertically out from a car.",
             "note": "Sun Roof cannon problem included in this pod."
           },
           "earths_reference_frame":
@@ -2772,7 +2772,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Analyze non-inertial reference frames moving in circular from the point of view of the motion object and the earth; examplies include a gravitron or a loop de loop."
+            "objective": "Analyze non-inertial reference frames moving in circular from the point of view of the motion object and the earth; examples include a gravitron amusement park ride or a loop de loop."
           },
           "quantitative_sun_roof_cannon":
           {
@@ -2856,7 +2856,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Relate the motion of an object thrown directly to the free-body diagram using Newton's Model."
+            "objective": "Relate the motion of an object thrown directly to the free-body diagram using Newton's Model of forces."
           },
           "pop_up_3":
           {
@@ -2874,7 +2874,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain the bullet drop conundrum in words."
+            "objective": "Explain, in words, how a bullet dropped and a bullet fired from a gun reach the ground at the same time."
           },
           "pop_up_4":
           {
@@ -2883,7 +2883,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air."
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis."
           },
           "horizontal_launch_3":
           {
@@ -2901,7 +2901,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; relate this motion to the free-body diagram using Newton's Model."
+            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; relate this motion to the free-body diagram using Newton's Model of forces."
           },
           "cannon_problem_2":
           {
@@ -2910,7 +2910,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve for relevant unknown numeric quantities when an object is launched upward at an angle."
+            "objective": "Solve for relevant unknown numeric quantities when an object is launched upward at an angle. Defend answers using dimensional analysis."
           },
           "cannon_problem_3":
           {
@@ -2918,9 +2918,9 @@
             "level": 5,
             "horizontal": null,
             "letter": "",
-            "prerequisites": [],
-            "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities."
+            "prerequisites": []
           },
+          "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities. Defend answers using dimensional analysis.",
           "cannon_problem_4":
           {
             "title": "Cannon Problem 4: Kinematic Graphs",
@@ -2928,7 +2928,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw qualitative kinematic graphs for an object fired from a cannon at an upward angle."
+            "objective": "Draw six qualitative kinematic graphs for an object fired from a cannon at an upward angle: position-time, velocity-time, and acceleration-time graphs in each dimension."
           },
           "cannon_problem_5":
           {
@@ -2955,7 +2955,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Devise a model that mathemtaical depicts how a quarterback hits a wide receiver running in motion with a parabolic pass."
+            "objective": "Devise a model that mathematical depicts how a quarterback hits a wide receiver running quickly with a parabolic pass."
           }
         }
       },

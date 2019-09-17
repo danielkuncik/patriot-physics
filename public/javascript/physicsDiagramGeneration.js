@@ -496,13 +496,13 @@ class Diagram {
         this.segments = [];
         this.circles = [];
         this.texts = [];
+        this.functionGraphs = [];
         this.xMax = undefined;
         this.xMin = undefined;
         this.yMax = undefined;
         this.yMin = undefined;
         this.horizontalRange = undefined;
         this.verticalRange = undefined;
-        this.functionGraphs = [];
     }
 
     // i added a line to prevent creating duplicates!
@@ -648,6 +648,12 @@ class Diagram {
         let centerOfLine = new Point( (point1.x + point2.x)/2, (point1.y + point2.y)/2);
         let theta = point1.getAngleToAnotherPoint(point2);
         let textRotation;
+        if (relativeFontSize === undefined) {
+            relativeFontSize = point1.getDistanceToAnotherPoint(point2) * 0.1;
+        }
+        if (textDisplacement === undefined) {
+            textDisplacement = relativeFontSize * 1.5
+        }
 
         let phi;
         let quadrant = point1.getQuadrantOfAnotherPoint(point2);
@@ -756,6 +762,31 @@ class Diagram {
         newLine.turnIntoDottedLine();
         return newLine
     };
+
+    // mergeWithAnotherDiagram
+    merge(anotherDiagram, whichSide, bufferSpace) {
+        this.getRange();
+        anotherDiagram.getRange();
+        if (whichSide === 'right') {
+            anotherDiagram.translate(this.xMax + bufferSpace, 0);
+        } else if (whichSide === 'left') {
+            anotherDiagram.translate(-1 * this.xMin - bufferSpace, 0);
+        } else if (whichSide === 'top') {
+            anotherDiagram.translate(0, this.yMax + bufferSpace);
+        } else if (whichSide === 'bottom') {
+            anotherDiagram.translate(0, -1 * this.yMax - bufferSpace);
+        } else {
+            return false
+        }
+
+        anotherDiagram.points.forEach((point) => {this.points.push(point)});
+        anotherDiagram.segments.forEach((segment) => {this.segments.push(segment)});
+        anotherDiagram.circles.forEach((circle) => {this.circles.push(circle)});
+        anotherDiagram.texts.forEach((text) => {this.texts.push(text)});
+        anotherDiagram.functionGraphs.forEach((functionGraph) => {this.functionGraphs.push(functionGraph)});
+
+        return true;
+    }
 
 
     /// transformations
@@ -1213,10 +1244,10 @@ class CircuitDiagram extends Diagram {
             startPoint = finishPoint;
         }
         if (labelAbove !== undefined) {
-            super.labelLineAbove(endPoint1, endPoint2, labelAbove, width * 1.5, length * 0.3);
+            super.labelLineAbove(endPoint1, endPoint2, printResistance(labelAbove), width * 1.7, length * 0.35);
         }
         if (labelBelow !== undefined) {
-            super.labelLineBelow(endPoint1, endPoint2, labelBelow, width * 1.5, length * 0.3);
+            super.labelLineBelow(endPoint1, endPoint2, printResistance(labelBelow), width * 1.7, length * 0.35);
         }
     }
 
@@ -1262,10 +1293,10 @@ class CircuitDiagram extends Diagram {
         }
         // still need to add + and - signs on the cathode and anode
         if (labelAbove !== undefined) {
-            super.labelLineAbove(endPoint1, endPoint2, labelAbove, width * 1.5, length * 0.2);
+            super.labelLineAbove(endPoint1, endPoint2, printVoltage(labelAbove), width * 1.5, length * 0.35);
         }
         if (labelBelow !== undefined) {
-            super.labelLineBelow(endPoint1, endPoint2, labelBelow, width * 1.5, length * 0.2);
+            super.labelLineBelow(endPoint1, endPoint2, printVoltage(labelBelow), width * 1.5, length * 0.35);
         }
 
         // add plus and minus signs

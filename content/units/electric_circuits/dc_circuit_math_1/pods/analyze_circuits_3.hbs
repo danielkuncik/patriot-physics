@@ -1,0 +1,57 @@
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problemXCircuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problemXGraph'></div>
+    </div>
+</div>
+
+<script>
+
+    // #################################################################
+    // Problem X
+    let problemXCircuit = new CircuitDiagram();
+    problemXCircuit.addElementWithCursor('wire',0,3);
+    problemXCircuit.addElementWithCursor('battery',0,6,12);
+    problemXCircuit.addElementWithCursor('wire',0,10);
+    problemXCircuit.addElementWithCursor('wire',6,10);
+    problemXCircuit.addElementWithCursor('resistor',9,10,4,'A');
+    problemXCircuit.addElementWithCursor('wire',13,10);
+    problemXCircuit.addElementWithCursor('wire',13,8);
+
+    // branch 1
+    problemXCircuit.addElementWithCursor('wire',10,8);
+    problemXCircuit.addElementWithCursor('wire',10,6);
+    problemXCircuit.addElementWithCursor('resistor',10,3,3,'B');
+    problemXCircuit.addElementWithCursor('wire',10,1);
+    problemXCircuit.addElementWithCursor('wire',13,1);
+
+    // branch 2
+    problemXCircuit.moveCursor(13,8);
+    problemXCircuit.addElementWithCursor('wire',16,8);
+    problemXCircuit.addElementWithCursor('wire',16,6);
+    problemXCircuit.addElementWithCursor('resistor',16,3,6,'C');
+    problemXCircuit.addElementWithCursor('wire',16,1);
+    problemXCircuit.addElementWithCursor('wire',13,1);
+
+    problemXCircuit.addElementWithCursor('wire',13,-1);
+    problemXCircuit.addElementWithCursor('wire',0,-1);
+    problemXCircuit.addElementWithCursor('wire',0,0);
+
+    let problemXGraph = new QuantitativeGraph(0,20,0,12,2);
+    problemXGraph.labelAxes('','Electric Potential (V)');
+    problemXGraph.addReferenceArray([],[4,8,12]);
+
+    $("#problemXCircuit").append(problemXCircuit.drawCanvas(300,300));
+    $("#problemXGraph").append(problemXGraph.drawCanvas(600,600)); // i think what's going on is that the limits aren't y-muliplied???
+
+    // #################################################################
+    // Problem Y
+
+</script>
