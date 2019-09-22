@@ -1649,9 +1649,9 @@
             "prerequisites": [],
             "objective": "Identify when net force is zero and when it is not; determine whether an abstract object accelerates, decelerates of moves at a constant speed based on its free-body diagrams"
           },
-          "inertia":
+          "inertia_newtons_first_law":
           {
-            "title": "Inertia",
+            "title": "Inertia and Newton's First Law",
             "level": 1,
             "horizontal": null,
             "letter": "",
@@ -1683,7 +1683,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a gien free-body diagram determine and defend the motion of that objecti",
+            "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a given free-body diagram determine and defend the motion of that object",
             "limits": "Limited to single step motion"
           },
           "air_resistance_1":
