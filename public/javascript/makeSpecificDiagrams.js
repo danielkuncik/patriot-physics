@@ -77,6 +77,7 @@ function printQuantity(item, singularUnit, pluralUnit) {
     }
     return outputString
 }
+// need to somehow account for abbreviations
 
 function printResistance(item) {
     return printQuantity(item, 'Ohm', 'Ohms');
@@ -94,6 +95,45 @@ function printPower(item) {
     return printQuantity(item, 'Watt', 'Watts');
 }
 
+function printForce(item) {
+    return printQuantity(item, 'Newton', "Newtons");
+}
+
+
+// turns a string in text to an appropriate angle in radians
+function turnTextToRadians(text) {
+    var theta;
+    switch(text) {
+        case 'right':
+            theta = 0;
+            break;
+        case 'left':
+            theta = Math.PI;
+            break;
+        case 'up':
+            theta = Math.PI / 2;
+            break;
+        case "down":
+            theta = Math.PI * 3 / 2;
+            break;
+        case "east":
+            theta = 0;
+            break;
+        case "west":
+            theta = Math.PI;
+            break;
+        case "north":
+            theta = Math.PI / 2;
+            break;
+        case "south":
+            theta = Math.PI * 3 / 2;
+            break;
+        default:
+            theta = undefined;
+            break;
+    }
+    return theta;
+}
 
 function makeSeriesCircuit(batteryVoltage, resistorArray) {
     let numResistors = resistorArray.length;
@@ -189,5 +229,35 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
     myCircuit.addElementWithCursor("wire", leftEndX, 0);
 
     return myCircuit
+}
+
+/// #########################################################################################
+//// FREE BODY Diagrams
+//     addForce(relativeMagnitude,angle,labelAbove, labelBelow) {
+
+
+// force array is a n x 2 matrix
+// the first item of each row is the magnitude, must be a number
+// the second item of each row is the direciton, can be a number or appropriate text
+// magnitude must be a number
+function fastFBD(forceArray) {
+    let myFBD = new FreeBodyDiagram();
+    let relativeMagnitude, label, direction, theta;
+    forceArray.forEach((force) => {
+        relativeMagnitude = force[0];
+        direction = force[1];
+        label = force[2];
+        if (label === undefined) {
+            label = relativeMagnitude;
+        }
+        theta = undefined;
+        if (typeof(direction) === "number") {
+            theta = direction;
+        } else if (typeof(direction) === 'string') {
+            theta = turnTextToRadians(direction);
+        }
+        myFBD.addForce(relativeMagnitude, theta, label);
+    });
+    return myFBD;
 }
 

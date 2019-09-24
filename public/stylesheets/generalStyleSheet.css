@@ -6,6 +6,15 @@ div.definitionBox {
     border-style: solid;
     border-width: 1px;
     border-color: #000000;
+    width: 600px;
+}
+
+ol.questionList {
+
+}
+
+ol.answerList {
+
 }
 
 div.pageBreak {

@@ -1323,24 +1323,24 @@ class FreeBodyDiagram extends Diagram {
     /// do i want to make forces their own class??????
 
     // if force is vertical, label above will add Text on the left and label below will ad Text on the right
-    addForce(relativeMagnitude,angle,labelAbove, labelBelow) {
+    addForce(relativeMagnitude,angleInRadians,labelAbove, labelBelow) {
         if (this.maxForce < relativeMagnitude) {this.maxForce = relativeMagnitude;}
-        let endPoint = new Point(relativeMagnitude * Math.cos(convertDegreesToRadians(angle)), relativeMagnitude * Math.sin(convertDegreesToRadians(angle)));
+        let endPoint = new Point(relativeMagnitude * Math.cos(angleInRadians), relativeMagnitude * Math.sin(angleInRadians));
         this.forces.push(
             {
                 "relativeMagnitude": relativeMagnitude,
-                "angle": angle,
-                "labelAbove": labelAbove,
-                "labelBelow": labelBelow,
+                "angle": angleInRadians,
+                "labelAbove": printForce(labelAbove),
+                "labelBelow": printForce(labelBelow),
                 "endPoint": endPoint
             }
-        );
+        ); // the printForce function will print as is if it is a string or print with the unit if it is a number
     };
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         this.circleRadius = this.maxForce * 0.1;
         this.arrowheadLength = this.maxForce * 0.05;
-        this.relativeFontSize = this.maxForce * 0.02;
+        this.relativeFontSize = this.maxForce * 0.1;
         this.textDisplacement = this.relativeFontSize / 2;
         console.log(origin);
         this.forces.forEach((force) => {

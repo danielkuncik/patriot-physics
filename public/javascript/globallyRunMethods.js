@@ -10,6 +10,7 @@ This javascript file contains method that are run as a part of every page
 // and at the end of the file place <ol class = 'answerList'>
 let i, j, thisQuestionList, thisQuestion, thisAnswer, questionNumber = 1;
 $(".questionList").each((i) => {
+    console.log('j');
     thisQuestionList = $(".questionList")[i];
     $(thisQuestionList).attr('start',String(questionNumber));
     $(thisQuestionList).children().each((j) => {
