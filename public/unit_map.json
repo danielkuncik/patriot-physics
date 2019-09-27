@@ -1653,7 +1653,7 @@
           {
             "title": "Inertia and Newton's First Law",
             "level": 1,
-            "horizontal": null,
+            "horizontal": 5,
             "letter": "A",
             "prerequisites": [],
             "objective": "Define inertia and relate inertia to mass"
@@ -1662,27 +1662,27 @@
           {
             "title": "Newton's Model 1",
             "level": 2,
-            "horizontal": null,
+            "horizontal": 5,
             "letter": "B",
-            "prerequisites": [],
+            "prerequisites": ["inertia_newtons_first_law"],
             "objective": "Identify when net force is zero and when it is not; determine whether an abstract object accelerates, decelerates of moves at a constant speed based on its free-body diagrams"
           },
           "basic_air_resistance_1":
           {
             "title": "Basic Air Resistance",
             "level": 2,
-            "horizontal": null,
+            "horizontal": 4,
             "letter": "C",
-            "prerequisites": [],
+            "prerequisites": ["newtons_model_1"],
             "objective": "Explain what factors determine how crucial air resistance is in analyzing a situation."
           },
           "newtons_model_2":
           {
             "title": "Newton's Model 2",
             "level": 2,
-            "horizontal": null,
+            "horizontal": 3,
             "letter": "D",
-            "prerequisites": [],
+            "prerequisites": ["basic_air_resistance_1"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a given free-body diagram determine and defend the motion of that object",
             "limits": "Limited to single step motion"
           },
@@ -1690,36 +1690,36 @@
           {
             "title": "Space Motion 1",
             "level": 2,
-            "horizontal": null,
+            "horizontal": 2,
             "letter": "E",
-            "prerequisites": [],
+            "prerequisites": ["newtons_model_2"],
             "objective": "Describe how objects move in space, contrast this motion with how objects move on earth, and give intuitive explanations for the difference."
           },
           "seat_back":
           {
             "title": "The Seat Back",
             "level": 2,
-            "horizontal": null,
+            "horizontal": 1,
             "letter": "F",
-            "prerequisites": [],
+            "prerequisites": ["space_motion_1"],
             "objective": "Use Newton's Laws to describe the experience of your car pressing into your back when a car accelerates."
           },
           "memorize_newtons_model":
           {
             "title": "Memorize Newton's Model",
             "level": 3,
-            "horizontal": null,
+            "horizontal": 1,
             "letter": "G",
-            "prerequisites": [],
+            "prerequisites": ["seat_back"],
             "objective": "State Newton's First and Second Laws completely from memory; state from memory a model that relates net force to motion qualitatively in one dimension and relate this model to Newton's First and Second Laws."
           },
           "newtons_model_3":
           {
             "title": "Newton's Model 3",
             "level": 3,
-            "horizontal": null,
+            "horizontal": 2,
             "letter": "H",
-            "prerequisites": [],
+            "prerequisites": ["memorize_newtons_model"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
             "notes": "Includes two-step motion; in particular, focuses on objects taht are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples."
           },
@@ -1727,72 +1727,72 @@
           {
             "title": "Space Motion 2",
             "level": 3,
-            "horizontal": null,
+            "horizontal": 3,
             "letter": "I",
-            "prerequisites": [],
+            "prerequisites": ["newtons_model_3"],
             "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces."
           },
           "newtons_model_4A":
           {
             "title": "Newton's Model 4A",
             "level": 4,
-            "horizontal": null,
+            "horizontal": 3,
             "letter": "J",
-            "prerequisites": [],
+            "prerequisites": ["space_motion_2"],
             "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: kicking a box and shooting an arrow."
           },
           "newtons_model_4B":
           {
             "title": "Newton's Model 4B",
             "level": 4,
-            "horizontal": null,
+            "horizontal": 4,
             "letter": "K",
-            "prerequisites": [],
+            "prerequisites": ["newtons_model_4A"],
             "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: lifting a weight and throwing a ball upward."
           },
           "space_motion_3":
           {
             "title": "Space Motion 3",
             "level": 4,
-            "horizontal": null,
+            "horizontal": 5,
             "letter": "L",
-            "prerequisites": [],
+            "prerequisites": ["newtons_model_4B"],
             "objective": "Defend the statement that all laws of motion are the same on earth, in space, and in all areas of the universe; and defend this notion using principles and examples."
           },
           "terminal_velocity":
           {
             "title": "Terminal Velocity",
             "level": 4,
-            "horizontal": null,
+            "horizontal": 6,
             "letter": "M",
-            "prerequisites": [],
+            "prerequisites": ["space_motion_3"],
             "objective": "Using Newton's First and Second Laws, describe why falling objects reach terminal velocity and discuss what factors determine terminal velocity."
           },
           "free_fall_survivors":
           {
             "title": "Free-Fall Survivors",
             "level": 5,
-            "horizontal": null,
+            "horizontal": 6,
             "letter": "N",
-            "prerequisites": [],
+            "prerequisites": ["terminal_velocity"],
             "objective": "Use Newton's laws and knowledge of air resistance to describe how falling from several miles in the air is possible."
           },
           "why_is_physics_hard":
           {
             "title": "Why is Physics Hard?",
             "level": 5,
-            "horizontal": null,
+            "horizontal": 4,
             "letter": "O",
-            "prerequisites": [],
+            "prerequisites": ["free_fall_survivors"],
             "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrams of objects that are slowing down or moving at a constant speed."
           },
           "vector_force_analysis_6":
           {
             "title": "Vector Force Analysis Level 6",
             "level": 6,
-            "horizontal": null,
+            "horizontal": 4,
             "letter": "P",
-            "prerequisites": [],
+            "prerequisites": ["why_is_physics_hard"],
             "objective": "TBD"
           }
         }
@@ -3783,32 +3783,32 @@
             "prerequisites": ["electric_potential_diagrams_1"],
             "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
           },
-          "analyze_circuits_4":
-          {
-            "title": "Analyze Circuits 4: Multiple-Step Accordion Circuits",
-            "level": 4,
-            "horizontal": 5,
-            "letter": "H",
-            "prerequisites": ["analyze_circuits_3"],
-            "objective": "Solve circuits with multiple layers of series and parallel circuits inside of each other."
-          },
           "electric_potential_diagrams_2":
           {
             "title": "Electric Potential Diagrams 2",
             "level": 4,
+            "horizontal": 5,
+            "letter": "H",
+            "prerequisites": ["analyze_circuits_3"],
+            "objective": "Given an electric potential diagram of a circuit, draw a circuit that could potentially be the correct circuit."
+          },
+          "algebraic_circuits_2":
+          {
+            "title": "Algebraic Circuits 2",
+            "level": 4,
             "horizontal": 4,
             "letter": "I",
-            "prerequisites": ["analyze_circuits_4"],
-            "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for circuits with series and parallel elements inside of each other."
+            "prerequisites": ["electric_potential_diagrams_2"],
+            "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
           },
-          "analyze_circuits_5":
+          "analyze_circuits_4":
           {
-            "title": "Analyze Circuits 5: Algebraic Simple Circuits",
+            "title": "Analyze Circuits 4",
             "level": 4,
             "horizontal": 3,
             "letter": "J",
-            "prerequisites": ["electric_potential_diagrams_2"],
-            "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
+            "prerequisites": ["algebraic_circuits_2"],
+            "objective": "For circuits with multiple layers of series and parallel elements within each other, determine the voltage, current, resistance, and power of each element and draw a diagram illustrating the electric potential of the circuit, and describe how the circuit diagram drawn illustrates Kirchoff's Laws."
           },
           "use_kirchoffs_laws":
           {
@@ -3816,7 +3816,7 @@
             "level": 4,
             "horizontal": 2,
             "letter": "K",
-            "prerequisites": ["analyze_circuits_5"],
+            "prerequisites": ["analyze_circuits_4"],
             "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
           },
           "very_challenging_circuit":
