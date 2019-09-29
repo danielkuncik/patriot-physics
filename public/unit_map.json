@@ -1667,7 +1667,7 @@
             "prerequisites": ["inertia_newtons_first_law"],
             "objective": "Identify when net force is zero and when it is not; determine whether an abstract object accelerates, decelerates of moves at a constant speed based on its free-body diagrams"
           },
-          "basic_air_resistance_1":
+          "basic_air_resistance":
           {
             "title": "Basic Air Resistance",
             "level": 2,
@@ -1682,7 +1682,7 @@
             "level": 2,
             "horizontal": 3,
             "letter": "D",
-            "prerequisites": ["basic_air_resistance_1"],
+            "prerequisites": ["basic_air_resistance"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a given free-body diagram determine and defend the motion of that object",
             "limits": "Limited to single step motion"
           },

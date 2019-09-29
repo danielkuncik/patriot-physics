@@ -22,8 +22,6 @@
     </p>
 </div>
 
-
-
 <p class = 'directions'>
     For the following problems, state if net force = 0 or if net force > 0.
     <br>
@@ -66,7 +64,7 @@
     information on forces is given as well as information on the velocity of the object.
     Note that velocity is <strong>NOT</strong> a force,
     and this it is indicated separately from the free-body diagram.
-    I wrote <i>Newton's Model</i> by compiling Newton's First and Second Laws with the rules of vector addition,
+    I wrote <em>Newton's Model</em> by compiling Newton's First and Second Laws with the rules of vector addition,
     to create a guide for <strong>qualitatively</strong> relating a free-body diagram to motion.
     Use Newton's Model to predict the motion for each of the free-body diagrams below.
 </p>
@@ -162,17 +160,85 @@
     </li>
 </ol>
 
+
+<p class = 'directions'>
+    If more than one force acts on an object,
+    the forces must be combined, and the <em>net force</em> determines the motion of the object.
+    In each of the following examples, first find the <em>net force</em> acting on the object,
+    and then determine the motion of the object.
+</p>
+
+<ol class = 'questionList'>
+    <li data-answer = 'X'>
+        <table>
+            <tr>
+                <td id = 'FBD_B4'></td>
+                <td>
+                    <ol type = 'A'>
+                        <li>The object moves at a constant velocity.</li>
+                        <li>The object increases in speed.</li>
+                        <li>The object decreases in speed.</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </li>
+    <li data-answer = 'X'>
+        <table>
+            <tr>
+                <td id = 'FBD_B4'></td>
+                <td>
+                    <ol type = 'A'>
+                        <li>The object moves at a constant velocity.</li>
+                        <li>The object increases in speed.</li>
+                        <li>The object decreases in speed.</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </li>
+    <li data-answer = 'X'>
+        <table>
+            <tr>
+                <td id = 'FBD_B4'></td>
+                <td>
+                    <ol type = 'A'>
+                        <li>The object moves at a constant velocity.</li>
+                        <li>The object increases in speed.</li>
+                        <li>The object decreases in speed.</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </li>
+    <li data-answer = 'X'>
+        <table>
+            <tr>
+                <td id = 'FBD_B4'></td>
+                <td>
+                    <ol type = 'A'>
+                        <li>The object moves at a constant velocity.</li>
+                        <li>The object increases in speed.</li>
+                        <li>The object decreases in speed.</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </li>
+</ol>
+
 <div id = 'putItHere'></div>
 <script>
     let FBD_B1 = fastFBD([['right', 'Force']],'right');
     let FBD_B2 = fastFBD([['left', 'Force']], 'right');
     let FBD_B3 = fastFBD([],'right');
+    let FBD_B4 = fastFBD([['left',60],['right',34],['right',54]],'right');
 
     appendListOfDiagramsByID([
-        [FBD_B1, 'FBD_B1'],[FBD_B2, 'FBD_B2'],[FBD_B3, 'FBD_B3']
+        [FBD_B1, 'FBD_B1'],[FBD_B2, 'FBD_B2'],[FBD_B3, 'FBD_B3'],[FBD_B4, 'FBD_B4']
     ]);
 
-    // need to finish this!
+    // can't finish because the free-body diagrams don't displace multiple forces correctly :(
 </script>
 
 <h3>Answers:</h3>
