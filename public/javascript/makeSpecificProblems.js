@@ -9,6 +9,7 @@ function makeCircuitProblem(type, voltage, resistorArray, powerRowBoolean, note)
     if (powerRowBoolean === undefined) { // default is to ahve a power row
         powerRowBoolean = true;
     }
+    //function CircuitTable(numResistors, powerRowBoolean, width, height, unit) {
     let myTable = new CircuitTable(resistorArray.length, powerRowBoolean);
     let containerDiv = $("<div class = 'container'></div>");
     let rowDiv = $("<div class = 'row'></div>");

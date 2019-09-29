@@ -401,11 +401,13 @@ function CircuitTable(numResistors, powerRowBoolean, width, height, unit) {
     resistanceRow.append("<td></td>");
     powerRow.append("<td></td>");
 
+    console.log(powerRowBoolean);
     $(table).append(headerRow);
     $(table).append(voltageRow);
     $(table).append(currentRow);
     $(table).append(resistanceRow);
     if (this.powerRowBoolean) {
+        console.log('hi');
         $(table).append(powerRow);
     }
     this.table = table;
