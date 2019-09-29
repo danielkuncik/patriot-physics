@@ -10,6 +10,26 @@ makeSpecificDiagrams.js creates functions that quickly generate specific types o
 
 
 
+function appendListOfDiagramsByID(diagramList) {
+    let thisDiagram, thisID, thisWidth, thisHeight;
+    diagramList.forEach((diagram) => {
+        thisDiagram = diagram[0];
+        thisID = diagram[1];
+        if (diagram[2]) {
+            thisWidth = diagram[2];
+        } else {
+            thisWidth = 300;
+        }
+        if (diagram[3]) {
+            thisHeight = diagram[3]
+        } else {
+            thisHeight = 300;
+        }
+        $(`#${thisID}`).append(thisDiagram.drawCanvas(thisWidth, thisHeight));
+    })
+}
+
+
 /// #########################################################################################
 //// KINEMATIC GRAPHS
 
@@ -135,6 +155,22 @@ function turnTextToRadians(text) {
     return theta;
 }
 
+// given an inputted direction
+// tries to figure out what the user meant, and returns a value in radians
+function processDirectionInput(direction) {
+    if (typeof(direction === 'string')) { // if you wrote a word indicating numbers
+        return turnTextToRadians(direction)
+    } else if (typeof(direction) === 'number' && direction > 2 * Math.PI + 1) { // if you probably meant degrees
+        console.log(`note: assuming value ${direction} entered was in units of degrees, not radians`);
+        return convertDegreeToRadian(direction)
+    } else if (typeof(direction) === 'number') { // if you gave a value in radians
+        return direction
+    } else {
+        console.log('ERROR: Unable to process direction input');
+        return undefined
+    }
+}
+
 function makeSeriesCircuit(batteryVoltage, resistorArray) {
     let numResistors = resistorArray.length;
     let resistorOnRightEnd = (numResistors % 2 > 0);
@@ -240,24 +276,30 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
 // the first item of each row is the magnitude, must be a number
 // the second item of each row is the direciton, can be a number or appropriate text
 // magnitude must be a number
-function fastFBD(forceArray) {
+function fastFBD(forceArray, velocityDirection) {
     let myFBD = new FreeBodyDiagram();
-    let relativeMagnitude, label, direction, theta;
+    let relativeMagnitude, label, direction, theta, magnitudeOrLabel;
     forceArray.forEach((force) => {
-        relativeMagnitude = force[0];
-        direction = force[1];
-        label = force[2];
-        if (label === undefined) {
-            label = relativeMagnitude;
-        }
-        theta = undefined;
-        if (typeof(direction) === "number") {
-            theta = direction;
-        } else if (typeof(direction) === 'string') {
-            theta = turnTextToRadians(direction);
+        direction = force[0];
+        theta = processDirectionInput(direction);
+        magnitudeOrLabel = force[1]; /// processed as a label if a string or as a magnitude if a number
+        if (typeof(magnitudeOrLabel) === 'string') { /// if it is a label
+            label = magnitudeOrLabel;
+            if (force[2]) { // can add a relative magnitude quantitiy as third element, or it will default to 1
+                relativeMagnitude = force[2];
+            } else {
+                relativeMagnitude = 1;
+            }
+        } else if (typeof(magnitudeOrLabel) === 'number') { // if it is a magnitude
+            relativeMagnitude = magnitudeOrLabel;
+            label = printForce(magnitudeOrLabel);
         }
         myFBD.addForce(relativeMagnitude, theta, label);
     });
+    if (velocityDirection) {
+        let velocityTheta = processDirectionInput(velocityDirection);
+        myFBD.addVelocityArrow(velocityTheta); // all default values
+    }
     return myFBD;
 }
 

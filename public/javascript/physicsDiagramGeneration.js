@@ -1318,9 +1318,10 @@ class FreeBodyDiagram extends Diagram {
         this.arrowheadLength = 0;
         this.relativeFontSize = 0;
         this.textDisplacement = 0;
+        this.velocityArrow = undefined; // only one allowed
     }
 
-    /// do i want to make forces their own class??????
+    /// i need to add a way to add velocity arrow
 
     // if force is vertical, label above will add Text on the left and label below will ad Text on the right
     addForce(relativeMagnitude,angleInRadians,labelAbove, labelBelow) {
@@ -1337,19 +1338,51 @@ class FreeBodyDiagram extends Diagram {
         ); // the printForce function will print as is if it is a string or print with the unit if it is a number
     };
 
+    addVelocityArrow(angleInRadians, labelAbove, labelBelow, location) {
+        if (location === undefined) {location = 'upperRight';}
+        if (labelAbove === undefined) {labelAbove = 'velocity';}
+        if (labelBelow === undefined) {labelBelow = '';}
+        this.velocityArrow = {
+            "angle": angleInRadians,
+            "labelAbove": labelAbove,
+            "labelBelow": labelBelow,
+            "location": location
+        }
+    }
+
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        if (this.forces.length === 0) {
+            this.maxForce = 1; // so that a diagram can still be created with zero forces
+        }
         this.circleRadius = this.maxForce * 0.1;
         this.arrowheadLength = this.maxForce * 0.05;
         this.relativeFontSize = this.maxForce * 0.1;
         this.textDisplacement = this.relativeFontSize / 2;
-        console.log(origin);
         this.forces.forEach((force) => {
             super.addArrow(origin,force.endPoint,this.arrowheadLength,this.arrowheadAngle);
             super.labelLine(origin, force.endPoint, force.labelAbove, force.labelBelow, this.textDisplacement, this.relativeFontSize);
         });
+        if (this.velocityArrow) { // add an arrow, seperate from the free-body diagram, indicating velocity of an object
+            let velocityArrowStartPoint;
+            if (this.velocityArrow.location === 'upperRight') { // this method can make the velocity kind of far away
+                velocityArrowStartPoint = new Point(this.maxForce * 1.1, this.maxForce * 1.1);
+            } else if (this.velocityArrow.location === 'lowerRight') {
+                velocityArrowStartPoint = new Point(this.maxForce * 1.1, this.maxForce * -1.1);
+            } else if (this.velocityArrow.location === 'lowerLeft') {
+                velocityArrowStartPoint = new Point(this.maxForce * -1.1, this.maxForce * -1.1);
+            } else if (this.velocityArrow.location === 'upperLeft') {
+                velocityArrowStartPoint = new Point(this.maxForce * -1.1, this.maxForce * 1.1);
+            } else {
+                console.log('ERROR: invalid velocity arrow location given');
+                velocityArrowStartPoint = origin
+            }
+            let velocityArrowLength = this.maxForce * 0.5;
+            let velocityArrowEndPoint = velocityArrowStartPoint.getAnotherPointWithTrig(velocityArrowLength, this.velocityArrow.angle);
+            super.addArrow(velocityArrowStartPoint, velocityArrowEndPoint);
+            super.labelLine(velocityArrowStartPoint, velocityArrowEndPoint, this.velocityArrow.labelAbove, this.velocityArrow.labelBelow, this.textDisplacement, this.relativeFontSize);
+        }
         let centerCircle = super.addCircle(origin, this.circleRadius,true);
         centerCircle.fill();
-        console.log(this);
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
