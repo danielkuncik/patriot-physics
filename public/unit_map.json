@@ -1653,7 +1653,7 @@
           {
             "title": "Inertia and Newton's First Law",
             "level": 1,
-            "horizontal": 5,
+            "horizontal": 4,
             "letter": "A",
             "prerequisites": [],
             "objective": "Define inertia and relate inertia to mass"
@@ -1661,7 +1661,7 @@
           "newtons_model_1":
           {
             "title": "Newton's Model 1",
-            "level": 2,
+            "level": 1,
             "horizontal": 5,
             "letter": "B",
             "prerequisites": ["inertia_newtons_first_law"],
@@ -1671,7 +1671,7 @@
           {
             "title": "Basic Air Resistance",
             "level": 2,
-            "horizontal": 4,
+            "horizontal": 5,
             "letter": "C",
             "prerequisites": ["newtons_model_1"],
             "objective": "Explain what factors determine how crucial air resistance is in analyzing a situation."
@@ -1680,11 +1680,20 @@
           {
             "title": "Newton's Model 2",
             "level": 2,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "D",
             "prerequisites": ["basic_air_resistance"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a given free-body diagram determine and defend the motion of that object",
             "limits": "Limited to single step motion"
+          },
+          "inertia_stories":
+          {
+            "title": "Inertia Stories",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "X",
+            "prerequisites": ["newtons_model_2"],
+            "objective": "Explain real-life situations in which a change in inertia casues a change in experience; differentiate between inertial and gravitational mass."
           },
           "space_motion_1":
           {
@@ -1692,26 +1701,31 @@
             "level": 2,
             "horizontal": 2,
             "letter": "E",
-            "prerequisites": ["newtons_model_2"],
+            "prerequisites": ["inertia_stories"],
             "objective": "Describe how objects move in space, contrast this motion with how objects move on earth, and give intuitive explanations for the difference."
           },
-          "seat_back":
+          "forces_on_you":
           {
-            "title": "The Seat Back",
+            "title": "Forces on You",
             "level": 2,
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["space_motion_1"],
-            "objective": "Use Newton's Laws to describe the experience of your car pressing into your back when a car accelerates."
+            "objective": "Using Newton's Three laws and free-body diagrams, describe forces acting on you in various situations and relate them to your experience.",
+            "examples": [
+              "Use Newton's Laws to describe the experience of your car pressing into your back when a car accelerates.",
+              "Use Newton's Laws to explain how a person walks."
+            ],
+            "limits": "Will not include very difficult elevator problems."
           },
-          "memorize_newtons_model":
+          "examine_newtons_laws_mathematically":
           {
-            "title": "Memorize Newton's Model",
+            "title": "Examine Newton's Laws Mathematically",
             "level": 3,
             "horizontal": 1,
             "letter": "G",
-            "prerequisites": ["seat_back"],
-            "objective": "State Newton's First and Second Laws completely from memory; state from memory a model that relates net force to motion qualitatively in one dimension and relate this model to Newton's First and Second Laws."
+            "prerequisites": ["forces_on_you"],
+            "objective": "Look at each of Newton's Laws as mathematical rules and derive mathematical results from each law."
           },
           "newtons_model_3":
           {
@@ -1719,7 +1733,7 @@
             "level": 3,
             "horizontal": 2,
             "letter": "H",
-            "prerequisites": ["memorize_newtons_model"],
+            "prerequisites": ["examine_newtons_laws_mathematically"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
             "notes": "Includes two-step motion; in particular, focuses on objects taht are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples."
           },
@@ -1780,20 +1794,11 @@
           "why_is_physics_hard":
           {
             "title": "Why is Physics Hard?",
-            "level": 5,
-            "horizontal": 4,
+            "level": 6,
+            "horizontal": 6,
             "letter": "O",
             "prerequisites": ["free_fall_survivors"],
             "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrams of objects that are slowing down or moving at a constant speed."
-          },
-          "vector_force_analysis_6":
-          {
-            "title": "Vector Force Analysis Level 6",
-            "level": 6,
-            "horizontal": 4,
-            "letter": "P",
-            "prerequisites": ["why_is_physics_hard"],
-            "objective": "TBD"
           }
         }
       },
