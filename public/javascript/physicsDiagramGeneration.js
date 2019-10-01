@@ -581,11 +581,11 @@ class Diagram {
         this.addExistingPoint(point2);
         this.addExistingPoint(arrowheadEnd1);
         this.addExistingPoint(arrowheadEnd2);
-        this.addSegment(point1, point2); // main line
+        let mainSegment = this.addSegment(point1, point2); // main line
         this.addSegment(point2, arrowheadEnd1); // half of arrowhead
         this.addSegment(point2, arrowheadEnd2); // half of arrowhead
 
-        return true;
+        return mainSegment;
     };
 
     // in case you want a line with an arrowhead in the middle of it
@@ -644,6 +644,7 @@ class Diagram {
     // if line is vertical "Text above" is to the left and "textBelow" is to the right
     // returns textAbove if it exists
     // if only textBelow exists, returns textBelow
+    // i need to create a function that labels a segment
     labelLine(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize) {
         let centerOfLine = new Point( (point1.x + point2.x)/2, (point1.y + point2.y)/2);
         let theta = point1.getAngleToAnotherPoint(point2);
