@@ -52,21 +52,26 @@ td.equation {
 
 li.bigQuestion {
     font-size: 20px;
-    margin-bottom: 300px;
+    margin-bottom: 500px;
 }
 li.mediumQuestion {
+    font-size: 20px;
+    margin-bottom: 300px;
+}
+
+li.smallQuestion {
     font-size: 20px;
     margin-bottom: 150px;
 }
 
-li.smallQuestion {
+li.tinyQuestion {
     font-size: 20px;
     margin-bottom: 80px;
 }
 
 li.physicsQuestion {
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 150px;
 }
 
 li.circuitProblem {
