@@ -1351,6 +1351,8 @@ class FreeBodyDiagram extends Diagram {
         }
     }
 
+    /// i need to add some function so that the label does not get covered by the dot!
+
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (this.forces.length === 0) {
             this.maxForce = 1; // so that a diagram can still be created with zero forces

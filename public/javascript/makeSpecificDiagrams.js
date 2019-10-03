@@ -82,17 +82,21 @@ but for now these are not bad
 /// undefined will return an empty string
 // a string will return the same string
 // a number will return the value with the unit
-function printQuantity(item, singularUnit, pluralUnit) {
+function printQuantity(item, singularUnit, pluralUnit, abbreviation, useAbbreviationBoolean) {
     let outputString;
     if (item === undefined) {
         outputString = ''
     } else if (typeof(item) === 'string') {
         outputString = item;
     } else if (typeof(item) === 'number') {
-        if (item === 1) {
-            outputString = `${item} ${singularUnit}`;
+        if (useAbbreviationBoolean) {
+            outputString = `${item} ${abbreviation}`;
         } else {
-            outputString = `${item} ${pluralUnit}`;
+            if (item === 1) {
+                outputString = `${item} ${singularUnit}`;
+            } else {
+                outputString = `${item} ${pluralUnit}`;
+            }
         }
     }
     return outputString
@@ -118,6 +122,12 @@ function printPower(item) {
 function printForce(item) {
     return printQuantity(item, 'Newton', "Newtons");
 }
+
+function printForceAbbreviated(item) {
+    return printQuantity(item, 'Newton', 'Newtons', 'N', true);
+}
+// i could just have both singular and plural be 'N' ==> a simpler code
+
 
 
 // turns a string in text to an appropriate angle in radians
@@ -293,7 +303,7 @@ function fastFBD(forceArray, velocityDirection) {
             }
         } else if (typeof(magnitudeOrLabel) === 'number') { // if it is a magnitude
             relativeMagnitude = magnitudeOrLabel;
-            label = printForce(magnitudeOrLabel);
+            label = printForceAbbreviated(magnitudeOrLabel);
         }
         myFBD.addForce(relativeMagnitude, theta, label);
     });
