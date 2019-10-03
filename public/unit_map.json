@@ -1473,7 +1473,7 @@
             "level": 3,
             "horizontal": 6,
             "letter": "G",
-            "prerequisites": ["memorize_newtons_second_law"],
+            "prerequisites": ["find_missing_force"],
             "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person."
           },
           "block_dragging_3":
