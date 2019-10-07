@@ -28,7 +28,7 @@
     </div>
 </div>
 
-
+<div class = 'pageBreak'></div>
 <h3>
     Parallel Circuit inside of a Series Circuit
 </h3>
@@ -97,6 +97,9 @@
     <li>
         <a href = '/contentFiles/analyze_circuits_3_extra_problems.pdf'>Extra Problems!</a>
     </li>
+    <li>
+        <a href = '/contentFiles/analyze_circuits_3_answers.pdf'>Answers!</a>
+    </li>
 </ul>
 
 <script>
@@ -132,7 +135,7 @@
     problem1Graph.labelAxes('','Potential (V)');
 
     $("#problem1Circuit").append(problem1Circuit.drawCanvas(600,600));
-    $("#problem1Graph").append(problem1Graph.drawCanvas(900,900)); // i think what's going on is that the limits aren't y-muliplied???
+    $("#problem1Graph").append(problem1Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
 
     // #################################################################
     // Problem 2
@@ -161,11 +164,11 @@
     problem2Circuit.addElementWithCursor('wire',8,0);
 
     let problem2Graph = new QuantitativeGraph(0,20,0,40,2);
-    problem2Graph.addReferenceArray([],[10,20,30,40]);
+    problem2Graph.addReferenceArray([],[8,16,24,32,40]);
     problem2Graph.labelAxes('','Potential (V)');
 
     $("#problem2Circuit").append(problem2Circuit.drawCanvas(600,600));
-    $("#problem2Graph").append(problem2Graph.drawCanvas(900,900)); // i think what's going on is that the limits aren't y-muliplied???
+    $("#problem2Graph").append(problem2Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
 
 
     // #################################################################
@@ -208,8 +211,8 @@
     problem3Graph.labelAxes('','Electric Potential (V)');
     problem3Graph.addReferenceArray([],[7,14,21]);
 
-    $("#problem3Circuit").append(problem3Circuit.drawCanvas(600,600));
-    $("#problem3Graph").append(problem3Graph.drawCanvas(900,900)); // i think what's going on is that the limits aren't y-muliplied???
+    $("#problem3Circuit").append(problem3Circuit.drawCanvas(500,500));
+    $("#problem3Graph").append(problem3Graph.drawCanvas(750,750)); // i think what's going on is that the limits aren't y-muliplied???
 
     // #################################################################
     // Problem 4
@@ -246,7 +249,7 @@
     problem4Graph.addReferenceArray([],[4,8,12]);
 
     $("#problem4Circuit").append(problem4Circuit.drawCanvas(600,600));
-    $("#problem4Graph").append(problem4Graph.drawCanvas(900,900)); // i think what's going on is that the limits aren't y-muliplied???
+    $("#problem4Graph").append(problem4Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
 
 
 
