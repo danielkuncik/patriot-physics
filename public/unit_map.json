@@ -3761,14 +3761,15 @@
             "prerequisites": ["analyze_circuits_1"],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information."
           },
-          "algebraic_circuit_formulas":
+          "algebraic_circuits_1":
           {
-            "title": "Algebraic Circuit Formulas",
+            "title": "Algebraic Circuits 1",
+            "subtitle": "New Circuit Formulas",
             "level": 3,
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["analyze_circuits_2"],
-            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together; prove that answers are dimensionally correct"
+            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together"
           },
           "electric_potential_diagrams_1":
           {
@@ -3776,7 +3777,7 @@
             "level": 3,
             "horizontal": 3.5,
             "letter": "F",
-            "prerequisites": ["algebraic_circuit_formulas"],
+            "prerequisites": ["algebraic_circuits_1"],
             "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits."
           },
           "analyze_circuits_3":
@@ -3800,15 +3801,17 @@
           "algebraic_circuits_2":
           {
             "title": "Algebraic Circuits 2",
+            "subtitle": "Solving Series and Parallel Circuits Algebraically",
             "level": 4,
             "horizontal": 4,
             "letter": "I",
             "prerequisites": ["electric_potential_diagrams_2"],
-            "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit; demonstrate that answers are dimensionally correct."
+            "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit."
           },
           "analyze_circuits_4":
           {
             "title": "Analyze Circuits 4",
+            "subtitle": "Demonstrating Kirchoff's Laws",
             "level": 4,
             "horizontal": 3,
             "letter": "J",
@@ -3833,9 +3836,10 @@
             "prerequisites": ["use_kirchoffs_laws"],
             "objective": "Solve a single, very complex and challenging circuit."
           },
-          "algebraic_accordion_circuits":
+          "algebraic_circuits_3":
           {
-            "title": "Algebraic Accordion Circuits",
+            "title": "Algebraic Circuits 3",
+            "subtitle": "Solving Accordion Circuits Algebraically and Dimensional Analysis with Circuits",
             "level": 5,
             "horizontal": 3,
             "letter": "M",
@@ -3848,7 +3852,7 @@
             "level": 5,
             "horizontal": 4,
             "letter": "N",
-            "prerequisites": ["algebraic_accordion_circuits"],
+            "prerequisites": ["algebraic_circuits_3"],
             "objective": "Solve a circuit  that includes series and parallel elements within each other without using Kirchoff's Laws, create an electric potential diagram of that circuit, use that diagram to demonstrate how Kirchoff's Laws are followed."
           },
           "demonstrate_basic_circuit_rules":
