@@ -88,3 +88,8 @@ a.importantLink {
 div.formulaBoxDiv {
 
 }
+
+ul.extraLinks {
+    font-size: 22px;
+    text-emphasis-color: red;
+}
