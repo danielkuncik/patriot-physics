@@ -128,6 +128,18 @@ class Point {
         this.y += yTranslation;
     }
 
+    // creates a new point by rotating the canvas, then translating
+    // does not work if rotation is negative
+    transformAndReproduce(rotation, xTranslation, yTranslation) {
+        let xPrime = xTranslation * Math.cos(rotation) - yTranslation * Math.sin(rotation) + this.x;
+        let yPrime = yTranslation * Math.cos(rotation) + xTranslation * Math.sin(rotation) + this.y;
+        // let newX = this.x + xTranslation * Math.cos(rotation) + yTranslation * Math.sin(rotation);
+        // let newY = this.y + xTranslation * Math.sin(rotation) - yTranslation * Math.cos(rotation);
+        // let newPoint = new Point(newX, newY);
+        let newPoint = new Point(xPrime, yPrime);
+        return newPoint
+    }
+
     // rotates a Point around the center Point by a certain angle
     // default center Point is origin
     rotate(rotationAngleInRadians, centerRotationPoint) {
@@ -171,7 +183,7 @@ class Point {
         /// inefficient, but very reliable
         else if (quadrant === '2') {theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
         else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.x) / (-1 * this.y));}
-        else if (quadrant === '4') {theta = Math.PI * 3 / 2 + Math.atan(this.x / -1 *  this.y);}
+        else if (quadrant === '4') {theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
         else if (quadrant === '+X') {theta = 0;}
         else if (quadrant === '-X') {theta = Math.PI;}
         else if (quadrant === '+Y') {theta = Math.PI / 2;}
@@ -227,6 +239,7 @@ class Point {
         return new Point(newx,newy)
     }
 }
+
 
 // global variable origin
 const origin = new Point(0,0);
@@ -1276,9 +1289,37 @@ class CircuitDiagram extends Diagram {
         // could make it more DRY by adding a function here
     }
 
+
+    addSign(type, centerPoint, width, thetaInRadians) {
+        // add a plus or minus sign
+        let north = centerPoint.getAnotherPointWithTrig(width / 2, thetaInRadians);
+        let west  = centerPoint.getAnotherPointWithTrig(width / 2, thetaInRadians + Math.PI / 2);
+        let south = centerPoint.getAnotherPointWithTrig(width / 2, thetaInRadians + Math.PI);
+        let east  = centerPoint.getAnotherPointWithTrig(width / 2, thetaInRadians + Math.PI * 3 / 2);
+
+        if (type === 'plus') {
+            let seg1 = super.addSegment(north, south);
+            let seg2 = super.addSegment(west, east);
+            return [seg1, seg2]
+        } else if (type = 'minus') {
+            let seg1 = super.addSegment(west, east);
+            return seg1
+        } else {
+            return false
+        }
+    }
+
+    addPlusSign(centerPoint, width, thetaInRadians) {
+        return this.addSign('plus', centerPoint, width, thetaInRadians);
+    }
+
+    addMinusSign(centerPoint, width, thetaInRadians) {
+        return this.addSign('minus', centerPoint, width, thetaInRadians);
+    }
+
     addCell(endPoint1, endPoint2, labelAbove, labelBelow, numBatteries, width) {
         if (numBatteries === undefined) {numBatteries = 2;}
-        if (width === undefined) {width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 0.5;} /// should be proportioned by numbatteries
+        if (width === undefined) {width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 1;} /// should be proportioned by numbatteries
 
         let length = endPoint1.getDistanceToAnotherPoint(endPoint2);
         let numLines = numBatteries * 2;
@@ -1288,10 +1329,18 @@ class CircuitDiagram extends Diagram {
             if (j % 2 === 0) {lineWidth = width / 2;} else {lineWidth = width;}
             pointA = endPoint1.interpolate(endPoint2, j / (numLines - 1));
             pointB = endPoint1.interpolate(endPoint2, j / (numLines - 1));
-            pointA.translate(lineWidth * Math.cos(theta + Math.PI/2), lineWidth * Math.sin(theta + Math.PI /2));
-            pointB.translate(lineWidth * Math.cos(theta - Math.PI/2), lineWidth * Math.sin(theta - Math.PI /2));
+            pointA.translate(lineWidth / 2 * Math.cos(theta + Math.PI/2), lineWidth / 2 * Math.sin(theta + Math.PI /2));
+            pointB.translate(lineWidth / 2 * Math.cos(theta - Math.PI/2), lineWidth / 2 * Math.sin(theta - Math.PI /2));
             super.addSegment(pointA, pointB);
         }
+        let plusSignCenter = endPoint2.transformAndReproduce(theta - Math.PI / 2, -1 * width * 3 / 8, width / 10);
+        let plusSign = this.addPlusSign(plusSignCenter, width / 8, theta);
+        let minusSignCenter = endPoint1.transformAndReproduce(theta - Math.PI / 2, -1 * width * 3 / 8, width / 10);
+        let minusSign = this.addMinusSign(minusSignCenter, width / 8, theta);
+        // the problem is exclusively in quadrant 4...in which theta - MATH.PI is negative!
+
+
+
         // still need to add + and - signs on the cathode and anode
         if (labelAbove !== undefined) {
             super.labelLineAbove(endPoint1, endPoint2, printVoltage(labelAbove), width * 1.5, length * 0.35);
@@ -1299,8 +1348,6 @@ class CircuitDiagram extends Diagram {
         if (labelBelow !== undefined) {
             super.labelLineBelow(endPoint1, endPoint2, printVoltage(labelBelow), width * 1.5, length * 0.35);
         }
-
-        // add plus and minus signs
 
     }
 
