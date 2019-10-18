@@ -1440,13 +1440,22 @@
             "prerequisites": ["newtons_second_law","finding_net_force"],
             "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object"
           },
+          "basic_friction":
+          {
+            "title": "Basic Friction",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "X",
+            "prerequisites": ["finding_acceleration"],
+            "objective": "Recognize when and how friction is applied; recognize qualitative differences between static and kinetic friction."
+          },
           "block_dragging_1":
           {
             "title": "Block Dragging 1: Dragging Without Friction",
             "level": 2,
             "horizontal": 2,
             "letter": "D",
-            "prerequisites": ["finding_acceleration"],
+            "prerequisites": ["basic_friction"],
             "objective": "Given a block of a certain mass, draw free-body diagrams for this block when it is not moving or being pushed on a surfaced without friction."
           },
           "find_missing_force":
@@ -1485,6 +1494,15 @@
             "prerequisites": ["block_dragging_2"],
             "objective": "Given a block being dragged on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
           },
+          "vertical_friction":
+          {
+            "title": "Vertical Friction",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "Y",
+            "prerequisites": ["block_dragging_3"],
+            "objective": "Analyze friction as it acts on an object pressed against a wall."
+          },
           "elevators_2":
           {
             "title": "Elevators 2",
@@ -1503,9 +1521,9 @@
             "prerequisites": ["block_dragging_3"],
             "objective": "Given a force-time graph of a block on a surface, draw free-body diagrams for the block at different times and defend them; quantitatively analyze the surface based on the block."
           },
-          "block_dragging_algebra":
+          "friction_algebra":
           {
-            "title": "Block Dragging Algebra",
+            "title": "Friction Algebra",
             "level": 5,
             "horizontal": 3,
             "letter": "K",
@@ -1538,6 +1556,15 @@
             "letter": "N",
             "prerequisites": ["artificial_gravity"],
             "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness."
+          },
+          "chinese_pole":
+          {
+            "title": "The Chinese Pole",
+            "level": 6,
+            "horizontal": 3,
+            "letter": "O",
+            "prerequisites": ["block_dragging_algebra"],
+            "objective": "Use knowledge of static and kinetic friction to create a quantitative model of tricks done on the Chinese Pole by a circus performer."
           }
         }
       },
@@ -2033,6 +2060,7 @@
         "completed": true,
         "AP": true,
         "honors": true,
+        "need_to_add": "Two direction quantitative kinematic graphs (3 and 4); derivations of kinematic equations (5)",
         "pods":
         {
           "distance_displacement":
@@ -2051,7 +2079,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Give very basic definitions and examples of vectors and scalars."
+            "objective": "Memorize the definitions and examples of vectors and scalars."
           },
           "average_speed_average_velocity":
           {
@@ -2084,6 +2112,16 @@
             "prerequisites": [],
             "objectives": "For different descriptions of motion and motion maps, determine the correct directions of velocity and acceleration."
           },
+          "distance_displacement_position":
+          {
+            "title": "Distance, Displacement, and Position",
+            "level": 3,
+            "objective": "Memorize the definitions of distance, displacement, and position; differentiate between the concepts of distance, displacement, and position",
+            "examples": [
+              "Explain why displacement and position  must be vectors but distance cannot be a vector.",
+              "Examine whether displacement depends upon the location of the origin and the direction of the axes."
+            ]
+          },
           "kinematic_graphs_two_direction_motion":
           {
             "title": "Kinematic Graphs of Two-Direction Motion",
@@ -2093,6 +2131,12 @@
             "prerequisites": [],
             "objectives":"Select qualitative kinematic graphs related to description of single step, accelerated and decelerated motion in two different directions.",
             "note": "Traffic light problems"
+          },
+          "quantitative_two_direction_kinematic_graphs_1":
+          {
+            "title": "Quantitative Two-Direction Kinematic Graphs 1",
+            "level": 3,
+            "objective": "Create position, velocity, and acceleration time graphs for objects moving with a constant acceleration but in two different directions and passing the origin."
           },
           "kinematic_equations_two_direction_motion":
           {
@@ -2122,6 +2166,12 @@
               "Focus on all kinematic equations."
             ]
           },
+          "quantitative_two_direction_kinematic_graphs_2":
+          {
+            "title": "Quantitative Two-Direction Kinematic Graphs 2",
+            "level": 4,
+            "objective": "Create position, velocity, and acceleration time graphs for objects moving with a constant acceleration but in two different directions and passing the origin."
+          },
           "kinematic_graphs_multi_step_two_direction_motion":
           {
             "title": "Kinematic Graphs of Multi-Step Two-Direction Motion",
@@ -2129,16 +2179,28 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a story that involves motion in multiple-steps in different directions, identify kinematic graphs that best reflect this motion."
+            "objective": "Given a story that involves motion in multiple-steps in different directions, identify kinematic graphs that best reflect this motion; explain results by referring to principles of vector addition and the fundamental theorem of calculus."
           },
-          "full_model_two_direction_motion":
+          "quantitative_two_direction_kinematic_graphs_3":
           {
-            "title": "Full Model of Two-Direction Motion",
+            "title": "Quantitative Two-Direction Kinematic Graphs",
+            "level": 5,
+            "objective": "Given an object that moves in multiple-steps, each individual step at a constant acceleration, and that both switches direction and moves past the origin during its motion, create quantitative position, velocity, and acceleration graphs for the object."
+          },
+          "kinematic_equation_two_direction_derivation":
+          {
+            "title": "Derive Kinematic Equations for Two-Direction Motion",
+            "level": 5,
+            "objective": "Given an object with a constant velocity that switches direction during its motion, demonstrate geometrically that the kinematic equations are valid."
+          },
+          "bungee_jumper":
+          {
+            "title": "The Bungee Jumper",
             "level": 6,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Create a full graphical and functional model of a complex two-direction motion situation, such as a bungee spring."
+            "objective": "Create a kinematic and dynamic model that describes the 1-dimensional motion of a bungee jumper."
           }
         }
       },
@@ -3107,6 +3169,14 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Analyze the forces acting on a person in the gravitron amusement park ride; describe why a person feels 'pressed into' the wall during the ride."
+          },
+          "hula_hoop":
+          {
+            "title": "The Hula Hoop",
+            "level": 6,
+            "horizontal": null,
+            "prerequisites": [],
+            "objective": "Develop a quantitative model to examine the motion of a hula hoop."
           }
         }
       },
@@ -3453,7 +3523,16 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Make inferences using algebraic and proportionality analysis regarding the rotaitonal and linear speeds of a person located at different points on the earth"
+            "objective": "Make inferences using algebraic and proportionality analysis regarding the rotational and linear speeds of a person located at different points on the earth"
+          },
+          "winter_is_coming":
+          {
+            "title": "Winter is Coming?",
+            "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Design a hypothetical planet for which days and seasons have irregular lengths."
           }
         }
       },
@@ -3813,56 +3892,56 @@
             "title": "Analyze Circuits 4",
             "subtitle": "Demonstrating Kirchoff's Laws",
             "level": 4,
-            "horizontal": 3,
+            "horizontal": 2,
             "letter": "J",
             "prerequisites": ["algebraic_circuits_2"],
             "objective": "For circuits with multiple layers of series and parallel elements within each other, determine the voltage, current, resistance, and power of each element and draw a diagram illustrating the electric potential of the circuit, and describe how the circuit diagram drawn illustrates Kirchoff's Laws."
-          },
-          "use_kirchoffs_laws":
-          {
-            "title": "Use Kirchoff's Laws",
-            "level": 4,
-            "horizontal": 2,
-            "letter": "K",
-            "prerequisites": ["analyze_circuits_4"],
-            "objective": "Use Kirchoff's laws to solve circuits with multiple batteries in different locations."
           },
           "very_challenging_circuit":
           {
             "title": "A very challenging circuit",
             "level": 5,
             "horizontal": 2,
-            "letter": "L",
-            "prerequisites": ["use_kirchoffs_laws"],
+            "letter": "K",
+            "prerequisites": ["analyze_circuits_4"],
             "objective": "Solve a single, very complex and challenging circuit."
+          },
+          "dc_circuit_dimensional_analysis":
+          {
+            "title": "DC Circuit Dimensional Analysis",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["very_challenging_circuit"],
+            "objective": "Determine and explain the units of all DC circuit quantities; prove various formulas are dimensionally correct."
           },
           "algebraic_circuits_3":
           {
             "title": "Algebraic Circuits 3",
             "subtitle": "Solving Accordion Circuits Algebraically and Dimensional Analysis with Circuits",
             "level": 5,
-            "horizontal": 3,
-            "letter": "M",
-            "prerequisites": ["very_challenging_circuit"],
-            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
-          },
-          "demonstrate_kirchoffs_laws":
-          {
-            "title": "Demonstrate Kirchoff's Laws",
-            "level": 5,
             "horizontal": 4,
-            "letter": "N",
-            "prerequisites": ["algebraic_circuits_3"],
-            "objective": "Solve a circuit  that includes series and parallel elements within each other without using Kirchoff's Laws, create an electric potential diagram of that circuit, use that diagram to demonstrate how Kirchoff's Laws are followed."
+            "letter": "M",
+            "prerequisites": ["dc_circuit_dimensional_analysis"],
+            "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
           },
           "demonstrate_basic_circuit_rules":
           {
             "title": "Demonstrate Basic Circuit Rules",
             "level": 5,
             "horizontal": 5,
+            "letter": "N",
+            "prerequisites": ["algebraic_circuits_3"],
+            "objective": "Demonstrate how the rules for series and parallel elements used to solve circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
+          },
+          "dc_circuits_level_6":
+          {
+            "title": "DC Circuits Level 6",
+            "level": 6,
+            "horizontal": 5,
             "letter": "O",
-            "prerequisites": ["demonstrate_kirchoffs_laws"],
-            "objective": "Demonstrate how the rules for series and parallel elements used to sovle circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
+            "prerequisites": ["demonstrate_basic_circuit_rules"],
+            "objective": "DC Circuits Level 6"
           }
         }
       },
