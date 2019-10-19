@@ -1347,6 +1347,11 @@ class FreeBodyDiagram extends Diagram {
         this.overLapppingForceGroups = undefined;
     }
 
+    setFontSize(newFontSize) {
+        this.relativeFontSize = newFontSize;
+        this.textDisplacement = this.relativeFontSize / 2;
+    }
+
     /// i need to add a way to add velocity arrow
 
     // if force is vertical, label above will add Text on the left and label below will ad Text on the right
@@ -1420,8 +1425,7 @@ class FreeBodyDiagram extends Diagram {
             } else {
                 displacementMagnitudes = NpointsEvenlySpacedInARange(N, -1 * displacementRange, displacementRange);
                 if (this.relativeFontSize > displacementMagnitudes[1] - displacementMagnitudes[0]) {  // if the labels will overlap each other
-                    this.relativeFontSize = (displacementMagnitudes[1] - displacementMagnitudes[0] * 0.6); // reduce size of the labels
-                    this.textDisplacement = this.relativeFontSize / 2;
+                    this.setFontSize((displacementMagnitudes[1] - displacementMagnitudes[0] * 0.6)); // reduce size of the labels
                 }
                 thetaSum = 0;
                 group.forEach((index) => {
@@ -1448,8 +1452,7 @@ class FreeBodyDiagram extends Diagram {
         }
         this.circleRadius = this.maxForce * 0.1;
         this.arrowheadLength = this.maxForce * 0.05;
-        this.relativeFontSize = this.maxForce * 0.1;
-        this.textDisplacement = this.relativeFontSize / 2;
+        this.setFontSize(this.maxForce * 0.1);
 
 
         this.forces.forEach((force) => {

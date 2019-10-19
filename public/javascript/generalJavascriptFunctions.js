@@ -61,5 +61,3 @@ function NpointsEvenlySpacedInARange(N, minVal, maxVal) {
     }
     return outputArray
 }
-
-console.log(NpointsEvenlySpacedInARange(3,-1 * 2.5, 2.5));
