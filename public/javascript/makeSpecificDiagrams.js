@@ -168,11 +168,11 @@ function turnTextToRadians(text) {
 // given an inputted direction
 // tries to figure out what the user meant, and returns a value in radians
 function processDirectionInput(direction) {
-    if (typeof(direction === 'string')) { // if you wrote a word indicating numbers
+    if (typeof(direction) === 'string') { // if you wrote a word indicating numbers
         return turnTextToRadians(direction)
     } else if (typeof(direction) === 'number' && direction > 2 * Math.PI + 1) { // if you probably meant degrees
         console.log(`note: assuming value ${direction} entered was in units of degrees, not radians`);
-        return convertDegreeToRadian(direction)
+        return convertDegreesToRadians(direction)
     } else if (typeof(direction) === 'number') { // if you gave a value in radians
         return direction
     } else {
@@ -180,6 +180,7 @@ function processDirectionInput(direction) {
         return undefined
     }
 }
+
 
 function makeSeriesCircuit(batteryVoltage, resistorArray) {
     let numResistors = resistorArray.length;

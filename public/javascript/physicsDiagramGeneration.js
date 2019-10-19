@@ -12,24 +12,7 @@ which i could use to better fit it into spaces
 // this would cause the Point to fit into a box with width no greater than maxwidth and height no greater than max height
 // and for all points to be positive (as though all in quadrant 1)
 
-// from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
-function create_UUID(){
-    var dt = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (dt + Math.random()*16)%16 | 0;
-        dt = Math.floor(dt/16);
-        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
-    });
-    return uuid;
-}
 
-function minOfTwoValues(val1, val2) {
-    if (val1 <= val2) {
-        return val1
-    } else {
-        return val2
-    }
-}
 
 function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {
     var scale = 1;
@@ -244,9 +227,9 @@ class Point {
 // global variable origin
 const origin = new Point(0,0);
 
-function constructPointWithMagnitude(magnitude, angleInDegrees) {
-    let x = magnitude * Math.cos(convertDegreeToRadian(angleInDegrees));
-    let y = magnitude * Math.sin(convertDegreeToRadian(angleInDegrees));
+function constructPointWithMagnitude(magnitude, angleInRadians) {
+    let x = magnitude * Math.cos(angleInRadians);
+    let y = magnitude * Math.sin(angleInRadians);
     let newPoint = new Point(x, y);
     return newPoint;
 }
@@ -320,13 +303,7 @@ class Segment {
     */
 }
 
-function convertDegreesToRadians(angle) {
-    return angle / 180 * Math.PI;
-}
 
-function convertRadiansToDegrees(angle) {
-    return angle / Math.PI * 180;
-}
 
 // the box should always belong to an object!
 class Rectangle {
@@ -1367,6 +1344,7 @@ class FreeBodyDiagram extends Diagram {
         this.relativeFontSize = 0;
         this.textDisplacement = 0;
         this.velocityArrow = undefined; // only one allowed
+        this.overLapppingForceGroups = undefined;
     }
 
     /// i need to add a way to add velocity arrow
@@ -1381,6 +1359,7 @@ class FreeBodyDiagram extends Diagram {
                 "angle": angleInRadians,
                 "labelAbove": printForce(labelAbove),
                 "labelBelow": printForce(labelBelow),
+                "startPoint": origin,
                 "endPoint": endPoint
             }
         ); // the printForce function will print as is if it is a string or print with the unit if it is a number
@@ -1394,11 +1373,74 @@ class FreeBodyDiagram extends Diagram {
             "angle": angleInRadians,
             "labelAbove": labelAbove,
             "labelBelow": labelBelow,
-            "location": location
+            "location": location,
         }
     }
 
     /// i need to add some function so that the label does not get covered by the dot!
+
+    // if two forces are a very similar direction, they need to be displaced so that they do not overlap
+    // first dvide forces ni
+    identifyOverlappingForces() {
+        const displacementMin = convertDegreesToRadians(15); // will act on all forces less than 15 degrees apart
+        // determine if any forces are close to each other
+        let overlappingForceGroups = [], forcesAlreadyAccountedFor = [];
+        let i, j, thisForce, thatForce, nextOverlappingForceGroup;
+        for (i = 0; i < this.forces.length; i++) {
+            if (!isXinArray(i, forcesAlreadyAccountedFor)) {
+                nextOverlappingForceGroup = [i];
+                forcesAlreadyAccountedFor.push(i);
+                thisForce = this.forces[i];
+                for (j = i + 1; j < this.forces.length; j++) {
+                    if (!isXinArray(j, forcesAlreadyAccountedFor)) {
+                        thatForce = this.forces[j];
+                        if (Math.abs(thisForce.angle - thatForce.angle) <= displacementMin) {
+                            nextOverlappingForceGroup.push(j);
+                            forcesAlreadyAccountedFor.push(j);
+                        }
+                    }
+                }
+                overlappingForceGroups.push(nextOverlappingForceGroup);
+            }
+        }
+        this.overLapppingForceGroups = overlappingForceGroups;
+        return overlappingForceGroups
+    }
+
+    displaceOverlappingForces() {
+        let N;
+        let thetaSum, thetaAverage, phi;
+        const displacementRange = this.circleRadius / 2; /// they will displace over this range
+        console.log(displacementRange);
+        let displacementMagnitudes;
+        this.overLapppingForceGroups.forEach((group) => {
+            N = group.length;
+            if (N === 1) {
+                // pass
+            } else {
+                displacementMagnitudes = NpointsEvenlySpacedInARange(N, -1 * displacementRange, displacementRange);
+                if (this.relativeFontSize > displacementMagnitudes[1] - displacementMagnitudes[0]) {  // if the labels will overlap each other
+                    this.relativeFontSize = (displacementMagnitudes[1] - displacementMagnitudes[0] * 0.6); // reduce size of the labels
+                    this.textDisplacement = this.relativeFontSize / 2;
+                }
+                thetaSum = 0;
+                group.forEach((index) => {
+                    thetaSum += this.forces[index].angle;
+                });
+                thetaAverage = thetaSum / N;
+                phi = thetaAverage + Math.PI / 2;
+
+                let thisForce, newStartPoint, newEndPoint;
+                group.forEach((index) => {
+                    thisForce = this.forces[index];
+                    newStartPoint = thisForce.startPoint.transformAndReproduce(phi, displacementMagnitudes[index], 0);
+                    newEndPoint = thisForce.endPoint.transformAndReproduce(phi, displacementMagnitudes[index], 0);
+                    thisForce.startPoint = newStartPoint;
+                    thisForce.endPoint = newEndPoint;
+                });
+            }
+        });
+    }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (this.forces.length === 0) {
@@ -1408,10 +1450,22 @@ class FreeBodyDiagram extends Diagram {
         this.arrowheadLength = this.maxForce * 0.05;
         this.relativeFontSize = this.maxForce * 0.1;
         this.textDisplacement = this.relativeFontSize / 2;
+
+
         this.forces.forEach((force) => {
-            super.addArrow(origin,force.endPoint,this.arrowheadLength,this.arrowheadAngle);
-            super.labelLine(origin, force.endPoint, force.labelAbove, force.labelBelow, this.textDisplacement, this.relativeFontSize);
+            force.startPoint = constructPointWithMagnitude(this.circleRadius, force.angle);
         });
+
+        this.identifyOverlappingForces();
+        this.displaceOverlappingForces();
+
+        // do i want forces to emanate from the edge of the circle, not its center???
+        this.forces.forEach((force) => {
+            super.addArrow(force.startPoint,force.endPoint,this.arrowheadLength,this.arrowheadAngle);
+            super.labelLine(force.startPoint, force.endPoint, force.labelAbove, force.labelBelow, this.textDisplacement, this.relativeFontSize);
+        });
+
+
         if (this.velocityArrow) { // add an arrow, seperate from the free-body diagram, indicating velocity of an object
             let velocityArrowStartPoint;
             if (this.velocityArrow.location === 'upperRight') { // this method can make the velocity kind of far away
