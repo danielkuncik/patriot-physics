@@ -1312,7 +1312,7 @@ class CircuitDiagram extends Diagram {
         }
         let plusSignCenter = endPoint2.transformAndReproduce(theta - Math.PI / 2, -1 * width * 3 / 8, width / 10);
         let plusSign = this.addPlusSign(plusSignCenter, width / 8, theta);
-        let minusSignCenter = endPoint1.transformAndReproduce(theta - Math.PI / 2, -1 * width * 3 / 8, width / 10);
+        let minusSignCenter = endPoint1.transformAndReproduce(theta - Math.PI / 2, -1 * width * 3 / 8, -1 * width / 10);
         let minusSign = this.addMinusSign(minusSignCenter, width / 8, theta);
         // the problem is exclusively in quadrant 4...in which theta - MATH.PI is negative!
 
