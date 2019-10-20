@@ -1568,9 +1568,9 @@
           }
         }
       },
-      "qualitative_forces":
+      "identifying_forces":
       {
-        "title": "Qualitative Forces (Newton's Third Law)",
+        "title": "Identifying Forces (Newton's Third Law)",
         "level": 1,
         "completed": true,
         "AP": true,
@@ -1613,22 +1613,31 @@
             "prerequisites": [],
             "objective": "Draw from memory the most common free-body diagrams."
           },
+          "earth_is_round":
+          {
+            "title": "The Earth is Round",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Properly use the terms gravity and weight; properly identify the direction of the force of weight; identify the reaction force to weight"
+          },
           "free_body_diagrams_3A":
           {
-            "title": "Free-Body Diagrams 3A: Multiple Item Free-Body Diagrams",
+            "title": "Free-Body Diagrams 3A: Identify Action-Reaction Force Pairs",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs."
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs."
           },
           "free_body_diagrams_3B": {
-            "title": "Free-Body Diagrams 3B: Multiple Item Free-Body Diagrams",
+            "title": "Free-Body Diagrams 3B: Identify Action-Reaction Force Pairs",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs.",
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs.",
             "note": "2 more questions on the same topic as 3A"
           },
           "breaking_boards_smashing_flies":
@@ -1639,6 +1648,15 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force."
+          },
+          "free_body_diagrams_4A":
+          {
+            "title": "Free-Body Diagrams 4A: Multiple Item Free-Body Diagrams and Forming Systems",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; combine free-body diagrams to create systems and identify internal and external forces within the system."
           },
           "lazy_donkey_paradox":
           {
