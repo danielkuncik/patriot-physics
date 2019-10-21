@@ -33,6 +33,10 @@ div.bigSpace {
     height: 150px;
 }
 
+div.hugeSpace {
+    height: 250px;
+}
+
 h3.newQuizHeading {
     page-break-before: always;
 }
