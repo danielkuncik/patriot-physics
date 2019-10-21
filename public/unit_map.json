@@ -3934,23 +3934,23 @@
             "prerequisites": ["dc_circuit_dimensional_analysis"],
             "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
           },
-          "demonstrate_basic_circuit_rules":
+          "mathematically_rigorous_circuit_model":
           {
-            "title": "Demonstrate Basic Circuit Rules",
+            "title": "Mathematically Rigorous Circuit Model",
             "level": 5,
             "horizontal": 4,
             "letter": "M",
             "prerequisites": ["algebraic_circuits_3"],
-            "objective": "Demonstrate how the rules for series and parallel elements used to solve circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
+            "objective": "Define and use mathematically rigorous definitions of potential difference, current, resistance, and power; use Kirchoff's Laws to demonstrate basic circuit rules."
           },
-          "dc_circuits_level_6":
+          "resistor_only_design":
           {
-            "title": "DC Circuits Level 6",
+            "title": "DC Circuit Design: Resistors Only",
             "level": 6,
             "horizontal": 4,
             "letter": "N",
-            "prerequisites": ["demonstrate_basic_circuit_rules"],
-            "objective": "DC Circuits Level 6"
+            "prerequisites": ["mathematically_rigorous_circuit_model"],
+            "objective": "Given a particular design goal, combine a set of resistors to accomplish this goal."
           }
         }
       },
