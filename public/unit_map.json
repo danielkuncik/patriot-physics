@@ -3915,22 +3915,13 @@
             "prerequisites": ["algebraic_circuits_2"],
             "objective": "For circuits with multiple layers of series and parallel elements within each other, determine the voltage, current, resistance, and power of each element and draw a diagram illustrating the electric potential of the circuit, and describe how the circuit diagram drawn illustrates Kirchoff's Laws."
           },
-          "very_challenging_circuit":
-          {
-            "title": "A very challenging circuit",
-            "level": 5,
-            "horizontal": 2,
-            "letter": "K",
-            "prerequisites": ["analyze_circuits_4"],
-            "objective": "Solve a single, very complex and challenging circuit."
-          },
           "dc_circuit_dimensional_analysis":
           {
             "title": "DC Circuit Dimensional Analysis",
             "level": 5,
-            "horizontal": 3,
-            "letter": "L",
-            "prerequisites": ["very_challenging_circuit"],
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["analyze_circuits_4"],
             "objective": "Determine and explain the units of all DC circuit quantities; prove various formulas are dimensionally correct."
           },
           "algebraic_circuits_3":
@@ -3938,8 +3929,8 @@
             "title": "Algebraic Circuits 3",
             "subtitle": "Solving Accordion Circuits Algebraically and Dimensional Analysis with Circuits",
             "level": 5,
-            "horizontal": 4,
-            "letter": "M",
+            "horizontal": 3,
+            "letter": "L",
             "prerequisites": ["dc_circuit_dimensional_analysis"],
             "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct."
           },
@@ -3947,8 +3938,8 @@
           {
             "title": "Demonstrate Basic Circuit Rules",
             "level": 5,
-            "horizontal": 5,
-            "letter": "N",
+            "horizontal": 4,
+            "letter": "M",
             "prerequisites": ["algebraic_circuits_3"],
             "objective": "Demonstrate how the rules for series and parallel elements used to solve circuits on lower levels follow directly from Kirchoff's Laws and other fundamental laws of physics."
           },
@@ -3956,8 +3947,8 @@
           {
             "title": "DC Circuits Level 6",
             "level": 6,
-            "horizontal": 5,
-            "letter": "O",
+            "horizontal": 4,
+            "letter": "N",
             "prerequisites": ["demonstrate_basic_circuit_rules"],
             "objective": "DC Circuits Level 6"
           }
