@@ -1542,19 +1542,10 @@
           "artificial_gravity":
           {
             "title": "Artificial Gravity",
-            "level": 5,
-            "horizontal": 5,
+            "level": 6,
+            "horizontal": 6,
             "letter": "M",
             "prerequisites": ["elevators_3"],
-            "objective": "By using Newton's Laws, knowledge of perception of forces, and relative motion, Demonstrate how astronauts on an accelerating spaceship could experience apparent weight similarly to people on earth."
-          },
-          "elevator_rockets":
-          {
-            "title": "Elevator Rockets",
-            "level": 6,
-            "horizontal": 5,
-            "letter": "N",
-            "prerequisites": ["artificial_gravity"],
             "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness."
           },
           "chinese_pole":
@@ -1562,8 +1553,8 @@
             "title": "The Chinese Pole",
             "level": 6,
             "horizontal": 3,
-            "letter": "O",
-            "prerequisites": ["block_dragging_algebra"],
+            "letter": "N",
+            "prerequisites": ["friction_algebra"],
             "objective": "Use knowledge of static and kinetic friction to create a quantitative model of tricks done on the Chinese Pole by a circus performer."
           }
         }
