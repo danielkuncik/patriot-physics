@@ -1545,7 +1545,7 @@
             "level": 6,
             "horizontal": 6,
             "letter": "M",
-            "prerequisites": ["elevators_3"],
+            "prerequisites": ["elevators_3A"],
             "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness."
           },
           "chinese_pole":

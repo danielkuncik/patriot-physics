@@ -1552,14 +1552,29 @@ class UnitMap extends Diagram {
         return this.pods[key];
     };
 
+    searchForPod(podKey) {
+        if (isXinArray(podKey,Object.keys(this.pods))) {
+            return this.pods[podKey]
+        } else {
+            return false
+        }
+    }
+
     // draws a segement between two existing pods
     connectTwoPods(podKey1, podKey2) {
-        // add something that breaks it if podKeys can't be found?
-        let theta = this.pods[podKey1].center.getAngleToAnotherPoint(this.pods[podKey2].center);
-        let startPoint = this.pods[podKey1].center.getAnotherPointWithTrig(this.radius, theta);
-        let endPoint = this.pods[podKey2].center.getAnotherPointWithTrig(this.radius, theta + Math.PI);
-        let newSegment = super.addSegmentWithArrowheadInCenter(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
-        newSegment.setThickness(2);
+        let pod1 = this.searchForPod(podKey1);
+        let pod2 = this.searchForPod(podKey2);
+        if (pod1 && pod2) {
+            // add something that stops it if the podKey cannot be find
+            let theta = this.pods[podKey1].center.getAngleToAnotherPoint(this.pods[podKey2].center);
+            let startPoint = this.pods[podKey1].center.getAnotherPointWithTrig(this.radius, theta);
+            let endPoint = this.pods[podKey2].center.getAnotherPointWithTrig(this.radius, theta + Math.PI);
+            let newSegment = super.addSegmentWithArrowheadInCenter(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
+            newSegment.setThickness(2);
+            return newSegment
+        } else {
+            return false
+        }
     };
 
 
