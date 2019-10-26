@@ -2154,9 +2154,9 @@
             "prerequisites": [],
             "objective": "Create position, velocity, and acceleration time graphs for objects moving with a constant acceleration but in two different directions and passing the origin."
           },
-          "kinematic_equations_two_direction_motion":
+          "two_direction_kinematic_equations_1":
           {
-            "title": "Kinematic Equations of Two-Direction Motion",
+            "title": "Two-Direction Kinematic Equations 1",
             "level": 3,
             "horizontal": null,
             "letter": "",
