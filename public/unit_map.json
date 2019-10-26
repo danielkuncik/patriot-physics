@@ -1437,7 +1437,7 @@
             "level": 2,
             "horizontal": 4,
             "letter": "C",
-            "prerequisites": ["newtons_second_law","finding_net_force"],
+            "prerequisites": ["finding_net_force","newtons_second_law"],
             "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object"
           },
           "basic_friction":
