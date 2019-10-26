@@ -35,6 +35,10 @@ function convertRadiansToDegrees(angle) {
     return angle / Math.PI * 180;
 }
 
+function roundValue(value, numDecimalPlaces) {
+    return Math.floor(value * 10**numDecimalPlaces) / 10**numDecimalPlaces
+}
+
 function displacementBetweenTwoValues(minVal, maxVal) {
     if (minVal >= 0 && maxVal >= 0) {
         return maxVal - minVal

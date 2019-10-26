@@ -1128,13 +1128,32 @@ class QuantitativeGraph extends Diagram {
     // at each position, adds a reference hash, a label, an a reference line
     addReferenceArray(xReferenceArray, yReferenceArray) {
         xReferenceArray.forEach((position) => {
-            this.addXAxisHash(position, String(position), true);
+            this.addXAxisHash(position, String(roundValue(position,2)), true);
             this.addXAxisReferenceLine(position);
         });
         yReferenceArray.forEach((position) => {
-            this.addYAxisHash(position, String(position), true);
+            this.addYAxisHash(position, String(roundValue(position,2)), true);
             this.addYAxisReferenceLine(position);
         });
+    }
+
+    automaticReferenceArray(NumXHashMarks, NumYHashMarks) {
+        if (NumXHashMarks === undefined) {NumXHashMarks = 6;}
+        if (NumYHashMarks === undefined) {NumYHashMarks = 4;}
+        if (NumXHashMarks < 2) {NumXHashMarks = 2;}
+        if (NumYHashMarks < 2) {NumYHashMarks = 2;}
+        let xInterval = (this.xMaxOnGraph - this.xMinOnGraph) / (NumXHashMarks  - 1);
+        let yInterval = (this.yMaxOnGraph / this.yMultiplier - this.yMinOnGraph / this.yMultiplier) / (NumYHashMarks  - 1);
+        let xReferenceArray = [];
+        let yReferenceArray = [];
+        let i, j;
+        for (i = 0; i < NumXHashMarks; i++) {
+            xReferenceArray.push(this.xMinOnGraph + i * xInterval);
+        }
+        for (j = 0; j < NumYHashMarks; j++) {
+            yReferenceArray.push(this.yMinOnGraph / this.yMultiplier + j * yInterval);
+        }
+        this.addReferenceArray(xReferenceArray, yReferenceArray);
     }
 
     addSegmentAndTwoPoints(x1,y1,x2,y2) {
@@ -1196,6 +1215,40 @@ class QuantitativeGraph extends Diagram {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
+}
+
+class VelocityTimeGraph extends QuantitativeGraph {
+    constructor(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio) {
+        super(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio);
+        this.timeUnit = 's';
+        this.velocityUnit = 'm/s';
+    }
+
+    changeTimeUnit(newTimeUnit) {
+        this.timeUnit = newTimeUnit;
+    }
+
+    changeVelocityUnit(newVelocityUnit) {
+        this.velocityUnit = newVelocityUnit
+    }
+
+    addSegmentWithCirclesOnEnds(x1,y1,x2,y2) {
+        super.addSegmentWithCirclesOnEnds(x1,y1,x2,y2);
+    }
+
+    addStepwiseFunction(arrayOfPoints) {
+        super.addStepwiseFunction(arrayOfPoints, true);
+    }
+
+    // add a function called automate reference array
+    automaticReferenceArray(NumXHashMarks, NumYHashMarks) {
+        super.automaticReferenceArray(NumXHashMarks, NumYHashMarks);
+    }
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        super.labelAxes(`time (${this.timeUnit})`, `velocity (${this.velocityUnit})`);
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
 }
 
 /*

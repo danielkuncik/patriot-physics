@@ -1,0 +1,37 @@
+<h3>Two-Direction Velocity Time Graphs</h3>
+
+<h5>
+    Principles
+</h5>
+<ul>
+    <li>
+        The <strong>sign</strong> of velocity represents its direction.
+    </li>
+    <li>
+        Whenever velocity is positive, the object is moving in the direciton defined as positive (usually right or up).
+    </li>
+    <li>
+        Whenever velocity is negative, the object is moving in the direciton defined as negative (usually left or down).
+    </li>
+    <li>
+        The <strong>abosolute value</strong> of velocity represents its magnitude.
+    </li>
+    <li>
+        If the absolute value is increasing, the object is speeding up.
+        The line will be sloping <emph>away from</emph> the x-axis.
+    </li>
+    <li>
+        If the absolute value is decreasing, the object is slowing down.
+        The line will be sloping <emph>towards</emph> the x-axis.
+    </li>
+</ul>
+
+
+<div id = 'velocityGraph1'></div>
+
+<script>
+    let myGraph1 = new VelocityTimeGraph(0,10,-10,10);
+    myGraph1.addSegmentWithCirclesOnEnds(0,0,5,5);
+    myGraph1.automaticReferenceArray(3,4);
+    $("#velocityGraph1").append(myGraph1.drawCanvas(300,300));
+</script>
