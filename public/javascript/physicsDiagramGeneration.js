@@ -579,14 +579,31 @@ class Diagram {
     };
 
     // in case you want a line with an arrowhead in the middle of it
-    addArrowHeadBetweenPoints(point1, point2, length, angleInDegrees) {
-        let angleInRadians = convertDegreesToRadians(angleInDegrees);
-        let centerPoint = new Point((point1.x + point2.x)/2, (point1.y + point2.y)/2);
+    addArrowHeadBetweenPoints(point1, point2, arrowHeadLength, arrowheadAngleInDegrees) {
+        let arrowHeadAngleInRadians = convertDegreesToRadians(arrowheadAngleInDegrees);
+        let centerPointOfSegment = new Point((point1.x + point2.x)/2, (point1.y + point2.y)/2);
+
+        // center it so the center, not the head, of the arrow is in the center of the segment
+        // looks much more centered
+        let totalDisplacement = arrowHeadLength / 2 * Math.cos(arrowHeadAngleInRadians);
+        let segmentToHorizontalAngle = point1.getAngleToAnotherPoint(point2);
+        let xDisplacement = totalDisplacement * Math.cos(segmentToHorizontalAngle);
+        let yDisplacement = totalDisplacement * Math.sin(segmentToHorizontalAngle);
+        let arrowHeadCenter = new Point(centerPointOfSegment.x + xDisplacement, centerPointOfSegment.y + yDisplacement);
+
         let theta = point1.getAngleToAnotherPoint(point2) + Math.PI;
-        let end1 = centerPoint.getAnotherPointWithTrig(length, theta + angleInRadians);
-        let end2 = centerPoint.getAnotherPointWithTrig(length, theta - angleInRadians);
-        this.addSegment(centerPoint, end1);
-        this.addSegment(centerPoint, end2);
+        let end1 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta + arrowHeadAngleInRadians);
+        let end2 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta - arrowHeadAngleInRadians);
+        this.addSegment(arrowHeadCenter, end1);
+        this.addSegment(arrowHeadCenter, end2);
+    }
+
+    addSegmentWithArrowheadInCenter(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
+        if (arrowheadAngleInDegrees === undefined) {arrowheadAngleInDegrees = 30;}
+        if (arrowheadLength === undefined) {arrowheadLength = point1.getDistanceToAnotherPoint(point2) * 0.15;}
+        let newSegment = this.addSegment(point1, point2);
+        this.addArrowHeadBetweenPoints(point1, point2, arrowheadLength, arrowheadAngleInDegrees);
+        return newSegment
     }
 
 
@@ -1541,11 +1558,7 @@ class UnitMap extends Diagram {
         let theta = this.pods[podKey1].center.getAngleToAnotherPoint(this.pods[podKey2].center);
         let startPoint = this.pods[podKey1].center.getAnotherPointWithTrig(this.radius, theta);
         let endPoint = this.pods[podKey2].center.getAnotherPointWithTrig(this.radius, theta + Math.PI);
-        let newSegment = super.addSegment(startPoint,endPoint);
-        // if (this.pods[podKey1].level === this.pods[podKey2].level) { // add arrowhead for horizontal connection lines
-        //     super.addArrowHeadBetweenPoints(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
-        // }
-        super.addArrowHeadBetweenPoints(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30); // add arrowhead on lines
+        let newSegment = super.addSegmentWithArrowheadInCenter(startPoint, endPoint, this.horizontalSpaceBetween * 0.4, 30);
         newSegment.setThickness(2);
     };
 
