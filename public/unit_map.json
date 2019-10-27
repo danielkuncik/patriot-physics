@@ -3952,166 +3952,185 @@
           }
         }
       },
-      "dc_circuit_concepts_1":
+      "voltage_and_current_concepts":
       {
-        "title": "DC Circuit Concepts 1",
+        "title": "Voltage and Current Concepts",
         "completed": true,
         "AP": true,
         "honors": true,
         "note": "8-21-19 i feel like parallel circuit concepts and short circuit concepts belong in a different quiz ladder, and there need to be more quiz ladders on circuits certainly",
         "pods":
         {
-          "insulators_conductors":
+          "very_basic_atoms":
           {
-            "title": "Insulators and Conductors",
+            "title": "Very Basic Atoms",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 2,
+            "letter": "A",
             "prerequisites": [],
-            "objective": "Recognize different insulators and conductors"
+            "objective": "Draw and explain atomic structure; recognize AC and DC current; explain why specific electrons move"
           },
           "circuit_definitions_1":
           {
             "title": "Circuit Definitions 1: Multiple Choice",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "B",
+            "prerequisites": ["very_basic_atoms"],
             "objective": "Recognize the definitions and properties of voltage, current, resistance, and power."
           },
-          "very_basic_atoms":
+          "insulators_conductors":
           {
-            "title": "Very Basic Atoms",
+            "title": "Insulators and Conductors",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw and explain atomic structure; recognize AC and DC current"
+            "horizontal": 4,
+            "letter": "C",
+            "prerequisites": ["circuit_definitions_1"],
+            "objective": "Recognize different insulators and conductors"
           },
           "energy_change_in_circuit":
           {
             "title": "Energy Change in a Circuit",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["insulators_conductors"],
             "objective": "Describe how energy changes in an electric circuit consisting of only a battery, a lightbulb, and a wire."
           },
           "circuit_definitions_2":
           {
             "title": "Circuit Definitions 2: Open Response",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["energy_change_in_circuit"],
             "objective": "Memorize the definitions and properties of voltage, current, resistance, and power."
-          },
-          "why_electrons_move":
-          {
-            "title": "Why electrons move?",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain and draw why electrons move within a circuit and why neutrons and protons do not."
           },
           "organization_atoms":
           {
             "title": "Organization of Atoms",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw how atoms are organized in insulators and conductors; relate this organization to how circuits operate within an electric circuit."
-          },
-          "advanced_voltage":
-          {
-            "title": "Advanced Voltage: The Potato Battery",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain by referring to chemical princples why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery."
-          },
-          "advanced_resistance":
-          {
-            "title": "Advanced Resistance: Effect of a Resistor on a Circuit",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain the effect of a resistor on the motion of electrons in an electric circuit; define ohmic and non-ohmic resistors; identify ohmic and non-ohmic resistors"
-          },
-          "parallel_circuit_concepts":
-          {
-            "title": "Parallel Circuit Concepts",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain how current branches in a parallel circuit, specifically addressing the issues of how resistance affects current",
-            "note": "Must address the misconception that closer light bulbs must be brighter"
-          },
-          "short_circuit_concepts":
-          {
-            "title": "Short Circuit Concepts",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain how voltage, current, resistance, and power are related in a short circuit."
-
+            "level": 2,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["circuit_definitions_2"],
+            "objective": "Draw how atoms are organized in insulators and conductors; relate this organization to how circuits operate within an electric circuit; explain why electrons and not protons and neutrons move in an electric circuit."
           },
           "advanced_current_1":
           {
-            "title": "Advanced Current 1: Moving Electrons vs. Current",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain how moving electrons sum together to make current; explain the effect of free-electrons on resistivity."
+            "title": "Advanced Current 1: How do Electrons Move",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "G",
+            "prerequisites": ["organization_atoms"],
+            "objective": "Differentiate between two theories of electron motion, one in which electrons all come from the battery and one in which they remain in the wire, select the theory, argue that electrons move slowly through a circuit"
+          },
+          "advanced_voltage_1":
+          {
+            "title": "Advanced Voltage 1: The Potato Battery",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "H",
+            "prerequisites": ["advanced_current_1"],
+            "objective": "Explain by referring to chemical princples why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery."
           },
           "advanced_current_2":
           {
-            "title": "Advanced Current 2: Electron Drift",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain how electrons actually move in a drift; recognize not all electrons, only valence electrons, are move in an electric current."
+            "title": "Advanced Current 2: Implications of How Electrons Move",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "I",
+            "prerequisites": ["advanced_voltage_1"],
+            "objective": "Refer to concepts of how electrons move to explain how current changes in circuits with switches and resistors",
+            "note": "Address misconception that closer light bulbs will be brighter."
           },
           "advanced_current_3":
           {
             "title": "Advanced Current 3: Conventional Current",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 3,
+            "horizontal": 5,
+            "letter": "J",
+            "prerequisites": ["advanced_current_2"],
             "objective": "Untangle the conundrum that, mathematically, current flows the opposite way that electrons actually move."
-          },
-          "rigorous_definitions":
-          {
-            "title": "Rigorous Definitions",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Define 'rigorous' and create rigorous definitions of voltage, current, resistance, and power",
-            "parameters":
-              [
-                "Ohm's Law is the rigorous definition of resistance for ohmic resistors",
-                "Derive and explain the equation that connects current to electron motion",
-                "Relate voltage to the electric potential diagrams",
-                "Relate electric power to energy transfer, mechanical power, and the conservation of energy."
-              ]
           },
           "advanced_current_4":
           {
+            "title": "Advanced Current 4: Electron Drift and Charge of a Wire",
+            "level": 4,
+            "horizontal": 5,
+            "letter": "K",
+            "prerequisites": ["advanced_current_3"],
+            "objective": "Describe how electrons combine fast random motion with slow drift under and electric field; describe how an electric wire has a neutral charge."
+          },
+          "advanced_current_5":
+          {
+            "title": "Advanced Current 5: Summation of Charge Motion",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "L",
+            "prerequisites": ["advanced_current_4"],
+            "objective": "Describe current and the summation of motion of many charges, relate current to the total number of free-charges in a wire; differentaite between free and not-free electrons in a wire."
+          },
+          "advanced_voltage_2":
+          {
+            "title": "Advanced Voltage 2: Battery Chemistry",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["advanced_current_5"],
+            "objective": "Relate specific batteries to half-reactions and explain how electric current flows through the electrolyte"
+          },
+          "advanced_current_6":
+          {
+            "title": "Advanced Current 6: Electricity without Electrons",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "N",
+            "prerequisites": ["advanced_voltage_2"],
+            "objective": "Describe how current can flow in bodies with charged particles other than water, such as a solution of ions."
+          },
+          "rigorous_definition_current":
+          {
+            "title": "The Rigorous Definition of Current",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "O",
+            "prerequisites": ["advanced_current_6"],
+            "objective": "Describe current at a point as charge per time through that point; explain an equation that relates electron drift velocity to current."
+          },
+          "rigorous_definition_voltage":
+          {
+            "title": "The Rigorous Definition of Voltage",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "P",
+            "prerequisites": ["rigorous_definition_current"],
+            "objective": "Describe Potential Difference between two points across a resistor as energy per charge."
+          },
+          "rigorous_batteries":
+          {
+            "title": "Rigorous Batteries",
+            "level": 5,
+            "horizontal": 4,
+            "letter": "Q",
+            "prerequisites": ["rigorous_definition_voltage"],
+            "objective": "Apply rigorous definitions of current and voltage to a battery"
+          },
+          "rigorous_definition_power":
+          {
+            "title": "Rigorous Definition of Power",
+            "level": 5,
+            "horizontal": 5,
+            "letter": "R",
+            "prerequisites": ["rigorous_batteries"],
+            "objective": "Describe power as energy inputted or outputted into a circuit per unit time and explain how the power formula is consistent with definitions of current and potential difference."
+          },
+          "advanced_current_x":
+          {
             "title": "Advanced Current 4: Current Model",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "S",
+            "prerequisites": ["rigorous_definition_power"],
             "objective": "Design a physical model, such as a diagram, a video, or a skit, that accurately describes the motion of electrons on a complex circuit with mulitple resistors and switches in series and parallel."
           }
         }
