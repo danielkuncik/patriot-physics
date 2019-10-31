@@ -3973,7 +3973,7 @@
           "mathematically_rigorous_circuit_model":
           {
             "title": "Mathematically Rigorous Circuit Model",
-            "level": 5,
+            "level": 6,
             "horizontal": 4,
             "letter": "M",
             "prerequisites": ["algebraic_circuits_3"],
@@ -3983,7 +3983,7 @@
           {
             "title": "DC Circuit Design: Resistors Only",
             "level": 6,
-            "horizontal": 4,
+            "horizontal": 3,
             "letter": "N",
             "prerequisites": ["mathematically_rigorous_circuit_model"],
             "objective": "Given a particular design goal, combine a set of resistors to accomplish this goal."
