@@ -540,7 +540,7 @@ class Diagram {
     }
 
     // shortcut, makes it easier to add a Segment witout creating each Point first
-    addTwoPointsAndSegement(x1,y1,x2,y2) {
+    addTwoPointsAndSegment(x1, y1, x2, y2) {
         let pointA = this.addNewPoint(x1,y1);
         let pointB = this.addNewPoint(x2,y2);
         let newSegment = this.addSegment(pointA, pointB);
@@ -622,6 +622,8 @@ class Diagram {
     /// if the Point already exists, eg. because it is the end of a line,
     /// then this functino does not work properly!
 
+    // should i add some sort of a workaround, in case a linear function etc. is inputted
+    /// that makes it graph more clearly?
     addFunctionGraph(func, xMin, xMax) {
         let thisFunctionGraph = new FunctionGraph(func, xMin, xMax);
         this.addExistingPoint(thisFunctionGraph.rectangle.lowerLeftPoint);
@@ -758,7 +760,7 @@ class Diagram {
         // // let isThisSegmentSolid = true;
         // while (n < numSteps) {
         //     if (n % 2 === 0) {
-        //         thisSegment = this.addTwoPointsAndSegement(point1.x + xDisplacementPerDash * n,point1.y + yDisplacementPerDash * n, point1.x + xDisplacementPerDash * (n + 1),point1.y + yDisplacementPerDash * (n + 1));
+        //         thisSegment = this.addTwoPointsAndSegment(point1.x + xDisplacementPerDash * n,point1.y + yDisplacementPerDash * n, point1.x + xDisplacementPerDash * (n + 1),point1.y + yDisplacementPerDash * (n + 1));
         //         thisSegment.setThickness(thickness);
         //     }
         //     //   isThisSegmentSolid = !isThisSegmentSolid;
@@ -1020,10 +1022,10 @@ class QuantitativeGraph extends Diagram {
         this.yMaxOnGraph = yMaxOnGraph * this.yMultiplier;
 
         // x axis
-        super.addTwoPointsAndSegement(this.xMinOnGraph, 0, this.xMaxOnGraph, 0);
+        super.addTwoPointsAndSegment(this.xMinOnGraph, 0, this.xMaxOnGraph, 0);
 
         // y axis
-        super.addTwoPointsAndSegement(0, this.yMinOnGraph, 0, this.yMaxOnGraph);
+        super.addTwoPointsAndSegment(0, this.yMinOnGraph, 0, this.yMaxOnGraph);
 
         this.axisLabelFontSize = undefined;
         this.hashLabelFontSize = undefined;
@@ -1078,7 +1080,7 @@ class QuantitativeGraph extends Diagram {
         // odn't i alwasy want the label far away??
         if (doYouWantTheLabelFarAway === undefined) {doYouWantTheLabelFarAway = true;}
 
-        let newHash = super.addTwoPointsAndSegement(position, this.hashLength / 2 + this.yMinOnGraph, position, -1 * this.hashLength / 2 + this.yMinOnGraph);
+        let newHash = super.addTwoPointsAndSegment(position, this.hashLength / 2 + this.yMinOnGraph, position, -1 * this.hashLength / 2 + this.yMinOnGraph);
 
         let newLabel;
         if (doYouWantTheLabelFarAway) {
@@ -1099,7 +1101,7 @@ class QuantitativeGraph extends Diagram {
         if (doYouWantTheLabelFarAway === undefined) {doYouWantTheLabelFarAway = false;}
 
 
-        let newHash = super.addTwoPointsAndSegement(this.hashLength / 2, position * this.yMultiplier, -1 * this.hashLength / 2, position * this.yMultiplier);
+        let newHash = super.addTwoPointsAndSegment(this.hashLength / 2, position * this.yMultiplier, -1 * this.hashLength / 2, position * this.yMultiplier);
 
         let newLabel;
         if (doYouWantTheLabelFarAway) {
@@ -1169,7 +1171,7 @@ class QuantitativeGraph extends Diagram {
             return false
         }
 
-        let newSegment = super.addTwoPointsAndSegement(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
+        let newSegment = super.addTwoPointsAndSegment(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
         return newSegment
     }
 
@@ -1214,6 +1216,142 @@ class QuantitativeGraph extends Diagram {
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
+
+}
+
+// different than quantiative graph!
+// designed for graphs with no numbers!
+class QualitativeGraph extends Diagram {
+    constructor(yFunc, xMin, xMax, desiredAspectRatio, forcedYmin, forcedYmax) {
+        super();
+
+        if (desiredAspectRatio === undefined) {
+            this.desiredAspectRatio = 1;
+        } else {
+            this.desiredAspectRatio = desiredAspectRatio;
+        }
+        if (xMax <= xMin) {
+            console.log('ERROR: xMax must be greater than xMin for qualitative graph class');
+        }
+
+        this.xMin = xMin;
+        this.xMax = xMax;
+
+        this.func = yFunc;
+        this.range = getRangeOfFunction(this.func, this.xMin, this.xMax);
+        if (forcedYmin === undefined) {
+            this.yMin = this.range.yMin;
+        } else {
+            this.yMin = forcedYmin;
+        }
+        if (forcedYmax === undefined) {
+            this.yMax = this.range.yMax;
+        } else {
+            this.yMax = forcedYmax;
+        }
+
+        // quadrants that will be included in the graph
+        if (this.xMax > 0 && this.yMax > 0) {
+            this.quadrant1 = true;
+        } else {
+            this.quadrant1 = false;
+        }
+
+        if (this.xMin < 0 && this.yMax > 0) {
+            this.quadrant2 = true;
+        } else {
+            this.quadrant2 = false;
+        }
+
+        if (this.xMin < 0 && this.yMin < 0) {
+            this.quadrant3 = true;
+        } else {
+            this.quadrant3 = false;
+        }
+
+        if (this.xMax > 0 && this.yMax < 0) {
+            this.quadrant4 = true;
+        } else {
+            this.quadrant4 = false;
+        }
+
+        // determine if the graph is always zero
+        if (this.range.yMin === 0 && this.range.yMax === 0) {
+            this.zeroGraph = true;
+        } else {
+            this.zeroGraph = false;
+        }
+
+        // determine if the graph is a constant value
+        if (this.range.yMin === this.range.yMax) {
+            this.constantGraph = true;
+        } else {
+            this.constantGraph = false;
+        }
+
+        // default values for labels
+        this.xLabel = 'x';
+        this.yLabel = 'y';
+        this.xLabelPosition = 'end';
+        this.yLabelPosition = 'end';
+        this.setFontSize();
+    }
+
+    setFontSize() {
+        this.relativeFontSize = (this.xMax - this.xMin) * 0.1;
+        this.textDisplacement = this.relativeFontSize * 0.7;
+    }
+
+    setLabels(xLabel, yLabel) {
+        this.xLabel = xLabel;
+        this.yLabel = yLabel;
+    }
+
+    setMultiplier() {
+        this.yMultiplier = this.desiredAspectRatio * (this.xMin - this.xMax)  / (this.yMin - this.yMax);
+    }
+
+
+
+    /*
+    Where will i put the labels?
+    how will i
+     */
+
+
+   //    addTwoPointsAndSegment(x1, y1, x2, y2) {
+    //     addFunctionGraph(func, xMin, xMax) {
+    //  addText(letters, centerPoint, relativeFontSize, rotation) {
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        this.setMultiplier();
+        super.addTwoPointsAndSegment(this.xMin, 0, this.xMax, 0);
+        super.addTwoPointsAndSegment(0, this.yMultiplier * this.yMin, 0, this.yMultiplier * this.yMax);
+        let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
+        super.addFunctionGraph(correctedFunction, this.xMin, this.xMax);
+
+        if (this.xLabelPosition === 'end') {
+            super.addText(this.xLabel, new Point(this.xMax + this.textDisplacement, 0), this.relativeFontSize);
+        }
+        // add an option if you want the label int he center
+        if (this.yLabelPosition === 'end') {
+            super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax + this.textDisplacement), this.relativeFontSize);
+        }
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
+
+    /// i need to add correction for aspect ratio
+}
+
+class QualitativeKinematicGraphSet {
+    constructor() {
+        this.timeArray = [];
+        this.positionArray = [];
+        this.velocityArray = [];
+        this.accelerationArray = [];
+    }
+
+
 
 }
 

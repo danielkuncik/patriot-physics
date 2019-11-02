@@ -65,3 +65,28 @@ function NpointsEvenlySpacedInARange(N, minVal, maxVal) {
     }
     return outputArray
 }
+
+
+function getRangeOfFunction(func, xMin, xMax, N) {
+    console.log(func);
+    let yMin = func(xMin);
+    let yMax = func(xMin);
+    if (N === undefined) {
+        N = 100;
+    }
+    let i, y;
+    let xRange = xMax - xMin;
+    for (i = 1; i <= N; i++) {
+        y = func(xMin + i / N * xRange);
+        if (y > yMax) {
+            yMax = y;
+        }
+        if (y < yMin) {
+            yMin = y;
+        }
+    }
+    return {
+        yMin: yMin,
+        yMax: yMax
+    }
+}
