@@ -68,7 +68,6 @@ function NpointsEvenlySpacedInARange(N, minVal, maxVal) {
 
 
 function getRangeOfFunction(func, xMin, xMax, N) {
-    console.log(func);
     let yMin = func(xMin);
     let yMax = func(xMin);
     if (N === undefined) {
@@ -89,4 +88,11 @@ function getRangeOfFunction(func, xMin, xMax, N) {
         yMin: yMin,
         yMax: yMax
     }
+}
+
+
+// returns an array of allowed ranges for a function
+function cutOffFunction(func, xMin, xMax, forcedYMin, forcedYMax) {
+
+
 }

@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 var app = express();
 
 function isItThere(filename) {
-    let process = shell.ls(`${__dirname}/${filename}`);
+    let process = shell.ls(`${__dirname}/${filename}`); // trust the process method, lol
     return !process.stderr;
 }
 
@@ -22,6 +22,59 @@ app.engine('hbs', hbs.express4({
     layoutsDir: __dirname + '/views/layouts'
 }));
 app.use(express.static(__dirname + '/public'));
+
+
+var quizMap = {};
+
+function prepareQuizMap() {
+    Object.keys(unitMap).forEach((superUnitKey) => {
+        if (isItThere(`content/quizzes/${superUnitKey}`)) {
+            quizMap[superUnitKey] = {};
+        }
+    });
+    Object.keys(quizMap).forEach((superUnitKey) => {
+        Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+            if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}`)) {
+                quizMap[superUnitKey][unitKey] = {};
+            }
+        })
+    });
+    Object.keys(quizMap).forEach((superUnitKey) => {
+        Object.keys(quizMap[superUnitKey]).forEach((unitKey) => {
+            Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+                if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)) {
+                    quizMap[superUnitKey][unitKey][podKey] = {
+                        versions: 1
+                    };
+                } else {
+                    quizMap[superUnitKey][unitKey][podKey] = {
+                        versions: 0
+                    };
+                }
+            });
+        });
+    });
+
+/*
+            Object.keys(unitMap).forEach((superUnitKey) => {
+        if (isItThere(`content/quizzes/${superUnitKey}`)) {
+            Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+                if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}`)) {
+                    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+                        if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)) {
+                            quizMap[superUnitKey][unitKey][podKey] = {
+                                key: podKey,
+                                version: 1
+                            };
+                        }
+                    });
+                }
+            });
+        }
+    });
+    */
+}
+prepareQuizMap();
 
 
 /// indicates which itmes in the unit map are available and which are not!
@@ -85,7 +138,6 @@ function prepareUnitMap() {
     });
 }
 prepareUnitMap();
-
 
 
 /// NOT READY YET!
@@ -192,6 +244,32 @@ hbs.registerHelper('listAllUnits', () => {
     }
     unitList = unitList + "</ul>";
     return new hbs.SafeString(unitList);
+});
+
+hbs.registerHelper('listAllUnitsWithQuizzes', () => {
+    var unitList = "<ul>";
+    Object.keys(quizMap).forEach((superUnitKey) => {
+        unitList += `<li> ${unitMap[superUnitKey].title} <ul>`;
+        Object.keys(quizMap[superUnitKey]).forEach((unitKey) => {
+            unitList = unitList + `<li><a href = '/quizzes/${superUnitKey}/${unitKey}'>${unitMap[superUnitKey].units[unitKey].title}</a></li>`
+        });
+        unitList += "</ul></li>"
+    });
+    unitList +="</ul>";
+    return new hbs.SafeString(unitList);
+});
+
+hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey) => {
+    var podList = "<ul>";
+    Object.keys(unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods).forEach((podKey) => {
+        if (quizMap[selectedUnitClusterKey][selectedUnitKey][podKey].versions > 0) {
+            podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey].title}</a></li>`;
+        } else {
+            podList += `<li>${unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey].title}</li>`;
+        }
+    });
+    podList += "</ul>";
+    return new hbs.SafeString(podList);
 });
 
 hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
@@ -420,5 +498,40 @@ app.get('/getJoke/:imageName', (req,res)=>{
     res.sendFile(__dirname + '/content/jokes/memedPictures/' + req.params.imageName);
 });
 
+// quiz entry page
+app.get('/quizzes', (req, res) => {
+    res.render('quizEntryPage.hbs'), {
+        layout: 'default',
+        title: 'Quizzes'
+    };
+});
+
+// quiz page for unit
+app.get('/quizzes/:unitClusterKey/:unitKey', (req, res) => {
+    res.render('unitQuizPage.hbs', {
+        layout: 'default',
+        title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title + " Quizzes",
+        unitClusterName: unitMap[req.params.unitClusterKey].title,
+        unitName: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
+        selectedUnitClusterKey: req.params.unitClusterKey,
+        selectedUnitKey: req.params.unitKey,
+    })
+});
+
+
+
+// compiled quizzes of a unit (will take more work!)
+
+
+// individual quiz page
+app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
+    let version = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
+    res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/' + req.params.podKey +  '_v' + String(version) +'.hbs', {
+        layout: 'quizPageLayout.hbs',
+        hello: 'hello',
+        selectedUnitClusterKey: req.params.unitClusterKey,
+        selectedUnitKey: req.params.unitKey,
+    });
+});
 
 app.listen(port);

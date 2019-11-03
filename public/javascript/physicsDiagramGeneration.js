@@ -307,13 +307,22 @@ class Segment {
 
 // the box should always belong to an object!
 class Rectangle {
-    constructor(lowerLeftPoint, width, height) {
-        this.lowerLeftPoint = lowerLeftPoint;
-        this.upperLeftPoint = new Point(lowerLeftPoint.x, lowerLeftPoint.y + height);
-        this.lowerRightPoint = new Point(lowerLeftPoint.x + width, lowerLeftPoint.y);
-        this.upperRightPoint = new Point(lowerLeftPoint.x + width, lowerLeftPoint.y + height);
-        this.centerPoint = new Point(lowerLeftPoint.x + width / 2, lowerLeftPoint.y + height / 2);
+    constructor(lowerLeftX, lowerLeftY, width, height) {
+        let bottomY = lowerLeftY;
+        let topY = lowerLeftY + height;
+        let rightX = lowerLeftX + width;
+        let leftX = lowerLeftX;
+        this.lowerLeftPoint = new Point(leftX, bottomY);
+        this.upperLeftPoint = new Point(leftX, topY);
+        this.lowerRightPoint = new Point(rightX, bottomY);
+        this.upperRightPoint = new Point(rightX, topY);
+        // console.log(this.lowerLeftPoint.x);
+        // console.log(isNaN(this.lowerLeftPoint.x));
+        // console.log(typeof(this.lowerLeftPoint.x));
+        // console.log(this.lowerLeftPoint);
+        this.centerPoint = new Point(leftX + width / 2, bottomY + width / 2);
     }
+
 
     rotateCounterClockwiseAboutCenter(angleInRadians) {
         this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint);
@@ -333,8 +342,7 @@ class Rectangle {
 function constructRectangleFromCenter(centerPoint, width, height) {
     let lowerLeftX = centerPoint.x - width/2;
     let lowerLeftY = centerPoint.y - height/2;
-    var lowerLeftPoint = new Point(lowerLeftX, lowerLeftY);
-    var newRectangle = new Rectangle(lowerLeftPoint, width, height);
+    var newRectangle = new Rectangle(lowerLeftX, lowerLeftY, width, height);
     return newRectangle;
 }
 
@@ -449,7 +457,7 @@ class FunctionGraph {
         let range = this.getRange();
         this.yMin = range[0];
         this.yMax = range[1];
-        this.rectangle = new Rectangle(new Point(this.xMin,this.yMin),(this.xMax - this.xMin), (this.yMax - this.yMin));
+        this.rectangle = new Rectangle(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
     }
 
     getRange(Nsteps) {
@@ -1219,6 +1227,8 @@ class QuantitativeGraph extends Diagram {
 
 }
 
+
+
 // different than quantiative graph!
 // designed for graphs with no numbers!
 class QualitativeGraph extends Diagram {
@@ -1234,42 +1244,46 @@ class QualitativeGraph extends Diagram {
             console.log('ERROR: xMax must be greater than xMin for qualitative graph class');
         }
 
-        this.xMin = xMin;
-        this.xMax = xMax;
+
+        // all xMin and xMax, and yMin and yMax have a 0 attached to prevent overlap with the
+        // same variables in the funciton above
+        this.xMin0 = xMin;
+        this.xMax0 = xMax;
 
         this.func = yFunc;
-        this.range = getRangeOfFunction(this.func, this.xMin, this.xMax);
+        this.range = getRangeOfFunction(this.func, this.xMax0, this.xMin0);
+        this.cutOffPossible = false; // if i force a particualr y value, i may need to cut the graph off after a point
         if (forcedYmin === undefined) {
-            this.yMin = this.range.yMin;
+            this.yMin0 = this.range.yMin;
         } else {
-            this.yMin = forcedYmin;
+            this.yMin0 = forcedYmin;
         }
         if (forcedYmax === undefined) {
-            this.yMax = this.range.yMax;
+            this.yMax0 = this.range.yMax;
         } else {
-            this.yMax = forcedYmax;
+            this.yMax0 = forcedYmax;
         }
 
         // quadrants that will be included in the graph
-        if (this.xMax > 0 && this.yMax > 0) {
+        if (this.xMax0 > 0 && this.yMax0 > 0) {
             this.quadrant1 = true;
         } else {
             this.quadrant1 = false;
         }
 
-        if (this.xMin < 0 && this.yMax > 0) {
+        if (this.xMin0 < 0 && this.yMax0 > 0) {
             this.quadrant2 = true;
         } else {
             this.quadrant2 = false;
         }
 
-        if (this.xMin < 0 && this.yMin < 0) {
+        if (this.xMin0 < 0 && this.yMin0 < 0) {
             this.quadrant3 = true;
         } else {
             this.quadrant3 = false;
         }
 
-        if (this.xMax > 0 && this.yMax < 0) {
+        if (this.xMax0 > 0 && this.yMax0 < 0) {
             this.quadrant4 = true;
         } else {
             this.quadrant4 = false;
@@ -1298,7 +1312,7 @@ class QualitativeGraph extends Diagram {
     }
 
     setFontSize() {
-        this.relativeFontSize = (this.xMax - this.xMin) * 0.1;
+        this.relativeFontSize = (this.xMax0 - this.xMin0) * 0.1;
         this.textDisplacement = this.relativeFontSize * 0.7;
     }
 
@@ -1308,7 +1322,7 @@ class QualitativeGraph extends Diagram {
     }
 
     setMultiplier() {
-        this.yMultiplier = this.desiredAspectRatio * (this.xMin - this.xMax)  / (this.yMin - this.yMax);
+        this.yMultiplier = this.desiredAspectRatio * (this.xMin0 - this.xMax0)  / (this.yMin0 - this.yMax0);
     }
 
 
@@ -1325,17 +1339,17 @@ class QualitativeGraph extends Diagram {
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         this.setMultiplier();
-        super.addTwoPointsAndSegment(this.xMin, 0, this.xMax, 0);
-        super.addTwoPointsAndSegment(0, this.yMultiplier * this.yMin, 0, this.yMultiplier * this.yMax);
+        super.addTwoPointsAndSegment(this.xMin0, 0, this.xMax0, 0);
+        super.addTwoPointsAndSegment(0, this.yMultiplier * this.yMin0, 0, this.yMultiplier * this.yMax0);
         let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
-        super.addFunctionGraph(correctedFunction, this.xMin, this.xMax);
+        super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0);
 
         if (this.xLabelPosition === 'end') {
-            super.addText(this.xLabel, new Point(this.xMax + this.textDisplacement, 0), this.relativeFontSize);
+            super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
         }
         // add an option if you want the label int he center
         if (this.yLabelPosition === 'end') {
-            super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax + this.textDisplacement), this.relativeFontSize);
+            super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
         }
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    {{>metaTags}}
+    <title>{{title}}</title>
+    {{>commonStyleSheets}}
+</head>
+<body>
+{{>commonJavascriptAssets}}
+<header>
+    {{>header}}
+</header>
+<!--
+<h3>
+    {{letter}}: {{title}}
+</h3>
+<ul>
+    <li>
+        Unit: {{unitName}}
+    </li>
+    <li>
+        Objective: {{objective}}
+    </li>
+    <li>
+        Level: {{level}}
+    </li>
+</ul>
+-->
+<div>
+    {{{body}}}
+</div>
+
+<p>
+    <a href = '/quizzes/{{selectedUnitClusterKey}}/{{selectedUnitKey}}'>BACK</a>
+</p>
+<footer>
+    {{>footer}}
+</footer>
+</body>
+</html>

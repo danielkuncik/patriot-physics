@@ -1,0 +1,25 @@
+<p>
+    Hello its me
+</p>
+
+<ul>
+    <li>
+        Unit Cluster: {{unitClusterName}}
+    </li>
+    <li>
+        Unit: {{unitName}}
+    </li>
+</ul>
+
+<div id = 'putUnitMapHere'></div>
+{{listPodsForQuizPage selectedUnitClusterKey selectedUnitKey}}
+
+
+<script>
+    var myUnitMap = new UnitMap();
+        {{addAllPodsToMap selectedUnitClusterKey selectedUnitKey}}
+    console.log(myUnitMap);
+    myUnitMap.connectPrerequisites();
+    var myUnitMapCanvas = myUnitMap.drawCanvas(myUnitMap.getMaxHorizontalPosition()*120,myUnitMap.getMaxLevel()*120);
+    $("#putUnitMapHere").append(myUnitMapCanvas);
+</script>
