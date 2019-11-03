@@ -1,0 +1,27 @@
+<p>
+    Here is where you will enter the passcode to enter a quiz
+</p>
+
+<h3>
+    Enter Passcode here:
+</h3>
+
+    <input id = 'passcodeInput' type = 'number' class = 'quizPasscodeInput' />
+
+    <button onclick = "clickFunction()">
+        Enter Quiz
+    </button>
+
+
+
+<script>
+
+    function clickFunction() {
+        let inputtedPasscode = document.getElementById('passcodeInput').value;
+        console.log(inputtedPasscode);
+        let link = '{{selectedPodKey}}';
+        link += `?passcode=${inputtedPasscode}`;
+        window.location.href = link;
+    }
+
+</script>
