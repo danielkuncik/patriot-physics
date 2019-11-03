@@ -421,7 +421,8 @@ app.get('/unit/:unitClusterKey/:unitKey', (req, res) =>{
         title: unit.title,
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
-        unitClusterName: unitCluster.title
+        unitClusterName: unitCluster.title,
+        unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number
     });
     //res.render('units/')
 });
@@ -434,7 +435,7 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     if (pod.fileType === 'hbs') {
         res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.hbs', {
             layout: "podPageLayout.hbs",
-            unitName: unit.name,
+            unitName: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
             title: pod.title,
             level: pod.level,
             selectedUnitClusterKey: req.params.unitClusterKey,
@@ -442,7 +443,9 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
             selectedPodKey: req.params.podKey,
             objective: pod.objective,
             //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
-            letter: pod.letter
+            letter: pod.letter,
+            unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
+            unitClusterName: unitMap[req.params.unitClusterKey].title
         });
     } else if (pod.fileType === 'pdf') {
         let filePath = '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
@@ -554,7 +557,13 @@ app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
             res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(version) +'.hbs', {
                 layout: 'quizPageLayout.hbs',
                 selectedUnitClusterKey: req.params.unitClusterKey,
-                selectedUnitKey: req.params.unitKey
+                selectedUnitKey: req.params.unitKey,
+                letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
+                title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
+                unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
+                unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
+                unitClusterTitle: unitMap[req.params.unitClusterKey].title,
+                level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level
             });
         }
     } else {
