@@ -9,8 +9,13 @@ const port = process.env.PORT || 3000;
 var app = express();
 
 function isItThere(filename) {
-    let process = shell.ls(`${__dirname}/${filename}`); // trust the process method, lol
+    let process = shell.ls(`${__dirname}/${filename}`); // trust the process, lol
     return !process.stderr;
+}
+
+function countFilesInADirectory(directoryName) {
+    let process = shell.ls(`${__dirname}/${directoryName}`); // trust the process, lol
+    return process.length
 }
 
 app.set('view engine', 'hbs');
@@ -44,8 +49,9 @@ function prepareQuizMap() {
             Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
                 if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)) {
                     quizMap[superUnitKey][unitKey][podKey] = {
-                        versions: 1
-                    };
+                        versions: countFilesInADirectory(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)
+                        // i need to add some sort of catch if the files are named incorrectly???
+                    }
                 } else {
                     quizMap[superUnitKey][unitKey][podKey] = {
                         versions: 0
@@ -54,25 +60,10 @@ function prepareQuizMap() {
             });
         });
     });
+}
 
-/*
-            Object.keys(unitMap).forEach((superUnitKey) => {
-        if (isItThere(`content/quizzes/${superUnitKey}`)) {
-            Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
-                if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}`)) {
-                    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
-                        if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)) {
-                            quizMap[superUnitKey][unitKey][podKey] = {
-                                key: podKey,
-                                version: 1
-                            };
-                        }
-                    });
-                }
-            });
-        }
-    });
-    */
+function checkQuizVersionsNamedCorrectly() {
+    /// need to add this function!!
 }
 prepareQuizMap();
 
