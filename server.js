@@ -8,6 +8,16 @@ const port = process.env.PORT || 3000;
 
 var app = express();
 
+function isXinArray(x, array) {
+    let answer = false;
+    array.forEach((element) => {
+        if (element === x) {
+            answer = true;
+        }
+    });
+    return answer
+}
+
 function isItThere(filename) {
     let process = shell.ls(`${__dirname}/${filename}`); // trust the process, lol
     return !process.stderr;
@@ -16,6 +26,24 @@ function isItThere(filename) {
 function countFilesInADirectory(directoryName) {
     let process = shell.ls(`${__dirname}/${directoryName}`); // trust the process, lol
     return process.length
+}
+
+function countVersionsOfQuiz(superUnitKey, unitKey, podKey) {
+    let directoryName = `content/quizzes/${superUnitKey}/${unitKey}/${podKey}`;
+    let process = shell.ls(`${__dirname}/${directoryName}`); // trust the process, lol
+    let N = 100;
+    let i = 1;
+    let stillGoing = true;
+    let totalVersions = 0;
+    while (i < N && stillGoing) {
+        if (isXinArray(`v${i}.hbs`,process)) {
+            totalVersions += 1;
+        } else {
+            stillGoing = false;
+        }
+        i += 1;
+    }
+    return totalVersions
 }
 
 app.set('view engine', 'hbs');
@@ -49,7 +77,7 @@ function prepareQuizMap() {
             Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
                 if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)) {
                     quizMap[superUnitKey][unitKey][podKey] = {
-                        versions: countFilesInADirectory(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)
+                        versions: countVersionsOfQuiz(superUnitKey, unitKey, podKey)
                         // i need to add some sort of catch if the files are named incorrectly???
                     }
                 } else {
@@ -62,9 +90,7 @@ function prepareQuizMap() {
     });
 }
 
-function checkQuizVersionsNamedCorrectly() {
-    /// need to add this function!!
-}
+
 prepareQuizMap();
 
 
@@ -512,14 +538,13 @@ app.get('/quizzes/:unitClusterKey/:unitKey', (req, res) => {
 
 /// add security for quizzes!
 
-const quizPasscode = '12345';
+const quizPasscode = '123456';
 
 // individual quiz page
 app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
-    console.log(req.query.passcode);
     if (req.query.passcode === quizPasscode) {
         let version = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
-        res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/' + req.params.podKey +  '_v' + String(version) +'.hbs', {
+        res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(version) +'.hbs', {
             layout: 'quizPageLayout.hbs',
             selectedUnitClusterKey: req.params.unitClusterKey,
             selectedUnitKey: req.params.unitKey,
