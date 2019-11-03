@@ -543,12 +543,20 @@ const quizPasscode = '123456';
 // individual quiz page
 app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     if (req.query.passcode === quizPasscode) {
-        let version = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
-        res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(version) +'.hbs', {
-            layout: 'quizPageLayout.hbs',
-            selectedUnitClusterKey: req.params.unitClusterKey,
-            selectedUnitKey: req.params.unitKey,
-        });
+        if (req.params.podKey === 'all') {
+            res.render('allQuizzesInAUnit.hbs', {
+                layout: 'default',
+                selectedUnitClusterKey: req.params.unitClusterKey,
+                selectedUnitKey: req.params.unitKey
+            })
+        } else {
+            let version = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
+            res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(version) +'.hbs', {
+                layout: 'quizPageLayout.hbs',
+                selectedUnitClusterKey: req.params.unitClusterKey,
+                selectedUnitKey: req.params.unitKey
+            });
+        }
     } else {
         res.render('quizPasscodePage.hbs', {
             layout: 'default',
