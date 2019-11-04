@@ -2424,6 +2424,15 @@
               "Determine the maximum speed of a pendulum in terms of the initial height of the pendulum",
               "Determine the amplitude of a spring-oscillator in terms of the maximum speed of the mass."
             ]
+          },
+          "spidermans_energy":
+          {
+            "title": "Spiderman's Energy",
+            "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze the potential energy of a fast moving spring that stretches as it falls."
           }
         }
       },
