@@ -1511,11 +1511,11 @@
           {
 
           },
-          "two_direction_kinematic_equations_1":
+          "two_direction_kinematic_equations_1a":
           {
 
           },
-          "two_direction_kinematic_equations_2":
+          "two_direction_kinematic_equations_2b":
           {
 
           },
@@ -2307,8 +2307,8 @@
           {
             "title": "Energy Table 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time."
           },
@@ -2316,122 +2316,150 @@
           {
             "title": "Energy Formulas 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["energy_table_1"],
             "objective": "Solve problems involving the KE and GPE formulas with only 1 -2 algebraic steps."
           },
           "memorize_conservation_of_energy":
           {
             "title": "Memorize The Conservation of Energy",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["energy_formulas_1"],
             "objective": "Recite the conservation of energy word for word."
           },
           "energy_formulas_2":
           {
             "title": "Energy Formulas 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "D",
+            "prerequisites": ["memorize_conservation_of_energy"],
             "objective": "Solve problems involving the KE, GPE, and EPE formulas with 2 - 4 algebraic steps."
           },
           "energy_table_2":
           {
             "title": "Energy Table 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations"
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["energy_formulas_2"],
+            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the block."
           },
           "kinetic_potential_energy_graphs_1":
           {
             "title": "Kinetic and Potential Energy Graphs 1",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "F",
+            "prerequisites": ["energy_table_2"],
             "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls."
           },
           "energy_table_3":
           {
             "title": "Energy Table 3",
+            "subtitle": "Roller Coaster Problem",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["kinetic_potential_energy_graphs_1"],
             "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, solve numerical questions based upon the result; consider zero point as a part of the GPE formula"
           },
           "energy_table_4":
           {
-            "title": "Energy Table 4: Heat Loss",
+            "title": "Energy Table 4",
+            "subtitle": "Horizontal Spring",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["energy_table_3"],
+            "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical quesitons based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring"
+          },
+          "energy_table_5":
+          {
+            "title": "Energy Table 5: Heat Loss",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["energy_table_4"],
             "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss"
           },
           "energy_formulas_3":
           {
-            "title": "Energy Formulas 3: Symbolic Solutions",
+            "title": "Energy Formulas 3",
+            "subtitle": "Dimensional Analysis, Symbolic Solutions, Proportionality",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Algebraically solve the formulas for KE, GPE, and EPE"
+            "horizontal": 4,
+            "letter": "J",
+            "prerequisites": ["energy_table_5"],
+            "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change."
           },
-          "energy_table_5":
+          "system_language":
+          {
+            "title": "System Language",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["energy_formulas_3"],
+            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly descirbe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system"
+          },
+          "energy_table_6":
           {
             "title": "Energy Table 5: Symbolic Table",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["system_language"],
             "objective": "Fill out a table describing how kinetic and potential energy change algebraically; explain why the GPE formula technically can only be for a change, not an absolute value."
           },
-          "energy_formulas_4":
+          "vertical_spring_system":
           {
-            "title": "Energy Formulas 4: Proportionality",
+            "title": "Vertical Spring System",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use proportionality to analzye the kinetic and potential energy formulas; make inferences regarding real world situations with this knowledge"
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["energy_table_6"],
+            "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by fricition."
           },
-          "KE_GPE_graph_with_heat_loss":
+          "algebraic_energy_analysis_1":
           {
-            "title": "KE and GPE graph with heat loss",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Make a graph showing how kinetic and potential energy change as something moves down a hill; including the effect of heat loss"
-          },
-          "algebraic_energy_analysis":
-          {
-            "title": "Algebraic Energy Analysis",
+            "title": "Algebraic Energy Analysis 1",
+            "subtitle": "Pendulums",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve algebraic problems using the conservation of energy with little to no guidance",
-            "examples":
-            [
-              "Determine the maximum speed of a pendulum in terms of the initial height of the pendulum",
-              "Determine the amplitude of a spring-oscillator in terms of the maximum speed of the mass."
-            ]
+            "horizontal": 1,
+            "letter": "N",
+            "prerequisites": ["vertical_spring_system"],
+            "objective": "Symbolically analyze the energy of a pendulum system as it swings; write statements regarding the energy of the pendulum-earth system; symbolically determine crucial values regarding the pendulum using the Conservation of Energy."
+          },
+          "algebraic_energy_analysis_2":
+          {
+            "title": "Algebraic Energy Analysis 2",
+            "subtitle": "Horizontal Springs",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "O",
+            "prerequisites": ["algebraic_energy_analysis_1"],
+            "objective": "Symbolically analyze the energy of a horizontal spring system as it moves; write statements regarding the energy of the mass-spring system; symbolically determine crucial values regarding the spring using the Conservation of Energy."
+          },
+          "algebraic_energy_analysis_3":
+          {
+            "title": "Algebraic Energy Analysis 3",
+            "subtitle": "Vertical Springs",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "P",
+            "prerequisites": ["algebraic_energy_analysis_2"],
+            "objective": "Symbolically analyze the energy of a vertical spring system as it moves; write statements regarding the energy of the mass-spring-earth system; symbolically determine crucial values regarding the spring using the Conservation of Energy."
           },
           "spidermans_energy":
           {
             "title": "Spiderman's Energy",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "Q",
+            "prerequisites": ["algebraic_energy_analysis_3"],
             "objective": "Analyze the potential energy of a fast moving spring that stretches as it falls."
           }
         }
