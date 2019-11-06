@@ -1873,15 +1873,23 @@
             "level": 6,
             "horizontal": 6,
             "letter": "M",
-            "prerequisites": ["elevators_3A"],
+            "prerequisites": ["elevators_3"],
             "objective": "Apply our knowledge of forces in elevators to determine appropriate speeds of a rocket and the use of the 'vomit comet' to practice weightlessness."
+          },
+          "vomit_comet": {
+            "title": "The Vomit Comet",
+            "level": 6,
+            "horizontal": 5,
+            "letter": "N",
+            "prerequisites": ["elevators_3"],
+            "objective": "Apply knowledge of forces in elevators to develop a quantiative model of the dynamics and kinematics of astronauts in NASA's weightlessness training plane (colloquially known as the vomit comet)"
           },
           "chinese_pole":
           {
             "title": "The Chinese Pole",
             "level": 6,
             "horizontal": 3,
-            "letter": "N",
+            "letter": "O",
             "prerequisites": ["friction_algebra"],
             "objective": "Use knowledge of static and kinetic friction to create a quantitative model of tricks done on the Chinese Pole by a circus performer."
           }
@@ -3296,8 +3304,17 @@
             "title": "The Hula Hoop",
             "level": 6,
             "horizontal": null,
+            "letter": "",
             "prerequisites": [],
             "objective": "Develop a quantitative model to examine the motion of a hula hoop."
+          },
+          "artificial_gravity_part_2":
+          {
+            "title": "Artificial Gravity Part 2",
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Develop a model of a space station in which people can walk around normally, as they would on earth, due to the dynamics of centripetal force."
           }
         }
       },
