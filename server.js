@@ -214,7 +214,7 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
 
 /// helpers to make lists of links on each unit page!
 hbs.registerHelper('listAllUnitsAndPods', () => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod;
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, unitNumber;
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
@@ -223,7 +223,8 @@ hbs.registerHelper('listAllUnitsAndPods', () => {
             for (unitKey in unitCluster.units) {
                 unit = unitCluster.units[unitKey];
                 if (unit.available) {
-                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a><ul>`;
+                    unitNumber = unitCluster.number * 100 + unit.number;
+                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a><ul>`;
                     for (podKey in unit.pods) {
                         pod = unit.pods[podKey];
                         if (pod.available) {
@@ -243,7 +244,7 @@ hbs.registerHelper('listAllUnitsAndPods', () => {
 });
 
 hbs.registerHelper('listAllUnits', () => {
-    var unitClusterKey, unitCluster, unitKey, unit;
+    var unitClusterKey, unitCluster, unitKey, unit, unitNumber;
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
@@ -252,7 +253,8 @@ hbs.registerHelper('listAllUnits', () => {
             for (unitKey in unitCluster.units) {
                 unit = unitCluster.units[unitKey];
                 if (unit.available) {
-                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
+                    unitNumber = unitCluster.number * 100 + unit.number;
+                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>`;
                     unitList = unitList + "</li>";
                 }
             }
@@ -264,11 +266,13 @@ hbs.registerHelper('listAllUnits', () => {
 });
 
 hbs.registerHelper('listAllUnitsWithQuizzes', () => {
+    let unitNumber;
     var unitList = "<ul>";
     Object.keys(quizMap).forEach((superUnitKey) => {
         unitList += `<li> ${unitMap[superUnitKey].title} <ul>`;
         Object.keys(quizMap[superUnitKey]).forEach((unitKey) => {
-            unitList = unitList + `<li><a href = '/quizzes/${superUnitKey}/${unitKey}'>${unitMap[superUnitKey].units[unitKey].title}</a></li>`
+            unitNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
+            unitList = unitList + `<li><a href = '/quizzes/${superUnitKey}/${unitKey}'>${unitNumber}: ${unitMap[superUnitKey].units[unitKey].title}</a></li>`
         });
         unitList += "</ul></li>"
     });
@@ -290,7 +294,7 @@ hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitK
 });
 
 hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
-    var unitClusterKey, unitCluster, unitKey, unit;
+    var unitClusterKey, unitCluster, unitKey, unit, unitNumber;
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
@@ -301,7 +305,8 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
                 for (unitKey in unitCluster.units) {
                     unit = unitCluster.units[unitKey];
                     if (unit.available) {
-                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
+                        unitNumber = unitCluster.number * 100 + unit.number;
+                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>`;
                         unitList = unitList + "</li>";
                     }
                 }
@@ -314,7 +319,7 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
 });
 
 hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey) => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter;
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber;
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
@@ -325,7 +330,8 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                 for (unitKey in unitCluster.units) {
                     unit = unitCluster.units[unitKey];
                     if (unit.available) {
-                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unit.title}</a>`;
+                        unitNumber = unitCluster.number * 100 + unit.number;
+                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>`;
                         if (unitKey === selectedUnitKey) {
                             unitList = unitList + "<ul>";
                             for (podKey in unit.pods) {
@@ -520,10 +526,10 @@ app.get('/getJoke/:imageName', (req,res)=>{
 
 // quiz entry page
 app.get('/quizzes', (req, res) => {
-    res.render('quizEntryPage.hbs'), {
+    res.render('quizEntryPage.hbs', {
         layout: 'default',
         title: 'Quizzes'
-    };
+    });
 });
 
 // quiz page for unit
