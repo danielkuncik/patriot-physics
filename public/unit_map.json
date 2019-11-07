@@ -1207,8 +1207,8 @@
           {
             "title": "Qualitative Kinematic Graphs 5",
             "subtitle": "Kinematic Graph Story",
-            "level": 4,
-            "horizontal": 7,
+            "level": 3,
+            "horizontal": 8,
             "letter": "O",
             "prerequisites": ["qualitative_kinematic_graphs_4"],
             "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs and motion maps that match that motion."
