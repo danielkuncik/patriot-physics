@@ -2413,9 +2413,9 @@
             "prerequisites": ["energy_table_5"],
             "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change."
           },
-          "work_on_system":
+          "work_done_on_system":
           {
-            "title": "Work on a System",
+            "title": "Work Done on a System",
             "level": 4,
             "horizontal": 3,
             "letter": "L",
