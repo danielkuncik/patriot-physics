@@ -471,9 +471,9 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
 // on the asset path, for some reason it does not work if i do not beign with a slash
 
 /// accessing pod assets
-app.get('/podAssets/:unitClusterKey/:unitKey/:podKey/:assetKey', (req, res) => {
-    var data = require(__dirname + '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetKey);
-    res.send(data);
+app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
+    var filepath = __dirname + '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/assets/' + req.params.assetName;
+    res.sendFile(filepath);
 });
 
 app.get('/labs', (req, res) => {
