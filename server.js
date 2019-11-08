@@ -472,7 +472,7 @@ app.get('/pod/:unitClusterKey/:unitKey/:podKey', (req, res) => {
 
 /// accessing pod assets
 app.get('/podAssets/:unitClusterKey/:unitKey/:podKey/:assetKey', (req, res) => {
-    var data = require(__dirname + '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey  + '/assets/' + req.params.assetKey);
+    var data = require(__dirname + '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetKey);
     res.send(data);
 });
 

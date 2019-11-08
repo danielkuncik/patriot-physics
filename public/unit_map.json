@@ -2422,14 +2422,14 @@
             "prerequisites": ["energy_formulas_3"],
             "objective": "Determine the work done on a system by considering changes in energy."
           },
-          "energy_table_6":
+          "symbolic_energy":
           {
-            "title": "Energy Table 5: Symbolic Table",
+            "title": "Symbolic Energy",
             "level": 4,
             "horizontal": 2,
             "letter": "M",
             "prerequisites": ["work_on_system"],
-            "objective": "Fill out a table describing how kinetic and potential energy change algebraically; explain why the GPE formula technically can only be for a change, not an absolute value."
+            "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions"
           },
           "vertical_spring_system":
           {
@@ -2437,7 +2437,7 @@
             "level": 4,
             "horizontal": 1,
             "letter": "N",
-            "prerequisites": ["energy_table_6"],
+            "prerequisites": ["symbolic_energy"],
             "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by fricition."
           },
           "algebraic_energy_analysis_1":
