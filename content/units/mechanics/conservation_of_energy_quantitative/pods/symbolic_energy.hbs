@@ -40,8 +40,8 @@
 <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/vertical_dropped.jpg' height = '300px' width = 'auto'/>
 <ol>
     <li>
-        Use the conservation of energy to write a symbolic formula for the <strong>Total Energy</strong>
-        of the object-earth system in terms of the variables stated here:
+        Write a symbolic formula for the <strong>Total Energy</strong>
+        of the object-earth system in terms of the variables stated at several different points:
         <ol type = 'A'>
             <li>
                 Immediately after the mass is dropped,
@@ -122,6 +122,91 @@
 <h3>
     Problem 2: Object Thrown Directly Upward
 </h3>
+<p>
+    A person throws some ball of mass \( m \) vertically upward at a speed \( v_i \).
+    When he throws it, the ball is at a vertical position \( y_i \).
+    Ignore air-resistance.
+    Please consider height = 0 to be the ground.
+</p>
+<img src = '/podAssets/mechanics/conservation_of_energy_quantitative/vertical_thrown_up.jpg' height = '300px' width = 'auto'/>
+<ol>
+    <li>
+        Write an expression for the total energy of the ball-earth system at
+        several different points in terms of the variables stated.
+        Note that the kinetic energy formula includes speed, not velocity,
+        because it does not depend upon the direction the ball is moving.
+        Thus, an ball moving up and an object moving down at the same speed have the same kinetic energy.
+        <ul type = 'A'>
+            <li>
+                When the ball is first let go.
+            </li>
+            <li>
+                When the ball is at its highest point.
+                At this point, it is momentarily stopped (speed = 0)
+                and its height is given by \( y_{\text{max}} \).
+            </li>
+            <li>
+                When the ball falls back past the point it was let go.
+                Frictionless projectile motion is always symetrical,
+                so at this point the speed is the same as the initial speed
+                and the height is the same as the initial height.
+                The only difference is that the object is now moving downward, not upward.
+            </li>
+            <li>
+                Immediately before the ball strikes the ground.
+                At this point, its vertical position is 0 and its speed is given by \( v_{\text{max}} \).
+            </li>
+        </ul>
+    </li>
+    <li>
+        Connect these expressions to create an equation
+        based on the conservation of energy.
+        State explicitly why this equation is true.
+        Remove any redundant peices of your equation.
+    </li>
+    <li>
+        Use the equation above to derive new formulas for key quantities:
+        <ol type = 'a'>
+            <li>
+                Determine a formula for \( y_{\text{max}} \) in terms of \( y_i \), \( v_i \),
+                and \( g \).
+                Prove your formula is dimensionally correct.
+            </li>
+            <li>
+                Determine a formula for \( v_{\text{max}} \) in terms of \( y_i \), \( v_i \), and \( g \).
+                Prove your formula is dimensionally correct.
+            </li>
+        </ol>
+        <li>
+            Now consider some random point R in the ball's flight.
+            At point R, the speed is given by \( v \) and the vertical position by \( y \).
+            Note that because these values do not have subscripts, they represent variable values, not specific values.
+            Write an expression for the total energy of the ball-earth system at point R
+        </li>
+    <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/vertical_thrown_up_r.jpg' height = '300px' width = 'auto'/>
+    <li>
+            Use the expression above to derive a function \( v(y) \) for the speed in terms of vertical position.
+            Your function should include constant values \( y_i \), \( v_i \), and \( g \).
+            Prove your function is dimensionally correct.
+        </li>
+        <li>
+            Test your function on key known values:
+            <ul>
+                <li>
+                    \( v( y = y_i \) should return \( v =  v_i \).
+                </li>
+                <li>
+                    \( v( y = y_{\text{max}}) \), where y_{\text{max}} was determined above,
+                    should return \( v = 0 \).
+                </li>
+                <li>
+                    \( v( y = 0) \) shoudl return \( v = v_{\text{max}} \),
+                    where \( v_{\text{max}} \) was determined above.
+                </li>
+            </ul>
+        </li>
+</ol>
+
 
 <h3>
     Problem 3: Horizontal Spring
