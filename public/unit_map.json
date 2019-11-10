@@ -1418,10 +1418,10 @@
           }
         }
       },
-      "forward_and_backward_kinematics":
+      "forward_and_backward_kinematics_qualitative":
       {
         "title": "Forward and Backwards Kinematics",
-        "completed": true,
+        "completed": false,
         "number": 3,
         "AP": true,
         "honors": true,
@@ -1614,11 +1614,21 @@
           }
         }
       },
+      "forward_and_backward_kinematics_quantitative":
+      {
+        "title": "Forward and Backwards Kinematics",
+        "completed": false,
+        "number": 4,
+        "AP": true,
+        "honors": true,
+        "need_to_add": "Two direction quantitative kinematic graphs (3 and 4); derivations of kinematic equations (5)",
+        "pods" : {}
+      },
       "identifying_forces":
       {
         "title": "Identifying Forces (Newton's Third Law)",
         "level": 1,
-        "number": 4,
+        "number": 5,
         "completed": true,
         "AP": true,
         "honors": true,
@@ -1735,7 +1745,7 @@
       {
         "title": "Dynamics Math (Newton's Second Law)",
         "level": 1,
-        "number": 5,
+        "number": 6,
         "completed": true,
         "AP": true,
         "honors": true,
@@ -1899,7 +1909,7 @@
       {
         "title": "Vector Force Analysis (Newton's First Law)",
         "level": 1,
-        "number": 6,
+        "number": 7,
         "essential_questions": "When, how, and why do items move?",
         "completed": true,
         "AP": true,
@@ -2064,7 +2074,7 @@
         "title": "System Dynamics",
         "completed": true,
         "AP": true,
-        "number": 7,
+        "number": 8,
         "honors": false,
         "level": 2,
         "pods":
@@ -2202,7 +2212,7 @@
       {
         "title": "Relative Velocity",
         "completed": true,
-        "number": 8,
+        "number": 9,
         "AP": true,
         "honors": false,
         "pods":
@@ -2305,7 +2315,7 @@
       {
         "title": "Conservation of Energy Quantitative",
         "level": 1,
-        "number": 9,
+        "number": 10,
         "completed": true,
         "AP": true,
         "honors": true,
@@ -2485,7 +2495,7 @@
       {
         "title": "Work and Power",
         "completed": true,
-        "number": 10,
+        "number": 11,
         "AP": true,
         "honors": false,
         "level": 2,
@@ -2641,7 +2651,7 @@
       {
         "title": "Projectile Motion",
         "level": 3,
-        "number": 11,
+        "number": 12,
         "completed": true,
         "AP": true,
         "honors": true,
@@ -2816,7 +2826,7 @@
       {
         "title": "Two-Dimensional Dynamics",
         "completed": true,
-        "number": 12,
+        "number": 13,
         "AP": true,
         "honors": false,
         "pods":
@@ -2944,7 +2954,7 @@
       {
         "title": "Collisions and Explosions",
         "level": 1,
-        "number": 13,
+        "number": 14,
         "completed": true,
         "AP": true,
         "honors": true,
@@ -3037,7 +3047,7 @@
       {
         "title": "Impulse",
         "completed": true,
-        "number": 14,
+        "number": 15,
         "AP": true,
         "honors": false,
         "pods":
@@ -3167,7 +3177,7 @@
       {
         "title": "Circular Motion",
         "level": 3,
-        "number": 15,
+        "number": 16,
         "completed": true,
         "AP": true,
         "honors": false,
@@ -3322,7 +3332,7 @@
       {
         "title": "Periodic Kinematics",
         "level": 2,
-        "number": 16,
+        "number": 17,
         "completed": true,
         "AP": true,
         "honors": false,
@@ -3415,7 +3425,7 @@
       {
         "title": "Periodic Dynamics",
         "level": 3,
-        "number": 17,
+        "number": 18,
         "completed": true,
         "AP": true,
         "honors": false,
@@ -3537,7 +3547,7 @@
       {
         "title": "Rotational Kinematics",
         "completed": true,
-        "number": 18,
+        "number": 19,
         "AP": true,
         "honors": false,
         "level": 4,
@@ -3667,7 +3677,7 @@
       {
         "title": "Rotational Dynamics",
         "completed": true,
-        "number": 19,
+        "number": 20,
         "AP": true,
         "honors": false,
         "level": 4,
@@ -3804,7 +3814,7 @@
       {
         "title": "Rotation Conservation Laws",
         "completed": true,
-        "number": 20,
+        "number": 21,
         "AP": true,
         "honors": false,
         "level": 4,
