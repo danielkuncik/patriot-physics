@@ -13,8 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "express-hbs": "^2.1.2",
+    "express-hbs": "^2.2.0",
     "mixin-deep": "^2.0.1",
+    "nodemon": "^1.19.4",
     "shelljs": "^0.8.3"
   }
 }
