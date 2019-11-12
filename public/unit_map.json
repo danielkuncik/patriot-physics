@@ -2448,7 +2448,7 @@
             "horizontal": 1,
             "letter": "N",
             "prerequisites": ["symbolic_energy"],
-            "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by fricition."
+            "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by friction."
           },
           "algebraic_energy_analysis_1":
           {
