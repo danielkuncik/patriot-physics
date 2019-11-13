@@ -313,11 +313,12 @@
 
 <p>
     A spring with spring constant \( k \) and equilibrium length \( y_{\text{eq}} \) is hanging vertically.
-    Somebody attaches a mass to the end of the spring, and as a result the spring
+    Somebody attaches a mass \( m \) to the end of the spring, and as a result the spring
     stretches to some length \( y_0 \) that is greater than its equilibrium length \( y_{\text{eq}} \).
     Assume the spring is both massless and frictionless.
+    Free-fall acceleration is given by \( g \).
     You will consider the motion of the mass-spring-earth system, which has three types of energy.
-    For this problem, consider the zero height to be the ceiling to which the spring is attached.
+    For this problem, consider the zero height and vertical origin to be the ceiling to which the spring is attached.
     Note that this means that all values of gravitational potential energy will be negative. This is okay.
 </p>
 <h5>
@@ -326,25 +327,23 @@
 <ol>
     <li>
         Draw a qualitative free-body diagram of the mass at rest.
+        Name each force and give the direction and agent of each force.
     </li>
     <li>
-        Draw a quantitative free-body diagram of the mass at rest.
-        Describe briefly how you determined each force.
-    </li>
-    <li>
+        Write the magnitude of each force in terms of known quantities.
         The magnitude of the force of a (vertical) spring is given by Hooke's Law:
         $$
-        F(y) = k (y - y_{\text{eq}})
+        F(y) = k \left| y - y_{\text{eq}} \right|
         $$
         In which \( k \) is the spring constant of the spring,
         \( y \) is the length of the spring,
         and \( y_{\text{eq}} \) is the equilibrium length of the spring.
         Both \( k \) and \( y_{\text{eq}} \) are constant properties of the spring,
         but the length of the spring \( y \) can change.
-        By using Hooke's Law and referring to your free-body diagram,
-        determine the position \( y_0 \) at
     </li>
     <li>
+        The equilibrium position of the system is the point
+        at which the net force acting on the mass is zero.
         Determine the equilibrium position of the mass \( y_0 \) in terms of \( k \), \( m \), \( g \),
         and the equilibrium length of the spring \( y_{\text{eq}} \).
         Prove your equation is dimensionally correct.
@@ -365,6 +364,7 @@
         <ol type = 'A'>
             <li>
                 Initially, when the mass a distance \( y_{\text{max}} \) below the ceiling and is momentarily stationary.
+                Determine total energy of the system in terms of \( m \), \( g \), \( k \), \( y_{\text{max}} \), and \( y_{\text{eq}} \).
                 <br>
                 <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/vertical_spring_a_e.jpg' height = '400px' width = 'auto'/>
             </li>
@@ -373,13 +373,15 @@
                 given by the value \( y_0 \) derived above.
                 Note that this point is <emph>NOT</emph> the equilibrium length of the spring \( y_{\text{eq}} \).
                 At this point, the mass is moving at its highest speed, given by \( v_{\text{max}} \).
-                Please write your expression for total energy at this point in terms of \( k \), \( y_{\text{eq}} \), \( m \), \( g \), \( y_0 \), and \( v_\{\text{max}} \).
+                Please write your expression for total energy at this point in terms of \( k \), \( y_{\text{eq}} \), \( m \), \( g \), \( y_0 \), and \( v_{\text{max}} \).
+                Then, substitute the value for \( y_0 \) determined above.
                 <br>
                 <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/vertical_spring_b.jpg' height = '300px' width = 'auto'/>
             </li>
             <li>
                 When the mass is at its highest point, \( y_{\text{min}} \). At this point,
                 the mass is momentarily stationary.
+                Determine total energy of the system in terms of \( m \), \( g \), \( k \), \( y_{\text{min}} \), and \( y_{\text{eq}} \).
                 <br>
                 <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/vertical_spring_c.jpg' height = '200px' width = 'auto'/>
             </li>
@@ -395,28 +397,25 @@
             </li>
         </ol>
     </li>
+    <!--
     <li>
-        Connect the expressions determined above into one large equation.
-        Write briefly why the equation is valid by referring to the laws of physics.
-        Eliminate redundancies from the equation.
-    </li>
-    <li>
-        Use the equation determined above to determine equations for key values:
+        Assume no work is done on the mass-spring-earth system,
+        and use the Conservation of Energy to determine equations for key values:
         <ol type = 'a'>
             <li>
                 Determine an equation for \( y_{\text{min}} \) in terms of
                 \( y_{\text{max}} \) and \( y_0 \).
-                \( y_{\text{min}} \) and \( y_{\text{max}} \) shoudl be equidistant from \( y_0 \).
+                \( y_{\text{min}} \) and \( y_{\text{max}} \) should be equidistant from \( y_0 \).
                 Demonstrate this is the case.
             </li>
             <li>
-                Determine an equation for \( v_{\text{max}} \) in terms of \( y_{\text{max}} \), \( k \), \( y_{\text{eq}} \), \( m \), \( g \),  and \( y_0 \).
+                Determine an equation for \( v_{\text{max}} \) in terms of \( y_{\text{max}} \), \( k \), \( y_{\text{eq}} \), \( m \), and \( g \).
                 Prove your equation is dimensionally correct.
             </li>
             <li>
                 Determine a new more parsimonious equation for \( v_{\text{max}} \).
                 Parsimonious in this context means containing fewer input variables.
-                Use your equation for \( y_0 \) from the prearation section to derive a new formula for \( v_{\text{max}} \)
+                Use your equation for \( y_0 \) from the preparation section to derive a new formula for \( v_{\text{max}} \)
                 in terms of only
                 \( y_{\text{max}} \), \( k \), \( y_{\text{eq}} \), \( m \), and \( g \).
                 Demonstrate that your formula is dimensionally correct.
@@ -449,6 +448,7 @@
             </li>
         </ul>
     </li>
+    -->
 </ol>
 
 
@@ -610,3 +610,65 @@
 <h5>
     Problem 4: Vertical Spring
 </h5>
+
+<h4>
+    Preparation
+</h4>
+
+<ol>
+    <li>
+        Gravity acts downward on the mass and its agent is the earth.
+        The spring force acts upward on the mass and its agent is the spring.
+        Both forces are internal to the mass-spring-earth system, meaning
+        they do no work on the system.
+    </li>
+    <li>
+        The magnitude of gravity is \( mg \).
+        The magnitude of the spring force is given by \( k \left| y_0 - y_{\text{eq}} \right| \).
+        Note that in this equation both \( y_0 \) and \( y_{\text{eq}} \) are negative values,
+        and that \( |y_0| > |y_{\text{eq}}| \)
+    </li>
+    <li>
+        Down is defined as the negative direction
+        and up is defined as the positive direction.
+        The net force at the equilibrium position is given by
+        <br>
+        \( \Sigma F = 0 = - mg - k \left( y_0 - y_{\text{eq}} \right)  \)
+        in which \( y_0 \) is defined as the equilibrium position of the mass
+        and \( y_{\text{eq}} \) is the equilibrium length of the spring.
+        Note that the force of gravity acts downward and the spring force acts upward,
+        but there is a negative sign in front of the spring force because the value
+        \( \left( y_0 - y_{\text{eq}} \right) \) will return a negative number.
+        <br>
+        \( y_0 = y_{\text{eq}} - \frac{mg}{k} \).
+    </li>
+</ol>
+<h4>
+    The Problem
+</h4>
+<ol>
+    <li>
+        <ol type = 'A'>
+            <li>
+                \( \text{Energy} =  m g y_{\text{max}} + \frac{1}{2} k \left( y_{\text{max}} - y_{\text{eq}} \right)^2  \)
+            </li>
+            <li>
+                \( \text{Energy} =   m g y_0 + \frac{1}{2} k \left( y_0 - y_{\text{eq}} \right)^2 + \frac{1}{2} m v_{\text{max}}^2 \)
+                <br>
+                \( \text{Energy} = m g y_{\text{eq}} - \frac{\left( mg \right)^2 }{k} + \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} =  m g y_{\text{min}} + \frac{1}{2} k \left( y_{\text{min}} - y_{\text{eq}} \right)^2  \)
+            </li>
+            <li>
+                \( \text{Energy} = m g y_{\text{eq}} - \frac{\left( mg \right)^2 }{k} + \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} =  m g y_{\text{max}} + \frac{1}{2} k \left( y_{\text{max}} - y_{\text{eq}} \right)^2  \)
+            </li>
+        </ol>
+    </li>
+    <li>
+
+    </li>
+</ol>

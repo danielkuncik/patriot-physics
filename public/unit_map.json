@@ -1163,55 +1163,105 @@
         "honors": true,
         "pods":
         {
-          "qualitative_kinematic_graphs_1":
+          "position_graphs_motion_maps":
           {
-            "title": "Qualitative Kinematic Graphs 1",
+            "title": "Position Graphs and Motion Maps",
             "subtitle": "Position Graphs and Motion Maps",
             "level": 1,
-            "horizontal": 6,
-            "letter": "C",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
           },
-          "qualitative_kinematic_graphs_2":
+          "velocity_acceleration_graphs":
           {
-            "title": "Qualitative Kinematic Graphs 2",
-            "subtitle": "Velocity and Acceleration Graphs",
+            "title": "Velocity and Acceleration Graphs",
             "level": 1,
-            "horizontal": 8,
-            "letter": "D",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["position_graphs_motion_maps"],
             "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
           },
-          "qualitative_kinematic_graphs_3":
+          "kinematic_graphs_connection":
           {
-            "title": "Qualitative Kinematic Graphs 3",
-            "subtitle": "Kinematic Graphs Connection",
+            "title": "Kinematic Graphs Connection",
             "level": 2,
-            "horizontal": 7,
-            "letter": "F",
-            "prerequisites": ["qualitative_kinematic_graphs_1","qualitative_kinematic_graphs_2"],
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["velocity_acceleration_graphs"],
             "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
           },
-          "qualitative_kinematic_graphs_4":
+          "kinematic_graphs_drawing":
           {
-            "title": "Qualitative Kinematic Graphs 4",
-            "subtitle": "2-step Kinematic Graphs",
-            "level": 3,
-            "horizontal": 7,
-            "letter": "L",
-            "prerequisites": ["qualitative_kinematic_graphs_3"],
-            "objective": "Given an explicit description of 2-step motion, identify kinematic graphs and motion maps that match that motion."
+            "title": "Kinematic Graphs Drawing",
+            "level": 2,
+            "letter": "D",
+            "horizontal": 1,
+            "prerequisites": ["kinematic_graphs_connection"],
+            "objective": "For single-step descriptions of motion, draw all relevant kinematic graphs correctly."
           },
-          "qualitative_kinematic_graphs_5":
+          "stories_to_graph_selection_A":
           {
-            "title": "Qualitative Kinematic Graphs 5",
-            "subtitle": "Kinematic Graph Story",
+            "title": "Story to Graph Selection A",
             "level": 3,
-            "horizontal": 8,
-            "letter": "O",
-            "prerequisites": ["qualitative_kinematic_graphs_4"],
-            "objective": "Given a story describing motion in 3 or more steps, identify kinematic graphs and motion maps that match that motion."
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["kinematic_graphs_drawing"],
+            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+          },
+          "stories_to_graph_selection_B":
+          {
+            "title": "Story to Graph Selection B",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["stories_to_graph_selection_A"],
+            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+          },
+          "position_graph_connection":
+          {
+            "title": "Position Graph Connection",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["stories_to_graph_selection_B"],
+            "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs."
+          },
+          "velocity_graph_connection":
+          {
+            "title": "Velocity Graph Connection",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "H",
+            "prerequisites": ["position_graph_connection"],
+            "objective": "Given a qualitative velocity-time graph showing several unique steps of motion, write a story that could be described by the velocity-time graph and draw corresponding position-time and acceleration-time graphs."
+          },
+          "acceleration_graph_connection":
+          {
+            "title": "Acceleration Graph Connection",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "I",
+            "prerequisites": ["velocity_graph_connection"],
+            "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs."
+          },
+          "acceleration_graph_connection_2":
+          {
+            "title": "Acceleration Graph Connection 2",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["acceleration_graph_connection"],
+            "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph."
+          },
+          "qualitative_kinematic_graphs_level_6":
+          {
+            "title": "Qualitative Kinematic Graphs Level 6",
+            "level": 6,
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["acceleration_graph_connection_2"],
+            "objective": "Create qualitative kinematic graphs for some complex description of motion invented by the student."
           }
         }
       },
