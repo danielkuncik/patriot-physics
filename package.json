@@ -17,7 +17,6 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-hbs": "^2.2.0",
-    "fsevents": "^2.1.2",
     "mixin-deep": "^2.0.1",
     "shelljs": "^0.8.3"
   },
