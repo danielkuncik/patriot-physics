@@ -1182,9 +1182,9 @@
             "prerequisites": ["position_graphs_motion_maps"],
             "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
           },
-          "kinematic_graphs_connection":
+          "kinematic_graph_connections":
           {
-            "title": "Kinematic Graphs Connection",
+            "title": "Kinematic Graph Connections",
             "level": 2,
             "horizontal": 2,
             "letter": "C",
