@@ -221,6 +221,17 @@ class Point {
         newy = this.y + length * Math.sin(thetaInRadians);
         return new Point(newx,newy)
     }
+
+    // returns an angle theta in Radians
+    // of  a line that is perpendicular to the line between this point and another point
+    getPerpendicularAngle(anotherPoint) {
+        let theta = this.getAngleToAnotherPoint(anotherPoint);
+        theta += Math.PI / 2;
+        if (theta > Math.PI * 2) {
+            theta -= Math.PI * 2;
+        }
+        return theta;
+    }
 }
 
 
@@ -273,12 +284,7 @@ class Segment {
     }
 
     getPerpendicularAngle() {
-        let theta = this.getAngleToHorizontal();
-        theta += Math.PI / 2;
-        if (theta > Math.PI * 2) {
-            theta -= Math.PI * 2;
-        }
-        return theta;
+        return this.point1.getPerpendicularAngle(this.point2);
     }
 
     // gets slope of line
@@ -663,7 +669,6 @@ class Diagram {
         this.texts.push(newText);
         return newText
     }
-
 
     // creates Text above and below a line
     // if line is vertical "Text above" is to the left and "textBelow" is to the right
@@ -1723,6 +1728,52 @@ class FreeBodyDiagram extends Diagram {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
+
+}
+
+class SpringProblem extends Diagram {
+    constructor() {
+        super();
+    }
+
+
+    // add a single zigzag
+    addZigZag(endPoint1, endPoint2, width) {
+        let pointA = endPoint1.interpolate(endPoint2,0.25);
+        let pointB = endPoint1.interpolate(endPoint2, 0.75);
+        let phi = endPoint1.getPerpendicularAngle(endPoint2);
+        pointA.translate(width * Math.cos(phi), width * Math.sin(phi));
+        pointB.translate(width * Math.cos(phi + Math.PI), width * Math.sin(phi + Math.PI));
+
+        super.addSegment(endPoint1, pointA);
+        super.addSegment(pointA, pointB);
+        super.addSegment(pointB, endPoint2);
+    }
+
+    // add draw spring function!
+    addSpring(endPoint1, endPoint2, width, numZigZags, proportionNotZigZag) {
+        if (width === undefined) {width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 0.2;}
+        if (numZigZags === undefined) {numZigZags = 8;}
+        if (proportionNotZigZag === undefined) {proportionNotZigZag = 0.1;}
+
+        let pointA = endPoint1.interpolate(endPoint2, proportionNotZigZag / 2);
+        let pointB = endPoint1.interpolate(endPoint2, 1 - proportionNotZigZag / 2);
+
+        super.addSegment(endPoint1, pointA);
+
+        let i, nextStartPoint = pointA, nextEndPoint;
+        for (i = 0; i < numZigZags; i++) {
+            nextEndPoint = endPoint1.interpolate(endPoint2, (1 - proportionNotZigZag) / numZigZags * (i + 1) + proportionNotZigZag / 2 );
+            this.addZigZag(nextStartPoint, nextEndPoint, width);
+            nextStartPoint = nextEndPoint;
+        }
+
+        super.addSegment(pointB, endPoint2)
+    }
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom)
+    }
 
 }
 
