@@ -2414,7 +2414,7 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["energy_formulas_2"],
-            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the block."
+            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table."
           },
           "kinetic_potential_energy_graphs_1":
           {

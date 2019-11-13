@@ -272,6 +272,15 @@ class Segment {
         return this.point1.getAngleToAnotherPoint(this.point2);
     }
 
+    getPerpendicularAngle() {
+        let theta = this.getAngleToHorizontal();
+        theta += Math.PI / 2;
+        if (theta > Math.PI * 2) {
+            theta -= Math.PI * 2;
+        }
+        return theta;
+    }
+
     // gets slope of line
     // if line is vertical, returns 1e10, rather than infinity
     getSlope() {
@@ -302,7 +311,6 @@ class Segment {
     }
     */
 }
-
 
 
 // the box should always belong to an object!
