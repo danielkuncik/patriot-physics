@@ -47,21 +47,90 @@
 
 
 <p>
-    Consider a horizontal spring with
-    an equilibrium length of 0.4 meters.
-    It is attached to a mass of 2 kg.
+    Consider a horizontal spring with a spring constant of 50 N/m and
+    an equilibrium length of 0.8 meters.
+    It is attached to a mass of 0.5 kg.
     The mass of the spring is negligible (otherwise we would need to consider its kinetic energy),
     and the surface is frictionless.
 </p>
 <div id = 'springUnstretched'></div>
 
 <p>
-    Consider the energy of the mass-spring system at the following points:
+    At this initial point, the mass-spring system has neither elastic potential nor kinetic energy.
+    However, somebody then arrives and stretches the spring until it has a length of 1.4 meters
+    and lets it go!
+    The spring begins oscillating back and forth. Analyze the energy of the spring-mass system
+    at several different key points.
 </p>
 
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springA' style = 'text-align: center'>A<br></div>
+        <div class = 'md-col-6' id = 'springB' style = 'text-align: center'>B<br></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springC' style = 'text-align: center'>C<br></div>
+        <div class = 'md-col-6' id = 'springD' style = 'text-align: center'>D<br></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springE' style = 'text-align: center'>E<br></div>
+        <div class = 'md-col-6' id = 'springF' style = 'text-align: center'>F<br></div>
+    </div>
+</div>
+
+<p>
+    Assuming that no work is done on the mass-spring system as it oscillates, fill out the table below to
+    analyze the mass-earth system.
+    Note that when no velocity arrow is pictured, the mass is momentarily stationary.
+</p>
+
+<table>
+    <tr>
+        <th>Point</th>
+        <th>Length</th>
+        <th>Speed</th>
+        <th>KE</th>
+        <th>EPE</th>
+        <th>Total Energy</th>
+    </tr>
+    <tr>
+        <th>A</th>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>B</th>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>C</th>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>D</th>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <th>E</th>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
 
 <script>
-    let springUnstretched = new SpringProblem();
+    let springUnstretched = new HorizontalSpringProblem(0.8, true);
+    $("#springUnstretched").append(springUnstretched.drawCanvas(0.8, '0.8 m'));
 
+    let springA = new HorizontalSpringProblem(0.8, true);
+    let springB = new HorizontalSpringProblem(0.8, true);
+    let springC = new HorizontalSpringProblem(0.8, true);
+    let springD = new HorizontalSpringProblem(0.8, true);
+    let springE = new HorizontalSpringProblem(0.8, true);
+    let springF = new HorizontalSpringProblem(0.8, true);
+
+    $("#springA").append(springA.drawCanvas(1.4, '1.4 m'));
+    $("#springB").append(springB.drawCanvas(0.8, '0.8 m', 'left', 'v', 1));
+    $("#springC").append(springC.drawCanvas(0.2, '0.2 m'));
+    $("#springD").append(springD.drawCanvas(0.8, '0.8 m', 'right', 'v', 1));
+    $("#springE").append(springE.drawCanvas(1.4, '1.4 m'));
+    $("#springF").append(springF.drawCanvas(1.0, '1.0 m', 'left', 'v', 0.94));
 </script>
 

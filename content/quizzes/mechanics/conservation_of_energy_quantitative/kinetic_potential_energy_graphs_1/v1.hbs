@@ -1,0 +1,21 @@
+<p>
+    Somebody throws an ball
+    directly upward into the air.
+    It rises high into the air, then begins
+    to fall down to the ground.
+</p>
+
+<p>
+    Create a qualitative graph of energy-time for the ball.
+    On the graph, include three different lines, each with their own label.
+    The three lines should show the kinetic energy, gravitational potential energy, and total energy of the ball.
+</p>
+
+<div id = 'graphDiv'></div>
+
+
+<script>
+    let myGraph = new QuantitativeGraph(0,10,0,10,3);
+    myGraph.labelAxes('Time', 'Energy');
+    $("#graphDiv").append(myGraph.drawCanvas(1200,400));
+</script>

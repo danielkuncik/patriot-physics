@@ -2387,7 +2387,7 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["energy_table_1"],
-            "objective": "Solve problems involving the KE and GPE formulas with only 1 -2 algebraic steps."
+            "objective": "Solve problems involving the KE and GPE formulas."
           },
           "memorize_conservation_of_energy":
           {
@@ -2398,22 +2398,13 @@
             "prerequisites": ["energy_formulas_1"],
             "objective": "Recite the conservation of energy word for word."
           },
-          "energy_formulas_2":
-          {
-            "title": "Energy Formulas 2",
-            "level": 2,
-            "horizontal": 3,
-            "letter": "D",
-            "prerequisites": ["memorize_conservation_of_energy"],
-            "objective": "Solve problems involving the KE, GPE, and EPE formulas with 2 - 4 algebraic steps."
-          },
           "energy_table_2":
           {
             "title": "Energy Table 2",
             "level": 2,
             "horizontal": 2,
             "letter": "E",
-            "prerequisites": ["energy_formulas_2"],
+            "prerequisites": ["memorize_conservation_of_energy"],
             "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table."
           },
           "kinetic_potential_energy_graphs_1":
@@ -2423,7 +2414,7 @@
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["energy_table_2"],
-            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls."
+            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls or rises."
           },
           "system_language":
           {

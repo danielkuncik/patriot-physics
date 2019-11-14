@@ -1,0 +1,100 @@
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'rampA'></div>
+        <div class = 'md-col-6' id = 'rampB'></div>
+    </div>
+    <div class = 'row'>
+        <div class ='md-col-6' id = 'rampC'></div>
+        <div class ='md-col-6' id = 'rampD'></div>
+    </div>
+</div>
+
+<p>
+    Using the conservation of energy, fill out the table below:
+</p>
+
+<table>
+    <tr>
+        <td>
+            Position
+        </td>
+        <td>
+            KE
+        </td>
+        <td>
+            GPE
+        </td>
+        <td>
+            Total Energy
+        </td>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>0</td><td></td><td></td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>44</td><td>65</td><td></td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td></td><td>19</td><td></td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td></td><td>0</td><td></td>
+    </tr>
+</table>
+
+
+<ol>
+    <li>
+        At what point is the ball moving the fastest? Why?
+    </li>
+    <li>
+        As the ball rolls down the ramp, does kinetic energy increase, decrease, or remain the same?
+    </li>
+    <li>
+        As the ball rolls down the ramp, does gravitational potential energy increase, decrease, or remain the same?
+    </li>
+    <li>
+        As the ball rolls down the ramp, does total energy increase, decrease, or remain the same?
+    </li>
+</ol>
+
+<script>
+    const ballRadius = 0.2;
+    function drawRamp(letter, ballPosition) {
+        // ball position is from 0 to 1
+        // the function doesn't work correctly if it is equal to 0 or 1
+        let myDiagram = new Diagram();
+        let endOfRamp1 = origin;
+        let topOfRamp = myDiagram.addNewPoint(1,0);
+        let bottomOfRamp = myDiagram.addNewPoint(3,-2);
+        let endOfRamp2 = myDiagram.addNewPoint(4,-2);
+
+        myDiagram.addText(letter, new Point(3,-0.5), 0.5);
+        myDiagram.addSegment(endOfRamp1, topOfRamp);
+        let rampSegment = myDiagram.addSegment(topOfRamp, bottomOfRamp);
+        myDiagram.addSegment(bottomOfRamp, endOfRamp2);
+
+        let centerBallPoint =  topOfRamp.interpolate(bottomOfRamp, ballPosition);
+        myDiagram.addCircle(centerBallPoint, ballRadius);
+
+        let phi = rampSegment.getPerpendicularAngle();
+        centerBallPoint.translate(ballRadius * Math.cos(phi), ballRadius * Math.sin(phi));
+
+        return myDiagram
+    }
+
+    let rampA = drawRamp('A',0.03);
+    let rampB = drawRamp('B',0.3);
+    let rampC = drawRamp('C',0.6);
+    let rampD = drawRamp('D',0.97);
+
+    $("#rampA").append(rampA.drawCanvas(400,400));
+    $("#rampB").append(rampB.drawCanvas(400,400));
+    $("#rampC").append(rampC.drawCanvas(400,400));
+    $("#rampD").append(rampD.drawCanvas(400,400));
+
+</script>
