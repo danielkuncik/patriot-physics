@@ -281,12 +281,19 @@ hbs.registerHelper('listAllUnitsWithQuizzes', () => {
 });
 
 hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey) => {
+    let thisPod, thisPodTitle;
     var podList = "<ul>";
     Object.keys(unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods).forEach((podKey) => {
-        if (quizMap[selectedUnitClusterKey][selectedUnitKey][podKey].versions > 0) {
-            podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey].title}</a></li>`;
+        thisPod = unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey];
+        if (thisPod.subtitle) {
+            thisPodTitle = `${thisPod.title}: ${thisPod.subtitle}`;
         } else {
-            podList += `<li>${unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey].title}</li>`;
+            thisPodTitle = thisPod.title;
+        }
+        if (quizMap[selectedUnitClusterKey][selectedUnitKey][podKey].versions > 0) {
+            podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${thisPodTitle}</a></li>`;
+        } else {
+            podList += `<li>${thisPodTitle}</li>`;
         }
     });
     podList += "</ul>";
@@ -319,7 +326,7 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
 });
 
 hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey) => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber;
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber, thisPodTitle;
     var unitList = "<ul>";
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
@@ -336,15 +343,20 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                             unitList = unitList + "<ul>";
                             for (podKey in unit.pods) {
                                 pod = unit.pods[podKey];
+                                if (pod.subtitle) {
+                                    thisPodTitle = `${pod.title}: ${pod.subtitle}`;
+                                } else {
+                                    thisPodTitle = pod.title;
+                                }
                                 if (pod.letter) {
                                     letter = pod.letter
                                 } else {
                                     letter = ''
                                 }
                                 if (pod.available) {
-                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${pod.title}</a></li>`
+                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}</a></li>`
                                 } else {
-                                    unitList = unitList + `<li>${letter}: ${pod.title}</li>`
+                                    unitList = unitList + `<li>${letter}: ${thisPodTitle}</li>`
                                 }
                             }
                             unitList = unitList + "</ul>";

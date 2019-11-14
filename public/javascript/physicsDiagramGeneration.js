@@ -335,6 +335,7 @@ class Rectangle {
         // console.log(typeof(this.lowerLeftPoint.x));
         // console.log(this.lowerLeftPoint);
         this.centerPoint = new Point(leftX + width / 2, bottomY + width / 2);
+        this.segments = [];
     }
 
 
@@ -344,6 +345,14 @@ class Rectangle {
         this.lowerRightPoint.rotate(angleInRadians, this.centerPoint);
         this.upperRightPoint.rotate(angleInRadians, this.centerPoint);
 
+    }
+
+    translate(xTranslation, yTranslation) {
+        this.centerPoint.translate(xTranslation, yTranslation);
+        this.lowerLeftPoint.translate(xTranslation, yTranslation);
+        this.upperLeftPoint.translate(xTranslation, yTranslation);
+        this.upperRightPoint.translate(xTranslation, yTranslation);
+        this.lowerRightPoint.translate(xTranslation, yTranslation);
     }
 
     rescaleVertically(yMultiplier) {
@@ -569,6 +578,35 @@ class Diagram {
         return newSegment
     }
 
+    // this is a different thing than the rectangle object defined above
+    // i need to come up with a different name for that object
+    addRectangleFromCenter(centerX, centerY, width, height) {
+        let lowerLeftX = centerX - width / 2;
+        let lowerLeftY = centerY - height / 2;
+
+        return this.addRectangleFromLowerLeft(lowerLeftX, lowerLeftY, width, height);
+    }
+
+    addRectangleFromLowerLeft(lowerLeftX, lowerLeftY, width, height) {
+        let lowerLeftPoint = this.addNewPoint(lowerLeftX, lowerLeftY);
+        let lowerRightPoint = this.addNewPoint(lowerLeftX + width, lowerLeftY);
+        let upperLeftPoint = this.addNewPoint(lowerLeftX, lowerLeftY + height);
+        let upperRightPoint = this.addNewPoint(lowerLeftX + width, lowerLeftY + height);
+
+        this.addSegment(lowerLeftPoint, lowerRightPoint);
+        this.addSegment(lowerRightPoint, upperRightPoint);
+        this.addSegment(upperRightPoint, upperLeftPoint);
+        this.addSegment(upperLeftPoint, lowerLeftPoint);
+
+        let rectangleObject = {
+            "lowerLeftPoint": lowerLeftPoint,
+            "lowerRightPoint": lowerRightPoint,
+            "upperLeftPoint": upperLeftPoint,
+            "upperRightPoint": upperRightPoint
+        };
+
+        return rectangleObject
+    }
 
     /// add arrow
     // right now, it's pretty bad
@@ -1753,7 +1791,7 @@ class SpringProblem extends Diagram {
     // add draw spring function!
     addSpring(endPoint1, endPoint2, width, numZigZags, proportionNotZigZag) {
         if (width === undefined) {width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 0.2;}
-        if (numZigZags === undefined) {numZigZags = 8;}
+        if (numZigZags === undefined) {numZigZags = 6;}
         if (proportionNotZigZag === undefined) {proportionNotZigZag = 0.1;}
 
         let pointA = endPoint1.interpolate(endPoint2, proportionNotZigZag / 2);
@@ -1768,11 +1806,113 @@ class SpringProblem extends Diagram {
             nextStartPoint = nextEndPoint;
         }
 
-        super.addSegment(pointB, endPoint2)
+        super.addSegment(pointB, endPoint2);
+
+        let springObject = {
+            "endPoint1": endPoint1,
+            "endPoint2": endPoint2,
+            "width": width
+        };
+        return springObject
     }
+
+    labelSpring(springObject, text, relativeFontSize) {
+        if (relativeFontSize === undefined) {relativeFontSize = 0.7 * springObject.width;}
+        super.labelLine(springObject.endPoint1, springObject.endPoint2, text, '', springObject.width * 1.5, relativeFontSize);
+    }
+
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom)
+    }
+
+}
+
+// in the future
+// i need to make this so that i can change it without creating a new object
+class HorizontalSpringProblem extends SpringProblem {
+    constructor(equilibirumLength, massBoolean, springWidth) {
+        super();
+        if (springWidth === undefined) {springWidth = equilibirumLength * 0.2;}
+        this.equilibriumLength = equilibirumLength;
+        this.massBoolean = massBoolean;
+        this.springWidth = springWidth;
+
+      //  super.addSpring(origin, new Point(equilibirumLength, 0));
+
+        this.maxCanvasWidth = 300;
+        this.maxCanvasHeight = 300;
+
+        this.corner = new Point(0, -1 * this.springWidth);
+        this.wallTop = new Point(0, this.springWidth * 2);
+        this.floorEnd = new Point(equilibirumLength * 2, -1 * this.springWidth);
+
+        this.wall = super.addSegment(this.corner, this.wallTop);
+        this.floor = super.addSegment(this.corner, this.floorEnd);
+
+        // default spring length is the
+        this.springLength = this.equilibriumLength;
+        this.springEndPoint = new Point(0, this.springLength);
+
+        this.mass = undefined;
+
+    }
+
+    setCanvasWidthAndHeight(maxCanvasWidth, maxCanvasHeight) {
+        this.maxCanvasWidth = maxCanvasWidth;
+        this.maxCanvasHeight = maxCanvasHeight;
+    }
+
+    // sets the spring length to be the length of the spring
+    stretchSpringAbsolute(newSpringLength) {
+        let xTranslation = newSpringLength - this.springLength;
+        this.springLength = newSpringLength;
+        this.springEndPoint = new Point(this.springLength, 0);
+        // if (this.mass) {
+        //         //     this.mass.lowerLeft.translate(xTranslation, 0);
+        //         //     this.mass.upperLeft.translate(xTranslation, 0);
+        //         //     this.mass.lowerRight.translate(xTranslation, 0);
+        //         //     this.mass.upperRight.translate(xTranslation, 0);
+        //         // }
+    }
+
+    addMass() {
+        this.mass = super.addRectangleFromCenter(this.springEndPoint.x + this.springWidth, 0, this.springWidth * 2, this.springWidth * 2);
+    }
+
+
+    // relativeLength = 1 will return an arrow with the same length as the mass;
+    addVelocityArrow(direction, label, relativeLength) {
+        let length = this.springWidth * 2 * relativeLength;
+        let textDisplacement = this.springWidth * 0.7;
+        let relativeFontSize = this.springWidth * 0.7;
+        let arrowCenterPoint = new Point(this.springEndPoint.x + this.springWidth, this.springWidth * 1.5);
+        let arrowBackPoint;
+        let arrowFrontPoint;
+        if (direction === 'right') {
+            arrowFrontPoint = new Point(arrowCenterPoint.x + length / 2, arrowCenterPoint.y);
+            arrowBackPoint = new Point(arrowCenterPoint.x - length / 2, arrowCenterPoint.y);
+        } else if (direction === 'left') {
+            arrowFrontPoint = new Point(arrowCenterPoint.x - length / 2, arrowCenterPoint.y);
+            arrowBackPoint = new Point(arrowCenterPoint.x + length / 2, arrowCenterPoint.y);
+        }
+        super.addArrow(arrowBackPoint, arrowFrontPoint, this.springWidth * 0.6);
+        super.labelLineAbove(arrowBackPoint, arrowFrontPoint, label, textDisplacement, relativeFontSize);
+    }
+
+    drawCanvas(springLength, springLabel, arrowDirection, arrowLabel, arrowRelativeLength) {
+        this.stretchSpringAbsolute(springLength);
+        if (this.massBoolean) {
+            this.addMass();
+        }
+        let theSpring = super.addSpring(origin, this.springEndPoint, this.springWidth);
+        if (springLabel) {
+            super.labelSpring(theSpring, springLabel);
+        }
+        if (arrowDirection && arrowLabel && arrowRelativeLength) {
+            this.addVelocityArrow(arrowDirection, arrowLabel, arrowRelativeLength);
+        }
+        return super.drawCanvas(this.maxCanvasWidth, this.maxCanvasHeight);
     }
 
 }
