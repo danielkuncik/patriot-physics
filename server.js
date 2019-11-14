@@ -286,9 +286,9 @@ hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitK
     Object.keys(unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods).forEach((podKey) => {
         thisPod = unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey];
         if (thisPod.subtitle) {
-            thisPodTitle = `${thisPod.title}: ${thisPod.subtitle}`;
+            thisPodTitle = `${thisPod.letter}: ${thisPod.title}: ${thisPod.subtitle}`;
         } else {
-            thisPodTitle = thisPod.title;
+            thisPodTitle = `${thisPod.letter}: ${thisPod.title}`;
         }
         if (quizMap[selectedUnitClusterKey][selectedUnitKey][podKey].versions > 0) {
             podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${thisPodTitle}</a></li>`;
