@@ -3005,7 +3005,7 @@
           {
             "title": "The Momentum Formula",
             "level": 1,
-            "horizontal": 2,
+            "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
             "objective": "Use the momentum formula to solve numerical problems."
@@ -3014,7 +3014,7 @@
           {
             "title": "Memorize the Conservation of Momentum",
             "level": 1,
-            "horizontal": 3,
+            "horizontal": 2,
             "letter": "B",
             "prerequisites": ["momentum_formula"],
             "objective": "Memorize, word for word, the conservation of momentum."
@@ -3022,8 +3022,9 @@
           "conservation_of_momentum_1":
           {
             "title": "Conservation of Momentum 1",
+            "subtitle": "Two Cars",
             "level": 2,
-            "horizontal": 4,
+            "horizontal": 3,
             "letter": "C",
             "prerequisites": ["memorize_conservation_of_momentum"],
             "objective": "Use the conservation of momentum to solve simple collision problems with the aid of a table."
@@ -3031,46 +3032,86 @@
           "conservation_of_momentum_2":
           {
             "title": "Conservation of Momentum 2",
+            "subtitle": "Perfectly Inelastic Collisions",
             "level": 2,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "D",
             "prerequisites": ["conservation_of_momentum_1"],
-            "objective": "Use the conservation of momentum to solve explosion problems and perfectly inelastic collision problems."
+            "objective": "Use the conservation of momentum to analyze crashes in which two objects stick together."
           },
-          "collision_formula_derivation_1":
+          "conservation_of_momentum_3":
           {
-            "title": "Collision Formula Derivation 1",
-            "level": 3,
-            "horizontal": 2,
+            "title": "Conservation of Momentum 3",
+            "subtitle": "Head-On Collisions",
+            "level": 2,
+            "horizontal": 5,
             "letter": "E",
             "prerequisites": ["conservation_of_momentum_2"],
-            "objective": "Derive the formula that explains a collision problem and explain what each term of that formula represents."
+            "objective": "Use the conservation of momentum and guiding tables to solve problems involving cars moving in different directions."
           },
-          "collision_formula_derivation_2":
+          "conservation_of_momentum_4":
           {
-            "title": "Collision Formula Derivation 2: Perfectly Inelastic Collisions",
-            "level": 3,
-            "horizontal": 1,
+            "title": "Conservation of Momentum 4",
+            "subtitle":  "Explosions",
+            "level": 2,
+            "horizontal": 6,
             "letter": "F",
-            "prerequisites": ["collision_formula_derivation_1"],
-            "objective": "Derive a formula that explains explosion or perfectly inelastic collision problems and explain what each term of that formula represents."
+            "prerequisites": ["conservation_of_momentum_3"],
+            "objective": "Use the conservation of momentum and guiding tables to analyze explosions."
           },
-          "collision_formula_derivation_3":
+          "collision_formula_derivation":
           {
-            "title": " Collision Formula Derivation 3: Perfectly Elastic Collisions",
+            "title": "Collision Formula Derivation",
+            "level": 3,
+            "horizontal": 5,
+            "letter": "G",
+            "prerequisites": ["conservation_of_momentum_4"],
+            "objective": "Represent each situation involving conservation of momentum with an algebraic formula and explain what each term of that formula represents."
+          },
+          "conservation_of_momentum_5":
+          {
+            "title": "Conservation of Momentum 5",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["collision_formula_derivation"],
+            "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given."
+          },
+          "conservation_of_momentum_6":
+          {
+            "title": "Conservation of Momentum 6",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["conservation_of_momentum_5"],
+            "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given."
+          },
+          "conservation_of_momentum_7":
+          {
+            "title": "Conservation of Momentum 7",
+            "subtitle": "Symbolic Solusions",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites":  ["conservation_of_momentum_6"],
+            "objective": "Solve for an algebraic solution to collision and explosion problems; prove solutions are dimensionally correct; use proportionality to analyze solutions"
+          },
+          "elastic_collisions":
+          {
+            "title": "Elastic Collisions",
             "level": 4,
             "horizontal": 1,
-            "letter": "G",
-            "prerequisites": ["collision_formula_derivation_2"],
-            "objective": "Derive and explain formulas that describe an elastic collision."
+            "letter": "K",
+            "prerequisites": ["conservation_of_momentum_7"],
+            "objective": "Define elastic and inelastic collisions; recognize common elastic and inelastic collisions; numerically analyze objects undergoing an elastic collision"
           },
           "advanced_pool_ball_collision":
           {
             "title": "Advanced Pool Ball Collision",
             "level": 5,
             "horizontal": 2,
-            "letter": "H",
-            "prerequisites": ["collision_formula_derivation_3"],
+            "letter": "L",
+            "prerequisites": ["elastic_collisions"],
             "objective": "Derive formulas that explain pool ball collisions and use relate these formulas to the actual reality in a pool ball collision."
           },
           "newtons_cradle":
@@ -3078,7 +3119,7 @@
             "title": "Newton's Cradle",
             "level": 5,
             "horizontal": 3,
-            "letter": "I",
+            "letter": "M",
             "prerequisites": ["advanced_pool_ball_collision"],
             "objective": "Use the conservation of momentum to explain how a Newton's Cradle works."
           }
