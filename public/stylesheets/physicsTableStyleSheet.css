@@ -1,8 +1,12 @@
+table.equationInfo {
+    text-align: center;
+}
+
 td {
     border: 1px solid black;
     margin: 0;
     vertical-align: text-top;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 
