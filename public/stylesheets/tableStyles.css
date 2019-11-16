@@ -1,33 +1,47 @@
-table.equationInfo {
-    text-align: center;
+table {
+    border-spacing: 0px;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
 }
 
 td {
     border: 1px solid black;
     margin: 0;
+    padding: 0;
     vertical-align: text-top;
     font-size: 20px;
-}
-
-
-td.nonShaded {
-    background-color: white;
-}
-
-td.shaded {
-    background-color: darkgrey;
 }
 
 th {
     border: 1px solid black;
     margin: 0;
     vertical-align: text-top;
+    font-size: 20px;
 }
 
-th.greenHeader {
-    color: green;
+th.electricCircuitTableSideHeader {
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: middle;
 }
 
+th.electricCircuitTableTopHeader {
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+td.electricCircuitTable {
+
+}
+
+td.shaded {
+    background-color: darkgrey;
+}
+th.shaded {
+    background-color: darkgrey;
+}
 
 
 /*
@@ -74,5 +88,3 @@ td.answerBox {
     width: 800px;
     height: 100px;
 }
-
-

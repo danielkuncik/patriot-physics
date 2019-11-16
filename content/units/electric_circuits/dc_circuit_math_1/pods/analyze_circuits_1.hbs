@@ -113,6 +113,9 @@
 </ol>
 
 <script>
+    $("#problem1").append(makeSeriesCircuit(12,[2,4]).drawCanvas(400,200));
+    $("#problem1").append((new ElectricCircuitTable(2,false)).draw(600,300));
+    /*
     $("#problem1").append(makeCircuitProblem('series', 12, [2,4], false));
     $("#problem2").append(makeCircuitProblem('series', 20, [2,3], false));
     $("#problem3").append(makeCircuitProblem('series', 30, [3,7], false));
@@ -126,5 +129,5 @@
     let problem1Answer = new CircuitTable(2, false);
     problem1Answer.fillInVoltage([4,8],12);
     $("#problem1Answers").append(problem1Answer.table);
-
+*/
 </script>
