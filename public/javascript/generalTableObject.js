@@ -84,9 +84,14 @@ class Table {
     }
 
     writeTextInCell(i, j, text) {
-        if (text) {
+        if (text !== undefined) {
             this.cellInfoArray[i][j].text = text;
         }
+    }
+
+    writeTextInCellKeys(rowKey, columnKey, text) {
+        let keys = this.getCellCoordinatesByKey(rowKey, columnKey);
+        this.writeTextInCell(keys.i, keys.j, text);
     }
 
     addClassToCell(i, j, newClass) {
@@ -239,7 +244,7 @@ class Table {
                 } else {
                     thisCell = $(`<td width = "${width * columnProportions[j]}${unit}"></td>`);
                 }
-                if (this.cellInfoArray[i][j].text) {
+                if (this.cellInfoArray[i][j].text !== undefined) {
                     $(thisCell).append($(document.createTextNode(this.cellInfoArray[i][j].text)));
                 }
                 if (this.cellInfoArray[i][j].class) {

@@ -93,7 +93,7 @@ class EnergyTable extends Table {
             'total_e': 'Total Energy (J)',
             'speed': 'Speed (m/s)',
             'height': 'Height (m)',
-            'length': 'length (m)'
+            'length': 'Length (m)'
         };
 
         let sideHeaders = [''];
@@ -124,6 +124,14 @@ class EnergyTable extends Table {
         let columnIndex = this.columnKeys[columnKey];
         for (q = 1; q <= this.numPoints; q++) {
             super.writeTextInCell(q, columnIndex, infoArray[q - 1]);
+        }
+    }
+
+    addInfoToRow(rowKey, infoArray) {
+        let q;
+        let rowIndex = this.rowKeys[rowKey];
+        for (q = 1; q < this.numPoints; q++) {
+            super.writeTextInCell(rowIndex, q, infoArray[q - 1]);
         }
     }
 }

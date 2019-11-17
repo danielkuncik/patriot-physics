@@ -38,38 +38,7 @@
     Using the conservation of energy, fill out the table below:
 </p>
 
-<table>
-    <tr>
-        <td>
-            Position
-        </td>
-        <td>
-            KE
-        </td>
-        <td>
-            GPE
-        </td>
-        <td>
-            Total Energy
-        </td>
-    </tr>
-    <tr>
-        <td>A</td>
-        <td>0</td><td></td><td></td>
-    </tr>
-    <tr>
-        <td>B</td>
-        <td>30</td><td>70</td><td></td>
-    </tr>
-    <tr>
-        <td>C</td>
-        <td></td><td>28</td><td></td>
-    </tr>
-    <tr>
-        <td>D</td>
-        <td></td><td>0</td><td></td>
-    </tr>
-</table>
+<div id = 'energyTable'></div>
 
 <p>
     Answer the questions below regarding the motion of the ball:
@@ -98,6 +67,21 @@
         As the ball rolls down the ramp, does total energy increase, decrease, or remain the same?
     </li>
 </ol>
+
+<p>
+    Rank the Energy at each point.
+    For each of the empty boxes, write in 'First,' 'Second,' 'Third,' or 'Fourth'
+    indicating how much KE or GPE is at that point.
+</p>
+<div id = 'energyRankingTable'></div>
+
+<h3>
+    Answers:
+</h3>
+
+<div id = 'energyTableAnswers'></div>
+<br>
+<div id = 'energyRankingTableAnswers'></div>
 
 <script>
     const ballRadius = 0.2;
@@ -133,5 +117,34 @@
     $("#rampB").append(rampB.drawCanvas(400,400));
     $("#rampC").append(rampC.drawCanvas(400,400));
     $("#rampD").append(rampD.drawCanvas(400,400));
+
+    let energyTable = new EnergyTable(4, ['ke', 'gpe', 'total_e']);
+    let energyAnswers = new EnergyTable(4, ['ke', 'gpe', 'total_e']);
+
+    energyAnswers.addInfoToColumn('ke', [0,30,70,100]);
+    energyAnswers.addInfoToColumn('gpe',[100,70,30,0]);
+    energyAnswers.addInfoToColumn('total_e', [100,100,100,100]);
+
+    energyTable.writeTextInCellKeys('A', 'ke', 0);
+    energyTable.writeTextInCellKeys('B', 'ke', 30);
+    energyTable.writeTextInCellKeys('C', 'gpe', 70);
+    energyTable.writeTextInCellKeys('D', 'gpe', 100);
+
+    $("#energyTable").append(energyTable.draw(400,400));
+    $("#energyTableAnswers").append(energyAnswers.draw(400,400));
+
+    let energyRankingTable = new Table(5,3);
+    energyRankingTable.addSideHeaders(['','A','B','C','D']);
+    energyRankingTable.addTopHeaders(['Point','Most KE', 'Most GPE']);
+    $("#energyRankingTable").append(energyRankingTable.draw(400,400));
+
+    let energyRankingTableAnswers = new Table(5,3);
+    energyRankingTableAnswers.addTopHeaders(['Point','Most KE', 'Most GPE']);
+    energyRankingTableAnswers.writeTextInRow(1, ['A','4th','1st']);
+    energyRankingTableAnswers.writeTextInRow(2, ['B','3rd','2nd']);
+    energyRankingTableAnswers.writeTextInRow(3, ['C','2nd','3rd']);
+    energyRankingTableAnswers.writeTextInRow(4, ['D','1st','4th']);
+
+    $("#energyRankingTableAnswers").append(energyRankingTableAnswers.draw(400,400));
 
 </script>

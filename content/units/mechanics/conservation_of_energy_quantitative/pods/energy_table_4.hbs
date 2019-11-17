@@ -60,7 +60,7 @@
     However, somebody then arrives and stretches the spring until it has a length of 1.4 meters
     and lets it go!
     The spring begins oscillating back and forth. Analyze the energy of the spring-mass system
-    at several different key points.
+    at several different points.
 </p>
 
 <div class = 'container'>
@@ -84,36 +84,13 @@
     Note that when no velocity arrow is pictured, the mass is momentarily stationary.
 </p>
 
-<table>
-    <tr>
-        <th>Point</th>
-        <th>Length</th>
-        <th>Speed</th>
-        <th>KE</th>
-        <th>EPE</th>
-        <th>Total Energy</th>
-    </tr>
-    <tr>
-        <th>A</th>
-        <td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <th>B</th>
-        <td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <th>C</th>
-        <td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <th>D</th>
-        <td></td><td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <th>E</th>
-        <td></td><td></td><td></td><td></td><td></td>
-    </tr>
-</table>
+<div id = 'springTable'></div>
+
+<h4>
+    Answers
+</h4>
+
+<div id = 'springTableAnswers'></div>
 
 <script>
     let springUnstretched = new HorizontalSpringProblem(0.8, true);
@@ -132,5 +109,17 @@
     $("#springD").append(springD.drawCanvas(0.8, '0.8 m', 'right', 'v', 1));
     $("#springE").append(springE.drawCanvas(1.4, '1.4 m'));
     $("#springF").append(springF.drawCanvas(1.0, '1.0 m', 'left', 'v', 0.94));
+
+
+    let springTable = new EnergyTable(6, ['length','speed','ke','epe','total_e']);
+    let springTableAnswers = new EnergyTable(6, ['length','speed','ke','epe','total_e']);
+    springTableAnswers.addInfoToRow('A',[1.4,0,0,9,9]);
+    springTableAnswers.addInfoToRow('B',[0.8,3,9,0,9]);
+    springTableAnswers.addInfoToRow('C',[0.2,0,0,9,9]);
+    springTableAnswers.addInfoToRow('D',[0.8,3,9,0,9]);
+    springTableAnswers.addInfoToRow('E',[1.4,0,0,9,9]);
+    springTableAnswers.addInfoToRow('F',[1.0,2.83,8,1,9]);
+    $("#springTable").append(springTable.draw(800,400));
+    $("#springTableAnswers").append(springTableAnswers.draw(800,400));
 </script>
 
