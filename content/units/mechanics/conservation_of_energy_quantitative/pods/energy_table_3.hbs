@@ -1,0 +1,128 @@
+<p class ='equation'>
+    $$
+    GPE = mgh
+    $$
+</p>
+
+<p class = 'equation'>
+    $$
+    KE = \frac{1}{2} m v^2
+    $$
+</p>
+
+<p>
+    A girl is biking on a giant hill.
+    She begins <emph>at rest</emph> at point A,
+    then begins falling down.
+    Assume that no energy is gained or added from
+    the girl-earth system during its travels.
+    (Sorry that the diagram looks horrible.
+    I'm working on it.)
+    The girl and her bike have a combined mass of 90 kg.
+</p>
+<div id="rollerCoasterDiv"></div>
+
+<ol>
+    <li>
+        What is the kinetic energy at point A (answer without an equation)?
+    </li>
+    She falls from point A to point B:
+    <li>
+        Does the kinetic energy of the girl-earth system increase, decrease, or remain the same.
+    </li>
+    <li>
+        Does the gravitational potential energy of the girl-earth system
+        increase, decrease, or stay the same.
+    </li>
+    <li>
+        Does the total energy of the girl-earth system
+        increase, decrease, or stay the same.
+    </li>
+    Then, she rises back from point B to point C:
+    <li>
+        Does the kinetic energy of the girl-earth system increase, decrease, or remain the same.
+    </li>
+    <li>
+        Does the gravitational potential energy of the girl-earth system
+        increase, decrease, or stay the same.
+    </li>
+    <li>
+        Does the total energy of the girl-earth system
+        increase, decrease, or stay the same.
+    </li>
+    <li>
+        Find the gravitational potential energy of the girl-earth system
+        at each point.
+        Note that there is more than one possible set of answers
+        based on how you select the zero-point height for this problem.
+        <ol type = 'A'>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </li>
+    <li>
+        At points C and E, the girl should have the same speed.
+        Explain why without doing any computations.
+    </li>
+    <li>
+        Complete the following table:
+        <div id = 'energyTable'></div>
+    </li>
+    <li>
+        What is the maximum kinetic energy of the girl on her bike? (There is only one possible answer).
+    </li>
+    <li>
+        Find the girl's speed at point B.
+    </li>
+    <li>
+        Find the girl's speed at point E.
+    </li>
+</ol>
+
+
+
+
+
+
+<script src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.2/math.js'></script>
+<script>
+    function rollerCoasterFunction(x) {
+        let a1 = 11/25;
+        let b1 = - 169 / 25;
+        let c1 = 794 / 25;
+        let a2 = - 2 / 25;
+        let b2 = 68 / 25;
+        let c2 = - 178 / 25;
+        if (x < 2) {
+            return 20
+        } else if (x >= 2 && x < 12) {
+            return a1 * x * x + b1 * x  + c1;
+        } else if (x >= 12 && x < 22) {
+            return a2 * x * x + b2 * x + c2;
+        } else if (x >= 22) {
+            return 14
+        } else {
+            return undefined
+        }
+    }
+
+
+    let rollerCoasterGraph = new QuantitativeGraph(0,24,0,24,2);
+    rollerCoasterGraph.labelAxes('','height (m)');
+    rollerCoasterGraph.addReferenceArray([],[6,14,16,20]);
+    rollerCoasterGraph.addFunctionGraph(rollerCoasterFunction,0,24);
+    rollerCoasterGraph.addLetterPoint('A',1,20);
+    rollerCoasterGraph.addLetterPoint('B',7,6);
+    rollerCoasterGraph.addLetterPoint('C',12,14);
+    rollerCoasterGraph.addLetterPoint('D',17,16);
+    rollerCoasterGraph.addLetterPoint('E',23,14);
+
+    $("#rollerCoasterDiv").append(rollerCoasterGraph.drawCanvas(800,400));
+
+
+    let energyTable = new EnergyTable(5, ['ke','gpe','total_e']);
+    $("#energyTable").append(energyTable.draw(500,500));
+</script>

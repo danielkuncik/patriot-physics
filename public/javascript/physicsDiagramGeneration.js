@@ -461,6 +461,11 @@ class Circle {
         this.filled = true;
     }
 
+    fillWhite() {
+        this.setFillColor('#FFFFFF')
+        this.fill();
+    }
+
     unfill() {
         this.filled = false;
     }
@@ -975,17 +980,6 @@ class Diagram {
         });
 
 
-        this.circles.forEach((circleObject) => {
-            ctx.fillStyle = circleObject.fillColor;
-            ctx.strokeStyle = circleObject.lineColor;
-            ctx.lineWidth = circleObject.lineThickness;
-
-            ctx.beginPath();
-            ctx.arc(wiggleRoom + circleObject.center.x, canvasHeight - wiggleRoom - circleObject.center.y, circleObject.radius, 0, Math.PI * 2);
-            ctx.stroke();
-            if (circleObject.filled) {ctx.fill();}
-        });
-
         this.functionGraphs.forEach((FunctionGraphObject) => {
             ctx.lineWidth = 2;
             ctx.lineCap = 'butt';
@@ -1016,6 +1010,17 @@ class Diagram {
             }
 
         });
+        this.circles.forEach((circleObject) => {
+            ctx.fillStyle = circleObject.fillColor;
+            ctx.strokeStyle = circleObject.lineColor;
+            ctx.lineWidth = circleObject.lineThickness;
+
+            ctx.beginPath();
+            ctx.arc(wiggleRoom + circleObject.center.x, canvasHeight - wiggleRoom - circleObject.center.y, circleObject.radius, 0, Math.PI * 2);
+            ctx.stroke();
+            if (circleObject.filled) {ctx.fill();}
+        });
+
         /// texts come last so they are not written over
         this.texts.forEach((textObject) => {
             ctx.font = String(textObject.relativeFontSize) + unit + " " + String(textObject.font);
@@ -1244,6 +1249,14 @@ class QuantitativeGraph extends Diagram {
         let newCircle = super.addCircle(centerPoint, this.pointRadius);
         newCircle.fill();
         return newCircle;
+    }
+
+    // adds a white circuit with a letter in it
+    addLetterPoint(letter,x,y) {
+        let centerPoint = new Point(x,y * this.yMultiplier);
+        let newCircle = super.addCircle(centerPoint, this.pointRadius);
+        newCircle.fillWhite();
+        let newText = super.addText(letter, centerPoint, this.pointRadius * 1.7);
     }
 
     addSegmentWithCirclesOnEnds(x1,y1,x2,y2) {
