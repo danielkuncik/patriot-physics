@@ -70,3 +70,60 @@ class ElectricCircuitTable extends Table {
     }
 
 }
+
+class EnergyTable extends Table {
+    constructor(numPoints, columnTypes) {
+        super(1 + numPoints, 1 + columnTypes.length);
+        this.numPoints = numPoints;
+        this.columnTypes = columnTypes;
+
+        super.assignColumnKey(0, 'points');
+        let k;
+        for (k = 0; k < columnTypes.length; k++) {
+            super.assignColumnKey(k + 1, columnTypes[k])
+        }
+        let rowKeys = alphabetArray.slice(0,numPoints);
+        rowKeys.unshift('top');
+        super.assignAllRowKeys(rowKeys);
+
+        const selectionObject = {
+            'ke': 'Kinetic Energy (J)',
+            'gpe': 'Gravitational Potential Energy (J)',
+            'epe': 'Elastic Potential Energy (J)',
+            'total_e': 'Total Energy (J)',
+            'speed': 'Speed (m/s)',
+            'height': 'Height (m)',
+            'length': 'length (m)'
+        };
+
+        let sideHeaders = [''];
+        let i;
+        for (i = 0; i < numPoints; i++) {
+            sideHeaders.push(alphabetArray[i]);
+        }
+        super.addSideHeaders(sideHeaders);
+
+        let topHeaders = [''];
+        let j;
+        for (j = 0; j < columnTypes.length; j++) {
+            if (selectionObject[columnTypes[j]]) {
+                topHeaders.push(selectionObject[columnTypes[j]]);
+            } else {
+                topHeaders.push(columnTypes[j]);
+            }
+        }
+        super.addTopHeaders(topHeaders);
+
+        super.shadeUpperLeftCorner();
+
+        // i just need to make this look a lot nicer etc.
+    }
+
+    addInfoToColumn(columnKey, infoArray) {
+        let q;
+        let columnIndex = this.columnKeys[columnKey];
+        for (q = 1; q <= this.numPoints; q++) {
+            super.writeTextInCell(q, columnIndex, infoArray[q - 1]);
+        }
+    }
+}
