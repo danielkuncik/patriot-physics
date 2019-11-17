@@ -1,5 +1,4 @@
 
-alphabetArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N','O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 class ElectricCircuitTable extends Table {
     constructor(numResistors, powerRowBoolean) {
@@ -50,6 +49,24 @@ class ElectricCircuitTable extends Table {
         super.makeFirstColumnHeaders();
         super.shadeUpperLeftCorner();
 
+    }
+
+
+    fillInVoltageRow(valuesArray) {
+        valuesArray.unshift(undefined);
+        super.writeTextInRow(1, valuesArray);
+    }
+    fillInCurrentRow(valuesArray) {
+        valuesArray.unshift(undefined);
+        super.writeTextInRow(2, valuesArray);
+    }
+    fillInResistanceRow(valuesArray) {
+        valuesArray.unshift(undefined);
+        super.writeTextInRow(3,valuesArray);
+    }
+    fillInPowerRow(valuesArray) {
+        valuesArray.unshift(undefined);
+        super.writeTextInRow(4, valuesArray);
     }
 
 }

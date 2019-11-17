@@ -29,5 +29,5 @@ $(".questionList").each((i) => {
 $(".directions").prepend($("<strong>Directions: </strong>"));
 
 // automatically places a box to sovle formula problems in any <div class = 'formulaBoxDiv'>
-let myFormulaBox = new formulaBox();
-myFormulaBox.insertTableByClass('formulaBoxDiv');
+// let myFormulaBox = new formulaBox();
+// myFormulaBox.insertTableByClass('formulaBoxDiv');

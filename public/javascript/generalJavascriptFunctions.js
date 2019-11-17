@@ -90,6 +90,24 @@ function getRangeOfFunction(func, xMin, xMax, N) {
         yMax: yMax
     }
 }
+function sumOfArray(array) {
+    let sum = 0;
+    array.forEach((element) => {
+        sum += element;
+    });
+    return sum
+}
+
+function makeArraySumToOne(array) {
+    let sum = sumOfArray(array);
+    let q;
+    for (q = 0; q < array.length; q++) {
+        array[q] = array[q]/sum;
+    }
+    return array
+}
+
+alphabetArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N','O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 
 // returns an array of allowed ranges for a function

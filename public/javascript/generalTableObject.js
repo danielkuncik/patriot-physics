@@ -6,22 +6,7 @@ types of tables I attach to physics problems.
  */
 
 
-function sumOfArray(array) {
-    let sum = 0;
-    array.forEach((element) => {
-        sum += element;
-    });
-    return sum
-}
 
-function makeArraySumToOne(array) {
-    let sum = sumOfArray(array);
-    let q;
-    for (q = 0; q < array.length; q++) {
-        array[q] = array[q]/sum;
-    }
-    return array
-}
 
 class Table {
     constructor(numRows, numColumns) {
@@ -68,7 +53,7 @@ class Table {
             return false
         }
         let k;
-        for (k = 0; k < this.numRows; k++) {
+        for (k = 0; k < this.numColumns; k++) {
             this.columnProportionArray[k] = newProportionArray[k];
         }
     }
@@ -99,7 +84,9 @@ class Table {
     }
 
     writeTextInCell(i, j, text) {
-        this.cellInfoArray[i][j].text = text;
+        if (text) {
+            this.cellInfoArray[i][j].text = text;
+        }
     }
 
     addClassToCell(i, j, newClass) {
@@ -118,7 +105,7 @@ class Table {
     }
 
     writeTextInColumn(j, textArray) {
-        if (textArray.length > this.numColumns) {
+        if (textArray.length > this.numRows) {
             console.log('ERROR: Too many elements in text array');
             return false
         }
