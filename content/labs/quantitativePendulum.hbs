@@ -1,0 +1,133 @@
+<p>
+    If you are in AP physics and you are doing this lab,
+    you need to write everything in your lab notebook.
+    Not on this page. Don't you dare write on this page.
+    And if you are reading this on a computer,
+    and you print it out and then write on the page
+    instead of writing it in your lab notebook,
+    then I truly have no words.
+</p>
+
+<h3>
+    Quantitative Pendulum Lab
+</h3>
+
+<p>
+    The formula for the period of a pendulum is given by:
+</p>
+<p class = 'equation'>
+    $$
+    T = 2 \pi \sqrt{\frac{l}{g}}
+    $$
+</p>
+<p>
+    In which \( T \) represents the period of the pendulum,
+    \( l \) represents the length of hte pendulum from the top of the string to
+    the center of mass of the bob,
+    and \( g \) represents the free-fall acceleration on earth.
+</p>
+
+<p>
+    The goal of this lab is to prove this formula
+    and to use the resulting value to find a numerical value
+    for the free-fall acceleration on earth \( g \).
+</p>
+
+<p>
+    The period of a pendulum \( T \) is proportional to the square root of the length of the pendulum \( l \).
+</p>
+
+<ol>
+    <li>
+        Build a pendulum. Minimize friction. Develop a way of measuring the
+        period of the pendulum as accurately as you can.
+    </li>
+    <li>
+        For at least 20 different data points, measure the length and period of the pendulum.
+        It is good to take many many data points.
+        You should test each length multiple times and count these as different data points.
+        You should test many different lengths, from those well over a meter
+        to those less than 20 centimeters.
+    </li>
+    <li>
+        (In your lab notebook) fill out the table below.
+        In this table, you compare the square root of the length to the period.
+        <br>
+        <div id = 'dataTable'></div>
+        <br>
+        This is an example! Don't fill this in. Write in your lab notebook.
+        This table is just here to show you what the table in your lab notebook
+        should look like.
+    </li>
+    <li>
+        (In your lab notebook) Create a graph relating the period (the independent variable)
+        to the square root of the length (the dependent variable).
+        Plot each point you found on your graph.
+        DO NOT connect the points. DO NOT draw any lines.
+        <br>
+        <div id = 'dataGraph'></div>
+        <br>
+        This is an example! Don't fill this in. Write in your lab notebook.
+        This graph is just here to show you what the graph in your lab notebook
+        should look like.
+    </li>
+    <li>
+        Notice if any of your points are outliers.
+        Outliers are points that do not seem to follow the set pattern.
+        Develop a logical policy for how to handle them.
+        (This should have been step 1...but as we are still learning we will think
+        about outliers after we have outliers to think about.)
+    </li>
+    <li>
+        According to the formula above,
+        the period is directly proportional to the square root of the length.
+        Therefore, according to the theory, the graph should be an upward sloped
+        line going through the origin.
+        Are your data consistent with this hypothesis?
+    </li>
+    <li>
+        Assuming that your data are do represent a straight line through the origin,
+        determine the slope of the line.
+        You may do so by drawing a best fit line and finding its slope geometrically
+        or by running a linear regression if you know how.
+    </li>
+    <li>
+        Algebraically manipulate the formula above to find the physical significance
+        of the slope of the line.
+    </li>
+    <li>
+        Solve for the value of \( g \) using your data
+        and calculate percent error.
+    </li>
+</ol>
+
+
+<p>
+    BONUS 1: Which of the following statements is grammatically correct:
+</p>
+<ol type = 'A'>
+    <li>
+        The data are consistent with the hypothesis.
+    </li>
+    <li>
+        The data is consistent with the hypothesis.
+    </li>
+</ol>
+
+<p>
+    BONUS 2: What is the singular form of the noun "data"?
+</p>
+
+
+<script>
+    let dataTable = new Table(21, 4);
+    dataTable.addTopHeaders(['trial','length','sqrt(length)','period']);
+    dataTable.addSideHeaders(['trial',1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
+    $("#dataTable").append(dataTable.draw(300,900));
+
+    let dataGraph = new QuantitativeGraph(0,1.5,0,2.5,1);
+    dataGraph.labelAxes('sqrt(l) (m^1/2)','T (s)');
+    dataGraph.automaticReferenceArray(4, 6);
+
+    $("#dataGraph").append(dataGraph.drawCanvas(500,500));
+</script>

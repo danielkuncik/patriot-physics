@@ -494,6 +494,13 @@ app.get('/labs', (req, res) => {
         title:'Labs'
     });
 });
+app.get('/labs/:labKey', (req,res) => {
+    res.render(__dirname + '/content/labs/' + req.params.labKey + '.hbs', {
+        layout: 'default',
+        title: 'Lab'
+    });
+});
+
 app.get('/writing', (req, res) => {
     res.render('writingEntryPage.hbs', {
         layout:'default',
