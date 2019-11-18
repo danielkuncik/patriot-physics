@@ -93,7 +93,8 @@ class EnergyTable extends Table {
             'total_e': 'Total Energy (J)',
             'speed': 'Speed (m/s)',
             'height': 'Height (m)',
-            'length': 'Length (m)'
+            'length': 'Length (m)',
+            'direction': 'Direction'
         };
 
         let sideHeaders = [''];
