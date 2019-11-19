@@ -2706,7 +2706,6 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectile motion always occurs in parabolic arcs"
-
           },
           "falling_1":
           {
@@ -2725,6 +2724,15 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
+          },
+          "falling_3":
+          {
+            "title": "Falling 3: Compilation",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Fully analyze a falling object using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
           },
           "pop_up_1":
           {
@@ -2789,6 +2797,15 @@
             "prerequisites": [],
             "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis."
           },
+          "pop_up_5":
+          {
+            "title": "Pop-Up 5: Compilation",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites":  [],
+            "objective": "Create a complete analysis of an object thrown directly upward, bringing together functional kinematic analysis, kinematic graphs, dynamic analysis, and energy analysis."
+          },
           "horizontal_launch_3":
           {
             "title": "Horizontal Launch 3: Kinematic Graphs",
@@ -2797,6 +2814,24 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw qualitative kinematic graphs in each dimension for an object launched horizontally."
+          },
+          "horizontal_launch_4":
+          {
+            "title": "Horizontal Launch 4: Symbolic Algebra",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Symbolically solve for relevant quantities and derive functions for an object launched horizontally."
+          },
+          "horizontal_launch_5":
+          {
+            "title": "Horizontal Launch 5: Compilation",
+            "level": 5,
+            "horizontal":  null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze an object launched horizontally using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
           },
           "cannon_problem_1":
           {
@@ -2822,9 +2857,9 @@
             "level": 5,
             "horizontal": null,
             "letter": "",
-            "prerequisites": []
+            "prerequisites": [],
+            "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities. Defend answers using dimensional analysis."
           },
-          "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities. Defend answers using dimensional analysis.",
           "cannon_problem_4":
           {
             "title": "Cannon Problem 4: Kinematic Graphs",
@@ -2836,7 +2871,16 @@
           },
           "cannon_problem_5":
           {
-            "title": "Cannon Problem 5: Fired From High Ground",
+            "title": "Cannon Problem 5: Compilation",
+            "level": 5,
+            "horizontal":  null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Fully analyze an object launched from a cannon using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
+          },
+          "cannon_problem_6":
+          {
+            "title": "Cannon Problem 6: Fired From High Ground",
             "level": 5,
             "horizontal": null,
             "letter": "",
