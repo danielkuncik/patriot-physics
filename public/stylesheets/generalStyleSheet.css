@@ -46,7 +46,14 @@ p.directions {
 }
 
 p.equation {
+    font-size: 25px;
+}
+
+p.veryImportantEquation {
     font-size: 30px;
+}
+p.semiImportantEquation {
+    font-size: 20px;
 }
 
 td.equation {
