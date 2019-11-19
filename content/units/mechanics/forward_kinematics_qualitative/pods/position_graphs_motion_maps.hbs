@@ -7,19 +7,130 @@
     motion-maps, position-time graphs, velocity-time graphs, and acceleration-time graphs.
     This first section will deal with position-time graphs and motion maps.
 </p>
+<p>
+    This unit will also focus exclusively on objects moving forward.
+    Future units will deal with objects moving forwards and backwards
+    and moving in more than one dimension.
+</p>
+
+<p>
+    Specifically, in this unit we will categorize motion into four separate types.
+    Fully understanding these four types will be the core of understanding qualitative kinematics.
+</p>
+
+<ul>
+    <li>
+        Moving with a constant velocity
+    </li>
+    <li>
+        Speeding up (moving with a positive acceleration)
+    </li>
+    <li>
+        Slowing down (moving with a negative acceleration)
+    </li>
+    <li>
+        Not moving
+    </li>
+</ul>
 
 
+<h4>
+    Part 1: Motion Maps
+</h4>
 <p class = 'definition'>
     A <strong>motion map</strong> is created by placing a dot at a person's location
     every second.
 </p>
 
+<ul>
+    <li>
+        Motion Map for moving with a constant velocity:
+        <br>
+        <div id = 'motionMap1'></div>
+    </li>
+    <li>
+        Motion Map for speeding up (positive acceleration)
+        <br>
+        <div id = 'motionMap2'></div>
+    </li>
+    <li>
+        Motion Map for slowing down (negative acceleration)
+        <br>
+        <div id = 'motionMap3'></div>
+    </li>
+    <li>
+        Motion Map for not moving
+        <br>
+        <div id = 'motionMap4'></div>
+    </li>
+</ul>
 
-<div id = 'motionMap'></div>
+<h4>
+    Position-Time Graphs
+</h4>
+
+<p class = 'definition'>
+    A <strong>position-time graph</strong> is a graph that displays position
+    on the vertical axis and time on the horizontal axis.
+    When the graph shows a line moving upwards or downwards,
+    it indicates an object is changing position, which means it is moving!
+</p>
+
+<ul>
+    <li>
+        Position-time graph for moving with a constant velocity:
+        <br>
+        <div id = 'positionGraph1'></div>
+    </li>
+    <li>
+        Position-time graph for speeding up (positive acceleration):
+        <br>
+        <div id = 'positionGraph2'></div>
+    </li>
+    <li>
+        Position-time graph for slowing down (negative acceleration):
+        <br>
+        <div id = 'positionGraph3'></div>
+    </li>
+    <li>
+        Position-time graph for not moving:
+        <br>
+        <div id = 'positionGraph4'></div>
+    </li>
+</ul>
+
 
 
 <script>
-    let motionMap = new MotionMap((x)=>x,0,20,10);
-    motionMap.multiplyRadius(0.6);
-    $("#motionMap").append(motionMap.drawCanvas(300,300));
+    let motionMap1 = new MotionMap((x)=>x,0,20,10);
+    motionMap1.multiplyRadius(0.6);
+    $("#motionMap1").append(motionMap1.drawCanvas(300,300));
+
+    let motionMap2 = new MotionMap((x) => x*x, 0, 100, 8);
+    motionMap2.multiplyRadius(3);
+    $("#motionMap2").append(motionMap2.drawCanvas(300,300));
+
+    let motionMap3 = new MotionMap((t) => 10*t + 0.5 * (-1) * t*t, 0, 10, 8);
+    motionMap3.multiplyRadius(1.6);
+    $("#motionMap3").append(motionMap3.drawCanvas(300,300));
+
+    let motionMap4 = new MotionMap((t) => 0, 0, 10, 10);
+    motionMap4.multiplyRadius(1);
+    $("#motionMap4").append(motionMap4.drawCanvas(300,300));
+
+    let positionGraph1 = new QualitativeGraph((x)=>x,0,10);
+    positionGraph1.labelAxes('time','position');
+    $("#positionGraph1").append(positionGraph1.drawCanvas(300,300));
+
+    let positionGraph2 = new QualitativeGraph((x)=>x*x,0,10);
+    positionGraph2.labelAxes('time','position');
+    $("#positionGraph2").append(positionGraph2.drawCanvas(300,300));
+
+    let positionGraph3 = new QualitativeGraph((x)=>10*x + 0.5 * (-1) * x * x,0,10);
+    positionGraph3.labelAxes('time','position');
+    $("#positionGraph3").append(positionGraph3.drawCanvas(300,300));
+
+    let positionGraph4 = new QualitativeGraph((x)=>5,0,10,1,0,10);
+    positionGraph4.labelAxes('time','position');
+    $("#positionGraph4").append(positionGraph4.drawCanvas(300,300));
 </script>

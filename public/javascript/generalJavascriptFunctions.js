@@ -166,3 +166,22 @@ function processDirectionInput(direction) {
         return undefined
     }
 }
+
+// tests if a function is constant over the range from xMin to xMax
+function isItAConstantFunction(testFunction, xMin, xMax, N) {
+    if (N === undefined) {N = 100;}
+    let xStep = (xMax - xMin) / N;
+    let result = true;
+    let k, thisY, previousY, x;
+    previousY = testFunction(xMin);
+    for (k = 1; k < N; k++) {
+        x = xMin + xStep * k;
+        thisY = testFunction(x);
+        if (Math.abs(thisY - previousY) > 1e-10 ) {
+            result = false;
+            break;
+        }
+        previousY = thisY;
+    }
+    return result
+}

@@ -326,13 +326,24 @@ class QualitativeGraph extends Diagram {
         this.textDisplacement = this.relativeFontSize * 0.7;
     }
 
-    setLabels(xLabel, yLabel) {
+    labelAxes(xLabel, yLabel) {
         this.xLabel = xLabel;
         this.yLabel = yLabel;
     }
 
     setMultiplier() {
         this.yMultiplier = this.desiredAspectRatio * (this.xMin0 - this.xMax0)  / (this.yMin0 - this.yMax0);
+    }
+
+
+    moveLabelsToEnd() {
+        this.xLabelPosition = 'end';
+        this.yLabelPosition = 'end';
+    }
+
+    moveLabelsToSide() {
+        this.xLabelPosition = 'side';
+        this.yLabelPosition = 'side';
     }
 
 
@@ -356,10 +367,14 @@ class QualitativeGraph extends Diagram {
 
         if (this.xLabelPosition === 'end') {
             super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
+        } else if (this.xLabelPosition === 'side') {
+            // add text below the x axis
         }
         // add an option if you want the label int he center
         if (this.yLabelPosition === 'end') {
             super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
+        } else if (this.yLabelPosition === 'side') {
+            // add text to the side of the y-axis
         }
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
@@ -380,14 +395,22 @@ class QualitativeKinematicGraphSet {
 class MotionMap extends Diagram {
     constructor(positionFunction, tMin, tMax, numDots, direction) {
         super();
+
+
         if (direction === undefined) {direction = 0;}
         this.theta = processDirectionInput(direction);
         // can input a text, number, etc. and it tries to figure out the correct direction
         this.func = positionFunction;
-        if (numDots === undefined) {numDots = 20;}
-        this.numDots = numDots;
         this.tMin = tMin;
         this.tMax = tMax;
+        this.constantFunction = false;
+        if (isItAConstantFunction(this.func, this.tMin, this.tMax)) {
+            this.constantFunction = true;
+        }
+
+        if (numDots === undefined) {numDots = 10;}
+        this.numDots = numDots;
+
         this.tStep = (this.tMax - this.tMin) / this.numDots;
 
         this.positionValues = this.calculatePositionValues(this.numDots);
@@ -424,14 +447,18 @@ class MotionMap extends Diagram {
     }
 
     setDefaultRadius() {
-        let minSpaceBetween = Math.abs(this.positionValues[1] - this.positionValues[0]);
-        let q;
-        for (q = 1; q < this.positionValues.length; q++) {
-            if (Math.abs(this.positionValues[q + 1] - this.positionValues[q]) < minSpaceBetween) {
-                minSpaceBetween = Math.abs(this.positionValues[q + 1] - this.positionValues[q]);
+        if (this.constantFunction) {
+            this.radius = 1;
+        } else {
+            let minSpaceBetween = Math.abs(this.positionValues[1] - this.positionValues[0]);
+            let q;
+            for (q = 1; q < this.positionValues.length; q++) {
+                if (Math.abs(this.positionValues[q + 1] - this.positionValues[q]) < minSpaceBetween) {
+                    minSpaceBetween = Math.abs(this.positionValues[q + 1] - this.positionValues[q]);
+                }
             }
+            this.radius = minSpaceBetween / 4; // default radius
         }
-        this.radius = minSpaceBetween / 4; // default radius
     }
 
     setRadius(newRadius) {
@@ -459,11 +486,20 @@ class MotionMap extends Diagram {
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         let thisCircle;
-        this.positionPoints.forEach((point) => {
-            thisCircle = super.addCircle(point, this.radius);
-            thisCircle.fill();
-        });
-        super.addArrow(this.arrowStartPoint, this.arrowEndPoint);
+        if (this.constantFunction) {
+            let circle = super.addCircle(origin, this.radius);
+            circle.fill();
+            super.addNewPoint(10,0);
+            super.addNewPoint(0,2);
+            super.addNewPoint(-10,0);
+            super.addNewPoint(0,-2);
+        } else {
+            this.positionPoints.forEach((point) => {
+                thisCircle = super.addCircle(point, this.radius);
+                thisCircle.fill();
+            });
+            super.addArrow(this.arrowStartPoint, this.arrowEndPoint);
+        }
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
