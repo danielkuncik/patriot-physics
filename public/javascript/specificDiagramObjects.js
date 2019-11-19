@@ -375,7 +375,97 @@ class QualitativeKinematicGraphSet {
         this.accelerationArray = [];
     }
 
+}
 
+class MotionMap extends Diagram {
+    constructor(positionFunction, tMin, tMax, numDots, direction) {
+        super();
+        if (direction === undefined) {direction = 0;}
+        this.theta = processDirectionInput(direction);
+        // can input a text, number, etc. and it tries to figure out the correct direction
+        this.func = positionFunction;
+        if (numDots === undefined) {numDots = 20;}
+        this.numDots = numDots;
+        this.tMin = tMin;
+        this.tMax = tMax;
+        this.tStep = (this.tMax - this.tMin) / this.numDots;
+
+        this.positionValues = this.calculatePositionValues(this.numDots);
+        this.positionPoints = this.calculatePositionPoints();
+
+        this.radius = 0;
+        this.setDefaultRadius();
+
+        this.arrowStartPoint = undefined;
+        this.arrowEndPoint = undefined;
+        this.setArrow();
+
+    }
+
+    calculatePositionValues(numDots) {
+        let positionValuesArray = [];
+        let q, t, x;
+        for (q = 0; q < numDots; q++) {
+            t = this.tMin + this.tStep * q;
+            x = this.func(t);
+            positionValuesArray.push(x);
+        }
+        return positionValuesArray;
+    }
+
+    calculatePositionPoints() {
+        let positionPoints = [];
+        let q, magnitude;
+        for (q = 0; q < this.positionValues.length; q++) {
+            magnitude = this.positionValues[q];
+            positionPoints.push(constructPointWithMagnitude(magnitude, this.theta));
+        }
+        return positionPoints;
+    }
+
+    setDefaultRadius() {
+        let minSpaceBetween = Math.abs(this.positionValues[1] - this.positionValues[0]);
+        let q;
+        for (q = 1; q < this.positionValues.length; q++) {
+            if (Math.abs(this.positionValues[q + 1] - this.positionValues[q]) < minSpaceBetween) {
+                minSpaceBetween = Math.abs(this.positionValues[q + 1] - this.positionValues[q]);
+            }
+        }
+        this.radius = minSpaceBetween / 4; // default radius
+    }
+
+    setRadius(newRadius) {
+        this.radius = newRadius;
+        this.setArrow();
+    }
+
+    multiplyRadius(factor) {
+        this.setRadius(this.radius * factor);
+    }
+
+    setArrow() {
+        let arrowStartPoint = this.positionPoints[0].interpolate(this.positionPoints[this.positionPoints.length - 1], 0.35);
+        let arrowEndPoint = this.positionPoints[0].interpolate(this.positionPoints[this.positionPoints.length - 1], 0.65);
+        let phi = arrowStartPoint.getPerpendicularAngle(arrowEndPoint);
+        let translation = this.radius * 3;
+
+        arrowStartPoint.translate(translation * Math.cos(phi), translation * Math.sin(phi));
+        arrowEndPoint.translate(translation* Math.cos(phi), translation * Math.sin(phi));
+
+        this.arrowStartPoint = arrowStartPoint;
+        this.arrowEndPoint = arrowEndPoint;
+    }
+
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        let thisCircle;
+        this.positionPoints.forEach((point) => {
+            thisCircle = super.addCircle(point, this.radius);
+            thisCircle.fill();
+        });
+        super.addArrow(this.arrowStartPoint, this.arrowEndPoint);
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
 
 }
 
