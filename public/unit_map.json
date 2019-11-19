@@ -1197,7 +1197,7 @@
             "level": 2,
             "letter": "D",
             "horizontal": 1,
-            "prerequisites": ["kinematic_graphs_connection"],
+            "prerequisites": ["kinematic_graph_connection"],
             "objective": "For single-step descriptions of motion, draw all relevant kinematic graphs correctly."
           },
           "stories_to_graph_selection_A":
