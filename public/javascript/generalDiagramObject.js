@@ -388,7 +388,9 @@ class Text {
         this.width = letters.length * this.relativeFontSize;
         this.height = this.relativeFontSize / 2;
         this.rectangle = constructRectangleFromCenter(centerPoint, this.width, this.height);
-        this.rectangle.rotateCounterClockwiseAboutCenter(rotationAngleInRadians);
+        if (this.rotationAngleInRadians) {
+            this.rectangle.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+        }
     }
 
 
