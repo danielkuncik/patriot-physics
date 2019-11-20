@@ -13,51 +13,19 @@
     Using the conservation of energy, fill out the table below:
 </p>
 
-<table>
-    <tr>
-        <td>
-            Position
-        </td>
-        <td>
-            KE
-        </td>
-        <td>
-            GPE
-        </td>
-        <td>
-            Total Energy
-        </td>
-    </tr>
-    <tr>
-        <td>A</td>
-        <td>0</td><td></td><td></td>
-    </tr>
-    <tr>
-        <td>B</td>
-        <td>44</td><td>65</td><td></td>
-    </tr>
-    <tr>
-        <td>C</td>
-        <td></td><td>19</td><td></td>
-    </tr>
-    <tr>
-        <td>D</td>
-        <td></td><td>0</td><td></td>
-    </tr>
-</table>
-
+<div id = 'energyTable'></div>
 
 <ol>
-    <li>
+    <li class = 'smallQuestion'>
         At what point is the ball moving the fastest? Why?
     </li>
-    <li>
+    <li class = 'smallQuestion'>
         As the ball rolls down the ramp, does kinetic energy increase, decrease, or remain the same?
     </li>
-    <li>
+    <li class = 'smallQuestion'>
         As the ball rolls down the ramp, does gravitational potential energy increase, decrease, or remain the same?
     </li>
-    <li>
+    <li class = 'smallQuestion'>
         As the ball rolls down the ramp, does total energy increase, decrease, or remain the same?
     </li>
 </ol>
@@ -92,9 +60,12 @@
     let rampC = drawRamp('C',0.6);
     let rampD = drawRamp('D',0.97);
 
-    $("#rampA").append(rampA.drawCanvas(400,400));
-    $("#rampB").append(rampB.drawCanvas(400,400));
-    $("#rampC").append(rampC.drawCanvas(400,400));
-    $("#rampD").append(rampD.drawCanvas(400,400));
+    $("#rampA").append(rampA.drawCanvas(300,300));
+    $("#rampB").append(rampB.drawCanvas(300,300));
+    $("#rampC").append(rampC.drawCanvas(300,300));
+    $("#rampD").append(rampD.drawCanvas(300,300));
+
+    let energyTable = new EnergyTable(4, ['ke','gpe','total_e']);
+    $("#energyTable").append(energyTable.draw(400,300));
 
 </script>
