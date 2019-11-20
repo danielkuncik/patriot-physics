@@ -30,49 +30,7 @@
     Assume that the ball loses no energy to friction or air resistance as it falls.
 </p>
 
-<table>
-    <tr>
-        <th>Point</th>
-        <th>Speed</th>
-        <th>Height</th>
-        <th>KE</th>
-        <th>GPE</th>
-        <th>Total Energy</th>
-    </tr>
-    <tr>
-        <th>A</th>
-        <td>0</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>B</th>
-        <td></td>
-        <td>0.85</td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>C</th>
-        <td>3.3</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>D</th>
-        <td>4.8</td>
-        <td>0</td>
-        <td>92.16</td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-
+<div id = 'energyTable'></div>
 
 <script>
     const ballRadius = 0.2;
@@ -109,4 +67,13 @@
     $("#rampC").append(rampC.drawCanvas(400,400));
     $("#rampD").append(rampD.drawCanvas(400,400));
 
+
+    let energyTable = new EnergyTable(4, ['speed', 'height', 'ke', 'gpe', 'total_e'])
+    energyTable.writeTextInCellKeys('A', 'speed', 0);
+    energyTable.writeTextInCellKeys('C', 'speed', 3.3);
+    energyTable.writeTextInCellKeys('D', 'speed', 4.8);
+    energyTable.writeTextInCellKeys('B', 'height', 0.85);
+    energyTable.writeTextInCellKeys('D', 'height', 0);
+    energyTable.writeTextInCellKeys('D', 'ke', 92.16)
+    $("#energyTable").append(energyTable.draw(500,500));
 </script>
