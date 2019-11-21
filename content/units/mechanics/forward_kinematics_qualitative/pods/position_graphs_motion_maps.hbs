@@ -34,8 +34,8 @@
 </ul>
 
 
-<h4>
-    Part 1: Motion Maps
+<h4 class = 'sectionHeader'>
+    Motion Maps
 </h4>
 <p class = 'definition'>
     A <strong>motion map</strong> is created by placing a dot at a person's location
@@ -65,7 +65,7 @@
     </li>
 </ul>
 
-<h4>
+<h4 class = 'sectionHeader'>
     Position-Time Graphs
 </h4>
 
@@ -78,17 +78,17 @@
 
 <ul>
     <li>
-        Position-time graph for moving with a constant velocity:
+        Position-time graph for an object moving with a constant velocity:
         <br>
         <div id = 'positionGraph1'></div>
     </li>
     <li>
-        Position-time graph for speeding up (positive acceleration):
+        Position-time graph for an object that is speeding up (positive acceleration):
         <br>
         <div id = 'positionGraph2'></div>
     </li>
     <li>
-        Position-time graph for slowing down (negative acceleration):
+        Position-time graph for an object that is slowing down (negative acceleration):
         <br>
         <div id = 'positionGraph3'></div>
     </li>
@@ -118,19 +118,15 @@
     motionMap4.multiplyRadius(1);
     $("#motionMap4").append(motionMap4.drawCanvas(300,300));
 
-    let positionGraph1 = new QualitativeGraph((x)=>x,0,10);
-    positionGraph1.labelAxes('time','position');
+    let positionGraph1 = makePositionGraphConstantVelocity();
     $("#positionGraph1").append(positionGraph1.drawCanvas(300,300));
 
-    let positionGraph2 = new QualitativeGraph((x)=>x*x,0,10);
-    positionGraph2.labelAxes('time','position');
+    let positionGraph2 = makePositionGraphPositiveAcceleration();
     $("#positionGraph2").append(positionGraph2.drawCanvas(300,300));
 
-    let positionGraph3 = new QualitativeGraph((x)=>10*x + 0.5 * (-1) * x * x,0,10);
-    positionGraph3.labelAxes('time','position');
+    let positionGraph3 = makePositionGraphNegativeAcceleration();
     $("#positionGraph3").append(positionGraph3.drawCanvas(300,300));
 
-    let positionGraph4 = new QualitativeGraph((x)=>5,0,10,1,0,10);
-    positionGraph4.labelAxes('time','position');
+    let positionGraph4 = makePositionGraphNotMoving();
     $("#positionGraph4").append(positionGraph4.drawCanvas(300,300));
 </script>

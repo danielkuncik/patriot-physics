@@ -123,3 +123,7 @@ div.equation {
 h3.podTitle {
     font-size: 24px;
 }
+
+h4.sectionHeader {
+    color: red;
+}

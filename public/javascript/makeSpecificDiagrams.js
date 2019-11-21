@@ -266,3 +266,61 @@ function fastFBD(forceArray, velocityDirection) {
     return myFBD;
 }
 
+
+/// Make simple qualitative kinematic graphs
+function makePositionGraphConstantVelocity() {
+    let positionGraph = new QualitativeGraph((x)=>x,0,10);
+    positionGraph.labelAxes('time','position');
+    positionGraph.moveLabelsToSide();
+    return positionGraph
+}
+
+function makePositionGraphPositiveAcceleration() {
+    let positionGraph = new QualitativeGraph((x)=>x*x,0,10);
+    positionGraph.labelAxes('time','position');
+    positionGraph.moveLabelsToSide();
+    return positionGraph
+}
+
+function makePositionGraphNegativeAcceleration() {
+    let positionGraph = new QualitativeGraph((x)=>10*x + 0.5 * (-1) * x * x,0,10);
+    positionGraph.labelAxes('time','position');
+    positionGraph.moveLabelsToSide();
+    return positionGraph
+}
+
+function makePositionGraphNotMoving() {
+    let positionGraph = new QualitativeGraph((x)=>5,0,10,1,0,10);
+    positionGraph.labelAxes('time','position');
+    positionGraph.moveLabelsToSide();
+    return positionGraph
+}
+
+function makeVelocityGraphConstantVelocity() {
+    let velocityGraph1 = new QualitativeGraph(() => 5, 0, 10, 1, 0, 10);
+    velocityGraph1.moveLabelsToSide();
+    velocityGraph1.labelAxes('time', 'velocity');
+    return velocityGraph1
+}
+
+function makeVelocityGraphPositiveAcceleration() {
+    let velocityGraph2 = new QualitativeGraph((v) => v, 0, 10);
+    velocityGraph2.moveLabelsToSide();
+    velocityGraph2.labelAxes('time', 'velocity');
+    return velocityGraph2
+}
+
+function makeVelocityGraphNegativeAcceleration() {
+    let velocityGraph3 = new QualitativeGraph((v) => 10 - v, 0, 11, 1, 0, 11);
+    velocityGraph3.moveLabelsToSide();
+    velocityGraph3.labelAxes('time', 'velocity');
+    return velocityGraph3
+}
+
+function makeVelocityGraphNotMoving() {
+    let velocityGraph4 = new QualitativeGraph(() => 0, 0, 10, 1, -0.5, 10);
+    velocityGraph4.moveLabelsToSide();
+    velocityGraph4.labelAxes('time', 'velocity');
+    velocityGraph4.addZeroLabel();
+    return velocityGraph4
+}

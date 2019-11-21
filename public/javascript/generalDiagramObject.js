@@ -479,14 +479,25 @@ class Circle {
 }
 
 class FunctionGraph {
-    constructor(func, xMin, xMax) {
+    constructor(func, xMin, xMax, forcedYmin, forcedYmax) {
         this.function = func;
         this.xMin = xMin;
         this.xMax = xMax;
         // error if xMin is less than xMax
         let range = this.getRange();
-        this.yMin = range[0];
-        this.yMax = range[1];
+        this.Yforced = false;
+        if (forcedYmin !== undefined) {
+            this.yMin = forcedYmin;
+            this.Yforced = true;
+        } else {
+            this.yMin = range[0];
+        }
+        if (forcedYmax !== undefined) {
+            this.yMax = forcedYmax;
+            this.Yforced = true;
+        } else {
+            this.yMax = range[1];
+        }
         this.rectangle = new Rectangle(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
     }
 
@@ -691,8 +702,8 @@ class Diagram {
 
     // should i add some sort of a workaround, in case a linear function etc. is inputted
     /// that makes it graph more clearly?
-    addFunctionGraph(func, xMin, xMax) {
-        let thisFunctionGraph = new FunctionGraph(func, xMin, xMax);
+    addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {
+        let thisFunctionGraph = new FunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax);
         this.addExistingPoint(thisFunctionGraph.rectangle.lowerLeftPoint);
         this.addExistingPoint(thisFunctionGraph.rectangle.upperLeftPoint);
         this.addExistingPoint(thisFunctionGraph.rectangle.lowerRightPoint);
@@ -992,23 +1003,36 @@ class Diagram {
             let xSteps = range / Nsteps;
             lastXVal = FunctionGraphObject.xMin;
             lastYval = FunctionGraphObject.function(lastXVal);
-            for (k = 1; k <= Nsteps; k++) {
-                thisXVal = FunctionGraphObject.xMin + xSteps * k;
-                thisYVal = FunctionGraphObject.function(thisXVal);
+            let yMax, yMin;
+            if (FunctionGraphObject.Yforced) {
+                yMax = FunctionGraphObject.yMax;
+                yMin = FunctionGraphObject.yMin;
+                for (k = 1; k <= Nsteps; k++) {
+                    thisXVal = FunctionGraphObject.xMin + xSteps * k;
+                    thisYVal = FunctionGraphObject.function(thisXVal);
+                    if (thisYVal > yMax || thisYVal < yMin) {
+                        // pass
+                    } else {
+                        ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
+                        ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                        ctx.stroke();
+                    }
 
-                /// the function was not transformed yet!
-                // so there are transformations are included here!
-                // ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
-                // ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                    lastXVal = thisXVal;
+                    lastYval = thisYVal;
+                }
+            } else {
+                for (k = 1; k <= Nsteps; k++) {
+                    thisXVal = FunctionGraphObject.xMin + xSteps * k;
+                    thisYVal = FunctionGraphObject.function(thisXVal);
 
-                ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
-                ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                    ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
+                    ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                    ctx.stroke();
 
-
-                ctx.stroke();
-
-                lastXVal = thisXVal;
-                lastYval = thisYVal;
+                    lastXVal = thisXVal;
+                    lastYval = thisYVal;
+                }
             }
 
         });

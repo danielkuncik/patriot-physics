@@ -1,0 +1,86 @@
+<h4 class = 'sectionHeader'>
+    Velocity-Time Graphs
+</h4>
+
+<p>
+    A <strong>velocity-time graph</strong> describes how fast
+    an object is moving.
+    If the velocity is higher, the object is moving faster.
+    If the velocity is lower, it is moving slower.
+    If the velocity is zero, the object is not moving.
+</p>
+
+<ul>
+    <li>
+        Velocity-time graph for an object moving with a constant velocity:
+        <br>
+        <div id = 'velocityGraph1'></div>
+    </li>
+    <li>
+        Velocity-time graph for an object that is speeding up (positive acceleration):
+        <br>
+        <div id = 'velocityGraph2'></div>
+    </li>
+    <li>
+        Velocity-time graph for an object that is slowing down (negative acceleration):
+        <br>
+        <div id = 'velocityGraph3'></div>
+    </li>
+    <li>
+        Velocity-time graph for an object that is not moving:
+        <br>
+        <div id = 'velocityGraph4'></div>
+    </li>
+</ul>
+
+<h4 class = 'sectionHeader'>
+    Acceleration-Time Graphs
+</h4>
+
+<p>
+    An <strong>acceleration-time</strong> graph describes
+    the rate of change of an objects velocity.
+    The acceleration-time graph is frequently the most
+    counter-intuitive of all the kinematic graphs.
+    In this unit, we will only learn about constant
+    acceleration motion, meaning the acceleration-time graphs
+    will always be horizontal lines or connected horizontal lines.
+</p>
+
+<ul>
+    <li>
+        Acceleration-time graph for an object moving at a constant velocity.
+        <br>
+        <div id = 'accelerationGraph1'></div>
+    </li>
+    <li>
+        Acceleration-time graph for an object that is speeding up (positive acceleration).
+        <div id = 'accelerationGraph2'></div>
+    </li>
+    <li>
+        Acceleration-time graph for an object that is slowing down (negative acceleration).
+        <br>
+        <div id = 'accelerationGraph3'></div>
+    </li>
+    <li>
+        Acceleration-time graph for an object that is not moving.
+        <br>
+        <div id = 'accelerationGraph4'></div>
+    </li>
+</ul>
+
+<script>
+    let velocityGraph1 = makeVelocityGraphConstantVelocity();
+    $("#velocityGraph1").append(velocityGraph1.drawCanvas(300,300));
+
+
+    let velocityGraph2 = makeVelocityGraphPositiveAcceleration();
+    $("#velocityGraph2").append(velocityGraph2.drawCanvas(300,300));
+
+
+    let velocityGraph3 = makeVelocityGraphNegativeAcceleration();
+    $("#velocityGraph3").append(velocityGraph3.drawCanvas(300,300));
+
+    let velocityGraph4 = makeVelocityGraphNotMoving();
+    $("#velocityGraph4").append(velocityGraph4.drawCanvas(300,300));
+</script>

@@ -263,16 +263,28 @@ class QualitativeGraph extends Diagram {
         this.func = yFunc;
         this.range = getRangeOfFunction(this.func, this.xMax0, this.xMin0);
         this.cutOffPossible = false; // if i force a particualr y value, i may need to cut the graph off after a point
+        this.Yforced = false;
         if (forcedYmin === undefined) {
             this.yMin0 = this.range.yMin;
         } else {
             this.yMin0 = forcedYmin;
+            this.Yforced = true;
         }
         if (forcedYmax === undefined) {
             this.yMax0 = this.range.yMax;
         } else {
             this.yMax0 = forcedYmax;
+            this.Yforced = true;
         }
+
+        this.zeroLabel = false;
+
+        this.setMultiplier();
+
+        this.lowerLeft = new Point(this.xMin0, this.yMin0 * this.yMultiplier);
+        this.upperLeft = new Point(this.xMin0, this.yMax0 * this.yMultiplier);
+        this.lowerRight = new Point(this.xMax0, this.yMin0 * this.yMultiplier);
+        this.upperRight = new Point(this.xMax0, this.yMax0 * this.yMultiplier);
 
         // quadrants that will be included in the graph
         if (this.xMax0 > 0 && this.yMax0 > 0) {
@@ -299,9 +311,14 @@ class QualitativeGraph extends Diagram {
             this.quadrant4 = false;
         }
 
+        if (this.quadrant1 && this.quadrant2) {
+            this.addZeroLabel();
+        }
+
         // determine if the graph is always zero
         if (this.range.yMin === 0 && this.range.yMax === 0) {
             this.zeroGraph = true;
+            this.addZeroLabel();
         } else {
             this.zeroGraph = false;
         }
@@ -346,35 +363,43 @@ class QualitativeGraph extends Diagram {
         this.yLabelPosition = 'side';
     }
 
-
-
     /*
-    Where will i put the labels?
-    how will i
+    I need some way to add the x-axis as a dotted line
+    and to label a single point as zero
+    first a break!
      */
 
-
-    //    addTwoPointsAndSegment(x1, y1, x2, y2) {
-    //     addFunctionGraph(func, xMin, xMax) {
-    //  addText(letters, centerPoint, relativeFontSize, rotation) {
+    addZeroLabel() {
+        this.zeroLabel = true;
+    }
+    removeZeroLabel() {
+        this.zeroLabel = false;
+    }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         this.setMultiplier();
-        super.addTwoPointsAndSegment(this.xMin0, 0, this.xMax0, 0);
-        super.addTwoPointsAndSegment(0, this.yMultiplier * this.yMin0, 0, this.yMultiplier * this.yMax0);
+        super.addSegment(this.lowerLeft, this.upperLeft);
+        super.addSegment(this.lowerLeft, this.lowerRight);
+        if (this.zeroLabel) {
+            super.addText('0', new Point(this.xMin0 - this.textDisplacement, 0), this.relativeFontSize);
+         //   super.addDashedLine(new Point(this.xMin0, 0), new Point(this.xMax0, 0), 10);
+        }
         let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
-        super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0);
-
+        if (this.Yforced) {
+            super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0, this.yMin0, this.yMax0);
+        } else {
+            super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0);
+        }
         if (this.xLabelPosition === 'end') {
             super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
         } else if (this.xLabelPosition === 'side') {
-            // add text below the x axis
+            super.labelLineBelow(this.lowerLeft, this.lowerRight, this.xLabel, this.textDisplacement, this.relativeFontSize);
         }
         // add an option if you want the label int he center
         if (this.yLabelPosition === 'end') {
             super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
         } else if (this.yLabelPosition === 'side') {
-            // add text to the side of the y-axis
+            super.labelLineAbove(this.lowerLeft, this.upperLeft, this.yLabel, this.textDisplacement, this.relativeFontSize);
         }
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
