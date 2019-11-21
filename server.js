@@ -36,7 +36,7 @@ function countVersionsOfQuiz(superUnitKey, unitKey, podKey) {
     let stillGoing = true;
     let totalVersions = 0;
     while (i < N && stillGoing) {
-        if (isXinArray(`v${i}.hbs`,process)) {
+        if (isXinArray(`v${i}.hbs`,process) || isXinArray(`v${i}.pdf`,process)) {
             totalVersions += 1;
         } else {
             stillGoing = false;
@@ -60,6 +60,7 @@ app.use(express.static(__dirname + '/public'));
 var quizMap = {};
 
 function prepareQuizMap() {
+    let versionCount, versionType;
     Object.keys(unitMap).forEach((superUnitKey) => {
         if (isItThere(`content/quizzes/${superUnitKey}`)) {
             quizMap[superUnitKey] = {};
@@ -76,8 +77,17 @@ function prepareQuizMap() {
         Object.keys(quizMap[superUnitKey]).forEach((unitKey) => {
             Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
                 if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}`)) {
+                    versionCount = countVersionsOfQuiz(superUnitKey, unitKey, podKey);
+                    if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}/v${versionCount}.hbs`)) {
+                        versionType = 'hbs';
+                    } else if (isItThere(`content/quizzes/${superUnitKey}/${unitKey}/${podKey}/v${versionCount}.pdf`)) {
+                        versionType = 'pdf';
+                    } else {
+                        versionType = 'none';
+                    }
                     quizMap[superUnitKey][unitKey][podKey] = {
-                        versions: countVersionsOfQuiz(superUnitKey, unitKey, podKey)
+                        versions: versionCount,
+                        fileType: versionType
                         // i need to add some sort of catch if the files are named incorrectly???
                     }
                 } else {
@@ -580,18 +590,27 @@ app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
                 selectedUnitKey: req.params.unitKey
             })
         } else {
-            let version = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
-            res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(version) +'.hbs', {
-                layout: 'quizPageLayout.hbs',
-                selectedUnitClusterKey: req.params.unitClusterKey,
-                selectedUnitKey: req.params.unitKey,
-                letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
-                title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
-                unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
-                unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
-                unitClusterTitle: unitMap[req.params.unitClusterKey].title,
-                level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level
-            });
+            let versionNumber = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
+            let versionType = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].fileType;
+            if (versionType === 'hbs') {
+                res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.hbs', {
+                    layout: 'quizPageLayout.hbs',
+                    selectedUnitClusterKey: req.params.unitClusterKey,
+                    selectedUnitKey: req.params.unitKey,
+                    letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
+                    title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
+                    unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
+                    unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
+                    unitClusterTitle: unitMap[req.params.unitClusterKey].title,
+                    level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level
+                });
+            } else if (versionType === 'pdf') {
+                let filePath = '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.pdf';
+                fs.readFile(__dirname + filePath , function (err,data){
+                    res.contentType("application/pdf");
+                    res.send(data);
+                });
+            }
         }
     } else {
         res.render('quizPasscodePage.hbs', {

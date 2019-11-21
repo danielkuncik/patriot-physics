@@ -2488,7 +2488,7 @@
             "level": 4,
             "horizontal": 2,
             "letter": "M",
-            "prerequisites": ["work_on_system"],
+            "prerequisites": ["work_done_on_system"],
             "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions"
           },
           "vertical_spring_system":
