@@ -566,7 +566,7 @@ app.get('/quizzes/:unitClusterKey/:unitKey', (req, res) => {
 
 /// add security for quizzes!
 
-const quizPasscode = '871241';
+const quizPasscode = '464974';
 
 
 // individual quiz page
