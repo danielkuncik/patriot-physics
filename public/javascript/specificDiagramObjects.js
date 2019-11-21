@@ -255,23 +255,40 @@ class QualitativeGraph extends Diagram {
         }
 
 
-        // all xMin and xMax, and yMin and yMax have a 0 attached to prevent overlap with the
-        // same variables in the funciton above
+        this.simpleFunctionGraph = undefined;
+        this.stepWiseFunctionObjectGraph = undefined;
+        this.yFuncMin = undefined;
+        this.yFuncMax = undefined;
+
+        // all xMin and xMax, and yMin and yMax have a 0 attached to prevent confusion with the
+        // min and max values of th the function
         this.xMin0 = xMin;
         this.xMax0 = xMax;
-
         this.func = yFunc;
-        this.range = getRangeOfFunction(this.func, this.xMax0, this.xMin0);
-        this.cutOffPossible = false; // if i force a particualr y value, i may need to cut the graph off after a point
+        if (typeof(this.func) === "function" ) { // simple graph
+            this.simpleFunctionGraph = true;
+
+            this.range = getRangeOfFunction(this.func, this.xMax0, this.xMin0);
+            this.yFuncMin = this.range.yMin;
+            this.yFuncMax = this.range.yMax;
+
+        } else if (typeof(this.func) === "object" && yFunc.stepwiseFunctionObject) {
+            this.stepWiseFunctionObjectGraph = true;
+            this.yFuncMin = yFunc.yMin;
+            this.yFuncMax = yFunc.yMax;
+        }
+
+
+
         this.Yforced = false;
         if (forcedYmin === undefined) {
-            this.yMin0 = this.range.yMin;
+            this.yMin0 = this.yFuncMin;
         } else {
             this.yMin0 = forcedYmin;
             this.Yforced = true;
         }
         if (forcedYmax === undefined) {
-            this.yMax0 = this.range.yMax;
+            this.yMax0 = this.yFuncMax;
         } else {
             this.yMax0 = forcedYmax;
             this.Yforced = true;
@@ -318,7 +335,7 @@ class QualitativeGraph extends Diagram {
         }
 
         // determine if the graph is always zero
-        if (this.range.yMin === 0 && this.range.yMax === 0) {
+        if (this.yFuncMin === 0 && this.yFuncMax === 0) {
             this.zeroGraph = true;
             this.addZeroLabel();
         } else {
@@ -326,7 +343,7 @@ class QualitativeGraph extends Diagram {
         }
 
         // determine if the graph is a constant value
-        if (this.range.yMin === this.range.yMax) {
+        if (this.yFuncMin === this.yFuncMax) {
             this.constantGraph = true;
         } else {
             this.constantGraph = false;
@@ -393,12 +410,7 @@ class QualitativeGraph extends Diagram {
             super.addText('0', new Point(this.xMin0 - this.textDisplacement/2, 0), this.relativeFontSize);
             super.addDashedLine(new Point(this.xMin0, 0), new Point(this.xMax0, 0));
         }
-        let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
-        if (this.Yforced) {
-            super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0, this.yMin0, this.yMax0);
-        } else {
-            super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0);
-        }
+
         if (this.xLabelPosition === 'end') {
             super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
         } else if (this.xLabelPosition === 'side') {
@@ -410,6 +422,23 @@ class QualitativeGraph extends Diagram {
         } else if (this.yLabelPosition === 'side') {
             super.labelLineAbove(this.lowerLeft, this.upperLeft, this.yLabel, this.textDisplacement, this.relativeFontSize);
         }
+
+        // graph the actual function
+        if (this.simpleFunctionGraph) { // just graphing a normal function
+            let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
+            if (this.Yforced) {
+                super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0, this.yMin0, this.yMax0);
+            } else {
+                super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0);
+            }
+        } else if (this.stepWiseFunctionObjectGraph) { // graphing a stepwise function object
+            if (this.Yforced) {
+                this.func.addToDiagram(this, this.yMultiplier,(this.xMax0 - this.xMin0) * 0.03, this.yMin0, this.yMax0);
+            } else {
+                this.func.addToDiagram(this, this.yMultiplier, (this.xMax0 - this.xMin0) * 0.03);
+            }
+        }
+
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
