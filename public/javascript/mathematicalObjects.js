@@ -144,6 +144,6 @@ class StepwiseFunctionObject {
                 };
                 Diagram.addFunctionGraph(thisCurve, step.x1, step.x2, forcedYmin, forcedYmax);
             }
-        })
+        });
     }
 }
