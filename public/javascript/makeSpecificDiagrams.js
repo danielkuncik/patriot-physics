@@ -324,3 +324,27 @@ function makeVelocityGraphNotMoving() {
     velocityGraph4.addZeroLabel();
     return velocityGraph4
 }
+
+function makeAccelerationGraphPositive() {
+    let accelerationGraph1 = new QualitativeGraph(() => 5, 0,10,1,-10,10);
+    accelerationGraph1.moveLabelsToSide();
+    accelerationGraph1.labelAxes('time', 'acceleration');
+    accelerationGraph1.removeHorizontalAxis();
+    return accelerationGraph1
+}
+
+function makeAccelerationGraphNegative() {
+    let accelerationGraph2 = new QualitativeGraph(() => -5, 0, 10, 1, -10, 10);
+    accelerationGraph2.moveLabelsToSide();
+    accelerationGraph2.labelAxes('time', 'acceleration');
+    accelerationGraph2.removeHorizontalAxis();
+    return accelerationGraph2
+}
+
+function makeAccelerationGraphZero() {
+    let accelerationGraph3 = new QualitativeGraph(() => 0, 0, 10, 1, -10, 10);
+    accelerationGraph3.moveLabelsToSide();
+    accelerationGraph3.labelAxes('time', 'acceleration');
+    accelerationGraph3.removeHorizontalAxis();
+    return accelerationGraph3
+}

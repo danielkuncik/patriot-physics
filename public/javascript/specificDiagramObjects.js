@@ -125,13 +125,13 @@ class QuantitativeGraph extends Diagram {
     /// i will need to put some thought into how the dotted lines work so that they look nice!
     // adds a dotted line
     addXAxisReferenceLine(position) {
-        super.addDashedLine(new Point(position, this.yMinOnGraph), new Point(position, this.yMaxOnGraph), 15);
+        super.addDottedLine(new Point(position, this.yMinOnGraph), new Point(position, this.yMaxOnGraph), 15);
         // function here
         // adds a vertical dotted line at this position on the axis
     }
 
     addYAxisReferenceLine(position) {
-        super.addDashedLine(new Point(this.xMinOnGraph, position * this.yMultiplier), new Point(this.xMaxOnGraph, position * this.yMultiplier), 15);
+        super.addDottedLine(new Point(this.xMinOnGraph, position * this.yMultiplier), new Point(this.xMaxOnGraph, position * this.yMultiplier), 15);
         // function here
         // adds a horizontal dotted line at this position on the y axis
     }
@@ -286,6 +286,8 @@ class QualitativeGraph extends Diagram {
         this.lowerRight = new Point(this.xMax0, this.yMin0 * this.yMultiplier);
         this.upperRight = new Point(this.xMax0, this.yMax0 * this.yMultiplier);
 
+        this.horizontalAxis = true;
+
         // quadrants that will be included in the graph
         if (this.xMax0 > 0 && this.yMax0 > 0) {
             this.quadrant1 = true;
@@ -305,13 +307,13 @@ class QualitativeGraph extends Diagram {
             this.quadrant3 = false;
         }
 
-        if (this.xMax0 > 0 && this.yMax0 < 0) {
+        if (this.xMax0 > 0 && this.yMin0 < 0) {
             this.quadrant4 = true;
         } else {
             this.quadrant4 = false;
         }
 
-        if (this.quadrant1 && this.quadrant2) {
+        if (this.quadrant1 && this.quadrant4) {
             this.addZeroLabel();
         }
 
@@ -376,13 +378,20 @@ class QualitativeGraph extends Diagram {
         this.zeroLabel = false;
     }
 
+    removeHorizontalAxis() {
+        this.horizontalAxis = false;
+    }
+
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         this.setMultiplier();
         super.addSegment(this.lowerLeft, this.upperLeft);
-        super.addSegment(this.lowerLeft, this.lowerRight);
+        if (this.horizontalAxis) {
+            super.addSegment(this.lowerLeft, this.lowerRight);
+        }
         if (this.zeroLabel) {
-            super.addText('0', new Point(this.xMin0 - this.textDisplacement, 0), this.relativeFontSize);
-         //   super.addDashedLine(new Point(this.xMin0, 0), new Point(this.xMax0, 0), 10);
+            this.textDisplacement *= 3;
+            super.addText('0', new Point(this.xMin0 - this.textDisplacement/2, 0), this.relativeFontSize);
+            super.addDashedLine(new Point(this.xMin0, 0), new Point(this.xMax0, 0));
         }
         let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
         if (this.Yforced) {

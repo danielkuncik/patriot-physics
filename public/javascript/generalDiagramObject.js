@@ -254,6 +254,7 @@ class Segment {
         this.color = "#000000";
         this.cap = "butt";
         this.dotted = false;
+        this.dashed = false;
     }
 
     // do i want thickness to scale with the rest of the image??
@@ -276,6 +277,10 @@ class Segment {
         this.dotted = true;
         this.setThickness(1);
     };
+
+    turnIntoDashedLine() {
+        this.dashed = true;
+    }
 
     // if Point 1 were the origin, returns the angle to the horizontal of Point 2
     // returns angles theta such that 0 <= theta < 2pi
@@ -844,11 +849,16 @@ class Diagram {
         //     n++;
         // }
 
+        let newLine = this.addSegment(point1, point2);
+        newLine.turnIntoDashedLine();
+        return newLine
+    };
 
+    addDottedLine(point1, point2) {
         let newLine = this.addSegment(point1, point2);
         newLine.turnIntoDottedLine();
         return newLine
-    };
+    }
 
     // mergeWithAnotherDiagram
     merge(anotherDiagram, whichSide, bufferSpace) {
@@ -984,6 +994,17 @@ class Diagram {
                         ctx.stroke();
                     }
                 }
+            } else if (segment.dashed) {
+                let length = segment.getLength();
+                let Ndashes = 7;
+                //let solidToSpaceRatio = 0.5;
+                let Lsolid = length / Ndashes / 2;
+                ctx.beginPath();
+                ctx.setLineDash([Lsolid]);
+                ctx.moveTo(wiggleRoom + segment.point1.x, canvasHeight - wiggleRoom - segment.point1.y);
+                ctx.lineTo(wiggleRoom + segment.point2.x, canvasHeight - wiggleRoom - segment.point2.y);
+                ctx.stroke();
+                // ctx.setLineDash([]);
             } else { /// normal (not dotted) lines
                 ctx.beginPath();
                 ctx.moveTo(wiggleRoom + segment.point1.x, canvasHeight - wiggleRoom - segment.point1.y);
