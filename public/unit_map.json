@@ -1215,7 +1215,7 @@
             "level": 3,
             "horizontal": 1,
             "letter": "F",
-            "prerequisites": ["kinematic_graph_comparisons"],
+            "prerequisites": ["kinematics_definitions"],
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
           },
           "stories_to_graph_selection_B":
