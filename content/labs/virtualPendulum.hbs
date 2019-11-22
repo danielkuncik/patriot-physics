@@ -1,0 +1,79 @@
+<p>
+    If you are in AP physics,
+    then you must complete this lab in your lab notebook.
+</p>
+<h3>
+    Virtual Pendulum Lab
+</h3>
+
+<p>
+    The purpose of this lab is to repeat the <strong>quantitative</strong> pendulum lab,
+    but using a computer simulation of a pendulum.
+    Minus any friction or air resistance, the data should nearly perfectly reflect the theory.
+</p>
+
+
+<iframe src="https://phet.colorado.edu/sims/html/pendulum-lab/latest/pendulum-lab_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+
+<p>
+    The virtual pendulum simulation is created by the Phet Physics Group
+    at the University of Colorado at Boulder.
+    The original webpage can be accessed <a href = 'https://phet.colorado.edu/en/simulation/pendulum-lab'>here</a>.
+</p>
+
+<ol>
+    <li>
+        First, play around with the simulation for about 10 minutes.
+        Look at all the different modes and different things you can change.
+        ONe th
+    </li>
+    <li>
+        Put the pendulum simulation in <strong>lab</strong> mode,
+        where there is a period timer.
+        Set the friction to <strong>none</strong>.
+        Set the gravity to Jupiter (24.79 m/s<sup>2</sup>).
+        (Because we already did the lab on earth, let's try something else this time.)
+    </li>
+    <li>
+        Vary the length of the pendulum, and measure the period for each length.
+        Record at least 10 data points on period and length in a table in your lab notebook.
+        <div id = 'dataTableDiv'></div>
+        <br>
+        Please don't fill in the data in this table.
+        This is a model of the table you should draw in your lab notebook.
+    </li>
+    <li>
+        Create a scatterplot of your data with Period on the vertical-axis
+        and the square root of length on the horizontal-axis.
+        (Please don't draw a scatterplot by hand, create one with a computer
+        and then paste it into your lab folder.
+        It's very important that it is accurate).
+    </li>
+    <li>
+        Your scatterplot should be linear and should go through the origin.
+        Draw a best-fit line and determine its slope.
+        You may use linear regression if you know how, or you may
+        geometrically determine the slope of the line.
+    </li>
+    <li>
+        The period of a pendulum is given by
+        $$
+        T = 2 \pi \sqrt{\frac{l}{}}
+        $$
+        This can be written as
+        $$
+        T = \frac{2 \pi}{\sqrt{g}} \cdot \sqrt{l}
+        $$
+        Therefore, in your graph relating period to the square root of length,
+        the slope of the line should be equal to \( \frac{2 \pi}{\sqrt{g}} \).
+        Use this information to solve and find the free-fall acceleration on Jupiter.
+    </li>
+</ol>
+
+
+<script>
+    let dataTable = new Table(11,3);
+    dataTable.addTopHeaders(['length','\\( \\sqrt{\\text{length}} \\)','period']);
+    $("#dataTableDiv").append(dataTable.draw(400,800));
+
+</script>
