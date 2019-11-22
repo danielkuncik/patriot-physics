@@ -1,0 +1,163 @@
+<p>
+    If you are in AP physics,
+    you must complete this lab in your lab notebook.
+</p>
+<h3>
+    Prove the Kinetic Friction Formula
+</h3>
+
+<p>
+    The magnitude of kinetic friction acting on an object
+    is given by the formula
+    $$
+    F_{frk} = F_N \cdot \mu_k
+    $$
+    In which \( F_N \) gives the normal force
+    between teh two objects and \( \mu_k \)
+    gives the coefficient of kinetic friction,
+    a constant measureable value.
+</p>
+
+<p>
+    The goal of this lab is to prove this formula
+    using the concept of proportionality.
+</p>
+
+<h5>
+    Pre-Lab analyisis
+</h5>
+<p>
+    Assume that an object of mass \( m \)
+    is being dragged by a force \( F_a \)
+    at a <emph>constant speed</emph>
+    across some table.
+    Assume that the applied force \( F_a \)
+    and the mass \( m \) are both measurable quantities.
+</p>
+<ol>
+    <li>
+        Draw a free-body diagram of the object being drawn.
+        Label the magnitudes of each forces in
+        terms of \( m \), \( g \), \( F_N \), \( F_a \), and \( \mu_k \).
+    </li>
+    <li>
+        Determine the net force acting on the block.
+        Explicitly refer to any principles of physics used to determine the net force.
+    </li>
+    <li>
+        Based on the net force you determined and the free-body diagram,
+        create a formula for the applied force \( F_a \)
+        in terms of the mass \( m \), free-fall acceleration \( g \),
+        and the coefficient of kinetic friction \( \mu_k \).
+    </li>
+    <li>
+        Based on the formula above, describe the proportionality relationship
+        between the applied force and the mass of the object.
+    </li>
+    <li>
+        If a graph contains applied force on the vertical axis
+        and mass on the horizontal axis,
+        what does the theory predict this graph would look like?
+        If it is a line, what would be the physical significance of the
+        slope of that line?
+        (This is the falsifiable hypothesis!)
+    </li>
+</ol>
+
+<p>
+    If you completed the pre-lab analysis,
+    you used the theories of physics we know
+    to create a <emph>falsifiable hypothesis</emph>.
+    A <emph>falsifiable hypothesis</emph>
+    is some statement that can be tested.
+    If the data you measure are consistent with the <emph>falsifiable hypothesis</emph>,
+    that means the theory describes the situation examined.
+</p>
+
+<h5>
+    Lab Analysis:
+</h5>
+
+<p>
+    Get a force meter,
+    and an object that you can drag across the table
+    with a constant velocity.
+    The object must have an adjustable mass
+    (For example, a block with a hook and several weights
+    that can be added or removed.)
+</p>
+
+<ol>
+    <li>
+        While varying the amount of mass on your
+        object, measure the applied force necessary
+        to move this object at a <emph>constant velocity</emph>.
+        Measure at least 20 different data points.
+        In your lab notebook, create a table like the table below
+        that relates the mass to the applied force.
+        <br>
+        <div id = 'dataTableDiv'></div>
+    </li>
+    <li>
+        Create a scatterplot of the data in your table.
+        Please create a scatterplot on a computer,
+        print it out, and paste it into your lab notebook.
+    </li>
+</ol>
+
+<h4>
+    Post-Lab Analysis
+</h4>
+
+<p>
+    To conduct the post-lab analysis,
+    you will either draw a best-fit line or conduct a linear regression.
+
+</p>
+
+<h5>
+    If you draw a best-fit line
+</h5>
+<ol>
+    <li>
+        Are most of the points close to the line?
+        If so, the data are close to the theory.
+    </li>
+    <li>
+        Does the line go through the origin?
+        If so, the data are consistent with the theory.
+    </li>
+    <li>
+        What is the slope of the best-fit line?
+        Use the slope in order to make a measurement of
+        the coefficient of kinetic friction \( \mu_k \)
+        for the two surfaces that were in contact.
+    </li>
+</ol>
+
+<h5>
+    If you conducted a linear regression:
+</h5>
+
+<ol>
+    <li>
+        How much of the variance in the applied
+        force is described by variance in the mass \( r^2 \)?
+    </li>
+    <li>
+        Does the line go through the origin?
+        \( \left( b = 0 \right) \).
+    </li>
+    <li>
+        What is the slope of the line \( a \)?
+        Use the slope in order to make a measurement of
+        the coefficient of kinetic friction \( \mu_k \)
+        for the two surfaces that were in contact.
+    </li>
+</ol>
+
+<script>
+    let dataTable = new Table(21,2);
+    dataTable.addTopHeaders(['Applied Force', 'mass']);
+    $("#dataTableDiv").append(dataTable.draw(200,800));
+</script>
