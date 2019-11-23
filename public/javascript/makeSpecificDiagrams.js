@@ -348,3 +348,27 @@ function makeAccelerationGraphZero() {
     accelerationGraph3.removeHorizontalAxis();
     return accelerationGraph3
 }
+
+function makeMotionMapConstantVelocity() {
+    let motionMap1 = new MotionMap((x)=>x,0,20,10);
+    motionMap1.multiplyRadius(0.6);
+    return motionMap1
+}
+
+function makeMotionMapPositiveAcceleration() {
+    let motionMap2 = new MotionMap((x) => x*x, 0, 100, 8);
+    motionMap2.multiplyRadius(3);
+    return motionMap2
+}
+
+function makeMotionMapNegativeAcceleration() {
+    let motionMap3 = new MotionMap((t) => 10*t + 0.5 * (-1) * t*t, 0, 10, 8);
+    motionMap3.multiplyRadius(1.6);
+    return motionMap3
+}
+
+function makeMotionMapNotMoving() {
+    let motionMap4 = new MotionMap((t) => 0, 0, 10, 10);
+    motionMap4.multiplyRadius(1);
+    return motionMap4
+}

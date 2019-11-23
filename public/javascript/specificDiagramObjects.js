@@ -456,7 +456,7 @@ class QualitativeKinematicGraphSet {
 }
 
 class MotionMap extends Diagram {
-    constructor(positionFunction, tMin, tMax, numDots, direction) {
+    constructor(positionFunction, tMin, tMax, numDots, direction, forcedRadius) {
         super();
 
 
@@ -480,7 +480,11 @@ class MotionMap extends Diagram {
         this.positionPoints = this.calculatePositionPoints();
 
         this.radius = 0;
-        this.setDefaultRadius();
+        if (forcedRadius !== undefined) {
+            this.radius = forcedRadius;
+        } else {
+            this.setDefaultRadius();
+        }
 
         this.arrowStartPoint = undefined;
         this.arrowEndPoint = undefined;
