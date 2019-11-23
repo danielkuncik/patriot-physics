@@ -130,9 +130,9 @@ class Point {
         this.translate(-1 * centerRotationPoint.x, -1 * centerRotationPoint.y);
         let xPrime = this.x * Math.cos(rotationAngleInRadians) - this.y * Math.sin(rotationAngleInRadians);
         let yPrime = this.y * Math.cos(rotationAngleInRadians) + this.x * Math.sin(rotationAngleInRadians);
-        this.translate(centerRotationPoint.x, centerRotationPoint.y);
         this.x = xPrime;
         this.y = yPrime;
+        this.translate(centerRotationPoint.x, centerRotationPoint.y);
     }
 
     rescale(scaleFactor) {
