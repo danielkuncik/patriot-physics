@@ -339,7 +339,7 @@ class Rectangle {
         // console.log(isNaN(this.lowerLeftPoint.x));
         // console.log(typeof(this.lowerLeftPoint.x));
         // console.log(this.lowerLeftPoint);
-        this.centerPoint = new Point(leftX + width / 2, bottomY + width / 2);
+        this.centerPoint = new Point(leftX + width / 2, bottomY + height / 2);
         this.segments = [];
     }
 
