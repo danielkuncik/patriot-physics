@@ -5446,22 +5446,40 @@
         "honors": true,
         "pods":
         {
+          "electrostatic_basics":
+          {
+            "title": "Electrostatic Basics",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Describe basic facts about electricity necessary to study electrostatics: parts of an atom; attraction and repulsion of subatomic particles"
+          },
           "charging_by_friction_electrostatic_discharge":
           {
             "title": "Charging by friction and electrostatic discharge",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["electrostatic_basics"],
             "objective": "Draw diagrams charging by friction and electrostatic discharge; recgonize real-life examples of each."
+          },
+          "what_is_charge":
+          {
+            "title": "What is charge?",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["charging_by_friction_electrostatic_discharge"],
+            "objective": "Describe qualitatively and quantitatively what it means for an object to be charged; describe how an object gains a positive or a negative charge."
           },
           "shocks_lightning":
           {
             "title": "Shocks and lightning",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["what_is_charge"],
             "objective": "Draw diagrams and write narrative explaining how an electric shock, a bolt of lightning, and/or a gas station fire occurs",
             "notes": "Gas station fires will be included here."
           },
@@ -5469,36 +5487,36 @@
           {
             "title": "Electrostatics vs. Electric Current",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["shocks_lightning"],
             "objective": "Compare and contrast between static and current electricity; recognize examples of both"
           },
           "electrostatic_induction":
           {
             "title": "Electrostatic Induction",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Define electrostatic polarization; draw diagrams and write narrative to show how electric charge can be acquired without exchange of electrons; recall real world examples of electrostatic induction."
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["electrostatics_vs_electric_current"],
+            "objective": "Define electrostatic polarization as a type of charge; draw diagrams and write narrative to show how electric charge can be acquired without exchange of electrons; recall real world examples of electrostatic induction."
           },
           "van_de_graaf_generator":
           {
             "title": "The van de Graaf Generator",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "G",
+            "prerequisites": ["electrostatic_induction"],
             "objective": "Draw diagrams and give narrative explaining how a van de Graaf Generator generates large shocks, causes hair to raise, and causes other effects."
           },
           "positives_or_negative_charge":
           {
             "title": "Positive or negative charge?",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["van_de_graaf_generator"],
             "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict.",
             "notes": "In particular, describe how a van de Graaf generator works opporsite of how it is often described."
           }
