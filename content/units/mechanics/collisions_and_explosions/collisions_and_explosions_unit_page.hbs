@@ -1,0 +1,19 @@
+<div id = 'putItHere'></div>
+
+<script>
+  let myTable = new Table(4,4);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(0,0);
+  myTable.mergeBelow(2,1);
+  myTable.mergeRight(0,1);
+  myTable.mergeRight(0,1);
+  myTable.mergeRight(0,1);
+
+
+  $("#putItHere").append(myTable.draw(500,500));
+</script>

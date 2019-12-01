@@ -169,6 +169,43 @@ class Table {
         }
     }
 
+    // causes cell i,j to merge with the cell below
+    // does not work if that particular cell is already merged
+    // need to keep merging the top cell
+    mergeBelow(i,j) {
+      if (this.cellInfoArray[i][j]["captureBelow"] === undefined) {
+        this.cellInfoArray[i][j]["captureBelow"] = 1;
+      } else if (this.cellInfoArray[i][j]["captureBelow"] > 0 ) {
+        this.cellInfoArray[i][j]["captureBelow"] += 1;
+      }
+      if (i + this.cellInfoArray[i][j]["captureBelow"] + 1 > this.numRows) {
+        console.log('ERROR: Attempting to merge beyond maximum number of rows. Setting to max number of rows.');
+        this.cellInfoArray[i][j]["captureBelow"] = this.numColumns - i - 1;
+      }
+
+      let k;
+      for (k = 1; k <= this.cellInfoArray[i][j]["captureBelow"]; k++) {
+        this.cellInfoArray[i + k][j].merged = true;
+      }
+    }
+
+    // need to add an error handler for if you go out of range!
+    mergeRight(i,j) {
+      if (this.cellInfoArray[i][j]["captureRight"] === undefined) {
+        this.cellInfoArray[i][j]["captureRight"] = 1;
+      } else if (this.cellInfoArray[i][j]["captureRight"] > 0 ) {
+        this.cellInfoArray[i][j]["captureRight"] += 1;
+      }
+      if (j + this.cellInfoArray[i][j]["captureRight"] + 1 > this.numColumns) {
+        console.log('ERROR: attempting to merge beyond maximum number of columns. Setting to max number of columns.');
+        this.cellInfoArray[i][j]["captureRight"] = this.numColumns - j - 1;
+      }
+      let k;
+      for (k = 1; k <= this.cellInfoArray[i][j]["captureRight"]; k++) {
+        this.cellInfoArray[i][j + k].merged = true;
+      }
+    }
+
     setClassOfTopRow(newClass) {
         this.setClassOfRow(0, newClass);
     }
@@ -228,6 +265,26 @@ class Table {
         }
     }
 
+    // gets the sum of the height of i and a certain number of cells below
+    sumRowProportions(i, captureBelow) {
+      let sum = this.rowProportionArray[i];
+      let k;
+      for (k = 0; k < captureBelow; k++) {
+        sum += this.rowProportionArray[i + k];
+      }
+      return sum
+    }
+
+    // gets the sum the widths for column j and a certain number of columns to the right
+    sumColumnProportions(j, captureRight) {
+      let sum = this.columnProportionArray[j];
+      let k;
+      for (k = 0; k < captureRight; k++) {
+        sum += this.columnProportionArray[j + k];
+      }
+      return sum
+    }
+
     draw(width, height, unit) {
         if (unit === undefined) {unit = 'px';}
 
@@ -235,22 +292,55 @@ class Table {
         let columnProportions = makeArraySumToOne(this.columnProportionArray);
 
         let table = $("<table></table>");
-        let i, j, thisRow, thisCell;
+        let i, j, thisRow, thisCell, rowspan, colspan, cellWidth, cellHeight, rowHeight, cellProperties;
         for (i = 0; i < this.numRows; i++) {
-            thisRow = $(`<tr height = "${height * rowProportions[i]}${unit}"></tr>`);
+            rowHeight = height * rowProportions[i];
+            thisRow = $(`<tr height = "${rowHeight}${unit}"></tr>`);
             for (j = 0; j < this.numColumns; j++) {
-                if (this.cellInfoArray[i][j].header) {
-                    thisCell = $(`<th width = "${width * columnProportions[j]}${unit}"></th>`);
+                if (this.cellInfoArray[i][j].merged) {
+                  // skip all this!
                 } else {
-                    thisCell = $(`<td width = "${width * columnProportions[j]}${unit}"></td>`);
+
+                  // deal with capture below
+                  if (this.cellInfoArray[i][j].captureBelow) {
+                    rowspan = this.cellInfoArray[i][j].captureBelow + 1;
+                    cellHeight = this.sumRowProportions(i, this.cellInfoArray[i][j].captureBelow) * height;
+                  } else {
+                    rowspan = 0;
+                    cellHeight = rowHeight;
+                  }
+
+                  // deal with capture right
+                  if (this.cellInfoArray[i][j].captureRight) {
+                    colspan = this.cellInfoArray[i][j].captureRight + 1;
+                    cellWidth = this.sumColumnProportions(j, this.cellInfoArray[i][j].captureRight) * width;
+                  } else {
+                    colspan = 0;
+                    cellWidth = width * columnProportions[j];
+                  }
+
+                  cellProperties = `width = "${cellWidth}${unit}" height = "${cellHeight}${unit}"`;
+
+                  if (rowspan) {
+                    cellProperties = cellProperties += ` rowspan = "${rowspan}"`
+                  }
+                  if (colspan) {
+                    cellProperties = cellProperties += `colspan = "${colspan}"`;
+                  }
+
+                  if (this.cellInfoArray[i][j].header) {
+                      thisCell = $(`<th ${cellProperties}></th>`);
+                  } else {
+                      thisCell = $(`<td ${cellProperties}></td>`);
+                  }
+                  if (this.cellInfoArray[i][j].text !== undefined) {
+                      $(thisCell).append($(document.createTextNode(this.cellInfoArray[i][j].text)));
+                  }
+                  if (this.cellInfoArray[i][j].class) {
+                      $(thisCell).addClass(this.cellInfoArray[i][j].class);
+                  }
+                  $(thisRow).append(thisCell);
                 }
-                if (this.cellInfoArray[i][j].text !== undefined) {
-                    $(thisCell).append($(document.createTextNode(this.cellInfoArray[i][j].text)));
-                }
-                if (this.cellInfoArray[i][j].class) {
-                    $(thisCell).addClass(this.cellInfoArray[i][j].class);
-                }
-                $(thisRow).append(thisCell);
             }
             $(table).append(thisRow);
         }
