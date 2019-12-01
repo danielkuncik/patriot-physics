@@ -136,3 +136,40 @@ class EnergyTable extends Table {
         }
     }
 }
+
+class MomentumTable extends Table {
+  constructor() {
+    super(5,6);
+
+    this.setNameOfObjects("Car A", "Car B");
+
+    super.mergeBelow(0,0);
+    super.shadeUpperLeftCorner();
+    super.addSideHeaders(["","","mass (kg)","velocity (m/s)", "momentum (kg m/s)"]);
+    super.mergeRight(0,1);
+    super.mergeRight(0,4);
+    super.writeTextInRow(0,["","Before Collision","","","After Collision", ""]);
+    super.mergeBelow(0,3);
+    super.mergeBelow(0,3);
+    super.mergeBelow(0,3);
+    super.writeTextInCell(0,3,'Total Momentum');
+  }
+
+  // default is
+  // object1 = car A
+  //object 2 = car B
+  setNameOfObjects(object1, object2) {
+    this.object1 = object1;
+    this.object2 = object2;
+    super.writeTextInRow(1,["",object1,object2,"",object1, object2]);
+  }
+
+  makeTotallyInelasticCollision() {
+    super.mergeRight(1,4);
+    super.mergeRight(2,4);
+    super.mergeRight(3,4);
+    super.mergeRight(4,4);
+    super.writeTextInCell(1,4,`${this.object1} and ${this.object2}`);
+  }
+
+}
