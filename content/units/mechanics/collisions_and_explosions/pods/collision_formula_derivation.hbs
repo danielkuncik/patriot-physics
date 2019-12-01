@@ -1,9 +1,22 @@
 <p>
-    Derive a formula that explains a collision.
+    In all of the sections thus far,
+    we have examined collisions quantitatively using
+    tables to organize our information.
+    As you might have expected, professional physicists use large equations
+    in order to quantitatively explain collisions.
+    A main goal of level 3 is to work from using tables to using equations.
+    However, it is crucial when using equations to not merely plug information
+    into a memorized equation but to be able to explain where an equation is derived from
+    and what each term of that equation means.
+    The goal of this section is to continue using tables in order to derive
+    equations, and to examine the individual terms of those equations.
 </p>
 
 <ol>
     <li>
+        <h5>
+            A General Collision
+        </h5>
         <p>
             Two cars have a collision.
             Use the table below to develop a table that describes
@@ -14,10 +27,10 @@
                 Before the collision...
                 <ul>
                     <li>
-                        Car A has a mass of \( m_A \) and a velocity of \( v_{ai} \).
+                        Car A has a mass of \( m_a \) and a velocity of \( v_{ai} \).
                     </li>
                     <li>
-                        Car B has a mass of \( m_B \) and a velocity of \( v_{bi} \).
+                        Car B has a mass of \( m_b \) and a velocity of \( v_{bi} \).
                     </li>
                 </ul>
             </li>
@@ -36,18 +49,27 @@
         <p>
             Fill out the table below using the algebraic values described.
         </p>
-        <!-- TABLE-->
+        <div id = 'generalCollisionTable'></div>
+        <script>
+            let generalCollisionTable = new MomentumTable();
+            generalCollisionTable.deleteUnits();
+            $("#generalCollisionTable").append(generalCollisionTable.draw(500,500));
+        </script>
         <p>
             Create an <emph>equation</emph> that describes the conservation of momentum
             for the collision of the two cars.
             Your equation should contain 4 terms and include six different variables:
-            \( m_A \), \( m_B \), \( v_{ai} \), \( v_{bi} \), \( v_{af} \), and \( v_{bf} \).
+            \( m_a \), \( m_b \), \( v_{ai} \), \( v_{bi} \), \( v_{af} \), and \( v_{bf} \).
         </p>
         <p>
             Briefly describe what each term of your conservation of momentum equation represents.
         </p>
     </li>
+    <div class = 'pageBreak'></div>
     <li>
+        <h5>
+            A Perfectly Inelastic Collision
+        </h5>
         <p>
             Two cars have a perfectly inelastic collision.
             Use the table below in order to derive a formula for the conservation
@@ -58,10 +80,10 @@
                 Before the collision...
                 <ul>
                     <li>
-                        Car A has a mass of \( m_A \) and a velocity of \( v_{ai} \).
+                        Car A has a mass of \( m_a \) and a velocity of \( v_{ai} \).
                     </li>
                     <li>
-                        Car B has a mass of \( m_B \) and a velocity of \( v_{bi} \).
+                        Car B has a mass of \( m_b \) and a velocity of \( v_{bi} \).
                     </li>
                 </ul>
             </li>
@@ -77,18 +99,28 @@
         <p>
             Fill out the table below using the algebraic values described.
         </p>
-        <!-- TABLE-->
+        <div id = 'inelasticCollisionTable'></div>
+        <script>
+            let inelasticCollisionTable = new MomentumTable();
+            inelasticCollisionTable.deleteUnits();
+            inelasticCollisionTable.makeTotallyInelasticCollision();
+            $("#inelasticCollisionTable").append(inelasticCollisionTable.draw(500,500));
+        </script>
         <p>
             Create an <emph>equation</emph> that describes the conservation of momentum
             for the collision of the two cars.
             Your equation should contain 3 terms and include six different variables:
-            \( m_A \), \( m_B \), \( v_{ai} \), \( v_{bi} \), and \( v_f \).
+            \( m_a \), \( m_b \), \( v_{ai} \), \( v_{bi} \), and \( v_f \).
         </p>
         <p>
             Briefly describe what each term of your conservation of momentum equation represents.
         </p>
     </li>
+    <div class = 'pageBreak'></div>
     <li>
+        <h5>
+            An explosion
+        </h5>
         <p>
             A cannon fires a cannonball and as a result, the cannon recoils.
             Use the information and the table below to derive a
@@ -102,7 +134,7 @@
                         The cannon has a mass of \( M_C \) and is stationary.
                     </li>
                     <li>
-                        The cannonball has a mass of \( m_c \) and is stationary.
+                        The cannonball has a mass of \( m_b \) and is stationary.
                     </li>
                 </ul>
             </li>
@@ -113,23 +145,45 @@
                         The cannon has a velocity of \( v_{Cf} \).
                     </li>
                     <li>
-                        The cannonball has a velocity of \( v_{cf} \).
+                        The cannonball has a velocity of \( v_{bf} \).
                     </li>
                 </ul>
             </li>
             <p>
                 Fill out the table below using the given algebraic variables:
             </p>
-            <!--TABLE -->
+            <div id = 'explosionTable'></div>
+            <script>
+                let explosionTable = new MomentumTable();
+                explosionTable.deleteUnits();
+                explosionTable.setNameOfObjects('Cannon', 'Cannonball');
+                $("#explosionTable").append(explosionTable.draw(500,500));
+            </script>
             <p>
                 Create an <emph>equation</emph> that describes the conservation of momentum
                 for the explosion.
                 Your equation should have only 2 terms and include the variables
-                \( M_C \), \( m_c \), \( v_{Cf} \), and \( v_{cf} \).
+                \( M_C \), \( m_b \), \( v_{Cf} \), and \( v_{bf} \).
             </p>
             <p>
                 Briefly describe what each term of your equation represents.
             </p>
         </ul>
+    </li>
+</ol>
+
+<div class = 'pageBreak'></div>
+<h4>
+    Answers:
+</h4>
+<ol>
+    <li>
+        \( m_a v_{ai} + m_b v_{bi} = m_a v_{af} + m_b v_{bf} \)
+    </li>
+    <li>
+        \( m_a v_{ai} + m_b v_{bi} = \left( m_a + m_b \right) v_f \)
+    </li>
+    <li>
+        \( 0 = M_C v_{Cf} + m_b v_{bf} \)
     </li>
 </ol>

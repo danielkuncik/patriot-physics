@@ -145,14 +145,21 @@ class MomentumTable extends Table {
 
     super.mergeBelow(0,0);
     super.shadeUpperLeftCorner();
-    super.addSideHeaders(["","","mass (kg)","velocity (m/s)", "momentum (kg m/s)"]);
+    this.setUnits('kg','m/s','kg m/s');
+    this.makeCollisionTable();
     super.mergeRight(0,1);
     super.mergeRight(0,4);
-    super.writeTextInRow(0,["","Before Collision","","","After Collision", ""]);
     super.mergeBelow(0,3);
     super.mergeBelow(0,3);
     super.mergeBelow(0,3);
-    super.writeTextInCell(0,3,'Total Momentum');
+  }
+
+  setUnits(massUnit, velocityUnit, momentumUnit) {
+      super.addSideHeaders(["","",`mass (${massUnit})`,`velocity (${velocityUnit})`, `momentum (${momentumUnit})`]);
+  }
+
+  deleteUnits() {
+      super.addSideHeaders(["","","mass","velocity", "momentum"]);
   }
 
   // default is
@@ -162,6 +169,14 @@ class MomentumTable extends Table {
     this.object1 = object1;
     this.object2 = object2;
     super.writeTextInRow(1,["",object1,object2,"",object1, object2]);
+  }
+
+  makeCollisionTable() {
+      super.writeTextInRow(0,["","Before Collision","","Total Momentum","After Collision", ""]);
+  }
+
+  makeExplosionTable() {
+      super.writeTextInRow(0,["","Before Explosion","","Total Momentum","After Explosion", ""]);
   }
 
   makeTotallyInelasticCollision() {
