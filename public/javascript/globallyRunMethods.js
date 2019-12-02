@@ -2,6 +2,7 @@
 This javascript file contains method that are run as a part of every page
  */
 
+
 // automatically correctly numbers multiple lists of questions
 // eg. so if the first list has 4 questions, the next will start with question 5
 // and automatically creates a list of answers
@@ -17,10 +18,29 @@ $(".questionList").each((i) => {
         questionNumber += 1;
         if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
+            $(".answerList").append(`<li>${thisAnswer}</li>`);
+        } else if ($(thisQuestion).find("ol.subQuestionList").length === 1) {//isXinArray('ol.subQuestionList', $(thisQuestion).children() )) {
+            let subQuestionList, thisSubQuestion, subAnswerList, k, thisSubAnswer, subAnswerListType;
+            subQuestionList = $(thisQuestion).find("ol.subQuestionList")[0];
+            subAnswerListType = $(subQuestionList).attr('type');
+            subAnswerList = $(`<ol type = ${subAnswerListType}></ol>`); // make this changeable?
+            $(subQuestionList).children().each((k) => {
+                thisSubQuestion = $(subQuestionList).children()[k];
+                if ($(thisSubQuestion).data()['answer'] !== undefined) {
+                    thisSubAnswer = $(thisSubQuestion).data()['answer'];
+                    $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
+                } else {
+                    thisSubAnswer = 'xxx';
+                    $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
+                }
+            });
+            thisAnswer = $("<li></li>");
+            $(thisAnswer).append(subAnswerList);
+            $(".answerList").append(thisAnswer);
         } else {
             thisAnswer = 'xxx';
+            $(".answerList").append(`<li>${thisAnswer}</li>`);
         }
-        $(".answerList").append(`<li>${thisAnswer}</li>`);
     });
 });
 
