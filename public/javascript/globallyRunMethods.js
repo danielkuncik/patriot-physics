@@ -14,7 +14,7 @@ $(".questionList").each((i) => {
     thisQuestionList = $(".questionList")[i];
     $(thisQuestionList).attr('start',String(questionNumber));
     $(thisQuestionList).children().each((j) => {
-        thisQuestion = $(thisQuestionList).children()[j];
+        thisQuestion = $(thisQuestionList).find("li.question")[j];
         questionNumber += 1;
         if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
@@ -25,7 +25,7 @@ $(".questionList").each((i) => {
             subAnswerListType = $(subQuestionList).attr('type');
             subAnswerList = $(`<ol type = ${subAnswerListType}></ol>`); // make this changeable?
             $(subQuestionList).children().each((k) => {
-                thisSubQuestion = $(subQuestionList).children()[k];
+                thisSubQuestion = $(subQuestionList).find("li.subQuestion")[k];
                 if ($(thisSubQuestion).data()['answer'] !== undefined) {
                     thisSubAnswer = $(thisSubQuestion).data()['answer'];
                     $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
