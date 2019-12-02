@@ -3130,23 +3130,23 @@
             "prerequisites": ["collision_formula_derivation"],
             "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given."
           },
-          "conservation_of_momentum_6":
+          "collision_energy":
           {
-            "title": "Conservation of Momentum 6",
+            "title": "Collision Energy",
             "level": 3,
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["conservation_of_momentum_5"],
-            "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given."
+            "objective": "Given a collision or explosion, analyze the collision quantitatively, determine if kinetic energy is lost, gained, or conserved; analyze the source of work done on a system."
           },
-          "conservation_of_momentum_7":
+          "conservation_of_momentum_6":
           {
-            "title": "Conservation of Momentum 7",
+            "title": "Conservation of Momentum 6",
             "subtitle": "Symbolic Analysis",
             "level": 4,
             "horizontal": 2,
             "letter": "J",
-            "prerequisites":  ["conservation_of_momentum_6"],
+            "prerequisites":  ["collision_energy"],
             "objective": "Solve for an algebraic solution to collision and explosion problems; prove solutions are dimensionally correct; use proportionality to analyze solutions"
           },
           "elastic_collisions":

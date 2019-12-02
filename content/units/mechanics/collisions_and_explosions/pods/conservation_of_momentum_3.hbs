@@ -43,13 +43,119 @@ Head-On Collisions
         </ul>
         <div id = 'table1' class = 'basicMomentumTable'></div>
     </li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li> <!--add a few totally inelastic collision probelms here -->
-    <li></li>
-    <li></li>
+    <li>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of 300 kg and is moving RIGHT with a speed of 12 m/s.
+                    </li>
+                    <li>
+                        Car B has a mass of 100 kg and is moving LEFT with a speed of 6 m/s.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car A is stationary.
+                    </li>
+                    <li>
+                        What is the <emph>magnitude</emph> and <emph>direction</emph>
+                        of car B's velocity?
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id = 'table1' class = 'basicMomentumTable'></div>
+    </li>
+    <li>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of 100 kg and is moving LEFT with a speed of 8 m/s.
+                    </li>
+                    <li>
+                        Car B has a mass of 150 kg and is moving RIGHT with a speed of 4 m/s.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car B is stationary.
+                    </li>
+                    <li>
+                        What is the <emph>magnitude</emph> and <emph>direction</emph>
+                        of car A's velocity?
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id = 'table1' class = 'basicMomentumTable'></div>
+
+    </li>
+    <li>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of 30 kg and is moving RIGHT with a speed of 12 m/s.
+                    </li>
+                    <li>
+                        Car B has a mass of 40 kg and is moving LEFT with a speed of 6 m/s.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car A moving to the LEFT with a speed of 2 m/s.
+                    </li>
+                    <li>
+                        What is the <emph>magnitude</emph> and <emph>direction</emph>
+                        of car B's velocity?
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id = 'table1' class = 'basicMomentumTable'></div>
+    </li>
+    <li>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of 2000 kg and is moving RIGHT with a speed of 3 m/s.
+                    </li>
+                    <li>
+                        Car B has a mass of 4000 kg and is moving LEFT with a speed of 9 m/s.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car A is moving LEFT with a speed of 8 m/s.
+                    </li>
+                    <li>
+                        What is the <emph>magnitude</emph> and <emph>direction</emph>
+                        of car B's velocity?
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id = 'table1' class = 'basicMomentumTable'></div>
+    </li>
     <li data-answer = 'The cars are stopped.'>
         <ul>
             <li>
@@ -72,6 +178,20 @@ Head-On Collisions
         </ul>
         <div id = 'table1' class = 'totallyInelasticTable'></div>
     </li>
+    <li></li> <!--add two more totally inelastic collision problems here -->
+    <li></li>
+    <li></li> <!-- add some 'bounce backwards' problems-->
+    <li>
+        A bumper car with a mass of 200 kg is driving forward (+) really fast,
+        with a speed of 30 m/s.
+        It slams directly into a truck with a mass of 4000 kg that
+        is stationary.
+        The bumper car bounces backwards (-) with a speed of 30 m/s.
+        The truck begins slowly rolling.
+        Determine the magnitude and direction of the bumper car's velocity
+        after the collision.
+        <div class = 'momentumTable2'></div>
+    </li>
 </ol>
 
 <script>
@@ -81,6 +201,10 @@ Head-On Collisions
     let totallyInelasticTable = new MomentumTable();
     totallyInelasticTable.makeTotallyInelasticCollision();
     $(".totallyInelasticTable").append(totallyInelasticTable.draw(350,350));
+
+    let momentumTable2 = new MomentumTable();
+    momentumTable2.setNameOfObjects('bumper car', 'truck');
+    $(".momentumTable2").append(momentumTable2.draw(350,350));
 </script>
 
 <h4>
