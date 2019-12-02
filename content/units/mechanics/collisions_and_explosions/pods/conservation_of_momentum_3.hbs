@@ -1,19 +1,87 @@
 <!--
 Head-On Collisions
 -->
+<p>
+    In the previous two sections,
+    we used the conservation of momentum
+    to analyze two cars in a crash.
+    All of these were rear-end collisions,
+    in which one car hit another moving in the same direction.
+</p>
 
+<p>
+    In this section, we will move to head-on collisions.
+    In these problems, objects move in two different directions.
+</p>
 
 <ol class = 'questionList'>
+    <li>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of 400 kg and is moving RIGHT with a speed of 10 m/s.
+                    </li>
+                    <li>
+                        Car B has a mass of 200 kg and is moving LEFT with a speed of 5 m/s.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car A is stationary.
+                    </li>
+                    <li>
+                        What is the <emph>magnitude</emph> and <emph>direction</emph>
+                        of car B's velocity?
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div id = 'table1' class = 'basicMomentumTable'></div>
+    </li>
     <li></li>
     <li></li>
     <li></li>
     <li></li>
+    <li></li> <!--add a few totally inelastic collision probelms here -->
     <li></li>
     <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li data-answer = 'The cars are stopped.'>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of 400 kg and is moving RIGHT with a speed of 5 m/s.
+                    </li>
+                    <li>
+                        Car B has a mass of 200 kg and is moving LEFT with a speed of 10 m/s.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                The collision is <strong>totally inelastic</strong>.
+            </li>
+            <li>
+                What happens after the collision?
+            </li>
+        </ul>
+        <div id = 'table1' class = 'totallyInelasticTable'></div>
+    </li>
 </ol>
+
+<script>
+    let basicMomentumTable = new MomentumTable();
+    $(".basicMomentumTable").append(basicMomentumTable.draw(350,350));
+
+    let totallyInelasticTable = new MomentumTable();
+    totallyInelasticTable.makeTotallyInelasticCollision();
+    $(".totallyInelasticTable").append(totallyInelasticTable.draw(350,350));
+</script>
 
 <h4>
     Answers
