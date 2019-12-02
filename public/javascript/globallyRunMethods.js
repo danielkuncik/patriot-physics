@@ -15,7 +15,7 @@ $(".questionList").each((i) => {
     $(thisQuestionList).children().each((j) => {
         thisQuestion = $(thisQuestionList).children()[j];
         questionNumber += 1;
-        if ($(thisQuestion).data()['answer']) {
+        if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
         } else {
             thisAnswer = 'xxx';
