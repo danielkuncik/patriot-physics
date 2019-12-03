@@ -1209,7 +1209,7 @@
             "prerequisites": ["kinematic_graph_comparisons"],
             "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration."
           },
-          "stories_to_graph_selection_A":
+          "story_to_graph_selection_A":
           {
             "title": "Story to Graph Selection A",
             "level": 3,
@@ -1218,7 +1218,7 @@
             "prerequisites": ["kinematics_definitions"],
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
           },
-          "stories_to_graph_selection_B":
+          "story_to_graph_selection_B":
           {
             "title": "Story to Graph Selection B",
             "level": 3,

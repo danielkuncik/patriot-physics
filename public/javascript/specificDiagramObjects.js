@@ -262,13 +262,12 @@ class QualitativeGraph extends Diagram {
 
         // all xMin and xMax, and yMin and yMax have a 0 attached to prevent confusion with the
         // min and max values of th the function
-        this.xMin0 = xMin;
-        this.xMax0 = xMax;
+
         this.func = yFunc;
         if (typeof(this.func) === "function" ) { // simple graph
             this.simpleFunctionGraph = true;
 
-            this.range = getRangeOfFunction(this.func, this.xMax0, this.xMin0);
+            this.range = getRangeOfFunction(this.func, xMin, xMax);
             this.yFuncMin = this.range.yMin;
             this.yFuncMax = this.range.yMax;
 
@@ -276,10 +275,19 @@ class QualitativeGraph extends Diagram {
             this.stepWiseFunctionObjectGraph = true;
             this.yFuncMin = yFunc.yMin;
             this.yFuncMax = yFunc.yMax;
+            if (xMin === undefined) {
+                xMin = this.func.xMin; // if using a stepwise function object, automatic x minimums are allowed
+            }
+            if (xMax === undefined) {
+                xMax = this.func.xMax;
+            }
         }
+        this.xMin0 = xMin;
+        this.xMax0 = xMax;
 
 
 
+        // if y has forced values
         this.Yforced = false;
         if (forcedYmin === undefined) {
             this.yMin0 = this.yFuncMin;
@@ -295,15 +303,6 @@ class QualitativeGraph extends Diagram {
         }
 
         this.zeroLabel = false;
-
-        this.setMultiplier();
-
-        this.lowerLeft = new Point(this.xMin0, this.yMin0 * this.yMultiplier);
-        this.upperLeft = new Point(this.xMin0, this.yMax0 * this.yMultiplier);
-        this.lowerRight = new Point(this.xMax0, this.yMin0 * this.yMultiplier);
-        this.upperRight = new Point(this.xMax0, this.yMax0 * this.yMultiplier);
-
-        this.horizontalAxis = true;
 
         // quadrants that will be included in the graph
         if (this.xMax0 > 0 && this.yMax0 > 0) {
@@ -330,6 +329,8 @@ class QualitativeGraph extends Diagram {
             this.quadrant4 = false;
         }
 
+
+
         if (this.quadrant1 && this.quadrant4) {
             this.addZeroLabel();
         }
@@ -348,6 +349,114 @@ class QualitativeGraph extends Diagram {
         } else {
             this.constantGraph = false;
         }
+
+        // ends of axes
+        this.leftEndHorizontal = undefined;
+        this.rightEndHorizontal = undefined;
+        this.topEndVertical = undefined;
+        this.bottomEndVertical = undefined;
+
+
+        /// i think there's lots of unnecessary cod ein this part
+        if (this.Yforced) {
+            this.setMultiplier();
+            this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
+            this.leftEndHorizontal = new Point(this.xMin0, 0);
+            this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+            this.rightEndHorizontal = new Point(this.xMax0, 0);
+        } else {
+            if (this.quadrant1 && !this.quadrant2 && !this.quadrant3 && !this.quadrant4) {
+                this.xMin0 = 0;
+                this.yMin0 = 0;
+                this.setMultiplier();
+                // quadrant 1 only
+                this.bottomEndVertical = origin;
+                this.leftEndHorizontal = origin;
+                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new Point(this.xMax0, 0);
+            } else if (this.quadrant2 && !this.quadrant1 && !this.quadrant3 && !this.quadrant4) {
+                // quadrant 2 only
+                this.xMax0 = 0;
+                this.yMin0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = origin;
+                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = origin;
+            } else if (this.quadrant3 && !this.quadrant1 && !this.quadrant2 && !this.quadrant4) {
+                // quadrant 3 only
+                this.xMax0 = 0;
+                this.yMax0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = new Point(0,this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.topEndVertical = origin;
+                this.rightEndHorizontal = origin
+            } else if (this.quadrant4 && !this.quadrant1 && !this.quadrant2 && !this.quadrant3) {
+                // quadrant 4 only
+                this.xMin0 = 0;
+                this.yMax0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = new Point(0,this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = origin;
+                this.topEndVertical = origin;
+                this.rightEndHorizontal = new Point(this.xMin0, 0);
+            } else if (this.quadrant1 && this.quadrant2 && !this.quadrant3 && !this.quadrant4) {
+                // quadrants 1 and 2
+                this.yMax0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = origin;
+                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new Point(this.xMax0, 0);
+            } else if (this.quadrant3 && this.quadrant4 && !this.quadrant1 && !this.quadrant2) {
+                // quadrants 3 and 4
+                this.yMax0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.topEndVertical = origin;
+                this.rightEndHorizontal = new Point(this.xMax0, 0);
+            } else if (this.quadrant1 && this.quadrant4 && !this.quadrant2 && !this.quadrant3) {
+                // quadrants 1 and 4
+                this.xMin0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = origin;
+                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new Point(this.xMax0, 0);
+            } else if (this.quadrant2 && this.quadrant3 && !this.quadrant1 && !this.quadrant4) {
+                // quadrants 2 and 3
+                this.xMax0 = 0;
+                this.setMultiplier();
+
+                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = origin;
+            } else {
+                this.setMultiplier();
+                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new Point(this.xMax0, 0);
+            }
+        }
+
+        // corners
+        this.lowerLeft = new Point(this.leftEndHorizontal.x, this.bottomEndVertical.y);
+        this.upperLeft = new Point(this.leftEndHorizontal.x, this.topEndVertical.y);
+        this.lowerRight = new Point(this.rightEndHorizontal.x, this.bottomEndVertical.y);
+        this.upperRight = new Point(this.rightEndHorizontal.x, this.topEndVertical.y);
+
+
+        this.horizontalAxis = true;
 
         // default values for labels
         this.xLabel = 'x';
@@ -368,8 +477,10 @@ class QualitativeGraph extends Diagram {
     }
 
     setMultiplier() {
-        this.yMultiplier = this.desiredAspectRatio * (this.xMin0 - this.xMax0)  / (this.yMin0 - this.yMax0);
+        this.yMultiplier = ( (this.xMax0 - this.xMin0) / (this.yMax0 - this.yMin0) ) / this.desiredAspectRatio ;
+        // desired aspect ratio divided by current aspect ratio
     }
+
 
 
     moveLabelsToEnd() {
@@ -400,10 +511,18 @@ class QualitativeGraph extends Diagram {
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        // add four corners as points
+        super.addExistingPoint(this.lowerRight);
+        super.addExistingPoint(this.lowerLeft);
+        super.addExistingPoint(this.upperRight);
+        super.addExistingPoint(this.upperLeft);
+
         this.setMultiplier();
-        super.addSegment(this.lowerLeft, this.upperLeft);
+
+        // vertical axies
+        super.addSegment(this.topEndVertical, this.bottomEndVertical);
         if (this.horizontalAxis) {
-            super.addSegment(this.lowerLeft, this.lowerRight);
+            super.addSegment(this.leftEndHorizontal, this.rightEndHorizontal);
         }
         if (this.zeroLabel) {
             this.textDisplacement *= 3;
@@ -425,7 +544,8 @@ class QualitativeGraph extends Diagram {
 
         // graph the actual function
         if (this.simpleFunctionGraph) { // just graphing a normal function
-            let correctedFunction = ((x) => this.func(x) * this.yMultiplier);
+            let correctedFunction = ((x) => {
+                return this.func(x) * this.yMultiplier});
             if (this.Yforced) {
                 super.addFunctionGraph(correctedFunction, this.xMin0, this.xMax0, this.yMin0, this.yMax0);
             } else {
@@ -445,15 +565,6 @@ class QualitativeGraph extends Diagram {
     /// i need to add correction for aspect ratio
 }
 
-class QualitativeKinematicGraphSet {
-    constructor() {
-        this.timeArray = [];
-        this.positionArray = [];
-        this.velocityArray = [];
-        this.accelerationArray = [];
-    }
-
-}
 
 class MotionMap extends Diagram {
     constructor(positionFunction, tMin, tMax, numDots, direction, forcedRadius) {

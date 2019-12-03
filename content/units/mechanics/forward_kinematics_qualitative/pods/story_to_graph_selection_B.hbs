@@ -1,0 +1,25 @@
+<p>
+    In this section,
+    you will continue working on the same type of problem
+    as in the previous section.
+</p>
+
+<p>
+    CURRENTLY UNDER CONSTRUCTION!
+</p>
+
+<div id = 'test1'></div>
+<div id = 'test2'></div>
+<div id = 'test3'></div>
+
+<script>
+    let myFunc = new KinematicStepwiseFunctions(0,10,2); // i need that two there...i don't particularly like it but it has to be there!
+    myFunc.addAcceleratedStep(2,10);
+    let graphs = myFunc.makeQualitativeGraphs();
+    $("#test1").append(graphs.positionGraph.drawCanvas(300,300));
+    $("#test2").append(graphs.velocityGraph.drawCanvas(300,300));
+    $("#test3").append(graphs.accelertionGraph.drawCanvas(300,300));
+
+    // well...there are things to work on! fer sur
+    // but its a start!
+</script>

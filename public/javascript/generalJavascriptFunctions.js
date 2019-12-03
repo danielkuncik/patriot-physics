@@ -90,6 +90,7 @@ function getRangeOfFunction(func, xMin, xMax, N) {
         yMax: yMax
     }
 }
+
 function sumOfArray(array) {
     let sum = 0;
     array.forEach((element) => {
