@@ -570,17 +570,27 @@ class MotionMap extends Diagram {
     constructor(positionFunction, tMin, tMax, numDots, direction, forcedRadius) {
         super();
 
+        if (typeof(positionFunction) === 'function') {
+            this.type = 'simpleFunction';
+            this.simpleFunction = true;
+            this.func = positionFunction;
+        } else if (typeof(positionFunction) === 'object' && positionFunction.stepwiseFunctionObject) {
+            this.type = 'stepwiseFunctionObject';
+            this.simpleFunction = false;
+            this.stepwiseFunctionObject = true;
+            this.func = positionFunction.getFunction();
+        }
 
         if (direction === undefined) {direction = 0;}
         this.theta = processDirectionInput(direction);
         // can input a text, number, etc. and it tries to figure out the correct direction
-        this.func = positionFunction;
         this.tMin = tMin;
         this.tMax = tMax;
         this.constantFunction = false;
         if (isItAConstantFunction(this.func, this.tMin, this.tMax)) {
             this.constantFunction = true;
         }
+
 
         if (numDots === undefined) {numDots = 10;}
         this.numDots = numDots;

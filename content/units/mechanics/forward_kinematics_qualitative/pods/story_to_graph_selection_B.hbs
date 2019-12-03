@@ -8,18 +8,99 @@
     CURRENTLY UNDER CONSTRUCTION!
 </p>
 
+<div id = 'storyTable'></div>
+<div id = 'positionGraphTable'></div>
+<div id = 'velocityGraphTable'></div>
+<div id = 'accelerationGraphTable'></div>
+<div id = 'motionMapTable'></div>
+
 <div id = 'test1'></div>
 <div id = 'test2'></div>
 <div id = 'test3'></div>
+<div id = 'test4'></div>
+<div id = 'test5'></div>
+
 
 <script>
-    let myFunc = new KinematicStepwiseFunctions(0,10,2); // i need that two there...i don't particularly like it but it has to be there!
-    myFunc.addAcceleratedStep(2,10);
-    let graphs = myFunc.makeQualitativeGraphs();
-    $("#test1").append(graphs.positionGraph.drawCanvas(300,300));
-    $("#test2").append(graphs.velocityGraph.drawCanvas(300,300));
-    $("#test3").append(graphs.accelertionGraph.drawCanvas(300,300));
+    // let myFunc = new KinematicStepwiseFunctions(0,10,2); // i need that two there...i don't particularly like it but it has to be there!
+    // myFunc.addAcceleratedStep(2,10);
+    // let graphs = myFunc.makeQualitativeGraphs();
+    // $("#test1").append(graphs.positionGraph.drawCanvas(300,300));
+    // $("#test2").append(graphs.velocityGraph.drawCanvas(300,300));
+    // $("#test3").append(graphs.accelertionGraph.drawCanvas(300,300));
+    // $("#test4").append(graphs.motionMap.drawCanvas(300,300));
 
-    // well...there are things to work on! fer sur
-    // but its a start!
+    let function1 = new KinematicStepwiseFunctions(0,5);
+    function1.addConstantVelocityStep(5);
+    function1.addAcceleratedStep(1.5,5);
+    let graphs1 = function1.makeQualitativeGraphs('1. Constant velocity followed by positive acceleration.');
+    // $("#test1").append(graphs1.story);
+    // $("#test2").append(graphs1.positionGraph.drawCanvas(300,300));
+    // $("#test3").append(graphs1.velocityGraph.drawCanvas(300,300));
+    // $("#test4").append(graphs1.accelertionGraph.drawCanvas(300,300));
+    // $("#test5").append(graphs1.motionMap.drawCanvas(300,300));
+
+    let function2 = new KinematicStepwiseFunctions(0,5);
+    function2.addConstantVelocityStep(5);
+    function2.addAcceleratedStep(-1, 5);
+    let graphs2 = function2.makeQualitativeGraphs('2. Constant velocity followed by negative acceleration.');
+
+    let function3 = new KinematicStepwiseFunctions(0,0,1);
+    function3.addAcceleratedStep(1,5);
+    function3.addConstantVelocityStep(5);
+    let graphs3 = function3.makeQualitativeGraphs('3. Positive acceleration followed by constant velocity');
+
+    let function4 = new KinematicStepwiseFunctions(0,0,1);
+    function4.addAcceleratedStep(1,5);
+    function4.addAcceleratedStep(-1,5);
+    let graphs4 = function4.makeQualitativeGraphs('4. Positive acceleration followed by negative acceleration');
+
+    let function5 = new KinematicStepwiseFunctions(0,5,-1);
+    function5.addAcceleratedStep(-1,5);
+    function5.addAcceleratedStep(1,5);
+    let graphs5 = function5.makeQualitativeGraphs('5. Negative acceleration followed by negative acceleration');
+
+    let function6 = new KinematicStepwiseFunctions(0,10,-1);
+    function6.addAcceleratedStep(-1,5);
+    function6.addConstantVelocityStep(5);
+    let graphs6 = function6.makeQualitativeGraphs('6. Negative acceleration followed by constant velocity');
+
+    let storyTable = new Table(7, 5);
+    storyTable.addTopHeaders(['Story', 'Position-Time Graph', 'Velocity-Time Graph', 'Acceleration-Time Graph', 'Motion Map']);
+    storyTable.addSideHeaders(['Story', graphs1.story, graphs2.story, graphs3.story, graphs4.story, graphs5.story, graphs6.story]);
+    storyTable.setClassOfAllCells('storyTable');
+
+    $("#storyTable").append(storyTable.draw(500,500));
+
+    let positionGraphTable = new TableOfCanvasses(3,2,'Position Graph', 'position_table');
+    positionGraphTable.addDiagramsToCells([graphs1.positionGraph, graphs2.positionGraph,
+        graphs3.positionGraph, graphs4.positionGraph,
+        graphs5.positionGraph, graphs6.positionGraph]);
+    $("#positionGraphTable").append(positionGraphTable.draw(1200,800));
+
+    let velocityGraphTable = new TableOfCanvasses(3,2, 'Velocity Graph', 'velocity_table');
+    velocityGraphTable.addDiagramsToCells([
+        graphs1.velocityGraph, graphs2.velocityGraph,
+            graphs3.velocityGraph, graphs4.velocityGraph,
+            graphs5.velocityGraph, graphs6.velocityGraph
+    ]);
+    $("#velocityGraphTable").append(velocityGraphTable.draw(1200,800));
+
+    let accelerationGraphTable = new TableOfCanvasses(3, 2, 'Acceleration Graph', 'acceleration_table');
+    accelerationGraphTable.addDiagramsToCells([
+        graphs1.accelertionGraph, graphs2.accelertionGraph,
+            graphs3.accelertionGraph, graphs4.accelertionGraph,
+            graphs5.accelertionGraph, graphs6.accelertionGraph
+    ]);
+    $("#accelerationGraphTable").append(accelerationGraphTable.draw(1200,800));
+
+    let motionMapTable = new TableOfCanvasses(3, 2, 'Motion Map', "motion_map_table");
+    motionMapTable.addDiagramsToCells([
+        graphs1.motionMap, graphs2.motionMap,
+            graphs3.motionMap, graphs4.motionMap,
+            graphs5.motionMap, graphs6.motionMap
+    ]);
+    $("#motionMapTable").append(motionMapTable.draw(800,800));
+
+    // issues exist, but very significant progress has been made
 </script>

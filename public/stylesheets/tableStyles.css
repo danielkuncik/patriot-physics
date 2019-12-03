@@ -20,6 +20,13 @@ th {
     font-size: 20px;
 }
 
+th.storyTable {
+    font-size: 10px;
+}
+td.storyTable {
+    font-size: 10px;
+}
+
 th.electricCircuitTableSideHeader {
     font-size: 20px;
     font-weight: normal;

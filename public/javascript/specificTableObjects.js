@@ -188,3 +188,43 @@ class MomentumTable extends Table {
   }
 
 }
+
+
+// a table built to contain canvasses
+class TableOfCanvasses extends Table {
+    constructor(numRows, numColumns, name, generalID) {
+        super(numRows, numColumns);
+        this.name = name;
+        this.generalID = generalID;
+
+        let i, j, overallIndex = 0;
+        for (i = 0; i < this.numRows; i++) {
+            for (j = 0; j < this.numColumns; j++) {
+                super.addIdToCell(i, j, `${generalID}_${alphabetArray[overallIndex]}`);
+                super.writeTextInCell(i, j, `${name} ${alphabetArray[overallIndex]}`);
+                overallIndex++;
+            }
+        }
+
+        this.canvasArray = [];
+        for (i = 0; i < this.numRows; i++) {
+            this.canvasArray.push([]);
+            for (j = 0; j < this.numRows; j++) {
+                this.canvasArray[i].push(undefined);
+            }
+        }
+    }
+
+    addDiagramsToCells(diagramArray) {
+        let i, j, overallIndex = 0;
+        if (diagramArray.length > this.numColumns * this.numRows) {
+            console.log('ERROR: attempting to add more diagrams than table can fit.')
+        }
+        for (i = 0; i < this.numRows; i++) {
+            for (j = 0; j < this.numColumns; j++) {
+                super.addDiagramToCell(i, j, diagramArray[overallIndex]);
+                overallIndex++;
+            }
+        }
+    }
+}

@@ -292,14 +292,19 @@ class KinematicStepwiseFunctions {
         this.currentTime = newTime;
     }
 
-    makeQualitativeGraphs(labelsOnSide, dimension) {
+    makeQualitativeGraphs(story, labelsOnSide, dimension) {
+        if (story === undefined) {
+            story = 'someStory'
+        }
         if (dimension === undefined) {
             dimension = 'x'
         }
         let graphCollection = {};
+        graphCollection.story = story;
         graphCollection.positionGraph = smartQualitativeFunctionGrapher(this.positionFunction);
         graphCollection.velocityGraph = smartQualitativeFunctionGrapher(this.velocityFunction);
         graphCollection.accelertionGraph = smartQualitativeFunctionGrapher(this.accelerationFunction);
+        graphCollection.motionMap = new MotionMap(this.positionFunction, this.startTime, this.currentTime);
 
         if (labelsOnSide) {
             graphCollection.positionGraph.moveLabelsToSide();

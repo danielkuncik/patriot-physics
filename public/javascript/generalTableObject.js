@@ -98,6 +98,10 @@ class Table {
         this.cellInfoArray[i][j].class = newClass
     }
 
+    addIdToCell(i, j, id) {
+        this.cellInfoArray[i][j].id = id;
+    }
+
     writeTextInRow(i, textArray) {
         if (textArray.length > this.numColumns) {
             console.log('ERROR: Too many elements in text array');
@@ -117,6 +121,16 @@ class Table {
         let i;
         for (i = 0; i < textArray.length; i++) {
             this.writeTextInCell(i, j, textArray[i]);
+        }
+    }
+
+    addDiagramToCell(i, j, diagram, breakBefore) {
+        if (breakBefore === undefined) {
+            breakBefore = true;
+        }
+        this.cellInfoArray[i][j].diagram = diagram;
+        if (breakBefore) {
+            this.cellInfoArray[i][j].diagramBreakBefore = true;
         }
     }
 
@@ -322,10 +336,13 @@ class Table {
                   cellProperties = `width = "${cellWidth}${unit}" height = "${cellHeight}${unit}"`;
 
                   if (rowspan) {
-                    cellProperties = cellProperties += ` rowspan = "${rowspan}"`
+                    cellProperties = cellProperties + ` rowspan = "${rowspan}"`
                   }
                   if (colspan) {
-                    cellProperties = cellProperties += `colspan = "${colspan}"`;
+                    cellProperties = cellProperties + `colspan = "${colspan}"`;
+                  }
+                  if (this.cellInfoArray[i][j].id) {
+                      cellProperties = cellProperties + ` id = "${this.cellInfoArray[i][j].id}"`;
                   }
 
                   if (this.cellInfoArray[i][j].header) {
@@ -338,6 +355,12 @@ class Table {
                   }
                   if (this.cellInfoArray[i][j].class) {
                       $(thisCell).addClass(this.cellInfoArray[i][j].class);
+                  }
+                  if (this.cellInfoArray[i][j].diagram) {
+                      if (this.cellInfoArray[i][j].diagramBreakBefore) {
+                          $(thisCell).append($("<br>"));
+                      }
+                      $(thisCell).append(this.cellInfoArray[i][j].diagram.drawCanvas(cellWidth * 0.75, cellHeight*0.75, unit));
                   }
                   $(thisRow).append(thisCell);
                 }
