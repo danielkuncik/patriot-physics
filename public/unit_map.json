@@ -1224,7 +1224,7 @@
             "level": 3,
             "horizontal": 2,
             "letter": "G",
-            "prerequisites": ["stories_to_graph_selection_A"],
+            "prerequisites": ["story_to_graph_selection_A"],
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
           },
           "position_graph_connection":
@@ -1233,7 +1233,7 @@
             "level": 4,
             "horizontal": 3,
             "letter": "H",
-            "prerequisites": ["stories_to_graph_selection_B"],
+            "prerequisites": ["story_to_graph_selection_B"],
             "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs."
           },
           "velocity_graph_connection":
@@ -3155,7 +3155,7 @@
             "level": 4,
             "horizontal": 1,
             "letter": "K",
-            "prerequisites": ["conservation_of_momentum_7"],
+            "prerequisites": ["conservation_of_momentum_6"],
             "objective": "Define elastic and inelastic collisions; recognize common elastic and inelastic collisions; numerically analyze objects undergoing an elastic collision"
           },
           "advanced_pool_ball_collision":
