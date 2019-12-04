@@ -13,7 +13,7 @@ let i, j, thisQuestionList, thisQuestion, thisAnswer, questionNumber = 1;
 $(".questionList").each((i) => {
     thisQuestionList = $(".questionList")[i];
     $(thisQuestionList).attr('start',String(questionNumber));
-    $(thisQuestionList).children().each((j) => {
+    $(thisQuestionList).find("li.question").each((j) => {
         thisQuestion = $(thisQuestionList).find("li.question")[j];
         questionNumber += 1;
         if ($(thisQuestion).data()['answer'] !== undefined) {
