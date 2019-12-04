@@ -1004,9 +1004,9 @@ class Diagram {
                 ctx.moveTo(wiggleRoom + segment.point1.x, canvasHeight - wiggleRoom - segment.point1.y);
                 ctx.lineTo(wiggleRoom + segment.point2.x, canvasHeight - wiggleRoom - segment.point2.y);
                 ctx.stroke();
-                // ctx.setLineDash([]);
             } else { /// normal (not dotted) lines
                 ctx.beginPath();
+                ctx.setLineDash([]);
                 ctx.moveTo(wiggleRoom + segment.point1.x, canvasHeight - wiggleRoom - segment.point1.y);
                 ctx.lineTo(wiggleRoom + segment.point2.x, canvasHeight - wiggleRoom - segment.point2.y);
                 ctx.stroke();

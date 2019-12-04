@@ -250,6 +250,7 @@ class KinematicStepwiseFunctions {
         this.velocityFunction.addZeroStep(time);
         this.accelerationFunction.addZeroStep(time);
         this.currentVelocity = 0;
+        this.currentAcceleration = 0;
         this.currentTime += time;
     }
 
@@ -259,6 +260,7 @@ class KinematicStepwiseFunctions {
         this.accelerationFunction.addZeroStep(time);
         this.currentPosition += time * this.currentVelocity;
         this.currentTime += time;
+        this.currentAcceleration = 0;
     }
 
     addAcceleratedStep(acceleration, time) {
@@ -275,6 +277,7 @@ class KinematicStepwiseFunctions {
         this.currentPosition += startingVelocity * time + 0.5 * acceleration * time * time;
         this.currentVelocity += acceleration * time;
         this.currentTime += time;
+        this.currentAcceleration = acceleration;
     }
 
     teleport(newPosition) {

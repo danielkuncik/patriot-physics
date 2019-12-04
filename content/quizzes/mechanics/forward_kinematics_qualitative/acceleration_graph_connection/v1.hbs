@@ -1,0 +1,32 @@
+
+<div id = 'accelerationGraph'></div>
+
+<ol>
+    <li>
+        Write a story about something that
+        begins at rest and moves with this acceleration-time graph.
+    </li>
+    <li>
+        Assuming that initial velocity = 0,
+        draw a corresponding velocity-time graph.
+    </li>
+    <li>
+        Assuming that initial position = 0,
+        draw a corresponding position-time graph.
+    </li>
+</ol>
+
+<script>
+    // there are lots of problems here!
+    let kinematicFunctions = new KinematicStepwiseFunctions(0,0,3);
+    kinematicFunctions.addAcceleratedStep(3,2);
+    kinematicFunctions.addConstantVelocityStep(3);
+    kinematicFunctions.addAcceleratedStep(-3,3);
+    kinematicFunctions.addAcceleratedStep(3,3);
+    kinematicFunctions.addConstantVelocityStep(2);
+    kinematicFunctions.addAcceleratedStep(3,3);
+
+
+    let graphs = kinematicFunctions.makeQualitativeGraphs(undefined, true, 2);
+    $("#accelerationGraph").append(graphs.accelertionGraph.drawCanvas(800,400));
+</script>

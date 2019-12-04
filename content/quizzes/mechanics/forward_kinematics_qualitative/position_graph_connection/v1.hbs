@@ -1,0 +1,26 @@
+<div id = 'positionGraph'></div>
+
+<ol>
+    <li>
+        Write a story that includes something moving with
+        this particular position-time graph.
+    </li>
+    <li>
+        Draw a corresponding velocity-time graph.
+    </li>
+    <li>
+        Draw a corresponding acceleration-time graph.
+    </li>
+</ol>
+
+
+<script>
+    let kinematicFunction = new KinematicStepwiseFunctions(0,0,1);
+    kinematicFunction.addAcceleratedStep(1,5);
+    kinematicFunction.addConstantVelocityStep(3);
+    kinematicFunction.addAcceleratedStep(-1,4);
+    kinematicFunction.addConstantVelocityStep(5);
+
+    let graphs = kinematicFunction.makeQualitativeGraphs(undefined, true);
+    $("#positionGraph").append(graphs.positionGraph.drawCanvas(500,500));
+</script>
