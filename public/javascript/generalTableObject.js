@@ -8,6 +8,12 @@ types of tables I attach to physics problems.
 
 
 
+/*
+Write a function called 'select cell',
+which avoids errors if i accidentlly enter
+indicies that are outside the range of the table.
+ */
+
 class Table {
     constructor(numRows, numColumns) {
         this.numRows = numRows;
@@ -122,6 +128,10 @@ class Table {
         for (i = 0; i < textArray.length; i++) {
             this.writeTextInCell(i, j, textArray[i]);
         }
+    }
+
+    eraseTextInCell(i, j) {
+        this.writeTextInCell(i, j, "");
     }
 
     addDiagramToCell(i, j, diagram, breakBefore) {

@@ -1,0 +1,65 @@
+<p>
+    On the next page are 11 kinematic graphs and 4 motion maps.
+    Please categorize them based on what type of motion they describe.
+</p>
+
+<p>
+    The motion maps are represented as dots.
+    Each unit time, a dot drawn is placed where the moving object is located.
+</p>
+
+<p>
+    There are 4 groups, each with three graphs and one motion map.
+    One of the graphs is used twice.
+</p>
+
+<ol>
+    <li class = 'mb-5'>
+        Category 1: Moving at a constant speed
+    </li>
+    <li class = 'mb-5'>
+        Category 2: Not Moving
+    </li>
+    <li class = 'mb-5'>
+        Category 3: Speeding Up
+    </li>
+    <li class = 'mb-5'>
+        Category 4: Slowing Down
+    </li>
+</ol>
+
+<div class = 'pageBreak'>
+</div>
+
+<div id = 'bigTable'></div>
+
+<script>
+    let positionGraph1 = makePositionGraphConstantVelocity();
+    let positionGraph2 = makePositionGraphNotMoving();
+    let positionGraph3 = makePositionGraphPositiveAcceleration();
+    let positionGraph4 = makePositionGraphNegativeAcceleration();
+
+    let velocityGraph1 = makeVelocityGraphConstantVelocity();
+    let velocityGraph2 = makeVelocityGraphNotMoving();
+    let velocityGraph3 = makeVelocityGraphPositiveAcceleration();
+    let velocityGraph4 = makeVelocityGraphNegativeAcceleration();
+
+    let accelerationGraph1 = makeAccelerationGraphZero();
+    let accelerationGraph2 = makeAccelerationGraphPositive();
+    let accelerationGraph3 = makeAccelerationGraphNegative();
+
+    let motionMap1 = makeMotionMapConstantVelocity();
+    let motionMap2 = makeMotionMapNotMoving();
+    let motionMap3 = makeMotionMapPositiveAcceleration();
+    let motionMap4 = makeMotionMapNegativeAcceleration();
+
+
+    let bigTable = new TableOfCanvasses(4,4, 'Diagram','diagram');
+    bigTable.addDiagramsToCells([
+        positionGraph3, velocityGraph4, motionMap3, accelerationGraph3, velocityGraph2,
+            accelerationGraph1, positionGraph4, velocityGraph3, positionGraph2, motionMap1,
+            velocityGraph1, motionMap2, accelerationGraph2, positionGraph1, motionMap4
+    ]);
+    bigTable.eraseTextInCell(3,3);
+    $("#bigTable").append(bigTable.draw(1400,1400));
+</script>
