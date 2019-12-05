@@ -10,11 +10,11 @@ div.definitionBox {
 }
 
 ol.questionList {
-
+    list-style-type: none;
 }
 
 ol.answerList {
-
+    list-style-type: none;
 }
 
 div.pageBreak {
@@ -131,3 +131,14 @@ h4.sectionHeader {
 ol.graphicalQuestionList {
 
 }
+
+
+/*ol.xxx {*/
+/*    counter-reset: section;*/
+/*  !*  list-style-type: none; *!*/
+/*}*/
+
+/*li.yyy::before {*/
+/*    counter-increment: section;*/
+/*    counter: counters(section, ".") " ";*/
+/*}*/

@@ -15,10 +15,10 @@ $(".questionList").each((i) => {
     $(thisQuestionList).attr('start',String(questionNumber));
     $(thisQuestionList).find("li.question").each((j) => {
         thisQuestion = $(thisQuestionList).find("li.question")[j];
-        questionNumber += 1;
+        $(thisQuestion).prepend(`${letter}.${questionNumber}. `);
         if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
-            $(".answerList").append(`<li>${thisAnswer}</li>`);
+            $(".answerList").append(`<li>${letter}.${questionNumber}. ${thisAnswer}</li>`);
         } else if ($(thisQuestion).find("ol.subQuestionList").length === 1) {//isXinArray('ol.subQuestionList', $(thisQuestion).children() )) {
             let subQuestionList, thisSubQuestion, subAnswerList, k, thisSubAnswer, subAnswerListType;
             subQuestionList = $(thisQuestion).find("ol.subQuestionList")[0];
@@ -34,13 +34,14 @@ $(".questionList").each((i) => {
                     $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
                 }
             });
-            thisAnswer = $("<li></li>");
+            thisAnswer = $(`<li>${letter}.${questionNumber}.</li>`);
             $(thisAnswer).append(subAnswerList);
             $(".answerList").append(thisAnswer);
         } else {
             thisAnswer = 'xxx';
-            $(".answerList").append(`<li>${thisAnswer}</li>`);
+            $(".answerList").append(`<li>${letter}.${questionNumber}. ${thisAnswer}</li>`);
         }
+        questionNumber += 1;
     });
 });
 
