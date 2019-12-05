@@ -24,7 +24,7 @@ $(".questionList").each((i) => {
             subQuestionList = $(thisQuestion).find("ol.subQuestionList")[0];
             subAnswerListType = $(subQuestionList).attr('type');
             subAnswerList = $(`<ol type = ${subAnswerListType}></ol>`); // make this changeable?
-            $(subQuestionList).children().each((k) => {
+            $(subQuestionList).find("li.subQuestion").each((k) => {
                 thisSubQuestion = $(subQuestionList).find("li.subQuestion")[k];
                 if ($(thisSubQuestion).data()['answer'] !== undefined) {
                     thisSubAnswer = $(thisSubQuestion).data()['answer'];
