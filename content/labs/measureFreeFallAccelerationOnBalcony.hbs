@@ -1,0 +1,104 @@
+<p>
+    The goal of this lab is to determine the acceleration of an object in free-fall the most straightforward
+    way: just dropping it.
+</p>
+
+<p>
+    In order to get an accurate time measurement, you need to drop an object from a significant height.
+    We are going to drop an object from the balcony on the stairway between the science wing and the math wing.
+</p>
+
+<h5>
+    Roles
+</h5>
+<ul>
+    <li>
+        One person needs to drop the tennis ball.
+    </li>
+    <li>
+        One person needs to measure the time it takes to reach the ground.
+    </li>
+    <li>
+        One person needs to stand the doorway and make sure nobody is coming.
+    </li>
+</ul>
+
+<h3>
+    IMPORTANT SAFETY NOTE
+</h3>
+<p>
+    When you are doing this lab, somebody <strong>MUST</strong>
+    be standing in the doorway at the bottom of the stairs and making sure nobody is coming when the tennis ball is dropped.
+    If nobody is doing this, it is very unsafe.
+    Don't ever ever ever drop something off the balcony without first making sure no one is coming.
+</p>
+
+<p>
+    Also, please don't very fast throw the ball around.
+    There's a security camera right there, and you don't want to be on film throwing fastballs at each other!
+</p>
+
+<h5>
+    Steps
+</h5>
+<ol>
+    <li>
+        Measure the height to the top of the balcony from the floor.
+        You should be able to do this with only a ruler!
+    </li>
+    <li>
+        Drop the tennis ball from the balcony, and measure the time
+        from the moment it leaves the hand of the person dropping it
+        to the moment that it strikes the ground.
+    </li>
+    <li>
+        Repeat this process 5 times, to get 6 measurements of time:
+    </li>
+</ol>
+
+<div id = 'measurementTable'></div>
+
+<script>
+    let measurementTable = new Table(3,2);
+    measurementTable.writeTextInRow(0,['Trial 1', 'Trial 2']);
+    measurementTable.writeTextInRow(1,['Trial 3', 'Trial 4']);
+    measurementTable.writeTextInRow(2,['Trial 5', 'Trial 6']);
+    $("#measurementTable").append(measurementTable.draw(400,400));
+</script>
+
+<ol start = '4'>
+    <li>
+        Was any of your measurements of time an <strong>outlier</strong>?
+        An outlier is a measurement that is very different from the others.
+        If there was an outlier, it was probably an error.
+        Delete that measurement and repeat it.
+    </li>
+    <li>
+        Determine the <strong>average</strong> of your six measurements.
+        Consider this to be the time necessary for a ball to reach the ground.
+    </li>
+    <li>
+        You are trying to find the <strong>acceleration</strong>
+        of the tennis ball. You know three quantities,
+        its displacement, its time interval, and its initial velocity.
+        Pick one of the four <emph>kinematic equations</emph>
+        to figure out the acceleration.
+        {{>kinematicEquationsWithoutNames}}
+        <br>
+        {{>formulaSolvingTable}}
+    </li>
+    <li>
+        You know that the measurement you "should" get is 9.8 m/s<sup>2</sup>.
+        Determine the percent error with the following formula:
+        $$
+        \text{% error} = \left| \frac{\text{Measured Value}  - \text{Predicted Value}}{\text{Predicted Value}} \right| \cdot 100
+        $$
+    </li>
+    <li>
+        Write at least two sources of error in this calculation.
+    </li>
+    <li>
+        Write two <emph>practical</emph> possibilities for how to reduce the error in this calculation.
+        Practical means that nobody would be injured and you already own the equipment needed, or it would cost less than $100.
+    </li>
+</ol>

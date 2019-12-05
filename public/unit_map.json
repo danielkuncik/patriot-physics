@@ -5329,8 +5329,8 @@
           {
             "title": "Basic Gravity",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Recognize examples of gravity on earth and in space; know gravity exists in space; define gravity as masses attracting rather than simply falling."
           },
@@ -5338,91 +5338,110 @@
           {
             "title": "Basic Orbits",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["basic_gravity"],
             "objective": "Recognize basic facts about orbits: they are elliptical etc. Recognize the orbits of objects such as planets and comets"
           },
           "mass_vs_weight_1":
           {
             "title": "Mass vs. Weight 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["basic_orbits"],
             "objective": "Differentiate between mass and weight, including how weight changes in different areas."
+          },
+          "universal_attraction":
+          {
+            "title": "Universal Attraction",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "D",
+            "prerequisites": ["mass_vs_weight_1"],
+            "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt."
           },
           "astronomical_examples_gravitation":
           {
             "title": "Astronomical Examples of Gravitation",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["universal_attraction"],
             "objective": "Explain star formation, planet formation, and the existence of earth's atmopshere, and the absence of an atmosphere on other planets."
           },
           "energy_of_comet":
           {
             "title": "Energy of a comet",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "F",
+            "prerequisites": ["astronomical_examples_gravitation"],
             "objective": "Explain how energy changes between GPE and KE in a comet"
-          },
-          "universal_attraction":
-          {
-            "title": "Universal Attraction",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt."
           },
           "earth_is_round":
           {
             "title": "The Earth is Round?",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["energy_of_comet"],
             "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple."
           },
-          "ellipse_geometry":
+          "keplers_first_law":
           {
-            "title": "Ellipse Geometry",
+            "title": "Kepler's First Law",
+            "subtitle": "Ellipse Geometry",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Rigorously define an ellipse and relate this definition to orbits; compare orbits of different eccentricity.",
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["earth_is_round"],
+            "objective": "State Kepler's First Law; Rigorously define an ellipse and relate this definition to orbits; compare orbits of different eccentricity.",
             "notes": "Must recognize that earth's orbit is nearly spherical and eccentricity is NOT responsible for the seasons."
           },
           "keplers_second_law":
           {
             "title": "Kepler's Second Law",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 3,
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["keplers_first_law"],
             "objective": "State Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy."
+          },
+          "keplers_third_law":
+          {
+            "title": "Kepler's Third Law",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "J",
+            "prerequisites": ["keplers_second_law"],
+            "objective":  "State Kepler's Third law; solve quantitative problems involving Kepler's Third Law; determine correct altitude of a cell-phone satellite"
+          },
+          "significance_of_keplers_laws":
+          {
+            "title": "Significance of Kepler's Laws",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["keplers_third_law"],
+            "objective": "Explain how Newton's proof of Kepler's Laws was crucial in shaping human understanding of the universe"
           },
           "gravitational_vs_inertial_mass":
           {
             "title": "Gravitational vs. Inertial Mass",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["significance_of_keplers_laws"],
             "objective": "Differentiate between gravitational and inertial mass while recognizing their equality."
           },
           "jumping_through_center_of_earth":
           {
             "title": "Jumping through the center of the earth. (A thought experiment)",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "L",
+            "prerequisites": ["gravitational_vs_inertial_mass"],
             "objective": "Examine using rigorous terminology, free-body diagrams, and kinetmatic graphs what would happen if you jumped through the center of the earth",
             "notes": "Must refer to Newton's Shell Principle"
           },
@@ -5430,10 +5449,19 @@
           {
             "title": "A non-round Earth (A thought experiment)",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["jumping_through_center_of_earth"],
             "objective": "Describe how life on earth might be different if the shape of earth were different but the force of gravity was still proportional to mass."
+          },
+          "non_round_earth_2":
+          {
+            "title": "Non-Round Earth 2",
+            "level": 6,
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["non_round_earth"],
+            "objective": "Invent a different planet of a non-round shape and qualitatively and/or quantitatively describe life on this planet."
           }
         }
       },

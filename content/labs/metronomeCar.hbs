@@ -1,0 +1,81 @@
+<p>
+    The goal of this lab is to
+    reproduce the position-time graph for an object that is accelerating,
+    using a simple car and a metronome.
+</p>
+
+<ol>
+    <li>
+        Set up a single car on a track.
+        Prop the track up on a textbook, so that if released the car will
+        go slightly down the track.
+    </li>
+    <li>
+        Get a metronome.
+        The easiest way is with <a href = 'https://www.google.com/search?client=safari&rls=en&q=metronome&ie=UTF-8&oe=UTF-8'>Google metronome</a>.
+    </li>
+    <li>
+        Set the metronome to 120 bpm.
+        This means that it will tick twice a second.
+        (If more than one group is completing the lab at once, it is best if they share a metronome.)
+    </li>
+    <li>
+        Place the car on top of the track.
+        Let go of the cart on a tick, and catch it on the next tick.
+        Measure how far the car went.
+        This is the distance it traveled after 1 tick.
+    </li>
+    <li>
+        Place the car on top of the track.
+        Let go of the cart on a tick, and catch it after <emph>two ticks</emph>.
+        Measure how far the car went.
+        This is the distance it traveled after 2 tick.
+    </li>
+    <li>
+        Repeat the process from above to fill out the following table.
+        For each number of ticks, measure the distance.
+        The <emph>time</emph> is the number of ticks divided by two (because there are two ticks per second).
+        <br>
+        <div id = 'dataTable'></div>
+    </li>
+    <li>
+        Using data from the table, create a graph of position-time.
+        The position is the distance traveled, in centimeters.
+        <div id = 'dataGraph'></div>
+    </li>
+    <li>
+        What is the motion of the car as it moves down the ramp:
+        <ol type = 'A'>
+            <li>
+                moving at a constant speed
+            </li>
+            <li>
+                speeding up
+            </li>
+            <li>
+                slowing down
+            </li>
+            <li>
+                not moving
+            </li>
+        </ol>
+        Evaluate your graph.
+        Does your graph have the correct shape of a position-time graph
+        for this particular type of motion?
+    </li>
+</ol>
+
+<script>
+    let dataTable = new Table(8,3);
+    dataTable.addTopHeaders(['tick', 'time (s)','distance Traveled (cm)']);
+    dataTable.writeTextInRow(1,['0','0','0']);
+    dataTable.writeTextInColumn(0,['tick','0','1','2','3','4','5','6']);
+    $("#dataTable").append(dataTable.draw(300,600));
+
+    //     constructor(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio) {
+    let dataGraph = new QuantitativeGraph(0,3,0,100,2.5);
+    dataGraph.labelAxes('time (s)', 'position (cm)');
+    dataGraph.automaticReferenceArray(7,6);
+
+    $("#dataGraph").append(dataGraph.drawCanvas(800,400));
+</script>
