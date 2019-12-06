@@ -1,0 +1,33 @@
+<p>
+    Two cars collide into each other.
+</p>
+
+<ul>
+    <li>
+        Before the collision:
+        <ul>
+            <li>
+                Car A has a mass of 2000 kg and a velocity of 8 m/s.
+            </li>
+            <li>
+                Car B has a mass of 2200 kg and a velocity of 11 m/s.
+            </li>
+        </ul>
+    </li>
+    <li>
+        After the collision, the two cars stick together.
+    </li>
+</ul>
+
+<p>
+    Fill out the table below to determine the speed of the
+    cars after the collision.
+</p>
+
+<div id = 'momentumTable'></div>
+
+<script>
+    let momentumTable = new MomentumTable();
+    momentumTable.makeTotallyInelasticCollision();
+    $("#momentumTable").append(momentumTable.draw(500,500));
+</script>

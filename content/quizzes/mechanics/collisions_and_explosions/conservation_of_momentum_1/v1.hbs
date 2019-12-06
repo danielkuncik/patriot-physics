@@ -1,0 +1,42 @@
+
+<p>
+    Two cars have a collision.
+    They were moving in the same direction when one car rear-ended another.
+</p>
+
+<ul>
+    <li>
+        Before the collision:
+        <ul>
+            <li>
+                Car A has a mass of 20 kg and a velocity of 5 m/s.
+            </li>
+            <li>
+                Car B has a mass of 15 kg and a velocity of 3 m/s.
+            </li>
+        </ul>
+    </li>
+    <li>
+        After the collision:
+        <ul>
+            <li>
+                Car A has a velocity of 2 m/s in the same direction.
+            </li>
+            <li>
+                Car B has an unknown velocity.
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<p>
+    Fill out the table below to determine the velocity of Car B after the collision:
+</p>
+<div id = 'momentumTable'></div>
+
+
+
+<script>
+    let momentumTable = new MomentumTable();
+    $("#momentumTable").append(momentumTable.draw(500,500));
+</script>

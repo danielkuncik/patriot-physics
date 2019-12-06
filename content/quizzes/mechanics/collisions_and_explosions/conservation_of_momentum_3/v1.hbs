@@ -1,0 +1,39 @@
+<h5>
+    Problem 1:
+</h5>
+<p>
+    Car A has a mass of 200 kg and is moving at a speed of 5 m/s to the right.
+    Car B has a mass of 150 kg and is moving at a speed of 8 m/s to the left.
+    They crash into each other head-on.
+    After they collide, Car A bounces off with a speed of 1 m/s to the left.
+    Fill out the following table to figure out what car B does:
+</p>
+
+<div id = 'table1'></div>
+
+
+<h5>
+    Problem 2:
+</h5>
+
+<p>
+    A truck with a mass of 500 kg is moving at a speed of 10 m/s
+    to the right.
+    It smashes into a small car with a mass of 200 kg moving
+    at a speed of 15 m/s to the left.
+    After the collision, the car crumbles and sticks to the truck.
+    Fill out the table below in order to determine the
+    final velocity (magnitude and direction) of the car and truck stuck together.
+</p>
+
+<div id = 'table2'></div>
+
+
+<script>
+    let table1 = new MomentumTable();
+    $("#table1").append(table1.draw(500,500));
+
+    let table2 = new MomentumTable();
+    table2.makeTotallyInelasticCollision();
+    $("#table2").append(table2.draw(500,500));
+</script>
