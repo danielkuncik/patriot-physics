@@ -38,15 +38,15 @@
     Problems
 </h4>
 
-<ol>
-    <li>
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '14.7 J'>
         A book with a mass of 2.5 kg is resting on
         the floor of a classroom.
         Somebody picks the book up and places it on a table with
         a height of 0.6 m above the ground.
         Calculate the work done on the book-earth system.
     </li>
-    <li>
+    <li class ='question' data-answer ='8 J'>
         A spring with spring constant 400 N/m
         is resting horizontally on a table at a length of 70 cm,
         which is its equilibrium length.
@@ -54,7 +54,7 @@
         (Note that you must convert centimeters to meters to correctly solve the problem in SI units.)
         How much work was done on the spring?
     </li>
-    <li>
+    <li class = 'question' data-answer = '1.5 J'>
         A spring with a spring constant of 300 N/m is resting horizontally at its
         equilibrium length of 60 cm and attached to a mass of 2 kg.
         Something happens (you are not sure what), and some time later
@@ -62,7 +62,7 @@
         is moving at a rate of 5 cm/s.
         Determine the total amount of work done on the mass-spring system.
     </li>
-    <li>
+    <li class = 'question' data-answer = '12.06 J'>
         A 3 kg block with the ability to move is on a staircase.
         It is 2 meters off the ground and is moving at a speed of 0.4 m/s.
         Sometime later, after some unknown event occurred,
@@ -70,7 +70,7 @@
         speed of 0.6 m/s.
         Determine the total amount of work done on the block-earth system.
     </li>
-    <li>
+    <li class = 'question' data-answer = '32.4 J'>
         A 0.8 kg ball is at rest on top of a building that is 15 meters tall.
         It falls off, and immediately before striking the ground has a speed of
         9 m/s.
@@ -80,33 +80,112 @@
 </ol>
 
 <h4>
-    Answers:
+    Trigonometry in Energy Problems
 </h4>
 
-<ol>
-    <li>
-        14.7 J
-    </li>
-    <li>
-        8 J
-    </li>
-    <li>
-        1.5 J
-    </li>
-    <li>
-        12.06 J
-    </li>
-    <li>
-        32.4 J
+<p>
+    Many problems regarding energy, in particular those involving gravitational potential energy,
+    involve some geometry and trigonometry.
+    This is because the formula for gravitational potential energy involves
+    <emph>vertical</emph> height,
+    and yet things that move upward often do so at an angle.
+    Some basic trigonometry is necessary to find the vertical height.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '\( x \cos \theta \)'>
+        A person is climbing a big hill.
+        The hill has an angle of incline \( \theta \).
+        The person has climbed a distance \( x \) from the bottom.
+        Determine the person's height from the bottom of the hill \( h \)
+        in terms of \( x \) and \( \theta \).
         <br>
-        This one was a trick question.
-        It was asking for work on the 'ball' not the 'ball-earth system,'
-        and therefore gravitational potential energy is not included in the system.
-        The block initially had zero energy and later had 32.4 J of kinetic energy.
+        <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/person_on_ramp.png' height = '300px' width = 'auto'/>
+    </li>
+    <li class = 'question' data-answer = '\( h = l \left( 1 - \cos \theta \right) \)'>
+        A pendulum has a length \( l \) and is at its equilibrium position (the bottom of its swing).
+        Somebody pulls the pendulum backs by an amplitude \( \theta \).
+        Determine the height \( h \) that the pendulum has been raised in terms of
+        \( l \) and \( \theta \).
         <br>
-        Gravity did the bulk of work on the block but air resistance
-        also did some negative work, causing the block
-        to strike the ground with less speed that you would predict
-        with the conservation of energy alone.
+        <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/lifted_pendulum.png' height = '300px' width = 'auto'/>
     </li>
 </ol>
+
+<h4>
+    Algebraic Problems looking for Work
+</h4>
+
+<p>
+    In the problems above, you found a numerical answer for work done on a system.
+    In these problems, you will find algebraic equations for work done on a system.
+    The formulas you derive will be long and include many terms and variables.
+    You do not need to manipulate or solve them,
+    but you do need to understand what each of the individual variables means physically.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'> <!-- Grabbing and pulling a spring-->
+        A mass \( m \) is moving on a frictionless horizontal spring of spring constant \( k \).
+        The mass passes through the equilibrium length of the spring \( x_0 \) with speed \( v_0 \).
+        <br>
+        <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/spring_work_problem_initial.png' height = 'auto' width = '300px'/>
+        <br>
+        Somebody grabs the mass, and thus does work on the mass-spring system.
+        He then pulls the spring until it has a length \( x_f \),
+        and the mass is not moving.
+        <br>
+        <img src = '/podAssets/mechanics/conservation_of_energy_quantitative/spring_work_problem_final.png' height = 'auto' width = '300px'/>
+        <br>
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion'  data-answer = 'kinetic energy only'>
+                What type(s) of energy does the mass-spring system have before the person grabs it?
+            </li>
+            <li class = 'subQuestion' data-answer = 'elastic potential energy only'>
+                What type(s) of energy does the mass-spring system have after the person grabs and pulls it?
+            </li>
+            <li class = 'subQuestion' data-answer = '\( TE_i = \frac{1}{2} m v_0^2 \)'>
+                Write an equation for the total energy \( TE_i \) of the mass-spring system before the person grabs it.
+                Your equation should be in terms of \( m \) and \( v_0 \).
+            </li>
+            <li class = 'subQuestion' data-answer = '\(  TE_f = \frac{1}{2} k \left( x_f - x_0 \right)^2 \)'>
+                Write an equation for the total energy \( TE_f \) of the mass-spring system after the person grabs and pulls it.
+                Your equation should be in terms of \( k \), \( x_0 \), and \( x_f \).
+            </li>
+            <li class= 'subQuestion' data-answer = ' \( W = \frac{1}{2} k \left( x_f - x_0 \right)^2 - \frac{1}{2} m v_0^2 \)'>
+                The work done on the mass-spring system by the person is given by \( W = TE_f - TE_i \).
+                Write an equation for the work done on the system \( W \)
+                in terms of \( m \), \( v_0 \), \( k \), \( x_0 \), and \( x_f \).
+            </li>
+            <li class= 'subQuestion' data-answer = 'The first term in the equation above is the elastic potential energy after the spring is pulled; the other term is the kinetic energy before.'>
+                Briefly describe what physical quantity each term of your equation represents,
+                and state why each term is either a positive or negative term.
+            </li>
+        </ol>
+    </li>
+    <li class="question"> <!-- person climbing a mountain -->
+
+    </li>
+    <li class ='question'><!--- grabbing a pendulum -->
+
+    </li>
+</ol>
+
+<div class ='pageBreak'></div>
+<h4>
+    Answers:
+</h4>
+<div class = 'answerList'></div>
+
+<p>
+    #5 was a trick question!
+    <br>
+    It was asking for work on the 'ball' not the 'ball-earth system,'
+    and therefore gravitational potential energy is not included in the system.
+    The block initially had zero energy and later had 32.4 J of kinetic energy.
+    <br>
+    Gravity did the bulk of work on the block but air resistance
+    also did some negative work, causing the block
+    to strike the ground with less speed that you would predict
+    with the conservation of energy alone.
+</p>
