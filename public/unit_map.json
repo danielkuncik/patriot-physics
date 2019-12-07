@@ -3191,56 +3191,37 @@
           {
             "title": "Impulse Formula 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 2,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Solve straightforward numerical problems using the impulse formula."
-          },
-          "impulse_concepts_1":
-          {
-            "title": "Impulse Concepts 1",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Answer basic real-world written questions by referring to the impulse formula."
-          },
-          "impulse_formula_inference":
-          {
-            "title": "Impulse Formula Inference",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the impulse formula to make inferences about what occurs during a collision",
-            "notes": "????? was this included by accident ??? how is it different than conceptual impulse"
           },
           "impulse_formula_2":
           {
             "title": "Impulse Formula 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "B",
+            "prerequisites": ["impulse_formula_1"],
             "objective": "Answer questions that require inferences combined with use of the impulse formula.",
             "example": "Information is given about momentum; an object stops or begins stopped"
           },
-          "impulse_concepts_2":
+          "impulse_concepts":
           {
-            "title": "Impulse Concepts 2",
+            "title": "Impulse Concepts",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 2,
+            "letter": "C",
             "prerequisites": [],
-            "objective": "Answer more complex real-world written questions by referring to the impulse formula; describe whath the term 'breaking a fall' means."
+            "objective": "Answer real-world written questions by referring to the impulse formula; describe whath the term 'breaking a fall' means."
           },
           "momentum_graphs_1":
           {
             "title": "Momentum Graphs 1",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["impulse_formula_2"],
             "objective": "Qualitatively relate simple (1-2 step) momentum-time and force-time graphs"
           },
           "impulse_formula_3":
@@ -3248,63 +3229,63 @@
             "title": "Impulse Formula 3",
             "subtitle": "Algebraic Proof",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["momentum_graphs_1"],
             "objective": "Prove the impulse formula is equivalent to Newton's Second Law."
           },
           "momentum_graphs_2":
           {
             "title": "Momentum Graphs 2",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["impulse_formula_3"],
             "objective": "Qualitatively relate momentum-time and force-time graphs with 3+ steps or ideas to consider."
           },
           "momentum_graphs_3":
           {
             "title": "Momentum Graphs 3",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["momentum_graphs_2"],
             "objective": "Quantitatively relate momentum-time and force-time graphs with 1-2 steps to consider; use the concept of impulse in making this connection."
           },
           "kinematic_dynamics_graphs_1":
           {
             "title": "Kinematic and Dynamic Graphs 1",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["momentum_graphs_3"],
             "objective": "Relate the five 'time' graphs of kinematic and dynamic quantities: position, velocity, acceleration, momentum, force."
           },
           "impulse_formula_4":
           {
             "title": "Impulse Formula 4: Proportionality and Inferences",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "I",
+            "prerequisites": ["kinematic_dynamics_graphs_1"],
             "objective": "Analyze impulse by using proportionality; make real world inferences using this analysis."
           },
           "kinematic_dynamics_graphs_2":
           {
             "title": "Kinematic and Dynamic Graphs 2",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "J",
+            "prerequisites": ["impulse_formula_4"],
             "objective": "Quantitatively relate the five graphs of kinematic and dynamic values."
           },
           "kinematic_dynamic_graphs_3":
           {
             "title": "Kinematic and Dynamic Graphs 3",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["kinematic_dynamics_graphs_2"],
             "objective": "Create quantitative kinematic and dynamic graphs based on a complex real world description."
           }
         }
