@@ -3223,7 +3223,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Answer questions that require inferences combined with use of the impulse formula.",
-            "example": "Information is given about momentum; an object stops or beigns stopped"
+            "example": "Information is given about momentum; an object stops or begins stopped"
           },
           "impulse_concepts_2":
           {
@@ -3245,7 +3245,8 @@
           },
           "impulse_formula_3":
           {
-            "title": "Impulse Formula 3: Algebraic Proof",
+            "title": "Impulse Formula 3",
+            "subtitle": "Algebraic Proof",
             "level": 3,
             "horizontal": null,
             "letter": "",

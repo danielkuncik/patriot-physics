@@ -1,0 +1,65 @@
+<p>
+    This section introduces a new but old formula, the impulse formula.
+    It is a new formula, but it is actually a recasting of
+    Newton's Second Law.
+    The quantity called "impulse" is represented by the letter J
+    and can refer to two different equivalent qunaitites:
+</p>
+<ul>
+    <li>
+        The net force acting on an object times the total time that force is acting.
+    </li>
+    <li>
+        The change in momentum of an object over some time.
+    </li>
+</ul>
+
+<p>
+    The formula below for impulse \( \left( J \right) \)
+    defines impulse in three different ways,
+    all of which are equal.
+</p>
+
+<p class = 'equation'>
+    $$
+    J = \Sigma F \cdot \Delta t = \Delta p = m v_f - m v_i
+    $$
+</p>
+
+<div id = 'impulseFormulaInfoTable'></div>
+
+<script>
+    let impulseFormulaInfoTable = new Table(8,3);
+    impulseFormulaInfoTable.addTopHeaders(['Symbol', 'Quantity', 'SI unit']);
+    impulseFormulaInfoTable.writeTextInRow(1,['\\( J \\)', 'Impulse', 'kg m/s']);
+    impulseFormulaInfoTable.writeTextInRow(2, ['\\( \\Sigma F \\)', 'Net Force', 'Newtons (N)']);
+    impulseFormulaInfoTable.writeTextInRow(3, ['\\( \\Delta t \\)', 'change in time', 'seconds (s)']);
+    impulseFormulaInfoTable.writeTextInRow(4, ['\\( \\Delta p \\)', 'change in momentum', 'kg m/s']);
+    impulseFormulaInfoTable.writeTextInRow(5, ['\\( m \\)', 'mass', 'kilograms (kg)']);
+    impulseFormulaInfoTable.writeTextInRow(6, ['\\( v_f \\)', 'final velocity', 'm/s']);
+    impulseFormulaInfoTable.writeTextInRow(7, ['\\( v_i \\)', 'initial velocity', 'm/s']);
+
+
+    $("#impulseFormulaInfoTable").append(impulseFormulaInfoTable.draw(300,800));
+</script>
+
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        An object experiences a net force of 50 Newtons
+        for a time of 0.4 seconds.
+        What is the impulse acting on this object?
+    </li>
+    <li class = 'question'>
+        An object with a mass of 5 kg
+        experiences a force of 80 N for a time of 2 seconds.
+        What is its change in velocity?
+    </li>
+</ol>
+
+<!-- need to include at least 10 of these questions?
+ 2 looking for impulse
+ 2 looking for change in velocity
+ 2 looking for final velocity
+
+ -->
