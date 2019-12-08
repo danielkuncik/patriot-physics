@@ -325,6 +325,32 @@ function makeVelocityGraphNotMoving() {
     return velocityGraph4
 }
 
+function makeMomentumGraphConstantVelocity() {
+    let momentumGraph1 = makeVelocityGraphConstantVelocity();
+    momentumGraph1.labelAxes('time', 'momentum');
+    return momentumGraph1
+}
+
+function makeMomentumGraphPositiveAcceleration() {
+    let momentumGraph2 = makeVelocityGraphPositiveAcceleration();
+    momentumGraph2.labelAxes('time', 'momentum');
+    return momentumGraph2
+}
+
+function makeMomentumGraphNegativeAcceleration() {
+    let momentumGraph3 = makeVelocityGraphNegativeAcceleration();
+    momentumGraph3.labelAxes('time', 'momentum');
+    return momentumGraph3
+}
+
+function makeMomentumGraphNotMoving() {
+    let momentumGraph4 = makeVelocityGraphNotMoving();
+    momentumGraph4.labelAxes('time', 'momentum');
+    return momentumGraph4
+}
+
+
+
 function makeAccelerationGraphPositive() {
     let accelerationGraph1 = new QualitativeGraph(() => 5, 0,10,1,-10,10);
     accelerationGraph1.moveLabelsToSide();
@@ -347,6 +373,24 @@ function makeAccelerationGraphZero() {
     accelerationGraph3.labelAxes('time', 'acceleration');
     accelerationGraph3.removeHorizontalAxis();
     return accelerationGraph3
+}
+
+function makeNetForceGraphZero() {
+    let netForceGraph1 = makeAccelerationGraphZero();
+    netForceGraph1.labelAxes('time', 'net force');
+    return netForceGraph1
+}
+
+function makeNetForceGraphPositive() {
+    let netForceGraph2 = makeAccelerationGraphPositive();
+    netForceGraph2.labelAxes('time', 'net force');
+    return netForceGraph2
+}
+
+function makeNetForceGraphNegative() {
+    let netForceGraph3 = makeAccelerationGraphNegative();
+    netForceGraph3.labelAxes('time', 'net force');
+    return netForceGraph3
 }
 
 function makeMotionMapConstantVelocity() {
@@ -372,3 +416,4 @@ function makeMotionMapNotMoving() {
     motionMap4.multiplyRadius(1);
     return motionMap4
 }
+

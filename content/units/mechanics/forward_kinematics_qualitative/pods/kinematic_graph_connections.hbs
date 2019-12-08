@@ -1,0 +1,26 @@
+
+<div id = 'bigKinematicGraphTable'></div>
+
+
+<script>
+    let kinematicGraphTable = new Table(5, 4);
+    kinematicGraphTable.addTopHeaders(['','Position-Time Graph', 'Velocity-Time Graph', 'Acceleration-Time Graph']);
+    kinematicGraphTable.addSideHeaders(['', 'Moving at a constant velocity', 'Speeding up', 'Slowing down', 'Not moving']);
+
+    kinematicGraphTable.addDiagramToCell(1,1,makePositionGraphConstantVelocity());
+    kinematicGraphTable.addDiagramToCell(2,1,makePositionGraphPositiveAcceleration());
+    kinematicGraphTable.addDiagramToCell(3,1,makePositionGraphNegativeAcceleration());
+    kinematicGraphTable.addDiagramToCell(4,1,makePositionGraphNotMoving());
+
+    kinematicGraphTable.addDiagramToCell(1,2,makeVelocityGraphConstantVelocity());
+    kinematicGraphTable.addDiagramToCell(2,2,makeVelocityGraphPositiveAcceleration());
+    kinematicGraphTable.addDiagramToCell(3,2,makeVelocityGraphNegativeAcceleration());
+    kinematicGraphTable.addDiagramToCell(4,2,makeVelocityGraphNotMoving());
+
+    kinematicGraphTable.addDiagramToCell(1,3,makeAccelerationGraphZero());
+    kinematicGraphTable.addDiagramToCell(2,3,makeAccelerationGraphPositive());
+    kinematicGraphTable.addDiagramToCell(3,3,makeAccelerationGraphNegative());
+    kinematicGraphTable.addDiagramToCell(4,3,makeAccelerationGraphZero());
+
+    $("#bigKinematicGraphTable").append(kinematicGraphTable.draw(1000,1000));
+</script>
