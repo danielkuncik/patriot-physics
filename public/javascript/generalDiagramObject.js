@@ -100,9 +100,10 @@ function grayscale0to20(score) {
 
 
 class Point {
-    constructor(x, y) {
+    constructor(x, y, name) {
         this.x = x;
         this.y = y;
+        this.name = name;
         //    this.uuid = create_UUID();
     }
 

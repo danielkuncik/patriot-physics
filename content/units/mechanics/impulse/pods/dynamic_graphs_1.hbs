@@ -93,6 +93,7 @@
     An acceleration-time graph can be derived from a net-force-time graph
 </p>
 
+
 <ol class = 'questionList'>
     <li class = 'question'>
         <div class = 'container'>
@@ -186,8 +187,59 @@
                     of an 20 kg object,
                     draw a corresponding acceleration-time graph.
                 </div>
-                <div class = 'col-6-md' id = 'netForceGraph1'></div>
+                <div class = 'col-6-md' id = 'netForceGraph2'></div>
             </div>
         </div>
     </li>
 </ol>
+
+<script>
+    let velocityGraph1 = new QuantitativeGraph(0,10,0,20);
+    velocityGraph1.makeVelocityGraph();
+    velocityGraph1.addStepwiseLinearFunction([[0,0],[5,15],[10,0]]);
+    velocityGraph1.automaticReferenceArray(4);
+    $("#velocityGraph1").append(velocityGraph1.drawCanvas(300,300));
+
+    let velocityGraph2 = new QuantitativeGraph(0,20,0,50);
+    velocityGraph2.makeVelocityGraph();
+    velocityGraph2.addStepwiseLinearFunction([[0,0],[10,10],[20,30]]);
+    velocityGraph2.automaticReferenceArray(4,5);
+    $("#velocityGraph2").append(velocityGraph2.drawCanvas(300,300));
+
+    let accelerationGraph1 = new QuantitativeGraph(0,2,0,9);
+    accelerationGraph1.makeAccelerationGraph();
+    accelerationGraph1.addSegmentAndTwoPoints(0,3,2,3);
+    accelerationGraph1.automaticReferenceArray(4,3);
+    $("#accelerationGraph1").append(accelerationGraph1.drawCanvas(300,300));
+
+    let accelerationGraph2 = new QuantitativeGraph(0,10,-8,8);
+    accelerationGraph2.makeAccelerationGraph();
+    accelerationGraph2.addStepwiseLinearFunction([[0,-4],[2,-4],[2,6],[10,6]]);
+    accelerationGraph2.automaticReferenceArray(5,4);
+    $("#accelerationGraph2").append(accelerationGraph2.drawCanvas(300,300));
+
+    let momentumGraph1 = new QuantitativeGraph(0,60,0,60);
+    momentumGraph1.makeMomentumGraph();
+    momentumGraph1.addStepwiseLinearFunction([[0,20],[20,20],[20,40],[40,40],[40,60],[60,60]]);
+    momentumGraph1.automaticReferenceArray(3);
+    $("#momentumGraph1").append(momentumGraph1.drawCanvas(300,300));
+
+    let momentumGraph2 = new QuantitativeGraph(0,10,0,36);
+    momentumGraph2.makeMomentumGraph();
+    momentumGraph2.addSegmentAndTwoPoints(0,0,10,36);
+    momentumGraph2.automaticReferenceArray(2,4);
+    $("#momentumGraph2").append(momentumGraph2.drawCanvas(300,300));
+
+    let netForceGraph1 = new QuantitativeGraph(0,0.1,0,300);
+    netForceGraph1.makeNetForceGraph();
+    netForceGraph1.addStepwiseLinearFunction([[0,0],[0.05,300],[0.1,0]]);
+    netForceGraph1.automaticReferenceArray(2,5);
+    $("#netForceGraph1").append(netForceGraph1.drawCanvas(300,300));
+
+    let netForceGraph2 = new QuantitativeGraph(0,0.5,-100,100);
+    netForceGraph2.makeNetForceGraph();
+    netForceGraph2.addSegmentAndTwoPoints(0,-60,0.5,60);
+    netForceGraph2.automaticReferenceArray(2,10);
+    $("#netForceGraph2").append(netForceGraph2.drawCanvas(600,600));
+
+</script>

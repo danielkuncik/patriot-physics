@@ -73,6 +73,36 @@ class QuantitativeGraph extends Diagram {
         this.yAxisLabel = super.labelLineAbove(lowerLeftCorner, upperLeftCorner, yLabel, this.axisTextDisplacement, this.axisLabelFontSize);
     }
 
+    makePositionGraph(timeUnit, positionUnit) {
+        if (timeUnit === undefined) {timeUnit = 's';}
+        if (positionUnit === undefined) {positionUnit = 'm';}
+        this.labelAxes(`time (${timeUnit})`, `position (${positionunit})`);
+    }
+
+    makeVelocityGraph(timeUnit, velocityUnit) {
+        if (timeUnit === undefined) {timeUnit = 's';}
+        if (velocityUnit === undefined) {velocityUnit = 'm/s';}
+        this.labelAxes(`time (${timeUnit})`, `velocity (${velocityUnit})`);
+    }
+
+    makeAccelerationGraph(timeUnit, accelerationUnit) {
+        if (timeUnit === undefined) {timeUnit = 's';}
+        if (accelerationUnit === undefined) {accelerationUnit = 'm/s/s';}
+        this.labelAxes(`time (${timeUnit})`, `acceleration (${accelerationUnit})`)
+    }
+
+    makeMomentumGraph(timeUnit, momentumUnit) {
+        if (timeUnit === undefined) {timeUnit = 's';}
+        if (momentumUnit === undefined) {momentumUnit = 'kg m/s';}
+        this.labelAxes(`time (${timeUnit})`, ` momentum (${momentumUnit})`);
+    }
+
+    makeNetForceGraph(timeUnit, netForceUnit) {
+        if (timeUnit === undefined) {timeUnit = 's';}
+        if (netForceUnit === undefined) {netForceUnit = 'N';}
+        this.labelAxes(`time (${timeUnit})`, `net force (${netForceUnit})`)
+    }
+
 
     /*
     I need to add:
@@ -136,22 +166,55 @@ class QuantitativeGraph extends Diagram {
         // adds a horizontal dotted line at this position on the y axis
     }
 
+    addXReference(position, referenceLineBoolean, hashMarkBoolean) {
+        if (referenceLineBoolean === undefined) {
+            referenceLineBoolean = true
+        }
+        if (hashMarkBoolean === undefined) {
+            hashMarkBoolean = true
+        }
+        if (referenceLineBoolean) {
+            this.addXAxisHash(position, String(roundValue(position,2)), true);
+        }
+        if (hashMarkBoolean) {
+            this.addXAxisReferenceLine(position);
+        }
+    }
+
+    addYReference(position, referenceLineBoolean, hashMarkBoolean) {
+        if (referenceLineBoolean === undefined) {
+            referenceLineBoolean = true
+        }
+        if (hashMarkBoolean === undefined) {
+            hashMarkBoolean = true
+        }
+        if (referenceLineBoolean) {
+            this.addYAxisHash(position, String(roundValue(position,2)), true);
+        }
+        if (hashMarkBoolean) {
+            this.addYAxisReferenceLine(position);
+        }
+    }
+
     // an array of positions
     // at each position, adds a reference hash, a label, an a reference line
     addReferenceArray(xReferenceArray, yReferenceArray) {
         xReferenceArray.forEach((position) => {
-            this.addXAxisHash(position, String(roundValue(position,2)), true);
-            this.addXAxisReferenceLine(position);
+            this.addXReference(position);
         });
         yReferenceArray.forEach((position) => {
-            this.addYAxisHash(position, String(roundValue(position,2)), true);
-            this.addYAxisReferenceLine(position);
+            this.addYReference(position);
         });
     }
 
     automaticReferenceArray(NumXHashMarks, NumYHashMarks) {
+        if (typeof(NumXHashMarks) === 'number' && NumYHashMarks === undefined) { // option to include a single argument
+            NumYHashMarks = NumXHashMarks;
+        }
         if (NumXHashMarks === undefined) {NumXHashMarks = 6;}
         if (NumYHashMarks === undefined) {NumYHashMarks = 4;}
+        NumXHashMarks += 1; // so that the origin does not count against it!
+        NumYHashMarks += 1;
         if (NumXHashMarks < 2) {NumXHashMarks = 2;}
         if (NumYHashMarks < 2) {NumYHashMarks = 2;}
         let xInterval = (this.xMaxOnGraph - this.xMinOnGraph) / (NumXHashMarks  - 1);
@@ -220,7 +283,7 @@ class QuantitativeGraph extends Diagram {
         super.addFunctionGraph(rescaledFunction, xMin, xMax);
     }
 
-    addStepwiseFunction(arrayOfPoints, circlesBoolean) {
+    addStepwiseLinearFunction(arrayOfPoints, circlesBoolean) {
         if (circlesBoolean === undefined) {circlesBoolean = true;}
         let k;
         for (k = 0; k < arrayOfPoints.length - 1; k++) {
@@ -229,6 +292,11 @@ class QuantitativeGraph extends Diagram {
         if (circlesBoolean) {
             arrayOfPoints.forEach((point) => {this.addPointAsACircle(point[0], point[1]);});
         }
+    }
+
+    // multiplies the y axis of the graph!
+    multiplyGraph(factor) {
+
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
@@ -712,8 +780,8 @@ class VelocityTimeGraph extends QuantitativeGraph {
         super.addSegmentWithCirclesOnEnds(x1,y1,x2,y2);
     }
 
-    addStepwiseFunction(arrayOfPoints) {
-        super.addStepwiseFunction(arrayOfPoints, true);
+    addStepwiseLinearFunction(arrayOfPoints) {
+        super.addStepwiseLinearFunction(arrayOfPoints, true);
     }
 
     // add a function called automate reference array
