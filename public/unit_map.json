@@ -3175,6 +3175,15 @@
             "letter": "M",
             "prerequisites": ["advanced_pool_ball_collision"],
             "objective": "Use the conservation of momentum to explain how a Newton's Cradle works."
+          },
+          "totally_inelastic_collision_energy_loss":
+          {
+            "title": "Totally Inelastic Collision Energy Loss",
+            "level": 6,
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisite": "newtons_cradle",
+            "objective":  "Determine a formula for kinetic energy lost in the case of a totally inelastic collision; apply this formula to several possible situations"
           }
         }
       },
