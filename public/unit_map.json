@@ -2486,7 +2486,7 @@
           {
             "title": "Symbolic Energy",
             "level": 4,
-            "horizontal": 2,
+            "horizontal": 0,
             "letter": "M",
             "prerequisites": ["work_done_on_system"],
             "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions"
@@ -2494,8 +2494,8 @@
           "vertical_spring_system":
           {
             "title": "Vertical Spring System",
-            "level": 4,
-            "horizontal": 1,
+            "level": 5,
+            "horizontal": 0,
             "letter": "N",
             "prerequisites": ["symbolic_energy"],
             "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by friction."
@@ -3182,8 +3182,17 @@
             "level": 6,
             "horizontal": 3,
             "letter": "N",
-            "prerequisite": "newtons_cradle",
+            "prerequisites": ["newtons_cradle"],
             "objective":  "Determine a formula for kinetic energy lost in the case of a totally inelastic collision; apply this formula to several possible situations"
+          },
+          "tennis_ball_basketball":
+          {
+            "title": "The Tennis Ball and the Basketball",
+            "level": 6,
+            "horizontal": 4,
+            "letter": "O",
+            "prerequisites": ["newtons_cradle"],
+            "objective": "Create an algebraic model for the motion of a tennis ball dropped on top of basketball (resulting in an elastic collision between then)"
           }
         }
       },
