@@ -3250,16 +3250,16 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["impulse_formula_3"],
-            "objective": "Qualitatively relate momentum-time and force-time graphs with 3+ steps or ideas to consider."
+            "objective": "Quantitatively relate momentum-time graphs to net-force-time graphs."
           },
-          "momentum_graphs_3":
+          "dynamic_graphs_3":
           {
-            "title": "Momentum Graphs 3",
+            "title": "Dynamic Graphs 3",
             "level": 3,
             "horizontal": 3,
             "letter": "G",
             "prerequisites": ["dynamic_graphs_2"],
-            "objective": "Quantitatively relate momentum-time and force-time graphs with 1-2 steps to consider; use the concept of impulse in making this connection."
+            "objective": "Quantitatively relate all five kinematic and dynamic graphs: position-time, velocity-time, acceleration-time, momentum-time, and net-force time."
           },
           "kinematic_dynamics_graphs_1":
           {
