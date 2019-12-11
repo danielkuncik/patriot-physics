@@ -941,6 +941,9 @@ class Diagram {
     // default wiggle room is 20
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (wiggleRoom === undefined) {wiggleRoom = 20;}
+        if (maxWidth > 0 && maxHeight === undefined) {
+            maxHeight = maxWidth;
+        }
         try {
             if (isNaN(maxWidth) || isNaN(maxHeight)) throw 'Width and Height must be numbers';
             if (maxWidth <= 0 || maxHeight <= 0) throw 'Width and Height must be positive numbers';

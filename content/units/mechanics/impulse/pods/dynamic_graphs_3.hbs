@@ -24,11 +24,20 @@ Diagram of all 5 types of graphs!
         Given the following position-time graph
         of an object with a mass of 5 kg,
         complete all other kinematic and dynamic graphs.
+        <div id = 'positionGraph1'></div>
     </li>
-    <li>
+    <li class = 'question'>
         Given the following position-time graph
         of an object with a mass of 6 kg,
         complete all other kinematic and dynamic graphs.
+        <div id = 'positionGraph2'></div>
     </li>
-
 </ol>
+
+<script>
+    let positionGraph1 = makeParabolicPTgraph(6,72,4);
+    $("#positionGraph1").append(positionGraph1.drawCanvas(300));
+
+    let positionGraph2 = makeParabolicPTgraph(8,64,-2,16);
+    $("#positionGraph2").append(positionGraph2.drawCanvas(300));
+</script>
