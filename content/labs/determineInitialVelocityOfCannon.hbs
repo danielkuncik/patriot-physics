@@ -1,0 +1,108 @@
+<p>
+    The range of a cannon is given by the formula
+    $$
+        \Delta x = \frac{v_i^2}{g} \sin \left( 2 \theta \right)
+    $$
+    in which \( v_i \) is the initial speed of the cannon,
+    \( g \) is free-fall acceleration,
+    and \( \theta \) is the launch angle of the cannon.
+    The goal of this lab is to:
+</p>
+
+<ul type = 'a'>
+    <li>
+        Prove that \( \Delta x \) is directly proportional
+        to \( \sin \left( 2 \theta \right) \).
+    </li>
+    <li>
+        Use this relationship
+        to determine the initial velocity of a spring-loaded cannon.
+    </li>
+</ul>
+
+<p>
+    However...here is the challenge.
+    This relationship applies only when the cannonball lands on exactly
+    the same vertical level it was launched!
+    Otherwise, there is a much more challenging solution involving the
+    quadratic equation, which we will consider during the lab
+    called "aim a cannon at any point in 3-D space."
+    For the purposes of this lab,
+    we need the cannonball (a marble) to land on the same vertical level it was
+    launched at.
+    To this end, at approximately the point it will land,
+    place 6 physics textbooks in a stack.
+</p>
+
+<p>
+    <strong>
+        Important Rule:
+    </strong>
+    Whenever firing the cannon,
+    somebody <strong>must</strong>
+    be standing outside the range of the cannon, like a baseball catcher,
+    in a position to catch the cannonball (which is a marble).
+    It don't want any of mine rolling around the place!
+</p>
+
+<p>
+    We will not consider air resistance in our calculations.
+</p>
+
+<p>
+    Compile at least 30 measurements that relate \( \theta \) to \( \Delta x \).
+    Complete ten measurements on strength 1, ten measurements on strength level 2,
+    and ten measurements on strength level 3.
+    Use your data to create the following table (which should be located
+    in your <emph>lab notebook</emph>)!
+</p>
+
+<div id = 'dataTable'></div>
+
+<script>
+    let numMeasurements = 30;
+    let dataTable = new Table(1 + numMeasurements,3);
+    dataTable.addTopHeaders(['Strength Level','\\( \\theta \\)',' \\( \\Delta x \\) (m)']);
+    let topRowProportion = 0.2;
+    let rowProportions = [topRowProportion];
+    let i;
+    let dataRowProportion = (1 - topRowProportion) / numMeasurements;
+    for (i = 0; i < numMeasurements; i++) {
+        rowProportions.push(dataRowProportion);
+    }
+    dataTable.setRowProportions([rowProportions]);
+    $("#dataTable").append(dataTable.draw(300,900));
+</script>
+
+<p>
+    Please enter your data into a <code>.csv</code> file
+    and give it to Mr. Kuncik.
+    He will produce a scatter plot and several statistical results for this lab.
+    This will lead to a much larger set of information to draw from.
+</p>
+
+<p>
+    For example, if the first three measurements were:
+</p>
+<div id = 'exampleDataTable'></div>
+<script>
+    let exampleDataTable = new Table(4, 3);
+    exampleDataTable.addTopHeaders(['Strength Level','\\( \\theta \\)',' \\( \\Delta x \\) (m)']);
+    exampleDataTable.writeTextInRow(1, [1, 30, 0.85]);
+    exampleDataTable.writeTextInRow(2, [1, 45, 1.2]);
+    exampleDataTable.writeTextInRow(3, [2, 35, 1.5]);
+    $("#exampleDataTable").append(exampleDataTable.draw(300,400));
+</script>
+<p>
+    Please format your <code>.csv</code> file as follows:
+    <br>
+    <code>
+        strength, theta, range
+        <br>
+        1, 30, 0.85
+        <br>
+        1, 45, 1.2
+        <br>
+        2, 35, 1.5
+    </code>
+</p>
