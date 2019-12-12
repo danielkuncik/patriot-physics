@@ -32,6 +32,12 @@ Diagram of all 5 types of graphs!
         complete all other kinematic and dynamic graphs.
         <div id = 'positionGraph2'></div>
     </li>
+    <li class = 'question'>
+        Given the following momentum-time graph
+        of an object with a mass of 8 kg,
+        complete all other kinematic and dynamic graphs.
+        <div id = 'momentumGraph1'></div>
+    </li>
 </ol>
 
 <script>
@@ -40,4 +46,10 @@ Diagram of all 5 types of graphs!
 
     let positionGraph2 = makeParabolicPTgraph(8,64,-2,16);
     $("#positionGraph2").append(positionGraph2.drawCanvas(300));
+
+    let momentumGraph1 = new QuantitativeGraph(0,10,0,240);
+    momentumGraph1.makeMomentumGraph();
+    momentumGraph1.automaticReferenceArray(2,6);
+    momentumGraph1.addSegmentAndTwoPoints(0,160,10,240);
+    $("#momentumGraph1").append(momentumGraph1.drawCanvas(400));
 </script>

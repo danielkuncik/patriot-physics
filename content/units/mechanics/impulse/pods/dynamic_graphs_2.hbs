@@ -112,6 +112,7 @@
             </div>
         </div>
     </li>
+    <div class = 'pageBreak'></div>
     <li class = 'question'>
         For the following momentum-time graph,
         create a net-force-time graph:
@@ -124,11 +125,16 @@
         <div id = 'momentumGraph3'></div>
         <div id = 'netForceGraph3'></div>
     </li>
+    <div class = 'pageBreak'></div>
     <li class = 'question'>
         For the following momentum-time graph,
         create a net-force-time graph:
         <div id = 'momentumGraph4'></div>
         <div id = 'netForceGraph4'></div>
+    </li>
+    <li class = 'question'>
+        Determine the impulse acting on the following object:
+        <div id = 'netForceGraphX'></div>
     </li>
 </ol>
 
@@ -177,8 +183,15 @@
     netForceGraph4.makeNetForceGraph();
     netForceGraph4.automaticReferenceArray(4,8);
     $("#netForceGraph4").append(netForceGraph4.drawCanvas(300,300));
+
+    let netForceGraphX = new QuantitativeGraph(0,0.5,0,200);
+    netForceGraphX.makeNetForceGraph();
+    netForceGraphX.automaticReferenceArray(2, 4);
+    netForceGraphX.addStepwiseLinearFunction([[0,0],[0.25,150],[0.5,0]]);
+    $("#netForceGraphX").append(netForceGraphX.drawCanvas(300));
 </script>
 
+<div class = 'pageBreak'></div>
 <h4>
     Answers
 </h4>
