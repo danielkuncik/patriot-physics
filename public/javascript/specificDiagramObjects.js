@@ -947,6 +947,7 @@ class CircuitDiagram extends Diagram {
     }
 }
 
+
 class FreeBodyDiagram extends Diagram {
     constructor() {
         super();
@@ -1060,6 +1061,8 @@ class FreeBodyDiagram extends Diagram {
         });
     }
 
+    /// create an option force all force arrows to have the same length;
+    // regardless of relative magnitude....
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (this.forces.length === 0) {
             this.maxForce = 1; // so that a diagram can still be created with zero forces
@@ -1110,6 +1113,8 @@ class FreeBodyDiagram extends Diagram {
 
 }
 
+
+/// this should be combined with the block problem area!
 class SpringProblem extends Diagram {
     constructor() {
         super();
@@ -1252,6 +1257,153 @@ class HorizontalSpringProblem extends SpringProblem {
         return super.drawCanvas(this.maxCanvasWidth, this.maxCanvasHeight);
     }
 
+}
+
+class Block {
+    constructor(horizontalPosition, width, height, name) {
+        if (horizontalPosition === undefined) {horizontalPosition = 0;}
+        if (width === undefined) {width = 1;}
+        if (height === undefined) {height = 1;}
+        if (name === undefined) {name = 'A';}
+
+        this.horizontalPosition = horizontalPosition;
+        this.width = width;
+        this.height = height;
+        this.name = name;
+
+        this.forces = [];
+    }
+
+    addForce(relativeMagnitude, angleInDegreesRelativeToSurface, label, position) {
+        if (relativeMagnitude === undefined) {relativeMagnitude = 1;}
+        if (angleInDegreesRelativeToSurface === undefined) {angleInDegreesRelativeToSurface = 0;}
+        if (label === undefined) {label = '';}
+        if (position === undefined) {position = 'centerRight';}
+        this.forces.push({
+            "relativeMagnitude": relativeMagnitude,
+            "angleInRadiansRelativeToSurface": convertRadiansToDegrees(angleInDegreesRelativeToSurface),
+            "label": label,
+            "position": position
+        });
+    }
+
+    addToDiagram(diagramObject, bottomCenterPoint, thetaInRadians) {
+        let bottomLeft = bottomCenterPoint.getAnotherPointWithTrig(this.width / 2, thetaInRadians + Math.PI);
+        let bottomRight = bottomCenterPoint.getAnotherPointWithTrig(this.width / 2, thetaInRadians);
+        let topLeft = bottomLeft.getAnotherPointWithTrig(this.height, thetaInRadians + Math.PI / 2);
+        let topRight = bottomRight.getAnotherPointWithTrig(this.height, thetaInRadians + Math.PI / 2);
+
+       // diagramObject.addSegment(bottomLeft, bottomRight); // redundadant?
+        diagramObject.addSegment(bottomRight, topRight);
+        diagramObject.addSegment(topRight, topLeft);
+        diagramObject.addSegment(topLeft, bottomLeft);
+
+        this.forces.forEach((force) => {
+            let startPoint, endPoint;
+            if (force.position === 'centerRight') {
+                startPoint = bottomRight.interpolate(topRight, 0.5);
+            } else if (force.position === 'topRightCorner') {
+                startPoint = topRight;
+            } else if (force.position === 'center') {
+                startPoint = bottomLeft.interpolate(topRight, 0.5);
+            }/// etc. etc., allow many positions here
+
+            endPoint = startPoint.getAnotherPointWithTrig(force.relativeMagnitude, force.angleInRadiansRelativeToSurface + thetaInRadians);
+
+            diagramObject.addArrow(startPoint, endPoint);
+
+        });
+    }
+}
+
+
+class BlockProblem extends Diagram {
+    constructor() {
+        super();
+        this.appliedForces = [];
+        this.blocks = [];
+        this.angleOfInclineDegrees = 0;
+        this.length = 10;
+        this.horizontalSurface = true;
+        this.verticalSurface = false;
+        this.ramp = false;
+    }
+
+    addBlock(horizontalPosition, width, height, name) {
+        if (name === undefined) {name = alphabetArray[this.blocks.length];}
+        this.blocks.push(new Block(horizontalPosition, width, height, name));
+    }
+
+    selectBlock(name) {
+        let k;
+        let selectedBlock;
+        for (k = 0; k < this.blocks.length; k++) {
+            if (this.blocks[k].name === name) {
+                selectedBlock = this.blocks[k];
+            }
+        }
+        return selectedBlock
+    }
+
+    addForce(blockName, relativeMagnitude, angleInDegreesRelativeToSurface, label, position) {
+        if (blockName === undefined) {blockName = 'A';}
+        let selectedBlock = this.selectBlock(blockName);
+        selectedBlock.addForce(relativeMagnitude, angleInDegreesRelativeToSurface, label, position);
+    }
+
+    setLength(newLength) {
+        this.length = newLength;
+    }
+
+    setAngleOfIncline(thetaInDegrees) {
+        if (thetaInDegrees % 180 === 0) {
+            this.horizontalSurface = true;
+            this.verticalSurface = false;
+            this.ramp = false;
+            this.angleOfInclineDegrees = 0;
+        }
+        else if ((thetaInDegrees + 90) % 180 === 0) {
+            this.verticalSurface = true;
+            this.horizontalSurface = false;
+            this.ramp = false;
+            this.angleOfInclineDegrees = 90;
+        }
+        else {
+            this.ramp = true;
+            this.horizontalSurface = false;
+            this.verticalSurface = false;
+            this.angleOfInclineDegrees = thetaInDegrees % 360;
+        }
+    }
+
+    addRamp(thetaInDegrees) {
+        if (thetaInDegrees === undefined) {thetaInDegrees = 30;}
+        this.angleOfInclineDegrees = thetaInDegrees;
+        this.ramp = true
+    }
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+
+        // draw ramp
+        let theta = convertDegreesToRadians(this.angleOfInclineDegrees);
+        let leftEndPoint = origin.getAnotherPointWithTrig(this.length / 2, theta + Math.PI);
+        let rightEndPoint = origin.getAnotherPointWithTrig(this.length/2, theta);
+        super.addSegment(leftEndPoint, rightEndPoint);
+        if (this.ramp) {
+            let cornerPoint = new Point(leftEndPoint.x + this.length * Math.cos(theta), leftEndPoint.y);
+            super.addSegment(leftEndPoint, cornerPoint);
+            super.addSegment(cornerPoint, rightEndPoint);
+        }
+
+        // draw blocks
+        this.blocks.forEach((block) => {
+            let bottomCenterPoint = leftEndPoint.getAnotherPointWithTrig(block.horizontalPosition + this.length / 2, theta);
+            block.addToDiagram(this, bottomCenterPoint, theta);
+        });
+
+        // draw canvas
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
 }
 
 class UnitMap extends Diagram {

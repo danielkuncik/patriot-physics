@@ -1,0 +1,13 @@
+<p>
+    Hello there everyone!
+</p>
+
+<div id = 'blockProblem'></div>
+
+<script>
+    let blockProblem = new BlockProblem();
+    //blockProblem.addRamp();
+    blockProblem.addBlock();
+    blockProblem.addForce();
+    $("#blockProblem").append(blockProblem.drawCanvas(500));
+</script>
