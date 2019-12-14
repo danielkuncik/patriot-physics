@@ -8,10 +8,9 @@
     let blockProblem = new BlockProblem();
     //blockProblem.addRamp();
     blockProblem.addBlock();
-    blockProblem.addGravity();
     blockProblem.addNormalForce();
-   // blockProblem.addFriction(undefined, undefined, undefined, 'right');
- //   blockProblem.addHorizontalAppliedForce(undefined, undefined, undefined, 'left');
+    blockProblem.addFriction(undefined, undefined, undefined, 'right');
+    blockProblem.addHorizontalAppliedForce(undefined, undefined, undefined, 'left');
     blockProblem.addAngledAppliedForce(undefined, undefined, undefined, -10, 'left');
 
     $("#blockProblem").append(blockProblem.drawCanvas(500));

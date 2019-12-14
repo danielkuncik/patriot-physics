@@ -643,14 +643,21 @@ class Diagram {
 
         let L = point1.getDistanceToAnotherPoint(point2);
         if (arrowheadLength === undefined) {arrowheadLength = L * 0.1;}
-        let arrowheadEnd1 = new Point(L - arrowheadLength * Math.cos((phi)), arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
+        let arrowProportion = arrowheadLength / point1.getDistanceToAnotherPoint(point2);
+        let arrowheadEnd1 = point2.interpolate(point1, arrowProportion);
+        let arrowheadEnd2 = point2.interpolate(point1, arrowProportion);
+
+        arrowheadEnd1.rotate(convertDegreesToRadians(arrowheadAngleInDegrees), point2);
+        arrowheadEnd2.rotate(-1 * convertDegreesToRadians(arrowheadAngleInDegrees), point2);
+     /* the old way
+     let arrowheadEnd1 = new Point(L - arrowheadLength * Math.cos((phi)), arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
         let arrowheadEnd2 = new Point(L - arrowheadLength * Math.cos((phi)), -1 * arrowheadLength * Math.sin(phi)); // location of the arrowhead end if the arrow were a straight line on the x-axis
 
         arrowheadEnd1.rotate(angleToHorizontal);
         arrowheadEnd1.translate(point1.x, point1.y);
         arrowheadEnd2.rotate(angleToHorizontal);
         arrowheadEnd2.translate(point1.x, point1.y);
-
+*/
         this.addExistingPoint(point1);
         this.addExistingPoint(point2);
         this.addExistingPoint(arrowheadEnd1);
