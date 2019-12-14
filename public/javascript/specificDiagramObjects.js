@@ -1274,17 +1274,71 @@ class Block {
         this.forces = [];
     }
 
-    addForce(relativeMagnitude, angleInDegreesRelativeToSurface, label, position) {
-        if (relativeMagnitude === undefined) {relativeMagnitude = 1;}
-        if (angleInDegreesRelativeToSurface === undefined) {angleInDegreesRelativeToSurface = 0;}
+    // if absolute angle boolean is false, then the angle is relative to surface
+    // but if true, it is relative to the ground
+    addForce(relativeMagnitude, label, angleInDegrees, position, absoluteAngleBoolean) {
+        if (relativeMagnitude === undefined) {relativeMagnitude = 2;}
+        if (angleInDegrees === undefined) {angleInDegrees = 0;}
         if (label === undefined) {label = '';}
         if (position === undefined) {position = 'centerRight';}
+        if (absoluteAngleBoolean === undefined) {absoluteAngleBoolean = 'false';}
         this.forces.push({
             "relativeMagnitude": relativeMagnitude,
-            "angleInRadiansRelativeToSurface": convertRadiansToDegrees(angleInDegreesRelativeToSurface),
+            "angleInDegrees": angleInDegrees,
             "label": label,
-            "position": position
+            "position": position,
+            "absoluteAngleBoolean": absoluteAngleBoolean
         });
+    }
+
+    addGravity(relativeMagnitude, label) {
+        this.addForce(relativeMagnitude, label, 270, 'center', true);
+    }
+
+    addNormalForce(relativeMagnitude, label) {
+        this.addForce(relativeMagnitude, label, 90, 'bottomCenter', false);
+    }
+
+    addHorizontalAppliedForce(relativeMagnitude, label, direction) {
+        if (direction === undefined) {direction = 'right';}
+        let position, angle;
+        if (direction === 'right') {
+            position = 'rightCenter';
+            angle = 0;
+        } else if (direction === 'left') {
+            position = 'leftCenter';
+            angle = 180;
+        }
+        this.addForce(relativeMagnitude, label, angle, position, false);
+    }
+
+    addFriction(relativeMagnitude, label, direction) {
+        if (direction === undefined) {direction = 'left';}
+        let position, angle;
+        if (direction === 'right') {
+            position = 'bottomRightCorner';
+            angle = 0;
+        } else if (direction === 'left') {
+            position = 'bottomLeftCorner';
+            angle = 180;
+        }
+        this.addForce(relativeMagnitude, label, angle, position, false);
+    }
+
+    /// there is a bug with NEGATIVE angles on the LEFT
+    // and i believe it is an error in the ADD ARROW function in the diagram object
+    addAngledAppliedForce(relativeMagnitude, label, angleInDegrees, direction) {
+        if (direction === undefined) {direction = 'right';}
+        if (angleInDegrees === undefined) {angleInDegrees = 30;}
+        let position, angle;
+        if (direction === 'right') {
+            position = 'topRightCorner';
+            angle = angleInDegrees;
+        } else if (direction === 'left') {
+            position = 'topLeftCorner';
+            angle = 180 - angleInDegrees;
+        }
+        this.addForce(relativeMagnitude, label, angle, position, false);
     }
 
     addToDiagram(diagramObject, bottomCenterPoint, thetaInRadians) {
@@ -1300,15 +1354,33 @@ class Block {
 
         this.forces.forEach((force) => {
             let startPoint, endPoint;
-            if (force.position === 'centerRight') {
+            if (force.position === 'rightCenter') {
                 startPoint = bottomRight.interpolate(topRight, 0.5);
+            } else if (force.position === 'leftCenter') {
+                startPoint = bottomLeft.interpolate(topLeft, 0.5);
             } else if (force.position === 'topRightCorner') {
                 startPoint = topRight;
+            } else if (force.position === 'topLeftCorner') {
+                startPoint = topLeft;
+            } else if (force.position === 'bottomRightCorner') { //it's just a little bit off the bottom so it doesn't overlap with the graph!
+                startPoint = bottomRight.interpolate(topRight, 0.1);
+            } else if (force.position === 'bottomLeftCorner') {
+                startPoint = bottomLeft.interpolate(topLeft, 0.1);
             } else if (force.position === 'center') {
-                startPoint = bottomLeft.interpolate(topRight, 0.5);
-            }/// etc. etc., allow many positions here
+                startPoint = bottomLeft.interpolate(topRight, 0.55); /// it is just a tiny bit off center so it does not overlap with the gravitational force!
+            } else if (force.position === 'bottomCenter') {
+                startPoint = bottomLeft.interpolate(bottomRight, 0.45);
+            } else if (force.position === 'topCenter') {
+                startPoint = topLeft.interpolate(topRight, 0.5);
+            } else {
+                startPoint = bottomLeft.interpolate(topRight, 0.5); // center is the default
+            }
 
-            endPoint = startPoint.getAnotherPointWithTrig(force.relativeMagnitude, force.angleInRadiansRelativeToSurface + thetaInRadians);
+            if (force.absoluteAngleBoolean) {
+                endPoint = startPoint.getAnotherPointWithTrig(force.relativeMagnitude, convertDegreesToRadians(force.angleInDegrees));
+            } else {
+                endPoint = startPoint.getAnotherPointWithTrig(force.relativeMagnitude, convertDegreesToRadians(force.angleInDegrees) + thetaInRadians);
+            }
 
             diagramObject.addArrow(startPoint, endPoint);
 
@@ -1335,6 +1407,7 @@ class BlockProblem extends Diagram {
     }
 
     selectBlock(name) {
+        if (name === undefined) {name = 'A';}
         let k;
         let selectedBlock;
         for (k = 0; k < this.blocks.length; k++) {
@@ -1345,10 +1418,30 @@ class BlockProblem extends Diagram {
         return selectedBlock
     }
 
-    addForce(blockName, relativeMagnitude, angleInDegreesRelativeToSurface, label, position) {
-        if (blockName === undefined) {blockName = 'A';}
+    addForce(blockName, relativeMagnitude, label, angleInDegrees, position, absoluteAngleBoolean) {
         let selectedBlock = this.selectBlock(blockName);
-        selectedBlock.addForce(relativeMagnitude, angleInDegreesRelativeToSurface, label, position);
+        selectedBlock.addForce(relativeMagnitude, angleInDegrees, label, position, absoluteAngleBoolean);
+    }
+
+    addGravity(blockName, relativeMagnitude, label) {
+        let selectedBlock = this.selectBlock(blockName);
+        selectedBlock.addGravity(relativeMagnitude, label);
+    }
+
+    addNormalForce(blockName, relativeMagnitude, label) {
+        this.selectBlock(blockName).addNormalForce(relativeMagnitude, label);
+    }
+
+    addHorizontalAppliedForce(blockName, relativeMagnitude, label, direction) {
+        this.selectBlock(blockName).addHorizontalAppliedForce(relativeMagnitude, label, direction);
+    }
+
+    addFriction(blockName, relativeMagnitude, label, direction) {
+        this.selectBlock(blockName).addFriction(relativeMagnitude, label, direction);
+    }
+
+    addAngledAppliedForce(blockName, relativeMagnitude, label, theta, direction) {
+        this.selectBlock(blockName).addAngledAppliedForce(relativeMagnitude, label, theta, direction);
     }
 
     setLength(newLength) {
