@@ -1259,6 +1259,129 @@ class HorizontalSpringProblem extends SpringProblem {
 
 }
 
+// global variable total number of forces
+let totalNumberOfVectors = 0;
+
+class Vector {
+    constructor(name, relativeMagnitude, label, angleInDegrees, startPoint, relativeAngleBoolean) {
+        if (name === undefined) {
+            name = numberToLetter(totalNumberOfVectors);
+        }
+        totalNumberOfVectors += 1;
+        if (relativeMagnitude === undefined) {
+            relativeMagnitude = 2;
+        }
+        if (label === undefined) {
+            label = name;
+        }
+        if (angleInDegrees === undefined) {
+            angleInDegrees = 0;
+        }
+        if (startPoint === undefined) {
+            startPoint = origin;
+        }
+        if (relativeAngleBoolean === undefined) { // relative angle boolean determines if the angle is relative to a ramp, etc.
+            relativeAngleBoolean = false;
+        }
+
+        this.relativeMagnitude = relativeMagnitude;
+        this.label = label;
+        this.angleInDegrees = angleInDegrees;
+        this.relativeAngleBoolean = relativeAngleBoolean;
+
+
+        if (typeof(startPoint) === 'string') {
+            this.stringStartPoint = true;
+            this.absoluteStartPoint = false;
+            this.startPoint = startPoint;
+        } else if (typeof(startPoint) === 'object') {
+            this.absoluteStartPoint = true;
+            this.stringStartPoint = false;
+            this.startPoint = startPoint;
+        }
+
+        this.verticalRefernceLine = undefined;
+        this.horizontalReferenceLine = undefined;
+    }
+
+    addVerticalReference(label, length, dashed, relativeAngleBoolean) {
+        if (label === undefined) {
+            label = 'a'
+        }
+        if (length === undefined) {
+            length = this.relativeMagnitude * Math.sin(convertDegreesToRadians(this.angleInDegrees)) * 0.5;
+        }
+        if (dashed === undefined) {
+            dashed = true;
+        }
+        if (relativeAngleBoolean === undefined) {
+            relativeAngleBoolean = false;
+        }
+        this.verticalRefernceLine = {
+            label: label,
+            length: length,
+            dashed: dashed,
+            relativeAngleBoolean: relativeAngleBoolean
+        }
+    }
+
+    rotate(rotationAngleInDegrees) {
+        this.angleInDegrees += rotationAngleInDegrees;
+    }
+
+    addHorizontalReference(label, length, dashed, relativeAngleBoolean) {
+        if (label === undefined) {
+            label = 'a'
+        }
+        if (length === undefined) {
+            length = this.relativeMagnitude * Math.cos(convertDegreesToRadians(this.angleInDegrees)) * 0.5;
+        }
+        if (dashed === undefined) {
+            dashed = true;
+        }
+        if (relativeAngleBoolean === undefined) {
+            relativeAngleBoolean = false;
+        }
+        this.horizontalReferenceLine = {
+            label: label,
+            length: length,
+            dashed: dashed,
+            relativeAngleBoolean: relativeAngleBoolean
+        }
+    }
+
+    setAbsoluteStartPoint(point) {
+        this.absoluteStartPoint = true;
+        this.startPoint = point;
+    }
+
+    addToDiagram(diagramObject, relativeAngleInDegrees, relativeFontSize) {
+        if (relativeFontSize === undefined) {
+            relativeFontSize = 0.2;
+        }
+        let textDisplacement = relativeFontSize / 2;
+        if (this.relativeAngleBoolean === true && relativeAngleInDegrees !== undefined) {
+            this.rotate(relativeAngleInDegrees)
+        }
+        if (!this.absoluteStartPoint) {
+            console.log(`ERROR: Must set absolute start point before drawing force ${name}`)
+        }
+
+        this.endPoint = this.startPoint.getAnotherPointWithTrig(this.relativeMagnitude, convertDegreesToRadians(this.angleInDegrees));
+
+        diagramObject.addArrow(this.startPoint, this.endPoint);
+
+        if (this.label) {
+            diagramObject.labelLineAbove(this.startPoint, this.endPoint, this.label,textDisplacement, relativeFontSize);
+        }
+
+        if (this.relativeAngleBoolean === true && relativeAngleInDegrees !== undefined) {
+            this.rotate(-1 * relativeAngleInDegrees);
+        }
+
+    }
+}
+
 class Block {
     constructor(horizontalPosition, width, height, name) {
         if (horizontalPosition === undefined) {horizontalPosition = 0;}
@@ -1276,27 +1399,21 @@ class Block {
 
     // if absolute angle boolean is false, then the angle is relative to surface
     // but if true, it is relative to the ground
-    addForce(relativeMagnitude, label, angleInDegrees, position, absoluteAngleBoolean) {
+    addForce(name, relativeMagnitude, label, angleInDegrees, startPoint, relativeAngleBoolean) {
         if (relativeMagnitude === undefined) {relativeMagnitude = 2;}
         if (angleInDegrees === undefined) {angleInDegrees = 0;}
-        if (label === undefined) {label = '';}
-        if (position === undefined) {position = 'centerRight';}
-        if (absoluteAngleBoolean === undefined) {absoluteAngleBoolean = 'false';}
-        this.forces.push({
-            "relativeMagnitude": relativeMagnitude,
-            "angleInDegrees": angleInDegrees,
-            "label": label,
-            "position": position,
-            "absoluteAngleBoolean": absoluteAngleBoolean
-        });
+       // if (label === undefined) {label = '';}
+        if (startPoint === undefined) {startPoint = 'centerRight';}
+        if (relativeAngleBoolean === undefined) {relativeAngleBoolean = 'false';}
+        this.forces.push(new Vector(name, relativeMagnitude, label, angleInDegrees, startPoint, relativeAngleBoolean));
     }
 
     addGravity(relativeMagnitude, label) {
-        this.addForce(relativeMagnitude, label, 270, 'center', true);
+        this.addForce(undefined, relativeMagnitude, label, 270, 'center', false);
     }
 
     addNormalForce(relativeMagnitude, label) {
-        this.addForce(relativeMagnitude, label, 90, 'bottomCenter', false);
+        this.addForce(undefined, relativeMagnitude, label, 90, 'bottomCenter', true);
     }
 
     addHorizontalAppliedForce(relativeMagnitude, label, direction) {
@@ -1309,7 +1426,7 @@ class Block {
             position = 'leftCenter';
             angle = 180;
         }
-        this.addForce(relativeMagnitude, label, angle, position, false);
+        this.addForce(undefined, relativeMagnitude, label, angle, position, true);
     }
 
     addFriction(relativeMagnitude, label, direction) {
@@ -1322,7 +1439,7 @@ class Block {
             position = 'bottomLeftCorner';
             angle = 180;
         }
-        this.addForce(relativeMagnitude, label, angle, position, false);
+        this.addForce(undefined, relativeMagnitude, label, angle, position, true);
     }
 
     /// there is a bug with NEGATIVE angles on the LEFT
@@ -1338,14 +1455,14 @@ class Block {
             position = 'topLeftCorner';
             angle = 180 - angleInDegrees;
         }
-        this.addForce(relativeMagnitude, label, angle, position, false);
+        this.addForce(undefined, relativeMagnitude, label, angle, position, true);
     }
 
-    addToDiagram(diagramObject, bottomCenterPoint, thetaInRadians) {
-        let bottomLeft = bottomCenterPoint.getAnotherPointWithTrig(this.width / 2, thetaInRadians + Math.PI);
-        let bottomRight = bottomCenterPoint.getAnotherPointWithTrig(this.width / 2, thetaInRadians);
-        let topLeft = bottomLeft.getAnotherPointWithTrig(this.height, thetaInRadians + Math.PI / 2);
-        let topRight = bottomRight.getAnotherPointWithTrig(this.height, thetaInRadians + Math.PI / 2);
+    addToDiagram(diagramObject, bottomCenterPoint, thetaInDegrees) {
+        let bottomLeft = bottomCenterPoint.getAnotherPointWithTrig(this.width / 2, convertDegreesToRadians(thetaInDegrees) + Math.PI);
+        let bottomRight = bottomCenterPoint.getAnotherPointWithTrig(this.width / 2, convertDegreesToRadians(thetaInDegrees));
+        let topLeft = bottomLeft.getAnotherPointWithTrig(this.height, convertDegreesToRadians(thetaInDegrees) + Math.PI / 2);
+        let topRight = bottomRight.getAnotherPointWithTrig(this.height, convertDegreesToRadians(thetaInDegrees) + Math.PI / 2);
 
        // diagramObject.addSegment(bottomLeft, bottomRight); // redundadant?
         diagramObject.addSegment(bottomRight, topRight);
@@ -1353,36 +1470,31 @@ class Block {
         diagramObject.addSegment(topLeft, bottomLeft);
 
         this.forces.forEach((force) => {
-            let startPoint, endPoint;
-            if (force.position === 'rightCenter') {
-                startPoint = bottomRight.interpolate(topRight, 0.5);
-            } else if (force.position === 'leftCenter') {
-                startPoint = bottomLeft.interpolate(topLeft, 0.5);
-            } else if (force.position === 'topRightCorner') {
-                startPoint = topRight;
-            } else if (force.position === 'topLeftCorner') {
-                startPoint = topLeft;
-            } else if (force.position === 'bottomRightCorner') { //it's just a little bit off the bottom so it doesn't overlap with the graph!
-                startPoint = bottomRight.interpolate(topRight, 0.1);
-            } else if (force.position === 'bottomLeftCorner') {
-                startPoint = bottomLeft.interpolate(topLeft, 0.1);
-            } else if (force.position === 'center') {
-                startPoint = bottomLeft.interpolate(topRight, 0.55); /// it is just a tiny bit off center so it does not overlap with the gravitational force!
-            } else if (force.position === 'bottomCenter') {
-                startPoint = bottomLeft.interpolate(bottomRight, 0.45);
-            } else if (force.position === 'topCenter') {
-                startPoint = topLeft.interpolate(topRight, 0.5);
+            if (force.startPoint === 'rightCenter') {
+                force.setAbsoluteStartPoint(bottomRight.interpolate(topRight, 0.5));
+            } else if (force.startPoint === 'leftCenter') {
+                force.setAbsoluteStartPoint(bottomLeft.interpolate(topLeft, 0.5));
+            } else if (force.startPoint === 'topRightCorner') {
+                force.setAbsoluteStartPoint(topRight);
+            } else if (force.startPoint === 'topLeftCorner') {
+                force.setAbsoluteStartPoint(topLeft);
+            } else if (force.startPoint === 'bottomRightCorner') { //it's just a little bit off the bottom so it doesn't overlap with the graph!
+                force.setAbsoluteStartPoint(bottomRight.interpolate(topRight, 0.1));
+            } else if (force.startPoint === 'bottomLeftCorner') {
+                force.setAbsoluteStartPoint(bottomLeft.interpolate(topLeft, 0.1));
+            } else if (force.startPoint === 'center') {
+                force.setAbsoluteStartPoint(bottomLeft.interpolate(topRight, 0.55));
+                /// it is just a tiny bit off center so it does not overlap with the gravitational force!
+            } else if (force.startPoint === 'bottomCenter') {
+                force.setAbsoluteStartPoint(bottomLeft.interpolate(bottomRight, 0.45));
+            } else if (force.startPoint === 'topCenter') {
+                force.setAbsoluteStartPoint(topLeft.interpolate(topRight, 0.5));
             } else {
-                startPoint = bottomLeft.interpolate(topRight, 0.5); // center is the default
+                force.setAbsoluteStartPoint(bottomLeft.interpolate(topRight, 0.5));
+                //center is the default
             }
 
-            if (force.absoluteAngleBoolean) {
-                endPoint = startPoint.getAnotherPointWithTrig(force.relativeMagnitude, convertDegreesToRadians(force.angleInDegrees));
-            } else {
-                endPoint = startPoint.getAnotherPointWithTrig(force.relativeMagnitude, convertDegreesToRadians(force.angleInDegrees) + thetaInRadians);
-            }
-
-            diagramObject.addArrow(startPoint, endPoint);
+            force.addToDiagram(diagramObject, thetaInDegrees);
 
         });
     }
@@ -1490,7 +1602,7 @@ class BlockProblem extends Diagram {
 
         // draw blocks
         this.blocks.forEach((block) => {
-            let bottomCenterPoint = leftEndPoint.getAnotherPointWithTrig(block.horizontalPosition + this.length / 2, theta);
+            let bottomCenterPoint = leftEndPoint.getAnotherPointWithTrig(block.horizontalPosition + this.length / 2, this.angleOfInclineDegrees);
             block.addToDiagram(this, bottomCenterPoint, theta);
         });
 

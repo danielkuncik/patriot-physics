@@ -109,6 +109,25 @@ function makeArraySumToOne(array) {
 }
 
 const alphabetArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N','O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const alphabetArrayLowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+function numberToLetter(number, lowercase) {
+    let array;
+    if (lowercase) {
+        array = alphabetArrayLowercase;
+    } else {
+        array = alphabetArray;
+    }
+    let letter;
+    if (number < 26) {
+        letter = array[number];
+    } else if (number < 26 * 27) {
+        letter = `${array[Math.floor(number / 26)]}${array[number % 26]}`;
+    } else {
+        letter = 'xxx';
+    }
+    return letter;
+}
 
 
 // returns an array of allowed ranges for a function

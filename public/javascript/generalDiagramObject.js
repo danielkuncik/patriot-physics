@@ -107,6 +107,10 @@ class Point {
         //    this.uuid = create_UUID();
     }
 
+    setName(newName) {
+        this.name = newName;
+    }
+
     translate(xTranslation, yTranslation) {
         this.x += xTranslation;
         this.y += yTranslation;
@@ -548,16 +552,24 @@ class Diagram {
         this.yMin = undefined;
         this.horizontalRange = undefined;
         this.verticalRange = undefined;
+        this.defaultSize = 500;
+    }
+
+    setDefaultSize(newSize) {
+        this.defaultSize = newSize;
     }
 
     // i added a line to prevent creating duplicates!
     // 8-25-19: Circle function was breaking because of the duplicates
-    addNewPoint(x,y) {
+    addNewPoint(x,y,name) {
         let pointAlreadyExists = this.searchForPoint(x,y);
         if (pointAlreadyExists) {
             return pointAlreadyExists
         } else {
-            let newPoint = new Point(x,y);
+            if (name === undefined) {
+                name = numberToLetter(this.points.length);
+            }
+            let newPoint = new Point(x,y,name);
             this.points.push(newPoint);
             return newPoint
         }
@@ -568,6 +580,9 @@ class Diagram {
         if (pointAlreadySaved) {
             return pointAlreadySaved
         } else {
+            if (existingPoint.name === undefined) {
+                existingPoint.setName(numberToLetter(this.points.length));
+            }
             this.points.push(existingPoint);
             return existingPoint
         }
@@ -947,6 +962,12 @@ class Diagram {
     // wiggle room is the space around the outside of the canvas in which nothing will be drawn,
     // default wiggle room is 20
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        if (maxWidth === undefined) {
+            maxWidth = this.defaultSize;
+        }
+        if (maxHeight === undefined) {
+            maxHeight = maxWidth;
+        }
         if (wiggleRoom === undefined) {wiggleRoom = 20;}
         if (maxWidth > 0 && maxHeight === undefined) {
             maxHeight = maxWidth;
