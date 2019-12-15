@@ -9,11 +9,8 @@
     let blockProblem = new BlockProblem();
     // blockProblem.addRamp();
     blockProblem.addBlock();
-    blockProblem.addNormalForce();
-    blockProblem.addFriction(undefined, undefined, undefined, 'right');
-    blockProblem.addHorizontalAppliedForce(undefined, undefined, undefined, 'left');
-    blockProblem.addAngledAppliedForce(undefined, undefined, undefined, -10, 'right');
-    blockProblem.addAngledAppliedForce(undefined, undefined, undefined, 10, 'left');
+    let myForce = blockProblem.addAngledAppliedForce(undefined, undefined, undefined, 30, 'right');
+    myForce.addComponents();
 
 
     let myTable = new forceTableQuantitative2D(1,4);

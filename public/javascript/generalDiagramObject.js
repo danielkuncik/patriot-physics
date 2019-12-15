@@ -237,6 +237,20 @@ class Point {
         }
         return theta;
     }
+
+    // gives x and y components of a vector made from this vector and another point
+    getComponentsToAnotherPoint(anotherPoint, axisRotationInRadians) {
+        if (axisRotationInRadians === undefined) {axisRotationInRadians = 0;}
+        let xComponent, yComponent;
+        let theta = this.getAngleToAnotherPoint(anotherPoint);
+        let L = this.getDistanceToAnotherPoint(anotherPoint);
+        xComponent = L * Math.cos(theta);
+        yComponent = L * Math.sin(theta);
+        return  {
+            xComponent: xComponent,
+            yComponent: yComponent
+        }
+    }
 }
 
 

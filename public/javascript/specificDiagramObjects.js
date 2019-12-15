@@ -1262,6 +1262,8 @@ class HorizontalSpringProblem extends SpringProblem {
 // global variable total number of forces
 let totalNumberOfVectors = 0;
 
+// axis rotation boolean
+// determines if the vector rotates when the axis rotate
 class Vector {
     constructor(name, relativeMagnitude, label, angleInDegrees, startPoint, relativeAngleBoolean) {
         if (name === undefined) {
@@ -1290,11 +1292,11 @@ class Vector {
         this.relativeAngleBoolean = relativeAngleBoolean;
 
 
-        if (typeof(startPoint) === 'string') {
+        if (typeof (startPoint) === 'string') {
             this.stringStartPoint = true;
             this.absoluteStartPoint = false;
             this.startPoint = startPoint;
-        } else if (typeof(startPoint) === 'object') {
+        } else if (typeof (startPoint) === 'object') {
             this.absoluteStartPoint = true;
             this.stringStartPoint = false;
             this.startPoint = startPoint;
@@ -1302,7 +1304,10 @@ class Vector {
 
         this.verticalRefernceLine = undefined;
         this.horizontalReferenceLine = undefined;
+
+        this.components = undefined;
     }
+
 
     addVerticalReference(label, length, dashed, relativeAngleBoolean) {
         if (label === undefined) {
@@ -1327,6 +1332,18 @@ class Vector {
 
     rotate(rotationAngleInDegrees) {
         this.angleInDegrees += rotationAngleInDegrees;
+    }
+
+    // if horizontal first boolean is false, the vertical component is constructed first
+    addComponents(dashedBoolean, horizontalFirstBoolean) {
+        if (dashedBoolean === undefined) {dashedBoolean = true;}
+        if (horizontalFirstBoolean === undefined) {horizontalFirstBoolean = true;}
+
+        this.components = {
+            dashedBoolean: dashedBoolean,
+            horizontalFirstBoolean: horizontalFirstBoolean
+        }
+
     }
 
     addHorizontalReference(label, length, dashed, relativeAngleBoolean) {
@@ -1355,13 +1372,13 @@ class Vector {
         this.startPoint = point;
     }
 
-    addToDiagram(diagramObject, relativeAngleInDegrees, relativeFontSize) {
+    addToDiagram(diagramObject, axisRotationInDegrees, relativeFontSize) {
         if (relativeFontSize === undefined) {
             relativeFontSize = 0.2;
         }
         let textDisplacement = relativeFontSize / 2;
-        if (this.relativeAngleBoolean === true && relativeAngleInDegrees !== undefined) {
-            this.rotate(relativeAngleInDegrees)
+        if (this.relativeAngleBoolean === true && axisRotationInDegrees !== undefined) {
+            this.rotate(axisRotationInDegrees)
         }
         if (!this.absoluteStartPoint) {
             console.log(`ERROR: Must set absolute start point before drawing force ${name}`)
@@ -1375,8 +1392,23 @@ class Vector {
             diagramObject.labelLineAbove(this.startPoint, this.endPoint, this.label,textDisplacement, relativeFontSize);
         }
 
-        if (this.relativeAngleBoolean === true && relativeAngleInDegrees !== undefined) {
-            this.rotate(-1 * relativeAngleInDegrees);
+        if (this.relativeAngleBoolean === true && axisRotationInDegrees !== undefined) {
+            this.rotate(-1 * axisRotationInDegrees);
+        }
+
+        if (this.components) {
+            let point1 = this.startPoint;
+            let point3 = this.endPoint;
+            let point2;
+            let components = point1.getComponentsToAnotherPoint(point3, convertDegreesToRadians(axisRotationInDegrees));
+            if (this.components.horizontalFirstBoolean) {
+                point2 = new Point(point1.x + components.xComponent, point1.y);
+            } else { // vertical first
+                point2 = new Point(point1.x, point1.y + components.yComponent);
+            }
+
+            diagramObject.addArrow(point1, point2);
+            diagramObject.addArrow(point2, point3);
         }
 
     }
@@ -1405,15 +1437,17 @@ class Block {
        // if (label === undefined) {label = '';}
         if (startPoint === undefined) {startPoint = 'centerRight';}
         if (relativeAngleBoolean === undefined) {relativeAngleBoolean = 'false';}
-        this.forces.push(new Vector(name, relativeMagnitude, label, angleInDegrees, startPoint, relativeAngleBoolean));
+        let newForce = new Vector(name, relativeMagnitude, label, angleInDegrees, startPoint, relativeAngleBoolean);
+        this.forces.push(newForce);
+        return newForce;
     }
 
     addGravity(relativeMagnitude, label) {
-        this.addForce(undefined, relativeMagnitude, label, 270, 'center', false);
+        return this.addForce(undefined, relativeMagnitude, label, 270, 'center', false);
     }
 
     addNormalForce(relativeMagnitude, label) {
-        this.addForce(undefined, relativeMagnitude, label, 90, 'bottomCenter', true);
+        return this.addForce(undefined, relativeMagnitude, label, 90, 'bottomCenter', true);
     }
 
     addHorizontalAppliedForce(relativeMagnitude, label, direction) {
@@ -1426,7 +1460,7 @@ class Block {
             position = 'leftCenter';
             angle = 180;
         }
-        this.addForce(undefined, relativeMagnitude, label, angle, position, true);
+        return this.addForce(undefined, relativeMagnitude, label, angle, position, true);
     }
 
     addFriction(relativeMagnitude, label, direction) {
@@ -1439,7 +1473,7 @@ class Block {
             position = 'bottomLeftCorner';
             angle = 180;
         }
-        this.addForce(undefined, relativeMagnitude, label, angle, position, true);
+        return this.addForce(undefined, relativeMagnitude, label, angle, position, true);
     }
 
     /// there is a bug with NEGATIVE angles on the LEFT
@@ -1455,7 +1489,7 @@ class Block {
             position = 'topLeftCorner';
             angle = 180 - angleInDegrees;
         }
-        this.addForce(undefined, relativeMagnitude, label, angle, position, true);
+        return this.addForce(undefined, relativeMagnitude, label, angle, position, true);
     }
 
     addToDiagram(diagramObject, bottomCenterPoint, thetaInDegrees) {
@@ -1515,7 +1549,9 @@ class BlockProblem extends Diagram {
 
     addBlock(horizontalPosition, width, height, name) {
         if (name === undefined) {name = alphabetArray[this.blocks.length];}
-        this.blocks.push(new Block(horizontalPosition, width, height, name));
+        let newBlock = new Block(horizontalPosition, width, height, name);
+        this.blocks.push(newBlock);
+        return
     }
 
     selectBlock(name) {
@@ -1532,28 +1568,28 @@ class BlockProblem extends Diagram {
 
     addForce(blockName, relativeMagnitude, label, angleInDegrees, position, absoluteAngleBoolean) {
         let selectedBlock = this.selectBlock(blockName);
-        selectedBlock.addForce(relativeMagnitude, angleInDegrees, label, position, absoluteAngleBoolean);
+        return selectedBlock.addForce(relativeMagnitude, angleInDegrees, label, position, absoluteAngleBoolean);
     }
 
     addGravity(blockName, relativeMagnitude, label) {
         let selectedBlock = this.selectBlock(blockName);
-        selectedBlock.addGravity(relativeMagnitude, label);
+        return selectedBlock.addGravity(relativeMagnitude, label);
     }
 
     addNormalForce(blockName, relativeMagnitude, label) {
-        this.selectBlock(blockName).addNormalForce(relativeMagnitude, label);
+        return this.selectBlock(blockName).addNormalForce(relativeMagnitude, label);
     }
 
     addHorizontalAppliedForce(blockName, relativeMagnitude, label, direction) {
-        this.selectBlock(blockName).addHorizontalAppliedForce(relativeMagnitude, label, direction);
+        return this.selectBlock(blockName).addHorizontalAppliedForce(relativeMagnitude, label, direction);
     }
 
     addFriction(blockName, relativeMagnitude, label, direction) {
-        this.selectBlock(blockName).addFriction(relativeMagnitude, label, direction);
+        return this.selectBlock(blockName).addFriction(relativeMagnitude, label, direction);
     }
 
     addAngledAppliedForce(blockName, relativeMagnitude, label, theta, direction) {
-        this.selectBlock(blockName).addAngledAppliedForce(relativeMagnitude, label, theta, direction);
+        return this.selectBlock(blockName).addAngledAppliedForce(relativeMagnitude, label, theta, direction);
     }
 
     setLength(newLength) {
