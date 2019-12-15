@@ -3,6 +3,7 @@
 </p>
 
 <div id = 'blockProblem'></div>
+<div id = 'table'></div>
 
 <script>
     let blockProblem = new BlockProblem();
@@ -13,6 +14,10 @@
     blockProblem.addHorizontalAppliedForce(undefined, undefined, undefined, 'left');
     blockProblem.addAngledAppliedForce(undefined, undefined, undefined, -10, 'right');
     blockProblem.addAngledAppliedForce(undefined, undefined, undefined, 10, 'left');
+
+
+    let myTable = new forceTableQuantitative2D(1,4);
+    $("#table").append(myTable.draw());
 
 
     $("#blockProblem").append(blockProblem.drawCanvas(800));

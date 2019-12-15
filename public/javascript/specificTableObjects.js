@@ -228,3 +228,114 @@ class TableOfCanvasses extends Table {
         }
     }
 }
+
+
+/// the next big thing is to create these tables for oragnizing forces!
+// quantiative force table depends on identifying magnitudes of forces?
+// has seperate sections for X and Y forces
+class ForceTableQuantitative1D extends Table {
+    constructor(numForces) {
+        let numRows = numForces + 2;
+        let numColumns = 4;
+        super(numRows, numColumns);
+
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+
+        super.writeTextInCell(0,0,
+            'free-body diagram');
+        super.writeTextInRow(1, ['force','magnitude','direction','How did you determine the magnitude?']);
+
+        super.setColumnProportions([2,2,2,4]);
+
+        let rowProportionArray = [4,1];
+        let k;
+        for (k = 0; k < numForces; k++) {
+            rowProportionArray.push(2);
+        }
+        super.setRowProportions(rowProportionArray);
+    }
+}
+
+class forceTableQuantitative2D extends Table {
+    constructor(numHorizontalForces, numVerticalForces) {
+        let numColumns = 5;
+        let maxForces;
+        if (numHorizontalForces >= numVerticalForces) {
+            maxForces = numHorizontalForces;
+        } else {
+            maxForces = numVerticalForces;
+        }
+        let numRows = maxForces + 3;
+
+        super(numRows, numColumns);
+
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+
+
+        super.mergeRight(1,0);
+        super.mergeRight(1,3);
+
+        super.writeTextInCell(1,0,'Horizontal');
+        super.writeTextInCell(1,3,'Vertical');
+        super.writeTextInCell(0,0,'free-body diagram');
+
+        super.writeTextInCell(2,0,'force');
+        super.writeTextInCell(2,1,'magnitude');
+
+        super.writeTextInCell(2,3,'force');
+        super.writeTextInCell(2,4,'magnitude');
+
+        super.setColumnProportions([5,5,1,5,5]);
+
+        super.mergeBelow(1,2);
+
+        let rowProportionArray = [4,1,1];
+        let k;
+        for (k = 0; k < maxForces; k++) {
+            rowProportionArray.push(2);
+            super.mergeBelow(1,2);
+        }
+
+        super.shadeCell(1,2);
+        super.setRowProportions(rowProportionArray);
+
+        // shading unecessary cells
+        if (numHorizontalForces > numVerticalForces) {
+            let q;
+            for (q = 3 + numVerticalForces; q < this.numRows; q++) {
+                super.mergeRight(q, 3);
+                super.shadeCell(q,3);
+            }
+            /// a problem in the merging function prevents me from merging all of them!
+        } else if (numVerticalForces > numHorizontalForces) {
+            let q;
+            for (q = 3 + numHorizontalForces; q < this.numRows; q++) {
+                super.mergeRight(q, 0);
+                super.shadeCell(q, 0);
+            }
+        }
+    }
+}
+
+// qualitative force table focuses on identifying agents and causes of forces
+class ForceTableQualitative extends Table {
+    constructor(numForces, notesColumnBoolean) {
+        let numRows = 2 + numForces;
+        let numColumns = 3;
+        if (notesColumnBoolean) {
+            numColumns += 1;
+        }
+        super(numRows, numColumns);
+
+        super.mergeRight(0,0);
+        super.mergeRight(0,0);
+        super.writeTextInRow(1,['force','direction','agent']);
+        super.writeTextInCell(0,0, 'free-body diagram');
+    }
+}

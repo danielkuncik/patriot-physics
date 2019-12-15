@@ -28,6 +28,12 @@ class Table {
 
         this.columnKeys = {};
         this.rowKeys = {};
+
+        this.defaultSize = 500;
+    }
+
+    setDefaultSize(newSize) {
+        this.defaultSize = newSize;
     }
 
     eraseAllInfo() {
@@ -312,6 +318,13 @@ class Table {
     draw(width, height, unit) {
         if (unit === undefined) {unit = 'px';}
 
+        if (width === undefined) {
+            width = this.defaultSize;
+        }
+        if (height === undefined) {
+            height = width;
+        }
+
         let rowProportions = makeArraySumToOne(this.rowProportionArray);
         let columnProportions = makeArraySumToOne(this.columnProportionArray);
 
@@ -380,3 +393,5 @@ class Table {
         return table;
     }
 }
+
+
