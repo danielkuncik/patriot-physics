@@ -170,7 +170,7 @@ class Point {
         if (quadrant === '1') {theta = Math.atan(this.y / this.x);}
         /// inefficient, but very reliable
         else if (quadrant === '2') {theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
-        else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.x) / (-1 * this.y));}
+        else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}
         else if (quadrant === '4') {theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
         else if (quadrant === '+X') {theta = 0;}
         else if (quadrant === '-X') {theta = Math.PI;}
@@ -651,7 +651,6 @@ class Diagram {
     // right now, it's pretty bad
     addArrow(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
         if (arrowheadAngleInDegrees === undefined) {arrowheadAngleInDegrees = 20;}
-        let phi = convertDegreesToRadians(arrowheadAngleInDegrees);
 
         let angleToHorizontal = point1.getAngleToAnotherPoint(point2);
 
