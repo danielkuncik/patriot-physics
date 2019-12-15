@@ -758,8 +758,11 @@ class Diagram {
     // returns textAbove if it exists
     // if only textBelow exists, returns textBelow
     // i need to create a function that labels a segment
-    labelLine(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize) {
-        let centerOfLine = new Point( (point1.x + point2.x)/2, (point1.y + point2.y)/2);
+    labelLine(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize, textPosition) {
+        if (textPosition === undefined) {
+            textPosition = 0.5;
+        }
+        let centerOfText = point1.interpolate(point2, textPosition);
         let theta = point1.getAngleToAnotherPoint(point2);
         let textRotation;
         if (relativeFontSize === undefined) {
@@ -772,12 +775,15 @@ class Diagram {
         let phi;
         let quadrant = point1.getQuadrantOfAnotherPoint(point2);
 
+        // as defined by https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate
+        // rotation angle is CLOCKWISE in radians
+        // there are probably more bugs here!
         if (quadrant === '1') {
             phi = Math.PI /2 - theta;
             textRotation = -1 * theta;
         } else if (quadrant === '2') {
-            phi = Math.PI - theta;
-            textRotation = theta + 3 * Math.PI / 2; // i don't know why this works, but it does!
+            textRotation = Math.PI - theta; // continues to perplex me
+            phi = Math.PI / 2 - textRotation;
         } else if (quadrant === '3') {
             textRotation = theta + Math.PI / 2;
             phi = 3 * Math.PI / 2 - theta;
@@ -793,8 +799,8 @@ class Diagram {
         }
 
 
-        let aboveX = centerOfLine.x, belowX = centerOfLine.x;
-        let aboveY = centerOfLine.y, belowY = centerOfLine.y;
+        let aboveX = centerOfText.x, belowX = centerOfText.x;
+        let aboveY = centerOfText.y, belowY = centerOfText.y;
 
         // i know this is inefficient, but it is easy to understand
         if (quadrant === '1' || quadrant === '3') { // up right line
