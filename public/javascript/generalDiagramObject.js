@@ -789,7 +789,8 @@ class Diagram {
             phi = 3 * Math.PI / 2 - theta;
         } else if (quadrant === '4') {
             textRotation = -1 * theta;
-            phi = 2* Math.PI - theta;
+            phi = Math.PI / 2 - textRotation;
+            //phi = 2* Math.PI - theta;
         } else if (quadrant === '+Y' || quadrant === '-Y') {
             textRotation = 3 * Math.PI / 2;
             // phi undefined
