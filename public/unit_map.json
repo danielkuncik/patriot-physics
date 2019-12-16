@@ -2947,118 +2947,136 @@
           {
             "title": "Vector Form Conversions",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 2,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Convert a vector between standard form and component form and back"
+          },
+          "basic_vector_addition":
+          {
+            "title": "Basic Vector Addition",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "B",
+            "prerequisites":["vector_form_conversions"],
+            "objective": "Add vectors and subtract vectors in multiple dimensions using component form."
           },
           "dragging_at_angle_1":
           {
             "title": "Dragging at an Angle 1: Kinetic Friction Only",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "C",
+            "prerequisites": ["basic_vector_addition"],
             "objective": "Analyze the motion of a block dragged at an angle with only kinetic friction; explain why the drag influences the normal force."
-          },
-          "dragging_at_angle_2":
-          {
-            "title": "Dragging at an Angle 2: Static and Kinetic Friction",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze the motion of a block dragged at an angle under both static and kinetic friction."
           },
           "hanging_sign_1":
           {
             "title": "Hanging a Sign 1: Two Ropes",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "D",
+            "prerequisites": ["dragging_at_angle_1"],
             "objective": "Draw a quantitative free-body diagram of a sign hanging from two ropes, both at an angle."
-          },
-          "hanging_sign_2":
-          {
-            "title": "Hanging a Sign 2: Three Ropes",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw a quantitative free-body diagram of a sign hanging from three ropes at angles."
           },
           "ramp_problems_1":
           {
             "title": "Ramp Problems 1: No Friction",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["hanging_sign_1"],
             "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only."
           },
           "ramp_problems_2":
           {
             "title": "Ramp Problems 2: Kinetic Friction",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["ramp_problems_1"],
             "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only."
+          },
+          "dragging_at_angle_2":
+          {
+            "title": "Dragging at an Angle 2: Static and Kinetic Friction",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "G",
+            "prerequisites": ["ramp_problems_2"],
+            "objective": "Analyze the motion of a block dragged at an angle under both static and kinetic friction."
+          },
+          "hanging_sign_2":
+          {
+            "title": "Hanging a Sign 2: Three Ropes",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "H",
+            "prerequisites": ["dragging_at_angle_2"],
+            "objective": "Draw a quantitative free-body diagram of a sign hanging from three ropes at angles."
           },
           "ramp_problems_3":
           {
             "title": "Ramp Problems 3: Static and Kinetic Friction",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Numerically analyeze the motion of a block on a ramp with both static and kinetic friction."
+            "horizontal": 2,
+            "letter": "I",
+            "prerequisites": ["hanging_sign_2"],
+            "objective": "Numerically analyze the motion of a block on a ramp with both static and kinetic friction."
+          },
+          "ramp_problems_4":
+          {
+            "title": "Ramp Problems 4: Algebraic with No Friction or Kinetic Friction",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "J",
+            "prerequisites": ["ramp_problems_3"],
+            "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model"
+          },
+          "dragging_at_angle_3":
+          {
+            "title": "Dragging at an Angle 3: Algebraic Solutions",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "K",
+            "prerequisites": ["ramp_problems_4"],
+            "objective": "Algebraically model a block being dragged at an angle; create algebraic conditions for the block to experience different types of motion."
+          },
+          "ramp_problems_5":
+          {
+            "title": "Ramp Problems 5: Algebraic with Kinetic and Static Friction",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["dragging_at_angle_3"],
+            "objective": "Algebraically model a block on a ramp with both static and kinetic friction"
           },
           "pulling_a_cordon":
           {
             "title": "Pulling a Cordon",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["ramp_problems_5"],
             "objective": "Create an algebraic model of a person pulling on a cordon rope."
           },
           "ramp_problems_6":
           {
             "title": "Ramp Problems 6: Draging and Object while on a ramp",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "N",
+            "prerequisites": ["pulling_a_cordon"],
             "objective": "Algebraically model a block being dragged on a ramp with friction."
           },
-          "dragging_at_angle_3":
+          "2D_dynamics_level_6":
           {
-            "title": "Dragging at an Angle 3: Algebraic Solutions",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Algebraically model a block being dragged at an angle; create algebraic conditions for the block to experience different types of motion."
-          },
-          "ramp_problems_4":
-          {
-            "title": "Ramp Problems 4: Algebraic with No Friction or Kinetic Friction",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model"
-          },
-          "ramp_problems_5":
-          {
-            "title": "Ramp Problems 5: Algebraic with Kinetic and Static Friction",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Algebraically model a block on a ramp with both static and kinetic friction"
+            "title": "2-D Dynamics Level 6",
+            "level": 6,
+            "horizontal": 5,
+            "letter": "O",
+            "prerequisites": ["ramp_problems_6"],
+            "objective": "Create models using the principles of 2-dimensional dynamics."
           }
         }
       },
