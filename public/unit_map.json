@@ -2943,22 +2943,22 @@
         "honors": false,
         "pods":
         {
-          "vector_form_conversions":
+          "vector_form_conversion":
           {
-            "title": "Vector Form Conversions",
+            "title": "Vector Form Conversion",
             "level": 1,
             "horizontal": 2,
             "letter": "A",
             "prerequisites": [],
             "objective": "Convert a vector between standard form and component form and back"
           },
-          "basic_vector_addition":
+          "vector_component_addition":
           {
-            "title": "Basic Vector Addition",
+            "title": "Vector Component Addition",
             "level": 1,
             "horizontal": 1,
             "letter": "B",
-            "prerequisites":["vector_form_conversions"],
+            "prerequisites":["vector_form_conversion"],
             "objective": "Add vectors and subtract vectors in multiple dimensions using component form."
           },
           "dragging_at_angle_1":
@@ -2967,7 +2967,7 @@
             "level": 2,
             "horizontal": 1,
             "letter": "C",
-            "prerequisites": ["basic_vector_addition"],
+            "prerequisites": ["vector_component_addition"],
             "objective": "Analyze the motion of a block dragged at an angle with only kinetic friction; explain why the drag influences the normal force."
           },
           "hanging_sign_1":
