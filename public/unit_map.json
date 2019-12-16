@@ -1191,9 +1191,9 @@
             "prerequisites": ["velocity_acceleration_graphs"],
             "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
           },
-          "kinematic_graph_comparisons":
+          "kinematic_graph_comparisons_1":
           {
-            "title": "Kinematic Graph Comparisons",
+            "title": "Kinematic Graph Comparisons 1",
             "level": 2,
             "letter": "D",
             "horizontal": 1,
@@ -1206,17 +1206,26 @@
             "level": 2,
             "letter": "E",
             "horizontal": 0,
-            "prerequisites": ["kinematic_graph_comparisons"],
+            "prerequisites": ["kinematic_graph_comparisons_1"],
             "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration."
           },
           "story_to_graph_selection_A":
           {
             "title": "Story to Graph Selection A",
             "level": 3,
-            "horizontal": 1,
+            "horizontal": 0,
             "letter": "F",
             "prerequisites": ["kinematics_definitions"],
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+          },
+          "kinematic_graph_comparisons_2":
+          {
+            "title": "Kinematic Graph Comparisons 2",
+            "level": 3,
+            "letter": "X",
+            "horizontal": 1,
+            "prerequisites": ["story_to_graph_selection_A"],
+            "objective": "Qualitatively Compare different curves and lines on kinematic graphs."
           },
           "story_to_graph_selection_B":
           {
@@ -1224,7 +1233,7 @@
             "level": 3,
             "horizontal": 2,
             "letter": "G",
-            "prerequisites": ["story_to_graph_selection_A"],
+            "prerequisites": ["kinematic_graph_comparisons_2"],
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
           },
           "position_graph_connection":

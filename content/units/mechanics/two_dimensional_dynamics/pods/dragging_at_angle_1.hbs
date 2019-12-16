@@ -1,21 +1,210 @@
 <p>
-    Hello there everyone!
+    In this section, we will begin to use the idea of vector components
+    to analyze dynamics problems.
+    Previous units on dynamics have considered forces that are only
+    completely vertical or horizontal.
+    In this unit, we will analyze forces that occur at angles,
+    and we will do so using the idea of <emph>vector components</emph>.
 </p>
 
-<div id = 'blockProblem'></div>
-<div id = 'table'></div>
+<h4>
+    Forces
+</h4>
+<ol>
+    <li>
+        Gravity:
+        Gravity always has a direction downward
+        and always has a magnitude given by
+        $$
+        F_g = mg
+        $$
+    </li>
+    <li>
+        Applied Force:
+        The applied force in these problems
+        is at an angle.
+        It is typically given
+        and needs to be broken into components
+        to complete the problem.
+    </li>
+    <li>
+        Normal Force:
+        The normal force is an <emph>constraint force</emph>.
+        For an object on the floor,
+        the direction of the normal force is always
+        <strong>upward</strong>.
+        The magnitude of the normal force will be whatever
+        value is necessary for the total vertical net force to equal
+        zero:
+        $$
+        \Sigma F_y = 0
+        $$
+        $$
+        F_N + \text{other vertical forces} = \Sigma F_y = 0
+        $$
+    </li>
+    <li>
+        Kinetic Friction:
+        Kinetic friction is given by
+        $$
+        F_{frk} = \mu_k F_N
+        $$
+    </li>
+</ol>
+
+<h4>
+    Problems
+</h4>
+<p class = 'directions'>
+    Write every formula you use before you use it!
+</p>
+
+<ol>
+    <li class = 'mb-5'>
+        A person pulls a block of mass 5 kg
+        on a frictionless surface
+        upward at an angle of \(30^{\circ} \)
+        with a force of 6 N.
+        <div id = 'problem1'></div>
+        <ol type = 'a'>
+            <li>
+                Only one force, the applied force,
+                has both horizontal and vertical components.
+                Break it into these two components.
+            </li>
+            <li>
+                Fill out the table below to analyze all of the
+                forces acting on the surface:
+                <div id = 'table1'></div>
+            </li>
+            <li>
+                Determine the net force and the acceleration of
+                the block.
+            </li>
+        </ol>
+    </li>
+    <li class = 'mb-5'>
+        A person pulls a block of mass 8 kg
+        on a frictionless surface upward
+        at an angle of \( 80^{\circ} \)
+        with a force of 12 N/.
+        <div id = 'problem2'></div>
+        <ol type = 'a'>
+            <li>
+                Only one force, the applied force,
+                has both horizontal and vertical components.
+                Break it into these two components.
+            </li>
+            <li>
+                Fill out the table below to analyze all of the
+                forces acting on the surface:
+                <div id = 'table2'></div>
+            </li>
+            <li>
+                Determine the net force and the acceleration of
+                the block.
+            </li>
+        </ol>
+    </li>
+    <li class = 'mb-5'>
+        A person pulls a block of mass 12 kg
+        on at an angle of \( 20^{\circ} \) upward from the horizontal
+        with a strength of 8 N.
+        The surface and block have a coefficient of kinetic friction
+        of 0.15.
+        <div id = 'problem3'></div>
+        <ol type = 'a'>
+            <li>
+                Only one force, the applied force,
+                has both horizontal and vertical components.
+                Break it into these two components.
+            </li>
+            <li>
+                Fill out the table below to analyze all of the
+                forces acting on the surface:
+                <div id = 'table3'></div>
+            </li>
+            <li>
+                Determine the net force and the acceleration of
+                the block.
+            </li>
+        </ol>
+    </li>
+    <li class = 'mb-5'>
+        A person pulls a block of mass 4 kg
+        on at an angle of \( 50^{\circ} \) upward from the horizontal
+        with a strength of 9 N.
+        The surface and block have a coefficient of kinetic friction
+        of 0.35.
+        <div id = 'problem4'></div>
+        <ol type = 'a'>
+            <li>
+                Only one force, the applied force,
+                has both horizontal and vertical components.
+                Break it into these two components.
+            </li>
+            <li>
+                Fill out the table below to analyze all of the
+                forces acting on the surface:
+                <div id = 'table4'></div>
+            </li>
+            <li>
+                Determine the net force and the acceleration of
+                the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h4>
+    Conceptual Questions
+</h4>
+
+<p>
+    In previous problems, blocks were pulled horizontally
+    and the magnitude of normal force
+    was always equal to the magnitude of gravity.
+    In these problems,
+    blocks are pulled slightly upward,
+    and as a result the normal force is slightly less.
+    Explain why by referring to your <emph>physical intuition</emph>
+    rather than mathematics.
+</p>
+
+
 
 <script>
-    let blockProblem = new BlockProblem();
-    // blockProblem.addRamp();
-    blockProblem.addBlock();
-    let myForce = blockProblem.addAngledAppliedForce(undefined, undefined, undefined, 30, 'right');
-    myForce.addComponents();
+    let problem1 = new BlockProblem();
+    problem1.addBlock();
+    let myForce1 = problem1.addAngledAppliedForce(undefined, undefined, undefined, 30, 'right');
+    myForce1.addComponents();
+    $("#problem1").append(problem1.drawCanvas(500));
+
+    let problem2 = new BlockProblem();
+    problem2.addBlock();
+    let myForce2 = problem2.addAngledAppliedForce(undefined, undefined, undefined, 80, 'right');
+    myForce2.addComponents();
+    $("#problem2").append(problem2.drawCanvas(500));
+
+    let problem3 = new BlockProblem();
+    problem3.addBlock();
+    let myForce3 = problem3.addAngledAppliedForce(undefined, undefined, undefined, 20, 'right');
+    myForce3.addComponents();
+    $("#problem3").append(problem3.drawCanvas(500));
+
+    let problem4 = new BlockProblem();
+    problem4.addBlock();
+    let myForce4 = problem4.addAngledAppliedForce(undefined, undefined, undefined, 50, 'right');
+    myForce4.addComponents();
+    $("#problem4").append(problem4.drawCanvas(500));
+
+    let frictionlessTable = new forceTableQuantitative2D(1,3);
+    let frictionTable = new forceTableQuantitative2D(2,3);
+    $("#table1").append(frictionlessTable.draw());
+    $("#table2").append(frictionlessTable.draw());
+    $("#table3").append(frictionTable.draw());
+    $("#table4").append(frictionTable.draw());
 
 
-    let myTable = new forceTableQuantitative2D(1,4);
-    $("#table").append(myTable.draw());
 
-
-    $("#blockProblem").append(blockProblem.drawCanvas(800));
 </script>
