@@ -52,9 +52,9 @@
 
     let bigTable = new TableOfCanvasses(3,4, 'Diagram','diagram');
     bigTable.addDiagramsToCells([
-        positionGraph3, velocityGraph4, accelerationGraph3, velocityGraph2,
-            accelerationGraph1, positionGraph4, velocityGraph3, positionGraph2,
-            velocityGraph1, accelerationGraph2, positionGraph1
+        accelerationGraph2, positionGraph3, velocityGraph4, accelerationGraph1,
+            positionGraph2, velocityGraph1, velocityGraph3, positionGraph1,
+            accelerationGraph3, positionGraph4, velocityGraph2
     ]);
     bigTable.eraseTextInCell(2,3);
     $("#bigTable").append(bigTable.draw(1400,1400));

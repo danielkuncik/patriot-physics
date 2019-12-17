@@ -602,7 +602,8 @@ app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
                     unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
                     unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
                     unitClusterTitle: unitMap[req.params.unitClusterKey].title,
-                    level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level
+                    level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level,
+                    version: versionNumber
                 });
             } else if (versionType === 'pdf') {
                 let filePath = '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.pdf';
