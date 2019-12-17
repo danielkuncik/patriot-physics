@@ -1,0 +1,199 @@
+<p>
+    In the previous section, we learned to calculate net force and acceleration.
+    That calculation is the basis of dynamics, the science of explaining <emph>why</emph> things
+    move the way they do.
+    The next several sections on quantitative dynamics will follow a similar pattern:
+    looking at a situation, drawing a quantitative free-body diagram of that situation,
+    and using it to analyze that situation.
+</p>
+
+<p>
+    We will start with the simplest two free-body diagrams:
+    a block at rest on a table,
+    and a block being pulled on a frictionless table.
+    These are certainly not the most exciting examples,
+    but they give us a good opportunity to start using the methods and vocabulary of
+    dynamics.
+</p>
+
+<p>
+    Crucial to this section is to understand how to use <strong>vectors</strong>.
+    The forces on all of our free-body diagrams are <strong>vectors</strong>,
+    meaning they have magnitude and direction,
+    and none of our free-body diagrams are complete until we correctly know the magnitude
+    and direction of every force!
+</p>
+
+<h4>
+    Force 1: Gravity
+</h4>
+
+<p class = 'definition'>
+    <strong>Gravity</strong> is a force that attracts all mass to all other masses,
+    but of course, here on earth, gravity is a force that always pulls you down.
+    Sometimes, the force of gravity when here on earth is called the <strong>weight</strong>.
+</p>
+
+<ul>
+    <li>
+        On earth, the <strong>direction</strong> of gravity is always <strong>down</strong>.
+    </li>
+    <li>
+        On earth, the <strong>magnitude</strong> of gravity is given by the formula \( F_g  = m g \).
+    </li>
+</ul>
+
+<p class = 'equation'>
+    $$
+    F_g = mg
+    $$
+</p>
+
+<div id = 'gravityFormulaTable'></div>
+
+
+<script>
+    let gravityFormulaTable = new Table(4,4);
+    gravityFormulaTable.addTopHeaders(['symbol','quantity','SI unit','note']);
+    gravityFormulaTable.writeTextInRow(1,['\\( F_g \\)', 'Magnitude of Force of gravity','Newtons (N)']);
+    gravityFormulaTable.writeTextInRow(2,['\\( m \\)', 'mass', 'kilograms (kg)']);
+    gravityFormulaTable.writeTextInRow(3,['\\( g \\)','free-fall acceleration',"m/s/s","on earth, always equal to 9.8 m/s/s"])
+    $("#gravityFormulaTable").append(gravityFormulaTable.draw(500));
+</script>
+
+<h4>
+    Force 2: Normal Force
+</h4>
+
+<ul>
+    <li>
+        The <strong>direction</strong> of the normal force is always perpendicular to the surface.
+        For these problems, the direction of normal force will be <strong>up</strong>.
+    </li>
+    <li>
+        <emph>For now</emph>, the magnitude of the normal force will equal the magnitude of
+        gravity. But know that in the future it will get much more complicated!
+    </li>
+</ul>
+
+<ol class = 'questionList'>
+    <li class = 'question mb-5'>
+        A block is resting on a table.
+        It has a mass of 2 kg.
+        <br>
+        <div id = 'diagram1'></div>
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Fill out the table below to draw a complete free-body diagram of the block.
+                <br>
+                <div id = 'table1'></div>
+            </li>
+            <li class = 'subQuestion'>
+                Use your free-body diagram to determine the net force \( \Sigma F \)
+                acting on the block.
+            </li>
+        </ol>
+    </li>
+    <li class = 'question mb-5'>
+        A block is resting on a table.
+        It has a mass of 5 kg.
+        <br>
+        <div id = 'diagram2'></div>
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Fill out the table below to draw a complete free-body diagram of the block.
+                <br>
+                <div id = 'table2'></div>
+            </li>
+            <li class = 'subQuestion'>
+                Use your free-body diagram to determine the net force \( \Sigma F \)
+                acting on the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h4>
+    Force 3: Applied Force
+</h4>
+
+<p class = 'definition'>
+    An <strong>applied force</strong> is any force applied
+    an on some object by a human.
+    Common examples are pulls and pushes.
+    The applied force is frequently a given value
+    in a problem. That is, both magnitude an direction
+    are often given in a problem.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question mb-5'>
+        An object with a mass of 2.00 kg is being pulled on a frictionless table.
+        It is pulled with an applied force of 16.0 Newtons.
+        <br>
+        <div id = 'diagram3'></div>
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Fill out the table below to draw a complete free-body diagram of the block.
+                <br>
+                <div id = 'table3'></div>
+            </li>
+            <li class = 'subQuestion'>
+                Use your free-body diagram to determine the net force \( \Sigma F \)
+                acting on the block.
+            </li>
+            <li class = 'subQuestion'>
+                Determine the acceleration \( a \) of the block.
+                Please write formulas before using them.
+            </li>
+        </ol>
+    </li>
+    <li class = 'question mb-5'>
+        An object with a mass of 3.56 kg is being pulled on a frictionless table.
+        It is pulled with an applied force of 12.6 Newtons.
+        <br>
+        <div id = 'diagram4'></div>
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Fill out the table below to draw a complete free-body diagram of the block.
+                <br>
+                <div id = 'table4'></div>
+            </li>
+            <li class = 'subQuestion'>
+                Use your free-body diagram to determine the net force \( \Sigma F \)
+                acting on the block.
+            </li>
+            <li class = 'subQuestion'>
+                Determine the acceleration \( a \) of the block.
+                Please write formulas before using them.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<script>
+    let basicBlockDiagram = new BlockProblem();
+    basicBlockDiagram.addBlock();
+
+    let blockDiagram3 = new BlockProblem();
+    blockDiagram3.addBlock();
+    blockDiagram3.addHorizontalAppliedForce('A',2,'16.0 N','right');
+
+    let blockDiagram4 = new BlockProblem();
+    blockDiagram4.addBlock();
+    blockDiagram4.addHorizontalAppliedForce('A',2,'12.6 N','right');
+
+    let twoForceTable = new ForceTableQuantitative1D(2);
+    let threeForceTable = new ForceTableQuantitative1D(3);
+
+    $("#diagram1").append(basicBlockDiagram.drawCanvas(300));
+    $("#diagram2").append(basicBlockDiagram.drawCanvas(300));
+    $("#diagram3").append(blockDiagram3.drawCanvas(300));
+    $("#diagram4").append(blockDiagram4.drawCanvas(300));
+
+    $("#table1").append(twoForceTable.draw(500));
+    $("#table2").append(twoForceTable.draw(500));
+    $("#table3").append(threeForceTable.draw(500));
+    $("#table4").append(threeForceTable.draw(500));
+</script>

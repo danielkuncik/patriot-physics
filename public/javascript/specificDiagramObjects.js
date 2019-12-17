@@ -1541,7 +1541,7 @@ class BlockProblem extends Diagram {
         this.appliedForces = [];
         this.blocks = [];
         this.angleOfInclineDegrees = 0;
-        this.length = 10;
+        this.length = 4;
         this.horizontalSurface = true;
         this.verticalSurface = false;
         this.ramp = false;

@@ -15,7 +15,7 @@ $(".questionList").each((i) => {
     $(thisQuestionList).attr('start',String(questionNumber));
     $(thisQuestionList).find("li.question").each((j) => {
         thisQuestion = $(thisQuestionList).find("li.question")[j];
-        $(thisQuestion).prepend(`${letter}.${questionNumber}. `);
+        $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}:</strong> `);
         if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
             $(".answerList").append(`<li>${letter}.${questionNumber}. ${thisAnswer}</li>`);

@@ -66,6 +66,11 @@
     $("#rampD").append(rampD.drawCanvas(300,300));
 
     let energyTable = new EnergyTable(4, ['ke','gpe','total_e']);
+    energyTable.writeTextInCell(1,1,'0');
+    energyTable.writeTextInCell(1,2,'80');
+    energyTable.writeTextInCell(2,2,'50');
+    energyTable.writeTextInCell(3,1,'10');
+    energyTable.writeTextInCell(4,2,'0');
     $("#energyTable").append(energyTable.draw(400,300));
 
 </script>
