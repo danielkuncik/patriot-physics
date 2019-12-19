@@ -2542,8 +2542,8 @@
           {
             "title": "Algebraic Energy Analysis 3",
             "subtitle": "Vertical Springs",
-            "level": 5,
-            "horizontal": 3,
+            "level": 6,
+            "horizontal": 2,
             "letter": "Q",
             "prerequisites": ["algebraic_energy_analysis_2"],
             "objective": "Symbolically analyze the energy of a vertical spring system as it moves; write statements regarding the energy of the mass-spring-earth system; symbolically determine crucial values regarding the spring using the Conservation of Energy."
@@ -2552,9 +2552,9 @@
           {
             "title": "Spiderman's Energy",
             "level": 6,
-            "horizontal": 2,
+            "horizontal": 3,
             "letter": "R",
-            "prerequisites": ["algebraic_energy_analysis_3"],
+            "prerequisites": ["algebraic_energy_analysis_2"],
             "objective": "Analyze the potential energy of a fast moving spring that stretches as it falls."
           }
         }
