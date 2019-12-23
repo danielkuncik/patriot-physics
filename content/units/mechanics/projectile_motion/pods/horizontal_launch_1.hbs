@@ -1,0 +1,34 @@
+<p>
+    In this section, we will explore problems in which an object is
+    fired from some height with horizontal velocity.
+    In this event, we will need to use the principle of two-dimensional motion.
+</p>
+
+<h5>
+    Principle of Two Dimensional Motion
+</h5>
+<p class = 'definition'>
+    When an object is moving in two dimensions,
+    the motion in one dimension does not affect the motion
+    in the other dimension.
+</p>
+
+<!--
+- 2 dimensioanl motion principle
+- review of one dimesional motion problems
+-->
+
+
+<div class = 'horizontalLaunchTable'></div>
+
+<script>
+
+
+  let horizontalLaunchTable = new Table(10,3);
+  horizontalLaunchTable.addTopHeaders(['','Horizontal', 'Vertical']);
+  horizontalLaunchTable.shadeUpperLeftCorner();
+  horizontalLaunchTable.writeTextInRow(1,['Motion','moving forward at a constant velocity','accelerating downward at a rate of 9.8 m/s/s']);
+  horizontalLaunchTable.writeTextInRow(2,['Formulas',constantVelocityEquation, 'xxx']);
+
+  $(".horizontalLaunchTable").append(horizontalLaunchTable.draw(600,800));
+</script>
