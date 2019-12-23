@@ -394,7 +394,7 @@ class Table {
                   }
                   if (this.cellInfoArray[i][j].list) {
                     let newList;
-                    if (this.cellInfoArray.orderedListBoolean) {
+                    if (this.cellInfoArray[i][j].orderedListBoolean) {
                       newList = $("<ol></ol>");
                     } else {
                       newList = $("<ul></ul>");

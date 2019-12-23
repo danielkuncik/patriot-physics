@@ -18,19 +18,137 @@
 - review of one dimesional motion problems
 -->
 
+<h5>
+  Standard Horizontal Launch Problems:
+</h5>
 
-<div class = 'horizontalLaunchTable'></div>
+<ol class = 'questionList'>
+  <li class = 'question'>
+    A car drives off of a cliff that is 30 meters tall at a horizontal speed of 15 m/s.
+    How far does it travel before striking the ground?
+    <br>
+    Here is how the information translates into physics quantities:
+    <ul>
+      <li>The horizontal velocity is 15 m/s. This is the speed the car was goign when it went off the cliff.</li>
+      <li>The initial vertial velocity is 0. The car is not moving vertically when it flies off the cliff.</li>
+      <li>
+        The vertical displacement is -30 m. This is how far it travels vertically before striking the ground.
+        This value is negative because the displacement is <emph>downward</emph>.
+      </li>
+      <li>
+        The vertical acceleraiton is -9.8 m/s<sup>2</sup>.
+        This value is negative because the acceleration is <emph>downward</emph>.
+      </li>
+      <li>
+        The quantity that the problem is looking for is <emph>horizontal displacement</emph>.
+      </li>
+    </ul>
+    <br>
+    Use the table below to find all of the unknown quantities.
+    <div class = 'horizontalLaunchTable'></div>
+    <br>
+    Write the final answer (the horizontal displacement) here:
+  </li>
+
+  <li class = 'question'>
+    A car drives off of a cliff that is 50 meters tall at a horizontal speed of 20 m/s.
+    How far does it travel before striking the ground?
+    <br>
+    Here is how the information translates into physics quantities:
+    <ul>
+      <li>The horizontal velocity is 20 m/s. This is the speed the car was goign when it went off the cliff.</li>
+      <li>The initial vertial velocity is 0. The car is not moving vertically when it flies off the cliff.</li>
+      <li>
+        The vertical displacement is -50 m. This is how far it travels vertically before striking the ground.
+        This value is negative because the displacement is <emph>downward</emph>.
+      </li>
+      <li>
+        The vertical acceleraiton is -9.8 m/s<sup>2</sup>.
+        This value is negative because the acceleration is <emph>downward</emph>.
+      </li>
+      <li>
+        The quantity that the problem is looking for is <emph>horizontal displacement</emph>.
+      </li>
+    </ul>
+    <br>
+    Use the table below to find all of the unknown quantities.
+    <div class = 'horizontalLaunchTable'></div>
+    <br>
+    Write the final answer (the horizontal displacement) here:
+  </li>
+</ol>
+
+<h5>
+  Conceptual Questions
+</h5>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    Why are there four equations available to use in the vertical dimension,
+    but only one available in the horizontal dimension.
+  </li>
+  <li class = 'question'>
+    Which is the only quantitiy that is the same in both dimensions. Why?
+  </li>
+  <li class = 'question'>
+    Why are all of the quantities in the vertical dimension negative?
+  </li>
+</ol>
+
+<h5>
+  More questions
+</h5>
+
+<!--
+include some questions that slowly remove the scaffolding that i added.
+-->
+
+
+<h5>
+  Different Questions
+</h5>
+<!--
+Have a problem asking for the magnitude of final velocity!
+-->
+
+
+<h4>
+  Answers:
+</h4>
+
+<ol class = 'answerList'></ol>
 
 <script>
 
 
-  let horizontalLaunchTable = new Table(10,3);
+  let horizontalLaunchTable = new Table(5,3);
+  horizontalLaunchTable.setColumnProportions([1,2,2]);
+  horizontalLaunchTable.setRowProportions([1,3,4,4,5]);
+
   horizontalLaunchTable.addTopHeaders(['','Horizontal', 'Vertical']);
   horizontalLaunchTable.shadeUpperLeftCorner();
   horizontalLaunchTable.writeTextInRow(1,['Motion','moving forward at a constant velocity','accelerating downward at a rate of 9.8 m/s/s']);
+
   horizontalLaunchTable.writeTextInCell(2,0,'Formulas');
-  horizontalLaunchTable.addListToCell(2,1,[constantVelocityEquation]);
-  horizontalLaunchTable.addListToCell(2,2,[kinematicEquation1, kinematicEquation2, kinematicEquation3, kinematicEquation4]);
+  horizontalLaunchTable.addListToCell(2,1,[constantVelocityEquation('x', true)]);
+  horizontalLaunchTable.addListToCell(2,2,kinematicEquations('y',true));
+
+  horizontalLaunchTable.writeTextInCell(3,0,'Quantities');
+  horizontalLaunchTable.addListToCell(3,1,[
+    '\\( \\Delta x =  \\)',
+    '\\( v_x = \\)',
+    '\\( \\Delta t = \\)'
+  ]);
+  horizontalLaunchTable.addListToCell(3,2,[
+    '\\( \\Delta y = \\)',
+    '\\( v_{yi} = \\)',
+    '\\( v_{yf} = \\)',
+    '\\( a_y = \\)',
+    '\\( \\Delta t = \\)'
+  ]);
+
+  horizontalLaunchTable.writeTextInCell(4,0,'Complete Problem Here:');
+
 
   $(".horizontalLaunchTable").append(horizontalLaunchTable.draw(600,800));
 </script>
