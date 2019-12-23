@@ -28,7 +28,9 @@
   horizontalLaunchTable.addTopHeaders(['','Horizontal', 'Vertical']);
   horizontalLaunchTable.shadeUpperLeftCorner();
   horizontalLaunchTable.writeTextInRow(1,['Motion','moving forward at a constant velocity','accelerating downward at a rate of 9.8 m/s/s']);
-  horizontalLaunchTable.writeTextInRow(2,['Formulas',constantVelocityEquation, 'xxx']);
+  horizontalLaunchTable.writeTextInCell(2,0,'Formulas');
+  horizontalLaunchTable.addListToCell(2,1,[constantVelocityEquation]);
+  horizontalLaunchTable.addListToCell(2,2,[kinematicEquation1, kinematicEquation2, kinematicEquation3, kinematicEquation4]);
 
   $(".horizontalLaunchTable").append(horizontalLaunchTable.draw(600,800));
 </script>

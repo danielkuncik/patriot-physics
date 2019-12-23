@@ -101,6 +101,13 @@ class Table {
         }
     }
 
+    addListToCell(i, j, listElementArray, orderedListBoolean) {
+      if (orderedListBoolean === undefined) {orderedListBoolean = false;}
+      this.cellInfoArray[i][j].list = true;
+      this.cellInfoArray[i][j].orderedListBoolean = orderedListBoolean;
+      this.cellInfoArray[i][j].listElementArray = listElementArray;
+    }
+
     writeTextInCellKeys(rowKey, columnKey, text) {
         let keys = this.getCellCoordinatesByKey(rowKey, columnKey);
         this.writeTextInCell(keys.i, keys.j, text);
@@ -385,6 +392,18 @@ class Table {
                       }
                       $(thisCell).append(this.cellInfoArray[i][j].diagram.drawCanvas(cellWidth * 0.75, cellHeight*0.75, unit));
                   }
+                  if (this.cellInfoArray[i][j].list) {
+                    let newList;
+                    if (this.cellInfoArray.orderedListBoolean) {
+                      newList = $("<ol></ol>");
+                    } else {
+                      newList = $("<ul></ul>");
+                    }
+                    this.cellInfoArray[i][j].listElementArray.forEach((element) => {
+                      newList.append(`<li>${element}</li>`);
+                    });
+                    $(thisCell).append(newList);
+                  }
                   $(thisRow).append(thisCell);
                 }
             }
@@ -393,5 +412,3 @@ class Table {
         return table;
     }
 }
-
-
