@@ -61,3 +61,122 @@ and if it is the first two, they need to solve the problem
     Unforutnately, this does not correctly identify the problem
     and what method could be used to solve it. Explain why.
 </p>
+
+
+
+
+<p class = 'directions'>
+  For each of the following problems, decide which of the three
+  types of motion this is.
+  You do not need to answer a question if it is asked,
+  only categorize the motion.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = 'A'>
+    A car is driving down the highway at a constant
+    speed of 55 mph. How far does it drive in 30 minutes?
+    <div class = 'motionMultipleChoice'></div>
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    An object is falling down on planet earth.
+    Air resistance is ignored.
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    A car is moving at a constant acceleration of 3 m/s<sup>2</sup>.
+  </li>
+</ol>
+
+<p class = 'directions'>
+  For the following table, match a particular type of problem
+  with the method necessary to solve that problem.
+</p>
+<div id = 'matchingTable1'></table>
+
+<p class = 'directions'>
+  For each of the following problems,
+  decide which of the three available methods you would use
+  to solve that particular problem.
+</p>
+
+<ol class = 'questionList'>
+  <li class ='question' data-answer = 'A'>
+    A car is driving down a highway at a constant
+    speed of 70 mph. How far does it travel in 5 hours?
+    <div class = 'optionsMultipleChoice'></div>
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    If a car is capable of stopping with a constant
+    acceleration of 5 m/s<sup>2</sup>,
+    how much distance does it take it to stop
+    if it is moving at 20 m/s?
+  </li>
+</ol>
+
+<!---
+Add a Dynamics section of this!
+In which, based on dynamic information, students pick from the same options
+-->
+<p class = 'directions'>
+  Based on the following dynamic information about the objects,
+  determine which method you would use to analyze its motion.
+</p>
+<ul class = 'questionList'>
+  <li class = 'question' data-answer = 'A'>
+    An object is moving with a net force of zero acting on it.
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    An object is moving with a non-zero net force acting on it,
+    but none of the forces acting on the object are changing.
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    An object is moving and the forces acting on that object
+    change as the object moves.
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    Analyzing the motion of a mass on a spring.
+    The force that the spring pulls changes when the spring changes length.
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    Analyzing an object falling when the force of gravity
+    acting on that object is constant.
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    An object is falling from such a high distance
+    that the force of gravity acting on the object changes as the object falls.
+  </li>
+  <li class = 'question' data-answer = 'A'>
+    An object is sliding forward.
+    with no force pushing it on a frictionless surface.
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    An object is sliding forward
+    while a constant force of friction opposes its motion.
+  </li>
+</ul>
+
+
+<h4>
+  Answers:
+</h4>
+<ol class = 'answerList'></ol>
+
+
+<script>
+  let motionMultipleChoice = $("<ul type = 'A'></ul>");
+  $(motionMultipleChoice).append($("<li>Constant Velocity Motion</li>"));
+  $(motionMultipleChoice).append($("<li>Uniformly Accelerated Motion</li>"));
+  $(motionMultipleChoice).append($("<li>Non-Uniformly Accelerated Motion</li>"));
+
+  let optionsMultipleChoice = $("<ul type = 'A'></ul>");
+  $(optionsMultipleChoice).append($("<li>\\( \\Delta x = v \\Delta t \\)</li>"));
+  $(optionsMultipleChoice).append($("<li>The kinematic Equations</li>"));
+  $(optionsMultipleChoice).append($("<li>Differential and Integral Calculus</li>"));
+
+  let matchingTable1 = new Table(4,3);
+  matchingTable1.addTopHeaders(['Type of Motion', '', 'Method']);
+  matchingTable1.writeTextInRow(1,['Constant Velocity Motion', '', 'Differential and Integral Calculus']);
+  matchingTable1.writeTextInRow(2,['Uniformly Accelerated Motion', '', '\\( \\Delta x = v \\Delta t \\)']);
+  matchingTable1.writeTextInRow(3,['Changing Acceleration', '', 'The Kinematic Equations']);
+  $("#matchingTable1").append(matchingTable1.draw(500));
+</script>
