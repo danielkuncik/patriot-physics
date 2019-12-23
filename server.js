@@ -403,6 +403,7 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
 var unitCluster, unit, pod;
 // ROUTES
 app.get('/',(req,res) => {
+  console.log('getting home');
     res.render('home.hbs', {
         layout:'default',
        // template:'home-template',
@@ -623,5 +624,5 @@ app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     }
 });
 
-app.listen(port);
 
+app.listen(port, () => console.log(`app runnings on port ${port} xxx`));

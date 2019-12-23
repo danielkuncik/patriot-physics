@@ -2725,6 +2725,15 @@
         "honors": true,
         "pods":
         {
+          "three_types_motion":
+          {
+            "title": "Three Types of Motion",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites":  [],
+            "objective":  "Understand the difference between three different types of motion: constant velocity, uniformly accelerating, and non-uniformly accelerating"
+          },
           "parabolic_arcs":
           {
             "title": "Parabolic Arcs",
