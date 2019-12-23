@@ -76,7 +76,7 @@ class QuantitativeGraph extends Diagram {
     makePositionGraph(timeUnit, positionUnit) {
         if (timeUnit === undefined) {timeUnit = 's';}
         if (positionUnit === undefined) {positionUnit = 'm';}
-        this.labelAxes(`time (${timeUnit})`, `position (${positionunit})`);
+        this.labelAxes(`time (${timeUnit})`, `position (${positionUnit})`);
     }
 
     makeVelocityGraph(timeUnit, velocityUnit) {

@@ -82,8 +82,12 @@ and if it is the first two, they need to solve the problem
     An object is falling down on planet earth.
     Air resistance is ignored.
   </li>
-  <li class = 'question' data-answer = 'C'>
+  <li class = 'question' data-answer = 'B'>
     A car is moving at a constant acceleration of 3 m/s<sup>2</sup>.
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    A gazelle is running.
+    As it runs, its velocity and acceleration are both changing.
   </li>
 </ol>
 
@@ -110,6 +114,29 @@ and if it is the first two, they need to solve the problem
     acceleration of 5 m/s<sup>2</sup>,
     how much distance does it take it to stop
     if it is moving at 20 m/s?
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    A car accelerates from rest, but as it gets faster
+    its rate of acceleration changes.
+  </li>
+  <li class = 'question' data-answer = 'C'>
+    A rocket ship takes off with a changing rate of acceleration.
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    A runner accelerates from rest at a rate of 2 m/s<sup>2</sup>.
+  </li>
+  <li class = 'question' data-answer = 'A'>
+    A biker is moving around a track at a constant velocity of 8 m/s.
+  </li>
+  <p>
+    The next two questions refer to this graph:
+  </p>
+  <div id = 'graph1'></div>
+  <li class = 'question' data-answer = 'A'>
+    Analyzing the motion from \( t = 0 - 5 \text{ s} \).
+  </li>
+  <li class = 'question' data-answer = 'B'>
+    Analyzing the motion from \( t = 5 \text{ s} - 7 \text{ s} \).
   </li>
 </ol>
 
@@ -179,4 +206,15 @@ In which, based on dynamic information, students pick from the same options
   matchingTable1.writeTextInRow(2,['Uniformly Accelerated Motion', '', '\\( \\Delta x = v \\Delta t \\)']);
   matchingTable1.writeTextInRow(3,['Changing Acceleration', '', 'The Kinematic Equations']);
   $("#matchingTable1").append(matchingTable1.draw(500));
+
+  let graph1 = new QuantitativeGraph(0,7,0,45);
+  graph1.makePositionGraph();
+  graph1.addReferenceArray([0,5,7],[]);
+  graph1.addPointAsACircle(0,0);
+  graph1.addFunctionGraph((x) => {
+    return x*x
+  },0,5);
+  graph1.addSegmentWithCirclesOnEnds(5,25,7,45);
+  $("#graph1").append(graph1.drawCanvas(400));
+
 </script>
