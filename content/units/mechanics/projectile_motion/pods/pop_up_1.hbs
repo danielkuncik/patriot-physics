@@ -1,0 +1,312 @@
+<p>
+  In this section, we will epxlore <strong>pop-up problems</strong>.
+  Pop-up problems are a good step.
+  They build on previous kinematics problems, in particular, falling problems,
+  and they lead into more complicated projectile motion problems
+</p>
+
+
+<h4>
+  What is free-fall?
+</h4>
+
+<p class = 'definition'>
+  A an object is in <strong>free-fall</strong>
+  when the only force acting on that object is gravity,
+  and the object is accelerating downward at 9.8 m/s<sup>2</sup>.
+  An object does not need to be falling to be in free-fall!
+  It can be rising up or even moving horizontally,
+  as long as it is in the air and not touching anything.
+</p>
+
+
+<p>
+  In a pop-up problem, the acceleration is consant (9.8 m/s<sup>2</sup> downward),
+  and thus, all of the kinematic equations apply:
+</p>
+<div id = 'kinematicEquationList'></div>
+
+<script>
+  $("#kinematicEquationList").append(kinematicEquationsHtmlList('y'));
+</script>
+
+<p>
+  Also consider these concepts
+</p>
+<ul>
+  <li>
+    In all of those equations, the variable \( \Delta y \)
+    is used instead of \( \Delta x \),
+    because the obejct moves in the vertical, not horizontal, dimension.
+  </li>
+  <li>
+    The objets acceleartion is -9.8 m/s<sup>2</sup>.
+    This value is <emph>negative</emph> because it is
+    downward.
+  </li>
+  <li>
+    When an object is on the way up,
+    its velocity is <emph>positive</emph>.
+  </li>
+  <li>
+    When the object reaches the very top,
+    it momentarily has velocity zero.
+  </li>
+  <li>
+    When an object is on the way down,
+    its velocity is <emph>negative</emph>
+  </li>
+</ul>
+
+<!---
+conceptual questions
+--->
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = 'B'>
+    When the object is on the way up, which of the following is true?
+    <ol type = 'A'>
+      <li>
+        Velocity and acceleration are in the same direction,
+        and the object speeds up.
+      </li>
+      <li>
+        Velocity and acceleration are in opposite directions,
+        and the object slows down.
+      </li>
+      <li>
+        Acceleration is zero and the object moves at a constant velocity.
+      </li>
+    </ol>
+  </li>
+  <li class = 'question' data-answer = 'A'>
+    When the object is on the way down, which of the following is true?
+    <ol type = 'A'>
+      <li>
+        Velocity and acceleration are in the same direction,
+        and the object speeds up.
+      </li>
+      <li>
+        Velocity and acceleration are in opposite directions,
+        and the object slows down.
+      </li>
+      <li>
+        Acceleration is zero and the object moves at a constant velocity.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+<h4>
+  Upward motion only
+</h4>
+
+<p>
+  Many pop-up problems deal only with flying upward, and ignore the downward motion.
+  Two questions like this are:
+  "How high does an object rise?"
+  and "How long does it take the object to reach its highest point?"
+  The following concepts can
+</p>
+
+<ul>
+  <li>
+    If a question asks "How high does an object rise?",
+    you are looking for vertical displacement.
+  </li>
+  <li>
+    If a question asks "How long does it take to reach its highest point?",
+    you are looking for change in time.
+  </li>
+  <li>
+    At the very top of the motion, the object momentarily has velocity zero.
+    So if you are analyzing motion from the moment it is thrown upward
+    to the top, the final velocity is equal to zero!
+  </li>
+</ul>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    An object is thrown directly upward with a speed of 25 m/s.
+    How much time does it take to reach the highest point?
+  </li>
+  <li class = 'question'>
+    An object is thrown directly upward with a speed of 5 m/s.
+    How much time does it take to reach the highest point?
+  </li>
+  <li class = 'question'>
+    An object is thrown directly upward with a speed of 16 m/s.
+    How high does it rise into the air?
+  </li>
+  <li class = 'question'>
+    An object is thrown directly upward with a speed of 30 m/s.
+    How high does it rise into the air?
+  </li>
+</ol>
+
+
+
+<h4>
+  Downward and upward motion landing in the same spot
+</h4>
+
+<p>
+  Several other problems deal with an object that is thrown directly upward,
+  rises very high up, then falls down in the same place that it started,
+  on the same exact height.
+</p>
+
+<p>
+  When an object is thrown directly upward,
+  it spends exactly as much time going up as it spends going down.
+  Thus, the total time in the air is <emph>twice</emph>
+  as long as the total time it took the object to rise.
+  Therefore, you can use the same method as in the previous problems
+  to answer these problems.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    An object is thrown directly up into the air with a speed of 49 m/s.
+    It rises and falls and then lands in the same spot.
+    <ol class = 'subQuestionList'>
+      <li class = 'subQuestion' data-answer = '5 s'>
+        Determine the time necessary for the object to reach its highest point.
+      </li>
+      <li class = 'subQuestion' data-answer = '10 s'>
+        The total time in the air is <emph>twice</emph> the time to reach the highest point.
+        Determine this total time.
+      </li>
+      <li class = 'subQuestion' data-answer = '-49 m/s'>
+        Determine the velocity of the object right before it strikes the ground.
+      </li>
+      <li class = 'subQuestion' data-answer = '0'>
+        Determine the total displacement of the object in its motion.
+      </li>
+    </ol>
+  </li>
+  <li class = 'question'>
+    An object is thrown directly up into the air with a speed of 22 m/s.
+    It rises and falls and then lands in the same spot.
+    <ol class = 'subQuestionList'>
+      <li class = 'subQuestion'>
+        Determine the time necessary for the object to reach its highest point.
+      </li>
+      <li class = 'subQuestion'>
+        The total time in the air is <emph>twice</emph> the time to reach the highest point.
+        Determine this total time.
+      </li>
+      <li class = 'subQuestion'>
+        Determine the velocity of the object right before it strikes the ground.
+      </li>
+      <li class = 'subQuestion'>
+        Determine the total displacement of the object in its motion.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>
+  When you did those problems above, you proved some very important principles
+  about pop-up motion!
+</p>
+
+<ul>
+  <li>
+    Pop-up motion is always <strong>symmetic</strong>.
+    This means that
+    the total time that the object is in the air is twice the time
+    that it takes to go all the way up.
+  </li>
+  <li>
+    Pop-up motion is always <strong>symmetic</strong>.
+    This means that
+    the final velocity, when the object strikes the ground,
+    is precisely the negative of the initial velocity.
+  </li>
+  <li>
+    Because, in these problems, an object rises up
+    and then falls to eactly the same spot,
+    the vertical displacement \( \Delta y \)
+    is equal to zero.
+  </li>
+</ul>
+
+<!---
+Do i want to change how i do this?
+i can ask first two questions in which students demonstrate this step by step
+-->
+
+<p>
+  In the next set of problems,
+  you will use these principles
+  to figure out the total time with three different methods!
+</p>
+
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    An object is thrown directly into the air at a speed of 18 m/s,
+    rises up, and then lands.
+    How long does it spend in the air?
+    Please answer this question in three different ways, and show
+    that you get the same answer each time:
+    <ol type = 'A'>
+      <li>
+        Find the total time it takes to reach the top of its motion,
+        and double that time.
+      </li>
+      <li>
+        Find the time it takes if the final velocity
+        is precisely the negative of the initial \( v_f = -18 \text{ m/s} \).
+      </li>
+      <li>
+        Find the time if the final displacement is equal to zero.
+      </li>
+    </ol>
+  </li>
+  <li class = 'question'>
+    An object is thrown directly into the air at a speed of 44 m/s,
+    rises up, and then lands.
+    How long does it spend in the air?
+    Please answer this question in three different ways, and show
+    that you get the same answer each time:
+    <ol type = 'A'>
+      <li>
+        Find the total time it takes to reach the top of its motion,
+        and double that time.
+      </li>
+      <li>
+        Find the time it takes if the final velocity
+        is precisely the negative of the initial \( v_f = -18 \text{ m/s} \).
+      </li>
+      <li>
+        Find the time if the final displacement is equal to zero.
+      </li>
+    </ol>
+  </li>
+  <li class = 'question'>
+    If you use the information \( \Delta y = 0 \),
+    you get two solutions to your mathematical equation.
+    One of them is the total time in the air, and the other is
+    \( \Delta t = 0 \). Why?
+  </li>
+</ol>
+
+
+
+
+
+
+<h4>
+  Answers
+</h4>
+
+<ol class = 'answerList'></ol>
+
+
+<!--
+- definition of free-fall (maybe that goes in the enxt one?)
+-
+-->

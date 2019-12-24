@@ -187,6 +187,7 @@ function processDirectionInput(direction) {
     }
 }
 
+
 // tests if a function is constant over the range from xMin to xMax
 function isItAConstantFunction(testFunction, xMin, xMax, N) {
     if (N === undefined) {N = 100;}
@@ -204,4 +205,24 @@ function isItAConstantFunction(testFunction, xMin, xMax, N) {
         previousY = thisY;
     }
     return result
+}
+
+
+function makeHtmlListFromArray(array, orderedListBoolean, type) {
+  let newList;
+  if (orderedListBoolean === undefined) {
+    orderedListBoolean = false;
+  }
+  if (orderedListBoolean) {
+    if (type === undefined) {type = '1'}
+    newList = $(`<ol type = '${type}'></ol>`);
+  } else {
+    newList = $("<ul></ul>");
+  }
+
+  array.forEach((element) => {
+    $(newList).append(`<li>${element}</li>`);
+  });
+
+  return newList
 }

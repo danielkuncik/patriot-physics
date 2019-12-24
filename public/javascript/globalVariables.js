@@ -48,3 +48,9 @@ function kinematicEquations(dimension, dimensionSubscripts) {
   ]
   return finalArray
 }
+
+
+function kinematicEquationsHtmlList(dimension, dimensionSubscripts) {
+  let kinematicEquationArray = kinematicEquations(dimension, dimensionSubscripts);
+  return makeHtmlListFromArray(kinematicEquationArray);
+}

@@ -2772,12 +2772,21 @@
           },
           "pop_up_1":
           {
-            "title": "Pop-Up 1: Numeric Problems",
+            "title": "Pop-Up 1: Numeric Problems and Concepts",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
+          },
+          "pop_up_x":
+          {
+            "title": "Pop-Up X: Pop-Up Problems with the Quadratic Equtaion",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Solve numerical pop-up problems which require the use of the quadratic equation."
           },
           "horizontal_launch_1":
           {
