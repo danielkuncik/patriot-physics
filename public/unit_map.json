@@ -2729,146 +2729,147 @@
           {
             "title": "Three Types of Motion",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites":  [],
             "objective":  "Understand the difference between three different types of motion: constant velocity, uniformly accelerating, and non-uniformly accelerating"
-          },
-          "parabolic_arcs":
-          {
-            "title": "Parabolic Arcs",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectile motion always occurs in parabolic arcs"
           },
           "falling_1":
           {
             "title": "Falling 1",
             "subtitle": "Numeric Analysis",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["three_types_motion"],
             "objective": "Solve numeric problems about objects falling down and objects thrown downards."
+          },
+          "parabolic_arcs":
+          {
+            "title": "Parabolic Arcs",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["falling_1"],
+            "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectile motion always occurs in parabolic arcs"
           },
           "falling_2":
           {
             "title": "Falling 2: Kinematic Graphs",
             "subtitle": "Kinematic, Dynamic, and Energy Analysis",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
-          },
-          "falling_3":
-          {
-            "title": "Falling 3",
-            "subtitle": "Functional and Algebraic Analysis",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Fully analyze a falling object using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
+            "horizontal": 3,
+            "letter": "D",
+            "prerequisites": ["parabolic_arcs"],
+            "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
           },
           "pop_up_1":
           {
             "title": "Pop-Up 1",
             "subtitle": "Numeric Analysis",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["falling_2"],
             "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
+          },
+          "falling_3":
+          {
+            "title": "Falling 3",
+            "subtitle": "Functional and Algebraic Analysis",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "F",
+            "prerequisites": ["pop_up_1"],
+            "objective": "Fully analyze a falling object using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
+          },
+          "pop_up_2":
+          {
+            "title": "Pop-Up 2",
+            "subtitle": "Numeric Analysis with Quadratic Equation",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["falling_3"],
+            "objective": "Solve numerical pop-up problems which require the use of the quadratic equation."
           },
           "pop_up_3":
           {
             "title": "Pop-Up 3",
-            "subtitle": "Numeric Analysis with Quadratic Equation",
+            "subtitle": "Kinematic and Dynamic Analysis",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve numerical pop-up problems which require the use of the quadratic equation."
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["pop_up_2"],
+            "objective": "Create qualitative kinematic graphs of an object thrown upward; use Newton's Laws to analyze the dynamics of an object thrown upward; demonstrate how an object thrown upward follows the conservation of energy."
           },
           "horizontal_launch_1":
           {
             "title": "Horizontal Launch 1",
             "subtitle": "Numeric Analysis",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "In writing, describe motion in different dimensions when an object is launched horizontally; relate this motion to the free-body diagram using Newton's Model"
-          },
-          "horizontal_launch_2":
-          {
-            "title": "Horizontal Launch 2",
-            "subtitle": "Kinematic, Dynamic, and Energy Analysis",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Create qualitative kinematic graphs of a horizontally launched object; use Newton's Laws to analyze the dynamics of a horizontally launched object in each dimension; demonstrate how an object launched horizontally follows the conservation of energy."
-          },
-          "pop_up_2":
-          {
-            "title": "Pop-Up 2",
-            "subtitle": "Kinematic and Dynamic Analysis",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Create qualitative kinematic graphs of an object thrown upward; use Newton's Laws to analyze the dynamics of an object thrown upward; demonstrate how an object thrown upward follows the conservation of energy."
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["pop_up_3"],
+            "objective": "In writing, describe motion in different dimensions when an object is launched horizontally; relate this motion to the free-body diagram using Newton's Model"
           },
           "bullet_drop_conundrum":
           {
             "title": "Bullet Drop Conundrum",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "J",
+            "prerequisites": ["horizontal_launch_1"],
             "objective": "Explain, in words, how a bullet dropped and a bullet fired from a gun reach the ground at the same time; analyze the an object launched upward out of the sunroof of a moving car."
           },
-          "pop_up_4":
+          "horizontal_launch_2":
           {
-            "title": "Pop-Up 4: Symbolic Algebra",
-            "subtitle": "Symbolic and Functional Analysis",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
-          },
-          "horizontal_launch_3":
-          {
-            "title": "Horizontal Launch 3: Kinematic Graphs",
+            "title": "Horizontal Launch 2",
+            "subtitle": "Kinematic, Dynamic, and Energy Analysis",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answres using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
+            "horizontal": 4,
+            "letter": "K",
+            "prerequisites": ["bullet_drop_conundrum"],
+            "objective": "Create qualitative kinematic graphs of a horizontally launched object; use Newton's Laws to analyze the dynamics of a horizontally launched object in each dimension; demonstrate how an object launched horizontally follows the conservation of energy."
           },
           "cannon_problem_1":
           {
             "title": "Cannon Problem 1",
             "subtitle": "Concepts and Numeric Analysis",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["horizontal_launch_2"],
             "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; use this information to solve for relevant numeric quantities."
+          },
+          "pop_up_4":
+          {
+            "title": "Pop-Up 4: Symbolic Algebra",
+            "subtitle": "Symbolic and Functional Analysis",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["cannon_problem_1"],
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
+          },
+          "horizontal_launch_3":
+          {
+            "title": "Horizontal Launch 3",
+            "subtitle": "Symbolic and Functional Analysis",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "N",
+            "prerequisites": ["pop_up_4"],
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answres using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
           },
           "cannon_problem_2":
           {
             "title": "Cannon Problem 2",
             "subtitle": "Kinematic and Dynamic Analysis",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 5,
+            "horizontal": 1,
+            "letter": "O",
+            "prerequisites": ["horizontal_launch_3"],
             "objective": "Draw qualitative kinematic graphs of an object launched at an angle; relate the forces of the object to its motion using Newton's Laws of Motion."
           },
           "cannon_problem_3":
@@ -2876,27 +2877,27 @@
             "title": "Cannon Problem 3",
             "subtitle": "Symbolic and Functional Analysis",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "P",
+            "prerequisites": ["cannon_problem_2"],
             "objective": "Symbolically solve for relevant quantities given an objet launched at an angle; solve for motion functions of an object launched at an angle; prove the principle of parabolic motion."
           },
           "aiming_cannon_laser_pointers":
           {
             "title": "Aim a cannon with laser pointers.",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "Q",
+            "prerequisites": ["cannon_problem_3"],
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           },
           "wide_receiver_motion":
           {
             "title": "Wide Receiver in Motion",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "R",
+            "prerequisites": ["cannon_problem_3"],
             "objective": "Devise a model that mathematical depicts how a quarterback hits a wide receiver running quickly with a parabolic pass."
           }
         }

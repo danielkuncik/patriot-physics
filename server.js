@@ -403,7 +403,6 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
 var unitCluster, unit, pod;
 // ROUTES
 app.get('/',(req,res) => {
-  console.log('getting home');
     res.render('home.hbs', {
         layout:'default',
        // template:'home-template',
