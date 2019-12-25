@@ -976,6 +976,83 @@ class CircuitDiagram extends Diagram {
     }
 }
 
+class Compass extends Diagram {
+  constructor(horizontalBoolean, verticalBoolean) {
+    super();
+    if (horizontalBoolean === undefined) {
+      horizontalBoolean = true;
+    }
+    if (verticalBoolean === undefined) {
+      verticalBoolean = true;
+    }
+      this.horizontal = horizontalBoolean;
+      this.vertical = verticalBoolean
+      this.thetaInDegrees = 0;
+
+      this.northLabel = 'N';
+      this.eastLabel = 'E';
+      this.southLabel = 'S';
+      this.westLabel = 'W';
+
+      this.dashed = false;
+  }
+
+  setNorthLabel(newLabel) {
+    this.northLabel = newLabel;
+  }
+  setEastLabel(newLabel) {
+    this.eastLabel = newLabel;
+  }
+  setSouthLabel(newLabel) {
+    this.southLabel = newLabel;
+  }
+  setWestLabel(newLabel) {
+    this.westLabel = newLabel;
+  }
+
+  setAllLabels(north, east, south, west) {
+    this.setNorthLabel(north);
+    this.setEastLabel(east);
+    this.setSouthLabel(south);
+    this.setWestLabel(west);
+  }
+
+  turnIntoCoordinateAxes() {
+    this.setAllLabels('+y','+x','-y','-x');
+  }
+
+  makeDashed() {
+    this.dashed = true;
+  }
+
+  makeSolid() {
+    this.dashed = false;
+  }
+
+  drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+    let relativeFontSize = 0.3;
+    let textDisplacement = relativeFontSize * 0.7
+
+    if (this.horizontal) {
+      super.addTwoHeadedArrow(new Point(-1,0), new Point(1,0));
+      super.addText(this.westLabel,new Point(-1 - textDisplacement ,0), relativeFontSize);
+      super.addText(this.eastLabel, new Point(1 + textDisplacement, 0), relativeFontSize);
+    }
+    if (this.vertical) {
+      super.addTwoHeadedArrow(new Point(0,-1), new Point(0,1));
+      super.addText(this.southLabel, new Point(0, -1 - textDisplacement), relativeFontSize);
+      super.addText(this.northLabel, new Point(0, 1 + textDisplacement), relativeFontSize);
+    }
+
+    return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+  }
+
+  addToDiagram(diagram, centerPoint, length) {
+    // function to add the object to an existing diagram?
+  }
+
+}
+
 
 class FreeBodyDiagram extends Diagram {
     constructor() {

@@ -17,6 +17,13 @@ Image of positive up and negative down
 [compass]
 -->
 
+<div id = 'compass'></div>
+<script>
+  let myCompass = new Compass(false, true);
+  myCompass.turnIntoCoordinateAxes();
+  $("#compass").append(myCompass.drawCanvas(200));
+</script>
+
 <p>
   Typically, upward is considered the positive direction
   and downward is considered the negative direction.

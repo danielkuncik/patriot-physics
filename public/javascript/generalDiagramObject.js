@@ -697,6 +697,14 @@ class Diagram {
         return mainSegment;
     };
 
+    addTwoHeadedArrow(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
+
+      let centerPoint = point1.interpolate(point2, 0.5);
+
+      this.addArrow(centerPoint, point1, arrowheadLength, arrowheadAngleInDegrees);
+      this.addArrow(centerPoint, point2, arrowheadLength, arrowheadAngleInDegrees);
+    }
+
     // in case you want a line with an arrowhead in the middle of it
     addArrowHeadBetweenPoints(point1, point2, arrowHeadLength, arrowheadAngleInDegrees) {
         let arrowHeadAngleInRadians = convertDegreesToRadians(arrowheadAngleInDegrees);
@@ -1150,4 +1158,3 @@ class Diagram {
     }
 
 }
-
