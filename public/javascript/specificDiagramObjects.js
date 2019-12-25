@@ -328,6 +328,8 @@ class QualitativeGraph extends Diagram {
         this.yFuncMin = undefined;
         this.yFuncMax = undefined;
 
+        this.pointsOnGraph = [];
+
         // all xMin and xMax, and yMin and yMax have a 0 attached to prevent confusion with the
         // min and max values of th the function
 
@@ -550,6 +552,24 @@ class QualitativeGraph extends Diagram {
     }
 
 
+    addPointOnGraph(x,y,type) {
+      if (type === undefined) {
+        type = 'defined';
+      }
+      this.pointsOnGraph.push({
+        x: x,
+        y: y,
+        type: type
+      });
+    }
+
+    addDefinedPoint(x,y) {
+      this.addPointOnGraph(x,y);
+    }
+
+    addUndefinedPoint(x,y) {
+      this.addPointOnGraph(x,y,'undefined');
+    }
 
     moveLabelsToEnd() {
         this.xLabelPosition = 'end';
@@ -609,6 +629,15 @@ class QualitativeGraph extends Diagram {
         } else if (this.yLabelPosition === 'side') {
             super.labelLineAbove(this.lowerLeft, this.upperLeft, this.yLabel, this.textDisplacement, this.relativeFontSize);
         }
+
+        let pointRadius = minOfTwoValues(this.lowerRight.x - this.lowerLeft.x, this.upperRight.y - this.lowerRight.y) * 0.05;
+
+        this.pointsOnGraph.forEach((point) => {
+          let newCircle = super.addCircle(new Point(point.x, point.y * this.yMultiplier), pointRadius);
+          if (point.type === 'defined') {
+            newCircle.fill();
+          }
+        });
 
         // graph the actual function
         if (this.simpleFunctionGraph) { // just graphing a normal function

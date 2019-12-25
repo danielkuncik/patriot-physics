@@ -10,22 +10,78 @@
 <p>
   The most important single fact about projectile motion is this:
   All 2-dimensional projecitle motion
-  takes the shape of a <strong>parabola</strong>.
+  takes the shape of a <strong>downward parabola</strong>.
   (The only exceptions are if an object is dropped down or thrown directly upward.
   These exceptions are 1-dimensional projectile motion.)
 </p>
 
 
 <h4>
-  What is a parabola
+  What is a downward parabola
 </h4>
 
 <p>
-  A parabola is a shape made by the mathematical equation
+  A downward parabola is a shape made by the mathematical equation
   $$
   y = a x^2 + bx + c
   $$
+  in which \( a < 0 \).
+  Here is a classic example of a downward parabola:
 </p>
+
+<div id = 'parabolaGraph1'></div>
+<p>
+  Here is an image of half of a downward parabola:
+</p>
+<div id = 'parabolaGraph2'></div>
+
+<p>
+  The most important point of a downward parabola
+  is the <strong>vertex</strong>.
+  The vertex is at the top of the parabola.
+  In the above graphs, the vertex is marked with a black circle.
+  For an object in projectile motion,
+  the vertex represents the point at which the object is at its highest point.
+</p>
+
+<p>
+  Note that a parabola is <strong>not</strong>
+  the same as an exponential function!
+  Many students confuse these.
+  An exponential function increases at a much faster rate and
+  decreases to an asymptote. An exponential function is monotonically
+  increasing and does not include a vertex.
+</p>
+
+<script>
+  let parabolaGraph1 = new QualitativeGraph((x) => {
+    return -1 * (x - 5)**2 + 25
+  }, 0, 10)
+  parabolaGraph1.addDefinedPoint(5,25);
+  let parabolaGraph2 = new QualitativeGraph((x) => {
+    return -1 * x * x + 25
+  }, 0, 5);
+  parabolaGraph2.addDefinedPoint(0,25);
+
+  $("#parabolaGraph1").append(parabolaGraph1.drawCanvas(300));
+  $("#parabolaGraph2").append(parabolaGraph2.drawCanvas(300));
+
+</script>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = 'false'>
+    True or False: All projectile motion follows the shape of an exponential function.
+  </li>
+  <li class = 'question' data-answer = 'false'>
+    True or False: All projectile motion follows the shape of a <strong>upward</strong> parabolic function.
+  </li>
+  <li class = 'question' data-answer = 'true'>
+    True or False: All projectile motion follows the shape of a <strong>downward</strong> parabolic function.
+  </li>
+  <li class = 'question' data-answer = 'vertex'>
+    The point at the top of a downard parabola is called the ________.
+  </li>
+</ol>
 
 <h4>
   Examples where parabolic motion is obvious:
@@ -60,3 +116,10 @@
 <!--
 include some quesitons like those on the force concept inventory on parabolic motion
 -->
+
+
+<h4>
+  Answers:
+</h4>
+
+<ol class = 'answerList'></ol>
