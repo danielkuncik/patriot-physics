@@ -581,6 +581,31 @@ class QualitativeGraph extends Diagram {
         this.yLabelPosition = 'side';
     }
 
+    turnIntoPositionGraph(dimension) {
+      if (dimension === undefined) {dimension = 'x';}
+      this.labelAxes('t',`${dimension}(t)`);
+    }
+
+    turnIntoVelocityGraph(dimension) {
+      let yLabel;
+      if (dimension === undefined) {
+        yLabel = 'v(t)';
+      } else {
+        yLabel = `v_${dimension}(t)`;
+      }
+      this.labelAxes('t', yLabel);
+    }
+
+    turnIntoAccelerationGraph(dimension) {
+      let yLabel;
+      if (dimension === undefined) {
+        yLabel = 'a(t)';
+      } else {
+        yLabel = `a_${dimension}(t)`;
+      }
+      this.labelAxes('t',yLabel);
+    }
+
     /*
     I need some way to add the x-axis as a dotted line
     and to label a single point as zero

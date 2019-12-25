@@ -2745,7 +2745,8 @@
           },
           "falling_1":
           {
-            "title": "Falling 1: Numeric Problems",
+            "title": "Falling 1",
+            "subtitle": "Numeric Analysis",
             "level": 1,
             "horizontal": null,
             "letter": "",
@@ -2755,6 +2756,7 @@
           "falling_2":
           {
             "title": "Falling 2: Kinematic Graphs",
+            "subtitle": "Kinematic, Dynamic, and Energy Analysis",
             "level": 1,
             "horizontal": null,
             "letter": "",
@@ -2763,7 +2765,8 @@
           },
           "falling_3":
           {
-            "title": "Falling 3: Compilation",
+            "title": "Falling 3",
+            "subtitle": "Functional and Algebraic Analysis",
             "level": 2,
             "horizontal": null,
             "letter": "",
@@ -2772,16 +2775,18 @@
           },
           "pop_up_1":
           {
-            "title": "Pop-Up 1: Numeric Problems and Concepts",
+            "title": "Pop-Up 1",
+            "subtitle": "Numeric Analysis",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
           },
-          "pop_up_x":
+          "pop_up_3":
           {
-            "title": "Pop-Up X: Pop-Up Problems with the Quadratic Equtaion",
+            "title": "Pop-Up 3",
+            "subtitle": "Numeric Analysis with Quadratic Equation",
             "level": 3,
             "horizontal": null,
             "letter": "",
@@ -2790,7 +2795,8 @@
           },
           "horizontal_launch_1":
           {
-            "title": "Horizontal Launch 1: Conceptual and Numeric",
+            "title": "Horizontal Launch 1",
+            "subtitle": "Numeric Analysis",
             "level": 2,
             "horizontal": null,
             "letter": "",
@@ -2799,30 +2805,23 @@
           },
           "horizontal_launch_2":
           {
-            "title": "Horizontal Launch 2: Numeric",
+            "title": "Horizontal Launch 2",
+            "subtitle": "Kinematic, Dynamic, and Energy Analysis",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve for unknown numeric quantities when an object is launched from a cliff horizontally."
+            "objective": "Create qualitative kinematic graphs of a horizontally launched object; use Newton's Laws to analyze the dynamics of a horizontally launched object in each dimension; demonstrate how an object launched horizontally follows the conservation of energy."
           },
           "pop_up_2":
           {
-            "title": "Pop-Up 2: Newton's Model",
+            "title": "Pop-Up 2",
+            "subtitle": "Kinematic and Dynamic Analysis",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Relate the motion of an object thrown directly to the free-body diagram using Newton's Model of forces."
-          },
-          "pop_up_3":
-          {
-            "title": "Pop-Up 3: Kinematic Graphs",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw qualitative kinematic graphs of an object thrown directly upward."
+            "objective": "Create qualitative kinematic graphs of an object thrown upward; use Newton's Laws to analyze the dynamics of an object thrown upward; demonstrate how an object thrown upward follows the conservation of energy."
           },
           "bullet_drop_conundrum":
           {
@@ -2831,25 +2830,17 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain, in words, how a bullet dropped and a bullet fired from a gun reach the ground at the same time."
+            "objective": "Explain, in words, how a bullet dropped and a bullet fired from a gun reach the ground at the same time; analyze the an object launched upward out of the sunroof of a moving car."
           },
           "pop_up_4":
           {
             "title": "Pop-Up 4: Symbolic Algebra",
+            "subtitle": "Symbolic and Functional Analysis",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis."
-          },
-          "pop_up_5":
-          {
-            "title": "Pop-Up 5: Compilation",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites":  [],
-            "objective": "Create a complete analysis of an object thrown directly upward, bringing together functional kinematic analysis, kinematic graphs, dynamic analysis, and energy analysis."
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
           },
           "horizontal_launch_3":
           {
@@ -2858,79 +2849,37 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw qualitative kinematic graphs in each dimension for an object launched horizontally."
-          },
-          "horizontal_launch_4":
-          {
-            "title": "Horizontal Launch 4: Symbolic Algebra",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Symbolically solve for relevant quantities and derive functions for an object launched horizontally."
-          },
-          "horizontal_launch_5":
-          {
-            "title": "Horizontal Launch 5: Compilation",
-            "level": 5,
-            "horizontal":  null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze an object launched horizontally using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answres using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
           },
           "cannon_problem_1":
           {
-            "title": "Cannon Problem 1: Conceptual",
+            "title": "Cannon Problem 1",
+            "subtitle": "Concepts and Numeric Analysis",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; relate this motion to the free-body diagram using Newton's Model of forces."
+            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; use this information to solve for relevant numeric quantities."
           },
           "cannon_problem_2":
           {
-            "title": "Cannon Problem 2: Numeric",
+            "title": "Cannon Problem 2",
+            "subtitle": "Kinematic and Dynamic Analysis",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve for relevant unknown numeric quantities when an object is launched upward at an angle. Defend answers using dimensional analysis."
+            "objective": "Draw qualitative kinematic graphs of an object launched at an angle; relate the forces of the object to its motion using Newton's Laws of Motion."
           },
           "cannon_problem_3":
           {
-            "title": "Cannon Problem 3: Symbolic Algebra",
+            "title": "Cannon Problem 3",
+            "subtitle": "Symbolic and Functional Analysis",
             "level": 5,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "With a cannon fired upward at a angle, algebraically solve for relevant quantities in terms of common known quantities. Defend answers using dimensional analysis."
-          },
-          "cannon_problem_4":
-          {
-            "title": "Cannon Problem 4: Kinematic Graphs",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw six qualitative kinematic graphs for an object fired from a cannon at an upward angle: position-time, velocity-time, and acceleration-time graphs in each dimension."
-          },
-          "cannon_problem_5":
-          {
-            "title": "Cannon Problem 5: Compilation",
-            "level": 5,
-            "horizontal":  null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Fully analyze an object launched from a cannon using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
-          },
-          "cannon_problem_6":
-          {
-            "title": "Cannon Problem 6: Fired From High Ground",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the range of a cannon fired at an angle from a high ground."
+            "objective": "Symbolically solve for relevant quantities given an objet launched at an angle; solve for motion functions of an object launched at an angle; prove the principle of parabolic motion."
           },
           "aiming_cannon_laser_pointers":
           {

@@ -1,0 +1,53 @@
+<p>
+  In the previous section,
+  we analyzed a falling object numerically,
+  by plugging values into relevant formulas to
+  infer interesting values.
+</p>
+
+<h4>
+  Qualitative Kinematic Graphs of Falling Objects
+</h4>
+
+<div id = 'positionGraph'></div>
+<div id = 'velocityGraph'></div>
+<div id = 'accelerationGraph'></div>
+
+<script>
+  let v_i = 0;
+  let a = -9.8;
+  let delta_t = 3;
+  let delta_y = v_i * delta_t + 0.5 * a * delta_t**2;
+  let y_i = delta_y
+
+  function position_function(t) {
+    return y_i + v_i + t + 0.5 * a * t*t
+  }
+  function velocity_function(t) {
+    return v_i + a * t;
+  }
+  function acceleration_function(t) {
+    return a
+  }
+
+  let positionGraph = new QualitativeGraph(position_function,0,delta_t);
+  positionGraph.turnIntoPositionGraph('y');
+  let velocityGraph = new QualitativeGraph(velocity_function,0,delta_t);
+  velocityGraph.turnIntoVelocityGraph();
+  let accelerationGraph = new QualitativeGraph(acceleration_function,0,delta_t);
+  accelerationGraph.turnIntoAccelerationGraph();
+
+  $("#positionGraph").append(positionGraph.drawCanvas(500));
+  $("#velocityGraph").append(velocityGraph.drawCanvas(500));
+  $("#accelerationGraph").append(accelerationGraph.drawCanvas(500));
+
+</script>
+
+
+<h4>
+  Dynamic Analysis of a Falling Object
+</h4>
+
+<h4>
+  Energy Analysis of a Falling Object
+</h4>
