@@ -3685,7 +3685,7 @@
         {
           "rotational_position_displacement":
           {
-            "name": "Rotational Position and Displacement",
+            "title": "Rotational Position and Displacement",
             "level": 1,
             "horizontal": null,
             "letter": "",
@@ -3694,7 +3694,7 @@
           },
           "rotational_velocity_calculations":
           {
-            "name": "Rotational Velocity Calculations",
+            "title": "Rotational Velocity Calculations",
             "level": 1,
             "horizontal": null,
             "letter": "",
@@ -3703,7 +3703,7 @@
           },
           "rotational_velocity_conversions":
           {
-            "name": "Rotational Velocity Conversions",
+            "title": "Rotational Velocity Conversions",
             "level": 1,
             "horizontal": null,
             "letter": "",
