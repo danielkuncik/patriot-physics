@@ -3719,6 +3719,15 @@
             "prerequisites": [],
             "objective": "Explain the difference between rotational and linear velocity and relate them numerically"
           },
+          "rotational_acceleration":
+          {
+            "title": "Rotational Acceleration",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Calculate rotational acceleration."
+          },
           "rotational_kinematic_equations_1":
           {
             "title": "Rotational Kinematic Equations 1",
@@ -3754,7 +3763,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the lienar velocity of a person located at a particular latitude on a planet."
+            "objective": "Determine the linear velocity of a person located at a particular latitude on a planet."
           },
           "rotational_kinematic_equations_3":
           {
@@ -3799,7 +3808,16 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Design a hypothetical planet for which days and seasons have irregular lengths."
+            "objective": "Design a hypothetical planet for which seasons have irregular lengths."
+          },
+          "the_long_night":
+          {
+            "title": "The Long Night",
+            "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Design a hypothetical planet on which days have irregular lengths"
           }
         }
       },
