@@ -1,0 +1,135 @@
+<p>
+    The goal of this lab is to ride in an elevator and analyze the forces acting on you
+    while you ride in the elevator.
+    Some very <emph>counterintuitive forces</emph> act on you when riding the elevator!
+    A <emph>counterintuitive force</emph> occurs when what you feel is not the same
+    as the force actually acting on you.
+</p>
+
+<p>
+    Ride in an elevator. Begin on a high floor and ride down to a lower floor,
+    then back up to a high floor. This experience works best in a high speed elevator,
+    but works even in a low-speed elevator.
+    As the elevator moves up and down, describe how you feel in six different situations.
+</p>
+
+<img src = '/labs/elevator_image.png' height = '600px' width = 'auto' />
+
+<p>
+    Describe what you <strong>feel</strong> in each situation.
+</p>
+
+<div id = 'dataTable'></div>
+
+<p>
+    Break the situations into three categories.
+</p>
+
+<ul>
+    <li>
+        During two of the six situations, you feel like you are <strong>falling</strong>. Which two?
+    </li>
+    <li>
+        During two of the six situations, you feel like the ground is <strong>pressing into</strong> you. Which two?
+    </li>
+    <li>
+        During two of the six situations, you feel relatively <strong>normal</strong>. Which two?
+    </li>
+</ul>
+
+
+<p>
+    The ultimate goal is to for each situation,
+    draw a free-body diagram based on how you are moving,
+    and then relate that to how you feel.
+</p>
+
+<h5>
+    Rules for how you feel:
+</h5>
+
+<ul>
+    <li>
+        If the normal force is weaker than your weight (gravity), you feel like you are falling.
+    </li>
+    <li>
+        If the normal force is stronger than your weight (gravity), you feel like the ground is pressing into you.
+    </li>
+    <li>
+        If the normal force is equal to your weight (gravity), you don't feel anything special.
+    </li>
+</ul>
+
+<h5>
+    Newton's First and Second Laws
+</h5>
+
+<ul>
+    <li>
+        If the net force acting on you is in the <strong>same</strong> direction as your velocity,
+        you speed up.
+    </li>
+    <li>
+        If the net force acting on you is in the <strong>opposite</strong> direction as your velocity,
+        you slow down.
+    </li>
+    <li>
+        If the net force acting on you is <strong>zero</strong>,
+        you move at a constant speed.
+    </li>
+</ul>
+
+<p>
+    For each of the six situations above in the boxes, complete the following analysis:
+</p>
+<ul>
+    <li>
+        Describe how you feel in each situation,
+        as though you are falling,
+        being pressed into,
+        or normal.
+    </li>
+    <li>
+        Draw a <emph>qualitative</emph> free-body diagram.
+        The free-body diagram should include only two forces in each case:
+        gravity and normal force.
+        Relate your free-body diagram to the way that you feel.
+    </li>
+    <li>
+        Draw a qualitative <strong>net force vector</strong>.
+        The net force vector should not be a part of your free-body diagram,
+        but should be separate from it.
+    </li>
+    <li>
+        Draw a qualitative <strong>velocity vector</strong>.
+        The velocity vector should not be a part of your free-body diagram,
+        but should be separate from it.
+        The velocity vector always points in the direction
+        that the elevator is moving.
+    </li>
+    <li>
+        Using <strong>Newton's First and Second Laws</strong>,
+        which are written above,
+        determine whether you are speeding up, slowing down, or moving at a constant speed
+        in each situation.
+    </li>
+</ul>
+<div id = 'analysisTable'></div>
+
+<p>
+    Write a one-paragraph final analysis.
+    In the final analysis, describe your trip in the elevator,
+    and relate how your motion (speeding up, slowing down, or moving at a constant speed),
+    connects to your free-body diagram and Newton's First and Second Laws at each portion.
+    Also identify which parts of the elevator write are the most <strong>counterintuitive</strong>?
+    For most people, forces are counterinuitive when their net force and their velocity
+    act in the opposite directions.
+</p>
+
+<script>
+    let dataTable = new Table(2,3);
+    dataTable.writeTextInRow(0,['A','B','C']);
+    dataTable.writeTextInRow(1,['D','E','F']);
+    $("#dataTable").append(dataTable.draw(600,400));
+    $("#analysisTable").append(dataTable.draw(1200,800));
+</script>
