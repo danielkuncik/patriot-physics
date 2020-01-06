@@ -4013,6 +4013,15 @@
         "level": 4,
         "pods":
         {
+          "angular_momentum_concepts":
+          {
+            "title": "Angular Momentum Concepts",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze real world situations using the concept of angular momentum."
+          },
           "rotational_conservation_analogies":
           {
             "title": "Rotational Conservation Analogies",
