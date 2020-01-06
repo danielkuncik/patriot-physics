@@ -1891,6 +1891,15 @@
             "prerequisites": ["block_dragging_1"],
             "objective": "Analyze the motion of a block on a surface with only kinetic friction; accelerating and moving at a constant velocity."
           },
+          "surface_area_friction":
+          {
+            "title": "Surface Area and Friction",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "X",
+            "prerequisites": ["block_dragging_2"],
+            "objective": "Explain that friction is independent of surface area."
+          },
           "elevators_1":
           {
             "title": "Elevators 1",
