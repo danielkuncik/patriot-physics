@@ -1,0 +1,124 @@
+<p>
+    In levels 1 and 2,
+    we have learned to use free-body diagrams and Newton's Second Law.
+    Here on level 3, we will use problems where you need to identify individual forces
+    using the principles of those forces.
+    For these problems, regarding a person inside of an elevator,
+    there are only two forces involved: gravity and normal force,
+    but you need to understand each force in order to use it.
+</p>
+
+<p>
+    You may have completed some of the <a href = '/pod/mechanics/quantitative_dynamics/block_dragging_1'>block dragging</a>
+    problems already.
+    In these problems, the magnitude normal force is equal to the magnitude
+    of gravitational force of the block.
+    However, this is not always the case.
+    Rather, there is a procedure for finding the
+    magnitude of normal force that requires you to know the net force first.
+    In these problems, we will begin using that procedure.
+</p>
+
+
+<h3>
+    Principles Involved
+</h3>
+<!--
+include newton' second law separately
+-->
+<ul>
+    <li>
+        <h4>
+            Newton's Second Law:
+        </h4>
+        <p class = 'equation'>
+            $$
+            \Sigma F = ma
+            $$
+        </p>
+        <div id = 'newtonsSecondLawInfoTable'></div>
+    </li>
+    <li>
+        <h4>
+            The Force of Gravity
+        </h4>
+
+        <ul>
+            <li>
+                On earth, the <strong>direction</strong> of gravity is always <strong>down</strong>.
+            </li>
+            <li>
+                On earth, the <strong>magnitude</strong> of gravity is given by the formula \( F_g  = m g \).
+            </li>
+        </ul>
+
+        <p class = 'equation'>
+            $$
+            F_g = mg
+            $$
+        </p>
+
+        <div id = 'gravityFormulaTable'></div>
+    </li>
+    <li>
+        <h4>
+            Normal Force
+        </h4>
+        In these problems, the <emph>direction</emph> of normal force is always <strong>up</strong>.
+        To find the <emph>magnitude</emph> of normal force,
+        there is no set formula. Instead, you need to follow a two-step process:
+        <ol>
+            <li>
+                First, find the net force.
+            </li>
+            <li>
+                Then, find the normal force using the process of
+                <a href = '/pod/mechanics/quantitative_dynamics/find_missing_force'>finding the missing force</a>.
+            </li>
+        </ol>
+    </li>
+</ul>
+
+<!---
+Principles:
+- newton's second law
+- weight equation
+-->
+
+
+
+<h4>
+    How to find Normal Force:
+</h4>
+
+<ol>
+    <li>
+        First, find the net force.
+    </li>
+    <li>
+        Then, find the normal force using the process of
+        <a href = '/pod/mechanics/quantitative_dynamics/find_missing_force'>finding the missing force</a>.
+    </li>
+</ol>
+
+
+<script>
+    let gravityFormulaTable = new Table(4,4);
+    gravityFormulaTable.addTopHeaders(['symbol','quantity','SI unit','note']);
+    gravityFormulaTable.writeTextInRow(1,['\\( F_g \\)', 'Magnitude of Force of gravity','Newtons (N)']);
+    gravityFormulaTable.writeTextInRow(2,['\\( m \\)', 'mass', 'kilograms (kg)']);
+    gravityFormulaTable.writeTextInRow(3,['\\( g \\)','free-fall acceleration',"m/s/s","on earth, always equal to 9.8 m/s/s"])
+    $("#gravityFormulaTable").append(gravityFormulaTable.draw(500));
+
+
+</script>
+
+<!--
+A small number of very easy find the missing force problems
+-->
+
+
+<!--
+a bunch (about 8) of the problems on completing free-body diagrams
+-->
+

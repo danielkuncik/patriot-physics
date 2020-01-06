@@ -1,0 +1,76 @@
+<p>
+    The ultimate goal of dynamics is to explain <emph>why</emph>
+    objects move by understanding the forces acting on those objects.
+    One crucial formula allows us to accomplish this.
+    This formula relates the <emph>forces</emph>
+    acting on an object to the <emph>acceleration</emph>
+    of that object:
+    Newton's Second Law.
+</p>
+
+
+<p class = 'equation'>
+    $$
+    \Sigma F = m a
+    $$
+</p>
+
+
+<div id = 'newtonsSecondLawInfoTable'></div>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '100 m/s/s'>
+        I kick and exert a net force of 200 N on a rock. The rock has a mass of 2 kg.
+        What is the acceleration of the rock?
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '40 N'>
+        Something is accelerating at a rate of 4 m/s<sup>2</sup>.
+        It has a mass of 10 kg. What is the net force on this object?
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '0.1 m/s/s'>
+        The cabinet has a mass of 200 kg and I push it with a force of 20 N. That is the only
+        horizontal force on the cabinet. What is its acceleration? Include the unit!
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '200 N'>
+        An 80 kg person on a 20 kg bicycle is accelerating at 2 m/s<sup>2</sup>. What is the net force on them?
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '25 kg'>
+        When I exert a 100 N net force on my bookshelf, it accelerates at a rate of 4 m/<sup>2</sup>.
+        What is the mass of the bookshelf?
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '20 m/s/s'>
+        A rocket has a mass of 1800 kg.
+        If the rocket thruster gives it a net force of 36000 N, how fast will it accelerate?
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '80 kg'>
+        What is the mass of an object with an acceleration of 5 m/s<sup>2</sup>
+        under a net force of 400 N? Include the unit!
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<h3>
+    Answers
+</h3>
+
+<ol class ='answerList'></ol>
+
+
+<script>
+    let newtonsSecondLawInfoTable = new Table(4,3);
+    newtonsSecondLawInfoTable.addTopHeaders(['symbol','quantity','SI unit']);
+    newtonsSecondLawInfoTable.writeTextInRow(1,['\\( \\Sigma F \\)','net force','Newtons (N)']);
+    newtonsSecondLawInfoTable.writeTextInRow(2,['\\( m \\)','mass','kilograms (kg)']);
+    newtonsSecondLawInfoTable.writeTextInRow(3,['\\( a \\)','acceleration','\\( \\frac{\\text{m}}{(\\text{s})^2} \\)']);
+    $("#newtonsSecondLawInfoTable").append(newtonsSecondLawInfoTable.draw(400));
+
+    let thisFormulaSolvingTable = new FormulaSolvingTable();
+    $(".formulaSolvingTable").append(thisFormulaSolvingTable.draw(600,300));
+</script>
+

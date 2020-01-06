@@ -339,3 +339,23 @@ class ForceTableQualitative extends Table {
         super.writeTextInCell(0,0, 'free-body diagram');
     }
 }
+
+class FormulaSolvingTable extends Table {
+    constructor() {
+        super(3,3);
+
+        super.mergeRight(1,1);
+
+        super.mergeRight(2,0);
+        super.mergeRight(2,0);
+
+        super.writeTextInCell(0,0,'Looking For');
+        super.writeTextInCell(1,0,'Already Know');
+        super.writeTextInCell(0,1,'Formula');
+        super.writeTextInCell(2,0,'Answer in a complete sentence with unit');
+
+        super.addClassToCell(0,2,'littleBoxOnTheSide');
+
+        super.setRowProportions([1,3,1]);
+    }
+}
