@@ -1,0 +1,155 @@
+<p>
+    Friction is one of the most crucial forces in physics.
+    Friction keeps objects in place.
+    Friction stops objects from moving.
+    It is the force behind the breaks on your car,
+    and it is the force that allows you to stand up without falling down.
+    Any understanding of dynamics is incomplete without a thorough understanding
+    of friction.
+</p>
+
+<p>
+    In this pod dealing with basic friction,
+    we will introduce the two types of friction:
+    <strong>static friction</strong>
+    and <strong>kinetic friction</strong>.
+    Here, we will discuss the definition of each one,
+    and later on we will use both static friction and
+    kinetic friction quantitatively.
+</p>
+
+<p class = 'definition'>
+    The force of <strong>kinetic friction</strong>
+    affects all surfaces that are sliding across
+    each other.
+    It affects thins that move,
+    and it makes them stop moving.
+</p>
+
+<p class = 'definition'>
+    The force of <strong>static friction</strong>
+    affects all objects that are not moving (or sliding).
+    It prevents objects from moving.
+</p>
+
+<div id = 'frictionTable'></div>
+
+
+<!---
+Four types of quesitons:
+- static vs. kinetic
+- true or false
+- fill in the blank
+- and then one essay question
+-->
+<h5>
+    Static vs. Kinetic Friction
+</h5>
+<p class = 'directions'>
+    For each of the following statements,
+    determine if it applies to
+    static friction or kinetic friction.
+</p>
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Acts on objects that are sliding across a table.
+    </li>
+    <li class = 'question'>
+        Acts on objects that are not sliding.
+    </li>
+    <li class = 'question'>
+        Will eventually cause somebody riding a Slip'n'Slide to
+        stop moving.
+    </li>
+    <li class = 'question'>
+        Keeps a chair from falling when you lean back in it.
+    </li>
+</ol>
+
+
+<h5>
+    True or False?
+</h5>
+<ol class = 'questionList'>
+    <li class = 'question'>
+        When an object begins moving, friction becomes stronger.
+    </li>
+    <li class = 'question'>
+        When an object begins moving, friction becomes weaker.
+    </li>
+</ol>
+
+
+<h5>Fill in the blank:</h5>
+
+<p>Word Bank</p>
+<ul>
+    <li>
+        Static
+    </li>
+    <li>
+        Maximum
+    </li>
+    <li>
+        Kinetic
+    </li>
+    <li>
+        Weaker
+    </li>
+</ul>
+<ol class = 'questionList'>
+    Bob the Builder
+    is trying to push a big heavy box.
+    The box isn't moving.
+    He pushes and pushes,
+    but it still doesn't move.
+    He is pushing against a force called
+    <li class = 'question'>___________________</li> friction.
+    Finally, Bob pushes harder than the
+    <li class = 'question'>___________________</li> static friction
+    and the box begins to move.
+    Now, box has to keep the box moving,
+    to do this, he needs to push against a force called
+    <li class = 'question'>___________________</li> friction.
+    Fortunately, he does not need to push as hard because
+    kinetic friction is
+    <li class = 'question'>___________________</li> than
+    maximum static friction.
+</ol>
+
+
+<h5>
+    Written Question:
+</h5>
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Try pushing a big heavy box across the floor.
+        It needs to slide, it cannot have wheels.
+        Ask yourself, which takes more force:
+        getting the block to start moving,
+        or keeping it moving.
+        According to the rules of friction,
+        it always takes more force to get it started moving
+        than to keep the object moving.
+        See if, by closely examining how it feels to push the heavy box,
+        you can observe this effect yourself.
+        <br>
+        <br>
+        Use the concepts of static and kinetic friction
+        to explain why it should be easier to begin moving
+        the box than to keep it moving?
+    </li>
+</ol>
+
+<script>
+    let frictionTable = new Table(5,2);
+    frictionTable.addTopHeaders(['Kinetic Friction','Static Friction']);
+    frictionTable.writeTextInRow(1,['acts on moving (sliding) objects','Acts on stationary (non-sliding) objects']);
+    frictionTable.writeTextInRow(2,['stops objects that are already moving','Prevents objects from beginning to move']);
+    frictionTable.writeTextInRow(3,['to keep pushing an object, you must overcome kinetic friction','To start an object moving, you must overcome static friction']);
+    frictionTable.mergeRight(4,0);
+    frictionTable.writeTextInCell(4,0,'Maximum static friction is stronger than kinetic friction.')
+
+    frictionTable.setColumnProportions([1,2,2,2,2]);
+    $("#frictionTable").append(frictionTable.draw(400,800));
+</script>
