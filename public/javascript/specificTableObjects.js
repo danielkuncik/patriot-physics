@@ -233,28 +233,50 @@ class TableOfCanvasses extends Table {
 /// the next big thing is to create these tables for oragnizing forces!
 // quantiative force table depends on identifying magnitudes of forces?
 // has seperate sections for X and Y forces
+
+// vector boolean, there is a place for velocity and net force vectors
 class ForceTableQuantitative1D extends Table {
-    constructor(numForces) {
-        let numRows = numForces + 2;
+    constructor(numForces, vectorBoolean) {
+        if (vectorBoolean === undefined) {
+            vectorBoolean = false;
+        }
+        let numRows = numForces + 3;
         let numColumns = 4;
         super(numRows, numColumns);
+        this.numForces = numForces;
+
 
         super.mergeRight(0,0);
-        super.mergeRight(0,0);
-        super.mergeRight(0,0);
+        if (!vectorBoolean) {
+            super.mergeRight(0,0);
+            super.mergeRight(0,0);
+        }
+
+        super.mergeRight(1,0);
+        super.mergeRight(1,0);
+        super.mergeRight(1,0);
+        super.shadeCell(1,0);
 
         super.writeTextInCell(0,0,
             'free-body diagram');
-        super.writeTextInRow(1, ['force','magnitude','direction','How did you determine the magnitude?']);
+        if (vectorBoolean) {
+            super.writeTextInCell(0,2, 'net force vector');
+            super.writeTextInCell(0,3, 'velocity vector');
+        }
+        super.writeTextInRow(2, ['force','magnitude','direction','How did you determine the magnitude?']);
 
         super.setColumnProportions([2,2,2,4]);
 
-        let rowProportionArray = [4,1];
+        let rowProportionArray = [4,0.25,1];
         let k;
         for (k = 0; k < numForces; k++) {
             rowProportionArray.push(2);
         }
         super.setRowProportions(rowProportionArray);
+    }
+
+    nameForce(number,name) {
+        super.writeTextInCell(2 + number,0, name);
     }
 }
 
