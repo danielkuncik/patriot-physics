@@ -3840,6 +3840,15 @@
         "level": 4,
         "pods":
         {
+          "inertia_conceptual_review":
+          {
+            "title": "Inertia Conceptual Review",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objectives": "Give conceptual examples of inertia in linear situations."
+          },
           "rotational_dynamics_analogies":
           {
             "title": "Rotational Dynamics Analogies",
@@ -3849,14 +3858,32 @@
             "prerequisites": [],
             "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia"
           },
-          "rotational_dynamic_formulas":
+          "rotational_inertia_formula":
           {
-            "title": "Rotational Dynamic Formulas",
+            "title": "Rotational Inertia Formula",
             "level": 1,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve straightforward numerical questions using the rotational dynamics formulas, including the definition of torque and basic equations for rotational inertia."
+            "objective": "Use the formula for rotational inertia to find rotational inertia of a point masses."
+          },
+          "cross_product":
+          {
+            "title": "Cross Products",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the vector cross product of two vectors; practice using right hand rules."
+          },
+          "torque_formula":
+          {
+            "title": "The Torque Formula",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the formula for torque to find the torque in situations with forces acting on a stick."
           },
           "rotational_dynamic_dimensional_analysis":
           {
@@ -3881,6 +3908,15 @@
                       "Why does a disc roll faster than a hoop of the same mass?",
                       "Why does liquid soup roll faster than cream soup, but cream soup faster still than noodle soup?"
                     ]
+          },
+          "torque_concepts":
+          {
+            "title": "Torque Concepts",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the concept of torque to analyze real world situations"
           },
           "same_force_different_torque":
           {
