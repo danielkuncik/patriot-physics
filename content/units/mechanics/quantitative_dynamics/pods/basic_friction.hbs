@@ -18,18 +18,25 @@
     kinetic friction quantitatively.
 </p>
 
+<p>
+    The following definitions
+    of static and kinetic friction applies
+    to a block sliding on a flat surface.
+</p>
+<!---
+add image here
+-->
+
 <p class = 'definition'>
     The force of <strong>kinetic friction</strong>
-    affects all surfaces that are sliding across
-    each other.
-    It affects thins that move,
-    and it makes them stop moving.
+    affects the block when it is moving.
+    It works to make the block stop moving.
 </p>
 
 <p class = 'definition'>
     The force of <strong>static friction</strong>
-    affects all objects that are not moving (or sliding).
-    It prevents objects from moving.
+    affects the block when it is not moving.
+    It works to prevent the block from beginning to move.
 </p>
 
 <div id = 'frictionTable'></div>
@@ -144,11 +151,14 @@ Four types of quesitons:
 <script>
     let frictionTable = new Table(5,2);
     frictionTable.addTopHeaders(['Kinetic Friction','Static Friction']);
-    frictionTable.writeTextInRow(1,['acts on moving (sliding) objects','Acts on stationary (non-sliding) objects']);
-    frictionTable.writeTextInRow(2,['stops objects that are already moving','Prevents objects from beginning to move']);
-    frictionTable.writeTextInRow(3,['to keep pushing an object, you must overcome kinetic friction','To start an object moving, you must overcome static friction']);
+    frictionTable.writeTextInRow(1,['Acts on the block when moving','Acts on the block when stationary']);
+    frictionTable.writeTextInRow(2,['Stops the block when it is moving','Prevents the block from beginning to move']);
+    frictionTable.writeTextInRow(3,[
+        'To keep pushing the block, you must overcome kinetic friction.',
+        'To start the block moving, you must overcome static friction.'
+    ]);
     frictionTable.mergeRight(4,0);
-    frictionTable.writeTextInCell(4,0,'Maximum static friction is stronger than kinetic friction.')
+    frictionTable.writeTextInCell(4,0,'Maximum static friction is stronger than kinetic friction.');
 
     frictionTable.setColumnProportions([1,2,2,2,2]);
     $("#frictionTable").append(frictionTable.draw(400,800));
