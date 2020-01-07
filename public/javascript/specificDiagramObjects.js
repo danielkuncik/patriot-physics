@@ -1170,7 +1170,7 @@ class FreeBodyDiagram extends Diagram {
             } else {
                 displacementMagnitudes = NpointsEvenlySpacedInARange(N, -1 * displacementRange, displacementRange);
                 if (this.relativeFontSize > displacementMagnitudes[1] - displacementMagnitudes[0]) {  // if the labels will overlap each other
-                    this.setFontSize((displacementMagnitudes[1] - displacementMagnitudes[0] * 0.6)); // reduce size of the labels
+                    this.setFontSize((displacementMagnitudes[1] - displacementMagnitudes[0] * 2)); // reduce size of the labels
                 }
                 thetaSum = 0;
                 group.forEach((index) => {
