@@ -1162,7 +1162,6 @@ class FreeBodyDiagram extends Diagram {
         let N;
         let thetaSum, thetaAverage, phi;
         const displacementRange = this.circleRadius / 2; /// they will displace over this range
-        console.log(displacementRange);
         let displacementMagnitudes;
         this.overLapppingForceGroups.forEach((group) => {
             N = group.length;
@@ -1180,11 +1179,12 @@ class FreeBodyDiagram extends Diagram {
                 thetaAverage = thetaSum / N;
                 phi = thetaAverage + Math.PI / 2;
 
-                let thisForce, newStartPoint, newEndPoint;
+                let thisForce, newStartPoint, newEndPoint, counter =0;
                 group.forEach((index) => {
                     thisForce = this.forces[index];
-                    newStartPoint = thisForce.startPoint.transformAndReproduce(phi, displacementMagnitudes[index], 0);
-                    newEndPoint = thisForce.endPoint.transformAndReproduce(phi, displacementMagnitudes[index], 0);
+                    newStartPoint = thisForce.startPoint.transformAndReproduce(phi, displacementMagnitudes[counter], 0);
+                    newEndPoint = thisForce.endPoint.transformAndReproduce(phi, displacementMagnitudes[counter], 0);
+                    counter++;
                     thisForce.startPoint = newStartPoint;
                     thisForce.endPoint = newEndPoint;
                 });

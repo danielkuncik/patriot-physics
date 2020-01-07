@@ -243,7 +243,6 @@ function fastFBD(forceArray, velocityDirection) {
     forceArray.forEach((force) => {
         direction = force[0];
         theta = processDirectionInput(direction);
-        console.log(theta);
         magnitudeOrLabel = force[1]; /// processed as a label if a string or as a magnitude if a number
         if (typeof(magnitudeOrLabel) === 'string') { /// if it is a label
             label = magnitudeOrLabel;
@@ -262,7 +261,6 @@ function fastFBD(forceArray, velocityDirection) {
         let velocityTheta = processDirectionInput(velocityDirection);
         myFBD.addVelocityArrow(velocityTheta); // all default values
     }
-    console.log(myFBD);
     return myFBD;
 }
 
