@@ -1272,14 +1272,14 @@
             "prerequisites": ["acceleration_graph_connection"],
             "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph."
           },
-          "qualitative_kinematic_graphs_level_6":
+          "qualitative_kinematics_advanced":
           {
-            "title": "Qualitative Kinematic Graphs Level 6",
+            "title": "Qualitative Kinematics Advanced",
             "level": 6,
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["acceleration_graph_connection_2"],
-            "objective": "Create qualitative kinematic graphs for some complex description of motion invented by the student."
+            "objective": "Invent a highly complex description of motion, and then create kinematic graphs that match the description."
           }
         }
       },
