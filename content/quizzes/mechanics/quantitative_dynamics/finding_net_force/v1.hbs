@@ -1,11 +1,33 @@
 <ol>
     <li class = 'physicsQuestion'>
         Find the net force (magnitude and direction) acting on the following object:
+        <br>
         <img src = '/contentFiles/dynamicsQuizImages/free_body_diagram_one.png' height = '100px' width = 'auto'>
+        <br>
+        <div id = 'freeBodyDiagram1'>
     </li>
     <div class = 'bigSpace'></div>
     <li class = 'physicsQuestion'>
         Find the net force (magnitude and direction) acting on the following object:
+        <br>
         <img src = '/contentFiles/dynamicsQuizImages/free_body_diagram_two.png' height = '180px' width = 'auto'>
+        <br>
+        <div id = 'freeBodyDiagram2'>
     </li>
 </ol>
+
+
+
+<script>
+  let freeBodyDiagram1 = fastFBD([
+    ['left',200],['left',350],
+    ['right',400],['right',800]
+  ]);
+//  $("#freeBodyDiagram1").append(freeBodyDiagram1.drawCanvas(400,200));
+
+  let freeBodyDiagram2 = fastFBD([
+    ['left',3],['left',7],['left',5],['left',5],
+    ['right',4],['right',8],['right',11],['right',9]
+  ]);
+//  $("#freeBodyDiagram2").append(freeBodyDiagram2.drawCanvas(800,400));
+</script>

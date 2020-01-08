@@ -1192,13 +1192,26 @@ class FreeBodyDiagram extends Diagram {
         });
     }
 
+    countMaxOverlappingForces() {
+      let max = 0;
+      this.overLapppingForceGroups.forEach((group) => {
+        if (group.length > max) {
+          max = group.length;
+        }
+      });
+      return max;
+    }
+
     /// create an option force all force arrows to have the same length;
     // regardless of relative magnitude....
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (this.forces.length === 0) {
             this.maxForce = 1; // so that a diagram can still be created with zero forces
         }
-        this.circleRadius = this.maxForce * 0.1;
+        this.identifyOverlappingForces();
+        const maxGroupSize = this.countMaxOverlappingForces();
+
+        this.circleRadius = this.maxForce * 0.1 * maxGroupSize;
         this.arrowheadLength = this.maxForce * 0.05;
         this.setFontSize(this.maxForce * 0.1);
 
@@ -1207,7 +1220,6 @@ class FreeBodyDiagram extends Diagram {
             force.startPoint = constructPointWithMagnitude(this.circleRadius, force.angle);
         });
 
-        this.identifyOverlappingForces();
         this.displaceOverlappingForces();
 
         // do i want forces to emanate from the edge of the circle, not its center???
