@@ -3792,6 +3792,15 @@
             "prerequisites": [],
             "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc."
           },
+          "direction_rotational_kinematics_quantities":
+          {
+            "title": "Direction of Rotational Kinematics Quantities",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use right-hand rules to determine the directions of rotational kinematics quantities."
+          },
           "advanced_angular_acceleration":
           {
             "title": "Advanced Angular Acceleration",
