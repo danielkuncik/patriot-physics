@@ -3790,7 +3790,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc."
+            "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc; answer conceptual questions related to rotational and linear velocity"
           },
           "direction_rotational_kinematics_quantities":
           {
@@ -3944,6 +3944,15 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Identify and explain times when the same force acting in different directions and locations results in different torques on a rotating object; describe why a lineman must hit low to make a good block."
+          },
+          "torque_conceptual_examples":
+          {
+            "title": "Torque Conceptual Examples",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Give real world examples of when torque is a crucial concept."
           },
           "torque_with_cross_product":
           {
