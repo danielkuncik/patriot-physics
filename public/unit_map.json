@@ -1835,7 +1835,7 @@
             "horizontal": 3,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Given a free-body diagram, determine the vector net force acting on an object."
+            "objective": "Given a 1-dimensional quantitative free-body diagram, determine the magnitude and direction of net force acting on an object."
           },
           "newtons_second_law":
           {
@@ -1844,7 +1844,7 @@
             "horizontal": 5,
             "letter": "B",
             "prerequisites": [],
-            "objective": "Use Newton's Second Law to solve simple numeric problems."
+            "objective": "Use Newton's Second Law to solve numeric problems."
           },
           "finding_acceleration":
           {
@@ -1853,7 +1853,7 @@
             "horizontal": 4,
             "letter": "C",
             "prerequisites": ["finding_net_force","newtons_second_law"],
-            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of an object"
+            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of the object."
           },
           "basic_friction":
           {
@@ -1871,7 +1871,7 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["basic_friction"],
-            "objective": "Given a block of a certain mass, draw free-body diagrams for this block when it is not moving or being pushed on a surfaced without friction."
+            "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block."
           },
           "find_missing_force":
           {
@@ -1880,7 +1880,7 @@
             "horizontal": 6,
             "letter": "F",
             "prerequisites": ["finding_acceleration"],
-            "objective": "Given a net force and/or an acceleration and mass identify the magnitude and direction of a particular force in a problem."
+            "objective": "Given a free-body diagram and the net force and/or an acceleration and mass, identify the magnitude and direction of an unknown force in a problem."
           },
           "block_dragging_2":
           {
@@ -1889,7 +1889,7 @@
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["block_dragging_1"],
-            "objective": "Analyze the motion of a block on a surface with only kinetic friction; accelerating and moving at a constant velocity."
+            "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block."
           },
           "surface_area_friction":
           {
@@ -1898,7 +1898,7 @@
             "horizontal": 1,
             "letter": "X",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Explain that friction is independent of surface area."
+            "objective": "Explain that the magnitude of friction is independent of surface area."
           },
           "elevators_1":
           {
@@ -1916,7 +1916,7 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Given a block being dragged on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
+            "objective": "Given a block experiencing an applied force on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
           },
           "vertical_friction":
           {
@@ -1925,7 +1925,7 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["block_dragging_3"],
-            "objective": "Analyze friction as it acts on an object pressed against a wall."
+            "objective": "Draw a free-body diagram including friction as it acts on an object pressed against a wall or pole."
           },
           "elevators_2":
           {
@@ -1934,7 +1934,7 @@
             "horizontal": 6,
             "letter": "K",
             "prerequisites": ["elevators_1"],
-            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and describe what that person will feel using the free-body diagram."
+            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel."
           },
           "block_dragging_4":
           {
