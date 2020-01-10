@@ -1897,6 +1897,16 @@ class RotatingRod extends Diagram {
         return max
     }
 
+    getMaxMass() {
+        let max = 0;
+        this.masses.forEach((mass) => {
+            if (mass.quantity > max) {
+                max = mass.quantity;
+            }
+        });
+        return max
+    }
+
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         // space here to draw it
@@ -1905,32 +1915,39 @@ class RotatingRod extends Diagram {
         const rectangleWidth = circleRadius * 0.75;
         const forceMultiplier = (this.distanceLeft + this.distanceRight) / this.getMaxForce() * 0.3;
         // the largest force will always be 30 % the length of the rod
+        const maxMass = this.getMaxMass();
+        // the largest mass will be the same radius as the circle
 
         const thetaInRadians = convertDegreesToRadians(this.thetaInDegrees);
 
         let centerCircle = super.addCircle(origin, circleRadius);
         centerCircle.fill();
 
+        // add two rectangles
         let rightCenterEndPoint = origin.getAnotherPointWithTrig(this.distanceRight, thetaInRadians);
         let leftCenterEndPoint = origin.getAnotherPointWithTrig(this.distanceLeft, thetaInRadians + Math.PI);
-
         let centerBottomPoint = origin.getAnotherPointWithTrig(rectangleWidth, thetaInRadians + Math.PI * 3 / 2);
         let centerTopPoint = origin.getAnotherPointWithTrig(rectangleWidth, thetaInRadians + Math.PI / 2);
-
         let rightBottomEndPoint = centerBottomPoint.getAnotherPointWithTrig(this.distanceRight, thetaInRadians);
         let rightTopEndPoint = centerTopPoint.getAnotherPointWithTrig(this.distanceRight, thetaInRadians);
-
         let leftBottomEndPoint = centerBottomPoint.getAnotherPointWithTrig(this.distanceLeft, thetaInRadians + Math.PI);
         let leftTopEndPoint = centerTopPoint.getAnotherPointWithTrig(this.distanceLeft, thetaInRadians + Math.PI);
-
         super.addSegment(centerBottomPoint, rightBottomEndPoint);
         super.addSegment(rightBottomEndPoint, rightTopEndPoint);
         super.addSegment(rightTopEndPoint, centerTopPoint);
-
         super.addSegment(centerBottomPoint, leftBottomEndPoint);
         super.addSegment(leftBottomEndPoint, leftTopEndPoint);
         super.addSegment(leftTopEndPoint, centerTopPoint);
 
+        // add masses as circles
+        this.masses.forEach((mass) => {
+            let massCenter = origin.getAnotherPointWithTrig(mass.position, thetaInRadians);
+            let massRadius = circleRadius * mass.quantity / maxMass;
+            let massString = `${mass.quantity} ${mass.unit}`;
+            let massFontSize = massString.length / massRadius;
+            super.addCircle(massCenter, massRadius);
+            super.addText(massString,massCenter, massFontSize, thetaInRadians); // addText(letters, centerPoint, relativeFontSize, rotation)
+        });
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
