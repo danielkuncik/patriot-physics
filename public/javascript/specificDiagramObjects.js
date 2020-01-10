@@ -1790,6 +1790,154 @@ class BlockProblem extends Diagram {
     }
 }
 
+class RotatingRod extends Diagram {
+    constructor(distanceRight, distanceLeft, thetaInDegrees, distanceUnit) {
+        super();
+        if (distanceRight === undefined) {
+            distanceRight = 1;
+        }
+        if (distanceLeft === undefined) {
+            distanceLeft = 0;
+        }
+        if (distanceUnit === undefined) {
+            distanceUnit = 'm'
+        }
+        if (thetaInDegrees === undefined) {
+            thetaInDegrees = 0;
+        }
+
+        this.distanceUnit = distanceUnit;
+        this.distanceRight = distanceRight;
+        this.distanceLeft = distanceLeft;
+        this.thetaInDegrees = thetaInDegrees;
+
+        this.masses = [];
+        this.defaultMassUnit = 'kg';
+
+        this.forces = [];
+        this.defaultForceUnit = 'N';
+    }
+
+    setDistanceRight(newDistanceRight) {
+        this.distanceRight = newDistanceRight;
+    }
+    setDistanceLeft(newDistanceLeft) {
+        this.distanceLeft = newDistanceLeft;
+    }
+    setTheta(newTheta) {
+        this.theta = newTheta;
+    }
+    setDistanceUnit(newDistanceUnit) {
+        this.distanceUnit = newDistanceUnit;
+    }
+    setMassUnit(newMassUnit) {
+        this.defaultMassUnit = newMassUnit;
+    }
+    setForceUnit(newForceUnit) {
+        this.defaultForceUnit = newForceUnit;
+    }
+
+    addMass(massQuantity, massPosition, unit) {
+        if (massPosition > 0 && massPosition > this.distanceRight) {
+            console.log('ERROR: mass added outside range of rod');
+            return false
+        } else if (massPosition < 0 && Math.abs(massPosition) > this.distanceLeft) {
+            console.log('ERROR: mass added outside range of rod');
+            return false
+        }
+        if (unit === 'undefined') {
+            unit = this.defaultMassUnit;
+        }
+
+        this.masses.push({
+            position: massPosition,
+            quantity: massQuantity,
+            unit: unit
+        });
+    }
+
+    addForce(forceMagnitude, forceDirectionInDegrees, forcePosition, unit) {
+        if (forceMagnitude === undefined) {
+            forceMagnitude = 10;
+        }
+        if (forceDirectionInDegrees === undefined) {
+            forceDirectionInDegrees = 90;
+        }
+        if (forcePosition === undefined) {
+            forcePosition = this.distanceRight
+        }
+        if (unit === 'undefined') {
+            unit = this.defaultForceUnit;
+        }
+
+
+        if (forcePosition > 0 && forcePosition > this.distanceRight) {
+            console.log('ERROR: mass added outside range of rod');
+            return false
+        } else if (forcePosition < 0 && Math.abs(forcePosition) > this.distanceLeft) {
+            console.log('ERROR: mass added outside range of rod');
+            return false
+        }
+
+        this.forces.push({
+            position: forcePosition,
+            magnitude: forceMagnitude,
+            directionInDegrees: forceDirectionInDegrees,
+            unit: unit
+        });
+    }
+
+    getMaxForce() {
+        let max = 0;
+        this.forces.forEach((force) => {
+            if (force.magnitude > max) {
+                max = force.magnitude;
+            }
+        });
+        return max
+    }
+
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        // space here to draw it
+
+        const circleRadius = (this.distanceLeft + this.distanceRight) * 0.1;
+        const rectangleWidth = circleRadius * 0.75;
+        const forceMultiplier = (this.distanceLeft + this.distanceRight) / this.getMaxForce() * 0.3;
+        // the largest force will always be 30 % the length of the rod
+
+        const thetaInRadians = convertDegreesToRadians(this.thetaInDegrees);
+
+        let centerCircle = super.addCircle(origin, circleRadius);
+        centerCircle.fill();
+
+        let rightCenterEndPoint = origin.getAnotherPointWithTrig(this.distanceRight, thetaInRadians);
+        let leftCenterEndPoint = origin.getAnotherPointWithTrig(this.distanceLeft, thetaInRadians + Math.PI);
+
+        let centerBottomPoint = origin.getAnotherPointWithTrig(rectangleWidth, thetaInRadians + Math.PI * 3 / 2);
+        let centerTopPoint = origin.getAnotherPointWithTrig(rectangleWidth, thetaInRadians + Math.PI / 2);
+
+        let rightBottomEndPoint = centerBottomPoint.getAnotherPointWithTrig(this.distanceRight, thetaInRadians);
+        let rightTopEndPoint = centerTopPoint.getAnotherPointWithTrig(this.distanceRight, thetaInRadians);
+
+        let leftBottomEndPoint = centerBottomPoint.getAnotherPointWithTrig(this.distanceLeft, thetaInRadians + Math.PI);
+        let leftTopEndPoint = centerTopPoint.getAnotherPointWithTrig(this.distanceLeft, thetaInRadians + Math.PI);
+
+        super.addSegment(centerBottomPoint, rightBottomEndPoint);
+        super.addSegment(rightBottomEndPoint, rightTopEndPoint);
+        super.addSegment(rightTopEndPoint, centerTopPoint);
+
+        super.addSegment(centerBottomPoint, leftBottomEndPoint);
+        super.addSegment(leftBottomEndPoint, leftTopEndPoint);
+        super.addSegment(leftTopEndPoint, centerTopPoint);
+
+
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
+
+
+}
+
 class UnitMap extends Diagram {
     constructor() {
         super();
