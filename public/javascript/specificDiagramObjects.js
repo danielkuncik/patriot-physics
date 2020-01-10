@@ -1845,7 +1845,7 @@ class RotatingRod extends Diagram {
             console.log('ERROR: mass added outside range of rod');
             return false
         }
-        if (unit === 'undefined') {
+        if (unit === undefined) {
             unit = this.defaultMassUnit;
         }
 
@@ -1944,9 +1944,9 @@ class RotatingRod extends Diagram {
             let massCenter = origin.getAnotherPointWithTrig(mass.position, thetaInRadians);
             let massRadius = circleRadius * mass.quantity / maxMass;
             let massString = `${mass.quantity} ${mass.unit}`;
-            let massFontSize = massString.length / massRadius;
+            let massFontSize = massRadius * 2 / massString.length;
             super.addCircle(massCenter, massRadius);
-            super.addText(massString,massCenter, massFontSize, thetaInRadians); // addText(letters, centerPoint, relativeFontSize, rotation)
+            super.addText(massString,massCenter, massFontSize, 0); // addText(letters, centerPoint, relativeFontSize, rotation)
         });
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);

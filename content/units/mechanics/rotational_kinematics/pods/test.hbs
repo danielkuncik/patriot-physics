@@ -5,7 +5,7 @@
 <div id = 'putItHere'></div>
 
 <script>
-    let rotatingRod = new RotatingRod(3,2);
-    rotatingRod.addMass(2,2);
+    let rotatingRod = new RotatingRod(3,2,0);
+    rotatingRod.addMass(2,-1);
     $("#putItHere").append(rotatingRod.drawCanvas(600,300));
 </script>
