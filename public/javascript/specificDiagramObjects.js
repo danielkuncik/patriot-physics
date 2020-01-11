@@ -1816,6 +1816,36 @@ class RotatingRod extends Diagram {
 
         this.forces = [];
         this.defaultForceUnit = 'N';
+
+        this.referenceLineBelow = true;
+
+        this.positionReferenceArray = [];
+    }
+
+    moveReferenceLineAbove() {
+      this.referenceLineBelow = false;
+    }
+
+    moveReferenceLineBelow() {
+      this.referenceLineBelow = true;
+    }
+
+    addPositionToReferenceArray(position) {
+      if (this.checkPosition(position, 'reference array')) {
+        this.positionReferenceArray.push(position);
+      }
+    }
+
+    checkPosition(position, type) {
+      if (position > 0 && position > this.distanceRight) {
+          console.log(`ERROR: position of ${type} added outside of range`);
+          return false
+      } else if (position < 0 && Math.abs(position) > this.distanceLeft) {
+          console.log(`ERROR: position of ${type} added outside of range`);
+          return false
+      } else {
+        return true
+      }
     }
 
     setDistanceRight(newDistanceRight) {
@@ -1838,13 +1868,7 @@ class RotatingRod extends Diagram {
     }
 
     addMass(massPosition, massQuantity, unit) {
-        if (massPosition > 0 && massPosition > this.distanceRight) {
-            console.log('ERROR: mass added outside range of rod');
-            return false
-        } else if (massPosition < 0 && Math.abs(massPosition) > this.distanceLeft) {
-            console.log('ERROR: mass added outside range of rod');
-            return false
-        }
+        this.checkPosition(massPosition, 'mass');
         if (unit === undefined) {
             unit = this.defaultMassUnit;
         }
@@ -1871,13 +1895,7 @@ class RotatingRod extends Diagram {
         }
 
 
-        if (forcePosition > 0 && forcePosition > this.distanceRight) {
-            console.log('ERROR: mass added outside range of rod');
-            return false
-        } else if (forcePosition < 0 && Math.abs(forcePosition) > this.distanceLeft) {
-            console.log('ERROR: mass added outside range of rod');
-            return false
-        }
+        this.checkPosition(forcePosition, 'force');
 
         this.forces.push({
             position: forcePosition,
@@ -1888,7 +1906,7 @@ class RotatingRod extends Diagram {
     }
 
     getMaxAndMinForce() {
-        let max = 0, min = Infinity;
+        let max = 0, min = Infinity, maxBelow = 0, maxAbove = 0;
         this.forces.forEach((force) => {
             if (force.magnitude > max) {
                 max = force.magnitude;
@@ -1896,10 +1914,21 @@ class RotatingRod extends Diagram {
             if (force.magnitude < min) {
               min = force.magnitude;
             }
+            if (force.directionInDegrees <= 180) { // forces above
+              if (force.magnitude > maxAbove) {
+                maxAbove = force.magnitude;
+              }
+            } else { // forces below
+              if (force.magnitude > maxBelow) {
+                maxBelow = force.magnitude;
+              }
+            }
         });
         return {
           max: max,
-          min: min
+          min: min,
+          maxBelow: maxBelow,
+          maxAbove: maxAbove
         }
     }
 
@@ -1922,6 +1951,8 @@ class RotatingRod extends Diagram {
         const forceRange = this.getMaxAndMinForce();
         const maxForce = forceRange.max;
         const minForce = forceRange.min;
+        const maxForceAbove = forceRange.maxAbove;
+        const maxForceBelow = forceRange.maxBelow;
         const forceMultiplier = (this.distanceLeft + this.distanceRight) / maxForce * 0.3;
         // the largest force will always be 30 % the length of the rod
         const forceFontSize = minForce * forceMultiplier * 0.2;
@@ -1980,6 +2011,22 @@ class RotatingRod extends Diagram {
 
 
         });
+
+        // add reference Line
+        let referenceLineDisplacement, referenceLeftEnd, referenceRightEnd;
+        if (this.positionReferenceArray.length > 0 ) {
+          if (this.referenceLineBelow) { // refernce line below
+            referenceLineDisplacement = (this.distanceLeft + this.distanceRight) * 0.07 + maxForceBelow * forceMultiplier;
+            referenceLeftEnd = leftBottomEndPoint.getAnotherPointWithTrig(referenceLineDisplacement, thetaInRadians + 3 * Math.PI / 2);
+            referenceRightEnd = rightBottomEndPoint.getAnotherPointWithTrig(referenceLineDisplacement, thetaInRadians + 3 * Math.PI / 2);
+          } else { // reference line above
+            referenceLineDisplacement = (this.distanceLeft + this.distanceRight) * 0.07 + maxForceAbove * forceMultiplier;
+            referenceLeftEnd = leftTopEndPoint.getAnotherPointWithTrig(referenceLineDisplacement, thetaInRadians + Math.PI / 2);
+            referenceRightEnd = rightTopEndPoint.getAnotherPointWithTrig(referenceLineDisplacement, thetaInRadians + Math.PI / 2);
+          }
+          let referenceLine = super.addSegment(referenceLeftEnd, referenceRightEnd);
+          referenceLine.turnIntoDashedLine();
+        }
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }

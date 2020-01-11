@@ -7,6 +7,9 @@
 <script>
     let rotatingRod = new RotatingRod(3,3,0);
     rotatingRod.addMass(-2,5);
-    rotatingRod.addForce(2,10,225);
+    rotatingRod.addForce(2,10,90);
+    rotatingRod.moveReferenceLineAbove();
+    rotatingRod.moveReferenceLineBelow();
+    rotatingRod.addPositionToReferenceArray(2);
     $("#putItHere").append(rotatingRod.drawCanvas(600,300));
 </script>

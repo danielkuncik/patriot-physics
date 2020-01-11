@@ -1073,6 +1073,7 @@ class Diagram {
             }
         });
 
+        ctx.setLineDash([]);
 
         this.functionGraphs.forEach((FunctionGraphObject) => {
             ctx.lineWidth = 2;
