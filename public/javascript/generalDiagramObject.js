@@ -909,7 +909,47 @@ class Diagram {
         let newLine = this.addSegment(point1, point2);
         newLine.turnIntoDottedLine();
         return newLine
-    }
+    };
+
+    // adds a hash mark,
+    // at a point between endpoint1 and endpoint 2, indicated by proportion
+    addHashMark(endPoint1, endPoint2, proportion, hashLength, labelAbove, labelBelow, labelFontSize, labelRotationBoolean) {
+      if (hashLength === undefined) {
+        hashLength = endPoint1.getDistanceToAnotherPoint(endPoint2) * 0.1;
+      }
+      if (labelFontSize === undefined) {
+        labelFontSize = hashLength * 0.75;
+      }
+      let centerPoint = endPoint1.interpolate(endPoint2, proportion);
+      let theta = endPoint1.getAngleToAnotherPoint(endPoint2);
+      let bottomEnd = centerPoint.getAnotherPointWithTrig(hashLength / 2, theta + 3 * Math.PI / 2);
+      let topEnd = centerPoint.getAnotherPointWithTrig(hashLength / 2, theta + Math.PI / 2);
+      this.addSegment(bottomEnd, topEnd);
+
+      let labelDisplacement = labelFontSize * 0.5;
+      let topLabelPosition = centerPoint.getAnotherPointWithTrig(hashLength / 2 + labelDisplacement, theta + Math.PI / 2);
+      let bottomLabelPosition = centerPoint.getAnotherPointWithTrig(hashLength / 2 + labelDisplacement, theta + 3 * Math.PI / 2);
+
+//     addText(letters, centerPoint, relativeFontSize, rotation) {
+
+
+
+      if (labelAbove) {
+        if (labelRotationBoolean) {
+          this.addText(labelAbove, topLabelPosition, labelFontSize, theta);
+        } else {
+          this.addText(labelAbove, topLabelPosition, labelFontSize);
+        }
+      }
+      if (labelBelow) {
+        if (labelRotationBoolean) {
+          this.addText(labelBelow, bottomLabelBelow, labelFontSize, theta);
+        } else {
+          this.addText(labelBelow, bottomLabelPosition, labelFontSize);
+        }
+      }
+
+    };
 
     // mergeWithAnotherDiagram
     merge(anotherDiagram, whichSide, bufferSpace) {

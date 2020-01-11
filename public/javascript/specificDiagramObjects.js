@@ -1830,9 +1830,16 @@ class RotatingRod extends Diagram {
       this.referenceLineBelow = true;
     }
 
-    addPositionToReferenceArray(position) {
+    addPositionToReferenceArray(position, label) {
+      if (label = 'undefined') {
+        label = `${position} ${this.distanceUnit}`;
+      } // find an easy way to have different labels
       if (this.checkPosition(position, 'reference array')) {
-        this.positionReferenceArray.push(position);
+        let labelInput = label;
+        this.positionReferenceArray.push({
+          position: position,
+          label: labelInput
+        });
       }
     }
 
@@ -2025,8 +2032,16 @@ class RotatingRod extends Diagram {
             referenceRightEnd = rightTopEndPoint.getAnotherPointWithTrig(referenceLineDisplacement, thetaInRadians + Math.PI / 2);
           }
           let referenceLine = super.addSegment(referenceLeftEnd, referenceRightEnd);
-          referenceLine.turnIntoDashedLine();
+        //  referenceLine.turnIntoDashedLine();
         }
+
+        // hash marks on reference line
+        //     addHashMark(endPoint1, endPoint2, proportion, hashLength, labelAbove, labelBelow, labelFontSize, labelRotateBoolean) {
+
+        this.positionReferenceArray.forEach((referencePoint) => {
+          let proportion = (referencePoint.position + this.distanceLeft) / (this.distanceRight + this.distanceLeft);
+          super.addHashMark(referenceLeftEnd, referenceRightEnd, proportion, undefined, 'y', 'x');
+        });
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
