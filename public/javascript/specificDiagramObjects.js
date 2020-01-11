@@ -1837,7 +1837,7 @@ class RotatingRod extends Diagram {
         this.defaultForceUnit = newForceUnit;
     }
 
-    addMass(massQuantity, massPosition, unit) {
+    addMass(massPosition, massQuantity, unit) {
         if (massPosition > 0 && massPosition > this.distanceRight) {
             console.log('ERROR: mass added outside range of rod');
             return false
@@ -1856,7 +1856,7 @@ class RotatingRod extends Diagram {
         });
     }
 
-    addForce(forceMagnitude, forceDirectionInDegrees, forcePosition, unit) {
+    addForce(forcePosition, forceMagnitude, forceDirectionInDegrees, unit) {
         if (forceMagnitude === undefined) {
             forceMagnitude = 10;
         }
@@ -1866,7 +1866,7 @@ class RotatingRod extends Diagram {
         if (forcePosition === undefined) {
             forcePosition = this.distanceRight
         }
-        if (unit === 'undefined') {
+        if (unit === undefined) {
             unit = this.defaultForceUnit;
         }
 
@@ -1887,14 +1887,20 @@ class RotatingRod extends Diagram {
         });
     }
 
-    getMaxForce() {
-        let max = 0;
+    getMaxAndMinForce() {
+        let max = 0, min = Infinity;
         this.forces.forEach((force) => {
             if (force.magnitude > max) {
                 max = force.magnitude;
             }
+            if (force.magnitude < min) {
+              min = force.magnitude;
+            }
         });
-        return max
+        return {
+          max: max,
+          min: min
+        }
     }
 
     getMaxMass() {
@@ -1913,8 +1919,13 @@ class RotatingRod extends Diagram {
 
         const circleRadius = (this.distanceLeft + this.distanceRight) * 0.1;
         const rectangleWidth = circleRadius * 0.75;
-        const forceMultiplier = (this.distanceLeft + this.distanceRight) / this.getMaxForce() * 0.3;
+        const forceRange = this.getMaxAndMinForce();
+        const maxForce = forceRange.max;
+        const minForce = forceRange.min;
+        const forceMultiplier = (this.distanceLeft + this.distanceRight) / maxForce * 0.3;
         // the largest force will always be 30 % the length of the rod
+        const forceFontSize = minForce * forceMultiplier * 0.2;
+        // the font size will always be 10 % the length of the smallest force
         const maxMass = this.getMaxMass();
         // the largest mass will be the same radius as the circle
 
@@ -1947,6 +1958,27 @@ class RotatingRod extends Diagram {
             let massFontSize = massRadius * 2 / massString.length;
             super.addCircle(massCenter, massRadius);
             super.addText(massString,massCenter, massFontSize, 0); // addText(letters, centerPoint, relativeFontSize, rotation)
+        });
+
+        // add forces
+        this.forces.forEach((force) => {
+          let forceStart;
+          let phiInRadians = convertDegreesToRadians(force.directionInDegrees);
+
+          if (phiInRadians <= Math.PI) { /// force on top
+            forceStart = centerTopPoint.getAnotherPointWithTrig(force.position, thetaInRadians);
+          } else { // force on bottom
+            forceStart = centerBottomPoint.getAnotherPointWithTrig(force.position, thetaInRadians);
+          }
+
+          let forceEnd = forceStart.getAnotherPointWithTrig(force.magnitude * forceMultiplier, phiInRadians);
+          super.addArrow(forceStart, forceEnd);
+          let forceText = `${force.magnitude} ${force.unit}`;
+          super.labelLineAbove(forceStart, forceEnd, forceText, forceFontSize * 0.5, forceFontSize);
+          //     addArrow(point1, point2, arrowheadLength, arrowheadAngleInDegrees)
+          //     labelLineAbove(point1, point2, text, textDisplacement, relativeFontSize) {
+
+
         });
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
