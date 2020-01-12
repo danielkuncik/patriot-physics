@@ -1,0 +1,109 @@
+<p>
+  When studying linear dynamics,
+  one of the most crucial factors was inertia,
+  which was represented by \( m \).
+  Objects with more inertia experience
+  less acceleration under the same force,
+  according to the formula Newton's Second Law:
+  \( \Sigma F = ma \).
+</p>
+
+<p>
+  In rotational motion, we have an analogous concept,
+  called "rotational inertia," and represented
+  by the variable \( I \).
+  However, rotational inertia is more complicated
+  than linear inertia.
+  Linear inertia was simply equal to the amount of mass
+  an object had.
+  Rotational inertia depends not only on mass,
+  but on how far the mass is from the axis of rotation.
+</p>
+
+<p>
+  In this pod, we will begin with the rotational
+  inertia of a single point mass rotating around a
+  single point.
+  In future pods, we will look at more complicated situations
+</p>
+
+<p class = 'definition'>
+  An objects <strong>rotational inertia</strong> represents
+  how difficult is is for that object to change angular velocity
+  (around a particular axis of rotation).
+  Rotational inertia is also referred to as <strong>moment of inertia</strong>.
+</p>
+
+<p>
+  The rotational inertia of a point mass is given by:
+</p>
+
+<p class = 'equation'>
+  $$
+  I = m r^2
+  $$
+</p>
+
+
+<div id = 'rotationalInertiaInfoTable'></div>
+
+<script>
+  let infoTable = new Table(4,3);
+  infoTable.addTopHeaders(['Symbol','Quantity','SI Unit']);
+  infoTable.writeTextInRow(1,['\\( I \\)','rotational inertia','kg m^2']);
+  infoTable.writeTextInRow(2,['\\( m \\)','mass','kilograms (kg)']);
+  infoTable.writeTextInRow(3,['\\( r \\)','distance from axis of rotation','meters (m)']);
+
+  $("#rotationalInertiaInfoTable").append(infoTable.draw(500));
+</script>
+
+
+<h3>
+  Problems:
+</h3>
+<p class = 'directions'>
+  In each of the following diagrams,
+  a single point mass is rotating around some point.
+  For each point, determine the magnitude of rotational inertia of that point mass.
+</p>
+
+
+<ol class = 'questionList'>
+  <li class = 'question' id = 'problem1' data-answer ='0.225 kg m^2'></li>
+  <li class = 'question' id = 'problem2' data-answer ='0.192 kg m^2'></li>
+</ol>
+
+<p class = 'directions'>
+  It is possible that the mass is on the left side, not the right side of the axis of rotation.
+  This doesn't make any difference.
+  Rotational inertia is a <strong>scalar</strong>,
+  and direction has no impact on its value.
+</p>
+<ol class = 'questionList'>
+  <li class = 'question' id = 'problem3' data-answer = '0.6075 kg m^2'></li>
+</ol>
+
+<script>
+  let problem1 = new RotatingRod(50,0,0,'cm');
+  problem1.addMass(50,900,'g');
+  problem1.automaticReferenceArray(2);
+
+  let problem2 = new RotatingRod(80,0,0,'cm');
+  problem2.addMass(80,300,'g');
+  problem2.automaticReferenceArray(2);
+
+  let problem3 = new RotatingRod(0,90,0,'cm');
+  problem3.addMass(-90,750,'g');
+  problem3.automaticReferenceArray(2);
+
+  $("#problem1").append(problem1.drawCanvas(600,300));
+  $("#problem2").append(problem2.drawCanvas(600,300));
+  $("#problem3").append(problem3.drawCanvas(600,300));
+
+</script>
+
+
+<h3>
+  Answers:
+<h3>
+<ol class = 'answerList'></ol>

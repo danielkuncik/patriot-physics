@@ -1972,7 +1972,10 @@ class RotatingRod extends Diagram {
         const minForce = forceRange.min;
         const maxForceAbove = forceRange.maxAbove;
         const maxForceBelow = forceRange.maxBelow;
-        const forceMultiplier = (this.distanceLeft + this.distanceRight) / maxForce * 0.3;
+        let forceMultiplier = 0;
+        if (maxForce > 0) {
+          forceMultiplier = (this.distanceLeft + this.distanceRight) / maxForce * 0.3;
+        }
         // the largest force will always be 30 % the length of the rod
         const forceFontSize = minForce * forceMultiplier * 0.2;
         // the font size will always be 10 % the length of the smallest force
