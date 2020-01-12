@@ -936,14 +936,14 @@ class Diagram {
 
       if (labelAbove) {
         if (labelRotationBoolean) {
-          this.addText(labelAbove, topLabelPosition, labelFontSize, theta);
+          this.addText(labelAbove, topLabelPosition, labelFontSize, theta + 3 * Math.PI / 2);
         } else {
           this.addText(labelAbove, topLabelPosition, labelFontSize);
         }
       }
       if (labelBelow) {
         if (labelRotationBoolean) {
-          this.addText(labelBelow, bottomLabelBelow, labelFontSize, theta);
+          this.addText(labelBelow, bottomLabelPosition, labelFontSize, theta + 3 * Math.PI / 2);
         } else {
           this.addText(labelBelow, bottomLabelPosition, labelFontSize);
         }

@@ -2040,7 +2040,7 @@ class RotatingRod extends Diagram {
 
         this.positionReferenceArray.forEach((referencePoint) => {
           let proportion = (referencePoint.position + this.distanceLeft) / (this.distanceRight + this.distanceLeft);
-          super.addHashMark(referenceLeftEnd, referenceRightEnd, proportion, undefined, 'y', 'x');
+          super.addHashMark(referenceLeftEnd, referenceRightEnd, proportion, undefined, 'hello', 'its me', undefined, true);
         });
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
