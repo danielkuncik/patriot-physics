@@ -1843,6 +1843,14 @@ class RotatingRod extends Diagram {
       }
     }
 
+    automaticReferenceArray(numHashes) {
+      let hashDistance = (this.distanceLeft + this.distanceRight) / (numHashes - 1);
+      let q;
+      for (q = 0; q < numHashes; q++) {
+        this.addPositionToReferenceArray(-1 * this.distanceLeft + hashDistance * q);
+      }
+    }
+
     checkPosition(position, type) {
       if (position > 0 && position > this.distanceRight) {
           console.log(`ERROR: position of ${type} added outside of range`);
@@ -1915,6 +1923,10 @@ class RotatingRod extends Diagram {
     getMaxAndMinForce() {
         let max = 0, min = Infinity, maxBelow = 0, maxAbove = 0;
         this.forces.forEach((force) => {
+          // this part here needs some work
+          // the operation will be different if the force and the rod are at different angles around the object
+          let forceAngle = convertDegreesToRadians(force.directionInDegrees - this.thetaInDegrees);
+          console.log(forceAngle);
             if (force.magnitude > max) {
                 max = force.magnitude;
             }
@@ -1922,12 +1934,12 @@ class RotatingRod extends Diagram {
               min = force.magnitude;
             }
             if (force.directionInDegrees <= 180) { // forces above
-              if (force.magnitude > maxAbove) {
-                maxAbove = force.magnitude;
+              if (Math.abs(force.magnitude*Math.sin(forceAngle)) > maxAbove) {
+                maxAbove = Math.abs(force.magnitude*Math.sin(forceAngle));
               }
             } else { // forces below
-              if (force.magnitude > maxBelow) {
-                maxBelow = force.magnitude;
+              if (Math.abs(force.magnitude*Math.sin(forceAngle)) > maxBelow) {
+                maxBelow = Math.abs(force.magnitude*Math.sin(forceAngle));
               }
             }
         });
@@ -2020,7 +2032,7 @@ class RotatingRod extends Diagram {
         });
 
         // add reference Line
-        let referenceLineDisplacement, referenceLeftEnd, referenceRightEnd;
+        let referenceLineDisplacement, referenceLeftEnd, referenceRightEnd, refernceLineBelow;
         if (this.positionReferenceArray.length > 0 ) {
           if (this.referenceLineBelow) { // refernce line below
             referenceLineDisplacement = (this.distanceLeft + this.distanceRight) * 0.07 + maxForceBelow * forceMultiplier;
@@ -2038,15 +2050,19 @@ class RotatingRod extends Diagram {
         // hash marks on reference line
         //     addHashMark(endPoint1, endPoint2, proportion, hashLength, labelAbove, labelBelow, labelFontSize, labelRotateBoolean) {
 
-        this.positionReferenceArray.forEach((referencePoint) => {
-          let proportion = (referencePoint.position + this.distanceLeft) / (this.distanceRight + this.distanceLeft);
-          super.addHashMark(referenceLeftEnd, referenceRightEnd, proportion, undefined, 'hello', 'its me', undefined, true);
+        if (this.referenceLineBelow) {
+          this.positionReferenceArray.forEach((referencePoint) => {
+            let proportion = (referencePoint.position + this.distanceLeft) / (this.distanceRight + this.distanceLeft);
+            super.addHashMark(referenceLeftEnd, referenceRightEnd, proportion, undefined, undefined, referencePoint.label, undefined, false);
+          });
+        } else {
+          this.positionReferenceArray.forEach((referencePoint) => {
+            let proportion = (referencePoint.position + this.distanceLeft) / (this.distanceRight + this.distanceLeft);
+            super.addHashMark(referenceLeftEnd, referenceRightEnd, proportion, undefined, referencePoint.label, undefined, undefined, false);
         });
-
-        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+      }
+      return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
-
-
 }
 
 class UnitMap extends Diagram {
