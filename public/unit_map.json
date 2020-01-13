@@ -1831,6 +1831,7 @@
           "finding_net_force":
           {
             "title": "Finding Net Force",
+            "subtitle": "Finding Net Force in One Dimension",
             "level": 1,
             "horizontal": 3,
             "letter": "A",
@@ -1840,6 +1841,7 @@
           "newtons_second_law":
           {
             "title": "Newton's Second Law",
+            "subtitle": "Using Newton's Second Law Numerically",
             "level": 1,
             "horizontal": 5,
             "letter": "B",
@@ -1849,6 +1851,7 @@
           "finding_acceleration":
           {
             "title": "Finding Acceleration",
+            "subtitle": "Finding Acceleration from a Free-Body Diagram",
             "level": 2,
             "horizontal": 4,
             "letter": "C",
@@ -1858,6 +1861,7 @@
           "basic_friction":
           {
             "title": "Basic Friction",
+            "subtitle": "Static vs. Kinetic Friction",
             "level": 2,
             "horizontal": 3,
             "letter": "D",
@@ -1866,7 +1870,8 @@
           },
           "block_dragging_1":
           {
-            "title": "Block Dragging 1: Dragging Without Friction",
+            "title": "Block Dragging 1",
+            "subtitle": "Dragging a Block Without Friction",
             "level": 2,
             "horizontal": 2,
             "letter": "E",
@@ -1884,7 +1889,8 @@
           },
           "block_dragging_2":
           {
-            "title": "Block Dragging 2: Dragging With Kinetic Friction",
+            "title": "Block Dragging 2",
+            "subtitle": "Dragging With Kinetic Friction",
             "level": 3,
             "horizontal": 2,
             "letter": "G",
@@ -1903,6 +1909,7 @@
           "elevators_1":
           {
             "title": "Elevators 1",
+            "subtitle": "Drawing a Free-Body Diagram Given Acceleration of an Elevator",
             "level": 3,
             "horizontal": 6,
             "letter": "H",
@@ -1912,6 +1919,7 @@
           "block_dragging_3":
           {
             "title": "Block Dragging 3",
+            "subtitle": "Dragging a Non-Moving Box",
             "level": 4,
             "horizontal": 2,
             "letter": "I",
@@ -1930,6 +1938,7 @@
           "elevators_2":
           {
             "title": "Elevators 2",
+            "subtitle": "Drawing a Free-Body Diagram Given Motion of An Elevator",
             "level": 4,
             "horizontal": 6,
             "letter": "K",
@@ -1938,7 +1947,8 @@
           },
           "block_dragging_4":
           {
-            "title": "Block Dragging 4: Graphical Analysis",
+            "title": "Block Dragging 4",
+            "subtitle": "An Applied Force-Time Graph of a Block",
             "level": 5,
             "horizontal": 1,
             "letter": "L",
@@ -1948,6 +1958,7 @@
           "friction_algebra":
           {
             "title": "Friction Algebra",
+            "subtitle": "Symbolically Solving Friction Problems",
             "level": 5,
             "horizontal": 3,
             "letter": "M",
@@ -1957,6 +1968,7 @@
           "elevators_3":
           {
             "title": "Elevator Problems 3",
+            "subtitle": "Qualitative Kinematic Graphs and Free-Body Diagrams of an Elevator",
             "level": 5,
             "horizontal": 6,
             "letter": "N",
@@ -3437,7 +3449,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Argue the formula for centripetal accereletion is numerically accurate using a conceptual geometry and limit-based argument."
+            "objective": "Argue the formula for centripetal acceleration is numerically accurate using a conceptual geometry and limit-based argument."
           },
           "gravitron":
           {
