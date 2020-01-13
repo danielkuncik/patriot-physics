@@ -20,12 +20,9 @@
   but on how far the mass is from the axis of rotation.
 </p>
 
-<p>
-  In this pod, we will begin with the rotational
-  inertia of a single point mass rotating around a
-  single point.
-  In future pods, we will look at more complicated situations
-</p>
+<h3>
+    Rotational Inertia of a Single Point Mass
+</h3>
 
 <p class = 'definition'>
   An objects <strong>rotational inertia</strong> represents
@@ -84,26 +81,139 @@
 </ol>
 
 <script>
-  let problem1 = new RotatingRod(50,0,0,'cm');
-  problem1.addMass(50,900,'g');
-  problem1.automaticReferenceArray(2);
+    let problem1 = new RotatingRod(0,50,0,'cm');
+    problem1.addMass(50,900,'g');
+    problem1.automaticReferenceArray(2);
 
-  let problem2 = new RotatingRod(80,0,0,'cm');
-  problem2.addMass(80,300,'g');
-  problem2.automaticReferenceArray(2);
+    let problem2 = new RotatingRod(0,80,0,'cm');
+    problem2.addMass(80,300,'g');
+    problem2.automaticReferenceArray(2);
 
-  let problem3 = new RotatingRod(0,90,0,'cm');
-  problem3.addMass(-90,750,'g');
-  problem3.automaticReferenceArray(2);
+    let problem3 = new RotatingRod(90,0,0,'cm');
+    problem3.addMass(-90,750,'g');
+    problem3.automaticReferenceArray(2);
 
-  $("#problem1").append(problem1.drawCanvas(600,300));
-  $("#problem2").append(problem2.drawCanvas(600,300));
-  $("#problem3").append(problem3.drawCanvas(600,300));
+    $("#problem1").append(problem1.drawCanvas(600,300));
+    $("#problem2").append(problem2.drawCanvas(600,300));
+    $("#problem3").append(problem3.drawCanvas(600,300));
 
+</script>
+
+<h3>
+    Rotational Inertia of Several Point Masses
+</h3>
+
+<p>
+    it is possible that there may be several point masses,
+    not one, on a rod. In this case,
+    you simply add the rotational inertia contributed by
+    each individual point mass:
+</p>
+
+<p class = 'equation'>
+    $$
+    I = \sum{ m r^2 }
+    $$
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' id = 'problem11'></li>
+    <li class = 'question' id = 'problem12'></li>
+    <li class = 'question' id = 'problem13'></li>
+    <li class = 'question' id = 'problem14'></li>
+    <li class = 'question' id = 'problem15'></li>
+    <li class = 'question' id = 'problem16'></li>
+    <li class = 'question' id = 'problem17'></li>
+
+    <li class = 'question' >
+        In the following rod, the 100 gram
+        mass contributes MORE rotational inertia
+        than the 200 gram mass, even though
+        it has half as much inertia on its own!
+        Explain why?
+        <div id = 'problem18'></div>
+    </li>
+</ol>
+
+
+<script>
+    let problem11 = new RotatingRod(80,35,0,'cm');
+    problem11.addMass(35,600,'g');
+    problem11.addMass(-80,100,'g');
+    problem11.addPositionToReferenceArray(0);
+    problem11.addPositionToReferenceArray(-80);
+    problem11.addPositionToReferenceArray(35);
+
+    let problem12 = new RotatingRod(0,100,0,'cm');
+    problem12.addMass(30,250,'g');
+    problem12.addMass(100,90,'g');
+    problem12.addPositionToReferenceArray(0);
+    problem12.addPositionToReferenceArray(30);
+    problem12.addPositionToReferenceArray(100);
+
+    let problem13 = new RotatingRod(30,70,0,'cm');
+    problem13.addMass(-30,2, undefined, true);
+    problem13.addMass(70,300,'g', true);
+
+    let problem14 = new RotatingRod(0,120,0,'cm');
+    problem14.addMass(50,200,'g',true);
+    problem14.addMass(80,120,'g',true);
+    problem14.addMass(120,150,'g',true);
+
+    let problem15 = new RotatingRod(50,80,0,'cm');
+    problem15.addMass(-50,4,undefined,true);
+    problem15.addMass(25,5,undefined,true);
+    problem15.addMass(80,3,undefined,true);
+
+    let problem16 = new RotatingRod(100,100,0,'cm');
+    problem16.addMass(-100,1);
+    problem16.addMass(-50,4);
+    problem16.addMass(50,3);
+    problem16.addMass(100,2);
+    problem16.automaticReferenceArray(5);
+
+    let problem17 = new RotatingRod(100,150,0,'cm');
+    problem17.addMass(-100,80,'g',true);
+    problem17.addMass(40,200,'g',true);
+    problem17.addMass(90,400,'g',true);
+    problem17.addMass(150,100,'g',true);
+
+    let problem18 = new RotatingRod(0,200,0,'cm');
+    problem18.addMass(100,200,'g',true);
+    problem18.addMass(200,200,'g',true);
+
+    $("#problem11").append(problem11.drawCanvas(600,300));
+    $("#problem12").append(problem12.drawCanvas(600,300));
+    $("#problem13").append(problem13.drawCanvas(600,300));
+    $("#problem14").append(problem14.drawCanvas(600,300));
+    $("#problem15").append(problem15.drawCanvas(600,300));
+    $("#problem16").append(problem16.drawCanvas(600,300));
+    $("#problem17").append(problem17.drawCanvas(600,300));
+    $("#problem18").append(problem18.drawCanvas(600,300));
 </script>
 
 
 <h3>
-  Answers:
+    Rotational Inertia of Continuous Masses
+</h3>
+
+<p>
+    The following sets of problems focused on rotating <strong>point masses</strong>.
+    However, most of the things that we study in the real world
+    are not point masses by <strong>continuous masses</strong>.
+    For example, a spinning tire is a continuous mass because the mass is spread
+    throughout the tire, not entirely in one point.
+</p>
+
+<p>
+    We will use a set of formulas to analyze the rotational inertia of continuous masses.
+    If you take <strong>calculus based physics</strong>,
+    then you can learn how to derive each of these formulas from the formula for a collection of point masses
+    using an integral.
+</p>
+
+
 <h3>
+  Answers:
+</h3>
 <ol class = 'answerList'></ol>

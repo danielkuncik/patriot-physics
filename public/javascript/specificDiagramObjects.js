@@ -1791,7 +1791,7 @@ class BlockProblem extends Diagram {
 }
 
 class RotatingRod extends Diagram {
-    constructor(distanceRight, distanceLeft, thetaInDegrees, distanceUnit) {
+    constructor(distanceLeft, distanceRight, thetaInDegrees, distanceUnit) {
         super();
         if (distanceRight === undefined) {
             distanceRight = 1;
@@ -1820,6 +1820,7 @@ class RotatingRod extends Diagram {
         this.referenceLineBelow = true;
 
         this.positionReferenceArray = [];
+        this.addPositionToReferenceArray(0,);
     }
 
     moveReferenceLineAbove() {
@@ -1882,20 +1883,30 @@ class RotatingRod extends Diagram {
         this.defaultForceUnit = newForceUnit;
     }
 
-    addMass(massPosition, massQuantity, unit) {
+    addMass(massPosition, massQuantity, unit, addHashBoolean) {
         this.checkPosition(massPosition, 'mass');
         if (unit === undefined) {
             unit = this.defaultMassUnit;
         }
+        let label = `${massQuantity} ${unit}`;
+        let quantity = massQuantity;
+        if (unit === 'g') {
+            quantity /= 1000;
+        }
 
         this.masses.push({
             position: massPosition,
-            quantity: massQuantity,
-            unit: unit
+            quantity: quantity,
+            unit: unit,
+            label: label
         });
+
+        if (addHashBoolean) {
+            this.addPositionToReferenceArray(massPosition);
+        }
     }
 
-    addForce(forcePosition, forceMagnitude, forceDirectionInDegrees, unit) {
+    addForce(forcePosition, forceMagnitude, forceDirectionInDegrees, unit, addHashBoolean) {
         if (forceMagnitude === undefined) {
             forceMagnitude = 10;
         }
@@ -1909,7 +1920,6 @@ class RotatingRod extends Diagram {
             unit = this.defaultForceUnit;
         }
 
-
         this.checkPosition(forcePosition, 'force');
 
         this.forces.push({
@@ -1918,6 +1928,10 @@ class RotatingRod extends Diagram {
             directionInDegrees: forceDirectionInDegrees,
             unit: unit
         });
+
+        if (addHashBoolean) {
+            this.addPositionToReferenceArray(forcePosition);
+        }
     }
 
     getMaxAndMinForce() {
@@ -2006,10 +2020,13 @@ class RotatingRod extends Diagram {
         // add masses as circles
         this.masses.forEach((mass) => {
             let massCenter = origin.getAnotherPointWithTrig(mass.position, thetaInRadians);
-            let massRadius = circleRadius * mass.quantity / maxMass;
-            let massString = `${mass.quantity} ${mass.unit}`;
+            let radiusMultiplier = mass.quantity / maxMass;
+            if (radiusMultiplier < 0.5) {radiusMultiplier = 0.5;} // this is to prevent masses from appearing as too small int he diagram
+            let massRadius = circleRadius * radiusMultiplier;
+            let massString = `${mass.label}`;
             let massFontSize = massRadius * 2 / massString.length;
-            super.addCircle(massCenter, massRadius);
+            let massCircle = super.addCircle(massCenter, massRadius);
+            massCircle.fillWhite();
             super.addText(massString,massCenter, massFontSize, 0); // addText(letters, centerPoint, relativeFontSize, rotation)
         });
 
