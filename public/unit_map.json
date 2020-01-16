@@ -3022,6 +3022,16 @@
             "prerequisites": ["ramp_problems_3"],
             "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model"
           },
+          "ramp_problems_x":
+          {
+            "title": "Ramp Problems X",
+            "subtitle": "Ramp Conservation of Energy",
+            "level": 4,
+            "horizontal": 5,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Demonstrate that the conservation of energy is consistent with the laws of dynamics for an object on a ramp without friction and with friction."
+          },
           "dragging_at_angle_3":
           {
             "title": "Dragging at an Angle 3: Algebraic Solutions",
