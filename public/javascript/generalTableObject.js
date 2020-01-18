@@ -14,6 +14,20 @@ which avoids errors if i accidentlly enter
 indicies that are outside the range of the table.
  */
 
+// this function will go through an evolution
+// assume all letters are a square of the font size
+function getFontSizeForCell(text,width,height) {
+    let finalAnswer;
+    let option1 = width / text.length * 1.5;
+    let option2 = height * 0.8;
+    if (option1 <= option2) {
+        finalAnswer = option1;
+    } else {
+        finalAnswer = option2;
+    }
+    return finalAnswer
+}
+
 class Table {
     constructor(numRows, numColumns) {
         this.numRows = numRows;
@@ -95,10 +109,18 @@ class Table {
         this.normalizeColumnProportions();
     }
 
-    writeTextInCell(i, j, text) {
+    // at the moment, 1-18-2020
+    // you can only set font size if you use this function directly
+    // otherwise you will get the default font size
+    writeTextInCell(i, j, text, fontSize) {
         if (text !== undefined) {
             this.cellInfoArray[i][j].text = text;
         }
+        this.setCellFontSize(i,j,fontSize);
+    }
+
+    setCellFontSize(i,j,size) {
+        this.cellInfoArray[i][j].fontSize = size;
     }
 
     addListToCell(i, j, listElementArray, orderedListBoolean) {
@@ -336,7 +358,7 @@ class Table {
         let columnProportions = makeArraySumToOne(this.columnProportionArray);
 
         let table = $("<table></table>");
-        let i, j, thisRow, thisCell, rowspan, colspan, cellWidth, cellHeight, rowHeight, cellProperties;
+        let i, j, thisRow, thisCell, rowspan, colspan, cellWidth, cellHeight, rowHeight, fontSize, cellProperties;
         for (i = 0; i < this.numRows; i++) {
             rowHeight = height * rowProportions[i];
             thisRow = $(`<tr height = "${rowHeight}${unit}"></tr>`);
@@ -365,7 +387,18 @@ class Table {
 
                   cellProperties = `width = "${cellWidth}${unit}" height = "${cellHeight}${unit}"`;
 
-                  if (rowspan) {
+                  fontSize = undefined;
+                  if (this.cellInfoArray[i][j].fontSize) {
+                      fontSize = this.cellInfoArray[i][j].fontSize;
+                  } else if (this.cellInfoArray[i][j].text) {
+                    fontSize = getFontSizeForCell(this.cellInfoArray[i][j].text,cellWidth,cellHeight);
+                  } else {
+                      fontSize = 20;
+                  }
+                  cellProperties = cellProperties + ` style = 'font-size:${fontSize}px'`;
+
+
+                    if (rowspan) {
                     cellProperties = cellProperties + ` rowspan = "${rowspan}"`
                   }
                   if (colspan) {

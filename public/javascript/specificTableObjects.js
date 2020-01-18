@@ -258,16 +258,16 @@ class ForceTableQuantitative1D extends Table {
         super.shadeCell(1,0);
 
         super.writeTextInCell(0,0,
-            'free-body diagram');
+            'free-body diagram',20);
         if (vectorBoolean) {
             super.writeTextInCell(0,2, 'net force vector');
             super.writeTextInCell(0,3, 'velocity vector');
         }
-        super.writeTextInRow(2, ['force','magnitude','direction','How did you determine the magnitude?']);
+        super.writeTextInRow(2, ['name of force','magnitude','direction','How did you determine the magnitude?']);
 
         super.setColumnProportions([2,2,2,4]);
 
-        let rowProportionArray = [4,0.25,1];
+        let rowProportionArray = [4,0.25,.5];
         let k;
         for (k = 0; k < numForces; k++) {
             rowProportionArray.push(2);
