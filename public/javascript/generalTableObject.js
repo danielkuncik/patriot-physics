@@ -16,15 +16,31 @@ indicies that are outside the range of the table.
 
 // this function will go through an evolution
 // assume all letters are a square of the font size
-function getFontSizeForCell(text,width,height) {
-    let finalAnswer;
+function getFontSizeForCell(text,width,height,maxValue) {
+    if (maxValue === undefined) {
+        maxValue = 1e10;
+    }
+    let intermediateAnswer, finalAnswer;
     let option1 = width / text.length * 1.5;
     let option2 = height * 0.8;
-    if (option1 <= option2) {
-        finalAnswer = option1;
-    } else {
-        finalAnswer = option2;
+    let n = 1;
+    while (option1 < option2 * .2 && n < 15) {
+        option1 *= 2;
+        n++
     }
+
+    if (option1 <= option2) {
+        intermediateAnswer = option1;
+    } else {
+        intermediateAnswer = option2;
+    }
+
+    if (intermediateAnswer <= maxValue) {
+        finalAnswer = intermediateAnswer;
+    } else {
+        finalAnswer = maxValue;
+    }
+
     return finalAnswer
 }
 
@@ -44,6 +60,8 @@ class Table {
         this.rowKeys = {};
 
         this.defaultSize = 500;
+
+        this.maxFontPorpotion = undefined;
     }
 
     setDefaultSize(newSize) {
@@ -344,6 +362,10 @@ class Table {
       return sum
     }
 
+    setMaxFontProportion(newMaxFontPropotion) {
+        this.maxFontPorpotion = newMaxFontPropotion;
+    }
+
     draw(width, height, unit) {
         if (unit === undefined) {unit = 'px';}
 
@@ -352,6 +374,13 @@ class Table {
         }
         if (height === undefined) {
             height = width;
+        }
+
+        let maxFontSize;
+        if (this.maxFontPorpotion) {
+            maxFontSize = width * this.maxFontPorpotion;
+        } else {
+            maxFontSize = undefined;
         }
 
         let rowProportions = makeArraySumToOne(this.rowProportionArray);
@@ -391,7 +420,7 @@ class Table {
                   if (this.cellInfoArray[i][j].fontSize) {
                       fontSize = this.cellInfoArray[i][j].fontSize;
                   } else if (this.cellInfoArray[i][j].text) {
-                    fontSize = getFontSizeForCell(this.cellInfoArray[i][j].text,cellWidth,cellHeight);
+                    fontSize = getFontSizeForCell(this.cellInfoArray[i][j].text,cellWidth,cellHeight, maxFontSize);
                   } else {
                       fontSize = 20;
                   }
