@@ -247,7 +247,9 @@ momentum included here
     Energy
 </h3>
 
-
+<h5>
+    Types of Energy:
+</h5>
 <div id = 'typesOfEnergyTable'></div>
 
 <script>
@@ -257,12 +259,70 @@ momentum included here
     typesOfEnergyTable.writeTextInRow(2,['gravitational potential energy on planet', '\\( GPE \\) or \\( U_g \\)', '\\( GPE = mgh \\)', 'system must include planet; depends on max height']);
     typesOfEnergyTable.writeTextInRow(3,['elastic potential energy', '\\( EPE \\) or  \\( U_s \\)', '\\( EPE = \\frac{1}{2} k \\left( x - x_0 \\right)^2 \\)', 'system must include spring; often \\( x_0  = 0 \\) 0 is assumed']);
     typesOfEnergyTable.writeTextInRow(4,['rotational kinetic energy', '\\( K_{rot} \\)', '\\( K_{rot} = I \\omega^2 \\)','system must include rotating object']);
-    typesOfEnergyTable.writeTextInRow(8, ['nuclear energy', '\\( E_{nuc} \\)', '\\( E_{nuc} = m c^2 \\)', 'energy released if mass is lost']);
+    typesOfEnergyTable.writeTextInRow(5, ['universal gravitational potential energy', '\\( GPE \\) or \\( U_g \\)', '\\( U_g = \\frac{- G m_1 m_2 }{d} \\)', 'always negative, zero point set at infinite distance']);
+    typesOfEnergyTable.writeTextInRow(6, ['nuclear energy', '\\( E_{nuc} \\)', '\\( E_{nuc} = m c^2 \\)', 'energy released if mass is lost']);
 
-
-    typesOfEnergyTable.writeTextInRow(9, ['universal gravitational potential energy', '\\( GPE \\) or \\( U_g \\)', '\\( U_g = \\frac{- G m_1 m_2 }{d} \\)', 'always negative, zero point set at infinite distance']);
     $("#typesOfEnergyTable").append(typesOfEnergyTable.draw(500));
 </script>
+
+<h5>
+    Energy Quantities:
+</h5>
+
+<div id = 'energyQuantities'></div>
+
+<script>
+    let energyQuantities = new Table(3,4);
+    energyQuantities.setMaxFontProportion(0.08);
+    energyQuantities.setRowProportions([1,3,3]);
+    energyQuantities.addTopHeaders(['symbol','name','SI unit','note']);
+    energyQuantities.writeTextInRow(1,['\\( W \\)','Work','Joules (J)','quantity of energy transferred']);
+    energyQuantities.writeTextInRow(2,['\\( P \\)','Power','Watts (J/s)','rate of energy transfer']);
+
+
+    $("#energyQuantities").append(energyQuantities.draw(300));
+</script>
+
+<h5>
+    Energy Formulas:
+</h5>
+
+<div id = 'energyFormulas'></div>
+
+<script>
+    let energyFormulas = new Table(3,2);
+    energyFormulas.setMaxFontProportion(0.06);
+    energyFormulas.setRowProportions([1,3,3]);
+    energyFormulas.addTopHeaders(['Name','Formula']);
+    energyFormulas.writeTextInRow(1,['Definition of Work','\\( W = F \\cdot d \\)']);
+    energyFormulas.writeTextInRow(2,['Definition of Power', '\\( P = \\frac{W}{\\Delta t} \\) or \\( P = \\frac{\\Delta E}{\\Delta t}\\)' ]);
+
+    $("#energyFormulas").append(energyFormulas.draw(200));
+</script>
+
+<h5>
+    Energy Principles:
+</h5>
+
+<ul>
+    <li>
+        The conservation of energy (universal):
+        Energy cannot be created or destroyed,
+        it changes only from one form to another.
+    </li>
+    <li>
+        The conservation of energy (specific systems):
+        The total energy in a system is constant if no
+        work is done on that system.
+    </li>
+    <li>
+        The Work-Energy Theorem:
+        The total work done on a system
+        by external forces is equal to the
+        change energy for that system:
+        \( W = \Delta E \).
+    </li>
+</ul>
 
 <h3>
     Fundamental Forces:
