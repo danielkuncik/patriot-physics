@@ -1,0 +1,627 @@
+<h3>
+    January 2020 Memorization Test
+</h3>
+
+<p>
+    <strong>The Goal:</strong>
+    Memorize every quantity, equation, and principle we've learned thus far
+    by Thursday 1-23-2020, the end of the quarter.
+    (Plus one more I'm giving you on Tuesday 1-21-2020.)
+</p>
+
+<p style = 'font-size:20px' >
+    There are no retakes, levels, take homes, etc.
+    You take it once in class and the grade you get is final.
+</p>
+
+<p>
+    For a copy of the quiz itself,
+    click
+    <a href = '/labs/equationMemorizeJan2020Quiz'>HERE</a>.
+</p>
+
+<h3>
+    Kinematics
+</h3>
+
+<h5>
+    Quantities:
+</h5>
+
+<div id = 'kinematicsQuantitiesTable'></div>
+<script>
+    let kinematicsQuantitiesTable = new Table(9,4);
+    kinematicsQuantitiesTable.setMaxFontProportion(0.05);
+    kinematicsQuantitiesTable.addTopHeaders(['Symbol','Quantity','SI unit',"Vector or Scalar"]);
+    kinematicsQuantitiesTable.writeTextInRow(1,['\\( d \\)','distance','m','scalar']);
+    kinematicsQuantitiesTable.writeTextInRow(2,['\\( x \\)','position','m','vector']);
+    kinematicsQuantitiesTable.writeTextInRow(3,['\\( \\Delta x \\)','displacement','m','vector']);
+    kinematicsQuantitiesTable.writeTextInRow(4,['\\( v \\)','speed','m/s','scalar']);
+    kinematicsQuantitiesTable.writeTextInRow(5,['\\( v \\)','velocity','m/s','vector']);
+    kinematicsQuantitiesTable.writeTextInRow(6,['\\( a \\)','acceleration','m/s^2','vector']);
+    kinematicsQuantitiesTable.writeTextInRow(7,['\\( t \\)', 'time','seconds', 'scalar']);
+    kinematicsQuantitiesTable.writeTextInRow(8,['\\( \\Delta t \\)','time interval','seconds','scalar']);
+
+    $("#kinematicsQuantitiesTable").append(kinematicsQuantitiesTable.draw(500));
+</script>
+
+
+<h5>
+    Basic Formulas:
+</h5>
+
+<div id = 'basicKinematicFormulaTable'></div>
+<script>
+    let basicKinematicFormulaTable = new Table(7,3);
+    basicKinematicFormulaTable.setRowProportions(0.05);
+    basicKinematicFormulaTable.addTopHeaders(['name','formula','notes']);
+    basicKinematicFormulaTable.writeTextInRow(1,['constant speed formula','\\( d = v t \\)','for constant speed']);
+    basicKinematicFormulaTable.writeTextInRow(2,['constant velocity formula', '\\( \\Delta x = v \\cdot \\Delta t \\)','for constant velocity']);
+    basicKinematicFormulaTable.writeTextInRow(3,['definition of average speed','average speed = distance / time']);
+    basicKinematicFormulaTable.writeTextInRow(4,['definition of average velocity','average velocity = displacement / time']);
+    basicKinematicFormulaTable.writeTextInRow(5,['definition of acceleration','\\( a = \\frac{\\Delta v }{\\Delta t } \\)']);
+    basicKinematicFormulaTable.writeTextInRow(6,['definition of acceleration','\\( a = \\frac{v_f - v_i }{\\Delta t } \\)', 'identical to above']);
+
+    $("#basicKinematicFormulaTable").append(basicKinematicFormulaTable.draw(500));
+</script>
+
+<h5>
+    The Kinematic Equations:
+</h5>
+
+<div id = 'kinematicEquationsTable'></div>
+<script>
+    let kinematicEquationsTable = new Table(4,2);
+    kinematicEquationsTable.setMaxFontProportion(0.05);
+    kinematicEquationsTable.writeTextInCell(0,0,'\\( v_f = v_i + a \\cdot \\Delta t \\)');
+    kinematicEquationsTable.writeTextInCell(1,0,'\\( \\Delta x = v_i \\cdot \\Delta t + \\frac{1}{2} a \\left( \\Delta t \\right)^2 \\)');
+    kinematicEquationsTable.writeTextInCell(2,0, '\\( \\Delta x = \\left( \\frac{v_f + v_i}{2} \\right) \\Delta t \\)');
+    kinematicEquationsTable.writeTextInCell(3,0,'\\( v_f^2 = v_i^2 + 2 a \\cdot \\Delta x \\)');
+
+    kinematicEquationsTable.mergeBelow(0,1);
+    kinematicEquationsTable.mergeBelow(0,1);
+    kinematicEquationsTable.mergeBelow(0,1);
+    kinematicEquationsTable.writeTextInCell(0,1,'Apply only if acceleration is constant');
+
+    $("#kinematicEquationsTable").append(kinematicEquationsTable.draw(500));
+</script>
+
+<h5>
+    Principles:
+</h5>
+
+<ul>
+    <li>
+        The slope of the position-time function \( x(t) \) at any time \( t_1 \)
+        is equal to the velocity at that time \( v(t_1) \).
+    </li>
+    <li>
+        The area under the curve of the velocity-time function \( v(t) \)
+        over any time interval \( \Delta t \) is equal to the
+        change in position \( \Delta x \) over that same time interval.
+        This quantity is called the displacement.
+    </li>
+    <li>
+        The slope of the velocity-time function \( v(t) \) at any time \( t_1 \)
+        is equal to the acceleration at that time \( v(t_1) \).
+    </li>
+    <li>
+        The area under the curve of the acceleration-time function \( a(t) \)
+        over any time interval \( \Delta t \) is equal to the change in velocity
+        \( \Delta v \) over that same time interval.
+    </li>
+</ul>
+
+<h3>
+    Dynamics
+</h3>
+
+<h5>
+    Quantities:
+</h5>
+
+<div id = 'dynamicsQuantitiesTable'></div>
+
+<script>
+    let dynamicsQuantitiesTable = new Table(6,4);
+    dynamicsQuantitiesTable.setMaxFontProportion(0.05);
+    dynamicsQuantitiesTable.addTopHeaders(['Symbol','Quantity','SI unit',"vector or Scalar"]);
+    dynamicsQuantitiesTable.writeTextInRow(1,['\\( m \\)','Inertial Mass','kg','scalar']);
+    dynamicsQuantitiesTable.writeTextInRow(2,['\\( \\Sigma F \\)','Net Force', "N",'vector']);
+    dynamicsQuantitiesTable.writeTextInRow(3,['\\( J \\)','Impulse','kg m/s', 'vector']);
+    dynamicsQuantitiesTable.writeTextInRow(4,['\\( p \\)','Momentum', 'kg m/s', 'vector']);
+    dynamicsQuantitiesTable.writeTextInRow(5,['\\( g \\)','Free-Fall Acceleration','m/s/s', 'vector']);
+    $("#dynamicsQuantitiesTable").append(dynamicsQuantitiesTable.draw(500));
+</script>
+
+<h5>
+    Basic Formulas:
+</h5>
+<div id = 'dynamicsBasicFormulaTable'></div>
+
+<script>
+    let dynamicsBasicFormulaTable = new Table(4,2);
+    dynamicsBasicFormulaTable.setRowProportions([1,3,3,3]);
+    dynamicsBasicFormulaTable.setMaxFontProportion(0.05);
+    dynamicsBasicFormulaTable.addTopHeaders(['name','formula']);
+    dynamicsBasicFormulaTable.writeTextInRow(1,["Newton's Second Law",'\\( \\Sigma F = m a \\)']);
+    dynamicsBasicFormulaTable.writeTextInRow(2, ['Definition of Momentum', '\\( p = m v  \\)']);
+    dynamicsBasicFormulaTable.writeTextInRow(3,['Impulse Formula', '\\( J = \\Sigma F \\cdot \\Delta t = \\Delta p \\)']);
+    $("#dynamicsBasicFormulaTable").append(dynamicsBasicFormulaTable.draw(500));
+</script>
+
+<h5>
+    Forces:
+</h5>
+<div id = 'forcesTable'></div>
+
+<script>
+    let forcesTable = new Table(9,4);
+    forcesTable.setMaxFontProportion(0.05);
+    forcesTable.addTopHeaders(['name of force', 'symbol', 'magnitude', 'direction']);
+    forcesTable.writeTextInRow(1,['gravity on planet', '\\( F_g \\)', '\\( F_g = m g \\)','down']);
+    forcesTable.writeTextInRow(2,['normal force','\\( F_N \\)', 'constraint force*', 'not definite']);
+    forcesTable.writeTextInRow(3,['applied force','\\( F_a \\)','not definite','not definite']);
+    forcesTable.writeTextInRow(4,['kinetic friction','\\( F_{frk} \\)','\\( F_{frk} = \\mu_k F_N \\)', 'opposite the velocity']);
+    forcesTable.writeTextInRow(5,['Static friction', '\\( F_{frs} \\)', 'constraint force up to maximum value \\( \\mu_k F_N \\)**', 'opposite forces that would cause motion']);
+    forcesTable.writeTextInRow(6,['Tension', '\\( F_T \\) or \\( T \\)', 'constraint force or given value', 'not definite']);
+    forcesTable.writeTextInRow(7,['Spring Force','\\( F_s \\)','\\( F_s = k \\left( x - x_0 \\right)  \\)', 'towards returning the spring to equilibrium length']);
+    forcesTable.writeTextInRow(8,['Universal Gravity', '\\( F_g \\)', '\\( F_G = \\frac{G m_1 m_2}{d^2} \\)', 'bringing the two objects together']);
+    $("#forcesTable").append(forcesTable.draw(500));
+</script>
+
+<ul>
+    <li>
+        * Normal Force and sometimes tension match the value necessary for an object to be stationary, or for an object to have a particular acceleration .
+    </li>
+    <li>
+        ** Static friction matches the value necessary to prevent an object from slipping, up to the maximum value of \( \mu_k F_N \).
+    </li>
+</ul>
+
+<h5>
+    Qualitative Principles:
+</h5>
+
+<ul>
+    <li>
+        When an object has a net force of zero acting on it,
+        it is either <emph>not moving</emph>
+        or <emph>moving with a constant velocity</emph>.
+        This object is said to be in <strong>equilibrium</strong>.
+        This statement is called <strong>Newton's First Law</strong>.
+    </li>
+    <li>
+        When an object has a net force acting in the same direction
+        as its velocity,
+        it <strong>speeds up.</strong>
+        This statement is a consequence of Newton's Second Law.
+    </li>
+    <li>
+        When an object has a net force acting in the opposite direction
+        as its velocity,
+        it <strong>slows down</strong>.
+        This statement is a consequence of Newton's Second Law.
+    </li>
+    <li>
+        When an object has a net force acting perpendicular to its velocity,
+        it <strong>changes direction</strong>.
+        This force is called a <strong>centripetal force</strong>.
+        This statement is a consequence of Newton's Second Law.
+    </li>
+    <li>
+        An object moves in a circle when the centripetal force has
+        a magnitude \( F_c = \frac{m v^2}{r} \).3
+    </li>
+</ul>
+
+<h5>
+    Principles:
+</h5>
+
+<ul>
+    <li>
+        <strong>Newton's First Law</strong>:
+        If an object has an external net force of zero,
+        then it is either moving at a constant velocity
+        or not moving.
+    </li>
+    <li>
+        <strong>Newton's Second Law (1):</strong>
+        The acceleration of an object \( a \) is equal to the net
+        force acting on that object \( \Sigma F \) divided by its mass \( m \).
+    </li>
+    <li>
+        <strong>Newton's Second Law (2):</strong>
+        The change in momentum \( \Delta p \) over an object
+        during its time period is equal to the average net force acting on
+        that object \( \Sigma F \) times the length of the time period \( \Delta t \).
+        This quantity is called the impulse.
+    </li>
+    <li>
+        <strong>Newton's Third Law</strong>:
+        If A exerts a force on B,
+        then B exerts a force on A with equal magnitude and opposite direction.
+    </li>
+    <li>
+        <strong>Principle of 2-D Physics</strong>:
+        In two dimensional problems,
+        the rules of kinematics and dynamics apply independently
+        in each dimension.
+    </li>
+</ul>
+<!--
+momentum included here
+-->
+<h3>
+    Energy
+</h3>
+
+<h5>
+    Types of Energy:
+</h5>
+<div id = 'typesOfEnergyTable'></div>
+
+<script>
+    let typesOfEnergyTable = new Table(7,4);
+    typesOfEnergyTable.setMaxFontProportion(0.02);
+    typesOfEnergyTable.setRowProportions([1,3,3,3,3,3,3]);
+    typesOfEnergyTable.addTopHeaders(['name','symbol','magnitude','notes']);
+    typesOfEnergyTable.writeTextInRow(1,['kinetic energy','\\( K \\) or \\( KE \\)', '\\( KE = \\frac{1}{2}m v^2 \\)', 'system must include moving object']);
+    typesOfEnergyTable.writeTextInRow(2,['gravitational potential energy on planet', '\\( GPE \\) or \\( U_g \\)', '\\( GPE = mgh \\)', 'system must include planet; depends on max height']);
+    typesOfEnergyTable.writeTextInRow(3,['elastic potential energy', '\\( EPE \\) or  \\( U_s \\)', '\\( EPE = \\frac{1}{2} k \\left( x - x_0 \\right)^2 \\)', 'system must include spring; often \\( x_0  = 0 \\) 0 is assumed']);
+    typesOfEnergyTable.writeTextInRow(4,['rotational kinetic energy', '\\( K_{rot} \\)', '\\( K_{rot} = I \\omega^2 \\)','system must include rotating object']);
+    typesOfEnergyTable.writeTextInRow(5, ['universal gravitational potential energy', '\\( GPE \\) or \\( U_g \\)', '\\( U_g = \\frac{- G m_1 m_2 }{d} \\)', 'always negative, zero point set at infinite distance']);
+    typesOfEnergyTable.writeTextInRow(6, ['nuclear energy', '\\( E_{nuc} \\)', '\\( E_{nuc} = m c^2 \\)', 'energy released if mass is lost']);
+
+    $("#typesOfEnergyTable").append(typesOfEnergyTable.draw(500));
+</script>
+
+<h5>
+    Energy Quantities:
+</h5>
+
+<div id = 'energyQuantities'></div>
+
+<script>
+    let energyQuantities = new Table(3,4);
+    energyQuantities.setMaxFontProportion(0.08);
+    energyQuantities.setRowProportions([1,3,3]);
+    energyQuantities.addTopHeaders(['symbol','name','SI unit','note']);
+    energyQuantities.writeTextInRow(1,['\\( W \\)','Work','Joules (J)','quantity of energy transferred']);
+    energyQuantities.writeTextInRow(2,['\\( P \\)','Power','Watts (J/s)','rate of energy transfer']);
+
+
+    $("#energyQuantities").append(energyQuantities.draw(300));
+</script>
+
+<h5>
+    Energy Formulas:
+</h5>
+
+<div id = 'energyFormulas'></div>
+
+<script>
+    let energyFormulas = new Table(3,2);
+    energyFormulas.setMaxFontProportion(0.06);
+    energyFormulas.setRowProportions([1,3,3]);
+    energyFormulas.addTopHeaders(['Name','Formula']);
+    energyFormulas.writeTextInRow(1,['Definition of Work','\\( W = F \\cdot d \\)']);
+    energyFormulas.writeTextInRow(2,['Definition of Power', '\\( P = \\frac{W}{\\Delta t} \\) or \\( P = \\frac{\\Delta E}{\\Delta t}\\)' ]);
+
+    $("#energyFormulas").append(energyFormulas.draw(200));
+</script>
+
+<h5>
+    Energy Principles:
+</h5>
+
+<ul>
+    <li>
+        The conservation of energy (universal):
+        Energy cannot be created or destroyed,
+        it changes only from one form to another.
+    </li>
+    <li>
+        The conservation of energy (specific systems):
+        The total energy in a system is constant if no
+        work is done on that system.
+    </li>
+    <li>
+        The Work-Energy Theorem:
+        The total work done on a system
+        by external forces is equal to the
+        change energy for that system:
+        \( W = \Delta E \).
+    </li>
+</ul>
+
+<h3>
+    Fundamental Forces:
+</h3>
+
+<p>
+    There are four fundamental forces that act on an object:
+</p>
+<ul>
+    <li>
+        The gravitational force:
+        All masses are attracted to all other masses.
+    </li>
+    <li>
+        The electromagnetic force (4 parts):
+        <ul>
+            <li>
+                The electrostatic force:
+                Like charges repel each other and unlike charges attract each other.
+            </li>
+            <li>
+                The magnetic and other forces (not on the AP test)
+            </li>
+        </ul>
+    </li>
+    <li>
+        The Strong Nuclear Force (not on the AP test)
+    </li>
+    <li>
+        The Weak Nuclear Force (not on the AP test)
+    </li>
+</ul>
+
+<h3>
+    Rotational Motion
+</h3>
+
+<h5>
+    Quantities:
+</h5>
+<div id = 'rotationalMotionQuantitiesTable'></div>
+
+<script>
+    let rotationalMotionQuantitiesTable = new Table(9,4);
+    rotationalMotionQuantitiesTable.setRowProportions([1,3,3,3,3,3,3,3,3,3]);
+    rotationalMotionQuantitiesTable.setMaxFontProportion(0.04);
+    rotationalMotionQuantitiesTable.addTopHeaders(['symbol','name','analogous translational quantity', 'vector or scalar']);
+    rotationalMotionQuantitiesTable.writeTextInRow(1,['\\( \\theta \\)', 'angular position','position \\( ( x ) \\)','scalar']);
+    rotationalMotionQuantitiesTable.writeTextInRow(2,['\\( \\Delta \\theta \\)', 'angular displacement','displacement \\( ( \\Delta x ) \\)','scalar']);
+    rotationalMotionQuantitiesTable.writeTextInRow(3, ['\\( \\omega \\)', 'rotational velocity','velocity \\( ( v ) \\)','vector']);
+    rotationalMotionQuantitiesTable.writeTextInRow(4,['\\( \\alpha \\)', 'rotational acceleration','acceleration \\( ( a ) \\)','vector']);
+    rotationalMotionQuantitiesTable.writeTextInRow(5,['\\( I \\)', 'rotational inertia (also moment of inertia)','inertial mass \\( ( m ) \\)','scalar']);
+    rotationalMotionQuantitiesTable.writeTextInRow(6,['\\( \\tau \\)', 'torque','force \\( ( F ) \\)','vector']);
+    rotationalMotionQuantitiesTable.writeTextInRow(7,['\\( \\Sigma \\tau \\)', 'net torque','net force \\( ( \\Sigma F ) \\)','vector']);
+    rotationalMotionQuantitiesTable.writeTextInRow(8,['\\( L \\)', 'angular momentum','momentum (\\( ( p ) \\))','vector']);
+    $("#rotationalMotionQuantitiesTable").append(rotationalMotionQuantitiesTable.draw(500));
+</script>
+
+
+<h5>
+    Basic Formulas:
+</h5>
+<div id = 'rotationalMotionBasicFormulasTable'></div>
+
+<script>
+    let rotationalMotionBasicFormulasTable = new Table(7,3);
+    rotationalMotionBasicFormulasTable.addTopHeaders(['name','formula','analogous linear motion formula']);
+
+    rotationalMotionBasicFormulasTable.writeTextInRow(1,['definition of angular velocity','\\( \\omega = \\frac{\\Delta \\theta}{\\Delta t} \\)','\\( v = \\frac{\\Delta x}{\\Delta t} \\)']);
+    rotationalMotionBasicFormulasTable.writeTextInRow(2,['definition of angular acceleration','\\( \\alpha = \\frac{\\Delta \\alpha}{\\Delta t} \\)','\\( a = \\frac{\\Delta v}{\\Delta t} \\)']);
+    rotationalMotionBasicFormulasTable.writeTextInRow(3,['definition of angular momentum','\\( L = I \\omega \\)','\\( p = m v \\)']);
+    rotationalMotionBasicFormulasTable.writeTextInRow(4,['linear and angular velocity','\\( v = \\omega r \\)','none']);
+
+    rotationalMotionBasicFormulasTable.writeTextInRow(5,['definition of torque','\\( \\tau = r \\times F \\)', 'none']);
+    rotationalMotionBasicFormulasTable.writeTextInRow(6,['definition of rotational inertia for point mass','\\( I = m r^2 \\)', 'none']);
+
+
+    $("#rotationalMotionBasicFormulasTable").append(rotationalMotionBasicFormulasTable.draw(500));
+</script>
+
+<h5>
+    Kinematic Equations:
+</h5>
+<div id = 'rotationalMotionKinematicEquations'></div>
+
+<script>
+    let rotationalMotionKinematicEquations = new Table(5,3);
+    rotationalMotionKinematicEquations.setMaxFontProportion(0.03);
+
+    rotationalMotionKinematicEquations.writeTextInCell(0,0,'Rotational Kinematic Equation');
+    rotationalMotionKinematicEquations.writeTextInCell(0,1,'Analogous Linear Kinematic Equation');
+
+    rotationalMotionKinematicEquations.writeTextInCell(0,2, 'These equations apply ONLY when angular acceleration is constant.');
+    rotationalMotionKinematicEquations.mergeBelow(0,2);
+    rotationalMotionKinematicEquations.mergeBelow(0,2);
+    rotationalMotionKinematicEquations.mergeBelow(0,2);
+    rotationalMotionKinematicEquations.mergeBelow(0,2);
+
+
+    rotationalMotionKinematicEquations.writeTextInCell(1,0,'\\( \\omega_f = \\omega_i + \\alpha \\cdot \\Delta t \\)');
+    rotationalMotionKinematicEquations.writeTextInCell(2,0,'\\( \\Delta \\theta = \\omega_i \\cdot \\Delta t + \\frac{1}{2} \\alpha \\left( \\Delta t \\right)^2 \\)');
+    rotationalMotionKinematicEquations.writeTextInCell(3,0, '\\( \\Delta \\theta = \\left( \\frac{\\omega_f + \\omega_i}{2} \\right) \\Delta t \\)');
+    rotationalMotionKinematicEquations.writeTextInCell(4,0,'\\( \\omega_f^2 = \\omega_i^2 + 2 \\alpha \\cdot \\Delta \\theta \\)');
+
+    rotationalMotionKinematicEquations.writeTextInCell(1,1,'\\( v_f = v_i + a \\cdot \\Delta t \\)');
+    rotationalMotionKinematicEquations.writeTextInCell(2,1,'\\( \\Delta x = v_i \\cdot \\Delta t + \\frac{1}{2} a \\left( \\Delta t \\right)^2 \\)');
+    rotationalMotionKinematicEquations.writeTextInCell(3,1, '\\( \\Delta x = \\left( \\frac{v_f + v_i}{2} \\right) \\Delta t \\)');
+    rotationalMotionKinematicEquations.writeTextInCell(4,1,'\\( v_f^2 = v_i^2 + 2 a \\cdot \\Delta x \\)');
+
+    $("#rotationalMotionKinematicEquations").append(rotationalMotionKinematicEquations.draw(500));
+</script>
+
+<h5>
+    Rotational Dynamics Formulas:
+</h5>
+<div id = 'rotationalDynamicsFormulas'></div>
+
+<script>
+    let rotationalDynamicsFormulas = new Table(3,3);
+    rotationalDynamicsFormulas.setMaxFontProportion(0.04);
+    rotationalDynamicsFormulas.setRowProportions([1,2,2]);
+
+    rotationalDynamicsFormulas.addTopHeaders(['name','formula','analogous linear motion formula']);
+
+    rotationalDynamicsFormulas.writeTextInRow(1,["Newton's Second Law for Rotation",'\\( \\Sigma \\tau = I \\alpha \\)','\\( \\Sigma F = m a  \\)']);
+    rotationalDynamicsFormulas.writeTextInRow(2,['angular impulse formula','\\( \\Sigma \\tau \\cdot \\Delta t = \\Delta L \\)', '\\( \\Sigma F \\cdot \\Delta t = \\Delta p \\)']);
+
+    $("#rotationalDynamicsFormulas").append(rotationalDynamicsFormulas.draw(500));
+</script>
+
+<h3>
+    Periodic Motion
+</h3>
+
+<div id = 'periodicMotionTable'></div>
+
+<script>
+    let periodicMotionTable = new Table(4,2);
+    periodicMotionTable.setMaxFontProportion(0.04);
+    periodicMotionTable.addTopHeaders(['name of formula','formula']);
+    periodicMotionTable.writeTextInRow(1,['period and frequency', '\\( T = \\frac{1}{f} \\)']);
+    periodicMotionTable.writeTextInRow(2,['period of pendulum','\\( T_p = 2 \\pi \\sqrt{ \\frac{l}{g} } \\)']);
+    periodicMotionTable.writeTextInRow(3,['period of spring','\\( T_s = 2 \\pi \\sqrt{ \\frac{m}{k} } \\)']);
+
+    $("#periodicMotionTable").append(periodicMotionTable.draw(500));
+</script>
+
+
+<h3>
+    Electrical Circuits
+</h3>
+
+<h5>
+    Quantities:
+</h5>
+
+<div id ='electricCircuitQuantityTable'></div>
+
+<script>
+    let electricCircuitQuantityTable = new Table(5,5);
+    electricCircuitQuantityTable.setMaxFontProportion(0.03);
+    electricCircuitQuantityTable.setRowProportions([1,2,2,2,2]);
+    electricCircuitQuantityTable.addTopHeaders(['symbol','quantity', 'SI unit 1', 'SI unit 2', 'vector or scalar']);
+
+    electricCircuitQuantityTable.writeTextInRow(1,['\\( \\Delta V \\)', 'Potential Difference (Voltage)', 'Volts (V)', 'Joules per Coulomb (J / C)', 'scalar']);
+    electricCircuitQuantityTable.writeTextInRow(2,['\\( I \\)', 'Current', 'Amperes (A)', 'Coulombs per Second (C /s)', 'scalar']);
+    electricCircuitQuantityTable.writeTextInRow(3,['\\( R \\)', 'Resistance', 'Ohms (\\Omega)', 'Joule-Seconds / Coulomb^2 (J-s/C^2)', 'scalar']);
+    electricCircuitQuantityTable.writeTextInRow(4,['\\( P \\)', 'Power', 'Watts (W)', 'Joules / second (J/s)', 'scalar']);
+
+    $("#electricCircuitQuantityTable").append(electricCircuitQuantityTable.draw(400));
+</script>
+
+<h5>
+    Formulas:
+</h5>
+
+<div id = 'electricCircuitFormulasTable'></div>
+
+<script>
+    let electricCircuitFormulasTable = new Table(3,2);
+    electricCircuitFormulasTable.setMaxFontProportion(0.05);
+    electricCircuitFormulasTable.addTopHeaders(['name','formula']);
+    electricCircuitFormulasTable.writeTextInRow(1,["Ohm's Law", '\\( \\Delta V = IR \\)']);
+    electricCircuitFormulasTable.writeTextInRow(2,['electric power formula', '\\( P = I \\cdot \\Delta V \\)']);
+
+    $("#electricCircuitFormulasTable").append(electricCircuitFormulasTable.draw(500));
+</script>
+
+<h5>
+    Principles:
+</h5>
+
+<ul>
+    <li>
+        In a series circuit:
+        <ul>
+            <li>
+                The potential difference (voltage)
+                of all circuit elements adds to the total.
+            </li>
+            <li>
+                The current of all circuit elements is the same.
+            </li>
+            <li>
+                The resistance of all circuit elements adds to the total.
+            </li>
+        </ul>
+    </li>
+    <li>
+        In a parallel circuit:
+        <ul>
+            <li>
+                The potential difference (voltage)
+                of all circuit elements is the same.
+            </li>
+            <li>
+                The current of all circuit elements adds to the total.
+            </li>
+            <li>
+                The resistance of all circuit elements DOES NOT add to the total.
+                it follows the formula:
+                \( \frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \ldots \)
+            </li>
+        </ul>
+    </li>
+    <li>
+        The power inputted to the circuit always
+        equals the power outputted,
+        not matter how complex the ciruit. (Conservation of Energy)
+    </li>
+</ul>
+
+<h3>
+    Principles
+</h3>
+
+
+<ul>
+    <li>
+        <strong>Conservation of Energy</strong>:
+        If no work is done on a system,
+        the total energy of that system is constant.
+    </li>
+    <li>
+        <strong>Conservation of Momentum</strong>:
+        If there are no external forces on a system,
+        the total momentum of that system is constant,
+        particularly during a collision or explosion.
+    </li>
+    <li>
+        <strong>Work-Energy Theorem</strong>:
+        If work is done on a system,
+        the work done on that system equals the change
+        in mechanical energy of that system.
+    </li>
+</ul>
+
+<h3>
+    The Greek Alphabet
+</h3>
+
+<div id = 'greekAlphabetTable'></div>
+
+<script>
+    let greekAlphabetTable = new Table(13,3);
+
+    greekAlphabetTable.addTopHeaders(['Symbol','letter','What it means']);
+    greekAlphabetTable.writeTextInRow(1,['\\( \\Delta \\)', 'upper case Delta','Change']);
+    greekAlphabetTable.writeTextInRow(2,['\\( \\omega \\)', 'lower case Omega','Angular Velocity']);
+    greekAlphabetTable.writeTextInRow(3,['\\( \\Omega \\)','upper case Omega','Ohms (SI unit of electrical resistance']);
+    greekAlphabetTable.writeTextInRow(4,['\\( \\mu \\)','lower case Mu','coefficient of friction OR 10^-6']);
+    greekAlphabetTable.writeTextInRow(5,['\\( \\Sigma \\)','Upper Case Sigma', 'Summation']);
+    greekAlphabetTable.writeTextInRow(6,['\\( \\theta \\)', 'lower Case Theta', 'Angle and Angular Position']);
+    greekAlphabetTable.writeTextInRow(7,['\\( \\phi \\)', 'lower case Phi', 'Angle']);
+    greekAlphabetTable.writeTextInRow(8,['\\( \\alpha \\)', 'lower case alpha', 'angular velocity']);
+    greekAlphabetTable.writeTextInRow(9,['\\( \\tau \\)', 'lower case tau', 'torque']);
+    greekAlphabetTable.writeTextInRow(10,['\\( \\pi \\)', 'lower case pi', 'circumference / diameter of a circle']);
+    greekAlphabetTable.writeTextInRow(11,['\\( \\rho \\)', 'lower case rho', 'density']);
+    greekAlphabetTable.writeTextInRow(12,['\\( \\lambda \\)', 'lower case lambda', 'wavelength']);
+    $("#greekAlphabetTable").append(greekAlphabetTable.draw(500));
+</script>
+
+<p>
+    There are lots of theses, on youtube. Lots. You can look up whatever you like.
+    But note that these ones pronounce the letters in correct Greek,
+    which is a little different than I've been saying them.
+    #NewYearsResolution.
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xLZhcPafleU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JqdPsm7-GAg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
