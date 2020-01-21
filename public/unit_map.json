@@ -5734,14 +5734,25 @@
             "prerequisites": [],
             "objective": "Draw electric or gravitational fields of two charged or massive objects."
           },
-          "law_of_gravitation":
+          "law_of_gravitation_1":
           {
-            "title": "Law of Gravitation",
+            "title": "Law of Gravitation 1",
+            "subtitle": "Two objects",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Numerically solve Newton's Law of Universal Gravitation."
+          },
+          "law_of_gravitation_2":
+          {
+            "title": "Law of Gravitation 2",
+            "subtitle": "Gravitation on a Planet",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically."
           },
           "coulombs_law":
           {

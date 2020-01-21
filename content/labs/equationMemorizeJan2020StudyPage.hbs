@@ -20,6 +20,7 @@
     <a href = '/labs/equationMemorizeJan2020Quiz'>HERE</a>.
 </p>
 
+<div class = 'pageBreak'></div>
 <h3>
     Kinematics
 </h3>
@@ -59,11 +60,16 @@
     basicKinematicFormulaTable.writeTextInRow(2,['constant velocity formula', '\\( \\Delta x = v \\cdot \\Delta t \\)','for constant velocity']);
     basicKinematicFormulaTable.writeTextInRow(3,['definition of average speed','average speed = distance / time']);
     basicKinematicFormulaTable.writeTextInRow(4,['definition of average velocity','average velocity = displacement / time']);
+    basicKinematicFormulaTable.shadeCell(3,2);
+    basicKinematicFormulaTable.shadeCell(4,2);
+    basicKinematicFormulaTable.shadeCell(5,2);
     basicKinematicFormulaTable.writeTextInRow(5,['definition of acceleration','\\( a = \\frac{\\Delta v }{\\Delta t } \\)']);
     basicKinematicFormulaTable.writeTextInRow(6,['definition of acceleration','\\( a = \\frac{v_f - v_i }{\\Delta t } \\)', 'identical to above']);
 
     $("#basicKinematicFormulaTable").append(basicKinematicFormulaTable.draw(500));
 </script>
+
+<div class = 'pageBreak'></div>
 
 <h5>
     The Kinematic Equations:
@@ -111,6 +117,7 @@
         \( \Delta v \) over that same time interval.
     </li>
 </ul>
+<div class = 'pageBreak'></div>
 
 <h3>
     Dynamics
@@ -149,6 +156,7 @@
     dynamicsBasicFormulaTable.writeTextInRow(3,['Impulse Formula', '\\( J = \\Sigma F \\cdot \\Delta t = \\Delta p \\)']);
     $("#dynamicsBasicFormulaTable").append(dynamicsBasicFormulaTable.draw(500));
 </script>
+<div class = 'pageBreak'></div>
 
 <h5>
     Forces:
@@ -156,17 +164,18 @@
 <div id = 'forcesTable'></div>
 
 <script>
-    let forcesTable = new Table(9,4);
+    let forcesTable = new Table(10,4);
     forcesTable.setMaxFontProportion(0.05);
     forcesTable.addTopHeaders(['name of force', 'symbol', 'magnitude', 'direction']);
     forcesTable.writeTextInRow(1,['gravity on planet', '\\( F_g \\)', '\\( F_g = m g \\)','down']);
-    forcesTable.writeTextInRow(2,['normal force','\\( F_N \\)', 'constraint force*', 'not definite']);
+    forcesTable.writeTextInRow(2,['normal force','\\( F_N \\)', 'constraint force*', 'perpendicular to the surface']);
     forcesTable.writeTextInRow(3,['applied force','\\( F_a \\)','not definite','not definite']);
     forcesTable.writeTextInRow(4,['kinetic friction','\\( F_{frk} \\)','\\( F_{frk} = \\mu_k F_N \\)', 'opposite the velocity']);
     forcesTable.writeTextInRow(5,['Static friction', '\\( F_{frs} \\)', 'constraint force up to maximum value \\( \\mu_k F_N \\)**', 'opposite forces that would cause motion']);
     forcesTable.writeTextInRow(6,['Tension', '\\( F_T \\) or \\( T \\)', 'constraint force or given value', 'not definite']);
     forcesTable.writeTextInRow(7,['Spring Force','\\( F_s \\)','\\( F_s = k \\left( x - x_0 \\right)  \\)', 'towards returning the spring to equilibrium length']);
     forcesTable.writeTextInRow(8,['Universal Gravity', '\\( F_g \\)', '\\( F_G = \\frac{G m_1 m_2}{d^2} \\)', 'bringing the two objects together']);
+    forcesTable.writeTextInRow(9,['Coulomb Force', '\\( F_e \\)','\\( F_e = \\frac{k q_1 q_2 }{d^2}\\)','attraction or repulsion']);
     $("#forcesTable").append(forcesTable.draw(500));
 </script>
 
@@ -253,6 +262,8 @@
 <!--
 momentum included here
 -->
+<div class = 'pageBreak'></div>
+
 <h3>
     Energy
 </h3>
@@ -336,6 +347,7 @@ momentum included here
     </li>
 </ul>
 
+<div class = 'pageBreak'></div>
 <h3>
     Fundamental Forces:
 </h3>
@@ -368,6 +380,7 @@ momentum included here
     </li>
 </ul>
 
+<div class = 'pageBreak'></div>
 <h3>
     Rotational Motion
 </h3>
@@ -415,8 +428,9 @@ momentum included here
     $("#rotationalMotionBasicFormulasTable").append(rotationalMotionBasicFormulasTable.draw(500));
 </script>
 
+<div class = 'pageBreak'></div>
 <h5>
-    Kinematic Equations:
+    Kinematic Equations for Rotational Motion:
 </h5>
 <div id = 'rotationalMotionKinematicEquations'></div>
 
@@ -465,6 +479,9 @@ momentum included here
     $("#rotationalDynamicsFormulas").append(rotationalDynamicsFormulas.draw(500));
 </script>
 
+
+<div class = 'pageBreak'></div>
+
 <h3>
     Periodic Motion
 </h3>
@@ -482,6 +499,8 @@ momentum included here
     $("#periodicMotionTable").append(periodicMotionTable.draw(500));
 </script>
 
+
+<div class = 'pageBreak'></div>
 
 <h3>
     Electrical Circuits
@@ -567,6 +586,10 @@ momentum included here
     </li>
 </ul>
 
+
+
+<div class = 'pageBreak'></div>
+
 <h3>
     Principles
 </h3>
@@ -591,6 +614,8 @@ momentum included here
         in mechanical energy of that system.
     </li>
 </ul>
+
+<div class = 'pageBreak'></div>
 
 <h3>
     The Greek Alphabet
