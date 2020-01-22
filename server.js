@@ -576,7 +576,7 @@ app.get('/quizzes/:unitClusterKey/:unitKey', (req, res) => {
 
 /// add security for quizzes!
 
-const quizPasscode = '793510';
+const quizPasscode = '839102';
 
 
 // individual quiz page
@@ -624,4 +624,4 @@ app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
 });
 
 
-app.listen(port, () => console.log(`app runnings on port ${port} xxx`));
+app.listen(port, () => console.log(`app running on port ${port} xxx`));
