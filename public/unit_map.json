@@ -5702,8 +5702,8 @@
           {
             "title": "Which has more force? 1: Basic Examples",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "For two masses or charges, identify the force involved, whether they attract or repel, and which pair experiences more force."
           },
@@ -5711,8 +5711,8 @@
           {
             "title": "Fields 1: Fields of One Object",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 4,
+            "letter": "B",
             "prerequisites": [],
             "objective": "Draw electric or gravitational fields of a single object."
           },
@@ -5720,18 +5720,18 @@
           {
             "title": "Which has more force? 2: Written Examples",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "For written descriptions of pairs of masses or chages, identify which pairs experience more force and why."
+            "horizontal": 1,
+            "letter": "C",
+            "prerequisites": ["which_has_more_force_1"],
+            "objective": "For written descriptions of pairs of masses or charges, identify which pairs experience more force and why."
           },
           "fields_2":
           {
             "title": "Fields 2: Fields of two Objects",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["fields_1"],
             "objective": "Draw electric or gravitational fields of two charged or massive objects."
           },
           "law_of_gravitation_1":
@@ -5739,9 +5739,9 @@
             "title": "Law of Gravitation 1",
             "subtitle": "Two objects",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["which_has_more_force_2"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation."
           },
           "law_of_gravitation_2":
@@ -5749,81 +5749,81 @@
             "title": "Law of Gravitation 2",
             "subtitle": "Gravitation on a Planet",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["law_of_gravitation_1"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically."
           },
           "coulombs_law":
           {
             "title": "Coulombs Law",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["law_of_gravitation_2"],
             "objective": "Numerically solve Coulomb's Law"
           },
           "fields_3":
           {
             "title": "Fields 3: Fields of Multiple Objects",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["fields_2"],
             "objective": "Draw gravitational or electric fields for several objects."
           },
           "why_inverse_square":
           {
             "title": "Why inverse square?",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "I",
+            "prerequisites": ["coulombs_law", "fields_3"],
             "objective": "Use field diagrams and spherical geometry to explain why inverse square laws are inverse square laws."
           },
           "algebraic_inverse_square":
           {
             "title": "Algebraic Inverse Square",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "J",
+            "prerequisites": ["why_inverse_square"],
             "objective": "Solve inverse square laws algebraically; determine the dimensions of the gravitational and electric constants"
           },
           "derive_free_fall_acceleration":
           {
             "title": "Derive Free-Fall Acceleration",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "K",
+            "prerequisites": ["algebraic_inverse_square"],
             "objective": "Derive, defend, and apply the formula for free-fall acceleration on a planet."
           },
           "inverse_square_law_proportionality":
           {
             "title": "Inverse Square Law Proportionality",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "L",
+            "prerequisites": ["derive_free_fall_acceleration"],
             "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values."
           },
           "universal_gravitational_potential_energy":
           {
             "title": "Universal Gravitational Potential Energy",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "M",
+            "prerequisites": ["inverse_square_law_proportionality"],
             "objective": "Explain and use the formula for universal gravitational potential energy to quantitatively describe the motion of a comet or planet."
           },
           "force_within_atoms":
           {
             "title": "The Force Within Atoms",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "N",
+            "prerequisites": ["universal_gravitational_potential_energy"],
             "objective": "Demonstrate why electrostatic, not gravitational force, determines the action of electrons within atoms."
           }
         }
