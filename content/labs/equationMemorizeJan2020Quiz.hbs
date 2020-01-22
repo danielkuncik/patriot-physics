@@ -244,7 +244,7 @@
     typesOfEnergyTable.writeTextInRow(1,['kinetic energy','\\( K \\) or \\( KE \\)', '', 'system must include moving object']);
     typesOfEnergyTable.writeTextInRow(2,['gravitational potential energy on planet', '\\( GPE \\) or \\( U_g \\)', '', 'system must include _________; depends on max height']);
     typesOfEnergyTable.writeTextInRow(3,['elastic potential energy', '\\( EPE \\) or  \\( U_s \\)', '', 'system must include spring; often \\( x_0  = 0 \\) 0 is assumed']);
-    typesOfEnergyTable.writeTextInRow(4,['rotational kinetic energy', '\\( K_{rot} \\)', '','system must include rotating object']);
+    typesOfEnergyTable.writeTextInRow(4,['rotational kinetic energy', '\\( K_{rot} \\)', '\\( \\frac{1}{2} I \\omega^2 \\)','system must include rotating object']);
     typesOfEnergyTable.writeTextInRow(5, ['universal gravitational potential energy', '\\( GPE \\) or \\( U_g \\)', '\\( U_g = \\frac{- G m_1 m_2 }{d} \\)', 'always negative, zero point set at infinite distance']);
     typesOfEnergyTable.writeTextInRow(6, ['nuclear energy', '\\( E_{nuc} \\)', '', 'energy released if mass is lost']);
 
@@ -357,8 +357,8 @@
     rotationalMotionQuantitiesTable.setRowProportions([1,3,3,3,3,3,3,3,3,3]);
     rotationalMotionQuantitiesTable.setMaxFontProportion(0.04);
     rotationalMotionQuantitiesTable.addTopHeaders(['symbol','name','analogous translational quantity', 'vector or scalar']);
-    rotationalMotionQuantitiesTable.writeTextInRow(1,['\\( \\theta \\)', '','','']);
-    rotationalMotionQuantitiesTable.writeTextInRow(2,['\\( \\Delta \\theta \\)', '','','']);
+    rotationalMotionQuantitiesTable.writeTextInRow(1,['\\( \\theta \\)', '','','vector']);
+    rotationalMotionQuantitiesTable.writeTextInRow(2,['\\( \\Delta \\theta \\)', '','','vector']);
     rotationalMotionQuantitiesTable.writeTextInRow(3, ['\\( \\omega \\)', '','','']);
     rotationalMotionQuantitiesTable.writeTextInRow(4,['\\( \\alpha \\)', '','','']);
     rotationalMotionQuantitiesTable.writeTextInRow(5,['\\( I \\)', '','','']);

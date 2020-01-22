@@ -281,7 +281,7 @@ momentum included here
     typesOfEnergyTable.writeTextInRow(1,['kinetic energy','\\( K \\) or \\( KE \\)', '\\( KE = \\frac{1}{2}m v^2 \\)', 'system must include moving object']);
     typesOfEnergyTable.writeTextInRow(2,['gravitational potential energy on planet', '\\( GPE \\) or \\( U_g \\)', '\\( GPE = mgh \\)', 'system must include planet; depends on max height']);
     typesOfEnergyTable.writeTextInRow(3,['elastic potential energy', '\\( EPE \\) or  \\( U_s \\)', '\\( EPE = \\frac{1}{2} k \\left( x - x_0 \\right)^2 \\)', 'system must include spring; often \\( x_0  = 0 \\) 0 is assumed']);
-    typesOfEnergyTable.writeTextInRow(4,['rotational kinetic energy', '\\( K_{rot} \\)', '\\( K_{rot} = I \\omega^2 \\)','system must include rotating object']);
+    typesOfEnergyTable.writeTextInRow(4,['rotational kinetic energy', '\\( K_{rot} \\)', '\\( K_{rot} = \\frac{1}{2} I \\omega^2 \\)','system must include rotating object']);
     typesOfEnergyTable.writeTextInRow(5, ['universal gravitational potential energy', '\\( GPE \\) or \\( U_g \\)', '\\( U_g = \\frac{- G m_1 m_2 }{d} \\)', 'always negative, zero point set at infinite distance']);
     typesOfEnergyTable.writeTextInRow(6, ['nuclear energy', '\\( E_{nuc} \\)', '\\( E_{nuc} = m c^2 \\)', 'energy released if mass is lost']);
 
@@ -395,8 +395,8 @@ momentum included here
     rotationalMotionQuantitiesTable.setRowProportions([1,3,3,3,3,3,3,3,3,3]);
     rotationalMotionQuantitiesTable.setMaxFontProportion(0.04);
     rotationalMotionQuantitiesTable.addTopHeaders(['symbol','name','analogous translational quantity', 'vector or scalar']);
-    rotationalMotionQuantitiesTable.writeTextInRow(1,['\\( \\theta \\)', 'angular position','position \\( ( x ) \\)','scalar']);
-    rotationalMotionQuantitiesTable.writeTextInRow(2,['\\( \\Delta \\theta \\)', 'angular displacement','displacement \\( ( \\Delta x ) \\)','scalar']);
+    rotationalMotionQuantitiesTable.writeTextInRow(1,['\\( \\theta \\)', 'angular position','position \\( ( x ) \\)','vector*']);
+    rotationalMotionQuantitiesTable.writeTextInRow(2,['\\( \\Delta \\theta \\)', 'angular displacement','displacement \\( ( \\Delta x ) \\)','vector*']);
     rotationalMotionQuantitiesTable.writeTextInRow(3, ['\\( \\omega \\)', 'rotational velocity','velocity \\( ( v ) \\)','vector']);
     rotationalMotionQuantitiesTable.writeTextInRow(4,['\\( \\alpha \\)', 'rotational acceleration','acceleration \\( ( a ) \\)','vector']);
     rotationalMotionQuantitiesTable.writeTextInRow(5,['\\( I \\)', 'rotational inertia (also moment of inertia)','inertial mass \\( ( m ) \\)','scalar']);
@@ -405,6 +405,12 @@ momentum included here
     rotationalMotionQuantitiesTable.writeTextInRow(8,['\\( L \\)', 'angular momentum','momentum (\\( ( p ) \\))','vector']);
     $("#rotationalMotionQuantitiesTable").append(rotationalMotionQuantitiesTable.draw(500));
 </script>
+
+<p>
+    * Angular position and angular displacement can be thought of as scalars or vectors depending on the context.
+    In this class, we will always think of them as scalars,
+    but in a more complex setting they could be thought of as vectors.
+</p>
 
 
 <h5>
@@ -417,7 +423,7 @@ momentum included here
     rotationalMotionBasicFormulasTable.addTopHeaders(['name','formula','analogous linear motion formula']);
 
     rotationalMotionBasicFormulasTable.writeTextInRow(1,['definition of angular velocity','\\( \\omega = \\frac{\\Delta \\theta}{\\Delta t} \\)','\\( v = \\frac{\\Delta x}{\\Delta t} \\)']);
-    rotationalMotionBasicFormulasTable.writeTextInRow(2,['definition of angular acceleration','\\( \\alpha = \\frac{\\Delta \\alpha}{\\Delta t} \\)','\\( a = \\frac{\\Delta v}{\\Delta t} \\)']);
+    rotationalMotionBasicFormulasTable.writeTextInRow(2,['definition of angular acceleration','\\( \\alpha = \\frac{\\Delta \\omega}{\\Delta t} \\)','\\( a = \\frac{\\Delta v}{\\Delta t} \\)']);
     rotationalMotionBasicFormulasTable.writeTextInRow(3,['definition of angular momentum','\\( L = I \\omega \\)','\\( p = m v \\)']);
     rotationalMotionBasicFormulasTable.writeTextInRow(4,['linear and angular velocity','\\( v = \\omega r \\)','none']);
 
