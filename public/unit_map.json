@@ -5754,14 +5754,25 @@
             "prerequisites": ["law_of_gravitation_1"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically."
           },
-          "coulombs_law":
+          "coulombs_law_1":
           {
-            "title": "Coulombs Law",
+            "title": "Coulombs Law 1",
+            "subtitle": "Two charges",
             "level": 3,
             "horizontal": 3,
             "letter": "G",
             "prerequisites": ["law_of_gravitation_2"],
             "objective": "Numerically solve Coulomb's Law"
+          },
+          "coulombs_law_2":
+          {
+            "title": "Coulombs Law 2",
+            "subtitle": "Coulombs Law Inside Atoms",
+            "level": 3,
+            "horizontal": 5,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Use Coulombs Law inside of atoms; use the electronic charge and unit of Angstroms to determine relevant quantities inside the atom"
           },
           "fields_3":
           {
@@ -5817,14 +5828,14 @@
             "prerequisites": ["inverse_square_law_proportionality"],
             "objective": "Explain and use the formula for universal gravitational potential energy to quantitatively describe the motion of a comet or planet."
           },
-          "force_within_atoms":
+          "force_behind_chemistry":
           {
-            "title": "The Force Within Atoms",
+            "title": "The Force Behind Chemistry",
             "level": 5,
             "horizontal": 6,
             "letter": "N",
             "prerequisites": ["universal_gravitational_potential_energy"],
-            "objective": "Demonstrate why electrostatic, not gravitational force, determines the action of electrons within atoms."
+            "objective": "Demonstrate why electrostatic, not gravitational force, determines how atoms and subatomic particles behave."
           }
         }
       },
