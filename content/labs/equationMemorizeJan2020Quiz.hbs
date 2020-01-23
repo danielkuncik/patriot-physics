@@ -61,7 +61,7 @@
 <div id = 'basicKinematicFormulaTable'></div>
 <script>
     let basicKinematicFormulaTable = new Table(7,3);
-    basicKinematicFormulaTable.setRowProportions(0.05);
+    basicKinematicFormulaTable.setMaxFontProportion(0.05);
     basicKinematicFormulaTable.addTopHeaders(['name','formula','notes']);
     basicKinematicFormulaTable.writeTextInRow(1,['constant speed formula','','for constant speed']);
     basicKinematicFormulaTable.writeTextInRow(2,['constant velocity formula', '','for constant velocity']);
@@ -376,6 +376,7 @@
 
 <script>
     let rotationalMotionBasicFormulasTable = new Table(7,3);
+    rotationalMotionBasicFormulasTable.setMaxFontProportion(0.05);
     rotationalMotionBasicFormulasTable.addTopHeaders(['name','formula','analogous linear motion formula']);
 
     rotationalMotionBasicFormulasTable.writeTextInRow(1,['definition of angular velocity','','']);
@@ -387,7 +388,7 @@
     rotationalMotionBasicFormulasTable.writeTextInRow(6,['definition of rotational inertia for point mass','', 'none']);
 
 
-    $("#rotationalMotionBasicFormulasTable").append(rotationalMotionBasicFormulasTable.draw(500));
+    $("#rotationalMotionBasicFormulasTable").append(rotationalMotionBasicFormulasTable.draw(400));
 </script>
 
 <div class = 'pageBreak'></div>

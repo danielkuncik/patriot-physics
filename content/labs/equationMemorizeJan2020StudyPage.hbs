@@ -54,7 +54,7 @@
 <div id = 'basicKinematicFormulaTable'></div>
 <script>
     let basicKinematicFormulaTable = new Table(7,3);
-    basicKinematicFormulaTable.setRowProportions(0.05);
+    basicKinematicFormulaTable.setMaxFontProportion(0.05);
     basicKinematicFormulaTable.addTopHeaders(['name','formula','notes']);
     basicKinematicFormulaTable.writeTextInRow(1,['constant speed formula','\\( d = v t \\)','for constant speed']);
     basicKinematicFormulaTable.writeTextInRow(2,['constant velocity formula', '\\( \\Delta x = v \\cdot \\Delta t \\)','for constant velocity']);
@@ -643,7 +643,7 @@ momentum included here
     greekAlphabetTable.writeTextInRow(8,['\\( \\alpha \\)', 'lower case alpha', 'angular velocity']);
     greekAlphabetTable.writeTextInRow(9,['\\( \\tau \\)', 'lower case tau', 'torque']);
     greekAlphabetTable.writeTextInRow(10,['\\( \\pi \\)', 'lower case pi', 'circumference / diameter of a circle']);
-    greekAlphabetTable.writeTextInRow(11,['\\( \\rho \\)', 'lower case rho', 'density']);
+    greekAlphabetTable.writeTextInRow(11,['\\( \\rho \\)', 'lower case rho', 'density and resistivity']);
     greekAlphabetTable.writeTextInRow(12,['\\( \\lambda \\)', 'lower case lambda', 'wavelength']);
     $("#greekAlphabetTable").append(greekAlphabetTable.draw(500));
 </script>
