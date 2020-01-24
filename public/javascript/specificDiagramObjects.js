@@ -1202,9 +1202,9 @@ class FreeBodyDiagram extends Diagram {
       return max;
     }
 
-    /// create an option force all force arrows to have the same length;
-    // regardless of relative magnitude....
-    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+
+    /// adds all the points etc.
+    createDiagramObject() {
         if (this.forces.length === 0) {
             this.maxForce = 1; // so that a diagram can still be created with zero forces
         }
@@ -1250,10 +1250,19 @@ class FreeBodyDiagram extends Diagram {
         }
         let centerCircle = super.addCircle(origin, this.circleRadius,true);
         centerCircle.fill();
+
+    }
+
+    /// create an option force all force arrows to have the same length;
+    // regardless of relative magnitude....
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        this.createDiagramObject();
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
-
+    drawWithoutCreatingObject(maxWidth, maxHeight, unit, wiggleRoom) {
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
 }
 
 

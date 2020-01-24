@@ -567,7 +567,24 @@ class Diagram {
         this.horizontalRange = undefined;
         this.verticalRange = undefined;
         this.defaultSize = 500;
+
+        this.lockedRange = undefined;
     }
+
+    lockRange(xMin, xMax, yMin, yMax) {
+        this.lockedRange = {
+            xMin: xMin,
+            xMax: xMax,
+            yMin: yMin,
+            yMax: yMax
+        };
+    }
+
+    lockRangeToAnotherDiagram(anotherDiagram) {
+        anotherDiagram.getRange();
+        this.lockRange(anotherDiagram.xMin, anotherDiagram.xMax, anotherDiagram.yMin, anotherDiagram.yMax);
+    }
+
 
     setDefaultSize(newSize) {
         this.defaultSize = newSize;
@@ -998,18 +1015,35 @@ class Diagram {
     }
 
     getRange() {
+        let xMin, xMax, yMin, yMax;
 
-        let xMin = this.points[0].x;
-        let xMax = xMin;
-        let yMin = this.points[0].y;
-        let yMax = yMin;
+        if (this.lockedRange) {
+            xMin = this.lockedRange.xMin;
+            xMax = this.lockedRange.xMax;
+            yMin = this.lockedRange.yMin;
+            yMax = this.lockedRange.yMax;
+        } else {
 
-        this.points.forEach((point) => {
-            if (point.x > xMax) {xMax = point.x;}
-            if (point.x < xMin) {xMin = point.x;}
-            if (point.y > yMax) {yMax = point.y;}
-            if (point.y < yMin) {yMin = point.y;}
-        });
+            xMin = this.points[0].x;
+            xMax = xMin;
+            yMin = this.points[0].y;
+            yMax = yMin;
+
+            this.points.forEach((point) => {
+                if (point.x > xMax) {
+                    xMax = point.x;
+                }
+                if (point.x < xMin) {
+                    xMin = point.x;
+                }
+                if (point.y > yMax) {
+                    yMax = point.y;
+                }
+                if (point.y < yMin) {
+                    yMin = point.y;
+                }
+            });
+        }
 
         let horizontalRange = xMax - xMin;
         let verticalRange = yMax - yMin;

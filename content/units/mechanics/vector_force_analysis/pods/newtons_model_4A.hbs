@@ -1,0 +1,29 @@
+<ol>
+    <li>
+        Someone fires a bow and arrow across the room to the right.
+        At this moment, the arrow has lost contact with the bow,
+        and is flying across the room.
+        There are two possible free-body diagrams.
+        <div id = 'problem1Table'></div>
+        Please
+    </li>
+</ol>
+
+
+<script>
+    let problem1Table = new Table(1,2);
+    problem1Table.setColumnProportions([2,2]);
+
+    let choiceA = fastFBD([['down','gravity'],['right','bow force']]);
+    let choiceB = fastFBD([['down','gravity']]);
+    choiceA.createDiagramObject();
+    choiceB.lockRangeToAnotherDiagram(choiceA);
+    problem1Table.addDiagramToCell(0,0,choiceA);
+    problem1Table.addDiagramToCell(0,1,choiceB);
+
+    $("#problem1Table").append(problem1Table.draw(500));
+</script>
+
+<!--
+I need to find a way to lock two diagrams together so that they have the same scale.
+-->
