@@ -3482,6 +3482,7 @@
           "artificial_gravity_part_2":
           {
             "title": "Artificial Gravity Part 2",
+            "level": 6,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
