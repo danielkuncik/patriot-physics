@@ -1855,17 +1855,17 @@
             "level": 2,
             "horizontal": 4,
             "letter": "C",
-            "prerequisites": ["finding_net_force","newtons_second_law"],
+            "prerequisites": ["finding_net_force","newtons_second_law", "friction_1"],
             "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of the object."
           },
-          "basic_friction":
+          "friction_1":
           {
-            "title": "Basic Friction",
+            "title": "Friction 1",
             "subtitle": "Static vs. Kinetic Friction",
-            "level": 2,
-            "horizontal": 3,
+            "level": 1,
+            "horizontal": 4,
             "letter": "D",
-            "prerequisites": ["finding_acceleration"],
+            "prerequisites": [],
             "objective": "Recognize when and how friction is applied; recognize qualitative differences between static and kinetic friction."
           },
           "block_dragging_1":
@@ -1875,7 +1875,7 @@
             "level": 2,
             "horizontal": 2,
             "letter": "E",
-            "prerequisites": ["basic_friction"],
+            "prerequisites": ["finding_acceleration"],
             "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block."
           },
           "find_missing_force":
@@ -1897,9 +1897,10 @@
             "prerequisites": ["block_dragging_1"],
             "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block."
           },
-          "surface_area_friction":
+          "friction_2":
           {
             "title": "Surface Area and Friction",
+            "subtitle": "Surface Area and Friction; Pushing",
             "level": 3,
             "horizontal": 1,
             "letter": "X",
@@ -5735,24 +5736,33 @@
             "prerequisites": ["fields_1"],
             "objective": "Draw electric or gravitational fields of two charged or massive objects."
           },
+          "law_of_gravitation_2":
+          {
+            "title": "Law of Gravitation 2",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "W",
+            "prerequisites": ["law_of_gravitation_1"],
+            "objective": "Solve Newton's Law of Universal Gravitation and relate the result to Newton's Third Law."
+          },
           "law_of_gravitation_1":
           {
             "title": "Law of Gravitation 1",
             "subtitle": "Two objects",
-            "level": 3,
-            "horizontal": 1,
+            "level": 2,
+            "horizontal": 2,
             "letter": "E",
             "prerequisites": ["which_has_more_force_2"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation."
           },
-          "law_of_gravitation_2":
+          "law_of_gravitation_3":
           {
-            "title": "Law of Gravitation 2",
+            "title": "Law of Gravitation 3",
             "subtitle": "Gravitation on a Planet",
             "level": 3,
             "horizontal": 2,
             "letter": "F",
-            "prerequisites": ["law_of_gravitation_1"],
+            "prerequisites": ["law_of_gravitation_2"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically."
           },
           "coulombs_law_1":
@@ -5768,11 +5778,20 @@
           "coulombs_law_2":
           {
             "title": "Coulombs Law 2",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "Y",
+            "prerequisites": ["coulombs_law_1"],
+            "objective": "Solve Coulomb's Law and connect it to Newton's Third Law."
+          },
+          "coulombs_law_3":
+          {
+            "title": "Coulombs Law 3",
             "subtitle": "Coulombs Law Inside Atoms",
             "level": 3,
             "horizontal": 5,
             "letter": "X",
-            "prerequisites": [],
+            "prerequisites": ["coulombs_law_2"],
             "objective": "Use Coulombs Law inside of atoms; use the electronic charge and unit of Angstroms to determine relevant quantities inside the atom"
           },
           "fields_3":
