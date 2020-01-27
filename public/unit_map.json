@@ -3443,14 +3443,15 @@
             "prerequisites": [],
             "objective": "Use the formulas for centripetal acceleration and gravitation to find the mass of the sun and earth."
           },
-          "loop_de_loop_problems":
+          "vertical_circles_1":
           {
-            "title": "Loop-de-loop Problems",
+            "title": "Vertical Circles 1",
+            "subtitle": "Loop-de-loop problems",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Analyze the forces acting on a pilot while he loops his plane over."
+            "objective": "Analyze the forces in a vertical circle, for example, the forces on a pilot as he loops over."
           },
           "proving_centripetal_acceleration_formula":
           {
@@ -3460,6 +3461,15 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Argue the formula for centripetal acceleration is numerically accurate using a conceptual geometry and limit-based argument."
+          },
+          "vertical_circles_2":
+          {
+            "title": "Vertical Circles 2",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisite": [],
+            "objective": "Derive a formula relating angular position, velocity, and acceleration for an object moving in a vertical circle."
           },
           "gravitron":
           {
