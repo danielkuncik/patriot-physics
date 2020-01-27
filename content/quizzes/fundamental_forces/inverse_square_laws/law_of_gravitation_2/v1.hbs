@@ -1,20 +1,3 @@
-<div id = 'planetTable'></div>
-
-<script>
-    let planetTable = new Table(9,3);
-    planetTable.addTopHeaders(['Planet','Mass (kg)','Radius (km)']);
-    planetTable.writeTextInRow(1,['Mercury','3.285 × 10^23','2,439.7']);
-    planetTable.writeTextInRow(2,['Venus','4.867 × 10^24','6,051.8']);
-    planetTable.writeTextInRow(3,['Earth','5.972 × 10^24','6,371']);
-    planetTable.writeTextInRow(4,['Mars','6.39 × 10^23','3,389.5']);
-    planetTable.writeTextInRow(5,['Jupiter','1.898 × 10^27','69,911']);
-    planetTable.writeTextInRow(6,['Saturn','5.683 × 10^26','58,232']);
-    planetTable.writeTextInRow(7,['Neptune','1.024 × 10^26','24,622']);
-    planetTable.writeTextInRow(8,['Uranus','8.681 × 10^25','25,362']);
-
-    $("#planetTable").append(planetTable.draw(500));
-</script>
-
 
 <p class = 'directions'>
     Write every formula before plugging any values into the formula.
@@ -22,73 +5,74 @@
     with a calculator.
 </p>
 
+<h5>
+    Mass of Uranus =  8.68 x 10<sup>25</sup> kilograms.
+</h5>
+<h5>
+    The Moons of Uranus:
+</h5>
+<p>
+    Note that mass is in units of 10^18 kilograms.
+</p>
+<div id = 'moonsOfJupiterTable'></div>
+<p>Source: <a href = 'https://en.wikipedia.org/wiki/Moons_of_Uranus'>Wikipedia: Moons of Uranus</a>
+(Yes, it's okay to look up factual information on Wikipedia.</p>
+<p>
+    Assume all moons move in circles, rather than ellipses.
+    All of the moon's listed have extremely low eccentricities (meaning they are very nearly circles).
+</p>
 <ol>
     <li>
-        Copy, from memory, Newton's Third Law, word-for-word.
+        Copy, from memory, Newton's Third Law.
         Please copy a mathematically rigorous version of the law,
         in which each of the words in the statement are precisely defined.
     </li>
     <li>
-        A person with a mass of 55 kg is standing on the surface
-         of Venus.
         <ol type = 'a'>
             <li>
-                Use the Law of Universal Gravitation to
-                determine the force of gravity between this person and Venus.
+                Determine the magnitude of the force of gravitation between Uranus and Rosalind.
             </li>
             <li>
-                Draw a (not to scale) diagram of the person and Venus,
-                in your diagram illustrate vectors
-                showing the forces of gravity between this person and Venus.
+                Draw a diagram depicting Uranus and Rosalind.
+                In your diagram, represent two forces of gravity as arrows.
             </li>
             <li>
-                One of the forces you drew above is, while it exists, entirely irrelevant.
-                Explain why.
-            </li>
-            <li>
-                Explain how the diagram you drew is consistent with Newton's Third Law.
+                In a sentence, describe how your diagram is consistent with Newton's Third Law.
             </li>
         </ol>
     </li>
     <li>
-        A person with a mass of 80 kg is standing on a platform
-        on the outer edge of Jupiter.
-        Use the Law of Universal Gravitation to
-        determine the force of gravity between this person and Jupiter.
         <ol type = 'a'>
             <li>
-                Use the Law of Universal Gravitation to
-                determine the force of gravity between this person and Jupiter.
+                Determine the magnitude of the force of gravitation between Uranus and Desdemona.
             </li>
             <li>
-                Draw a (not to scale) diagram of the person and Jupiter,
-                in your diagram illustrate vectors
-                showing the forces of gravity between this person and Jupiter.
+                Draw a diagram depicting Uranus and Desdemona.
+                In your diagram, represent two forces of gravity as arrows.
             </li>
             <li>
-                One of the forces you drew above is, while it exists, entirely irrelevant.
-                Explain why.
-            </li>
-            <li>
-                Explain how the diagram you drew is consistent with Newton's Third Law.
+                In a sentence, describe how your diagram is consistent with Newton's Third Law.
             </li>
         </ol>
     </li>
     <li>
-        Explain briefly why the radius of the planets was relevant to these
-        problems by referring to Newton's Law of Universal Gravitation.
-    </li>
-    <li>
-        Person A is at sea level on planet earth,
-        while person B is 100 m above sea level.
-        <ol type = 'a'>
-            <li>
-                Who experiences a stronger gravitational pull and why?
-                Refer to Newton's Law of Universal Gravitation in your answer.
-            </li>
-            <li>
-                Is this difference very important? Explain why or why not.
-            </li>
-        </ol>
+        BONUS: All of the moons of Uranus are named after characters created by what famous author?
     </li>
 </ol>
+
+
+<script>
+    let moonsOfJupiterTable = new Table(8,3);
+    moonsOfJupiterTable.addTopHeaders(['Moon','Mass (x 10^18 kg)','Radius of Rotation (km)']);
+    moonsOfJupiterTable.setMaxFontProportion(0.05);
+
+    moonsOfJupiterTable.writeTextInRow(1,['Ophelia','0.053','49770']);
+    moonsOfJupiterTable.writeTextInRow(2,['Juliet','0.056','64350']);
+    moonsOfJupiterTable.writeTextInRow(3,['Rosalind','0.25','69940']);
+    moonsOfJupiterTable.writeTextInRow(4,['Bianca','0.092','59170']);
+    moonsOfJupiterTable.writeTextInRow(5,['Desdemona','0.18','62680']);
+    moonsOfJupiterTable.writeTextInRow(6,['Titania','3527','435910']);
+    moonsOfJupiterTable.writeTextInRow(7,['Oberon','3014','583520']);
+
+    $("#moonsOfJupiterTable").append(moonsOfJupiterTable.draw(600));
+</script>
