@@ -5820,30 +5820,37 @@
             "prerequisites": ["derive_free_fall_acceleration"],
             "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values."
           },
-          "universal_gravitational_potential_energy":
-          {
-            "title": "Universal Gravitational Potential Energy",
-            "level": 4,
-            "horizontal": 6,
-            "letter": "M",
-            "prerequisites": ["inverse_square_law_proportionality"],
-            "objective": "Explain and use the formula for universal gravitational potential energy to quantitatively describe the motion of a comet or planet."
-          },
           "force_behind_chemistry":
           {
             "title": "The Force Behind Chemistry",
             "level": 5,
             "horizontal": 6,
             "letter": "N",
-            "prerequisites": ["universal_gravitational_potential_energy"],
+            "prerequisites": ["inverse_square_law_proportionality"],
             "objective": "Demonstrate why electrostatic, not gravitational force, determines how atoms and subatomic particles behave."
+          },
+          "different_dimensional_universe":
+          {
+            "title": "Different Dimensional Universe",
+            "level": 6,
+            "horizontal": 6,
+            "letter": "O",
+            "prerequisites": ["force_behind_chemistry"],
+            "objective": "Consider how the inverse square laws would be different if we lived in a universe with other than three dimensions."
           }
         }
+      },
+      "quantitative_orbits":
+      {
+        "title": "Quantitative Orbits",
+        "number": 4,
+        "completed": false,
+        "vision": "Will contain information on conic sections, different types of orbits, quantitative analyses of Kepler's Laws, historical information on the importance of keplers laws and orbits in the development of science, and energy in orbits; For the AP curriculum, the universal gravitational potentail energy formual will be here"
       },
       "conceptual_magnetism":
       {
         "title": "Conceptual Magnetism",
-        "number": 4,
+        "number": 5,
         "completed": true,
         "honors": true,
         "pods":
