@@ -1866,7 +1866,7 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": [],
-            "objective": "Recognize when and how friction is applied; recognize qualitative differences between static and kinetic friction."
+            "objective": "Recognize when and how friction is applied"
           },
           "block_dragging_1":
           {
@@ -1899,13 +1899,12 @@
           },
           "friction_2":
           {
-            "title": "Surface Area and Friction",
-            "subtitle": "Surface Area and Friction; Pushing",
+            "title": "Friction 2",
             "level": 3,
             "horizontal": 1,
             "letter": "X",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Explain that the magnitude of friction is independent of surface area."
+            "objective": "Recognize qualitative differences between static and kinetic friction; Explain that the magnitude of friction is independent of surface area."
           },
           "elevators_1":
           {
