@@ -1,0 +1,25 @@
+
+<ol>
+    <li>
+        In the following situation, the net force acting on the object is 50 Newtons to the left.
+        There are four forces acting, and only three are shown on the free-body diagram.
+        Determine the magnitude and direction of the missing force.
+        <br>
+        <div id = 'problemE1'></div>
+    </li>
+    <div class = 'bigSpace'></div>
+    <div class = 'smallSpace'></div>
+    <li>
+        In the following situation, the net force acting on the object is 175 Newtons down.
+        There are four forces acting, and only three are shown on the free-body diagram.
+        Determine the magnitude and direction of the missing force.
+        <br>
+        <div id = 'problemE2'></div>
+    </li>
+    <div class = 'bigSpace'></div>
+</ol>
+
+<script>
+    $("#problemE1").append((fastFBD([['right',280],['left',540],['right',290]])).drawCanvas(300,300));
+    $("#problemE2").append((fastFBD([['up',200],['down',150],['down',280]])).drawCanvas(300,300));
+</script>
