@@ -152,6 +152,8 @@ class MomentumTable extends Table {
     super.mergeBelow(0,3);
     super.mergeBelow(0,3);
     super.mergeBelow(0,3);
+
+    super.setMaxFontProportion(0.05);
   }
 
   setUnits(massUnit, velocityUnit, momentumUnit) {
