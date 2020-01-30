@@ -3510,11 +3510,19 @@
           }
         }
       },
+      "circular_motion_trigonometry":
+      {
+        "title": "Circular Motion Trigonometry",
+        "level": 3,
+        "number": 17,
+        "completed": false,
+        "vision": "Problems that require both circular motion and trigonometry: banking on a highway, using polar coordinates to describe motion"
+      },
       "periodic_kinematics":
       {
         "title": "Periodic Kinematics",
         "level": 2,
-        "number": 17,
+        "number": 18,
         "completed": true,
         "AP": true,
         "honors": false,
@@ -3607,7 +3615,7 @@
       {
         "title": "Periodic Dynamics",
         "level": 3,
-        "number": 18,
+        "number": 19,
         "completed": true,
         "AP": true,
         "honors": false,
@@ -3722,503 +3730,6 @@
             "prerequisites": [],
             "objective": "Without using calculus, create position-time, velocity-time, and acceleration-time graphs for simple harmonic motion in terms of amplitude and phase.",
             "limits": "Does not include damping or differential equations."
-          }
-        }
-      },
-      "rotational_kinematics":
-      {
-        "title": "Rotational Kinematics",
-        "completed": true,
-        "number": 19,
-        "AP": true,
-        "honors": false,
-        "level": 4,
-        "pods":
-        {
-          "test": {
-            "title": "This is a test",
-            "level": 6,
-            "objective": "This is a test"
-          },
-          "rotational_position_displacement":
-          {
-            "title": "Rotational Position and Displacement",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine rotational position and displacement in radians for simple examples; define a radian; know a radian is dimensionless"
-          },
-          "rotational_velocity_calculations":
-          {
-            "title": "Rotational Velocity Calculations",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Calculate rotational velocity in radians per second"
-          },
-          "rotational_velocity_conversions":
-          {
-            "title": "Rotational Velocity Conversions",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use conversion factors to convert rotational velocity from non-SI units to radians per second."
-          },
-          "rotational_linear_velocity":
-          {
-            "title": "Rotational and Linear Velocity",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain the difference between rotational and linear velocity and relate them numerically"
-          },
-          "rotational_acceleration":
-          {
-            "title": "Rotational Acceleration",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Calculate rotational acceleration."
-          },
-          "rotational_kinematic_equations_1":
-          {
-            "title": "Rotational Kinematic Equations 1",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve kinematic equations for rotational motion with quantities given."
-          },
-          "angular_velocity_of_real_things":
-          {
-            "title": "Angular Velocity of Real Things",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the angular velocity in radians per second of the hands of a clock, a rotating planet, a revolving planet"
-          },
-          "rotational_kinematic_equations_2":
-          {
-            "title": "Rotational Kinematic Equations 2",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Relate the kinematic quantities and equations for linear and rotational motion",
-            "note": "This pod was once flagged as redundant, but when editing I couldn't see why"
-          },
-          "linear_velocity_on_planet":
-          {
-            "title": "Linear Velocity on a Planet",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the linear velocity of a person located at a particular latitude on a planet."
-          },
-          "rotational_kinematic_equations_3":
-          {
-            "title": "Rotational Kinematic Equations 3",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "When rotational kinematic quantities are given in inconvienient ways (such as rpm, or time per rotation, or linear motion is given), determine the rotational quantities in correct units and then use the rotational kinematic equations."
-          },
-          "rotational_vs_linear_velocity":
-          {
-            "title": "Rotational vs. Linear Velocity",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc; answer conceptual questions related to rotational and linear velocity"
-          },
-          "direction_rotational_kinematics_quantities":
-          {
-            "title": "Direction of Rotational Kinematics Quantities",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use right-hand rules to determine the directions of rotational kinematics quantities."
-          },
-          "advanced_angular_acceleration":
-          {
-            "title": "Advanced Angular Acceleration",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the angular acceleration of a wheel as a car accelerates; determine angular acceleration if a planet were to speed up or slow down."
-          },
-          "rotational_kinematics_advanced":
-          {
-            "title": "Rotational Kinematics Advanced",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Make inferences using algebraic and proportionality analysis regarding the rotational and linear speeds of a person located at different points on the earth"
-          },
-          "winter_is_coming":
-          {
-            "title": "Winter is Coming?",
-            "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Design a hypothetical planet for which seasons have irregular lengths."
-          },
-          "the_long_night":
-          {
-            "title": "The Long Night",
-            "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Design a hypothetical planet on which days have irregular lengths"
-          }
-        }
-      },
-      "rotational_dynamics":
-      {
-        "title": "Rotational Dynamics",
-        "completed": true,
-        "number": 20,
-        "AP": true,
-        "honors": false,
-        "level": 4,
-        "pods":
-        {
-          "inertia_conceptual_review":
-          {
-            "title": "Inertia Conceptual Review",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objectives": "Give conceptual examples of inertia in linear situations."
-          },
-          "rotational_dynamics_analogies":
-          {
-            "title": "Rotational Dynamics Analogies",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia"
-          },
-          "rotational_inertia_formula":
-          {
-            "title": "Rotational Inertia Formula",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the formula for rotational inertia to find rotational inertia of a point masses."
-          },
-          "cross_product":
-          {
-            "title": "Cross Products",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the vector cross product of two vectors; practice using right hand rules."
-          },
-          "torque_formula":
-          {
-            "title": "The Torque Formula",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the formula for torque to find the torque in situations with forces acting on a stick."
-          },
-          "rigid_bodies":
-          {
-            "title": "Rigid Bodies",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective":  "Define rigid and identify rigid bodies and non-rigid bodies; explain the significance of rigid bodies"
-          },
-          "rotational_dynamic_dimensional_analysis":
-          {
-            "title": "Rotational Dynamic Dimensional Analysis",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the dimensions of all rotational dynamic quantities, particularly torque and rotational inertia"
-          },
-          "rotational_inertia_conceptual_examples":
-          {
-            "title": "Rotational Inertia Conceptual Examples",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain several conceptual examples of items with different rotational inertia",
-            "examples":
-                    [
-                      "Why is it easier to balance a meter stick with a weight on the end?",
-                      "Why does a disc roll faster than a hoop of the same mass?",
-                      "Why does liquid soup roll faster than cream soup, but cream soup faster still than noodle soup?"
-                    ]
-          },
-          "torque_concepts":
-          {
-            "title": "Torque Concepts",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the concept of torque to analyze real world situations"
-          },
-          "same_force_different_torque":
-          {
-            "title": "Same Force Different Torque",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify and explain times when the same force acting in different directions and locations results in different torques on a rotating object; describe why a lineman must hit low to make a good block."
-          },
-          "torque_conceptual_examples":
-          {
-            "title": "Torque Conceptual Examples",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Give real world examples of when torque is a crucial concept."
-          },
-          "torque_with_cross_product":
-          {
-            "title": "Torque with Cross Product",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the torque formula in situations requiring a single cross product; determine angular acceleration."
-          },
-          "determine_net_torque":
-          {
-            "title": "Determine Net Torque",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "For a rotating object experiencing multiple torques, some forces applied at a non-perpendicular angle, determine the net torque acting on the object."
-          },
-          "determine_angular_acceleration":
-          {
-            "title": "Determine Angular Acceleration",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "For a rotating object experiencing multiple torques, some requiring cross products, determine the net torque acting on the object and the angular acceleration of the object."
-          },
-          "basic_rolling":
-          {
-            "title": "Basic Rolling",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw free-body diagrams and analyze the torque of a rollign object; identify the type of friction that causes rolling; differentiate between rolling with and without slipping."
-          },
-          "rolling_down_a_hill":
-          {
-            "title": "Rolling down a Hill",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a ball rolling down a hill."
-          },
-          "numerical_car_tire":
-          {
-            "title": "Numerical Car Tire",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a spinning car tire."
-          },
-          "weight_hanging_numerical":
-          {
-            "title": "Numerical Weight Hanging",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and [where necessary] linear acceleration of a wheel with a weight hanging from it."
-          },
-          "raiders_of_the_lost_arc":
-          {
-            "title": "Raiders of the Lost Arc",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze why the giant ball designed to roll and kill Indiana Jones failed to do so, and redesign the setup to accomplish this task.",
-            "notes": "Extra credit will be awarded if quiz is accomplished while wearing a fedora and humming Indiana Jones theme."
-          },
-          "derivation_newtons_second_law_rotation":
-          {
-            "title": "Derivation of Newton's Second Law for Rotation",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Derive Newton's Second Law for Rotational Motion, including in cases when the forces are applied at non-perpendicular angles."
-          },
-          "wheel_of_fortune":
-          {
-            "title": "Wheel of Fortune",
-            "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Design a mathematical model to predict where the wheel of fortune will land after having been spun.",
-            "notes": "Includes making some basic assumption about torques acting on the wheel; will probably need to use the concept of rotational impulse"
-          }
-        }
-      },
-      "rotational_conservation_laws":
-      {
-        "title": "Rotation Conservation Laws",
-        "completed": true,
-        "number": 21,
-        "AP": true,
-        "honors": false,
-        "level": 4,
-        "pods":
-        {
-          "angular_momentum_concepts":
-          {
-            "title": "Angular Momentum Concepts",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze real world situations using the concept of angular momentum."
-          },
-          "rotational_conservation_analogies":
-          {
-            "title": "Rotational Conservation Analogies",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw analogies between conserved quantities for linear motion and rotational motion"
-          },
-          "rotational_conserved_quantites_1":
-          {
-            "title": "Rotational Conserved Quantities 1: Formula Basics",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the formulas for rotational conserved quantities to sovle simple numerical questions."
-          },
-          "rotational_conserved_quantities_2":
-          {
-            "title": "Rotational Conserved Quantities 2: Dimensional Analysis and Proportionality",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the dimensions of all rotation conserved quantities using the formulas to define them; use proportionality to analyze conserved rotational quantities."
-          },
-          "ice_skater_spin_qualitative":
-          {
-            "title": "Ice Skater Spin Qualitative",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Using the formulas realated to angular momentum, describe how an ice skater (or other athlete) changes her rotational speed."
-          },
-          "sprials_knukleballs":
-          {
-            "title": "Spirals and Knuckleballs",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Qualitatively explain the phenomena of a football thrown with a sprial and a knuckelball by referring to the conservation of angular momentum."
-          },
-          "ice_skater_spin_quantitative":
-          {
-            "title": "Ice Skater Spin Quantitative",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use a quantitative model to predict how much spin will change when a spinner person moves their arms"
-          },
-          "rotational_kinetic_energy_on_ramp":
-          {
-            "title": "Rotational Kinetic Energy on a Ramp",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Describe real-world situations using the conservation of energy, including rotational kinetic energy.",
-            "examples":
-                    [
-                      "A block sliding withotu friction goes faster than a wheel",
-                      "Why do the dynamics cars have small wheels?"
-                    ]
-          },
-          "rotation_work_energy_theorem":
-          {
-            "title": "Rotation and the Work-Energy Theorem",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze situations including rotational kinetic energy using the work-energy theorem."
-          },
-          "rotational_kinetic_energy_different_points_of_view":
-          {
-            "title": "Rotational Kinetic Energy from Different Points of View",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze sitations incluindg rotational kinetic energy using differen definitions of the system and surroundings",
-            "example": "A ball rolls down a ramp; analyze the types of energy in which only the ball is the system and when there is a ball-earth system."
-          },
-          "reinvent_the_wheel":
-          {
-            "title": "Reinvent the Wheel",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Compare how energy changes in a block sliding down a ramp with friction and a wheel rolling down the same rampe; make a conclusion regarding the use of wheels."
-          },
-          "precession_of_axes":
-          {
-            "title": "Precession of Axes",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use conservation of angular momentum to explain why the earth's axes precess and the consequences of this precession."
           }
         }
       },
@@ -6862,6 +6373,511 @@
             "prerequisites": [],
             "objective": "Connect energy of the earth back to the gravitational potential energy of space dust (which would eventually form the sun)",
             "connections": "Requires knowledge of gravitation and nuclear physics"
+          }
+        }
+      }
+    }
+  },
+  "rotational_motion":
+  {
+    "title": "Rotational Motion",
+    "number": 10,
+    "units":
+    {
+      "rotational_kinematics":
+      {
+        "title": "Rotational Kinematics",
+        "completed": true,
+        "number": 19,
+        "AP": true,
+        "honors": false,
+        "level": 4,
+        "pods":
+        {
+          "test": {
+            "title": "This is a test",
+            "level": 6,
+            "objective": "This is a test"
+          },
+          "rotational_position_displacement":
+          {
+            "title": "Rotational Position and Displacement",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine rotational position and displacement in radians for simple examples; define a radian; know a radian is dimensionless"
+          },
+          "rotational_velocity_calculations":
+          {
+            "title": "Rotational Velocity Calculations",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Calculate rotational velocity in radians per second"
+          },
+          "rotational_velocity_conversions":
+          {
+            "title": "Rotational Velocity Conversions",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use conversion factors to convert rotational velocity from non-SI units to radians per second."
+          },
+          "rotational_linear_velocity":
+          {
+            "title": "Rotational and Linear Velocity",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Explain the difference between rotational and linear velocity and relate them numerically"
+          },
+          "rotational_acceleration":
+          {
+            "title": "Rotational Acceleration",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Calculate rotational acceleration."
+          },
+          "rotational_kinematic_equations_1":
+          {
+            "title": "Rotational Kinematic Equations 1",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Solve kinematic equations for rotational motion with quantities given."
+          },
+          "angular_velocity_of_real_things":
+          {
+            "title": "Angular Velocity of Real Things",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the angular velocity in radians per second of the hands of a clock, a rotating planet, a revolving planet"
+          },
+          "rotational_kinematic_equations_2":
+          {
+            "title": "Rotational Kinematic Equations 2",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Relate the kinematic quantities and equations for linear and rotational motion",
+            "note": "This pod was once flagged as redundant, but when editing I couldn't see why"
+          },
+          "linear_velocity_on_planet":
+          {
+            "title": "Linear Velocity on a Planet",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the linear velocity of a person located at a particular latitude on a planet."
+          },
+          "rotational_kinematic_equations_3":
+          {
+            "title": "Rotational Kinematic Equations 3",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "When rotational kinematic quantities are given in inconvienient ways (such as rpm, or time per rotation, or linear motion is given), determine the rotational quantities in correct units and then use the rotational kinematic equations."
+          },
+          "rotational_vs_linear_velocity":
+          {
+            "title": "Rotational vs. Linear Velocity",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc; answer conceptual questions related to rotational and linear velocity"
+          },
+          "direction_rotational_kinematics_quantities":
+          {
+            "title": "Direction of Rotational Kinematics Quantities",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use right-hand rules to determine the directions of rotational kinematics quantities."
+          },
+          "advanced_angular_acceleration":
+          {
+            "title": "Advanced Angular Acceleration",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the angular acceleration of a wheel as a car accelerates; determine angular acceleration if a planet were to speed up or slow down."
+          },
+          "rotational_kinematics_advanced":
+          {
+            "title": "Rotational Kinematics Advanced",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Make inferences using algebraic and proportionality analysis regarding the rotational and linear speeds of a person located at different points on the earth"
+          },
+          "winter_is_coming":
+          {
+            "title": "Winter is Coming?",
+            "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Design a hypothetical planet for which seasons have irregular lengths."
+          },
+          "the_long_night":
+          {
+            "title": "The Long Night",
+            "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Design a hypothetical planet on which days have irregular lengths"
+          }
+        }
+      },
+      "rotational_dynamics":
+      {
+        "title": "Rotational Dynamics",
+        "completed": true,
+        "number": 20,
+        "AP": true,
+        "honors": false,
+        "level": 4,
+        "pods":
+        {
+          "inertia_conceptual_review":
+          {
+            "title": "Inertia Conceptual Review",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objectives": "Give conceptual examples of inertia in linear situations."
+          },
+          "rotational_dynamics_analogies":
+          {
+            "title": "Rotational Dynamics Analogies",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia"
+          },
+          "rotational_inertia_formula":
+          {
+            "title": "Rotational Inertia Formula",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the formula for rotational inertia to find rotational inertia of a point masses."
+          },
+          "cross_product":
+          {
+            "title": "Cross Products",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the vector cross product of two vectors; practice using right hand rules."
+          },
+          "torque_formula":
+          {
+            "title": "The Torque Formula",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the formula for torque to find the torque in situations with forces acting on a stick."
+          },
+          "rigid_bodies":
+          {
+            "title": "Rigid Bodies",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective":  "Define rigid and identify rigid bodies and non-rigid bodies; explain the significance of rigid bodies"
+          },
+          "rotational_dynamic_dimensional_analysis":
+          {
+            "title": "Rotational Dynamic Dimensional Analysis",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the dimensions of all rotational dynamic quantities, particularly torque and rotational inertia"
+          },
+          "rotational_inertia_conceptual_examples":
+          {
+            "title": "Rotational Inertia Conceptual Examples",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Explain several conceptual examples of items with different rotational inertia",
+            "examples":
+            [
+              "Why is it easier to balance a meter stick with a weight on the end?",
+              "Why does a disc roll faster than a hoop of the same mass?",
+              "Why does liquid soup roll faster than cream soup, but cream soup faster still than noodle soup?"
+            ]
+          },
+          "torque_concepts":
+          {
+            "title": "Torque Concepts",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the concept of torque to analyze real world situations"
+          },
+          "same_force_different_torque":
+          {
+            "title": "Same Force Different Torque",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Identify and explain times when the same force acting in different directions and locations results in different torques on a rotating object; describe why a lineman must hit low to make a good block."
+          },
+          "torque_conceptual_examples":
+          {
+            "title": "Torque Conceptual Examples",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Give real world examples of when torque is a crucial concept."
+          },
+          "torque_with_cross_product":
+          {
+            "title": "Torque with Cross Product",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the torque formula in situations requiring a single cross product; determine angular acceleration."
+          },
+          "determine_net_torque":
+          {
+            "title": "Determine Net Torque",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "For a rotating object experiencing multiple torques, some forces applied at a non-perpendicular angle, determine the net torque acting on the object."
+          },
+          "determine_angular_acceleration":
+          {
+            "title": "Determine Angular Acceleration",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "For a rotating object experiencing multiple torques, some requiring cross products, determine the net torque acting on the object and the angular acceleration of the object."
+          },
+          "basic_rolling":
+          {
+            "title": "Basic Rolling",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw free-body diagrams and analyze the torque of a rollign object; identify the type of friction that causes rolling; differentiate between rolling with and without slipping."
+          },
+          "rolling_down_a_hill":
+          {
+            "title": "Rolling down a Hill",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a ball rolling down a hill."
+          },
+          "numerical_car_tire":
+          {
+            "title": "Numerical Car Tire",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a spinning car tire."
+          },
+          "weight_hanging_numerical":
+          {
+            "title": "Numerical Weight Hanging",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Numerically determine the free-body diagram, torque, angular acceleration and [where necessary] linear acceleration of a wheel with a weight hanging from it."
+          },
+          "raiders_of_the_lost_arc":
+          {
+            "title": "Raiders of the Lost Arc",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze why the giant ball designed to roll and kill Indiana Jones failed to do so, and redesign the setup to accomplish this task.",
+            "notes": "Extra credit will be awarded if quiz is accomplished while wearing a fedora and humming Indiana Jones theme."
+          },
+          "derivation_newtons_second_law_rotation":
+          {
+            "title": "Derivation of Newton's Second Law for Rotation",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Derive Newton's Second Law for Rotational Motion, including in cases when the forces are applied at non-perpendicular angles."
+          },
+          "wheel_of_fortune":
+          {
+            "title": "Wheel of Fortune",
+            "level": 6,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Design a mathematical model to predict where the wheel of fortune will land after having been spun.",
+            "notes": "Includes making some basic assumption about torques acting on the wheel; will probably need to use the concept of rotational impulse"
+          }
+        }
+      },
+      "rotational_conservation_laws":
+      {
+        "title": "Rotation Conservation Laws",
+        "completed": true,
+        "number": 21,
+        "AP": true,
+        "honors": false,
+        "level": 4,
+        "pods":
+        {
+          "angular_momentum_concepts":
+          {
+            "title": "Angular Momentum Concepts",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze real world situations using the concept of angular momentum."
+          },
+          "rotational_conservation_analogies":
+          {
+            "title": "Rotational Conservation Analogies",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw analogies between conserved quantities for linear motion and rotational motion"
+          },
+          "rotational_conserved_quantites_1":
+          {
+            "title": "Rotational Conserved Quantities 1: Formula Basics",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the formulas for rotational conserved quantities to sovle simple numerical questions."
+          },
+          "rotational_conserved_quantities_2":
+          {
+            "title": "Rotational Conserved Quantities 2: Dimensional Analysis and Proportionality",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the dimensions of all rotation conserved quantities using the formulas to define them; use proportionality to analyze conserved rotational quantities."
+          },
+          "ice_skater_spin_qualitative":
+          {
+            "title": "Ice Skater Spin Qualitative",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Using the formulas realated to angular momentum, describe how an ice skater (or other athlete) changes her rotational speed."
+          },
+          "sprials_knukleballs":
+          {
+            "title": "Spirals and Knuckleballs",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Qualitatively explain the phenomena of a football thrown with a sprial and a knuckelball by referring to the conservation of angular momentum."
+          },
+          "ice_skater_spin_quantitative":
+          {
+            "title": "Ice Skater Spin Quantitative",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use a quantitative model to predict how much spin will change when a spinner person moves their arms"
+          },
+          "rotational_kinetic_energy_on_ramp":
+          {
+            "title": "Rotational Kinetic Energy on a Ramp",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Describe real-world situations using the conservation of energy, including rotational kinetic energy.",
+            "examples":
+            [
+              "A block sliding withotu friction goes faster than a wheel",
+              "Why do the dynamics cars have small wheels?"
+            ]
+          },
+          "rotation_work_energy_theorem":
+          {
+            "title": "Rotation and the Work-Energy Theorem",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze situations including rotational kinetic energy using the work-energy theorem."
+          },
+          "rotational_kinetic_energy_different_points_of_view":
+          {
+            "title": "Rotational Kinetic Energy from Different Points of View",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze sitations incluindg rotational kinetic energy using differen definitions of the system and surroundings",
+            "example": "A ball rolls down a ramp; analyze the types of energy in which only the ball is the system and when there is a ball-earth system."
+          },
+          "reinvent_the_wheel":
+          {
+            "title": "Reinvent the Wheel",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Compare how energy changes in a block sliding down a ramp with friction and a wheel rolling down the same rampe; make a conclusion regarding the use of wheels."
+          },
+          "precession_of_axes":
+          {
+            "title": "Precession of Axes",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use conservation of angular momentum to explain why the earth's axes precess and the consequences of this precession."
           }
         }
       }
