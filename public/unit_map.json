@@ -1171,7 +1171,8 @@
             "horizontal": 3,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
+            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion.",
+            "content": "Position-time graphs and motion maps are two ways to represent how something is moving."
           },
           "velocity_acceleration_graphs":
           {
@@ -1180,7 +1181,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["position_graphs_motion_maps"],
-            "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
+            "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion",
+            "content": "Velocity-time and acceleration-time graphs are two other ways to represent how something is moving."
           },
           "kinematic_graph_connections":
           {
@@ -1189,7 +1191,8 @@
             "horizontal": 2,
             "letter": "C",
             "prerequisites": ["velocity_acceleration_graphs"],
-            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
+            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion.",
+            "content": "Position-time graphs, velocity-time graphs, and acceleration-time graphs can represent the same example of motion."
           },
           "kinematic_graph_comparisons_1":
           {
@@ -1198,7 +1201,8 @@
             "letter": "D",
             "horizontal": 1,
             "prerequisites": ["kinematic_graph_connections"],
-            "objective": "Qualitatively Compare different curves and lines on kinematic graphs."
+            "objective": "Qualitatively compare different curves and lines on kinematic graphs.",
+            "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves."
           },
           "kinematics_definitions":
           {
@@ -1207,7 +1211,8 @@
             "letter": "E",
             "horizontal": 0,
             "prerequisites": ["kinematic_graph_comparisons_1"],
-            "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration."
+            "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration.",
+            "content": "The goal of qualitative kinematics is to determine how an object moves without determining why"
           },
           "story_to_graph_selection_A":
           {
@@ -1216,7 +1221,8 @@
             "horizontal": 0,
             "letter": "F",
             "prerequisites": ["kinematics_definitions"],
-            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
+            "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story."
           },
           "kinematic_graph_comparisons_2":
           {
