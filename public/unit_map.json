@@ -1212,7 +1212,7 @@
             "horizontal": 0,
             "prerequisites": ["kinematic_graph_comparisons_1"],
             "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration.",
-            "content": "The goal of qualitative kinematics is to determine how an object moves without determining why"
+            "content": "The goal of qualitative kinematics is to determine how an object moves without determining why."
           },
           "story_to_graph_selection_A":
           {
@@ -1231,7 +1231,8 @@
             "letter": "X",
             "horizontal": 1,
             "prerequisites": ["story_to_graph_selection_A"],
-            "objective": "Qualitatively Compare different curves and lines on kinematic graphs."
+            "objective": "Qualitatively Compare different curves and lines on kinematic graphs.",
+            "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves."
           },
           "story_to_graph_selection_B":
           {
@@ -1240,7 +1241,8 @@
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["kinematic_graph_comparisons_2"],
-            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
+            "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story."
           },
           "position_graph_connection":
           {
@@ -1249,7 +1251,8 @@
             "horizontal": 3,
             "letter": "H",
             "prerequisites": ["story_to_graph_selection_B"],
-            "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs."
+            "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs.",
+            "content": "The information in a position-time graph can be represented in words or in other kinematic graphs."
           },
           "velocity_graph_connection":
           {
@@ -1258,7 +1261,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["position_graph_connection"],
-            "objective": "Given a qualitative velocity-time graph showing several unique steps of motion, write a story that could be described by the velocity-time graph and draw corresponding position-time and acceleration-time graphs."
+            "objective": "Given a qualitative velocity-time graph showing several unique steps of motion, write a story that could be described by the velocity-time graph and draw corresponding position-time and acceleration-time graphs.",
+            "content": "The information in a velocity-time graph can be represented in words or in other kinematic graphs."
           },
           "acceleration_graph_connection":
           {
@@ -1267,7 +1271,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["velocity_graph_connection"],
-            "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs."
+            "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs.",
+            "content": "The information in an acceleration-time graph can be represented in words or in other kinematic graphs."
           },
           "acceleration_graph_connection_2":
           {
@@ -1276,7 +1281,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["acceleration_graph_connection"],
-            "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph."
+            "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph.",
+            "content": "The information in a highly complex acceleration-time graph can be represented in words or in other kinematic graphs; acceleration graphs contain no information regarding initial velocity."
           },
           "qualitative_kinematics_advanced":
           {
@@ -1285,7 +1291,8 @@
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["acceleration_graph_connection_2"],
-            "objective": "Invent a highly complex description of motion, and then create kinematic graphs that match the description."
+            "objective": "Invent a highly complex description of motion, and then create kinematic graphs that match the description.",
+            "content": "Kinematic graphs can represent extremely complex descriptions of motion."
           }
         }
       },
