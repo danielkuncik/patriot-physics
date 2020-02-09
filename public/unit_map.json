@@ -199,8 +199,8 @@
           {
             "title": "Powers of Ten",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Evaluate positive and negative powers of ten and ten raised to the zeroth power."
           },
@@ -209,9 +209,9 @@
             "title": "Scientific Notation 1",
             "subtitle": "Scientific to Standard Notation",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["powers_of_ten"],
             "objective": "Convert numbers from scientific notation to standard notation."
           },
           "scientific_notation_2":
@@ -219,9 +219,9 @@
             "title": "Scientific Notation 2",
             "subtitle": "Standard to Scientific Notation",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["scientific_notation_1"],
             "objective": "Convert numbers from standard notation to scientific notation."
           },
           "scientific_notation_3":
@@ -229,27 +229,27 @@
             "title": "Scientific Notation 3",
             "subtitle": "Moving from Incorrect to Correct Scientific Notation",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["scientific_notation_2"],
             "objective": "Given numbers written as digits multipled by a power of ten but not in proper scientific notation, put the number into proper scientific notation."
           },
           "memorize_metric_prefixes":
           {
             "title": "Memorize Metric Prefixes",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["scientific_notation_3"],
             "objective": "Memorize all metric prefixes from femto through tera"
           },
           "scientific_notation_calculator_1":
           {
             "title": "Scientific Notation on a Calculator 1",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["memorize_metric_prefixes"],
             "objective": "Using a calculator, complete arithmetic operations for numbers in scientific notation involving one or two steps",
             "parameters":
             [
@@ -260,9 +260,9 @@
           {
             "title": "Scientific Notation Inequalities",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["scientific_notation_calculator_1"],
             "objective": "Given two values written in scientific notation, determine which is greater and defend your answer"
           },
           "scientific_notation_4":
@@ -270,9 +270,9 @@
             "title": "Scientific Notation 4",
             "subtitle": "Metric to Scientific Notation",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "H",
+            "prerequisites": ["scientific_notation_inequalities"],
             "objective": "Given a metric unit, convert it to an SI unit in scientific notation",
             "limits": "Excludes calculations in mass to kilograms"
           },
@@ -281,18 +281,18 @@
             "title": "Scientific Notation 5",
             "subtitle": "Scientific Notation to Metric",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["scientific_notation_4"],
             "objective": "Convert from numbers written in scientific notation with SI units to more elegant metric units"
           },
           "scientific_notation_calculator_2":
           {
             "title": "Scientific Notation on a Calculator 2",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["scientific_notation_5"],
             "objective": "Using a calculator, complete arithmetic operations for numbers in scientific notation involving three or more steps",
             "example": "Solving the universal law of gravitation with all values in scientific notation.",
             "parameters":
@@ -304,9 +304,9 @@
           {
             "title": "Convert Between Metric Units",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["scientific_notation_calculator_2"],
             "objective": "Convert from one metric unit to a different metric unit; in particular, convert from other masses to kilograms."
           },
           "scientific_notation_calculator_3":
@@ -314,18 +314,18 @@
             "title": "Scientific Notation on a Calculator 3",
             "subtitle": "Scientific Notation on a four-function calculator",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["convert_between_metric_units"],
             "objective": "Complete arithmetic operations for numbers in scientific notation involving three or more steps with a four function calculator that does not include an EE or EXP button"
           },
           "floating_points":
           {
             "title": "Floating Points",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "M",
+            "prerequisites": ["scientific_notation_calculator_3"],
             "objective": "Explain how a floating point represents all possible numbers using scientific notation"
           }
         }
