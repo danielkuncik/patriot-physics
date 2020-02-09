@@ -1,0 +1,133 @@
+<p>
+  In the previous pod,
+  we converted values from
+  scientific notation into the more well known standard notation.
+  In this pod, we will complete the same operation in reverse.
+</p>
+
+
+<ul>
+  <li>
+    Step 0: If there is no decimal point,
+    put one at the end of the number.
+  </li>
+  <li>
+    Step 1: Move the decimal point until it is in the
+    correct location.
+    It is in the correct location when there is precisely
+    <strong>one</strong> non-zero digit to the left
+    of the decimal point.
+    Count how many times you moved it.
+  </li>
+  <li>
+    Step 2: Figure out if the order of magnitude is positive or negative.
+    <ul>
+      <li>
+        If you started with a BIG NUMBER and
+        moved the decimal point to the LEFT,
+        then the order of magnitude is POSITIVE.
+      </li>
+      <li>
+        If you started with a SMALL NUMBER
+        and moved the decimal point to the RIGHT,
+        then the order of magnitude is NEGATIVE
+      </li>
+      <li>
+        If you didn't need to move the exponent
+        at all, then the order of magnitude is zero.
+      </li>
+      <li>
+        BIG NUMBER = move LEFT = POSITIVE exponent
+        <br>
+        LITTLE NUMBER = move RIGHT = NEGATIVE exponent
+      </li>
+    </ul>
+  </li>
+  <li>
+    Add the order of magnitude.
+    It is equal to the number of times you moved the decimal,
+    and is positive or negative.
+  </li>
+</ul>
+
+
+<p>
+  Make sure that that you place the decimal point correctly for scientific notation!
+</p>
+<div id = 'isItScientificNotation'></div>
+
+<script>
+  let isItScientificNotation = new Table(2,3);
+
+  isItScientificNotation.addTopHeaders(['NOT scientific notatation','Scientific Notation!', 'NOT scientific notation']);
+  isItScientificNotation.writeTextInRow(1,['\\( 0.456 \\times 10^6 \\)','\\( 4.56 \\times 10^5 \\)','\\( 45.6 \\times 10^4 \\)']);
+
+  $("#isItScientificNotation").append(isItScientificNotation.draw(400,200));
+
+</script>
+
+<h4>
+  Questions:
+</h4>
+
+<p class = 'directions'>
+  For each number, convert from standard notation to proper scientific notation.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = '\\( 3.42 \\times 10^6 \\)'>
+   \( 3420000 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 3.24 \\times 10^4 \\)'>
+   \( 32400 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 5.89 \\times 10^9 \\)'>
+   \( 5830000000 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.23 \\times 10^3 \\)'>
+   \( 1230  \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.4 \\times 10^1 \\)'>
+   \( 14 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 9.0 \\times 10^0 \\)'>
+   \( 9 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.23 \\times 10^{-6} \\)'>
+   \( 0.00000123 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.45 \\times 10^4 \\)'>
+   \( 0.000145 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.23 \\times 10^{-10} \\)'>
+   \( 0.000000000123 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.241 \\times 10^{-7} \\)'>
+   \( 0.0000001241 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.124 \\times 10^{7} \\)'>
+   \( 11240000  \)
+  </li>
+  <li class = 'question' data-answer = '\\( 8.1 \\times 10^1 \\)'>
+   \( 81 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 7 \\times 10^0 \\)'>
+   \( 7 \)
+  </li>
+  <li class = 'question' data-answer = '\\( 9.9 \\times 10^5 \\)'>
+   \( 990000  \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.41 \\times 10^{-1} \\)'>
+   \( 0.141  \)
+  </li>
+  <li class = 'question' data-answer = '\\( 1.32 \\times 10^{-1} \\)'>
+   \( 0.0132 \)
+  </li>
+</ol>
+
+
+<h4>
+  Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

@@ -1,0 +1,159 @@
+<p>
+  In two previous pods on scientific notation,
+  you learned to convert to an from scientific notation.
+  In this pod, you will learn to convert between numbers
+  that are neither into proper scientific notation.
+  Often, a number that you look up, especially if you need
+  to convert a number from metric notatation,
+  appears to be in scientific notation, but is actually
+  in improper scientific notation.
+  It is best to convert acccuractely.
+</p>
+
+<p>
+  A number is in <strong>scientific notation</strong>
+  only if there is exactly one digit to the left of the decimal,
+  and this digit is not zero!
+</p>
+
+<p>
+  If there are more than one digit to the left of the decimal point,
+  or if there is one digit to the left of the decimal point,
+  but it is zero, then it is not in scientific notation.
+</p>
+
+<div id = 'isItScientificNotation'></div>
+
+<script>
+  let isItScientificNotation = new Table(2,3);
+
+  isItScientificNotation.addTopHeaders(['NOT scientific notatation','Scientific Notation!', 'NOT scientific notation']);
+  isItScientificNotation.writeTextInRow(1,['\\( 0.456 \\times 10^6 \\)','\\( 4.56 \\times 10^5 \\)','\\( 45.6 \\times 10^4 \\)']);
+
+  $("#isItScientificNotation").append(isItScientificNotation.draw(400,200));
+
+</script>
+
+
+<h3>
+  Questions:
+</h3>
+
+<p class = 'directions'>
+  For each number given, state if it is in proper scientific notation or not.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = 'scientific notation'>
+    \( 3.42 \times 10^4 \)
+  </li>
+  <li class = 'question' data-answer = 'scientific notation'>
+    \( 9.23 \times 10^8 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 0.414 \times 10^5 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 0.0070 \times 10^1 \)
+  </li>
+  <li class = 'question' data-answer = 'scientific notation'>
+    \( 1.10 \times 10^0 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 921. \times 10^4 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 11.38 \times 10^5 \)
+  </li>
+  <li class = 'question' data-answer = 'scientific notation'>
+    \( 6.0 \times 10^9 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 34.4 \times 10^1 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notatation'>
+    \( 746.2 \times 10^{15} \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 0.097 \times 10^5 \)
+  </li>
+  <li class = 'question' data-answer = 'NOT scientific notation'>
+    \( 56.7 \times 10^{11} \)
+  </li>
+</ol>
+
+<h5>
+  Changing from incorrect to correct scientific notation
+</h5>
+
+<ol>
+  <li>
+    Move the decimal point to the correct location.
+    Count how many places you moved it.
+  </li>
+  <li>
+    If you moved it LEFT, you INCREASE the exponent by the number of steps you took.
+    <br>
+    If you moved it RIGHT, you DECREASE the exponent by the number of steps you took.
+  </li>
+</ol>
+
+<ul>
+  <li>
+    move decimal LEFT = INCREASE exponent
+  </li>
+  <li>
+    move decimal RIGHT = DECREASE exponent
+  </li>
+</ul>
+
+
+<p class = 'directions'>
+  Figure out if the number is in correct scientific notation.
+  If it is not, convert it to corret scientific notation.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = 'already scientific notation'>
+    \( 3.42 \times 10^4 \)
+  </li>
+  <li class = 'question' data-answer = 'already scientific notation'>
+    \( 9.23 \times 10^8 \)
+  </li>
+  <li class = 'question' data-answer = '\( 4.14 \times 10^4 \)'>
+    \( 0.414 \times 10^5 \)
+  </li>
+  <li class = 'question' data-answer = '\( 7.0 \times 10^{-8} \)'>
+    \( 0.0070 \times 10^{-5} \)
+  </li>
+  <li class = 'question' data-answer = 'already scientific notation'>
+    \( 1.10 \times 10^0 \)
+  </li>
+  <li class = 'question' data-answer = '\( 9.21 \times 10^6 \)'>
+    \( 921 \times 10^4 \)
+  </li>
+  <li class = 'question' data-answer = '\( 1.138 \times 10^4 \)'>
+    \( 11.38 \times 10^5 \)
+  </li>
+  <li class = 'question' data-answer = 'already scientific notation'>
+    \( 6.0 \times 10^9 \)
+  </li>
+  <li class = 'question' data-answer = '\( 3.44 \times 10^0 \)'>
+    \( 34.4 \times 10^1 \)
+  </li>
+  <li class = 'question' data-answer = '\( 7.462 \times 10^{13} \)'>
+    \( 746.2 \times 10^{15} \)
+  </li>
+  <li class = 'question' data-answer = '\( 9.7 \times 10^3 \)'>
+    \( 0.097 \times 10^5 \)
+  </li>
+  <li class = 'question' data-answer = '\( 5.67 \times 10^{10} \)'>
+    \( 56.7 \times 10^{11} \)
+  </li>
+</ol>
+
+<h3>
+  Answers:
+</h3>
+
+<ol class = 'answerList'></ol>
