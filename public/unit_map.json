@@ -199,8 +199,8 @@
           {
             "title": "Powers of Ten",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Evaluate positive and negative powers of ten and ten raised to the zeroth power."
           },
@@ -209,9 +209,9 @@
             "title": "Scientific Notation 1",
             "subtitle": "Scientific to Standard Notation",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["powers_of_ten"],
             "objective": "Convert numbers from scientific notation to standard notation."
           },
           "scientific_notation_2":
@@ -219,9 +219,9 @@
             "title": "Scientific Notation 2",
             "subtitle": "Standard to Scientific Notation",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["scientific_notation_1"],
             "objective": "Convert numbers from standard notation to scientific notation."
           },
           "scientific_notation_3":
@@ -229,27 +229,27 @@
             "title": "Scientific Notation 3",
             "subtitle": "Moving from Incorrect to Correct Scientific Notation",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["scientific_notation_2"],
             "objective": "Given numbers written as digits multipled by a power of ten but not in proper scientific notation, put the number into proper scientific notation."
           },
           "memorize_metric_prefixes":
           {
             "title": "Memorize Metric Prefixes",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["scientific_notation_3"],
             "objective": "Memorize all metric prefixes from femto through tera"
           },
           "scientific_notation_calculator_1":
           {
             "title": "Scientific Notation on a Calculator 1",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["memorize_metric_prefixes"],
             "objective": "Using a calculator, complete arithmetic operations for numbers in scientific notation involving one or two steps",
             "parameters":
             [
@@ -260,9 +260,9 @@
           {
             "title": "Scientific Notation Inequalities",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["scientific_notation_calculator_1"],
             "objective": "Given two values written in scientific notation, determine which is greater and defend your answer"
           },
           "scientific_notation_4":
@@ -270,9 +270,9 @@
             "title": "Scientific Notation 4",
             "subtitle": "Metric to Scientific Notation",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "H",
+            "prerequisites": ["scientific_notation_inequalities"],
             "objective": "Given a metric unit, convert it to an SI unit in scientific notation",
             "limits": "Excludes calculations in mass to kilograms"
           },
@@ -281,18 +281,18 @@
             "title": "Scientific Notation 5",
             "subtitle": "Scientific Notation to Metric",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["scientific_notation_4"],
             "objective": "Convert from numbers written in scientific notation with SI units to more elegant metric units"
           },
           "scientific_notation_calculator_2":
           {
             "title": "Scientific Notation on a Calculator 2",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["scientific_notation_5"],
             "objective": "Using a calculator, complete arithmetic operations for numbers in scientific notation involving three or more steps",
             "example": "Solving the universal law of gravitation with all values in scientific notation.",
             "parameters":
@@ -304,9 +304,9 @@
           {
             "title": "Convert Between Metric Units",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["scientific_notation_calculator_2"],
             "objective": "Convert from one metric unit to a different metric unit; in particular, convert from other masses to kilograms."
           },
           "scientific_notation_calculator_3":
@@ -314,18 +314,18 @@
             "title": "Scientific Notation on a Calculator 3",
             "subtitle": "Scientific Notation on a four-function calculator",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["convert_between_metric_units"],
             "objective": "Complete arithmetic operations for numbers in scientific notation involving three or more steps with a four function calculator that does not include an EE or EXP button"
           },
           "floating_points":
           {
             "title": "Floating Points",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "M",
+            "prerequisites": ["scientific_notation_calculator_3"],
             "objective": "Explain how a floating point represents all possible numbers using scientific notation"
           }
         }
@@ -1171,7 +1171,8 @@
             "horizontal": 3,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion."
+            "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion.",
+            "content": "Position-time graphs and motion maps are two ways to represent how something is moving."
           },
           "velocity_acceleration_graphs":
           {
@@ -1180,7 +1181,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["position_graphs_motion_maps"],
-            "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion"
+            "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion",
+            "content": "Velocity-time and acceleration-time graphs are two other ways to represent how something is moving."
           },
           "kinematic_graph_connections":
           {
@@ -1189,7 +1191,8 @@
             "horizontal": 2,
             "letter": "C",
             "prerequisites": ["velocity_acceleration_graphs"],
-            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion."
+            "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion.",
+            "content": "Position-time graphs, velocity-time graphs, and acceleration-time graphs can represent the same example of motion."
           },
           "kinematic_graph_comparisons_1":
           {
@@ -1198,7 +1201,8 @@
             "letter": "D",
             "horizontal": 1,
             "prerequisites": ["kinematic_graph_connections"],
-            "objective": "Qualitatively Compare different curves and lines on kinematic graphs."
+            "objective": "Qualitatively compare different curves and lines on kinematic graphs.",
+            "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves."
           },
           "kinematics_definitions":
           {
@@ -1207,7 +1211,8 @@
             "letter": "E",
             "horizontal": 0,
             "prerequisites": ["kinematic_graph_comparisons_1"],
-            "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration."
+            "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration.",
+            "content": "The goal of qualitative kinematics is to determine how an object moves without determining why."
           },
           "story_to_graph_selection_A":
           {
@@ -1216,7 +1221,8 @@
             "horizontal": 0,
             "letter": "F",
             "prerequisites": ["kinematics_definitions"],
-            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
+            "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story."
           },
           "kinematic_graph_comparisons_2":
           {
@@ -1225,7 +1231,8 @@
             "letter": "X",
             "horizontal": 1,
             "prerequisites": ["story_to_graph_selection_A"],
-            "objective": "Qualitatively Compare different curves and lines on kinematic graphs."
+            "objective": "Qualitatively Compare different curves and lines on kinematic graphs.",
+            "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves."
           },
           "story_to_graph_selection_B":
           {
@@ -1234,7 +1241,8 @@
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["kinematic_graph_comparisons_2"],
-            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion."
+            "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
+            "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story."
           },
           "position_graph_connection":
           {
@@ -1243,7 +1251,8 @@
             "horizontal": 3,
             "letter": "H",
             "prerequisites": ["story_to_graph_selection_B"],
-            "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs."
+            "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs.",
+            "content": "The information in a position-time graph can be represented in words or in other kinematic graphs."
           },
           "velocity_graph_connection":
           {
@@ -1252,7 +1261,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["position_graph_connection"],
-            "objective": "Given a qualitative velocity-time graph showing several unique steps of motion, write a story that could be described by the velocity-time graph and draw corresponding position-time and acceleration-time graphs."
+            "objective": "Given a qualitative velocity-time graph showing several unique steps of motion, write a story that could be described by the velocity-time graph and draw corresponding position-time and acceleration-time graphs.",
+            "content": "The information in a velocity-time graph can be represented in words or in other kinematic graphs."
           },
           "acceleration_graph_connection":
           {
@@ -1261,7 +1271,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["velocity_graph_connection"],
-            "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs."
+            "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs.",
+            "content": "The information in an acceleration-time graph can be represented in words or in other kinematic graphs."
           },
           "acceleration_graph_connection_2":
           {
@@ -1270,7 +1281,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["acceleration_graph_connection"],
-            "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph."
+            "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph.",
+            "content": "The information in a highly complex acceleration-time graph can be represented in words or in other kinematic graphs; acceleration graphs contain no information regarding initial velocity."
           },
           "qualitative_kinematics_advanced":
           {
@@ -1279,7 +1291,8 @@
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["acceleration_graph_connection_2"],
-            "objective": "Invent a highly complex description of motion, and then create kinematic graphs that match the description."
+            "objective": "Invent a highly complex description of motion, and then create kinematic graphs that match the description.",
+            "content": "Kinematic graphs can represent extremely complex descriptions of motion."
           }
         }
       },

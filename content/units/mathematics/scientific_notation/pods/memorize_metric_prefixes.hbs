@@ -1,0 +1,34 @@
+<p>
+  It is very helpful, especially if you plan on taking more STEM courses,
+  to memorize what each metric prefix means.
+  For this class, you are expected to measure all prefixes from 10<sup>-15</sup>
+  to 10<sup>15</sup>.
+</p>
+
+<div id = 'metricTable'></div>
+
+
+<script>
+  let metricTable = new Table(16,3);
+
+  metricTable.addTopHeaders(['Prefix','Abbreviation','Means']);
+
+  metricTable.writeTextInRow(1,['peta','P','\\( 10^{15} \\)']);
+  metricTable.writeTextInRow(2,['tera','T','\\( 10^{12} \\)']);
+  metricTable.writeTextInRow(3,['giga','G','\\( 10^{9} \\)']);
+  metricTable.writeTextInRow(4,['mega','M','\\( 10^{6} \\)']);
+  metricTable.writeTextInRow(5,['kilo','k','\\( 10^{3} \\)']);
+  metricTable.writeTextInRow(6,['hecto','h','\\( 10^{2} \\)']);
+  metricTable.writeTextInRow(7,['deca','da','\\( 10^{1} \\)']);
+
+  metricTable.writeTextInRow(9,['deci','d','\\( 10^{-1} \\)']);
+  metricTable.writeTextInRow(10,['centi','c','\\( 10^{-2} \\)']);
+  metricTable.writeTextInRow(11,['milli','m','\\( 10^{-3} \\)']);
+  metricTable.writeTextInRow(12,['micro','\\( \\mu \\)', '\\( 10^{-6} \\)']);
+  metricTable.writeTextInRow(13,['nano','n','\\( 10^{-9} \\)']);
+  metricTable.writeTextInRow(14,['pico','p','\\( 10^{-12} \\)']);
+  metricTable.writeTextInRow(15,['femto','f','\\( 10^{-15} \\)']);
+
+  $("#metricTable").append(metricTable.draw(800));
+
+</script>
