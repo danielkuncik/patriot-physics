@@ -1,0 +1,220 @@
+<p>
+    In a <a href = '#'>previous pod</a>, we used Newton's Law of Universal Gravitation
+    to derive the acceleration of an object while on the surface of a planet.
+    Points to recall from previous units:
+</p>
+
+<ul>
+    <li>
+        On any planet, all objects accelerate towards
+        the ground at the same rate,
+        which is designated by the symbol \( g \).
+    </li>
+    <li>
+        On earth, \( g = 9.8 \frac{\text{m}}{\text{s}^2} \).
+    </li>
+    <li>
+        On other planets (or any astronomical body), \( g \) has different values.
+        For example, on Mars \( g = 3.7 \frac{\text{m}}{\text{s}^2} \),
+        and on Venus \( g = 5.2 \frac{\text{m}}{\text{s}^2} \).
+        This value is based on the properties of the planet.
+    </li>
+    <li>
+        The force of gravity (called the weight) affecting any object on
+        the surface of the planet has a direction towards the center of the planet
+        and a magnitude given by the formula \( F_g = m g \),
+        in which \( m \) is the mass of an object.
+    </li>
+    <li>
+        Anyone can roughly demonstrate this principle by simply dropping items
+        of different mass and seeing that the strike the ground at the same time.
+        Most famously, this was demonstrated by Galileo on the Leaning Tower of Pisa
+        (though this story is possibly apocryphal).
+    </li>
+    <li>
+        The measurement of free-fall acceleration can be measured in many different ways,
+        including
+        <a href = '/labs/measureFreeFallAccelerationOnBalcony'>simply dropping something and timing it</a>,
+        <a href = '/labs/quantitativePendulum'>using a pendulum</a>, or
+        <a href = '#'>using a ramp</a>.
+    </li>
+</ul>
+
+<p>
+    Our goal in this unit is to learn how to derive a formula for \( g \)
+    from the Law of Universal Gravitation.
+    Fortunately, the math is nearly identical to the math from a <a href = '#'>previous pod</a>.
+    The derivation does not include many different steps, but does require you to understand some basic principles.
+</p>
+
+<h4>
+    Gravitational and Inertial Mass
+</h4>
+
+<p>
+    In physics class, whenever was say "mass", or we use the variable \( m \) in a formula,
+    we actually mean one of two different variables, called
+    <strong>gravitational mass</strong> and <strong>inertial mass</strong>.
+    In the way that all of the formulas in this class are structured, gravitational and inertial mass
+    are identical. However, it is still crucial to identify which type of mass is indicated by a particular formula.
+</p>
+
+<ul>
+    <li>
+        <strong>Gravitational mass</strong> indicates how strongly
+        a mass attracts other masses according to Newton's Law of gravitation.
+    </li>
+    <li>
+        <strong>Inertial mass</strong> indicates how strongly an object
+        resists changes to its velocity.
+    </li>
+</ul>
+
+<p class = 'directions'>
+    For each of the following formulas, indicate if the variable \( m \) indicates
+    inertial mass or gravitational mass.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'inertial mass'>
+        \( \Sigma F = ma \) [Newton's Second Law]
+    </li>
+    <li class = 'question' data-answer = 'gravitational mass'>
+        \( F_g = \frac{G m_1 m_2}{d^2} \) [Newton's Law of Universal Gravitation]
+    </li>
+    <li class = 'question' data-answer = 'inertial mass'>
+        \( I = m r^2\) [Rotational Inertial of a Point Mass]
+    </li>
+    <li class = 'question' data-answer = 'gravitational mass'>
+        \( F_g= m g \) [Force of Gravity on a Planet]
+    </li>
+    <li class = 'question' data-answer = 'inertial mass'>
+        \( KE = \frac{1}{2} m v^2 \) [Kinetic Energy]
+    </li>
+    <li class = 'question' data-answer = 'gravitational mass'>
+        \( GPE = mgh \) [Gravitational Potential Energy]
+    </li>
+</ol>
+
+<h4>
+    A Proof
+</h4>
+
+<p>
+    An object is in <emph>free-fall</emph> when the only force acting on that
+    object is gravity. The free-body diagram of an object in free-fall is given by:
+</p>
+<div id = 'freeFallFreeBody'></div>
+
+<script>
+    let freeBodyDiagram = fastFBD([['down','gravity']]);
+    $("#freeFallFreeBody").append(freeBodyDiagram.drawCanvas(200));
+</script>
+
+<p>
+    Because only one force acts on the object in free-fall, its net force is equal to that single force,
+    and thus:
+    $$
+    \Sigma F = F_g.
+    $$
+    This means that, according to Newton's Second Law:
+    $$
+    \Sigma F = F_g = m a.
+    $$
+    The variable \( m \) in the formula above is given by inertial mass, so we will denote it \( m_i \):
+    $$
+    \Sigma F = F_g = m_i a.
+    $$
+</p>
+
+<p>
+    Newton's Law of Universal Gravitation states that
+    $$
+    F_g = \frac{G m_1 m_2}{d^2}.
+    $$
+    In this case, the force of gravity is the force that is attracting the object towards the planet it is on.
+    Without loss of generality, we will assume that the object falling is object 1 and the planet is object 2.
+    Allow \( m \) to indicate the mass of the object falling, \( M \) to indicate the mass of the planet,
+    and \( R \) to indicate the radius of the planet. By arguments made in a <a href = '#'>previous pod</a>,
+    the variable \( d \), or distance between the centers of masses of the object, is equal to the radius of the planet \( \).
+    With these alterations, newton's Law of Universal Gravitation becomes:
+    $$
+    F_g = \frac{G m M}{R^2}.
+    $$
+    Note that in this variable \( m \) is the gravitational mass of the object, so we will denote it \( m_g \):
+    $$
+    F_g = \frac{G m_g M}{R^2}.
+    $$
+</p>
+
+<p>
+    Combining the formulas derived, we have
+    $$
+    \Sigma F = F_g = m_i a = \frac{G m_g M}{R^2}.
+    $$
+    Now, we know that the inertial mass \( m_i \) is equal to the gravitational mass \( m_g \),
+    this, these two variables cancel, and we have:
+    $$
+    \require{cancel}
+    \cancel{m_i} a = \frac{G \cancel{m_g} M}{R^2},
+    $$
+    and thus:
+    $$
+    a = \frac{G M}{R^2}.
+    $$
+    As stated at the beginning of this pod, the object above is in free-fall,
+    and the free-fall acceleration on a planet is given by the variable \( g \),
+    thus we have:
+    $$
+    g = \frac{G M}{R^2}.
+    $$
+</p>
+
+<p>
+    Does the above formula connect with the physics that we know?
+    We know that all objects of any mass have the same free-fall acceleration on each planet.
+    The formula above includes <emph>only</emph> qualities of the planet (its mass and radius),
+    and no qualities of the object. These canceled out because inertial and gravitational mass are equal.
+    Thus, the formula derived is consistent with the physics we know and observe.
+</p>
+
+
+<h4>
+    Using the Formula:
+</h4>
+
+<p>
+    The table below includes the mass and radius of each planet, and several other astronomical bodies that are not planets.
+    Use the formula above to find the free-fall acceleration on each planet.
+</p>
+
+<p>
+    Coming soon!
+</p>
+
+<h4>
+    Introducing the Quiz:
+</h4>
+<p>
+    The quiz for this pod will require you to derive the formula above,
+    to make some arguments as to why it is true,
+    and to apply it in some simple cases.
+</p>
+
+<h3>
+    Answers
+</h3>
+<ol class = 'answerList'></ol>
+
+<h3>
+    References
+</h3>
+<p>
+    In the following clip from the Big Bang Theory,
+    Sheldon attempts to teach physics to Penny.
+    His lessons only make her cry!
+    But, while this is going on...take a look at the whiteboard.
+    What calculation is he making?
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mUGXcuKbGlc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
