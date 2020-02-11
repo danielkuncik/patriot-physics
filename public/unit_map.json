@@ -309,22 +309,32 @@
             "prerequisites": ["scientific_notation_calculator_2"],
             "objective": "Convert from one metric unit to a different metric unit; in particular, convert from other masses to kilograms."
           },
+          "scientific_notation_6":
+          {
+            "title": "Scientific Notation 6",
+            "subtitle":  "Metric Mass Conversions",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisite": ["convert_between_metric_units"],
+            "objective": "Convert other metric units of mass to kilograms; convert kilograms to other metric units of mass."
+          },
           "scientific_notation_calculator_3":
           {
             "title": "Scientific Notation on a Calculator 3",
             "subtitle": "Scientific Notation on a four-function calculator",
             "level": 4,
-            "horizontal": 3,
-            "letter": "L",
-            "prerequisites": ["convert_between_metric_units"],
+            "horizontal": 4,
+            "letter": "M",
+            "prerequisites": ["scientific_notation_6"],
             "objective": "Complete arithmetic operations for numbers in scientific notation involving three or more steps with a four function calculator that does not include an EE or EXP button"
           },
           "floating_points":
           {
             "title": "Floating Points",
             "level": 5,
-            "horizontal": 4,
-            "letter": "M",
+            "horizontal": 5,
+            "letter": "N",
             "prerequisites": ["scientific_notation_calculator_3"],
             "objective": "Explain how a floating point represents all possible numbers using scientific notation"
           }
