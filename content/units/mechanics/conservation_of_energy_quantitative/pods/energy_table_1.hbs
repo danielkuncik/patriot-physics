@@ -34,12 +34,14 @@
     </div>
 </div>
 
+
 <p>
     Using the conservation of energy, fill out the table below:
 </p>
 
 <div id = 'energyTable'></div>
 
+<div class = 'pageBreak'></div>
 <p>
     Answer the questions below regarding the motion of the ball:
 </p>
@@ -75,6 +77,7 @@
 </p>
 <div id = 'energyRankingTable'></div>
 
+<div class = 'pageBreak'></div>
 <h3>
     Answers:
 </h3>
@@ -120,6 +123,8 @@
 
     let energyTable = new EnergyTable(4, ['ke', 'gpe', 'total_e']);
     let energyAnswers = new EnergyTable(4, ['ke', 'gpe', 'total_e']);
+    energyTable.setMaxFontProportion(0.05);
+    energyAnswers.setMaxFontProportion(0.05);
 
     energyAnswers.addInfoToColumn('ke', [0,30,70,100]);
     energyAnswers.addInfoToColumn('gpe',[100,70,30,0]);
@@ -138,12 +143,16 @@
     energyRankingTable.addTopHeaders(['Point','Most KE', 'Most GPE']);
     $("#energyRankingTable").append(energyRankingTable.draw(400,400));
 
+    energyRankingTable.setMaxFontProportion(0.05);
+
     let energyRankingTableAnswers = new Table(5,3);
     energyRankingTableAnswers.addTopHeaders(['Point','Most KE', 'Most GPE']);
     energyRankingTableAnswers.writeTextInRow(1, ['A','4th','1st']);
     energyRankingTableAnswers.writeTextInRow(2, ['B','3rd','2nd']);
     energyRankingTableAnswers.writeTextInRow(3, ['C','2nd','3rd']);
     energyRankingTableAnswers.writeTextInRow(4, ['D','1st','4th']);
+
+    energyRankingTableAnswers.setMaxFontProportion(0.05);
 
     $("#energyRankingTableAnswers").append(energyRankingTableAnswers.draw(400,400));
 
