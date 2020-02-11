@@ -46,26 +46,29 @@
     Answer the questions below regarding the motion of the ball:
 </p>
 
-<ol>
-    <li>
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'gravitational potential energy'>
         What type of energy does the ball have at the top of the ramp?
     </li>
-    <li>
+    <li class = 'question' data-answer = 'kinetic energy'>
         What type of energy does the ball have at the bottom of the ramp?
     </li>
-    <li>
-        At what point is the ball moving the slowest? Why?
+    <li class = 'question' data-answer = 'point A; KE = 0'>
+        At what point is the ball not moving at all? Why?
     </li>
-    <li>
+    <li class = 'question' data-answer = 'point D; it has the most kinetic energy'>
         At what point is the ball moving the fastest? Why?
     </li>
-    <li>
+    <li class = 'question' data-answer = 'point B; it has more than zero kinetic energy, but the least'>
+        At what point is the ball <emph>moving</emph> the slowest? Why?
+    </li>
+    <li class = 'question' data-answer = 'increases'>
         As the ball rolls down the ramp, does kinetic energy increase, decrease, or remain the same?
     </li>
-    <li>
+    <li class = 'question' data-answer = 'decreases'>
         As the ball rolls down the ramp, does gravitational potential energy increase, decrease, or remain the same?
     </li>
-    <li>
+    <li class = 'question' data-answer = 'stays the same'>
         As the ball rolls down the ramp, does total energy increase, decrease, or remain the same?
     </li>
 </ol>
@@ -84,7 +87,11 @@
 
 <div id = 'energyTableAnswers'></div>
 <br>
+<ol class = 'answerList'></ol>
+<br>
 <div id = 'energyRankingTableAnswers'></div>
+
+
 
 <script>
     const ballRadius = 0.2;
@@ -132,7 +139,7 @@
 
     energyTable.writeTextInCellKeys('A', 'ke', 0);
     energyTable.writeTextInCellKeys('B', 'ke', 30);
-    energyTable.writeTextInCellKeys('C', 'gpe', 70);
+    energyTable.writeTextInCellKeys('C', 'gpe', 30);
     energyTable.writeTextInCellKeys('D', 'gpe', 100);
 
     $("#energyTable").append(energyTable.draw(400,400));
