@@ -1,14 +1,11 @@
 
-
-
-
 <h3>
     Using Conservation of Energy
     To Analyze a Ball Rolling Down a Ramp
 </h3>
 
 <p>
-    In this section,
+    In this problem,
     we are going to use the Law of Conservation of Energy
     and our knowledge of Kinetic and Gravitational Potential Energy
     to determine information about objects moving downward.
@@ -21,60 +18,28 @@
     Determining Energy at Each Point:
 </h5>
 <p>
-    Fill out the following table.
-    Remain that the total energy of this system remains the same.
+    A ball rolls down a hill. As it rolls, no energy is lost.
+    Fill out the following table using the following key principles:
 </p>
 
-<table>
-    <tr>
-        <th>Point</th>
-        <th>KE (J)</th>
-        <th>GPE (J)</th>
-        <th>Total Energy (J)</th>
-    </tr>
-    <tr>
-        <th>A</th>
-        <td>0</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>B</th>
-        <td>10</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>C</th>
-        <td></td>
-        <td>69</td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>D</th>
-        <td>49</td>
-        <td>49</td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>E</th>
-        <td></td>
-        <td>37</td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>F</th>
-        <td>87</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>G</th>
-        <td></td>
-        <td>0</td>
-        <td></td>
-    </tr>
-</table>
+<ul>
+    <li>
+        \( KE + GPE = \text{Total Energy} \)
+    </li>
+    <li>
+        Total Energy remains the same
+    </li>
+</ul>
+
+<div id = 'energyTable1'></div>
+<script>
+    let energyTable1 = new EnergyTable(7, ['KE (J)','GPE (J)','Total Energy (J)']);
+    energyTable1.addInfoToColumn('KE (J)',['0','10','','49','','87','']);
+    energyTable1.addInfoToColumn('GPE (J)',['','','69','49','37','','0']);
+
+    $("#energyTable1").append(energyTable1.draw(250));
+</script>
+
 
 <div class = 'pageBreak'></div>
 <h5>
@@ -88,7 +53,7 @@
 <p>
     Use the information you know on point A to determine the <emph>mass</emph>
     of the rolling ball:
-    {{>formulaSolvingTable}}
+    <div class = 'formulaBoxDiv'></div>
 </p>
 
 <p>
@@ -104,14 +69,14 @@
     At point B, what is the kinetic energy of the ball?
     <br>
     Use this information to find the speed of the ball at point B:
-    {{>formulaSolvingTable}}
+    <div class = 'formulaBoxDiv'></div>
 </p>
 
 <p>
     At point D, what is the gravitational potential energy of the ball?
     <br>
     Use this information to find the height of the ball at point D:
-    {{>formulaSolvingTable}}
+    <div class = 'formulaBoxDiv'></div>
 </p>
 
 <div class = 'pageBreak'></div>
@@ -128,45 +93,58 @@
     then repeat the process to find the speed and height at each point.
 </p>
 
-<table>
-    <tr>
-        <th>Point</th>
-        <th>Speed (m/s)</th>
-        <th>Height (m)</th>
-    </tr>
-    <tr>
-        <th>A</th>
-        <td></td>
-        <td>20</td>
-    </tr>
-    <tr>
-        <th>B</th>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>C</th>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>D</th>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>E</th>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>F</th>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th>G</th>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
+<div id = 'infoTable1'></div>
+
+<script>
+    let infoTable1 = new EnergyTable(7,['speed (m/s)','height (m)']);
+    infoTable1.addInfoToColumn('height (m)',['','20']);
+    $("#infoTable1").append(infoTable1.draw(300));
+</script>
+
+
+<div class = 'pageBreak'></div>
+
+<h3>
+    Problem 2: A sled dude moving down a hill
+</h3>
+
+<img src = '/podAssets/mechanics/conservation_of_energy_quantitative/sled_dude.png' height = '500px' width = 'auto'/>
+
+<p>
+    Fill out the table below:
+</p>
+<div id = 'energyTable2'></div>
+
+<script>
+    let energyTable2 = new EnergyTable(6, ['KE (J)','GPE (J)','Total Energy (J)']);
+    energyTable2.addInfoToColumn('KE (J)',['0','7500','','22000','33000','']);
+    energyTable2.addInfoToColumn('GPE (J)',['','','23300','18180','','0']);
+
+    $("#energyTable2").append(energyTable2.draw(300));
+</script>
+
+<p>
+    Pick a point where you have enough information to find the mass of the rider,
+    and find the mass:
+</p>
+
+<div class = 'formulaBoxDiv'></div>
+
+<div class = 'pageBreak'></div>
+
+<p>
+    Using the information you have and any formulas you can, fill out the table below:
+</p>
+<div id = 'infoTable2'></div>
+
+<script>
+    let infoTable2 = new EnergyTable(5,['speed (m/s)','height (m)']);
+
+    $("#infoTable2").append(infoTable2.draw(400));
+</script>
+
+
+<script>
+    let formulaBox = new FormulaSolvingTable();
+    $(".formulaBoxDiv").append(formulaBox.draw(500,300));
+</script>
