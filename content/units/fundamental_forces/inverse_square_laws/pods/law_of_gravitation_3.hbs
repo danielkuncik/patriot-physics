@@ -4,4 +4,149 @@
     F_g = \frac{G m_1 m_2}{d^2}
     $$
     to determine the strength of the force of gravity between two objects.
+    This formula is a universal formula, used to determine the strength
+    of gravity between any two objects, anywhere in the universe, at any time.
+    Of course, the main relevance of gravity in our own lives
+    is as simply a force that pulls you downward (towards the center of the earth).
+    This force is caused by the gravitational attraction between
+    yourself and the earth.
+    We will focus on that force in this pod.
 </p>
+
+
+<p>
+    Let's take a look at what each message is.
+</p>
+
+<h5>
+    Example problem:
+</h5>
+
+<p>
+    A person is standing on planet earth.
+    The person has a mass of 60 kg.
+    The earth has a mass of \( 5.972 \times 10^{24} \text{ kilograms} \)
+    and a radius of \( 6.378 \times 10^6 \text{ meters} \).
+    Because the person has mass and the earth has mass,
+    the person and the earth are attracted, and their attraction
+    is given by the formula:
+    $$
+    F_g = \frac{G m_1 m_2}{d^2}
+    $$
+    We need to think about, in this particular context, what do each
+    of these variables mean?
+</p>
+<ul>
+    <li>
+        \( m_1 \) is the mass of the person, which is 60 kg.
+    </li>
+    <li>
+        \( m_2 \) is the mass of the earth, which is \( 5.972 \times 10^{24} \text{ kilograms} \).
+    </li>
+    <li>
+        \( d \) represents the distance between the person's center of mass
+        and the earth's center of mass.
+        In this case, it means the distance between the person and the center of the earth,
+        which is the earth's radius \( 6.378 \times 10^6 \text{ meters} \).
+    </li>
+</ul>
+
+<p>
+    We can now use the formula to find the strength of attraction
+    between the person and the earth.
+</p>
+
+<p>
+    $$
+    F_g = \frac{G m_1 m_2}{d^2} = \frac{6.67 \times 10^{11} \cdot 60 \cdot 5.972 \times 10^{24} }{\left( 6.378 \times 10^6 \right)^2} = 587.5 \text{ Newtons}
+    $$
+</p>
+
+<h5>
+    Information:
+</h5>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-6-md' id = 'planetTable'></div>
+        <div class ='col-6-md' id = 'notPlanetTable'></div>
+    </div>
+</div>
+Source: <a href = 'https://solarsystem.nasa.gov/solar-system/our-solar-system/overview/'>NASA Solar System Exploration Website</a>
+
+<h4>
+    Basic Problems:
+</h4>
+
+<p class = 'directions'>
+    Use the formula and reasoning about planets in order to solve
+    each of the problems below.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Determine the force of gravity (weight) pulling a 80 kg person on the surface of Venus.
+        <div class = 'formulaBoxDiv'></div>
+    </li>
+    <li class = 'question'>
+        Determine the force of gravity (weight) pulling a 60 kg person on the surface of Io.
+        <div class = 'formulaBoxDiv'></div>
+    </li>
+    <li class = 'question'>
+        Determine the force of gravity (weight) pulling a 75 kg person who is on a platform* on the surface of Neptune.
+        <div class = 'formulaBoxDiv'></div>
+    </li>
+    <li class = 'question'>
+        Determine the force of gravity (weight) pulling a 65 kg person who is on the surface of the asteroid Ceres.
+        <div class = 'formulaBoxDiv'></div>
+    </li>
+</ol>
+
+<p>
+    *As Neptune is a gas giant, you cannot stand on it. So imagine there's a platform above Neptune, and someone is standing on the platform.
+</p>
+
+<h4>
+    Planets and Acceleration:
+</h4>
+
+<p>
+    coming soon!
+</p>
+
+<h4>
+    Newton's Third Law and Gravity
+</h4>
+
+<p>
+    coming soon!
+</p>
+
+
+<script>
+    let planetTable = new Table(9,3);
+    planetTable.addTopHeaders(['Planet','Mass (kg)','Radius (km)']);
+    planetTable.writeTextInRow(1,['Mercury','3.301 × 10^23','2,440']);
+    planetTable.writeTextInRow(2,['Venus','4.867 × 10^24','6,052']);
+    planetTable.writeTextInRow(3,['Earth','5.972 × 10^24','6,371']);
+    planetTable.writeTextInRow(4,['Mars','6.417 × 10^23','3,390']);
+    planetTable.writeTextInRow(5,['Jupiter','1.898 × 10^27','69,910']);
+    planetTable.writeTextInRow(6,['Saturn','5.683 × 10^26','58,230']);
+    planetTable.writeTextInRow(7,['Neptune','1.024 × 10^26','24,620']);
+    planetTable.writeTextInRow(8,['Uranus','8.681 × 10^25','25,360']);
+
+    let notPlanetTable = new Table(6,3);
+    notPlanetTable.addTopHeaders(['not Planet', 'Mass (kg)', 'Radius (km)']);
+    notPlanetTable.writeTextInRow(1,['moon','\\( 7.348 \\times 10^{22} \\)','1737']);
+    notPlanetTable.writeTextInRow(2,['sun','\\( 1.9891 \\times 10^{30} \\)','\\( 4.370 \\times 10^6 \\)']);
+    notPlanetTable.writeTextInRow(3,['Pluto','\\( 1.309 \\times 10^{22} \\)','1151']);
+    notPlanetTable.writeTextInRow(4,['Io (moon of Jupiter)','\\( 8.93 \\times 10^{22} \\)','1821.6']);
+    notPlanetTable.writeTextInRow(5,['Ceres (an asteroid)','\\( 9.47 \\times 10^{20} \\)','467.2']);
+
+    $("#planetTable").append(planetTable.draw(200));
+    $("#notPlanetTable").append(notPlanetTable.draw(200));
+
+
+    let formulaBox = new FormulaSolvingTable();
+    $(".formulaBoxDiv").append(formulaBox.draw(400));
+</script>

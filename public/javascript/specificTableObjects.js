@@ -381,5 +381,7 @@ class FormulaSolvingTable extends Table {
         super.addClassToCell(0,2,'littleBoxOnTheSide');
 
         super.setRowProportions([1,3,1]);
+
+        super.setMaxFontProportion(0.04);
     }
 }
