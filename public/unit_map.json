@@ -4132,159 +4132,213 @@
           {
             "title": "Electromagnetic vs. Mechanical Waves 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Recognize electromagnetic and mechanical waves from a list; answer multiple choice questions on differences between electromagnetic and mechanical waves."
-          },
-          "parts_of_a_wave_1":
-          {
-            "title": "Parts of a Wave 1: Transverse Waves",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify important parts of a traveling transverse wave."
           },
           "transverse_vs_longitudinal_waves":
           {
             "title": "Transverse vs. Longitudinal Waves",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["electromagnetic_vs_mechanical_waves_1"],
             "objective": "Differentiate between pictures and examples of transverse and longitudinal waves."
+          },
+          "parts_of_a_wave_1":
+          {
+            "title": "Parts of a Wave 1: Transverse Waves",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["transverse_vs_longitudinal_waves"],
+            "objective": "Identify important parts of a traveling transverse wave."
           },
           "drawing_waves_1A":
           {
             "title": "Drawing Waves 1A: Wavelength",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["parts_of_a_wave_1"],
             "objective": "Draw transverse waves with a particular wavelength and each crest correctly positioned"
           },
           "drawing_waves_1B":
           {
             "title": "Drawing Waves 1B: Amplitude",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["drawing_waves_1A"],
             "objective": "Draw transverse waves with a particular amplitude."
           },
           "wave_equation":
           {
             "title": "The Wave Equation",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "F",
+            "prerequisites": ["drawing_waves_1B"],
             "objective": "Use the equation v = lambda f in simple contexts related to waves."
           },
           "electromagnetic_vs_mechanical_waves_2":
           {
             "title": "Electromagnetic vs. Mechanical Waves 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "G",
+            "prerequisites": ["wave_equation"],
             "objective": "Write definitions of electromagnetic and mechanical waves; write differences between electromagnetic and mechanical waves.",
             "notes": "This is the quiz in which students formally define a wave."
-          },
-          "speed_of_sound_and_light_1":
-          {
-            "title": "Speed of Sound and Light 1",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify the difference between the speeds of sound and light; identify real world implications of this."
           },
           "oscillation_particles_during_wave":
           {
             "title": "Oscillation of Particles During a Wave",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["electromagnetic_vs_mechanical_waves_2"],
             "objective": "Diagram how an object oscillates as a transverse or longitudinal wave passes through."
           },
           "wave_categorization":
           {
             "title": "Wave Categorization",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["oscillation_particles_during_wave"],
             "objective": "Categorize waves using a matrix as electromagnetic or mechanical and as longitudinal or transverse."
           },
           "parts_of_a_wave_2":
           {
             "title": "Parts of a Wave 2: Longitudinal Waves",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["wave_categorization"],
             "objective": "Identify parts of a longitudinal wave; briefly measure wavelength and amplitude of a longitudinal wave."
+          },
+          "speed_of_sound_and_light_1":
+          {
+            "title": "Speed of Sound and Light 1",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "K",
+            "prerequisites": ["parts_of_a_wave_2"],
+            "objective": "Identify the difference between the speeds of sound and light; identify real world implications of this."
           },
           "drawing_waves_2":
           {
             "title": "Drawing Waves 2: Wavelength and amplitude",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "L",
+            "prerequisites": ["speed_of_sound_and_light_1"],
             "objective": "Draw waves of particular wavelength AND amplitude, with a particular focus on the crests of a wave.",
             "limits": "Grading is generous if the troughs of a wave are not perfectly drawn."
-          },
-          "drawing_waves_3":
-          {
-            "title": "Drawing Waves 3: Crests and Troughs positioned",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw waves of particular wavelength AND ampltidue with every crest, trough, and center point correctly positioned.",
-            "note": "Crest, troughs, and middle points must all be correctly positoned, horizontally and vertically, for full credit."
           },
           "making_transverse_longitudinal_waves":
           {
             "title": "Making Transverse and Longitudinal Waves",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["drawing_waves_2"],
             "objective": "Explain how to create transverse and longitudinal waves in multiple contexts; explain logically why sound is longitudinal and light is transverse."
+          },
+          "drawing_waves_3":
+          {
+            "title": "Drawing Waves 3: Crests and Troughs positioned",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "N",
+            "prerequisites": ["making_transverse_longitudinal_waves"],
+            "objective": "Draw waves of particular wavelength AND ampltidue with every crest, trough, and center point correctly positioned.",
+            "note": "Crest, troughs, and middle points must all be correctly positoned, horizontally and vertically, for full credit."
           },
           "speed_of_sound_and_light_in_media":
           {
             "title": "Speed of Sound and Light in Media",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify how mdia change the speed of sound and the speed of light; identify why media has opposite effects on the speed of sound and of light.",
+            "horizontal": 3,
+            "letter": "O",
+            "prerequisites": ["drawing_waves_3"],
+            "objective": "Identify how media change the speed of sound and the speed of light; identify why media has opposite effects on the speed of sound and of light.",
             "notes": "Also deals with the ideas of transverse and longitudinal waves.."
+          },
+          "trigonometric_waves_1":
+          {
+            "title": "Trigonometric Waves 1",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "P",
+            "prerequisites": ["speed_of_sound_and_light_in_media"],
+            "objective": "Write trigonometric functions that show the shape of a wave with a particular wavelength and amplitude"
           },
           "drawing_waves_4":
           {
             "title": "Drawing Waves 4: Phase",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 3,
+            "horizontal": 5,
+            "letter": "Q",
+            "prerequisites": ["trigonometric_waves_1"],
             "objective": "Draw waves with a particular wavelength, amplitude, and phase, with all crests, troughs, and center points drawn correctly.",
             "notes": "The wave must begin on a particular phase for full credit. Phases presented are 0, pi/2, pi, and 3pi/2"
+          },
+          "trigonometric_waves_2":
+          {
+            "title": "Trigonometric Waves 2",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "R",
+            "prerequisites": ["drawing_waves_4"],
+            "objective": "Write trigonometric functions that show the shape of a wave with a particular wavelength and amplitude"
+          },
+          "trigonometric_waves_3":
+          {
+            "title": "Trigonometric Waves 3",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "S",
+            "prerequisites": ["trigonometric_waves_2"],
+            "objective": "Write a trigonometric function that gives the position of a particle relative to time as a transverse wave passes through. Identify and explain pieces of this function."
           },
           "combined_transverse_longitudinal_waves":
           {
             "title": "Combined Transverse-Longitudinal Waves",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze waves that combine transverse and longitudinal components."
+            "horizontal": 2,
+            "letter": "T",
+            "prerequisites": ["trigonometric_waves_3"],
+            "objective": "Qualitatively analyze waves that combine transverse and longitudinal elements."
+          },
+          "trigonometric_waves_4":
+          {
+            "title": "Trigonometric Waves 4",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "U",
+            "prerequisites": ["combined_transverse_longitudinal_waves"],
+            "objective": "Write a trigonometric function that gives the position of a particle relative to time as a longitudinal wave passes through. Identify and explain pieces of this function."
+          },
+          "trigonometric_waves_5":
+          {
+            "title": "Trigonometric Waves 5",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "V",
+            "prerequisites": ["trigonometric_waves_4"],
+            "objective":"Write a trigonometric function that gives the position of a particle relative to time as a combined transverse/longitudinal wave passes through. Identify and explain pieces of this function."
+          },
+          "wave_structure_level_6":
+          {
+            "title": "Wave structure Level 6",
+            "level": 6,
+            "horizontal": 3,
+            "letter": "W",
+            "prerequisites": ["trigonometric_waves_5"],
+            "objective": "Open-ended task on wave structure."
           }
         }
       },
