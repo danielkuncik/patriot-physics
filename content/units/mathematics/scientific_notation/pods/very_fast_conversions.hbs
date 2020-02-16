@@ -1,0 +1,158 @@
+<p>
+  Some metric conversions come up again and again in physics.
+  So often that it is a good idea to be able to do them fast,
+  very fast,
+   <a href = 'https://www.sciencedirect.com/topics/psychology/automaticity'>automatically</a>
+   If you can do them expending no mental effort at all,
+   then you can use all of the mental ability you do have towards
+   solving harder problems.
+</p>
+
+<p>
+  You should be able to convert very quickly between these units:
+</p>
+
+<ul>
+  <li>
+    Meters and centimeters
+  </li>
+  <li>
+    Meters and kilometers
+  </li>
+  <li>
+    Grams and kilograms
+  </li>
+  <li>
+    Seconds and milliseconds
+  </li>
+</ul>
+
+
+<p>
+  All of these conversiosn involve simply moving the decimal point
+  right or left a certain number of spaces.
+  As with <a href = '/pod/mathematics/scientific_notation/scientific_notation_1'>converting from scientific notation</a>,
+  if extra spaces are created whem moving the decimal point,
+  add extra zeroes on those spaces.
+  Make sure you know how to do these.
+</p>
+
+
+<div id = 'conversionTable'></div>
+
+
+<script>
+  let conversionTable = new Table(12,3)
+
+  conversionTable.addTopHeaders(['Conversion','How to move the edecial point','Example'])
+  conversionTable.writeTextInRow(1,['centimeters to meters', '2 spaces LEFT', '54 cm = 0.54 m'])
+  conversionTable.writeTextInRow(2,['meters to centimeters', '2 spaces RIGHT','0.47 m = 47 cm']);
+
+  conversionTable.shadeRow(3);
+
+  conversionTable.writeTextInRow(4,['kilometers to meters','3 spaces RIGHT', '12 km = 12000 m']);
+  conversionTable.writeTextInRow(5,['meters to kilometers','3 spaces LEFT', '8000 m = 8 km']);
+
+  conversionTable.shadeRow(6);
+
+  conversionTable.writeTextInRow(7,['grams to kilograms','3 spaces LEFT','159 g = 0.159 kg']);
+  conversionTable.writeTextInRow(8,['kilograms to grams','3 spaces RIGHT','0.834 kg = 834 g']);
+
+  conversionTable.shadeRow(9);
+
+  conversionTable.writeTextInRow(10,['milliseconds to seconds','3 spaces LEFT', '842 ms = 0.842 s']);
+  conversionTable.writeTextInRow(11,['seconds to milliseconds', '3 spaces RIGHT', '0.472 s = 472 ms']);
+
+  conversionTable.setRowProportions([1,1,1,0.5,1,1,0.5,1,1,0.5,1,1]);
+
+  $("#conversionTable").append(conversionTable.draw(500));
+</script>
+
+
+<!--
+ADD KILOMETERS = METERS
+-->
+
+<h4>
+  Practice Questions:
+</h4>
+
+<p class = 'directions'>
+  Complete all of these until you can do them <emph>very</emph> quickly.
+  It shouldn't take more than a couple seconds per question!
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = '0.173 ms'>
+    Convert 173 milliseconds to seconds.
+  </li>
+  <li class = 'question' data-answer = '0.43 cm'>
+    Convert 43 centimeters to meters.
+  </li>
+  <li class = 'question' data-answer = '547 ms'>
+    Convert 0.547 seconds to milliseconds.
+  </li>
+  <li class = 'question' data-answer = '763 ms'>
+    Convert 763 milliseconds to seconds.
+  </li>
+  <li class = 'question' data-answer = '192 ms'>
+    Convert 0.192 seconds to milliseconds.
+  </li>
+  <li class = 'question' data-answer = '0.642 s'>
+    Convert 642 milliseconds to seconds.
+  </li>
+  <li class = 'question' data-answer = '0.81 m'>
+    Convert 81 centimeters to meters.
+  </li>
+  <li class = 'question' data-answer = '522 g'>
+    Convert 0.522 kilograms to grams.
+  </li>
+  <li class = 'question' data-answer = '0.943 kg'>
+    Convert 943 grams to kilograms.
+  </li>
+  <li class = 'question' data-answer = '61 cm'>
+    Convert 0.61 meters to centimeters.
+  </li>
+  <li class = 'question' data-answer = '242 g'>
+    Convert 0.242 kilograms to grams.
+  </li>
+  <li class = 'question' data-answer = '0.05 m'>
+    Convert 5 centimeters to meters.
+  </li>
+  <li class = 'question' data-answer = '0.023 kg'>
+    Convert 23 grams to kilograms
+  </li>
+  <li class = 'question' data-answer = '0.011 s'>
+    Convert 11 milliseconds to seconds.
+  </li>
+  <li class = 'question' data-answer = '790 g'>
+    Convert 0.79 kilograms to grams
+  </li>
+  <li class = 'question' data-answer = '40 m'>
+    Convert 0.4 meters to centimeters
+  </li>
+  <li class = 'question' data-answer = '300 ms'>
+    Convert 0.3 seconds to milliseconds
+  </li>
+  <li class = 'question' data-answer = '0.005 s'>
+    Convert 5 milliseoncds to seconds.
+  </li>
+  <li class = 'question' data-answer = '8.45 m'>
+    Convert 845 centimeters to meters.
+  </li>
+  <li class = 'question' data-answer = '5.454 kg'>
+    Convert 5454 grams to kilograms.
+  </li>
+  <li class = 'question' data-answer = '6000 s'>
+    Convert 6 seconds to milliseconds.
+  </li>
+  <li class = 'question' data-answer = '687.9 cm'>
+    Convert 6.879 meters to centimeters.
+  </li>
+</ol>
+
+<h4>
+  Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

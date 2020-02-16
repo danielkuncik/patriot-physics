@@ -234,6 +234,14 @@
             "prerequisites": ["scientific_notation_2"],
             "objective": "Given numbers written as digits multipled by a power of ten but not in proper scientific notation, put the number into proper scientific notation."
           },
+          "very_fast_conversions": {
+            "title": "Very Fast Conversions",
+            "level": 2,
+            "horizontal": 6,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Solve the most common conversion problems in a few seconds: grams and kilograms, meters and centimeters, seconds and milliseconds."
+          },
           "memorize_metric_prefixes":
           {
             "title": "Memorize Metric Prefixes",
@@ -375,14 +383,6 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one to three conversino factors; properly write conversino factors to show how dimensional anlaysis is used"
-          },
-          "very_fast_conversions": {
-            "title": "Very Fast Conversions",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve the most common conversion problems in a few seconds: grams and kilograms, meters and centimeters, seconds and milliseconds."
           },
           "dimensional_analysis_1": {
             "title": "Dimensional Analysis 1",

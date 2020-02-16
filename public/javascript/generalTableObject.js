@@ -246,6 +246,14 @@ class Table {
         }
     }
 
+    shadeRow(i) {
+      let j;
+      for (j = 0; j < this.numColumns - 1; j++) {
+        this.mergeRight(i,0);
+      }
+      this.shadeCell(i,0);
+    }
+
     // causes cell i,j to merge with the cell below
     // does not work if that particular cell is already merged
     // need to keep merging the top cell

@@ -136,6 +136,14 @@ ol.graphicalQuestionList {
 
 }
 
+@media print
+{
+  .no-print, .no-print *
+  {
+    display: none !important;
+  }
+}
+
 
 /*ol.xxx {*/
 /*    counter-reset: section;*/
