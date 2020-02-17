@@ -33,26 +33,7 @@
 <div>
     {{{body}}}
 </div>
-<div id = 'putQuestionsHere'>
-</div>
-<!--
-<div class = 'container'>
-    <button class = 'btn btn-info' data-toggle = "collapse" data-target = "#putAnswersHere">Show Answers</button>
-    <div id = 'putAnswersHere' class = 'collapse'>
-    </div>
-</div>
-<script>
-    var myProblems = new writtenProblemList();
-    $.getJSON( '{{assetPath}}' + '{{selectedPodKey}}' +'_problems.json',(data)=>{
-        data.problems.forEach((problem) => {
-            myProblems.addProblem(problem);
-        });
-    });
-    myProblems.insertLists('putQuestionsHere','putAnswersHere');
-</script>
--->
-<div class = 'pageBreak'></div>
-<div>
+<div class = 'no-print'>
     {{listAllPodsWithinUnit selectedUnitClusterKey selectedUnitKey}}
  </div>
 <footer>
