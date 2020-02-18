@@ -582,7 +582,7 @@ const quizPasscode = '508293';
 // individual quiz page
 app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', (req, res) => {
     let level = unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level;
-    if (req.query.passcode === quizPasscode || level <= 2 || level >= 5) {
+    if ((req.query.passcode === quizPasscode || level <= 2 || level >= 5) && false) {
         if (req.params.podKey === 'all') {
             res.render('allQuizzesInAUnit.hbs', {
                 layout: 'default',
