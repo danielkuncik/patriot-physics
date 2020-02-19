@@ -100,16 +100,16 @@ app.post('/logout',(req, res) => {
 //         title:'Calendars'
 //     });
 // });
-app.get('/unitsEntryPage', [check_if_logged_in, disp.display_units_entry_page]);
+app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page]);
 
 // unit cluster home page
-app.get('/unitcluster/:unitClusterKey', [check_if_logged_in, disp.display_unit_cluster_page]);
+app.get('/unitcluster/:unitClusterKey', [db.check_if_logged_in, disp.display_unit_cluster_page]);
 
 // unit home page
-app.get('/unit/:unitClusterKey/:unitKey', [check_if_logged_in, disp.display_unit_page]);
+app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_unit_page]);
 
 // pod home page
-app.get('/pod/:unitClusterKey/:unitKey/:podKey', [check_if_logged_in, disp.display_pod_page]);
+app.get('/pod/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
@@ -120,9 +120,9 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
     res.sendFile(filepath);
 });
 
-app.get('/labs', [check_if_logged_in, disp.display_lab_list_page]);
+app.get('/labs', [db.check_if_logged_in, disp.display_lab_list_page]);
 
-app.get('/labs/:labKey', [check_if_logged_in, disp.display_lab_page]);
+app.get('/labs/:labKey', [db.check_if_logged_in, disp.display_lab_page]);
 
 // app.get('/writing', (req, res) => {
 //     res.render('writingEntryPage.hbs', {
@@ -167,14 +167,14 @@ app.get('/labs/:labKey', [check_if_logged_in, disp.display_lab_page]);
 // });
 
 // quiz entry page
-app.get('/quizzes', [check_if_logged_in, disp.display_quiz_entry_page]);
+app.get('/quizzes', [db.check_if_logged_in, disp.display_quiz_entry_page]);
 
 // quiz page for unit
-app.get('/quizzes/:unitClusterKey/:unitKey', [check_if_logged_in, disp.display_quiz_unit_page]);
+app.get('/quizzes/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_quiz_unit_page]);
 
 
 // individual quiz page
-app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', [check_if_logged_in, disp.display_quiz]);
+app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
 
 
 app.listen(port, () => console.log(`app running on port ${port}`));
