@@ -1,5 +1,6 @@
 const unitMap = require(__dirname + '/public/unit_map');
 const shell = require('shelljs');
+const fs = require('fs');
 
 const hbs = require('express-hbs');
 
