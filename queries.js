@@ -58,9 +58,23 @@ check_login = (req, res, next) => {
         if (result.rows.length > 0) {
             if (result.rows[0].passcode === inputtedPasscode) {
                 req.session.student = result.rows[0];
+                pool.query('SELECT * FROM sections WHERE id = $1', [req.session.student.section_id], (err, result2) => {
+                    if (error) {
+                        throw error
+                    }
+                    if (result2.rows.length > 0) {
+                        req.session.section = result2.rows[0];
+                        next();
+                    } else {
+                        next();
+                    }
+                });
+            } else {
+                next();
             }
+        } else {
+            next();
         }
-        next();
     });
 };
 
@@ -69,6 +83,11 @@ check_if_logged_in = function(req, res, next) {
         req.user = req.session.student;
     } else {
         req.user = undefined;
+    }
+    if (req.session.section) {
+        req.section = req.session.section;
+    } else {
+        req.section = undefined;
     }
     next();
 };

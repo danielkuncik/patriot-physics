@@ -45,23 +45,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-check_login_info = function(request, response, next) {
-    const inputtedName = request.body.name;
-    const inputtedPasscode = request.body.passcode;
-    const selectedUser = db.findUser(inputtedName);
-    if (request.session) {
-        if (selectedUser) {
-            if (selectedUser.passcode === inputtedPasscode) {
-                request.session.user = selectedUser;
-            } else {
-                request.session.user = undefined;
-            }
-        } else {
-            request.session.user = undefined;
-        }
-    }
-    next();
-};
 
 var unitCluster, unit, pod;
 // ROUTES
