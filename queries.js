@@ -1,5 +1,7 @@
 const Pool = require('pg').Pool;
 const isProduction = process.env.NODE_ENV === 'production';
+const bodyParser = require('body-parser');
+
 
 require('dotenv').config();
 
@@ -12,40 +14,6 @@ const pool = new Pool({
 });
 
 
-
-
-
-// will later be replaced with a database program!
-function findUser(name) {
-
-    // temporary, to practice getting the login set up
-    const users = [
-        {
-            "name": "daniel",
-            "passcode": "12345",
-            "section": 'red'
-        },
-        {
-            "name": "marie",
-            'passcode': '123456',
-            'section': 'diamond'
-        },
-        {
-            "name": "diane",
-            'passcode': '987654',
-            'section': 'green'
-        }
-    ];
-
-
-    let selectedUser = undefined;
-    users.forEach((user) => {
-        if (user.name === name) {
-            selectedUser = user;
-        }
-    });
-    return selectedUser
-}
 
 check_login = (req, res, next) => {
     let inputtedName = req.body.name;
@@ -91,6 +59,7 @@ check_if_logged_in = function(req, res, next) {
     }
     next();
 };
+
 
 module.exports = {
     check_login,

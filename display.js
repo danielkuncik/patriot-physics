@@ -568,9 +568,40 @@ display_quiz_unit_page = (req, res) => {
 
 const quizPassword = 'octopus';
 
+function quizAccess(section, level, enteredPassword) {
+    let result = false;
+    if (section === "Violet") {
+        if (level <= 2 || level >= 5) {
+            result = true;
+        } else if (enteredPassword === quizPassword) {
+            result = true;
+        } else {
+            result = false;
+        }
+    } else if (section === "Red" || section || section === "Blue" || section === "Green" || section === 'Orange') {
+        if (level >= 5) {
+            result = true;
+        } else if (enteredPassword === quizPassword) {
+            result = true;
+        } else {
+            result = false;
+        }
+    } else {
+        result = false;
+    }
+    return result
+}
+
 display_quiz = (req, res) => {
     let level = unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level;
-    if ((req.query.password === quizPassword || level <= 2 || level >= 5) && true) { // use boolean at the end to shut down all quiz access if i want to
+    let section;
+    if (req.section) {
+        section = req.section.name;
+    } else {
+        section = false;
+    }
+    let enteredPassword = req.body.password;
+    if (quizAccess(section, level, enteredPassword)) {
         if (req.params.podKey === 'all') {
             res.render('allQuizzesInAUnit.hbs', {
                 layout: 'default',
@@ -606,13 +637,15 @@ display_quiz = (req, res) => {
             }
         }
     } else {
+        let action = `/quizzes/${req.params.unitClusterKey}/${req.params.unitKey}/${req.params.podKey}`;
         res.render('quizPasswordPage.hbs', {
             layout: 'default',
             selectedUnitClusterKey: req.params.unitClusterKey,
             selectedUnitKey: req.params.unitKey,
             selectedPodKey: req.params.podKey,
             user: req.user,
-            section: req.section
+            section: req.section,
+            action: action
         });
     }
 };
