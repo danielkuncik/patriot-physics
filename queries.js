@@ -49,19 +49,24 @@ function findUser(name) {
 
 check_login = (req, res, next) => {
     let inputtedName = req.body.name;
-    let inputtedPasscode = req.body.passcode;
-    let selectedUser = findUser(inputtedName);
-    if (selectedUser) {
-        if (selectedUser.passcode === inputtedPasscode) {
-            req.session.user = selectedUser;
+    let inputtedPasscode = Number(req.body.passcode);
+
+    pool.query('SELECT * FROM students WHERE name = $1', [inputtedName], (error, result) => {
+        if (error) {
+            throw error
         }
-    }
-    next();
+        if (result.rows.length > 0) {
+            if (result.rows[0].passcode === inputtedPasscode) {
+                req.session.student = result.rows[0];
+            }
+        }
+        next();
+    });
 };
 
 check_if_logged_in = function(req, res, next) {
-    if (req.session.user) {
-        req.user = req.session.user;
+    if (req.session.student) {
+        req.user = req.session.student;
     } else {
         req.user = undefined;
     }
