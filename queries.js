@@ -23,17 +23,17 @@ function findUser(name) {
         {
             "name": "daniel",
             "passcode": "12345",
-            "color": 'red'
+            "section": 'red'
         },
         {
             "name": "marie",
-            'passcode': 'cake',
-            'color': 'diamond'
+            'passcode': '123456',
+            'section': 'diamond'
         },
         {
             "name": "diane",
-            'passcode': 'eyes',
-            'color': 'green'
+            'passcode': '987654',
+            'section': 'green'
         }
     ];
 
@@ -47,6 +47,28 @@ function findUser(name) {
     return selectedUser
 }
 
+check_login = (req, res, next) => {
+    let inputtedName = req.body.name;
+    let inputtedPasscode = req.body.passcode;
+    let selectedUser = findUser(inputtedName);
+    if (selectedUser) {
+        if (selectedUser.passcode === inputtedPasscode) {
+            req.session.user = selectedUser;
+        }
+    }
+    next();
+};
+
+check_if_logged_in = function(req, res, next) {
+    if (req.session.user) {
+        req.user = req.session.user;
+    } else {
+        req.user = undefined;
+    }
+    next();
+};
+
 module.exports = {
-    findUser
+    check_login,
+    check_if_logged_in
 };

@@ -65,9 +65,18 @@ check_login_info = function(request, response, next) {
 
 var unitCluster, unit, pod;
 // ROUTES
-app.get('/', disp.display_home);
+app.get('/', [check_if_logged_in, disp.display_home]);
 
-app.get('/login', disp.display_login_page);
+app.get('/login', [check_if_logged_in, disp.display_login_page]);
+
+app.post('/login',[check_login, check_if_logged_in, disp.display_home]);
+
+app.get('/logout',[check_if_logged_in, disp.display_logout_page]);
+
+app.post('/logout',(req, res) => {
+    req.session.user = undefined;
+    res.redirect('/');
+});
 
 // app.post('/login',[check_login_info, (req,res) => {
 //     res.render('home.hbs', {
@@ -91,16 +100,16 @@ app.get('/login', disp.display_login_page);
 //         title:'Calendars'
 //     });
 // });
-app.get('/unitsEntryPage', disp.display_units_entry_page);
+app.get('/unitsEntryPage', [check_if_logged_in, disp.display_units_entry_page]);
 
 // unit cluster home page
-app.get('/unitcluster/:unitClusterKey', disp.display_unit_cluster_page);
+app.get('/unitcluster/:unitClusterKey', [check_if_logged_in, disp.display_unit_cluster_page]);
 
 // unit home page
-app.get('/unit/:unitClusterKey/:unitKey', disp.display_unit_page);
+app.get('/unit/:unitClusterKey/:unitKey', [check_if_logged_in, disp.display_unit_page]);
 
 // pod home page
-app.get('/pod/:unitClusterKey/:unitKey/:podKey', disp.display_pod_page);
+app.get('/pod/:unitClusterKey/:unitKey/:podKey', [check_if_logged_in, disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
@@ -111,9 +120,9 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
     res.sendFile(filepath);
 });
 
-app.get('/labs', disp.display_lab_list_page);
+app.get('/labs', [check_if_logged_in, disp.display_lab_list_page]);
 
-app.get('/labs/:labKey', disp.display_lab_page);
+app.get('/labs/:labKey', [check_if_logged_in, disp.display_lab_page]);
 
 // app.get('/writing', (req, res) => {
 //     res.render('writingEntryPage.hbs', {
@@ -158,14 +167,14 @@ app.get('/labs/:labKey', disp.display_lab_page);
 // });
 
 // quiz entry page
-app.get('/quizzes', disp.display_quiz_entry_page);
+app.get('/quizzes', [check_if_logged_in, disp.display_quiz_entry_page]);
 
 // quiz page for unit
-app.get('/quizzes/:unitClusterKey/:unitKey', disp.display_quiz_unit_page);
+app.get('/quizzes/:unitClusterKey/:unitKey', [check_if_logged_in, disp.display_quiz_unit_page]);
 
 
 // individual quiz page
-app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', disp.display_quiz);
+app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', [check_if_logged_in, disp.display_quiz]);
 
 
 app.listen(port, () => console.log(`app running on port ${port}`));

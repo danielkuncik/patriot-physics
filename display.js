@@ -213,6 +213,26 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
     return new hbs.SafeString(htmlString);
 });
 
+hbs.registerHelper('userInfo', (user) => {
+    let output;
+    if (user) {
+        output = "<p>Logged in</p>";
+    } else {
+        output = "<p>Not logged in.</p>";
+    }
+    return new hbs.SafeString(output)
+});
+
+hbs.registerHelper('loginLink',(user) => {
+    let output;
+    if (user) {
+        output = "<a href = '/logout' class = 'nav-link'>Logout</a>";
+    } else {
+        output = "<a href = '/login' class = 'nav-link'>Login</a>";
+    }
+    return new hbs.SafeString(output)
+});
+
 /// helpers to make lists of links on each unit page!
 hbs.registerHelper('listAllUnitsAndPods', () => {
     var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, unitNumber;
@@ -397,22 +417,37 @@ display_home = (req,res) => {
     res.render('home.hbs', {
         layout: 'default',
         // template:'home-template',
-        title: 'Home Page'
+        title: 'Home Page',
+        user: req.user
     });
 };
 
 display_login_page = (req, res) => {
     res.render('loginPage.hbs', {
         layout: 'default',
-        'title': 'Login Page'
+        'title': 'Login Page',
+        user: req.user
     });
+};
+
+display_logout_page = (req, res) => {
+    if (!req.user) {
+        res.redirect('/');
+    } else {
+        res.render('logoutPage.hbs', {
+            layout: 'default',
+            'title': 'Logout Page',
+            user: req.user
+        });
+    }
 };
 
 display_units_entry_page = (req,res) => {
     res.render('unitsEntryPage.hbs', {
         layout:'default',
         title:'Units',
-        unitMap:unitMap
+        unitMap:unitMap,
+        user: req.user
     });
 };
 
@@ -422,7 +457,8 @@ display_unit_cluster_page = (req,res) => {
     res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitClusterKey + '_unit_cluster_page.hbs', {
         layout: 'unitClusterPageLayout.hbs',
         selectedUnitClusterKey: req.params.unitClusterKey,
-        title: unitCluster.title
+        title: unitCluster.title,
+        user: req.user
     })
 };
 
@@ -435,7 +471,8 @@ display_unit_page = (req, res) => {
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
         unitClusterName: unitCluster.title,
-        unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number
+        unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
+        user: req.user
     });
 };
 
@@ -456,7 +493,8 @@ display_pod_page = (req, res) => {
             //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
             letter: pod.letter,
             unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
-            unitClusterName: unitMap[req.params.unitClusterKey].title
+            unitClusterName: unitMap[req.params.unitClusterKey].title,
+            user: req.user
         });
     } else if (pod.fileType === 'pdf') {
         let filePath = '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
@@ -477,21 +515,24 @@ display_pod_page = (req, res) => {
 display_lab_list_page = (req, res) => {
     res.render('labsEntryPage.hbs', {
         layout:'default',
-        title:'Labs'
+        title:'Labs',
+        user: req.user
     });
 };
 
 display_lab_page = (req, res) => {
     res.render(__dirname + '/content/labs/' + req.params.labKey + '.hbs', {
         layout: 'default',
-        title: 'Lab'
+        title: 'Lab',
+        user: req.user
     });
 };
 
 display_quiz_entry_page = (req, res) => {
     res.render('quizEntryPage.hbs', {
         layout: 'default',
-        title: 'Quizzes'
+        title: 'Quizzes',
+        user: req.user
     });
 };
 
@@ -503,6 +544,7 @@ display_quiz_unit_page = (req, res) => {
         unitName: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
+        user: req.user
     })
 };
 
@@ -515,7 +557,8 @@ display_quiz = (req, res) => {
             res.render('allQuizzesInAUnit.hbs', {
                 layout: 'default',
                 selectedUnitClusterKey: req.params.unitClusterKey,
-                selectedUnitKey: req.params.unitKey
+                selectedUnitKey: req.params.unitKey,
+                user: req.user
             })
         } else {
             let versionNumber = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
@@ -531,7 +574,8 @@ display_quiz = (req, res) => {
                     unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
                     unitClusterTitle: unitMap[req.params.unitClusterKey].title,
                     level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level,
-                    version: versionNumber
+                    version: versionNumber,
+                    user: req.user
                 });
             } else if (versionType === 'pdf') {
                 let filePath = '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.pdf';
@@ -546,7 +590,8 @@ display_quiz = (req, res) => {
             layout: 'default',
             selectedUnitClusterKey: req.params.unitClusterKey,
             selectedUnitKey: req.params.unitKey,
-            selectedPodKey: req.params.podKey
+            selectedPodKey: req.params.podKey,
+            user: req.user
         });
     }
 };
@@ -554,6 +599,7 @@ display_quiz = (req, res) => {
 module.exports = {
     display_home,
     display_login_page,
+    display_logout_page,
     display_units_entry_page,
     display_unit_cluster_page,
     display_unit_page,
