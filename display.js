@@ -423,11 +423,15 @@ display_home = (req,res) => {
 };
 
 display_login_page = (req, res) => {
-    res.render('loginPage.hbs', {
-        layout: 'default',
-        'title': 'Login Page',
-        user: req.user
-    });
+    if (!req.user) {
+        res.render('loginPage.hbs', {
+            layout: 'default',
+            'title': 'Login Page',
+            user: req.user
+        });
+    } else {
+        res.redirect('/');
+    }
 };
 
 display_logout_page = (req, res) => {

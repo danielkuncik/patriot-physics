@@ -65,16 +65,16 @@ check_login_info = function(request, response, next) {
 
 var unitCluster, unit, pod;
 // ROUTES
-app.get('/', [check_if_logged_in, disp.display_home]);
+app.get('/', [db.check_if_logged_in, disp.display_home]);
 
-app.get('/login', [check_if_logged_in, disp.display_login_page]);
+app.get('/login', [db.check_if_logged_in, disp.display_login_page]);
 
-app.post('/login',[check_login, check_if_logged_in, disp.display_home]);
+app.post('/login',[db.check_login, db.check_if_logged_in, disp.display_home]);
 
-app.get('/logout',[check_if_logged_in, disp.display_logout_page]);
+app.get('/logout',[db.check_if_logged_in, disp.display_logout_page]);
 
 app.post('/logout',(req, res) => {
-    req.session.user = undefined;
+    req.session.student = undefined;
     res.redirect('/');
 });
 
