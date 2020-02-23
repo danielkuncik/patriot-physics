@@ -4351,122 +4351,122 @@
         "AP": true,
         "pods":
         {
-          "wave_formula_2":
+          "traveling_vs_standing_waves":
           {
-            "title": "The Wave Formula 2",
+            "title": "Traveling vs. Standing Waves",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
-            "objective": "Use the formula relating the wavelength, period, and frequency of a wave"
+            "objective": "Identify examples of and differences between traveling and standing wave; identify parts of a standing wave."
           },
           "finding_wavelength_from_diagrams":
           {
             "title": "Finding Wavelength from Diagrams",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["traveling_vs_standing_waves"],
             "objective": "From a of waves of a given length, find the wavelength of the wave; includes fractional wavelengths"
           },
-          "traveling_vs_standing_waves":
+          "wave_formula_2":
           {
-            "title": "Traveling vs. Standing Waves",
+            "title": "The Wave Formula 2",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify examples of and differences between traveling and standing wave; identify parts of a standing wave."
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["finding_wavelength_from_diagrams"],
+            "objective": "Use the formula relating the wavelength, period, and frequency of a wave"
           },
           "harmonics_1":
           {
             "title": "Harmonics 1",
             "subtitle": "Drawing Harmonics",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["wave_formula_2"],
             "objective": "Draw a simple sequence of harmonics."
           },
           "harmonics_2":
           {
             "title": "Harmonics 2: Harmonics on a String Table",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "E",
+            "prerequisites": ["harmonics_1"],
             "objective": "Using a table, draw a series of harmonics on a string and find the wavelength and frequency of each."
           },
           "harmonics_3":
           {
             "title": "Harmonics 3: Quarter Wavelength Harmonics",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["harmonics_2"],
             "objective": "Using a table, draw a series of harmonics and find the wavelength and frequency of each; harmonics include a node on one end and an antinode on the other."
           },
           "harmonics_4":
           {
             "title": "Harmonics 4: Harmonics Unguided Math",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["harmonics_3"],
             "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic."
           },
           "harmonics_5":
           {
             "title": "Harmonics 5: Symbolic Harmonics",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "H",
+            "prerequisites": ["harmonics_4"],
             "objective": "Create algebraic formulas and an algebraic series that determine the properties of different harmonics."
           },
           "harmonics_6":
           {
             "title": "Harmonics 6: Harmonics Proportionality",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "I",
+            "prerequisites": ["harmonics_5"],
             "objective": "Use proportionality to further analyze harmonics."
           },
           "speed_of_sound":
           {
             "title": "Speed of Sound",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 4,
+            "horizontal": 1,
+            "letter": "J",
+            "prerequisites": ["harmonics_6"],
             "objective": "Determine the speed of sound by identifying different harmonics. "
           },
           "string_tension_harmonics":
           {
             "title": "String Tension Harmonics",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["speed_of_sound"],
             "objective": "Analyze harmonics on a string with a different tensions of the string"
           },
           "hanging_string_harmonics":
           {
             "title": "Hanging String Harmonics",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "L",
+            "prerequisites": ["string_tension_harmonics"],
             "objective": "Analyze harmonics in a hanging string."
           },
           "musical_instrument":
           {
             "title": "Musical Instrument",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["hanging_string_harmonics"],
             "objective": "Use knowledge of harmonics to design a musical instrument that plays different musical scales."
           }
         }

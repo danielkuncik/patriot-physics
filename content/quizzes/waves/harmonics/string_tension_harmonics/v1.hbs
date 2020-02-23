@@ -1,0 +1,38 @@
+<p>
+    The speed of a wave on a uniform string is given by the formula
+    $$
+    v = \sqrt{\frac{T}{m / L}}
+    $$
+    in which \( T \) is the tension of the string,
+    \( m \) is the mass of the string,
+    and \( L \) is the length of the string.
+    Notice that the denominator of the fraction is the density-per-length
+    of the string.
+</p>
+
+<p>
+    In a particular string of unknown length  is attached at both ends with a tension of 20 Newtons,
+    the third harmonic is made when the string is vibrated at
+    a rate of 44 Hertz.
+    The person then adjusts the devices holding the string in place,
+    in order to make it tighter and looser, and then records resultant changes in the frequency of various harmonics.
+</p>
+
+<p>
+    Fill out the table below, describing the frequency of each harmonic
+    at several different values of tension.
+    Please fill in all squares to 3 significant figures of accuracy.
+    PLease include the mathematical arguments used to find the necessary values in your analysis.
+    Use arguments of proportionality and relationships amongst different harmonics.
+    If you use any formulas except the above and \( v = \lambda f \), derive them as a part of your analysis.
+</p>
+
+<div id = 'tableHere'></div>
+
+<script>
+    let frequencyTable = new Table(7,8);
+    frequencyTable.addTopHeaders(['frequency','T = 5 N','T = 10 N', 'T = 15 N', 'T = 20 N', 'T = 30 N', 'T = 40 N', 'T = 80 N']);
+    frequencyTable.addSideHeaders(['frequency','First Harmonic','Second Harmonic','Third Harmonic','Fourth Harmonic','Fifth Harmonic','Sixth Harmonic']);
+
+    $("#tableHere").append(frequencyTable.draw(800));
+</script>
