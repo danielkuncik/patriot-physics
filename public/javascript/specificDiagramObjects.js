@@ -473,7 +473,7 @@ class QualitativeGraph extends Diagram {
                 this.bottomEndVertical = new Point(0,this.yMin0 * this.yMultiplier);
                 this.leftEndHorizontal = origin;
                 this.topEndVertical = origin;
-                this.rightEndHorizontal = new Point(this.xMin0, 0);
+                this.rightEndHorizontal = new Point(this.xMax0, 0);
             } else if (this.quadrant1 && this.quadrant2 && !this.quadrant3 && !this.quadrant4) {
                 // quadrants 1 and 2
                 this.yMax0 = 0;

@@ -264,6 +264,10 @@ function fastFBD(forceArray, velocityDirection) {
     return myFBD;
 }
 
+function freeFallFBD() {
+    return fastFBD([['down','gravity']]);
+}
+
 
 /// Make simple qualitative kinematic graphs
 function makePositionGraphConstantVelocity() {
