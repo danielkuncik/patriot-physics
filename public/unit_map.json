@@ -4342,116 +4342,24 @@
           }
         }
       },
-      "sound_properties":
-      {
-        "title": "Sound Properties",
-        "number": 2,
-        "completed": true,
-        "AP": true,
-        "honors": true,
-        "pods":
-        {
-          "speed_of_sound_in_materials":
-          {
-            "title": "Speed of Sound in Materials",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify how the speed of sound changes in different media; define the term 'medium' in the content of waves"
-          },
-          "doppler_effect":
-          {
-            "title": "The Doppler Effect",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Identify how the Doppler effect changes sound; identify real world examples of the Doppler effect"
-          },
-          "octaves_1":
-          {
-            "title": "Octaves 1",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve for all wavelengths and frequencies of a particular octave, with notes given."
-          },
-          "octaves_2":
-          {
-            "title": "Octaves 2: Musical Scales",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve for all wavelengths and frequencies of a particular octave, with ratios of the octave given."
-          },
-          "doppler_efffect_equation":
-          {
-            "title": "Doppler Effect Equation",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Numerically solve the Doppler effect equation and relate the result to a real life experience."
-          },
-          "doppler_diagrams":
-          {
-            "title": "Doppler Diagrams",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Analyze diagrams of the Doppler effect to explain why the effect occurs."
-          },
-          "explain_speed_of_sound":
-          {
-            "title": "Explain The Speed of Sound",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Explain why the speed of sound changes within different media."
-          },
-          "doppler_algebra":
-          {
-            "title": "Doppler Algebra",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Algebraically solve the Doppler effect equation."
-          },
-          "doppler_proportionality":
-          {
-            "title": "Doppler Proportionality",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use proportionality to analyze the Doppler effect equation."
-          },
-          "sound_barrier":
-          {
-            "title": "The Sound Barrier",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use diagrams of sound waves to explain the existence of the sound barrier, and what occurs when it is broken."
-          }
-        }
-      },
       "harmonics":
       {
         "title": "Harmonics",
-        "number": 3,
+        "number": 2,
         "notes": "Co-requisite with sound properties.",
         "completed": true,
         "AP": true,
         "pods":
         {
+          "wave_formula_2":
+          {
+            "title": "The Wave Formula 2",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use the formula relating the wavelength, period, and frequency of a wave"
+          },
           "finding_wavelength_from_diagrams":
           {
             "title": "Finding Wavelength from Diagrams",
@@ -4461,7 +4369,7 @@
             "prerequisites": [],
             "objective": "From a of waves of a given length, find the wavelength of the wave; includes fractional wavelengths"
           },
-          "traveling_vs_standing_wave":
+          "traveling_vs_standing_waves":
           {
             "title": "Traveling vs. Standing Waves",
             "level": 1,
@@ -4472,43 +4380,53 @@
           },
           "harmonics_1":
           {
-            "title": "Harmonics 1: Harmonics on a String Table",
+            "title": "Harmonics 1",
+            "subtitle": "Drawing Harmonics",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw a simple sequence of harmonics."
+          },
+          "harmonics_2":
+          {
+            "title": "Harmonics 2: Harmonics on a String Table",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Using a table, draw a series of harmonics on a string and find the wavelength and frequency of each."
           },
-          "harmonics_2":
+          "harmonics_3":
           {
-            "title": "Harmonics 2: Quarter Wavelength Harmonics",
+            "title": "Harmonics 3: Quarter Wavelength Harmonics",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Using a table, draw a series of harmonics and find the wavelength and frequency of each; harmonics include a node on one end and an antinode on the other."
           },
-          "harmonics_3":
+          "harmonics_4":
           {
-            "title": "Harmonics 3: Harmonics Unguided Math",
+            "title": "Harmonics 4: Harmonics Unguided Math",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic."
           },
-          "harmonics_4":
+          "harmonics_5":
           {
-            "title": "Harmonics 4: Symbolic Harmonics",
+            "title": "Harmonics 5: Symbolic Harmonics",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
             "objective": "Create algebraic formulas and an algebraic series that determine the properties of different harmonics."
           },
-          "harmonics_5":
+          "harmonics_6":
           {
-            "title": "Harmonics 5: Harmonics Proportionality",
+            "title": "Harmonics 6: Harmonics Proportionality",
             "level": 4,
             "horizontal": null,
             "letter": "",
@@ -4553,7 +4471,107 @@
           }
         }
       },
-
+      "sound_properties":
+      {
+        "title": "Sound Properties",
+        "number": 3,
+        "completed": true,
+        "AP": true,
+        "honors": true,
+        "pods":
+        {
+          "speed_of_sound_in_materials":
+          {
+            "title": "Speed of Sound in Materials",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Identify how the speed of sound changes in different media; define the term 'medium' in the content of waves"
+          },
+          "doppler_effect":
+          {
+            "title": "The Doppler Effect",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Identify how the Doppler effect changes sound; identify real world examples of the Doppler effect"
+          },
+          "octaves_1":
+          {
+            "title": "Octaves 1",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Solve for all wavelengths and frequencies of a particular octave, with notes given."
+          },
+          "octaves_2":
+          {
+            "title": "Octaves 2: Musical Scales",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Solve for all wavelengths and frequencies of a particular octave, with ratios of the octave given."
+          },
+          "doppler_effect_equation":
+          {
+            "title": "Doppler Effect Equation",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Numerically solve the Doppler effect equation and relate the result to a real life experience."
+          },
+          "doppler_diagrams":
+          {
+            "title": "Doppler Diagrams",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Analyze diagrams of a wave front of sound; explain why the Doppler effect occurs."
+          },
+          "explain_speed_of_sound":
+          {
+            "title": "Explain The Speed of Sound",
+            "level": 3,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Explain why the speed of sound changes within different media."
+          },
+          "doppler_algebra":
+          {
+            "title": "Doppler Algebra",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Algebraically solve the Doppler effect equation."
+          },
+          "doppler_proportionality":
+          {
+            "title": "Doppler Proportionality",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use proportionality to analyze the Doppler effect equation."
+          },
+          "sound_barrier":
+          {
+            "title": "The Sound Barrier",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Use diagrams of sound waves to explain the existence of the sound barrier, and what occurs when it is broken."
+          }
+        }
+      },
       "wave_phenomena":
       {
         "title": "Wave Phenomena",
