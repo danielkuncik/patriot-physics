@@ -3986,7 +3986,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve Ohm's law for either resistance, current, or power."
+            "objective": "Solve Ohm's law for either resistance, current, or voltage.",
+            "content": "Voltage is equal to current times resistance."
           },
           "power_formula":
           {
@@ -3995,7 +3996,8 @@
             "horizontal": 4,
             "letter": "B",
             "prerequisites": ["ohms_law"],
-            "objective": "Use both the power formula and Ohm's Law to solve for power or other quantities."
+            "objective": "Use both the power formula and Ohm's Law to solve for power or other quantities.",
+            "content": "Power is equal to current times voltage; this formula can be combined with Ohm's Law."
           },
           "analyze_circuits_1":
           {
@@ -4004,7 +4006,8 @@
             "horizontal": 4,
             "letter": "C",
             "prerequisites": ["power_formula"],
-            "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor."
+            "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor.",
+            "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit."
           },
           "analyze_circuits_2":
           {
@@ -4013,7 +4016,8 @@
             "horizontal": 2,
             "letter": "D",
             "prerequisites": ["analyze_circuits_1"],
-            "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information."
+            "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information.",
+            "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit, and you can logically deduce the information you need from different sets of initial information."
           },
           "algebraic_circuits_1":
           {
@@ -4023,7 +4027,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["analyze_circuits_2"],
-            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together"
+            "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together",
+            "content": "Ohm's Law and the Power Formula can be manipulated to create new formulas."
           },
           "electric_potential_diagrams_1":
           {
@@ -4032,7 +4037,8 @@
             "horizontal": 3.5,
             "letter": "F",
             "prerequisites": ["algebraic_circuits_1"],
-            "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits."
+            "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits.",
+            "content": "Voltage can be depicted as changes in electric potential across a circuit; magnitude of current can also be depicted on an electric potential graph."
           },
           "analyze_circuits_3":
           {
@@ -4041,7 +4047,8 @@
             "horizontal": 5,
             "letter": "G",
             "prerequisites": ["electric_potential_diagrams_1"],
-            "objective": "Solve circuits with series components inside of parallel components or parallel sections in series."
+            "objective": "Solve circuits with series components inside of parallel components or parallel sections in series.",
+            "content": "Combinations of series and parallel resistor elements can be combined and taken apart to make a circuit."
           },
           "electric_potential_diagrams_2":
           {
@@ -4050,7 +4057,8 @@
             "horizontal": 6,
             "letter": "H",
             "prerequisites": ["analyze_circuits_3"],
-            "objective": "Given an electric potential diagram of a circuit, draw a circuit that could potentially be the correct circuit."
+            "objective": "Given an electric potential diagram of a circuit, draw a circuit that could potentially be the correct circuit.",
+            "content": "The elements within a circuit can be determined from an electric potential diagram of that circuit."
           },
           "algebraic_circuits_2":
           {
@@ -4135,7 +4143,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Recognize electromagnetic and mechanical waves from a list; answer multiple choice questions on differences between electromagnetic and mechanical waves."
+            "objective": "Recognize electromagnetic and mechanical waves from a list; answer multiple choice questions on differences between electromagnetic and mechanical waves.",
+            "content": "All waves can be categorized as either electromagnetic waves or mechanical waves."
           },
           "transverse_vs_longitudinal_waves":
           {
@@ -4144,7 +4153,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["electromagnetic_vs_mechanical_waves_1"],
-            "objective": "Differentiate between pictures and examples of transverse and longitudinal waves."
+            "objective": "Differentiate between pictures and examples of transverse and longitudinal waves.",
+            "content": "All waves can be categorized as either transverse or longitudinal waves."
           },
           "parts_of_a_wave_1":
           {
@@ -4153,7 +4163,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["transverse_vs_longitudinal_waves"],
-            "objective": "Identify important parts of a traveling transverse wave."
+            "objective": "Identify important parts of a traveling transverse wave, including crests, troughs, wavelength, and amplitude.",
+            "content": "Crests, troughs, wavelength, and amplitude are important elements of a transverse wave."
           },
           "drawing_waves_1A":
           {
@@ -4162,7 +4173,8 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["parts_of_a_wave_1"],
-            "objective": "Draw transverse waves with a particular wavelength and each crest correctly positioned"
+            "objective": "Draw transverse waves with a particular wavelength and each crest correctly positioned",
+            "content": "The distance between the crests of a transverse wave show its wavelength."
           },
           "drawing_waves_1B":
           {
@@ -4171,7 +4183,8 @@
             "horizontal": 5,
             "letter": "E",
             "prerequisites": ["drawing_waves_1A"],
-            "objective": "Draw transverse waves with a particular amplitude."
+            "objective": "Draw transverse waves with a particular amplitude.",
+            "content": "The distance from the middle of a transverse wave to its crest shows its amplitude."
           },
           "wave_equation":
           {
@@ -4180,7 +4193,8 @@
             "horizontal": 6,
             "letter": "F",
             "prerequisites": ["drawing_waves_1B"],
-            "objective": "Use the equation v = lambda f in simple contexts related to waves."
+            "objective": "Use the equation v = lambda f in simple contexts related to waves.",
+            "content": "The speed of a wave is equal to its wavelength times its frequency."
           },
           "electromagnetic_vs_mechanical_waves_2":
           {
@@ -4190,7 +4204,8 @@
             "letter": "G",
             "prerequisites": ["wave_equation"],
             "objective": "Write definitions of electromagnetic and mechanical waves; write differences between electromagnetic and mechanical waves.",
-            "notes": "This is the quiz in which students formally define a wave."
+            "notes": "This is the quiz in which students formally define a wave.",
+            "content": "Mechanical waves consist of moving oscillations; electromagnetic wave consist of oscillating electric and magnetic energy."
           },
           "oscillation_particles_during_wave":
           {
@@ -4199,7 +4214,8 @@
             "horizontal": 4,
             "letter": "H",
             "prerequisites": ["electromagnetic_vs_mechanical_waves_2"],
-            "objective": "Diagram how an object oscillates as a transverse or longitudinal wave passes through."
+            "objective": "Diagram how an object oscillates as a mechanical transverse or longitudinal wave passes through.",
+            "content": "As a wave passes through, the direction a particle oscillates depends on whether it is a transverse or mechanical wave."
           },
           "wave_categorization":
           {
@@ -4208,7 +4224,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["oscillation_particles_during_wave"],
-            "objective": "Categorize waves using a matrix as electromagnetic or mechanical and as longitudinal or transverse."
+            "objective": "Categorize waves using a matrix as electromagnetic or mechanical and as longitudinal or transverse.",
+            "content": "Waves can be categorized as transverse electromagnetic waves, transverse mechanical waves, or longitudinal mechanical waves."
           },
           "parts_of_a_wave_2":
           {
@@ -4217,7 +4234,8 @@
             "horizontal": 2,
             "letter": "J",
             "prerequisites": ["wave_categorization"],
-            "objective": "Identify parts of a longitudinal wave; briefly measure wavelength and amplitude of a longitudinal wave."
+            "objective": "Identify parts of a longitudinal wave, including compression zone, rarefaction zone, and wavelength; briefly measure wavelength and amplitude of a longitudinal wave.",
+            "content": "The crest of a transverse wave corresponds to the compression zone of a longitudinal wave; the trough of a longitudinal wave corresponds to the rarefaction zone of a longitudinal wave; wavelength and amplitude can be measured on an image of a longitudinal wave."
           },
           "speed_of_sound_and_light_1":
           {
@@ -4226,7 +4244,8 @@
             "horizontal": 1,
             "letter": "K",
             "prerequisites": ["parts_of_a_wave_2"],
-            "objective": "Identify the difference between the speeds of sound and light; identify real world implications of this."
+            "objective": "Identify the difference between the speeds of sound and light; identify real world implications of this.",
+            "content": "Sound moves much slower than light, and this fact can be observed whenever a loud sound is made far away."
           },
           "drawing_waves_2":
           {
@@ -4236,7 +4255,8 @@
             "letter": "L",
             "prerequisites": ["speed_of_sound_and_light_1"],
             "objective": "Draw waves of particular wavelength AND amplitude, with a particular focus on the crests of a wave.",
-            "limits": "Grading is generous if the troughs of a wave are not perfectly drawn."
+            "limits": "Grading is generous if the troughs of a wave are not perfectly drawn.",
+            "content": "Wavelength and amplitude can be depicted on an image of a wave."
           },
           "making_transverse_longitudinal_waves":
           {
