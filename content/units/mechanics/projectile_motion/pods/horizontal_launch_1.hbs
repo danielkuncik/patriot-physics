@@ -23,20 +23,20 @@
 </h5>
 
 <ol class = 'questionList'>
-  <li class = 'question'>
+  <li class = 'question' data-answer = '37.1 m'>
     A car drives off of a cliff that is 30 meters tall at a horizontal speed of 15 m/s.
     How far does it travel before striking the ground?
     <br>
     Here is how the information translates into physics quantities:
     <ul>
-      <li>The horizontal velocity is 15 m/s. This is the speed the car was goign when it went off the cliff.</li>
-      <li>The initial vertial velocity is 0. The car is not moving vertically when it flies off the cliff.</li>
+      <li>The horizontal velocity is 15 m/s. This is the speed the car was going when it went off the cliff.</li>
+      <li>The initial vertical velocity is 0. The car is not moving vertically when it flies off the cliff.</li>
       <li>
         The vertical displacement is -30 m. This is how far it travels vertically before striking the ground.
         This value is negative because the displacement is <emph>downward</emph>.
       </li>
       <li>
-        The vertical acceleraiton is -9.8 m/s<sup>2</sup>.
+        The vertical acceleration is -9.8 m/s<sup>2</sup>.
         This value is negative because the acceleration is <emph>downward</emph>.
       </li>
       <li>
@@ -50,20 +50,20 @@
     Write the final answer (the horizontal displacement) here:
   </li>
 
-  <li class = 'question'>
+  <li class = 'question' data-answer = '63.9 m'>
     A car drives off of a cliff that is 50 meters tall at a horizontal speed of 20 m/s.
     How far does it travel before striking the ground?
     <br>
     Here is how the information translates into physics quantities:
     <ul>
       <li>The horizontal velocity is 20 m/s. This is the speed the car was goign when it went off the cliff.</li>
-      <li>The initial vertial velocity is 0. The car is not moving vertically when it flies off the cliff.</li>
+      <li>The initial vertical velocity is 0. The car is not moving vertically when it flies off the cliff.</li>
       <li>
         The vertical displacement is -50 m. This is how far it travels vertically before striking the ground.
         This value is negative because the displacement is <emph>downward</emph>.
       </li>
       <li>
-        The vertical acceleraiton is -9.8 m/s<sup>2</sup>.
+        The vertical acceleration is -9.8 m/s<sup>2</sup>.
         This value is negative because the acceleration is <emph>downward</emph>.
       </li>
       <li>
@@ -83,15 +83,15 @@
 </h5>
 
 <ol class = 'questionList'>
-  <li class = 'question'>
+  <li class = 'question' data-answer = 'In the vertical dimension, the object is accelerating. In the horizontal dimension, it is moving with a constant velocity.'>
     Why are there four equations available to use in the vertical dimension,
-    but only one available in the horizontal dimension.
+    but only one available in the horizontal dimension?
   </li>
-  <li class = 'question'>
-    Which is the only quantitiy that is the same in both dimensions. Why?
+  <li class = 'question' data-answer = 'Time. Time is not connected to you position in space.'>
+    Which is the only quantity that is the same in both dimensions? Why?
   </li>
-  <li class = 'question'>
-    Why are all of the quantities in the vertical dimension negative?
+  <li class = 'question' data-answer = 'Because it is both moving downward and accelerating downward.'>
+    Why are the velocity and acceleration in the vertical dimension negative?
   </li>
 </ol>
 
@@ -111,17 +111,25 @@ include some questions that slowly remove the scaffolding that i added.
 Have a problem asking for the magnitude of final velocity!
 -->
 
-
 <h4>
   Answers:
 </h4>
 
 <ol class = 'answerList'></ol>
 
+
+<h4>
+    Video Resources:
+</h4>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wB_Uv8P-VAo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+
 <script>
 
 
   let horizontalLaunchTable = new Table(5,3);
+  horizontalLaunchTable.setMaxFontProportion(0.05);
   horizontalLaunchTable.setColumnProportions([1,2,2]);
   horizontalLaunchTable.setRowProportions([1,3,4,4,5]);
 
