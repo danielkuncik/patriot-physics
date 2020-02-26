@@ -2888,13 +2888,23 @@
           },
           "cannon_problem_1":
           {
-            "title": "Cannon Problem 1",
+            "title": "Cannon Problems 1",
             "subtitle": "Concepts and Numeric Analysis",
             "level": 4,
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["horizontal_launch_2"],
             "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; use this information to solve for relevant numeric quantities."
+          },
+          "cannon_problem_2":
+          {
+            "title": "Cannon Problems 2",
+            "subtitle": "On Different Levels",
+            "level": 4,
+            "horizontal": 6,
+            "letter": "X",
+            "prerequisite": [],
+            "objective": "Solve a cannon problem in which the cannonball lands on a different level than it began."
           },
           "pop_up_4":
           {
@@ -2916,9 +2926,9 @@
             "prerequisites": ["pop_up_4"],
             "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answres using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
           },
-          "cannon_problem_2":
+          "cannon_problem_3":
           {
-            "title": "Cannon Problem 2",
+            "title": "Cannon Problem 3",
             "subtitle": "Kinematic and Dynamic Analysis",
             "level": 5,
             "horizontal": 1,
@@ -2926,9 +2936,9 @@
             "prerequisites": ["horizontal_launch_3"],
             "objective": "Draw qualitative kinematic graphs of an object launched at an angle; relate the forces of the object to its motion using Newton's Laws of Motion."
           },
-          "cannon_problem_3":
+          "cannon_problem_4":
           {
-            "title": "Cannon Problem 3",
+            "title": "Cannon Problem 4",
             "subtitle": "Symbolic and Functional Analysis",
             "level": 5,
             "horizontal": 2,
