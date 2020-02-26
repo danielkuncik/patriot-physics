@@ -2881,29 +2881,29 @@
             "title": "Horizontal Launch 2",
             "subtitle": "Kinematic, Dynamic, and Energy Analysis",
             "level": 4,
-            "horizontal": 4,
+            "horizontal": 5,
             "letter": "K",
             "prerequisites": ["bullet_drop_conundrum"],
             "objective": "Create qualitative kinematic graphs of a horizontally launched object; use Newton's Laws to analyze the dynamics of a horizontally launched object in each dimension; demonstrate how an object launched horizontally follows the conservation of energy."
           },
-          "cannon_problem_1":
+          "cannon_problems_1":
           {
             "title": "Cannon Problems 1",
             "subtitle": "Concepts and Numeric Analysis",
             "level": 4,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "L",
             "prerequisites": ["horizontal_launch_2"],
             "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; use this information to solve for relevant numeric quantities."
           },
-          "cannon_problem_2":
+          "cannon_problems_2":
           {
             "title": "Cannon Problems 2",
             "subtitle": "On Different Levels",
             "level": 4,
-            "horizontal": 6,
-            "letter": "X",
-            "prerequisite": [],
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["cannon_problems_1"],
             "objective": "Solve a cannon problem in which the cannonball lands on a different level than it began."
           },
           "pop_up_4":
@@ -2912,8 +2912,8 @@
             "subtitle": "Symbolic and Functional Analysis",
             "level": 4,
             "horizontal": 2,
-            "letter": "M",
-            "prerequisites": ["cannon_problem_1"],
+            "letter": "N",
+            "prerequisites": ["cannon_problems_2"],
             "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
           },
           "horizontal_launch_3":
@@ -2922,28 +2922,28 @@
             "subtitle": "Symbolic and Functional Analysis",
             "level": 4,
             "horizontal": 1,
-            "letter": "N",
+            "letter": "O",
             "prerequisites": ["pop_up_4"],
             "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answres using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
           },
-          "cannon_problem_3":
+          "cannon_problems_3":
           {
-            "title": "Cannon Problem 3",
+            "title": "Cannon Problems 3",
             "subtitle": "Kinematic and Dynamic Analysis",
             "level": 5,
             "horizontal": 1,
-            "letter": "O",
+            "letter": "P",
             "prerequisites": ["horizontal_launch_3"],
             "objective": "Draw qualitative kinematic graphs of an object launched at an angle; relate the forces of the object to its motion using Newton's Laws of Motion."
           },
-          "cannon_problem_4":
+          "cannon_problems_4":
           {
-            "title": "Cannon Problem 4",
+            "title": "Cannon Problems 4",
             "subtitle": "Symbolic and Functional Analysis",
             "level": 5,
             "horizontal": 2,
-            "letter": "P",
-            "prerequisites": ["cannon_problem_2"],
+            "letter": "Q",
+            "prerequisites": ["cannon_problems_3"],
             "objective": "Symbolically solve for relevant quantities given an objet launched at an angle; solve for motion functions of an object launched at an angle; prove the principle of parabolic motion."
           },
           "aiming_cannon_laser_pointers":
@@ -2951,8 +2951,8 @@
             "title": "Aim a cannon with laser pointers.",
             "level": 6,
             "horizontal": 2,
-            "letter": "Q",
-            "prerequisites": ["cannon_problem_3"],
+            "letter": "R",
+            "prerequisites": ["cannon_problems_4"],
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
           },
           "wide_receiver_motion":
@@ -2960,8 +2960,8 @@
             "title": "Wide Receiver in Motion",
             "level": 6,
             "horizontal": 3,
-            "letter": "R",
-            "prerequisites": ["cannon_problem_3"],
+            "letter": "S",
+            "prerequisites": ["cannon_problems_4"],
             "objective": "Devise a model that mathematical depicts how a quarterback hits a wide receiver running quickly with a parabolic pass."
           }
         }
