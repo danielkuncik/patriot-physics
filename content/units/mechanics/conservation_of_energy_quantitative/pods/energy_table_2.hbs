@@ -148,3 +148,28 @@
     let formulaBox = new FormulaSolvingTable();
     $(".formulaBoxDiv").append(formulaBox.draw(500,300));
 </script>
+
+
+<h4>
+    Problem 3:
+</h4>
+
+
+<p class = 'directions'>
+    Use the Law of Conservation of Energy and
+    the formulas for Kinetic and Gravitational Potential Energy
+    to fill out the table below.
+</p>
+<div id = 'infoTable3' ></div>
+
+<script>
+    let infoTable3 = new EnergyTable(4,['speed (m/s)', 'height (m)', 'KE (J)', 'GPE (J)', 'Total Energy (J)']);
+
+    infoTable3.writeTextInCellKeys('A','speed (m/s)','0');
+    infoTable3.writeTextInCellKeys('B','speed (m/s)','4');
+    infoTable3.writeTextInCellKeys('B','height (m)','0.5');
+    infoTable3.writeTextInCellKeys('C','height (m)','0.3');
+    infoTable3.writeTextInCellKeys('D','height (m)','0');
+
+    $("#infoTable3").append(infoTable3.draw(300));
+</script>
