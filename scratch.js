@@ -63,7 +63,12 @@ class GradeMap {
                                 grade: 0,
                                 pending: false
                             };
-                            let podCode =
+                            let podCode = 10000*alphabetDictionary[pod.letter] + 100 * superUnit.number + unit.number;
+                            this.quizCodes[podCode] = {
+                                podKey: podKey,
+                                unitKey: unitKey,
+                                superUnitKey: superUnitKey
+                            };
                             podsPerLevel[pod.level] += 1;
                         });
 
@@ -88,47 +93,8 @@ class GradeMap {
         });
     }
 
-    getPodFromNumber(podNumber) {
-        const podLetter = alphabetArray[Math.floor(podNumber / 10000) - 1];
-        const superUnitNumber = Math.floor((podNumber % 10000) / 100);
-        const unitNumber = superUnitNumber % 100;
-
-        let superUnitKey, unitKey, podKey;
-        Object.entries(this.map).forEach((entry_A) => {
-            let superUnit = entry_A[1];
-            if (superUnit.number === superUnitNumber && superUnit.units) {
-                superUnitKey = entry_A[0];
-                Object.entries(superUnit.units).forEach((entry_B) => {
-                    let unit = entry_B[1];
-                    if (unit.number === unitNumber && unit.pods) {
-                        unitKey = entry_B[0];
-                        Object.entries(unit.pods).forEach((entry_C) => {
-                            let pod = entry_C[1];
-                            if (pod.letter === podLetter) {
-                                podKey = entry_C[0];
-                            }
-                        });
-                    }
-                });
-
-            }
-        });
-        let result;
-        if (superUnitKey && unitKey && podKey) {
-            result = {
-                superUnitKey: superUnitKey,
-                unitKey: unitKey,
-                podKey: podKey
-            }
-        } else {
-            result = undefined
-        }
-        return result
-
-    }
-
     editGrade(podNumber, newGrade) {
-        const keys = this.getPodFromNumber(podNumber);
+        const keys = this.quizCodes[podNumber];
         if (keys) {
             this.map[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].grade = newGrade;
         }
@@ -170,14 +136,15 @@ class GradeMap {
     }
 }
 const newGradeMap = new GradeMap();
+// console.log(newGradeMap.quizCodes);
 newGradeMap.editGrade(50101, 15);
 newGradeMap.editGrade(60101, 20);
 newGradeMap.editGrade(70101, 20);
 newGradeMap.editGrade(40101, 20);
-
+//
 newGradeMap.calculateAllUnitLevels();
 
-// console.log(newGradeMap.map['mechanics'].units['forward_kinematics_qualitative']);
+console.log(newGradeMap.map['mechanics'].units['forward_kinematics_qualitative']);
 console.log(newGradeMap.calculateOverallLevel());
 
 /*
