@@ -213,12 +213,13 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
     return new hbs.SafeString(htmlString);
 });
 
-hbs.registerHelper('userInfo', (user, section) => {
+hbs.registerHelper('userInfo', (user, section, overallLevel) => {
     let output;
     if (user) {
         output = "<p>Logged in as:</p><ul>";
         output = output + `<li>Name: ${user.name}</li>`;
         output = output + `<li>Section: ${section.name}</li>`;
+        output = output + `<li>Level ${overallLevel}</li>`;
         output = output + "</ul>";
     } else {
         output = "<p>Not logged in.</p>";
@@ -422,7 +423,9 @@ display_home = (req,res) => {
         // template:'home-template',
         title: 'Home Page',
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     });
 };
 
@@ -432,7 +435,9 @@ display_login_page = (req, res) => {
             layout: 'default',
             'title': 'Login Page',
             user: req.user,
-            section: req.section
+            section: req.section,
+            overallLevel: req.overallLevel,
+            gradeMap: req.gradeMap
         });
     } else {
         res.redirect('/');
@@ -447,7 +452,9 @@ display_logout_page = (req, res) => {
             layout: 'default',
             'title': 'Logout Page',
             user: req.user,
-            section: req.section
+            section: req.section,
+            overallLevel: req.overallLevel,
+            gradeMap: req.gradeMap
         });
     }
 };
@@ -458,7 +465,9 @@ display_units_entry_page = (req,res) => {
         title:'Units',
         unitMap:unitMap,
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     });
 };
 
@@ -470,7 +479,9 @@ display_unit_cluster_page = (req,res) => {
         selectedUnitClusterKey: req.params.unitClusterKey,
         title: unitCluster.title,
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     })
 };
 
@@ -485,7 +496,9 @@ display_unit_page = (req, res) => {
         unitClusterName: unitCluster.title,
         unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     });
 };
 
@@ -508,7 +521,9 @@ display_pod_page = (req, res) => {
             unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
             unitClusterName: unitMap[req.params.unitClusterKey].title,
             user: req.user,
-            section: req.section
+            section: req.section,
+            overallLevel: req.overallLevel,
+            gradeMap: req.gradeMap
         });
     } else if (pod.fileType === 'pdf') {
         let filePath = '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
@@ -531,7 +546,9 @@ display_lab_list_page = (req, res) => {
         layout:'default',
         title:'Labs',
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     });
 };
 
@@ -540,7 +557,9 @@ display_lab_page = (req, res) => {
         layout: 'default',
         title: 'Lab',
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     });
 };
 
@@ -549,7 +568,9 @@ display_quiz_entry_page = (req, res) => {
         layout: 'default',
         title: 'Quizzes',
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     });
 };
 
@@ -562,7 +583,9 @@ display_quiz_unit_page = (req, res) => {
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
         user: req.user,
-        section: req.section
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
     })
 };
 
@@ -608,7 +631,9 @@ display_quiz = (req, res) => {
                 selectedUnitClusterKey: req.params.unitClusterKey,
                 selectedUnitKey: req.params.unitKey,
                 user: req.user,
-                section: req.section
+                section: req.section,
+                overallLevel: req.overallLevel,
+                gradeMap: req.gradeMap
             })
         } else {
             let versionNumber = quizMap[req.params.unitClusterKey][req.params.unitKey][req.params.podKey].versions;
@@ -626,7 +651,9 @@ display_quiz = (req, res) => {
                     level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level,
                     version: versionNumber,
                     user: req.user,
-                    section: req.section
+                    section: req.section,
+                    overallLevel: req.overallLevel,
+                    gradeMap: req.gradeMap
                 });
             } else if (versionType === 'pdf') {
                 let filePath = '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.pdf';
@@ -645,7 +672,9 @@ display_quiz = (req, res) => {
             selectedPodKey: req.params.podKey,
             user: req.user,
             section: req.section,
-            action: action
+            action: action,
+            overallLevel: req.overallLevel,
+            gradeMap: req.gradeMap
         });
     }
 };

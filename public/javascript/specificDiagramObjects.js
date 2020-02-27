@@ -2094,6 +2094,44 @@ class RotatingRod extends Diagram {
     }
 }
 
+class Wave extends Diagram {
+    constructor(amplitude, wavelength, phaseProportion, numWavelengths) {
+        super();
+
+        if (amplitude === undefined) {
+            amplitude = 1;
+        }
+        if (wavelength === undefined) {
+            wavelength = 1;
+        }
+        if (phaseProportion === undefined) {
+            phaseProportion = 0;
+        }
+        if (numWavelengths === undefined) {
+            numWavelengths = 4;
+        }
+        this.amplitude = amplitude;
+        this.wavelength = wavelength;
+        this.phaseProportion = phaseProportion;
+        this.numWavelengths = numWavelengths;
+        this.phase = phaseProportion * Math.PI / 2;
+        this.xMax = wavelength * numWavelengths;
+        //    addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {
+        this.function = (x) => {
+            return this.amplitude * Math.sin(2 * Math.PI * x / this.wavelength + this.phase);
+        };
+        super.addFunctionGraph(this.function, 0, this.xMax);
+    }
+
+    addSecondHalf(dashedBoolean) {
+        let newFunction = (x) => {
+            return this.amplitude * Math.sin(2 * Math.PI * x / this.wavelength + this.phase + Math.PI);
+        };
+        super.addFunctionGraph(newFunction, 0, this.xMax);
+    }
+}
+
+
 class UnitMap extends Diagram {
     constructor() {
         super();
