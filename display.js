@@ -566,7 +566,7 @@ display_quiz_unit_page = (req, res) => {
     })
 };
 
-const quizPassword = 'hippopotamus';
+const quizPassword = 'alligator';
 
 function quizAccess(section, level, enteredPassword) {
     let result = false;
