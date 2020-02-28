@@ -589,7 +589,7 @@ display_quiz_unit_page = (req, res) => {
     })
 };
 
-const quizPassword = 'alligator';
+const quizPassword = 'gfdiiuvnaiu';
 
 function quizAccess(section, level, enteredPassword) {
     let result = false;
