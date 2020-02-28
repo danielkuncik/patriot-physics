@@ -1,0 +1,24 @@
+<p>
+    Somebody is on top of a building.
+    They fall downward onto a giant trampoline.
+    After bouncing on the trampoline,
+    they rise upward to the top of the building and land
+    where they began.
+    Ignore the effects of friction or air resistance.
+</p>
+
+<p>
+    Create a qualitative graph of energy-time for the person.
+    On the graph, include three different lines, each with their own label.
+    The three lines should show the kinetic energy, gravitational potential energy, and total energy of the person.
+    The graph should encompass the entire time from when the person jumps to when they land.
+</p>
+
+<div id = 'graphDiv'></div>
+
+
+<script>
+    let myGraph = new QuantitativeGraph(0,10,0,10,3);
+    myGraph.labelAxes('Time', 'Energy');
+    $("#graphDiv").append(myGraph.drawCanvas(1200,400));
+</script>
