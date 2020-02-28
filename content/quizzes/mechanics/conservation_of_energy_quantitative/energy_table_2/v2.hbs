@@ -1,0 +1,83 @@
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'rampA'></div>
+        <div class = 'md-col-6' id = 'rampB'></div>
+    </div>
+    <div class = 'row'>
+        <div class ='md-col-6' id = 'rampC'></div>
+        <div class ='md-col-6' id = 'rampD'></div>
+    </div>
+</div>
+
+<p class = 'directions'>
+    Write every formula you use before you use it!
+</p>
+
+<p>
+    A ball of unknown mass rolls down a ramp of unknown height,
+    and at the bottom has a speed of 3.6 m/s
+    and a kinetic energy of 77.76 Joules.
+</p>
+
+<p>
+    First, determine the mass of the ball:
+</p>
+{{>formulaSolvingTable}}
+
+
+<div class = 'pageBreak'></div>
+
+<p>
+    Second, use the Law of Conservation of Energy
+    and the formulas for kinetic and gravitational potential energy
+    to complete the table below.
+    Assume that the ball loses no energy to friction or air resistance as it falls.
+</p>
+
+<div id = 'energyTable'></div>
+
+<script>
+    const ballRadius = 0.2;
+    function drawRamp(letter, ballPosition) {
+        // ball position is from 0 to 1
+        // the function doesn't work correctly if it is equal to 0 or 1
+        let myDiagram = new Diagram();
+        let endOfRamp1 = origin;
+        let topOfRamp = myDiagram.addNewPoint(1,0);
+        let bottomOfRamp = myDiagram.addNewPoint(3,-2);
+        let endOfRamp2 = myDiagram.addNewPoint(4,-2);
+
+        myDiagram.addText(letter, new Point(3,-0.5), 0.5);
+        myDiagram.addSegment(endOfRamp1, topOfRamp);
+        let rampSegment = myDiagram.addSegment(topOfRamp, bottomOfRamp);
+        myDiagram.addSegment(bottomOfRamp, endOfRamp2);
+
+        let centerBallPoint =  topOfRamp.interpolate(bottomOfRamp, ballPosition);
+        myDiagram.addCircle(centerBallPoint, ballRadius);
+
+        let phi = rampSegment.getPerpendicularAngle();
+        centerBallPoint.translate(ballRadius * Math.cos(phi), ballRadius * Math.sin(phi));
+
+        return myDiagram
+    }
+
+    let rampA = drawRamp('A',0.03);
+    let rampB = drawRamp('B',0.3);
+    let rampC = drawRamp('C',0.6);
+    let rampD = drawRamp('D',0.97);
+
+    $("#rampA").append(rampA.drawCanvas(400,400));
+    $("#rampB").append(rampB.drawCanvas(400,400));
+    $("#rampC").append(rampC.drawCanvas(400,400));
+    $("#rampD").append(rampD.drawCanvas(400,400));
+
+
+    let energyTable = new EnergyTable(4, ['speed', 'height', 'ke', 'gpe', 'total_e'])
+    energyTable.writeTextInCellKeys('A', 'speed', '0');
+    energyTable.writeTextInCellKeys('C', 'speed', '1.8');
+    energyTable.writeTextInCellKeys('D', 'speed', '3.6');
+    energyTable.writeTextInCellKeys('B', 'height', '0.5');
+    energyTable.writeTextInCellKeys('D', 'height', '0');
+    energyTable.writeTextInCellKeys('D', 'ke', '77.76');
+    $("#energyTable").append(energyTable.draw(500,500));
+</script>
