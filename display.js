@@ -237,6 +237,35 @@ hbs.registerHelper('loginLink',(user) => {
     return new hbs.SafeString(output)
 });
 
+
+function getGradeMessagesForPod(superUnitKey, unitKey, gradeMap) {
+    let messages = {};
+    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+        messages[podKey] = '';
+    });
+
+    if (gradeMap) {
+        if (gradeMap[superUnitKey]) {
+            if (gradeMap[superUnitKey].units[unitKey].pods && gradeMap[superUnitKey].units[unitKey].level > 0) {
+                Object.keys(gradeMap[superUnitKey].units[unitKey].pods).forEach((key) => {
+                    let score = gradeMap[superUnitKey].units[unitKey].pods[key].score;
+                    let text;
+                    if (score === 0 ) {
+                        text = ': not yet taken';
+                    } else if (score >= 18) {
+                        text = ': PASSED';
+                    } else if (score > 0 && score < 18) {
+                        text = `: ${score} out of 20`;
+                    }
+                    messages[key]  = text;
+                });
+            }
+        }
+    }
+    return messages;
+}
+
+
 /// helpers to make lists of links on each unit page!
 hbs.registerHelper('listAllUnitsAndPods', () => {
     var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, unitNumber;
@@ -350,9 +379,10 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
     return new hbs.SafeString(unitList);
 });
 
-hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey) => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber, thisPodTitle;
+hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber, thisPodTitle, scoreMessage;
     var unitList = "<ul>";
+    let podScoreMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap);
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
         if (unitCluster.available) {
@@ -378,10 +408,15 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                                 } else {
                                     letter = ''
                                 }
-                                if (pod.available) {
-                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}</a></li>`
+                                if (podScoreMessages[podKey]) {
+                                    scoreMessage = podScoreMessages[podKey];
                                 } else {
-                                    unitList = unitList + `<li>${letter}: ${thisPodTitle}</li>`
+                                    scoreMessage = '';
+                                }
+                                if (pod.available) {
+                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}${scoreMessage}</a></li>`
+                                } else {
+                                    unitList = unitList + `<li>${letter}: ${thisPodTitle}${scoreMessage}</li>`
                                 }
                             }
                             unitList = unitList + "</ul>";
