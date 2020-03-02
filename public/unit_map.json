@@ -2504,7 +2504,16 @@
             "horizontal": 0,
             "letter": "G",
             "prerequisites": ["kinetic_potential_energy_graphs_1"],
-            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly descirbe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system"
+            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly describe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system"
+          },
+          "zero_point_height":
+          {
+            "title": "Zero Point Height",
+            "level": 3,
+            "horizontal": 8,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "consider zero point height as a part of the GPE formula"
           },
           "energy_table_3":
           {
@@ -2514,7 +2523,7 @@
             "horizontal": 1,
             "letter": "H",
             "prerequisites": ["system_language"],
-            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, solve numerical questions based upon the result; consider zero point as a part of the GPE formula"
+            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, solve numerical questions based upon the result"
           },
           "energy_table_4":
           {
