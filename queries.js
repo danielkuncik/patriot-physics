@@ -14,6 +14,20 @@ const pool = new Pool({
 });
 
 
+function getCourseLevel(section) {
+    let courseLevel;
+    if (section === 'Violet') {
+        courseLevel = 'AP';
+    } else if (section === 'Red' || section === 'Blue' || section === 'Green') {
+        courseLevel = 'Honors';
+    } else if (section === 'Orange') {
+        courseLevel = 'A_Level';
+    } else {
+        courseLevel = undefined;
+    }
+    return courseLevel
+}
+
 
 check_login = (req, res, next) => {
     let inputtedName = req.body.name;
@@ -32,6 +46,7 @@ check_login = (req, res, next) => {
                     }
                     if (result2.rows.length > 0) {
                         req.session.section = result2.rows[0];
+                        req.session.courseLevel = getCourseLevel(result2.rows[0].name);
                         next();
                     } else {
                         next();
@@ -192,6 +207,7 @@ class GradeMap {
 }
 
 
+
 load_grades = function(req, res, next) {
     let newGradeMap = new GradeMap();
 
@@ -225,6 +241,11 @@ check_if_logged_in = function(req, res, next) {
         req.section = req.session.section;
     } else {
         req.section = undefined;
+    }
+    if (req.session.courseLevel) {
+        req.courseLevel = req.session.courseLevel;
+    } else {
+        req.courseLevel = undefined;
     }
     if (req.session.gradeMap && req.session.overallLevel) {
         req.gradeMap = req.session.gradeMap;

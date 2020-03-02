@@ -416,6 +416,46 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
 });
 
 
+hbs.registerHelper('isAP', (courseLevel) => {
+    let result;
+    if (courseLevel === 'AP') {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result
+});
+
+hbs.registerHelper('isHonors', (courseLevel) => {
+    let result;
+    if (courseLevel === 'Honors') {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result
+});
+
+hbs.registerHelper('isA_Level', (courseLevel) => {
+    let result;
+    if (courseLevel === 'A_Level') {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result
+});
+
+
+hbs.registerHelper('isNoSection', (courseLevel) => {
+    let result;
+    if (courseLevel === undefined) {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result
+});
 
 display_home = (req,res) => {
     res.render('home.hbs', {
@@ -425,7 +465,8 @@ display_home = (req,res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        courseLevel: req.courseLevel
     });
 };
 

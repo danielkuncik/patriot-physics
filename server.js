@@ -59,6 +59,10 @@ app.get('/logout',[db.check_if_logged_in, disp.display_logout_page]);
 
 app.post('/logout',(req, res) => {
     req.session.student = undefined;
+    req.session.section = undefined;
+    req.session.courseLevel = undefined;
+    req.session.gradeMap = undefined;
+    req.session.overallLevel = undefined;
     res.redirect('/');
 });
 

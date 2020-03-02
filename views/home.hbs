@@ -1,9 +1,25 @@
-{{>ap_home_page}}
+{{#if (isAP courseLevel)}}
+    {{>ap_home_page}}
+{{/if}}
 
-<br>
+{{#if (isHonors courseLevel)}}
+    {{>honors_home_page}}
+{{/if}}
 
-{{>honors_home_page}}
+{{#if (isA_Level courseLevel)}}
+    {{>a_level_home_page}}
+{{/if}}
 
-<br>
 
-{{>a_level_home_page}}
+{{#if (isNoSection courseLevel)}}
+    {{>ap_home_page}}
+
+    <br>
+
+    {{>honors_home_page}}
+
+    <br>
+
+    {{>a_level_home_page}}
+{{/if}}
+
