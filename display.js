@@ -414,7 +414,7 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                                     scoreMessage = '';
                                 }
                                 if (pod.available) {
-                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}${scoreMessage}</a></li>`
+                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}</a>${scoreMessage}</li>`
                                 } else {
                                     unitList = unitList + `<li>${letter}: ${thisPodTitle}${scoreMessage}</li>`
                                 }
