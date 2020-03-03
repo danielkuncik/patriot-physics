@@ -1,0 +1,58 @@
+<p>
+    In previous problems,
+    we considered only kinetic, gravitational potential,
+    and elastic potential energy.
+    Now we will incorporate <strong>thermal energy</strong>
+    into our analysis.
+    In the real world, friction and air resistance
+    will convert kinetic energy into thermal energy.
+    We don't have a formula for thermal energy,
+    but we can deduce how much we have by looking at the situation.
+</p>
+
+<p>
+    Friction and air resistance turn kinetic energy into thermal energy.
+    Because, after it is turned into thermal energy, we can
+    no longer use this energy for anything, it is sometimes called <strong>heat loss</strong>.
+</p>
+
+<h5>
+    Rules:
+</h5>
+<ul>
+    <li>
+        The Conservation of Energy: The total energy of the universe remains the same. It only changes form.
+    </li>
+    <li>
+        \( KE = \frac{1}{2} m v^2 \)
+    </li>
+    <li>
+        \( GPE = mgh \)
+    </li>
+    <li>
+        \( EPE = \frac{1}{2} k \left( x - x_0 \right)^2 \)
+    </li>
+</ul>
+
+<h5>
+    Problem 1:
+</h5>
+<p>
+    A ball with a mass of 4.00 kg is dropped off a short cliff that is 12.0 m tall.
+    At the bottom, the ball has a speed of 13.2 m/s.
+    Your goal is to determine how much energy is lost to heat?
+</p>
+
+<div id = 'energyTable1'></div>
+
+
+<script>
+    let energyTable1 = new EnergyTable(5,['speed','height','ke','gpe','thermal','total_e']);
+    energyTable1.setMaxFontProportion(0.05);
+
+    energyTable1.addInfoToColumn('speed',['0','6.60','9.35','11.4','13.2']);
+    energyTable1.addInfoToColumn('height',['12.0','9.00','6.00','3.00','0']);
+    energyTable1.addInfoToColumn('thermal',['0']);
+
+    $("#energyTable1").append(energyTable1.draw(500));
+</script>
