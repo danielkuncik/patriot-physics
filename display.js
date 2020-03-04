@@ -334,9 +334,10 @@ hbs.registerHelper('listAllUnitsWithQuizzes', () => {
     return new hbs.SafeString(unitList);
 });
 
-hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey) => {
-    let thisPod, thisPodTitle;
+hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
+    let thisPod, thisPodTitle, thisGradeMessage;
     var podList = "<ul>";
+    const gradeMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap)
     Object.keys(unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods).forEach((podKey) => {
         thisPod = unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey];
         if (thisPod.subtitle) {
@@ -344,8 +345,13 @@ hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitK
         } else {
             thisPodTitle = `${thisPod.letter}: ${thisPod.title}`;
         }
+        if (gradeMessages[podKey]) {
+            thisGradeMessage =  `: ${gradeMessages[podKey]}`;
+        } else {
+            thisGradeMessage = '';
+        }
         if (quizMap[selectedUnitClusterKey][selectedUnitKey][podKey].versions > 0) {
-            podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${thisPodTitle}</a></li>`;
+            podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${thisPodTitle}</a>${thisGradeMessage}</li>`;
         } else {
             podList += `<li>${thisPodTitle}</li>`;
         }
