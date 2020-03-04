@@ -545,6 +545,29 @@ hbs.registerHelper('isNoSection', (courseLevel) => {
     return result
 });
 
+hbs.registerHelper('printUnitLevel',(superUnitKey, unitKey, gradeMap) => {
+    let level = undefined;
+    let grade = undefined;
+    if (gradeMap && gradeMap[superUnitKey] && gradeMap[superUnitKey].units && gradeMap[superUnitKey].units[unitKey] ) {
+        if (gradeMap[superUnitKey].units[unitKey].level > 0) {
+            level = `Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
+        }
+        if (gradeMap[superUnitKey].units[unitKey].grade) {
+            grade = `Grade: ${gradeMap[superUnitKey].units[unitKey].grade}%`;
+        }
+    }
+    let string = '';
+    if (level) {
+        string = '<ul>';
+        string = string + `<li>${level}</li>`;
+        if (grade) {
+            string = string + `<li>${grade}</li>`;
+        }
+        string = string + '</ul>';
+    }
+    return new hbs.SafeString(string);
+});
+
 display_home = (req,res) => {
     res.render('home.hbs', {
         layout: 'default',

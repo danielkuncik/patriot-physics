@@ -93,6 +93,40 @@ const alphabetDictionary = {
     'Z': 26
 };
 
+const requirements = {
+    "AP": {
+        "fundamental_forces": {
+            "inverse_square_laws": [0,50,65,75,85,95,100]
+        }
+    },
+    "Honors": {
+        "mechanics": {
+            "quantitative_dynamics": [0,75,85,95,100],
+            "conservation_of_energy_quantitative": [0,75,85,95,100]
+        }
+    },
+    "A_Level": {
+        "mechanics": {
+            "quantitative_dynamics": [0,85,95,100],
+            "conservation_of_energy_quantitative": [0,85,95,100]
+        }
+    }
+};
+
+function getGradeFromLevel(level, gradeArray) {
+    const floorLevel = Math.floor(level);
+    const levelDecimal = level - floorLevel;
+    let grade;
+    if (floorLevel >= gradeArray.length - 1) {
+        grade = 100;
+    } else {
+        let start = gradeArray[floorLevel];
+        let extra = (gradeArray[floorLevel + 1] - gradeArray[floorLevel]) * levelDecimal;
+        grade = start + extra;
+    }
+    return grade
+}
+
 class GradeMap {
     constructor() {
         this.map = {};
@@ -205,6 +239,17 @@ class GradeMap {
             }
         });
     }
+
+    calculateGrades(courseLevel) {
+        const reqs = requirements[courseLevel];
+        Object.keys(reqs).forEach((superUnitKey) => {
+            Object.keys(reqs[superUnitKey]).forEach((unitKey) => {
+                let gradeArray = reqs[superUnitKey][unitKey];
+                let level = this.map[superUnitKey].units[unitKey].level;
+                this.map[superUnitKey].units[unitKey].grade = getGradeFromLevel(level, gradeArray);
+            });
+        });
+    }
 }
 
 
@@ -222,6 +267,7 @@ load_grades = function(req, res, next) {
                 newGradeMap.editGrade(grade.pod_id, grade.score);
             });
             newGradeMap.calculateAllUnitLevels();
+            newGradeMap.calculateGrades(req.session.courseLevel);
             req.session.gradeMap = newGradeMap.map;
             req.session.overallLevel = newGradeMap.calculateOverallLevel();
             next();
