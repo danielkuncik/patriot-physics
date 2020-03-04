@@ -1428,7 +1428,6 @@
             "prerequisites": ["memorize_kinematic_equations"],
             "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity.",
             "content": "A physicist can learn kinematic quantities from a quantitative kinematic graph, and then relate them using the kinematic equations."
-            :
           },
           "kinematic_equations_4":
           {
