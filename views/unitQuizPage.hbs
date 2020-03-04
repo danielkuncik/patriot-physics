@@ -14,7 +14,7 @@
 
 <script>
     var myUnitMap = new UnitMap();
-        {{addAllPodsToMap selectedUnitClusterKey selectedUnitKey}}
+        {{addAllPodsToMap selectedUnitClusterKey selectedUnitKey gradeMap}}
     console.log(myUnitMap);
     myUnitMap.connectPrerequisites();
     var myUnitMapCanvas = myUnitMap.drawCanvas(myUnitMap.getMaxHorizontalPosition()*120,myUnitMap.getMaxLevel()*120);

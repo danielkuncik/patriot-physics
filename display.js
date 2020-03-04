@@ -368,7 +368,7 @@ hbs.registerHelper('listAllUnitsWithQuizzes', (gradeMap) => {
 hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
     let thisPod, thisPodTitle, thisGradeMessage;
     var podList = "<ul>";
-    const gradeMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap)
+    const gradeMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap);
     Object.keys(unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods).forEach((podKey) => {
         thisPod = unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey];
         if (thisPod.subtitle) {
@@ -470,7 +470,8 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
 });
 
 
-hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
+hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey, gradeMap) => {
+    let thisScore;
     const myPods = unitMap[unitClusterKey]["units"][unitKey]["pods"];
     var podAddString = "", pod;
     Object.keys(myPods).forEach((key) => {
@@ -481,8 +482,17 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey) => {
                 prerequisiteString = prerequisiteString.concat("\"" + preReq + "\"" +  ",");
             });
         }
+        if (gradeMap && gradeMap[unitClusterKey] && gradeMap[unitClusterKey].units && gradeMap[unitClusterKey].units[unitKey] && gradeMap[unitClusterKey].units[unitKey].pods) {
+            if (gradeMap[unitClusterKey].units[unitKey].pods[key]) {
+                thisScore = gradeMap[unitClusterKey].units[unitKey].pods[key].score;
+            } else {
+                thisScore = 0;
+            }
+        } else {
+            thisScore = 0;
+        }
         if (prerequisiteString[prerequisiteString.length - 1] === ",") {prerequisiteString = prerequisiteString.slice(0,-1)}
-        podAddString += (`myUnitMap.addPod('${key}','${pod.letter}',${pod.level},${pod.horizontal},[${prerequisiteString}]);`);
+        podAddString += (`myUnitMap.addPod('${key}','${pod.letter}',${pod.level},${pod.horizontal},[${prerequisiteString}],${thisScore});`);
     });
     return new hbs.SafeString(podAddString);
 });
