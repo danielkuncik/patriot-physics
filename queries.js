@@ -170,7 +170,8 @@ class GradeMap {
                 currentLevel += pod.score / 20 * pod.value;
             });
         }
-        this.map[superUnitKey].units[unitKey].level = currentLevel;
+        let roundedLevel = Math.floor(currentLevel * 10) / 10;
+        this.map[superUnitKey].units[unitKey].level = roundedLevel;
     }
 
     calculateAllUnitLevels() {

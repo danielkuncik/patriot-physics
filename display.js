@@ -266,6 +266,25 @@ function getGradeMessagesForPod(superUnitKey, unitKey, gradeMap) {
 }
 
 
+function getLevelMessages(gradeMap) {
+    let messages = {};
+    if (gradeMap) {
+        Object.keys(gradeMap).forEach((superUnitKey) => {
+            messages[superUnitKey] = {};
+            if (gradeMap[superUnitKey].units) {
+                Object.keys(gradeMap[superUnitKey].units).forEach((unitKey) => {
+                    if (gradeMap[superUnitKey].units[unitKey].level > 0) {
+                        messages[superUnitKey][unitKey] = `: Level ${gradeMap[superUnitKey].units[unitKey].level}`;
+                    } else {
+                        messages[superUnitKey][unitKey] = undefined;
+                    }
+                });
+            }
+        });
+    }
+    return messages
+}
+
 /// helpers to make lists of links on each unit page!
 hbs.registerHelper('listAllUnitsAndPods', () => {
     var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, unitNumber;
@@ -297,9 +316,10 @@ hbs.registerHelper('listAllUnitsAndPods', () => {
     return new hbs.SafeString(unitList);
 });
 
-hbs.registerHelper('listAllUnits', () => {
-    var unitClusterKey, unitCluster, unitKey, unit, unitNumber;
+hbs.registerHelper('listAllUnits', (gradeMap) => {
+    var unitClusterKey, unitCluster, unitKey, unit, unitNumber, thisLevelMessage;
     var unitList = "<ul>";
+    const levelMessages = getLevelMessages(gradeMap);
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
         if (unitCluster.available) {
@@ -307,8 +327,13 @@ hbs.registerHelper('listAllUnits', () => {
             for (unitKey in unitCluster.units) {
                 unit = unitCluster.units[unitKey];
                 if (unit.available) {
+                    if (levelMessages[unitClusterKey] && levelMessages[unitClusterKey][unitKey]) {
+                        thisLevelMessage = levelMessages[unitClusterKey][unitKey];
+                    } else {
+                        thisLevelMessage = '';
+                    }
                     unitNumber = unitCluster.number * 100 + unit.number;
-                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>`;
+                    unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>${thisLevelMessage}`;
                     unitList = unitList + "</li>";
                 }
             }
