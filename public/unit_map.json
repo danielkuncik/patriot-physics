@@ -1869,7 +1869,8 @@
             "horizontal": 3,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Given a 1-dimensional quantitative free-body diagram, determine the magnitude and direction of net force acting on an object."
+            "objective": "Given a 1-dimensional quantitative free-body diagram, determine the magnitude and direction of net force acting on an object.",
+            "content": "Net force is calculated from a quantitative free-body diagram of an object."
           },
           "newtons_second_law":
           {
@@ -1879,7 +1880,8 @@
             "horizontal": 5,
             "letter": "B",
             "prerequisites": [],
-            "objective": "Use Newton's Second Law to solve numeric problems."
+            "objective": "Use Newton's Second Law to solve numeric problems.",
+            "content": "Newton's Second Law relates the mass of an object, the acceleration of that object, and the net force acting on that object."
           },
           "finding_acceleration":
           {
@@ -1889,7 +1891,8 @@
             "horizontal": 4,
             "letter": "C",
             "prerequisites": ["finding_net_force","newtons_second_law", "friction_1"],
-            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of the object."
+            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of the object.",
+            "content": "A physicist finds acceleration of an object by first finding net force from a quantitative free-body diagram, then finding acceleration from Newton's Second Law."
           },
           "friction_1":
           {
@@ -1899,7 +1902,8 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": [],
-            "objective": "Recognize when and how friction is applied"
+            "objective": "Recognize when and how friction is applied; differentiate between two different types of friction.",
+            "content": "Kinetic friction acts on objects that are moving; static friction acts on objects that are not moving."
           },
           "block_dragging_1":
           {
@@ -1909,7 +1913,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["finding_acceleration"],
-            "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block."
+            "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block.",
+            "content": "Gravity, normal force, and applied force act on a block being dragged; by understanding these forces a physicist can understand the motion of the block."
           },
           "find_missing_force":
           {
@@ -1918,7 +1923,8 @@
             "horizontal": 6,
             "letter": "F",
             "prerequisites": ["finding_acceleration"],
-            "objective": "Given a free-body diagram and the net force and/or an acceleration and mass, identify the magnitude and direction of an unknown force in a problem."
+            "objective": "Given a free-body diagram and the net force and/or an acceleration and mass, identify the magnitude and direction of an unknown force in a problem.",
+            "content": "A physicist sometimes must find a particular force to find the net force acting on a block."
           },
           "block_dragging_2":
           {
@@ -1928,7 +1934,8 @@
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["block_dragging_1"],
-            "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block."
+            "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block.",
+            "content": "Gravity, normal force, and applied force, and kinetic friction act on a block being dragged; by understanding these forces a physicist can understand the motion of the block."
           },
           "friction_2":
           {
@@ -1937,7 +1944,8 @@
             "horizontal": 1,
             "letter": "X",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Recognize qualitative differences between static and kinetic friction; Explain that the magnitude of friction is independent of surface area."
+            "objective": "Recognize qualitative differences between static and kinetic friction; Explain that the magnitude of friction is independent of surface area.",
+            "content": "The magnitude of friction is independent of surface area of the object being dragged; maximum static friction is stronger than kinetic friction."
           },
           "elevators_1":
           {
@@ -1947,7 +1955,8 @@
             "horizontal": 6,
             "letter": "H",
             "prerequisites": ["find_missing_force"],
-            "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person."
+            "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person.",
+            "content": "Inside an elevator, gravity and normal force act on the rider; normal force is a constraint force that adjusts to match a particular acceleration"
           },
           "block_dragging_3":
           {
@@ -1957,7 +1966,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Given a block experiencing an applied force on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
+            "objective": "Given a block experiencing an applied force on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction.",
+            "content": "If a block is not moving, a physicist determines if it will move by comparing applied force to maximum static friction; static friction is a constraint force."
           },
           "vertical_friction":
           {
@@ -1966,7 +1976,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["block_dragging_3"],
-            "objective": "Draw a free-body diagram including friction as it acts on an object pressed against a wall or pole."
+            "objective": "Draw a free-body diagram including friction as it acts on an object pressed against a wall or pole.",
+            "content": "Friction can be analyzed in several situations other than simply a block being dragged on a horizontal surface."
           },
           "elevators_2":
           {
@@ -1976,7 +1987,8 @@
             "horizontal": 6,
             "letter": "K",
             "prerequisites": ["elevators_1"],
-            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel."
+            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel.",
+            "content": "Normal force changes in an elevator, leading to counterintuitive feelings; a physicist can make sense of these feelings by analyzing the forces and acceleration of a person in an elevator."
           },
           "block_dragging_4":
           {
