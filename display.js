@@ -447,9 +447,9 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                                     thisPodTitle = pod.title;
                                 }
                                 if (pod.letter) {
-                                    letter = pod.letter
+                                    letter = pod.letter;
                                 } else {
-                                    letter = ''
+                                    letter = '';
                                 }
                                 if (podScoreMessages[podKey]) {
                                     scoreMessage = podScoreMessages[podKey];
@@ -457,9 +457,9 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                                     scoreMessage = '';
                                 }
                                 if (pod.available) {
-                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}</a>${scoreMessage}</li>`
+                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}</a>${scoreMessage}</li>`;
                                 } else {
-                                    unitList = unitList + `<li>${letter}: ${thisPodTitle}${scoreMessage}</li>`
+                                    unitList = unitList + `<li>${letter}: ${thisPodTitle}${scoreMessage}</li>`;
                                 }
                             }
                             unitList = unitList + "</ul>";
