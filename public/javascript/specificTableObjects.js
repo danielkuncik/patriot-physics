@@ -90,6 +90,7 @@ class EnergyTable extends Table {
             'ke': 'Kinetic Energy (J)',
             'gpe': 'Gravitational Potential Energy (J)',
             'epe': 'Elastic Potential Energy (J)',
+            'thermal': 'Thermal Energy (heat loss) (J)',
             'total_e': 'Total Energy (J)',
             'speed': 'Speed (m/s)',
             'height': 'Height (m)',
