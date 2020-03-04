@@ -553,7 +553,7 @@ hbs.registerHelper('printUnitLevel',(superUnitKey, unitKey, gradeMap) => {
             level = `Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
         }
         if (gradeMap[superUnitKey].units[unitKey].grade) {
-            grade = `Grade: ${gradeMap[superUnitKey].units[unitKey].grade}%`;
+            grade = `Current Grade: ${gradeMap[superUnitKey].units[unitKey].grade}%`;
         }
     }
     let string = '';
@@ -565,6 +565,38 @@ hbs.registerHelper('printUnitLevel',(superUnitKey, unitKey, gradeMap) => {
         }
         string = string + '</ul>';
     }
+    return new hbs.SafeString(string);
+});
+
+hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap) => {
+    let string = '<li>';
+    let level = undefined;
+    let grade = undefined;
+    if (gradeMap && gradeMap[superUnitKey] && gradeMap[superUnitKey].units && gradeMap[superUnitKey].units[unitKey] ) {
+        if (gradeMap[superUnitKey].units[unitKey].level > 0) {
+            level = `Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
+        }
+        if (gradeMap[superUnitKey].units[unitKey].grade) {
+            grade = `Current Grade: ${gradeMap[superUnitKey].units[unitKey].grade}%`;
+        }
+    }
+    let superUnit = unitMap[superUnitKey];
+    let unit = superUnit.units[unitKey];
+
+    const unitNumber = superUnit.number * 100 + unit.number;
+    const unitTitle = unit.title;
+
+    string = string + `<a href = '/unit/${superUnitKey}/${unitKey}'>${unitNumber}-${unitTitle}</a>`;
+
+    if (level) {
+        string = string + '<ul>';
+        string = string + `<li>${level}</li>`;
+        if (grade) {
+            string = string + `<li>${grade}</li>`;
+        }
+        string = string + '</ul>';
+    }
+    string = string + '</li>';
     return new hbs.SafeString(string);
 });
 
