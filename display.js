@@ -417,9 +417,10 @@ hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
 });
 
 hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber, thisPodTitle, scoreMessage;
+    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber, thisPodTitle, scoreMessage, thisLevel;
     var unitList = "<ul>";
     let podScoreMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap);
+    let levelScoreMessages = getLevelMessages(gradeMap);
     for (unitClusterKey in unitMap) {
         unitCluster = unitMap[unitClusterKey];
         if (unitCluster.available) {
@@ -429,8 +430,13 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
                 for (unitKey in unitCluster.units) {
                     unit = unitCluster.units[unitKey];
                     if (unit.available) {
+                        if (levelScoreMessages[unitClusterKey] && levelScoreMessages[unitClusterKey][unitKey]) {
+                            thisLevel = levelScoreMessages[unitClusterKey][unitKey];
+                        } else {
+                            thisLevel = '';
+                        }
                         unitNumber = unitCluster.number * 100 + unit.number;
-                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>`;
+                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>${thisLevel}`;
                         if (unitKey === selectedUnitKey) {
                             unitList = unitList + "<ul>";
                             for (podKey in unit.pods) {
