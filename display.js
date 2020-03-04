@@ -344,14 +344,20 @@ hbs.registerHelper('listAllUnits', (gradeMap) => {
     return new hbs.SafeString(unitList);
 });
 
-hbs.registerHelper('listAllUnitsWithQuizzes', () => {
-    let unitNumber;
+hbs.registerHelper('listAllUnitsWithQuizzes', (gradeMap) => {
+    let unitNumber, thisLevelMessage;
     var unitList = "<ul>";
+    const levelMessages = getLevelMessages(gradeMap);
     Object.keys(quizMap).forEach((superUnitKey) => {
         unitList += `<li> ${unitMap[superUnitKey].title} <ul>`;
         Object.keys(quizMap[superUnitKey]).forEach((unitKey) => {
+            if (levelMessages && levelMessages[superUnitKey] && levelMessages[superUnitKey][unitKey]) {
+                thisLevelMessage = levelMessages[superUnitKey][unitKey];
+            } else {
+                thisLevelMessage = '';
+            }
             unitNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
-            unitList = unitList + `<li><a href = '/quizzes/${superUnitKey}/${unitKey}'>${unitNumber}: ${unitMap[superUnitKey].units[unitKey].title}</a></li>`
+            unitList = unitList + `<li><a href = '/quizzes/${superUnitKey}/${unitKey}'>${unitNumber}: ${unitMap[superUnitKey].units[unitKey].title}</a>${thisLevelMessage}</li>`
         });
         unitList += "</ul></li>"
     });
