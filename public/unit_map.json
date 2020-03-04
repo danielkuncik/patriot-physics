@@ -232,7 +232,7 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["scientific_notation_2"],
-            "objective": "Given numbers written as digits multipled by a power of ten but not in proper scientific notation, put the number into proper scientific notation."
+            "objective": "Given numbers written as digits multiplied by a power of ten but not in proper scientific notation, put the number into proper scientific notation."
           },
           "very_fast_conversions": {
             "title": "Very Fast Conversions",
@@ -324,7 +324,7 @@
             "level": 4,
             "horizontal": 3,
             "letter": "L",
-            "prerequisite": ["convert_between_metric_units"],
+            "prerequisites": ["convert_between_metric_units"],
             "objective": "Convert other metric units of mass to kilograms; convert kilograms to other metric units of mass."
           },
           "scientific_notation_calculator_3":
