@@ -1328,7 +1328,8 @@
             "horizontal": 6,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve problems using the formula relating distance, speed, and time; always write the appropriate units for distance, speed, and time."
+            "objective": "Solve problems using the formula relating distance, speed, and time; always write the appropriate units for distance, speed, and time.",
+            "content": "Distance is equal to speed times time."
           },
           "acceleration_formula":
           {
@@ -1337,7 +1338,8 @@
             "horizontal": 1,
             "letter": "B",
             "prerequisites": ["speed_formula"],
-            "objective": "Solve for acceleration using its definition."
+            "objective": "Solve for acceleration using its definition.",
+            "content": "Acceleration is equal to change in velocity divided by change in time."
           },
           "kinematic_equations_1":
           {
@@ -1348,6 +1350,7 @@
             "letter": "C",
             "prerequisites": ["acceleration_formula"],
             "objective": "Solve 1-2 step numerical algebraic problems with the kinematic equations with equations and information given.",
+            "content": "The four kinematic equations relate the five kinematic variables for an object moving with a constant acceleration.",
             "parameters":
             [
               "Equations are given.",
@@ -1363,7 +1366,8 @@
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["kinematic_equations_1"],
-            "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement."
+            "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement.",
+            "content": "The slope of a position-time graph is the velocity; the area under the curve of a velocity-time graph is the displacement"
           },
           "kinematic_equations_2":
           {
@@ -1374,6 +1378,7 @@
             "letter": "E",
             "prerequisites": ["quantitative_kinematic_graphs_1"],
             "objective": "Solve numerical algebraic problems with the kinematic equations; use all four kinematic equations interchangeably; know the acceleration of a falling object.",
+            "content": "The four kinematic equations relate the five kinematic variables for an object moving with a constant acceleration. They can be applied to problems of varying difficulty.",
             "parameters":
             [
               "Equations are given.",
@@ -1389,7 +1394,8 @@
             "horizontal": 5,
             "letter": "F",
             "prerequisites": ["kinematic_equations_2"],
-            "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process."
+            "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process.",
+            "content": "Physicists use the relationship amongst velocity and displacement in quantitative kinematic graphs to draw velocity-time graphs for a corresponding position-time graphs and vice versa."
           },
           "kinematic_equations_3":
           {
@@ -1399,7 +1405,8 @@
             "horizontal": 3.67,
             "letter": "G",
             "prerequisites": ["quantitative_kinematic_graphs_2"],
-            "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred"
+            "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred",
+            "content": "The four kinematic equations can be used to real-world problems if a physicist can break real-world information down to the kinematic variables."
           },
           "memorize_kinematic_equations":
           {
@@ -1408,7 +1415,8 @@
             "horizontal": 2.33,
             "letter": "H",
             "prerequisites": ["kinematic_equations_3"],
-            "objective": "Memorize the kinematic equations."
+            "objective": "Memorize the kinematic equations.",
+            "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems."
           },
           "quantitative_kinematic_graphs_3":
           {
@@ -1418,7 +1426,9 @@
             "horizontal": 1,
             "letter": "I",
             "prerequisites": ["memorize_kinematic_equations"],
-            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
+            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity.",
+            "content": "A physicist can learn kinematic quantities from a quantitative kinematic graph, and then relate them using the kinematic equations."
+            :
           },
           "kinematic_equations_4":
           {
@@ -1428,7 +1438,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["quantitative_kinematic_graphs_3"],
-            "objective": "Numerically solve the kinematic equations for step-wise motion."
+            "objective": "Numerically solve the kinematic equations for step-wise motion.",
+            "content": "The kinematic equations can be when some object changes acceleration but its motion can be broken to several unique steps of independent motion."
           },
           "quantitative_kinematic_graphs_4A":
           {
@@ -1437,7 +1448,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["kinematic_equations_4"],
-            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
+            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs.",
+            "content": "The kinematic equations and geometric relationships can gain information about velocity and acceleration from a position-time graph."
           },
           "quantitative_kinematic_graphs_4B":
           {
@@ -1446,7 +1458,8 @@
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["quantitative_kinematic_graphs_4A"],
-            "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs."
+            "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs.",
+            "content": "The kinematic equations and geometric relationships can gain information about displacement and acceleration from a velocity-time graph."
           },
           "quantitative_kinematic_graphs_4C":
           {
@@ -1455,7 +1468,8 @@
             "horizontal": 4,
             "letter": "M",
             "prerequisites": ["quantitative_kinematic_graphs_4B"],
-            "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs."
+            "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs.",
+            "content": "The kinematic equations and geometric relationships can gain information about displacement and change in velocity from an acceleration-time graph."
           },
           "kinematic_equations_symbolic":
           {
@@ -1465,6 +1479,7 @@
             "letter": "N",
             "prerequisites": ["quantitative_kinematic_graphs_4C"],
             "objective": "Solve the kinematic equations symbolically and defend answers using dimensional analysis.",
+            "content": "New kinematic formulas can be derived by solving the kinematic equations symbolically",
             "parameters":
             [
               "Equations not given."
