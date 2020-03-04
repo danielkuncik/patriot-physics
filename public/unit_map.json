@@ -2459,7 +2459,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time."
+            "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time.",
+            "content": "As a ball rolls down a ramp, gravitational potential energy converts into kinetic energy."
           },
           "energy_formulas_1":
           {
@@ -2468,7 +2469,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["energy_table_1"],
-            "objective": "Solve problems involving the KE and GPE formulas."
+            "objective": "Solve problems involving the KE and GPE formulas.",
+            "content": "Formulas for kinetic energy and gravitational potential energy relate these quantities to speed and height, respectively."
           },
           "memorize_conservation_of_energy":
           {
@@ -2477,7 +2479,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["energy_formulas_1"],
-            "objective": "Recite the conservation of energy word for word."
+            "objective": "Recite the conservation of energy word for word.",
+            "content": "The total amount of energy in the universe stays the same. Energy cannot be created or destroyed. It only changes from one type to another."
           },
           "energy_table_2":
           {
@@ -2486,7 +2489,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["memorize_conservation_of_energy"],
-            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table."
+            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table.",
+            "content": "Physicists can use the conservation of energy and formulas for kinetic and potential energy together to learn information about an object in motion."
           },
           "kinetic_potential_energy_graphs_1":
           {
@@ -2495,7 +2499,8 @@
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["energy_table_2"],
-            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls or rises."
+            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls or rises.",
+            "content": "Kinetic, potential, and total energy can be represented qualitatively as an objcet moves."
           },
           "system_language":
           {
@@ -2504,7 +2509,8 @@
             "horizontal": 0,
             "letter": "G",
             "prerequisites": ["kinetic_potential_energy_graphs_1"],
-            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly describe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system"
+            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly describe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system",
+            "content": "Gravitational potential energy is shared by an object and the planet it is attracted to, which is described as the 'planet-earth system.'"
           },
           "zero_point_height":
           {
@@ -2513,7 +2519,8 @@
             "horizontal": 8,
             "letter": "X",
             "prerequisites": [],
-            "objective": "consider zero point height as a part of the GPE formula"
+            "objective": "Consider zero point height as a part of the GPE formula",
+            "content": "The variable h in the formula for gravitational potential energy is dependent on a physicists choice of a particular zero-point."
           },
           "energy_table_3":
           {
@@ -2523,7 +2530,8 @@
             "horizontal": 1,
             "letter": "H",
             "prerequisites": ["system_language"],
-            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, solve numerical questions based upon the result"
+            "objective": "Describe the KE and GPE of a roller coaster moving both up and down without a table, solve numerical questions based upon the result",
+            "content": "A physicist can gain useful information from considering the exchange of potential and kinetic energy."
           },
           "energy_table_4":
           {
@@ -2533,7 +2541,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["energy_table_3"],
-            "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical quesitons based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring"
+            "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical questions based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring",
+            "content": "As a spring moves back and forth, kinetic energy is exchanged for elastic potential energy and vice-versa; a physicist can use this knowledge to gain useful information about the spring system."
           },
           "energy_table_5":
           {
@@ -2542,7 +2551,8 @@
             "horizontal": 3,
             "letter": "J",
             "prerequisites": ["energy_table_4"],
-            "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss"
+            "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss",
+            "content": "As an object moves, air resistance and friction turn kinetic energy into thermal energy (called heat loss); A physicist can quantitatively model how much thermal energy is produced."
           },
           "energy_formulas_3":
           {
@@ -2552,7 +2562,8 @@
             "horizontal": 4,
             "letter": "K",
             "prerequisites": ["energy_table_5"],
-            "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change."
+            "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change.",
+            "content": "All forms of energy have the same units in terms of kilograms, meters, and seconds; proportionality can be used to easily find quantities of energy."
           },
           "work_done_on_system":
           {
@@ -2561,7 +2572,8 @@
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["energy_formulas_3"],
-            "objective": "Determine the work done on a system by considering changes in energy."
+            "objective": "Determine the work done on a system by considering changes in energy.",
+            "content": "Work done on a system is the change in the total energy of that system."
           },
           "symbolic_energy":
           {
@@ -2570,7 +2582,8 @@
             "horizontal": 0,
             "letter": "M",
             "prerequisites": ["work_done_on_system"],
-            "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions"
+            "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions",
+            "content": "A physicist can derive useful new equations by using the conservation of energy symbolically"
           },
           "vertical_spring_system":
           {
