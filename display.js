@@ -10,6 +10,11 @@ function isItThere(filename) {
 }
 
 
+const quizPassword = 'otter';
+
+
+
+
 function countFilesInADirectory(directoryName) {
     let process = shell.ls(`${__dirname}/${directoryName}`); // trust the process, lol
     return process.length
@@ -773,7 +778,6 @@ display_quiz_unit_page = (req, res) => {
     })
 };
 
-const quizPassword = 'giraffe';
 
 function quizAccess(section, level, enteredPassword) {
     let result = false;
