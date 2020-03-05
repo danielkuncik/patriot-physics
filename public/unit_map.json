@@ -1328,7 +1328,8 @@
             "horizontal": 6,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve problems using the formula relating distance, speed, and time; always write the appropriate units for distance, speed, and time."
+            "objective": "Solve problems using the formula relating distance, speed, and time; always write the appropriate units for distance, speed, and time.",
+            "content": "Distance is equal to speed times time."
           },
           "acceleration_formula":
           {
@@ -1337,7 +1338,8 @@
             "horizontal": 1,
             "letter": "B",
             "prerequisites": ["speed_formula"],
-            "objective": "Solve for acceleration using its definition."
+            "objective": "Solve for acceleration using its definition.",
+            "content": "Acceleration is equal to change in velocity divided by change in time."
           },
           "kinematic_equations_1":
           {
@@ -1348,6 +1350,7 @@
             "letter": "C",
             "prerequisites": ["acceleration_formula"],
             "objective": "Solve 1-2 step numerical algebraic problems with the kinematic equations with equations and information given.",
+            "content": "The four kinematic equations relate the five kinematic variables for an object moving with a constant acceleration.",
             "parameters":
             [
               "Equations are given.",
@@ -1363,7 +1366,8 @@
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["kinematic_equations_1"],
-            "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement."
+            "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement.",
+            "content": "The slope of a position-time graph is the velocity; the area under the curve of a velocity-time graph is the displacement"
           },
           "kinematic_equations_2":
           {
@@ -1374,6 +1378,7 @@
             "letter": "E",
             "prerequisites": ["quantitative_kinematic_graphs_1"],
             "objective": "Solve numerical algebraic problems with the kinematic equations; use all four kinematic equations interchangeably; know the acceleration of a falling object.",
+            "content": "The four kinematic equations relate the five kinematic variables for an object moving with a constant acceleration. They can be applied to problems of varying difficulty.",
             "parameters":
             [
               "Equations are given.",
@@ -1389,7 +1394,8 @@
             "horizontal": 5,
             "letter": "F",
             "prerequisites": ["kinematic_equations_2"],
-            "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process."
+            "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process.",
+            "content": "Physicists use the relationship amongst velocity and displacement in quantitative kinematic graphs to draw velocity-time graphs for a corresponding position-time graphs and vice versa."
           },
           "kinematic_equations_3":
           {
@@ -1399,7 +1405,8 @@
             "horizontal": 3.67,
             "letter": "G",
             "prerequisites": ["quantitative_kinematic_graphs_2"],
-            "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred"
+            "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred",
+            "content": "The four kinematic equations can be used to real-world problems if a physicist can break real-world information down to the kinematic variables."
           },
           "memorize_kinematic_equations":
           {
@@ -1408,7 +1415,8 @@
             "horizontal": 2.33,
             "letter": "H",
             "prerequisites": ["kinematic_equations_3"],
-            "objective": "Memorize the kinematic equations."
+            "objective": "Memorize the kinematic equations.",
+            "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems."
           },
           "quantitative_kinematic_graphs_3":
           {
@@ -1418,7 +1426,8 @@
             "horizontal": 1,
             "letter": "I",
             "prerequisites": ["memorize_kinematic_equations"],
-            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity."
+            "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity.",
+            "content": "A physicist can learn kinematic quantities from a quantitative kinematic graph, and then relate them using the kinematic equations."
           },
           "kinematic_equations_4":
           {
@@ -1428,7 +1437,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["quantitative_kinematic_graphs_3"],
-            "objective": "Numerically solve the kinematic equations for step-wise motion."
+            "objective": "Numerically solve the kinematic equations for step-wise motion.",
+            "content": "The kinematic equations can be when some object changes acceleration but its motion can be broken to several unique steps of independent motion."
           },
           "quantitative_kinematic_graphs_4A":
           {
@@ -1437,7 +1447,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["kinematic_equations_4"],
-            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs."
+            "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs.",
+            "content": "The kinematic equations and geometric relationships can gain information about velocity and acceleration from a position-time graph."
           },
           "quantitative_kinematic_graphs_4B":
           {
@@ -1446,7 +1457,8 @@
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["quantitative_kinematic_graphs_4A"],
-            "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs."
+            "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs.",
+            "content": "The kinematic equations and geometric relationships can gain information about displacement and acceleration from a velocity-time graph."
           },
           "quantitative_kinematic_graphs_4C":
           {
@@ -1455,7 +1467,8 @@
             "horizontal": 4,
             "letter": "M",
             "prerequisites": ["quantitative_kinematic_graphs_4B"],
-            "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs."
+            "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs.",
+            "content": "The kinematic equations and geometric relationships can gain information about displacement and change in velocity from an acceleration-time graph."
           },
           "kinematic_equations_symbolic":
           {
@@ -1465,6 +1478,7 @@
             "letter": "N",
             "prerequisites": ["quantitative_kinematic_graphs_4C"],
             "objective": "Solve the kinematic equations symbolically and defend answers using dimensional analysis.",
+            "content": "New kinematic formulas can be derived by solving the kinematic equations symbolically",
             "parameters":
             [
               "Equations not given."
@@ -1869,7 +1883,8 @@
             "horizontal": 3,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Given a 1-dimensional quantitative free-body diagram, determine the magnitude and direction of net force acting on an object."
+            "objective": "Given a 1-dimensional quantitative free-body diagram, determine the magnitude and direction of net force acting on an object.",
+            "content": "Net force is calculated from a quantitative free-body diagram of an object."
           },
           "newtons_second_law":
           {
@@ -1879,7 +1894,8 @@
             "horizontal": 5,
             "letter": "B",
             "prerequisites": [],
-            "objective": "Use Newton's Second Law to solve numeric problems."
+            "objective": "Use Newton's Second Law to solve numeric problems.",
+            "content": "Newton's Second Law relates the mass of an object, the acceleration of that object, and the net force acting on that object."
           },
           "finding_acceleration":
           {
@@ -1889,7 +1905,8 @@
             "horizontal": 4,
             "letter": "C",
             "prerequisites": ["finding_net_force","newtons_second_law", "friction_1"],
-            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of the object."
+            "objective": "Given the mass of an object and several forces acting on that object in one dimension, determine the acceleration of the object.",
+            "content": "A physicist finds acceleration of an object by first finding net force from a quantitative free-body diagram, then finding acceleration from Newton's Second Law."
           },
           "friction_1":
           {
@@ -1899,7 +1916,8 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": [],
-            "objective": "Recognize when and how friction is applied"
+            "objective": "Recognize when and how friction is applied; differentiate between two different types of friction.",
+            "content": "Kinetic friction acts on objects that are moving; static friction acts on objects that are not moving."
           },
           "block_dragging_1":
           {
@@ -1909,7 +1927,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["finding_acceleration"],
-            "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block."
+            "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block.",
+            "content": "Gravity, normal force, and applied force act on a block being dragged; by understanding these forces a physicist can understand the motion of the block."
           },
           "find_missing_force":
           {
@@ -1918,7 +1937,8 @@
             "horizontal": 6,
             "letter": "F",
             "prerequisites": ["finding_acceleration"],
-            "objective": "Given a free-body diagram and the net force and/or an acceleration and mass, identify the magnitude and direction of an unknown force in a problem."
+            "objective": "Given a free-body diagram and the net force and/or an acceleration and mass, identify the magnitude and direction of an unknown force in a problem.",
+            "content": "A physicist sometimes must find a particular force to find the net force acting on a block."
           },
           "block_dragging_2":
           {
@@ -1928,7 +1948,8 @@
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["block_dragging_1"],
-            "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block."
+            "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block.",
+            "content": "Gravity, normal force, and applied force, and kinetic friction act on a block being dragged; by understanding these forces a physicist can understand the motion of the block."
           },
           "friction_2":
           {
@@ -1937,7 +1958,8 @@
             "horizontal": 1,
             "letter": "X",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Recognize qualitative differences between static and kinetic friction; Explain that the magnitude of friction is independent of surface area."
+            "objective": "Recognize qualitative differences between static and kinetic friction; Explain that the magnitude of friction is independent of surface area.",
+            "content": "The magnitude of friction is independent of surface area of the object being dragged; maximum static friction is stronger than kinetic friction."
           },
           "elevators_1":
           {
@@ -1947,7 +1969,8 @@
             "horizontal": 6,
             "letter": "H",
             "prerequisites": ["find_missing_force"],
-            "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person."
+            "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person.",
+            "content": "Inside an elevator, gravity and normal force act on the rider; normal force is a constraint force that adjusts to match a particular acceleration"
           },
           "block_dragging_3":
           {
@@ -1957,7 +1980,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["block_dragging_2"],
-            "objective": "Given a block experiencing an applied force on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction."
+            "objective": "Given a block experiencing an applied force on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction.",
+            "content": "If a block is not moving, a physicist determines if it will move by comparing applied force to maximum static friction; static friction is a constraint force."
           },
           "vertical_friction":
           {
@@ -1966,7 +1990,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["block_dragging_3"],
-            "objective": "Draw a free-body diagram including friction as it acts on an object pressed against a wall or pole."
+            "objective": "Draw a free-body diagram including friction as it acts on an object pressed against a wall or pole.",
+            "content": "Friction can be analyzed in several situations other than simply a block being dragged on a horizontal surface."
           },
           "elevators_2":
           {
@@ -1976,7 +2001,8 @@
             "horizontal": 6,
             "letter": "K",
             "prerequisites": ["elevators_1"],
-            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel."
+            "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel.",
+            "content": "Normal force changes in an elevator, leading to counterintuitive feelings; a physicist can make sense of these feelings by analyzing the forces and acceleration of a person in an elevator."
           },
           "block_dragging_4":
           {
@@ -2459,7 +2485,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time."
+            "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time.",
+            "content": "As a ball rolls down a ramp, gravitational potential energy converts into kinetic energy."
           },
           "energy_formulas_1":
           {
@@ -2468,7 +2495,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["energy_table_1"],
-            "objective": "Solve problems involving the KE and GPE formulas."
+            "objective": "Solve problems involving the KE and GPE formulas.",
+            "content": "Formulas for kinetic energy and gravitational potential energy relate these quantities to speed and height, respectively."
           },
           "memorize_conservation_of_energy":
           {
@@ -2477,7 +2505,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["energy_formulas_1"],
-            "objective": "Recite the conservation of energy word for word."
+            "objective": "Recite the conservation of energy word for word.",
+            "content": "The total amount of energy in the universe stays the same. Energy cannot be created or destroyed. It only changes from one type to another."
           },
           "energy_table_2":
           {
@@ -2486,7 +2515,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["memorize_conservation_of_energy"],
-            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table."
+            "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table.",
+            "content": "Physicists can use the conservation of energy and formulas for kinetic and potential energy together to learn information about an object in motion."
           },
           "kinetic_potential_energy_graphs_1":
           {
@@ -2495,7 +2525,8 @@
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["energy_table_2"],
-            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls or rises."
+            "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls or rises.",
+            "content": "Kinetic, potential, and total energy can be represented qualitatively as an objcet moves."
           },
           "system_language":
           {
@@ -2504,7 +2535,8 @@
             "horizontal": 0,
             "letter": "G",
             "prerequisites": ["kinetic_potential_energy_graphs_1"],
-            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly describe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system"
+            "objective": "Describe changes in energy using the language of systems and work done on a system; Properly describe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system",
+            "content": "Gravitational potential energy is shared by an object and the planet it is attracted to, which is described as the 'planet-earth system.'"
           },
           "zero_point_height":
           {
@@ -2513,7 +2545,8 @@
             "horizontal": 8,
             "letter": "X",
             "prerequisites": [],
-            "objective": "consider zero point height as a part of the GPE formula"
+            "objective": "Consider zero point height as a part of the GPE formula",
+            "content": "The variable h in the formula for gravitational potential energy is dependent on a physicists choice of a particular zero-point."
           },
           "energy_table_3":
           {
@@ -2523,7 +2556,8 @@
             "horizontal": 1,
             "letter": "H",
             "prerequisites": ["system_language"],
-            "objective": "Fill out a table describing KE and GPE of a roller coaster moving both up and down, solve numerical questions based upon the result"
+            "objective": "Describe the KE and GPE of a roller coaster moving both up and down without a table, solve numerical questions based upon the result",
+            "content": "A physicist can gain useful information from considering the exchange of potential and kinetic energy."
           },
           "energy_table_4":
           {
@@ -2533,7 +2567,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["energy_table_3"],
-            "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical quesitons based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring"
+            "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical questions based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring",
+            "content": "As a spring moves back and forth, kinetic energy is exchanged for elastic potential energy and vice-versa; a physicist can use this knowledge to gain useful information about the spring system."
           },
           "energy_table_5":
           {
@@ -2542,7 +2577,8 @@
             "horizontal": 3,
             "letter": "J",
             "prerequisites": ["energy_table_4"],
-            "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss"
+            "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss",
+            "content": "As an object moves, air resistance and friction turn kinetic energy into thermal energy (called heat loss); A physicist can quantitatively model how much thermal energy is produced."
           },
           "energy_formulas_3":
           {
@@ -2552,7 +2588,8 @@
             "horizontal": 4,
             "letter": "K",
             "prerequisites": ["energy_table_5"],
-            "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change."
+            "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change.",
+            "content": "All forms of energy have the same units in terms of kilograms, meters, and seconds; proportionality can be used to easily find quantities of energy."
           },
           "work_done_on_system":
           {
@@ -2561,7 +2598,8 @@
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["energy_formulas_3"],
-            "objective": "Determine the work done on a system by considering changes in energy."
+            "objective": "Determine the work done on a system by considering changes in energy.",
+            "content": "Work done on a system is the change in the total energy of that system."
           },
           "symbolic_energy":
           {
@@ -2570,7 +2608,8 @@
             "horizontal": 0,
             "letter": "M",
             "prerequisites": ["work_done_on_system"],
-            "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions"
+            "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions",
+            "content": "A physicist can derive useful new equations by using the conservation of energy symbolically"
           },
           "vertical_spring_system":
           {
@@ -3148,7 +3187,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Use the momentum formula to solve numerical problems."
+            "objective": "Use the momentum formula to solve numerical problems.",
+            "content": "Momentum equals mass times velocity"
           },
           "memorize_conservation_of_momentum":
           {
@@ -3157,7 +3197,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["momentum_formula"],
-            "objective": "Memorize, word for word, the conservation of momentum."
+            "objective": "Memorize, word for word, the conservation of momentum.",
+            "content": "During any process, the total momentum before the process equals the total momentum after the process."
           },
           "conservation_of_momentum_1":
           {
@@ -3167,7 +3208,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["memorize_conservation_of_momentum"],
-            "objective": "Use the conservation of momentum to solve simple collision problems with the aid of a table."
+            "objective": "Use the conservation of momentum to solve simple collision problems with the aid of a table.",
+            "content": "When two cars collide, the total momentum before the collision equals the total momentum after the collision; this information can be used to find useful information about the cars"
           },
           "conservation_of_momentum_2":
           {
@@ -3177,7 +3219,8 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["conservation_of_momentum_1"],
-            "objective": "Use the conservation of momentum to analyze crashes in which two objects stick together."
+            "objective": "Use the conservation of momentum to analyze crashes in which two objects stick together.",
+            "content": "When two cars crash and stick together, it is called a perfectly inelastic collision; a perfectly inelastic collision can also be analyzed using the principles of conservation of momentum."
           },
           "conservation_of_momentum_3":
           {
@@ -3187,7 +3230,8 @@
             "horizontal": 5,
             "letter": "E",
             "prerequisites": ["conservation_of_momentum_2"],
-            "objective": "Use the conservation of momentum and guiding tables to solve problems involving cars moving in different directions."
+            "objective": "Use the conservation of momentum and guiding tables to solve problems involving cars moving in different directions.",
+            "content": "When two cars are moving in different directions, physicists represent direction with the sign of the velocity."
           },
           "conservation_of_momentum_4":
           {
@@ -3197,7 +3241,8 @@
             "horizontal": 6,
             "letter": "F",
             "prerequisites": ["conservation_of_momentum_3"],
-            "objective": "Use the conservation of momentum and guiding tables to analyze explosions."
+            "objective": "Use the conservation of momentum and guiding tables to analyze explosions.",
+            "content": "The total momentum before an explosion equals the total momentum after the explosion."
           },
           "collision_formula_derivation":
           {
@@ -3206,7 +3251,8 @@
             "horizontal": 5,
             "letter": "G",
             "prerequisites": ["conservation_of_momentum_4"],
-            "objective": "Represent each situation involving conservation of momentum with an algebraic formula and explain what each term of that formula represents."
+            "objective": "Represent each situation involving conservation of momentum with an algebraic formula and explain what each term of that formula represents.",
+            "content": "Physicists use the conservation of momentum to create a formula specific to individual situations."
           },
           "conservation_of_momentum_5":
           {
@@ -3215,7 +3261,8 @@
             "horizontal": 4,
             "letter": "H",
             "prerequisites": ["collision_formula_derivation"],
-            "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given."
+            "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given.",
+            "content": "Physicists invent and solve formulas using the conservation of momentum to find useful information regarding a collision."
           },
           "collision_energy":
           {
@@ -3224,7 +3271,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["conservation_of_momentum_5"],
-            "objective": "Given a collision or explosion, analyze the collision quantitatively, determine if kinetic energy is lost, gained, or conserved; analyze the source of work done on a system."
+            "objective": "Given a collision or explosion, analyze the collision quantitatively, determine if kinetic energy is lost, gained, or conserved; analyze the source of work done on a system.",
+            "content": "While momentum is always conserved in a collision or explosion, energy can be gained or lost depending upon the individual situation."
           },
           "conservation_of_momentum_6":
           {
@@ -3234,7 +3282,8 @@
             "horizontal": 2,
             "letter": "J",
             "prerequisites":  ["collision_energy"],
-            "objective": "Solve for an algebraic solution to collision and explosion problems; prove solutions are dimensionally correct; use proportionality to analyze solutions"
+            "objective": "Solve for an algebraic solution to collision and explosion problems; prove solutions are dimensionally correct; use proportionality to analyze solutions",
+            "content": "Physicists will often derive formulas based on the conservation of momentum, solve them algebraically, and theorize regarding relevant proportionality relationships."
           },
           "elastic_collisions":
           {
@@ -3243,7 +3292,8 @@
             "horizontal": 1,
             "letter": "K",
             "prerequisites": ["conservation_of_momentum_6"],
-            "objective": "Define elastic and inelastic collisions; recognize common elastic and inelastic collisions; numerically analyze objects undergoing an elastic collision"
+            "objective": "Define elastic and inelastic collisions; recognize common elastic and inelastic collisions; numerically analyze objects undergoing an elastic collision",
+            "content": "In an elastic collision, the kinetic energy before the collision equals the kinetic energy after the collision; this principle gives physicists another formula from which to find information regarding the collision."
           },
           "advanced_pool_ball_collision":
           {
