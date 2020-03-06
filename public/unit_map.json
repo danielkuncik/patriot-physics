@@ -4465,7 +4465,7 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["finding_wavelength_from_diagrams"],
-            "objective": "Use the formula relating the wavelength, period, and frequency of a wave"
+            "objective": "Use the formula relating the wavelength, speed, and frequency of a wave"
           },
           "harmonics_1":
           {
