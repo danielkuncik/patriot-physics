@@ -231,7 +231,7 @@ class QuantitativeGraph extends Diagram {
         this.addReferenceArray(xReferenceArray, yReferenceArray);
     }
 
-    addSegmentAndTwoPoints(x1,y1,x2,y2) {
+    validatePoints(x1,y1,x2,y2) {
         try {
             if (x1 < this.xMinOnGraph || x1 > this.xMaxOnGraph) {throw "ERROR: Segment given out of range (x1)";}
             if (x2 < this.xMinOnGraph || x2 > this.xMaxOnGraph) {throw "ERROR: Segment given out of range (x2)";}
@@ -243,10 +243,19 @@ class QuantitativeGraph extends Diagram {
             console.log(err);
             return false
         }
+    }
 
+    addSegmentAndTwoPoints(x1,y1,x2,y2) {
+        this.validatePoints(x1,y1,x2,y2);
         let newSegment = super.addTwoPointsAndSegment(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
         return newSegment
     }
+
+    addSegmentWithArrowheadInCenter(x1,y1,x2,y2) {
+        this.validatePoints(x1,y1,x2,y2);
+        super.addSegmentWithArrowheadInCenter(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier));
+    }
+
 
     addPointAsACircle(x,y) {
         // doens't work, i think it might have something to do witht he fact that
@@ -1000,6 +1009,7 @@ class CircuitDiagram extends Diagram {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 }
+
 
 class Compass extends Diagram {
   constructor(horizontalBoolean, verticalBoolean) {
