@@ -9,7 +9,8 @@ This javascript file contains method that are run as a part of every page
 // whenever I want to ask questions in a file, put them in <ol class = 'questionList'>
 // each question should be in an li tag: <li data-answer = 'answer here'>
 // and at the end of the file place <ol class = 'answerList'>
-let i, j, thisQuestionList, thisQuestion, thisAnswer, questionNumber = 1;
+let i, j, thisQuestionList, thisQuestion, thisAnswer, questionNumber = 1, thisAnswerID;
+
 $(".questionList").each((i) => {
     thisQuestionList = $(".questionList")[i];
     $(thisQuestionList).attr('start',String(questionNumber));
@@ -18,7 +19,13 @@ $(".questionList").each((i) => {
         $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}:</strong> `);
         if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
-            $(".answerList").append(`<li>${letter}.${questionNumber}. ${thisAnswer}</li>`);
+            $(".answerList").append(`<li>${letter}.${questionNumber}: ${thisAnswer}</li>`);
+        } else if ($(thisQuestion).data()['answer_id'] !== undefined) {
+            thisAnswerID = $(thisQuestion).data()['answer_id'];
+            $(".answerList").append(`<li id = '${thisAnswerID}'>${letter}.${questionNumber}:</li>`);
+
+            // object defined in fglobally run methods at the top
+            $(`#${thisAnswerID}`).append($(answerObjects[thisAnswerID]));
         } else if ($(thisQuestion).find("ol.subQuestionList").length === 1) {//isXinArray('ol.subQuestionList', $(thisQuestion).children() )) {
             let subQuestionList, thisSubQuestion, subAnswerList, k, thisSubAnswer, subAnswerListType;
             subQuestionList = $(thisQuestion).find("ol.subQuestionList")[0];
@@ -39,11 +46,14 @@ $(".questionList").each((i) => {
             $(".answerList").append(thisAnswer);
         } else {
             thisAnswer = 'xxx';
-            $(".answerList").append(`<li>${letter}.${questionNumber}. ${thisAnswer}</li>`);
+            $(".answerList").append(`<li>${letter}.${questionNumber}: ${thisAnswer}</li>`);
         }
         questionNumber += 1;
     });
 });
+
+// append all items in the answerID object into the lesson
+
 
 /// for any <p class = 'directions>
 // automatically palces the term "Directons" in bold at the front
