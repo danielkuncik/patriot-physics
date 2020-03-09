@@ -1,0 +1,28 @@
+<p>
+    A person is at rest on top of a building.
+    They fall down and hit a trampoline positioned about halfway down.
+    When they hit the trampoline, they bounce back up and reach the top of the building again,
+    but then they fall all the way down to the ground.
+</p>
+
+<p>
+    Assume that no energy is lost. This example exists in a world free of
+    friction and air resistance.
+</p>
+
+<p>
+    Create a qualitative graph of energy-time for the person.
+    On the graph, include three different lines, each with their own label.
+    The three lines should show the kinetic energy, gravitational potential energy, and total energy of the person.
+    The graph should encompass the entire time from when the person jumps to when they land.
+</p>
+
+
+<div id = 'graphDiv'></div>
+
+
+<script>
+    let myGraph = new QuantitativeGraph(0,10,0,10,3);
+    myGraph.labelAxes('Time', 'Energy');
+    $("#graphDiv").append(myGraph.drawCanvas(1200,400));
+</script>
