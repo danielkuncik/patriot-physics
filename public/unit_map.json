@@ -2548,10 +2548,9 @@
             "objective": "Consider zero point height as a part of the GPE formula",
             "content": "The variable h in the formula for gravitational potential energy is dependent on a physicists choice of a particular zero-point."
           },
-          "energy_table_3":
+          "roller_coaster_problems":
           {
-            "title": "Energy Table 3",
-            "subtitle": "Roller Coaster Problem",
+            "title": "Roller Coaster Problems",
             "level": 3,
             "horizontal": 2,
             "letter": "H",
@@ -2566,7 +2565,7 @@
             "level": 3,
             "horizontal": 3,
             "letter": "I",
-            "prerequisites": ["energy_table_3"],
+            "prerequisites": ["roller_coaster_problems"],
             "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical questions based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring",
             "content": "As a spring moves back and forth, kinetic energy is exchanged for elastic potential energy and vice-versa; a physicist can use this knowledge to gain useful information about the spring system."
           },
@@ -2591,13 +2590,22 @@
             "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change.",
             "content": "All forms of energy have the same units in terms of kilograms, meters, and seconds; proportionality can be used to easily find quantities of energy."
           },
+          "semi_qualitative_conservation_of_energy":
+          {
+            "title": "Semi-Qualitative Conservation of Energy",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "Y",
+            "prerequisites": ["energy_formulas_3"],
+            "objective": "Answer quantitative questions using the conservation of energy by concept alone without resorting to plugging in numbers."
+          },
           "work_done_on_system":
           {
             "title": "Work Done on a System",
             "level": 4,
-            "horizontal": 4,
+            "horizontal": 2,
             "letter": "L",
-            "prerequisites": ["energy_formulas_3"],
+            "prerequisites": ["semi_qualitative_conservation_of_energy"],
             "objective": "Determine the work done on a system by considering changes in energy.",
             "content": "Work done on a system is the change in the total energy of that system."
           },
