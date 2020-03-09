@@ -5194,7 +5194,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Recognize examples of gravity on earth and in space; know gravity exists in space; define gravity as masses attracting rather than simply falling."
+            "objective": "Recognize examples of gravity on earth and in space; know gravity exists in space; define gravity as masses attracting rather than simply falling.",
+            "content": "Gravity is a force that attracts all masses to all other masses; gravity exists both on earth and in space."
           },
           "basic_orbits":
           {
@@ -5203,7 +5204,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["basic_gravity"],
-            "objective": "Recognize basic facts about orbits: they are elliptical etc. Recognize the orbits of objects such as planets and comets"
+            "objective": "Recognize basic facts about orbits: they are elliptical etc. Recognize the orbits of objects such as planets and comets",
+            "content": "All planets and all other objects in orbit such as dwarf planets and comets move around the sun in an ellipse; some of these ellipses are very close to a circle."
           },
           "mass_vs_weight_1":
           {
@@ -5212,7 +5214,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["basic_orbits"],
-            "objective": "Differentiate between mass and weight, including how weight changes in different areas."
+            "objective": "Differentiate between mass and weight, including how weight changes in different areas.",
+            "content": "Mass is the total amount of matter or inertia that an object has; weight is the strength of gravity pulling the object downward when it is on a planet."
           },
           "universal_attraction":
           {
@@ -5221,7 +5224,8 @@
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["mass_vs_weight_1"],
-            "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt."
+            "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt.",
+            "content": "All masses are attracted by gravity, most of these attractions are too weak for you to feel."
           },
           "astronomical_examples_gravitation":
           {
@@ -5230,7 +5234,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["universal_attraction"],
-            "objective": "Explain star formation, planet formation, and the existence of earth's atmopshere, and the absence of an atmosphere on other planets."
+            "objective": "Explain star formation, planet formation, and the existence of earth's atmosphere, and the absence of an atmosphere on other planets.",
+            "content": "Gravitational attraction of dust particles causes stars to form; earth's atmosphere exists due to gravitational attraction."
           },
           "energy_of_comet":
           {
@@ -5239,7 +5244,8 @@
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["astronomical_examples_gravitation"],
-            "objective": "Explain how energy changes between GPE and KE in a comet"
+            "objective": "Explain how energy changes between GPE and KE in a comet",
+            "content": "As a comet approaches earth, GPE converts to KE; as it moves away KE converts to GPE."
           },
           "earth_is_round":
           {
@@ -5248,7 +5254,8 @@
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["energy_of_comet"],
-            "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple."
+            "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple.",
+            "content": "Because the earth is round, the direction we called 'down' is actually 'inward'; an apple and the moon are both falling inward towards earth."
           },
           "keplers_first_law":
           {
@@ -5259,7 +5266,8 @@
             "letter": "H",
             "prerequisites": ["earth_is_round"],
             "objective": "State Kepler's First Law; Rigorously define an ellipse and relate this definition to orbits; compare orbits of different eccentricity.",
-            "notes": "Must recognize that earth's orbit is nearly spherical and eccentricity is NOT responsible for the seasons."
+            "notes": "Must recognize that earth's orbit is nearly spherical and eccentricity is NOT responsible for the seasons.",
+            "content": "An ellipse is formed by all points whose combined distance from two points is the same; the eccentricity of an ellipse represents how elongated it is; different object's orbits have different eccentricities; earth's orbit is nearly circular."
           },
           "keplers_second_law":
           {
@@ -5268,7 +5276,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["keplers_first_law"],
-            "objective": "State Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy."
+            "objective": "State Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy.",
+            "content": "The area created by an object's orbit is equal for all unit times."
           },
           "keplers_third_law":
           {
@@ -5277,7 +5286,8 @@
             "horizontal": 4,
             "letter": "J",
             "prerequisites": ["keplers_second_law"],
-            "objective":  "State Kepler's Third law; solve quantitative problems involving Kepler's Third Law; determine correct altitude of a cell-phone satellite"
+            "objective":  "State Kepler's Third law; solve quantitative problems involving Kepler's Third Law; determine correct altitude of a cell-phone satellite",
+            "content": "The period of an orbit squared divided by the radius of an orbit cubed is constant for all objects orbitting a particular body; this can be used to place items in a place there they have a particular orbit."
           },
           "significance_of_keplers_laws":
           {
@@ -5286,7 +5296,8 @@
             "horizontal": 3,
             "letter": "K",
             "prerequisites": ["keplers_third_law"],
-            "objective": "Explain how Newton's proof of Kepler's Laws was crucial in shaping human understanding of the universe"
+            "objective": "Explain how Newton's proof of Kepler's Laws was crucial in shaping human understanding of the universe",
+            "content": "By proving Kepler's Laws, Isaac Newton showed that objects in space followed the same principles as objects on earth."
           },
           "gravitational_vs_inertial_mass":
           {
@@ -5295,7 +5306,8 @@
             "horizontal": 2,
             "letter": "J",
             "prerequisites": ["significance_of_keplers_laws"],
-            "objective": "Differentiate between gravitational and inertial mass while recognizing their equality."
+            "objective": "Differentiate between gravitational and inertial mass while recognizing their equality.",
+            "content": "The physics quantity of mass represents both inertia and the strength of gravitational attraction to that object."
           },
           "jumping_through_center_of_earth":
           {
@@ -5304,8 +5316,9 @@
             "horizontal": 1,
             "letter": "L",
             "prerequisites": ["gravitational_vs_inertial_mass"],
-            "objective": "Examine using rigorous terminology, free-body diagrams, and kinetmatic graphs what would happen if you jumped through the center of the earth",
-            "notes": "Must refer to Newton's Shell Principle"
+            "objective": "Examine using rigorous terminology, free-body diagrams, and kinematic graphs what would happen if you jumped through the center of the earth",
+            "notes": "Must refer to Newton's Shell Principle",
+            "content": "If you were to jump through the center of the earth, you would come out the other side with no velocity; a physicist can prove this principle with the laws of dynamics and kinematics."
           },
           "non_round_earth":
           {
@@ -5314,7 +5327,8 @@
             "horizontal": 2,
             "letter": "M",
             "prerequisites": ["jumping_through_center_of_earth"],
-            "objective": "Describe how life on earth might be different if the shape of earth were different but the force of gravity was still proportional to mass."
+            "objective": "Describe how life on earth might be different if the shape of earth were different but the force of gravity was still proportional to mass.",
+            "content": "Were earth any other shape, gravity would pull you towards the center of that shape."
           },
           "non_round_earth_2":
           {
@@ -5323,7 +5337,8 @@
             "horizontal": 3,
             "letter": "N",
             "prerequisites": ["non_round_earth"],
-            "objective": "Invent a different planet of a non-round shape and qualitatively and/or quantitatively describe life on this planet."
+            "objective": "Invent a different planet of a non-round shape and qualitatively and/or quantitatively describe life on this planet.",
+            "content": "A physicist can invent a hypothetical planet with a different shape and then imagine what might happen on that planet."
           }
         }
       },
@@ -5383,7 +5398,8 @@
             "horizontal": 1,
             "letter": "E",
             "prerequisites": ["shocks_lightning"],
-            "objective": "Compare and contrast between static and current electricity; recognize examples of both"
+            "objective": "Compare and contrast between static and current electricity; recognize examples of both",
+            "content": "In static electricity, objects build and release charges; in current electricity electrons drift through neutral wires."
           },
           "electrostatic_induction":
           {
@@ -5392,7 +5408,8 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["electrostatics_vs_electric_current"],
-            "objective": "Define electrostatic polarization as a type of charge; draw diagrams and write narrative to show how electric charge can be acquired without exchange of electrons; recall real world examples of electrostatic induction."
+            "objective": "Define electrostatic polarization as a type of charge; draw diagrams and write narrative to show how electric charge can be acquired without exchange of electrons; recall real world examples of electrostatic induction.",
+            "content": "When an object is polarized, one side is positive charged and the other side negatively charged; objects can become polarized without touching or exchanging electrons."
           },
           "van_de_graaf_generator":
           {
