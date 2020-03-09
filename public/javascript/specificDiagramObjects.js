@@ -251,9 +251,14 @@ class QuantitativeGraph extends Diagram {
         return newSegment
     }
 
-    addSegmentWithArrowheadInCenter(x1,y1,x2,y2) {
+    addSegmentWithArrowheadInCenter(x1,y1,x2,y2,arrowheadLength, arrowheadAngleInDegrees) {
         this.validatePoints(x1,y1,x2,y2);
-        super.addSegmentWithArrowheadInCenter(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier));
+        super.addSegmentWithArrowheadInCenter(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier),arrowheadLength, arrowheadAngleInDegrees);
+    }
+
+    labelBetweenTwoPoints(x1,y1,x2,y2,labelAbove,labelBelow,textDisplacement, relativeFontSize) {
+        this.validatePoints(x1,y1,x2,y2);
+        super.labelLine(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier),labelAbove,labelBelow,textDisplacement, relativeFontSize);
     }
 
 

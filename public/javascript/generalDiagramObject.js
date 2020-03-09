@@ -403,13 +403,14 @@ class Text {
         // reference Point will be different if the alignment is different!
 
         this.font = 'Arial';
+        this.fontAspectRatio = 0.52; // aspect ratio of aria font according to https://www.lifewire.com/aspect-ratio-table-common-fonts-3467385
         this.alignment = 'center'; // default
         this.baseline = 'middle';
         this.color = "#000000";
         this.centerPoint = centerPoint;
         this.referencePoint = this.centerPoint; // default, Text in center
 
-        this.width = letters.length * this.relativeFontSize;
+        this.width = letters.length * this.relativeFontSize * this.fontAspectRatio;
         this.height = this.relativeFontSize / 2;
         this.rectangle = constructRectangleFromCenter(centerPoint, this.width, this.height);
         if (this.rotationAngleInRadians) {
