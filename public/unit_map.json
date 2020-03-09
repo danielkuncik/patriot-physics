@@ -848,7 +848,6 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-
             "objective": "Find slope of a line on graphs with integer scales."
           },
           "finding_slope_2": {
@@ -5344,7 +5343,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Describe basic facts about electricity necessary to study electrostatics: parts of an atom; attraction and repulsion of subatomic particles"
+            "objective": "Describe basic facts about electricity necessary to study electrostatics: parts of an atom; attraction and repulsion of subatomic particles",
+            "content": "Atoms are made of protons, neutrons, and electrons; two protons repel, two electrons repel, but a proton and an electron attract."
           },
           "charging_by_friction_electrostatic_discharge":
           {
@@ -5353,7 +5353,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["electrostatic_basics"],
-            "objective": "Draw diagrams charging by friction and electrostatic discharge; recgonize real-life examples of each."
+            "objective": "Draw diagrams charging by friction and electrostatic discharge; recognize real-life examples of each.",
+            "content": "When two objects are rubbed together, electrons move between them in a process called charging by friction; when a charged object is placed near a conductor, electrons move to the conductor in a process called electrostatic discharge."
           },
           "what_is_charge":
           {
@@ -5362,7 +5363,8 @@
             "horizontal": 2,
             "letter": "C",
             "prerequisites": ["charging_by_friction_electrostatic_discharge"],
-            "objective": "Describe qualitatively and quantitatively what it means for an object to be charged; describe how an object gains a positive or a negative charge."
+            "objective": "Describe qualitatively and quantitatively what it means for an object to be charged; describe how an object gains a positive or a negative charge.",
+            "content": "Charged objects have different numbers of protons and electrons; charged objects exhibit electrostatic properties; only electrons move between atoms so an object can only gain a positive charge by losing electrons."
           },
           "shocks_lightning":
           {
@@ -5372,7 +5374,7 @@
             "letter": "D",
             "prerequisites": ["what_is_charge"],
             "objective": "Draw diagrams and write narrative explaining how an electric shock, a bolt of lightning, and/or a gas station fire occurs",
-            "notes": "Gas station fires will be included here."
+            "content": "Shocks are created when an object first charges by friction, then exhibits electrostatic discharge."
           },
           "electrostatics_vs_electric_current":
           {
@@ -5399,7 +5401,8 @@
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["electrostatic_induction"],
-            "objective": "Draw diagrams and give narrative explaining how a van de Graaf Generator generates large shocks, causes hair to raise, and causes other effects."
+            "objective": "Draw diagrams and give narrative explaining how a van de Graaf Generator generates large shocks, causes hair to raise, and causes other effects.",
+            "content": "a van de Graaf generator works by generating a large charge with a belt moving across a comb, then either collecting the charge to create electrostatic effects or enabling a large discharge."
           },
           "positives_or_negative_charge":
           {
@@ -5408,8 +5411,9 @@
             "horizontal": 2,
             "letter": "H",
             "prerequisites": ["van_de_graaf_generator"],
-            "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict.",
-            "notes": "In particular, describe how a van de Graaf generator works opporsite of how it is often described."
+            "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict; describe how an electroscope is used and the value of the electroscope.",
+            "notes": "In particular, describe how a van de Graaf generator works opposite of how it is often described.",
+            "content": "Physicists are unable to determine from most observable electrostatic phenomena whether a charge is positive or negative."
           }
         }
       },
@@ -5429,7 +5433,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "For two masses or charges, identify the force involved, whether they attract or repel, and which pair experiences more force."
+            "objective": "For two masses or charges, identify the force involved, whether they attract or repel, and which pair experiences more force.",
+            "content": "Objects with more mass and less distance between them experience greater gravitational force; objects with more charge and less distance between them experience a greater electrostatic force."
           },
           "fields_1":
           {
@@ -5438,7 +5443,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["which_has_more_force_1"],
-            "objective": "Draw electric or gravitational fields of a single object."
+            "objective": "Draw electric or gravitational fields of a single object.",
+            "content": "Electric field illustrates the force that would act on a positive charge; gravitational field illustrates the force that would act on a mass; electric field points towards a negative charge and away from a positive charge."
           },
           "which_has_more_force_2":
           {
@@ -5447,7 +5453,8 @@
             "horizontal": 2,
             "letter": "C",
             "prerequisites": ["fields_1"],
-            "objective": "For written descriptions of pairs of masses or charges, identify which pairs experience more force and why."
+            "objective": "For written descriptions of pairs of masses or charges, identify which pairs experience more force and why.",
+            "content": "The amount of gravitational or electrostatic force can be determined from written descriptions."
           },
           "fields_2":
           {
@@ -5456,7 +5463,8 @@
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["which_has_more_force_2"],
-            "objective": "Draw electric or gravitational fields of two charged or massive objects."
+            "objective": "Draw electric or gravitational fields of two charged or massive objects.",
+            "content": "When two charged or massive objects are together, electric and gravitational fields bend to indicate the summation of forces caused by the two objects."
           },
           "law_of_gravitation_1":
           {
@@ -5466,7 +5474,8 @@
             "horizontal": 4,
             "letter": "E",
             "prerequisites": ["fields_2"],
-            "objective": "Numerically solve Newton's Law of Universal Gravitation."
+            "objective": "Numerically solve Newton's Law of Universal Gravitation.",
+            "content": "The magnitude of gravity acting on two objects is proportional to their masses and inversely proportional to the square of the distance between their centers of mass; the constant of proportionality is called the Universal Gravitational Constant."
           },
           "coulombs_law_1":
           {
@@ -5476,7 +5485,8 @@
             "horizontal": 5,
             "letter": "F",
             "prerequisites": ["law_of_gravitation_1"],
-            "objective": "Numerically solve Coulomb's Law"
+            "objective": "Numerically solve Coulomb's Law",
+            "content": "The magnitude of the electrostatic force acting on two objects is proportional to their charges and inversely proportional to the square of the sitance between their centers of charge; the constant of proportionality is called the Coulomb's Law Constant."
           },
           "law_of_gravitation_2":
           {
@@ -5485,7 +5495,8 @@
             "horizontal": 5,
             "letter": "G",
             "prerequisites": ["coulombs_law_1"],
-            "objective": "Solve Newton's Law of Universal Gravitation and relate the result to Newton's Third Law."
+            "objective": "Solve Newton's Law of Universal Gravitation and relate the result to Newton's Third Law.",
+            "content": "Whenever there are two masses A and B, A exerts a force of gravity on B and B exerts a force of gravity on A with equal magnitude and opposite direction; the force is always attractive and the magnitude is given by Newton's Universal Law of Gravitation"
           },
           "coulombs_law_2":
           {
@@ -5494,7 +5505,8 @@
             "horizontal": 4,
             "letter": "H",
             "prerequisites": ["law_of_gravitation_2"],
-            "objective": "Solve Coulomb's Law and connect it to Newton's Third Law."
+            "objective": "Solve Coulomb's Law and connect it to Newton's Third Law.",
+            "content": "Whenever there are two charged objects, A exerts an electrostatic force on B and B exerts an electrostatic force on A with equal magnitude and opposite direction; the force is attractive if the charges are opposite and repulsive if the charges are like; the magnitude of the force is given by Coulomb's Law."
           },
           "law_of_gravitation_3":
           {
@@ -5504,7 +5516,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["coulombs_law_2"],
-            "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically."
+            "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically.",
+            "content": "When a person is on a planet, they attract the planet and the planet attracts them with a force of equal magnitude and opposite direction; the distance between the center of mass of the person and the center of mass and the planet is effectively equal to the radius of the planet."
           },
           "coulombs_law_3":
           {
@@ -5514,7 +5527,8 @@
             "horizontal": 2,
             "letter": "J",
             "prerequisites": ["law_of_gravitation_3"],
-            "objective": "Use Coulombs Law inside of atoms; use the electronic charge and unit of Angstroms to determine relevant quantities inside the atom"
+            "objective": "Use Coulombs Law inside of atoms; use the electronic charge and unit of Angstroms to determine relevant quantities inside the atom",
+            "content": "Coulomb's Law can be applied to determine the attraction between electrons and nuclei within an atom."
           },
           "fields_3":
           {
@@ -5523,7 +5537,8 @@
             "horizontal": 1,
             "letter": "K",
             "prerequisites": ["coulombs_law_3"],
-            "objective": "Draw gravitational or electric fields for several objects."
+            "objective": "Draw gravitational or electric fields for several objects.",
+            "content": "When more than two charged or massive objects are near each other, they create derivable patterns of electric and magnetic fields."
           },
           "derive_free_fall_acceleration":
           {
@@ -5532,7 +5547,8 @@
             "horizontal": 1,
             "letter": "L",
             "prerequisites": ["fields_3"],
-            "objective": "Derive, defend, and apply the formula for free-fall acceleration on a planet."
+            "objective": "Derive, defend, and apply the formula for free-fall acceleration on a planet.",
+            "content": "The free-fall acceleration on a planet depends only upon the properties of the planet and no properties of the object in free-fall; physicists can derive this formula from Newton's Law of Universal Gravitation."
           },
           "algebraic_inverse_square":
           {
@@ -5541,7 +5557,8 @@
             "horizontal": 2,
             "letter": "M",
             "prerequisites": ["derive_free_fall_acceleration"],
-            "objective": "Solve inverse square laws algebraically; determine the dimensions of the gravitational and electric constants"
+            "objective": "Solve inverse square laws algebraically; determine the dimensions of the gravitational and electric constants",
+            "content": "Inverse square laws can be algebraically manipulated to determine new formulas; the constants of the inverse square laws have units that have no physical meaning but connect the units of the principles."
           },
           "inverse_square_law_proportionality":
           {
@@ -5550,7 +5567,8 @@
             "horizontal": 3,
             "letter": "N",
             "prerequisites": ["algebraic_inverse_square"],
-            "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values."
+            "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values.",
+            "content": "Proportionality can be used to relate gravitational and electrostatic force to other quantities, even if not all information is known."
           },
           "why_inverse_square":
           {
@@ -5559,7 +5577,8 @@
             "horizontal": 4,
             "letter": "O",
             "prerequisites": ["inverse_square_law_proportionality"],
-            "objective": "Use field diagrams and spherical geometry to explain why inverse square laws are inverse square laws."
+            "objective": "Use field diagrams and spherical geometry to explain why inverse square laws are inverse square laws.",
+            "content": "Gravitational and electrostatic force are inversely proportional to distance squared because the gravitational and electric field spread out into three-dimensional space."
           },
           "force_behind_chemistry":
           {
@@ -5568,7 +5587,8 @@
             "horizontal": 5,
             "letter": "P",
             "prerequisites": ["why_inverse_square"],
-            "objective": "Demonstrate why electrostatic, not gravitational force, determines how atoms and subatomic particles behave."
+            "objective": "Demonstrate why electrostatic, not gravitational force, determines how atoms and subatomic particles behave.",
+            "content": "On subatomic scales, the gravitational force is many orders of magnitude less than the electrostatic force. As a result, only the electrostatic force is used to describe how atoms behave."
           },
           "different_dimensional_universe":
           {
@@ -5577,7 +5597,8 @@
             "horizontal": 6,
             "letter": "Q",
             "prerequisites": ["force_behind_chemistry"],
-            "objective": "Consider how the inverse square laws would be different if we lived in a universe with other than three dimensions."
+            "objective": "Consider how the inverse square laws would be different if we lived in a universe with other than three dimensions.",
+            "content": "Gravitational and electrostatic forces follow inverse square laws becasue we live in a three-dimensional universe. If we lived in a universe of different dimensionality, the gravitational and electrostatic forces would follow different proportionality laws."
           }
         }
       },
