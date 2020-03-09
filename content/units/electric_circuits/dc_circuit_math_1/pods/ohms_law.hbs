@@ -51,32 +51,49 @@
 
 </script>
 
-<ol>
-    <li>
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '2 Amps'>
         I hook up a battery with a voltage of 10 volts to a resistance of 5 Ohms. What is the current?
-        {{>formulaSolvingTable}}
+        <br>
+        <div class = 'formulaSolvingTable'></div>
     </li>
-    <li>
+    <li class = 'question' data-answer = '5 Amps'>
         I hook up a battery with a voltage of 30 volts to a resistance of 6 Ohms. What is the current?
-        {{>formulaSolvingTable}}
+        <br>
+        <div class = 'formulaSolvingTable'></div>
     </li>
-    <li>
+    <li class = 'question' data-answer = '4 Ohms'>
         When I hook up a battery with a voltage of 12 volts, I get 3 amps of current. What is the resistance?
-        {{>formulaSolvingTable}}
+        <br>
+        <div class = 'formulaSolvingTable'></div>
     </li>
-    <li>
+    <li class = 'question' data-answer = '50 Volts'>
         I have 5 amps of current going through a 10 Ohm resistor. What is the voltage of my battery?
-        {{>formulaSolvingTable}}
+        <br>
+        <div class = 'formulaSolvingTable'></div>
     </li>
-    <li>
+    <li class = 'question' data-answer = '15 Volts'>
         I have 3 amps of current going through a 5 Ohm resistor. What is the voltage of my circuit?
-        {{>formulaSolvingTable}}
+        <br>
+        <div class = 'formulaSolvingTable'></div>
     </li>
-    <li>
+    <li class = 'question' data-answer = '0.33 Amps'>
         I hook up a 12 volt battery to a 36 Ohm resistor. What is the current of my circuit?
-        {{>formulaSolvingTable}}
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = 'Current is represented by \( I \) (not C)'>
+        Which electric circuit quantity is not represented by the first letter of its name?
+    </li>
+    <li class = 'question' data-answer = 'Ohms are represented by a uppercase omega: \( \Omega \)'>
+        Which electric circuit unit is represented by a Greek letter? Which letter?
     </li>
 </ol>
+
+<script>
+    let formulaSolvingTable = new FormulaSolvingTable();
+    $(".formulaSolvingTable").append(formulaSolvingTable.draw(600,300));
+</script>
 
 
 <!--- Part 2 Ohms Law Table--->
@@ -119,3 +136,10 @@
         <td>10</td><td></td><td>20</td>
     </tr>
 </table>
+
+
+<h4>
+   Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

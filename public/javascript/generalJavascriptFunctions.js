@@ -28,6 +28,29 @@ function minOfTwoValues(val1, val2) {
     }
 }
 
+function maxOfTwoValues(val1, val2) {
+    if (val1 >= val2) {
+        return val1
+    } else {
+        return val2
+    }
+}
+
+function getMaxOfArray(array) {
+    if (array.length > 1) {
+        let currentMax = array[0];
+        let i;
+        for (i = 1; i < array.length; i++) {
+            if (array[i] > currentMax) {
+                currentMax = array[i]
+            }
+        }
+        return currentMax
+    } else {
+        return undefined
+    }
+}
+
 function convertDegreesToRadians(angle) {
     return angle / 180 * Math.PI;
 }

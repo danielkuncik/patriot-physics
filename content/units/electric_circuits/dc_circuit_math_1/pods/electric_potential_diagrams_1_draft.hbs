@@ -1,0 +1,17 @@
+
+
+<div id = 'diagramHere'></div>
+
+<script>
+    let myPotentialDiagram = new ElectricPotentialGraph();
+    myPotentialDiagram.addBattery(30,2);
+    myPotentialDiagram.addWire(2);
+    myPotentialDiagram.addResistor(10,2);
+    myPotentialDiagram.addWire(2);
+    myPotentialDiagram.addResistor(10,2);
+    myPotentialDiagram.addWire(2);
+    myPotentialDiagram.addResistor(10,2);
+
+
+    $("#diagramHere").append(myPotentialDiagram.drawCanvas(800,500));
+</script>

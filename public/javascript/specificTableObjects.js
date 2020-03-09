@@ -71,6 +71,30 @@ class ElectricCircuitTable extends Table {
 
 }
 
+function filledElectricCircuitTable(voltageArray,currentArray,resistanceArray,powerArray) {
+    let powerRowBoolean = false;
+    if (powerArray) {
+        powerRowBoolean = true;
+    }
+    if (voltageArray.length !== currentArray.length || voltageArray.length !== resistanceArray.length || (powerRowBoolean && voltageArray.length !== powerArray.length)) {
+        console.log("ERROR: all arrays must be the same length!");
+        return false
+    }
+
+    let numResistors = voltageArray.length - 1;
+
+    let newTable = new ElectricCircuitTable(numResistors, powerRowBoolean);
+
+    newTable.fillInVoltageRow(voltageArray);
+    newTable.fillInCurrentRow(currentArray);
+    newTable.fillInResistanceRow(resistanceArray);
+    if (powerRowBoolean) {
+        newTable.fillInPowerRow(powerArray);
+    }
+
+    return newTable
+}
+
 class EnergyTable extends Table {
     constructor(numPoints, columnTypes) {
         super(1 + numPoints, 1 + columnTypes.length);
