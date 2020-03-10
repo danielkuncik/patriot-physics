@@ -1,0 +1,26 @@
+<p class = 'directions'>
+    Use principles of electrical circuits to find the voltage, current, resistance, and power
+    of each circuit written and the total circuit.
+</p>
+
+<ol>
+    <li class = 'physicsQuestion'><br>
+        <div id = 'problem-C1'></div>
+    </li>
+    <div class = 'smallSpace'></div>
+    <li class = 'physicsQuestion'><br>
+        <div id = 'problem-C2'></div>
+    </li>
+    <div class = 'smallSpace'></div>
+    <li class = 'physicsQuestion'><br>
+        <div id = 'problem-C3'></div>
+    </li>
+</ol>
+
+<script>
+    // function makeCircuitProblem(type, voltage, resistorArray, powerRowBoolean) {
+    $("#problem-C1").append(makeCircuitProblem('series',21,[2,3,2]));
+    $("#problem-C2").append(makeCircuitProblem('parallel',10,[1,2,2]));
+    $("#problem-C3").append(makeCircuitProblem('parallel',24,[4,8,12]));
+
+</script>

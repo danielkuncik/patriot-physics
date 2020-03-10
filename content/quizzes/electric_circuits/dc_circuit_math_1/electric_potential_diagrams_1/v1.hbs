@@ -1,0 +1,65 @@
+<p class= 'directions'>
+    For each circuit presented, determine the voltage, current, resistance, and power
+    of each element of the circuit. Then create a great of electric potential that describes the circuit.
+    For full credit, your graph must comply with each direction stated.
+</p>
+
+<ol>
+    <li class = 'physicsQuestion'><br>
+        <h5>Requirements</h5>
+        <ul>
+            <li>Create a graph that shows how electric potential changes as current crosses each element.</li>
+            <li>
+                Each upward or downward slope on your graph must be <strong>labeled</strong> with the name of the element.
+                That is, for full credit you <strong>must</strong> write "battery," "resistor 1," "resistor 2," "resistor 3"
+                next to each downward and upward slope.
+            </li>
+            <li>
+                All resistors, particularly those in series, must be presented on the graph in the correct order that the circuit travels.
+            </li>
+            <li>
+                An arrow must indicate the direction of electric current on your diagram.
+            </li>
+        </ul>
+        <div id = 'F1-circuit'></div>
+        <br>
+        <div id = 'F1-graph'></div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'physicsQuestion'><br>
+        <h5>Requirements</h5>
+        <ul>
+            <li>
+                Create a graph that shows how electric potential changes as current crosses each element.
+            </li>
+            <li>
+                Each upward or downward slope on your graph must be <strong>labeled</strong> with the name of the element.
+                That is, for full credit you <strong>must</strong> write "battery," "resistor 1," "resistor 2," "resistor 3"
+                next to each downward and upward slope.
+            </li>
+            <li>
+                Each segment of your graph must be labeled with an arrow indicating the current within that segment of the circuit.
+                Your arrow must point in the correct direction.
+            </li>
+        </ul>
+        <div id = 'F2-circuit'></div>
+        <br>
+        <div id = 'F2-graph'></div>
+    </li>
+</ol>
+
+<script>
+    $("#F1-circuit").append(makeCircuitProblem('series',20,[2,5,3], false));
+
+    let F1graph = new QuantitativeGraph(0,10,0,20,2);
+    F1graph.labelAxes('','electric potential (V)');
+    F1graph.addReferenceArray([],[2,4,6,8,10,12,14,16,18,20]);
+    $("#F1-graph").append(F1graph.drawCanvas(1700,850));
+
+    $("#F2-circuit").append(makeCircuitProblem('parallel',18,[2,9,3], false));
+
+    let F2graph = new QuantitativeGraph(0,10,0,18,2);
+    F2graph.labelAxes('', 'electric potential (V)');
+    F2graph.addReferenceArray([],[6,12,18]);
+    $("#F2-graph").append(F2graph.drawCanvas(1800,900));
+</script>
