@@ -52,6 +52,13 @@ class ElectricPotentialGraph {
         this.addStep(0,undefined,current);
     }
 
+    addMultipleWires(numWires, current) {
+        let p;
+        for (p = 0; p < numWires; p++) {
+            this.addWire(current);
+        }
+    }
+
     addResistor(voltageDrop,current, infoLinesBoolean) {
         this.addStep(-1 * voltageDrop,`R${alphabetArrayLowercase[this.numResistors]}`,current, infoLinesBoolean);
         this.numResistors += 1;

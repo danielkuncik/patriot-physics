@@ -17,6 +17,18 @@
     <li class = 'question'>
         <div id = 'problem2'></div>
     </li>
+    <li class = 'question'>
+        <div id = 'problem3'></div>
+        <p>
+            Note: In this circuit, resistors Rb, Rc, and Rd all have the same current!
+        </p>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem4'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem5'></div>
+    </li>
 </ol>
 
 <script>
@@ -45,9 +57,25 @@
     problem2.addBranch([12],2,true,true,2);
     problem2.setReferenceArray([4,8,12]);
 
+    let problem3 = new ElectricPotentialGraph();
+    problem3.addBattery(10,1);
+    problem3.addWire(1);
+    problem3.addResistor(5, undefined, true);
+    problem3.addWire();
+    problem3.addResistor(3, undefined, true);
+    problem3.addMultipleWires(3);
+    problem3.addBranch([3],undefined,true,undefined,1,5);
+    problem3.addMultipleWires(3);
+    problem3.addBranch([3],undefined,true,undefined,1,5);
+    problem3.addWire();
+    problem3.addResistor(2,undefined,true);
+
+    problem3.setReferenceArray([2,5,10]);
+
 
     $("#problem1").append(problem1.drawCanvas(500));
     $("#problem2").append(problem2.drawCanvas(500));
+    $("#problem3").append(problem3.drawCanvas(500));
 
 </script>
 
