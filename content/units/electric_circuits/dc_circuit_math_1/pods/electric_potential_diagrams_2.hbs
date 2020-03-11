@@ -41,6 +41,9 @@
     <li class = 'question'>
         <div id = 'problem9'></div>
     </li>
+    <li class = 'question'>
+        <div id = 'problem10'></div>
+    </li>
 </ol>
 
 <script>
@@ -84,7 +87,7 @@
 
     problem3.setReferenceArray([2,5,10]);
 
-    problem4 = new ElectricPotentialGraph();
+    let problem4 = new ElectricPotentialGraph();
     problem4.setReferenceArray([1,2,3,4,5,6,7,8,9,10,11,12]);
     problem4.addBattery(12,7);
     problem4.addMultipleWires(2);
@@ -92,7 +95,7 @@
     problem4.addBranch([2,3,2,5],undefined,true,undefined,2);
 
 
-    problem5 = new ElectricPotentialGraph();
+    let problem5 = new ElectricPotentialGraph();
     problem5.setReferenceArray([2,6]);
     problem5.addBattery(6);
     problem5.addWire(6);
@@ -110,7 +113,7 @@
     problem5.addResistor(2,undefined,true);
     // this one will require some different coding operations
 
-    problem6 = new ElectricPotentialGraph();
+    let problem6 = new ElectricPotentialGraph();
     problem6.addBattery(12);
     problem6.addWire();
     problem6.addDownwardSteps([4,8],2,true);
@@ -119,7 +122,7 @@
     problem6.addDownwardSteps([10,2],1,true);
     problem6.setReferenceArray([2,8,12]);
 
-    problem7 = new ElectricPotentialGraph();
+    let problem7 = new ElectricPotentialGraph();
     problem7.setReferenceArray([1,2,3,4,5,6,7,8,9,10]);
     problem7.addBattery(10);
     problem7.addWire(3);
@@ -128,7 +131,7 @@
     problem7.addMultipleWires(4);
     problem7.addDownwardSteps([6,4],undefined,true);
 
-    problem8 = new ElectricPotentialGraph();
+    let problem8 = new ElectricPotentialGraph();
     problem8.setReferenceArray([3,6,24]);
     problem8.addBattery(24);
     problem8.addWire(6);
@@ -143,6 +146,23 @@
     problem8.addResistor(6,undefined,true,{"R":2});
 
 
+    // begin without guidance problems
+    let problem9 = new ElectricPotentialGraph();
+    problem9.addBattery(20,8);
+    problem9.setReferenceArray([2,4,6,8,10,12,14,16,18,20]);
+    problem9.addWire();
+    problem9.addDownwardSteps([6,4,10]);
+    problem9.addBranch([2,14,4],5,false,true,3);
+
+    let problem10 = new ElectricPotentialGraph();
+    problem10.addBattery(8);
+    problem10.addWire(5);
+    problem10.addDownwardSteps([2,3,3]);
+    problem10.addBranch([4,4],4,false,true,2);
+    problem10.setReferenceArray([1,2,3,4,5,6,7,8]);
+
+
+    // with guidance
     $("#problem1").append(problem1.drawCanvas(500));
     $("#problem2").append(problem2.drawCanvas(500));
     $("#problem3").append(problem3.drawCanvas(500));
@@ -151,6 +171,11 @@
     $("#problem6").append(problem6.drawCanvas(800));
     $("#problem7").append(problem7.drawCanvas(800));
     $("#problem8").append(problem8.drawCanvas(800));
+
+
+    // without guidance
+    $("#problem9").append(problem9.drawCanvas(800));
+    $("#problem10").append(problem10.drawCanvas(800));
 
 
 </script>
