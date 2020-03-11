@@ -57,18 +57,53 @@ class ElectricPotentialGraph {
         this.numResistors += 1;
     }
 
-    addDownwardSteps(stepArray, current) {
+    addDownwardSteps(stepArray, current, infoLinesBoolean) {
         let k;
         for (k = 0; k < stepArray.length - 1; k++) {
-            this.addResistor(stepArray,current);
-            this.addWire(stepArray,current);
+            this.addResistor(stepArray[k],current, infoLinesBoolean);
+            this.addWire(current);
         }
-        this.addResistor(stepArray[stepArray.length - 1], current);
+        this.addResistor(stepArray[stepArray.length - 1], current, infoLinesBoolean);
     }
 
-    addEmptyInfoBox(centerPoint) {
-
+    moveToEndOfRow(verticalPosition) {
+        let newX = 0;
+        this.lines.forEach((line) => {
+            if (line.y1 === verticalPosition && line.x1 > newX) {
+                newX = line.x1;
+            }
+            if (line.y2 === verticalPosition && line.x2 > newX) {
+                newX = line.x2;
+            }
+        });
+        this.moveCursor(newX, verticalPosition);
     }
+
+    // one current boolean, if true, current is shown only in one place
+    addBranch(stepArray, current, infoLinesBoolean, oneCurrentBoolean, extraHorizontalSteps, verticalPositionIfNotTop) {
+        this.getMaxes();
+        let verticalPosition = verticalPositionIfNotTop;
+        if (verticalPosition === undefined) {
+            verticalPosition = this.maxY;
+        }
+        if (extraHorizontalSteps === undefined) {
+            extraHorizontalSteps = 0;
+        }
+        this.moveToEndOfRow(verticalPosition);
+
+        this.addWire(current);
+        if (oneCurrentBoolean) {
+            current = undefined; // from now on
+        }
+
+        this.addWire(current);
+        let w;
+        for (w = 0; w < extraHorizontalSteps; w++) {
+            this.addWire(current);
+        }
+        this.addDownwardSteps(stepArray, current, infoLinesBoolean);
+    }
+
 
     moveCursor(newX, newY) {
         this.cursorX = newX;

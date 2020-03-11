@@ -14,22 +14,12 @@
     <li class = 'question'>
         <div id = 'problem1'></div>
     </li>
+    <li class = 'question'>
+        <div id = 'problem2'></div>
+    </li>
 </ol>
 
 <script>
-    let myPotentialDiagram = new ElectricPotentialGraph();
-    myPotentialDiagram.addBattery(30,2);
-    myPotentialDiagram.addWire(2);
-    myPotentialDiagram.addResistor(10,2,true);
-    myPotentialDiagram.addWire(2);
-    myPotentialDiagram.addResistor(10,2, true);
-    myPotentialDiagram.addWire(2);
-    myPotentialDiagram.addResistor(10,2, true);
-
-
-    $("#diagramHere").append(myPotentialDiagram.drawCanvas(800,500));
-
-
     let problem1 = new ElectricPotentialGraph();
     problem1.addBattery(9);
     problem1.setReferenceArray([3,9]);
@@ -45,7 +35,19 @@
     problem1.addWire();
     problem1.addResistor(6,1,true);
 
+
+//    addDownwardSteps(stepArray, current, infoLinesBoolean) {
+
+    let problem2 = new ElectricPotentialGraph();
+    problem2.addBattery(12);
+    problem2.addWire(4);
+    problem2.addDownwardSteps([8,4],undefined,true);
+    problem2.addBranch([12],2,true,true,2);
+    problem2.setReferenceArray([4,8,12]);
+
+
     $("#problem1").append(problem1.drawCanvas(500));
+    $("#problem2").append(problem2.drawCanvas(500));
 
 </script>
 
