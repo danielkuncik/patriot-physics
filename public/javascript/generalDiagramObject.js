@@ -22,6 +22,12 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
     return scale;
 }
 
+
+function getLengthOfLetters(letters) {
+    let fontAspectRatio = 0.52; // aspect ratio of arial font according to https://www.lifewire.com/aspect-ratio-table-common-fonts-3467385
+    return letters.length * fontAspectRatio
+}
+
 // given a number zero to 20, returns a proportionate shade of gray
 // with 0 = white
 // and 20 = black
@@ -890,6 +896,45 @@ class Diagram {
         let obj = this.labelLine(point1, point2, undefined, text, textDisplacement, relativeFontSize);
         return obj
     }
+
+    // you are not allowed to rotate lines
+    addLinesOfText(lettersArray, centerPoint, relativeFontSize, spacing) {
+        if (spacing === undefined) {
+            spacing  = 1.4;
+        }
+        let lineWidth = relativeFontSize * spacing;
+        let centerX = centerPoint.x;
+        let topCenterY = centerPoint.y + lineWidth * (lettersArray.length - 1) / 2;
+        let q, thisY;
+        for (q = 0; q < lettersArray.length; q++) {
+            thisY = topCenterY - lineWidth * q;
+            this.addText(lettersArray[q],new Point(centerX, thisY),relativeFontSize);
+        }
+    }
+
+    addLinesRightOfSegment(point1, point2, lettersArray, relativeFontSize, spacing) {
+        if (spacing === undefined) {
+            spacing  = 1.4;
+        }
+        let boxHeight = relativeFontSize * spacing * lettersArray.length;
+        let theta = point1.getAngleToAnotherPoint(point2);
+        let horizontalDisplacement_1 = (boxHeight / 2) / (Math.atan(theta));
+
+        let maxLetters = 0;
+        lettersArray.forEach((text) => {
+            if (text.length > maxLetters) {
+                maxLetters = text.length;
+            }
+        });
+        let horizontalDisplacement_2 = maxLetters * 0.52 * relativeFontSize;
+
+        let horizontalDisplacement = horizontalDisplacement_1 + horizontalDisplacement_2;
+
+        let textCenter = point1.interpolate(point2, 0.5);
+        textCenter.translate(horizontalDisplacement,0);
+
+        this.addLinesOfText(lettersArray, textCenter, relativeFontSize, spacing);
+    };
 
     /// bring back the dotted line function here!!!
     // adds a dashed line between point1 and point2 in which there are numDashes of dashes,

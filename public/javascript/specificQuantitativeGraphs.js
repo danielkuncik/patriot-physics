@@ -1,6 +1,8 @@
 class ElectricPotentialGraph {
-    constructor(yMax,desiredAspectRatio) {
-        this.yMax = yMax;
+    constructor(desiredAspectRatio) {
+        if (desiredAspectRatio === undefined) {
+            desiredAspectRatio = 2;
+        }
         this.desiredAspectRatio = desiredAspectRatio;
         this.xStart = 1;
 
@@ -27,7 +29,7 @@ class ElectricPotentialGraph {
         }
     }
 
-    addStep(potentialDifference,name,current) {
+    addStep(potentialDifference,name,current,infoLinesBoolean) {
         this.lines.push({
             x1: this.cursorX,
             y1: this.cursorY,
@@ -35,23 +37,37 @@ class ElectricPotentialGraph {
             y2: this.cursorY + potentialDifference,
             name: name,
             currentQuantity: current,
-            currentLabel: this.labelCurrent(current)
+            currentLabel: this.labelCurrent(current),
+            infoLinesBoolean: infoLinesBoolean
         });
         this.cursorX += 1;
         this.cursorY += potentialDifference;
     }
 
-    addBattery(voltage,current) {
-        this.addStep(voltage,'Bat',current);
+    addBattery(voltage,current, infoLinesBoolean) {
+        this.addStep(voltage,'Bat',current, infoLinesBoolean);
     }
 
     addWire(current) {
         this.addStep(0,undefined,current);
     }
 
-    addResistor(voltageDrop,current) {
-        this.addStep(-1 * voltageDrop,`R${alphabetArrayLowercase[this.numResistors]}`,current);
+    addResistor(voltageDrop,current, infoLinesBoolean) {
+        this.addStep(-1 * voltageDrop,`R${alphabetArrayLowercase[this.numResistors]}`,current, infoLinesBoolean);
         this.numResistors += 1;
+    }
+
+    addDownwardSteps(stepArray, current) {
+        let k;
+        for (k = 0; k < stepArray.length - 1; k++) {
+            this.addResistor(stepArray,current);
+            this.addWire(stepArray,current);
+        }
+        this.addResistor(stepArray[stepArray.length - 1], current);
+    }
+
+    addEmptyInfoBox(centerPoint) {
+
     }
 
     moveCursor(newX, newY) {
@@ -80,6 +96,7 @@ class ElectricPotentialGraph {
         this.maxY = maxY;
     }
 
+
     setFontAndArrowSize() {
         this.fontSize = this.maxX * 0.02;
         this.arrowSize = this.maxX * 0.02;
@@ -93,7 +110,7 @@ class ElectricPotentialGraph {
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         this.getMaxes();
         this.setFontAndArrowSize();
-        let newGraph = new QuantitativeGraph(0, this.maxX, 0, this.maxY,2);
+        let newGraph = new QuantitativeGraph(0, this.maxX, 0, this.maxY,this.desiredAspectRatio);
 
         newGraph.labelAxes('','Electric Potential (V)');
         newGraph.addReferenceArray([],this.referenceArray);
@@ -102,7 +119,12 @@ class ElectricPotentialGraph {
         this.lines.forEach((line) => {
             newGraph.addSegmentWithArrowheadInCenter(line.x1,line.y1,line.x2,line.y2,this.arrowSize);
             newGraph.labelBetweenTwoPoints(line.x1,line.y1,line.x2,line.y2,line.currentLabel,line.name,undefined,this.fontSize);
+            if (line.infoLinesBoolean) {
+                newGraph.addLinesRightOfSegment(line.x1, line.y1, line.x2, line.y2, ['ΔV =','I = ','R = '],this.fontSize);
+            }
         });
+
+        newGraph.addReferenceArray([], this.referenceArray);
 
         // backward steps
         let i;

@@ -1,0 +1,54 @@
+
+
+
+<p class = 'directions'>
+    For each of the following electric potential diagrams, use information from the graph,
+    the junction rule,
+    and Ohm's law in order to fill in all missing information.
+    Then, draw a circuit that corresponds to this electric potential graph.
+    On your circuit, label the voltage of the battery and the resistance of each resistor.
+    You do not need to do anything else after drawing the circuit.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        <div id = 'problem1'></div>
+    </li>
+</ol>
+
+<script>
+    let myPotentialDiagram = new ElectricPotentialGraph();
+    myPotentialDiagram.addBattery(30,2);
+    myPotentialDiagram.addWire(2);
+    myPotentialDiagram.addResistor(10,2,true);
+    myPotentialDiagram.addWire(2);
+    myPotentialDiagram.addResistor(10,2, true);
+    myPotentialDiagram.addWire(2);
+    myPotentialDiagram.addResistor(10,2, true);
+
+
+    $("#diagramHere").append(myPotentialDiagram.drawCanvas(800,500));
+
+
+    let problem1 = new ElectricPotentialGraph();
+    problem1.addBattery(9);
+    problem1.setReferenceArray([3,9]);
+    problem1.addWire();
+    problem1.addResistor(6,2,true);
+    problem1.addWire();
+    problem1.addWire();
+    problem1.addWire();
+    problem1.addResistor(3,undefined,true);
+
+    problem1.moveCursor(3,9);
+    problem1.addWire();
+    problem1.addWire();
+    problem1.addResistor(6,1,true);
+
+    $("#problem1").append(problem1.drawCanvas(500));
+
+</script>
+
+<br><br><br><br><br>
+<a href = '/contentFiles/handwritten_electric_potential_diagrams.pdf'>EXTRA PROBLEMS</a>
+<br><br><br><br><br>

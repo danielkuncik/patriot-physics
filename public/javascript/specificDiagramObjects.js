@@ -261,6 +261,12 @@ class QuantitativeGraph extends Diagram {
         super.labelLine(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier),labelAbove,labelBelow,textDisplacement, relativeFontSize);
     }
 
+    // used to add lines of text
+    // replaces a previous function from before...
+    addLinesRightOfSegment(x1,y1,x2,y2,textArray,relativeFontSize, spacing) {
+        super.addLinesRightOfSegment(new Point(x1,y1 * this.yMultiplier), new Point(x2,y2 * this.yMultiplier), textArray, relativeFontSize, spacing);
+    }
+
 
     addPointAsACircle(x,y) {
         // doens't work, i think it might have something to do witht he fact that
