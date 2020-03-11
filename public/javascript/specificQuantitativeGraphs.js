@@ -29,7 +29,7 @@ class ElectricPotentialGraph {
         }
     }
 
-    addStep(potentialDifference,name,current,infoLinesBoolean) {
+    addStep(potentialDifference,name,current,infoLinesBoolean, knownInformation) {
         this.lines.push({
             x1: this.cursorX,
             y1: this.cursorY,
@@ -38,7 +38,8 @@ class ElectricPotentialGraph {
             name: name,
             currentQuantity: current,
             currentLabel: this.labelCurrent(current),
-            infoLinesBoolean: infoLinesBoolean
+            infoLinesBoolean: infoLinesBoolean,
+            knownInformation: knownInformation
         });
         this.cursorX += 1;
         this.cursorY += potentialDifference;
@@ -59,8 +60,8 @@ class ElectricPotentialGraph {
         }
     }
 
-    addResistor(voltageDrop,current, infoLinesBoolean) {
-        this.addStep(-1 * voltageDrop,`R${alphabetArrayLowercase[this.numResistors]}`,current, infoLinesBoolean);
+    addResistor(voltageDrop,current, infoLinesBoolean, knownInformation) {
+        this.addStep(-1 * voltageDrop,`R${alphabetArrayLowercase[this.numResistors]}`,current, infoLinesBoolean, knownInformation);
         this.numResistors += 1;
     }
 
@@ -84,6 +85,11 @@ class ElectricPotentialGraph {
             }
         });
         this.moveCursor(newX, verticalPosition);
+    }
+
+    moveToEndOfTopRow() {
+        this.getMaxes();
+        this.moveToEndOfRow(this.maxY);
     }
 
     // one current boolean, if true, current is shown only in one place
@@ -162,7 +168,21 @@ class ElectricPotentialGraph {
             newGraph.addSegmentWithArrowheadInCenter(line.x1,line.y1,line.x2,line.y2,this.arrowSize);
             newGraph.labelBetweenTwoPoints(line.x1,line.y1,line.x2,line.y2,line.currentLabel,line.name,undefined,this.fontSize);
             if (line.infoLinesBoolean) {
-                newGraph.addLinesRightOfSegment(line.x1, line.y1, line.x2, line.y2, ['ΔV =','I = ','R = '],this.fontSize);
+                let voltageLine = 'ΔV =';
+                let currentLine = 'I = ';
+                let resistanceLine = 'R = ';
+                if (line.knownInformation) {
+                    if (line.knownInformation['V']) {
+                        voltageLine = voltageLine + ` ${line.knownInformation['V']} V`;
+                    }
+                    if (line.knownInformation['I']) {
+                        currentLine = currentLine + ` ${line.knownInformation['I']} A`;
+                    }
+                    if (line.knownInformation['R']) {
+                        resistanceLine = resistanceLine + ` ${line.knownInformation['R']} Ohms`;
+                    }
+                }
+                newGraph.addLinesRightOfSegment(line.x1, line.y1, line.x2, line.y2, [voltageLine,currentLine,resistanceLine],this.fontSize);
             }
         });
 

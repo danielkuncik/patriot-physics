@@ -72,10 +72,37 @@
 
     problem3.setReferenceArray([2,5,10]);
 
+    problem4 = new ElectricPotentialGraph();
+    problem4.setReferenceArray([1,2,3,4,5,6,7,8,9,10,11,12]);
+    problem4.addBattery(12,7);
+    problem4.addMultipleWires(2);
+    problem4.addDownwardSteps([6,6],2,true);
+    problem4.addBranch([2,3,2,5],undefined,true,undefined,2);
+
+
+    problem5 = new ElectricPotentialGraph();
+    problem5.setReferenceArray([2,6]);
+    problem5.addBattery(6);
+    problem5.addWire(6);
+    problem5.addWire();
+    problem5.addResistor(4,undefined,true,{'R': 2});
+    problem5.addMultipleWires(4);
+    problem5.moveToEndOfTopRow();
+    problem5.addMultipleWires(4);
+    problem5.addResistor(4,undefined,true,{'I': 2});
+    problem5.addMultipleWires(4);
+    problem5.moveToEndOfTopRow();
+    problem5.addMultipleWires(4);
+    problem5.addResistor(4,undefined,true);
+    problem5.addMultipleWires(4);
+    problem5.addResistor(2,undefined,true);
+    // this one will require some different coding operations
 
     $("#problem1").append(problem1.drawCanvas(500));
     $("#problem2").append(problem2.drawCanvas(500));
     $("#problem3").append(problem3.drawCanvas(500));
+    $("#problem4").append(problem4.drawCanvas(1000));
+    $("#problem5").append(problem5.drawCanvas(800));
 
 </script>
 
