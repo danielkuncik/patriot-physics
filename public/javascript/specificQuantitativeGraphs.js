@@ -65,9 +65,16 @@ class ElectricPotentialGraph {
         this.numResistors += 1;
     }
 
-    addDownwardSteps(stepArray, current, infoLinesBoolean) {
+    // one current boolean causes current to be displayed in only one spot
+    addDownwardSteps(stepArray, current, infoLinesBoolean, oneCurrentBoolean) {
         let k;
-        for (k = 0; k < stepArray.length - 1; k++) {
+        this.addResistor(stepArray[0],current, infoLinesBoolean);
+        if (oneCurrentBoolean) {
+            current = undefined;
+        }
+        this.addWire(current);
+
+        for (k = 1; k < stepArray.length - 1; k++) {
             this.addResistor(stepArray[k],current, infoLinesBoolean);
             this.addWire(current);
         }

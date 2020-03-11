@@ -29,6 +29,18 @@
     <li class = 'question'>
         <div id = 'problem5'></div>
     </li>
+    <li class = 'question'>
+        <div id = 'problem6'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem7'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem8'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem9'></div>
+    </li>
 </ol>
 
 <script>
@@ -98,11 +110,48 @@
     problem5.addResistor(2,undefined,true);
     // this one will require some different coding operations
 
+    problem6 = new ElectricPotentialGraph();
+    problem6.addBattery(12);
+    problem6.addWire();
+    problem6.addDownwardSteps([4,8],2,true);
+    problem6.moveToEndOfTopRow();
+    problem6.addMultipleWires(3);
+    problem6.addDownwardSteps([10,2],1,true);
+    problem6.setReferenceArray([2,8,12]);
+
+    problem7 = new ElectricPotentialGraph();
+    problem7.setReferenceArray([1,2,3,4,5,6,7,8,9,10]);
+    problem7.addBattery(10);
+    problem7.addWire(3);
+    problem7.addDownwardSteps([2,4,4],2,true,true);
+    problem7.moveToEndOfTopRow();
+    problem7.addMultipleWires(4);
+    problem7.addDownwardSteps([6,4],undefined,true);
+
+    problem8 = new ElectricPotentialGraph();
+    problem8.setReferenceArray([3,6,24]);
+    problem8.addBattery(24);
+    problem8.addWire(6);
+    problem8.addResistor(18,undefined,true);
+    problem8.addWire();
+    problem8.addResistor(6,undefined,true,{'I': 2});
+    problem8.moveToEndOfRow(6);
+    problem8.addMultipleWires(3);
+    problem8.addResistor(6,undefined,true);
+    problem8.moveToEndOfRow(6);
+    problem8.addMultipleWires(4);
+    problem8.addResistor(6,undefined,true,{"R":2});
+
+
     $("#problem1").append(problem1.drawCanvas(500));
     $("#problem2").append(problem2.drawCanvas(500));
     $("#problem3").append(problem3.drawCanvas(500));
     $("#problem4").append(problem4.drawCanvas(1000));
     $("#problem5").append(problem5.drawCanvas(800));
+    $("#problem6").append(problem6.drawCanvas(800));
+    $("#problem7").append(problem7.drawCanvas(800));
+    $("#problem8").append(problem8.drawCanvas(800));
+
 
 </script>
 
