@@ -4801,114 +4801,124 @@
         "honors": true,
         "pods":
         {
+          "electromagnetic_wave_basics":
+          {
+            "title": "Electromagnetic Wave Basics",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Remember basic facts about electromagnetic waves.",
+            "content": "Electromagnetic waves are oscillations of electric and magnetic energy; all electromagnetic waves move at 300,000,000 m/s; electromagnetic waves can move through vacuums; electromagnetic waves are transverse."
+          },
           "electromagnetic_spectrum_1":
           {
             "title":"Electromagnetic Spectrum 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["electromagnetic_wave_basics"],
             "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency (multiple choice)"
           },
           "choosing_color_by_wavelength":
           {
             "title": "Choosing Colors by Wavelength",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["electromagnetic_spectrum_1"],
             "objective": "For visible electromagnetic waves of specific wavelengths, determine the color of that wave."
           },
           "electromagnetic_spectrum_2":
           {
             "title": "Electromagnetic Spectrum 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "D",
+            "prerequisites": ["choosing_color_by_wavelength"],
             "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer)."
           },
           "choosing_electromagnetic_wave_by_wavelength_A":
           {
             "title": "Choosing Electromagnetic Wave by Wavelength A",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 2,
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["electromagnetic_spectrum_2"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "All values are given in SI scientific notation and not in metric units"
           },
-          "choosing_electromagnetic_wave_by_wavelength B":
+          "choosing_electromagnetic_wave_by_wavelength_B":
           {
             "title": "Choosing Electromagnetic Wave by Wavelength B",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["choosing_electromagnetic_wave_by_wavelength_A"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "Includes values in metric units."
           },
-          "wave_formulas_1":
+          "photon_formulas_1":
           {
-            "title": "Wave Formulas 1",
+            "title": "Photon Formulas 1",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["choosing_electromagnetic_wave_by_wavelength_B"],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step"
           },
           "wave_proportionality":
           {
             "title": "Wave proportionality",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["photon_formulas_1"],
             "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules."
           },
-          "wave_formulas_2":
+          "photon_formulas_2":
           {
-            "title": "Wave Formulas 2",
+            "title": "Photon Formulas 2",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "I",
+            "prerequisites": ["wave_proportionality"],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form"
           },
           "logarithmic_graph_electromagnetic_spectrum_1":
           {
             "title":"Logarithmic Graph of the Electromagnetic Spectrum 1",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, eneergy, and frequency; express the logarthmic value on the axis"
+            "horizontal": 3,
+            "letter": "J",
+            "prerequisites": ["photon_formulas_2"],
+            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, energy, and frequency; express the logarithmic value on the axis"
           },
           "logarithmic_graph_electromagnetic_spectrum_2":
           {
             "title": "Logarithmic Graph of the EM Spectrum 2",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, eneergy, and frequency; express graph using a lograthmic scale but numbers written in linear"
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["logarithmic_graph_electromagnetic_spectrum_1"],
+            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, energy, and frequency; express graph using a logarithmic scale but numbers written in linear"
           },
           "space_photos":
           {
             "title": "Space Photos",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["logarithmic_graph_electromagnetic_spectrum_2"],
             "objective": "Explain, and do some examples, how photos are made of non-visible light objects in space."
           },
           "visible_experience_human_experience":
           {
             "title": "Visible Light and the Human Experience",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["space_photos"],
             "objective": "From your knowledge of the electromagnetic spectrum, surmise philosophical conclucions on the human expereince and the role of humans in the universe."
           }
         }
