@@ -427,6 +427,7 @@ class HarmonicsTable extends Table {
             'speed': 'Speed (m/s)',
             'number': 'Harmonic',
             'diagram': 'Diagram',
+            'numWavelengths': 'How many wavelengths are there?',
             'headers': undefined
         };
 

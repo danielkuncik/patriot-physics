@@ -773,6 +773,13 @@ class Diagram {
     /// if the Point already exists, eg. because it is the end of a line,
     /// then this functino does not work properly!
 
+    addBlackCircle(centerPoint, radius) {
+        let circle = this.addCircle(centerPoint, radius);
+        circle.setFillColor('#000000');
+        circle.fill();
+        return circle
+    }
+
     // should i add some sort of a workaround, in case a linear function etc. is inputted
     /// that makes it graph more clearly?
     addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {

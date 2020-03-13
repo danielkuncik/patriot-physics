@@ -9,6 +9,10 @@ function isXinArray(x, array) {
 }
 
 
+function getRandomPointInProbabilityFunction(probabilityFunction) {
+    // need to work this out
+}
+
 // from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
 function create_UUID(){
     var dt = new Date().getTime();

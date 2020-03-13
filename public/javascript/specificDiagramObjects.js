@@ -2115,10 +2115,10 @@ class RotatingRod extends Diagram {
     }
 }
 
-class Wave extends Diagram {
-    constructor(amplitude, wavelength, phaseProportion, numWavelengths) {
-        super();
-
+// default start is zero line, going up
+// phase proportion is a number from 0 to 1 indicating at what point it should begin
+class Wave {
+    constructor(numWavelengths, amplitude, wavelength, phaseProportion) {
         if (amplitude === undefined) {
             amplitude = 1;
         }
@@ -2131,6 +2131,7 @@ class Wave extends Diagram {
         if (numWavelengths === undefined) {
             numWavelengths = 4;
         }
+        this.makeTransverse();
         this.amplitude = amplitude;
         this.wavelength = wavelength;
         this.phaseProportion = phaseProportion;
@@ -2141,15 +2142,87 @@ class Wave extends Diagram {
         this.function = (x) => {
             return this.amplitude * Math.sin(2 * Math.PI * x / this.wavelength + this.phase);
         };
-        super.addFunctionGraph(this.function, 0, this.xMax);
+
+    }
+
+    normalizeFunction() {
+        this.integral = this.amplitude * (Math.cos(this.phase) - Math.cos(2 * Math.PI * this.numWavelengths)) + this.amplitude * this.xMax / 2;
+        this.probabilityFunction = (x) => {
+            return (this.function(x) + this.amplitude / 2) / this.integral;
+        }
+        ///  won't this cancel out amplitude?? that does need to be a part of it.
+    }
+
+    makeLongitudinal(totalHeight, dotDensity) {
+        if (totalHeight === undefined) {
+            totalHeight = this.xMax / 2;
+        }
+        if (dotDensity === undefined) {
+            dotDensity = 0.7; // number of dots per area
+        }
+        this.type = 'longitudinal';
+        this.totalHeight = totalHeight;
+        this.dotDensity = dotDensity;
+
+        // make function into a probability distribution
+    }
+    makeTransverse() {
+        this.type = 'transverse';
+        this.totalHeight = undefined;
+        this.dotDensity = undefined;
     }
 
     addSecondHalf(dashedBoolean) {
-        let newFunction = (x) => {
+        if (this.type === 'longitudinal') {
+            console.log('ERROR: Cannot add second half to longitudinal wave')
+            return false
+        }
+        this.secondFunction = (x) => {
             return this.amplitude * Math.sin(2 * Math.PI * x / this.wavelength + this.phase + Math.PI);
         };
-        super.addFunctionGraph(newFunction, 0, this.xMax);
+        this.bottomHalfDashed = dashedBoolean;
     }
+
+    makeStandingWave() {
+        this.addSecondHalf(true);
+    }
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        if (maxWidth === undefined) {
+            maxWidth = 300;
+        }
+        if (maxHeight === undefined) {
+            maxHeight = maxWidth;
+        }
+        let WaveDiagram = new Diagram();
+        if (this.type === 'transverse') {
+            WaveDiagram.addFunctionGraph(this.function, 0, this.xMax);
+
+            if (this.secondFunction) {
+                WaveDiagram.addFunctionGraph(this.secondFunction, 0, this.xMax);
+            }
+        } else if (this.type === 'longitudinal') {
+            /// function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {
+
+
+            let scale = nondistortedResize(this.xMax, this.totalHeight, maxWidth, maxHeight);
+            let areaOnScreen = this.xMax * this.totalHeight * scale; // get the area in pixels
+            let numDots = areaOnScreen * this.dotDensity;
+            let dotRadius = areaOnScreen * 0.00003;
+
+            let i, thisVerticalPosition, thisHorizontalPosition, Ntries;
+            for (i = 0; i < numDots; i++) {
+                thisVerticalPosition = Math.random() * this.totalHeight;
+                thisHorizontalPosition = Math.random() * this.xMax; /// now evenly distributed!
+                /// the only thing to work out is how to turn the function into a probability function!
+
+                WaveDiagram.addBlackCircle(new Point(thisHorizontalPosition, thisVerticalPosition), dotRadius);
+            }
+
+        }
+        return WaveDiagram.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
+
 }
 
 
