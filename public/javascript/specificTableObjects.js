@@ -410,3 +410,74 @@ class FormulaSolvingTable extends Table {
         super.setMaxFontProportion(0.04);
     }
 }
+
+
+class HarmonicsTable extends Table {
+    constructor(numHarmonics, infoArray, nRowBoolean) {
+        if (numHarmonics === undefined) {
+            numHarmonics = 6;
+        }
+        if (infoArray === undefined) {
+            infoArray = ['wavelength','frequency','speed']
+        }
+
+        const selectionObject = {
+            'wavelength': 'Wavelength (m)',
+            'frequency': 'Frequency (hz)',
+            'speed': 'Speed (m/s)',
+            'number': 'Harmonic',
+            'diagram': 'Diagram',
+            'headers': undefined
+        };
+
+        let numRows = 1 + numHarmonics;
+        if (nRowBoolean) {
+            numRows += 1;
+        }
+
+        let numColumns = 2 + infoArray.length;
+
+        super(numRows, numColumns);
+
+        this.numHarmonics = numHarmonics;
+        this.nRowBoolean = nRowBoolean;
+        let columnKeys = ['number','diagram'];
+        infoArray.forEach((key) => {
+            columnKeys.push(key);
+        });
+
+        let rowKeys = ['headers'];
+        let q;
+        for (q = 1; q <= this.numHarmonics; q++) {
+            rowKeys.push(q);
+        }
+        if (this.nRowBoolean) {
+            rowKeys.push('n');
+        }
+
+        this.assignAllColumnKeys(columnKeys);
+        this.assignAllRowKeys(rowKeys);
+
+        let topRowText = [];
+        columnKeys.forEach((key) => {
+            topRowText.push(selectionObject[key]);
+        });
+
+        let leftColumnText = [];
+        rowKeys.forEach((key) => {
+            leftColumnText.push(ordinalObject[key]);
+        });
+
+        this.writeTextInRow(0, topRowText);
+        this.writeTextInColumn(0, leftColumnText);
+
+        let columnPropotions = [];
+        let k;
+        for (k = 0; k < this.numColumns; k++) {
+            columnPropotions.push(1);
+        }
+        columnPropotions[1] = 3; /// making the 'diagrams' columnd wider!
+
+        this.setColumnProportions(columnPropotions);
+    };
+}
