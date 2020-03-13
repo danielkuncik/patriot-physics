@@ -10,7 +10,7 @@ function isItThere(filename) {
 }
 
 
-const quizPassword = 'oerTheRamparts';
+const quizPassword = 'antarctica';
 
 
 
