@@ -2136,7 +2136,7 @@ class Wave {
         this.wavelength = wavelength;
         this.phaseProportion = phaseProportion;
         this.numWavelengths = numWavelengths;
-        this.phase = phaseProportion * Math.PI / 2;
+        this.phase = phaseProportion * 2 * Math.PI;
         this.xMax = wavelength * numWavelengths;
         //    addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {
         this.function = (x) => {
@@ -2210,13 +2210,19 @@ class Wave {
             let numDots = areaOnScreen * this.dotDensity;
             let dotRadius = areaOnScreen * 0.00003;
 
-            let i, thisVerticalPosition, thisHorizontalPosition, Ntries;
+            let i, yTest, xTest, monteCarloPoint, Ntries;
             for (i = 0; i < numDots; i++) {
-                thisVerticalPosition = Math.random() * this.totalHeight;
-                thisHorizontalPosition = Math.random() * this.xMax; /// now evenly distributed!
-                /// the only thing to work out is how to turn the function into a probability function!
+                xTest = Math.random() * this.xMax;
+                yTest = Math.random() * this.totalHeight;
 
-                WaveDiagram.addBlackCircle(new Point(thisHorizontalPosition, thisVerticalPosition), dotRadius);
+                monteCarloPoint = Math.random() * this.amplitude * 2;
+
+                if (monteCarloPoint < this.function(xTest) + this.amplitude) {
+                    WaveDiagram.addBlackCircle(new Point(xTest, yTest), dotRadius);
+                } else {
+                    i -= 1;
+                }
+                // the solution i once figured out on a friday night at a teavana in waltham, ma
             }
 
         }

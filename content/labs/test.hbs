@@ -7,8 +7,9 @@
 <script>
     let harmonicsTable = new HarmonicsTable(undefined,undefined,true);
 
-    let waveTest = new Wave();
+    let waveTest = new Wave(3,1,4,1);
     waveTest.makeLongitudinal();
+    // creates the correct pattern, but amplitude has no effect
 
     $("#putItHere").append(waveTest.drawCanvas(500));
 </script>
