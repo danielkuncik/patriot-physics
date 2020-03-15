@@ -2199,7 +2199,8 @@ class Wave {
             WaveDiagram.addFunctionGraph(this.function, 0, this.xMax);
 
             if (this.secondFunction) {
-                WaveDiagram.addFunctionGraph(this.secondFunction, 0, this.xMax);
+                let secondFunction = WaveDiagram.addFunctionGraph(this.secondFunction, 0, this.xMax);
+                secondFunction.makeDashed(20);
             }
         } else if (this.type === 'longitudinal') {
             /// function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {

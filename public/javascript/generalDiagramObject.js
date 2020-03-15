@@ -529,6 +529,8 @@ class FunctionGraph {
         } else {
             this.yMax = range[1];
         }
+        this.makeSolid();
+
         this.rectangle = new Rectangle(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
     }
 
@@ -549,6 +551,37 @@ class FunctionGraph {
 
     rescaleVertically(yMultiplier) {
         /// rescales the function so that it fits
+    }
+
+    makeDashed(numDashes) {
+        this.dashed = true;
+        this.dashLength = this.getDashLength(numDashes);
+    }
+
+    makeSolid() {
+        this.dashed = false;
+        this.dashLength = undefined;
+    }
+
+    getArcLength() {
+        const Nsteps = 10000;
+        let i;
+        const range = this.xMax - this.xMin;
+        let arcLength = 0, x1, y1, x2,y2;
+        for (i = 0; i < Nsteps; i++) {
+            x1 = this.function(this.xMin + i / Nsteps * range);
+            x2 = x1 + 1 / Nsteps;
+            y1 = this.function(x1);
+            y2 = this.function(x2);
+            arcLength += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+        }
+        return arcLength;
+    }
+
+    getDashLength(numDashes) {
+        const arcLength = this.getArcLength();
+        const numDashesAndSpaces = numDashes + (numDashes - 1); // always begin and end on a dash
+        return arcLength / numDashesAndSpaces;
     }
 }
 
@@ -1202,7 +1235,8 @@ class Diagram {
 
         ctx.setLineDash([]);
 
-        this.functionGraphs.forEach((FunctionGraphObject) => {
+        this.functionGraphs.forEach((FunctionGraphObject) => { /// in desperate need of some refartoring, to make it easier to comprehend what's going on
+            // too many different options in their own method and too much repeated code
             ctx.lineWidth = 2;
             ctx.lineCap = 'butt';
             ctx.strokeStyle = 'black'; // can change later!
@@ -1230,6 +1264,34 @@ class Diagram {
                     lastXVal = thisXVal;
                     lastYval = thisYVal;
                 }
+            } else if (FunctionGraphObject.dashed) {
+                let dashOn = true;
+                let dashLength = FunctionGraphObject.dashLength;
+                let sinceLastDashStart = 0;
+
+                let x1,x2,y1,y2;
+
+                for (k = 0; k < Nsteps; k++) { // a slightly different method here
+                    x1 = FunctionGraphObject.xMin + xSteps * k;
+                    x2 = x1 + xSteps;
+                    y1 = FunctionGraphObject.function(x1);
+                    y2 = FunctionGraphObject.function(x2);
+
+                    sinceLastDashStart += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+                    if (sinceLastDashStart > dashLength) {
+                        dashOn = !dashOn;
+                        sinceLastDashStart = 0;
+                    }
+                    console.log(dashOn);
+                    if (dashOn) {
+                        ctx.moveTo(wiggleRoom + (x1 - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (y1 - this.yMin) * scaleFactor);
+                        ctx.lineTo(wiggleRoom + (x2 - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (y2 - this.yMin) * scaleFactor);
+                        ctx.stroke();
+                    }
+                }
+
+                /// so, i cannot have a yForced value on a dashed object!
+
             } else {
                 for (k = 1; k <= Nsteps; k++) {
                     thisXVal = FunctionGraphObject.xMin + xSteps * k;
