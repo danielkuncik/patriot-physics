@@ -146,9 +146,14 @@ class Point {
         this.translate(centerRotationPoint.x, centerRotationPoint.y);
     }
 
-    rescale(scaleFactor) {
+    rescaleSingleFactor(scaleFactor) {
         this.x *= scaleFactor;
         this.y *= scaleFactor;
+    }
+
+    rescaleDoubleFactor(xFactor, yFactor) {
+        this.x *= xFactor;
+        this.y *= yFactor;
     }
 
     reflectAboutXAxis() {
@@ -425,9 +430,17 @@ class Text {
     }
 
 
-    rescale(scaleFactor) {
+    rescaleSingleFactor(scaleFactor) {
         this.relativeFontSize *= scaleFactor;
         // i won't change anything else because they are all tied to the Point array with the Diagram
+    }
+
+    rescaleDoubleFactor(xFactor, yFactor) {
+        if (xFactor <= yFactor) {
+            this.relativeFontSize *= xFactor;
+        } else {
+            this.relativeFontSize *= yFactor;
+        }
     }
 
     setRelativeFontSize(newRelativeFontSize) {
@@ -503,8 +516,16 @@ class Circle {
         this.filled = false;
     }
 
-    rescale(scaleFactor) {
+    rescaleSingleFactor(scaleFactor) {
         this.radius *= scaleFactor; // why is there a /2??? i don't know, but it is necessary for it to work
+    }
+
+    rescaleDoubleFactor(xFactor, yFactor) {
+        if (xFactor <= yFactor) {
+            this.radius *= xFactor;
+        } else {
+            this.radius *= yFactor;
+        }
     }
 
 }
@@ -564,7 +585,7 @@ class FunctionGraph {
     }
 
     getArcLength() {
-        const Nsteps = 10000;
+        const Nsteps = 1000;
         let i;
         const range = this.xMax - this.xMin;
         let arcLength = 0, x1, y1, x2,y2;
@@ -1090,10 +1111,17 @@ class Diagram {
         this.points.forEach((point) => {point.rotate(angleInRadians, centerRotationPoint)});
     }
 
-    rescale(scaleFactor) {
-        this.points.forEach((point) => {point.rescale(scaleFactor)});
-        this.texts.forEach((text) => {text.rescale(scaleFactor)});
-        this.circles.forEach((circle) => {circle.rescale(scaleFactor)});
+    rescaleSingleFactor(scaleFactor) {
+        this.points.forEach((point) => {point.rescaleSingleFactor(scaleFactor)});
+        this.texts.forEach((text) => {text.rescaleSingleFactor(scaleFactor)});
+        this.circles.forEach((circle) => {circle.rescaleSingleFactor(scaleFactor)});
+    }
+
+    rescaleDoubleFactor(xFactor, yFactor) {
+        this.points.forEach((point) => {point.rescaleDoubleFactor(xFactor, yFactor)});
+        this.texts.forEach((text) => {text.rescaleDoubleFactor(xFactor, yFactor)});
+        this.circles.forEach((circle) => {circle.rescaleDoubleFactor(xFactor, yFactor)});
+
     }
 
     reflectAboutXAxis() {
@@ -1149,7 +1177,7 @@ class Diagram {
     // unit is the unit for the maxWidth and maxHeight variabales, default is px
     // wiggle room is the space around the outside of the canvas in which nothing will be drawn,
     // default wiggle room is 20
-    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+    drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom) {
         if (maxWidth === undefined) {
             maxWidth = this.defaultSize;
         }
@@ -1181,14 +1209,29 @@ class Diagram {
 
         if (unit === undefined) {unit = 'px';}
 
-        const scaleFactor = nondistortedResize(this.horizontalRange, this.verticalRange, maxWidth - wiggleRoom * 2, maxHeight - wiggleRoom * 2);
 
         // transform to prepare for canvas;
         this.translate(-1 * this.xMin, -1 * this.yMin);
-        this.rescale(scaleFactor);
 
-        const canvasWidth = this.horizontalRange * scaleFactor + wiggleRoom * 2;
-        const canvasHeight = this.verticalRange * scaleFactor + wiggleRoom * 2;
+
+        let scaleFactor, xScaleFactor, yScaleFactor, canvasWidth, canvasHeight;
+        if (!forceSize) {
+            scaleFactor = nondistortedResize(this.horizontalRange, this.verticalRange, maxWidth - wiggleRoom * 2, maxHeight - wiggleRoom * 2);
+            this.rescaleSingleFactor(scaleFactor);
+            canvasWidth = this.horizontalRange * scaleFactor + wiggleRoom * 2;
+            canvasHeight = this.verticalRange * scaleFactor + wiggleRoom * 2;
+            xScaleFactor = scaleFactor;
+            yScaleFactor = scaleFactor;
+        } else {
+            xScaleFactor = (maxWidth - wiggleRoom * 2) / (this.horizontalRange);
+            yScaleFactor = (maxHeight - wiggleRoom * 2) / (this.verticalRange);
+            this.rescaleDoubleFactor(xScaleFactor, yScaleFactor);
+            canvasWidth = maxWidth;
+            canvasHeight = maxHeight;
+        }
+
+
+
 
         let c = document.createElement('canvas');
         c.setAttribute("width", String(canvasWidth) + unit);
@@ -1256,8 +1299,8 @@ class Diagram {
                     if (thisYVal > yMax || thisYVal < yMin) {
                         // pass
                     } else {
-                        ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
-                        ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                        ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * yScaleFactor);
+                        ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * yScaleFactor);
                         ctx.stroke();
                     }
 
@@ -1283,8 +1326,8 @@ class Diagram {
                         sinceLastDashStart = 0;
                     }
                     if (dashOn) {
-                        ctx.moveTo(wiggleRoom + (x1 - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (y1 - this.yMin) * scaleFactor);
-                        ctx.lineTo(wiggleRoom + (x2 - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (y2 - this.yMin) * scaleFactor);
+                        ctx.moveTo(wiggleRoom + (x1 - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (y1 - this.yMin) * yScaleFactor);
+                        ctx.lineTo(wiggleRoom + (x2 - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (y2 - this.yMin) * yScaleFactor);
                         ctx.stroke();
                     }
                 }
@@ -1296,12 +1339,13 @@ class Diagram {
                     thisXVal = FunctionGraphObject.xMin + xSteps * k;
                     thisYVal = FunctionGraphObject.function(thisXVal);
 
-                    ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * scaleFactor);
-                    ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * scaleFactor);
+                    ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * yScaleFactor);
+                    ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * yScaleFactor);
                     ctx.stroke();
 
                     lastXVal = thisXVal;
                     lastYval = thisYVal;
+
                 }
             }
 
@@ -1340,7 +1384,11 @@ class Diagram {
 
 
         // before finishing, undo transformations
-        this.rescale(1 / scaleFactor);
+        if (!forceSize) {
+            this.rescaleSingleFactor(1 / scaleFactor);
+        } else {
+            this.rescaleDoubleFactor(1 / xScaleFactor, 1 / yScaleFactor);
+        }
         this.translate(this.xMin, this.yMin);
 
         return c
