@@ -1,0 +1,14 @@
+<p>
+    Standing waves come in shapes called <strong>harmonics</strong>.
+    This page shows thr first six harmonics,
+    they are called the first harmonic, the second harmonic, the third harmonic, etc.
+</p>
+
+<div id = 'harmonicsTable1'></div>
+
+<script>
+    let harmonicsTable = new HarmonicsTable(6,[]);
+    harmonicsTable.addHarmonicDiagrams('open','closed');
+
+    $("#harmonicsTable1").append(harmonicsTable.draw(400,800));
+</script>

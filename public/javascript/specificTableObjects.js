@@ -481,4 +481,17 @@ class HarmonicsTable extends Table {
 
         this.setColumnProportions(columnPropotions);
     };
+
+    addHarmonicDiagrams(end1, end2) { // doesn't adjust to phase
+        Object.keys(this.rowKeys).forEach((key) => {
+            if (isStringIntegerOneTo20(key)) {
+                let coordinates = super.getCellCoordinatesByKey(key,'diagram');
+                let harmonicNumber = Number(key);
+                let newWave = drawHarmonic(harmonicNumber, end1, end2);
+                if (coordinates) {
+                    super.addDiagramToCell(coordinates.i, coordinates.j, newWave);
+                }
+            }
+        });
+    }
 }

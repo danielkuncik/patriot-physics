@@ -1282,7 +1282,6 @@ class Diagram {
                         dashOn = !dashOn;
                         sinceLastDashStart = 0;
                     }
-                    console.log(dashOn);
                     if (dashOn) {
                         ctx.moveTo(wiggleRoom + (x1 - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (y1 - this.yMin) * scaleFactor);
                         ctx.lineTo(wiggleRoom + (x2 - this.xMin) * scaleFactor, canvasHeight - wiggleRoom - (y2 - this.yMin) * scaleFactor);
