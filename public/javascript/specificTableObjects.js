@@ -487,9 +487,9 @@ class HarmonicsTable extends Table {
             if (isStringIntegerOneTo20(key)) {
                 let coordinates = super.getCellCoordinatesByKey(key,'diagram');
                 let harmonicNumber = Number(key);
-                let newWave = drawHarmonic(harmonicNumber, end1, end2);
+                let newHarmonic = new Harmonic(harmonicNumber, end1, end2);
                 if (coordinates) {
-                    super.addDiagramToCell(coordinates.i, coordinates.j, newWave);
+                    super.addDiagramToCell(coordinates.i, coordinates.j, newHarmonic);
                 }
             }
         });

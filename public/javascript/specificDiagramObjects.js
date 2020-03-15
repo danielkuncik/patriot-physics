@@ -2232,6 +2232,43 @@ class Wave {
 
 }
 
+class Harmonic extends Wave {
+    constructor(harmonicNumber, end1, end2, amplitude, wavelength) {
+        if (end1 === undefined) {
+            end1 = 'closed';
+        }
+        if (end2 === undefined) {
+            end2 = 'closed';
+        }
+        if (harmonicNumber === undefined) {
+            console.log('ERROR, Harmonic number must be defined')
+        }
+        let phaseProportion, numWavelengths;
+        if (end1 === 'closed' && end2 === 'closed') {
+            phaseProportion = 0;
+            numWavelengths = harmonicNumber * 0.5;
+        } else if (end1 === 'open' && end2 === 'open') {
+            phaseProportion = 0.25;
+            numWavelengths =  harmonicNumber * 0.5;
+        } else if (end1 === 'closed' && end2 === 'open') {
+            phaseProportion = 0;
+            numWavelengths = 0.25 + (harmonicNumber - 1) * 0.5;
+        } else if (end1 === 'open' && end2 === 'closed') {
+            phaseProportion = 0.25;
+            numWavelengths = 0.25 + (harmonicNumber - 1) * 0.5;
+        } else {
+            console.log('ERROR: unallowed harmonic type');
+        }
+
+        super(numWavelengths,amplitude,wavelength,phaseProportion);
+        super.addSecondHalf(true);
+
+    }
+
+
+}
+
+
 
 class UnitMap extends Diagram {
     constructor() {
