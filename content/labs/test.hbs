@@ -9,7 +9,11 @@
 <div id = 'putItHere'></div>
 
 <script>
-    let newWave = new Wave();
-    newWave.addSecondHalf(true);
+    let newWave = new Wave(3,undefined,undefined,0);
+    //newWave.circleAllKeyPoints();
+    // newWave.pointToCrests('crest');
+    // newWave.pointToTroughs('trough');
+    newWave.pointToWavelengthTop(1,'wavelength');
+    newWave.pointToWavelengthBottom(1,'wavelength');
     $("#putItHere").append(newWave.drawCanvas(500));
 </script>

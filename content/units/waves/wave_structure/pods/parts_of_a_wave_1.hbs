@@ -12,11 +12,36 @@
     The top of a wave is called a <strong>crest</strong>
     and the bottom of a wave is called a <strong>trough</strong>.
 </p>
-
+<div id = 'crestTroughWave'></div>
+<script>
+    let crestTroughWave = new Wave(4);
+    crestTroughWave.pointToCrests('crest');
+    crestTroughWave.pointToTroughs('trough');
+    $("#crestTroughWave").append(crestTroughWave.drawCanvas(500));
+</script>
 
 <h4>
-    Wavelength and Amplitude:
+    Wavelength and Amplitude
 </h4>
+
+<p class = 'definition'>
+    The distance between any two crests is called the <strong>wavelength</strong>.
+    A wavelength is also the distance between the
+</p>
+<div id = 'wavelengthWave'></div>
+<script>
+    let wavelengthWave = new Wave(3,undefined,undefined,0);
+    wavelengthWave.pointToWavelengthTop(1,'wavelength');
+    wavelengthWave.pointToWavelengthBottom(1,'wavelength');
+    $("#wavelengthWave").append(wavelengthWave.drawCanvas(500));
+</script>
+
+<p class = 'definition'>
+    The distance from the middle of the wave to the top of the
+    wave is called the <strong>amplitude</strong>.
+    An amplitude is also the distance from the middle of the wave
+    to the botton of the wave.
+</p>
 
 
 <h4>

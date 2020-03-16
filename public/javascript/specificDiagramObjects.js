@@ -2131,15 +2131,15 @@ class Wave {
         if (phaseProportion === undefined) {
             phaseProportion = 0;
         }
+        this.phaseProportion = this.setPhaseProportion(phaseProportion);
         if (numWavelengths === undefined) {
             numWavelengths = 4;
         }
         this.makeTransverse();
         this.amplitude = amplitude;
         this.wavelength = wavelength;
-        this.phaseProportion = phaseProportion;
         this.numWavelengths = numWavelengths;
-        this.phase = phaseProportion * 2 * Math.PI;
+        this.phase = this.phaseProportion * 2 * Math.PI;
         this.xMax = wavelength * numWavelengths;
         //    addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {
         this.function = (x) => {
@@ -2149,6 +2149,21 @@ class Wave {
 
         this.circles = [];
 
+        this.aboveArrows = [];
+        this.belowArrows = [];
+        this.topHorizontalArrows = [];
+        this.bottomHorizontalArrows = [];
+        this.verticalArrows = [];
+    }
+
+    setPhaseProportion(newPhaseProportion) {
+        if (newPhaseProportion < 0) {
+            newPhaseProportion -= Math.floor(newPhaseProportion);
+        }
+        if (newPhaseProportion > 1) {
+            newPhaseProportion = newPhaseProportion % 1;
+        }
+        return newPhaseProportion
     }
 
     normalizeFunction() {
@@ -2193,45 +2208,135 @@ class Wave {
         this.addSecondHalf(true);
     }
 
-    circleCrests(filled) {
-        let firstCrest, numCrests;
-
-    }
-
-    circleTroughs(filled) {
-        let firstTrough, numTroughs;
-
-    }
-
-    circleCenterPoints(filled) {
-        let firstCenterPoint, numCenterPoints;
-        if (this.phaseProportion === 0) { // if it begins with an anit-node
-            firstCenterPoint = 0;
-            if ((this.numWavelengths * 2) % 1 === 0 ) { // if it ends on a node
-                numCenterPoints = this.numWavelengths  * 2 + 1;
-            } else { // if it doesn't end on a node
-                numCenterPoints = this.numWavelengths  * 2;
+    countPoints(selectedPhaseProportion) { // counting the points at a particular proportion
+        selectedPhaseProportion = this.setPhaseProportion(selectedPhaseProportion);
+        let firstPoint, numPoints;
+        if (this.phaseProportion === selectedPhaseProportion) {
+            firstPoint = 0;
+            if (this.numWavelengths % 1 === 0) { /// if it ends on a point
+                numPoints = 1 + this.numWavelengths;
+            } else { // if it doesn't end on a point
+                numPoints = this.numWavelengths;
             }
-        } else {
-            firstCenterPoint = (0.5 - this.phaseProportion) * this.wavelength;
-            numCenterPoints = this.numWavelengths * 2;
+        } else if (this.phaseProportion < selectedPhaseProportion) {
+            firstPoint = this.wavelength * (selectedPhaseProportion - this.phaseProportion);
+            if ((this.numWavelengths % 1) === (selectedPhaseProportion - this.phaseProportion)) {
+                console.log('q');
+                numPoints = 1 + this.numWavelengths;
+            } else {
+                numPoints = this.numWavelengths;
+            }
+        } else { // this.phaseProportion > selectedPhaseProportion
+            firstPoint = this.wavelength * (1 + selectedPhaseProportion - this.phaseProportion);
+            if ((this.numWavelengths % 1) ===  (1 + selectedPhaseProportion - this.phaseProportion)) { // if it ends on a point
+                numPoints = 1 + this.numWavelengths;
+            } else {
+                numPoints = this.numWavelengths;
+            }
+        }
+        return {
+            firstPoint: firstPoint,
+            numPoints: numPoints
+        }
+    }
+
+    circlePoints(selectedPhaseProportion, yPoint, filled, radius) {
+        if (radius === undefined) {
+            radius = 0.1;
+        }
+        if (yPoint === undefined) {
+            yPoint = 0;
         }
 
-        const circleRadius = this.amplitude * 0.1;
+        let pointLocations = this.countPoints(selectedPhaseProportion);
 
-        let k, x, y;
-        for (k = 0; k < numCenterPoints; k++) {
-            x = firstCenterPoint + this.wavelength / 2 * k;
-            y = 0;
+        let k, x;
+        for (k = 0; k < pointLocations.numPoints; k++ ) {
+            x = pointLocations.firstPoint + this.wavelength * k;
             this.circles.push({
                 x: x,
-                y: y,
-                radius: circleRadius,
+                y: yPoint,
+                radius: radius,
                 filled: filled
-            })
+            });
         }
-
     }
+
+    aboveArrowPoints(selectedPhaseProportion, label) {
+        let pointLocations = this.countPoints(selectedPhaseProportion);
+
+        let k, x;
+        for (k = 0; k < pointLocations.numPoints; k++) {
+            x = pointLocations.firstPoint + this.wavelength * k;
+            this.aboveArrows.push({
+                x: x,
+                label: label
+            });
+        }
+    }
+
+    belowArrowPoints(selectedPhaseProportion, label) {
+        let pointLocations = this.countPoints(selectedPhaseProportion);
+
+        let k, x;
+        for (k = 0; k < pointLocations.numPoints; k++) {
+            x = pointLocations.firstPoint + this.wavelength * k;
+            this.belowArrows.push({
+                x: x,
+                label: label
+            });
+        }
+    }
+
+    pointToWavelengthTop(numCrest, label) {
+        // currently no requirements
+        let crestLocations = this.countPoints(0.25);
+        let x1 = crestLocations.firstPoint + numCrest * this.wavelength;
+        let x2 = x1 + this.wavelength;
+        this.topHorizontalArrows.push({
+            x1: x1,
+            x2: x2,
+            label: label
+        });
+    }
+
+    pointToWavelengthBottom(numTrough, label) {
+        let troughLocations = this.countPoints(0.75);
+        let x1 = troughLocations.firstPoint + numTrough * this.wavelength;
+        let x2 = x1 + this.wavelength;
+        this.bottomHorizontalArrows.push({
+            x1: x1,
+            x2: x2,
+            label: label
+        });
+    }
+
+    pointToCrests(label) {
+        this.aboveArrowPoints(0.25, label);
+    }
+    pointToTroughs(label) {
+        this.belowArrowPoints(0.75, label);
+    }
+
+    circleCrests(filled, radius) {
+        this.circlePoints(0.25, this.amplitude, filled, radius);
+    }
+
+    circleTroughs(filled, radius) {
+        this.circlePoints(0.75,-1 * this.amplitude, filled, radius);
+    }
+
+    circleCenterPoints(filled, radius) {
+        this.circlePoints(0,0,filled,radius);
+        this.circlePoints(0.5,0,filled,radius);
+    }
+
+    circleAllKeyPoints(filled, radius) {
+        this.circleCrests(filled, radius);
+        this.circleTroughs(filled, radius);
+        this.circleCenterPoints(filled, radius);
+    }
+
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (maxWidth === undefined) {
@@ -2282,6 +2387,37 @@ class Wave {
                 newCircle.fill();
             }
         });
+
+        this.aboveArrows.forEach((arrow) => {
+            WaveDiagram.addArrow(new Point(arrow.x, this.amplitude * 1.4),new Point(arrow.x, 1.1 * this.amplitude), this.amplitude* 0.06);
+            if (arrow.label) {
+                WaveDiagram.addText(arrow.label, new Point(arrow.x, this.amplitude * 1.5), this.amplitude * 0.2);
+            }
+        });
+        this.belowArrows.forEach((arrow) => {
+            WaveDiagram.addArrow(new Point(arrow.x, this.amplitude * -1.4),new Point(arrow.x, -1.1 * this.amplitude), this.amplitude * 0.06);
+            if (arrow.label) {
+                WaveDiagram.addText(arrow.label, new Point(arrow.x, this.amplitude * -1.5), this.amplitude * 0.2);
+            }
+        });
+
+        this.topHorizontalArrows.forEach((arrow) => {
+            let point1 = new Point(arrow.x1, this.amplitude);
+            let point2 = new Point(arrow.x2, this.amplitude);
+            WaveDiagram.addTwoHeadedArrow(point1, point2, this.amplitude * 0.12);
+            if (arrow.label) {
+                WaveDiagram.labelLine(point1,point2,arrow.label,'',this.amplitude*0.05, this.amplitude*0.1);
+            }
+        });
+        this.bottomHorizontalArrows.forEach((arrow) => {
+            let point1 = new Point(arrow.x1, -1 * this.amplitude);
+            let point2 = new Point(arrow.x2, -1 * this.amplitude);
+            WaveDiagram.addTwoHeadedArrow(point1, point2, this.amplitude* 0.12);
+            if (arrow.label) {
+                WaveDiagram.labelLine(point1,point2,'',arrow.label,this.amplitude*0.05, this.amplitude*0.1);
+            }
+        });
+
         return WaveDiagram.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
@@ -2321,42 +2457,15 @@ class Harmonic extends Wave {
     }
 
 
-    circleNodes(filled) {
-        super.circleCenterPoints(filled);
+    circleNodes(filled, radius) {
+        super.circleCenterPoints(filled, radius);
     }
 
-    circleAntiNodes(filled) {
-        let firstAntiNode, numAntiNodes;
-
-        if (this.phaseProportion === 0.25 || this.phaseProportion === 0.75) { // begins on an antinode
-            firstAntiNode = 0;
-            if ((this.numWavelengths * 2) % 1 === 0 ) { // if it ends on a antinode
-                numAntiNodes = this.numWavelengths * 2 + 1;
-            } else {
-                numAntiNodes = this.numWavelengths * 2;
-            }
-        } else {
-            firstAntiNode = 0.25 - this.phaseProportion;
-            numAntiNodes = this.numWavelengths * 2;
-        }
-
-        const circleRadius = this.amplitude * 0.1;
-        let k, x;
-        for (k = 0; k < numAntiNodes; k++) {
-            x = firstAntiNode + this.wavelength / 2 * k;
-            this.circles.push({
-                x: x,
-                y: this.amplitude,
-                radius: circleRadius,
-                filled: filled
-            });
-            this.circles.push({
-                x: x,
-                y: -1 * this.amplitude,
-                radius: circleRadius,
-                filled: filled
-            });
-        }
+    circleAntiNodes(filled, radius) {
+        super.circleTroughs(filled, radius);
+        super.circleCrests(filled, radius);
+        super.circlePoints(0.25,-1 * this.amplitude, filled, radius);
+        super.circlePoints(0.75, this.amplitude, filled, radius);
     }
 
 
