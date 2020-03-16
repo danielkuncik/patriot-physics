@@ -489,7 +489,7 @@ class HarmonicsTable extends Table {
                 let harmonicNumber = Number(key);
                 let newHarmonic = new Harmonic(harmonicNumber, end1, end2);
                 if (coordinates) {
-                    super.addDiagramToCell(coordinates.i, coordinates.j, newHarmonic);
+                    super.addDiagramToCell(coordinates.i, coordinates.j, newHarmonic, false);
                 }
             }
         });

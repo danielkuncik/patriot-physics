@@ -2266,6 +2266,11 @@ class Harmonic extends Wave {
     }
 
 
+    circleNodes() {
+        console.log(this.function);
+    }
+
+
 }
 
 

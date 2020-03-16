@@ -6,9 +6,28 @@
 
 <div id = 'harmonicsTable1'></div>
 
+
+<p>
+    A harmonic is a <strong>standing wave</strong>
+    because it is a wave pattern that is oscillating in place,
+    not oscillating at once.
+</p>
+
+<p>
+    The points at which the wave is not moving
+    at all are called the <strong>nodes</strong>.
+</p>
+<div id = 'harmonicWithNodes'></div>
+
+
 <script>
     let harmonicsTable = new HarmonicsTable(6,[]);
     harmonicsTable.addHarmonicDiagrams('closed','closed');
 
     $("#harmonicsTable1").append(harmonicsTable.draw(400,800));
+
+    let harmonicWithNodes = new Harmonic(4,'closed','closed');
+    harmonicWithNodes.circleNodes();
+    $("#harmonicWithNodes").append(harmonicWithNodes.drawCanvas(300));
+
 </script>
