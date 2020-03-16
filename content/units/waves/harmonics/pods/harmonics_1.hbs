@@ -123,7 +123,7 @@
     $("#harmonicsTable1").append(harmonicsTable.draw(400,800));
 
     let harmonicWithNodes = new Harmonic(4,'closed','closed');
-    harmonicWithNodes.circleNodes();
+    harmonicWithNodes.circleNodes(true);
     $("#harmonicWithNodes").append(harmonicWithNodes.drawCanvas(300));
 
     let harmonicWithAntiNodes = new Harmonic(4, 'closed', 'closed');

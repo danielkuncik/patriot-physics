@@ -2193,6 +2193,46 @@ class Wave {
         this.addSecondHalf(true);
     }
 
+    circleCrests(filled) {
+        let firstCrest, numCrests;
+
+    }
+
+    circleTroughs(filled) {
+        let firstTrough, numTroughs;
+
+    }
+
+    circleCenterPoints(filled) {
+        let firstCenterPoint, numCenterPoints;
+        if (this.phaseProportion === 0) { // if it begins with an anit-node
+            firstCenterPoint = 0;
+            if ((this.numWavelengths * 2) % 1 === 0 ) { // if it ends on a node
+                numCenterPoints = this.numWavelengths  * 2 + 1;
+            } else { // if it doesn't end on a node
+                numCenterPoints = this.numWavelengths  * 2;
+            }
+        } else {
+            firstCenterPoint = (0.5 - this.phaseProportion) * this.wavelength;
+            numCenterPoints = this.numWavelengths * 2;
+        }
+
+        const circleRadius = this.amplitude * 0.1;
+
+        let k, x, y;
+        for (k = 0; k < numCenterPoints; k++) {
+            x = firstCenterPoint + this.wavelength / 2 * k;
+            y = 0;
+            this.circles.push({
+                x: x,
+                y: y,
+                radius: circleRadius,
+                filled: filled
+            })
+        }
+
+    }
+
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         if (maxWidth === undefined) {
             maxWidth = 300;
@@ -2237,7 +2277,10 @@ class Wave {
         }
 
         this.circles.forEach((circle) => {
-            WaveDiagram.addCircle(new Point(circle.x, circle.y),circle.radius);
+            let newCircle = WaveDiagram.addCircle(new Point(circle.x, circle.y),circle.radius);
+            if (circle.filled) {
+                newCircle.fill();
+            }
         });
         return WaveDiagram.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
@@ -2278,37 +2321,11 @@ class Harmonic extends Wave {
     }
 
 
-    circleNodes() {
-
-        let firstNode, numNodes;
-        if (this.phaseProportion === 0) { // if it begins with an anit-node
-            firstNode = 0;
-            if ((this.numWavelengths * 2) % 1 === 0 ) { // if it ends on a node
-                numNodes = this.numWavelengths  * 2 + 1;
-            } else { // if it doesn't end on a node
-                numNodes = this.numWavelengths  * 2;
-            }
-        } else {
-            firstNode = (0.5 - this.phaseProportion) * this.wavelength;
-            numNodes = this.numWavelengths * 2;
-        }
-
-        const circleRadius = this.amplitude * 0.1;
-
-        let k, x, y;
-        for (k = 0; k < numNodes; k++) {
-            x = firstNode + this.wavelength / 2 * k;
-            y = 0;
-            this.circles.push({
-                x: x,
-                y: y,
-                radius: circleRadius
-            })
-        }
-
+    circleNodes(filled) {
+        super.circleCenterPoints(filled);
     }
 
-    circleAntiNodes() {
+    circleAntiNodes(filled) {
         let firstAntiNode, numAntiNodes;
 
         if (this.phaseProportion === 0.25 || this.phaseProportion === 0.75) { // begins on an antinode
@@ -2330,12 +2347,14 @@ class Harmonic extends Wave {
             this.circles.push({
                 x: x,
                 y: this.amplitude,
-                radius: circleRadius
+                radius: circleRadius,
+                filled: filled
             });
             this.circles.push({
                 x: x,
                 y: -1 * this.amplitude,
-                radius: circleRadius
+                radius: circleRadius,
+                filled: filled
             });
         }
     }
