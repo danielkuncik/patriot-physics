@@ -2115,6 +2115,9 @@ class RotatingRod extends Diagram {
     }
 }
 
+
+// should there be just one type of wave object, or different wave objects for transverse and longitudinal??
+
 // default start is zero line, going up
 // phase proportion is a number from 0 to 1 indicating at what point it should begin
 class Wave {
@@ -2142,6 +2145,9 @@ class Wave {
         this.function = (x) => {
             return this.amplitude * Math.sin(2 * Math.PI * x / this.wavelength + this.phase);
         };
+
+
+        this.circles = [];
 
     }
 
@@ -2227,6 +2233,10 @@ class Wave {
             }
 
         }
+
+        this.circles.forEach((circle) => {
+            WaveDiagram.addCircle(new Point(circle.x, circle.y),circle.radius);
+        });
         return WaveDiagram.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
 
@@ -2267,7 +2277,65 @@ class Harmonic extends Wave {
 
 
     circleNodes() {
-        console.log(this.function);
+
+        let firstNode, numNodes;
+        if (this.phaseProportion === 0) { // if it begins with an anit-node
+            firstNode = 0;
+            if ((this.numWavelengths * 2) % 1 === 0 ) { // if it ends on a node
+                numNodes = this.numWavelengths  * 2 + 1;
+            } else { // if it doesn't end on a node
+                numNodes = this.numWavelengths  * 2;
+            }
+        } else {
+            firstNode = (0.5 - this.phaseProportion) * this.wavelength;
+            numNodes = this.numWavelengths * 2;
+        }
+
+        const circleRadius = this.amplitude * 0.1;
+
+        let k, x, y;
+        for (k = 0; k < numNodes; k++) {
+            x = firstNode + this.wavelength / 2 * k;
+            y = 0;
+            this.circles.push({
+                x: x,
+                y: y,
+                radius: circleRadius
+            })
+        }
+
+    }
+
+    circleAntiNodes() {
+        let firstAntiNode, numAntiNodes;
+
+        if (this.phaseProportion === 0.25 || this.phaseProportion === 0.75) { // begins on an antinode
+            firstAntiNode = 0;
+            if ((this.numWavelengths * 2) % 1 === 0 ) { // if it ends on a antinode
+                numAntiNodes = this.numWavelengths * 2 + 1;
+            } else {
+                numAntiNodes = this.numWavelengths * 2;
+            }
+        } else {
+            firstAntiNode = 0.25 - this.phaseProportion;
+            numAntiNodes = this.numWavelengths * 2;
+        }
+
+        const circleRadius = this.amplitude * 0.1;
+        let k, x;
+        for (k = 0; k < numAntiNodes; k++) {
+            x = firstAntiNode + this.wavelength / 2 * k;
+            this.circles.push({
+                x: x,
+                y: this.amplitude,
+                radius: circleRadius
+            });
+            this.circles.push({
+                x: x,
+                y: -1 * this.amplitude,
+                radius: circleRadius
+            });
+        }
     }
 
 

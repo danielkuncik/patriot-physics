@@ -16,8 +16,18 @@
 <p>
     The points at which the wave is not moving
     at all are called the <strong>nodes</strong>.
+    All nodes are circled in the diagram below.
 </p>
 <div id = 'harmonicWithNodes'></div>
+
+<p>
+    The points at which the wave is moving
+    as much as possible (through two full amplitudes)
+    is called an <strong>antinode</strong>.
+    All antinodes (both the top and bottom)
+    are circled in the diagram below:
+</p>
+<div id = 'harmonicWithAntiNodes'></div>
 
 
 <script>
@@ -29,5 +39,9 @@
     let harmonicWithNodes = new Harmonic(4,'closed','closed');
     harmonicWithNodes.circleNodes();
     $("#harmonicWithNodes").append(harmonicWithNodes.drawCanvas(300));
+
+    let harmonicWithAntiNodes = new Harmonic(4, 'closed', 'closed');
+    harmonicWithAntiNodes.circleAntiNodes();
+    $("#harmonicWithAntiNodes").append(harmonicWithAntiNodes.drawCanvas(300));
 
 </script>
