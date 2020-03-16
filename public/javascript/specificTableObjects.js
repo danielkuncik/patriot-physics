@@ -428,7 +428,9 @@ class HarmonicsTable extends Table {
             'number': 'Harmonic',
             'diagram': 'Diagram',
             'numWavelengths': 'How many wavelengths are there?',
-            'headers': undefined
+            'headers': undefined,
+            'numNodes': 'Number of Nodes',
+            'numAntiNodes': 'Number of Antinodes'
         };
 
         let numRows = 1 + numHarmonics;

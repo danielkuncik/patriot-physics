@@ -2180,7 +2180,7 @@ class Wave {
 
     addSecondHalf(dashedBoolean) {
         if (this.type === 'longitudinal') {
-            console.log('ERROR: Cannot add second half to longitudinal wave')
+            console.log('ERROR: Cannot add second half to longitudinal wave');
             return false
         }
         this.secondFunction = (x) => {
@@ -2206,7 +2206,9 @@ class Wave {
 
             if (this.secondFunction) {
                 let secondFunction = WaveDiagram.addFunctionGraph(this.secondFunction, 0, this.xMax);
-                secondFunction.makeDashed(20);
+                if (this.bottomHalfDashed) {
+                    secondFunction.makeDashed(20);
+                }
             }
         } else if (this.type === 'longitudinal') {
             /// function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {

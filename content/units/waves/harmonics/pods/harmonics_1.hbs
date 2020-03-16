@@ -13,6 +13,10 @@
     not oscillating at once.
 </p>
 
+
+<h4>
+    Nodes and Antinodes:
+</h4>
 <p>
     The points at which the wave is not moving
     at all are called the <strong>nodes</strong>.
@@ -30,6 +34,88 @@
 <div id = 'harmonicWithAntiNodes'></div>
 
 
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Fill out the table that describes how many
+        nodes and antinodes each harmonic has.
+        <br>
+        <div id = 'nodeCountingTable'></div>
+    </li>
+    <li class = 'question' data-answer = 'The harmonic number plus 1.'>
+        Determine a pattern for how many nodes each harmonic has.
+    </li>
+    <li class = 'question'>
+        Determine a pattern for how many anti-nodes each harmonic has.
+    </li>
+</ol>
+
+<h4>
+    Drawing Harmonics:
+</h4>
+
+<p>
+    Drawing harmonics is an important skill for understanding how harmonics work.
+    Use the following principles to draw harmonics:
+</p>
+<ul>
+    <li>
+        All harmonics should be exactly the same length.
+        (This means you are squeezing more wavelengths into a single space.)
+        <ul>
+            <li>
+                BAD: (each harmonic is longer than the last)
+                <br>
+                <div id = 'firstHarmonicBad'></div>
+                <br>
+                <div id = 'secondHarmonicBad'></div>
+                <br>
+                <div id = 'thirdHarmonicBad'></div>
+            </li>
+            <li>
+                GOOD: (all harmonics are the same length)
+                <br>
+                <div id = 'firstHarmonicGood'></div>
+                <br>
+                <div id = 'secondHarmonicGood'></div>
+                <br>
+                <div id = 'thirdHarmonicGood'></div>
+            </li>
+        </ul>
+    </li>
+    <li>
+        Make sure that you draw both sides of the harmonic.
+        This indicates that you are drawing a <strong>standing wave</strong>
+        rather than a <strong>traveling wave.</strong>
+        <ul>
+            <li>
+                BAD: (because it looks more like a traveling wave than a standing wave)
+                <div id = 'exampleWaveBad'></div>
+            </li>
+            <li>
+                GOOD: (shows that the wave is oscillating in place, like a standing wave)
+                <div id = 'exampleWaveGood1'></div>
+            </li>
+            <li>
+                ALSO GOOD: (The dashed lines are not essential)
+                <div id = 'exampleWaveGood2'></div>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Practice drawing the first six harmonics:
+        <div id = 'harmonicsQuestionTable'></div>
+    </li>
+</ol>
+
+<h4>
+    Answers:
+</h4>
+<ol class = 'answerList'></ol>
+
 <script>
     let harmonicsTable = new HarmonicsTable(6,[]);
     harmonicsTable.addHarmonicDiagrams('closed','closed');
@@ -44,4 +130,33 @@
     harmonicWithAntiNodes.circleAntiNodes();
     $("#harmonicWithAntiNodes").append(harmonicWithAntiNodes.drawCanvas(300));
 
+    let nodeCountingTable = new HarmonicsTable(8,['numNodes','numAntiNodes']);
+    nodeCountingTable.addHarmonicDiagrams();
+    $("#nodeCountingTable").append(nodeCountingTable.draw(600));
+
+    let harmonicsQuestionTable = new HarmonicsTable(6,[]);
+    $("#harmonicsQuestionTable").append(harmonicsQuestionTable.draw(600));
+
+    let firstHarmonic = new Harmonic(1);
+    let secondHarmonic = new Harmonic(2);
+    let thirdHarmonic = new Harmonic(3);
+
+    $("#firstHarmonicBad").append(firstHarmonic.drawCanvas(100,200,true));
+    $("#secondHarmonicBad").append(secondHarmonic.drawCanvas(200,200,true));
+    $("#thirdHarmonicBad").append(thirdHarmonic.drawCanvas(300,200,true));
+
+    $("#firstHarmonicGood").append(firstHarmonic.drawCanvas(200,200,true));
+    $("#secondHarmonicGood").append(secondHarmonic.drawCanvas(200,200,true));
+    $("#thirdHarmonicGood").append(thirdHarmonic.drawCanvas(200,200,true));
+
+    let exampleWaveBad = new Wave(2);
+    let exampleWaveGood1 = new Wave(2);
+    exampleWaveGood1.addSecondHalf(true);
+
+    let exampleWaveGood2 = new Wave(2);
+    exampleWaveGood2.addSecondHalf(false);
+
+    $("#exampleWaveBad").append(exampleWaveBad.drawCanvas(200));
+    $("#exampleWaveGood1").append(exampleWaveGood1.drawCanvas(200));
+    $("#exampleWaveGood2").append(exampleWaveGood2.drawCanvas(200));
 </script>
