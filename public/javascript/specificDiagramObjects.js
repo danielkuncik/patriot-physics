@@ -973,6 +973,35 @@ class CircuitDiagram extends Diagram {
 
     }
 
+    addInfoLinesToElement(elementStartPoint, elementEndPoint, powerBoolean, valuesObject) {
+        let theta = elementStartPoint.getAngleToAnotherPoint(elementEndPoint);
+        let linearray =[];
+        if (valuesObject.V) {
+            linearray.push(`ΔV = ${printVoltage(valuesObject.V)}`);
+        } else {
+            linearray.push("ΔV = ");
+        }
+        if (valuesObject.I) {
+            linearray.push(`I = ${printCurrent(valuesObject.I)}`);
+        } else {
+            linearray.push("I = ");
+        }
+        if (valuesObject.R) {
+            linearray.push(`R = ${printResistance(valuesObject.R)}`);
+        } else {
+            linearray.push('R = ');
+        }
+        if (powerBoolean) {
+            if (valuesObject.P) {
+                linearray.push(`P = ${printPower(valuesObject.P)}`);
+            } else {
+                linearray.push("P = ");
+            }
+        }
+
+        //next, add lines using the function i wrote before
+    }
+
     ///I want to replace 'addListOfElements' with more of a cursor type program
     translateCursor(xTranslation, yTranslation) {
         this.cursor.translate(xTranslation, yTranslation);

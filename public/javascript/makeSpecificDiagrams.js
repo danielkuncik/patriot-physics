@@ -82,14 +82,17 @@ but for now these are not bad
 /// undefined will return an empty string
 // a string will return the same string
 // a number will return the value with the unit
-function printQuantity(item, singularUnit, pluralUnit, abbreviation, useAbbreviationBoolean) {
+function printQuantity(item, singularUnit, pluralUnit, abbreviation, abbreviationBoolean) {
+    if (abbreviationBoolean === undefined) {
+        abbreviationBoolean = true;
+    }
     let outputString;
     if (item === undefined) {
         outputString = ''
     } else if (typeof(item) === 'string') {
         outputString = item;
     } else if (typeof(item) === 'number') {
-        if (useAbbreviationBoolean) {
+        if (abbreviationBoolean) {
             outputString = `${item} ${abbreviation}`;
         } else {
             if (item === 1) {
@@ -103,24 +106,24 @@ function printQuantity(item, singularUnit, pluralUnit, abbreviation, useAbbrevia
 }
 // need to somehow account for abbreviations
 
-function printResistance(item) {
-    return printQuantity(item, 'Ohm', 'Ohms');
+function printResistance(item,abbreviationBoolean) {
+    return printQuantity(item, 'Ohm', 'Ohms', 'Ω',abbreviationBoolean);
 }
 
-function printVoltage(item) {
-    return printQuantity(item, 'Volt', 'Volts');
+function printVoltage(item,abbreviationBoolean) {
+    return printQuantity(item, 'Volt', 'Volts','V',abbreviationBoolean);
 }
 
-function printCurrent(item) {
-    return printQuantity(item, 'Amp', 'Amps');
+function printCurrent(item,abbreviationBoolean) {
+    return printQuantity(item, 'Amp', 'Amps','A',abbreviationBoolean);
 }
 
-function printPower(item) {
-    return printQuantity(item, 'Watt', 'Watts');
+function printPower(item,abbreviationBoolean) {
+    return printQuantity(item, 'Watt', 'Watts','W',abbreviationBoolean);
 }
 
-function printForce(item) {
-    return printQuantity(item, 'Newton', "Newtons");
+function printForce(item,abbreviationBoolean) {
+    return printQuantity(item, 'Newton', "Newtons",'N',abbreviationBoolean);
 }
 
 function printForceAbbreviated(item) {
