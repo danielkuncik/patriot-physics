@@ -941,7 +941,7 @@ class CircuitDiagram extends Diagram {
         this.translateCursorPolar(length, thetaInRadians);
     }
 
-    addParallelElement(directionInput, length, resistorArray, width) {
+    addParallelResistors(directionInput, length, resistorArray, width) {
         const numResistors = resistorArray.length;
         if (width === undefined) {
             width = numResistors * length * 0.5;
