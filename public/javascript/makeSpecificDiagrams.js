@@ -207,23 +207,34 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
     let widthBetweenResistors = 3;
 
     let myCircuit = new CircuitDiagram();
-    myCircuit.addElementWithCursor('battery', leftEndX, 3, printVoltage(batteryVoltage));
-    myCircuit.addElementWithCursor('wire', leftEndX, topLineY);
-    myCircuit.addElementWithCursor('wire', firstResistorX - widthBetweenResistors, topLineY);
+    myCircuit.addCell('up',3,printVoltage(batteryVoltage));
+    myCircuit.addWire('up',2);
+    // myCircuit.addWire('right',4);
+
+    // myCircuit.addElementWithCursor('wire', leftEndX, topLineY);
+    // myCircuit.addElementWithCursor('wire', firstResistorX - widthBetweenResistors, topLineY);
 
     let k, X;
     for (k = 0; k < numResistors; k++) {
-        X = firstResistorX + k * widthBetweenResistors;
-        myCircuit.moveCursor(X - widthBetweenResistors, topLineY);
-        myCircuit.addElementWithCursor("wire", X, topLineY);
-        myCircuit.addElementWithCursor("wire", X, topLineY - 3);
-        myCircuit.addElementWithCursor("resistor", X, topLineY - 5, undefined, this.printNextResistor());
-        myCircuit.addElementWithCursor("wire", X, bottomLineY);
-        myCircuit.addElementWithCursor("wire", X - widthBetweenResistors, bottomLineY);
+        myCircuit.addWire('right',4);
+        myCircuit.addWire('down',2);
+        myCircuit.addResistor('down',3,this.printNextResistor());
+        myCircuit.addWire('down',2);
+        myCircuit.addWire('left',4);
+        myCircuit.translateCursor(4,7);
+        // X = firstResistorX + k * widthBetweenResistors;
+        // myCircuit.moveCursor(X - widthBetweenResistors, topLineY);
+        // myCircuit.addElementWithCursor("wire", X, topLineY);
+        // myCircuit.addElementWithCursor("wire", X, topLineY - 3);
+        // myCircuit.addElementWithCursor("resistor", X, topLineY - 5, undefined, this.printNextResistor());
+        // myCircuit.addElementWithCursor("wire", X, bottomLineY);
+        // myCircuit.addElementWithCursor("wire", X - widthBetweenResistors, bottomLineY);
     }
-    myCircuit.moveCursor(firstResistorX - widthBetweenResistors, bottomLineY);
-    myCircuit.addElementWithCursor("wire", leftEndX, bottomLineY);
-    myCircuit.addElementWithCursor("wire", leftEndX, 0);
+    myCircuit.translateCursorAbsolute(0,-2);
+    myCircuit.addWire('up',2);
+    // myCircuit.moveCursor(firstResistorX - widthBetweenResistors, bottomLineY);
+    // myCircuit.addElementWithCursor("wire", leftEndX, bottomLineY);
+    // myCircuit.addElementWithCursor("wire", leftEndX, 0);
 
     return myCircuit
 }

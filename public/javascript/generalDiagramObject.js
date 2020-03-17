@@ -128,6 +128,12 @@ class Point {
         this.translate(xTranslation, yTranslation);
     }
 
+    translateAbsolute(newX, newY) {
+        let xNow = this.x;
+        let yNow = this.y;
+        this.translate(newX - xNow, newY - yNow);
+    }
+
     // creates a new point by rotating the canvas, then translating
     // does not work if rotation is negative
     transformAndReproduce(rotation, xTranslation, yTranslation) {
@@ -211,7 +217,6 @@ class Point {
         anotherPoint.translate(-1 * this.x, -1 * this.y);
         let theta = anotherPoint.getAngleToHorizontal();
         anotherPoint.translate(this.x, this.y);
-        console.log(this, anotherPoint, theta);
         return theta;
     }
 

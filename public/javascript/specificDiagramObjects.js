@@ -896,7 +896,7 @@ class CircuitDiagram extends Diagram {
         let directionInRadians = processDirectionInput(directionInput);
         let pointB = pointA.getAnotherPointWithTrig(length, directionInRadians);
         let newWire = super.addSegment(pointA, pointB);
-        this.cursor.translatePolar(length, directionInRadians);
+        this.translateCursorPolar(length, directionInRadians);
         return newWire
     }
 
@@ -914,20 +914,23 @@ class CircuitDiagram extends Diagram {
         super.addSegment(intermediatePoint2, endPoint2);
     }
 
-    addResistor(endPoint1, endPoint2, labelAbove, labelBelow, width, numZigZags) {
+    addResistor(directionInput, length, labelAbove, labelBelow, width, numZigZags) {
         if (numZigZags === undefined) {
             numZigZags = 3;
         }
-        let length = endPoint1.getDistanceToAnotherPoint(endPoint2);
+        let thetaInRadians = processDirectionInput(directionInput);
+        let endPoint1 = this.cursor;
+        let endPoint2 = (this.cursor).getAnotherPointWithTrig(length, thetaInRadians);
         if (width === undefined) {
             width = length * 0.25;
         }
         let j;
-        let startPoint = endPoint1, finishPoint;
+        let beginningOfZigZag = this.cursor;
+        let endOfZigZag;
         for (j = 0; j < numZigZags; j++) {
-            finishPoint = endPoint1.interpolate(endPoint2, (j + 1) / numZigZags);
-            this.addZigZag(startPoint, finishPoint, width);
-            startPoint = finishPoint;
+            endOfZigZag = endPoint1.interpolate(endPoint2, (j + 1) / numZigZags);
+            this.addZigZag(beginningOfZigZag, endOfZigZag, width);
+            beginningOfZigZag = endOfZigZag;
         }
         if (labelAbove !== undefined) {
             super.labelLineAbove(endPoint1, endPoint2, printResistance(labelAbove), width * 1.7, length * 0.35);
@@ -935,6 +938,7 @@ class CircuitDiagram extends Diagram {
         if (labelBelow !== undefined) {
             super.labelLineBelow(endPoint1, endPoint2, printResistance(labelBelow), width * 1.7, length * 0.35);
         }
+        this.translateCursorPolar(length, thetaInRadians);
     }
 
     addParallelElement(point1, point2, resistorArray) {
@@ -942,9 +946,14 @@ class CircuitDiagram extends Diagram {
     }
 
     ///I want to replace 'addListOfElements' with more of a cursor type program
-
-    moveCursor(X, Y) {
-        this.cursor = new Point(X, Y);
+    translateCursor(xTranslation, yTranslation) {
+        this.cursor.translate(xTranslation, yTranslation);
+    }
+    translateCursorPolar(length, directionInRadians) {
+        this.cursor.translatePolar(length, directionInRadians);
+    }
+    translateCursorAbsolute(newX, newY) {
+        this.cursor.translateAbsolute(newX, newY);
     }
 
     /// will be deprecated after all elements are added with cursor
@@ -955,11 +964,9 @@ class CircuitDiagram extends Diagram {
         if (elementType === 'wire') {
             this.addWire(directionInRadians, length);
         } else if (elementType === 'resistor') {
-            this.addResistor(this.cursor, nextPoint, labelAbove, labelBelow);
-            this.cursor = nextPoint;
+            this.addResistor(directionInRadians, length, labelAbove, labelBelow);
         } else if (elementType === 'battery' || elementType === 'cell') {
-            this.addCell(this.cursor, nextPoint, labelAbove, labelBelow);
-            this.cursor = nextPoint;
+            this.addCell(directionInRadians, length, labelAbove, labelBelow);
         }
         return true
     }
@@ -996,11 +1003,13 @@ class CircuitDiagram extends Diagram {
         return this.addSign('minus', centerPoint, width, thetaInRadians);
     }
 
-    addCell(endPoint1, endPoint2, labelAbove, labelBelow, numBatteries, width) {
+    addCell(directionInput, length, labelAbove, labelBelow, numBatteries, width) {
         if (numBatteries === undefined) {numBatteries = 2;}
-        if (width === undefined) {width = endPoint1.getDistanceToAnotherPoint(endPoint2) * 1;} /// should be proportioned by numbatteries
+        if (width === undefined) {width = length * 0.6} /// should be proportioned by numbatteries
 
-        let length = endPoint1.getDistanceToAnotherPoint(endPoint2);
+        let thetaInRadians = processDirectionInput(directionInput);
+        let endPoint1 = this.cursor;
+        let endPoint2 = endPoint1.getAnotherPointWithTrig(length, thetaInRadians);
         let numLines = numBatteries * 2;
         let theta = endPoint1.getAngleToAnotherPoint(endPoint2);
         let j, pointA, pointB, lineWidth;
@@ -1028,6 +1037,7 @@ class CircuitDiagram extends Diagram {
             super.labelLineBelow(endPoint1, endPoint2, printVoltage(labelBelow), width * 1.5, length * 0.35);
         }
 
+        this.translateCursorPolar(length, thetaInRadians);
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
