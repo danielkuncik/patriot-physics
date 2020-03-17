@@ -874,6 +874,11 @@ To do:
 - add plus and minus signs to battery
 - add meters
 - add a line with current labeled
+
+how should this actually work?
+should it be primarily cursor based
+
+i want to reorganize this a little
  */
 class CircuitDiagram extends Diagram {
     constructor() {
@@ -930,6 +935,10 @@ class CircuitDiagram extends Diagram {
         }
     }
 
+    addParallelElement(point1, point2, resistorArray) {
+
+    }
+
     ///I want to replace 'addListOfElements' with more of a cursor type program
 
     moveCursor(X, Y) {
@@ -937,13 +946,14 @@ class CircuitDiagram extends Diagram {
     }
 
     /// creates an element
+    // this should be length and direction, not specified end points
     addElementWithCursor(elementType, endPointX, endPointY, labelAbove, labelBelow) {
         let nextPoint = new Point(endPointX, endPointY);
         if (elementType === 'wire') {
             this.addWire(this.cursor, nextPoint);
         } else if (elementType === 'resistor') {
             this.addResistor(this.cursor, nextPoint, labelAbove, labelBelow);
-        } else if (elementType === 'battery') {
+        } else if (elementType === 'battery' || elementType === 'cell') {
             this.addCell(this.cursor, nextPoint, labelAbove, labelBelow);
         }
         this.cursor = nextPoint;
@@ -2154,6 +2164,19 @@ class Wave {
         this.topHorizontalArrows = [];
         this.bottomHorizontalArrows = [];
         this.verticalArrows = [];
+
+        this.centerLine = false;
+        this.centerLineDashed = undefined;
+    }
+
+    addCenterLine(dashedBoolean) {
+        this.centerLine = true;
+        this.centerLineDashed = dashedBoolean;
+    }
+
+    removeCenterLine() {
+        this.centerLine = false;
+        this.centerLineDashed = undefined;
     }
 
     setPhaseProportion(newPhaseProportion) {
@@ -2240,6 +2263,13 @@ class Wave {
         }
     }
 
+    getCrestLocations() {
+        return this.countPoints(0.25);
+    }
+    getTroughLocations() {
+        return this.countPoints(0.75);
+    }
+
     circlePoints(selectedPhaseProportion, yPoint, filled, radius) {
         if (radius === undefined) {
             radius = 0.1;
@@ -2290,7 +2320,7 @@ class Wave {
 
     pointToWavelengthTop(numCrest, label) {
         // currently no requirements
-        let crestLocations = this.countPoints(0.25);
+        let crestLocations = this.getCrestLocations();
         let x1 = crestLocations.firstPoint + numCrest * this.wavelength;
         let x2 = x1 + this.wavelength;
         this.topHorizontalArrows.push({
@@ -2301,7 +2331,7 @@ class Wave {
     }
 
     pointToWavelengthBottom(numTrough, label) {
-        let troughLocations = this.countPoints(0.75);
+        let troughLocations = this.getTroughLocations();
         let x1 = troughLocations.firstPoint + numTrough * this.wavelength;
         let x2 = x1 + this.wavelength;
         this.bottomHorizontalArrows.push({
@@ -2310,6 +2340,40 @@ class Wave {
             label: label
         });
     }
+
+    pointAmplitudeUp(xLocation, label) {
+        this.verticalArrows.push({
+            y1: 0,
+            y2: this.amplitude,
+            x: xLocation,
+            label: label
+        })
+    }
+
+    pointAmplitudeDown(xLocation, label) {
+        this.verticalArrows.push({
+            y1: 0,
+            y2: -1 * this.amplitude,
+            x: xLocation,
+            label: label
+        })
+    }
+
+    pointAmplitudeOnCrest(crestNumber, label) {
+        let crestLocations = this.getCrestLocations();
+        console.log(crestLocations);
+        let x = crestLocations.firstPoint + crestNumber * this.wavelength;
+        this.pointAmplitudeUp(x, label);
+    }
+
+    pointAmplitudeOnTrough(troughNumber, label) {
+        let troughLocations = this.getTroughLocations();
+        console.log(troughLocations);
+        let x = troughLocations.firstPoint + troughNumber * this.wavelength;
+        this.pointAmplitudeDown(x, label);
+    }
+
+
 
     pointToCrests(label) {
         this.aboveArrowPoints(0.25, label);
@@ -2381,6 +2445,13 @@ class Wave {
 
         }
 
+        if (this.centerLine) {
+            let centerLine = WaveDiagram.addSegment(new Point(0,0), new Point(this.xMax, 0));
+            if (this.centerLineDashed) {
+                centerLine.turnIntoDashedLine();
+            }
+        }
+
         this.circles.forEach((circle) => {
             let newCircle = WaveDiagram.addCircle(new Point(circle.x, circle.y),circle.radius);
             if (circle.filled) {
@@ -2415,6 +2486,15 @@ class Wave {
             WaveDiagram.addTwoHeadedArrow(point1, point2, this.amplitude* 0.12);
             if (arrow.label) {
                 WaveDiagram.labelLine(point1,point2,'',arrow.label,this.amplitude*0.05, this.amplitude*0.1);
+            }
+        });
+
+        this.verticalArrows.forEach((arrow) => {
+            let point1 = new Point(arrow.x, arrow.y1);
+            let point2 = new Point(arrow.x, arrow.y2);
+            WaveDiagram.addTwoHeadedArrow(point1, point2, this.amplitude * 0.12);
+            if (arrow.label) {
+                WaveDiagram.labelLine(point1, point2, arrow.label, '', this.amplitude * 0.05, this.amplitude * 0.1);
             }
         });
 
