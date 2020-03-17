@@ -891,10 +891,12 @@ class CircuitDiagram extends Diagram {
     }
 
     // points must already exist?
-    addWire(point1, point2) {
-        let pointA = super.addExistingPoint(point1);
-        let pointB = super.addExistingPoint(point2);
+    addWire(directionInput, length) {
+        let pointA = new Point(this.cursor.x, this.cursor.y);
+        let directionInRadians = processDirectionInput(directionInput);
+        let pointB = pointA.getAnotherPointWithTrig(length, directionInRadians);
         let newWire = super.addSegment(pointA, pointB);
+        this.cursor.translatePolar(length, directionInRadians);
         return newWire
     }
 
@@ -907,9 +909,9 @@ class CircuitDiagram extends Diagram {
         intermediatePoint1.translate(width * Math.cos(theta + Math.PI / 2), width * Math.sin(theta + Math.PI / 2));
         let intermediatePoint2 = endPoint1.interpolate(endPoint2, 0.666667);
         intermediatePoint2.translate(width * Math.cos(theta - Math.PI / 2), width * Math.sin(theta - Math.PI / 2));
-        this.addWire(endPoint1, intermediatePoint1);
-        this.addWire(intermediatePoint1, intermediatePoint2);
-        this.addWire(intermediatePoint2, endPoint2);
+        super.addSegment(endPoint1, intermediatePoint1);
+        super.addSegment(intermediatePoint1, intermediatePoint2);
+        super.addSegment(intermediatePoint2, endPoint2);
     }
 
     addResistor(endPoint1, endPoint2, labelAbove, labelBelow, width, numZigZags) {
@@ -945,18 +947,20 @@ class CircuitDiagram extends Diagram {
         this.cursor = new Point(X, Y);
     }
 
-    /// creates an element
-    // this should be length and direction, not specified end points
+    /// will be deprecated after all elements are added with cursor
     addElementWithCursor(elementType, endPointX, endPointY, labelAbove, labelBelow) {
         let nextPoint = new Point(endPointX, endPointY);
+        let directionInRadians = (this.cursor).getAngleToAnotherPoint(nextPoint);
+        let length = this.cursor.getDistanceToAnotherPoint(nextPoint);
         if (elementType === 'wire') {
-            this.addWire(this.cursor, nextPoint);
+            this.addWire(directionInRadians, length);
         } else if (elementType === 'resistor') {
             this.addResistor(this.cursor, nextPoint, labelAbove, labelBelow);
+            this.cursor = nextPoint;
         } else if (elementType === 'battery' || elementType === 'cell') {
             this.addCell(this.cursor, nextPoint, labelAbove, labelBelow);
+            this.cursor = nextPoint;
         }
-        this.cursor = nextPoint;
         return true
     }
 

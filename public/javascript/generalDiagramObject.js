@@ -122,6 +122,12 @@ class Point {
         this.y += yTranslation;
     }
 
+    translatePolar(radius, directionInRadians) {
+        let xTranslation = radius * Math.cos(directionInRadians);
+        let yTranslation = radius * Math.sin(directionInRadians);
+        this.translate(xTranslation, yTranslation);
+    }
+
     // creates a new point by rotating the canvas, then translating
     // does not work if rotation is negative
     transformAndReproduce(rotation, xTranslation, yTranslation) {
@@ -205,7 +211,16 @@ class Point {
         anotherPoint.translate(-1 * this.x, -1 * this.y);
         let theta = anotherPoint.getAngleToHorizontal();
         anotherPoint.translate(this.x, this.y);
+        console.log(this, anotherPoint, theta);
         return theta;
+    }
+
+    isEqualToAnotherPoint(anotherPoint) {
+        if ((this.x === anotherPoint.x) && (this.y === anotherPoint.y)) {
+            return true
+        } else {
+            return false
+        }
     }
 
     // if this Point were the origin
@@ -232,10 +247,10 @@ class Point {
 
     // returns a new Point which is a particular length away at angle theta
     getAnotherPointWithTrig(length, thetaInRadians) {
-        let newx, newy;
-        newx = this.x + length * Math.cos(thetaInRadians);
-        newy = this.y + length * Math.sin(thetaInRadians);
-        return new Point(newx,newy)
+        let newX, newY;
+        newX = this.x + length * Math.cos(thetaInRadians);
+        newY = this.y + length * Math.sin(thetaInRadians);
+        return new Point(newX,newY)
     }
 
     // returns an angle theta in Radians
