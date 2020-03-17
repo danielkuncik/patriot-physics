@@ -12,8 +12,10 @@
     let newCircuit = new CircuitDiagram();
     // newCircuit.addElementWithCursor('battery');
     newCircuit.addWire('up',2);
-    newCircuit.addWire('right',2);
-    newCircuit.addWire('down',3);
+    newCircuit.addWire('right',10);
+    newCircuit.addWire('down',1);
+    newCircuit.addParallelElement('down',6,[1,2,3]);
 
+    newCircuit.addWire('down',3);
     $("#putItHere").append(newCircuit.drawCanvas());
 </script>

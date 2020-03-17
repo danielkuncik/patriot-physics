@@ -941,7 +941,35 @@ class CircuitDiagram extends Diagram {
         this.translateCursorPolar(length, thetaInRadians);
     }
 
-    addParallelElement(point1, point2, resistorArray) {
+    addParallelElement(directionInput, length, resistorArray, width) {
+        const numResistors = resistorArray.length;
+        if (width === undefined) {
+            width = numResistors * length * 0.5;
+        }
+        const originalX = this.cursor.x;
+        const originalY = this.cursor.y;
+        const thetaInRadians = processDirectionInput(directionInput);
+        const perpendicularAngle = thetaInRadians - Math.PI / 2;
+        this.translateCursorPolar(width / 2, perpendicularAngle);
+        this.addWire(Math.PI + perpendicularAngle, width);
+        this.translateCursorPolar(width, perpendicularAngle);
+        let k;
+        if (numResistors > 1) {
+            for (k = 0; k < numResistors; k++) {
+                this.addWire(thetaInRadians, length * 0.25);
+                this.addResistor(thetaInRadians, length*0.5,printResistance(resistorArray[k]));
+                this.addWire(thetaInRadians, length * 0.25);
+                this.translateCursorPolar(length, -1 * thetaInRadians);
+                this.translateCursorPolar(width / (numResistors - 1),  Math.PI + perpendicularAngle);
+            }
+        } else {
+            console.log('What are you doing? dont use the add parallel element function unless you have more than one resistor!');
+        }
+        this.translateCursorAbsolute(originalX, originalY);
+        this.translateCursorPolar(length, thetaInRadians);
+        this.translateCursorPolar(width / 2, perpendicularAngle);
+        this.addWire(Math.PI + perpendicularAngle, width);
+        this.translateCursorPolar(width / 2, perpendicularAngle);
 
     }
 

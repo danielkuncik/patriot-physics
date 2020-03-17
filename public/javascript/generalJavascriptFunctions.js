@@ -203,7 +203,7 @@ function turnTextToRadians(text) {
 function processDirectionInput(direction, forceDegreesBoolean) {
     if (typeof(direction) === 'string') { // if you wrote a word indicating numbers
         return turnTextToRadians(direction)
-    } else if (typeof(direction) === 'number' && (direction > 2 * Math.PI + 1 || forceDegreesBoolean)) { // if you probably meant degrees
+    } else if (typeof(direction) === 'number' && (Math.abs(direction) > 3 * Math.PI || forceDegreesBoolean)) { // if you probably meant degrees
         console.log(`note: assuming value ${direction} entered was in units of degrees, not radians`);
         return convertDegreesToRadians(direction)
     } else if (typeof(direction) === 'number') { // if you gave a value in radians
