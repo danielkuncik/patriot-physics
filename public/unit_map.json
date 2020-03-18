@@ -348,7 +348,7 @@
           }
         }
       },
-      "dimensionalAnalysis":
+      "dimensional_analysis":
       {
         "title": "Unit Conversion and Dimensional Analysis",
         "level": 1,
@@ -658,7 +658,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given an equaiton, state the relationship between variables when other variables are constant (or satisfy other conditions; write effectively about proportions",
+            "objective": "Given an equation, state the relationship between variables when other variables are constant (or satisfy other conditions; write effectively about proportions",
             "examples":
             [
               "voltage and current are directly proportional when resistance is constant",
