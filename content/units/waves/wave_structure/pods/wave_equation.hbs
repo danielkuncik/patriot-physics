@@ -1,0 +1,69 @@
+<h4>
+    The Wave Equation
+</h4>
+
+<p class = 'equation'>
+    $$
+    v = \lambda f
+    $$
+</p>
+
+
+<div id = 'waveEquationTable'></div>
+
+<ul>
+    <li>
+        Note that <strong>wavelength</strong> is represented by the Greek letter
+        <emph>lambda</emph> or \( \lambda \).
+    </li>
+</ul>
+
+<p class = 'directions'>
+    Fill out the tables below to practice using the formula above.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = ''>
+        Catherine shakes a slinky with a frequency of 4 Hz. The waves have a speed of 5 m/s. What is the wavelength?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = ''>
+        Bobby is very fast and shakes a rope 18 times a second. The wavelength of each wave is .4 m. What is the speed of waves in the rope?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = ''>
+        Henry creates waves with a wavelength of .55 m, and a speed of 3 m/s. What is the frequency of these waves?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = ''>
+        I have a wave with a frequency of 15 Hz, and a speed of 4 m/s. What is the wavelength?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+
+<h4>
+    Two-Step Problems:
+</h4>
+
+
+<h4>
+    Answers:
+</h4>
+<ol class = 'questionList'></ol>
+
+<script>
+    let waveEquationTable = new Table(4,3);
+    waveEquationTable.addTopHeaders(['Symbol','Quantity','Unit']);
+    waveEquationTable.setRowProportions([1,2,2,2]);
+    waveEquationTable.writeTextInRow(1,['\\( v \\)','velocity','meters per second (m/s)']);
+    waveEquationTable.writeTextInRow(2,['\\( \\lambda \\)','wavelength','meters']);
+    waveEquationTable.writeTextInRow(3,['\\( f \\)','frequency','Hertz (Hz) or \\( \\frac{1}{\\text{s}} \\)']);
+
+    $("#waveEquationTable").append(waveEquationTable.draw(300));
+</script>

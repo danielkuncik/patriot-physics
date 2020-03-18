@@ -62,3 +62,5 @@ $(".directions").prepend($("<strong>Directions: </strong>"));
 // automatically places a box to sovle formula problems in any <div class = 'formulaBoxDiv'>
 // let myFormulaBox = new formulaBox();
 // myFormulaBox.insertTableByClass('formulaBoxDiv');
+let formulaSolvingTable2 = new FormulaSolvingTable();
+$(".formulaSolvingTable").append(formulaSolvingTable2.draw(600,300));
