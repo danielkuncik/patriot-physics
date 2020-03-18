@@ -496,7 +496,7 @@
           }
         }
       },
-      "error_approximation_significant_figures":
+      "error_approximation":
       {
         "title": "Error Approximation and Significant Figures",
         "level": 2,
