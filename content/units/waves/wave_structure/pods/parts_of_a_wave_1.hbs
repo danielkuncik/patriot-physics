@@ -53,7 +53,147 @@
 </script>
 
 
+<p class = 'definition'>
+    The <strong>amplitude</strong> is NOT the height of a wave from top to bottom.
+    The total height of the wave is <strong>two amplitudes</strong>.
+</p>
+
 <h4>
     Practice:
 </h4>
 
+
+<p class = 'definition'>
+    In each image of wave, an arrow points out some feature.
+    Select the answer that best describes that feature.
+    Each answer choice is used TWICE.
+</p>
+
+<ol class = 'questionList'>
+    <div class = 'container'>
+        <li class = 'question' data-answer = 'C. Wavelength'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage1'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'D. Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage2'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'E. Twice the Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage3'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'A. Crest'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage4'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'C. Wavelength'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage5'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'B. Trough'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage6'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'D. Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage7'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'E. Twice the Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage8'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'B. Trough'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage9'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'A. Crest'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage10'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+    </div>
+</ol>
+
+<script>
+    let waveImageOptions = $("<ol type = 'A'></ol>");
+    $(waveImageOptions).append($("<li>crest</li>"));
+    $(waveImageOptions).append($("<li>trough</li>"));
+    $(waveImageOptions).append($("<li>wavelength</li>"));
+    $(waveImageOptions).append($("<li>amplitude</li>"));
+    $(waveImageOptions).append($("<li>twice the amplitude</li>"));
+    $(".waveImageOptions").append(waveImageOptions);
+
+    let waveImage1 = new Wave();
+    waveImage1.pointToWavelengthTop(2);
+
+    let waveImage2 = new Wave();
+    waveImage2.pointAmplitudeOnTrough(2);
+
+    let waveImage3 = new Wave();
+    waveImage3.pointFullHeightOfWave('crest',1);
+
+    let waveImage4 = new Wave();
+    waveImage4.pointToOneCrest(3);
+
+    let waveImage5 = new Wave();
+    waveImage5.pointToWavelengthBottom(1);
+
+    let waveImage6 = new Wave();
+    waveImage6.pointToOneTrough(2);
+
+    let waveImage7 = new Wave();
+    waveImage7.pointAmplitudeOnCrest(1);
+
+    let waveImage8 = new Wave();
+    waveImage8.pointFullHeightOfWave('trough',3);
+
+    let waveImage9 = new Wave();
+    waveImage9.pointToOneTrough(0);
+
+    let waveImage10 = new Wave();
+    waveImage10.pointToOneCrest(1);
+
+    $("#waveImage1").append(waveImage1.drawCanvas(300));
+    $("#waveImage2").append(waveImage2.drawCanvas(300));
+    $("#waveImage3").append(waveImage3.drawCanvas(300));
+    $("#waveImage4").append(waveImage4.drawCanvas(300));
+    $("#waveImage5").append(waveImage5.drawCanvas(300));
+    $("#waveImage6").append(waveImage6.drawCanvas(300));
+    $("#waveImage7").append(waveImage7.drawCanvas(300));
+    $("#waveImage8").append(waveImage8.drawCanvas(300));
+    $("#waveImage9").append(waveImage9.drawCanvas(300));
+    $("#waveImage10").append(waveImage10.drawCanvas(300));
+
+</script>
+
+
+
+<h2>
+    THIS IS NOT DONE! NOT CLOSE!
+</h2>
+
+<h4>
+    Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

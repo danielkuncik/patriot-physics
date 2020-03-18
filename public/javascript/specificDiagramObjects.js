@@ -2389,10 +2389,9 @@ class Wave {
         }
     }
 
-    pointToWavelengthTop(numCrest, label) {
+    pointToWavelengthTop(crestNumber, label) {
         // currently no requirements
-        let crestLocations = this.getCrestLocations();
-        let x1 = crestLocations.firstPoint + numCrest * this.wavelength;
+        let x1 = this.getSingleCrestLocation(crestNumber);
         let x2 = x1 + this.wavelength;
         this.topHorizontalArrows.push({
             x1: x1,
@@ -2401,9 +2400,8 @@ class Wave {
         });
     }
 
-    pointToWavelengthBottom(numTrough, label) {
-        let troughLocations = this.getTroughLocations();
-        let x1 = troughLocations.firstPoint + numTrough * this.wavelength;
+    pointToWavelengthBottom(troughNumber, label) {
+        let x1 = this.getSingleTroughLocation(troughNumber);
         let x2 = x1 + this.wavelength;
         this.bottomHorizontalArrows.push({
             x1: x1,
@@ -2430,21 +2428,59 @@ class Wave {
         })
     }
 
-    pointAmplitudeOnCrest(crestNumber, label) {
+    getSingleCrestLocation(crestNumber) {
         let crestLocations = this.getCrestLocations();
-        console.log(crestLocations);
         let x = crestLocations.firstPoint + crestNumber * this.wavelength;
+        return x
+    }
+
+    getSingleTroughLocation(troughNumber) {
+        let troughLocations = this.getTroughLocations();
+        let x = troughLocations.firstPoint + troughNumber * this.wavelength;
+        return x
+    }
+
+    pointAmplitudeOnCrest(crestNumber, label) {
+        let x = this.getSingleCrestLocation(crestNumber);
         this.pointAmplitudeUp(x, label);
     }
 
     pointAmplitudeOnTrough(troughNumber, label) {
-        let troughLocations = this.getTroughLocations();
-        console.log(troughLocations);
-        let x = troughLocations.firstPoint + troughNumber * this.wavelength;
+        let x = this.getSingleTroughLocation(troughNumber);
         this.pointAmplitudeDown(x, label);
     }
 
+    pointToOneCrest(crestNumber, label) {
+        let x = this.getSingleCrestLocation(crestNumber);
+        this.aboveArrows.push({
+            x: x,
+            label: label
+        });
+    }
 
+    pointToOneTrough(troughNumber, label) {
+        let x = this.getSingleTroughLocation(troughNumber);
+        this.belowArrows.push({
+            x: x,
+            label: label
+        });
+    }
+
+    pointFullHeightOfWave(crestOrTrough, number, label) {
+        if (crestOrTrough === undefined) {crestOrTrough = 'crest';}
+        let x;
+        if (crestOrTrough === 'crest') {
+            x = this.getSingleCrestLocation(number);
+        } else if (crestOrTrough === 'trough') {
+            x = this.getSingleTroughLocation(number);
+        }
+        this.verticalArrows.push({
+            x: x,
+            y1: -1 * this.amplitude,
+            y2: this.amplitude,
+            label: label
+        });
+    }
 
     pointToCrests(label) {
         this.aboveArrowPoints(0.25, label);
