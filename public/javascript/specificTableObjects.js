@@ -497,3 +497,14 @@ class HarmonicsTable extends Table {
         });
     }
 }
+
+class MatchingTable extends Table {
+    constructor(numChoices) {
+        super(numChoices,3);
+        super.setColumnProportions([1,2,1]);
+        super.mergeFullColumn(1,false);
+    }
+
+    // this didn't get off the ground
+    // but is still worth exploring
+}
