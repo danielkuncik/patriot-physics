@@ -13,6 +13,13 @@ div.definitionBox {
     width: 600px;
 }
 
+p.definition {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    width: 600px;
+}
+
 ol.questionList {
     list-style-type: none;
 }

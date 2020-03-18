@@ -274,6 +274,26 @@ class Table {
       }
     }
 
+    mergeFullColumn(j, shadeBoolean) {
+        let q;
+        for (q = 0; q < this.numRows - 1; q++) {
+            this.mergeBelow(0,j);
+        }
+        if (shadeBoolean) {
+            this.shadeCell(0,j);
+        }
+    }
+
+    mergeFullRow(i, shadeBoolean) {
+        let q;
+        for (q = 0; q < this.numColumns - 1; q++) {
+            this.mergeRight(i,0);
+        }
+        if (shadeBoolean) {
+            this.shadeCell(i,0);
+        }
+    }
+
     // need to add an error handler for if you go out of range!
     mergeRight(i,j) {
       if (this.cellInfoArray[i][j]["captureRight"] === undefined) {
