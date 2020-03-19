@@ -105,277 +105,9 @@ function grayscale0to20(score) {
 }
 
 
-class Point {
-    constructor(x, y, name) {
-        this.x = x;
-        this.y = y;
-        this.name = name;
-        //    this.uuid = create_UUID();
-    }
-
-    setName(newName) {
-        this.name = newName;
-    }
-
-    translate(xTranslation, yTranslation) {
-        this.x += xTranslation;
-        this.y += yTranslation;
-    }
-
-    translatePolar(radius, directionInRadians) {
-        let xTranslation = radius * Math.cos(directionInRadians);
-        let yTranslation = radius * Math.sin(directionInRadians);
-        this.translate(xTranslation, yTranslation);
-    }
-
-    translateAbsolute(newX, newY) {
-        let xNow = this.x;
-        let yNow = this.y;
-        this.translate(newX - xNow, newY - yNow);
-    }
-
-    // creates a new point by rotating the canvas, then translating
-    // does not work if rotation is negative
-    transformAndReproduce(rotation, xTranslation, yTranslation) {
-        let xPrime = xTranslation * Math.cos(rotation) - yTranslation * Math.sin(rotation) + this.x;
-        let yPrime = yTranslation * Math.cos(rotation) + xTranslation * Math.sin(rotation) + this.y;
-        // let newX = this.x + xTranslation * Math.cos(rotation) + yTranslation * Math.sin(rotation);
-        // let newY = this.y + xTranslation * Math.sin(rotation) - yTranslation * Math.cos(rotation);
-        // let newPoint = new Point(newX, newY);
-        let newPoint = new Point(xPrime, yPrime);
-        return newPoint
-    }
-
-    // rotates a Point around the center Point by a certain angle
-    // default center Point is origin
-    rotate(rotationAngleInRadians, centerRotationPoint) {
-        if (centerRotationPoint === undefined) {centerRotationPoint = origin;}
-        this.translate(-1 * centerRotationPoint.x, -1 * centerRotationPoint.y);
-        let xPrime = this.x * Math.cos(rotationAngleInRadians) - this.y * Math.sin(rotationAngleInRadians);
-        let yPrime = this.y * Math.cos(rotationAngleInRadians) + this.x * Math.sin(rotationAngleInRadians);
-        this.x = xPrime;
-        this.y = yPrime;
-        this.translate(centerRotationPoint.x, centerRotationPoint.y);
-    }
-
-    rescaleSingleFactor(scaleFactor) {
-        this.x *= scaleFactor;
-        this.y *= scaleFactor;
-    }
-
-    rescaleDoubleFactor(xFactor, yFactor) {
-        this.x *= xFactor;
-        this.y *= yFactor;
-    }
-
-    reflectAboutXAxis() {
-        this.y *= -1;
-    }
-
-    getQuadrant() {
-        if (Math.abs(this.x) < 1e-10 && Math.abs(this.y) < 1e-10) {return 'origin';}
-        else if (this.x > 0 && Math.abs(this.y) < 1e-10 ) {return '+X';}
-        else if (this.x < 0 && Math.abs(this.y) < 1e-10 ) {return '-X';}
-        else if (Math.abs(this.x) < 1e-10 && this.y > 0) {return '+Y';}
-        else if (Math.abs(this.x) < 1e-10 && this.y < 0) {return '-Y';}
-        else if (this.x > 0 && this.y > 0) {return '1';}
-        else if (this.x < 0 && this.y > 0) {return '2';}
-        else if (this.x < 0 && this.y < 0) {return '3';}
-        else if (this.x > 0 && this.y < 0) {return '4';}
-        else {return false;}
-    }
-
-    // returns the angle in radians between the x-axis and a line Segment from the origin to this Point
-    // returns angles theta such that 0 <= theta < 2pi
-    getAngleToHorizontal() {
-        let theta;
-        const quadrant = this.getQuadrant();
-        if (quadrant === '1') {theta = Math.atan(this.y / this.x);}
-        /// inefficient, but very reliable
-        else if (quadrant === '2') {theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
-        else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}
-        else if (quadrant === '4') {theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
-        else if (quadrant === '+X') {theta = 0;}
-        else if (quadrant === '-X') {theta = Math.PI;}
-        else if (quadrant === '+Y') {theta = Math.PI / 2;}
-        else if (quadrant === '-Y') {theta = 3 * Math.PI / 2;}
-        else theta = undefined;
-        return theta
-    }
-
-    getMagnitude() {
-        return Math.sqrt(this.x**2 + this.y**2)
-    }
-
-    getDistanceToAnotherPoint(anotherPoint) {
-        return Math.sqrt((this.x - anotherPoint.x)**2 + (this.y - anotherPoint.y)**2);
-    }
-
-    /// if this Point were the origin, returns the angle to the horizontal of the other Point
-    // returns angles theta such that 0 <= theta < 2pi
-    getAngleToAnotherPoint(anotherPoint) {
-        anotherPoint.translate(-1 * this.x, -1 * this.y);
-        let theta = anotherPoint.getAngleToHorizontal();
-        anotherPoint.translate(this.x, this.y);
-        return theta;
-    }
-
-    isEqualToAnotherPoint(anotherPoint) {
-        if ((this.x === anotherPoint.x) && (this.y === anotherPoint.y)) {
-            return true
-        } else {
-            return false
-        }
-    }
-
-    // if this Point were the origin
-    // in what quadrant woul the other Point be?
-    getQuadrantOfAnotherPoint(anotherPoint) {
-        anotherPoint.translate(-1 * this.x, -1 * this.y);
-        let quadrant = anotherPoint.getQuadrant();
-        anotherPoint.translate(this.x, this.y);
-        return quadrant;
-    }
-
-    // returns a new Point
-    // on the ray beginning at this Point and pointing toward anotherPoint
-    // at a distance the length between the points * proportion
-    // so if propotion = 0.5, it will be halfway between the points
-    // and if proportion = 2, it will be twice as far away as the other Point (so it can actually interpolate and extrapolate)
-    interpolate(anotherPoint, proportion) {
-        let theta = this.getAngleToAnotherPoint(anotherPoint);
-        let L = this.getDistanceToAnotherPoint(anotherPoint) * proportion;
-        let x = this.x + L * Math.cos(theta);
-        let y = this.y + L * Math.sin(theta);
-        return new Point(x, y);
-    }
-
-    // returns a new Point which is a particular length away at angle theta
-    getAnotherPointWithTrig(length, thetaInRadians) {
-        let newX, newY;
-        newX = this.x + length * Math.cos(thetaInRadians);
-        newY = this.y + length * Math.sin(thetaInRadians);
-        return new Point(newX,newY)
-    }
-
-    // returns an angle theta in Radians
-    // of  a line that is perpendicular to the line between this point and another point
-    getPerpendicularAngle(anotherPoint) {
-        let theta = this.getAngleToAnotherPoint(anotherPoint);
-        theta += Math.PI / 2;
-        if (theta > Math.PI * 2) {
-            theta -= Math.PI * 2;
-        }
-        return theta;
-    }
-
-    // gives x and y components of a vector made from this vector and another point
-    getComponentsToAnotherPoint(anotherPoint, axisRotationInRadians) {
-        if (axisRotationInRadians === undefined) {axisRotationInRadians = 0;}
-        let xComponent, yComponent;
-        let theta = this.getAngleToAnotherPoint(anotherPoint);
-        let L = this.getDistanceToAnotherPoint(anotherPoint);
-        xComponent = L * Math.cos(theta);
-        yComponent = L * Math.sin(theta);
-        return  {
-            xComponent: xComponent,
-            yComponent: yComponent
-        }
-    }
-}
-
-
-// global variable origin
-const origin = new Point(0,0);
-
-function constructPointWithMagnitude(magnitude, angleInRadians) {
-    let x = magnitude * Math.cos(angleInRadians);
-    let y = magnitude * Math.sin(angleInRadians);
-    let newPoint = new Point(x, y);
-    return newPoint;
-}
-
-
-class Segment {
-    constructor(point1, point2) {
-        this.point1 = point1;
-        this.point2 = point2;
-        this.thickness = 2;
-        this.color = "#000000";
-        this.cap = "butt";
-        this.dotted = false;
-        this.dashed = false;
-    }
-
-    // do i want thickness to scale with the rest of the image??
-    // right now, line thickness is the only thing that does not scale
-    setThickness(newThickness) {
-        this.thickness = newThickness;
-    }
-
-    setColor(newColor) {
-        this.color = newColor;
-    }
-
-    getLength() {
-        return this.point1.getDistanceToAnotherPoint(this.point2);
-    }
-
-    /// i need a way to customize dot sizes and dash sizes!!!
-    /// right now, it is set to 1/30 times the average of the width and height of the whole canvas!
-    turnIntoDottedLine() {
-        this.dotted = true;
-        this.setThickness(1);
-    };
-
-    turnIntoDashedLine() {
-        this.dashed = true;
-    }
-
-    // if Point 1 were the origin, returns the angle to the horizontal of Point 2
-    // returns angles theta such that 0 <= theta < 2pi
-    getAngleToHorizontal() {
-        return this.point1.getAngleToAnotherPoint(this.point2);
-    }
-
-    getPerpendicularAngle() {
-        return this.point1.getPerpendicularAngle(this.point2);
-    }
-
-    // gets slope of line
-    // if line is vertical, returns 1e10, rather than infinity
-    getSlope() {
-        let slope = (this.point2.y - this.point1.y) / (this.point2.x - this.point1.x);
-        if (slope >= 1e0) {slope = 1e10;}
-        return slope
-    }
-
-    // gets the slope of a line perpendicular to this line
-    getPerpendicularSlope(point1, point2) {
-        const originalSlope = getSlope(point1, point2);
-        if (originalSlope >= 1e10) {return 0;} // due to floating Point arithmetic, a slope zero usually doesn't actually come out as zero!
-        else if (originalSlope <= 1e-10) {return 1e10;} // if it returned Infinity, could lead to NaNs in later calculations
-        else {return -1 / originalSlope;}
-    }
-
-    /* A BAD FUNCTION, MUST FIX
-    // if two segments were to continue infinitely
-    // gets the angle with which this Segment intersects another
-    // of two possible angles, always returns smaller angle
-    getAngleWithAnotherSegment(anotherSegment) {
-        let theta1 = this.getAngleToHorizontal();
-        let theta2 = anotherSegment.getAngleToHorizontal();
-        let choice1 = Math.abs(theta1 - theta2);
-        let choice2 = 2 * Math.PI - choice1;
-        if (choice1 <= choice2) {return choice1}
-        else {return choice2}
-    }
-    */
-}
-
 
 // the box should always belong to an object!
-class Rectangle {
+class RangeBox {
     constructor(lowerLeftX, lowerLeftY, width, height) {
         let bottomY = lowerLeftY;
         let topY = lowerLeftY + height;
@@ -417,11 +149,11 @@ class Rectangle {
 
 }
 // does this make a duplicate of the center Point??
-function constructRectangleFromCenter(centerPoint, width, height) {
+function constructRangeBoxFromCenter(centerPoint, width, height) {
     let lowerLeftX = centerPoint.x - width/2;
     let lowerLeftY = centerPoint.y - height/2;
-    var newRectangle = new Rectangle(lowerLeftX, lowerLeftY, width, height);
-    return newRectangle;
+    var newRangeBox = new RangeBox(lowerLeftX, lowerLeftY, width, height);
+    return newRangeBox;
 }
 
 class Text {
@@ -444,9 +176,9 @@ class Text {
 
         this.width = letters.length * this.relativeFontSize * this.fontAspectRatio;
         this.height = this.relativeFontSize / 2;
-        this.rectangle = constructRectangleFromCenter(centerPoint, this.width, this.height);
+        this.rangeBox = constructRangeBoxFromCenter(centerPoint, this.width, this.height);
         if (this.rotationAngleInRadians) {
-            this.rectangle.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+            this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
         }
     }
 
@@ -508,48 +240,6 @@ class Text {
 
 }
 
-class Circle {
-    constructor(centerPoint, radius) {
-        //this.centerPoint = centerPoint;
-        this.radius = radius;
-        this.filled = false;
-        this.lineThickness = 2;
-        this.lineColor = "#000000";
-        this.fillColor = "#000000";
-        this.center = centerPoint;
-        this.rectangle = constructRectangleFromCenter(centerPoint, radius * 2, radius * 2);
-    }
-
-    setFillColor(newColor) {
-        this.fillColor = newColor;
-    }
-
-    fill() {
-        this.filled = true;
-    }
-
-    fillWhite() {
-        this.setFillColor('#FFFFFF')
-        this.fill();
-    }
-
-    unfill() {
-        this.filled = false;
-    }
-
-    rescaleSingleFactor(scaleFactor) {
-        this.radius *= scaleFactor; // why is there a /2??? i don't know, but it is necessary for it to work
-    }
-
-    rescaleDoubleFactor(xFactor, yFactor) {
-        if (xFactor <= yFactor) {
-            this.radius *= xFactor;
-        } else {
-            this.radius *= yFactor;
-        }
-    }
-
-}
 
 class FunctionGraph {
     constructor(func, xMin, xMax, forcedYmin, forcedYmax) {
@@ -573,7 +263,7 @@ class FunctionGraph {
         }
         this.makeSolid();
 
-        this.rectangle = new Rectangle(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
+        this.rangeBox = new RangeBox(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
     }
 
     getRange(Nsteps) {
@@ -627,13 +317,6 @@ class FunctionGraph {
     }
 }
 
-// alternative to constructing Text with a center Point, the default
-function constructTextFromLowerLeftPoint() {}
-
-// constructs a parallel Segment
-function constructParallelSegment(originalSegment, startPoint, length) {
-
-}
 
 class Diagram {
     constructor() {
@@ -732,14 +415,14 @@ class Diagram {
 
     // this is a different thing than the rectangle object defined above
     // i need to come up with a different name for that object
-    addRectangleFromCenter(centerX, centerY, width, height) {
+    addRangeBoxFromCenter(centerX, centerY, width, height) {
         let lowerLeftX = centerX - width / 2;
         let lowerLeftY = centerY - height / 2;
 
-        return this.addRectangleFromLowerLeft(lowerLeftX, lowerLeftY, width, height);
+        return this.addRangeBoxFromLowerLeft(lowerLeftX, lowerLeftY, width, height);
     }
 
-    addRectangleFromLowerLeft(lowerLeftX, lowerLeftY, width, height) {
+    addRangeBoxFromLowerLeft(lowerLeftX, lowerLeftY, width, height) {
         let lowerLeftPoint = this.addNewPoint(lowerLeftX, lowerLeftY);
         let lowerRightPoint = this.addNewPoint(lowerLeftX + width, lowerLeftY);
         let upperLeftPoint = this.addNewPoint(lowerLeftX, lowerLeftY + height);
@@ -838,10 +521,10 @@ class Diagram {
     addCircle(centerPoint, radius) {
         let center = this.addExistingPoint(centerPoint);
         let thisCircle = new Circle(center, radius);
-        this.addExistingPoint(thisCircle.rectangle.lowerLeftPoint);
-        this.addExistingPoint(thisCircle.rectangle.upperLeftPoint);
-        this.addExistingPoint(thisCircle.rectangle.lowerRightPoint);
-        this.addExistingPoint(thisCircle.rectangle.upperRightPoint);
+        this.addExistingPoint(thisCircle.rangeBox.lowerLeftPoint);
+        this.addExistingPoint(thisCircle.rangeBox.upperLeftPoint);
+        this.addExistingPoint(thisCircle.rangeBox.lowerRightPoint);
+        this.addExistingPoint(thisCircle.rangeBox.upperRightPoint);
         this.circles.push(thisCircle);
         return thisCircle;
     }
@@ -859,10 +542,10 @@ class Diagram {
     /// that makes it graph more clearly?
     addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {
         let thisFunctionGraph = new FunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax);
-        this.addExistingPoint(thisFunctionGraph.rectangle.lowerLeftPoint);
-        this.addExistingPoint(thisFunctionGraph.rectangle.upperLeftPoint);
-        this.addExistingPoint(thisFunctionGraph.rectangle.lowerRightPoint);
-        this.addExistingPoint(thisFunctionGraph.rectangle.upperRightPoint);
+        this.addExistingPoint(thisFunctionGraph.rangeBox.lowerLeftPoint);
+        this.addExistingPoint(thisFunctionGraph.rangeBox.upperLeftPoint);
+        this.addExistingPoint(thisFunctionGraph.rangeBox.lowerRightPoint);
+        this.addExistingPoint(thisFunctionGraph.rangeBox.upperRightPoint);
         this.functionGraphs.push(thisFunctionGraph);
         return thisFunctionGraph;
     }
@@ -872,11 +555,11 @@ class Diagram {
     addText(letters, centerPoint, relativeFontSize, rotation) {
         let center = this.addExistingPoint(centerPoint);
         let newText = new Text(letters, center, relativeFontSize, rotation);
-        this.addExistingPoint(newText.rectangle.lowerLeftPoint);
-        this.addExistingPoint(newText.rectangle.upperLeftPoint);
-        this.addExistingPoint(newText.rectangle.lowerRightPoint);
-        this.addExistingPoint(newText.rectangle.upperRightPoint);
-        // this.addExistingPoint(newText.Rectangle.centerPoint); /// shoudl center Point already exist though???
+        this.addExistingPoint(newText.rangeBox.lowerLeftPoint);
+        this.addExistingPoint(newText.rangeBox.upperLeftPoint);
+        this.addExistingPoint(newText.rangeBox.lowerRightPoint);
+        this.addExistingPoint(newText.rangeBox.upperRightPoint);
+        // this.addExistingPoint(newText.RangeBox.centerPoint); /// shoudl center Point already exist though???
         this.texts.push(newText);
         return newText
     }
@@ -1064,33 +747,7 @@ class Diagram {
         this.addLinesOfText(lettersArray, centerLeftPoint, relativeFontSize, spacing, textAlign);
     };
 
-    /// bring back the dotted line function here!!!
-    // adds a dashed line between point1 and point2 in which there are numDashes of dashes,
-    // canvas has a built in dashed line funciton, but it has never worked properly for me
-    // so i am creating my own instead
-    // the line will always start and end with a solid Segment!
     addDashedLine(point1, point2, numDashes, thickness) {
-        // if (thickness === undefined) {thickness = 1;}
-        // let totalLength = point1.getDistanceToAnotherPoint(point2);
-        // if (numDashes === undefined || isNaN(numDashes)) {numDashes = 10;}
-        // let numSteps = 2 * numDashes - 1;
-        // let stepLength = totalLength / numSteps;
-        // let theta = point1.getAngleToAnotherPoint(point2);
-        // let xDisplacementPerDash = stepLength * Math.cos(theta);
-        // let yDisplacementPerDash = stepLength * Math.sin(theta);
-        // //     if (isNaN(numSteps)) {numSteps = 1;} // to prevent potential of an infinite loop
-        // let n = 0;
-        // let thisSegment;
-        // // let isThisSegmentSolid = true;
-        // while (n < numSteps) {
-        //     if (n % 2 === 0) {
-        //         thisSegment = this.addTwoPointsAndSegment(point1.x + xDisplacementPerDash * n,point1.y + yDisplacementPerDash * n, point1.x + xDisplacementPerDash * (n + 1),point1.y + yDisplacementPerDash * (n + 1));
-        //         thisSegment.setThickness(thickness);
-        //     }
-        //     //   isThisSegmentSolid = !isThisSegmentSolid;
-        //     n++;
-        // }
-
         let newLine = this.addSegment(point1, point2);
         newLine.turnIntoDashedLine();
         return newLine
