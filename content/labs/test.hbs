@@ -9,8 +9,24 @@
 <div id = 'putItHere'></div>
 
 <script>
-    let newGrid = new Grid();
+    // let myCircuit = new CircuitDiagram();
+    //
+    // myCircuit.addCell('up',3);
+    // myCircuit.addWire('up',2);
+    // myCircuit.addWire('right',5);
+    // myCircuit.addWire('down',2);
+    // myCircuit.addResistor('down',3);
+    // myCircuit.addWire('down',2);
+    // myCircuit.addWire('left',5);
+    // myCircuit.addWire('up',2);
+    //
+    // $("#putItHere").append(myCircuit.drawCanvas(500));
 
-    $("#putItHere").append(newGrid.drawCanvas(800,800,false));
 
+    let myDiagram = new Diagram();
+    let pointA = myDiagram.addNewPoint(0,0);
+    let pointB = myDiagram.addNewPoint(1,2);
+    let mySegment = myDiagram.addSegment(pointA, pointB);
+    myDiagram.addLinesNextToSegment(pointA, pointB,['A = 2','B = 3','C = 4'],'right',0);
+    $("#putItHere").append(myDiagram.drawCanvas(300));
 </script>

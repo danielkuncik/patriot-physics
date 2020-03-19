@@ -189,7 +189,7 @@ class ElectricPotentialGraph {
                         resistanceLine = resistanceLine + ` ${line.knownInformation['R']} Ohms`;
                     }
                 }
-                newGraph.addLinesRightOfSegment(line.x1, line.y1, line.x2, line.y2, [voltageLine,currentLine,resistanceLine],this.fontSize);
+                newGraph.addLinesNextToSegment(line.x1, line.y1, line.x2, line.y2, [voltageLine,currentLine,resistanceLine],'right',0,this.fontSize);
             }
         });
 

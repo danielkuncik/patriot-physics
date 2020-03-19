@@ -263,8 +263,8 @@ class QuantitativeGraph extends Diagram {
 
     // used to add lines of text
     // replaces a previous function from before...
-    addLinesRightOfSegment(x1,y1,x2,y2,textArray,relativeFontSize, spacing) {
-        super.addLinesRightOfSegment(new Point(x1,y1 * this.yMultiplier), new Point(x2,y2 * this.yMultiplier), textArray, relativeFontSize, spacing);
+    addLinesNextToSegment(x1,y1,x2,y2,textArray,location,extraDisplacement,relativeFontSize, spacing) {
+        super.addLinesNextToSegment(new Point(x1,y1 * this.yMultiplier), new Point(x2,y2 * this.yMultiplier), textArray,  location, extraDisplacement, relativeFontSize, spacing);
     }
 
 
@@ -912,6 +912,14 @@ class CircuitDiagram extends Diagram {
         super.addSegment(endPoint1, intermediatePoint1);
         super.addSegment(intermediatePoint1, intermediatePoint2);
         super.addSegment(intermediatePoint2, endPoint2);
+    }
+
+    labelElementSingle(endPoint1, endPoint2, labelAbove, labelBelow, extraDisplacement, relativeFontSize) {
+
+    }
+
+    labelElementMultiple(endpoint1, endPoint2, powerBoolean, voltageValue, currentValue, resistanceValue, powerValue) {
+
     }
 
     addResistor(directionInput, length, labelAbove, labelBelow, width, numZigZags) {

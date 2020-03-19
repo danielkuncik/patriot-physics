@@ -435,6 +435,7 @@ class Text {
 
         this.font = 'Arial';
         this.fontAspectRatio = 0.52; // aspect ratio of aria font according to https://www.lifewire.com/aspect-ratio-table-common-fonts-3467385
+        this.fontAspectRatio = 0.7; /// but, that value from lifewire led to text being cut off! so i changed it!
         this.alignment = 'center'; // default
         this.baseline = 'middle';
         this.color = "#000000";
@@ -979,27 +980,46 @@ class Diagram {
     }
 
     // you are not allowed to rotate lines
-    addLinesOfText(lettersArray, centerPoint, relativeFontSize, spacing) {
+    addLinesOfText(lettersArray, centerLeftPoint, relativeFontSize, spacing, textAlign) {
         if (spacing === undefined) {
             spacing  = 1.4;
         }
+        if (textAlign === undefined) {
+            textAlign = 'left';
+        }
         let lineWidth = relativeFontSize * spacing;
-        let centerX = centerPoint.x;
-        let topCenterY = centerPoint.y + lineWidth * (lettersArray.length - 1) / 2;
-        let q, thisY;
+        let leftX = centerLeftPoint.x;
+        let boxHeight = relativeFontSize * lettersArray.length + (spacing - 1) * relativeFontSize * (lettersArray.length - 1);
+        let topY = centerLeftPoint.y + boxHeight / 2;
+        let q, thisY, nextText;
         for (q = 0; q < lettersArray.length; q++) {
-            thisY = topCenterY - lineWidth * q;
-            this.addText(lettersArray[q],new Point(centerX, thisY),relativeFontSize);
+            thisY = topY - lineWidth * q;
+            nextText = this.addText(lettersArray[q],new Point(leftX, thisY),relativeFontSize);
+            nextText.setAlignmentAndBaseline(textAlign,'top');
+            console.log(nextText);
         }
     }
 
-    addLinesRightOfSegment(point1, point2, lettersArray, relativeFontSize, spacing) {
+    /// WORKS ONLY FOR 45 degree angles!!!! 3-19-2020 10:31 am
+    /// i'm taking a break and coming back to this shit
+    addLinesNextToSegment(point1, point2, lettersArray, location, extraDisplacement, relativeFontSize, spacing) {
+        if (location === undefined) {
+            location = 'right';
+        }
+        // left is a pretty bad idea, but right, above, below should all work
+        if (extraDisplacement === undefined) {
+            extraDisplacement = 0;
+        }
         if (spacing === undefined) {
             spacing  = 1.4;
         }
-        let boxHeight = relativeFontSize * spacing * lettersArray.length;
+        if (relativeFontSize === undefined) {
+            relativeFontSize = point1.getDistanceToAnotherPoint(point2) / 3 / lettersArray.length;
+        }
+        let boxHeight = relativeFontSize * lettersArray.length + (spacing - 1) * relativeFontSize * (lettersArray.length - 1);
         let theta = point1.getAngleToAnotherPoint(point2);
-        let horizontalDisplacement_1 = (boxHeight / 2) / (Math.atan(theta));
+        let quad = point1.getQuadrantOfAnotherPoint(point2);
+        //let horizontalDisplacement_1 = (boxHeight / 2) / (Math.atan(theta));
 
         let maxLetters = 0;
         lettersArray.forEach((text) => {
@@ -1007,14 +1027,41 @@ class Diagram {
                 maxLetters = text.length;
             }
         });
-        let horizontalDisplacement_2 = maxLetters * 0.52 * relativeFontSize;
+        let boxWidth = maxLetters * relativeFontSize * 0.7; // 0.7 is my guess of aspect ratio
 
-        let horizontalDisplacement = horizontalDisplacement_1 + horizontalDisplacement_2;
+        let horizontalDisplacement = 0;
+        let verticalDisplacement = 0;
+        let textAlign = 'left';
 
-        let textCenter = point1.interpolate(point2, 0.5);
-        textCenter.translate(horizontalDisplacement,0);
+        ///// THIS PART ISN'T DONE!!!!
+        /// but i want to make some programs while creating this
+        // placement => not totally completed!
+        if (location === 'right') {
+            if (quad === '1' || quad === '3') {
+                horizontalDisplacement += (boxHeight / 2) / Math.tan(theta) + extraDisplacement;
+            } else if (quad === '2' || quad === '4') {
+                horizontalDisplacement += -1 * (boxHeight / 2) / Math.tan(theta) + extraDisplacement;
+            } else if (quad === '+Y' || quad === '-Y') {
+                // do nothing
+            } else if (quad === '+X' || quad === '-X') {
+                console.log('ERROR: Cannot place text to the right of horizontal line');
+            }
+        } else if (location === 'below') { // these vertical positions are screwing with me
+            if (quad === '1') {
+                verticalDisplacement -= boxHeight / 2;
+            } else if (quad === '2') {
+                horizontalDisplacement -= boxWidth;
+                verticalDisplacement -= boxHeight / 2;
+            } else if (quad === '+X' || quad === '-X') {
+                verticalDisplacement -= boxHeight / 2;
+                textAlign = 'center';
+            }
+        }
 
-        this.addLinesOfText(lettersArray, textCenter, relativeFontSize, spacing);
+        let centerLeftPoint = point1.interpolate(point2, 0.5);
+        centerLeftPoint.translate(horizontalDisplacement,verticalDisplacement);
+
+        this.addLinesOfText(lettersArray, centerLeftPoint, relativeFontSize, spacing, textAlign);
     };
 
     /// bring back the dotted line function here!!!
