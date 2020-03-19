@@ -506,101 +506,101 @@
         "honors": false,
         "pods":
         {
-          "error_calculation_1":
+          "rounding":
           {
-            "title": "Error Calculation 1",
-            "subtitle": "Comparing Order of Magnitude",
+            "title": "Rounding",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
-            "objective": "Given two numbers, determine whether thw two numbers are on the same or different orders of mangitude."
+            "objective": "Given a decimal number in standard notation, round to a certain number of decimal places correctly",
+            "note": "No whining, people do it wrong all the time!"
           },
           "significant_figures_1":
           {
             "title": "Significant Figures 1",
             "subtitle": "Counting Significant Figures",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["rounding"],
             "objective": "Given a value in standard or scientific notation, count the number of significant figures in that value."
           },
-          "rounding":
+          "error_calculation_1":
           {
-            "title": "Rounding",
+            "title": "Error Calculation 1",
+            "subtitle": "Comparing Order of Magnitude",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a decimal number in standard notation, round to a certain number of decimal places correctly",
-            "note": "No whining, people dp it wrong all the time!"
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["significant_figures_1"],
+            "objective": "Given two numbers, determine whether thw two numbers are on the same or different orders of mangitude."
+          },
+          "significant_figures_2":
+          {
+            "title": "Significant Figures 2",
+            "subtitle": "Rounding to a specific number of significant figures",
+            "level": 1,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["error_calculation_1"],
+            "objective": "Given a value in standard or scientific notation, round toa  certain number of significant figures."
           },
           "error_calculation_2":
           {
             "title": "Error Calculation 2",
             "subtitle": "Calculating Percent Difference and Percent Error",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["significant_figures_2"],
             "objective": "Given two numbers, calculate the percent different between those numbers; given a theoretical and determined value, calculate the percent error of a theory."
-          },
-          "significant_figures_2":
-          {
-            "title": "Significant Figures 2",
-            "subtitle": "Rounding to a specific number of significant figures",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a value in standard or scientific notation, round toa  certain number of significant figures."
           },
           "significant_figures_3":
           {
             "title": "Significant Figures 3",
             "subtitle": "Solving Problems with the Correct Number of Significant Figures",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 2,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["error_calculation_2"],
             "objective": "Given a simple physics problem whose inputs have different degrees of accuracy, solve the problem and state the answer with the correct number of significant figures."
           },
-          "estimation_error":
+          "estimating_error":
           {
             "title": "Estimating Error",
             "subtitle": "Significant Figures of a Measurement",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a measurement and method of measuring, estimate the amount of error in that measurement and write how many sigificant figures would be appropriate to report."
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["significant_figures_3"],
+            "objective": "Given a measurement and method of measuring, estimate the amount of error in that measurement and write how many significant figures would be appropriate to report."
           },
           "purpose_significant_figures":
           {
             "title": "The Purpose of Significant Figures",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["estimating_error"],
             "objective": "Explain why scientists use significant figures; explain why long decimal answers are poor in science"
           },
           "error_propagation_1":
           {
             "title": "Error Propagation 1",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["purpose_significant_figures"],
             "objective": ""
           },
           "error_propagation_2":
           {
             "title": "Error Propagation 2",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "J",
+            "prerequisites": ["error_propagation_1"],
             "objective": ""
           }
         }
