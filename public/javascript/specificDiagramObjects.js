@@ -918,7 +918,7 @@ class CircuitDiagram extends Diagram {
 
     }
 
-    labelElementMultiple(endpoint1, endPoint2, powerBoolean, voltageValue, currentValue, resistanceValue, powerValue) {
+    labelElementLines(endpoint1, endPoint2, powerBoolean, voltageValue, currentValue, resistanceValue, powerValue) {
 
     }
 

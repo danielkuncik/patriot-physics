@@ -108,31 +108,35 @@
 
     let problem1Circuit = new CircuitDiagram();
 
-    // battery
-    problem1Circuit.addElementWithCursor('wire',0,12);
-    problem1Circuit.addElementWithCursor('battery',0,14,40);
-    problem1Circuit.addElementWithCursor('wire',0,18);
+    problem1Circuit.addCell('up',3,'40 V');
+    problem1Circuit.addWire('up',9);
 
-    // branch 1
-    problem1Circuit.addElementWithCursor('wire',8,18);
-    problem1Circuit.addElementWithCursor('wire',8,10);
-    problem1Circuit.addElementWithCursor('resistor',8,6,10,'A');
-    problem1Circuit.addElementWithCursor('wire',8,0);
-    problem1Circuit.addElementWithCursor('wire',0,0);
-
-    // branch 2
-    problem1Circuit.moveCursor(8,18);
-    problem1Circuit.addElementWithCursor('wire',16,18);
-    problem1Circuit.addElementWithCursor('wire',16,14);
-    problem1Circuit.addElementWithCursor('resistor',16,11,5,'B');
-    problem1Circuit.addElementWithCursor('wire',16,8);
-    problem1Circuit.addElementWithCursor('resistor',16,5,15,'C');
-    problem1Circuit.addElementWithCursor('wire',16,0);
-    problem1Circuit.addElementWithCursor('wire',8,0);
-
-    let problem1Graph = new QuantitativeGraph(0,20,0,40,2);
-    problem1Graph.addReferenceArray([],[10,20,30,40]);
-    problem1Graph.labelAxes('','Potential (V)');
+    //
+    // // battery
+    // problem1Circuit.addElementWithCursor('wire',0,12);
+    // problem1Circuit.addElementWithCursor('battery',0,14,40);
+    // problem1Circuit.addElementWithCursor('wire',0,18);
+    //
+    // // branch 1
+    // problem1Circuit.addElementWithCursor('wire',8,18);
+    // problem1Circuit.addElementWithCursor('wire',8,10);
+    // problem1Circuit.addElementWithCursor('resistor',8,6,10,'A');
+    // problem1Circuit.addElementWithCursor('wire',8,0);
+    // problem1Circuit.addElementWithCursor('wire',0,0);
+    //
+    // // branch 2
+    // problem1Circuit.translateCursor(8,18);
+    // problem1Circuit.addElementWithCursor('wire',16,18);
+    // problem1Circuit.addElementWithCursor('wire',16,14);
+    // problem1Circuit.addElementWithCursor('resistor',16,11,5,'B');
+    // problem1Circuit.addElementWithCursor('wire',16,8);
+    // problem1Circuit.addElementWithCursor('resistor',16,5,15,'C');
+    // problem1Circuit.addElementWithCursor('wire',16,0);
+    // problem1Circuit.addElementWithCursor('wire',8,0);
+    //
+    // let problem1Graph = new QuantitativeGraph(0,20,0,40,2);
+    // problem1Graph.addReferenceArray([],[10,20,30,40]);
+    // problem1Graph.labelAxes('','Potential (V)');
 
     $("#problem1Circuit").append(problem1Circuit.drawCanvas(600,600));
     $("#problem1Graph").append(problem1Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
@@ -154,7 +158,7 @@
     problem2Circuit.addElementWithCursor('wire',0,0);
 
     // branch 2
-    problem2Circuit.moveCursor(8,18);
+    problem2Circuit.translateCursor(8,18);
     problem2Circuit.addElementWithCursor('wire',16,18);
     problem2Circuit.addElementWithCursor('wire',16,14);
     problem2Circuit.addElementWithCursor('resistor',16,11,4,'B');
