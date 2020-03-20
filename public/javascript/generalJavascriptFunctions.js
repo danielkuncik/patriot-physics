@@ -214,25 +214,6 @@ function processDirectionInput(direction, forceDegreesBoolean) {
     }
 }
 
-// given a line at a certain angle, determines the optimal location of text
-function determineOptimalLocationOfText(angleInRadians) {
-    angleInRadians = angleInRadians % (2 * Math.PI);
-    if (angleInRadians < 0) {
-        angleInRadians = Math.PI * 2 + angleInRadians;
-    }
-    if (angleInRadians >= 0 && angleInRadians < Math.pi / 4) {
-        return 'vertical';
-    } else if (angleInRadians >= Math.pi / 4 && angleInRadians <= 3 * Math.PI / 4) {
-        return 'horizontal';
-    } else if (angleInRadians > 3 * Math.pi / 4 && angleInRadians < 5 * Math.PI / 4) {
-        return 'vertical';
-    } else if (angleInRadians >= 5 * Math.PI / 4 && angleInRadians <= 7 * Math.PI / 4) {
-        return  'horizontal';
-    } else if (angleInRadians > 7 * Math.PI / 4 && angleInRadians < Math.PI * 2 ) {
-        return  'vertical';
-    }
-}
-
 // tests if a function is constant over the range from xMin to xMax
 function isItAConstantFunction(testFunction, xMin, xMax, N) {
     if (N === undefined) {N = 100;}

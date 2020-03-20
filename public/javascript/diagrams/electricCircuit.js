@@ -56,7 +56,10 @@ class CircuitDiagram extends Diagram {
     ONLY to be used within other functions!
     NOT to be used on its own!
      */
-    labelElement(point1, point2, labelObject, name, relativeFontSize, width, extraDisplacement, primaryInformation) {
+    labelElement(point1, point2, labelObject, name, relativeFontSize, width, extraDisplacement, primaryInformation, textLocation) {
+        if (textLocation === undefined) {
+            textLocation = 'clockwise';
+        }
 
         const length = point1.getDistanceToAnotherPoint(point2);
 
@@ -89,7 +92,7 @@ class CircuitDiagram extends Diagram {
                 textArray.push(this.printCircuitQuantity(magnitude,quantity,true));
             });
             // the LOCATION needs to be adaptive, some of these will just yield an error!
-            super.addLinesNextToSegment(point1, point2, textArray,'right', width + extraDisplacement,relativeFontSize,undefined);
+            super.addLinesNextToSegment(point1, point2, textArray,textLocation, width + extraDisplacement,relativeFontSize,undefined);
         } else if (Object.keys(labelObject).length === 0) {
             //no information
             //pass, do nothing

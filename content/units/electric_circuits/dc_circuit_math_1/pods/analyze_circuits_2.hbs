@@ -85,7 +85,7 @@
     let problem1Circuit = makeSeriesCircuit(undefined,[6,{"V":2, "I": 2},{"V": 4}]);
     let problem2Circuit = makeSeriesCircuit(21,[undefined,{"V": 6, "R": 2}, {"V": 6}]);
     let problem3Circuit = makeSeriesCircuit(22, [undefined, {"V": 15, "P":28},'6 V']);
-    let problem4Circuit = makeSeriesCircuit('12 Ohms',['1 W','3 V','1 V   2 Ohms']);
+    let problem4Circuit = makeSeriesCircuit('12 Ohms',[{"P": 1},{"V":3},{"V": 1, "R": 2}]);
     let problem5Circuit = makeSeriesCircuit('xx',['xx','xx','xx']);
 
     let problem6Circuit = makeParallelCircuit(undefined,['6 Ohms','18 V    54 W', '6 A']);

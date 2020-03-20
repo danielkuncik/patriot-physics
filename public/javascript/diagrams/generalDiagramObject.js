@@ -23,6 +23,45 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
 }
 
 
+// given a line at a certain angle, determines the optimal location of text
+function getOptimalLocationOfText(point1, point2, turningOrientation) {
+    if (turningOrientation === undefined) {
+        turningOrientation = 'clockwise';
+    }
+    const angleInRadians = point1.getAngleToAnotherPoint(point2);
+    let bestSpot;
+
+
+    // optimal spots for counter-clockwise orientation
+    if (angleInRadians >= 0 && angleInRadians < Math.pi / 4) {
+        bestSpot = 'below';
+    } else if (angleInRadians >= Math.PI / 4 && angleInRadians <= 3 * Math.PI / 4) {
+        bestSpot = 'right';
+    } else if (angleInRadians > 3 * Math.PI / 4 && angleInRadians < 5 * Math.PI / 4) {
+        bestSpot = 'above';
+    } else if (angleInRadians >= 5 * Math.PI / 4 && angleInRadians <= 7 * Math.PI / 4) {
+        bestSpot = 'left';
+    } else if (angleInRadians > 7 * Math.PI / 4 && angleInRadians <= Math.PI * 2 ) {
+        bestSpot =  'below';
+    } else {
+        bestSpot = undefined;
+    }
+    if (turningOrientation === 'clockwise') { // rather than clockwise
+        if (bestSpot === 'right') {
+            bestSpot = 'left';
+        } else if (bestSpot === 'left') {
+            bestSpot = 'right';
+        } else if (bestSpot === 'above') {
+            bestSpot = 'below';
+        } else if (bestSpot === 'below') {
+            bestSpot = 'above';
+        }
+    }
+
+    return bestSpot
+}
+
+
 
 // given a number zero to 20, returns a proportionate shade of gray
 // with 0 = white
@@ -693,8 +732,14 @@ class Diagram {
     /// i'm taking a break and coming back to this shit
     addLinesNextToSegment(point1, point2, lettersArray, location, extraDisplacement, relativeFontSize, spacing) {
         if (location === undefined) {
-            location = 'right';
+            location = 'clockwise';
         }
+        if (location === 'clockwise') {
+            location = getOptimalLocationOfText(point1, point2, 'clockwise');
+        } else if (location === 'counterclockwise') {
+            location = getOptimalLocationOfText(point1, point2, 'counterclockwise');
+        }
+
         // left is a pretty bad idea, but right, above, below should all work
         if (extraDisplacement === undefined) {
             extraDisplacement = 0;
@@ -724,11 +769,7 @@ class Diagram {
         let textAlign;
 
         ///// THIS PART ISN'T DONE!!!!
-        /// but i want to make some programs while creating this
-        // placement => not totally completed!
-
-        // there needs to be an optimal placement decider, based on clockwise or counterclockwise
-        //(but first,
+        ///  In fact, it's a total wreck, but i need to fix some other thigns before i can properly test it
         if (location === 'right') {
             textAlign = 'left';
             if (quad === '1' || quad === '3') {
@@ -742,12 +783,12 @@ class Diagram {
             } else {
                 console.log('unable to add text lines');
             }
-        } else if (location === 'right') {
+        } else if (location === 'left') {
             textAlign = 'right';
             if (quad === '1' || quad === '3') {
-                horizontalDisplacement -= (boxHeight / 2) / Math.tan(theta) - extraDisplacement;
+                horizontalDisplacement -= (boxHeight / 2) / Math.tan(theta) + extraDisplacement;
             } else if (quad === '2' || quad === '4') {
-                horizontalDisplacement -= -1 * (boxHeight / 2) / Math.tan(theta) - extraDisplacement;
+                horizontalDisplacement -= -1 * (boxHeight / 2) / Math.tan(theta) + extraDisplacement;
             } else if (quad === '+Y' || quad === '-Y') {
                 horizontalDisplacement -= extraDisplacement;
             } else if (quad === '+X' || quad === '-X') {
@@ -758,19 +799,19 @@ class Diagram {
         } else if (location === 'below') { // these vertical positions are screwing with me
             textAlign = 'center';
             if (quad === '1') {
-                verticalDisplacement -= boxHeight / 2;
+                verticalDisplacement -= boxHeight / 2 + extraDisplacement;
             } else if (quad === '2') {
                // horizontalDisplacement -= boxWidth;
-                verticalDisplacement -= boxHeight / 2;
+                verticalDisplacement -= boxHeight / 2 + extraDisplacement;
             } else if (quad === '+X' || quad === '-X') {
                // verticalDisplacement -= boxHeight / 2;
-                verticalDisplacement -= extraDisplacement
+                verticalDisplacement -= boxHeight / 2 + extraDisplacement;
             } else if (quad === '+Y' || quad === '-Y') {
                 console.log('ERROR: Cannot place text above a vertical line');
             } else {
                 console.log('unable to add text lines');
             }
-        } else if (location == 'above') {
+        } else if (location === 'above') {
             textAlign = 'center';
             if (quad === '1') {
                 verticalDisplacement += boxHeight / 2 + extraDisplacement; // definitely need more here
