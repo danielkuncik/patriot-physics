@@ -394,29 +394,52 @@ class Triangle {
 
         this.segmentA = new Segment(this.vertexB, this.vertexC);
         this.segmentB = new Segment(this.vertexC, this.vertexA);
-        this.segmentC = new Segment(this.segmentA, this.segmentB);
+        this.segmentC = new Segment(this.vertexA, this.vertexB);
 
-        // altitudes, from one vertex and perpendicular to the opposite segment
-        this.altitudeA = new Segment(this.vertexA, this.segmentA.line.findIntersectionWithAnotherLine(this.segmentA.line.findPerpendicularLine(this.vertexA)));
-        this.altitudeB = new Segment(this.vertexB, this.segmentB.line.findIntersectionWithAnotherLine(this.segmentB.line.findPerpendicularLine(this.vertexB)));
-        this.altitudeC = new Segment(this.vertexC, this.segmentC.line.findIntersectionWithAnotherLine(this.segmentC.line.findPerpendicularLine(this.vertexC)));
+    }
 
-        // medians, from one vertex to the midpoint of the opposite segment
-        this.medianA = new Segment(this.vertexA, this.vertexB.interpolate(this.vertexC, 0.5));
-        this.medianB = new Segment(this.vertexB, this.vertexC.interpolate(this.vertexA, 0.5));
-        this.medianC = new Segment(this.vertexC, this.vertexA.interpolate(this.vertexB, 0.5));
+    // altitude is a segment that begins at one vertex and makes a right angle with the opposite segment
+    getAltitude(whichVertex) {
+        if (whichVertex === 'A') {
+            return new Segment(this.vertexA, this.segmentA.line.findIntersectionWithAnotherLine(this.segmentA.line.findPerpendicularLine(this.vertexA)));
+        } else if (whichVertex === 'B') {
+            return new Segment(this.vertexB, this.segmentB.line.findIntersectionWithAnotherLine(this.segmentB.line.findPerpendicularLine(this.vertexB)));
+        } else if (whichVertex === 'C') {
+            return new Segment(this.vertexC, this.segmentC.line.findIntersectionWithAnotherLine(this.segmentC.line.findPerpendicularLine(this.vertexC)));
+        } else {
+            return undefined
+        }
+    }
 
-        this.centroid = this.medianA.line.findIntersectionWithAnotherLine(this.medianB.line);
+    // a median is a segment that begins at one vertex and ends at the midpoint of the opposite segment
+    getMedian(whichVertex) {
+        if (whichVertex === 'A') {
+            return new Segment(this.vertexA, this.vertexB.interpolate(this.vertexC, 0.5));
+        } else if (whichVertex === 'B') {
+            return new Segment(this.vertexB, this.vertexC.interpolate(this.vertexA, 0.5));
+        } else if (whichVertex === 'C') {
+            return new Segment(this.vertexC, this.vertexA.interpolate(this.vertexB, 0.5));
+        } else {
+            return undefined
+        }
+    }
+
+    // the centroid is the point at which all medians intersect
+    getCentroid() {
+        let medianA = this.getMedian('A');
+        let medianB = this.getMedian("B");
+        return medianA.line.findIntersectionWithAnotherLine(medianB.line);
     }
 
     translate(xTranslation, yTranslation) {
         // how will this affect altitudes and medians?....need to think about this.
     }
 
-    getCenter() {
-
+    addToDiagramObject(DiagramObject) {
+        DiagramObject.addExistingSegment(this.segmentA);
+        DiagramObject.addExistingSegment(this.segmentB);
+        DiagramObject.addExistingSegment(this.segmentC);
     }
-
 
 }
 
@@ -426,7 +449,7 @@ function constructTriangleSAS(vertexA, side1, angleInDegrees, side2) {
     }
     let vertexB = vertexA.translateAndReproduce(side1, 0);
     let angleInRadians = convertDegreesToRadians(angleInDegrees);
-    let vertexC = vertexB.translateAndReproduce(-1 * side2 * Math.cos(angleInRadians), side2 * Math.sin(angle));
+    let vertexC = vertexB.translateAndReproduce(-1 * side2 * Math.cos(angleInRadians), side2 * Math.sin(angleInRadians));
     let newTriangle = new Triangle(vertexA, vertexB, vertexC);
     return newTriangle
 }
@@ -449,7 +472,7 @@ function constructTriangleASA(vertexA, angle1inDegrees, side, angle2inDegrees) {
 
 function constructTrianlgeSSS(vertexA, side1, side2, side3) {
     let angleB = getAngleFromLawOfCosines(side3, side1, side2); // in degrees
-    return addTriangleSAS(vertexA, side1, angleB, side2);
+    return constructTriangleSAS(vertexA, side1, angleB, side2);
 }
 
 

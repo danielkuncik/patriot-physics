@@ -405,6 +405,15 @@ class Diagram {
         return newSegment
     }
 
+    // adds a segment object that already exists, independent of this particular diagram object
+    addExistingSegment(segmentObject) {
+        console.log(segmentObject);
+        let pointA = this.addExistingPoint(segmentObject.point1);
+        let pointB = this.addExistingPoint(segmentObject.point2);
+        this.segments.push(segmentObject);
+        return segmentObject
+    }
+
     // shortcut, makes it easier to add a Segment witout creating each Point first
     addTwoPointsAndSegment(x1, y1, x2, y2) {
         let pointA = this.addNewPoint(x1,y1);

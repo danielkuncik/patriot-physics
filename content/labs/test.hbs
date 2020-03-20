@@ -23,10 +23,14 @@
     // $("#putItHere").append(myCircuit.drawCanvas(500));
 
 
-    let myDiagram = new Diagram();
-    let pointA = myDiagram.addNewPoint(0,0);
-    let pointB = myDiagram.addNewPoint(1,2);
-    let mySegment = myDiagram.addSegment(pointA, pointB);
-    myDiagram.addLinesNextToSegment(pointA, pointB,['A = 2','B = 3','C = 4'],'right',0);
-    $("#putItHere").append(myDiagram.drawCanvas(300));
+    // let myDiagram = new Diagram();
+    // let pointA = myDiagram.addNewPoint(0,0);
+    // let pointB = myDiagram.addNewPoint(1,2);
+    // let mySegment = myDiagram.addSegment(pointA, pointB);
+    // myDiagram.addLinesNextToSegment(pointA, pointB,['A = 2','B = 3','C = 4'],'right',0);
+    // $("#putItHere").append(myDiagram.drawCanvas(300));
+
+    let myPad = new GeometryPad();
+    myPad.addTriangleSAS(origin, 1,60,1);
+    $("#putItHere").append(myPad.drawCanvas(300));
 </script>
