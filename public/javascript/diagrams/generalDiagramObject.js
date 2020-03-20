@@ -189,7 +189,7 @@ class Text {
     }
 
     rescaleDoubleFactor(xFactor, yFactor) {
-        if (xFactor <= yFactor) {
+        if (xFactor >= yFactor) {
             this.relativeFontSize *= xFactor;
         } else {
             this.relativeFontSize *= yFactor;
@@ -396,7 +396,7 @@ class Diagram {
     }
 
 
-    /// points must already be in the array of poitns before adding the Segment!
+    /// points must already be in the array of points before adding the Segment!
     addSegment(point1, point2) {
         let pointA = this.addExistingPoint(point1);
         let pointB = this.addExistingPoint(point2);
@@ -494,6 +494,10 @@ class Diagram {
 
       this.addArrow(centerPoint, point1, arrowheadLength, arrowheadAngleInDegrees);
       this.addArrow(centerPoint, point2, arrowheadLength, arrowheadAngleInDegrees);
+    }
+
+    addDistanceMarker(point1, point2, sideLength) {
+        this.addTwoHeadedArrow(point1, point2, sideLength, 90);
     }
 
     // in case you want a line with an arrowhead in the middle of it

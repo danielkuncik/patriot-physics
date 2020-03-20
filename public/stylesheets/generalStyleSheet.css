@@ -28,6 +28,10 @@ ol.answerList {
     list-style-type: none;
 }
 
+h4.answerHeader {
+    page-break-before: always;
+}
+
 div.pageBreak {
     page-break-after: always;
 }

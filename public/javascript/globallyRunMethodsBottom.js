@@ -19,7 +19,7 @@ $(".questionList").each((i) => {
         $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}:</strong> `);
         if ($(thisQuestion).data()['answer'] !== undefined) {
             thisAnswer = $(thisQuestion).data()['answer'];
-            $(".answerList").append(`<li>${letter}.${questionNumber}: ${thisAnswer}</li>`);
+            $(".answerList").append(`<li>${letter}.${questionNumber}:   ${thisAnswer}</li>`);
         } else if ($(thisQuestion).data()['answer_id'] !== undefined) {
             thisAnswerID = $(thisQuestion).data()['answer_id'];
             $(".answerList").append(`<li id = '${thisAnswerID}'>${letter}.${questionNumber}:</li>`);
@@ -41,7 +41,7 @@ $(".questionList").each((i) => {
                     $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
                 }
             });
-            thisAnswer = $(`<li>${letter}.${questionNumber}.</li>`);
+            thisAnswer = $(`<li>${letter}.${questionNumber}:  </li>`);
             $(thisAnswer).append(subAnswerList);
             $(".answerList").append(thisAnswer);
         } else {
@@ -53,7 +53,7 @@ $(".questionList").each((i) => {
 });
 
 // append all items in the answerID object into the lesson
-
+$("ol.answerList").prepend($("<h4 class = 'answerHeader'>Answers:</h4>"))
 
 /// for any <p class = 'directions>
 // automatically palces the term "Directons" in bold at the front
