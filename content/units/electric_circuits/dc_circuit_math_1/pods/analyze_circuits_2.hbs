@@ -82,9 +82,9 @@
 <script>
     let ThreeResisitorTable = new ElectricCircuitTable(3,4);
 
-    let problem1Circuit = makeSeriesCircuit(undefined,['6 Ohms','2 V   2 A','4 V']);
-    let problem2Circuit = makeSeriesCircuit(21,[undefined,'6 V  2 Ohms', '6 V']);
-    let problem3Circuit = makeSeriesCircuit(22, [undefined, '15 V   28 W','6 V']);
+    let problem1Circuit = makeSeriesCircuit(undefined,[6,{"V":2, "I": 2},{"V": 4}]);
+    let problem2Circuit = makeSeriesCircuit(21,[undefined,{"V": 6, "R": 2}, {"V": 6}]);
+    let problem3Circuit = makeSeriesCircuit(22, [undefined, {"V": 15, "P":28},'6 V']);
     let problem4Circuit = makeSeriesCircuit('12 Ohms',['1 W','3 V','1 V   2 Ohms']);
     let problem5Circuit = makeSeriesCircuit('xx',['xx','xx','xx']);
 
@@ -132,7 +132,6 @@
     answerObjects['problem8Answer'] = answer8.draw(200);
     answerObjects['problem9Answer'] = answer9.draw(200);
     answerObjects['problem10Answer'] = answer10.draw(200);
-    //    answerObjects['problem1Answer'] = problem1AnswerTable;
 
 
 </script>

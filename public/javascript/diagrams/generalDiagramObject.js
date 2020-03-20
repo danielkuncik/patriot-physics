@@ -23,10 +23,6 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
 }
 
 
-function getLengthOfLetters(letters) {
-    let fontAspectRatio = 0.52; // aspect ratio of arial font according to https://www.lifewire.com/aspect-ratio-table-common-fonts-3467385
-    return letters.length * fontAspectRatio
-}
 
 // given a number zero to 20, returns a proportionate shade of gray
 // with 0 = white
@@ -166,15 +162,13 @@ class Text {
         // reference Point will be different if the alignment is different!
 
         this.font = 'Arial';
-        this.fontAspectRatio = 0.52; // aspect ratio of aria font according to https://www.lifewire.com/aspect-ratio-table-common-fonts-3467385
-        this.fontAspectRatio = 0.7; /// but, that value from lifewire led to text being cut off! so i changed it!
         this.alignment = 'center'; // default
         this.baseline = 'middle';
         this.color = "#000000";
         this.centerPoint = centerPoint;
         this.referencePoint = this.centerPoint; // default, Text in center
 
-        this.width = letters.length * this.relativeFontSize * this.fontAspectRatio;
+        this.width = getLengthOfLetters(letters, this.relativeFontSize);
         this.height = this.relativeFontSize / 2;
         this.rangeBox = constructRangeBoxFromCenter(centerPoint, this.width, this.height);
         if (this.rotationAngleInRadians) {
@@ -692,7 +686,6 @@ class Diagram {
             thisY = topY - lineWidth * q;
             nextText = this.addText(lettersArray[q],new Point(leftX, thisY),relativeFontSize);
             nextText.setAlignmentAndBaseline(textAlign,'top');
-            console.log(nextText);
         }
     }
 
@@ -717,47 +710,87 @@ class Diagram {
         let quad = point1.getQuadrantOfAnotherPoint(point2);
         //let horizontalDisplacement_1 = (boxHeight / 2) / (Math.atan(theta));
 
-        let maxLetters = 0;
+        let maxLettersLength = 0;
         lettersArray.forEach((text) => {
-            if (text.length > maxLetters) {
-                maxLetters = text.length;
+            let testLength = getLengthOfLetters(text, relativeFontSize);
+            if (testLength > maxLettersLength) {
+                maxLettersLength = testLength;
             }
         });
-        let boxWidth = maxLetters * relativeFontSize * 0.7; // 0.7 is my guess of aspect ratio
 
+        let boxWidth = maxLettersLength;
         let horizontalDisplacement = 0;
         let verticalDisplacement = 0;
-        let textAlign = 'left';
+        let textAlign;
 
         ///// THIS PART ISN'T DONE!!!!
         /// but i want to make some programs while creating this
         // placement => not totally completed!
+
+        // there needs to be an optimal placement decider, based on clockwise or counterclockwise
+        //(but first,
         if (location === 'right') {
+            textAlign = 'left';
             if (quad === '1' || quad === '3') {
                 horizontalDisplacement += (boxHeight / 2) / Math.tan(theta) + extraDisplacement;
             } else if (quad === '2' || quad === '4') {
                 horizontalDisplacement += -1 * (boxHeight / 2) / Math.tan(theta) + extraDisplacement;
             } else if (quad === '+Y' || quad === '-Y') {
-                // do nothing
+                horizontalDisplacement += extraDisplacement;
             } else if (quad === '+X' || quad === '-X') {
                 console.log('ERROR: Cannot place text to the right of horizontal line');
+            } else {
+                console.log('unable to add text lines');
+            }
+        } else if (location === 'right') {
+            textAlign = 'right';
+            if (quad === '1' || quad === '3') {
+                horizontalDisplacement -= (boxHeight / 2) / Math.tan(theta) - extraDisplacement;
+            } else if (quad === '2' || quad === '4') {
+                horizontalDisplacement -= -1 * (boxHeight / 2) / Math.tan(theta) - extraDisplacement;
+            } else if (quad === '+Y' || quad === '-Y') {
+                horizontalDisplacement -= extraDisplacement;
+            } else if (quad === '+X' || quad === '-X') {
+                console.log('ERROR: Cannot place text to the right of horizontal line');
+            } else {
+                console.log('unable to add text lines');
             }
         } else if (location === 'below') { // these vertical positions are screwing with me
+            textAlign = 'center';
             if (quad === '1') {
                 verticalDisplacement -= boxHeight / 2;
             } else if (quad === '2') {
-                horizontalDisplacement -= boxWidth;
+               // horizontalDisplacement -= boxWidth;
                 verticalDisplacement -= boxHeight / 2;
             } else if (quad === '+X' || quad === '-X') {
-                verticalDisplacement -= boxHeight / 2;
-                textAlign = 'center';
+               // verticalDisplacement -= boxHeight / 2;
+                verticalDisplacement -= extraDisplacement
+            } else if (quad === '+Y' || quad === '-Y') {
+                console.log('ERROR: Cannot place text above a vertical line');
+            } else {
+                console.log('unable to add text lines');
             }
+        } else if (location == 'above') {
+            textAlign = 'center';
+            if (quad === '1') {
+                verticalDisplacement += boxHeight / 2 + extraDisplacement; // definitely need more here
+            } else if (quad === '2') {
+                verticalDisplacement += boxHeight / 2 + extraDisplacement; // definitely need more here
+            } else if (quad === '+X' || quad === '-X') {
+                verticalDisplacement += boxHeight / 2 + extraDisplacement;
+            } else if (quad === '+Y' || quad === '-Y') {
+                console.log('ERROR: Cannot place text above a vertical line');
+            } else {
+                console.log('unable to add text lines');
+            }
+        } else {
+            console.log('unable to add text lines');
         }
 
-        let centerLeftPoint = point1.interpolate(point2, 0.5);
-        centerLeftPoint.translate(horizontalDisplacement,verticalDisplacement);
+        let textReferencePoint = point1.interpolate(point2, 0.5);
+        textReferencePoint.translate(horizontalDisplacement,verticalDisplacement);
 
-        this.addLinesOfText(lettersArray, centerLeftPoint, relativeFontSize, spacing, textAlign);
+        this.addLinesOfText(lettersArray, textReferencePoint, relativeFontSize, spacing, textAlign);
     };
 
     addDashedLine(point1, point2, numDashes, thickness) {

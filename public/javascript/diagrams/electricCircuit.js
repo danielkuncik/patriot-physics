@@ -67,6 +67,9 @@ class CircuitDiagram extends Diagram {
                 relativeFontSize = length * 0.35;
             }
         }
+        if (!labelObject) {
+            return undefined
+        }
         let textDisplacement = width * 1.5 + relativeFontSize * 0.5 + extraDisplacement;
         if (Object.keys(labelObject).length === 1) {
             // label object with a single piece of information
@@ -82,12 +85,12 @@ class CircuitDiagram extends Diagram {
             // and all statements will have an 'equals statement'
             let textArray = [];
             Object.keys(labelObject).forEach((quantity) => {
-                let magnitude = String(labelObject[quantity]);
+                let magnitude = labelObject[quantity];
                 textArray.push(this.printCircuitQuantity(magnitude,quantity,true));
             });
             // the LOCATION needs to be adaptive, some of these will just yield an error!
-            super.addLinesNextToSegment(point1, point2, textArray,'right',extraDisplacement,relativeFontSize,undefined);
-        } else if (Object.keys(labelObject).length === 0 || labelObject === undefined ) {
+            super.addLinesNextToSegment(point1, point2, textArray,'right', width + extraDisplacement,relativeFontSize,undefined);
+        } else if (Object.keys(labelObject).length === 0) {
             //no information
             //pass, do nothing
         }
@@ -96,33 +99,37 @@ class CircuitDiagram extends Diagram {
         }
     }
 
-    printCircuitQuantity(magnitude, quantity, includeEqualStatement) {
-        let unit, symbol;
-        if (quantity === 'V') {
-            unit = 'V';
-            symbol = 'ΔV';
-        } else if (quantity === 'I') {
-            unit = 'A';
-            symbol = 'I';
-        } else if (quantity === 'R') {
-            unit = 'Ω';
-            symbol = 'R';
-        } else if (quantity === 'P') {
-            unit = 'W';
-            symbol = 'P';
-        } else {
-            unit = '';
-            symbol = '';
-            // youll just get an equals sign and a number
-        }
+    printCircuitQuantity(magnitudeOrString, quantity, includeEqualStatement) {
+        if (typeof(magnitudeOrString) === 'string') { // if a string is entered
+            return  magnitudeOrString
+        } else if (typeof(magnitudeOrString) === 'number') { // if a number is entered
+            let magnitude = magnitudeOrString;
+            let unit, symbol;
+            if (quantity === 'V') {
+                unit = 'V';
+                symbol = 'ΔV';
+            } else if (quantity === 'I') {
+                unit = 'A';
+                symbol = 'I';
+            } else if (quantity === 'R') {
+                unit = 'Ω';
+                symbol = 'R';
+            } else if (quantity === 'P') {
+                unit = 'W';
+                symbol = 'P';
+            } else {
+                unit = '';
+                symbol = '';
+            }
 
-        let statement;
-        if (includeEqualStatement) {
-            statement = `${symbol} = ${magnitude} ${unit}`;
-        } else {
-            statement = `${magnitude} ${unit}`;
+            let statement;
+            if (includeEqualStatement) {
+                statement = `${symbol} = ${magnitude} ${unit}`;
+            } else {
+                statement = `${magnitude} ${unit}`;
+            }
+            return statement
         }
-        return statement
     }
 
 
@@ -150,8 +157,14 @@ class CircuitDiagram extends Diagram {
     }
 
     // a simpler functions to add resistors
-    addResistorSimple(directionInput,length,resistance,relativeFontSize) {
-        this.addResistor(directionInput, length, {'R': resistance},undefined,relativeFontSize, undefined, undefined);
+    addResistorSimple(directionInput,length,resistanceOrLabelObject,relativeFontSize) {
+        let labelObject;
+        if (typeof(resistanceOrLabelObject) === 'string' || typeof(resistanceOrLabelObject) === 'number') {
+            labelObject = {"R": resistanceOrLabelObject};
+        } else if (typeof(resistanceOrLabelObject) === 'object') {
+            labelObject = resistanceOrLabelObject;
+        }
+        this.addResistor(directionInput, length, labelObject,undefined,relativeFontSize, undefined, undefined);
     }
 
     addParallelResistors(directionInput, length, resistorArray, width) {
@@ -271,8 +284,14 @@ class CircuitDiagram extends Diagram {
         this.translateCursorPolar(length, thetaInRadians);
     }
 
-    addCellSimple(directionInput, length, voltage, numBatteries) {
-        this.addCell(directionInput, length, {"V": voltage}, undefined, numBatteries, undefined, undefined);
+    addCellSimple(directionInput, length, voltageOrLabelObject, numBatteries) {
+        let labelObject;
+        if (typeof(voltageOrLabelObject) === 'number' || typeof(voltageOrLabelObject) === 'string') {
+            labelObject = {"V": voltageOrLabelObject};
+        } else if (typeof(voltageOrLabelObject) === 'object') {
+            labelObject = voltageOrLabelObject;
+        }
+        this.addCell(directionInput, length, labelObject, undefined, numBatteries, undefined, undefined);
     }
 
 }

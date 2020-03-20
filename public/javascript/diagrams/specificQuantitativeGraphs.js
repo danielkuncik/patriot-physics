@@ -78,7 +78,9 @@ class ElectricPotentialGraph {
             this.addResistor(stepArray[k],current, infoLinesBoolean);
             this.addWire(current);
         }
-        this.addResistor(stepArray[stepArray.length - 1], current, infoLinesBoolean);
+        if (stepArray.length > 1) {
+            this.addResistor(stepArray[stepArray.length - 1], current, infoLinesBoolean); // add the last resistor
+        }
     }
 
     moveToEndOfRow(verticalPosition) {
