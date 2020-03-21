@@ -1,0 +1,129 @@
+<h5>Newton's First Law</h5>
+<table>
+    <tr>
+        <th>
+            Net Force
+        </th>
+        <th>
+            Motion of Object
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Net Force = 0 and object is not moving
+        </td>
+        <td>
+            Object remains still
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net Force = 0 and the object is moving
+        </td>
+        <td>
+            Object moves with a constant velocity
+        </td>
+    </tr>
+</table>
+<br>
+<h5>Newton's Second Law</h5>
+<table>
+    <tr>
+        <th>
+            Net Force
+        </th>
+        <th>
+            Motion of Object
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Net Force is in the same direction as velocity
+        </td>
+        <td>
+            Object increases in speed.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net force is in the opposite direction as velocity
+        </td>
+        <td>
+            Object decreases in speed.
+        </td>
+    </tr>
+</table>
+
+<p class = 'directions'>
+    Each of the following examples presents a particular situation,
+    and a series of free-body diagrams.
+    For full credit on each question you must:
+<ul>
+    <li>
+        Use Newton's Model to describe what the correct motion <i>would</i> be if that were the correct free-body diagram.
+    </li>
+    <li>
+        Use this analysis to determine the correct answer and defend your answer in words.
+    </li>
+    <li>
+        If any of the incorrect answers includes a force that could not exist in reality, indicate this.
+    </li>
+</ul>
+</p>
+
+<p>
+    Mario** kicks a green shell to the right. It moves forward in a straight line at a constant speed forever.
+    Select the correct free-body diagram of the shell after leaving Mario's foot.
+</p>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-6' id = 'problemK1A'>
+            A. <br>
+        </div>
+        <div class = 'col-6' id = 'problemK1B'>
+            B. <br>
+        </div>
+    </div>
+</div>
+<p>Don't forget the back!</p>
+<div class="pageBreak"></div>
+<p>
+    Mario kicks a red shell directly up into the air. It rises and falls as it would on earth.
+    What is the correct free-body diagram for the red shell after leaving Mario's foot?.
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-4' id = 'problemK2A'>
+            A. <br>
+        </div>
+        <div class = 'col-4' id = 'problemK2B'>
+            B. <br>
+        </div>
+        <div class = 'col-4' id = 'problemK2C'>
+            C. <br>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let problemK1A = fastFBD([['up','Normal Force'],['down','Gravity'],['right','Kick']]);
+    let problemK1B = fastFBD([['up','Normal Force'],['down','Gravity']]);
+
+    $("#problemK1A").append(problemK1A.drawCanvas(300,300));
+    $("#problemK1B").append(problemK1B.drawCanvas(300,300));
+
+
+    let problemK2A = fastFBD([['up', 'Kick'], ['down', 'Gravity']]); // need to change the relative magnitude of these forces
+    let problemK2B = fastFBD([['up', 'Kick'], ['down', 'Gravity']]);
+    let problemK2C = fastFBD([['down', 'Gravity']]);
+
+    $("#problemK2A").append(problemK2A.drawCanvas(300,300));
+    $("#problemK2B").append(problemK2B.drawCanvas(300,300));
+    $("#problemK2C").append(problemK2C.drawCanvas(300,300));
+</script>
+
+<p>
+    **Assume that all the laws of physics apply in the Mushroom Kingdom.
+</p>

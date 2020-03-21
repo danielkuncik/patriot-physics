@@ -1,0 +1,140 @@
+<h5>Newton's First Law</h5>
+<table>
+    <tr>
+        <th>
+            Net Force
+        </th>
+        <th>
+            Motion of Object
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Net Force = 0 and object is not moving
+        </td>
+        <td>
+            Object remains still
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net Force = 0 and the object is moving
+        </td>
+        <td>
+            Object moves with a constant velocity
+        </td>
+    </tr>
+</table>
+<br>
+<h5>Newton's Second Law</h5>
+<table>
+    <tr>
+        <th>
+            Net Force
+        </th>
+        <th>
+            Motion of Object
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Net Force is in the same direction as velocity
+        </td>
+        <td>
+            Object increases in speed.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net force is in the opposite direction as velocity
+        </td>
+        <td>
+            Object decreases in speed.
+        </td>
+    </tr>
+</table>
+
+<p class = 'directions'>
+    Each of the following examples presents a particular situation,
+    and a series of free-body diagrams.
+    For full credit on each question you must:
+<ul>
+    <li>
+        Use Newton's Model to describe what the correct motion <i>would</i> be if that were the correct free-body diagram.
+    </li>
+    <li>
+        Use this analysis to determine the correct answer and defend your answer in words.
+    </li>
+    <li>
+        If any of the incorrect answers violates the principle of contact forces, indicate this..
+    </li>
+</ul>
+</p>
+
+<p>
+    Somebody sleds down a hill and has a great time!
+    After they reach the bottom of the hill, they slide for awhile on the flat surface
+    while slowing down until coming to a stop.
+    In the diagrams below, the sled is moving to the left!
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-4' id = 'problemL1A'>
+            A. <br>
+        </div>
+        <div class = 'col-4' id = 'problemL1B'>
+            B. <br>
+        </div>
+        <div class = 'col-4' id = 'problemL1C'>
+            C. <br>
+        </div>
+    </div>
+</div>
+<p>Don't forget the back!</p>
+<div class="pageBreak"></div>
+
+<p>
+    Someone is driving a car to the right at a constant velocity.
+    Select the correct free-body diagram for the car.
+    Assume that only air resistance, not friction, is the force resisting the car's motion.
+    The force of the car's engine is called the <strong>thrust</strong>.
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-4' id = 'problemL2A'>
+            A. <br>
+        </div>
+        <div class = 'col-4' id = 'problemL2B'>
+            B. <br> (Note: "air" and "normal" are identical to "air resistance" and "normal force.") <br>
+        </div>
+        <div class = 'col-4' id = 'problemL2C'>
+            C. <br>
+        </div>
+    </div>
+</div>
+
+<p></p>
+
+
+<script>
+    let problemL1A = fastFBD([['up','Normal Force'],['down','Gravity'],['right','friction']]);
+    let problemL1B = fastFBD([['up','Normal Force'],['down','Gravity'],['right','friction'],['left','applied force']]);
+    let problemL1C = fastFBD([['up','Normal Force'],['down','Gravity']]);
+
+    $("#problemL1A").append(problemL1A.drawCanvas(300,300));
+    $("#problemL1B").append(problemL1B.drawCanvas(300,300));
+    $("#problemL1C").append(problemL1C.drawCanvas(300,300));
+
+    let problemL2A = fastFBD([['right','thrust',1],['left','air resistance',1],['up','normal force',1], ['down','gravity',1]]);
+    let problemL2B = fastFBD([['right','thrust',2],['left','air',1],['up','normal'], ['down','gravity',1]]);
+    let problemL2C = fastFBD([['right','thrust',0.5],['left','air resistance',1],['up','normal force',1], ['down','gravity',1]]);
+
+
+
+    $("#problemL2A").append(problemL2A.drawCanvas(300,300));
+    $("#problemL2B").append(problemL2B.drawCanvas(300,300));
+    $("#problemL2C").append(problemL2C.drawCanvas(300,300));
+
+</script>

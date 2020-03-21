@@ -1,0 +1,117 @@
+<h5>Newton's Model</h5>
+<table>
+    <tr>
+        <th>
+            Net Force
+        </th>
+        <th>
+            Motion of Object
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Net Force = 0 and object is not moving
+        </td>
+        <td>
+            Object remains still
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net Force = 0 and the object is moving
+        </td>
+        <td>
+            Object moves with a constant velocity
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net Force is in the same direction as velocity
+        </td>
+        <td>
+            Object increases in speed.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Net force is in the opposite direciton as velocity
+        </td>
+        <td>
+            Object decreases in speed.
+        </td>
+    </tr>
+</table>
+
+<p class = 'directions'>
+    For each of the following situations, state if the net force is equal to zero or it is not.
+</p>
+
+<ol>
+    <li class = 'physicsQuestion'>
+        A book sitting on a table.
+    </li>
+    <li class = 'physicsQuestion'>
+        A ball rolling down a ramp.
+    </li>
+    <li class = 'physicsQuestion'>
+        A biker moving at a constant velocity.
+    </li>
+    <li class = 'physicsQuestion'>
+        A tile that feel off of the roof.
+    </li>
+</ol>
+
+
+<p class = 'directions'>
+    For each of the following diagrams, determine what the motion of the object would be.
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-4' id = 'problemB1'>
+            The velocity is to the RIGHT: <br>
+        </div>
+        <div class = 'col-6'>
+            <ol type = 'A'>
+                <li>Moves at a constant velocity</li>
+                <li>Increases in speed</li>
+                <li>Decreases in speed</li>
+            </ol>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-4' id = 'problemB2'>
+            The velocity is to the RIGHT: <br>
+        </div>
+        <div class = 'col-6'>
+            <ol type = 'A'>
+                <li>Moves at a constant velocity</li>
+                <li>Increases in speed</li>
+                <li>Decreases in speed</li>
+            </ol>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-4' id = 'problemB3'>
+            The velocity is to the RIGHT: <br>
+        </div>
+        <div class = 'col-6'>
+            <ol type = 'A'>
+                <li>Moves at a constant velocity</li>
+                <li>Increases in speed</li>
+                <li>Decreases in speed</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let problemB1 = fastFBD([[30,'right'],[20,'left']]);
+    let problemB2 = fastFBD([[30,'right'],[30,'left']]);
+    let problemB3 = fastFBD([[20,'right'],[30,'left']]);
+
+    $("#problemB1").append(problemB1.drawCanvas(300,300));
+    $("#problemB2").append(problemB2.drawCanvas(300,300));
+    $("#problemB3").append(problemB3.drawCanvas(300,300));
+</script>
