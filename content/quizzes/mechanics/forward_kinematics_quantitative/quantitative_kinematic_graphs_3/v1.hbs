@@ -1,0 +1,81 @@
+<p class = 'directions'>
+    Using the graphs below, answer each of the questions asked.
+    You must do so using one of the <i>kinematic equations</i>.
+    Please write out each equation you use <i>before</i> plugging any numbers
+    into the equation.
+</p>
+
+<ol>
+    <li class = 'smallQuestion'><br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id ='I1'></div>
+                <div class = 'col-6-md'>
+                    Determine the final velocity of the object.
+                    Note that the graph is flat at t = 0.
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class = 'smallQuestion'><br> <!--- Big problem with this question !--->
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = 'I2'></div>
+                <div class = 'col-6-md'>
+                    Determine the acceleration of the object.
+                    Note that the graph is flat at t = 0.8 s.
+                </div>
+            </div>
+        </div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'smallQuestion'> <br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = "I3"></div>
+                <div class = 'col-6-md'>
+                    <ol type = 'a'>
+                        <li>Determine the displacement of the object.</li>
+                        <li>Determine the acceleration of the object.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class = 'physicsQuestion'><br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = 'I4'></div>
+                <div class = 'col-6-md'>
+                    The following object has an initial velocity of 8 m/s.
+                    <ol type = 'a'>
+                        <li>Determine the final velocity of the object.</li>
+                        <li>Determine the displacement of the object</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </li>
+</ol>
+
+<script>
+    /// function makeParabolicPTgraph(tMax, positionMax, acceleration, initialVelocity, initialPosition)
+    let I1 = makeParabolicPTgraph(20,undefined,3,0,0);
+    $("#I1").append(I1.drawCanvas(300,300));
+
+    let I2 = makeParabolicPTgraph(0.8, undefined, -0.02, 0.016, 0); <!-- ???? this graph is a line! -->
+    $("#I2").append(I2.drawCanvas(300,300));
+
+    let I3 = new QuantitativeGraph(0,20,0,3);
+    I3.labelAxes('time (s)', 'velocity (m/s)');
+    I3.addReferenceArray([4,8,12,16,20],[.5,1.5,2,2.5,3]);
+    I3.addSegmentWithCirclesOnEnds(0,2.5,20,0);
+    $("#I3").append(I3.drawCanvas(300,300));
+
+    let I4 = new QuantitativeGraph(0,0.5,-5,0);
+    I4.labelAxes('time (s)', 'acceleration (m/s/s)');
+    I4.addReferenceArray([0.5],[-3]);
+    I4.addSegmentWithCirclesOnEnds(0,-3,0.5,-3);
+    $("#I4").append(I4.drawCanvas(300,300));
+</script>

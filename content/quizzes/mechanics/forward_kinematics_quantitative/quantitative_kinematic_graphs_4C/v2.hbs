@@ -1,0 +1,81 @@
+<p class = 'directions'>
+    Use the acceleration-time graphs below to create corresponding position-time and acceleration-time graphs.
+    You must complete each problem without the use of a graphing calculator.
+    When solving each problem, please write down any formulas you use before plugging numbers into them.
+    You must show the kinematic equations you use in order to solve the problems.
+    <br>
+    If you do know calculus, please also solve the problems without using differentiation or integration.
+    If you know how to use these methods, you may do them as well,
+    but I want to see that you know how to figure out the problems using algebra alone.
+</p>
+
+<ol>
+    <li class = 'physicsQuestion'><br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = "M1-acceleration"></div>
+                <div class = 'col-6-md'>
+                    Initial Position = 0.
+                    <br>
+                    Initial Velocity = 0 m/s.
+                </div>
+            </div>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = 'M1-position'></div>
+                <div class = 'col-6-md' id = 'M1-velocity'></div>
+            </div>
+        </div>
+    </li>
+    <div class = 'pageBreak'>MORE ON THE BACK!</div>
+    <li class = 'physicsQuestion'><br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = "M2-acceleration"></div>
+                <div class = 'col-6-md'>
+                    Initial Position = 0
+                    Initial Velocity = 12 m/s
+                </div>
+            </div>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = 'M2-position'></div>
+                <div class = 'col-6-md' id = 'M2-velocity'></div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
+<script>
+    let M1acceleration = new QuantitativeGraph(0,10,0,8);
+    M1acceleration.labelAxes('time (s)', 'acceleration (m/s/s)');
+    M1acceleration.addReferenceArray([5,10],[2,4,6,8]);
+    M1acceleration.addSegmentWithCirclesOnEnds(0,6,10,6);
+    $("#M1-acceleration").append(M1acceleration.drawCanvas(300,300));
+
+    let M1velocity = new QuantitativeGraph(0,10,0,80);
+    M1velocity.labelAxes('time (s)', 'velocity (m/s)');
+    M1velocity.addReferenceArray([5,10],[20,40,60,80]);
+    $("#M1-velocity").append(M1velocity.drawCanvas(300,300));
+
+    let M1position = new QuantitativeGraph(0,10,0,400);
+    M1position.labelAxes('time (s)', 'position (m)');
+    M1position.addReferenceArray([5,10],[100,200,300,400]);
+    $("#M1-position").append(M1position.drawCanvas(300,300));
+
+    let M2acceleration = new QuantitativeGraph(0,0.6,-25,0);
+    M2acceleration.labelAxes('time (s)', 'acceleration (m/s/s)');
+    M2acceleration.addReferenceArray([0.2,0.4,0.6],[-10,-20]);
+    M2acceleration.addSegmentWithCirclesOnEnds(0,-20,0.6,-20);
+    $("#M2-acceleration").append(M2acceleration.drawCanvas(300,300));
+
+    let M2velocity = new QuantitativeGraph(0,0.6,0,20);
+    M2velocity.labelAxes('time (s)', 'velocity (m/s)');
+    M2velocity.addReferenceArray([0.2,0.4,0.6],[4,8,12,16,20]);
+    $("#M2-velocity").append(M2velocity.drawCanvas(300,300));
+
+    let M2position = new QuantitativeGraph(0,0.6,0,7);
+    M2position.labelAxes('time (s)', 'position (m)');
+    M2position.addReferenceArray([0.2,0.4,0.6],[2.16,4.32,6.48]);
+    $("#M2-position").append(M2position.drawCanvas(300,300));
+
+</script>

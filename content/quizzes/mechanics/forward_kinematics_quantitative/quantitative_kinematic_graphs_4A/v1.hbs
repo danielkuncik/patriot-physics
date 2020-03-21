@@ -1,0 +1,70 @@
+<p class = 'directions'>
+    Use the position-time graphs below to create corresponding velocity-time and acceleration-time graphs.
+    You must complete each problem without the use of a graphing calculator.
+    When solving each problem, please write down any formulas you use before plugging numbers into them.
+    You must show the kinematic equations you use in order to solve the problems.
+    <br>
+    If you do know calculus, please also solve the problems without using differentiation or integration.
+    If you know how to use these methods, you may do them as well,
+    but I want to see that you know how to figure out the problems using algebra alone.
+</p>
+
+<ol>
+    <li class = 'physicsQuestion'><br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = "K1-position"></div>
+                <div class = 'col-6-md'>
+                    Note that the curve is flat at t = 0.
+                </div>
+            </div>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = 'K1-velocity'></div>
+                <div class = 'col-6-md' id = 'K1-acceleration'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'physicsQuestion'><br>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = "K2-position"></div>
+                <div class = 'col-6-md'>Note that the curve is flat at t = 60 s.</div>
+            </div>
+            <div class = 'row'>
+                <div class = 'col-6-md' id = 'K2-velocity'></div>
+                <div class = 'col-6-md' id = 'K2-acceleration'></div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+<script>
+    let K1positon = makeParabolicPTgraph(20,undefined,4,0);
+    K1positon.addReferenceArray([5,10,15],[200,400,600]);
+    $("#K1-position").append(K1positon.drawCanvas(300,300));
+
+    let K1velocity = new QuantitativeGraph(0,20,0,100);
+    K1velocity.addReferenceArray([5,10,15,20],[20,40,60,80,100]);
+    K1velocity.labelAxes('time (s)', 'velocity (m/s)');
+    $("#K1-velocity").append(K1velocity.drawCanvas(300,300));
+
+    let K1acceleration = new QuantitativeGraph(0,20,0,8);
+    K1acceleration.addReferenceArray([5,10,15,20],[2,4,6,8]);
+    K1acceleration.labelAxes('time (s)', 'acceleration (m/s/s)');
+    $("#K1-acceleration").append(K1acceleration.drawCanvas(300,300));
+
+    let K2position = makeParabolicPTgraph(60,undefined,-1.2,72);
+    K2position.addReferenceArray([20,40],[500,1000,1500]);
+    $("#K2-position").append(K2position.drawCanvas(300,300));
+
+    let K2velocity = new QuantitativeGraph(0,60,0,100);
+    K2velocity.labelAxes('time (s)', 'velocity (m/s)');
+    K2velocity.addReferenceArray([20,40,60],[24,48,72,96]);
+    $("#K2-velocity").append(K2velocity.drawCanvas(300,300));
+
+    let K2acceleration = new QuantitativeGraph(0,60,-2,0);
+    K2acceleration.labelAxes('time (s)', 'acceleration (m/s/s)');
+    K2acceleration.addReferenceArray([20,40,60],[-0.4,-0.8,-1.2,-1.6,-2]);
+    $("#K2-acceleration").append(K2acceleration.drawCanvas(300,300));
+
+</script>
