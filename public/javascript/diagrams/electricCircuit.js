@@ -14,6 +14,12 @@ class CircuitDiagram extends Diagram {
         super();
         this.cursor = origin;
         this.fontSize = undefined;
+        this.automaticallyNameAllResisors = false;
+        this.numResistors = 0;
+    }
+
+    nameAllResistors() {
+        this.automaticallyNameAllResisors = true;
     }
 
     setFontSize(newFontSize) {
@@ -56,9 +62,9 @@ class CircuitDiagram extends Diagram {
     ONLY to be used within other functions!
     NOT to be used on its own!
      */
-    labelElement(point1, point2, labelObject, name, relativeFontSize, width, extraDisplacement, primaryInformation, textLocation) {
-        if (textLocation === undefined) {
-            textLocation = 'clockwise';
+    labelElement(point1, point2, labelObject, name, relativeFontSize, width, extraDisplacement, primaryInformation, textOrientation) {
+        if (textOrientation === undefined) {
+            textOrientation = 'clockwise';
         }
 
         const length = point1.getDistanceToAnotherPoint(point2);
@@ -81,7 +87,7 @@ class CircuitDiagram extends Diagram {
             // if the information is the primary information, it just gives the quantity
             // otherwise, a statement shows
             // primary information: potential difference for cells, resistance for resistors, current for wires, etc.
-            super.labelLineAbove(point1, point2, labelAbove, textDisplacement, relativeFontSize);
+            super.labelLineOutside(point1, point2, labelAbove, textDisplacement, relativeFontSize, textOrientation);
         } else if (Object.keys(labelObject).length > 1) {
             // label object with multiple pieces of information
             // it will automatically go to LINES of information
@@ -92,20 +98,22 @@ class CircuitDiagram extends Diagram {
                 textArray.push(this.printCircuitQuantity(magnitude,quantity,true));
             });
             // the LOCATION needs to be adaptive, some of these will just yield an error!
-            super.addLinesNextToSegment(point1, point2, textArray,textLocation, width + extraDisplacement,relativeFontSize,undefined);
+            super.addLinesNextToSegment(point1, point2, textArray,textOrientation, width + extraDisplacement,relativeFontSize,undefined);
         } else if (Object.keys(labelObject).length === 0) {
             //no information
             //pass, do nothing
         }
         if (name) {
-            super.labelLineBelow(point1, point2, name, textDisplacement, relativeFontSize);
+            // it needs to be on the opposite side, every time!
+            super.labelLineInside(point1, point2, name, textDisplacement, relativeFontSize, textOrientation);
+            // will work if it stays clockwise
         }
     }
 
     printCircuitQuantity(magnitudeOrString, quantity, includeEqualStatement) {
         if (typeof(magnitudeOrString) === 'string') { // if a string is entered
             return  magnitudeOrString
-        } else if (typeof(magnitudeOrString) === 'number') { // if a number is entered
+        } else if (typeof(magnitudeOrString) === 'number' || magnitudeOrString === undefined) { // if a number is entered
             let magnitude = magnitudeOrString;
             let unit, symbol;
             if (quantity === 'V') {
@@ -124,12 +132,18 @@ class CircuitDiagram extends Diagram {
                 unit = '';
                 symbol = '';
             }
+            let value;
+            if (magnitude === undefined) {
+                value = '  ';
+            } else {
+                value = `${magnitude} ${unit}`;
+            }
 
             let statement;
             if (includeEqualStatement) {
-                statement = `${symbol} = ${magnitude} ${unit}`;
+                statement = `${symbol} = ${value}`;
             } else {
-                statement = `${magnitude} ${unit}`;
+                statement = `${value}`;
             }
             return statement
         }
@@ -138,6 +152,11 @@ class CircuitDiagram extends Diagram {
 
 
     addResistor(directionInput, length, labelObject, name, relativeFontSize, width, numZigZags) {
+        if (name === undefined && this.automaticallyNameAllResisors) {
+            name = `R${alphabetArrayLowercase[this.numResistors]}`
+        }
+        this.numResistors += 1;
+
         if (numZigZags === undefined) {
             numZigZags = 3;
         }
@@ -160,14 +179,14 @@ class CircuitDiagram extends Diagram {
     }
 
     // a simpler functions to add resistors
-    addResistorSimple(directionInput,length,resistanceOrLabelObject,relativeFontSize) {
+    addResistorSimple(directionInput,length,resistanceOrLabelObject,relativeFontSize, name) {
         let labelObject;
         if (typeof(resistanceOrLabelObject) === 'string' || typeof(resistanceOrLabelObject) === 'number') {
             labelObject = {"R": resistanceOrLabelObject};
         } else if (typeof(resistanceOrLabelObject) === 'object') {
             labelObject = resistanceOrLabelObject;
         }
-        this.addResistor(directionInput, length, labelObject,undefined,relativeFontSize, undefined, undefined);
+        this.addResistor(directionInput, length, labelObject,name,relativeFontSize, undefined, undefined);
     }
 
     addParallelResistors(directionInput, length, resistorArray, width) {
@@ -186,7 +205,7 @@ class CircuitDiagram extends Diagram {
         if (numResistors > 1) {
             for (k = 0; k < numResistors; k++) {
                 this.addWire(thetaInRadians, length * 0.25);
-                this.addResistor(thetaInRadians, length*0.5,printResistance(resistorArray[k]));
+                this.addResistorSimple(thetaInRadians, length*0.5,resistorArray[k]);
                 this.addWire(thetaInRadians, length * 0.25);
                 this.translateCursorPolar(length, -1 * thetaInRadians);
                 this.translateCursorPolar(width / (numResistors - 1),  Math.PI + perpendicularAngle);
@@ -203,8 +222,34 @@ class CircuitDiagram extends Diagram {
     }
 
 
+    addSeriesResistors(directionInput, length, resistorArray, lockedResistorLength) {
+        const numResistors = resistorArray.length;
+        const numWireSections = numResistors + 1;
+        let resistorLength;
+        if (lockedResistorLength) {
+            resistorLength = lockedResistorLength;
+        } else {
+            resistorLength = length / (numResistors + numWireSections);
+        }
+        const wireLength = (length - resistorLength * numResistors) / numWireSections;
+
+        this.addWire(directionInput, wireLength);
+        let k;
+        for (k = 0; k < numResistors; k++) {
+            this.addResistorSimple(directionInput, resistorLength, resistorArray[k]);
+            this.addWire(directionInput, wireLength);
+        }
+        // that's all folks!
+    }
+
+
     ///I want to replace 'addListOfElements' with more of a cursor type program
-    translateCursor(xTranslation, yTranslation) {
+    translateCursor(directionInput, length) {
+        let directionInRadians = processDirectionInput(directionInput);
+        this.translateCursorPolar(length, directionInRadians);
+    }
+
+    translateCursorRectangonal(xTranslation, yTranslation) {
         this.cursor.translate(xTranslation, yTranslation);
     }
     translateCursorPolar(length, directionInRadians) {
@@ -365,7 +410,7 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
         myCircuit.addResistorSimple('down',3,resistorArray[k]);
         myCircuit.addWire('down',2);
         myCircuit.addWire('left',4);
-        myCircuit.translateCursor(4,7);
+        myCircuit.translateCursorRectangonal(4,7);
     }
     myCircuit.translateCursorAbsolute(0,-2);
     myCircuit.addWire('up',2);

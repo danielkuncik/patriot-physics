@@ -107,11 +107,39 @@
     // Problem 1
 
     let problem1Circuit = new CircuitDiagram();
+    let RaLabel = {
+        "V": undefined,
+        "I": undefined,
+        "R": 10
+    };
+    let RbLabel = {
+        "V": undefined,
+        "I": undefined,
+        "R": 5
+    };
+    let RcLabel = {
+        "V": undefined,
+        "I": undefined,
+        "R": 15
+    };
 
-    problem1Circuit.addCell('up',3,'40 V');
-    problem1Circuit.addWire('up',9);
+    problem1Circuit.nameAllResistors();
+    problem1Circuit.setFontSize(1);
+    problem1Circuit.addCellSimple('up',3,40);
+    problem1Circuit.addWire('up',7.5);
+    problem1Circuit.addWire('right',10);
+    problem1Circuit.addSeriesResistors('down',18,[RaLabel],3);
+    problem1Circuit.translateCursor('up',18);
+    problem1Circuit.addWire('right',10);
+    problem1Circuit.addSeriesResistors('down',18,[RbLabel, RcLabel],3);
+    problem1Circuit.addWire('left',20);
+    problem1Circuit.addWire('up',7.5);
+    $("#problem1Circuit").append(problem1Circuit.drawCanvas(500));
+   // addSeriesResistors(directionInput, length, resistorArray, lockedResistorLength) {
+
 
     //
+    // FOURTH ELEMENT WAS THE
     // // battery
     // problem1Circuit.addElementWithCursor('wire',0,12);
     // problem1Circuit.addElementWithCursor('battery',0,14,40);
@@ -158,7 +186,7 @@
     problem2Circuit.addElementWithCursor('wire',0,0);
 
     // branch 2
-    problem2Circuit.translateCursor(8,18);
+    problem2Circuit.translateCursorRectangonal(8,18);
     problem2Circuit.addElementWithCursor('wire',16,18);
     problem2Circuit.addElementWithCursor('wire',16,14);
     problem2Circuit.addElementWithCursor('resistor',16,11,4,'B');

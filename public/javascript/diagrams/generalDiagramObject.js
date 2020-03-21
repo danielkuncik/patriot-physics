@@ -33,7 +33,7 @@ function getOptimalLocationOfText(point1, point2, turningOrientation) {
 
 
     // optimal spots for counter-clockwise orientation
-    if (angleInRadians >= 0 && angleInRadians < Math.pi / 4) {
+    if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {
         bestSpot = 'below';
     } else if (angleInRadians >= Math.PI / 4 && angleInRadians <= 3 * Math.PI / 4) {
         bestSpot = 'right';
@@ -242,19 +242,21 @@ class Text {
     }
 
     /// need to think about implications of this!
+    /// YES!!! this does not take into account how the rangeBox must change
+    /// when the text alignment is changed
     setAlignmentAndBaseline(newAlignment, newBaseline) {
         this.alignment = newAlignment;
         this.baseline = newBaseline;
     }
 
     centerText() {
-        this.referencePoint = this.rectangle.centerPoint;
+        this.referencePoint = this.rangeBox.centerPoint;
         this.alignment = 'center';
         this.baseline = 'middle';
     }
 
     alignLowerLeftCorner() {
-        this.referencePoint = this.rectangle.lowerLeftPoint;
+        this.referencePoint = this.rangeBox.lowerLeftPoint;
         this.alignment = 'left';
         this.baseline = 'bottom';
     }
@@ -262,13 +264,13 @@ class Text {
 
     rotateCounterClockwise(rotationInRadians) {
         this.rotationAngleInRadians += rotationInRadians;
-        this.rectangle.rotateCounterClockwiseAboutCenter(rotationInRadians);
+        this.rangeBox.rotateCounterClockwiseAboutCenter(rotationInRadians);
     }
 
     setNewRotationAngle(newRotationAngleInRadians) {
-        this.rectangle.rotateCounterClockwiseAboutCenter(-1 * this.rotationAngleInRadians);
+        this.rangeBox.rotateCounterClockwiseAboutCenter(-1 * this.rotationAngleInRadians);
         this.rotationAngleInRadians = newRotationAngleInRadians;
-        this.rectangle.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+        this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
     }
 
 }
@@ -706,6 +708,45 @@ class Diagram {
     labelLineBelow(point1, point2, text, textDisplacement, relativeFontSize) {
         let obj = this.labelLine(point1, point2, undefined, text, textDisplacement, relativeFontSize);
         return obj
+    }
+
+    getOppositeOrientation(orientation) {
+        if (orientation === 'clockwise') {
+            return 'counterclockwise'
+        } else if (orientation === 'counterclockwise') {
+            return 'clockwise'
+        }
+    }
+
+    // these are used for labeling lines outside or inside of a box
+    // the orientation is clockwise or counterclockwise
+    labelLineOutside(point1, point2, text, textDisplacement, relativeFontSize, textOrientation) {
+        if (textOrientation === undefined) {
+            textOrientation = 'clockwise';
+        }
+        let aboveOrBelow;
+        const optimalTextLocation = getOptimalLocationOfText(point1, point2, textOrientation);
+        if (optimalTextLocation === 'left') {
+            aboveOrBelow = 'above';
+        } else if (optimalTextLocation === 'above') {
+            aboveOrBelow = 'above';
+        } else if (optimalTextLocation === 'right') {
+            aboveOrBelow = 'below';
+        } else if (optimalTextLocation === 'below') {
+            aboveOrBelow = 'below';
+        }
+        if (aboveOrBelow === 'below') {
+            this.labelLineBelow(point1, point2, text, textDisplacement, relativeFontSize);
+        } else if (aboveOrBelow === 'above') {
+            this.labelLineAbove(point1, point2, text, textDisplacement, relativeFontSize);
+        }
+    }
+
+    labelLineInside(point1, point2, text, textDisplacement, relativeFontSize, textOrientation) {
+        if (textOrientation === undefined) {
+            textOrientation = 'clockwise';
+        }
+        this.labelLineOutside(point1, point2, text, textDisplacement, relativeFontSize, this.getOppositeOrientation(textOrientation));
     }
 
     // you are not allowed to rotate lines
