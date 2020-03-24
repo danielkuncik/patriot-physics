@@ -4818,7 +4818,7 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["electromagnetic_wave_basics"],
-            "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency (multiple choice)"
+            "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency"
           },
           "choosing_color_by_wavelength":
           {
