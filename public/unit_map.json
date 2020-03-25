@@ -4963,50 +4963,50 @@
           {
             "title": "Basic Infrared Camera",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Explain an infrared camera very simply.",
             "examples":
             [
               "Why do humans appear white on an infrared camera?",
-              "Why does ice appear black on an infrared cameara?"
+              "Why does ice appear black on an infrared camera?"
             ]
           },
           "reflection_color":
           {
             "title": "Reflection and Color",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["basic_infrared_camera"],
             "objective": "Predict how objects of different color will reflect different photons of light."
           },
           "additive_color":
           {
             "title": "Additive Color",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["reflection_color"],
             "objective": "Explain how colors of light combine to make different colors; relate this fact to light from the sun and flourescent lights"
           },
           "long_vs_short_wavelength":
           {
             "title": "Long vs. Short Wavelength",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["additive_color"],
             "objective": "Identify long and short wavelength electromagnetic waves and explain difference in how they would interact."
           },
           "infrared_camera_advanced":
           {
             "title": "Infrared Camera Advanced",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["long_vs_short_wavelength"],
             "objective": "Explain how different objects emit different wavelengths; ex",
             "examples":
             [
@@ -5015,66 +5015,102 @@
               "How do objects of different human color appear on an infrared camera."
             ]
           },
-          "define_radioactivity":
+          "define_radiation":
           {
             "title": "Define Radioactivity",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "F",
+            "prerequisites": ["infrared_camera_advanced"],
             "objective": "Define all the terms that make electromagnetic waves seem scary, such as radioactivity; analyze the relative value of these terms."
+          },
+          "safe_and_dangerous_waves":
+          {
+            "title": "Safe and dangerous waves",
+            "level": 2,
+            "horizontal": 7,
+            "letter": "G",
+            "prerequisites": ["define_radiation"],
+            "objective": "Explain what makes some waves safe and others dangerous. Identify safe and dangerous waves."
           },
           "subtractive_color":
           {
             "title": "Subtractive Color",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "H",
+            "prerequisites": ["safe_and_dangerous_waves"],
             "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color."
           },
           "identify_applications_electromagnetic_waves":
           {
             "title": "Identify Applications of Electromagnetic Waves",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "I",
+            "prerequisites": ["subtractive_color"],
             "objective": "In writing, identify human applications each of types of invisible electromagnetic waves; relate the particular uses of each wave to wavelength, frequency and energy",
             "examples":
             [
-              "What types of wave are most used for communicatio and why?",
+              "What types of wave are most used for communication and why?",
               "How does X-rays allow you to see within your body?",
               "Which types of waves are dangerous and why?",
               "Can dangerous waves be useful, and how."
             ]
           },
+          "long_wavelength_astronomy":
+          {
+            "title": "Long Wavelength Astronomy",
+            "horizontal": 4,
+            "level": 3,
+            "letter": "J",
+            "prerequisites": ["identify_applications_electromagnetic_waves"],
+            "objective": "Explain how astronomers conduct astronomy in the radio, microwave and infrared ranges and what objects they see in these ranges."
+          },
+          "short_wavelength_astronomy":
+          {
+            "title": "Short Wavelength Astronomy",
+            "horizontal": 3,
+            "level": 3,
+            "letter": "K",
+            "prerequisites": ["long_wavelength_astronomy"],
+            "objective": "Explain how astronomers conduct astronomy in the visible, ultraviolet, X-Ray and gamma ray ranges and what objects they see in these ranges."
+          },
           "why_is_the_sky_blue":
           {
             "title": "Why is the sky blue?",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 4,
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["short_wavelength_astronomy"],
             "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue."
           },
           "climate_change":
           {
             "title": "Climate Change",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["why_is_the_sky_blue"],
             "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect."
           },
           "galaxy_in_all_wavelengths":
           {
             "title": "A Galaxy in All Wavelengths",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "N",
+            "prerequisites": ["climate_change"],
             "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum."
+          },
+          "electromagnetic_rube_goldberg_device":
+          {
+            "title": "Electromagnetic Rube Goldberg Device",
+            "level": 6,
+            "horizontal": 3,
+            "letter": "O",
+            "prerequisites": ["galaxy_in_all_wavelengths"],
+            "objective": "Design a hypothetical device that uses each different type of electromagnetic wave to accomplish a small household task."
           }
         }
       },
