@@ -112,6 +112,10 @@ app.get('/labs', [db.check_if_logged_in, disp.display_lab_list_page]);
 
 app.get('/labs/:labKey', [db.check_if_logged_in, disp.display_lab_page]);
 
+
+app.get('/problemSets', [db.check_if_logged_in, disp.display_problemSet_list_page]);
+
+app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_problemSet_page]);
 // app.get('/writing', (req, res) => {
 //     res.render('writingEntryPage.hbs', {
 //         layout:'default',

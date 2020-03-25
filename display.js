@@ -741,10 +741,32 @@ display_lab_list_page = (req, res) => {
     });
 };
 
+display_problemSet_list_page = (req, res) => {
+    res.render('problemSetsEntryPage.hbs', {
+        layout:'default',
+        title:'Problem Set',
+        user: req.user,
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
+    });
+};
+
 display_lab_page = (req, res) => {
     res.render(__dirname + '/content/labs/' + req.params.labKey + '.hbs', {
         layout: 'default',
         title: 'Lab',
+        user: req.user,
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap
+    });
+};
+
+display_problemSet_page = (req, res) => {
+    res.render(__dirname + '/content/problemSets/' + req.params.problemSetKey + '.hbs', {
+        layout: 'default',
+        title: 'Problem Set',
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
@@ -877,6 +899,8 @@ module.exports = {
     display_pod_page,
     display_lab_list_page,
     display_lab_page,
+    display_problemSet_list_page,
+    display_problemSet_page,
     display_quiz_entry_page,
     display_quiz_unit_page,
     display_quiz
