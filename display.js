@@ -803,26 +803,30 @@ display_quiz_unit_page = (req, res) => {
 
 function quizAccess(section, level, enteredPassword) {
     let result = false;
-    if (section === "Violet") {
-        if (level <= 2 || level >= 5) {
-            result = true;
-        } else if (enteredPassword === quizPassword) {
-            result = true;
-        } else {
-            result = false;
-        }
-    } else if (section === "Red" || section || section === "Blue" || section === "Green" || section === 'Orange') {
-        if (level >= 5) {
-            result = true;
-        } else if (enteredPassword === quizPassword) {
-            result = true;
-        } else {
-            result = false;
-        }
-    } else {
+    if (section === "Red" || section || section === "Blue" || section === "Green" || section === 'Orange' || section === 'Violet') {
         result = false;
     }
     return result
+    // if (section === "Violet") {
+    //     if (level <= 2 || level >= 5) {
+    //         result = true;
+    //     } else if (enteredPassword === quizPassword) {
+    //         result = true;
+    //     } else {
+    //         result = false;
+    //     }
+    // } else if (section === "Red" || section || section === "Blue" || section === "Green" || section === 'Orange') {
+    //     if (level >= 5) {
+    //         result = true;
+    //     } else if (enteredPassword === quizPassword) {
+    //         result = true;
+    //     } else {
+    //         result = false;
+    //     }
+    // } else {
+    //     result = false;
+    // }
+    // return result
 }
 
 display_quiz = (req, res) => {
