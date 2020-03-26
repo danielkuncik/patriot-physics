@@ -1769,7 +1769,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "State Newton's Third Law and recognize examples of how it applies."
+            "objective": "State Newton's Third Law and recognize examples of how it applies.",
+            "content": "Newton's Third Law states that if A exerts a force on B, B exerts a force on A with equal magnitude and opposite direction."
           },
           "free_body_diagrams_1":
           {
@@ -1778,7 +1779,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize the forces in the most common free-body diagrams."
+            "objective": "Recognize the forces in the most common free-body diagrams.",
+            "content": "In free-body diagrams, all forces are represented as arrows showing the direction that force acts; the most common forces in our lives are gravity, normal forces, applied forces, friction, and tension."
           },
           "newtons_third_law_2":
           {
@@ -1787,7 +1789,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking."
+            "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking.",
+            "content": "Newtons Third Law allows humans to move by pushing off a surface, and allows a rocket to move by pushing material downward."
           },
           "free_body_diagrams_2":
           {
@@ -1796,7 +1799,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw from memory the most common free-body diagrams."
+            "objective": "Draw from memory the most common free-body diagrams.",
+            "content": "The most common free-body diagrams include a person not moving, an object being pushed, and an object being lifted up."
           },
           "earth_is_round":
           {
@@ -1805,7 +1809,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Properly use the terms gravity and weight; properly identify the direction of the force of weight; identify the reaction force to weight"
+            "objective": "Properly use the terms gravity and weight; properly identify the direction of the force of weight; identify the reaction force to weight",
+            "content": "Physicists use the term weight to describe the force of gravity on a planet; the directions humans call downward is actually inward, towards the center of the earth; the reaction force of our weight is a force we exert on the earth."
           },
           "free_body_diagrams_3A":
           {
@@ -1814,7 +1819,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs."
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs.",
+            "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite"
           },
           "free_body_diagrams_3B": {
             "title": "Free-Body Diagrams 3B: Identify Action-Reaction Force Pairs",
@@ -1823,6 +1829,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs.",
+            "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite",
             "note": "2 more questions on the same topic as 3A"
           },
           "subatomic_contact_forces":
@@ -1832,25 +1839,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Relate contact forces to electrostatic forces. Relate Newton's Third Law to these electrostatic forces."
-          },
-          "breaking_boards":
-          {
-            "title": "Breaking Boards",
-            "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Defend how Newton's Third Law still applies when an object is broken by a force; use the principles of connecting contact forces to  "
-          },
-          "free_body_diagrams_4A":
-          {
-            "title": "Free-Body Diagrams 4A: Multiple Item Free-Body Diagrams and Forming Systems",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; combine free-body diagrams to create systems and identify internal and external forces within the system."
+            "objective": "Relate contact forces to electrostatic forces. Relate Newton's Third Law to these electrostatic forces.",
+            "content": "Contact forces and applied forces are in fact electrostatic forces acting between subatomic particles of two objects."
           },
           "lazy_donkey_paradox":
           {
@@ -1859,7 +1849,18 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Defend how Newton's Third Law still applies when an object is broken by a force."
+            "objective": "Defend how Newton's Third Law still applies when an object is broken by a force.",
+            "content": "Newton's Third Law seems to imply that no object may ever move because two forces always cancel each other out (a paradox), but it does not because the action and reaction forces act on two different objects."
+          },
+          "system_free_body_diagrams":
+          {
+            "title": "System free-body diagrams",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; combine free-body diagrams to create systems and identify internal and external forces within the system.",
+            "content": "Systems can be created by combining all of the forces acting on an object; forces internal to a system are always action-reaction pairs."
           },
           "fundamental_forces":
           {
@@ -1868,7 +1869,8 @@
             "horizontal": 3,
             "letter": "",
             "prerequisites": [],
-            "objective": "Connect each of the major forces we experience to one of the four fundamental forces."
+            "objective": "Connect each of the major forces we experience to one of the four fundamental forces.",
+            "content": "All forces in the universe come from four fundamental forces: gravity, the electromagnetic force, the strong nuclear force, and the weak nuclear force. All forces we experience can be tied to one of these four (mostly the electromagnetic force)."
           },
           "newtons_third_law_3":
           {
@@ -1879,12 +1881,23 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Complete a series of objectives related to more abstract applications of Newton's Third Law.",
+            "content": "As students develop more in depth knowledge of physics, they should see pairs of forces not as one action and a separate reaction but as two forces that always exist together in a duality.",
             "notes":
             [
               "Restate Newton's Third Law in which forces are not 'actions' and 'reactions' but always come in equal pairs.",
               "Show how Newton's Third Law applies to gravity on earth.",
               "Relate contact forces to electrostatic forces and use this relationship to defend Newton's Third Law for contact forces."
             ]
+          },
+          "breaking_boards":
+          {
+            "title": "Breaking Boards",
+            "level": 5,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Defend how Newton's Third Law still applies when an object is broken by a force",
+            "content": "All objects have a maximum value of force they can absorb before breaking, and you cannot apply a force greater than that value to any object, even if you are able."
           }
         }
       },
@@ -6676,15 +6689,91 @@
             "objective": "Connect (nearly) all forms of energy on earth back to light from the sun.",
             "notes": "The exceptions, which should be noted, are geothermal and nuclear energy."
           },
-          "connect_energy_to_dust":
+          "connect_energy_to_big_bang":
           {
-            "title": "Connect Energy to Dust",
+            "title": "Connect Energy to Big Bang",
             "level": 6,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Connect energy of the earth back to the gravitational potential energy of space dust (which would eventually form the sun)",
-            "connections": "Requires knowledge of gravitation and nuclear physics"
+            "objective": "Connect energy of the earth through the gravitational potential energy of space dust (which would eventually form the sun) back to the creation of energy during the big bang",
+            "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology"
+          }
+        }
+      },
+      "cosmology":
+      {
+        "title": "Cosmology",
+        "number": 2,
+        "completed": false,
+        "pods":
+        {
+          "what_is_cosmology":
+          {
+            "title": "What is cosmology?",
+            "level": 1,
+            "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts"
+          },
+          "your_place_in_the_cosmos":
+          {
+            "title": "Your Place in the Cosmos",
+            "level": 1,
+            "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc."
+          },
+          "expansion_of_universe":
+          {
+            "title": "The Expansion of the Universe",
+            "level": 2,
+            "objective": "Explain evidence that the universe is expanding from the red-shift of far away galaxies."
+          },
+          "cosmological_principle":
+          {
+            "title": "The Cosmological Principle",
+            "level": 2,
+            "objective": "Describe evidence the universe is infinite; define the cosmological principle; give arguments in favor of the cosmological principle; "
+          },
+          "infinite_and_expanding":
+          {
+            "title": "Infinite and Expanding?",
+            "level": 3,
+            "objective": "Explain how the universe can be both infinite and expanding."
+          },
+          "big_bang":
+          {
+            "title": "The Big Bang",
+            "level": 3,
+            "objective": "Explain how scientists created the big bang theory; properly define the big bang."
+          },
+          "stages_of_universe":
+          {
+            "title": "Stages of the Universe",
+            "level": 4,
+            "objective": "Explain the stages of the development of the universe according to the big bang theory."
+          },
+          "comic_microwave_background":
+          {
+            "title": "The Cosmic Microwave Background",
+            "level": 4,
+            "objective": "Explain the existence and discovery of the cosmic microwave background; examine how it gives evidence for the big bang theory"
+          },
+          "big_bang_limitations":
+          {
+            "title": "Big Bang Limitations",
+            "level": 4,
+            "objective": "Explain limitations of the big bang theory and open questions within cosmology"
+          },
+          "your_own_brief_history_of_time":
+          {
+            "title": "Your Own Brief History of Time",
+            "level": 5,
+            "objective": "Tell the story of the history of the universe, the solar system, the earth, life on earth, humans, and yourself beginning with the Big Bang and ending with this moment.",
+            "note": "Must incorporate information from physics, chemistry, biology, history, and any other relevant field"
+          },
+          "alternative_universes":
+          {
+            "title": "Alternative Universes",
+            "level": 6,
+            "objective": "Within the big bang theory, imagine how if some variables were different our own experience in the universe would be different."
           }
         }
       }
