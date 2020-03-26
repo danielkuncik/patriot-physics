@@ -4807,7 +4807,6 @@
           }
         }
       },
-
       "the_electromagnetic_spectrum_quantitative":
       {
         "title": "The Electromagnetic Spectrum: Quantitative",
@@ -4820,7 +4819,6 @@
           "These three values are related by fundamental constants.",
           "Frequency and energy are directly proportional, while wavelength is inversely proportional to both."
         ],
-        "notes": "This unit needs work.",
         "completed": true,
         "honors": true,
         "pods":
@@ -4884,7 +4882,7 @@
             "level": 3,
             "horizontal": 2,
             "letter": "F",
-            "prerequisites": ["choosing_electromagnetic_wave_by_wavelength_A"],
+            "prerequisites": ["classify_electromagnetic_wave_by_wavelength_1"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "Includes values in metric units.",
             "content": "The wavelength of an electromagnetic wave can is frequently expressed in metric units; by understanding these metric units a physicist can better classify electromagnetic waves."
@@ -4895,13 +4893,13 @@
             "level": 3,
             "horizontal": 3,
             "letter": "G",
-            "prerequisites": ["choosing_electromagnetic_wave_by_wavelength_B"],
+            "prerequisites": ["classify_electromagnetic_wave_by_wavelength_2"],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step",
             "content": "Physicists use two key formulas to relate the wavelength, frequency, and energy of an electromagnetic photon."
           },
-          "wave_proportionality":
+          "electromagnetic_wave_proportionality":
           {
-            "title": "Wave proportionality",
+            "title": "Electromagnetic Wave Proportionality",
             "level": 3,
             "horizontal": 4,
             "letter": "H",
@@ -4915,7 +4913,7 @@
             "level": 4,
             "horizontal": 4,
             "letter": "I",
-            "prerequisites": ["wave_proportionality"],
+            "prerequisites": ["electromagnetic_wave_proportionality"],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form",
             "content": "Because the wavelength, frequency, and energy electromagnetic photons comprise such as wide range of magnitudes, rarely used metric units are frequently used to express them; these units must be properly converted before and after using any formula"
           },
