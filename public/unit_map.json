@@ -4842,7 +4842,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["electromagnetic_wave_basics"],
-            "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency"
+            "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency",
+            "content": "Each color has a specific wavelength and frequency that defines that color; each type of electromagnetic wave has a specific wavelength and frequency that define that wave; wavelength and frequency are inversely proportional"
           },
           "choosing_color_by_wavelength":
           {
@@ -4851,7 +4852,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["electromagnetic_spectrum_1"],
-            "objective": "For visible electromagnetic waves of specific wavelengths, determine the color of that wave."
+            "objective": "For visible electromagnetic waves of specific wavelengths, determine the color of that wave.",
+            "content": "The wavelength of each electromagnetic wave determines what color that wave is; visible light spans from 400 nm to 700 nm"
           },
           "electromagnetic_spectrum_2":
           {
@@ -4860,27 +4862,32 @@
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["choosing_color_by_wavelength"],
-            "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer)."
+            "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer).",
+            "content": "The electromagnetic spectrum can be broken into six invisible waves and six visible colors; these categories have different wavelength, frequency, and energy; all electromagnetic waves have the same speed."
           },
-          "choosing_electromagnetic_wave_by_wavelength_A":
+          "classify_electromagnetic_wave_by_wavelength_1":
           {
-            "title": "Choosing Electromagnetic Wave by Wavelength A",
+            "title": "Classify Electromagnetic Wave by Wavelength 1",
+            "subtitle": "Scientific Notation",
             "level": 2,
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["electromagnetic_spectrum_2"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
-            "limits": "All values are given in SI scientific notation and not in metric units"
+            "limits": "All values are given in SI scientific notation and not in metric units",
+            "content": "Any electromagnetic wave is categorized into a particular type by its wavelength; wavelength can span from over one meter to 10^-12 m, so a through knowledge of scientific notation is necessary to properly categorize waves."
           },
-          "choosing_electromagnetic_wave_by_wavelength_B":
+          "classify_electromagnetic_wave_by_wavelength_2":
           {
-            "title": "Choosing Electromagnetic Wave by Wavelength B",
+            "title": "Classify Electromagnetic Wave by Wavelength 2",
+            "subtitle": "Metric Units",
             "level": 3,
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["choosing_electromagnetic_wave_by_wavelength_A"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
-            "limits": "Includes values in metric units."
+            "limits": "Includes values in metric units.",
+            "content": "The wavelength of an electromagnetic wave can is frequently expressed in metric units; by understanding these metric units a physicist can better classify electromagnetic waves."
           },
           "photon_formulas_1":
           {
@@ -4889,7 +4896,8 @@
             "horizontal": 3,
             "letter": "G",
             "prerequisites": ["choosing_electromagnetic_wave_by_wavelength_B"],
-            "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step"
+            "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step",
+            "content": "Physicists use two key formulas to relate the wavelength, frequency, and energy of an electromagnetic photon."
           },
           "wave_proportionality":
           {
@@ -4898,7 +4906,8 @@
             "horizontal": 4,
             "letter": "H",
             "prerequisites": ["photon_formulas_1"],
-            "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules."
+            "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules.",
+            "content": "The energy of an electromagnetic photon is directly proportional to its frequency and inversely proportional to its wavelength; a physicist can use these relationships to better comprehend electromagnetic waves."
           },
           "photon_formulas_2":
           {
@@ -4907,7 +4916,8 @@
             "horizontal": 4,
             "letter": "I",
             "prerequisites": ["wave_proportionality"],
-            "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form"
+            "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form",
+            "content": "Because the wavelength, frequency, and energy electromagnetic photons comprise such as wide range of magnitudes, rarely used metric units are frequently used to express them; these units must be properly converted before and after using any formula"
           },
           "logarithmic_graph_electromagnetic_spectrum_1":
           {
@@ -4916,7 +4926,8 @@
             "horizontal": 3,
             "letter": "J",
             "prerequisites": ["photon_formulas_2"],
-            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, energy, and frequency; express the logarithmic value on the axis"
+            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, energy, and frequency; express the logarithmic value on the axis",
+            "content": "Due to the wide range of wavelengths in the electromagnetic spectrum, the electromagnetic spectrum can only be properly visualized on a logarithmic scale"
           },
           "logarithmic_graph_electromagnetic_spectrum_2":
           {
@@ -4925,7 +4936,8 @@
             "horizontal": 3,
             "letter": "K",
             "prerequisites": ["logarithmic_graph_electromagnetic_spectrum_1"],
-            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, energy, and frequency; express graph using a logarithmic scale but numbers written in linear"
+            "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, energy, and frequency; express graph using a logarithmic scale but numbers written in linear",
+            "content": "A logarithmic scale can be used to describe the electromagnetic spectrum using either wavelength, frequency, or photon energy as a categorizing quantity."
           },
           "space_photos":
           {
@@ -4934,7 +4946,8 @@
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["logarithmic_graph_electromagnetic_spectrum_2"],
-            "objective": "Explain, and do some examples, how photos are made of non-visible light objects in space."
+            "objective": "Explain, and do some examples, how photos are made of non-visible light objects in space.",
+            "content": "NASA and similar organizations collect vast amounts of numerical data from telescopes; beautiful photos that are publicized as space are often constructed by correlating invisible electromagnetic wavelengths to visible ones."
           },
           "visible_light_human_experience":
           {
@@ -4943,7 +4956,8 @@
             "horizontal": 1,
             "letter": "M",
             "prerequisites": ["space_photos"],
-            "objective": "From your knowledge of the electromagnetic spectrum, surmise philosophical conclucions on the human expereince and the role of humans in the universe."
+            "objective": "From your knowledge of the electromagnetic spectrum, surmise philosophical conclusions on the human experience and the role of humans in the universe.",
+            "content": "The human eye reacts to an almost immeasurably  tiny portion of the electromagnetic spectrum; philosophers seeking to understand humanity's place int he universe must contend with this fact."
           }
         }
       },
