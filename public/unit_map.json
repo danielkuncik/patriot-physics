@@ -2116,7 +2116,8 @@
             "horizontal": 4,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Define inertia and relate inertia to mass"
+            "objective": "Define inertia and relate inertia to mass",
+            "content": "Inertia is a measure of resistance to change in motion; all matter has inertia; mass is a measure of inertia"
           },
           "newtons_model_1":
           {
@@ -2125,7 +2126,8 @@
             "horizontal": 5,
             "letter": "B",
             "prerequisites": ["inertia_newtons_first_law"],
-            "objective": "Identify when net force is zero and when it is not; determine whether an abstract object accelerates, decelerates of moves at a constant speed based on its free-body diagrams"
+            "objective": "Identify when net force is zero and when it is not; determine whether an abstract object accelerates, decelerates of moves at a constant speed based on its free-body diagrams",
+            "content": "When an object is not moving or moving at a constant velocity, the net force acting on that object is zero; when an object is accelerating, the net force is not zero; accelerating in physics can mean speeding up, slowing down, or changing direction; when the net force on an object is zero we say it is 'in equilibrium'"
           },
           "basic_air_resistance":
           {
@@ -2134,7 +2136,8 @@
             "horizontal": 5,
             "letter": "C",
             "prerequisites": ["newtons_model_1"],
-            "objective": "Explain what factors determine how crucial air resistance is in analyzing a situation."
+            "objective": "Explain what factors determine how crucial air resistance is in analyzing a situation.",
+            "content": "Air resistance is a crucial factor in a problem when an object moves very fast, has high surface area, has very low inertia, or when an extremely precise measurement is necessary."
           },
           "newtons_model_2":
           {
@@ -2144,6 +2147,7 @@
             "letter": "D",
             "prerequisites": ["basic_air_resistance"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagrams; for a given free-body diagram determine and defend the motion of that object",
+            "content": "When net force acts in the same direction as velocity, an object speeds up; when net force acts in the opposite direction as velocity, an object slows down; when net force is zero, an object is either not moving or moving at a constant velocity",
             "limits": "Limited to single step motion"
           },
           "inertia_stories":
@@ -2153,7 +2157,8 @@
             "horizontal": 3,
             "letter": "E",
             "prerequisites": ["newtons_model_2"],
-            "objective": "Explain real-life situations in which a change in inertia casues a change in experience; differentiate between inertial and gravitational mass."
+            "objective": "Explain real-life situations in which a change in inertia causes a change in experience; differentiate between inertial and gravitational mass.",
+            "content": "When objects have a high inertia, it is more difficult to change their speed or direction."
           },
           "space_motion_1":
           {
@@ -2162,7 +2167,8 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["inertia_stories"],
-            "objective": "Describe how objects move in space, contrast this motion with how objects move on earth, and give intuitive explanations for the difference."
+            "objective": "Describe how objects move in space, contrast this motion with how objects move on earth, and give intuitive explanations for the difference.",
+            "content": "In space, gravity does not always act downwards, air resistance does not exist, and friction rarely exists. Thus, objects appear to move very differently than they do on earth while still following the same laws of physics."
           },
           "forces_on_you":
           {
@@ -2172,6 +2178,7 @@
             "letter": "G",
             "prerequisites": ["space_motion_1"],
             "objective": "Using Newton's Three laws and free-body diagrams, describe forces acting on you in various situations and relate them to your experience.",
+            "content": "Newton's Laws can be used to analyze forces and motion acting on a person.",
             "examples": [
               "Use Newton's Laws to describe the experience of your car pressing into your back when a car accelerates.",
               "Use Newton's Laws to explain how a person walks."
@@ -2185,17 +2192,20 @@
             "horizontal": 1,
             "letter": "H",
             "prerequisites": ["forces_on_you"],
-            "objective": "Look at each of Newton's Laws as mathematical rules and derive mathematical results from each law."
+            "objective": "Look at each of Newton's Laws as mathematical rules and derive mathematical results from each law.",
+            "content": "Newton's Laws are mathematical laws and physicists can make statements and prove them using Newton's Laws."
           },
           "newtons_model_3":
           {
             "title": "Newton's Model 3",
+            "subtitle": "Abstract Application of Newton's Laws",
             "level": 3,
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["examine_newtons_laws_mathematically"],
             "objective": "Connect motion to free-body diagrams in abstract cases; for a given motion draw and defend a free-body diagram; for a given fee-body diagram determine and defend the motion on that object.",
-            "notes": "Includes two-step motion; in particular, focuses on objects taht are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples."
+            "notes": "Includes two-step motion; in particular, focuses on objects that are already moving at a constant velocity when a change in force causes a change in motion; focuses primarily on abstract examples.",
+            "content": "Physicists must understand how to use Newton's Laws to analyze motion abstractly"
           },
           "space_motion_2":
           {
@@ -2204,7 +2214,8 @@
             "horizontal": 3,
             "letter": "J",
             "prerequisites": ["newtons_model_3"],
-            "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces."
+            "objective": "Describe how objects move in space, contrast with how their move on earth, and explain this contrast using Newton's Laws and knowledge of forces.",
+            "content": "While motion in space appears very different than motion on earth due to the absence of omnipresent forces, motion in space follows the same laws of motion as motion on earth."
           },
           "newtons_model_4A":
           {
@@ -2213,7 +2224,8 @@
             "horizontal": 3,
             "letter": "K",
             "prerequisites": ["space_motion_2"],
-            "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: kicking a box and shooting an arrow."
+            "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: kicking a box and shooting an arrow.",
+            "content": "At times, an object can move when the a net force is not acting in the direction the object is moving, counter to human intuition, but a careful connection between motion and Newton's Laws can create a logically sound model explaining how this motion occurs."
           },
           "newtons_model_4B":
           {
@@ -2222,7 +2234,8 @@
             "horizontal": 4,
             "letter": "L",
             "prerequisites": ["newtons_model_4A"],
-            "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: lifting a weight and throwing a ball upward."
+            "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: lifting a weight and throwing a ball upward.",
+            "content": "At times, an object can move when the a net force is not acting in the direction the object is moving, counter to human intuition, but a careful connection between motion and Newton's Laws can create a logically sound model explaining how this motion occurs."
           },
           "terminal_velocity_free_fall_survivors":
           {
@@ -2231,7 +2244,8 @@
             "horizontal": 5,
             "letter": "M",
             "prerequisites": ["newtons_model_4B"],
-            "objective": "Using Newton's First and Second Laws, describe why falling objects reach terminal velocity and discuss what factors determine terminal velocity; describe how it is possible to fall several miles through the air and live."
+            "objective": "Using Newton's First and Second Laws, describe why falling objects reach terminal velocity and discuss what factors determine terminal velocity; describe how it is possible to fall several miles through the air and live.",
+            "content": "If a person falls for a long time, air resistance acting on that person increases until a net force of zero acts on that person; after this point falling from higher heights does not increase the impact velocity."
           },
           "space_motion_3":
           {
@@ -2240,7 +2254,8 @@
             "horizontal": 5,
             "letter": "N",
             "prerequisites": ["terminal_velocity_free_fall_survivors"],
-            "objective": "Defend the statement that all laws of motion are the same on earth, in space, and in all areas of the universe; and defend this notion using principles and examples."
+            "objective": "Defend the statement that all laws of motion are the same on earth, in space, and in all areas of the universe; and defend this notion using principles and examples.",
+            "content": "For most of Western history people thought that objects in space, the heavens, followed different laws of motion than objects on earth; early physicists proved mathematically that all objects in the universe follow the same laws of motion."
           },
           "why_is_physics_hard":
           {
@@ -2249,7 +2264,8 @@
             "horizontal": 6,
             "letter": "O",
             "prerequisites": ["space_motion_3"],
-            "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrams of objects that are slowing down or moving at a constant speed."
+            "objective": "Using knowledge from both physics and psychology, describe why it is so difficult to figure out free-body diagrams of objects that are slowing down or moving at a constant speed.",
+            "content": "Human intuition says that objects move if and only if a force pushes them, but Newton's Laws of motion state that force is related not to motion but change in motion; students must shed their misconceptions in order to master physics."
           },
           "cognitive_psychology_dynamics":
           {
@@ -2258,7 +2274,8 @@
             "horizontal": 6,
             "letter": "P",
             "prerequisites": ["why_is_physics_hard"],
-            "objective": "Research and analyze scientific studies of the misconceptions in the study of forces and dynamics."
+            "objective": "Research and analyze scientific studies of the misconceptions in the study of forces and dynamics.",
+            "content": "Students come to physics with misconceptions about how and why objects move; physicists have studied these misconceptions and developed theories and methods to help students internalize correct models of motion."
           }
         }
       },
