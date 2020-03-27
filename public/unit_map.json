@@ -1536,6 +1536,9 @@
             "title": "Position Graphs 2",
             "subtitle": "Forward and Backward Position Graphs",
             "level": 1,
+            "letter": "A",
+            "horizontal": 1,
+            "prerequisites": [""],
             "objective": "Create qualitative position graphs for objects moving in two different directions around an origin; define an origin and a positive and negative direction"
           },
           "velocity_acceleration_graphs_2":
@@ -1543,6 +1546,9 @@
             "title": "Velocity and Acceleration Graphs 2",
             "subtitle": "Two Direction Velocity and Acceleration Graphs",
             "level": 1,
+            "letter": "B",
+            "horizontal": 2,
+            "prerequisites": ["position_graphs_2"],
             "objective": "Using qualitative velocity and acceleration graphs, identify when an object is speeding up and slowing down and what direction an object is moving"
           },
           "kinematic_graph_connections_2":
@@ -1550,37 +1556,55 @@
             "title": "Kinematic graphs Connections 2",
             "subtitle": "Connecting graphs of two direction motion",
             "level": 2,
+            "letter": "C",
+            "horizontal": 3,
+            "prerequisites": ["velocity_acceleration_graphs_2"],
             "objective": "Relate three different types of kinematic graphs for objects moving with a constant acceleration in either direction."
-          },
-          "direction_reversal_origin_relocation":
-          {
-            "title": "Direction Reversal and Origin Relocation",
-            "level": 2,
-            "objective": "Given all types of kinematic graphs, show how the graphs must change if a physicist decides to reverse the positive and negative direction and/or change the location of the origin."
           },
           "kinematic_graph_comparison_3":
           {
             "title": "Kinematic Graph Comparison 3",
             "level": 2,
+            "letter": "D",
+            "horizontal": 4,
+            "prerequisites": ["kinematic_graph_connections_2"],
             "objective": "Compare different kinematic graphs for objects moving in different directions; answer questions such as which one is moving faster etc."
+          },
+          "direction_reversal_origin_relocation":
+          {
+            "title": "Direction Reversal and Origin Relocation",
+            "level": 2,
+            "letter": "E",
+            "horizontal": 5,
+            "prerequisites": ["kinematic_graph_comparison_3"],
+            "objective": "Given all types of kinematic graphs, show how the graphs must change if a physicist decides to reverse the positive and negative direction and/or change the location of the origin."
           },
           "story_to_graph_selection_3":
           {
             "title": "Story to Graph Selection 3",
             "subtitle": "(The Traffic Light Problem)",
             "level": 3,
+            "letter": "F",
+            "horizontal": 4,
+            "prerequisites": ["direction_reversal_origin_relocation"],
             "objective": "Given a story, select the position-time, acceleration-time, and velocity-time graphs that reflect the story."
           },
           "kinematic_graph_comparison_4":
           {
             "title": "Kinematic Graph Comparison 4",
             "level": 3,
+            "letter": "G",
+            "horizontal": 3,
+            "prerequisites": ["story_to_graph_selection_3"],
             "objective": "Compare different kinematic graphs for objects moving in different directions; answer questions such as which one is accelerating faster etc."
           },
           "story_to_graph_selection_4":
           {
             "title": "Story to Graph Selection 4",
             "level": 3,
+            "letter": "H",
+            "horizontal": 2,
+            "prerequisites": ["kinematic_graph_comparison_4"],
             "objective": "Given a story, select the position-time, acceleration-time, and velocity-time graphs that reflect the story."
           },
           "position_graph_connection_2":
@@ -1588,6 +1612,9 @@
             "title": "Position Graph Connection 2",
             "subtitle": "Position Graph Connection in two directions",
             "level": 4,
+            "letter": "I",
+            "horizontal": 3,
+            "prerequisites": ["story_to_graph_selection_4"],
             "objective": "Given a qualitative position-time graph of an object moving in two directions, write a relevant story for that position-time graph and draw corresponding velocity-time and acceleration-time graphs"
           },
           "velocity_graph_connection_2":
@@ -1595,6 +1622,9 @@
             "title": "Velocity Graph Connection 2",
             "subtitle": "Velocity Graph Connection in two directions",
             "level": 4,
+            "letter": "J",
+            "horizontal": 4,
+            "prerequisites": ["position_graph_connection_2"],
             "objective": "Given a qualitative velocity-time graph of an object moving in two directions, write a relevant story for that velocity-time graph and draw corresponding position-time and acceleration-time graphs"
           },
           "acceleration_graph_connection_3":
@@ -1602,6 +1632,9 @@
             "title": "Acceleration Graph Connection 3",
             "subtitle": "Acceleration Graph Connection in two directions",
             "level": 4,
+            "letter": "K",
+            "horizontal": 5,
+            "prerequisites": ["velocity_graph_connection_2"],
             "objective": "Given a qualitative acceleration-time graph of an object moving in two directions with initial velocity of zero, write a relevant story for that acceleration-time graph and draw corresponding position-time and velocity-time graphs."
           },
           "velocity_graph_connection_3":
@@ -1609,6 +1642,9 @@
             "title": "Velocity Graph Connection 3",
             "subtitle": "Velocity Graph Connection in two directions and multiple initial positions",
             "level": 5,
+            "letter": "L",
+            "horizontal": 4,
+            "prerequisites": ["acceleration_graph_connection_3"],
             "objective": "Given a qualitative velocity-time graph of an object moving in two directions, write a relevant story for that velocity-time graph and draw corresponding position-time and acceleration-time graphs; complete this task for several different initial positions"
           },
           "acceleration_graph_connection_4":
@@ -1616,12 +1652,18 @@
             "title": "Acceleration Graph Connection 4",
             "subtitle": "Acceleration Graph Connection in two directions and multiple initial velocities",
             "level": 5,
+            "letter": "M",
+            "horizontal": 3,
+            "prerequisites": ["velocity_graph_connection_3"],
             "objective": "Given a qualitative acceleration-time graph of an object moving in two directions, write a relevant story for that graph and draw corresponding velocity-time and position-time graphs; complete this task for initial velocity zero, positive initial velocity, and negative initial velocity"
           },
           "qualitative_kinematics_advanced_2":
           {
             "title": "Qualitative Kinematics Advanced 2",
             "level": 6,
+            "letter": "N",
+            "horizontal": 2,
+            "prerequisites": ["acceleration_graph_connection_4"],
             "objective": "Given a complex description of motion, write a story that comprises this motion, and draw relevant position-time, velocity-time, and acceleration-time graphs; define an origin and a positive and negative direction within the story"
           }
         }
