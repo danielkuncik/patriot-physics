@@ -243,6 +243,25 @@ class CircuitDiagram extends Diagram {
     }
 
 
+    addLightBulb(directionInput, length) {
+        const thetaInRadians = processDirectionInput(directionInput);
+        const radius = length / 2;
+        let centerPoint = this.cursor.translateAndReproducePolar(radius, thetaInRadians);
+
+        super.addCircle(centerPoint, radius);
+
+        let point1 = centerPoint.translateAndReproducePolar(radius, thetaInRadians + Math.PI / 4);
+        let point2 = centerPoint.translateAndReproducePolar(radius, thetaInRadians + 3 * Math.PI / 4);
+        let point3 = centerPoint.translateAndReproducePolar(radius, thetaInRadians + 5 * Math.PI / 4);
+        let point4 = centerPoint.translateAndReproducePolar(radius, thetaInRadians + 7 * Math.PI / 4);
+
+        super.addSegment(point1, point3);
+        super.addSegment(point2, point4);
+
+        this.translateCursorPolar(length, thetaInRadians);
+    }
+
+
     ///I want to replace 'addListOfElements' with more of a cursor type program
     translateCursor(directionInput, length) {
         let directionInRadians = processDirectionInput(directionInput);
