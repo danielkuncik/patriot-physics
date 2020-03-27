@@ -242,6 +242,12 @@ hbs.registerHelper('loginLink',(user) => {
     return new hbs.SafeString(output)
 });
 
+hbs.registerHelper('displayJoke', (name) => {
+    let link = `/joke/${name}`;
+    let output = `<img src = '${link}' width = 'auto' height = '300px' />`;
+    return new hbs.SafeString(output);
+});
+
 
 function getGradeMessagesForPod(superUnitKey, unitKey, gradeMap) {
     let messages = {};

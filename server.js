@@ -112,6 +112,11 @@ app.get('/labs', [db.check_if_logged_in, disp.display_lab_list_page]);
 
 app.get('/labs/:labKey', [db.check_if_logged_in, disp.display_lab_page]);
 
+app.get('/joke/:jokeName', (req, res) => {
+    let filePath = __dirname + '/content/jokes/memedPictures/' + req.params.jokeName + '.jpg';
+    res.sendFile(filePath);
+});
+
 
 app.get('/problemSets', [db.check_if_logged_in, disp.display_problemSet_list_page]);
 
