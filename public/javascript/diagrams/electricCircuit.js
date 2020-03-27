@@ -261,6 +261,50 @@ class CircuitDiagram extends Diagram {
         this.translateCursorPolar(length, thetaInRadians);
     }
 
+    addTerminal(radius) {
+        if (radius === undefined) {
+            radius = 0.3333;
+        }
+        let newTerminal = super.addCircle(this.cursor, radius);
+        newTerminal.fill();
+    }
+
+    addClosedSwitch(directionInput, length) {
+        let terminalRadius = length / 4;
+        this.addTerminal(terminalRadius);
+        this.addWire(directionInput, length);
+        this.addTerminal(terminalRadius);
+    }
+
+    addOpenSwitch(directionInput, length, circuitOrientation, openningAngleInDegrees) { // how will i handle the 'direction to open???? similar to the labels???'
+        if (openningAngleInDegrees === undefined) {
+            openningAngleInDegrees = 20;
+        }
+        if (circuitOrientation === undefined) {
+            circuitOrientation = 'clockwise';
+        }
+        let thetaInRadiansOfCircuit = processDirectionInput(directionInput);
+
+        let thetaInRadiansOfSwitch;
+        if (circuitOrientation === 'clockwise') {
+            thetaInRadiansOfSwitch = thetaInRadiansOfCircuit + convertDegreesToRadians(openningAngleInDegrees);
+        } else if (circuitOrientation === 'counterclockwise') {
+            thetaInRadiansOfSwitch = thetaInRadiansOfCircuit - convertDegreesToRadians(openningAngleInDegrees);
+        } else {
+            thetaInRadiansOfSwitch = thetaInRadiansOfCircuit;
+            console.log('Open switch changed to closed switch');
+        }
+
+        let terminalRadius = length / 4;
+        this.addTerminal(terminalRadius);
+
+        const point1 = this.cursor;
+        const point2 = this.cursor.translateAndReproducePolar(length, thetaInRadiansOfSwitch);
+        super.addSegment(point1, point2);
+
+        this.translateCursorPolar(length, thetaInRadiansOfCircuit);
+        this.addTerminal(terminalRadius);
+    }
 
     ///I want to replace 'addListOfElements' with more of a cursor type program
     translateCursor(directionInput, length) {

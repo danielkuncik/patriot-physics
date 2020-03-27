@@ -1,0 +1,176 @@
+<h3>
+    Short Circuits Lab
+</h3>
+
+<p>
+    A <strong>short circuit</strong> is a circuit that includes no resistance.
+    Short circuits are dangerous, but also very interesting, and sometimes counterintuitive.
+    To learn about short circuits, we are going to build some short circuits using
+    only one battery. Don't worry, as long as we use only one battery, nobody will get hurt,
+    and this is a good way to build and play around with short circuits without the danger.
+</p>
+
+<h4>
+    Materials
+</h4>
+<ul>
+    <li>
+        A single D battery (only one! Do not take more than one!)
+    </li>
+    <li>
+        A battery holder
+    </li>
+    <li>
+        A single light bulb
+    </li>
+    <li>
+        Several wires
+    </li>
+</ul>
+
+
+<h4>
+    Procedure
+</h4>
+
+<ol>
+    <li>
+        Put the battery in the holder and connect one end of the battery
+        to the other, without including any light bulb in between, only a wire:
+        <br>
+        <div id = 'shortCircuit1'></div>
+        <br>
+        This is a short circuit! That is because there is a working circuit, but there is no resistor (like a light bulb in the circuit)
+        Wait for a few minutes, and the battery might become a little bit warm.
+        After this happens, disconnect the circuit!
+    </li>
+    <li>
+        Is there electric current running in your short circuit?
+        How can you tell?
+    </li>
+    <li>
+        Short circuits are dangerous because, with no resistance, there is a very high amount of current!
+        Remember, \( V = IR \) and \( I = \frac{V}{R} \), so if \( R \) is very low,
+        then \( I \) is very high.
+        People often believe that high voltage is very dangerous, but it is actually high current that tends to make
+        danger. When there is high current is when you start to feel your circuit get warm.
+        In fact, most household items can take only about 15 amps before they break.
+        <br>
+        Look at the voltage of your battery. If the wire provides only 0.1 Ohms of resistance,
+        find the <emph>current</emph> and <emph>power</emph> of your circuit with the formula
+        \( V = IR \) and \( P = IV \)
+        Do you think this is safe? [Don't worry, I made up these numbers..it doesn't actually have that much current in reality.]
+    </li>
+    <li>
+        <strong>Shorting a Light Bulb:</strong>
+        Connect a light bulb to a battery so that it lights:
+        <br>
+        <div id = 'simpleCircuit1'></div>
+        <br>
+        Now, add another wire between your bulb and battery like so:
+        <br>
+        <div id = 'shortCircuit2'></div>
+        <br>
+        What happens to the light bulb the moment you add the wire?
+        Wait for a few minutes again and see if the battery becomes warm.
+    </li>
+    <li>
+        Imagine that the wire is a big open highway, the light bulb (a resistor)
+        is a traffic jam, and the electrons (moving around the circuit) are cars trying to
+        get from one end of the battery to the other.
+        Which path would the electrons take, the path with the light bulb or the path without the light bulb?
+        Based on this metaphor, why do you think the light bulb shuts off when another line opens up?
+    </li>
+    <li>
+        <strong>A "Short Circuit" that is a Long Circuit:</strong>
+        Connect a light bulb to a battery so that it lights:
+        <br>
+        <div id = 'simpleCircuit2'></div>
+        <br>
+        Now, add another wire that goes the long around the light bulb:
+        <br>
+        <div id = 'shortCircuit3'></div>
+        <br>
+        What happens to the light bulb? Wait a few minutes again and see if the battery becomes warm.
+    </li>
+    <li>
+        A short circuit always happens because there is a path around the light bulb that includes no resistance.
+        It does not matter if this path is short or long. Wires have almost no resistance, so if there are lots
+        of wires, it can still be a 'short' circuit.
+        Using the same explanation you had above, explain why the light bulb turns off,
+        even though the path through the wire is much longer than the path through the light bulb.
+    </li>
+    <li>
+        Your friend builds this circuit:
+        <br>
+        <div id = 'shortCircuit4'></div>
+        <br>
+        Upon noticing the light bulb does not light, your friend says
+        "The light bulb does not light because it is farther away from the battery than the other wire."
+        Is your friend correct?
+        If not, create a 'counterexample,' that is, draw another circuit which you can use to prove that
+        his reasoning is incorrect. Explain what happens when you build your counterexample
+    </li>
+</ol>
+
+
+
+<script>
+    let simpleCircuit = new CircuitDiagram();
+    simpleCircuit.addCellSimple('up',3);
+    simpleCircuit.addWire('up',1);
+    simpleCircuit.addWire('right',4);
+    simpleCircuit.addWire('down',2);
+    simpleCircuit.addLightBulb('down',1);
+    simpleCircuit.addWire('down',2);
+    simpleCircuit.addWire('left',4);
+    simpleCircuit.addWire('up',1);
+
+    let shortCircuit1 = new CircuitDiagram();
+    shortCircuit1.addCellSimple('up',3);
+    shortCircuit1.addWire('up',1);
+    shortCircuit1.addWire('right',4);
+    shortCircuit1.addWire('down',5);
+    shortCircuit1.addWire('left',4);
+    shortCircuit1.addWire('up',1);
+
+    let shortCircuit2 = new CircuitDiagram();
+    shortCircuit2.addCellSimple('up',3);
+    shortCircuit2.addWire('up',1);
+    shortCircuit2.addWire('right',4);
+    shortCircuit2.addWire('down',2);
+    shortCircuit2.addLightBulb('down',1);
+    shortCircuit2.addWire('down',2);
+    shortCircuit2.addWire('left',2);
+    shortCircuit2.translateCursor('up',5);
+    shortCircuit2.addWire('down',5);
+    shortCircuit2.addWire('left',2);
+    shortCircuit2.addWire('up',1);
+
+    let shortCircuit3 = new CircuitDiagram();
+    shortCircuit3.addCellSimple('up',3);
+    shortCircuit3.addWire('up',1);
+    shortCircuit3.addWire('right',4);
+    shortCircuit3.addWire('down',2);
+    shortCircuit3.addLightBulb('down',1);
+    shortCircuit3.addWire('down',2);
+    shortCircuit3.translateCursor('up',5);
+
+
+    shortCircuit3.addWire('right',8);
+    shortCircuit3.addWire('down',5);
+    shortCircuit3.addWire('left',8);
+
+    shortCircuit3.addWire('left',4);
+    shortCircuit3.addWire('up',1);
+
+    $("#shortCircuit1").append(shortCircuit1.drawCanvas(300));
+    $("#shortCircuit2").append(shortCircuit2.drawCanvas(300));
+    $("#shortCircuit3").append(shortCircuit3.drawCanvas(600,300));
+    $("#shortCircuit4").append(shortCircuit2.drawCanvas(300));
+
+    $("#simpleCircuit1").append(simpleCircuit.drawCanvas(300));
+    $("#simpleCircuit2").append(simpleCircuit.drawCanvas(300));
+
+
+</script>
