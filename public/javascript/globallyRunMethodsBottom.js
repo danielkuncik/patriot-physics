@@ -13,19 +13,37 @@ function createQuestionAndAnswerList() {
         return undefined
     }
     let i, j, thisQuestionList, thisQuestion, thisAnswer, questionNumber = 1, thisAnswerID;
+    let withLetter;
+    if (typeof(letter) === 'undefined') {
+        withLetter = false;
+    } else {
+        withLetter = true;
+    }
 
     $(".questionList").each((i) => {
         thisQuestionList = $(".questionList")[i];
         $(thisQuestionList).attr('start',String(questionNumber));
         $(thisQuestionList).find("li.question").each((j) => {
             thisQuestion = $(thisQuestionList).find("li.question")[j];
-            $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}:</strong> `);
+            if (withLetter) {
+                $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}:</strong> `);
+            } else {
+                $(thisQuestion).prepend(`<strong>${questionNumber}:</strong> `);
+            }
             if ($(thisQuestion).data()['answer'] !== undefined) {
                 thisAnswer = $(thisQuestion).data()['answer'];
-                $(".answerList").append(`<li>${letter}.${questionNumber}:   ${thisAnswer}</li>`);
+                if (withLetter) {
+                    $(".answerList").append(`<li>${letter}.${questionNumber}:   ${thisAnswer}</li>`);
+                } else {
+                    $(".answerList").append(`<li>${questionNumber}:   ${thisAnswer}</li>`);
+                }
             } else if ($(thisQuestion).data()['answer_id'] !== undefined) {
                 thisAnswerID = $(thisQuestion).data()['answer_id'];
-                $(".answerList").append(`<li id = '${thisAnswerID}'>${letter}.${questionNumber}:</li>`);
+                if (withLetter) {
+                    $(".answerList").append(`<li id = '${thisAnswerID}'>${letter}.${questionNumber}:</li>`);
+                } else {
+                    $(".answerList").append(`<li id = '${thisAnswerID}'>${questionNumber}:</li>`);
+                }
 
                 // object defined in fglobally run methods at the top
                 $(`#${thisAnswerID}`).append($(answerObjects[thisAnswerID]));
@@ -44,12 +62,20 @@ function createQuestionAndAnswerList() {
                         $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
                     }
                 });
-                thisAnswer = $(`<li>${letter}.${questionNumber}:  </li>`);
+                if (withLetter) {
+                    thisAnswer = $(`<li>${letter}.${questionNumber}:  </li>`);
+                } else {
+                    thisAnswer = $(`<li>${questionNumber}:  </li>`);
+                }
                 $(thisAnswer).append(subAnswerList);
                 $(".answerList").append(thisAnswer);
             } else {
                 thisAnswer = 'xxx';
-                $(".answerList").append(`<li>${letter}.${questionNumber}: ${thisAnswer}</li>`);
+                if (withLetter) {
+                    $(".answerList").append(`<li>${letter}.${questionNumber}: ${thisAnswer}</li>`);
+                } else {
+                    $(".answerList").append(`<li>${questionNumber}: ${thisAnswer}</li>`);
+                }
             }
             questionNumber += 1;
         });
