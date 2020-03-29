@@ -1869,8 +1869,8 @@
           {
             "title": "Newton's Third Law 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 4,
+            "letter": "A",
             "prerequisites": [],
             "objective": "State Newton's Third Law and recognize examples of how it applies.",
             "content": "Newton's Third Law states that if A exerts a force on B, B exerts a force on A with equal magnitude and opposite direction."
@@ -1879,9 +1879,9 @@
           {
             "title": "Free-Body Diagrams 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "B",
+            "prerequisites": ["newtons_third_law_1"],
             "objective": "Recognize the forces in the most common free-body diagrams.",
             "content": "In free-body diagrams, all forces are represented as arrows showing the direction that force acts; the most common forces in our lives are gravity, normal forces, applied forces, friction, and tension."
           },
@@ -1889,9 +1889,9 @@
           {
             "title": "Newton's Third Law 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["free_body_diagrams_1"],
             "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking.",
             "content": "Newtons Third Law allows humans to move by pushing off a surface, and allows a rocket to move by pushing material downward."
           },
@@ -1899,9 +1899,9 @@
           {
             "title": "Free-Body Diagrams 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["newtons_third_law_2"],
             "objective": "Draw from memory the most common free-body diagrams.",
             "content": "The most common free-body diagrams include a person not moving, an object being pushed, and an object being lifted up."
           },
@@ -1909,29 +1909,32 @@
           {
             "title": "The Earth is Round",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "E",
+            "prerequisites": ["free_body_diagrams_2"],
             "objective": "Properly use the terms gravity and weight; properly identify the direction of the force of weight; identify the reaction force to weight",
             "content": "Physicists use the term weight to describe the force of gravity on a planet; the directions humans call downward is actually inward, towards the center of the earth; the reaction force of our weight is a force we exert on the earth."
           },
-          "free_body_diagrams_3A":
+          "free_body_diagrams_3":
           {
-            "title": "Free-Body Diagrams 3A: Identify Action-Reaction Force Pairs",
+            "title": "Free-Body Diagrams 3",
+            "subtitle": "Identify Action-Reaction Force Pairs",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs.",
+            "horizontal": 3,
+            "letter": "F",
+            "prerequisites": ["earth_is_round"],
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; differentiate between action-reaction force pairs and balanced force pairs",
             "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite"
           },
-          "free_body_diagrams_3B": {
-            "title": "Free-Body Diagrams 3B: Identify Action-Reaction Force Pairs",
+          "free_body_diagrams_4":
+          {
+            "title": "Free-Body Diagrams 4",
+            "subtitle": "Identify More Action-Reaction Force Pairs",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs.",
+            "horizontal": 2,
+            "letter": "G",
+            "prerequisites": ["free_body_diagrams_3"],
+            "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; differentiate between action-reaction force pairs and balanced force pairs",
             "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite",
             "note": "2 more questions on the same topic as 3A"
           },
@@ -1939,9 +1942,9 @@
           {
             "title": "Subatomic Contact Forces",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "H",
+            "prerequisites": ["free_body_diagrams_4"],
             "objective": "Relate contact forces to electrostatic forces. Relate Newton's Third Law to these electrostatic forces.",
             "content": "Contact forces and applied forces are in fact electrostatic forces acting between subatomic particles of two objects."
           },
@@ -1949,9 +1952,9 @@
           {
             "title": "The Lazy Donkey Paradox",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["subatomic_contact_forces"],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force.",
             "content": "Newton's Third Law seems to imply that no object may ever move because two forces always cancel each other out (a paradox), but it does not because the action and reaction forces act on two different objects."
           },
@@ -1959,30 +1962,20 @@
           {
             "title": "System free-body diagrams",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["lazy_donkey_paradox"],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; combine free-body diagrams to create systems and identify internal and external forces within the system.",
             "content": "Systems can be created by combining all of the forces acting on an object; forces internal to a system are always action-reaction pairs."
-          },
-          "fundamental_forces":
-          {
-            "title": "Fundamental Forces",
-            "level": 3,
-            "horizontal": 3,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Connect each of the major forces we experience to one of the four fundamental forces.",
-            "content": "All forces in the universe come from four fundamental forces: gravity, the electromagnetic force, the strong nuclear force, and the weak nuclear force. All forces we experience can be tied to one of these four (mostly the electromagnetic force)."
           },
           "newtons_third_law_3":
           {
             "title": "Newtons Third Law 3",
             "subtitle": "Forces as a Duality",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["system_free_body_diagrams"],
             "objective": "Complete a series of objectives related to more abstract applications of Newton's Third Law.",
             "content": "As students develop more in depth knowledge of physics, they should see pairs of forces not as one action and a separate reaction but as two forces that always exist together in a duality.",
             "notes":
@@ -1996,9 +1989,9 @@
           {
             "title": "Breaking Boards",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["newtons_third_law_3"],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force",
             "content": "All objects have a maximum value of force they can absorb before breaking, and you cannot apply a force greater than that value to any object, even if you are able."
           }
@@ -3013,7 +3006,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites":  [],
-            "objective":  "Understand the difference between three different types of motion: constant velocity, uniformly accelerating, and non-uniformly accelerating"
+            "objective":  "Understand the difference between three different types of motion: constant velocity, uniformly accelerating, and non-uniformly accelerating",
+            "content": "Constant velocity motion is analyzed with the speed formula, uniformly accelerated motion is analyzed with the four kinematic equations, and non-uniformly accelerated motion is analyzed with calculus."
           },
           "falling_1":
           {
@@ -3023,7 +3017,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["three_types_motion"],
-            "objective": "Solve numeric problems about objects falling down and objects thrown downards."
+            "objective": "Solve numeric problems about objects falling down and objects thrown downwards.",
+            "content": "Objects falling downwards have an acceleration of 9/8 m/s^2 downwards and follow the four kinematic equations"
           },
           "parabolic_arcs":
           {
@@ -3032,17 +3027,19 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["falling_1"],
-            "objective": "Draw parabolic arcs to show projectile motion, recognize and demonstrate that projectile motion always occurs in parabolic arcs"
+            "objective": "Draw qualitative diagrams of objects in projectile motion; define free-fall",
+            "content": "All objects in projectile motion follow downward facing parabolic arcs; all objects that have only gravity acting on them, no matter what direction they are moving, are in free-fall."
           },
           "falling_2":
           {
-            "title": "Falling 2: Kinematic Graphs",
+            "title": "Falling 2",
             "subtitle": "Kinematic, Dynamic, and Energy Analysis",
             "level": 2,
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["parabolic_arcs"],
-            "objective": "Draw qualitative kinematic graphs for objects either falling down or thrown downward."
+            "objective": "Create qualitative kinematic graphs of an object falling downward; use Newton's Laws to analyze the dynamics of an object falling downward; demonstrate how an object falling downward follows the conservation of energy.",
+            "content": "Physicists can analyze an object falling downward through kinematic, dynamic, or energy-based methods and find consistent results."
           },
           "pop_up_1":
           {
@@ -3052,7 +3049,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["falling_2"],
-            "objective": "Solve for unknown numeric quantities when an object is thrown directly upwards."
+            "objective": "Solve numeric problems about objects falling down and objects thrown directly upwards.",
+            "content": "Objects thrown upwards have an acceleration of 9/8 m/s^2 downwards, have an initial velocity that is upwards, and follow the four kinematic equations"
           },
           "falling_3":
           {
@@ -3062,7 +3060,8 @@
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["pop_up_1"],
-            "objective": "Fully analyze a falling object using kinematic functions, kinematic graphs, dynamic analysis, and energy analysis."
+            "objective": "Create functions that describe the kinematic, dynamic, and energy-based quantities acting on an object that is falling; demonstrate how these functions are correct in known cases.",
+            "content": "Physicists can solve equations algebraically to write functions that describe the kinematic, dynamic, and energy-based quantities of an object falling downwards."
           },
           "pop_up_2":
           {
@@ -3072,17 +3071,20 @@
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["falling_3"],
-            "objective": "Solve numerical pop-up problems which require the use of the quadratic equation."
+            "objective": "Solve numerical pop-up problems which require the use of the quadratic equation.",
+            "content": "When an object is thrown directly upwards and lands at a different vertical position than it began, a physicist must use the quadratic formula to solve the necessary kinematic equations and describe the motion of the ball."
           },
           "pop_up_3":
           {
             "title": "Pop-Up 3",
-            "subtitle": "Kinematic and Dynamic Analysis",
+            "subtitle": "Kinematic, Dynamic, and Energy-based Analysis",
             "level": 3,
             "horizontal": 2,
             "letter": "H",
             "prerequisites": ["pop_up_2"],
-            "objective": "Create qualitative kinematic graphs of an object thrown upward; use Newton's Laws to analyze the dynamics of an object thrown upward; demonstrate how an object thrown upward follows the conservation of energy."
+            "objective": "Create qualitative kinematic graphs of an object thrown directly upward; use Newton's Laws to analyze the dynamics of an object thrown directly upward; demonstrate how an object thrown directly upward follows the conservation of energy.",
+            "content": "Physicists can analyze an object thrown directly upward through kinematic, dynamic, or energy-based methods and find consistent results."
+
           },
           "horizontal_launch_1":
           {
@@ -3092,7 +3094,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["pop_up_3"],
-            "objective": "In writing, describe motion in different dimensions when an object is launched horizontally; relate this motion to the free-body diagram using Newton's Model"
+            "objective": "Solve for important kinematic quantities when an object is launched horizontally.",
+            "content": "When an object is launched horizontally, it moves at a constant speed in the horizontal dimension and accelerates downward in the vertical dimension; physicists can use the kinematic equations to analyze the motion of this object."
           },
           "bullet_drop_conundrum":
           {
@@ -3101,7 +3104,8 @@
             "horizontal": 4,
             "letter": "J",
             "prerequisites": ["horizontal_launch_1"],
-            "objective": "Explain, in words, how a bullet dropped and a bullet fired from a gun reach the ground at the same time; analyze the an object launched upward out of the sunroof of a moving car."
+            "objective": "Explain, in words, how a bullet dropped and a bullet fired from a gun reach the ground at the same time; analyze the an object launched upward out of the sunroof of a moving car.",
+            "content": "Motion in the horizontal dimension does not affect motion in the vertical dimension, therefore an object fired horizontally, such as a bullet, falls at precisely the same rate as an object merely dropped"
           },
           "horizontal_launch_2":
           {
@@ -3111,7 +3115,8 @@
             "horizontal": 5,
             "letter": "K",
             "prerequisites": ["bullet_drop_conundrum"],
-            "objective": "Create qualitative kinematic graphs of a horizontally launched object; use Newton's Laws to analyze the dynamics of a horizontally launched object in each dimension; demonstrate how an object launched horizontally follows the conservation of energy."
+            "objective": "Create qualitative kinematic graphs of an object fired horizontally; use Newton's Laws to analyze the dynamics of an object fired horizontally; demonstrate how an object fired horizontally follows the conservation of energy.",
+            "content": "Physicists can analyze an object fired horizontally through kinematic, dynamic, or energy-based methods and find consistent results."
           },
           "cannon_problems_1":
           {
@@ -3121,7 +3126,8 @@
             "horizontal": 4,
             "letter": "L",
             "prerequisites": ["horizontal_launch_2"],
-            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; use this information to solve for relevant numeric quantities."
+            "objective": "Conceptually explain the motion in each dimension of an object launched at an angle; use this information to solve for relevant numeric quantities.",
+            "content": "An object fired at an angle moves forward with a constant velocity in the horizontal dimension and moves identically to an object thrown directly upward in the vertical dimension."
           },
           "cannon_problems_2":
           {
@@ -3131,7 +3137,8 @@
             "horizontal": 3,
             "letter": "M",
             "prerequisites": ["cannon_problems_1"],
-            "objective": "Solve a cannon problem in which the cannonball lands on a different level than it began."
+            "objective": "Solve a cannon problem in which the cannonball lands on a different vertical level than it began.",
+            "content": "When a cannonball fired at an angle lands on a different vertical level than where it began, a physicist must use the quadratic formula to determine necessary kinematic quantities."
           },
           "pop_up_4":
           {
@@ -3141,7 +3148,9 @@
             "horizontal": 2,
             "letter": "N",
             "prerequisites": ["cannon_problems_2"],
-            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answers using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
+            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air; Defend answers using dimensional analysis; Create functions that describe the kinematic, dynamic, and energy-based quantities acting on an object that is thrown directly upward; demonstrate how these functions are correct in known cases.",
+            "content": "Physicists can solve equations algebraically to write functions that describe the kinematic, dynamic, and energy-based quantities of an object thrown directly upwards."
+
           },
           "horizontal_launch_3":
           {
@@ -3151,7 +3160,8 @@
             "horizontal": 1,
             "letter": "O",
             "prerequisites": ["pop_up_4"],
-            "objective": "Symbolically solve for relevant quantities when an object is thrown directly into the air. Defend answres using dimensional analysis. Derive functions to describe the motion of an object thrown upward."
+            "objective": "Symbolically solve for relevant quantities when an object is fired horizontally; Defend answers using dimensional analysis; Create functions that describe the kinematic, dynamic, and energy-based quantities acting on an object that is fired horizontally; demonstrate how these functions are correct in known cases.",
+            "content": "Physicists can solve equations algebraically to write functions that describe the kinematic, dynamic, and energy-based quantities of an object fired horizontally."
           },
           "cannon_problems_3":
           {
@@ -3161,35 +3171,50 @@
             "horizontal": 1,
             "letter": "P",
             "prerequisites": ["horizontal_launch_3"],
-            "objective": "Draw qualitative kinematic graphs of an object launched at an angle; relate the forces of the object to its motion using Newton's Laws of Motion."
+            "objective": "Create qualitative kinematic graphs of an object fired at an angle; use Newton's Laws to analyze the dynamics of an object fired at an angle; demonstrate how an object fired at an angle follows the conservation of energy.",
+            "content": "Physicists can analyze an object fired at an angle through kinematic, dynamic, or energy-based methods and find consistent results."
+          },
+          "banana_cannon":
+          {
+            "title": "The Banana Cannon",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "Q",
+            "prerequisites": ["cannon_problems_3"],
+            "objective": "Qualitatively explain how gravity affects horizontally moving and non-horizontally moving objects in the same way and apply this principle to simply aiming a cannon at a falling target with a cannon.",
+            "content": "A cannon is aimed directly at a target that begins falling immediately when the cannon fires; the cannon will always strike the target because gravity affects the projectile and the target in the same way."
           },
           "cannon_problems_4":
           {
             "title": "Cannon Problems 4",
             "subtitle": "Symbolic and Functional Analysis",
             "level": 5,
-            "horizontal": 2,
-            "letter": "Q",
-            "prerequisites": ["cannon_problems_3"],
-            "objective": "Symbolically solve for relevant quantities given an objet launched at an angle; solve for motion functions of an object launched at an angle; prove the principle of parabolic motion."
+            "horizontal": 3,
+            "letter": "R",
+            "prerequisites": ["banana_cannon"],
+            "objective": "Symbolically solve for relevant quantities when an object is fired at an angle; Defend answers using dimensional analysis; Create functions that describe the kinematic, dynamic, and energy-based quantities acting on an object that is fired at an angle; demonstrate how these functions are correct in known cases.",
+            "content": "Physicists can solve equations algebraically to write functions that describe the kinematic, dynamic, and energy-based quantities of an object fired at an angle."
           },
           "aiming_cannon_laser_pointers":
           {
             "title": "Aim a cannon with laser pointers.",
             "level": 6,
             "horizontal": 2,
-            "letter": "R",
+            "letter": "S",
             "prerequisites": ["cannon_problems_4"],
-            "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers."
+            "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers.",
+            "content": "With multiple angles pointing to a particular object, physicists can use trigonometry and geometry to locate a particular object in 1-D, 2-D, or 3-D space",
+            "note": "Should this be moved to the geometry unit???"
           },
           "wide_receiver_motion":
           {
             "title": "Wide Receiver in Motion",
             "level": 6,
             "horizontal": 3,
-            "letter": "S",
+            "letter": "T",
             "prerequisites": ["cannon_problems_4"],
-            "objective": "Devise a model that mathematical depicts how a quarterback hits a wide receiver running quickly with a parabolic pass."
+            "objective": "Devise a model that mathematical depicts how a quarterback hits a wide receiver running quickly with a parabolic pass.",
+            "content": "Through careful mathematical analysis, a physicist can create a mathematical model that can guide someone to accomplish a complex task, such as hitting a moving target with a projectile motion."
           }
         }
       },
