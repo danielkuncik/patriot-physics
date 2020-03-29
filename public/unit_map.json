@@ -143,14 +143,24 @@
             "prerequisites": ["trigonometry_2"],
             "objective": "Solve trigonometric problems with variables in the denominator; given the minimum necessary pieces of information determine all other information regarding a triangle."
           },
+          "laser_pointer_1":
+          {
+            "title": "Laser Pointer 1",
+            "subtitle": "Solve for a position in 1-D space",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["trigonometry_3"],
+            "objective": "Use a laser pointer, a protractor, and a known distance to find any position in 1-dimensional space; estimate the height of a building using a laser pointer."
+          },
           "algebraic_geometry_1":
           {
             "title": "Algebraic Geometry 1",
             "subtitle": "Polygons",
             "level": 3,
-            "horizontal": 2,
-            "letter": "H",
-            "prerequisites": ["trigonometry_3", "area_1"],
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["laser_pointer_1", "area_1", "circle_math_2"],
             "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
           },
           "algebraic_geometry_2":
@@ -158,9 +168,9 @@
             "title": "Algebraic Geometry 2",
             "subtitle": "Circles",
             "level": 3,
-            "horizontal": 3,
-            "letter": "I",
-            "prerequisites": ["circle_math_2"],
+            "horizontal": 4,
+            "letter": "J",
+            "prerequisites": ["algebraic_geometry_1"],
             "objective": "Drive algebraic formulas to relate elements of a circle, such as radius, circumference, diameter, and area."
           },
           "algebraic_geometry_3":
@@ -168,20 +178,40 @@
             "title": "Algebraic Geometry 3",
             "subtitle": "Nontraditional Information",
             "level": 4,
-            "horizontal": 2,
-            "letter": "J",
-            "prerequisites": ["trigonometry_3","algebraic_geometry_1", "algebraic_geometry_2"],
+            "horizontal": 4,
+            "letter": "K",
+            "prerequisites": ["algebraic_geometry_2"],
             "objective": "Figure out the area of a triangle or trapezoid in which given information requires sevearl steps of analysis.",
             "example": "Determine the area of a trapezoid if the base and a single angle are known."
+          },
+          "laser_pointer_2":
+          {
+            "title": "Laser Pointer 2",
+            "subtitle": "Finding a point in 2-D space with a laser pointer",
+            "level": 5,
+            "horizontal": 4,
+            "letter": "L",
+            "prerequisites": ["algebraic_geometry_3"],
+            "objective": "Using a laser pointer, a known height, and two protractors, locate any point in a 2-dimensional space."
           },
           "trigonometric_identities":
           {
             "title": "Trigonometric Identities",
             "level": 5,
-            "horizontal": 2,
-            "letter": "K",
-            "prerequisites": ["algebraic_geometry_3"],
-            "objective": "Derive trigonometric identities, such as the sum and difference angle formulas."
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["laser_pointer_2"],
+            "objective": "Derive trigonometric identities, such as the sum and difference angle formulas.",
+            "notes": "Should this be moved to level 4???"
+          },
+          "laser_pointer_3":
+          {
+            "title": "Laser Pointer 3",
+            "level": 6,
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["trigonometric_identities"],
+            "objective": "Use two laser pointers and four protractors to locate any point in 3 dimensional space without needing any heights."
           }
         }
       },
@@ -3204,7 +3234,7 @@
             "prerequisites": ["cannon_problems_4"],
             "objective": "Determine a method to aim a cannon and expect a direct hit with laser pointers.",
             "content": "With multiple angles pointing to a particular object, physicists can use trigonometry and geometry to locate a particular object in 1-D, 2-D, or 3-D space",
-            "note": "Should this be moved to the geometry unit???"
+            "note": "Connected to the 'placing an object in three-dimensional space' problem from the geometry unit."
           },
           "wide_receiver_motion":
           {
