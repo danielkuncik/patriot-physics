@@ -1,43 +1,37 @@
+<h3>
+    Basic Switches Virtual Lab
+</h3>
+
+<p>
+    This is a version of the <a href = '/labs/basicSwitches'>Basic Switches Lab</a>
+    lab conducted virtually,
+    using the simulation below.
+    The goal is to learn how to properly connect a switch in a circuit.
+    I recommend you select "intro" mode,
+    although you can use either "intro" mode or "lab" mode.
+</p>
+
+
+<iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+<p>
+    Simulation provided by <a href = 'https://phet.colorado.edu'>PHET interactive simulations</a> at the University of Colorado at Boulder
+</p>
 
 <h4>
-    Basic Switches
+    Virtual Materials
 </h4>
-
-<p>
-    This lab deals with how to properly connect an
-    <emph>switch</emph> to a circuit.
-</p>
-
-<p>
-    First, two vocabulary:
-</p>
 <ul>
     <li>
-        When two components are <strong>in series</strong>,
-        they adjacent, so all current through one component goes through the other.
+        Battery
     </li>
     <li>
-        When two components are <strong>in parallel</strong>,
-        they are in a series circuit, one after the other.
-    </li>
-</ul>
-
-<h5>
-    Materials
-</h5>
-<ul>
-    <li>
-        A battery
+        Light Bulb
     </li>
     <li>
-        A light bulb
+        Switch
     </li>
     <li>
-        A switch. When you are first learning
-        to use a switch, its good to use a throw switch.
-    </li>
-    <li>
-        Several alligator clip wires
+        Lots of Wires
     </li>
 </ul>
 
@@ -65,15 +59,13 @@
         with the light bulb, like this:
         <br>
         <div id = 'switchInSeries'></div>
-        Move the switch up and down.
+        Move the switch up and down. (by clicking on it)
         Does it work?
     </li>
     <li>
-        If you have an old-school throw-switch,
-        do you need to close it all the way to get
-        the light bulb to turn on?
-        How much do you need to close it?
-        Why?
+        What happens to the moving electrons in the circuit
+        when the switch is open?
+        Do they move partially or stop moving entirely?
     </li>
     <li>
         Now try rewiring
@@ -82,20 +74,21 @@
         <br>
         <div id = 'switchInParallel'></div>
         Try flipping the switch on and off.
-        It should still work, turning the light bulb turn
-        on and off.....but you will notice something a little strange.
+        It should still work, because when you switch it the light bulb
+        changes between bright and dim.....but you will notice something a little strange.
         What?
     </li>
     <li>
         I like to call this a "reverse switch." Why does that name fit?
     </li>
     <li>
-        Turn the switch in parallel "on."
-        The light bulbs should now be off.
-        Is there current running? Wait for a little bit, and see if the battery gets warm.
+        When the switch is on, what happens to the battery. Why?
+        You can look back at the previous lab on <a href = '/labs/shortCircuits'>short circuits</a>
+        for guidance.
     </li>
     <li>
-        Look back at the previous lab on <a href = '/labs/shortCircuits'>short circuits</a>.
+        Using information from the previous lab on <a href = '/labs/shortCircuits'>short circuits</a>,
+        answer these questions:
         Why is the light bulb off when the switch is on?
         Why is the light bulb on when the battery is off?
     </li>
@@ -107,10 +100,6 @@
     </li>
 </ol>
 
-<p>
-    Coming soon:
-    picture of a throw switch
-</p>
 
 <script>
     let simpleCircuit = new CircuitDiagram();
