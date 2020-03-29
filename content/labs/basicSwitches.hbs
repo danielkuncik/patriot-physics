@@ -1,0 +1,150 @@
+
+<p>
+    This lab deals with how to properly connect an
+    <emph>switch</emph> to a circuit.
+</p>
+
+<p>
+    First, two vocabulary:
+</p>
+<ul>
+    <li>
+        When two components are <strong>in series</strong>,
+        they adjacent, so all current through one component goes through the other.
+    </li>
+    <li>
+        When two components are <strong>in parallel</strong>,
+        they are in a series circuit, one after the other.
+    </li>
+</ul>
+
+<h5>
+    Materials
+</h5>
+<ul>
+    <li>
+        A battery
+    </li>
+    <li>
+        A light bulb
+    </li>
+    <li>
+        A switch. When you are first learning
+        to use a switch, its good to use a throw switch.
+    </li>
+    <li>
+        Several alligator clip wires
+    </li>
+</ul>
+
+
+<h5>
+    Procedure and Questions
+</h5>
+
+<p>
+    <strong>Note:</strong>
+    All of the switches in the circuit diagrams for this lab
+    are being drawn as open switch. This is because it is much easier to see them.
+    Obviously, the point is to open and close the switch after you
+    build it to see how it works.
+</p>
+
+<ol>
+    <li>
+        Start with a circuit containing
+        just a light bulb and a battery:
+        <br>
+        <div id = 'simpleCircuit'></div>
+        <br>
+        Then, add a switch <emph>in series</emph>
+        with the light bulb, like this:
+        <br>
+        <div id = 'switchInSeries'></div>
+        Move the switch up and down.
+        Does it work?
+    </li>
+    <li>
+        If you have an old-school throw-switch,
+        do you need to close it all the way to get
+        the light bulb to turn on?
+        How much do you need to close it?
+        Why?
+    </li>
+    <li>
+        Now try rewiring
+        your circuit so that the switch is connected
+        to the light bulb <emph>in parallel</emph>:
+        <br>
+        <div id = 'switchInParallel'></div>
+        Try flipping the switch on and off.
+        It should still work, turning the light bulb turn
+        on and off.....but you will notice something a little strange.
+        What?
+    </li>
+    <li>
+        Turn the switch in parallel "on."
+        The light bulbs should now be off.
+        Is there current running? Wait for a little bit, and see if the battery gets warm.
+    </li>
+    <li>
+        Look back at the previous lab on <a href = '/labs/shortCircuits'>short circuits</a>.
+        Why is the light bulb off when the switch is on?
+        Why is the light bulb on when the battery is off?
+    </li>
+    <li>
+        If you want a switch to properly control a light bulb,
+        do yo want to connect it in series or parallel with the light bulb?
+        Give two reasons why:
+        one reason that deals with safety and another with making your circuit easy to understand.
+    </li>
+</ol>
+
+<p>
+    Coming soon:
+    picture of a throw switch
+</p>
+
+<script>
+    let simpleCircuit = new CircuitDiagram();
+    simpleCircuit.addCellSimple('up',3);
+    simpleCircuit.addWire('up',1);
+    simpleCircuit.addWire('right',4);
+    simpleCircuit.addWire('down',2);
+    simpleCircuit.addLightBulb('down',1);
+    simpleCircuit.addWire('down',2);
+    simpleCircuit.addWire('left',4);
+    simpleCircuit.addWire('up',1);
+
+    let switchInSeries = new CircuitDiagram();
+    switchInSeries.addCellSimple('up',3);
+    switchInSeries.addWire('up',1);
+    switchInSeries.addWire('right',1.5);
+    switchInSeries.addOpenSwitch('right',1);
+    switchInSeries.addWire('right',1.5);
+    switchInSeries.addWire('down',2);
+    switchInSeries.addLightBulb('down',1);
+    switchInSeries.addWire('down',2);
+    switchInSeries.addWire('left',4);
+    switchInSeries.addWire('up',1);
+
+    let switchInParallel = new CircuitDiagram();
+    switchInParallel.addCellSimple('up',3);
+    switchInParallel.addWire('up',1);
+    switchInParallel.addWire('right',4);
+    switchInParallel.addWire('down',2);
+    switchInParallel.addLightBulb('down',1);
+    switchInParallel.addWire('down',2);
+    switchInParallel.translateCursor('up',5);
+    switchInParallel.addWire('right',3);
+    switchInParallel.addWire('down',2);
+    switchInParallel.addOpenSwitch('down',1);
+    switchInParallel.addWire('down',2);
+    switchInParallel.addWire('left',3);
+    switchInParallel.addWire('left',4);
+    switchInParallel.addWire('up',1);
+
+    $("#simpleCircuit").append(simpleCircuit.drawCanvas(200));
+    $("#switchInSeries").append(switchInSeries.drawCanvas(400));
+    $("#switchInParallel").append(switchInParallel.drawCanvas(400));
+</script>

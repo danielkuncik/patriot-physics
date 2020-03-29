@@ -265,12 +265,12 @@ class CircuitDiagram extends Diagram {
         if (radius === undefined) {
             radius = 0.3333;
         }
-        let newTerminal = super.addCircle(this.cursor, radius);
-        newTerminal.fill();
+        const centerPoint = new Point(this.cursor.x, this.cursor.y);
+        super.addBlackCircle(centerPoint, radius);
     }
 
     addClosedSwitch(directionInput, length) {
-        let terminalRadius = length / 4;
+        let terminalRadius = length / 8;
         this.addTerminal(terminalRadius);
         this.addWire(directionInput, length);
         this.addTerminal(terminalRadius);
@@ -295,7 +295,7 @@ class CircuitDiagram extends Diagram {
             console.log('Open switch changed to closed switch');
         }
 
-        let terminalRadius = length / 4;
+        let terminalRadius = length / 8;
         this.addTerminal(terminalRadius);
 
         const point1 = this.cursor;

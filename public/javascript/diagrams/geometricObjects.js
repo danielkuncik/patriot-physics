@@ -38,7 +38,8 @@ class Point {
     translateAndReproducePolar(length, thetaInRadians) {
         let xTranslation = length * Math.cos(thetaInRadians);
         let yTranslation = length * Math.sin(thetaInRadians);
-        return this.translateAndReproduce(xTranslation, yTranslation);
+        let newPoint = new Point(this.x + xTranslation, this.y + yTranslation);
+        return newPoint
     }
 
     // creates a new point by rotating the canvas, then translating
