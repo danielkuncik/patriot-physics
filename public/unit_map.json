@@ -1681,67 +1681,107 @@
           {
             "title": "Very basic vectors and scalars",
             "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
             "objective": "Define vectors and scalars; identify basic vectors and scalars."
           },
           "distance_vs_displacement":
           {
             "title": "Distance vs. Displacement",
             "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["very_basic_vectors_scalars"],
             "objective": "Calculate distance and displacement for one-dimensional motion."
+          },
+          "quantitative_kinematic_graphs_6":
+          {
+            "title": "Quantitative Kinematic Graphs 6",
+            "subtitle": "Information from Position and Velocity graphs in 2-directions",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["distance_vs_displacement"],
+            "objective": "Find speed and/or displacement from position and velocity graphs for objects moving in two-directions."
           },
           "average_speed_vs_average_velocity":
           {
             "title": "Average Speed vs. Average Velocity",
             "level": 2,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["quantitative_kinematic_graphs_6"],
             "objective": "Calculate average speed and average velocity in simple situations; know that average speed does not include direction and average velocity does; identify situations when average velocity is zero."
           },
           "distance_displacement_position":
           {
             "title": "Distance, Displacement, and Position (Nick the Knight)",
             "level": 2,
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["average_speed_vs_average_velocity"],
             "objective": "Define an origin, positive direction, and negative direction; calculate distance, displacement, and position in multi-step motion"
-          },
-          "quantitative_kinematic_graphs_6":
-          {
-            "title": "Quantitative Kinematic Graphs 6",
-            "subtitle": "Information from Position and Velocity graphs in 2-directions",
-            "level": 2,
-            "objective": "Find speed and/or displacement from position and velocity graphs for objects moving in two-directions."
           },
           "kinematic_equations_5":
           {
             "title": "Kinematic Equations 5",
             "subtitle": "The first kinematic equation in two directions",
             "level": 2,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["distance_displacement_position"],
             "objective": "Solve the first kinematic equation in two-directions; use relevant quantities to identify what direction an object is moving and whether is is speeding up or slowing down."
+          },
+          "kinematic_graphs_7":
+          {
+            "title": "Kinematic Graphs 7",
+            "subtitle": "Connect and Interpret position and velocity graphs in two directions",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["kinematic_equations_5"],
+            "objective": "Given a velocity-time graph of an object moving in a constant velocity in multiple directions, draw a corresponding position-time graph; given a position-time graph of an object moving in a constatn velocity in two directions, draw a relevant velocity time graph; interpret the graphs for relevant information such as which direction an object is moving",
+            "notes": "Level 2 is crowded, beef this up and make it truly level 3"
           },
           "kinematic_equations_6":
           {
             "title": "Kinematic Equations 6",
             "subtitle": "All kinematic equations in two directions",
             "level": 2,
+            "horizontal": 0,
+            "letter": "H",
+            "prerequisites": ["kinematic_graphs_7"],
             "objective": "Solve all kinematic equations in two-directions; use relevant quantities to identify what direction an object is moving and whether is is speeding up or slowing down."
-          },
-          "kinematic_graphs_7":
-          {
-            "title": "Kinematic Graphs 7",
-            "subtitle": "Connect and Interpret position and velocity graphs in two directions",
-            "level": 3,
-            "objective": "Given a velocity-time graph of an object moving in a constant velocity in multiple directions, draw a corresponding position-time graph; given a position-time graph of an object moving in a constatn velocity in two directions, draw a relevant velocity time graph; interpret the graphs for relevant information such as which direction an object is moving",
-            "notes": "Level 2 is crowded, beef this up and make it truly level 3"
           },
           "kinematic_equations_7":
           {
             "title": "Kinematic Equations 7",
             "subtitle": "Real world kinematics in two directions",
             "level": 3,
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["kinematic_equations_6"],
             "objective": "Solve real world problems with an object moving at a constant acceleration in two directions, including pop-up problems; interpret results for relevant information"
+          },
+          "kinematic_graphs_8":
+          {
+            "title": "Kinematic Graphs 8",
+            "subtitle": "Information from Kinematic Graphs in two directions",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["kinematic_equations_7"],
+            "objective": "Find kinematic quantities from a kinematic graph of an object moving in two directions."
           },
           "kinematic_equations_8":
           {
             "title": "Kinematic Equations 8",
             "subtitle": "Stepwise kinematic equations in two directions",
             "level": 4,
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["kinematic_graphs_8"],
             "objective": "Use the kinematic equations to analyze stepwise motion in two different directions; solve for average speed and average velocity in more complex situations."
           },
           "kinematic_graphs_9A":
@@ -1749,6 +1789,9 @@
             "title": "Kinematic Equations 9A",
             "subtitle": "Position to other graphs in two directions",
             "level": 4,
+            "horizontal": 4,
+            "letter": "L",
+            "prerequisites": ["kinematic_equations_8"],
             "objective": "Given a position-time graph of an object moving in two different directions, draw a corresponding velocity-time graph and acceleration-time graph; includes only constant acceleration motion"
           },
           "kinematic_graphs_9B":
@@ -1756,6 +1799,9 @@
             "title": "Kinematic Equations 9B",
             "subtitle": "Velocity to other graphs in two directions",
             "level": 4,
+            "horizontal": 5,
+            "letter": "M",
+            "prerequisites": ["kinematic_graphs_9A"],
             "objective": "Given a velocity-time graph of an object moving in two different directions, draw a corresponding position-time graph and acceleration-time graph; includes only constant acceleration motion"
           },
           "kinematic_graphs_9C":
@@ -1763,6 +1809,9 @@
             "title": "Kinematic Equations 9C",
             "subtitle": "Acceleration to other graphs in two directions",
             "level": 4,
+            "horizontal": 6,
+            "letter": "N",
+            "prerequisites": ["kinematic_graphs_9B"],
             "objective": "Given an acceleration-time graph of an object moving in two different directions, draw a corresponding position-time graph and velocity-time graph; includes only constant acceleration motion"
           },
           "kinematic_graphs_10":
@@ -1770,6 +1819,9 @@
             "title": "Kinematic Graphs 10",
             "subtitle": "Stepwise kinematic graphs in two directions",
             "level": 5,
+            "horizontal": 5,
+            "letter": "O",
+            "prerequisites": ["kinematic_graphs_9C"],
             "objective": "Given a description of stepwise motion of an object moving two-directions, draw position-time graph, velocity-time graph, and acceleration-time graph for the object; each step has constant acceleration"
           },
           "derive_kinematic_equations_2":
@@ -1777,6 +1829,9 @@
             "title": "Derive the Kinematic Equations 2",
             "subtitle": "Derive the kinematic equations in two directions",
             "level": 5,
+            "horizontal": 4,
+            "letter": "P",
+            "prerequisites": ["kinematic_graphs_10"],
             "objective": "Demonstrate that the derivation of the kinematic equations from unit 102 still applies when an object's velocity-time function crosses the y-axis"
           },
           "fundamental_theorem_of_calculus_2":
@@ -1784,12 +1839,18 @@
             "title": "Fundamental Theorem of Calculus 2",
             "subtitle": "Fundamental Theorem of Calculus in two directions",
             "level": 5,
+            "horizontal": 3,
+            "letter": "Q",
+            "prerequisites": ["derive_kinematic_equations_2"],
             "objective": "Demonstrate that the fundamental theorem of calculus still connects the three main kinematic quantities when the velocity-time function crosses the y-axis."
           },
           "bungee_jumper":
           {
             "title": "The bungee jumper",
             "level": 6,
+            "horizontal": 2,
+            "letter": "R",
+            "prerequisites": ["fundamental_theorem_of_calculus_2"],
             "objective": "Create a quantitative kinematic model for a bungee jumper."
           }
         }

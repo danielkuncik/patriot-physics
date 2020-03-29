@@ -1,0 +1,131 @@
+<p>
+    The previous formula, distance = speed * time,
+    is useful if an object is moving at a constant velocity.
+    However, most interesting physics involves objects that are
+    either speeding up or slowing down.
+    To analyze these objects, we need a new quantity, the <strong>acceleration</strong>.
+    In this pod, we will learn the formula that defines acceleration.
+</p>
+
+<p class = 'equation'>
+    $$
+    a = \frac{v_f - v_i}{\Delta t}
+    $$
+</p>
+
+<div id = 'accelerationFormulaTable'></div>
+
+<script>
+    let accelerationFormulaTable = new Table(5,4);
+    accelerationFormulaTable.addTopHeaders(['Symbol','Quantity','SI Unit','Notes']);
+    accelerationFormulaTable.writeTextInRow(1,['\\( a \\)','acceleration','m/s/s']);
+    accelerationFormulaTable.writeTextInRow(2,['\\( v_f \\)','final velocity','m/s',"Velocity at the end of the motion."]);
+    accelerationFormulaTable.writeTextInRow(3,['\\( v_i \\)','initial velocity','m/s',"Velocity at the beginning of the motion."]);
+    accelerationFormulaTable.writeTextInRow(4,['\\( \\Delta t \\)', 'Time interval', 'seconds (s)']);
+
+    accelerationFormulaTable.setMaxFontProportion(0.05);
+    $("#accelerationFormulaTable").append(accelerationFormulaTable.draw(500));
+</script>
+
+<p>
+    The unit of acceleration can be written as meters per second per second (m/s/s),
+    or as meters per second-squared (m/s<sup>2</sup>).
+    Even though there is a square in the unit, it does not mean
+    you need to square the value. Treat it like any other unit.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '6 m/s/s'>
+        I have an initial velocity of 10 m/s.
+        I have a final velocity of 40 m/s.
+        A time of 5 seconds passes.
+        What is my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '4 m/s/s'>
+        I have an initial velocity of 2 m/s.
+        I have a final velocity of 26 m/s.
+        A time of 6 seconds passes.
+        What is my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '5 m/s/s'>
+        I have an initial velocity of 7 m/s.
+        I have a final velocity of 57 m/s.
+        A time of 10 s passes.
+        What is my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+<h5>
+    "At Rest"
+</h5>
+
+<p class = 'definition'>
+    When a problem says something is <strong>at rest</strong>,
+    it means that velocity is equal to zero.
+    If it <strong>begins at rest</strong>, initial velocity is zero.
+    If the <strong>ends at rest</strong>, final velocity is zero.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '8 m/s/s'>
+        I begin at rest.
+        I have a final velocity of 40 m/s.
+        A time of 5 s passes.
+        What is my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<h5>
+    Negative Acceleration
+</h5>
+
+<p class = 'definition'>
+    Acceleration can be either positive or negative.
+    When it is positive, it means something is speeding up.
+    When it is negative, it means something is slowing down.
+    Sometimes, negative acceleration is called <emph>deceleration</emph>,
+    but most physicists  prefer the term <strong>negative acceleration</strong>.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '-2 m/s/s'>
+        A car has an initial velocity of 24 m/s.
+        It has a final velocity of 10 m/s.
+        A time of 7 s passes.
+        What is its acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '-5 m/s/s'>
+        I have an initial velocity of 50 m/s. I slow down until I am at rest.
+        A time of 10 s passes.
+        What is my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = 'final velocity; I am getting faster.'>
+        Acceleration is positive. Which is greater, initial velocity or final velocity?
+    </li>
+    <li class = 'question' data-answer = 'initial velocity; I am getting slower.'>
+        Acceleration is negative. Which is greater, initial velocity or final velocity?
+    </li>
+</ol>
+
+<h4>
+    Coming soon!
+</h4>
+<p>
+    More explanation of the unit for acceleration...
+    intuitively understanding the unit for acceleration
+</p>
+
+<ol class = 'answerList'></ol>
