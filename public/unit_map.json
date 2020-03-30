@@ -2415,6 +2415,16 @@
         "level": 2,
         "pods":
         {
+          "what_is_system":
+          {
+            "title": "What is a system?",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Properly define a physics system",
+            "content": "A system is several parts combined to make a whole"
+          },
           "internal_external_forces":
           {
             "title": "Internal and External Forces",
