@@ -3,71 +3,71 @@
   {
     "title": "Mathematics",
     "number": 0,
-      "units":
-      {
+    "units":
+    {
       "algebra":
+      {
+        "title": "Algebra",
+        "number": 1,
+        "level": 1,
+        "completed": true,
+        "AP": true,
+        "honors": false,
+        "pods":
         {
-          "title": "Algebra",
-          "number": 1,
-          "level": 1,
-          "completed": true,
-          "AP": true,
-          "honors": false,
-          "pods":
+          "numeric_algebra_1":
           {
-            "numeric_algebra_1":
-            {
-              "title": "Numeric Algebra 1",
-              "level": 1,
-              "horizontal": 2,
-              "letter": "A",
-              "prerequisites": [],
-              "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
-            },
-            "numeric_algebra_2": {
-              "title": "Numeric Algebra 2",
-              "level": 2,
-              "horizontal": 1,
-              "letter": "B",
-              "prerequisites": ["numeric_algebra_1"],
-              "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
-            },
-            "symbolic_algebra_1": {
-              "title": "Symbolic Algebra 1",
-              "level": 2,
-              "horizontal": 3,
-              "letter": "C",
-              "prerequisites": ["numeric_algebra_1"],
-              "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
-            },
-            "system_of_equations_1": {
-              "title": "System of Equations 1",
-              "subtitle": "Numeric Solutions",
-              "level": 3,
-              "horizontal": 1,
-              "letter": "D",
-              "prerequisites": ["numeric_algebra_2"],
-              "objective": "Solve a system of 2-3 equations and an equal number of variables numerically."
-            },
-            "symbolic_algebra_2": {
-              "title": "Symbolic Algebra 2",
-              "level": 3,
-              "horizontal": 3,
-              "letter": "E",
-              "prerequisites": ["symbolic_algebra_1"],
-              "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
-            },
-            "system_of_equations_2": {
-              "title": "System of Equations 2",
-              "subtitle": "Symbolic Solution",
-              "level": 4,
-              "horizontal": 2,
-              "letter": "F",
-              "prerequisites": ["system_of_equations_1", "symbolic_algebra_2"],
-              "objective": "Solve a system of 2-3 equations with an equal number of variables symbolically."
-            }
+            "title": "Numeric Algebra 1",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
+          },
+          "numeric_algebra_2": {
+            "title": "Numeric Algebra 2",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "B",
+            "prerequisites": ["numeric_algebra_1"],
+            "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
+          },
+          "symbolic_algebra_1": {
+            "title": "Symbolic Algebra 1",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["numeric_algebra_1"],
+            "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
+          },
+          "system_of_equations_1": {
+            "title": "System of Equations 1",
+            "subtitle": "Numeric Solutions",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["numeric_algebra_2"],
+            "objective": "Solve a system of 2-3 equations and an equal number of variables numerically."
+          },
+          "symbolic_algebra_2": {
+            "title": "Symbolic Algebra 2",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["symbolic_algebra_1"],
+            "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
+          },
+          "system_of_equations_2": {
+            "title": "System of Equations 2",
+            "subtitle": "Symbolic Solution",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["system_of_equations_1", "symbolic_algebra_2"],
+            "objective": "Solve a system of 2-3 equations with an equal number of variables symbolically."
           }
-        },
+        }
+      },
       "geometry":
       {
         "title": "Geometry",
@@ -77,7 +77,7 @@
         "AP": true,
         "honors": false,
         "pods":
-          {
+        {
           "trigonometry_1":
           {
             "title": "Trigonometry 1",
@@ -1140,50 +1140,50 @@
           }
         }
       },
-    "back_of_envelp_calc":
-    {
-      "title": "Back of the Envelope Calculations",
-      "level": 2,
-      "number": 10,
-      "completed": null,
-      "enduring_understandings":
-              [
-                "When presented with some novel sitaution or problem,",
-                "A good scientist can, in a small amount of space and without a calcualtor,",
-                "figure out an order of magnitude estimate of the answer."
-              ],
-      "pods":
+      "back_of_envelp_calc":
       {
-        "slap_a_chicken":
+        "title": "Back of the Envelope Calculations",
+        "level": 2,
+        "number": 10,
+        "completed": null,
+        "enduring_understandings":
+        [
+          "When presented with some novel sitaution or problem,",
+          "A good scientist can, in a small amount of space and without a calcualtor,",
+          "figure out an order of magnitude estimate of the answer."
+        ],
+        "pods":
         {
-          "title": "How hard do you need to slap a chicken to cook it?",
-          "level": 2
-        },
-        "memorz_length_scales":
-        {
-          "title": "Memorizing Length Scales",
-          "level": 4,
-          "objective": "Recall, whenever necessary, various objects with a given order of magnitude in length."
-        },
-        "memorz_mass_scales":
-        {
-          "title": "Memorizing Mass Scales",
-          "level": 4,
-          "objective": "Recall, whenever necessary, various objects with a given order of magnitude in mass."
-        },
-        "memorz_other_scales":
-        {
-          "title": "Memorizing Other Scales",
-          "level": 5,
-          "objective": "Recall, whenever necessary, various instances in the universe with particular orders of magnitude in speed, acceleration, energy, temperature, or time."
-        },
-        "burn_kings_landing":
-        {
-          "title": "Burning Kings Landing",
-          "level": 6,
-          "objective": "How many sheep must a dragon eat to conduct a single fire breath? During the final two episodes of Game of Thrones, how many sheep would Drogon need to eat to burn the city of King's Landing?"
+          "slap_a_chicken":
+          {
+            "title": "How hard do you need to slap a chicken to cook it?",
+            "level": 2
+          },
+          "memorz_length_scales":
+          {
+            "title": "Memorizing Length Scales",
+            "level": 4,
+            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in length."
+          },
+          "memorz_mass_scales":
+          {
+            "title": "Memorizing Mass Scales",
+            "level": 4,
+            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in mass."
+          },
+          "memorz_other_scales":
+          {
+            "title": "Memorizing Other Scales",
+            "level": 5,
+            "objective": "Recall, whenever necessary, various instances in the universe with particular orders of magnitude in speed, acceleration, energy, temperature, or time."
+          },
+          "burn_kings_landing":
+          {
+            "title": "Burning Kings Landing",
+            "level": 6,
+            "objective": "How many sheep must a dragon eat to conduct a single fire breath? During the final two episodes of Game of Thrones, how many sheep would Drogon need to eat to burn the city of King's Landing?"
+          }
         }
-      }
       }
     }
   },
@@ -2872,8 +2872,8 @@
           {
             "title": "Work and Power Formulas",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Solve the work and power formulas, including in situations in which an object does not move.",
             "content": "Work is equal to force times distance; if an object does not move, no work is done; power is equal to work divided by time elapsed while down that work."
@@ -2882,9 +2882,9 @@
           {
             "title": "Defining Mechanical Energy",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["work_power_formulas"],
             "objective": "Write the definition of mechanical energy, recognize examples of mechanical and non-mechanical energies, sum mechanical energy of objects with several different types of energy.",
             "content": "Kinetic energy and the forms of potential energy that can be gained by doing work are called mechanical energy; gravitational and elastic potential energy are a component of mechanical energy; chemical, electrochemical, and nuclear potential energies are not a part of mechanical energy."
           },
@@ -2892,9 +2892,9 @@
           {
             "title": "Is work done?",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["defining_mechanical_energy"],
             "objective": "Identify situations in which positive work, negative work, and zero work is done.",
             "content": "If an object moves in the direction of the force on an object, positive work is done; if an object moves in the opposite direction as a force on an object, negative work is done; if an object moves in a direction perpendicular to the force on an object, no work is done; if an object does not move no work is done."
           },
@@ -2902,9 +2902,9 @@
           {
             "title": "The Weightlifter Problem",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["is_work_done"],
             "objective": "Analyze how work and power are different for weightlifters lifting weights at different speeds.",
             "content": "A weightlifter lifting more weight ot a taller height is doing more work; a weightlifter lifting the same weight to the same height but in less time does the same work but has more power."
           },
@@ -2912,31 +2912,20 @@
           {
             "title": "Conservative vs. Non-conservative Forces",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["weightlifter_problem"],
             "objective": "Identify conservative and non-conservative forces and explain how they can be analyzed differently.",
             "content": "A conservative force does not cause a system to lose mechanical energy; gravity and the elastic force are conservative forces; friction and air resistance are non-conservative forces",
             "notes": "Content statement must improve."
           },
-          "work_energy_theorem_A":
+          "work_energy_theorem_1":
           {
-            "title": "The Work-Energy Theorem A",
+            "title": "The Work-Energy Theorem 1",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
-            "content": "The Work-Energy Theorem states that the work done a system equals to the change in mechanical energy of a system; physicists can use the work formula to calculate work done and then use this value to calculate quantities of kinetic and/or potential energy.",
-            "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet."
-          },
-          "work_energy_theorem_B":
-          {
-            "title": "The Work-Energy Theorem B",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["conservative_vs_nonconservative_forces"],
             "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
             "content": "The Work-Energy Theorem states that the work done a system equals to the change in mechanical energy of a system; physicists can use the work formula to calculate work done and then use this value to calculate quantities of kinetic and/or potential energy.",
             "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet."
@@ -2945,19 +2934,30 @@
           {
             "title": "Force-Position Graphs 1: Calculating Work",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["work_energy_theorem_1"],
             "objective": "Calculate Work using a force-position graph.",
             "content": "The work done on an object is equal to the area under the curve of a force-position graph of that object."
+          },
+          "work_energy_theorem_2":
+          {
+            "title": "The Work-Energy Theorem 2",
+            "level": 3,
+            "horizontal": 0,
+            "letter": "H",
+            "prerequisites": ["force_position_graphs_1"],
+            "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
+            "content": "The Work-Energy Theorem states that the work done a system equals to the change in mechanical energy of a system; physicists can use the work formula to calculate work done and then use this value to calculate quantities of kinetic and/or potential energy.",
+            "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet."
           },
           "multiple_viewpoints_1":
           {
             "title": "Multiple Viewpoints 1: Block on a Ramp",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["work_energy_theorem_2"],
             "objective": "Analyze, algebraically and graphically, a block on a frictionless ramp with different definitions of the system and surroundings.",
             "content": "When using the work-energy theorem, a physicist defines a specific system and all forces internal and external to that system; by redefining the system, the physicist changes which forces and which types of potential energy are used in the analysis",
             "systems":
@@ -2966,13 +2966,23 @@
               "block-alone system"
             ]
           },
+          "force_position_graphs_2":
+          {
+            "title": "Force-Position Graphs 2: Work-Energy Theorem",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["multiple_viewpoints_1"],
+            "objective": "Use a force-position graph together with the work-energy theorem to find dynamic and kinematic quantities.",
+            "content": "A physicist, by understanding the definition of work and the work-energy theorem, can learn useful quantities from a force-position graph of an object."
+          },
           "multiple_viewpoints_2":
           {
             "title": "Multiple Viewpoints 2: Comet",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["force_position_graphs_2"],
             "objective": "Analyze, algebraically and graphically, a comet orbiting the sun with different definitions of the system and the surroundings.",
             "content": "When using the work-energy theorem, a physicist defines a specific system and all forces internal and external to that system; by redefining the system, the physicist changes which forces and which types of potential energy are used in the analysis",
             "systems":
@@ -2981,23 +2991,13 @@
               "comet-alone system"
             ]
           },
-          "force_position_graphs_2":
-          {
-            "title": "Force-Position Graphs 2: Work-Energy Theorem",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use a force-position graph together with the work-energy theorem to find dynamic and kinematic quantities.",
-            "content": "A physicist, by understanding the definition of work and the work-energy theorem, can learn useful quantities from a force-position graph of an object."
-          },
           "prove_work_energy_theorem":
           {
             "title": "Prove the Work Energy Theorem: Special Case",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "L",
+            "prerequisites": ["multiple_viewpoints_2"],
             "objective": "Algebraically prove the work-energy theorem when acceleration is constant.",
             "content": "For an object moving with a constant acceleration, the work-energy theorem can be demonstrated by combining Newton's Laws of motion with the kinematic equations."
           },
@@ -3005,19 +3005,19 @@
           {
             "title": "Derive Potential Energy Formulas",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["prove_work_energy_theorem"],
             "objective": "Use the work-energy theorem to derive potential energy formulas.",
             "content": "The formulas we use for potential energy can be derived from the work-energy theorem."
           },
           "multiple_viewpoints_3":
           {
             "title": "Multiple Viewpoints 3: Spidey String",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "level": 5,
+            "horizontal": 2,
+            "letter": "N",
+            "prerequisites": ["derive_potential_energy_formulas"],
             "objective": "Analyze, algebraically and graphically, Spiderman swinging from his spidey-string with different definitions of the system and surroundings.",
             "content": "As Spiderman swings from building to building, he gains and loses kinetic energy, his string gains and loses elastic potential energy, and the spiderman-earth system gains and loses gravitational potential energy; a physicist can analyze this motion using multiple different systems as a point of view and find the same underlying result.",
             "systems":
@@ -6143,12 +6143,12 @@
             "prerequisites": [],
             "objective": "Recognize and describe applications of the kinetic theory of matter",
             "examples":
-                    [
-                      "Food coloring spreads faster in hot water",
-                      "Smells spread faster in hot air.",
-                      "Apply to thermal expansion",
-                      "Apply to basic gas laws"
-                    ]
+            [
+              "Food coloring spreads faster in hot water",
+              "Smells spread faster in hot air.",
+              "Apply to thermal expansion",
+              "Apply to basic gas laws"
+            ]
           },
           "entropy_1":
           {
@@ -6240,10 +6240,10 @@
             "prerequisites": [],
             "objective": "Relate common processes to probability theory",
             "examples":
-                    [
-                      "spreading perfume",
-                      "jam mixed in pudding"
-                    ],
+            [
+              "spreading perfume",
+              "jam mixed in pudding"
+            ],
             "enrichment": "Students should read/see the play 'Arcadia' by Tom Stoppard as a part of this lesson."
           }
         }
