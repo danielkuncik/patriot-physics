@@ -1,0 +1,173 @@
+<p>
+    There are four equations, called the <strong>kinematic equations</strong>
+    that physicists use the analyze motion
+    whenever an object is moving with a constant acceleration:
+</p>
+
+{{>kinematicEquationsWithNames}}
+
+<p>
+    The goal of this pod is to begin learning to use the first three of these equations.
+</p>
+
+
+<h4>
+    Formula 1: The Definition of Acceleration
+</h4>
+
+<p class = 'equation'>
+    $$
+    v_f = v_i + a \cdot \Delta t
+    $$
+</p>
+
+<div id = 'kinematicEquation1Table'></div>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '24 m/s'>
+        I have an initial velocity of 4 m/s. <br>
+        I have an acceleration of 5 m/s<sup>2</sup>. <br>
+        I have a time of 4 seconds. <br>
+        What is my final velocity? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '58 m/s'>
+        I have an initial velocity of 18 m/s. <br>
+        I have an acceleration of 2 m/s<sup>2</sup>. <br>
+        I have a time of 20 seconds. <br>
+        What is my final velocity? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '8 m/s'>
+        I have an acceleration of 3 m/s<sup>2</sup>. <br>
+        I have a time of 4 seconds. <br>
+        I have a <strong>final</strong> velocity of 20 m/s. <br>
+        What is my <strong>initial</strong> velocity? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '25 m/s'>
+        I have an acceleration of 5 m/s<sup>2</sup>. <br>
+        I have a time of 3 seconds. <br>
+        I have a <strong>final</strong> velocity of 40 m/s. <br>
+        What is my <strong>initial</strong> velocity? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '2 m/s/s'>
+        I have a final velocity of 30 m/s. <br>
+        I have an initial velocity of 20 m/s. <br>
+        I have a time of 5 seconds. <br>
+        What is my acceleration? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '3 m/s/s'>
+        I have a final velocity of 23 m/s. <br>
+        I have an initial velocity of 5 m/s. <br>
+        I have a time of 6 seconds. <br>
+        What is my acceleration? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+<h4>
+    Formula 2: The King of Kinematic Equations
+</h4>
+
+<p class = 'equation'>
+    $$
+    \Delta x = v_i \cdot \Delta t + \frac{1}{2}a \left( \Delta t \right)^2
+    $$
+</p>
+<p>
+    Note that I made this name up, because I think this is the most
+    important of kinematic equations. It isn't the official name. (But it should be!)
+</p>
+<div id = 'kinematicEquation2Table'></div>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '39 m'>
+        I have an initial velocity of 4 m/s. <br>
+        I have a time of 3 s. <br>
+        I hae an acceleration of 6 m/s. <br>
+        What is my displacement? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '250 m'>
+        I have an initial velocity of 5 m/s. <br>
+        I have a time of 10 s. <br>
+        I have an acceleration of 4 m/s<sup>2</sup>. <br>
+        What is my displacement? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<h3>
+    Formula 3: The Average Speed Formula
+</h3>
+<p class = 'equation'>
+    $$
+    \Delta x = \left( \frac{v_i + v_f}{2} \right) \Delta t
+    $$
+</p>
+
+<div id = 'kinematicEquation3Table'></div>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '30 m'>
+        I have an initial velocity of 15 m/s. <br>
+        I have a final velocity of 5 m/s. <br>
+        I have a time of 3 seconds. <br>
+        What is my displacement? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '32 m'>
+        I have an initial velocity of 3 m/s. <br>
+        I have a final velocity 13 m/s. <br>
+        I have a time of 4 s. <br>
+        What is my displacement? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '8 s'>
+        I have an initial velocity 2 m/s. <br>
+        I have a final velocity of 10 m/s. <br>
+        I have a displacement of 48 m. <br>
+        What was my time? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '6 s'>
+        I have an initial velocity of 12 m/s. <br>
+        I have a final velocity of 18 m/s. <br>
+        I have a displacement of 90 m. <br>
+        What was my time? <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<ol class = 'answerList'></ol>
+
+<script>
+    let kinematicEquation1Table = new Table(5,3);
+    kinematicEquation1Table.addTopHeaders(['Symbol','Quantity','SI Unit']);
+    kinematicEquation1Table.writeTextInRow(1,['\\( v_f \\)','Final Velocity','meters per second (m/s)']);
+    kinematicEquation1Table.writeTextInRow(2,['\\( v_i \\)','Initial Velocity','meters per second (m/s)']);
+    kinematicEquation1Table.writeTextInRow(3,['\\( a \\)', 'Acceleration','meters per second per second (m/s^2)']);
+    kinematicEquation1Table.writeTextInRow(4,['\\( \\Delta t \\)','Change in Time','seconds (s)']);
+
+    let kinematicEquation2Table = new Table(5,3);
+    kinematicEquation2Table.addTopHeaders(['Symbol','Quantity','SI Unit']);
+    kinematicEquation2Table.writeTextInRow(1,['\\( \\Delta x \\)', 'Displacement','meters (m)']);
+    kinematicEquation2Table.writeTextInRow(2,['\\( v_i \\)','Initial Velocity','meters per second (m/s)']);
+    kinematicEquation2Table.writeTextInRow(3,['\\( \\Delta t \\)','Change in Time','seconds (s)']);
+    kinematicEquation2Table.writeTextInRow(4,['\\( a \\)', 'Acceleration','meters per second per second (m/s^2)']);
+
+    let kinematicEquation3Table = new Table(5,3);
+    kinematicEquation3Table.addTopHeaders(['Symbol','Quantity','SI Unit']);
+    kinematicEquation3Table.writeTextInRow(1,['\\( \\Delta x \\)', 'Displacement','meters (m)']);
+    kinematicEquation3Table.writeTextInRow(2,['\\( v_i \\)','Initial Velocity','meters per second (m/s)']);
+    kinematicEquation3Table.writeTextInRow(3,['\\( v_f \\)','Final Velocity','meters per second (m/s)']);
+    kinematicEquation3Table.writeTextInRow(4,['\\( \\Delta t \\)','Change in Time','seconds (s)']);
+
+    $("#kinematicEquation1Table").append(kinematicEquation1Table.draw(400));
+    $("#kinematicEquation2Table").append(kinematicEquation2Table.draw(400));
+    $("#kinematicEquation3Table").append(kinematicEquation3Table.draw(400));
+</script>
