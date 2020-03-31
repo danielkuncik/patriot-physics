@@ -407,7 +407,7 @@ class FormulaSolvingTable extends Table {
 
         super.setRowProportions([1,3,1]);
 
-        super.setMaxFontProportion(0.04);
+        super.setMaxFontProportion(0.02);
     }
 }
 
@@ -507,4 +507,22 @@ class MatchingTable extends Table {
 
     // this didn't get off the ground
     // but is still worth exploring
+}
+
+
+// add kinematic equations as global variables
+
+function makeKinematicEquationsTable(dimension, dimensionSubscript) {
+    let equationArray = kinematicEquations(dimension, dimensionSubscript);
+
+    let myTable = new Table(5,2);
+    myTable.setRowProportions([1,2,2,2,2]);
+
+    myTable.addTopHeaders(['Name','Equation']);
+    myTable.writeTextInRow(1,['Definition of Acceleration',equationArray[0]]);
+    myTable.writeTextInRow(2,['The King of Kinematic Equations',equationArray[1]]);
+    myTable.writeTextInRow(3,['The Average Velocity Equation',equationArray[2]]);
+    myTable.writeTextInRow(4,['The No-Time Equation',equationArray[3]]);
+
+    return myTable
 }

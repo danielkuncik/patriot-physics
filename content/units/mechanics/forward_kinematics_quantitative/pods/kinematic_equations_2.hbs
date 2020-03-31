@@ -1,0 +1,230 @@
+<p class = 'introduction'>
+    In a previous pod,
+    we introduced each the the first three kinematic equations.
+    In this pod, we will use all four kinematic equations to solve problems that are more self-directed.
+</p>
+
+
+<p class = 'definition'>
+    The <strong>kinematic equations</strong> are four equations that can be used
+    to relate the different relevant quantities when an object is moving.
+    The four kinematic equations can be used whenever an object is
+    <emph>moving with a constant acceleration</emph>.
+    They cannot be used otherwise.
+</p>
+
+<h5>
+    The Four Kinematic Equations:
+</h5>
+<div id = kinematicEquationsTable></div>
+
+<script>
+    $("#kinematicEquationsTable").append(makeKinematicEquationsTable().draw(300));
+</script>
+
+<h5>
+    The Five Kinematic Quantities:
+</h5>
+<div id = 'kinematicQuantitiesTable'></div>
+
+<script>
+    let kinematicQuantitiesTable = new Table(6,3);
+    kinematicQuantitiesTable.addTopHeaders(['Symbol','Quantity','SI Unit']);
+    kinematicQuantitiesTable.writeTextInRow(1,['\\( \\Delta \\)','Displacement','meters (m)']);
+    kinematicQuantitiesTable.writeTextInRow(2,['\\( v_f \\)','Final Velocity','meters per second (m/s)']);
+    kinematicQuantitiesTable.writeTextInRow(3,['\\( v_i \\)','Initial Velocity','meters per second (m/s)']);
+    kinematicQuantitiesTable.writeTextInRow(4,['\\( a \\)', 'Acceleration','meters per second per second (m/s^2)']);
+    kinematicQuantitiesTable.writeTextInRow(5,['\\( \\Delta t \\)','Change in Time','seconds (s)']);
+
+    $("#kinematicQuantitiesTable").append(kinematicQuantitiesTable.draw(300));
+</script>
+
+<!--
+here needs to go some questions on the kinematic equations
+-->
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'The No-Time Equation'>
+        Which kinematic equation does not include the variable \( \Delta t \)?
+    </li>
+    <li class = 'question' data-answer = 'Acceleration'>
+        Which kinematic variable has units of meters per second per second?
+    </li>
+    <li class = 'question' data-answer = 'The Average Velocity Equation'>
+        Which kinetic equation asks you to <emph>add</emph> final and initial velocity?
+    </li>
+    <li class = 'question' data-answer = 'Four. (There are four in every equation!)'>
+        How many kinematic quantities are in each kinematic equation?
+    </li>
+</ol>
+
+
+<h4>
+    Kinematic Equation 1: The Definition of Acceleration
+</h4>
+
+<p class = 'equation'>
+    $$
+    v_f = v_i + a \cdot \Delta t
+    $$
+</p>
+
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '3 s'>
+        I had an initial velocity of 8 m/s and now have a final velocity of 20 m/s.
+        I had an acceleration of 4 m/s<sup>2</sup>.
+        How much time did I take?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '7 s'>
+        I had an initial velocity of 2 m/s and now have a final velocity of 23 m/s.
+        I had an acceleration of 3 m/s<sup>2</sup>.
+        How much time did I take?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<h4>
+    Kinematic Equation 2: The King of Kinematic Equations
+</h4>
+<p>
+    Note: "The King of Kinematic Equations" is not the official name,
+    it is a name that I invented. But if you keep learning physics,
+    you will see why this kinematic equation deserves to be crowned the king.
+</p>
+
+<p class = 'equation'>
+    $$
+    \Delta x = v_i \cdot \Delta t + \frac{1}{2}a \left( \Delta t \right)^2
+    $$
+</p>
+
+<ol class ='questionList'>
+    <li class = 'question' data-answer = '15.5 m/s'>
+        When I travel with an acceleration of 5 m/s<sup>2</sup>
+        for a time of 3 s,
+        I travel a displacement of 69 m.
+        What was my initial velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '12 m/s'>
+        When I travel with an acceleration of 7 m/s<sup>2</sup>
+        for a time of 4 s,
+        I travel a displacement of 104 m.
+        What was my initial velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '6 m/s/s'>
+        I began with an initial velocity of 3 m/s
+        and traveled for a time of 6 s.
+        I eventually traveled a displacement of 126 m.
+        What was my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '9 m/s/s'>
+        I began with an initial velocity of 16 m/s
+        and traveled for a time of 2 s.
+        I eventually traveled a displacement of 50 m.
+        What was my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<h4>
+    Kinematic Equation 3: The Average Velocity Equation
+</h4>
+
+<p class = 'equation'>
+    $$
+    \Delta x = \left( \frac{v_i + v_f}{2} \right) \Delta t
+    $$
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '11 m/s'>
+        I begin with an initial velocity of 3 m/s and travel a displacement of 49 m in a time of 7 seconds. What is my final velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '17 m/s'>
+        I begin with an initial velocity of 5 m/s and travel a displacement of 88 m in a time of 8 s. What is my final velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '13 m/s'>
+        I travel a displacement of 90 m in a time of 5 seconds and end with a final velocity of 23 m/s. What was my initial velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '1 m/s'>
+        I travel a displacement of 15 m in a time of 3 s and end with a final velocity of 9 m/s. What was my initial velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+<h4>
+    Kinematic Equation 4: The No-Time Equation
+</h4>
+
+<p class = 'equation'>
+    $$
+    v_f^2 = v_i^2 + 2 a \cdot \Delta x
+    $$
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '7.0 m/s'>
+        I begin with an initial velocity of 3 m/s and accelerate at a rate of 4 m/s<sup>2</sup>, while traveling a displacement of only 5 meters. What is my final velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '6.0 m/s'>
+        I begin with an initial velocity of 2 m/s and accelerate at a rate of 2 m/s<sup>2</sup> while traveling a displacement of 8 m. What is my final velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '5.0 m/s'>
+        I travel a displacement of only 4 meters while accelerating at a rate of 7 m/s<sup>2</sup>. If my final velocity is 9 m/s, what was my initial velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '0'>
+        I travel a displacement of 6 m while accelerating at a rate of 3 m/s<sup>2</sup> and end with a final velocity of 6 m/s. What was my initial velocity?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '3.0 m/s/s'>
+        I begin with an initial velocity of 8 m/s and accelerate to a final velocity of 10 m/s. I traveled a displacement of 6 m, what was my acceleration?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '-4.0 m/s/s'>
+        I begin with an initial velocity of 6 m/s and slow down to a final velocity of 2 m/s. If I travel a displacement of 4 m, what was my acceleration?
+        <br> [The answer should be negative here!]
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '32.0 m'>
+        I begin with an initial velocity of 4 m/s and accelerate to a final velocity of 12 m/s. My acceleration was 2 m/s<sup>2</sup>. What displacement did I travel?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '50.0 m'>
+        I begin at rest and accelerate at a rate of 4 m/s<sup>2</sup>. I finish with a final velocity of 20 m/s. What displacement did I travel?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+
+<ol class = 'answerList'></ol>
