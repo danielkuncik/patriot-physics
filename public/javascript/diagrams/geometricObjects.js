@@ -23,9 +23,8 @@ class Point {
     }
 
     translateAbsolute(newX, newY) {
-        let xNow = this.x;
-        let yNow = this.y;
-        this.translate(newX - xNow, newY - yNow);
+        this.x = newX;
+        this.y = newY;
     }
 
     translateAndReproduce(xTranslation, yTranslation) {

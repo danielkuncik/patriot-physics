@@ -69,47 +69,9 @@
 </ol>
 
 <script>
-    let simpleCircuit = new CircuitDiagram();
-    simpleCircuit.addCellSimple('up',3);
-    simpleCircuit.addWire('up',1);
-    simpleCircuit.addWire('right',4);
-    simpleCircuit.addWire('down',2);
-    simpleCircuit.addLightBulb('down',1);
-    simpleCircuit.addWire('down',2);
-    simpleCircuit.addWire('left',4);
-    simpleCircuit.addWire('up',1);
-
-    let seriesCircuit = new CircuitDiagram();
-    seriesCircuit.addCellSimple('up',3);
-    seriesCircuit.addWire('up',1);
-    seriesCircuit.addWire('right',2);
-    seriesCircuit.addLightBulb('right',1);
-    seriesCircuit.addWire('right',2);
-    seriesCircuit.addWire('down',5);
-    seriesCircuit.addWire('left',2);
-    seriesCircuit.addLightBulb('left',1);
-    seriesCircuit.addWire('left',2);
-    seriesCircuit.addWire('up',1);
-
-    let parallelCircuit = new CircuitDiagram();
-    parallelCircuit.addCellSimple('up',3);
-    parallelCircuit.addWire('up',1);
-    parallelCircuit.addWire('right',4);
-    parallelCircuit.addWire('down',2);
-    parallelCircuit.addLightBulb('down',1);
-    parallelCircuit.addWire('down',2);
-    parallelCircuit.translateCursor('up',5);
-    parallelCircuit.addWire('right',3);
-    parallelCircuit.addWire('down',2);
-    parallelCircuit.addLightBulb('down',1);
-    parallelCircuit.addWire('down',2);
-    parallelCircuit.addWire('left',3);
-    parallelCircuit.addWire('left',4);
-    parallelCircuit.addWire('up',1);
-
-    $("#simpleCircuit").append(simpleCircuit.drawCanvas(300));
-    $("#seriesCircuit").append(seriesCircuit.drawCanvas(300));
-    $("#parallelCircuit").append(parallelCircuit.drawCanvas(300));
+    $("#simpleCircuit").append(makeSimpleCircuit().drawCanvas(300));
+    $("#seriesCircuit").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+    $("#parallelCircuit").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(300));
 </script>
 
 <!--

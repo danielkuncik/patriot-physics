@@ -1,0 +1,119 @@
+<h4>
+    Adding Light Bulbs in Series and Parallel
+</h4>
+
+<p>
+    The goal of this lab is to figure out what happens when we add more light bulbs to a series or a parallel
+    circuit.
+    Do they become dimmer? Do they become brighter? What happens tot he battery?
+    If we can understand this, then later on we can use light bulbs and/or resistors to control what happens in our circuits.
+</p>
+
+<h3>
+    Materials
+</h3>
+<ul>
+    <li>
+        Two Batteries
+    </li>
+    <li>
+        Four <emph>identical</emph> light bulbs
+    </li>
+    <li>
+        Lots of wires
+    </li>
+    <li>
+        It works best if you turn the lights off!
+    </li>
+</ul>
+
+
+<h3>
+    Part 1: Adding Light Bulbs in Series
+</h3>
+
+<ol>
+    <li>
+        Begin by connecting the two batteries to a single light bulb.
+        <br>
+        <div id = 'seriesCircuit1Bulb'></div>
+    </li>
+    <li>
+        Add a another light bulb in series.
+        What happens to the first bulb?
+        <br>
+        <div id = 'seriesCircuit2Bulbs'></div>
+    </li>
+    <li>
+        Make a prediction: What do you think will happen if you continue to add light bulbs in series?
+    </li>
+    <li>
+        Add three, and then four light bulbs in series.
+        <br>
+        <div id = 'seriesCircuit3Bulbs'></div>
+        <div id = 'seriesCircuit4Bulbs'></div>
+        <br>
+        To understand this lab correctly, they must be <emph>identical</emph>,
+        otherwise you will see effects you cannot understand.
+        What happened? Did it match your prediction?
+    </li>
+    <li>
+        Think of a way that you can make light bulbs shut off just by
+        adding more light bulbs.
+        Explain your reasoning.
+    </li>
+</ol>
+
+
+<h3>
+    Part 2: Adding Light Bulbs in Parallel
+</h3>
+
+<ol start = '6'>
+    <li>
+        Begin by connecting the two batteries to a single light bulb.
+        <br>
+        <div id = 'parallelCircuit1Bulb'></div>
+    </li>
+    <li>
+        Add another light bulb in parallel. What happens to the first bulb?
+        <br>
+        <div id = 'parallelCircuit2Bulbs'></div>
+    </li>
+    <li>
+        Make a prediction: What do you think will happen if you continue to add light bulbs in parallel?
+    </li>
+    <li>
+        Add three, and then four light bulbs in parallel.
+        <br>
+        <div id = 'parallelCircuit3Bulbs'></div>
+        <div id = 'parallelCircuit4Bulbs'></div>
+        <br>
+        To understand this lab correctly, they must be <emph>identical</emph>,
+        otherwise you will see effects you cannot understand.
+        What happened? Did it match your prediction?
+    </li>
+    <li>
+        Unlike in series,
+        adding more light bulbs in parallel does not make them dimmer.
+        However, there is a cost to everything!
+        What do you think the "price" is of adding more light bulbs in parallel?
+    </li>
+</ol>
+
+
+
+
+<script>
+
+    $("#seriesCircuit1Bulb").append(makeSimpleCircuit().drawCanvas(300));
+    $("#seriesCircuit2Bulbs").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+    $("#seriesCircuit3Bulbs").append(makeSeriesCircuitOfLightBulbs(3).drawCanvas(300));
+    $("#seriesCircuit4Bulbs").append(makeSeriesCircuitOfLightBulbs(4).drawCanvas(300));
+
+    $("#parallelCircuit1Bulb").append(makeSimpleCircuit().drawCanvas(300));
+    $("#parallelCircuit2Bulbs").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(300));
+    $("#parallelCircuit3Bulbs").append(makeParallelCircuitOfLightBulbs(3).drawCanvas(300));
+    $("#parallelCircuit4Bulbs").append(makeParallelCircuitOfLightBulbs(4).drawCanvas(300));
+
+</script>

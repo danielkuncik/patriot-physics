@@ -12,7 +12,7 @@ i want to reorganize this a little
 class CircuitDiagram extends Diagram {
     constructor() {
         super();
-        this.cursor = origin;
+        this.cursor = new Point(0,0); // i used to have this set to the origin, but then i somehow moved the origin
         this.fontSize = undefined;
         this.automaticallyNameAllResisors = false;
         this.numResistors = 0;
@@ -408,7 +408,7 @@ class CircuitDiagram extends Diagram {
 }
 
 
-function makeSeriesCircuit(batteryVoltage, resistorArray) {
+function makeSeriesCircuit(batteryVoltage, resistorArray, drawBulbsInsteadOfResistors) {
     let numResistors = resistorArray.length;
     let resistorOnRightEnd = (numResistors % 2 > 0);
     let resistorsOnTop;
@@ -420,22 +420,35 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
 
     let myCircuit = new CircuitDiagram();
     // need to change this so i have more control over the battery voltage
-    myCircuit.addCellSimple('up',3,batteryVoltage);
-    myCircuit.addWire('up',2);
+    myCircuit.addWire('up',2.5);
+    myCircuit.addCellSimple('up',2,batteryVoltage);
+    myCircuit.addWire('up',2.5);
 
 
 
     let k, resistorIndex = 0;
     for (k = 0; k < resistorsOnTop; k++) {
         myCircuit.addWire('right',2);
-        myCircuit.addResistorSimple('right',2,resistorArray[resistorIndex]);
+        if (drawBulbsInsteadOfResistors) {
+            myCircuit.addWire('right',0.5);
+            myCircuit.addLightBulb('right',1);
+            myCircuit.addWire('right',0.5);
+        } else {
+            myCircuit.addResistorSimple('right',2,resistorArray[resistorIndex]);
+        }
         resistorIndex += 1;
     }
     myCircuit.addWire('right',2);
 
     if (resistorOnRightEnd) {
         myCircuit.addWire('down',2);
-        myCircuit.addResistorSimple('down',2, resistorArray[resistorIndex]);
+        if (drawBulbsInsteadOfResistors) {
+            myCircuit.addWire('down',0.5);
+            myCircuit.addLightBulb('down', 1);
+            myCircuit.addWire('down',0.5);
+        } else {
+            myCircuit.addResistorSimple('down',2, resistorArray[resistorIndex]);
+        }
         resistorIndex += 1;
         myCircuit.addWire('down',3);
     } else {
@@ -445,12 +458,17 @@ function makeSeriesCircuit(batteryVoltage, resistorArray) {
 
     for (k = 0; k < resistorsOnTop; k++) {
         myCircuit.addWire('left',2);
-        myCircuit.addResistorSimple('left',2, resistorArray[resistorIndex]);
+        if (drawBulbsInsteadOfResistors) {
+            myCircuit.addWire('left',0.5);
+            myCircuit.addLightBulb('left', 1);
+            myCircuit.addWire('left',0.5);
+        } else {
+            myCircuit.addResistorSimple('left',2, resistorArray[resistorIndex]);
+        }
         resistorIndex += 1;
     }
 
     myCircuit.addWire('left',2);
-    myCircuit.addWire('up',2);
 
     return myCircuit
 }
@@ -459,7 +477,7 @@ function makeSimpleCircuit(voltage, resistance) {
     return makeSeriesCircuit(voltage, [resistance]);
 }
 
-function makeParallelCircuit(batteryVoltage, resistorArray) {
+function makeParallelCircuit(batteryVoltage, resistorArray, drawBulbsInsteadOfResistors) {
     let numResistors = resistorArray.length;
 
     let myCircuit = new CircuitDiagram();
@@ -470,7 +488,13 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
     for (k = 0; k < numResistors; k++) {
         myCircuit.addWire('right',4);
         myCircuit.addWire('down',2);
-        myCircuit.addResistorSimple('down',3,resistorArray[k]);
+        if (drawBulbsInsteadOfResistors) {
+            myCircuit.addWire('down',1);
+            myCircuit.addLightBulb('down',1);
+            myCircuit.addWire('down',1);
+        } else {
+            myCircuit.addResistorSimple('down',3,resistorArray[k]);
+        }
         myCircuit.addWire('down',2);
         myCircuit.addWire('left',4);
         myCircuit.translateCursorRectangonal(4,7);
@@ -481,6 +505,28 @@ function makeParallelCircuit(batteryVoltage, resistorArray) {
     return myCircuit
 }
 
+function makeParallelCircuitOfLightBulbs(numBulbs) {
+    let resistorArray = [];
+    let k;
+    for (k = 0; k < numBulbs; k++) {
+        resistorArray.push(undefined)
+    }
+    return makeParallelCircuit(undefined,resistorArray,true);
+}
+
+function makeSeriesCircuitOfLightBulbs(numBulbs) {
+    let resistorArray = [];
+    let k;
+    for (k = 0; k < numBulbs; k++) {
+        resistorArray.push(undefined)
+    }
+    return makeSeriesCircuit(undefined,resistorArray,true);
+}
+
+// a circuit with just one battery and one light bulb
+function makeSimpleCircuit() {
+    return makeSeriesCircuitOfLightBulbs(1);
+}
 
 function createCircuitProblem(type, batteryVoltage, resistorArray, powerBoolean, resistanceAnswers, currentAnswers, voltageAnswers, powerAnswers) {
     let circuit, table, answerTable;
