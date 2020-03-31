@@ -3274,7 +3274,8 @@
             "horizontal": 2,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Convert a vector between standard form and component form and back"
+            "objective": "Convert a vector between standard form and component form and back",
+            "content": "Vectors can be written as components or as a magnitude and direction; the rules of trigonometry can be used to convert between the different representations."
           },
           "vector_component_addition":
           {
@@ -3283,7 +3284,8 @@
             "horizontal": 1,
             "letter": "B",
             "prerequisites":["vector_form_conversion"],
-            "objective": "Add vectors and subtract vectors in multiple dimensions using component form."
+            "objective": "Add vectors and subtract vectors in multiple dimensions using component form.",
+            "content": "Multi-dimensional vectors are easy to add and subtract in component form."
           },
           "dragging_at_angle_1":
           {
@@ -3292,7 +3294,8 @@
             "horizontal": 1,
             "letter": "C",
             "prerequisites": ["vector_component_addition"],
-            "objective": "Analyze the motion of a block dragged at an angle with only kinetic friction; explain why the drag influences the normal force."
+            "objective": "Analyze the motion of a block dragged at an angle with only kinetic friction; explain why the drag influences the normal force.",
+            "content": "An object being dragged and moving at an angle is subject to 4 forces: gravity, a normal force, an applied force and kinetic friction; a physicist can fully analyze the box use trigonometry combined with the dynamics of pulling a box at a horizontal angle."
           },
           "hanging_sign_1":
           {
@@ -3301,7 +3304,8 @@
             "horizontal": 2,
             "letter": "D",
             "prerequisites": ["dragging_at_angle_1"],
-            "objective": "Draw a quantitative free-body diagram of a sign hanging from two ropes, both at an angle."
+            "objective": "Draw a quantitative free-body diagram of a sign hanging from two ropes, both at an angle.",
+            "content": "A hanging and non-moving sign is subject to gravity and multiple applied forces; the applied forces can be broken into components in order to analyze the situation fully."
           },
           "ramp_problems_1":
           {
@@ -3310,7 +3314,8 @@
             "horizontal": 3,
             "letter": "E",
             "prerequisites": ["hanging_sign_1"],
-            "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only."
+            "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only.",
+            "content": "A block on a ramp is subject to gravity and normal force; physicists rotate the traditional cartesian coordinate system in order to properly analyze a the block; gravity must be broken into components to properly analyze a block on a ramp."
           },
           "ramp_problems_2":
           {
@@ -3319,7 +3324,8 @@
             "horizontal": 4,
             "letter": "F",
             "prerequisites": ["ramp_problems_1"],
-            "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only."
+            "objective": "Numerically analyze the motion of a block on a ramp with either no friction or kinetic friction only.",
+            "content": "In a ramp, kinetic friction adds another force in the negative-x direction."
           },
           "dragging_at_angle_2":
           {
@@ -3328,7 +3334,8 @@
             "horizontal": 4,
             "letter": "G",
             "prerequisites": ["ramp_problems_2"],
-            "objective": "Analyze the motion of a block dragged at an angle under both static and kinetic friction."
+            "objective": "Analyze the motion of a block dragged at an angle under both static and kinetic friction.",
+            "content": "When static friction is added to a block pulled at an angle, a physicist must first determine if the block moves, then, if it does move, determine how fast it accelerates"
           },
           "hanging_sign_2":
           {
@@ -3337,7 +3344,8 @@
             "horizontal": 3,
             "letter": "H",
             "prerequisites": ["dragging_at_angle_2"],
-            "objective": "Draw a quantitative free-body diagram of a sign hanging from three ropes at angles."
+            "objective": "Draw a quantitative free-body diagram of a sign hanging from three ropes at angles.",
+            "content": "For an object hanging and not moving, adding more ropes to hang from adds more terms that must to each equation."
           },
           "ramp_problems_3":
           {
@@ -3346,7 +3354,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["hanging_sign_2"],
-            "objective": "Numerically analyze the motion of a block on a ramp with both static and kinetic friction."
+            "objective": "Numerically analyze the motion of a block on a ramp with both static and kinetic friction.",
+            "content": "When a block is on a ramp with both static and kinetic friction, a physicist must first determine if the block moves, and then, if it does, determine its acceleration."
           },
           "ramp_problems_4":
           {
@@ -3355,7 +3364,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["ramp_problems_3"],
-            "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model"
+            "objective": "Algebraically model a block on a ramp without friction or only kinetic friction; use proportionality to make predictions regarding the model",
+            "content": "Physicists can algebraically model a block on a ramp by repeating the same processes used to analyze the block numerically."
           },
           "ramp_problems_x":
           {
@@ -3365,7 +3375,8 @@
             "horizontal": 5,
             "letter": "X",
             "prerequisites": [],
-            "objective": "Demonstrate that the conservation of energy is consistent with the laws of dynamics for an object on a ramp without friction and with friction."
+            "objective": "Demonstrate that the conservation of energy is consistent with the laws of dynamics for an object on a ramp without friction and with friction.",
+            "content": "A block moving down a ramp is subject to the conservation of energy and the work-energy theorem, and this can be demonstrated numerically or algebraically."
           },
           "dragging_at_angle_3":
           {
@@ -3374,7 +3385,8 @@
             "horizontal": 1,
             "letter": "K",
             "prerequisites": ["ramp_problems_4"],
-            "objective": "Algebraically model a block being dragged at an angle; create algebraic conditions for the block to experience different types of motion."
+            "objective": "Algebraically model a block being dragged at an angle; create algebraic conditions for the block to experience different types of motion.",
+            "content": "Physicists can algebraically model a block dragged at an angle by repeating the same processes used to analyze the block numerically."
           },
           "ramp_problems_5":
           {
@@ -3383,7 +3395,8 @@
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["dragging_at_angle_3"],
-            "objective": "Algebraically model a block on a ramp with both static and kinetic friction"
+            "objective": "Algebraically model a block on a ramp with both static and kinetic friction",
+            "content": "Physicists can algebraically model a block on a ramp by repeating the same processes used to analyze the block numerically."
           },
           "pulling_a_cordon":
           {
@@ -3392,7 +3405,8 @@
             "horizontal": 3,
             "letter": "M",
             "prerequisites": ["ramp_problems_5"],
-            "objective": "Create an algebraic model of a person pulling on a cordon rope."
+            "objective": "Create an algebraic model of a person pulling on a cordon rope.",
+            "content": "A person pulling on a cordon rope creates two reaction forces from the rope pulling in each direction."
           },
           "ramp_problems_6":
           {
@@ -3401,7 +3415,8 @@
             "horizontal": 4,
             "letter": "N",
             "prerequisites": ["pulling_a_cordon"],
-            "objective": "Algebraically model a block being dragged on a ramp with friction."
+            "objective": "Algebraically model a block being dragged on a ramp with friction.",
+            "content": "Adding an applied force to a block on a ramp adds an extra term in each equation."
           },
           "2D_dynamics_level_6":
           {
@@ -5885,7 +5900,7 @@
           "why_inverse_square":
           {
             "title": "Why inverse square?",
-            "level": 4,
+            "level": 5,
             "horizontal": 4,
             "letter": "O",
             "prerequisites": ["inverse_square_law_proportionality"],
