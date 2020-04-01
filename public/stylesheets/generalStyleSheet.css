@@ -170,6 +170,10 @@ ol.graphicalQuestionList {
 
 }
 
+ol.fillInTheBlank li {
+    display: inline;
+}
+
 @media print
 {
   .no-print
