@@ -3720,33 +3720,33 @@
         "honors": false,
         "pods":
         {
-          "circular_motion_basics":
-          {
-            "title": "Circular Motion Basics",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw objects in circular motion; identify the centripetal force; predict what happens if the centripetal force is released",
-            "content": "When an object is in circular motion, its velocity is tangent to the circle and a force called the centripetal force pulls it towards the center of the circle."
-          },
           "circular_vs_rotational_motion":
           {
             "title": "Circular vs. Rotational Motion",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 4,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Differentiate between examples of circular and rotational motion.",
             "content": "When an object is in circular motion, its center of mass moves in a full circle around some center point; when an object is in rotational motion, the parts of the object rotate about some pivot point, and the center of mass does not necessarily move."
+          },
+          "circular_motion_basics":
+          {
+            "title": "Circular Motion Basics",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "B",
+            "prerequisites": ["circular_vs_rotational_motion"],
+            "objective": "Draw objects in circular motion; identify the centripetal force; predict what happens if the centripetal force is released",
+            "content": "When an object is in circular motion, its velocity is tangent to the circle and a force called the centripetal force pulls it towards the center of the circle."
           },
           "circular_kinematics_1":
           {
             "title": "Circular Kinematics 1: Finding Speed",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["circular_motion_basics"],
             "objective": "Find the speed of an object in circular motion.",
             "content": "An object in circular motion travels a distance equal to the circumference of the circular in a time equal to the period of its motion."
           },
@@ -3755,95 +3755,95 @@
             "title": "Vector Analysis of Circular Motion 1",
             "subtitle": "Identify Vectors in Circular Motion",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["circular_kinematics_1"],
             "objective": "Identify the four relevant vectors for an object in circular motion: position, velocity, acceleration, and force.",
             "content": "When an object is moving in a circle and the origin is in the center of that circle, its position is radial and outward, its acceleration and force are radial and inward, and its velocity is tangential."
+          },
+          "centripetal_acceleration_force_formulas_1":
+          {
+            "title": "Centripetal Acceleration and Force Formulas 1",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["vector_analysis_circular_motion_1"],
+            "objective": "Use the centripetal acceleration formula alone.",
+            "content": "The magnitude of the acceleration required to keep an object moving in a circle is equal to its speed squared divided by the radius of the circle; the magnitude of the force required to keep something moving in a circle is equal to the mass times the acceleration."
           },
           "vector_analysis_circular_motion_2":
           {
             "title": "Vector Analysis of Circular Motion 2",
             "subtitle": "Apply Newton's Laws to Circular Motion",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "F",
+            "prerequisites": ["centripetal_acceleration_force_formulas_1"],
             "objective": "Explain why an object in circular motion is accelerating; explain why a net force must act on an object moving in a circle; extend Newton's Second Law to include turning",
             "content": "Velocity is a vector, meaning any object changing direction is changing velocity; according to Newton's First Law any object changing velocity must have a net force acting on it; when an object experiences a net force perpendicular to its velocity, its direction of velocity changes."
           },
-          "centripetal_acceleration_force_formulas_1":
+          "centripetal_acceleration_force_formulas_2":
           {
-            "title": "Centripetal Acceleration and Force Formulas 1",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the centripetal acceleration formula alone.",
-            "content": "The magnitude of the acceleration required to keep an object moving in a circle is equal to its speed squared divided by the radius of the circle; the magnitude of the force required to keep something moving in a circle is equal to the mass times the acceleration."
+            "title": "Centripetal Acceleration and Force Formula 2",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "G",
+            "prerequisites": ["vector_analysis_circular_motion_2"],
+            "objective": "Given a radius and period of circular motion, determine necessary quantitative information about that motion.",
+            "content": "Physicists can use multiple formulas together to learn crucial kinematic and dynamic quantities about an object moving in a circle."
           },
           "vector_analysis_circular_motion_3":
           {
             "title": "Newton's Model for Circular Motion 2",
             "subtitle": "Counterintuitive Examples of Circular Motion",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "H",
+            "prerequisites": ["centripetal_acceleration_force_formulas_2"],
             "objective": "Using Newton's Model, explain why objects in a shopping bag do not fall out when it is flipped over and why the earth does not move towards the sun if it is attracted to it.",
             "content": "When an object is moving in a circle, a force pulls it towards the center of that circle, but this force only causes it to change direction of velocity, not to move towards the center of the circle."
-          },
-          "centripetal_acceleration_force_formulas_2":
-          {
-            "title": "Centripetal Acceleration and Force Formula 2",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Given a radius and period of circular motion, determine necessary quantitative information about that motion.",
-            "content": "Physicists can use multiple formulas together to learn crucial kinematic and dynamic quantities about an object moving in a circle."
           },
           "centripetal_acceleration_force_formulas_3":
           {
             "title": "Centripetal Acceleration and Force Formulas 3: ",
             "subtitle": "Solving the Centripetal Acceleration Formula Algebraically",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "I",
+            "prerequisites": ["vector_analysis_circular_motion_3"],
             "objective": "Solve the centripetal acceleration formula for each item and demonstrate answers are correct using dimensional analysis.",
             "content": "Physicists can create new formulas by algebraically manipulating the formulas for centripetal force and acceleration."
+          },
+          "finding_mass_of_sun":
+          {
+            "title": "Finding Mass of Sun",
+            "level": 4,
+            "horizontal": 5,
+            "letter": "J",
+            "prerequisites": ["centripetal_acceleration_force_formulas_3"],
+            "objective": "Use the formulas for centripetal acceleration and gravitation to find the mass of the sun and earth.",
+            "content": "Because the earth moves in a nearly perfect circle around the sun, the centripetal force acting on the earth is equal to the gravitational force pulling it towards the sun; this knowledge can be used to discover the mass of the sun.",
+            "notes": "There is a related problem set on this topic."
           },
           "centripetal_acceleration_force_formulas_4":
           {
             "title": "Centripetal Acceleration Formula 4",
             "subtitle": "Proportionality in the Centripetal Acceleration Formula",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "K",
+            "prerequisites": ["finding_mass_of_sun"],
             "objective": "Use proportionality to find numerical answers with not all information given and to explain real life experiences with turning a car.",
             "content": "The magnitude of force required to keep a car moving in a circle is directly proportional to the square of the car's speed and inversely proportional to the radius of the circle the in which the car is moving."
-          },
-          "finding_mass_of_sun":
-          {
-            "title": "Finding Mass of Sun",
-            "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the formulas for centripetal acceleration and gravitation to find the mass of the sun and earth.",
-            "content": "Because the earth moves in a nearly perfect circle around the sun, the centripetal force acting on the earth is equal to the gravitational force pulling it towards the sun; this knowledge can be used to discover the mass of the sun.",
-            "notes": "There is a related problem set on this topic."
           },
           "vertical_circles_1":
           {
             "title": "Vertical Circles 1",
             "subtitle": "Loop-de-loop problems",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["centripetal_acceleration_force_formulas_4"],
             "objective": "Analyze the forces in a vertical circle, for example, the forces on a pilot as he loops over.",
             "content": "When an object is swung around in a circle, gravity and tension combine to make the centripetal force acting on an object."
           },
@@ -3851,9 +3851,9 @@
           {
             "title": "Proving the Centripetal Acceleration Formula",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["vertical_circles_1"],
             "objective": "Argue the formula for centripetal acceleration is numerically accurate using a conceptual geometry and limit-based argument.",
             "content": "The formula for centripetal acceleration can be demonstrated using geometry and an intuitive understanding of mathematical limits"
           },
@@ -3861,9 +3861,9 @@
           {
             "title": "Vertical Circles 2",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisite": [],
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["proving_centripetal_acceleration_formula"],
             "objective": "Derive a formula relating angular position, velocity, and acceleration for an object moving in a vertical circle.",
             "content": "Physicists can analyze vertical circles algebraically as well as numerically."
           },
@@ -3871,9 +3871,9 @@
           {
             "title": "The Gravitron",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "O",
+            "prerequisites": ["vertical_circles_2"],
             "objective": "Analyze the forces acting on a person in the gravitron amusement park ride; describe why a person feels 'pressed into' the wall during the ride.",
             "content": "A person on a gravitron ride exhibits three forces: gravity, normal force, and static friction; normal force acts as centripetal force and its high magnitude increases the static friction and causes the person to stick to the wall."
           },
@@ -3881,9 +3881,9 @@
           {
             "title": "The Hula Hoop",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "P",
+            "prerequisites": ["gravitron"],
             "objective": "Develop a quantitative model to examine the motion of a hula hoop.",
             "content": "In a hula hoop, forces caused be a person's gyrations keep the hoop in circular motion and above the ground."
           },
@@ -3891,9 +3891,9 @@
           {
             "title": "Artificial Gravity Part 2",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "Q",
+            "prerequisites": ["gravitron"],
             "objective": "Develop a model of a space station in which people can walk around normally, as they would on earth, due to the dynamics of centripetal force.",
             "content": "A space station moving in a circle could potentially give humans an experience of standing or walking on the ground similar to that on planet earth."
           }
