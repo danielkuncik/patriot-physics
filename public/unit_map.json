@@ -2432,7 +2432,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["what_is_system"],
-            "objective": "Identify internal and external forces acting on a defined system."
+            "objective": "Identify internal and external forces acting on a defined system.",
+            "content": "In an internal force, one object within the system acts on another object within the system; in an external force, an object outside the system acts on some part of the system; only external forces affect the motion of the center of mass of a system."
           },
           "center_of_mass_1":
           {
@@ -2441,7 +2442,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["internal_external_forces"],
-            "objective": "Calculate center of mass of a series of spheres with integer values for position and mass."
+            "objective": "Calculate center of mass of a series of spheres with integer values for position and mass.",
+            "content": "The center of mass of a system is calculated via weighted a weighted average of position and mass."
           },
           "atwood_machines_1":
           {
@@ -2450,7 +2452,8 @@
             "horizontal": 3,
             "letter": "D",
             "prerequisites": ["center_of_mass_1"],
-            "objective": "Find the numerical acceleration of a frictionless Atwood machine with two masses."
+            "objective": "Find the numerical acceleration of a frictionless Atwood machine with two masses.",
+            "content": "An atwood machine consists of two weights hanging over a pulley; an Atwood machine is most easily understood as a system."
           },
           "center_of_mass_2":
           {
@@ -2459,7 +2462,8 @@
             "horizontal": 2,
             "letter": "E",
             "prerequisites": ["atwood_machines_1"],
-            "objective": "Find the center of mass of a series of spheres with inconvienient masses and positions, such as planets and moons."
+            "objective": "Find the center of mass of a series of spheres with inconvienient masses and positions, such as planets and moons.",
+            "content": "Center of mass can be calculated for spheres very close together or far apart, such as the center of mass of the earth-moon system."
           },
           "center_of_mass_3":
           {
@@ -2468,7 +2472,8 @@
             "horizontal": 1,
             "letter": "F",
             "prerequisites": ["center_of_mass_2"],
-            "objective": "Approximate the center of mass of a system with an irregular shape, such as a human being."
+            "objective": "Approximate the center of mass of a system with an irregular shape, such as a dog.",
+            "content": "Physicists frequently use approximations to gain a sense of how a particular system works; the center of mass of an object may be located outside of that object."
           },
           "atwood_machines_2":
           {
@@ -2477,7 +2482,8 @@
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["center_of_mass_3"],
-            "objective": "Create a free-body diagram and find the acceleration of an Atwood machine with three blocks and/or subject to friction."
+            "objective": "Create a free-body diagram and find the acceleration of an Atwood machine with three blocks and/or subject to friction.",
+            "content": "The same rules of dynamics can be used to analyze a more complex Atwood machine."
           },
           "stacking_problems_1":
           {
@@ -2486,7 +2492,8 @@
             "horizontal": 2,
             "letter": "H",
             "prerequisites": ["atwood_machines_2"],
-            "objective": "Draw correct numerical free-body diagrams for two blocks stacked on top of each other; demonstrate that these blocks follow the rules of system dynamics"
+            "objective": "Draw correct numerical free-body diagrams for two blocks stacked on top of each other; demonstrate that these blocks follow the rules of system dynamics",
+            "content": "Multiple boxes stacked on each other are subject to the forces of gravity and multiple normal forces."
           },
           "reduce_system_point_mass":
           {
@@ -2495,16 +2502,24 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["stacking_problems_1"],
-            "objective": "Apply the concept of center of mass in order to treat a rotating projectile as a point mass; anlayze the earth-moon system as a point mass; state from memory Isaac Newton's Principle that a complex system can be treated as a point mass."
+            "objective": "Apply the concept of center of mass in order to treat a rotating projectile as a point mass; analyze the earth-moon system as a point mass; state from memory Isaac Newton's Principle that a complex system can be treated as a point mass.",
+            "content": "Any system, no matter how complex, can be analyzed kinematically and dynamically as a single point located at the center of mass of that system"
           },
-          "center_of_mass_4":
+          "human_system":
           {
-            "title": "Center of Mass 4: Applications",
+            "title": "The Human System",
             "level": 3,
-            "horizontal": 4,
-            "letter": "J",
-            "prerequisites": ["reduce_system_point_mass"],
-            "objective": "Apply the concept of center of mass to real world situations, such as a higher jumper, or understanding a difference in center of mass between sexes."
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Consider the human body as a system and look at theoretical findings and applications of the analysis",
+            "content": "The human is a system; the center of mass is located within the torso when standing straight up; the center of mass moves when a human twists and bends; the center of mass can be located outside the body",
+            "examples": [
+              "finding the center of mass of a human",
+              "male and female center of mass",
+              "motion of center of mass in high jump",
+              "motion of center of mass in long jump"
+            ]
           },
           "atwood_machine_3":
           {
@@ -2513,7 +2528,19 @@
             "horizontal": 3,
             "letter": "K",
             "prerequisites": ["center_of_mass_4"],
-            "objective": "Solve a frictionless and more complex Atwood machine algebraically."
+            "objective": "Solve a frictionless and more complex Atwood machine algebraically.",
+            "content": "An Atwood machine can be solved algebraically in order to derive new formulas that show how it works."
+          },
+          "system_collision_explosion":
+          {
+            "title": "System Collision and Explosions",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Demonstrate that, during a collision or explosion, the velocity of the center of mass of a system is unchanged ",
+            "content": "During a collision and explosion, the total momentum of the system is a constant value, and thus the velocity of the center of mass is unchanged.",
+            "thoughts": "Consider moving this to the collisions and explosions unit"
           },
           "atwood_machine_4":
           {
@@ -2522,7 +2549,8 @@
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["atwood_machine_3"],
-            "objective": "Use proportionality to predict the functioning of an Atwood machine; use this knowledge to demonstrate Newton's Second Law"
+            "objective": "Use proportionality to predict the functioning of an Atwood machine; use this knowledge to demonstrate Newton's Second Law",
+            "content": "The acceleration of an Atwood machine is inversely proportional to total mass when net force is constant and is directly proportional to net force when total mass is constant, in accordance with Newton's Second Law."
           },
           "stacking_problems_2":
           {
@@ -2531,7 +2559,8 @@
             "horizontal": 1,
             "letter": "M",
             "prerequisites": ["atwood_machine_4"],
-            "objective": "Create algebraic free-body diagrams for two blocks stacked upon each other"
+            "objective": "Create algebraic free-body diagrams for two blocks stacked upon each other",
+            "content": "If two boxes are stacked on each other, they can be considered as two separate systems of one system; each outlook will give the same results."
           },
           "atwood_machine_proof":
           {
@@ -2540,7 +2569,8 @@
             "horizontal": 2,
             "letter": "N",
             "prerequisites": ["stacking_problems_2"],
-            "objective": "Prove, in the case of an Atwood machine, that a system can be analyzed only by external forces and not internal forces."
+            "objective": "Prove, in the case of an Atwood machine, that a system can be analyzed only by external forces and not internal forces.",
+            "content": "If an Atwood machine's forces are broken into internal and external forces, then it can be shown that only external forces determine the motion of the Atwood machine and hte internal forces cancel out."
           },
           "stacking_problems_3":
           {
@@ -2549,7 +2579,8 @@
             "horizontal": 4,
             "letter": "O",
             "prerequisites": ["atwood_machine_proof"],
-            "objective": "Create algebraic free-body diagrams for three blocks stacked upon each other."
+            "objective": "Create algebraic free-body diagrams for three blocks stacked upon each other.",
+            "content": "When multiple blocks are stacked on each other, each collection of adjacent boxes can be considered an indepedent system."
           }
         }
       },
