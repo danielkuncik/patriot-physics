@@ -4617,7 +4617,7 @@
           "breadboards_3":
           {
             "title": "Breadboards 3",
-            "subtitle": "Combined Circuits"
+            "subtitle": "Combined Circuits",
             "level": 4,
             "objective": "Create combined series and parallel circuits off lightbulbs and fuses on a breadbaord"
           },
