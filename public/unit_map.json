@@ -3560,7 +3560,8 @@
             "horizontal": 2,
             "letter": "L",
             "prerequisites": ["elastic_collisions"],
-            "objective": "Derive formulas that explain pool ball collisions and use relate these formulas to the actual reality in a pool ball collision."
+            "objective": "Derive formulas that explain pool ball collisions and use relate these formulas to the actual reality in a pool ball collision.",
+            "content": "When two objects collide elastically, physicists can derive new formulas to simplify the problem; two pool balls show a simple elastic collision physicists can use to better understand elastic collisions."
           },
           "newtons_cradle":
           {
@@ -3569,7 +3570,8 @@
             "horizontal": 3,
             "letter": "M",
             "prerequisites": ["advanced_pool_ball_collision"],
-            "objective": "Use the conservation of momentum to explain how a Newton's Cradle works."
+            "objective": "Use the conservation of momentum in an elastic collision to explain how a Newton's Cradle works.",
+            "content": "A combination of the conservation of momentum and the conservation of kinetic energy causes the effect people see in a Newton's Cradle"
           },
           "totally_inelastic_collision_energy_loss":
           {
@@ -3578,7 +3580,8 @@
             "horizontal": 3,
             "letter": "N",
             "prerequisites": ["newtons_cradle"],
-            "objective":  "Determine a formula for kinetic energy lost in the case of a totally inelastic collision; apply this formula to several possible situations"
+            "objective":  "Determine a formula for kinetic energy lost in the case of a totally inelastic collision; apply this formula to several possible situations",
+            "content": "When two objects stick together following a collision, kinetic energy is lost; the total amount of energy lost can be algebraically derived and analyzed by a physicist."
           },
           "tennis_ball_basketball":
           {
@@ -3587,7 +3590,8 @@
             "horizontal": 4,
             "letter": "O",
             "prerequisites": ["newtons_cradle"],
-            "objective": "Create an algebraic model for the motion of a tennis ball dropped on top of basketball (resulting in an elastic collision between then)"
+            "objective": "Create an algebraic model for the motion of a tennis ball dropped on top of basketball (resulting in an elastic collision between then)",
+            "content": "A tennis ball dropped on top of a basketball will end up rising very high into the air; physicists can algebraically derive how high the tennis ball will rise from available formulas."
           }
         }
       },
@@ -3607,7 +3611,8 @@
             "horizontal": 2,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve straightforward numerical problems using the impulse formula."
+            "objective": "Solve straightforward numerical problems using the impulse formula.",
+            "content": "Impulse is equal to net force multiplied by time elapsed and is also equal to change in momentum."
           },
           "impulse_concepts":
           {
@@ -3616,7 +3621,8 @@
             "horizontal": 2,
             "letter": "C",
             "prerequisites": ["impulse_formula_1"],
-            "objective": "Answer real-world written questions by referring to the impulse formula; describe whath the term 'breaking a fall' means."
+            "objective": "Answer real-world written questions by referring to the impulse formula; describe what the term 'breaking a fall' means.",
+            "content": "The impulse formula implies that speeding up or slowing down in a greater time would mean you need a lesser force; padded surfaces allow the same impulse with lower force."
           },
           "dynamic_graphs_1":
           {
@@ -3626,7 +3632,8 @@
             "horizontal": 1,
             "letter": "D",
             "prerequisites": ["impulse_concepts"],
-            "objective": "Qualitatively relate simple (1-2 step) momentum-time and force-time graphs; answer quantitative questions on momentum graphs"
+            "objective": "Qualitatively relate simple (1-2 step) momentum-time and net force-time graphs; answer quantitative questions on momentum graphs",
+            "content": "The relationship between a momentum-time graph and a net force-time graph is the same as that between a position-time graph and a velocity-time graph."
           },
           "impulse_formula_3":
           {
@@ -3636,7 +3643,8 @@
             "horizontal": 1,
             "letter": "E",
             "prerequisites": ["dynamic_graphs_1"],
-            "objective": "Prove the impulse formula is equivalent to Newton's Second Law."
+            "objective": "Prove the impulse formula is equivalent to Newton's Second Law.",
+            "content": "The impulse formula is mathematically equivalent to Newton's Second Law"
           },
           "dynamic_graphs_2":
           {
@@ -3645,7 +3653,8 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["impulse_formula_3"],
-            "objective": "Quantitatively relate momentum-time graphs to net-force-time graphs."
+            "objective": "Quantitatively relate momentum-time graphs to net-force-time graphs.",
+            "content": "The slope of a momentum time graph at a given time is equal to the net force at that time; the area under the curve of a net force-time graph is equal to the change in momentum over that time period."
           },
           "dynamic_graphs_3":
           {
@@ -3654,7 +3663,8 @@
             "horizontal": 3,
             "letter": "G",
             "prerequisites": ["dynamic_graphs_2"],
-            "objective": "Quantitatively relate all five kinematic and dynamic graphs: position-time, velocity-time, acceleration-time, momentum-time, and net-force time."
+            "objective": "Quantitatively relate all five kinematic and dynamic graphs: position-time, velocity-time, acceleration-time, momentum-time, and net-force time.",
+            "content": "Multiplying the y-axis of a velocity-time graph by the mass yields a momentum-time graph; multiplying the y-axis of an acceleration-time graph by the mass yields a net force-time graph."
           },
           "kinematic_dynamics_graphs_1":
           {
@@ -3663,16 +3673,20 @@
             "horizontal": 4,
             "letter": "H",
             "prerequisites": ["momentum_graphs_3"],
-            "objective": "Relate the five 'time' graphs of kinematic and dynamic quantities: position, velocity, acceleration, momentum, force."
+            "objective": "Relate the five 'time' graphs of kinematic and dynamic quantities: position, velocity, acceleration, momentum, force.",
+            "content": " All of the five kinematic and dynamic graphs are related by mathematical operations and physical formulas.",
+            "note": "I still need to determine what exactly makes kinematic and dynamic graphs 1, 2, and 3 different"
           },
           "impulse_formula_4":
           {
-            "title": "Impulse Formula 4: Proportionality and Inferences",
+            "title": "Impulse Formula 4",
+            "subtitle": "Proportionality and Inferences",
             "level": 4,
             "horizontal": 4,
             "letter": "I",
             "prerequisites": ["kinematic_dynamics_graphs_1"],
-            "objective": "Analyze impulse by using proportionality; make real world inferences using this analysis."
+            "objective": "Analyze impulse by using proportionality; make real world inferences using this analysis.",
+            "content": "For objects with the same change in momentum, net force and time elapsed are inversely proportional."
           },
           "kinematic_dynamics_graphs_2":
           {
@@ -3681,7 +3695,8 @@
             "horizontal": 3,
             "letter": "J",
             "prerequisites": ["impulse_formula_4"],
-            "objective": "Quantitatively relate the five graphs of kinematic and dynamic values."
+            "objective": "Quantitatively relate the five graphs of kinematic and dynamic values.",
+            "content": " All of the five kinematic and dynamic graphs are related by mathematical operations and physical formulas."
           },
           "kinematic_dynamic_graphs_3":
           {
@@ -3690,7 +3705,8 @@
             "horizontal": 3,
             "letter": "K",
             "prerequisites": ["kinematic_dynamics_graphs_2"],
-            "objective": "Create quantitative kinematic and dynamic graphs based on a complex real world description."
+            "objective": "Create quantitative kinematic and dynamic graphs based on a complex real world description.",
+            "content": " All of the five kinematic and dynamic graphs are related by mathematical operations and physical formulas."
           }
         }
       },
