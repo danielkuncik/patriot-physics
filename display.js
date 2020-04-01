@@ -491,8 +491,10 @@ hbs.registerHelper('displayQuizLink', (unitClusterKey, unitKey, podKey) => {
     if (quizMap[unitClusterKey]) {
         if (quizMap[unitClusterKey][unitKey]) {
             if (quizMap[unitClusterKey][unitKey][podKey]) {
-                let href = `/quizzes/${unitClusterKey}/${unitKey}/${podKey}`;
-                link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the quiz.`;
+                if (quizMap[unitClusterKey][unitKey][podKey].versionCount > 0) {
+                    let href = `/quizzes/${unitClusterKey}/${unitKey}/${podKey}`;
+                    link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the quiz.`;
+                }
             }
         }
     }
