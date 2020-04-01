@@ -486,6 +486,20 @@ hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUni
     return new hbs.SafeString(unitList);
 });
 
+hbs.registerHelper('displayQuizLink', (unitClusterKey, unitKey, podKey) => {
+    let link = "<p class ='quizLink'>";
+    if (quizMap[unitClusterKey]) {
+        if (quizMap[unitClusterKey][unitKey]) {
+            if (quizMap[unitClusterKey][unitKey][podKey]) {
+                let href = `/quizzes/${unitClusterKey}/${unitKey}/${podKey}`;
+                link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the quiz.`;
+            }
+        }
+    }
+    link = link + '</p>';
+    return new hbs.SafeString(link);
+});
+
 
 hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey, gradeMap) => {
     let thisScore;

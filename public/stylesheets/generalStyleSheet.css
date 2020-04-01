@@ -169,6 +169,9 @@ h4.sectionHeader {
 ol.graphicalQuestionList {
 
 }
+p.quizLink {
+    font-size: 18px;
+}
 
 ol.fillInTheBlank li {
     display: inline;
