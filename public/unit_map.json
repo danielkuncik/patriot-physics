@@ -4938,7 +4938,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Identify examples of and differences between traveling and standing wave; identify parts of a standing wave."
+            "objective": "Identify examples of and differences between traveling and standing wave; identify parts of a standing wave.",
+            "content": "Traveling waves move from one point to another; standing wave have the shape of a wave but are actually oscillators between two points; a node is a "
           },
           "finding_wavelength_from_diagrams":
           {
@@ -5029,7 +5030,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["speed_of_sound"],
-            "objective": "Analyze harmonics on a string with a different tensions of the string"
+            "objective": "Analyze harmonics on a string with a different tensions of the string",
+            "content": "The speed of a wave in a string is proportional to the square root of the tension of the string; because speed is equal to wavelength times frequency, changing the tension in a string creates differences in the wavelength and frequency of each harmonic."
           },
           "hanging_string_harmonics":
           {
@@ -5038,7 +5040,18 @@
             "horizontal": 1,
             "letter": "L",
             "prerequisites": ["string_tension_harmonics"],
-            "objective": "Analyze harmonics in a hanging string."
+            "objective": "Analyze harmonics in a hanging string.",
+            "content": "The tension a hanging string is greater at the top of the string and lower at the bottom of the string, creating a wave whose speed and wavelength are different at different points on the string."
+          },
+          "standing_wave_formation":
+          {
+            "title": "Standing Wave Formation",
+            "level": 5,
+            "horizontal": 5,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Show how a standing wave is formed from the interference of many reflecting traveling waves.",
+            "content": "A standing wave is formed from the interference of many reflecting traveling waves."
           },
           "musical_instrument":
           {
@@ -5047,7 +5060,8 @@
             "horizontal": 1,
             "letter": "M",
             "prerequisites": ["hanging_string_harmonics"],
-            "objective": "Use knowledge of harmonics to design a musical instrument that plays different musical scales."
+            "objective": "Use knowledge of harmonics to design a musical instrument that plays different musical scales.",
+            "content": "A musical instrument works with strings or tubes whose fundamental frequencies form different notes on a scale; when a musician creates many harmonics their music sounds better."
           }
         }
       },
