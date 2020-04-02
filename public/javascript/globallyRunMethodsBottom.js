@@ -95,6 +95,10 @@ $("ol.answerList").prepend($("<h4 class = 'answerHeader'>Answers:</h4>"))
 // automatically palces the term "Directons" in bold at the front
 $(".directions").prepend($("<strong>Directions: </strong>"));
 
+$(".imageCredit").prepend($("<span>Image Credit: </span>"));
+
+
+
 // automatically places a box to sovle formula problems in any <div class = 'formulaBoxDiv'>
 // let myFormulaBox = new formulaBox();
 // myFormulaBox.insertTableByClass('formulaBoxDiv');

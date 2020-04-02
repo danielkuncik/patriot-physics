@@ -1,0 +1,53 @@
+<h3>
+    Analysis of Track and Field World Records
+</h3>
+
+<p>
+    The goal of this analysis is to analyze the world record
+    of every Olympic Running event.
+</p>
+
+
+<p>
+    All men's world records for track and field events can be accessed <a href = 'https://trackandfieldnews.com/records/mens-world-records/'>here</a>.
+    All women's world records for track and field events can be accessed <a href = 'https://trackandfieldnews.com/records/womens-world-records/'>here</a>.
+</p>
+
+<p>
+    Create a table of the men's and women's world records for track and field events
+    included in the Olympic Games.
+    (Not all of the records given on the website are included in the Olympics).
+    Then, figure out the average speed of the runner in meters per second
+    for each event.
+</p>
+
+<p>
+    1 marathon = 42,195 meters
+</p>
+
+<div id = 'worldRecordTable'></div>
+
+
+<script>
+    let worldRecordTable = new Table(9,5);
+    worldRecordTable.addTopHeaders(['Event',"Men's World Record Time","Women's World Record Time","Men's World Record Average Speed (m/s)","Women's World Record Average Speed (m/s)"]);
+
+    worldRecordTable.writeTextInRow(1,['100 m']);
+    worldRecordTable.writeTextInRow(2,['200 m']);
+    worldRecordTable.writeTextInRow(3,['400 m']);
+    worldRecordTable.writeTextInRow(4,['800 m']);
+    worldRecordTable.writeTextInRow(5,['1500 m']);
+    worldRecordTable.writeTextInRow(6,['5000 m']);
+    worldRecordTable.writeTextInRow(7,['10000 m']);
+    worldRecordTable.writeTextInRow(8,['marathon']);
+
+
+    $("#worldRecordTable").append(worldRecordTable.draw(600,1200));
+</script>
+
+
+<!--
+Answers: (as of 4-2-2020)
+
+
+-->
