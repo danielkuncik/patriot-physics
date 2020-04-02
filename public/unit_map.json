@@ -3952,8 +3952,8 @@
           {
             "title": "Period and Frequency 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Define and calculate period and frequency.",
             "content": "The period of motion is the time for a single cycles; the frequency of motion is the number of cycles per time."
@@ -3962,9 +3962,9 @@
           {
             "title": "Harmonic vs. Linear Motion",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["period_and_frequency_1"],
             "objective": "Define and give examples of harmonic and linear motion.",
             "content": "Linear motion consists of motion that occurs once; harmonic motion is motion that occurs in a repeating pattern."
           },
@@ -3972,9 +3972,9 @@
           {
             "title": "Period and Frequency 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["harmonic_v_linear_motion"],
             "objective": "Correctly use the formula T = 1 /f, including with proportionality",
             "content": "Period and frequency are mathematically reciprocal; period and frequency are always inversely proportional."
           },
@@ -3982,9 +3982,9 @@
           {
             "title": "Position-Time Graphs of Periodic Motion",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["period_frequency_2"],
             "objective": "Draw simple position-time graphs of periodic motion.",
             "content": "The position-time graphs for periodic motion are will appear as wave pattern (a trigonometric function)."
           },
@@ -3992,9 +3992,9 @@
           {
             "title": "Period and Frequency 3: Specific Formulas",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["position_time_graphs_periodic_motion"],
             "objective": "Numerically solve the formulas for period and frequency of a spring or pendulum.",
             "content": "The period of a pendulum is equal to 2pi times the square root of the length divided by free fall acceleration; the period of a block-spring system is equal to 2pi times the square root of the mass of a block divided by the spring constant."
           },
@@ -4002,9 +4002,9 @@
           {
             "title": "Periodic Position Function",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["periodic_frequency_3"],
             "objective": "Use a trigonometric function to represent the position of an object in harmonic motion, with period and amplitude correct but phase not considered.",
             "content": "Physicists represent the position-time function of an object in harmonic motion by a trigonometric function.",
             "note": "Velocity and acceleration of an object in periodic motion will be analyzed using calculus in the unit on differential equations of simple harmonic motion"
@@ -4013,9 +4013,9 @@
           {
             "title": "Period and Frequency 4: Symbolic Solutions Algebra",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["periodic_position_function"],
             "objective": "Algebraically solve the period and frequency formulas for springs and pendulums",
             "content": "Physicists can solve the formula for period and frequency of a harmonic system algebraically in order to invent new formulas"
           },
@@ -4023,9 +4023,9 @@
           {
             "title": "Period and Frequency 5: Proportionality",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "H",
+            "prerequisites": ["period_frequency_4"],
             "objective": "Use proportionality to analyze the formulas for frequency and period of a pendulum.",
             "content": "The period of a pendulum is proportional to the square root of the length of the pendulum; the period of a mass-spring system is proportional to the square root of the mass"
           },
@@ -4033,9 +4033,9 @@
           {
             "title": "Periodic Position Function 2",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "I",
+            "prerequisites": ["period_frequency_5"],
             "objective": "Use trigonometric formulas to represent the position of an object in harmonic motion, including correct amplitude, period, and phase.",
             "content": "The phase of a trigonometric function indicates where that function begins; a pendulum or spring that is pulled back begins with a different phase than one which is struck."
           }
