@@ -4948,7 +4948,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["traveling_vs_standing_waves"],
-            "objective": "From a of waves of a given length, find the wavelength of the wave; includes fractional wavelengths"
+            "objective": "From a of waves of a given length, find the wavelength of the wave; includes fractional wavelengths",
+            "content": "A wavelength is equal to the length required for one full cycle of a wave; a physicist can use this principle to find wavelength from a diagram of a wave"
           },
           "wave_formula_2":
           {
@@ -4957,26 +4958,30 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["finding_wavelength_from_diagrams"],
-            "objective": "Use the formula relating the wavelength, speed, and frequency of a wave"
+            "objective": "Use the formula relating the wavelength, speed, and frequency of a wave",
+            "content": "The speed of a wave is equal to its frequency times its wavelength"
           },
           "harmonics_1":
           {
             "title": "Harmonics 1",
-            "subtitle": "Drawing Harmonics",
+            "subtitle": "Drawing Harmonics on a String with two Closed Ends",
             "level": 1,
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["wave_formula_2"],
-            "objective": "Draw a simple sequence of harmonics."
+            "objective": "Draw a simple sequence of harmonics on a string with two closed ends",
+            "content": "All of the harmonics on a string with two closed ends have a node at the end."
           },
           "harmonics_2":
           {
-            "title": "Harmonics 2: Harmonics on a String Table",
+            "title": "Harmonics 2",
+            "subtitle": "Analyzing Harmonics on Strings with a Table",
             "level": 2,
             "horizontal": 4,
             "letter": "E",
             "prerequisites": ["harmonics_1"],
-            "objective": "Using a table, draw a series of harmonics on a string and find the wavelength and frequency of each."
+            "objective": "Using a table, draw a series of harmonics on a string with two closed ends to find the wavelength and frequency of each; define the fundamental frequency",
+            "content": "The wavelengths of harmonics on a string have a defiend pattern that can be determiend from the diagrams; the frequencies of each harmonic can be determined from combiing this pattern with the relevant formula; the fundamental frequency is the frequency of the first harmonic."
           },
           "harmonics_3":
           {
