@@ -5487,31 +5487,22 @@
               "How do objects of different human color appear on an infrared camera."
             ]
           },
-          "define_radiation":
+          "safe_dangerous_radiation":
           {
-            "title": "Define Radioactivity",
-            "level": 2,
-            "horizontal": 6,
-            "letter": "F",
-            "prerequisites": ["infrared_camera_advanced"],
-            "objective": "Define all the terms that make electromagnetic waves seem scary, such as radioactivity; analyze the relative value of these terms."
-          },
-          "safe_and_dangerous_waves":
-          {
-            "title": "Safe and dangerous waves",
+            "title": "Safe and dangerous radiation",
             "level": 2,
             "horizontal": 7,
-            "letter": "G",
-            "prerequisites": ["define_radiation"],
-            "objective": "Explain what makes some waves safe and others dangerous. Identify safe and dangerous waves."
+            "letter": "F",
+            "prerequisites": ["infrared_camera_advanced"],
+            "objective": "Define the terms 'radiation' and 'electromagnetic radiations,' differentiate between ionizing radiation and non-ionizing radiation; identify the health risks associated with ionizing radiation."
           },
           "subtractive_color":
           {
             "title": "Subtractive Color",
             "level": 3,
             "horizontal": 6,
-            "letter": "H",
-            "prerequisites": ["safe_and_dangerous_waves"],
+            "letter": "G",
+            "prerequisites": ["safe_dangerous_radiation"],
             "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color."
           },
           "identify_applications_electromagnetic_waves":
@@ -5519,7 +5510,7 @@
             "title": "Identify Applications of Electromagnetic Waves",
             "level": 3,
             "horizontal": 5,
-            "letter": "I",
+            "letter": "H",
             "prerequisites": ["subtractive_color"],
             "objective": "In writing, identify human applications each of types of invisible electromagnetic waves; relate the particular uses of each wave to wavelength, frequency and energy",
             "examples":
@@ -5535,7 +5526,7 @@
             "title": "Long Wavelength Astronomy",
             "horizontal": 4,
             "level": 3,
-            "letter": "J",
+            "letter": "I",
             "prerequisites": ["identify_applications_electromagnetic_waves"],
             "objective": "Explain how astronomers conduct astronomy in the radio, microwave and infrared ranges and what objects they see in these ranges."
           },
@@ -5544,7 +5535,7 @@
             "title": "Short Wavelength Astronomy",
             "horizontal": 3,
             "level": 3,
-            "letter": "K",
+            "letter": "J",
             "prerequisites": ["long_wavelength_astronomy"],
             "objective": "Explain how astronomers conduct astronomy in the visible, ultraviolet, X-Ray and gamma ray ranges and what objects they see in these ranges."
           },
@@ -5553,7 +5544,7 @@
             "title": "Why is the sky blue?",
             "level": 4,
             "horizontal": 2,
-            "letter": "L",
+            "letter": "K",
             "prerequisites": ["short_wavelength_astronomy"],
             "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue."
           },
@@ -5562,7 +5553,7 @@
             "title": "Climate Change",
             "level": 4,
             "horizontal": 1,
-            "letter": "M",
+            "letter": "L",
             "prerequisites": ["why_is_the_sky_blue"],
             "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect."
           },
@@ -5571,7 +5562,7 @@
             "title": "A Galaxy in All Wavelengths",
             "level": 5,
             "horizontal": 2,
-            "letter": "N",
+            "letter": "M",
             "prerequisites": ["climate_change"],
             "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum."
           },
@@ -5580,7 +5571,7 @@
             "title": "Electromagnetic Rube Goldberg Device",
             "level": 6,
             "horizontal": 3,
-            "letter": "O",
+            "letter": "N",
             "prerequisites": ["galaxy_in_all_wavelengths"],
             "objective": "Design a hypothetical device that uses each different type of electromagnetic wave to accomplish a small household task."
           }
