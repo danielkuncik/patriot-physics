@@ -4975,22 +4975,24 @@
           "harmonics_2":
           {
             "title": "Harmonics 2",
-            "subtitle": "Analyzing Harmonics on Strings with a Table",
+            "subtitle": "Analyzing Harmonics with a Table",
             "level": 2,
             "horizontal": 4,
             "letter": "E",
             "prerequisites": ["harmonics_1"],
-            "objective": "Using a table, draw a series of harmonics on a string with two closed ends to find the wavelength and frequency of each; define the fundamental frequency",
-            "content": "The wavelengths of harmonics on a string have a defiend pattern that can be determiend from the diagrams; the frequencies of each harmonic can be determined from combiing this pattern with the relevant formula; the fundamental frequency is the frequency of the first harmonic."
+            "objective": "Using a table, draw a series of harmonics on a string with two closed ends to find the wavelength and frequency of each; define the fundamental frequency; also analyze harmonics in a tube with two closed ends or two open ends.",
+            "content": "The wavelengths of harmonics on a string have a defined pattern that can be determined from the diagrams; the frequencies of each harmonic can be determined from combining this pattern with the relevant formula; the fundamental frequency is the frequency of the first harmonic; ina tube, harmonics move at the speed of sound; there is always an antinode at open ends and a node at closed ends of a tube."
           },
           "harmonics_3":
           {
-            "title": "Harmonics 3: Quarter Wavelength Harmonics",
+            "title": "Harmonics 3",
+            "subtitle": "Quarter Wavelength Harmonics",
             "level": 3,
             "horizontal": 4,
             "letter": "F",
             "prerequisites": ["harmonics_2"],
-            "objective": "Using a table, draw a series of harmonics and find the wavelength and frequency of each; harmonics include a node on one end and an antinode on the other."
+            "objective": "Using a table, draw a series of harmonics and find the wavelength and frequency of each; harmonics include a node on one end and an antinode on the other.",
+            "content": "When one end of a tube is open and the other is closed, the wavelengths follow a pattern of quarter wavelengths instead of half wavelengths"
           },
           "harmonics_4":
           {
@@ -4999,7 +5001,8 @@
             "horizontal": 3,
             "letter": "G",
             "prerequisites": ["harmonics_3"],
-            "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic."
+            "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic.",
+            "content": "By working out the pattern of how wavelengths and frequencies of harmonics are related, physicists can work out the pattern amongst harmonics without filling out a table of all harmonics."
           },
           "harmonics_5":
           {
@@ -5008,7 +5011,8 @@
             "horizontal": 3,
             "letter": "H",
             "prerequisites": ["harmonics_4"],
-            "objective": "Create algebraic formulas and an algebraic series that determine the properties of different harmonics."
+            "objective": "Create algebraic formulas and an algebraic series that determine the properties of different harmonics.",
+            "content": "Harmonics follow a pattern, and this pattern can be described algebraically; physicists can derive new formulas from these patterns."
           },
           "harmonics_6":
           {
@@ -5017,7 +5021,8 @@
             "horizontal": 2,
             "letter": "I",
             "prerequisites": ["harmonics_5"],
-            "objective": "Use proportionality to further analyze harmonics."
+            "objective": "Use proportionality to further analyze harmonics.",
+            "content": "Because all harmonics in a tube or string have the same speed, the frequency and wavelength of each harmonic are inversely proportional."
           },
           "speed_of_sound":
           {
@@ -5026,7 +5031,8 @@
             "horizontal": 1,
             "letter": "J",
             "prerequisites": ["harmonics_6"],
-            "objective": "Determine the speed of sound by identifying different harmonics. "
+            "objective": "Determine the speed of sound by identifying different harmonics. ",
+            "content": "Physicists can determine the speed of sound from analyzing the different harmonics made by a tuning fork in an air tube of variable length"
           },
           "string_tension_harmonics":
           {
