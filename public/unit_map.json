@@ -4529,13 +4529,17 @@
       "circuit_construction_1":
       {
         "title": "Circuit Construction 1",
-        "subtitle": "Batteries, Lightbulbs, Wires, Ressitors, Switches, Fuses",
+        "number": 3,
+        "subtitle": "Batteries, Light Bulbs, Wires, Ressitors, Switches, Fuses",
         "pods":
         {
           "simplest_circuit":
           {
             "title": "The Simplest Circuit",
             "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
             "objective": "Light a bulb with one battery, one light bulb, and one wire."
           },
           "circuit_diagrams_1":
@@ -4543,6 +4547,9 @@
             "title": "Circuit Diagrams 1",
             "subtitle": "Identifying Circuit Components",
             "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["simplest_circuit"],
             "objective": "Identify the circuit diagram symbols of batteries, light bulbs, wires, switches, resistors, and fuses"
           },
           "circuit_diagrams_2":
@@ -4550,51 +4557,75 @@
             "title": "Circuit Diagrams 2",
             "subtitle": "Drawing Basic Circuits",
             "level": 1,
-            "objective": "Draw simple series and parallel ciruits correctly; understand different symbols for a battery."
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["circuit_diagrams_1"],
+            "objective": "Draw simple series and parallel circuits correctly; understand different symbols for a battery."
           },
           "switches_1":
           {
             "title": "Switches 1",
             "subtitle": "Connecting a Switch",
             "level": 1,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["circuit_diagrams_2"],
             "objective": "Connect a switch that works correctly and does not produce a short circuit."
-          },
-          "switch_challenges":
-          {
-            "title": "Switch Challenges",
-            "level": 2,
-            "objective": "Create complex circuits with multiple swithces and light bulbs and predict accurately what each switch will control.",
-            "example": "Connect three light bulbs and three switches; switch A controls one light bulb; switch B controls two light bulbs; switch C controls all three light bulbs."
-          },
-          "dimness_brightness_challenges":
-          {
-            "title": "Dimness and Brightness Challenges",
-            "level": 2,
-            "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in paralell."
           },
           "short_circuits":
           {
             "title": "Short Circuits",
             "level": 2,
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["switches_1"],
             "objective": "Identify and avoid building short circuits"
+          },
+          "dimness_brightness_challenges":
+          {
+            "title": "Dimness and Brightness Challenges",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["short_circuits"],
+            "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in paralell."
+          },
+          "switch_challenges":
+          {
+            "title": "Switch Challenges",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["dimness_brightness_challenges"],
+            "objective": "Create complex circuits with multiple swithces and light bulbs and predict accurately what each switch will control.",
+            "example": "Connect three light bulbs and three switches; switch A controls one light bulb; switch B controls two light bulbs; switch C controls all three light bulbs."
+          },
+          "fuses":
+          {
+            "title": "Fuses",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["switch_challenges"],
+            "objective": "Add a fuse to a circuit; explain the value of a fuse"
           },
           "breadboards_1":
           {
             "title": "Breadboards 1",
             "subtitle": "Understanding a Breadboard",
             "level": 2,
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["fuses"],
             "objective": "Understand how a breadbaord is connected, make a single bulb light on a breadbaord."
-          },
-          "fuses":
-          {
-            "title": "Fuses",
-            "level": 2,
-            "objective": "Add a fuse to a circuit; explain the value of a fuse"
           },
           "reading_resistors_1":
           {
             "title": "Reading Resistors",
             "level": 2,
+            "horizontal": 0,
+            "letter": "J",
+            "prerequisites": ["breadboards_1"],
             "objective": "Identify the resistance of a resistor from the color bands on the resistor",
             "limits": "Includes only the first 3 bands"
           },
@@ -4602,6 +4633,9 @@
           {
             "title": "Combined Challenges",
             "level": 3,
+            "horizontal": 0,
+            "letter": "K",
+            "prerequisites": ["reading_resistors_1"],
             "objective": "Create circuits of switches, fuses, and light bulbs of varying brightness in which each switch controls specified light bulbs.",
             "note": "Based on the circuit that veronica asked me about in taunton."
           },
@@ -4610,6 +4644,9 @@
             "title": "Voltmeters and Ammeters 1",
             "subtitle": "Connecting Analog Voltmeters and Ammeters",
             "level": 3,
+            "horizontal": 1,
+            "letter": "L",
+            "prerequisites": ["combined_challenges"],
             "objective": "Properly connect voltmeters in parallel and ammeters in series"
           },
           "voltmeters_ammeters_2":
@@ -4617,6 +4654,9 @@
             "title": "Voltmeters and Ammeters 2",
             "subtitle": "Identify Correct Analog Voltmeters and Ammeters by Range",
             "level": 3,
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["voltmeters_ammeters_1"],
             "objective": "From a selection, identify which analog voltmeter or ammeter has the correct range for a particular circuit."
           },
           "voltmeters_ammeters_3":
@@ -4624,6 +4664,9 @@
             "title": "Voltmeters and Ammeters 3",
             "subtitle": "Using a Multimeter",
             "level": 3,
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["voltmeters_ammeters_2"],
             "objective": "Properly use a multimeter as a voltmeter and/or an ammeter."
           },
           "breadboards_2":
@@ -4631,18 +4674,27 @@
             "title": "Breadboards 2",
             "subtitle": "Series and Parallel Circuits on a Breadboard",
             "level": 3,
+            "horizontal": 4,
+            "letter": "O",
+            "prerequisites": ["voltmeters_ammeters_3"],
             "objective": "Properly create series and parallel circuits on a breadboard."
           },
           "different_switches":
           {
             "title": "Different Switches",
             "level": 4,
+            "horizontal": 4,
+            "letter": "P",
+            "prerequisites": ["breadboards_2"],
             "objective": "Identifying and Using Different Types of Switches"
           },
           "reading_resistors_2":
           {
             "title": "Reading Resistors 2",
             "level": 4,
+            "horizontal": 3,
+            "letter": "Q",
+            "prerequisites": ["different_switches"],
             "objective": "Explain and use the fourth color band on a resistor"
           },
           "breadboards_3":
@@ -4650,31 +4702,46 @@
             "title": "Breadboards 3",
             "subtitle": "Combined Circuits",
             "level": 4,
+            "horizontal": 2,
+            "letter": "R",
+            "prerequisites": ["reading_resistors_2"],
             "objective": "Create combined series and parallel circuits off lightbulbs and fuses on a breadbaord"
           },
           "breadboards_4":
           {
             "title": "Breadboards 4",
-            "subtitle": "Switches on a Breadbaord",
+            "subtitle": "Switches on a Breadboard",
             "level": 4,
+            "horizontal": 1,
+            "letter": "S",
+            "prerequisites": ["breadboards_3"],
             "objective": "Incorporating different types of switches on a breadbaord."
           },
           "breadboards_5":
           {
             "title": "Breadboards 5",
             "level": 5,
+            "horizontal": 1,
+            "letter": "T",
+            "prerequisites": ["breadboards_4"],
             "objective": "Creating combined series/parallel circuits on a breadboard of resistors of different magnitude in order to achieve and measure particular current and voltage goals."
           },
           "breadboards_6":
           {
             "title": "Breadboards 6",
             "level": 5,
+            "horizontal": 2,
+            "letter": "U",
+            "prerequisites": ["breadboards_5"],
             "objective": "Incorporating different types of switches into the circuits from breadboards 5"
           },
           "advanced_circuit_deisgn":
           {
             "title": "Advanced Circuit Design",
             "level": 6,
+            "horizontal": 2,
+            "letter": "V",
+            "prerequisites": ["breadboards_6"],
             "objective": "Given vague parameters and goals for a particular circuit, build a circuit that accomplishes the goals within the parameters."
           }
         }
