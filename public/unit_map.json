@@ -3773,7 +3773,8 @@
           },
           "circular_kinematics_1":
           {
-            "title": "Circular Kinematics 1: Finding Speed",
+            "title": "Circular Kinematics 1",
+            "subtitle": "Finding Speed",
             "level": 1,
             "horizontal": 2,
             "letter": "C",
