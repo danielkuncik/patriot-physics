@@ -6419,7 +6419,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize how molecules move differently within different states of matter.",
-            "content": "All matter is made of moving moclules; molecules only virbarte in solids; molecules slip and slide in liquids; molecules move freely in a gas."
+            "content": "All matter is made of moving molecules; molecules only virbarte in solids; molecules slip and slide in liquids; molecules move freely in a gas."
           },
           "conduction_convection_radiation_1":
           {
@@ -6430,6 +6430,26 @@
             "prerequisites": [],
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation",
             "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves."
+          },
+          "conduction_convection_radiation_2":
+          {
+            "title": "Conduction, Convection, and Radiation 2",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation (but harder)",
+            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves."
+          },
+          "air_composition":
+          {
+            "title": "Air Composition",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Define what chemicals compose the air",
+            "content": "The air is composed of nitrogen, oxygen, carbon dioxide, water vapor, and argon"
           },
           "air_pressure":
           {
@@ -6669,7 +6689,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw qualitative graphs of temperature as heat is added; describe and explain what happens when state changes in these graphs."
+            "objective": "Draw qualitative graphs of temperature as heat is added; describe and explain what happens when state changes in these graphs; identify the state of matter of an object base on temperature",
+            "example": "Can you ever have water with a temperatuer of -10 degrees celsius"
           },
           "thermal_contact_2":
           {
