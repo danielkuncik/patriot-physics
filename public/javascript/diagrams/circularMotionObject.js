@@ -117,4 +117,37 @@ class CircularMotionDiagram extends Diagram {
         }
     }
 
+    addTangentLine(positionInRadians, length) {
+        if (length === undefined) {
+            length = this.radius * 3;
+        }
+        const centerPoint = this.getPointOnCircle(positionInRadians);
+        const pointingAngle = this.getPointingAngle(positionInRadians);
+        let pointA = centerPoint.translateAndReproducePolar(length / 2, pointingAngle);
+        let pointB = centerPoint.translateAndReproducePolar(length / 2, pointingAngle + Math.PI);
+        super.addSegment(pointA, pointB);
+    }
+
+    addRadius(positionInRadians) {
+        super.addSegment(origin, this.getPointOnCircle(positionInRadians));
+    }
+
+    addPerpendicularTangentLineAndRadius(positionInRadians, lineLength) {
+        this.addTangentLine(positionInRadians, lineLength);
+        this.addRadius(positionInRadians, lineLength);
+
+        const squareLength = this.radius * 0.2;
+
+        const centerPoint = this.getPointOnCircle(positionInRadians);
+        const pointingAngle = this.getPointingAngle(positionInRadians);
+
+        const pointA = centerPoint.translateAndReproducePolar(squareLength, positionInRadians + Math.PI);
+        const pointC = centerPoint.translateAndReproducePolar(squareLength, pointingAngle + Math.PI);
+        const pointB = pointA.translateAndReproducePolar(squareLength, pointingAngle + Math.PI);
+
+        super.addSegment(pointA, pointB);
+        super.addSegment(pointB, pointC);
+
+    }
+
 }

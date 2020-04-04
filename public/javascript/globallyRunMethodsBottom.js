@@ -40,9 +40,9 @@ function createQuestionAndAnswerList() {
             } else if ($(thisQuestion).data()['answer_id'] !== undefined) {
                 thisAnswerID = $(thisQuestion).data()['answer_id'];
                 if (withLetter) {
-                    $(".answerList").append(`<li id = '${thisAnswerID}'>${letter}.${questionNumber}:</li>`);
+                    $(".answerList").append(`<li id = '${thisAnswerID}'>${letter}.${questionNumber}:<br></li>`);
                 } else {
-                    $(".answerList").append(`<li id = '${thisAnswerID}'>${questionNumber}:</li>`);
+                    $(".answerList").append(`<li id = '${thisAnswerID}'>${questionNumber}:<br></li>`);
                 }
 
                 // object defined in fglobally run methods at the top

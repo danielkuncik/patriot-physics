@@ -20,18 +20,19 @@
     are perpendicular.
 </p>
 
+
 <ol class = 'questionList'>
-    <li class = 'question' data-answer_id = 'tangent_answer'>
+    <li class = 'question' data-answer_id = 'tangentAnswer'>
         On the circle below, draw any line <emph>tangent</emph> to the circle.
         <br>
         <div id = 'simpleCircle1'></div>
     </li>
-    <li class = 'question' data-answer_id = 'radius_answer'>
+    <li class = 'question' data-answer_id = 'radiusAnswer'>
         On the circle below, draw any segment that is a <emph>radius</emph> of the circle.
         <br>
         <div id = 'simpleCircle2'></div>
     </li>
-    <li class ='question' data-answer_id = 'tangent_and_radius_answer'>
+    <li class ='question' data-answer_id = 'tangentAndRadiusAnswer'>
         On the circle below, draw a <emph>radius</emph> and <emph>tangent line</emph> that intersect,
         and indicate they are perpendicular.
         <br>
@@ -39,17 +40,12 @@
     </li>
 </ol>
 
-<img src = '/podAssets/mechanics/circular_motion/simpleCircularMotionDiagram.png' height = '200px' width = 'auto' />
-
-<!--
-I have no image credit for this image, and i need to replace it with one of my own
--->
 
 <h4>
     Rules for an object moving in a circle
 </h4>
 
-<ol class = 'principleList'>
+<ul class = 'principleList'>
     <li>
         Whenever an object is moving in a circle, its <emph>velocity</emph> is <emph>tangent</emph> to the circle.
     </li>
@@ -63,7 +59,12 @@ I have no image credit for this image, and i need to replace it with one of my o
         in the direction of its velocity the moment it was released.
         It <strong>never</strong> continues to turn or bend, but always moves in a straight line.
     </li>
-</ol>
+</ul>
+
+<img src = '/podAssets/mechanics/circular_motion/simpleCircularMotionDiagram.png' height = '200px' width = 'auto' />
+<!--
+I have no image credit for this image, and i need to replace it with one of my own
+-->
 
 <ol class ='questionList'>
     <li class = 'question' data-answer_id = 'circleCounterclockwise1Answer'>
@@ -212,6 +213,18 @@ I have no image credit for this image, and i need to replace it with one of my o
     $("#simpleCircle2").append(simpleCircle.drawCanvas(100));
     $("#simpleCircle3").append(simpleCircle.drawCanvas(100));
 
+    let tangentAnswer = new CircularMotionDiagram(undefined, undefined, 0);
+    tangentAnswer.addTangentLine(1);
+    let radiusAnswer = new CircularMotionDiagram(undefined, undefined, 0);
+    radiusAnswer.addRadius(4);
+    let tangentAndRadiusAnswer = new CircularMotionDiagram(undefined, undefined, 0);
+    tangentAndRadiusAnswer.addPerpendicularTangentLineAndRadius(2.5);
+    addAnswerObject('tangentAnswer', tangentAnswer.drawCanvas(150));
+    addAnswerObject('radiusAnswer', radiusAnswer.drawCanvas(150));
+    addAnswerObject('tangentAndRadiusAnswer', tangentAndRadiusAnswer.drawCanvas(150));
+
+
+
     let circleCounterClockwise1 = new CircularMotionDiagram('counterclockwise');
     circleCounterClockwise1.addVisiblePoint(1);
     let circleCounterClockwise1Answer = new CircularMotionDiagram('counterclockwise');
@@ -239,10 +252,27 @@ I have no image credit for this image, and i need to replace it with one of my o
 
     let circleClockwise1 = new CircularMotionDiagram('clockwise');
     circleClockwise1.addVisiblePoint(4);
+    let circleClockwise1Answer = new CircularMotionDiagram('clockwise');
+    circleClockwise1Answer.addVisiblePoint(4);
+    circleClockwise1Answer.addVelocityArrow(4);
+    addAnswerObject('circleClockwise1Answer', circleClockwise1Answer.drawCanvas(150));
+
+
     let circleClockwise2 = new CircularMotionDiagram('clockwise');
     circleClockwise2.addVisiblePoint(0.5);
+    let circleClockwise2Answer = new CircularMotionDiagram('clockwise');
+    circleClockwise2Answer.addVisiblePoint(0.5);
+    circleClockwise2Answer.addCentripetalForce(0.5);
+    addAnswerObject('circleClockwise2Answer', circleClockwise2Answer.drawCanvas(150));
+
+
     let circleClockwise3 = new CircularMotionDiagram('clockwise');
     circleClockwise3.addVisiblePoint(5.2);
+    let circleClockwise3Answer = new CircularMotionDiagram('clockwise');
+    circleClockwise3Answer.addVisiblePoint(5.2);
+    circleClockwise3Answer.addVelocityArrowWithDottedLine(5.2);
+    addAnswerObject('circleClockwise3Answer', circleClockwise3Answer.drawCanvas(150));
+
 
     $("#circleCounterclockwise1").append(circleCounterClockwise1.drawCanvas(150));
 
