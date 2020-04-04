@@ -6638,7 +6638,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the heat energy necessary to cause a temperature change."
+            "objective": "Determine the heat energy necessary to cause a temperature change.",
+            "content": "The heat energy necessary to cause a change in temperature is equal to the mass of the object time sits specific heat times the change in temperature."
           },
           "thermal_contact_1":
           {
@@ -6647,7 +6648,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends."
+            "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends.",
+            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature."
           },
           "temperature_scales":
           {
@@ -6657,6 +6659,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Define the three (or four) temperature scales; give guidelines on temperature scale, know the difference between scales and units",
+            "content": "There are three different scales to measure temperature: Fahrenheit, Celsius, and Kelvin; these are called 'scales' rather than units because they have different zero-points",
             "examples":[
               "Where does water boil on each scale?",
               "What would a hot day be on each scale?",
@@ -6671,7 +6674,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use formulas to convert temperatures between the three temperature scales."
+            "objective": "Use formulas to convert temperatures between the three temperature scales.",
+            "content": "Converting between different temperature scales involves both multiplying by a conversion factor and translating to a different zero point."
           },
           "heat_formula_2":
           {
@@ -6680,7 +6684,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat."
+            "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat.",
+            "content": "The formula for heat energy can be solved for other quantities as well."
           },
           "heat_graphs":
           {
@@ -6690,7 +6695,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw qualitative graphs of temperature as heat is added; describe and explain what happens when state changes in these graphs; identify the state of matter of an object base on temperature",
-            "example": "Can you ever have water with a temperatuer of -10 degrees celsius"
+            "example": "Can you ever have water with a temperature of -10 degrees celsius",
+            "content": "A heat graph shows how an object's temperature changes heat energy is added or removed; as an object changes state, heat energy is added or removed but the temperature of the object does not change"
           },
           "thermal_contact_2":
           {
@@ -6699,7 +6705,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends."
+            "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends.",
+            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature."
           },
           "heat_formula_3":
           {
@@ -6708,7 +6715,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve heat formula problems asking for final or initial temperature."
+            "objective": "Solve heat formula problems asking for final or initial temperature.",
+            "content": "Given the amount of heat added to an object, its mass, and its specific heat, a physicist can determine the intital or final temperature of the object."
           },
           "heat_formula_4":
           {
@@ -6717,7 +6725,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object."
+            "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object.",
+            "content": "By combining the formula to heat needed to change temperature with the formula for heat needed to change state, a physicist can analyze the amount of heat energy necessary to progress through a multi-step process on a heat graph."
           },
           "newtons_law_of_cooling":
           {
@@ -6726,16 +6735,18 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics."
+            "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics.",
+            "content": "An object that is placed in a cooler environment loses heat energy due to an exponential decay."
           },
           "heat_formula_5":
           {
-            "title": "Heat Formula 5: Multi-Step solve for tmperature",
+            "title": "Heat Formula 5: Multi-Step solve for temperature",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature."
+            "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature.",
+            "content": "Through a more difficult mathematical process, physicists can determine the final or initial temperature of an object that has been through a multi-step process including changing temperature and changing state of matter."
           },
           "heat_formula_mixture":
           {
@@ -6744,7 +6755,18 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water."
+            "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water.",
+            "content": "When two items are mixed in a closed system, the heat energy added to one item is equal to the heat energy subtracted from the other; physicists can use this to create a new formula and find the final temperature of the mixture or other useful information."
+          },
+          "determine_specific_heat":
+          {
+            "title": "Determine Specific Heat",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the specific heat of some metal using a calorimeter and water.",
+            "content": "Physicists can use a mixture of a substance and water in order to find the specific heat of the metal."
           }
         }
       },
@@ -7369,19 +7391,15 @@
         "AP": true,
         "honors": false,
         "level": 4,
+        "notes": "I need to add content on kinematic graphs...but this unit seems full with all this computational stuff",
         "pods":
         {
-          "test": {
-            "title": "This is a test",
-            "level": 6,
-            "objective": "This is a test"
-          },
           "rotational_position_displacement":
           {
             "title": "Rotational Position and Displacement",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 4,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Determine rotational position and displacement in radians for simple examples; define a radian; know a radian is dimensionless"
           },
@@ -7389,136 +7407,136 @@
           {
             "title": "Rotational Velocity Calculations",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "B",
+            "prerequisites": ["rotational_position_displacement"],
             "objective": "Calculate rotational velocity in radians per second"
           },
           "rotational_velocity_conversions":
           {
             "title": "Rotational Velocity Conversions",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["rotational_velocity_calculations"],
             "objective": "Use conversion factors to convert rotational velocity from non-SI units to radians per second."
           },
           "rotational_linear_velocity":
           {
             "title": "Rotational and Linear Velocity",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["rotational_velocity_conversions"],
             "objective": "Explain the difference between rotational and linear velocity and relate them numerically"
           },
           "rotational_acceleration":
           {
             "title": "Rotational Acceleration",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["rotational_linear_velocity"],
             "objective": "Calculate rotational acceleration."
-          },
-          "rotational_kinematic_equations_1":
-          {
-            "title": "Rotational Kinematic Equations 1",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Solve kinematic equations for rotational motion with quantities given."
           },
           "angular_velocity_of_real_things":
           {
             "title": "Angular Velocity of Real Things",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["rotational_acceleration"],
             "objective": "Determine the angular velocity in radians per second of the hands of a clock, a rotating planet, a revolving planet"
+          },
+          "rotational_kinematic_equations_1":
+          {
+            "title": "Rotational Kinematic Equations 1",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["angular_velocity_of_real_things"],
+            "objective": "Solve kinematic equations for rotational motion with quantities given."
           },
           "rotational_kinematic_equations_2":
           {
             "title": "Rotational Kinematic Equations 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["rotational_kinematic_equations_1"],
             "objective": "Relate the kinematic quantities and equations for linear and rotational motion",
             "note": "This pod was once flagged as redundant, but when editing I couldn't see why"
           },
-          "linear_velocity_on_planet":
+          "angular_linear_velocity_on_planet":
           {
-            "title": "Linear Velocity on a Planet",
+            "title": "Angular and Linear Velocity on a Planet",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "I",
+            "prerequisites": ["rotational_kinematic_equations_2"],
             "objective": "Determine the linear velocity of a person located at a particular latitude on a planet."
           },
           "rotational_kinematic_equations_3":
           {
             "title": "Rotational Kinematic Equations 3",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "J",
+            "prerequisites": ["angular_linear_velocity_on_planet"],
             "objective": "When rotational kinematic quantities are given in inconvienient ways (such as rpm, or time per rotation, or linear motion is given), determine the rotational quantities in correct units and then use the rotational kinematic equations."
           },
           "rotational_vs_linear_velocity":
           {
             "title": "Rotational vs. Linear Velocity",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["rotational_kinematic_equations_3"],
             "objective": "Compare the rotational and linear velocity of items in different locations on a rotating disc; answer conceptual questions related to rotational and linear velocity"
           },
           "direction_rotational_kinematics_quantities":
           {
             "title": "Direction of Rotational Kinematics Quantities",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "L",
+            "prerequisites": ["rotational_vs_linear_velocity"],
             "objective": "Use right-hand rules to determine the directions of rotational kinematics quantities."
           },
           "advanced_angular_acceleration":
           {
             "title": "Advanced Angular Acceleration",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["direction_rotational_kinematics_quantities"],
             "objective": "Determine the angular acceleration of a wheel as a car accelerates; determine angular acceleration if a planet were to speed up or slow down."
           },
           "rotational_kinematics_advanced":
           {
             "title": "Rotational Kinematics Advanced",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "N",
+            "prerequisites": ["advanced_angular_acceleration"],
             "objective": "Make inferences using algebraic and proportionality analysis regarding the rotational and linear speeds of a person located at different points on the earth"
           },
           "winter_is_coming":
           {
             "title": "Winter is Coming?",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "O",
+            "prerequisites": ["rotational_kinematics_advanced"],
             "objective": "Design a hypothetical planet for which seasons have irregular lengths."
           },
           "the_long_night":
           {
             "title": "The Long Night",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "P",
+            "prerequisites": ["rotational_kinematics_advanced"],
             "objective": "Design a hypothetical planet on which days have irregular lengths"
           }
         }
