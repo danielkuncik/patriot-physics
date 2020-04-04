@@ -152,10 +152,15 @@ simpler questions, like true or false and fill in the blank
     addAnswerObject('circleCounterclockwise2Answer', circleCounterClockwise2Answer.drawCanvas(150));
 
 
-
-
     let circleCounterClockwise3 = new CircularMotionDiagram('counterclockwise');
     circleCounterClockwise3.addVisiblePoint(5.5);
+    let circleCounterclockwise3Answer = new CircularMotionDiagram('counterclockwise');
+    circleCounterclockwise3Answer.addVisiblePoint(5.5);
+    circleCounterclockwise3Answer.addVelocityArrowWithDottedLine(5.5);
+    circleCounterclockwise3Answer.addCentripetalForce(5.5);
+    addAnswerObject('circleCounterclockwise3Answer', circleCounterclockwise3Answer.drawCanvas(150));
+
+
 
     let circleClockwise1 = new CircularMotionDiagram('clockwise');
     circleClockwise1.addVisiblePoint(4);

@@ -76,11 +76,14 @@ class CircularMotionDiagram extends Diagram {
         let pointA = this.getPointOnCircle(positionInRadians);
         let pointB = pointA.translateAndReproducePolar(length, pointingAngle);
 
-        super.addArrow(pointA, pointB);
+        let arrow = super.addArrow(pointA, pointB);
         if (label) {
             super.labelLineOutside(pointA, pointB, label, undefined, undefined, this.direction);
         }
-
+        return {
+            pointB: pointB,
+            pointingAngle: pointingAngle
+        }
     }
 
     addCentripetalForce(positionInRadians, length, label) {
@@ -94,6 +97,23 @@ class CircularMotionDiagram extends Diagram {
         super.addArrow(pointA, pointB);
         if (label) {
             super.labelLineAbove(pointA, pointB, label);
+        }
+    }
+
+    addVelocityArrowWithDottedLine(positionInRadians, arrowLength, label, dottedLineLength, dottedLineLabel) {
+        if (arrowLength === undefined) {
+            arrowLength = this.radius * 1.2;
+        }
+        if (dottedLineLength === undefined) {
+            dottedLineLength = arrowLength;
+        }
+        let velocityArrow = this.addVelocityArrow(positionInRadians, arrowLength, label);
+        let pointB = velocityArrow.pointB;
+        let pointingAngle = velocityArrow.pointingAngle;
+        let pointC = pointB.translateAndReproducePolar(dottedLineLength, pointingAngle);
+        super.addDottedLine(pointB, pointC);
+        if (dottedLineLabel) {
+            super.labelLineOutside(pointB, pointC, dottedLineLabel, undefined, undefined, this.direction);
         }
     }
 
