@@ -6638,7 +6638,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the heat energy necessary to cause a temperature change."
+            "objective": "Determine the heat energy necessary to cause a temperature change.",
+            "content": "The heat energy necessary to cause a change in temperature is equal to the mass of the object time sits specific heat times the change in temperature."
           },
           "thermal_contact_1":
           {
@@ -6647,7 +6648,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends."
+            "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends.",
+            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature."
           },
           "temperature_scales":
           {
@@ -6657,6 +6659,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Define the three (or four) temperature scales; give guidelines on temperature scale, know the difference between scales and units",
+            "content": "There are three different scales to measure temperature: Fahrenheit, Celsius, and Kelvin; these are called 'scales' rather than units because they have different zero-points",
             "examples":[
               "Where does water boil on each scale?",
               "What would a hot day be on each scale?",
@@ -6671,7 +6674,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use formulas to convert temperatures between the three temperature scales."
+            "objective": "Use formulas to convert temperatures between the three temperature scales.",
+            "content": "Converting between different temperature scales involves both multiplying by a conversion factor and translating to a different zero point."
           },
           "heat_formula_2":
           {
@@ -6680,7 +6684,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat."
+            "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat.",
+            "content": "The formula for heat energy can be solved for other quantities as well."
           },
           "heat_graphs":
           {
@@ -6690,7 +6695,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw qualitative graphs of temperature as heat is added; describe and explain what happens when state changes in these graphs; identify the state of matter of an object base on temperature",
-            "example": "Can you ever have water with a temperatuer of -10 degrees celsius"
+            "example": "Can you ever have water with a temperature of -10 degrees celsius",
+            "content": "A heat graph shows how an object's temperature changes heat energy is added or removed; as an object changes state, heat energy is added or removed but the temperature of the object does not change"
           },
           "thermal_contact_2":
           {
@@ -6699,7 +6705,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends."
+            "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends.",
+            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature."
           },
           "heat_formula_3":
           {
@@ -6708,7 +6715,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve heat formula problems asking for final or initial temperature."
+            "objective": "Solve heat formula problems asking for final or initial temperature.",
+            "content": "Given the amount of heat added to an object, its mass, and its specific heat, a physicist can determine the intital or final temperature of the object."
           },
           "heat_formula_4":
           {
@@ -6717,7 +6725,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object."
+            "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object.",
+            "content": "By combining the formula to heat needed to change temperature with the formula for heat needed to change state, a physicist can analyze the amount of heat energy necessary to progress through a multi-step process on a heat graph."
           },
           "newtons_law_of_cooling":
           {
@@ -6726,16 +6735,18 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics."
+            "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics.",
+            "content": "An object that is placed in a cooler environment loses heat energy due to an exponential decay."
           },
           "heat_formula_5":
           {
-            "title": "Heat Formula 5: Multi-Step solve for tmperature",
+            "title": "Heat Formula 5: Multi-Step solve for temperature",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature."
+            "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature.",
+            "content": "Through a more difficult mathematical process, physicists can determine the final or initial temperature of an object that has been through a multi-step process including changing temperature and changing state of matter."
           },
           "heat_formula_mixture":
           {
@@ -6744,7 +6755,18 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water."
+            "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water.",
+            "content": "When two items are mixed in a closed system, the heat energy added to one item is equal to the heat energy subtracted from the other; physicists can use this to create a new formula and find the final temperature of the mixture or other useful information."
+          },
+          "determine_specific_heat":
+          {
+            "title": "Determine Specific Heat",
+            "level": 4,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Determine the specific heat of some metal using a calorimeter and water.",
+            "content": "Physicists can use a mixture of a substance and water in order to find the specific heat of the metal."
           }
         }
       },
