@@ -1,0 +1,177 @@
+
+<h4>
+    Basic Geoemtry Review:
+</h4>
+
+
+<p class = 'definition'>
+    A <strong>circle</strong> is all points equidistant from a single point.
+</p>
+<p class = 'definition'>
+    A line <strong>tangent</strong> to a circle
+    is a line that touches the circle at only one point.
+</p>
+<p class = 'definition'>
+    A <strong>radius</strong> of a circle is a line that
+    goes from the center of a circle to the outside of the circle.
+</p>
+<p class = 'definition'>
+    Any tangent of a circle and a radius of the circle that intersect
+    are perpendicular.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        On the circle below, draw any line <emph>tangent</emph> to the circle.
+        <br>
+        <div id = 'simpleCircle1'></div>
+    </li>
+    <li class = 'question'>
+        On the circle below, draw any segment that is a <emph>radius</emph> of the circle.
+        <br>
+        <div id = 'simpleCircle2'></div>
+    </li>
+    <li class ='question'>
+        On the circle below, draw a <emph>radius</emph> and <emph>tangent line</emph> that intersect,
+        and indicate they are perpendicular.
+        <br>
+        <div id = 'simpleCircle3'></div>
+    </li>
+</ol>
+
+<img src = '/podAssets/simpleCircularMotionDiagram.png' height = '200px' width = 'auto' />
+
+<!--
+I have no image credit for this image, and i need to replace it with one of my own
+-->
+
+<h4>
+    Rules for an object moving in a circle
+</h4>
+
+<ol class = 'principleList'>
+    <li>
+        Whenever an object is moving in a circle, its <emph>velocity</emph> is <emph>tangent</emph> to the circle.
+    </li>
+    <li>
+        Whenever an object is moving in a circle, there is a <emph>force</emph> pulling it <emph>towards the center</emph>
+        of the circle.
+        This force is called the <strong>centripetal force</strong>.
+    </li>
+    <li>
+        If the centripetal force is released, the object will fly in a straight line <emph>tangent</emph> to the circle,
+        in the direction of its velocity the moment it was released.
+        It <strong>never</strong> continues to turn or bend, but always moves in a straight line.
+    </li>
+</ol>
+
+<ol class ='questionList'>
+    <li class = 'question' data-answer_id = 'circleCounterclockwise1Answer'>
+        The circle below shows an object moving counterclockwise.
+        Add an arrow showing the <emph>velocity</emph> of this object.
+        Label your arrow.
+        <br>
+        <div id = 'circleCounterclockwise1'></div>
+    </li>
+    <li class = 'question' data-answer_id = 'circleCounterclockwise2Answer'>
+        The circle below shows an object moving counterclockwise.
+        Add an arrow showing the <emph>centripetal force</emph> acting on this object.
+        Label your arrow.
+        <br>
+        <div id = 'circleCounterclockwise2'></div>
+    </li>
+    <li class = 'question' data-answer_id = 'circleCounterclockwise3Answer'>
+        The circle below shows an object moving counterclockwise.
+        Add an two arrows, showing <strong>both</strong> the velocity and centripetal force
+        acting on the object.
+        Then, draw a dotted line showing the direction that the object would move
+        if the centripetal force were released.
+        <br>
+        <div id = 'circleCounterclockwise3'></div>
+    </li>
+    <li class = 'question' data-answer_id = 'circleClockwise1Answer'>
+        The circle below shows an object moving clockwise.
+        Add an arrow showing the <emph>velocity</emph> of this object.
+        Label your arrow.
+        <br>
+        <div id = 'circleClockwise1'></div>
+    </li>
+    <li class = 'question' data-answer_id = 'circleClockwise2Answer'>
+        The circle below shows an object moving clockwise.
+        Add an arrow showing the <emph>centripetal force</emph> acting on this object.
+        Label your arrow.
+        <br>
+        <div id = 'circleClockwise2'></div>
+    </li>
+    <li class = 'question' data-answer_id = 'circleClockwise3Answer'>
+        The circle below shows an object moving clockwise.
+        Add an two arrows, showing <strong>both</strong> the velocity and centripetal force
+        acting on the object.
+        Then, draw a dotted line showing the direction that the object would move
+        if the centripetal force were released.
+        <br>
+        <div id = 'circleClockwise3'></div>
+    </li>
+</ol>
+
+<ol class = 'answerList'></ol>
+
+
+<!--
+once i get a diagram object, add some objects moving CLOCKWISE as well as counterclockwise
+-->
+
+<!--
+simpler questions, like true or false and fill in the blank
+-->
+
+
+<!--
+
+-->
+
+<script>
+    let simpleCircle = new Diagram();
+    simpleCircle.addCircle(origin,1);
+    $("#simpleCircle1").append(simpleCircle.drawCanvas(100));
+    $("#simpleCircle2").append(simpleCircle.drawCanvas(100));
+    $("#simpleCircle3").append(simpleCircle.drawCanvas(100));
+
+    let circleCounterClockwise1 = new CircularMotionDiagram('counterclockwise');
+    circleCounterClockwise1.addVisiblePoint(1);
+    let circleCounterClockwise1Answer = new CircularMotionDiagram('counterclockwise');
+    circleCounterClockwise1Answer.addVisiblePoint(1);
+    circleCounterClockwise1Answer.addVelocityArrow(1);
+    addAnswerObject('circleCounterclockwise1Answer', circleCounterClockwise1Answer.drawCanvas(150));
+
+    let circleCounterClockwise2 = new CircularMotionDiagram('counterclockwise');
+    circleCounterClockwise2.addVisiblePoint(2.5);
+    let circleCounterClockwise2Answer = new CircularMotionDiagram('counterclockwise');
+    circleCounterClockwise2Answer.addVisiblePoint(2.5);
+    circleCounterClockwise2Answer.addCentripetalForce(2.5);
+    addAnswerObject('circleCounterclockwise2Answer', circleCounterClockwise2Answer.drawCanvas(150));
+
+
+
+
+    let circleCounterClockwise3 = new CircularMotionDiagram('counterclockwise');
+    circleCounterClockwise3.addVisiblePoint(5.5);
+
+    let circleClockwise1 = new CircularMotionDiagram('clockwise');
+    circleClockwise1.addVisiblePoint(4);
+    let circleClockwise2 = new CircularMotionDiagram('clockwise');
+    circleClockwise2.addVisiblePoint(0.5);
+    let circleClockwise3 = new CircularMotionDiagram('clockwise');
+    circleClockwise3.addVisiblePoint(5.2);
+
+    $("#circleCounterclockwise1").append(circleCounterClockwise1.drawCanvas(150));
+
+
+    $("#circleCounterclockwise2").append(circleCounterClockwise2.drawCanvas(150));
+    $("#circleCounterclockwise3").append(circleCounterClockwise3.drawCanvas(150));
+
+    $("#circleClockwise1").append(circleClockwise1.drawCanvas(150));
+    $("#circleClockwise2").append(circleClockwise2.drawCanvas(150));
+    $("#circleClockwise3").append(circleClockwise3.drawCanvas(150));
+</script>
+
