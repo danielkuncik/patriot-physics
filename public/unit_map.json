@@ -3871,30 +3871,42 @@
           "vertical_circles_1":
           {
             "title": "Vertical Circles 1",
-            "subtitle": "Loop-de-loop problems",
+            "subtitle": "Constant Speed",
             "level": 4,
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["centripetal_acceleration_force_formulas_4"],
-            "objective": "Analyze the forces in a vertical circle, for example, the forces on a pilot as he loops over.",
+            "objective": "Analyze the forces in a vertical circle when speed is constant, for example, the forces on a pilot as he loops over.",
             "content": "When an object is swung around in a circle, gravity and tension combine to make the centripetal force acting on an object."
+          },
+          "vertical_circles_2":
+          {
+            "title": "Vertical Circles 2",
+            "subtitle": "Not Constant Speed",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["vertical_circles_1"],
+            "objective": "Analyze the forces in a vertical circle when speed is NOT constant; use circular motion to analyze a pendulum",
+            "content": "When an object is swung around in a circle, gravity and tension combine to make the centripetal force acting on an object; speed typically decreases when an object rises and increase when an object falls."
           },
           "proving_centripetal_acceleration_formula":
           {
             "title": "Proving the Centripetal Acceleration Formula",
             "level": 5,
-            "horizontal": 2,
-            "letter": "M",
-            "prerequisites": ["vertical_circles_1"],
+            "horizontal": 1,
+            "letter": "N",
+            "prerequisites": ["vertical_circles_2"],
             "objective": "Argue the formula for centripetal acceleration is numerically accurate using a conceptual geometry and limit-based argument.",
             "content": "The formula for centripetal acceleration can be demonstrated using geometry and an intuitive understanding of mathematical limits"
           },
-          "vertical_circles_2":
+          "vertical_circles_3":
           {
-            "title": "Vertical Circles 2",
+            "title": "Vertical Circles 3",
+            "subtitle": "Algebraic Derivation",
             "level": 5,
-            "horizontal": 3,
-            "letter": "N",
+            "horizontal": 2,
+            "letter": "O",
             "prerequisites": ["proving_centripetal_acceleration_formula"],
             "objective": "Derive a formula relating angular position, velocity, and acceleration for an object moving in a vertical circle.",
             "content": "Physicists can analyze vertical circles algebraically as well as numerically."
@@ -3903,9 +3915,9 @@
           {
             "title": "The Gravitron",
             "level": 5,
-            "horizontal": 4,
-            "letter": "O",
-            "prerequisites": ["vertical_circles_2"],
+            "horizontal": 3,
+            "letter": "P",
+            "prerequisites": ["vertical_circles_3"],
             "objective": "Analyze the forces acting on a person in the gravitron amusement park ride; describe why a person feels 'pressed into' the wall during the ride.",
             "content": "A person on a gravitron ride exhibits three forces: gravity, normal force, and static friction; normal force acts as centripetal force and its high magnitude increases the static friction and causes the person to stick to the wall."
           },
@@ -3913,8 +3925,8 @@
           {
             "title": "The Hula Hoop",
             "level": 6,
-            "horizontal": 3,
-            "letter": "P",
+            "horizontal": 2,
+            "letter": "Q",
             "prerequisites": ["gravitron"],
             "objective": "Develop a quantitative model to examine the motion of a hula hoop.",
             "content": "In a hula hoop, forces caused be a person's gyrations keep the hoop in circular motion and above the ground."
@@ -3923,8 +3935,8 @@
           {
             "title": "Artificial Gravity Part 2",
             "level": 6,
-            "horizontal": 5,
-            "letter": "Q",
+            "horizontal": 4,
+            "letter": "R",
             "prerequisites": ["gravitron"],
             "objective": "Develop a model of a space station in which people can walk around normally, as they would on earth, due to the dynamics of centripetal force.",
             "content": "A space station moving in a circle could potentially give humans an experience of standing or walking on the ground similar to that on planet earth."
