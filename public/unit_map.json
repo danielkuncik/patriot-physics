@@ -6418,6 +6418,7 @@
   {
     "title": "Fundamental Forces",
     "number": 2,
+    "uuid": "",
     "units":
     {
       "conceptual_gravitation":
@@ -6427,6 +6428,7 @@
         "completed": true,
         "AP": true,
         "honors": true,
+        "uuid": "",
         "pods":
         {
           "basic_gravity":
@@ -6437,7 +6439,8 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "Recognize examples of gravity on earth and in space; know gravity exists in space; define gravity as masses attracting rather than simply falling.",
-            "content": "Gravity is a force that attracts all masses to all other masses; gravity exists both on earth and in space."
+            "content": "Gravity is a force that attracts all masses to all other masses; gravity exists both on earth and in space.",
+            "uuid": ""
           },
           "basic_orbits":
           {
@@ -6447,7 +6450,8 @@
             "letter": "B",
             "prerequisites": ["basic_gravity"],
             "objective": "Recognize basic facts about orbits: they are elliptical etc. Recognize the orbits of objects such as planets and comets",
-            "content": "All planets and all other objects in orbit such as dwarf planets and comets move around the sun in an ellipse; some of these ellipses are very close to a circle."
+            "content": "All planets and all other objects in orbit such as dwarf planets and comets move around the sun in an ellipse; some of these ellipses are very close to a circle.",
+            "uuid": ""
           },
           "mass_vs_weight_1":
           {
@@ -6457,7 +6461,8 @@
             "letter": "C",
             "prerequisites": ["basic_orbits"],
             "objective": "Differentiate between mass and weight, including how weight changes in different areas.",
-            "content": "Mass is the total amount of matter or inertia that an object has; weight is the strength of gravity pulling the object downward when it is on a planet."
+            "content": "Mass is the total amount of matter or inertia that an object has; weight is the strength of gravity pulling the object downward when it is on a planet.",
+            "uuid": ""
           },
           "universal_attraction":
           {
@@ -6467,7 +6472,8 @@
             "letter": "D",
             "prerequisites": ["mass_vs_weight_1"],
             "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt.",
-            "content": "All masses are attracted by gravity, most of these attractions are too weak for you to feel."
+            "content": "All masses are attracted by gravity, most of these attractions are too weak for you to feel.",
+            "uuid": ""
           },
           "astronomical_examples_gravitation":
           {
@@ -6477,7 +6483,8 @@
             "letter": "E",
             "prerequisites": ["universal_attraction"],
             "objective": "Explain star formation, planet formation, and the existence of earth's atmosphere, and the absence of an atmosphere on other planets.",
-            "content": "Gravitational attraction of dust particles causes stars to form; earth's atmosphere exists due to gravitational attraction."
+            "content": "Gravitational attraction of dust particles causes stars to form; earth's atmosphere exists due to gravitational attraction.",
+            "uuid": ""
           },
           "energy_of_comet":
           {
@@ -6487,7 +6494,8 @@
             "letter": "F",
             "prerequisites": ["astronomical_examples_gravitation"],
             "objective": "Explain how energy changes between GPE and KE in a comet",
-            "content": "As a comet approaches earth, GPE converts to KE; as it moves away KE converts to GPE."
+            "content": "As a comet approaches earth, GPE converts to KE; as it moves away KE converts to GPE.",
+            "uuid": ""
           },
           "earth_is_round":
           {
@@ -6497,7 +6505,8 @@
             "letter": "G",
             "prerequisites": ["energy_of_comet"],
             "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple.",
-            "content": "Because the earth is round, the direction we called 'down' is actually 'inward'; an apple and the moon are both falling inward towards earth."
+            "content": "Because the earth is round, the direction we called 'down' is actually 'inward'; an apple and the moon are both falling inward towards earth.",
+            "uuid": ""
           },
           "keplers_first_law":
           {
@@ -6509,7 +6518,8 @@
             "prerequisites": ["earth_is_round"],
             "objective": "State Kepler's First Law; Rigorously define an ellipse and relate this definition to orbits; compare orbits of different eccentricity.",
             "notes": "Must recognize that earth's orbit is nearly spherical and eccentricity is NOT responsible for the seasons.",
-            "content": "An ellipse is formed by all points whose combined distance from two points is the same; the eccentricity of an ellipse represents how elongated it is; different object's orbits have different eccentricities; earth's orbit is nearly circular."
+            "content": "An ellipse is formed by all points whose combined distance from two points is the same; the eccentricity of an ellipse represents how elongated it is; different object's orbits have different eccentricities; earth's orbit is nearly circular.",
+            "uuid": ""
           },
           "keplers_second_law":
           {
@@ -6519,7 +6529,8 @@
             "letter": "I",
             "prerequisites": ["keplers_first_law"],
             "objective": "State Kepler's second law, demonstrate it with diagrams, and relate it to changes in energy.",
-            "content": "The area created by an object's orbit is equal for all unit times."
+            "content": "The area created by an object's orbit is equal for all unit times.",
+            "uuid": ""
           },
           "keplers_third_law":
           {
@@ -6529,7 +6540,8 @@
             "letter": "J",
             "prerequisites": ["keplers_second_law"],
             "objective":  "State Kepler's Third law; solve quantitative problems involving Kepler's Third Law; determine correct altitude of a cell-phone satellite",
-            "content": "The period of an orbit squared divided by the radius of an orbit cubed is constant for all objects orbitting a particular body; this can be used to place items in a place there they have a particular orbit."
+            "content": "The period of an orbit squared divided by the radius of an orbit cubed is constant for all objects orbitting a particular body; this can be used to place items in a place there they have a particular orbit.",
+            "uuid": ""
           },
           "significance_of_keplers_laws":
           {
@@ -6539,7 +6551,8 @@
             "letter": "K",
             "prerequisites": ["keplers_third_law"],
             "objective": "Explain how Newton's proof of Kepler's Laws was crucial in shaping human understanding of the universe",
-            "content": "By proving Kepler's Laws, Isaac Newton showed that objects in space followed the same principles as objects on earth."
+            "content": "By proving Kepler's Laws, Isaac Newton showed that objects in space followed the same principles as objects on earth.",
+            "uuid": ""
           },
           "gravitational_vs_inertial_mass":
           {
@@ -6549,7 +6562,8 @@
             "letter": "J",
             "prerequisites": ["significance_of_keplers_laws"],
             "objective": "Differentiate between gravitational and inertial mass while recognizing their equality.",
-            "content": "The physics quantity of mass represents both inertia and the strength of gravitational attraction to that object."
+            "content": "The physics quantity of mass represents both inertia and the strength of gravitational attraction to that object.",
+            "uuid": ""
           },
           "jumping_through_center_of_earth":
           {
@@ -6560,7 +6574,8 @@
             "prerequisites": ["gravitational_vs_inertial_mass"],
             "objective": "Examine using rigorous terminology, free-body diagrams, and kinematic graphs what would happen if you jumped through the center of the earth",
             "notes": "Must refer to Newton's Shell Principle",
-            "content": "If you were to jump through the center of the earth, you would come out the other side with no velocity; a physicist can prove this principle with the laws of dynamics and kinematics."
+            "content": "If you were to jump through the center of the earth, you would come out the other side with no velocity; a physicist can prove this principle with the laws of dynamics and kinematics.",
+            "uuid": ""
           },
           "non_round_earth":
           {
@@ -6570,7 +6585,8 @@
             "letter": "M",
             "prerequisites": ["jumping_through_center_of_earth"],
             "objective": "Describe how life on earth might be different if the shape of earth were different but the force of gravity was still proportional to mass.",
-            "content": "Were earth any other shape, gravity would pull you towards the center of that shape."
+            "content": "Were earth any other shape, gravity would pull you towards the center of that shape.",
+            "uuid": ""
           },
           "non_round_earth_2":
           {
@@ -6580,7 +6596,8 @@
             "letter": "N",
             "prerequisites": ["non_round_earth"],
             "objective": "Invent a different planet of a non-round shape and qualitatively and/or quantitatively describe life on this planet.",
-            "content": "A physicist can invent a hypothetical planet with a different shape and then imagine what might happen on that planet."
+            "content": "A physicist can invent a hypothetical planet with a different shape and then imagine what might happen on that planet.",
+            "uuid": ""
           }
         }
       },
@@ -6588,6 +6605,7 @@
       {
         "title": "Conceptual Electrostatics",
         "number": 2,
+        "uuid": "",
         "completed": true,
         "AP": true,
         "honors": true,
@@ -6601,7 +6619,8 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "Describe basic facts about electricity necessary to study electrostatics: parts of an atom; attraction and repulsion of subatomic particles",
-            "content": "Atoms are made of protons, neutrons, and electrons; two protons repel, two electrons repel, but a proton and an electron attract."
+            "content": "Atoms are made of protons, neutrons, and electrons; two protons repel, two electrons repel, but a proton and an electron attract.",
+            "uuid": ""
           },
           "charging_by_friction_electrostatic_discharge":
           {
@@ -6611,7 +6630,8 @@
             "letter": "B",
             "prerequisites": ["electrostatic_basics"],
             "objective": "Draw diagrams charging by friction and electrostatic discharge; recognize real-life examples of each.",
-            "content": "When two objects are rubbed together, electrons move between them in a process called charging by friction; when a charged object is placed near a conductor, electrons move to the conductor in a process called electrostatic discharge."
+            "content": "When two objects are rubbed together, electrons move between them in a process called charging by friction; when a charged object is placed near a conductor, electrons move to the conductor in a process called electrostatic discharge.",
+            "uuid": ""
           },
           "what_is_charge":
           {
@@ -6621,7 +6641,8 @@
             "letter": "C",
             "prerequisites": ["charging_by_friction_electrostatic_discharge"],
             "objective": "Describe qualitatively and quantitatively what it means for an object to be charged; describe how an object gains a positive or a negative charge.",
-            "content": "Charged objects have different numbers of protons and electrons; charged objects exhibit electrostatic properties; only electrons move between atoms so an object can only gain a positive charge by losing electrons."
+            "content": "Charged objects have different numbers of protons and electrons; charged objects exhibit electrostatic properties; only electrons move between atoms so an object can only gain a positive charge by losing electrons.",
+            "uuid": ""
           },
           "shocks_lightning":
           {
@@ -6631,7 +6652,8 @@
             "letter": "D",
             "prerequisites": ["what_is_charge"],
             "objective": "Draw diagrams and write narrative explaining how an electric shock, a bolt of lightning, and/or a gas station fire occurs",
-            "content": "Shocks are created when an object first charges by friction, then exhibits electrostatic discharge."
+            "content": "Shocks are created when an object first charges by friction, then exhibits electrostatic discharge.",
+            "uuid": ""
           },
           "electrostatics_vs_electric_current":
           {
@@ -6641,7 +6663,8 @@
             "letter": "E",
             "prerequisites": ["shocks_lightning"],
             "objective": "Compare and contrast between static and current electricity; recognize examples of both",
-            "content": "In static electricity, objects build and release charges; in current electricity electrons drift through neutral wires."
+            "content": "In static electricity, objects build and release charges; in current electricity electrons drift through neutral wires.",
+            "uuid": ""
           },
           "electrostatic_induction":
           {
@@ -6651,7 +6674,8 @@
             "letter": "F",
             "prerequisites": ["electrostatics_vs_electric_current"],
             "objective": "Define electrostatic polarization as a type of charge; draw diagrams and write narrative to show how electric charge can be acquired without exchange of electrons; recall real world examples of electrostatic induction.",
-            "content": "When an object is polarized, one side is positive charged and the other side negatively charged; objects can become polarized without touching or exchanging electrons."
+            "content": "When an object is polarized, one side is positive charged and the other side negatively charged; objects can become polarized without touching or exchanging electrons.",
+            "uuid": ""
           },
           "van_de_graaf_generator":
           {
@@ -6661,7 +6685,8 @@
             "letter": "G",
             "prerequisites": ["electrostatic_induction"],
             "objective": "Draw diagrams and give narrative explaining how a van de Graaf Generator generates large shocks, causes hair to raise, and causes other effects.",
-            "content": "a van de Graaf generator works by generating a large charge with a belt moving across a comb, then either collecting the charge to create electrostatic effects or enabling a large discharge."
+            "content": "a van de Graaf generator works by generating a large charge with a belt moving across a comb, then either collecting the charge to create electrostatic effects or enabling a large discharge.",
+            "uuid": ""
           },
           "positives_or_negative_charge":
           {
@@ -6672,7 +6697,8 @@
             "prerequisites": ["van_de_graaf_generator"],
             "objective": "Justify that the electrostatic phenomenon we observe would be identical if electrons moved the opposite way as we predict; describe how an electroscope is used and the value of the electroscope.",
             "notes": "In particular, describe how a van de Graaf generator works opposite of how it is often described.",
-            "content": "Physicists are unable to determine from most observable electrostatic phenomena whether a charge is positive or negative."
+            "content": "Physicists are unable to determine from most observable electrostatic phenomena whether a charge is positive or negative.",
+            "uuid": ""
           }
         }
       },
@@ -6680,6 +6706,7 @@
       {
         "title": "Inverse Square Laws",
         "number": 3,
+        "uuid": "",
         "completed": true,
         "AP": true,
         "honors": true,
@@ -6693,7 +6720,8 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "For two masses or charges, identify the force involved, whether they attract or repel, and which pair experiences more force.",
-            "content": "Objects with more mass and less distance between them experience greater gravitational force; objects with more charge and less distance between them experience a greater electrostatic force."
+            "content": "Objects with more mass and less distance between them experience greater gravitational force; objects with more charge and less distance between them experience a greater electrostatic force.",
+            "uuid": ""
           },
           "fields_1":
           {
@@ -6703,7 +6731,8 @@
             "letter": "B",
             "prerequisites": ["which_has_more_force_1"],
             "objective": "Draw electric or gravitational fields of a single object.",
-            "content": "Electric field illustrates the force that would act on a positive charge; gravitational field illustrates the force that would act on a mass; electric field points towards a negative charge and away from a positive charge."
+            "content": "Electric field illustrates the force that would act on a positive charge; gravitational field illustrates the force that would act on a mass; electric field points towards a negative charge and away from a positive charge.",
+            "uuid": ""
           },
           "which_has_more_force_2":
           {
@@ -6713,7 +6742,8 @@
             "letter": "C",
             "prerequisites": ["fields_1"],
             "objective": "For written descriptions of pairs of masses or charges, identify which pairs experience more force and why.",
-            "content": "The amount of gravitational or electrostatic force can be determined from written descriptions."
+            "content": "The amount of gravitational or electrostatic force can be determined from written descriptions.",
+            "uuid": ""
           },
           "fields_2":
           {
@@ -6723,7 +6753,8 @@
             "letter": "D",
             "prerequisites": ["which_has_more_force_2"],
             "objective": "Draw electric or gravitational fields of two charged or massive objects.",
-            "content": "When two charged or massive objects are together, electric and gravitational fields bend to indicate the summation of forces caused by the two objects."
+            "content": "When two charged or massive objects are together, electric and gravitational fields bend to indicate the summation of forces caused by the two objects.",
+            "uuid": ""
           },
           "law_of_gravitation_1":
           {
@@ -6734,7 +6765,8 @@
             "letter": "E",
             "prerequisites": ["fields_2"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation.",
-            "content": "The magnitude of gravity acting on two objects is proportional to their masses and inversely proportional to the square of the distance between their centers of mass; the constant of proportionality is called the Universal Gravitational Constant."
+            "content": "The magnitude of gravity acting on two objects is proportional to their masses and inversely proportional to the square of the distance between their centers of mass; the constant of proportionality is called the Universal Gravitational Constant.",
+            "uuid": ""
           },
           "coulombs_law_1":
           {
@@ -6745,7 +6777,8 @@
             "letter": "F",
             "prerequisites": ["law_of_gravitation_1"],
             "objective": "Numerically solve Coulomb's Law",
-            "content": "The magnitude of the electrostatic force acting on two objects is proportional to their charges and inversely proportional to the square of the sitance between their centers of charge; the constant of proportionality is called the Coulomb's Law Constant."
+            "content": "The magnitude of the electrostatic force acting on two objects is proportional to their charges and inversely proportional to the square of the sitance between their centers of charge; the constant of proportionality is called the Coulomb's Law Constant.",
+            "uuid": ""
           },
           "law_of_gravitation_2":
           {
@@ -6755,7 +6788,8 @@
             "letter": "G",
             "prerequisites": ["coulombs_law_1"],
             "objective": "Solve Newton's Law of Universal Gravitation and relate the result to Newton's Third Law.",
-            "content": "Whenever there are two masses A and B, A exerts a force of gravity on B and B exerts a force of gravity on A with equal magnitude and opposite direction; the force is always attractive and the magnitude is given by Newton's Universal Law of Gravitation"
+            "content": "Whenever there are two masses A and B, A exerts a force of gravity on B and B exerts a force of gravity on A with equal magnitude and opposite direction; the force is always attractive and the magnitude is given by Newton's Universal Law of Gravitation",
+            "uuid": ""
           },
           "coulombs_law_2":
           {
@@ -6765,7 +6799,8 @@
             "letter": "H",
             "prerequisites": ["law_of_gravitation_2"],
             "objective": "Solve Coulomb's Law and connect it to Newton's Third Law.",
-            "content": "Whenever there are two charged objects, A exerts an electrostatic force on B and B exerts an electrostatic force on A with equal magnitude and opposite direction; the force is attractive if the charges are opposite and repulsive if the charges are like; the magnitude of the force is given by Coulomb's Law."
+            "content": "Whenever there are two charged objects, A exerts an electrostatic force on B and B exerts an electrostatic force on A with equal magnitude and opposite direction; the force is attractive if the charges are opposite and repulsive if the charges are like; the magnitude of the force is given by Coulomb's Law.",
+            "uuid": ""
           },
           "law_of_gravitation_3":
           {
@@ -6776,7 +6811,8 @@
             "letter": "I",
             "prerequisites": ["coulombs_law_2"],
             "objective": "Numerically solve Newton's Law of Universal Gravitation on a planet; derive free-fall acceleration numerically.",
-            "content": "When a person is on a planet, they attract the planet and the planet attracts them with a force of equal magnitude and opposite direction; the distance between the center of mass of the person and the center of mass and the planet is effectively equal to the radius of the planet."
+            "content": "When a person is on a planet, they attract the planet and the planet attracts them with a force of equal magnitude and opposite direction; the distance between the center of mass of the person and the center of mass and the planet is effectively equal to the radius of the planet.",
+            "uuid": ""
           },
           "coulombs_law_3":
           {
@@ -6787,7 +6823,8 @@
             "letter": "J",
             "prerequisites": ["law_of_gravitation_3"],
             "objective": "Use Coulombs Law inside of atoms; use the electronic charge and unit of Angstroms to determine relevant quantities inside the atom",
-            "content": "Coulomb's Law can be applied to determine the attraction between electrons and nuclei within an atom."
+            "content": "Coulomb's Law can be applied to determine the attraction between electrons and nuclei within an atom.",
+            "uuid": ""
           },
           "fields_3":
           {
@@ -6797,7 +6834,8 @@
             "letter": "K",
             "prerequisites": ["coulombs_law_3"],
             "objective": "Draw gravitational or electric fields for several objects.",
-            "content": "When more than two charged or massive objects are near each other, they create derivable patterns of electric and magnetic fields."
+            "content": "When more than two charged or massive objects are near each other, they create derivable patterns of electric and magnetic fields.",
+            "uuid": ""
           },
           "derive_free_fall_acceleration":
           {
@@ -6807,7 +6845,8 @@
             "letter": "L",
             "prerequisites": ["fields_3"],
             "objective": "Derive, defend, and apply the formula for free-fall acceleration on a planet.",
-            "content": "The free-fall acceleration on a planet depends only upon the properties of the planet and no properties of the object in free-fall; physicists can derive this formula from Newton's Law of Universal Gravitation."
+            "content": "The free-fall acceleration on a planet depends only upon the properties of the planet and no properties of the object in free-fall; physicists can derive this formula from Newton's Law of Universal Gravitation.",
+            "uuid": ""
           },
           "algebraic_inverse_square":
           {
@@ -6817,7 +6856,8 @@
             "letter": "M",
             "prerequisites": ["derive_free_fall_acceleration"],
             "objective": "Solve inverse square laws algebraically; determine the dimensions of the gravitational and electric constants",
-            "content": "Inverse square laws can be algebraically manipulated to determine new formulas; the constants of the inverse square laws have units that have no physical meaning but connect the units of the principles."
+            "content": "Inverse square laws can be algebraically manipulated to determine new formulas; the constants of the inverse square laws have units that have no physical meaning but connect the units of the principles.",
+            "uuid": ""
           },
           "inverse_square_law_proportionality":
           {
@@ -6827,7 +6867,8 @@
             "letter": "N",
             "prerequisites": ["algebraic_inverse_square"],
             "objective": "Given a certain attraction or repulsion between certain masses or charges, determine what a new reaction or repulsion would be between slightly changed values.",
-            "content": "Proportionality can be used to relate gravitational and electrostatic force to other quantities, even if not all information is known."
+            "content": "Proportionality can be used to relate gravitational and electrostatic force to other quantities, even if not all information is known.",
+            "uuid": ""
           },
           "why_inverse_square":
           {
@@ -6837,7 +6878,8 @@
             "letter": "O",
             "prerequisites": ["inverse_square_law_proportionality"],
             "objective": "Use field diagrams and spherical geometry to explain why inverse square laws are inverse square laws.",
-            "content": "Gravitational and electrostatic force are inversely proportional to distance squared because the gravitational and electric field spread out into three-dimensional space."
+            "content": "Gravitational and electrostatic force are inversely proportional to distance squared because the gravitational and electric field spread out into three-dimensional space.",
+            "uuid": ""
           },
           "force_behind_chemistry":
           {
@@ -6847,7 +6889,8 @@
             "letter": "P",
             "prerequisites": ["why_inverse_square"],
             "objective": "Demonstrate why electrostatic, not gravitational force, determines how atoms and subatomic particles behave.",
-            "content": "On subatomic scales, the gravitational force is many orders of magnitude less than the electrostatic force. As a result, only the electrostatic force is used to describe how atoms behave."
+            "content": "On subatomic scales, the gravitational force is many orders of magnitude less than the electrostatic force. As a result, only the electrostatic force is used to describe how atoms behave.",
+            "uuid": ""
           },
           "different_dimensional_universe":
           {
@@ -6857,7 +6900,8 @@
             "letter": "Q",
             "prerequisites": ["force_behind_chemistry"],
             "objective": "Consider how the inverse square laws would be different if we lived in a universe with other than three dimensions.",
-            "content": "Gravitational and electrostatic forces follow inverse square laws becasue we live in a three-dimensional universe. If we lived in a universe of different dimensionality, the gravitational and electrostatic forces would follow different proportionality laws."
+            "content": "Gravitational and electrostatic forces follow inverse square laws becasue we live in a three-dimensional universe. If we lived in a universe of different dimensionality, the gravitational and electrostatic forces would follow different proportionality laws.",
+            "uuid": ""
           }
         }
       },
@@ -6865,6 +6909,7 @@
       {
         "title": "Quantitative Orbits",
         "number": 4,
+        "uuid": "",
         "completed": false,
         "vision": "Will contain information on conic sections, different types of orbits, quantitative analyses of Kepler's Laws, historical information on the importance of keplers laws and orbits in the development of science, and energy in orbits; For the AP curriculum, the universal gravitational potentail energy formual will be here"
       },
@@ -6872,6 +6917,7 @@
       {
         "title": "Conceptual Magnetism",
         "number": 5,
+        "uuid": "",
         "completed": true,
         "honors": true,
         "pods":
@@ -6884,7 +6930,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize North and South poles of a magnet, predict attraction and repulsion in a magnet, recognize earth's magnetic field, explain how a compass works",
-            "notes": "north and south poles, earth's magnetic field, how a compass works."
+            "notes": "north and south poles, earth's magnetic field, how a compass works.",
+            "uuid": ""
           },
           "simple_electromagnet":
           {
@@ -6893,7 +6940,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain how to build a simple electromagnet."
+            "objective": "Explain how to build a simple electromagnet.",
+            "uuid": ""
           },
           "magnet_laws":
           {
@@ -6902,7 +6950,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "State Faraday's and Ampere's Laws"
+            "objective": "State Faraday's and Ampere's Laws",
+            "uuid": ""
           },
           "simple_magnetic_fields":
           {
@@ -6911,7 +6960,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw a magnetic field of a single bar magnet and of the earth."
+            "objective": "Draw a magnetic field of a single bar magnet and of the earth.",
+            "uuid": ""
           },
           "how_do_magnets_work":
           {
@@ -6920,7 +6970,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain and diagram how a magnet works."
+            "objective": "Explain and diagram how a magnet works.",
+            "uuid": ""
           },
           "electron_motion_in_magnetic_field":
           {
@@ -6929,7 +6980,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine, using right-hand rules, how an electron moves within a magnetic field; recogniezze why a bar magnet lines up in an electric field."
+            "objective": "Determine, using right-hand rules, how an electron moves within a magnetic field; recogniezze why a bar magnet lines up in an electric field.",
+            "uuid": ""
           },
           "magnetization_of_metal":
           {
@@ -6938,7 +6990,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain what happens on a subatomic level when a piece of metal is magnetized"
+            "objective": "Explain what happens on a subatomic level when a piece of metal is magnetized",
+            "uuid": ""
           },
           "earths_magnetic_field":
           {
@@ -6947,7 +7000,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain why the earth has a magnetic field and identify crucial consequences of the earth's magnetic field."
+            "objective": "Explain why the earth has a magnetic field and identify crucial consequences of the earth's magnetic field.",
+            "uuid": ""
           },
           "dc_motors_electrical_generators":
           {
@@ -6956,7 +7010,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Using concepts of magnetic fields and electric current, explain how a DC motor and an electrical generator works."
+            "objective": "Using concepts of magnetic fields and electric current, explain how a DC motor and an electrical generator works.",
+            "uuid": ""
           },
           "multiple_magnetic_fields":
           {
@@ -6965,7 +7020,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw the magnetic field of two magnets and explain why they would attract or repel."
+            "objective": "Draw the magnetic field of two magnets and explain why they would attract or repel.",
+            "uuid": ""
           },
           "what_is_light":
           {
@@ -6974,7 +7030,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Narrate qualitatively why light exists using Faraday's Law, Ampere's Law, and other electromagnetic laws."
+            "objective": "Narrate qualitatively why light exists using Faraday's Law, Ampere's Law, and other electromagnetic laws.",
+            "uuid": ""
           }
         }
       },
@@ -6982,18 +7039,14 @@
       {
         "title": "Maxwell's Equations",
         "completed": null,
-        "honors": false
-      },
-      "cosmology":
-      {
-        "title": "Cosmology",
-        "completed": null,
+        "uuid": "",
         "honors": false
       },
       "calculus_based_gravitation":
       {
         "title": "Calculus Based Gravitation",
         "completed": null,
+        "uuid": "",
         "honors": false
       }
     }
@@ -7002,6 +7055,7 @@
   {
     "title": "Thermodynamics",
     "number": 4,
+    "uuid": "",
     "notes": "These units need to be done together to be understood...for example, pods on definitions of temperature and pressure I wasn't sure where to include",
     "units":
     {
@@ -7010,6 +7064,7 @@
         "title": "Kinetic Theory of Matter Conceptual",
         "completed": true,
         "number": 1,
+        "uuid": "",
         "honors": true,
         "notes": [
           "Many of these quizzes and examples need to be combined!",
@@ -7025,7 +7080,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize where molecules move faster between different options.",
-            "content": "When an object is warmer, the molecules that make up that object move faster."
+            "content": "When an object is warmer, the molecules that make up that object move faster.",
+            "uuid": ""
           },
           "states_of_matter_1":
           {
@@ -7035,7 +7091,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize how molecules move differently within different states of matter.",
-            "content": "All matter is made of moving molecules; molecules only virbarte in solids; molecules slip and slide in liquids; molecules move freely in a gas."
+            "content": "All matter is made of moving molecules; molecules only virbarte in solids; molecules slip and slide in liquids; molecules move freely in a gas.",
+            "uuid": ""
           },
           "conduction_convection_radiation_1":
           {
@@ -7045,7 +7102,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation",
-            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves."
+            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
+            "uuid": ""
           },
           "conduction_convection_radiation_2":
           {
@@ -7055,7 +7113,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation (but harder)",
-            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves."
+            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
+            "uuid": ""
           },
           "air_composition":
           {
@@ -7065,7 +7124,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Define what chemicals compose the air",
-            "content": "The air is composed of nitrogen, oxygen, carbon dioxide, water vapor, and argon"
+            "content": "The air is composed of nitrogen, oxygen, carbon dioxide, water vapor, and argon",
+            "uuid": ""
           },
           "air_pressure":
           {
@@ -7075,7 +7135,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Define air pressure, give examples of how air pressure applies, explain why humans do not feel air pressure, define atmospheric pressure.",
-            "content": "Humans and all other objects are constantly bombarded by air molcules surrounding them, but do not feel it becuas it strikes every side of them equally."
+            "content": "Humans and all other objects are constantly bombarded by air molcules surrounding them, but do not feel it becuas it strikes every side of them equally.",
+            "uuid": ""
           },
           "where_molecules_are_faster_2":
           {
@@ -7086,7 +7147,8 @@
             "prerequisites": [],
             "objective": "Describe where molecules move faster and give consequences of this; define temperature as average kinetic energy of molecules",
             "idea": "Incorporate some of the level 1 quizzes into this.",
-            "content": "Temperature is the average kinetic energy of the molecuels in an object; molecuels that are warmer move faster, and this creates effects we can see, such as changes in the size of a balloon in different temperatures."
+            "content": "Temperature is the average kinetic energy of the molecuels in an object; molecuels that are warmer move faster, and this creates effects we can see, such as changes in the size of a balloon in different temperatures.",
+            "uuid": ""
           },
           "define_temperature":
           {
@@ -7097,7 +7159,8 @@
             "prerequisites": [],
             "objective": "Define temperature as the average kinetic enregy of molecules.",
             "content": "Temperature is defiend as the average kinetic energy of the molecules an an object (and/or a quantity that is equal when two objects are in thermal equilibrium).",
-            "thought": "Need this single topic stand on its own, or can it be absorbed into another pod...it could be a memorizing pod like memorizing the conservation of energy in unit 110"
+            "thought": "Need this single topic stand on its own, or can it be absorbed into another pod...it could be a memorizing pod like memorizing the conservation of energy in unit 110",
+            "uuid": ""
           },
           "states_of_matter_2":
           {
@@ -7107,7 +7170,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Describe and draw diagrams showing how molecules move within each state of matter.",
-            "content": "The macroscopic behavior of solids, liquids, and gasses can be correlated to the microscopic behavior of their atoms."
+            "content": "The macroscopic behavior of solids, liquids, and gasses can be correlated to the microscopic behavior of their atoms.",
+            "uuid": ""
           },
           "kinetic_theory_applications":
           {
@@ -7125,7 +7189,8 @@
               "Apply to thermal expansion",
               "Apply to basic gas laws"
             ],
-            "thought": "Is this identical to where are molecules moving faster 2?"
+            "thought": "Is this identical to where are molecules moving faster 2?",
+            "uuid": ""
           },
           "entropy_1":
           {
@@ -7135,7 +7200,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Define entropy, give examples of high and low entropy, and state the second law of thermodynamics.",
-            "content": "Entropy is the degree of randomness in a system; the second law of thermodynamics states that the entropy of the universe is always increasing."
+            "content": "Entropy is the degree of randomness in a system; the second law of thermodynamics states that the entropy of the universe is always increasing.",
+            "uuid": ""
           },
           "entropy_2":
           {
@@ -7149,7 +7215,8 @@
             "examples": [
               "kinetic energy turns to thermal energy when an object strikes the ground",
               "kinetic energy turns to thermal energy when an object that was moving stops due to friction"
-            ]
+            ],
+            "uuid": ""
           },
           "define_kinetic_theory":
           {
@@ -7159,7 +7226,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Define the kinetic theory of matter; relate to changes in temperature",
-            "content": "The kinetic theory of matter states that matter is made of particles that are always in motion; temperature reflects the average kinetic energy of these molecules in motion."
+            "content": "The kinetic theory of matter states that matter is made of particles that are always in motion; temperature reflects the average kinetic energy of these molecules in motion.",
+            "uuid": ""
           },
           "changes_of_state":
           {
@@ -7169,7 +7237,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Explain what occurs on a molecular level during a change of state; explain why temperature does not change during a change of state",
-            "content": "When an object changes state, loose bonds between molecules either form or break; the moelcuels do not speed up or slow down."
+            "content": "When an object changes state, loose bonds between molecules either form or break; the moelcuels do not speed up or slow down.",
+            "uuid": ""
           },
           "conduction_zeroth_law":
           {
@@ -7179,7 +7248,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Relate heat transfer by conduction to the zeroth law of thermodynamics, kinetic theory, and the mechanics of collisions",
-            "content": "The zeroth law of thermodynamics states that heat energy does not transfer between two objcets of equal temperature; during heat conduction energy kinetic transfers through collisions until temperatures are equal."
+            "content": "The zeroth law of thermodynamics states that heat energy does not transfer between two objcets of equal temperature; during heat conduction energy kinetic transfers through collisions until temperatures are equal.",
+            "uuid": ""
           },
           "evaporation":
           {
@@ -7189,7 +7259,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Contrast evaporation and boiling; explain how water cools due to evaporation; explain evaporation in open and closed containers.",
-            "content": "Evaporation cools water because faster moving water molecules leave the water due to evaporation; liquids are frequently cooler than their environments and do not reach thermal equilibrium; liquids in sealed containers can reach thermal equilibrium."
+            "content": "Evaporation cools water because faster moving water molecules leave the water due to evaporation; liquids are frequently cooler than their environments and do not reach thermal equilibrium; liquids in sealed containers can reach thermal equilibrium.",
+            "uuid": ""
           },
           "advanced_convection_and_radiation":
           {
@@ -7199,7 +7270,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Relate heat radiation to our knowledge of electromagnetic waves",
-            "content": "All electromagnetic waves, but particularly infrared waves, transfer heat from one object to another."
+            "content": "All electromagnetic waves, but particularly infrared waves, transfer heat from one object to another.",
+            "uuid": ""
           },
           "entropy_3":
           {
@@ -7209,7 +7281,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Compare random and non-random motion of molecules; (describe entropy change in common examples of energy transfer) -> already in entropy 2",
-            "content": "When an object moves its molecules move, but not randomly; but the random motion represents the heat energy."
+            "content": "When an object moves its molecules move, but not randomly; but the random motion represents the heat energy.",
+            "uuid": ""
           },
           "brownian_motion":
           {
@@ -7219,7 +7292,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Describe how molecules appear to be moving by not traveling in a random walk model.",
-            "content": "Brownian motion is a more precise, mathematical way of analyzing molecuels random motion."
+            "content": "Brownian motion is a more precise, mathematical way of analyzing molecuels random motion.",
+            "uuid": ""
           },
           "entropy_probability":
           {
@@ -7235,7 +7309,8 @@
               "spreading perfume",
               "jam mixed in pudding"
             ],
-            "enrichment": "Students should read/see the play 'Arcadia' by Tom Stoppard as a part of this lesson."
+            "enrichment": "Students should read/see the play 'Arcadia' by Tom Stoppard as a part of this lesson.",
+            "uuid": ""
           }
         }
       },
@@ -7244,6 +7319,7 @@
         "title": "Heat Transfer and Temperature: Mathematical",
         "completed": true,
         "number": 2,
+        "uuid": "",
         "honors": true,
         "pods":
         {
@@ -7255,7 +7331,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Determine the heat energy necessary to cause a temperature change.",
-            "content": "The heat energy necessary to cause a change in temperature is equal to the mass of the object time sits specific heat times the change in temperature."
+            "content": "The heat energy necessary to cause a change in temperature is equal to the mass of the object time sits specific heat times the change in temperature.",
+            "uuid": ""
           },
           "thermal_contact_1":
           {
@@ -7265,7 +7342,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends.",
-            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature."
+            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature.",
+            "uuid": ""
           },
           "temperature_scales":
           {
@@ -7281,7 +7359,8 @@
               "What would a hot day be on each scale?",
               "What would a cold day be on each scale?",
               "Why do we say 'degrees Celsius' and 'degrees Fahrenheit' but never 'degrees Kelvin', just 'Kelvin'"
-            ]
+            ],
+            "uuid": ""
           },
           "temperature_conversions":
           {
@@ -7291,7 +7370,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Use formulas to convert temperatures between the three temperature scales.",
-            "content": "Converting between different temperature scales involves both multiplying by a conversion factor and translating to a different zero point."
+            "content": "Converting between different temperature scales involves both multiplying by a conversion factor and translating to a different zero point.",
+            "uuid": ""
           },
           "heat_formula_2":
           {
@@ -7301,7 +7381,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat.",
-            "content": "The formula for heat energy can be solved for other quantities as well."
+            "content": "The formula for heat energy can be solved for other quantities as well.",
+            "uuid": ""
           },
           "heat_graphs":
           {
@@ -7312,7 +7393,8 @@
             "prerequisites": [],
             "objective": "Draw qualitative graphs of temperature as heat is added; describe and explain what happens when state changes in these graphs; identify the state of matter of an object base on temperature",
             "example": "Can you ever have water with a temperature of -10 degrees celsius",
-            "content": "A heat graph shows how an object's temperature changes heat energy is added or removed; as an object changes state, heat energy is added or removed but the temperature of the object does not change"
+            "content": "A heat graph shows how an object's temperature changes heat energy is added or removed; as an object changes state, heat energy is added or removed but the temperature of the object does not change",
+            "uuid": ""
           },
           "thermal_contact_2":
           {
@@ -7322,7 +7404,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends.",
-            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature."
+            "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature.",
+            "uuid": ""
           },
           "heat_formula_3":
           {
@@ -7332,7 +7415,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Solve heat formula problems asking for final or initial temperature.",
-            "content": "Given the amount of heat added to an object, its mass, and its specific heat, a physicist can determine the intital or final temperature of the object."
+            "content": "Given the amount of heat added to an object, its mass, and its specific heat, a physicist can determine the intital or final temperature of the object.",
+            "uuid": ""
           },
           "heat_formula_4":
           {
@@ -7342,7 +7426,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object.",
-            "content": "By combining the formula to heat needed to change temperature with the formula for heat needed to change state, a physicist can analyze the amount of heat energy necessary to progress through a multi-step process on a heat graph."
+            "content": "By combining the formula to heat needed to change temperature with the formula for heat needed to change state, a physicist can analyze the amount of heat energy necessary to progress through a multi-step process on a heat graph.",
+            "uuid": ""
           },
           "newtons_law_of_cooling":
           {
@@ -7352,7 +7437,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics.",
-            "content": "An object that is placed in a cooler environment loses heat energy due to an exponential decay."
+            "content": "An object that is placed in a cooler environment loses heat energy due to an exponential decay.",
+            "uuid": ""
           },
           "heat_formula_5":
           {
@@ -7362,7 +7448,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature.",
-            "content": "Through a more difficult mathematical process, physicists can determine the final or initial temperature of an object that has been through a multi-step process including changing temperature and changing state of matter."
+            "content": "Through a more difficult mathematical process, physicists can determine the final or initial temperature of an object that has been through a multi-step process including changing temperature and changing state of matter.",
+            "uuid": ""
           },
           "heat_formula_mixture":
           {
@@ -7372,7 +7459,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water.",
-            "content": "When two items are mixed in a closed system, the heat energy added to one item is equal to the heat energy subtracted from the other; physicists can use this to create a new formula and find the final temperature of the mixture or other useful information."
+            "content": "When two items are mixed in a closed system, the heat energy added to one item is equal to the heat energy subtracted from the other; physicists can use this to create a new formula and find the final temperature of the mixture or other useful information.",
+            "uuid": ""
           },
           "determine_specific_heat":
           {
@@ -7382,7 +7470,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Determine the specific heat of some metal using a calorimeter and water.",
-            "content": "Physicists can use a mixture of a substance and water in order to find the specific heat of the metal."
+            "content": "Physicists can use a mixture of a substance and water in order to find the specific heat of the metal.",
+            "uuid": ""
           }
         }
       },
@@ -7391,6 +7480,7 @@
         "title": "Quantitative Gas Laws and Thermal Expansion",
         "completed": true,
         "number": 3,
+        "uuid": "",
         "honors": false,
         "notes": "I need more on proving the ideal gas law and connecting it to the combined gas law.",
         "pods":
@@ -7402,7 +7492,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use the formulas for thermal expansion of a solid or liquid."
+            "objective": "Use the formulas for thermal expansion of a solid or liquid.",
+            "uuid": ""
           },
           "gas_laws_1":
           {
@@ -7412,7 +7503,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Use gas laws built only on proportionality.",
-            "limits": "Very straightforward mathematical problems; no solving for a denominator"
+            "limits": "Very straightforward mathematical problems; no solving for a denominator",
+            "uuid": ""
           },
           "gas_laws_2":
           {
@@ -7422,7 +7514,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Use gas laws built only on proportionality",
-            "limits": "Includes more inconvientient numbers and mathematical situaitons, such as solving for the denominator"
+            "limits": "Includes more inconvientient numbers and mathematical situaitons, such as solving for the denominator",
+            "uuid": ""
           },
           "ideal_gas_law":
           {
@@ -7431,7 +7524,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve the ideal gas law."
+            "objective": "Solve the ideal gas law.",
+            "uuid": ""
           },
           "combined_gas_law":
           {
@@ -7440,7 +7534,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Defend and solve the combined gas law; differentiate between the combined gas law and the ideal gas law; explain why gas laws are ueful and necessary"
+            "objective": "Defend and solve the combined gas law; differentiate between the combined gas law and the ideal gas law; explain why gas laws are ueful and necessary",
+            "uuid": ""
           },
           "thermal_expansion_advanced":
           {
@@ -7449,7 +7544,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Solve complex real world thermal expansion problems, such as the thermal expansion of the oceans."
+            "objective": "Solve complex real world thermal expansion problems, such as the thermal expansion of the oceans.",
+            "uuid": ""
           },
           "prove_ideal_gas_law":
           {
@@ -7458,7 +7554,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Through both mathematical and conceptual arguments, prove the ideal gas law from the combined gas law."
+            "objective": "Through both mathematical and conceptual arguments, prove the ideal gas law from the combined gas law.",
+            "uuid": ""
           }
         }
       },
@@ -7467,12 +7564,14 @@
         "title": "Heat Processes",
         "completed": null,
         "honors": false,
+        "uuid": "",
         "idea": "This unit will deal with heat processes on P-V graphs."
       },
       "statistical_mechanics":
       {
         "title": "Statistical Mechanics",
         "completed": null,
+        "uuid": "",
         "honors": false
       }
     }
@@ -7480,12 +7579,14 @@
   "fluid_dynamics":
   {
     "title": "Fluid Dynamics",
-    "number": 6
+    "number": 6,
+    "uuid": ""
   },
   "atomic_physics":
   {
     "title": "Atomic Physics",
     "number": 7,
+    "uuid": "",
     "units":
     {
       "nuclear_reaction_formulas":
@@ -7493,6 +7594,7 @@
         "title": "Nuclear Reaction Formulas",
         "completed": true,
         "number": 1,
+        "uuid": "",
         "honors": true,
         "pods":
         {
@@ -7503,7 +7605,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation"
+            "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation",
+            "uuid": ""
           },
           "atomic_mass_vs_mass_number":
           {
@@ -7512,7 +7615,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Differentiate between atomic mass and mass number; explain when each is useful"
+            "objective": "Differentiate between atomic mass and mass number; explain when each is useful",
+            "uuid": ""
           },
           "alpha_beta_decay":
           {
@@ -7521,7 +7625,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Draw reactions involving alpha or beta decay of an isotope."
+            "objective": "Draw reactions involving alpha or beta decay of an isotope.",
+            "uuid": ""
           },
           "complete_nuclear_reaction":
           {
@@ -7530,7 +7635,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fuision, or decay."
+            "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fuision, or decay.",
+            "uuid": ""
           },
           "simple_half_life":
           {
@@ -7541,7 +7647,8 @@
             "prerequisites": [],
             "objective": "Define half-life; answer simple questions",
             "limits": "Problems in this seciton do not require the half-life to be represented as a function.",
-            "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?"
+            "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?",
+            "uuid": ""
           },
           "identify_crucial_particles":
           {
@@ -7550,7 +7657,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Identify the particles most crucial to understanding nuclear reactions."
+            "objective": "Identify the particles most crucial to understanding nuclear reactions.",
+            "uuid": ""
           },
           "written_reactions_1":
           {
@@ -7560,7 +7668,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula.",
-            "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction"
+            "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction",
+            "uuid": ""
           },
           "written_reactions_2":
           {
@@ -7570,7 +7679,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula; determine energy released by a nuclear reaction.",
-            "notes": "This crucial topic should be broken into two sections"
+            "notes": "This crucial topic should be broken into two sections",
+            "uuid": ""
           },
           "half_life_formulas":
           {
@@ -7579,7 +7689,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Represent half-life through an exponential decay function; use these formulas properly"
+            "objective": "Represent half-life through an exponential decay function; use these formulas properly",
+            "uuid": ""
           },
           "calculate_atomic_mass":
           {
@@ -7588,7 +7699,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation."
+            "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation.",
+            "uuid": ""
           },
           "decay_chain":
           {
@@ -7597,7 +7709,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use a table of isotopes to draft a decay chain for a particular isotope."
+            "objective": "Use a table of isotopes to draft a decay chain for a particular isotope.",
+            "uuid": ""
           },
           "nuclear_reactions_sun":
           {
@@ -7606,7 +7719,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Write and analyze the nuclear reactions occuring inside the sun; explain how they produce energy."
+            "objective": "Write and analyze the nuclear reactions occuring inside the sun; explain how they produce energy.",
+            "uuid": ""
           },
           "remnants_isotope":
           {
@@ -7616,7 +7730,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Based upon the decay chain and the half-life of a particular isotope, identify at particualr times what different products you will have and what radiation they will give off.",
-            "notes": "Good lead-in to a computation problem."
+            "notes": "Good lead-in to a computation problem.",
+            "uuid": ""
           }
         }
       },
@@ -7625,6 +7740,7 @@
         "title": "Nuclear Reaction Concepts",
         "completed": true,
         "number": 2,
+        "uuid": "",
         "honors": true,
         "pods":
         {
@@ -7635,7 +7751,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Identify parts of an atom; know that nuclear reactions occur only in the nucleus of the atom; define terms 'radioactive' and 'radioactivity"
+            "objective": "Identify parts of an atom; know that nuclear reactions occur only in the nucleus of the atom; define terms 'radioactive' and 'radioactivity",
+            "uuid": ""
           },
           "fission_fusion_decay":
           {
@@ -7644,7 +7761,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Differentiate between three types of nuclear reactions: fission, fuision, and decay"
+            "objective": "Differentiate between three types of nuclear reactions: fission, fuision, and decay",
+            "uuid": ""
           },
           "why_nucleus_decays":
           {
@@ -7653,7 +7771,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain why a nucleus decays"
+            "objective": "Explain why a nucleus decays",
+            "uuid": ""
           },
           "nuclear_vs_chemical_reactions":
           {
@@ -7662,7 +7781,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Differentiate between nuclear and chemical reactions"
+            "objective": "Differentiate between nuclear and chemical reactions",
+            "uuid": ""
           },
           "nuclear_reaction_danger":
           {
@@ -7672,7 +7792,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Assess the danger of different types of nuclear reactions",
-            "notes": "Requires previous knowledge of the electromagnetic spectrum."
+            "notes": "Requires previous knowledge of the electromagnetic spectrum.",
+            "uuid": ""
           },
           "nuclear_reactions_stars":
           {
@@ -7682,7 +7803,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Explain the processes of stars by using the concept of nuclear reaction.",
-            "notes": "Requires previous knowledge of gravity."
+            "notes": "Requires previous knowledge of gravity.",
+            "uuid": ""
           },
           "artificially_created_elements_1":
           {
@@ -7691,7 +7813,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain how new elements can be artificially created; draw reactions that go with those examples."
+            "objective": "Explain how new elements can be artificially created; draw reactions that go with those examples.",
+            "uuid": ""
           },
           "artificially_created_elements_2":
           {
@@ -7700,7 +7823,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain more complex examples of how new elements can be artificially created; draw reactions that go with those examples."
+            "objective": "Explain more complex examples of how new elements can be artificially created; draw reactions that go with those examples.",
+            "uuid": ""
           },
           "isotopes_uranium":
           {
@@ -7709,7 +7833,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain the importance of different isotopes of uranium for the creation of a nuclear reactor or a nuclear bomb; examine how different isotopes are isolated."
+            "objective": "Explain the importance of different isotopes of uranium for the creation of a nuclear reactor or a nuclear bomb; examine how different isotopes are isolated.",
+            "uuid": ""
           },
           "periodic_table_cosmology":
           {
@@ -7718,7 +7843,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain, using descriptions of reactions, how heavier elements within the universe can be created."
+            "objective": "Explain, using descriptions of reactions, how heavier elements within the universe can be created.",
+            "uuid": ""
           }
         }
       },
@@ -7727,6 +7853,7 @@
         "title": "Atomic Spectra",
         "completed": true,
         "number": 3,
+        "uuid": "",
         "honors": true,
         "pods":
         {
@@ -7737,7 +7864,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the difference between different energy levels of an atom."
+            "objective": "Determine the difference between different energy levels of an atom.",
+            "uuid": ""
           },
           "photons_atoms":
           {
@@ -7746,7 +7874,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain how and why photons of a precise energy can be emitted or absorbed by an atom, refer to electrons and energy levels in your answer"
+            "objective": "Explain how and why photons of a precise energy can be emitted or absorbed by an atom, refer to electrons and energy levels in your answer",
+            "uuid": ""
           },
           "energy_levels_photons":
           {
@@ -7755,7 +7884,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given an atom of various energy levels, determine the wavelength, frequency, and color or type of wave that can be emitted by that atom."
+            "objective": "Given an atom of various energy levels, determine the wavelength, frequency, and color or type of wave that can be emitted by that atom.",
+            "uuid": ""
           },
           "ionizing_radiation":
           {
@@ -7764,7 +7894,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Differentiate between ionizing and non-ionizing radiation"
+            "objective": "Differentiate between ionizing and non-ionizing radiation",
+            "uuid": ""
           },
           "cell_phone_controversy":
           {
@@ -7773,7 +7904,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Evaluate the danger of devices that emit electromagnetic waves such as cellphones; defend choices using knowledge of atomic structure and electromagnetic waves."
+            "objective": "Evaluate the danger of devices that emit electromagnetic waves such as cellphones; defend choices using knowledge of atomic structure and electromagnetic waves.",
+            "uuid": ""
           },
           "bands_spectrum":
           {
@@ -7782,7 +7914,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a spectrum showing bands of particualr wavelengths, recognize the bands by consutling a table of energy levels."
+            "objective": "Given a spectrum showing bands of particualr wavelengths, recognize the bands by consutling a table of energy levels.",
+            "uuid": ""
           },
           "neon_lights":
           {
@@ -7791,7 +7924,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use the chemical composition of a neon tube to determine what color a neon light will shine."
+            "objective": "Use the chemical composition of a neon tube to determine what color a neon light will shine.",
+            "uuid": ""
           },
           "astrochemistry":
           {
@@ -7800,7 +7934,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Determine the chemical composition of an astronomical body using a spectrum of taht body and a table of energy levels between atoms; defend choices."
+            "objective": "Determine the chemical composition of an astronomical body using a spectrum of taht body and a table of energy levels between atoms; defend choices.",
+            "uuid": ""
           }
         }
       },
@@ -7808,7 +7943,8 @@
       {
         "title": "Basic Quantum Theory",
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
-        "completed": null
+        "completed": null,
+        "uuid": ""
       }
     }
   },
@@ -7816,12 +7952,14 @@
   {
     "title": "Relativity",
     "number": 8,
+    "uuid": "",
     "units":
     {
       "special_relativity":
       {
         "title": "Special Relativity",
-        "completed": null
+        "completed": null,
+        "uuid": ""
       }
     }
   },
@@ -7829,12 +7967,14 @@
   {
     "title": "Overarching topics",
     "number": 9,
+    "uuid": "",
     "units":
     {
       "conceptual_energy_conservation":
       {
         "title": "Conceptual Conservation of Energy",
         "number": 1,
+        "uuid": "",
         "completed": true,
         "pods":
         {
@@ -7845,7 +7985,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize (multiple choice) single examples of different types of energy"
+            "objective": "Recognize (multiple choice) single examples of different types of energy",
+            "uuid": ""
           },
           "write_energy_types":
           {
@@ -7854,7 +7995,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Write the names of different types of energy."
+            "objective": "Write the names of different types of energy.",
+            "uuid": ""
           },
           "state_law_conservation_of_energy":
           {
@@ -7863,7 +8005,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "State, from memory, the law of conservation of energy."
+            "objective": "State, from memory, the law of conservation of energy.",
+            "uuid": ""
           },
           "recognize_energy_transfer":
           {
@@ -7872,7 +8015,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes"
+            "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes",
+            "uuid": ""
           },
           "describe_energy_transfer_1":
           {
@@ -7881,7 +8025,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Write, using tables as guidance, processes of 2 - 3 steps in which energy changes from one type to another; name these processes."
+            "objective": "Write, using tables as guidance, processes of 2 - 3 steps in which energy changes from one type to another; name these processes.",
+            "uuid": ""
           },
           "describe_energy_transfer_2":
           {
@@ -7891,7 +8036,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Write without guidance energy transfer in four or more steps; name processes involved.",
-            "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb."
+            "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
+            "uuid": ""
           },
           "connect_energy_to_sun":
           {
@@ -7901,7 +8047,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Connect (nearly) all forms of energy on earth back to light from the sun.",
-            "notes": "The exceptions, which should be noted, are geothermal and nuclear energy."
+            "notes": "The exceptions, which should be noted, are geothermal and nuclear energy.",
+            "uuid": ""
           },
           "connect_energy_to_big_bang":
           {
@@ -7911,7 +8058,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Connect energy of the earth through the gravitational potential energy of space dust (which would eventually form the sun) back to the creation of energy during the big bang",
-            "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology"
+            "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology",
+            "uuid": ""
           }
         }
       },
@@ -7919,6 +8067,7 @@
       {
         "title": "Cosmology",
         "number": 2,
+        "uuid": "",
         "completed": false,
         "pods":
         {
@@ -7926,68 +8075,79 @@
           {
             "title": "What is cosmology?",
             "level": 1,
-            "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts"
+            "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts",
+            "uuid": ""
           },
           "your_place_in_the_cosmos":
           {
             "title": "Your Place in the Cosmos",
             "level": 1,
-            "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc."
+            "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc.",
+            "uuid": ""
           },
           "expansion_of_universe":
           {
             "title": "The Expansion of the Universe",
             "level": 2,
-            "objective": "Explain evidence that the universe is expanding from the red-shift of far away galaxies."
+            "objective": "Explain evidence that the universe is expanding from the red-shift of far away galaxies.",
+            "uuid": ""
           },
           "cosmological_principle":
           {
             "title": "The Cosmological Principle",
             "level": 2,
-            "objective": "Describe evidence the universe is infinite; define the cosmological principle; give arguments in favor of the cosmological principle; "
+            "objective": "Describe evidence the universe is infinite; define the cosmological principle; give arguments in favor of the cosmological principle; ",
+            "uuid": ""
           },
           "infinite_and_expanding":
           {
             "title": "Infinite and Expanding?",
             "level": 3,
-            "objective": "Explain how the universe can be both infinite and expanding."
+            "objective": "Explain how the universe can be both infinite and expanding.",
+            "uuid": ""
           },
           "big_bang":
           {
             "title": "The Big Bang",
             "level": 3,
-            "objective": "Explain how scientists created the big bang theory; properly define the big bang."
+            "objective": "Explain how scientists created the big bang theory; properly define the big bang.",
+            "uuid": ""
           },
           "stages_of_universe":
           {
             "title": "Stages of the Universe",
             "level": 4,
-            "objective": "Explain the stages of the development of the universe according to the big bang theory."
+            "objective": "Explain the stages of the development of the universe according to the big bang theory.",
+            "uuid": ""
           },
           "comic_microwave_background":
           {
             "title": "The Cosmic Microwave Background",
             "level": 4,
-            "objective": "Explain the existence and discovery of the cosmic microwave background; examine how it gives evidence for the big bang theory"
+            "objective": "Explain the existence and discovery of the cosmic microwave background; examine how it gives evidence for the big bang theory",
+            "uuid": ""
           },
           "big_bang_limitations":
           {
             "title": "Big Bang Limitations",
             "level": 4,
-            "objective": "Explain limitations of the big bang theory and open questions within cosmology"
+            "objective": "Explain limitations of the big bang theory and open questions within cosmology",
+            "uuid": ""
           },
           "your_own_brief_history_of_time":
           {
             "title": "Your Own Brief History of Time",
             "level": 5,
             "objective": "Tell the story of the history of the universe, the solar system, the earth, life on earth, humans, and yourself beginning with the Big Bang and ending with this moment.",
-            "note": "Must incorporate information from physics, chemistry, biology, history, and any other relevant field"
+            "note": "Must incorporate information from physics, chemistry, biology, history, and any other relevant field",
+            "uuid": ""
           },
           "alternative_universes":
           {
             "title": "Alternative Universes",
             "level": 6,
-            "objective": "Within the big bang theory, imagine how if some variables were different our own experience in the universe would be different."
+            "objective": "Within the big bang theory, imagine how if some variables were different our own experience in the universe would be different.",
+            "uuid": ""
           }
         }
       }
