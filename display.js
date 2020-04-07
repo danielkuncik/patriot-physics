@@ -220,6 +220,9 @@ hbs.registerHelper('createUnitNavbar', (selectedUnitClusterKey) => {
 
 hbs.registerHelper('userInfo', (user, section, overallLevel) => {
     let output;
+    if (overallLevel === undefined) {
+        overallLevel = 0;
+    }
     if (user) {
         output = "<p>Logged in as:</p><ul>";
         output = output + `<li>Name: ${user.name}</li>`;

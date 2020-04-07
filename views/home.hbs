@@ -61,28 +61,53 @@
 
 
 {{#if (isAP courseLevel)}}
-    {{>ap_home_page}}
+    <h3>
+        AP Physics
+    </h3>
+    <div class = 'ml-5'>
+        {{>ap_home_page}}
+    </div>
 {{/if}}
 
 {{#if (isHonors courseLevel)}}
-    {{>honors_home_page}}
+    <h3>
+        Honors Physics
+    </h3>
+    <div class = 'ml-5'>
+        {{>honors_home_page}}
+    </div>
 {{/if}}
 
 {{#if (isA_Level courseLevel)}}
-    {{>a_level_home_page}}
-{{/if}}
+    <h3>
+        Physics A
+    </h3>
+    <div class = 'ml-5'>
+        {{>a_level_home_page}}
+    </div>{{/if}}
 
 
 {{#if (isNoSection courseLevel)}}
-    {{>ap_home_page}}
+    <h3>
+        AP Physics
+    </h3>
+    <div class = 'ml-5'>
+        {{>ap_home_page}}
+    </div>
 
-    <br>
+    <h3>
+        Honors Physics
+    </h3>
+    <div class = 'ml-5'>
+        {{>honors_home_page}}
+    </div>
 
-    {{>honors_home_page}}
-
-    <br>
-
-    {{>a_level_home_page}}
+    <h3>
+        Physics A
+    </h3>
+    <div class = 'ml-5'>
+        {{>a_level_home_page}}
+    </div>
 {{/if}}
 
 
