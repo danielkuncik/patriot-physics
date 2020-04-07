@@ -1,0 +1,124 @@
+<p>
+    In the <a href = '/pod/mechanics/circular_motion/vector_analysis_circular_motion_1'>previous pod</a>,
+    we learned about the direction of the vectors for centripetal acceleration and centripetal force.
+    In this pod, we we learn about the magnitudes:
+</p>
+
+
+<div id = 'formulasTable' class ='mb-5'></div>
+
+<div id = 'quantitiesTable'></div>
+
+<script>
+    let formulasTable = new Table(2,2);
+    formulasTable.addTopHeaders(['Formula for Centripetal Acceleration','Formula for Centripetal Force']);
+    formulasTable.writeTextInRow(1,["\\( a_c = \\frac{v^2}{r} \\)","\\( F_c = \\frac{m v^2}{r} \\)"]);
+
+    let quantitiesTable = new Table(6,3);
+    quantitiesTable.addTopHeaders(['Symbol','Quantity','SI Unit']);
+    quantitiesTable.writeTextInRow(1,['\\( a_c \\)','centripetal acceleration','m/s/s']);
+    quantitiesTable.writeTextInRow(2,['\\( F_c \\)','centripetal force','Newtons (N)']);
+    quantitiesTable.writeTextInRow(3,['\\( m \\)','mass','kilograms (kg)']);
+    quantitiesTable.writeTextInRow(4,['\\( v \\)','speed','m/s']);
+    quantitiesTable.writeTextInRow(5,['\\( r \\)','radius of circle','meters (m)']);
+
+    $("#formulasTable").append(formulasTable.draw(300));
+    $("#quantitiesTable").append(quantitiesTable.draw(300));
+</script>
+
+<p>
+    Note, that the <strong>centripetal force</strong> is simply the <strong>centripetal
+    acceleration</strong> times the <strong>mass</strong>.
+    The two are related by Newton's Second Law
+    $$
+    \Sigma F = m a
+    $$
+</p>
+
+<p class = 'directions'>
+    Every time you use a formula, copy the formula.
+    Every time you
+</p>
+
+
+<ol class="questionList">
+    <li class="question" data-answer = ''>
+        What is the centripetal acceleration of an object that is moving
+        in a circle with of radius 0.4 m
+        with a linear velocity of 5 m/s?
+    </li>
+    <li class="question" data-answer = ''>
+        What is the centripetal acceleration of an object that is moving
+        in a circle with of radius 1.2 m
+        with a linear velocity of 0.7 m/s?
+    </li>
+    <li class="question" data-answer = '32 m/s/s (did you remember to convert centimeters to meters?'>
+        What is the centripetal acceleration of an object that is moving
+        in a circle with of radius 50 cm
+        with a linear velocity of 4 m/s?
+    </li>
+    <li class="question" data-answer = ''>
+        What is the centripetal acceleration of an object that is moving
+        in a circle with of radius 80 cm
+        with a linear velocity of 12 m/s?
+    </li>
+    <li class = 'question'>
+        An object with mass of 4 kg is moving with a speed of 3 m/s
+        in a circle with a radius of 2 m.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion' data-answer = ''>
+                What is the object's centripetal acceleration?
+            </li>
+            <li class = 'subQuestion' data-answer = ''>
+                What is the magnitude of centripetal force acting on the object?
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        An object with mass of 6.23 kg is moving with a speed of 1.45 m/s
+        in a circle with a radius of 0.892 m.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion' data-answer = ''>
+                What is the object's centripetal acceleration?
+            </li>
+            <li class = 'subQuestion' data-answer = ''>
+                What is the magnitude of centripetal force acting on the object?
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        A go-kart is moving in a circle with a radius of 2 meters.
+        The go-kart makes 5 turns in a time of 12 seconds.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class="subQuestion" data-answer = ''>
+                What is the linear velocity of the go-kart?
+            </li>
+            <li class="subQuestion" data-answer = ''>
+                What is the centripetal acceleration of the go-kart?
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        A plane is flying in circles of radius 200 meters.
+        It flies a full circle in a time of 1.45 seconds.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class="subQuestion" data-answer = ''>
+                What is the linear velocity of the plane?
+            </li>
+            <li class="subQuestion" data-answer = ''>
+                What is the centripetal acceleration of the plane?
+            </li>
+        </ol>
+    </li>
+    <!--
+    finding linear velocity, centripetal acceleration, and force (2 questions)
+    -->
+</ol>
+
+<h4>
+    Looking for Other Quantities from the Centripetal Acceleration and Force Formulas
+</h4>
+
+
+
+<ol class="answerList"></ol>
