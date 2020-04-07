@@ -22,7 +22,8 @@
             "horizontal": 2,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve algebraic equations with one or two steps to find a numeric answer."
+            "objective": "Solve algebraic equations with one or two steps to find a numeric answer.",
+            "uuid": ""
           },
           "numeric_algebra_2": {
             "title": "Numeric Algebra 2",
@@ -30,7 +31,8 @@
             "horizontal": 1,
             "letter": "B",
             "prerequisites": ["numeric_algebra_1"],
-            "objective": "Solve algebraic equations with three or four steps to find a numeric answer."
+            "objective": "Solve algebraic equations with three or four steps to find a numeric answer.",
+            "uuid": ""
           },
           "symbolic_algebra_1": {
             "title": "Symbolic Algebra 1",
@@ -38,7 +40,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["numeric_algebra_1"],
-            "objective": "Solve algebraic equations with one or two steps to find a symbolic answer."
+            "objective": "Solve algebraic equations with one or two steps to find a symbolic answer.",
+            "uuid": ""
           },
           "system_of_equations_1": {
             "title": "System of Equations 1",
@@ -47,7 +50,8 @@
             "horizontal": 1,
             "letter": "D",
             "prerequisites": ["numeric_algebra_2"],
-            "objective": "Solve a system of 2-3 equations and an equal number of variables numerically."
+            "objective": "Solve a system of 2-3 equations and an equal number of variables numerically.",
+            "uuid": ""
           },
           "symbolic_algebra_2": {
             "title": "Symbolic Algebra 2",
@@ -55,7 +59,8 @@
             "horizontal": 3,
             "letter": "E",
             "prerequisites": ["symbolic_algebra_1"],
-            "objective": "Solve algebraic equations with three or four steps to find a symbolic answer."
+            "objective": "Solve algebraic equations with three or four steps to find a symbolic answer.",
+            "uuid": ""
           },
           "system_of_equations_2": {
             "title": "System of Equations 2",
@@ -64,7 +69,8 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["system_of_equations_1", "symbolic_algebra_2"],
-            "objective": "Solve a system of 2-3 equations with an equal number of variables symbolically."
+            "objective": "Solve a system of 2-3 equations with an equal number of variables symbolically.",
+            "uuid": ""
           }
         }
       },
@@ -86,7 +92,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve numerical problems using the Pythagorean Theorem"
+            "objective": "Solve numerical problems using the Pythagorean Theorem",
+            "uuid": ""
           },
           "area_1":
           {
@@ -95,15 +102,18 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": [],
-            "objective": "Memorize and use the formula for the area of rectangles, squares, right triangles, and trapezoids"
+            "objective": "Memorize and use the formula for the area of rectangles, squares, right triangles, and trapezoids",
+            "uuid": ""
           },
-          "pi": {
+          "pi":
+          {
             "title": "Pi",
             "level": 1,
             "horizontal": 3,
             "letter": "C",
             "prerequisites": [],
-            "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle."
+            "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle.",
+            "uuid": ""
           },
           "circle_math_1":
           {
@@ -112,7 +122,8 @@
             "horizontal": 5,
             "letter": "D",
             "prerequisites": [],
-            "objective": "Solve numeric problems with one step relating elements of a circle, such as radius, diameter, area, and circumference"
+            "objective": "Solve numeric problems with one step relating elements of a circle, such as radius, diameter, area, and circumference",
+            "uuid": ""
           },
           "trigonometry_2":
           {
@@ -122,7 +133,8 @@
             "horizontal": 1,
             "letter": "E",
             "prerequisites": ["trigonometry_1"],
-            "objective": "Solve for pieces of a triangle using sine, cosine, and tangent."
+            "objective": "Solve for pieces of a triangle using sine, cosine, and tangent.",
+            "uuid": ""
           },
           "circle_math_2":
           {
@@ -131,7 +143,8 @@
             "horizontal": 4,
             "letter": "F",
             "prerequisites": ["pi", "circle_math_1"],
-            "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi."
+            "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi.",
+            "uuid": ""
           },
           "trigonometry_3":
           {
@@ -141,7 +154,8 @@
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["trigonometry_2"],
-            "objective": "Solve trigonometric problems with variables in the denominator; given the minimum necessary pieces of information determine all other information regarding a triangle."
+            "objective": "Solve trigonometric problems with variables in the denominator; given the minimum necessary pieces of information determine all other information regarding a triangle.",
+            "uuid": ""
           },
           "laser_pointer_1":
           {
@@ -151,7 +165,8 @@
             "horizontal": 2,
             "letter": "H",
             "prerequisites": ["trigonometry_3"],
-            "objective": "Use a laser pointer, a protractor, and a known distance to find any position in 1-dimensional space; estimate the height of a building using a laser pointer."
+            "objective": "Use a laser pointer, a protractor, and a known distance to find any position in 1-dimensional space; estimate the height of a building using a laser pointer.",
+            "uuid": ""
           },
           "algebraic_geometry_1":
           {
@@ -161,7 +176,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["laser_pointer_1", "area_1", "circle_math_2"],
-            "objective": "Derive algebraic formulas from basic area and trigonometric formulas."
+            "objective": "Derive algebraic formulas from basic area and trigonometric formulas.",
+            "uuid": ""
           },
           "algebraic_geometry_2":
           {
@@ -171,7 +187,8 @@
             "horizontal": 4,
             "letter": "J",
             "prerequisites": ["algebraic_geometry_1"],
-            "objective": "Drive algebraic formulas to relate elements of a circle, such as radius, circumference, diameter, and area."
+            "objective": "Drive algebraic formulas to relate elements of a circle, such as radius, circumference, diameter, and area.",
+            "uuid": ""
           },
           "algebraic_geometry_3":
           {
@@ -182,7 +199,8 @@
             "letter": "K",
             "prerequisites": ["algebraic_geometry_2"],
             "objective": "Figure out the area of a triangle or trapezoid in which given information requires sevearl steps of analysis.",
-            "example": "Determine the area of a trapezoid if the base and a single angle are known."
+            "example": "Determine the area of a trapezoid if the base and a single angle are known.",
+            "uuid": ""
           },
           "laser_pointer_2":
           {
@@ -192,7 +210,8 @@
             "horizontal": 4,
             "letter": "L",
             "prerequisites": ["algebraic_geometry_3"],
-            "objective": "Using a laser pointer, a known height, and two protractors, locate any point in a 2-dimensional space."
+            "objective": "Using a laser pointer, a known height, and two protractors, locate any point in a 2-dimensional space.",
+            "uuid": ""
           },
           "trigonometric_identities":
           {
@@ -202,7 +221,8 @@
             "letter": "M",
             "prerequisites": ["laser_pointer_2"],
             "objective": "Derive trigonometric identities, such as the sum and difference angle formulas.",
-            "notes": "Should this be moved to level 4???"
+            "notes": "Should this be moved to level 4???",
+            "uuid": ""
           },
           "laser_pointer_3":
           {
@@ -211,7 +231,8 @@
             "horizontal": 3,
             "letter": "N",
             "prerequisites": ["trigonometric_identities"],
-            "objective": "Use two laser pointers and four protractors to locate any point in 3 dimensional space without needing any heights."
+            "objective": "Use two laser pointers and four protractors to locate any point in 3 dimensional space without needing any heights.",
+            "uuid": ""
           }
         }
       },
@@ -232,7 +253,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Evaluate positive and negative powers of ten and ten raised to the zeroth power."
+            "objective": "Evaluate positive and negative powers of ten and ten raised to the zeroth power.",
+            "uuid": ""
           },
           "scientific_notation_1":
           {
@@ -242,7 +264,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["powers_of_ten"],
-            "objective": "Convert numbers from scientific notation to standard notation."
+            "objective": "Convert numbers from scientific notation to standard notation.",
+            "uuid": ""
           },
           "scientific_notation_2":
           {
@@ -252,7 +275,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["scientific_notation_1"],
-            "objective": "Convert numbers from standard notation to scientific notation."
+            "objective": "Convert numbers from standard notation to scientific notation.",
+            "uuid": ""
           },
           "scientific_notation_3":
           {
@@ -262,15 +286,18 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["scientific_notation_2"],
-            "objective": "Given numbers written as digits multiplied by a power of ten but not in proper scientific notation, put the number into proper scientific notation."
+            "objective": "Given numbers written as digits multiplied by a power of ten but not in proper scientific notation, put the number into proper scientific notation.",
+            "uuid": ""
           },
-          "very_fast_conversions": {
+          "very_fast_conversions":
+          {
             "title": "Very Fast Conversions",
             "level": 2,
             "horizontal": 6,
             "letter": "X",
             "prerequisites": [],
-            "objective": "Solve the most common conversion problems in a few seconds: grams and kilograms, meters and centimeters, seconds and milliseconds."
+            "objective": "Solve the most common conversion problems in a few seconds: grams and kilograms, meters and centimeters, seconds and milliseconds.",
+            "uuid": ""
           },
           "memorize_metric_prefixes":
           {
@@ -279,7 +306,8 @@
             "horizontal": 3,
             "letter": "E",
             "prerequisites": ["scientific_notation_3"],
-            "objective": "Memorize all metric prefixes from femto through tera"
+            "objective": "Memorize all metric prefixes from femto through tera",
+            "uuid": ""
           },
           "scientific_notation_calculator_1":
           {
@@ -292,7 +320,8 @@
             "parameters":
             [
               "Includes single step problems like multiplying, dividing, and squaring."
-            ]
+            ],
+            "uuid": ""
           },
           "scientific_notation_inequalities":
           {
@@ -301,7 +330,8 @@
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["scientific_notation_calculator_1"],
-            "objective": "Given two values written in scientific notation, determine which is greater and defend your answer"
+            "objective": "Given two values written in scientific notation, determine which is greater and defend your answer",
+            "uuid": ""
           },
           "scientific_notation_4":
           {
@@ -312,7 +342,8 @@
             "letter": "H",
             "prerequisites": ["scientific_notation_inequalities"],
             "objective": "Given a metric unit, convert it to an SI unit in scientific notation",
-            "limits": "Excludes calculations in mass to kilograms"
+            "limits": "Excludes calculations in mass to kilograms",
+            "uuid": ""
           },
           "scientific_notation_5":
           {
@@ -322,7 +353,8 @@
             "horizontal": 1,
             "letter": "I",
             "prerequisites": ["scientific_notation_4"],
-            "objective": "Convert from numbers written in scientific notation with SI units to more elegant metric units"
+            "objective": "Convert from numbers written in scientific notation with SI units to more elegant metric units",
+            "uuid": ""
           },
           "scientific_notation_calculator_2":
           {
@@ -336,7 +368,8 @@
             "parameters":
             [
               "More complex operations with multiple steps."
-            ]
+            ],
+            "uuid": ""
           },
           "convert_between_metric_units":
           {
@@ -345,7 +378,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["scientific_notation_calculator_2"],
-            "objective": "Convert from one metric unit to a different metric unit; in particular, convert from other masses to kilograms."
+            "objective": "Convert from one metric unit to a different metric unit; in particular, convert from other masses to kilograms.",
+            "uuid": ""
           },
           "scientific_notation_6":
           {
@@ -355,7 +389,8 @@
             "horizontal": 3,
             "letter": "L",
             "prerequisites": ["convert_between_metric_units"],
-            "objective": "Convert other metric units of mass to kilograms; convert kilograms to other metric units of mass."
+            "objective": "Convert other metric units of mass to kilograms; convert kilograms to other metric units of mass.",
+            "uuid": ""
           },
           "scientific_notation_calculator_3":
           {
@@ -365,7 +400,8 @@
             "horizontal": 4,
             "letter": "M",
             "prerequisites": ["scientific_notation_6"],
-            "objective": "Complete arithmetic operations for numbers in scientific notation involving three or more steps with a four function calculator that does not include an EE or EXP button"
+            "objective": "Complete arithmetic operations for numbers in scientific notation involving three or more steps with a four function calculator that does not include an EE or EXP button",
+            "uuid": ""
           },
           "floating_points":
           {
@@ -374,7 +410,8 @@
             "horizontal": 5,
             "letter": "N",
             "prerequisites": ["scientific_notation_calculator_3"],
-            "objective": "Explain how a floating point represents all possible numbers using scientific notation"
+            "objective": "Explain how a floating point represents all possible numbers using scientific notation",
+            "uuid": ""
           }
         }
       },
@@ -387,78 +424,95 @@
         "AP": true,
         "honors": true,
         "pods": {
-          "conversion_factors_1": {
+          "conversion_factors_1":
+          {
             "title": "Conversion Factors 1",
             "subtitle": "One-Step Conversions",
             "level": 1,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity to a different unit using a single conversion factor; properly write conversion factors to show how dimensional analysis is used"
+            "objective": "Convert a quantity to a different unit using a single conversion factor; properly write conversion factors to show how dimensional analysis is used",
+            "uuid": ""
           },
-          "conversion_factors_2": {
+          "conversion_factors_2":
+          {
             "title": "Conversion Factors 2",
             "subtitle": "Two- and Three-Step Conversions",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity to a different unit using two or three conversion factors; properly write conversion factors to show how dimensional analysis is used"
+            "objective": "Convert a quantity to a different unit using two or three conversion factors; properly write conversion factors to show how dimensional analysis is used",
+            "uuid": ""
           },
-          "conversion_factors_3": {
+          "conversion_factors_3":
+          {
             "title": "Conversion Factors 3",
             "subtitle": "Speed and Acceleration Conversions",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one to three conversino factors; properly write conversino factors to show how dimensional anlaysis is used"
+            "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one to three conversion factors; properly write conversino factors to show how dimensional anlaysis is used",
+            "uuid": ""
           },
-          "dimensional_analysis_1": {
+          "dimensional_analysis_1":
+          {
             "title": "Dimensional Analysis 1",
             "subtitle": "Simplifying Dimensions",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Simplify theoretical units made of meters, kilograms, and seconds of different powers in the numerator and denominator."
+            "objective": "Simplify theoretical units made of meters, kilograms, and seconds of different powers in the numerator and denominator.",
+            "uuid": ""
           },
-          "conversion_factors_4": {
+          "conversion_factors_4":
+          {
             "title": "Conversion Factors 4",
             "subtitle": "Four-Step Conversions",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity to a different unit using four or more conversion factors; in particular convert mph to m/s with four conversion factors; properly write conversion factors to show how dimensional analysis is used"
+            "objective": "Convert a quantity to a different unit using four or more conversion factors; in particular convert mph to m/s with four conversion factors; properly write conversion factors to show how dimensional analysis is used",
+            "uuid": ""
           },
-          "conversion_factors_5": {
+          "conversion_factors_5":
+          {
             "title": "Conversion Factors 5",
             "subtitle": "Area, Volume, and acceleration Conversions",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity that has units raised to a power to different units using conversion factors; properly write conversino factors to show how dimensional anlaysis is used"
+            "objective": "Convert a quantity that has units raised to a power to different units using conversion factors; properly write conversino factors to show how dimensional anlaysis is used",
+            "uuid": ""
           },
-          "dimensional_analysis_2": {
+          "dimensional_analysis_2":
+          {
             "title": "Dimensional Analysis 2",
             "subtitle": "Simplifying Dimensions of Quantities",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Simplify dimensions made of different quantities, such as velocity and force, in numerators and denominators."
+            "objective": "Simplify dimensions made of different quantities, such as velocity and force, in numerators and denominators.",
+            "uuid": ""
           },
-          "dimensions_and_units": {
+          "dimensions_and_units":
+          {
             "title": "Dimensions and Units",
             "level": 3,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Define the terms quantity, dimensions, unit, and SI unit; for crucial physics quantities give the quantity, dimension, SI unit, and other units."
+            "objective": "Define the terms quantity, dimensions, unit, and SI unit; for crucial physics quantities give the quantity, dimension, SI unit, and other units.",
+            "uuid": ""
           },
-          "mathematical_foundations_of_dimensional_analysis": {
+          "mathematical_foundations_of_dimensional_analysis":
+          {
             "title": "Mathematical Foundations of Dimensional Analysis",
             "level": 3,
             "horizontal": null,
@@ -472,57 +526,70 @@
               "The unit of your answer is based on the unit your provide",
               "All physics are based on a few basic units: meters, kilograms, seconds, and coulombs",
               "All conversion factors are equal to 1, and can be multiplied to manipulate units as you want."
-            ]
+            ],
+            "uuid": ""
           },
-          "conversion_factors_6": {
+          "conversion_factors_6":
+          {
             "title": "Conversion Factors 6",
             "subtitle": "Using Conversion Factors with Formulas",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use conversion factors together with formulas to solve novel and nondirect problems."
+            "objective": "Use conversion factors together with formulas to solve novel and nondirect problems.",
+            "uuid": ""
           },
-          "dimensional_analysis_3": {
+          "dimensional_analysis_3":
+          {
             "title": "Dimensional Analysis 3",
             "subtitle": "Using Dimensional Analysis to Confirm Equations",
             "level": 4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Confirm formulas and answers to symbolic algebra porblems with dimensional analysis."
+            "objective": "Confirm formulas and answers to symbolic algebra porblems with dimensional analysis.",
+            "uuid": ""
           },
-          "derive_and_categorize_units": {
+          "derive_and_categorize_units":
+          {
             "title": "Derive and Categorize Units",
             "level":4,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Using physics formulas, derive all relevant physics quantities; categorize these quantities by their dimensions."
+            "objective": "Using physics formulas, derive all relevant physics quantities; categorize these quantities by their dimensions.",
+            "uuid": ""
           },
-          "google_interview_questions": {
+          "google_interview_questions":
+          {
             "title": "Google Interview Questions",
             "level": 5,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use dimensional analysis to invent solutions to random, outside the box questions."
+            "objective": "Use dimensional analysis to invent solutions to random, outside the box questions.",
+            "uuid": ""
           },
-          "SI_unit_system": {
+          "SI_unit_system":
+          {
             "title": "SI Unit System",
             "level": 5,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Explain the development, function, and purpose of the SI unit system."
+            "objective": "Explain the development, function, and purpose of the SI unit system.",
+            "uuid": ""
           },
-          "planck_units": {
+          "planck_units":
+          {
             "title": "Planck units",
             "level": 5,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use dimensional analysis to derive a set of units in which all physical constants are equal to one; Derive conversion factors between SI units and these units; Explain the significance of these units."
+            "objective": "Use dimensional analysis to derive a set of units in which all physical constants are equal to one; Derive conversion factors between SI units and these units; Explain the significance of these units.",
+            "uuid": ""
           }
         }
       },
@@ -544,7 +611,8 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "Given a decimal number in standard notation, round to a certain number of decimal places correctly",
-            "note": "No whining, people do it wrong all the time!"
+            "note": "No whining, people do it wrong all the time!",
+            "uuid": ""
           },
           "significant_figures_1":
           {
@@ -554,7 +622,8 @@
             "horizontal": 2,
             "letter": "B",
             "prerequisites": ["rounding"],
-            "objective": "Given a value in standard or scientific notation, count the number of significant figures in that value."
+            "objective": "Given a value in standard or scientific notation, count the number of significant figures in that value.",
+            "uuid": ""
           },
           "error_calculation_1":
           {
@@ -564,7 +633,8 @@
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["significant_figures_1"],
-            "objective": "Given two numbers, determine whether thw two numbers are on the same or different orders of mangitude."
+            "objective": "Given two numbers, determine whether thw two numbers are on the same or different orders of mangitude.",
+            "uuid": ""
           },
           "significant_figures_2":
           {
@@ -574,7 +644,8 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["error_calculation_1"],
-            "objective": "Given a value in standard or scientific notation, round toa  certain number of significant figures."
+            "objective": "Given a value in standard or scientific notation, round toa  certain number of significant figures.",
+            "uuid": ""
           },
           "error_calculation_2":
           {
@@ -584,7 +655,8 @@
             "horizontal": 3,
             "letter": "E",
             "prerequisites": ["significant_figures_2"],
-            "objective": "Given two numbers, calculate the percent different between those numbers; given a theoretical and determined value, calculate the percent error of a theory."
+            "objective": "Given two numbers, calculate the percent different between those numbers; given a theoretical and determined value, calculate the percent error of a theory.",
+            "uuid": ""
           },
           "significant_figures_3":
           {
@@ -594,7 +666,8 @@
             "horizontal": 2,
             "letter": "F",
             "prerequisites": ["error_calculation_2"],
-            "objective": "Given a simple physics problem whose inputs have different degrees of accuracy, solve the problem and state the answer with the correct number of significant figures."
+            "objective": "Given a simple physics problem whose inputs have different degrees of accuracy, solve the problem and state the answer with the correct number of significant figures.",
+            "uuid": ""
           },
           "estimating_error":
           {
@@ -604,7 +677,8 @@
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["significant_figures_3"],
-            "objective": "Given a measurement and method of measuring, estimate the amount of error in that measurement and write how many significant figures would be appropriate to report."
+            "objective": "Given a measurement and method of measuring, estimate the amount of error in that measurement and write how many significant figures would be appropriate to report.",
+            "uuid": ""
           },
           "purpose_significant_figures":
           {
@@ -613,7 +687,8 @@
             "horizontal": 2,
             "letter": "H",
             "prerequisites": ["estimating_error"],
-            "objective": "Explain why scientists use significant figures; explain why long decimal answers are poor in science"
+            "objective": "Explain why scientists use significant figures; explain why long decimal answers are poor in science",
+            "uuid": ""
           },
           "error_propagation_1":
           {
@@ -622,7 +697,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["purpose_significant_figures"],
-            "objective": ""
+            "objective": "",
+            "uuid": ""
           },
           "error_propagation_2":
           {
@@ -631,7 +707,8 @@
             "horizontal": 4,
             "letter": "J",
             "prerequisites": ["error_propagation_1"],
-            "objective": ""
+            "objective": "",
+            "uuid": ""
           }
         }
       },
@@ -652,7 +729,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a direct or inverse proportion between two variables, solve numerical problems on how one variable changes as the other does."
+            "objective": "Given a direct or inverse proportion between two variables, solve numerical problems on how one variable changes as the other does.",
+            "uuid": ""
           },
           "graphical_proportionality_1":
           {
@@ -661,7 +739,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize and draw graphs and equations showing direct or inverse proportionality."
+            "objective": "Recognize and draw graphs and equations showing direct or inverse proportionality.",
+            "uuid": ""
           },
           "numeric_proportionality_2":
           {
@@ -670,7 +749,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a square, square root, inverse square, or inverse square root proportion between two variables, solve numerical problems on how one variable changes as the other does."
+            "objective": "Given a square, square root, inverse square, or inverse square root proportion between two variables, solve numerical problems on how one variable changes as the other does.",
+            "uuid": ""
           },
           "graphical_proportionality_2":
           {
@@ -679,7 +759,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize and draw graphs showing square, square root, inverse square, or inverse square root proportion between two variables."
+            "objective": "Recognize and draw graphs showing square, square root, inverse square, or inverse square root proportion between two variables.",
+            "uuid": ""
           },
           "equation_proportionality":
           {
@@ -693,7 +774,8 @@
             [
               "voltage and current are directly proportional when resistance is constant",
               "displacement is proportional to the square of time when acceleration is constant and initial velocity is zero"
-            ]
+            ],
+            "uuid": ""
           },
           "variable_transformations_1":
           {
@@ -702,7 +784,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Algebraically modify a relationship a graph with a non-direct proportionality to a graph showing a direct proportionality in 1-2 algebraic steps; interpret the slope of the line of this graph."
+            "objective": "Algebraically modify a relationship a graph with a non-direct proportionality to a graph showing a direct proportionality in 1-2 algebraic steps; interpret the slope of the line of this graph.",
+            "uuid": ""
           },
           "variable_transformations_2":
           {
@@ -715,7 +798,8 @@
             "examples":
             [
               "necessary to use a pendulum to measure free-fall acceleration"
-            ]
+            ],
+            "uuid": ""
           }
         }
       },
@@ -738,7 +822,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Define a function, give and recognize examples of functinos and non-functions."
+            "objective": "Define a function, give and recognize examples of functinos and non-functions.",
+            "uuid": ""
           },
           "linear_functions":
           {
@@ -747,7 +832,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a graph of a linear function, write equations for that function; given an equation create a graph of a linear function."
+            "objective": "Given a graph of a linear function, write equations for that function; given an equation create a graph of a linear function.",
+            "uuid": ""
           },
           "quadratic_functions_1":
           {
@@ -757,7 +843,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a graph of an upward facing parabola, write a quadratic function for that parabola; given a quadratic function create a graph of that function."
+            "objective": "Given a graph of an upward facing parabola, write a quadratic function for that parabola; given a quadratic function create a graph of that function.",
+            "uuid": ""
           },
           "quadratic_functions_2":
           {
@@ -767,7 +854,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a graph showing an upward or downward facing parabola, possibly not showing the full parabola, write a quadratic function for that graph; given a quadratic function within a particular range create a graph representing that function."
+            "objective": "Given a graph showing an upward or downward facing parabola, possibly not showing the full parabola, write a quadratic function for that graph; given a quadratic function within a particular range create a graph representing that function.",
+            "uuid": ""
           },
           "exponential_logarithmic_functions":
           {
@@ -776,7 +864,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Write equations of, graph, and describe the purpose of logarthmic funcitons; recognize that exponential and logarthmic functions are the inverse of each other; recognize graphs of these functions."
+            "objective": "Write equations of, graph, and describe the purpose of logarthmic funcitons; recognize that exponential and logarthmic functions are the inverse of each other; recognize graphs of these functions.",
+            "uuid": ""
           },
           "other_power_functions":
           {
@@ -785,7 +874,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Write equations for functions in which the dependent variable is raised to some power, particularly inverse, inverse square, square root, and inverse square root functions."
+            "objective": "Write equations for functions in which the dependent variable is raised to some power, particularly inverse, inverse square, square root, and inverse square root functions.",
+            "uuid": ""
           },
           "periodic_functions_1":
           {
@@ -796,7 +886,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Given a graph of a periodic function with a specific amplitude and period, write a trigonometric function taht describes that graph; given a trigonometric function with a specific amplitude and period, create a graph of that function.",
-            "limits": "Does not consider phase"
+            "limits": "Does not consider phase",
+            "uuid": ""
           },
           "periodic_functions_2":
           {
@@ -806,7 +897,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a graph of a periodic function with a specific amplitude, period, and phase, write a trigonometric function taht describes that graph; given a trigonometric function with a specific amplitude, period, and phase, create a graph of that function; recognize that sine and cosine differ only in phase"
+            "objective": "Given a graph of a periodic function with a specific amplitude, period, and phase, write a trigonometric function taht describes that graph; given a trigonometric function with a specific amplitude, period, and phase, create a graph of that function; recognize that sine and cosine differ only in phase",
+            "uuid": ""
           },
           "stepwise_functions":
           {
@@ -816,7 +908,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Given a graph of a stepwise function, write a set of equations with different ranges that describe the graph; given a set of equations of different ranges draw a graph representing the function",
-            "note": "Functions included are linear, quadratic, power, exponential, logarithmic, and trigonometric functions"
+            "note": "Functions included are linear, quadratic, power, exponential, logarithmic, and trigonometric functions",
+            "uuid": ""
           },
           "function_description_1":
           {
@@ -827,7 +920,8 @@
             "prerequisites": [],
             "objective": "Given a description of some function, produce an equation for that function",
             "example": "y begins at 40 and doubles every 10 seconds, write an equation for y(t)",
-            "limits": "Only single step, no stepwise, functions are included"
+            "limits": "Only single step, no stepwise, functions are included",
+            "uuid": ""
           },
           "function_description_2":
           {
@@ -836,7 +930,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a description of a stepwise function with 2-4 steps, produce relevant equations for that function"
+            "objective": "Given a description of a stepwise function with 2-4 steps, produce relevant equations for that function",
+            "uuid": ""
           },
           "real_world_functions_1":
           {
@@ -846,7 +941,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Given a real-world description of some phenomenon, produce a function that models that phenomenon",
-            "limits": "One single-step, no stepwise, functions are included."
+            "limits": "One single-step, no stepwise, functions are included.",
+            "uuid": ""
           },
           "real_world_function_2":
           {
@@ -856,7 +952,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a real-world description of some phenomenon that occurs in steps, produce a stepwise function that models that phenomenon"
+            "objective": "Given a real-world description of some phenomenon that occurs in steps, produce a stepwise function that models that phenomenon",
+            "uuid": ""
           }
         }
       },
@@ -878,33 +975,40 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Find slope of a line on graphs with integer scales."
+            "objective": "Find slope of a line on graphs with integer scales.",
+            "uuid": ""
           },
-          "finding_slope_2": {
+          "finding_slope_2":
+          {
             "title": "Finding Slope 2",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Find slope of a line on graphs with decimal scales."
+            "objective": "Find slope of a line on graphs with decimal scales.",
+            "uuid": ""
           },
-          "definite_integral_1": {
+          "definite_integral_1":
+          {
             "title": "Definite Integral 1",
             "subtitle": "Area Under a Horizontal Curve",
             "level": 1,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Find area under a curve within a specified range that includes only rectangles; refer to this process as taking a definite integral"
+            "objective": "Find area under a curve within a specified range that includes only rectangles; refer to this process as taking a definite integral",
+            "uuid": ""
           },
-          "definite_integral_2": {
+          "definite_integral_2":
+          {
             "title": "Definite Integral 2",
             "subtitle": "Area Under a Sloped Linear Curve",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Find the area under a curve within a specified range that includes rectangles, triangles, and trapezoids; refer to this process as taking a definite integral"
+            "objective": "Find the area under a curve within a specified range that includes rectangles, triangles, and trapezoids; refer to this process as taking a definite integral",
+            "uuid": ""
           },
           "derivative_1":
           {
@@ -914,7 +1018,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "For a graph of a linear function with integer scales, create a graph showing the slope of the function."
+            "objective": "For a graph of a linear function with integer scales, create a graph showing the slope of the function.",
+            "uuid": ""
           },
           "indefinite_integral_1":
           {
@@ -923,7 +1028,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a curve within a specified range that includes only rectanges and an initial value , graph an indefinite integral of this function."
+            "objective": "Given a curve within a specified range that includes only rectanges and an initial value , graph an indefinite integral of this function.",
+            "uuid": ""
           },
           "derivative_2":
           {
@@ -932,7 +1038,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "For a graph of a stepwise linear function, graph a new function showing the slope of the line at each point."
+            "objective": "For a graph of a stepwise linear function, graph a new function showing the slope of the line at each point.",
+            "uuid": ""
           },
           "derivative_3":
           {
@@ -941,7 +1048,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a graph of a non-linear curve and a ruler, find the slope at several points on the curve"
+            "objective": "Given a graph of a non-linear curve and a ruler, find the slope at several points on the curve",
+            "uuid": ""
           },
           "calculus_notation":
           {
@@ -950,7 +1058,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Properly recognize and use symbols for derivative, higher order derivative, slope at one point, indefinite integral, and definite integral."
+            "objective": "Properly recognize and use symbols for derivative, higher order derivative, slope at one point, indefinite integral, and definite integral.",
+            "uuid": ""
           },
           "derivative_4":
           {
@@ -960,7 +1069,8 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Given a graph of a non-linear curve and a ruler, find the slope at several points on the curve and draw a graph of the derivivative of the function; define the term tangent line",
-            "limits": "The graph must have equal scales on each side to amke the calculation more attainable."
+            "limits": "The graph must have equal scales on each side to amke the calculation more attainable.",
+            "uuid": ""
           },
           "definite_integral_3":
           {
@@ -969,7 +1079,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a non-linear function and a ruler, find the definite integral of the function for a specified range (Riemann Sum)."
+            "objective": "Given a non-linear function and a ruler, find the definite integral of the function for a specified range (Riemann Sum).",
+            "uuid": ""
           },
           "indefinite_integral_2":
           {
@@ -978,7 +1089,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a non-linear function, a ruler, and an initial condition, draw graph an indefinite integral of the function (Riemann Sum)."
+            "objective": "Given a non-linear function, a ruler, and an initial condition, draw graph an indefinite integral of the function (Riemann Sum).",
+            "uuid": ""
           },
           "fundamental_theorem_calculus_1":
           {
@@ -987,7 +1099,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a non-linear function and a ruler, graphically take a derivative of the function and an indefinite integral of the derivative to demonstrate a return to the original function; recognize this phenomenon as the fundamental theorem of calculus."
+            "objective": "Given a non-linear function and a ruler, graphically take a derivative of the function and an indefinite integral of the derivative to demonstrate a return to the original function; recognize this phenomenon as the fundamental theorem of calculus.",
+            "uuid": ""
           },
           "fundamental_theorem_calculus_2":
           {
@@ -996,7 +1109,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Given a non-linear function, a ruler, and an initial condition, graphically take an indefinite integral of the function (Riemann sum) and then take the derivative of the integral to demonstrate a return to the original function; recognize this phenomenon as the fundamental theorem of calculus."
+            "objective": "Given a non-linear function, a ruler, and an initial condition, graphically take an indefinite integral of the function (Riemann sum) and then take the derivative of the integral to demonstrate a return to the original function; recognize this phenomenon as the fundamental theorem of calculus.",
+            "uuid": ""
           },
           "fundamental_theorem_of_calculus_3":
           {
@@ -1005,7 +1119,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Demonstrate the fundamental theorem of calculus to two levels by inventing a non-linear function and taking derivatives and indefinite integrals of that function."
+            "objective": "Demonstrate the fundamental theorem of calculus to two levels by inventing a non-linear function and taking derivatives and indefinite integrals of that function.",
+            "uuid": ""
           }
         }
       },
@@ -1028,7 +1143,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take the derivative of a polynomial."
+            "objective": "Take the derivative of a polynomial.",
+            "uuid": ""
           },
           "differentiation_2":
           {
@@ -1038,7 +1154,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take the derivative of trigonometric Functions"
+            "objective": "Take the derivative of trigonometric Functions",
+            "uuid": ""
           },
           "differentiation_3":
           {
@@ -1048,7 +1165,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take the derivative of logarithmic, inverse, root, and exponential functions"
+            "objective": "Take the derivative of logarithmic, inverse, root, and exponential functions",
+            "uuid": ""
           },
           "integration_1":
           {
@@ -1058,7 +1176,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take the definite and indefinite integrals of polynomial functions"
+            "objective": "Take the definite and indefinite integrals of polynomial functions",
+            "uuid": ""
           },
           "integration_2":
           {
@@ -1068,7 +1187,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take the definite and indefinite integrals of trigonometric functions"
+            "objective": "Take the definite and indefinite integrals of trigonometric functions",
+            "uuid": ""
           },
           "integration_3":
           {
@@ -1078,7 +1198,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take the definite and indefinite integrals of logarithmic, inverse, root, and exponential functions"
+            "objective": "Take the definite and indefinite integrals of logarithmic, inverse, root, and exponential functions",
+            "uuid": ""
           },
           "differentiation_4":
           {
@@ -1088,7 +1209,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take derivatives using the chain rule."
+            "objective": "Take derivatives using the chain rule.",
+            "uuid": ""
           },
           "integration_4":
           {
@@ -1098,7 +1220,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use the u-substitution techinque ot take definite and indefinite integrals"
+            "objective": "Use the u-substitution techinque ot take definite and indefinite integrals",
+            "uuid": ""
           },
           "integration_5":
           {
@@ -1108,7 +1231,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Use the u-substitution technique to take definite and indefinite integrals"
+            "objective": "Use the u-substitution technique to take definite and indefinite integrals",
+            "uuid": ""
           },
           "integration_6":
           {
@@ -1118,7 +1242,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Take definite integrals of Gaussian Functions"
+            "objective": "Take definite integrals of Gaussian Functions",
+            "uuid": ""
           },
           "integration_7":
           {
@@ -1127,7 +1252,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Combine methods to take more challenging integrals"
+            "objective": "Combine methods to take more challenging integrals",
+            "uuid": ""
           },
           "differentiation_5":
           {
@@ -1136,7 +1262,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Combine methods to take more challenging derivatives"
+            "objective": "Combine methods to take more challenging derivatives",
+            "uuid": ""
           }
         }
       },
@@ -1157,31 +1284,36 @@
           "slap_a_chicken":
           {
             "title": "How hard do you need to slap a chicken to cook it?",
-            "level": 2
+            "level": 2,
+            "uuid": ""
           },
           "memorz_length_scales":
           {
             "title": "Memorizing Length Scales",
             "level": 4,
-            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in length."
+            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in length.",
+            "uuid": ""
           },
           "memorz_mass_scales":
           {
             "title": "Memorizing Mass Scales",
             "level": 4,
-            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in mass."
+            "objective": "Recall, whenever necessary, various objects with a given order of magnitude in mass.",
+            "uuid": ""
           },
           "memorz_other_scales":
           {
             "title": "Memorizing Other Scales",
             "level": 5,
-            "objective": "Recall, whenever necessary, various instances in the universe with particular orders of magnitude in speed, acceleration, energy, temperature, or time."
+            "objective": "Recall, whenever necessary, various instances in the universe with particular orders of magnitude in speed, acceleration, energy, temperature, or time.",
+            "uuid": ""
           },
           "burn_kings_landing":
           {
             "title": "Burning Kings Landing",
             "level": 6,
-            "objective": "How many sheep must a dragon eat to conduct a single fire breath? During the final two episodes of Game of Thrones, how many sheep would Drogon need to eat to burn the city of King's Landing?"
+            "objective": "How many sheep must a dragon eat to conduct a single fire breath? During the final two episodes of Game of Thrones, how many sheep would Drogon need to eat to burn the city of King's Landing?",
+            "uuid": ""
           }
         }
       }
