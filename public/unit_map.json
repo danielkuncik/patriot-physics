@@ -584,7 +584,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Explain the development, function, and purpose of the SI unit system.",
-            "uuid": "fc002087-1f8c-4f36-b26f-818a0367599e"
+            "uuid": "5796d7b1-9a0a-454d-a972-98cc055418b5"
           },
           "planck_units":
           {
@@ -594,7 +594,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Use dimensional analysis to derive a set of units in which all physical constants are equal to one; Derive conversion factors between SI units and these units; Explain the significance of these units.",
-            "uuid": "fc002087-1f8c-4f36-b26f-818a0367599e"
+            "uuid": "c179eb78-ae79-4e04-9d67-385a40ccba06"
           }
         }
       },
@@ -3824,7 +3824,7 @@
         "title": "Collisions and Explosions",
         "level": 1,
         "number": 14,
-        "uuid": "47a23018-1174-474f-a4de-a253461fc41e",
+        "uuid": "c3a0a725-9774-4afa-bdc0-c6773f6d8d5f",
         "completed": true,
         "AP": true,
         "honors": true,
@@ -6466,7 +6466,7 @@
             "prerequisites": ["basic_orbits"],
             "objective": "Differentiate between mass and weight, including how weight changes in different areas.",
             "content": "Mass is the total amount of matter or inertia that an object has; weight is the strength of gravity pulling the object downward when it is on a planet.",
-            "uuid": "a9b868ff-c849-4ada-a491-043ff98a9bb4"
+            "uuid": "6035a7a4-e8ae-4ab5-9765-2837e7e8881b"
           },
           "universal_attraction":
           {
