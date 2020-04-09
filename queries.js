@@ -94,24 +94,30 @@ const alphabetDictionary = {
 };
 
 const requirements = {
-    "AP": {
-        "fundamental_forces": {
-            "inverse_square_laws": [0,50,70,85,100,100,100]
-        }
-    },
-    "Honors": {
-        "mechanics": {
-            "quantitative_dynamics": [0,80,90,100,100],
-            "conservation_of_energy_quantitative": [0,80,90,100,100]
-        }
-    },
-    "A_Level": {
-        "mechanics": {
-            "quantitative_dynamics": [0,87,100,100],
-            "conservation_of_energy_quantitative": [0,87,100,100]
-        }
-    }
+    "AP": {},
+    "Honors": {},
+    "A_Level": {}
 };
+
+// const requirements = {
+//     "AP": {
+//         "fundamental_forces": {
+//             "inverse_square_laws": [0,50,70,85,100,100,100]
+//         }
+//     },
+//     "Honors": {
+//         "mechanics": {
+//             "quantitative_dynamics": [0,80,90,100,100],
+//             "conservation_of_energy_quantitative": [0,80,90,100,100]
+//         }
+//     },
+//     "A_Level": {
+//         "mechanics": {
+//             "quantitative_dynamics": [0,87,100,100],
+//             "conservation_of_energy_quantitative": [0,87,100,100]
+//         }
+//     }
+// };
 
 function getGradeFromLevel(level, gradeArray) {
     const floorLevel = Math.floor(level);
