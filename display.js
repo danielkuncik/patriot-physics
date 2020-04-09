@@ -829,7 +829,7 @@ display_quiz_unit_page = (req, res) => {
 function quizAccess(section, level, enteredPassword) {
     let result = false;
     if (section === "Red" || section || section === "Blue" || section === "Green" || section === 'Orange' || section === 'Violet') {
-        result = true;
+        result = false;
     }
     return result
     // if (section === "Violet") {
