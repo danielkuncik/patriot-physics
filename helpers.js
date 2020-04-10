@@ -64,7 +64,6 @@ function getGradeMessagesForPod(superUnitKey, unitKey, gradeMap) {
     return messages;
 }
 
-
 function getLevelMessages(gradeMap) {
     let messages = {};
     if (gradeMap) {
@@ -84,43 +83,66 @@ function getLevelMessages(gradeMap) {
     return messages
 }
 
+function createUnitListItem(superUnitKey, unitKey, gradeMap) {
+    let levelMessage = '';
+    let superUnitNumber = unitMap[superUnitKey].number;
+    if (gradeMap && gradeMap[superUnitKey].units[unitKey].level > 0) {
+        levelMessage = `--Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
+    }
+    let unitListItem = "<li class = 'unitListItem'>";
+    let unitTitle = unitMap[superUnitKey].units[unitKey].title;
+    let unitNumber = 100 * superUnitNumber + unitMap[superUnitKey].units[unitKey].number;
+    let unitMessage = `${unitNumber}: ${unitTitle}${levelMessage}`;
+    if (availableContent[superUnitKey].units[unitKey].available) {
+        let unitLink = `/unit/${superUnitKey}/${unitKey}`;
+        unitListItem = unitListItem + `<a href = '${unitLink}'>${unitMessage}</a>`;
+    } else {
+        unitListItem = unitListItem + unitMessage;
+    }
+    unitListItem = unitListItem + "</li>";
+    return unitListItem
+}
+
+// creates a list of all units within a super Unit
+function createUnitList(superUnitKey, gradeMap) {
+    let unitList = "<ul class = 'unitList'>";
+    Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+        let unitListItem = createUnitListItem(superUnitKey, unitKey, gradeMap);
+        unitList = unitList + unitListItem;
+    });
+    unitList = unitList + "</ul>";
+    return unitList
+}
+
+function createSuperUnitListItem(superUnitKey, isItImportant) {
+    let li_class;
+    if (isItImportant) {
+        li_class = 'superUnitListItem';
+    } else {
+        li_class = 'lessImportantSuperUnitListItem';
+    }
+    let superUnitListItem = `<li class = '${li_class}'>`;
+    let superUnitTitle = unitMap[superUnitKey].title;
+    let superUnitNumber = unitMap[superUnitKey].number;
+    let superUnitMessage = `${superUnitNumber}: ${superUnitTitle}`;
+    if (availableContent[superUnitKey].available) {
+        let link = `/superUnit/${superUnitKey}`;
+        superUnitListItem = superUnitListItem + `<a href = '${link}'>${superUnitMessage}</a>`;
+    } else {
+        superUnitListItem = superUnitListItem + superUnitMessage;
+    }
+    superUnitListItem = superUnitListItem + "</li>";
+    return superUnitListItem
+}
+
 
 // i need to include the level message...that states the level a student has achieved for each unit!
 hbs.registerHelper('listAllUnits',(gradeMap) => {
     let fullList = "<ul class = 'listOfAllUnits'>";
     Object.keys(unitMap).forEach((superUnitKey) => {
-        let superUnitListItem = "<li class = 'superUnitListItem'>";
-        let superUnitTitle = unitMap[superUnitKey].title;
-        let superUnitNumber = unitMap[superUnitKey].number;
-        let superUnitMessage = `${superUnitNumber}: ${superUnitTitle}`;
-        if (availableContent[superUnitKey].available) {
-            let link = `/superUnit/${superUnitKey}`;
-            superUnitListItem = superUnitListItem + `<a href = '${link}'>${superUnitMessage}</a>`;
-        } else {
-            superUnitListItem = superUnitListItem + superUnitMessage;
-        }
-        superUnitListItem = superUnitListItem + "</li>";
+        let superUnitListItem = createSuperUnitListItem(superUnitKey, true);
         fullList = fullList + superUnitListItem;
-        let unitList = "<ul class = 'unitList'>";
-        Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
-            let levelMessage = '';
-            if (gradeMap && gradeMap[superUnitKey].units[unitKey].level > 0) {
-                levelMessage = `--Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
-            }
-            let unitListItem = "<li class = 'unitListItem'>";
-            let unitTitle = unitMap[superUnitKey].units[unitKey].title;
-            let unitNumber = 100 * superUnitNumber + unitMap[superUnitKey].units[unitKey].number;
-            let unitMessage = `${unitNumber}: ${unitTitle}${levelMessage}`;
-            if (availableContent[superUnitKey].units[unitKey].available) {
-                let unitLink = `/unit/${superUnitKey}/${unitKey}`;
-                unitListItem = unitListItem + `<a href = '${unitLink}'>${unitMessage}</a>`;
-            } else {
-                unitListItem = unitListItem + unitMessage;
-            }
-            unitListItem = unitListItem + "</li>";
-            unitList = unitList + unitListItem;
-        });
-        unitList = unitList + "</ul>";
+        let unitList = createUnitList(superUnitKey, gradeMap);
         fullList = fullList + unitList;
     });
     fullList = fullList + "</ul>";
@@ -129,115 +151,23 @@ hbs.registerHelper('listAllUnits',(gradeMap) => {
 
 
 
-hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
-    let thisPod, thisPodTitle, thisGradeMessage;
-    var podList = "<ul>";
-    const gradeMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap);
-    Object.keys(unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods).forEach((podKey) => {
-        thisPod = unitMap[selectedUnitClusterKey].units[selectedUnitKey].pods[podKey];
-        if (thisPod.subtitle) {
-            thisPodTitle = `${thisPod.letter}: ${thisPod.title}: ${thisPod.subtitle}`;
-        } else {
-            thisPodTitle = `${thisPod.letter}: ${thisPod.title}`;
-        }
-        if (gradeMessages[podKey]) {
-            thisGradeMessage =  `: ${gradeMessages[podKey]}`;
-        } else {
-            thisGradeMessage = '';
-        }
-        if (quizMap[selectedUnitClusterKey][selectedUnitKey][podKey].versions > 0) {
-            podList += `<li><a href = '/quizzes/${selectedUnitClusterKey}/${selectedUnitKey}/${podKey}'>${thisPodTitle}</a>${thisGradeMessage}</li>`;
-        } else {
-            podList += `<li>${thisPodTitle}</li>`;
+
+// change it so that the super Unit as at the top...and all other units are at the bottom
+/// MUST BE REDONE
+hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMap) => {
+    let header = `<h2>${unitMap[selectedSuperUnitKey].number}: ${unitMap[selectedSuperUnitKey].title}</h2>`;
+    let unitList = createUnitList(selectedSuperUnitKey, gradeMap);
+    let otherSuperUnitsList = "<ul>";
+    Object.keys(unitMap).forEach((superUnitKey) => {
+        if (superUnitKey !== selectedSuperUnitKey) { // don't include this unit!
+            let superUnitListItem = createSuperUnitListItem(superUnitKey, false);
+            otherSuperUnitsList = otherSuperUnitsList + superUnitListItem;
         }
     });
-    podList += "</ul>";
-    return new hbs.SafeString(podList);
+    otherSuperUnitsList = otherSuperUnitsList + "</ul>";
+    return new hbs.SafeString(header + unitList + otherSuperUnitsList);
 });
 
-hbs.registerHelper('listAllUnitsWithinCluster', (selectedUnitClusterKey) => {
-    var unitClusterKey, unitCluster, unitKey, unit, unitNumber;
-    var unitList = "<ul>";
-    for (unitClusterKey in unitMap) {
-        unitCluster = unitMap[unitClusterKey];
-        if (unitCluster.available) {
-            unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
-            if (unitClusterKey === selectedUnitClusterKey) {
-                unitList = unitList + '<ul>';
-                for (unitKey in unitCluster.units) {
-                    unit = unitCluster.units[unitKey];
-                    if (unit.available) {
-                        unitNumber = unitCluster.number * 100 + unit.number;
-                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>`;
-                        unitList = unitList + "</li>";
-                    }
-                }
-                unitList = unitList + "</ul></li>";
-            }
-        }
-    }
-    unitList = unitList + "</ul>";
-    return new hbs.SafeString(unitList);
-});
-
-hbs.registerHelper('listAllPodsWithinUnit', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
-    var unitClusterKey, unitCluster, unitKey, unit, podKey, pod, letter, unitNumber, thisPodTitle, scoreMessage, thisLevel;
-    var unitList = "<ul>";
-    let podScoreMessages = getGradeMessagesForPod(selectedUnitClusterKey, selectedUnitKey, gradeMap);
-    let levelScoreMessages = getLevelMessages(gradeMap);
-    for (unitClusterKey in unitMap) {
-        unitCluster = unitMap[unitClusterKey];
-        if (unitCluster.available) {
-            unitList = unitList + `<li><a href = '/unitcluster/${unitClusterKey}'>${unitCluster.title}</a>`;
-            if (unitClusterKey === selectedUnitClusterKey) {
-                unitList = unitList + '<ul>';
-                for (unitKey in unitCluster.units) {
-                    unit = unitCluster.units[unitKey];
-                    if (unit.available) {
-                        if (levelScoreMessages[unitClusterKey] && levelScoreMessages[unitClusterKey][unitKey]) {
-                            thisLevel = levelScoreMessages[unitClusterKey][unitKey];
-                        } else {
-                            thisLevel = '';
-                        }
-                        unitNumber = unitCluster.number * 100 + unit.number;
-                        unitList = unitList + `<li><a href = '/unit/${unitClusterKey}/${unitKey}'>${unitNumber}: ${unit.title}</a>${thisLevel}`;
-                        if (unitKey === selectedUnitKey) {
-                            unitList = unitList + "<ul>";
-                            for (podKey in unit.pods) {
-                                pod = unit.pods[podKey];
-                                if (pod.subtitle) {
-                                    thisPodTitle = `${pod.title}: ${pod.subtitle}`;
-                                } else {
-                                    thisPodTitle = pod.title;
-                                }
-                                if (pod.letter) {
-                                    letter = pod.letter;
-                                } else {
-                                    letter = '';
-                                }
-                                if (podScoreMessages[podKey]) {
-                                    scoreMessage = podScoreMessages[podKey];
-                                } else {
-                                    scoreMessage = '';
-                                }
-                                if (pod.available) {
-                                    unitList = unitList + `<li><a href = '/pod/${unitClusterKey}/${unitKey}/${podKey}'>${letter}: ${thisPodTitle}</a>${scoreMessage}</li>`;
-                                } else {
-                                    unitList = unitList + `<li>${letter}: ${thisPodTitle}${scoreMessage}</li>`;
-                                }
-                            }
-                            unitList = unitList + "</ul>";
-                        }
-                        unitList = unitList + "</li>";
-                    }
-                }
-                unitList = unitList + "</ul></li>";
-            }
-        }
-    }
-    unitList = unitList + "</ul>";
-    return new hbs.SafeString(unitList);
-});
 
 hbs.registerHelper('displayQuizLink', (unitClusterKey, unitKey, podKey) => {
     let link = "<p class ='quizLink'>";
@@ -256,6 +186,7 @@ hbs.registerHelper('displayQuizLink', (unitClusterKey, unitKey, podKey) => {
 });
 
 
+/// remkate this so that there are links next to the quiz map!
 hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey, gradeMap) => {
     let thisScore;
     const myPods = unitMap[unitClusterKey]["units"][unitKey]["pods"];

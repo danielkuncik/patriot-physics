@@ -67,8 +67,8 @@ display_units_entry_page = (req,res) => {
 display_super_unit_page = (req,res) => {
     let superUnit = unitMap[req.params.superUnitKey];
     res.render('units/' + req.params.superUnitKey + '/' + req.params.superUnitKey + '_super_unit_page.hbs', {
-        layout: 'unitClusterPageLayout.hbs',
-        selectedUnitClusterKey: req.params.superUnitKey,
+        layout: 'superUnitPageLayout.hbs',
+        selectedSuperUnitKey: req.params.superUnitKey,
         title: superUnit.title,
         user: req.user,
         section: req.section,
