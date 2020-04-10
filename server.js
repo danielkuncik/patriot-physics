@@ -13,6 +13,8 @@ const disp = require('./display.js');
 
 const port = process.env.PORT || 3000;
 
+const { availableContent } = require('./findAvailableContent.js');
+
 var app = express();
 
 const maxCookieTime = 3600000; // one hour

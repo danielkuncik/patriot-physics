@@ -10,15 +10,27 @@ function isItThere(filename) {
 }
 
 
+let availableUnits = {};
+
+function filesInDirectory(directoryName) {
+    let array = shell.ls(directoryName).stdout.split('\n');
+    array.pop();
+    return array
+}
+
+const contentDirectory = `${__dirname}/content`;
+const unitsDirectory = `${contentDirectory}/units`;
+console.log(filesInDirectory(unitsDirectory));
+
+
 const quizPassword = 'antarctica';
-
-
 
 
 function countFilesInADirectory(directoryName) {
     let process = shell.ls(`${__dirname}/${directoryName}`); // trust the process, lol
     return process.length
 }
+
 
 function countVersionsOfQuiz(superUnitKey, unitKey, podKey) {
     let directoryName = `content/quizzes/${superUnitKey}/${unitKey}/${podKey}`;
@@ -111,7 +123,7 @@ function prepareUnitMap() {
         }
     });
 }
-prepareUnitMap();
+// prepareUnitMap();
 
 
 var quizMap = {};
@@ -158,7 +170,7 @@ function prepareQuizMap() {
 }
 
 
-prepareQuizMap();
+// prepareQuizMap();
 
 
 
