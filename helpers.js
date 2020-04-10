@@ -84,28 +84,38 @@ function getLevelMessages(gradeMap) {
     return messages
 }
 
+
+// i need to include the level message...that states the level a student has achieved for each unit!
 hbs.registerHelper('listAllUnits',(gradeMap) => {
     let fullList = "<ul class = 'listOfAllUnits'>";
     Object.keys(unitMap).forEach((superUnitKey) => {
         let superUnitListItem = "<li class = 'superUnitListItem'>";
         let superUnitTitle = unitMap[superUnitKey].title;
+        let superUnitNumber = unitMap[superUnitKey].number;
+        let superUnitMessage = `${superUnitNumber}: ${superUnitTitle}`;
         if (availableContent[superUnitKey].available) {
             let link = `/superUnit/${superUnitKey}`;
-            superUnitListItem = superUnitListItem + `<a href = '${link}'>${superUnitTitle}</a>`;
+            superUnitListItem = superUnitListItem + `<a href = '${link}'>${superUnitMessage}</a>`;
         } else {
-            superUnitListItem = superUnitListItem + superUnitTitle;
+            superUnitListItem = superUnitListItem + superUnitMessage;
         }
         superUnitListItem = superUnitListItem + "</li>";
         fullList = fullList + superUnitListItem;
         let unitList = "<ul class = 'unitList'>";
         Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+            let levelMessage = '';
+            if (gradeMap && gradeMap[superUnitKey].units[unitKey].level > 0) {
+                levelMessage = `--Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
+            }
             let unitListItem = "<li class = 'unitListItem'>";
             let unitTitle = unitMap[superUnitKey].units[unitKey].title;
+            let unitNumber = 100 * superUnitNumber + unitMap[superUnitKey].units[unitKey].number;
+            let unitMessage = `${unitNumber}: ${unitTitle}${levelMessage}`;
             if (availableContent[superUnitKey].units[unitKey].available) {
                 let unitLink = `/unit/${superUnitKey}/${unitKey}`;
-                unitListItem = unitListItem + `<a href = '${unitLink}'>${unitTitle}</a>`;
+                unitListItem = unitListItem + `<a href = '${unitLink}'>${unitMessage}</a>`;
             } else {
-                unitListItem = unitListItem + unitTitle;
+                unitListItem = unitListItem + unitMessage;
             }
             unitListItem = unitListItem + "</li>";
             unitList = unitList + unitListItem;
@@ -118,26 +128,6 @@ hbs.registerHelper('listAllUnits',(gradeMap) => {
 });
 
 
-hbs.registerHelper('listAllUnitsWithQuizzes', (gradeMap) => {
-    let unitNumber, thisLevelMessage;
-    var unitList = "<ul>";
-    const levelMessages = getLevelMessages(gradeMap);
-    Object.keys(quizMap).forEach((superUnitKey) => {
-        unitList += `<li> ${unitMap[superUnitKey].title} <ul>`;
-        Object.keys(quizMap[superUnitKey]).forEach((unitKey) => {
-            if (levelMessages && levelMessages[superUnitKey] && levelMessages[superUnitKey][unitKey]) {
-                thisLevelMessage = levelMessages[superUnitKey][unitKey];
-            } else {
-                thisLevelMessage = '';
-            }
-            unitNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
-            unitList = unitList + `<li><a href = '/quizzes/${superUnitKey}/${unitKey}'>${unitNumber}: ${unitMap[superUnitKey].units[unitKey].title}</a>${thisLevelMessage}</li>`
-        });
-        unitList += "</ul></li>"
-    });
-    unitList +="</ul>";
-    return new hbs.SafeString(unitList);
-});
 
 hbs.registerHelper('listPodsForQuizPage', (selectedUnitClusterKey, selectedUnitKey, gradeMap) => {
     let thisPod, thisPodTitle, thisGradeMessage;

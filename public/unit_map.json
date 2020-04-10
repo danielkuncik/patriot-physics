@@ -4612,6 +4612,7 @@
         "title": "Machines",
         "completed": null,
         "AP": false,
+        "number": 20,
         "uuid": "0aacddec-c4c4-4ec5-bbe9-3a48b84cd92e",
         "pods": {}
       },
@@ -4620,6 +4621,7 @@
         "title": "Differential Equations for Periodic Motion",
         "level": 5,
         "completed": null,
+        "number": 21,
         "notes": "Solving differential equations for simple harmonic motion and analyzing the result.",
         "uuid": "bf35493c-a199-40f4-a5ee-937cba427097",
         "pods": {}
@@ -4629,6 +4631,7 @@
         "title": "Potential Energy Functions",
         "level": 4,
         "completed": null,
+        "number": 22,
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics.",
         "uuid": "8cd92d50-ffbe-4f99-9cc4-c86762acde53",
         "pods": {}
@@ -7040,19 +7043,21 @@
           }
         }
       },
+      "calculus_based_gravitation":
+      {
+        "title": "Calculus Based Gravitation",
+        "number": 4,
+        "completed": null,
+        "uuid": "50378a88-caa5-455d-9e67-77e038b32a62",
+        "honors": false,
+        "pods": {}
+      },
       "maxwells_equations":
       {
         "title": "Maxwell's Equations",
         "completed": null,
+        "number": 5,
         "uuid": "b7dfa155-b6d2-4f1e-a232-5e0f14d096c3",
-        "honors": false,
-        "pods": {}
-      },
-      "calculus_based_gravitation":
-      {
-        "title": "Calculus Based Gravitation",
-        "completed": null,
-        "uuid": "50378a88-caa5-455d-9e67-77e038b32a62",
         "honors": false,
         "pods": {}
       }
@@ -7571,6 +7576,7 @@
         "title": "Heat Processes",
         "completed": null,
         "honors": false,
+        "number": 4,
         "uuid": "0c45ad33-758a-42f7-9e1d-57313bcf1abb",
         "idea": "This unit will deal with heat processes on P-V graphs.",
         "pods": {}
@@ -7579,6 +7585,7 @@
       {
         "title": "Statistical Mechanics",
         "completed": null,
+        "number": 5,
         "uuid": "ec3a9078-3b52-43e1-8883-e8cf2e663642",
         "honors": false,
         "pods": {}
@@ -7955,7 +7962,8 @@
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
         "completed": null,
         "uuid": "45760652-3931-4e35-9997-a5ab2052be64",
-        "pods": {}
+        "pods": {},
+        "number": 4
       }
     }
   },
@@ -7970,6 +7978,7 @@
       {
         "title": "Special Relativity",
         "completed": null,
+        "number": 1,
         "uuid": "47254750-bdd9-4796-a766-2aeec453c3d1",
         "pods": {}
       },
@@ -7977,6 +7986,7 @@
       {
         "title": "General Relativity",
         "completed": null,
+        "number": 2,
         "uuid": "2f705f14-0d19-44f7-a029-ce9ea8c645a0",
         "pods": {}
       }
