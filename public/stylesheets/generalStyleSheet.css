@@ -186,6 +186,25 @@ ol.fillInTheBlank li {
 
 }
 
+/*
+Classes for a list of all units on the unit entry page!
+ */
+ul.listOfAllUnits {
+
+}
+
+ul.unitList {
+
+}
+
+li.superUnitListItem {
+    font-size: 24px;
+}
+
+li.unitListItem {
+    font-size: 20px;
+}
+
 
 /*ol.xxx {*/
 /*    counter-reset: section;*/

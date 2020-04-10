@@ -25,8 +25,13 @@ Object.keys(unitMap).forEach((superUnitKey) => {
     const superUnit = unitMap[superUnitKey];
     let availableUnitFolders;
     if (availableSuperUnits.includes(superUnitKey)) {
-        availableContent[superUnitKey].available = true;
         availableUnitFolders = filesInDirectory(`${unitsDirectory}/${superUnitKey}`);
+        if (availableUnitFolders.includes(`${superUnitKey}_super_unit_page.hbs`)) {
+            availableContent[superUnitKey].available = true;
+        } else {
+            availableContent[superUnitKey].available = false;
+            availableUnitFolders = [];
+        }
     } else {
         availableContent[superUnitKey].available = false;
         availableUnitFolders = [];

@@ -17,6 +17,8 @@ const { availableContent } = require('./findAvailableContent.js');
 
 var app = express();
 
+const helpers = require('./helpers.js');
+
 const maxCookieTime = 3600000; // one hour
 app.use(cookieParser());
 app.use(session({
@@ -49,16 +51,16 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-var unitCluster, unit, pod;
 // ROUTES
+
+// home
 app.get('/', [db.check_if_logged_in, disp.display_home]);
 
+
+// login and logout
 app.get('/login', [db.check_if_logged_in, disp.display_login_page]);
-
 app.post('/login',[db.check_login, db.load_grades, db.check_if_logged_in, disp.display_home]);
-
 app.get('/logout',[db.check_if_logged_in, disp.display_logout_page]);
-
 app.post('/logout',(req, res) => {
     req.session.student = undefined;
     req.session.section = undefined;
@@ -68,32 +70,11 @@ app.post('/logout',(req, res) => {
     res.redirect('/');
 });
 
-// app.post('/login',[check_login_info, (req,res) => {
-//     res.render('home.hbs', {
-//         layout:'default',
-//         // template:'home-template',
-//         title: 'Home Page'
-//     });
-//     ]
-// )
 
-// app.get('/info',(req,res) => {
-//     res.render('infoEntryPage.hbs', {
-//         layout:'default',
-//        // template:'about-template',
-//         title:'Information'
-//     });
-// });
-// app.get('/calendars', (req, res) => {
-//     res.render('calendarsEntryPage.hbs', {
-//         layout:'default',
-//         title:'Calendars'
-//     });
-// });
 app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page]);
 
 // unit cluster home page
-app.get('/unitcluster/:unitClusterKey', [db.check_if_logged_in, disp.display_unit_cluster_page]);
+app.get('/superUnit/:superUnitKey', [db.check_if_logged_in, disp.display_super_unit_page]);
 
 // unit home page
 app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_unit_page]);
@@ -123,47 +104,6 @@ app.get('/joke/:jokeName', (req, res) => {
 app.get('/problemSets', [db.check_if_logged_in, disp.display_problemSet_list_page]);
 
 app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_problemSet_page]);
-// app.get('/writing', (req, res) => {
-//     res.render('writingEntryPage.hbs', {
-//         layout:'default',
-//         title:'Writing'
-//     });
-// });
-// app.get('/computationEntry', (req, res) => {
-//     res.render('computationEntryPage.hbs', {
-//         layout:'default',
-//         title:'Computational Physics'
-//     });
-// });
-// app.get('/computation/:type/:name', (req, res) => {
-//     if (req.params.type === 'entry') {
-//         res.render('computationEntryPage.hbs', {
-//             layout:'default',
-//             title:'Computational Physics'
-//         });
-//     } else {
-//         res.render(`computation/${req.params.type}/${req.params.name}.hbs`, {
-//             layout:'computationLayout.hbs',
-//             id: req.params.uid
-//         });
-//     }
-// });
-// app.get('/enrichment', (req, res) => {
-//     res.render('enrichmentEntryPage.hbs', {
-//         layout:'default',
-//         title:'Enrichment'
-//     });
-// });
-// app.get('/jokes', (req, res) => {
-//     res.render('jokesEntryPage.hbs', {
-//         layout:'default',
-//         title:'Jokes'
-//     });
-// });
-// // sending a joke image image
-// app.get('/getJoke/:imageName', (req,res)=>{
-//     res.sendFile(__dirname + '/content/jokes/memedPictures/' + req.params.imageName);
-// });
 
 // quiz entry page
 app.get('/quizzes', [db.check_if_logged_in, disp.display_quiz_entry_page]);
