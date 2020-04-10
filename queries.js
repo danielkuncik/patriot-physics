@@ -283,7 +283,6 @@ const unitMap = require(__dirname + '/public/unit_map');
 // }
 // */
 
-const fs = require('fs');
 
 load_grades = function(req, res, next) {
     let newGradeMap = new gm.GradeMap();
@@ -301,7 +300,6 @@ load_grades = function(req, res, next) {
             // newGradeMap.calculateGrades(req.session.courseLevel);
             req.session.gradeMap = newGradeMap.map;
             req.session.overallLevel = newGradeMap.calculateOverallLevel();
-            fs.writeFileSync('../playground/testGradeMap.json',JSON.stringify(req.session.gradeMap));
             next();
         });
     } else {
