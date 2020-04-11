@@ -27,12 +27,17 @@
         Level: {{level}}
     </li>
 </ul>
+<div class = 'no-print'>
+    <h4>
+        <a href = '{{backLink}}'>BACK</a>
+    </h4>
+</div>
 <h3>
     NOT A QUIZ
     <br>
     TO LEARN AND STUDY!
 </h3>
-{{displayQuizLink selectedUnitClusterKey selectedUnitKey selectedPodKey}}
+{{displayQuizLink superUnitKey unitKey podKey}}
 <script>
     const letter = '{{letter}}';
 </script>
@@ -40,8 +45,10 @@
     {{{body}}}
 </div>
 <div class = 'no-print'>
-    {{listAllPodsWithinUnit selectedUnitClusterKey selectedUnitKey}}
- </div>
+    <h4>
+        <a href = '{{backLink}}'>BACK</a>
+    </h4>
+</div>
 <footer>
     {{>footer}}
 </footer>

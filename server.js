@@ -80,7 +80,7 @@ app.get('/superUnit/:superUnitKey', [db.check_if_logged_in, disp.display_super_u
 app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_unit_page]);
 
 // pod home page
-app.get('/pod/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_pod_page]);
+app.get('/pod/:superUnitKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash

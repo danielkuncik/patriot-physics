@@ -201,6 +201,10 @@ li.superUnitListItem {
     font-size: 24px;
 }
 
+li.podListItem {
+    font-size: 18px;
+}
+
 li.lessImportantSuperUnitListItem {
     font-size: 16px;
 }

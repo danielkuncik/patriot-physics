@@ -22,15 +22,16 @@
 <div>
     {{{body}}}
 </div>
-<div id = 'putUnitMapHere'></div>
-<div>
-    {{listAllPodsWithinUnit selectedUnitClusterKey selectedUnitKey gradeMap}}
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-4-md p-6'>
+            {{listOfPods selectedUnitClusterKey selectedUnitKey gradeMap}}
+        </div>
+        <div id = 'putUnitMapHere' class = 'col-8-md'></div>
+    </div>
 </div>
-<!--
-<div>
-    {{createUnitNavbar selectedUnitClusterKey}}
-</div>
--->
+
+
 <footer>
     {{>footer}}
 </footer>

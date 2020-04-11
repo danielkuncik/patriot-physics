@@ -169,20 +169,58 @@ hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMa
 });
 
 
-hbs.registerHelper('displayQuizLink', (unitClusterKey, unitKey, podKey) => {
+hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey) => {
     let link = "<p class ='quizLink'>";
-    if (quizMap[unitClusterKey]) {
-        if (quizMap[unitClusterKey][unitKey]) {
-            if (quizMap[unitClusterKey][unitKey][podKey]) {
-                if (quizMap[unitClusterKey][unitKey][podKey].versionCount > 0) {
-                    let href = `/quizzes/${unitClusterKey}/${unitKey}/${podKey}`;
-                    link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the quiz.`;
-                }
-            }
-        }
+    if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
+        let href = `/quizzes/${superUnitKey}/${unitKey}/${podKey}`;
+        link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the miniquiz.`;
     }
     link = link + '</p>';
     return new hbs.SafeString(link);
+});
+
+function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
+    let listItem = "<li class = 'podListItem'>";
+    let letter = unitMap[superUnitKey].units[unitKey].pods[podKey].letter;
+    let title = unitMap[superUnitKey].units[unitKey].pods[podKey].title;
+    if (unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle) {
+        title = title + `: ${unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle}`;
+    }
+    let score;
+    if (gradeMap) {
+        score = gradeMap[superUnitKey].units[unitKey].pods[podKey].score;
+    } else {
+        score = 0;
+    }
+    let scoreMessage;
+    if (score === 0) {
+        scoreMessage = '';
+    } else if (score >= 18) {
+        scoreMessage = '-- PASSED';
+    } else {
+        scoreMessage = `--${score} out of 20`;
+    }
+    let available = availableContent[superUnitKey].units[unitKey].pods[podKey].available;
+    let link = `/pod/${superUnitKey}/${unitKey}/${podKey}`;
+    if (available) {
+        listItem = listItem + `<a href = '${link}'>`;
+    }
+    listItem = listItem + `Pod ${letter}--${title}`;
+    if (available) {
+        listItem = listItem + '</a>';
+    }
+    listItem = listItem + scoreMessage;
+    listItem = listItem + "</li>";
+    return listItem
+}
+
+hbs.registerHelper('listOfPods', (superUnitKey, unitKey, gradeMap) => {
+    let list = "<ul class = 'podList'>";
+    Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+        list = list + makePodListItem(superUnitKey, unitKey, podKey, gradeMap);
+    });
+    list = list + "</ul>";
+    return new hbs.SafeString(list)
 });
 
 
