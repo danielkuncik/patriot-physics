@@ -117,9 +117,29 @@ check_if_logged_in = function(req, res, next) {
     next();
 };
 
+kick_out_if_not_logged_in = function(req, res, next) {
+    if (req.user === undefined) {
+        res.redirect('/login');
+    }
+    next();
+};
+
+submit_quiz = function(req, res, next) {
+    const pod_uuid = req.query.uuid;
+    const student_id = req.user.id;
+    pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,tstz) VALUES ($1, $2, current_timestamp)',[student_id, pod_uuid],(error, results) => {
+        if (error) {
+            throw error
+        }
+        next();
+    });
+};
+
 
 module.exports = {
     check_login,
     check_if_logged_in,
-    load_grades
+    load_grades,
+    kick_out_if_not_logged_in,
+    submit_quiz
 };

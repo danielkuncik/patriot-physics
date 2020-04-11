@@ -233,6 +233,7 @@ display_quiz = (req, res) => {
         selectedUnitKey: req.params.unitKey,
         letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
         title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
+        pod_uuid: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].uuid,
         unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
         backLink: `/pod/${req.params.unitClusterKey}/${req.params.unitKey}/${req.params.podKey}`,
         unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,

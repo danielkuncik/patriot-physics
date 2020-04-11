@@ -15,7 +15,13 @@ const port = process.env.PORT || 3000;
 
 const { availableContent } = require('./findAvailableContent.js');
 
+const multer = require("multer");
+const cloudinary = require("cloudinary");
+const cloudinaryStorage = require("multer-storage-cloudinary");
+
+
 var app = express();
+
 
 const helpers = require('./helpers.js');
 
@@ -29,6 +35,21 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+/// configuration for cloudinary
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+const storage = cloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: "demo",
+    allowedFormats: ["jpg", "png"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }]
+});
+const parser = multer({ storage: storage });
+
 
 app.use(
     bodyParser.urlencoded({
@@ -123,7 +144,7 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
 //app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
 
-
+app.post('/submitMiniquiz',[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
 
 

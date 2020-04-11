@@ -39,6 +39,12 @@
 <div>
     {{{body}}}
 </div>
+<form action = '/submitMiniquiz?uuid={{pod_uuid}}' method="post" enctype="multipart/form-data">
+    <input type = 'file' value = 'Upload File' class = 'quizFileUploadButton' />
+    <br>
+    <br>
+    <input type = 'submit' value = 'Submit Quiz' class = 'quizSubmitButton' />
+</form>
 
 <div class = 'no-print'>
     <h4>
