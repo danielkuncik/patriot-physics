@@ -106,22 +106,22 @@ app.get('/problemSets', [db.check_if_logged_in, disp.display_problemSet_list_pag
 app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_problemSet_page]);
 
 // quiz entry page
-app.get('/quizzes', [db.check_if_logged_in, disp.display_quiz_entry_page]);
+//app.get('/quizzes', [db.check_if_logged_in, disp.display_quiz_entry_page]);
 
 
 
 // quiz page for unit
-app.get('/quizzes/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_quiz_unit_page]);
+// app.get('/quizzes/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_quiz_unit_page]);
 
-
-check_quiz_password = function(req, res, next) {
-    req.quiz_password = req.body.password;
-    next();
-};
+//
+// check_quiz_password = function(req, res, next) {
+//     req.quiz_password = req.body.password;
+//     next();
+// };
 
 // individual quiz page
-app.get('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
-app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
+app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
+//app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
 
 
 

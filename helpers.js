@@ -172,7 +172,7 @@ hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMa
 hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey) => {
     let link = "<p class ='quizLink'>";
     if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
-        let href = `/quizzes/${superUnitKey}/${unitKey}/${podKey}`;
+        let href = `/miniquiz/${superUnitKey}/${unitKey}/${podKey}`;
         link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the miniquiz.`;
     }
     link = link + '</p>';

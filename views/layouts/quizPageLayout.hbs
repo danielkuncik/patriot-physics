@@ -18,8 +18,13 @@
     Level {{level}}
 </h3>
 <h3>
-    QUIZ!
+    MINIQUIZ!
 </h3>
+<div class = 'no-print'>
+    <h4>
+        <a href = '{{backLink}}'>BACK</a>
+    </h4>
+</div>
 <ul class = 'sectionInfoList'>
     <li>
         Unit Cluster: {{unitClusterTitle}}
@@ -35,9 +40,11 @@
     {{{body}}}
 </div>
 
-<p>
-    <a href = '/quizzes/{{selectedUnitClusterKey}}/{{selectedUnitKey}}'>BACK</a>
-</p>
+<div class = 'no-print'>
+    <h4>
+        <a href = '{{backLink}}'>BACK</a>
+    </h4>
+</div>
 <footer>
     {{>footer}}
 </footer>
