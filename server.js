@@ -7,6 +7,8 @@ const shell = require('shelljs');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const flash = require('express-flash');
+const f = require('./flashMessages.js');
 
 const db = require('./queries.js');
 const disp = require('./display.js');
@@ -20,8 +22,9 @@ const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
 
-var app = express();
+let app = express();
 
+let sessionStore = new session.MemoryStore();
 
 const helpers = require('./helpers.js');
 
@@ -29,12 +32,14 @@ const maxCookieTime = 3600000; // one hour
 app.use(cookieParser());
 app.use(session({
     secret: "Shhhhhh!",
-    //   name: cookie_name,
-//    store: sessionStore,
+    //name: cookie_name,
+    store: sessionStore,
     proxy: true,
     resave: true,
     saveUninitialized: true
 }));
+app.use(flash());
+
 
 /// configuration for cloudinary
 cloudinary.config({
@@ -59,6 +64,7 @@ app.use(
 app.use(bodyParser.json());
 
 
+
 app.set('view engine', 'hbs');
 app.set('views', [__dirname + '/views',__dirname + '/content']);
 app.engine('hbs', hbs.express4({
@@ -75,7 +81,7 @@ app.use(express.static(__dirname + '/public'));
 // ROUTES
 
 // home
-app.get('/', [db.check_if_logged_in, disp.display_home]);
+app.get('/', [db.check_if_logged_in, f.niceFlash, disp.display_home]);
 
 
 // login and logout

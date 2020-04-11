@@ -1,5 +1,13 @@
-body {
-    padding-top: 70px;
+
+@media only screen and (min-width: 600px) {
+    body {
+        padding-top: 70px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    body {
+        padding-top: 200px;
+    }
 }
 
 p.testClass {
