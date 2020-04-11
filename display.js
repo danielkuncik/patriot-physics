@@ -1,5 +1,6 @@
 const unitMap = require(__dirname + '/public/unit_map');
 const { availableContent } = require('./findAvailableContent.js');
+const fs = require('fs');
 
 const hbs = require('express-hbs');
 
