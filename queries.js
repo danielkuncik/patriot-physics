@@ -127,7 +127,12 @@ kick_out_if_not_logged_in = function(req, res, next) {
 submit_quiz = function(req, res, next) {
     const pod_uuid = req.query.uuid;
     const student_id = req.user.id;
-    pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,tstz) VALUES ($1, $2, current_timestamp)',[student_id, pod_uuid],(error, results) => {
+
+    const imageURL = req.file.url;
+    const imagePUBLIC_ID = req.file.public_id;
+
+
+    pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,tstz) VALUES ($1, $2, $3,current_timestamp)',[student_id, pod_uuid, imageURL],(error, results) => {
         if (error) {
             throw error
         }
