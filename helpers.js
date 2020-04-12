@@ -15,7 +15,7 @@ hbs.registerHelper('userInfo', (user, section, overallLevel) => {
         output = output + `<li>Level ${overallLevel}</li>`;
         output = output + "</ul>";
     } else {
-        output = "<p>Not logged in.</p>";
+        output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>";
     }
     return new hbs.SafeString(output)
 });
@@ -168,12 +168,20 @@ hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMa
     return new hbs.SafeString(header + unitList + otherSuperUnitsList);
 });
 
-
-hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey) => {
+// put i giant link if logged in, and a message to login if not
+hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, ungradedQuizzes) => {
     let link = "<p class ='quizLink'>";
     if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
         let href = `/miniquiz/${superUnitKey}/${unitKey}/${podKey}`;
-        link = link + `If you are logged in, click <a href = '${href}'>here</a> to go to the miniquiz.`;
+        if (!loggedIn) {
+            link = link + "You must be logged in to take the miniquiz. Click <a href = '/login'>here</a> to login.";
+        } else if (ungradedQuizzes) {
+            link = link + "You are still waiting for your last attempt to be graded, so wait a little before taking this quiz again.";
+        } else {
+            link = link + ` <a href = '${href}'>GO TO MINIQUIZ</a>`;
+        }
+    } else {
+        link = link + 'Sorry, no miniquiz is available yet for this pod.';
     }
     link = link + '</p>';
     return new hbs.SafeString(link);
@@ -351,6 +359,70 @@ hbs.registerHelper('isNoSection', (courseLevel) => {
     return result
 });
 
+const Months_Dictionary ={
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+};
+
+function getDateFromSQL_timestamp(SQL_timestamp) {
+    let string = JSON.stringify(SQL_timestamp);
+    let year = string.slice(1,5);
+    let month = Months_Dictionary[string.slice(6,8)];
+    let day = string.slice(9,11);
+    return `${month} ${day}, ${year}`;
+}
+
+function getPreviousAttemptListItem(previousAttemptObject) {
+    let string = "<li>";
+    let date = getDateFromSQL_timestamp(previousAttemptObject.tstz);
+    if (previousAttemptObject.score) {
+        string = string + `You took this quiz on ${date} and scored ${previousAttemptObject.score} out of 20`;
+        string = string + "<ul>";
+        string = string + `<li><img src = '${previousAttemptObject.image_url_1}' /></li>`;
+        string = string + `<li>Comment: ${previousAttemptObject.comment}</li>`;
+        string = string + "</ul>";
+    } else {
+        string = string + `You took this quiz on ${date}, and the quiz has not been scored yet.`;
+    }
+    string = string + "</li>";
+    return string
+}
+
+hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {
+    let string;
+    if (previousAttemptsArray === undefined) {
+        string = '';
+    } else {
+        let countMessage;
+        if (previousAttemptsArray.length === 1) {
+            countMessage = 'once';
+        } else if (previousAttemptsArray.length === 2) {
+            countMessage = 'twice';
+        } else {
+            countMessage = `${previousAttemptsArray.length} times`;
+        }
+        string = `<p>You have taken this quiz ${countMessage}.</p>`;
+
+        string = string + "<ul>";
+
+        previousAttemptsArray.forEach((previousAttempt) => {
+            string = string + getPreviousAttemptListItem(previousAttempt);
+        });
+
+        string = string + "</ul>";
+    }
+    return new hbs.SafeString(string);
+});
 
 module.exports = {
 

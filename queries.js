@@ -29,7 +29,7 @@ function getCourseLevel(section) {
 }
 
 
-check_login = (req, res, next) => {
+const check_login = (req, res, next) => {
     let inputtedName = req.body.name;
     let inputtedPasscode = Number(req.body.passcode);
 
@@ -66,7 +66,7 @@ const unitMap = require(__dirname + '/public/unit_map');
 
 
 
-load_grades = function(req, res, next) {
+const load_grades = function(req, res, next) {
     let newGradeMap = new gm.GradeMap();
 
     if (req.session.student) {
@@ -90,7 +90,7 @@ load_grades = function(req, res, next) {
 };
 
 
-check_if_logged_in = function(req, res, next) {
+const check_if_logged_in = function(req, res, next) {
     if (req.session.student) {
         req.user = req.session.student;
     } else {
@@ -117,14 +117,14 @@ check_if_logged_in = function(req, res, next) {
     next();
 };
 
-kick_out_if_not_logged_in = function(req, res, next) {
+const kick_out_if_not_logged_in = function(req, res, next) {
     if (req.user === undefined) {
         res.redirect('/login');
     }
     next();
 };
 
-submit_quiz = function(req, res, next) {
+const submit_quiz = function(req, res, next) {
     const pod_uuid = req.query.uuid;
     const student_id = req.user.id;
 
@@ -140,11 +140,38 @@ submit_quiz = function(req, res, next) {
     });
 };
 
+const look_up_quiz_attempts = function(req, res, next) {
+    if (req.user) {
+        const pod_uuid = unitMap[req.params.superUnitKey].units[req.params.unitKey].pods[req.params.podKey].uuid;
+        const student_id = req.user.id;
+        pool.query('SELECT comment,score,image_url_1,tstz FROM quiz_attempts WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.previousAttempts = results.rows;
+            if (results.rows.length > 0) {
+                let lastAttempt = results.rows[results.rows.length - 1];
+                if (lastAttempt.score === null) {
+                    req.ungradedQuizzes = true;
+                } else {
+                    req.ungradedQuizzes = false;
+                }
+            } else {
+                req.ungradedQuizzes = false;
+            }
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
 
 module.exports = {
     check_login,
     check_if_logged_in,
     load_grades,
     kick_out_if_not_logged_in,
-    submit_quiz
+    submit_quiz,
+    look_up_quiz_attempts
 };

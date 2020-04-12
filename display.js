@@ -101,6 +101,12 @@ display_pod_page = (req, res) => {
     let unit = superUnit.units[req.params.unitKey];
     let pod = unit.pods[req.params.podKey];
     let title = pod.title;
+    let loggedIn;
+    if (req.user) {
+        loggedIn = true;
+    } else {
+        loggedIn = false;
+    }
     let format = availableContent[req.params.superUnitKey].units[req.params.unitKey].pods[req.params.podKey].format;
     if (pod.subtitle) {
         title = title + `: ${pod.subtitle}`;
@@ -121,9 +127,12 @@ display_pod_page = (req, res) => {
             unitNumber: unitMap[req.params.superUnitKey].number * 100 + unitMap[req.params.superUnitKey].units[req.params.unitKey].number,
             unitClusterName: unitMap[req.params.superUnitKey].title,
             user: req.user,
+            loggedIn: loggedIn,
             section: req.section,
             overallLevel: req.overallLevel,
-            gradeMap: req.gradeMap
+            gradeMap: req.gradeMap,
+            previousAttempts: req.previousAttempts,
+            ungradedQuizzes: req.ungradedQuizzes
         });
     } else if (format === 'pdf') {
         let filePath = '/content/units/' + req.params.superUnitKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';

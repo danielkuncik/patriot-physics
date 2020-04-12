@@ -37,13 +37,17 @@
     <br>
     TO LEARN AND STUDY!
 </h3>
-{{displayQuizLink superUnitKey unitKey podKey}}
+{{displayQuizLink superUnitKey unitKey podKey loggedIn ungradedQuizzes}}
 <script>
     const letter = '{{letter}}';
 </script>
 <div>
+    {{showPreviousQuizAttempts previousAttempts}}
+</div>
+<div>
     {{{body}}}
 </div>
+{{displayQuizLink superUnitKey unitKey podKey loggedIn ungradedQuizzes}}
 <div class = 'no-print'>
     <h4>
         <a href = '{{backLink}}'>BACK</a>
