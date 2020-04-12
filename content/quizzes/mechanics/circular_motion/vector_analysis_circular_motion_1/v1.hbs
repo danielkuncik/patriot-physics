@@ -1,0 +1,68 @@
+<p class = 'directions'>
+    The following diagrams represent an object
+    in circular motion, with the dot representing
+    the current location of the object
+    and the arrows representing which way it is going.
+    For each situation,
+    draw vectors representing the position, velocity, acceleration, and net force
+    at the moment depicted.
+</p>
+
+
+<ol>
+    <li>
+        <div id = 'circularMotion1' class = 'mb-3'></div>
+        <ol type = 'A'>
+            <li class = 'mb-5'>
+                Position vector:
+            </li>
+            <li class = 'mb-5'>
+                Velocity vector:
+            </li>
+            <li class = 'mb-5'>
+                Acceleration vector:
+            </li>
+            <li class = 'mb-5'>
+                Net force vector:
+            </li>
+        </ol>
+    </li>
+    <li>
+        <div id = 'circularMotion2' class = 'mb-3'></div>
+        <ol type = 'A'>
+            <ol type = 'A'>
+                <li class = 'mb-5'>
+                    Position vector:
+                </li>
+                <li class = 'mb-5'>
+                    Velocity vector:
+                </li>
+                <li class = 'mb-5'>
+                    Acceleration vector:
+                </li>
+                <li class = 'mb-5'>
+                    Net force vector:
+                </li>
+            </ol>
+        </ol>
+    </li>
+    <li>
+        What is a special name for the acceleration
+        in the case of circular motion?
+    </li>
+    <li>
+        What is the special name for the net force
+        in the case of circular motion?
+    </li>
+</ol>
+
+<script>
+    let circularMotion1 = new CircularMotionDiagram('clockwise');
+    let circularMotion2 = new CircularMotionDiagram('counterclockwise');
+
+    circularMotion1.addVisiblePoint(2.5);
+    circularMotion2.addVisiblePoint(5.5);
+
+    $("#circularMotion1").append(circularMotion1.drawCanvas(200));
+    $("#circularMotion2").append(circularMotion2.drawCanvas(200));
+</script>
