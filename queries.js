@@ -128,6 +128,11 @@ const submit_quiz = function(req, res, next) {
     const pod_uuid = req.query.uuid;
     const student_id = req.user.id;
 
+    if (req.file === undefined) {
+        res.redirect(`/`);
+        // need a flash!
+    }
+
     const imageURL = req.file.url;
     const imagePUBLIC_ID = req.file.public_id;
 

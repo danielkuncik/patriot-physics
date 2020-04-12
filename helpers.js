@@ -170,7 +170,7 @@ hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMa
 
 // put i giant link if logged in, and a message to login if not
 hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, ungradedQuizzes) => {
-    let link = "<p class ='quizLink'>";
+    let link = "<h4 class ='quizLink'>";
     if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
         let href = `/miniquiz/${superUnitKey}/${unitKey}/${podKey}`;
         if (!loggedIn) {
@@ -183,7 +183,7 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
     } else {
         link = link + 'Sorry, no miniquiz is available yet for this pod.';
     }
-    link = link + '</p>';
+    link = link + '</h4>';
     return new hbs.SafeString(link);
 });
 

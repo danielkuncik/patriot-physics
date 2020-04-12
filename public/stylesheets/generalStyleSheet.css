@@ -239,7 +239,7 @@ Quiz submission
 
 
 input.quizFileUploadButton {
-    width: 300px;
+    width: 800px;
     height: 100px;
     font-size: 40px;
 }
@@ -248,4 +248,8 @@ input.quizSubmitButton {
     width: 300px;
     height: 100px;
     font-size: 40px;
+}
+
+h4.quizLink {
+    font-size: 24px;
 }
