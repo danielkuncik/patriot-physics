@@ -253,3 +253,7 @@ input.quizSubmitButton {
 h4.quizLink {
     font-size: 24px;
 }
+
+p.dueDates {
+    font-size: 14px;
+}
