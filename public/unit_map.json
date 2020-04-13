@@ -3301,12 +3301,13 @@
           },
           "multiple_viewpoints_1":
           {
-            "title": "Multiple Viewpoints 1: Block on a Ramp",
+            "title": "Multiple Viewpoints 1",
+            "subtitle": "Rising and Falling",
             "level": 4,
             "horizontal": 1,
             "letter": "I",
             "prerequisites": ["work_energy_theorem_2"],
-            "objective": "Analyze, algebraically and graphically, a block on a frictionless ramp with different definitions of the system and surroundings.",
+            "objective": "When an object is dropped downward, thrown upward, or lifted upward, qualitatively show that the work-energy theorem is followed no matter how the system is defined.",
             "content": "When using the work-energy theorem, a physicist defines a specific system and all forces internal and external to that system; by redefining the system, the physicist changes which forces and which types of potential energy are used in the analysis",
             "systems":
             [
