@@ -3208,16 +3208,27 @@
         "level": 2,
         "pods":
         {
-          "work_power_formulas":
+          "work_formula":
           {
             "title": "Work and Power Formulas",
             "level": 1,
-            "horizontal": 1,
+            "horizontal": 0,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Solve the work and power formulas, including in situations in which an object does not move.",
+            "objective": "Solve for the work done by a force, including in cases where an object does not move.",
             "content": "Work is equal to force times distance; if an object does not move, no work is done; power is equal to work divided by time elapsed while down that work.",
             "uuid": "b1e3aad9-0270-4add-aa82-f689d0d2aa15"
+          },
+          "power_formulas":
+          {
+            "title": "Power Formulas",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "B",
+            "prerequisites": ["work_formula"],
+            "objective": "Solve multiple different formulas for the power of an object",
+            "content": "Power is equal to work divided by time AND equal to energy transferred divided by tiem",
+            "uuid": "35d3826f-70a0-4ef8-890a-7a61e97a2af9"
           },
           "defining_mechanical_energy":
           {
@@ -3225,7 +3236,7 @@
             "level": 1,
             "horizontal": 2,
             "letter": "B",
-            "prerequisites": ["work_power_formulas"],
+            "prerequisites": ["power_formulas"],
             "objective": "Write the definition of mechanical energy, recognize examples of mechanical and non-mechanical energies, sum mechanical energy of objects with several different types of energy.",
             "content": "Kinetic energy and the forms of potential energy that can be gained by doing work are called mechanical energy; gravitational and elastic potential energy are a component of mechanical energy; chemical, electrochemical, and nuclear potential energies are not a part of mechanical energy.",
             "uuid": "940c7ae4-841e-4d79-93bb-f1255bc17e75"
