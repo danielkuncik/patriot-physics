@@ -23,6 +23,25 @@
     between \( x_1 \) and \( x_2 \).
 </p>
 
+<h4>
+    A review of area formulas:
+</h4>
+
+<ul class = 'principleList'>
+    <li>
+        The area of a rectangle is given by:
+        \( A = bh = \text{base } \cdot \text{ height}\).
+    </li>
+    <li>
+        The area of a triangle is given by:
+        \( A = \frac{1}{2} bh = \frac{1}{2} \cdot \text{base } \cdot \text{ height}\).
+    </li>
+    <li>
+        The area of a trapezoid is given by:
+        \( A = \left( \frac{b_1 + b_2}{2} \right) h = \left( \frac{\text{base}_1 + \text{base}_2}{2} \right) \cdot \text{height} \).
+    </li>
+</ul>
+
 
 <h4>
     Determining Work From a Position-Time Graph
@@ -32,11 +51,23 @@
     Determine the work done in each situation.
 </p>
 
+<!--
+two rectanges
+two right triangles
+two non-right triangles
+two trapezoids
+-->
+
 <ol class = 'questionList'>
     <li class = 'question' data-answer = '300 Joules'>
         Determine the work done between \( x = 0 \) and \( x = 15 \text{ m} \).
         <br>
         <div id = 'forcePositionGraph1'></div>
+    </li>
+    <li class="question" data-answer = '550 Joules'>
+        Determine the work done between \( x = 4 \text{ m} \) and \( x = 26 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraph2'></div>
     </li>
 </ol>
 
@@ -54,5 +85,12 @@
     forcePositionGraph1.automaticReferenceArray(4,3);
     forcePositionGraph1.addStepwiseLinearFunction([[0,20],[15,20],[15,0],[20,0]]);
 
+    let forcePositionGraph2 = new QuantitativeGraph(0,30,0,75);
+    forcePositionGraph2.labelAxes('Position (m)','Force (N)');
+    forcePositionGraph2.addReferenceArray([4,8,12,22,26,30],[25,50,75]);
+    forcePositionGraph2.addStepwiseLinearFunction([[0,0],[4,0],[4,25],[26,25],[26,0],[30,0]]);
+
+
     $("#forcePositionGraph1").append(forcePositionGraph1.drawCanvas());
+    $("#forcePositionGraph2").append(forcePositionGraph2.drawCanvas());
 </script>
