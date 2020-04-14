@@ -1,0 +1,58 @@
+<p>
+    We learned the formula
+    for work as
+    $$
+    W = F d.
+    $$
+    However, how can we use this formula if the force
+    done is changing?
+    For example, in a spring, when you pull the spring farther back,
+    the force needed to keep pulling increases.
+    Or for another example, as a rocket ship moves farther from earth,
+    the force of gravity pulling it back downward becomes weaker.
+    How can you model the work done in these situations?
+    In fact, there is a mathematical relationship you can use
+    very similar to what we learned when studying <a href = '/unit/mechanics/forward_kinematics_quantitative'>kinematic graphs.</a>
+</p>
+
+<p class = 'definition'>
+    The work done over a particular displacement
+    \( \left( x_2 - x_1 \right) \)
+    is equal to the area under the curve
+    of a <strong>force-position graph</strong>
+    between \( x_1 \) and \( x_2 \).
+</p>
+
+
+<h4>
+    Determining Work From a Position-Time Graph
+</h4>
+
+<p class = 'directions'>
+    Determine the work done in each situation.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '300 Joules'>
+        Determine the work done between \( x = 0 \) and \( x = 15 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraph1'></div>
+    </li>
+</ol>
+
+
+<h4>
+    Drawing a Position-Time Graphs
+</h4>
+
+
+<ol class = 'answerList'></ol>
+
+<script>
+    let forcePositionGraph1 = new QuantitativeGraph(0,20,0,30);
+    forcePositionGraph1.labelAxes('Position (m)','Force (N)');
+    forcePositionGraph1.automaticReferenceArray(4,3);
+    forcePositionGraph1.addStepwiseLinearFunction([[0,20],[15,20],[15,0],[20,0]]);
+
+    $("#forcePositionGraph1").append(forcePositionGraph1.drawCanvas());
+</script>
