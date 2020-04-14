@@ -51,12 +51,6 @@
     Determine the work done in each situation.
 </p>
 
-<!--
-two rectanges
-two right triangles
-two non-right triangles
-two trapezoids
--->
 
 <ol class = 'questionList'>
     <li class = 'question' data-answer = '300 Joules'>
@@ -69,6 +63,41 @@ two trapezoids
         <br>
         <div id = 'forcePositionGraph2'></div>
     </li>
+    <li class="question" data-answer = '300 m'>
+        Determine the work done between \( x = 0 \) and \( x = 12 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraph3'></div>
+    </li>
+
+    <li class = 'question' data-answer = '20 m'>
+        Determine the work done between \( x = 0 \) and \( x = 5 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTri2'></div>
+    </li>
+
+    <li class = 'question' data-answer = '900 m'>
+        Determine the work done between \( x = 0 \) and \( x = 60 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTri3' ></div>
+    </li>
+
+    <li class = 'question' data-answer = '7200 m'>
+        Determine the work done between \( x = 0 \) and \( x = 40 \text{ m} \).
+        <br>
+        <div id="forcePositionGraphTri4"></div>
+    </li>
+
+    <li class="question" data-answer = '220 m'>
+        Determine the work done between \( x = 0 \) and \( x = 16 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTrap1'></div>
+    </li>
+
+    <li class="question" data-answer = '1600 m'>
+        Determine the work done between \( x = 0 \) and \( x = 30 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTrap2'></div>
+    </li>
 </ol>
 
 
@@ -76,6 +105,9 @@ two trapezoids
     Drawing a Position-Time Graphs
 </h4>
 
+<p>
+    Coming soon!
+</p>
 
 <ol class = 'answerList'></ol>
 
@@ -90,7 +122,48 @@ two trapezoids
     forcePositionGraph2.addReferenceArray([4,8,12,22,26,30],[25,50,75]);
     forcePositionGraph2.addStepwiseLinearFunction([[0,0],[4,0],[4,25],[26,25],[26,0],[30,0]]);
 
+    let forcePositionGraph3 = new QuantitativeGraph(0,15,0,50);
+    forcePositionGraph3.labelAxes('Position (m)','Force (N)');
+    forcePositionGraph3.automaticReferenceArray(5,2);
+    forcePositionGraph3.addStepwiseLinearFunction([[0,0],[12,50],[12,0],[15,0]]);
+
+    let forcePositionGraphTri2 = new QuantitativeGraph(0,6,0,8);
+    forcePositionGraphTri2.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTri2.automaticReferenceArray(6,2);
+    forcePositionGraphTri2.addStepwiseLinearFunction([[0,8],[5,0],[6,0]]);
+
+    let forcePositionGraphTri3 = new QuantitativeGraph(0,60,0,40);
+    forcePositionGraphTri3.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTri3.automaticReferenceArray(4,4);
+    forcePositionGraphTri3.addStepwiseLinearFunction([[0,0],[30,30],[60,0]]);
+
+    let forcePositionGraphTri4 = new QuantitativeGraph(0,50,0,90);
+    forcePositionGraphTri4.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTri4.automaticReferenceArray(5,3);
+    forcePositionGraphTri4.addStepwiseLinearFunction([[0,0],[30,90],[40,0],[50,0]]);
+
+    let forcePositionGraphTrap1 = new QuantitativeGraph(0,16,0,20);
+    forcePositionGraphTrap1.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTrap1.automaticReferenceArray(8,2);
+    forcePositionGraphTrap1.addStepwiseLinearFunction([[0,0],[10,20],[16,20],[16,0]]);
+
+    let forcePositionGraphTrap2 = new QuantitativeGraph(0,30,0,80);
+    forcePositionGraphTrap2.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTrap2.automaticReferenceArray(6,2);
+    forcePositionGraphTrap2.addStepwiseLinearFunction([[0,0],[10,80],[20,80],[30,0]]);
+
 
     $("#forcePositionGraph1").append(forcePositionGraph1.drawCanvas());
     $("#forcePositionGraph2").append(forcePositionGraph2.drawCanvas());
+    $("#forcePositionGraph3").append(forcePositionGraph3.drawCanvas());
+
+    $("#forcePositionGraphTri2").append(forcePositionGraphTri2.drawCanvas());
+
+    $("#forcePositionGraphTri3").append(forcePositionGraphTri3.drawCanvas());
+
+    $("#forcePositionGraphTri4").append(forcePositionGraphTri4.drawCanvas());
+
+    $("#forcePositionGraphTrap1").append(forcePositionGraphTrap1.drawCanvas());
+
+    $("#forcePositionGraphTrap2").append(forcePositionGraphTrap2.drawCanvas());
 </script>
