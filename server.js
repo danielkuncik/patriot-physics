@@ -50,10 +50,24 @@ cloudinary.config({
 const storage = cloudinaryStorage({
     cloudinary: cloudinary,
     folder: "demo",
-    allowedFormats: ["jpg", "png","pdf"],
+    allowedFormats: ["jpg", "png","pdf","heic"],
     transformation: [{ width: 600, height: 800, crop: "limit" }]
 });
 const parser = multer({ storage: storage });
+
+function uploadFile(req, res, next) {
+    const upload = parser.single('image');
+
+    upload(req, res, function (err) {
+        if (err instanceof multer.MulterError) {
+            console.log('multerError');
+        } else if (err) {
+            console.log('unknown error');
+            console.log(err);
+        }
+        next();
+    });
+}
 
 
 app.use(
@@ -152,7 +166,8 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 
 
 
-app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+// app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+app.post('/submitMiniquiz', [uploadFile, db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
 
 

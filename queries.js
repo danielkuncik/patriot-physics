@@ -129,20 +129,20 @@ const submit_quiz = function(req, res, next) {
     const student_id = req.user.id;
 
     if (req.file === undefined) {
-        res.redirect(`/`);
+        res.redirect('/');
         // need a flash!
+    } else {
+        const imageURL = req.file.url;
+        const imagePUBLIC_ID = req.file.public_id;
+
+
+        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,tstz) VALUES ($1, $2, $3,current_timestamp)',[student_id, pod_uuid, imageURL],(error, results) => {
+            if (error) {
+                throw error
+            }
+            next();
+        });
     }
-
-    const imageURL = req.file.url;
-    const imagePUBLIC_ID = req.file.public_id;
-
-
-    pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,tstz) VALUES ($1, $2, $3,current_timestamp)',[student_id, pod_uuid, imageURL],(error, results) => {
-        if (error) {
-            throw error
-        }
-        next();
-    });
 };
 
 const look_up_quiz_attempts = function(req, res, next) {
