@@ -3365,15 +3365,15 @@
             "content": "For an object moving with a constant acceleration, the work-energy theorem can be demonstrated by combining Newton's Laws of motion with the kinematic equations.",
             "uuid": "695736f7-0f52-47a0-a5e0-3d0e005114fd"
           },
-          "derive_potential_energy_formulas":
+          "define_potential_energy":
           {
-            "title": "Derive Potential Energy Formulas",
+            "title": "Define Potential Energy",
             "level": 5,
             "horizontal": 3,
             "letter": "N",
             "prerequisites": ["prove_work_energy_theorem"],
-            "objective": "Use the work-energy theorem to derive potential energy formulas.",
-            "content": "The formulas we use for potential energy can be derived from the work-energy theorem.",
+            "objective": "Define potential energy using the concept of work, conservative and non-conservative forces.",
+            "content": "The formulas we use for potential energy can be derived from the formula for work and the conservation of energy.",
             "uuid": "bb128014-0d0d-4202-9ee6-efb79d043612"
           },
           "multiple_viewpoints_3":
