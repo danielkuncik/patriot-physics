@@ -150,7 +150,9 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
 //app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
 
-app.post('/submitMiniquiz',parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+
+
+app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
 
 

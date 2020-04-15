@@ -40,7 +40,11 @@
     {{{body}}}
 </div>
 <form action = '/submitMiniquiz?uuid={{pod_uuid}}' method="post" enctype="multipart/form-data">
-    <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' />
+    <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf'/>
+    <br>
+    <p>
+        Please submit a <code>.jpg</code> or <code>.png</code> file.
+    </p>
     <br>
     <br>
     <input type = 'submit' value = 'Submit Quiz' class = 'quizSubmitButton' />
