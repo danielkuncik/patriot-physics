@@ -1,0 +1,32 @@
+<ol>
+    <li>
+        Word for word,
+        state the relationship
+        between work and a force-position graph.
+    </li>
+</ol>
+
+<p class="directions">
+    Consider the graph below.
+    Determine the work done on the object
+    by the force involved.
+    For full credit, you must write out the calculations
+    you used to find the work involved.
+</p>
+
+<ol start="2">
+    <li>
+        <br>
+        <div id = 'forcePositionGraph'></div>
+    </li>
+</ol>
+
+
+<script>
+    let forcePositionGraph = new QuantitativeGraph(0,30,0,80,3);
+    forcePositionGraph.automaticReferenceArray(10,4);
+    forcePositionGraph.labelAxes('position (m)','Force (N)');
+    forcePositionGraph.addStepwiseLinearFunction([[0,0],[6,60],[9,60],[12,80],[18,0],[21,0],[21,40],[27,40],[30,0]]);
+
+    $("#forcePositionGraph").append(forcePositionGraph.drawCanvas(600));
+</script>
