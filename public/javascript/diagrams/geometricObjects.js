@@ -369,7 +369,95 @@ class Circle {
 
 }
 
+// start radians and end radians are based on starting at +X and going counter-clockwise
 
+/// NOTE: the range box functions are a disaster
+class Arc {
+    constructor(centerPoint, radius, startRadians, endRadians) {
+        this.center = centerPoint;
+        this.radius = radius;
+        if (startRadians >= endRadians) {
+            console.log('ERROR: starting point of an arc must' +
+                'be less than the ending point.');
+        }
+        if (startRadians > Math.PI * 2 || endRadians > Math.PI * 2 || startRadians < 0 || endRadians < 0) {
+            console.log('ERROR: Please make starting and ending points of an arc between 0 radians and 2pi radians');
+        }
+        this.startRadians = startRadians;
+        this.endRadians = endRadians;
+
+        this.rangeBox = constructRangeBoxFromCorner(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
+    }
+
+    // gets the closest point to a particular angle on
+    getClosestPointToAngleAbsolute(angle) {
+        if (this.startRadians < angle && this.endRadians > angle) {
+            return angle
+        } else if (this.startRadians > angle) {
+            return this.startRadians
+        } else if (this.endRadians < angle) {
+            return this.endRadians
+        }
+    }
+
+    getMinIndexOfArray(array) {
+        if (array.length === 0) {
+            return undefined
+        }
+        let min = array[0];
+        let min_i = 0;
+        let i;
+        for (i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+                min_i = i;
+            }
+        }
+        return  min_i
+    }
+
+    // returns the point, in radians, on this particular arc, that is closest to some other angle in radians
+    // I need to write many unit tests for this function
+    getClosestPointToAngle(angle) {
+        let options = [this.getClosestPointToAngleAbsolute(angle), this.getClosestPointToAngleAbsolute(angle + Math.PI * 2), this.getClosestPointToAngleAbsolute(angle - Math.PI * 2)];
+        let optionScores = [Math.abs(options[0] - angle), Math.abs(options[1] - (angle + Math.PI * 2)), Math.abs(options[2] - (angle - Math.PI * 2))];
+        let index = this.getMinIndexOfArray(optionScores);
+        return options[index];
+    }
+
+    getMaxY() {
+        let highestAngle = this.getClosestPointToAngle(Math.PI / 2);
+        return this.center.y + this.radius * Math.sin(highestAngle);
+    }
+
+    getMinY() {
+        let lowestAngle = this.getClosestPointToAngle(Math.PI * 3 / 2);
+        return this.center.y + this.radius * Math.sin(lowestAngle);
+    }
+
+    getMaxX() {
+        let farthestRightAngle = this.getClosestPointToAngle(0);
+        return this.center.x + this.radius * Math.cos(farthestRightAngle);
+    }
+
+    getMinX() {
+        let farthestLeftAngle = this.getClosestPointToAngle(Math.PI);
+        return this.center.x + this.radius * Math.cos(farthestLeftAngle);
+    }
+
+    rescaleSingleFactor(scaleFactor) {
+        this.radius *= scaleFactor; // why is there a /2??? i don't know, but it is necessary for it to work
+    }
+
+    rescaleDoubleFactor(xFactor, yFactor) {
+        if (xFactor <= yFactor) {
+            this.radius *= xFactor;
+        } else {
+            this.radius *= yFactor;
+        }
+    }
+
+}
 
 // maybe this isn't that helpful an object
 class Polygon {

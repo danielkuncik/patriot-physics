@@ -1,0 +1,15 @@
+
+<div id = 'test'></div>
+
+
+<script>
+    let myDiagram = new Diagram();
+
+    myDiagram.addSegment(origin, new Point(3,0));
+    myDiagram.addSegment(origin, new Point(3,3));
+    myDiagram.addArc(origin, 1, 0, Math.PI / 4);
+    myDiagram.addCircle(origin, Math.sqrt(3**2 + 3**2));
+
+
+    $("#test").append(myDiagram.drawCanvas());
+</script>

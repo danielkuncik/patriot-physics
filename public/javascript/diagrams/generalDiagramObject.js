@@ -191,6 +191,12 @@ function constructRangeBoxFromCenter(centerPoint, width, height) {
     return newRangeBox;
 }
 
+function constructRangeBoxFromCorner(minX, minY, maxX, maxY) {
+    let width = maxX - minX;
+    let height = maxY = minY;
+    return new RangeBox(minX, minY, width, height);
+}
+
 class Text {
     constructor(letters, centerPoint, relativeFontSize, rotationAngleInRadians) {
         this.letters = letters;
@@ -358,6 +364,7 @@ class Diagram {
         this.points = [];
         this.segments = [];
         this.circles = [];
+        this.arcs = [];
         this.texts = [];
         this.functionGraphs = [];
         this.xMax = undefined;
@@ -577,7 +584,18 @@ class Diagram {
         return thisCircle;
     }
     /// if the Point already exists, eg. because it is the end of a line,
-    /// then this functino does not work properly!
+    /// then this function does not work properly!
+
+    addArc(centerPoint, radius, startRadians, endRadians) {
+        let center = this.addExistingPoint(centerPoint);
+        let thisArc = new Arc(centerPoint, radius, startRadians, endRadians);
+        this.addExistingPoint(thisArc.rangeBox.lowerLeftPoint);
+        this.addExistingPoint(thisArc.rangeBox.upperLeftPoint);
+        this.addExistingPoint(thisArc.rangeBox.lowerRightPoint);
+        this.addExistingPoint(thisArc.rangeBox.upperRightPoint);
+        this.arcs.push(thisArc);
+        return thisArc
+    }
 
     addBlackCircle(centerPoint, radius) {
         let circle = this.addCircle(centerPoint, radius);
@@ -967,12 +985,14 @@ class Diagram {
         this.points.forEach((point) => {point.rescaleSingleFactor(scaleFactor)});
         this.texts.forEach((text) => {text.rescaleSingleFactor(scaleFactor)});
         this.circles.forEach((circle) => {circle.rescaleSingleFactor(scaleFactor)});
+        this.arcs.forEach((arc) => {arc.rescaleSingleFactor(scaleFactor)});
     }
 
     rescaleDoubleFactor(xFactor, yFactor) {
         this.points.forEach((point) => {point.rescaleDoubleFactor(xFactor, yFactor)});
         this.texts.forEach((text) => {text.rescaleDoubleFactor(xFactor, yFactor)});
         this.circles.forEach((circle) => {circle.rescaleDoubleFactor(xFactor, yFactor)});
+        this.arcs.forEach((arc) => {arc.rescaleDoubleFactor(xFactor, yFactor)});
 
     }
 
@@ -1211,6 +1231,17 @@ class Diagram {
             ctx.arc(wiggleRoom + circleObject.center.x, canvasHeight - wiggleRoom - circleObject.center.y, circleObject.radius, 0, Math.PI * 2);
             ctx.stroke();
             if (circleObject.filled) {ctx.fill();}
+        });
+
+        this.arcs.forEach((arcObject) => {
+            ctx.strokeStyle = "#000000";
+            ctx.fillStyle = "#FFFFFF";
+            // ctx.fillStyle = "#FFFFFF";
+            ctx.lineWidth = 2;
+
+            ctx.beginPath();
+            ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, -1 * arcObject.endRadians, arcObject.startRadians);
+            ctx.stroke();
         });
 
         /// texts come last so they are not written over
