@@ -386,7 +386,7 @@ class Arc {
         this.startRadians = startRadians;
         this.endRadians = endRadians;
 
-        this.rangeBox = constructRangeBoxFromCorner(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
+        this.rangeBox = constructRangeBoxFromExtremePoints(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
     }
 
     // gets the closest point to a particular angle on

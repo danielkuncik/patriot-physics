@@ -187,38 +187,52 @@ class RangeBox {
 function constructRangeBoxFromCenter(centerPoint, width, height) {
     let lowerLeftX = centerPoint.x - width/2;
     let lowerLeftY = centerPoint.y - height/2;
-    var newRangeBox = new RangeBox(lowerLeftX, lowerLeftY, width, height);
+    let newRangeBox = new RangeBox(lowerLeftX, lowerLeftY, width, height);
     return newRangeBox;
 }
 
-function constructRangeBoxFromCorner(minX, minY, maxX, maxY) {
+function constructRangeBoxFromExtremePoints(minX, minY, maxX, maxY) {
+    if (maxX <= minX) {
+        console.log('ERROR: range box error- max X must be greater than min X');
+    }
+    if (maxY <= minY) {
+        console.log('ERROR: range box error- maxY must be greater than min Y');
+    }
     let width = maxX - minX;
-    let height = maxY = minY;
+    let height = maxY - minY;
     return new RangeBox(minX, minY, width, height);
 }
 
 class Text {
-    constructor(letters, centerPoint, relativeFontSize, rotationAngleInRadians) {
+    constructor(letters, referencePoint, relativeFontSize, rotationAngleInRadians, positioning) {
+        if (positioning === undefined) {
+            positioning = 'center'
+        }
         this.letters = letters;
         this.relativeFontSize = relativeFontSize;
         if (rotationAngleInRadians === undefined) {this.rotationAngleInRadians = 0} else {this.rotationAngleInRadians = rotationAngleInRadians}
 
-        //this.referencePoint = centerPoint;
-        // reference Point will be different if the alignment is different!
-
-        this.font = 'Arial';
-        this.alignment = 'center'; // default
-        this.baseline = 'middle';
-        this.color = "#000000";
-        this.centerPoint = centerPoint;
-        this.referencePoint = this.centerPoint; // default, Text in center
-
         this.width = getLengthOfLetters(letters, this.relativeFontSize);
         this.height = this.relativeFontSize / 2;
-        this.rangeBox = constructRangeBoxFromCenter(centerPoint, this.width, this.height);
-        if (this.rotationAngleInRadians) {
-            this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+
+
+        this.font = 'Arial';
+        this.referencePoint = referencePoint;
+        if (positioning === 'center') {
+            this.alignment = 'center'; // default
+            this.baseline = 'middle';
+            this.centerPoint = referencePoint;
+            this.rangeBox = constructRangeBoxFromCenter(this.centerPoint, this.width, this.height);
+            if (this.rotationAngleInRadians) {
+                this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+            }
+        } else if (positioning === 'lowerLeft') {
+            this.alignment = 'left';
+            this.baseline = 'center';
+            this.rangeBox = new RangeBox(this.referencePoint.x, this.referencePoint.y, this.width, this.height); // construc from lower left corner is default
         }
+        this.color = "#000000";
+
     }
 
 
@@ -442,7 +456,7 @@ class Diagram {
     addSegment(point1, point2) {
         let pointA = this.addExistingPoint(point1);
         let pointB = this.addExistingPoint(point2);
-        var newSegment = new Segment(pointA, pointB);
+        let newSegment = new Segment(pointA, pointB);
         this.segments.push(newSegment);
         return newSegment
     }
@@ -586,6 +600,15 @@ class Diagram {
     /// if the Point already exists, eg. because it is the end of a line,
     /// then this function does not work properly!
 
+
+    addBlackCircle(centerPoint, radius) {
+        let circle = this.addCircle(centerPoint, radius);
+        circle.setFillColor('#000000');
+        circle.fill();
+        return circle
+    }
+
+
     addArc(centerPoint, radius, startRadians, endRadians) {
         let center = this.addExistingPoint(centerPoint);
         let thisArc = new Arc(centerPoint, radius, startRadians, endRadians);
@@ -597,12 +620,26 @@ class Diagram {
         return thisArc
     }
 
-    addBlackCircle(centerPoint, radius) {
-        let circle = this.addCircle(centerPoint, radius);
-        circle.setFillColor('#000000');
-        circle.fill();
-        return circle
-    }
+    addDegreeLabel(number, lowerLeftPoint, relativeFontSize, rotation) {
+        if (rotation === undefined) {
+            rotation = 0;
+        }
+        // need to figure out the issue with centerPoint and lowerLeftPoint
+        let text = this.addText(String(number), lowerLeftPoint, relativeFontSize, rotation, 'lowerLeft');
+
+        let circleRadius = relativeFontSize * 0.1;
+
+        // position the little circle
+        let point1 = text.rangeBox.upperRightPoint;
+        let point2 = text.rangeBox.lowerRightPoint;
+        let d = point1.getDistanceToAnotherPoint(point2);
+        let theta = point1.getAngleToAnotherPoint(point2);
+        let circleCenter = point1.transformAndReproduce(theta, circleRadius * 1.3, circleRadius * 1.3);
+        // this.addCircle(circleCenter, circleRadius);
+        // the circle is all coded, but it will look terrible until I fix my aspect ratio of text issue
+    };
+
+
 
     // should i add some sort of a workaround, in case a linear function etc. is inputted
     /// that makes it graph more clearly?
@@ -618,9 +655,9 @@ class Diagram {
 
 
     /// center Point need not already exist
-    addText(letters, centerPoint, relativeFontSize, rotation) {
+    addText(letters, centerPoint, relativeFontSize, rotation, positioning) {
         let center = this.addExistingPoint(centerPoint);
-        let newText = new Text(letters, center, relativeFontSize, rotation);
+        let newText = new Text(letters, center, relativeFontSize, rotation, positioning);
         this.addExistingPoint(newText.rangeBox.lowerLeftPoint);
         this.addExistingPoint(newText.rangeBox.upperLeftPoint);
         this.addExistingPoint(newText.rangeBox.lowerRightPoint);
@@ -966,6 +1003,7 @@ class Diagram {
         anotherDiagram.circles.forEach((circle) => {this.circles.push(circle)});
         anotherDiagram.texts.forEach((text) => {this.texts.push(text)});
         anotherDiagram.functionGraphs.forEach((functionGraph) => {this.functionGraphs.push(functionGraph)});
+        anotherDiagram.arcs.forEach((arc) => {this.arcs.push(arc)});
 
         return true;
     }
@@ -1254,13 +1292,13 @@ class Diagram {
             //// MUST ADD IF/THEN STATEMENT TO SET THE REFERENCE POINT BASED UPON THE TEXT ALIGNMENT AND BASELINE
 
             if (Math.abs(textObject.rotationAngleInRadians) > 1e-10) {
-                ctx.translate(wiggleRoom + textObject.centerPoint.x, canvasHeight - textObject.centerPoint.y - wiggleRoom);
+                ctx.translate(wiggleRoom + textObject.referencePoint.x, canvasHeight - textObject.referencePoint.y - wiggleRoom);
                 ctx.rotate(textObject.rotationAngleInRadians);
                 ctx.fillText(textObject.letters, 0, 0);
                 ctx.rotate(-1 * textObject.rotationAngleInRadians);
-                ctx.translate(-1 * (wiggleRoom + textObject.centerPoint.x), -1 * ( canvasHeight - textObject.centerPoint.y - wiggleRoom));
+                ctx.translate(-1 * (wiggleRoom + textObject.referencePoint.x), -1 * ( canvasHeight - textObject.referencePoint.y - wiggleRoom));
             } else {
-                ctx.fillText(textObject.letters, wiggleRoom + textObject.centerPoint.x, canvasHeight - textObject.centerPoint.y - wiggleRoom);
+                ctx.fillText(textObject.letters, wiggleRoom + textObject.referencePoint.x, canvasHeight - textObject.referencePoint.y - wiggleRoom);
             }
 
         });
