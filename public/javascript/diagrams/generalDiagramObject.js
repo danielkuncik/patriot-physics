@@ -293,6 +293,20 @@ class Text {
         this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
     }
 
+    addDegreeLabel(diagramObject) {
+        let circleRadius = this.relativeFontSize * 0.1;
+
+        // position the little circle
+        let point1 = this.rangeBox.upperRightPoint;
+        let point2 = this.rangeBox.lowerRightPoint;
+        let d = point1.getDistanceToAnotherPoint(point2);
+        let theta = point1.getAngleToAnotherPoint(point2);
+        let circleCenter = point1.transformAndReproduce(theta, circleRadius * 1.3, circleRadius * 1.3);
+        // this.addCircle(circleCenter, circleRadius);
+        // the circle is all coded, but it will look terrible until I fix my aspect ratio of text issue
+
+    }
+
 }
 
 
@@ -620,24 +634,72 @@ class Diagram {
         return thisArc
     }
 
-    addDegreeLabel(number, lowerLeftPoint, relativeFontSize, rotation) {
-        if (rotation === undefined) {
-            rotation = 0;
+    // the arc radius will be the radiusProportion variable times the lesser of the two rays
+    labelAngle(label, outsidePointA, vertex, outsidePointB, radiusProportion) {
+        if (radiusProportion === undefined) {
+            radiusProportion = 0.15;
         }
-        // need to figure out the issue with centerPoint and lowerLeftPoint
-        let text = this.addText(String(number), lowerLeftPoint, relativeFontSize, rotation, 'lowerLeft');
 
-        let circleRadius = relativeFontSize * 0.1;
+        let arcRadius;
+        let lengthA = vertex.getDistanceToAnotherPoint(outsidePointA);
+        let lengthB = vertex.getDistanceToAnotherPoint(outsidePointB);
+        if (lengthA <= lengthB) {
+            arcRadius = radiusProportion * lengthA;
+        } else {
+            arcRadius = lengthB * radiusProportion;
+        }
 
-        // position the little circle
-        let point1 = text.rangeBox.upperRightPoint;
-        let point2 = text.rangeBox.lowerRightPoint;
-        let d = point1.getDistanceToAnotherPoint(point2);
-        let theta = point1.getAngleToAnotherPoint(point2);
-        let circleCenter = point1.transformAndReproduce(theta, circleRadius * 1.3, circleRadius * 1.3);
-        // this.addCircle(circleCenter, circleRadius);
-        // the circle is all coded, but it will look terrible until I fix my aspect ratio of text issue
-    };
+        let startAngle, endAngle;
+        let angleA = outsidePointA.getAngleToHorizontal();
+        let angleB = outsidePointB.getAngleToHorizontal();
+        if (angleA <= angleB) {
+            startAngle = angleA;
+            endAngle = angleB;
+        } else {
+            startAngle = angleB;
+            endAngle = angleA;
+        }
+
+
+        /// this is going to be very difficult to make it work right
+        // the text will need to be sometimes at the start, sometimes on the end
+        // sometimes in different orientations
+        // rotated all different ways
+        // it'll be tough
+
+        this.addArc(vertex,arcRadius,startAngle,endAngle);
+        let textRotation;
+        /// setting text rotation, must go through each case
+        if (startAngle === 0 ) { // horizontal right
+            textRotation = 0;
+        } else if (Math.abs(startAngle - Math.PI / 2) < 1e-10) { // vertical up
+            textRotation = 3 * Math.PI / 2;
+        } else if (Math.abs(startAngle - Math.PI ) < 1e-10) { // horizontal left
+            textRotation = 0;
+        } else if (Math.abs(startAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
+            textRotation = 0;
+        } else if (startAngle > 0 && startAngle < Math.PI / 2) { // quadrant 1
+            textRotation = startAngle + 3 * Math.PI / 2;
+        } else if (startAngle > Math.PI / 2 && startAngle < Math.PI ) { // quadrant 2
+            console.log(startAngle);
+            textRotation = -1 * startAngle;
+        } else if (startAngle > Math.PI && startAngle < Math.PI * 3 / 2) { // quadrant 3
+            textRotation = startAngle;
+        } else if (startAngle > Math.PI * 3 / 2 && startAngle < Math.PI * 2) { // quadrant 4
+            textRotation = startAngle;
+        } else {
+            textRotation = 0;
+        }
+
+
+        let textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, startAngle);
+        let relativeFontSize = arcRadius * 0.6;
+        let text;
+        if (label) {
+            text = this.addText(label,textReferencePoint,relativeFontSize,textRotation,'lowerLeft');
+            text.addDegreeLabel(this);
+        }
+    }
 
 
 
@@ -1278,7 +1340,16 @@ class Diagram {
             ctx.lineWidth = 2;
 
             ctx.beginPath();
-            ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, -1 * arcObject.endRadians, arcObject.startRadians);
+            let startRadians = arcObject.startRadians;
+            let endRadians = arcObject.endRadians;
+            startRadians *= -1;
+            if (startRadians === 0) {
+                endRadians *= -1;
+            } else if (startRadians <= -1 * Math.PI + 1e-10) {
+                endRadians *= -1;
+            }
+            console.log(startRadians, endRadians);
+            ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, startRadians, endRadians, true);
             ctx.stroke();
         });
 

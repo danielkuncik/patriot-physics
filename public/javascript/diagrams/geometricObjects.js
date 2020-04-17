@@ -577,3 +577,13 @@ Do i want all of these objects to exist as geometric objects separate from the o
 included in a diagram????
 i'm starting to lean in that direction
  */
+
+// always returns the interor angle!!
+function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
+    const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
+    const a = vertex.getDistanceToAnotherPoint(outsidePointA);
+    const b = vertex.getDistanceToAnotherPoint(outsidePointB);
+
+    let cosTheta = (a**2 + b**2 - c**2) / (2 * a * b);
+    return Math.acos(cosTheta)
+}

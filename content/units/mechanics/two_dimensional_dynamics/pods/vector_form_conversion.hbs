@@ -5,10 +5,17 @@
 <script>
     let myDiagram = new Diagram();
 
-    myDiagram.addSegment(origin, new Point(3,0));
-    myDiagram.addSegment(origin, new Point(3,3));
-    myDiagram.addArc(origin, 1, 0, Math.PI / 4);
-    myDiagram.addDegreeLabel(45, new Point(1.05,0), 0.4);
+    let A = new Point(0,-3);
+    let B = new Point(3,0);
+    myDiagram.addNewPoint(3,0);
+    myDiagram.addSegment(origin, A);
+    myDiagram.addSegment(origin, B);
+    myDiagram.labelAngle('A',A,origin,B);
+
+    /// TO DO
+    // make sure that the arc always works correctly
+    // make sure that the label is correctly oriented
+    // fix the problem in the program that finds the range
 
 
     $("#test").append(myDiagram.drawCanvas());
