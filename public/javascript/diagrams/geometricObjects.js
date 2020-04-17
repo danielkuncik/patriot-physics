@@ -369,6 +369,18 @@ class Circle {
 
 }
 
+
+// converts an angle that is outside the range of 0 to 2pi into that range
+function simplifyAngle(angleInRadians) {
+    while (angleInRadians < 0) {
+        angleInRadians += 2 * Math.PI;
+    }
+    while (angleInRadians >= Math.PI * 2) {
+        angleInRadians -= 2 * Math.PI;
+    }
+    return angleInRadians
+}
+
 // start radians and end radians are based on starting at +X and going counter-clockwise
 
 /// NOTE: the range box functions are a disaster
@@ -376,27 +388,31 @@ class Arc {
     constructor(centerPoint, radius, startRadians, endRadians) {
         this.center = centerPoint;
         this.radius = radius;
-        if (startRadians >= endRadians) {
-            console.log('ERROR: starting point of an arc must' +
-                'be less than the ending point.');
-        }
-        if (startRadians > Math.PI * 2 || endRadians > Math.PI * 2 || startRadians < 0 || endRadians < 0) {
-            console.log('ERROR: Please make starting and ending points of an arc between 0 radians and 2pi radians');
-        }
+        startRadians = simplifyAngle(startRadians); // if the angle is outside the 0 to 2 pi range, converts into that range
+        endRadians = simplifyAngle(endRadians);
         this.startRadians = startRadians;
         this.endRadians = endRadians;
+        if (this.startRadians < this.endRadians) {
+            this.lesserAngle = this.startRadians;
+            this.greaterAngle = this.endRadians;
+            this.crossZeroLine = false;
+        } else {
+            this.greaterAngle = this.startRadians;
+            this.lesserAngle = this.endRadians;
+            this.crossZeroLine = true;
+        }
 
         this.rangeBox = constructRangeBoxFromExtremePoints(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
     }
 
     // gets the closest point to a particular angle on
     getClosestPointToAngleAbsolute(angle) {
-        if (this.startRadians < angle && this.endRadians > angle) {
+        if (this.lesserAngle < angle && this.greaterAngle > angle) {
             return angle
-        } else if (this.startRadians > angle) {
-            return this.startRadians
-        } else if (this.endRadians < angle) {
-            return this.endRadians
+        } else if (this.lesserAngle >= angle) {
+            return this.lesserAngle
+        } else if (this.greaterAngle <= angle) {
+            return this.greaterAngle
         }
     }
 
@@ -564,7 +580,7 @@ function constructTriangleASA(vertexA, angle1inDegrees, side, angle2inDegrees) {
     return constructTriangleSAS(vertexA, side3, angle2inDegrees, side2);
 }
 
-function constructTrianlgeSSS(vertexA, side1, side2, side3) {
+function constructTriangleSSS(vertexA, side1, side2, side3) {
     let angleB = getAngleFromLawOfCosines(side3, side1, side2); // in degrees
     return constructTriangleSAS(vertexA, side1, angleB, side2);
 }
@@ -578,7 +594,7 @@ included in a diagram????
 i'm starting to lean in that direction
  */
 
-// always returns the interor angle!!
+// always returns the interior angle!!
 function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
     const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
     const a = vertex.getDistanceToAnotherPoint(outsidePointA);

@@ -6,15 +6,18 @@
 <script>
     let myDiagram = new Diagram();
 
-    let A = new Point(0,-3);
-    let B = new Point(3,0);
+    let A = new Point(2,-3);
+    let B = new Point(2,1);
     myDiagram.addNewPoint(3,0);
     myDiagram.addSegment(origin, A);
     myDiagram.addSegment(origin, B);
     myDiagram.labelAngle('A',A,origin,B);
+    // make sure it always returns the angle you want
+
+    // it cannot properly cross over the +X line
+
 
     /// TO DO
-    // make sure that the arc always works correctly
     // make sure that the label is correctly oriented
     // fix the arc object in the program that finds the range
     // allow the user to chose to place the label on the start or the end

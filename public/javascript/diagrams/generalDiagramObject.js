@@ -649,50 +649,39 @@ class Diagram {
             arcRadius = lengthB * radiusProportion;
         }
 
-        let startAngle, endAngle;
         let angleA = outsidePointA.getAngleToHorizontal();
         let angleB = outsidePointB.getAngleToHorizontal();
-        if (angleA <= angleB) {
-            startAngle = angleA;
-            endAngle = angleB;
-        } else {
-            startAngle = angleB;
-            endAngle = angleA;
-        }
 
 
-        /// this is going to be very difficult to make it work right
-        // the text will need to be sometimes at the start, sometimes on the end
-        // sometimes in different orientations
-        // rotated all different ways
-        // it'll be tough
 
-        this.addArc(vertex,arcRadius,startAngle,endAngle);
+        /// right now, the text is always included on angle A
+        // but in the future, I need to make an option to include text on angle B
+
+        this.addArc(vertex,arcRadius,angleA,angleB);
         let textRotation;
         /// setting text rotation, must go through each case
-        if (startAngle === 0 ) { // horizontal right
+        if (angleA === 0 ) { // horizontal right
             textRotation = 0;
-        } else if (Math.abs(startAngle - Math.PI / 2) < 1e-10) { // vertical up
+        } else if (Math.abs(angleA - Math.PI / 2) < 1e-10) { // vertical up
             textRotation = 3 * Math.PI / 2;
-        } else if (Math.abs(startAngle - Math.PI ) < 1e-10) { // horizontal left
-            textRotation = 0;
-        } else if (Math.abs(startAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
-            textRotation = 0;
-        } else if (startAngle > 0 && startAngle < Math.PI / 2) { // quadrant 1
-            textRotation = startAngle + 3 * Math.PI / 2;
-        } else if (startAngle > Math.PI / 2 && startAngle < Math.PI ) { // quadrant 2
-            console.log(startAngle);
-            textRotation = -1 * startAngle;
-        } else if (startAngle > Math.PI && startAngle < Math.PI * 3 / 2) { // quadrant 3
-            textRotation = startAngle;
-        } else if (startAngle > Math.PI * 3 / 2 && startAngle < Math.PI * 2) { // quadrant 4
-            textRotation = startAngle;
+        } else if (Math.abs(angleA - Math.PI ) < 1e-10) { // horizontal left
+            textRotation = Math.PI;
+        } else if (Math.abs(angleA - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
+            textRotation = Math.PI / 2;
+        } else if (angleA > 0 && angleA < Math.PI / 2) { // quadrant 1
+            textRotation = angleA + 3 * Math.PI / 2;
+        } else if (angleA > Math.PI / 2 && angleA < Math.PI ) { // quadrant 2
+            textRotation = -1 * angleA;
+        } else if (angleA > Math.PI && angleA < Math.PI * 3 / 2) { // quadrant 3
+            textRotation = -1 * angleA;
+        } else if (angleA > Math.PI * 3 / 2 && angleA < Math.PI * 2) { // quadrant 4
+            textRotation = -1 * angleA;
         } else {
             textRotation = 0;
         }
 
 
-        let textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, startAngle);
+        let textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, angleA);
         let relativeFontSize = arcRadius * 0.6;
         let text;
         if (label) {
@@ -1208,7 +1197,7 @@ class Diagram {
         let c = document.createElement('canvas');
         c.setAttribute("width", String(canvasWidth) + unit);
         c.setAttribute("height", String(canvasHeight) + unit);
-        var ctx = c.getContext('2d');
+        let ctx = c.getContext('2d');
 
         // should i make this variable?
         let dotSize = (this.horizontalRange + this.verticalRange) / 2 / 30;
@@ -1340,16 +1329,28 @@ class Diagram {
             ctx.lineWidth = 2;
 
             ctx.beginPath();
-            let startRadians = arcObject.startRadians;
-            let endRadians = arcObject.endRadians;
-            startRadians *= -1;
-            if (startRadians === 0) {
-                endRadians *= -1;
-            } else if (startRadians <= -1 * Math.PI + 1e-10) {
-                endRadians *= -1;
+
+            let anticlockwise, start, end;
+            if (!arcObject.crossZeroLine) {
+                start = arcObject.lesserAngle;
+                end = arcObject.greaterAngle;
+                anticlockwise = true;
+                start *= -1;
+                if (start === 0) {
+                    end *= -1;
+                } else if (start <= -1 * Math.PI + 1e-10) {
+                    end *= -1;
+                }
+            } else { // crosses zero line
+                anticlockwise = true;
+                start = arcObject.greaterAngle;
+                end = arcObject.lesserAngle;
+                console.log(start, end);
+                start *= -1;
+                end *= -1;
+                // works so far, but will probably break if I keep testing it!
             }
-            console.log(startRadians, endRadians);
-            ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, startRadians, endRadians, true);
+            ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, start, end, anticlockwise);
             ctx.stroke();
         });
 
