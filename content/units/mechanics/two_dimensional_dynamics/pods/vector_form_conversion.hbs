@@ -1,8 +1,6 @@
 
 <div id = 'test'></div>
 
-
-
 <script>
     let myDiagram = new Diagram();
 
@@ -24,6 +22,136 @@
 
 
     $("#test").append(myDiagram.drawCanvas());
-
-
 </script>
+
+
+
+<ol class="questionList">
+    <li class="question">
+        <br>
+        <div id = 'vector1'></div>
+    </li>
+    <li class="question">
+        <br>
+        <div id = 'vector2'></div>
+    </li>
+    <li class="question">
+        <br>
+        <div id = 'vector3'></div>
+    </li>
+    <li class="question">
+        <br>
+        <div id = 'vector4'></div>
+    </li>
+    <li class="question">
+        <br>
+        <div id = 'vector5'></div>
+    </li>
+    <li class="question">
+        <br>
+        <div id = 'vector6'></div>
+    </li>
+</ol>
+
+<script>
+    function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfReference) {
+        if (referenceLine === undefined) {
+            if (directionInDegrees > 0 && directionInDegrees <= 45) {
+                referenceLine = '+X';
+                sideOfReference = 'above';
+            } else if (directionInDegrees > 45 && directionInDegrees <= 90) {
+                referenceLine = '+Y';
+                sideOfReference = 'right';
+            } else if (directionInDegrees > 90 && directionInDegrees <= 135) {
+                referenceLine = '+Y';
+                sideOfReference = 'left';
+            } else if (directionInDegrees > 135 && directionInDegrees <= 180) {
+                referenceLine = '-X';
+                sideOfReference = 'above';
+            } else if (directionInDegrees > 180 && directionInDegrees <= 225) {
+                referenceLine = '-X';
+                sideOfReference = 'below';
+            } else if (directionInDegrees > 225 && directionInDegrees <= 270) {
+                referenceLine = '-Y';
+                sideOfReference = 'left';
+            } else if (directionInDegrees > 270 && directionInDegrees <= 315) {
+                referenceLine = '-Y';
+                sideOfReference = 'right';
+            } else if (directionInDegrees > 315 && directionInDegrees <= 360) {
+                referenceLine = '+X';
+                sideOfReference = 'below';
+            }
+        }
+
+        if (unit === undefined) {
+            unit = '';
+        }
+        let label = String(magnitude) + ` ${unit}`;
+        let degreeLabel;
+        let angleReferenceEnd1, angleReferenceEnd2;
+        if (referenceLine === '+X' && sideOfReference === 'above') {
+            degreeLabel = directionInDegrees;
+            angleReferenceEnd1 = 0;
+            angleReferenceEnd2 = convertDegreesToRadians(directionInDegrees);
+        } else if (referenceLine === '+x' && sideOfReference === 'below') {
+            degreeLabel = 360 - directionInDegrees;
+            angleReferenceEnd2 = 0;
+            angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
+        } else if (referenceLine === '+Y' && sideOfReference === 'left') {
+            degreeLabel = 90 - directionInDegrees;
+            angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
+            angleReferenceEnd2 = Math.PI / 2;
+        } else if (referenceLine === '+Y' && sideOfReference === 'right') {
+            degreeLabel = directionInDegrees - 90;
+            angleReferenceEnd1 = Math.PI / 2;
+            angleReferenceEnd2 = convertDegreesToRadians(directionInDegrees);
+        } else if (referenceLine === '-X' && sideOfReference === 'above') {
+            degreeLabel = 180 - directionInDegrees;
+            angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
+            angleReferenceEnd2 = Math.PI;
+        } else if (referenceLine === '-X' && sideOfReference === 'below') {
+            degreeLabel = directionInDegrees - 180;
+            angleReferenceEnd1 = Math.PI;
+            angleReferenceEnd2 = convertDegreesToRadians(directionInDegrees);
+        } else if (referenceLine === '-Y' && sideOfReference === 'left') {
+            degreeLabel = 270 - directionInDegrees;
+            angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
+            angleReferenceEnd2 = Math.PI * 3 / 2;
+        } else if (referenceLine === '-Y' && sideOfReference === 'right') {
+            degreeLabel = directionInDegrees - 270;
+            angleReferenceEnd1 = Math.PI * 3 / 2;
+            angleReferenceEnd2 = convertDegreesToRadians(directionInDegrees);
+        } else {
+            degreeLabel = 0;
+        }
+
+        let myDiagram = new Diagram();
+        let vectorEndPoint = constructPointWithMagnitude(magnitude, convertDegreesToRadians(directionInDegrees));
+        let referenceLineEndPoint;
+        let referenceLineMagnitude = magnitude * 0.5;
+        if (referenceLine === '+X') {
+            referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, 0);
+        } else if (referenceLine === '+Y') {
+            referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, Math.PI / 2);
+        } else if (referenceLine === '-X') {
+            referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, Math.PI);
+        } else if (referenceLine === '-Y') {
+            referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, Math.PI * 3 / 2);
+        }
+
+        myDiagram.addArrow(origin, vectorEndPoint);
+        myDiagram.labelLineAbove(origin, vectorEndPoint, label);
+        myDiagram.addSegment(origin, referenceLineEndPoint);
+        myDiagram.labelAngle(degreeLabel, vectorEndPoint, origin, referenceLineEndPoint, 'interior','B');
+        return myDiagram
+    }
+
+    $("#vector1").append(drawVector(30,50,'N','+X','above').drawCanvas(200));
+    $("#vector2").append(drawVector(12,20,'N').drawCanvas(200));
+    $("#vector3").append(drawVector(50,75,'N').drawCanvas(200));
+    $("#vector4").append(drawVector(80,220,'N').drawCanvas(200));
+    $("#vector5").append(drawVector(19,270 - 15,'N').drawCanvas(200));
+    $("#vector6").append(drawVector(100,330,'N').drawCanvas(200));
+</script>
+
+<ol class="answerList"></ol>
