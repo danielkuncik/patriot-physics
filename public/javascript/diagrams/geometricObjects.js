@@ -382,8 +382,7 @@ function simplifyAngle(angleInRadians) {
 }
 
 // start radians and end radians are based on starting at +X and going counter-clockwise
-
-/// NOTE: the range box functions are a disaster
+// always counterclockwise!
 class Arc {
     constructor(centerPoint, radius, startRadians, endRadians) {
         this.center = centerPoint;
@@ -402,19 +401,36 @@ class Arc {
             this.crossZeroLine = true;
         }
 
+        // not quite perfect, look at some cases
         this.rangeBox = constructRangeBoxFromExtremePoints(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
     }
 
     // gets the closest point to a particular angle on
-    getClosestPointToAngleAbsolute(angle) {
-        if (this.lesserAngle < angle && this.greaterAngle > angle) {
-            return angle
-        } else if (this.lesserAngle >= angle) {
-            return this.lesserAngle
-        } else if (this.greaterAngle <= angle) {
-            return this.greaterAngle
+    getClosestPointToAngleAbsolute(angle) {  // need to do some different things if crossing the zero line
+        /// edit this function to incorporate crossing the zero line!!!!
+        let lowAngle, highAngle;
+        if (!this.crossZeroLine) {
+            lowAngle = this.lesserAngle;
+            highAngle = this.greaterAngle;
+        } else {
+            lowAngle = this.greaterAngle;
+            highAngle = this.lesserAngle + Math.PI * 2;
+            angle += Math.PI * 2;
         }
+        let newAngle;
+        if (lowAngle < angle && highAngle > angle) {
+            newAngle = angle;
+        } else if (lowAngle >= angle) {
+            newAngle = lowAngle;
+        } else if (highAngle <= angle) {
+            newAngle = highAngle;
+        }
+        return simplifyAngle(newAngle)
     }
+
+    // this is infuriating 4-17-2020
+    // i need to create a set of unit tests for this function, bc it's a mess
+    // TDD is the only way to make this work
 
     getMinIndexOfArray(array) {
         if (array.length === 0) {

@@ -635,9 +635,15 @@ class Diagram {
     }
 
     // the arc radius will be the radiusProportion variable times the lesser of the two rays
-    labelAngle(label, outsidePointA, vertex, outsidePointB, radiusProportion) {
+    labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, radiusProportion) {
         if (radiusProportion === undefined) {
             radiusProportion = 0.15;
+        }
+        if (interiorOrExterior === undefined) {
+            interiorOrExterior = 'interior';
+        }
+        if (textOnAorB === undefined) {
+            textOnAorB = 'A';
         }
 
         let arcRadius;
@@ -651,37 +657,105 @@ class Diagram {
 
         let angleA = outsidePointA.getAngleToHorizontal();
         let angleB = outsidePointB.getAngleToHorizontal();
-
-
-
+        let greaterAngle, lesserAngle;
+        if (angleA > angleB) {
+            greaterAngle = angleA;
+            lesserAngle = angleB;
+        } else {
+            greaterAngle = angleB;
+            lesserAngle = angleA;
+        }
+        /// how do i figure out how to decide if it is interior or exterior?
+        // this is just a test
+        // i don't know how it will work if I cut through the zero line
+        let startAngle, endAngle;
+        if (greaterAngle - lesserAngle <= Math.PI && interiorOrExterior === 'interior') {
+            startAngle = lesserAngle;
+            endAngle = greaterAngle;
+        } else if (greaterAngle - lesserAngle <= Math.PI && interiorOrExterior === 'exterior') {
+            startAngle = greaterAngle;
+            endAngle = lesserAngle;
+        } else if (greaterAngle - lesserAngle > Math.PI && interiorOrExterior === 'interior') {
+            startAngle = greaterAngle;
+            endAngle = lesserAngle;
+        } else if (greaterAngle - lesserAngle > Math.PI && interiorOrExterior === 'exterior') {
+            startAngle = lesserAngle;
+            endAngle = greaterAngle;
+        } else {
+            startAngle = 0;
+            endAngle = 0;
+        }
         /// right now, the text is always included on angle A
         // but in the future, I need to make an option to include text on angle B
+        this.addArc(vertex,arcRadius,startAngle,endAngle);
 
-        this.addArc(vertex,arcRadius,angleA,angleB);
-        let textRotation;
-        /// setting text rotation, must go through each case
-        if (angleA === 0 ) { // horizontal right
-            textRotation = 0;
-        } else if (Math.abs(angleA - Math.PI / 2) < 1e-10) { // vertical up
-            textRotation = 3 * Math.PI / 2;
-        } else if (Math.abs(angleA - Math.PI ) < 1e-10) { // horizontal left
-            textRotation = Math.PI;
-        } else if (Math.abs(angleA - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
-            textRotation = Math.PI / 2;
-        } else if (angleA > 0 && angleA < Math.PI / 2) { // quadrant 1
-            textRotation = angleA + 3 * Math.PI / 2;
-        } else if (angleA > Math.PI / 2 && angleA < Math.PI ) { // quadrant 2
-            textRotation = -1 * angleA;
-        } else if (angleA > Math.PI && angleA < Math.PI * 3 / 2) { // quadrant 3
-            textRotation = -1 * angleA;
-        } else if (angleA > Math.PI * 3 / 2 && angleA < Math.PI * 2) { // quadrant 4
-            textRotation = -1 * angleA;
+        let textRotation, textReferencePoint;
+        let textOnStartOrEnd;
+        if (textOnAorB === 'A' && startAngle === angleA) {
+            textOnStartOrEnd = 'start';
+        } else if (textOnAorB === 'A' && startAngle === angleB) {
+            textOnStartOrEnd = 'end';
+        } else if (textOnAorB === 'B' && startAngle === angleA) {
+            textOnStartOrEnd = 'end';
+        } else if (textOnAorB === 'B' && startAngle === angleB) {
+            textOnStartOrEnd = 'start';
         } else {
-            textRotation = 0;
+            textOnStartOrEnd = 'start'; // default, if all the above tests don't work
         }
 
 
-        let textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, angleA);
+        /// Is this all unecessary???? it seems not that complex
+        // this should go back to being start or end
+        if (textOnStartOrEnd === 'start') {
+            console.log('text on start');
+            /// setting text rotation, must go through each case
+            if (startAngle === 0 ) { // horizontal right
+                textRotation = 0;
+            } else if (Math.abs(startAngle - Math.PI / 2) < 1e-10) { // vertical up
+                textRotation = 3 * Math.PI / 2;
+            } else if (Math.abs(startAngle - Math.PI ) < 1e-10) { // horizontal left
+                textRotation = Math.PI; // some errors here
+            } else if (Math.abs(startAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
+                textRotation = Math.PI / 2;
+            } else if (startAngle > 0 && startAngle < Math.PI / 2) { // quadrant 1
+                textRotation = -1 * startAngle;
+            } else if (startAngle > Math.PI / 2 && startAngle < Math.PI ) { // quadrant 2
+                textRotation = -1 * startAngle;
+            } else if (startAngle > Math.PI && startAngle < Math.PI * 3 / 2) { // quadrant 3
+                textRotation = -1 * startAngle;
+            } else if (startAngle > Math.PI * 3 / 2 && startAngle < Math.PI * 2) { // quadrant 4
+                textRotation = -1 * startAngle;
+            } else {
+                textRotation = 0;
+            }
+            textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, startAngle);
+        } else if (textOnStartOrEnd === 'end') {
+            console.log('text on end');
+            /// add more functions here to label text on angle B!
+            if (endAngle === 0 ) { // horizontal right
+                textRotation = 0;
+            } else if (Math.abs(endAngle - Math.PI / 2) < 1e-10) { // vertical up
+                textRotation = 0;
+            } else if (Math.abs(endAngle - Math.PI ) < 1e-10) { // horizontal left
+                textRotation = 0;
+            } else if (Math.abs(endAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
+                textRotation = 0;
+            } else if (endAngle > 0 && endAngle < Math.PI / 2) { // quadrant 1
+                textRotation = 0;
+            } else if (endAngle > Math.PI / 2 && endAngle < Math.PI ) { // quadrant 2
+                textRotation = 0;
+            } else if (endAngle > Math.PI && endAngle < Math.PI * 3 / 2) { // quadrant 3
+                textRotation = 0;
+            } else if (endAngle > Math.PI * 3 / 2 && endAngle < Math.PI * 2) { // quadrant 4
+                textRotation = 0;
+            } else {
+                textRotation = 0;
+            }
+            textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, endAngle);
+
+
+            // MUCH MORE TO ADD HERE!
+        }
         let relativeFontSize = arcRadius * 0.6;
         let text;
         if (label) {
@@ -1328,28 +1402,38 @@ class Diagram {
             // ctx.fillStyle = "#FFFFFF";
             ctx.lineWidth = 2;
 
+            let start = -1 * arcObject.startRadians;
+            let end = -1 * arcObject.endRadians;
+            let anticlockwise = true;
+
             ctx.beginPath();
 
-            let anticlockwise, start, end;
-            if (!arcObject.crossZeroLine) {
-                start = arcObject.lesserAngle;
-                end = arcObject.greaterAngle;
-                anticlockwise = true;
-                start *= -1;
-                if (start === 0) {
-                    end *= -1;
-                } else if (start <= -1 * Math.PI + 1e-10) {
-                    end *= -1;
-                }
-            } else { // crosses zero line
-                anticlockwise = true;
-                start = arcObject.greaterAngle;
-                end = arcObject.lesserAngle;
-                console.log(start, end);
-                start *= -1;
-                end *= -1;
-                // works so far, but will probably break if I keep testing it!
-            }
+            /// THIS METHOD IS AN ABSOLUTE NIGHTMARE!
+            // let anticlockwise, start, end;
+            // if (!arcObject.crossZeroLine) {
+            //     start = arcObject.lesserAngle;
+            //     end = arcObject.greaterAngle;
+            //     console.log(start, end);
+            //     anticlockwise = true;
+            //     start *= -1;
+            //     if (start === 0) {
+            //         end *= -1;
+            //     } else if (start <= -1 * Math.PI + 1e-10) {
+            //         end *= -1;
+            //     }
+            //     if (start < Math.PI / 2 && end > 3 * Math.PI / 2) {
+            //         start *= -1;
+            //     }
+            //     console.log(start, end);
+            // } else { // crosses zero line
+            //     anticlockwise = true;
+            //     start = arcObject.greaterAngle;
+            //     end = arcObject.lesserAngle;
+            //     console.log(start, end);
+            //     start *= -1;
+            //     end *= -1;
+            //     // works so far, but will probably break if I keep testing it!
+            // }
             ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, start, end, anticlockwise);
             ctx.stroke();
         });
