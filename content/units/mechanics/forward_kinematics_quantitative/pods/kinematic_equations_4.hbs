@@ -1,0 +1,137 @@
+<p>
+    In previous pods, we learned to use the four
+    kinematic equations, which can
+    be used whenever acceleration is constant.
+    In this pod, we will apply these equations to stepwise motion.
+    In stepwise motion, acceleration is not constant for the entire motion,
+    but it is constant in a series of small steps.
+    This means that you can use the kinematic equations,
+    but their usage gets much more complicated
+</p>
+
+<h5>
+    Which Equations to Use
+</h5>
+
+<ul>
+    <li>
+        For any section in which an object is either
+        speeding up or slowing down,
+        you need to use the four kinematic equations:
+        <br>
+        <div id = 'kinematicEquationsTable'></div>
+    </li>
+    <li>
+        However, there are also intervals when an
+        object is moving at a constant velocity.
+        In these intervals, use a much simpler formula
+        for constant velocity motion:
+        $$
+        \Delta x = v t
+        $$
+    </li>
+    <li>
+        There may also be steps of motion
+        when an object is not moving at all.
+        In these steps of motion, \( \Delta x = 0 \).
+    </li>
+</ul>
+<script>
+    $("#kinematicEquationsTable").append(makeKinematicEquationsTable().draw(300));
+</script>
+
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '10.6 m/s'>
+        <strong>[4 steps]:</strong>
+        You are driving towards a green light at a speed of 25 m/s.
+        But after 3 seconds, the light ahead of you turns red,
+        and you begin slowing to a stop. You stop at the light after 4 seconds.
+        You wait for 10 seconds.
+        Then, the light turns green, and you begin accelerating at a rate of 4 m/s,<sup>2</sup>,
+        until you reach 25 m/s again. You then travel another 3 seconds at a constant speed.
+        <br>
+        <br>
+        For this entire trip, what is your <emph>average speed</emph>?
+        <p>
+            Use this method:
+        </p>
+        <ul>
+            <li>
+                Average Speed = Total Distance / Total Time
+            </li>
+            <li>
+                Using the table below, find the distance and time of each step, then use the
+                formula for average speed.
+            </li>
+            <li>
+                Remember that the <emph>final</emph> velocity for one step is equal to the <emph>initial</emph> velocity
+                of the next step!
+            </li>
+        </ul>
+        <div class = 'container'>
+            <div class="row">
+                <div class="col-md-8 pb-5 border border-dark">
+                    Step 1:
+                    You are driving towards a green light at a speed of 25 m/s.
+                    But after 3 seconds, the light ahead of you turns red,
+                    and you begin slowing to a stop. You stop at the light after 4 seconds.
+                </div>
+                <div class="col-md-4 pb-5 border border-dark">
+                    Step 2:
+                    You wait for 10 seconds.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 pb-5 border border-dark">
+                Step 3:
+                Then, the light turns green, and you begin accelerating at a rate of 4 m/s,<sup>2</sup>,
+                until you reach 25 m/s again.
+            </div>
+            <div class="col-md-4 pb-5 border border-dark">
+                Step 4:
+                You then travel another 3 seconds at a constant speed.
+            </div>
+        </div>
+    </li>
+    <li class="question">
+        <strong>[3 Steps]:</strong>
+        A super hero is flying briskly down the street at a constant speed of 4 m/s.
+        She travels a distance of 100 meters.
+        Suddenly, she sees an ice cream truck and start accelerating forward
+        at a rate of 2 m/s<sup>2</sup> for 10 seconds.
+        But a super villain comes up behind her and she must stop suddenly,
+        decelerating at a rate of -8 m/s<sup>2</sup> until she is stopped.
+        <br><br>
+        Determine the super hero’s average speed.
+    </li>
+    <li class="question">
+        <strong>[2 Steps]:</strong>
+        The great hero is fighting a demon.
+        The demon unfortunately wins the fight and pushes him off a cliff that is 100 meters tall.
+        (Neglect air resistance.) Fortunately, when the hero is 20 meters above the ground,
+        a wizard appears and decides to save his life,
+        by causing him to decelerate so that he strikes the ground with a speed of precisely 2 m/s.
+        Determine the great hero’s average speed during his fall.
+    </li>
+    <li class="question">
+        <strong>The Bike Race:</strong> (This problem is tougher
+        than those that will be on the miniquiz):
+        Jonny and Joey are in a bicycle race.
+        Joey is biking consistently forward at a rate of 15 m/s.
+        Jonny is moving at the same speed as Joey but is behind by 60 meters.
+        This persists for 30 seconds.
+        Then, Jonny decides to catch up.
+        He accelerates at a constant rate for a time of 10 seconds, after which he is moving 5 m/s faster than Joey.
+        Then, he bikes at this speed until he is 20 m ahead of Joey.
+        Over the course of the next 40 m, Jonny decelerates to 15 m/s, his original speed.
+        Fortunately, Joey is completely exhausted and unable to catch up!
+        Jonny easily wins moving at a constant velocity for the final 200 m of the race.
+        <br>
+        <br>
+        For the entire time described in the passage, what is Jonny’s <emph>average speed</emph>?
+    </li>
+</ol>
+
+<ol class="answerList"></ol>

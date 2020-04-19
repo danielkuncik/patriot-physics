@@ -5,11 +5,12 @@
     let myDiagram = new Diagram();
 
     let r = 3;
-    let A = new Point(r / 1.4142135623730951,-1 * r / 1.4142135623730951);
-    let B = new Point(-1 * r,0);
+    let B = new Point(2,0);
+    let A = new Point(1,2);
     myDiagram.addSegment(origin, A);
     myDiagram.addSegment(origin, B);
-    myDiagram.labelAngle('X',A,origin,B,'exterior','B',0.3333333);
+    myDiagram.labelAngle('AA',A,origin,B,'interior','A',false,0.3333333);
+    // it broke again
     // make sure it always returns the angle you want
 
     // it cannot properly cross over the +X line
@@ -98,11 +99,11 @@
             angleReferenceEnd2 = 0;
             angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
         } else if (referenceLine === '+Y' && sideOfReference === 'left') {
-            degreeLabel = 90 - directionInDegrees;
+            degreeLabel = directionInDegrees - 90;
             angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
             angleReferenceEnd2 = Math.PI / 2;
         } else if (referenceLine === '+Y' && sideOfReference === 'right') {
-            degreeLabel = directionInDegrees - 90;
+            degreeLabel = 90 - directionInDegrees;
             angleReferenceEnd1 = Math.PI / 2;
             angleReferenceEnd2 = convertDegreesToRadians(directionInDegrees);
         } else if (referenceLine === '-X' && sideOfReference === 'above') {
@@ -142,7 +143,7 @@
         myDiagram.addArrow(origin, vectorEndPoint);
         myDiagram.labelLineAbove(origin, vectorEndPoint, label);
         myDiagram.addSegment(origin, referenceLineEndPoint);
-        myDiagram.labelAngle(degreeLabel, vectorEndPoint, origin, referenceLineEndPoint, 'interior','B');
+        myDiagram.labelAngle(degreeLabel, vectorEndPoint, origin, referenceLineEndPoint, 'interior','B',true,0.5);
         return myDiagram
     }
 

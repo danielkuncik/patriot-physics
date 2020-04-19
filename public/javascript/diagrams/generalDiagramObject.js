@@ -228,11 +228,28 @@ class Text {
             }
         } else if (positioning === 'lowerLeft') {
             this.alignment = 'left';
-            this.baseline = 'center';
+            this.baseline = 'alphabetic';
             this.rangeBox = new RangeBox(this.referencePoint.x, this.referencePoint.y, this.width, this.height); // construc from lower left corner is default
+        } else if (positioning === 'aboveCenter') {
+            this.alignment = 'center';
+            this.baseline = 'alphabetic';
+            let lowerLeftX = this.referencePoint.x - this.width/2;
+            let lowerLeftY = this.referencePoint.y;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        }  else if (positioning === 'belowCenter') {
+            this.alignment = 'center';
+            this.baseline = 'hanging';
+            let lowerLeftX = this.referencePoint.x - this.width/2;
+            let lowerLeftY = this.referencePoint.y - this.height;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        } else if (positioning === 'upperLeft') {
+            this.alignment = 'left';
+            this.baseline = 'hanging';
+            let lowerLeftX = this.referencePoint.x;
+            let lowerLeftY = this.referencePoint.y - this.height;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
         }
         this.color = "#000000";
-
     }
 
 
@@ -268,18 +285,18 @@ class Text {
         this.alignment = newAlignment;
         this.baseline = newBaseline;
     }
-
-    centerText() {
-        this.referencePoint = this.rangeBox.centerPoint;
-        this.alignment = 'center';
-        this.baseline = 'middle';
-    }
-
-    alignLowerLeftCorner() {
-        this.referencePoint = this.rangeBox.lowerLeftPoint;
-        this.alignment = 'left';
-        this.baseline = 'bottom';
-    }
+    //
+    // centerText() {
+    //     this.referencePoint = this.rangeBox.centerPoint;
+    //     this.alignment = 'center';
+    //     this.baseline = 'middle';
+    // }
+    //
+    // alignLowerLeftCorner() {
+    //     this.referencePoint = this.rangeBox.lowerLeftPoint;
+    //     this.alignment = 'left';
+    //     this.baseline = 'bottom';
+    // }
 
 
     rotateCounterClockwise(rotationInRadians) {
@@ -635,9 +652,12 @@ class Diagram {
     }
 
     // the arc radius will be the radiusProportion variable times the lesser of the two rays
-    labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, radiusProportion) {
+    labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion) {
         if (radiusProportion === undefined) {
             radiusProportion = 0.15;
+        }
+        if (fontProportion === undefined) {
+            fontProportion = 1;
         }
         if (interiorOrExterior === undefined) {
             interiorOrExterior = 'interior';
@@ -706,31 +726,39 @@ class Diagram {
 
         /// Is this all unecessary???? it seems not that complex
         // this should go back to being start or end
+        let textPositioning;
         if (textOnStartOrEnd === 'start') {
-            console.log('text on start');
             /// setting text rotation, must go through each case
             if (startAngle === 0 ) { // horizontal right
+                textPositioning = 'lowerLeft';
                 textRotation = 0;
             } else if (Math.abs(startAngle - Math.PI / 2) < 1e-10) { // vertical up
+                textPositioning = 'lowerLeft';
                 textRotation = 3 * Math.PI / 2;
             } else if (Math.abs(startAngle - Math.PI ) < 1e-10) { // horizontal left
+                textPositioning = 'lowerLeft';
                 textRotation = Math.PI; // some errors here
             } else if (Math.abs(startAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
+                textPositioning = 'lowerLeft';
                 textRotation = Math.PI / 2;
             } else if (startAngle > 0 && startAngle < Math.PI / 2) { // quadrant 1
+                textPositioning = 'lowerLeft';
                 textRotation = -1 * startAngle;
             } else if (startAngle > Math.PI / 2 && startAngle < Math.PI ) { // quadrant 2
+                textPositioning = 'lowerLeft';
                 textRotation = -1 * startAngle;
             } else if (startAngle > Math.PI && startAngle < Math.PI * 3 / 2) { // quadrant 3
+                textPositioning = 'lowerLeft';
                 textRotation = -1 * startAngle;
             } else if (startAngle > Math.PI * 3 / 2 && startAngle < Math.PI * 2) { // quadrant 4
+                textPositioning = 'lowerLeft';
                 textRotation = -1 * startAngle;
             } else {
                 textRotation = 0;
             }
             textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, startAngle);
         } else if (textOnStartOrEnd === 'end') {
-            console.log('text on end');
+            textPositioning = 'upperLeft';
             /// add more functions here to label text on angle B!
             if (endAngle === 0 ) { // horizontal right
                 textRotation = 0;
@@ -741,7 +769,7 @@ class Diagram {
             } else if (Math.abs(endAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
                 textRotation = 0;
             } else if (endAngle > 0 && endAngle < Math.PI / 2) { // quadrant 1
-                textRotation = 0;
+                textRotation =  -1 * endAngle;
             } else if (endAngle > Math.PI / 2 && endAngle < Math.PI ) { // quadrant 2
                 textRotation = 0;
             } else if (endAngle > Math.PI && endAngle < Math.PI * 3 / 2) { // quadrant 3
@@ -756,10 +784,13 @@ class Diagram {
 
             // MUCH MORE TO ADD HERE!
         }
-        let relativeFontSize = arcRadius * 0.6;
+        let relativeFontSize = arcRadius * 0.5 * fontProportion;
         let text;
         if (label) {
-            text = this.addText(label,textReferencePoint,relativeFontSize,textRotation,'lowerLeft');
+            if (addDegreeLabel) {
+                label = label + '°';
+            }
+            text = this.addText(label,textReferencePoint,relativeFontSize,textRotation,textPositioning);
             text.addDegreeLabel(this);
         }
     }
@@ -808,7 +839,7 @@ class Diagram {
             relativeFontSize = point1.getDistanceToAnotherPoint(point2) * 0.1;
         }
         if (textDisplacement === undefined) {
-            textDisplacement = relativeFontSize * 1.5
+            textDisplacement = 0;
         }
 
         let phi;
@@ -824,8 +855,9 @@ class Diagram {
             textRotation = Math.PI - theta; // continues to perplex me
             phi = Math.PI / 2 - textRotation;
         } else if (quadrant === '3') {
-            textRotation = theta + Math.PI / 2;
-            phi = 3 * Math.PI / 2 - theta;
+            textRotation = Math.PI - theta;
+            // textRotation = theta + Math.PI / 2;
+            phi = 3 * Math.PI / 2 - theta; // have not fully tested this
         } else if (quadrant === '4') {
             textRotation = -1 * theta;
             phi = Math.PI / 2 - textRotation;
@@ -861,13 +893,12 @@ class Diagram {
             belowY -= textDisplacement;
         }
 
-
         let textAboveObject, textBelowObject;
         if (textAbove) {
-            textAboveObject = this.addText(textAbove, new Point(aboveX, aboveY), relativeFontSize, textRotation);
+            textAboveObject = this.addText(textAbove, new Point(aboveX, aboveY), relativeFontSize, textRotation, 'aboveCenter');
         }
         if (textBelow) {
-            textBelowObject = this.addText(textBelow, new Point(belowX, belowY), relativeFontSize, textRotation);
+            textBelowObject = this.addText(textBelow, new Point(belowX, belowY), relativeFontSize, textRotation,'belowCenter');
         }
 
         if (textAbove) {
@@ -1397,6 +1428,7 @@ class Diagram {
         });
 
         this.arcs.forEach((arcObject) => {
+            /// ARC SECTION
             ctx.strokeStyle = "#000000";
             ctx.fillStyle = "#FFFFFF";
             // ctx.fillStyle = "#FFFFFF";
