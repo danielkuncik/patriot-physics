@@ -407,25 +407,7 @@ class Arc {
 
     // gets the closest point to a particular angle on
     getClosestPointToAngleAbsolute(angle) {  // need to do some different things if crossing the zero line
-        /// edit this function to incorporate crossing the zero line!!!!
-        let lowAngle, highAngle;
-        if (!this.crossZeroLine) {
-            lowAngle = this.lesserAngle;
-            highAngle = this.greaterAngle;
-        } else {
-            lowAngle = this.greaterAngle;
-            highAngle = this.lesserAngle + Math.PI * 2;
-            angle += Math.PI * 2;
-        }
-        let newAngle;
-        if (lowAngle < angle && highAngle > angle) {
-            newAngle = angle;
-        } else if (lowAngle >= angle) {
-            newAngle = lowAngle;
-        } else if (highAngle <= angle) {
-            newAngle = highAngle;
-        }
-        return simplifyAngle(newAngle)
+        return getAngleClosestToArc(this.startRadians, this.endRadians, angle)
     }
 
     // this is infuriating 4-17-2020

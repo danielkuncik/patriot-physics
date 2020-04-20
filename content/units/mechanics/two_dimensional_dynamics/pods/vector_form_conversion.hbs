@@ -5,11 +5,11 @@
     let myDiagram = new Diagram();
 
     let r = 3;
-    let B = new Point(2,0);
-    let A = new Point(1,2);
+    let B = new Point(1,1);
+    let A = new Point(1,0);
     myDiagram.addSegment(origin, A);
     myDiagram.addSegment(origin, B);
-    myDiagram.labelAngle('AA',A,origin,B,'interior','A',false,0.3333333);
+    myDiagram.labelAngle('AA',A,origin,B,'exterior','A',false,0.3333333);
     // it broke again
     // make sure it always returns the angle you want
 
