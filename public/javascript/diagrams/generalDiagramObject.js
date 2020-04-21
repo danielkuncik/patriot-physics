@@ -162,12 +162,19 @@ class RangeBox {
 
 
     rotateCounterClockwiseAboutCenter(angleInRadians) {
-        this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint);
+        this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint); // i need unit tests for the point rotate method
         this.upperLeftPoint.rotate(angleInRadians, this.centerPoint);
         this.lowerRightPoint.rotate(angleInRadians, this.centerPoint);
         this.upperRightPoint.rotate(angleInRadians, this.centerPoint);
-
     }
+
+    rotateClockwiseAboutCenter(angleInRadians) {
+        this.lowerLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
+        this.upperLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
+        this.lowerRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
+        this.upperRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
+    }
+
 
     translate(xTranslation, yTranslation) {
         this.centerPoint.translate(xTranslation, yTranslation);
@@ -218,14 +225,12 @@ class Text {
 
         this.font = 'Arial';
         this.referencePoint = referencePoint;
+        // NT ALL OF THESE RANGE BOT functions work!
         if (positioning === 'center') {
             this.alignment = 'center'; // default
             this.baseline = 'middle';
             this.centerPoint = referencePoint;
             this.rangeBox = constructRangeBoxFromCenter(this.centerPoint, this.width, this.height);
-            if (this.rotationAngleInRadians) {
-                this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
-            }
         } else if (positioning === 'lowerLeft') {
             this.alignment = 'left';
             this.baseline = 'alphabetic';
@@ -248,6 +253,29 @@ class Text {
             let lowerLeftX = this.referencePoint.x;
             let lowerLeftY = this.referencePoint.y - this.height;
             this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        } else if (positioning === 'lowerRight') {
+            this.alignment = 'right';
+            this.baseline = 'alphabetic';
+            let lowerLeftX = this.referencePoint.x - this.width;
+            let lowerLeftY = this.referencePoint.y;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        } else if (positioning === 'upperRight') {
+            this.alignment = 'right';
+            this.baseline = 'hanging';
+            let lowerLeftX = this.referencePoint.x - this.width;
+            let lowerLeftY = this.referencePoint.y - this.height;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        }
+        if (this.rotationAngleInRadians) { // should it be clockwise, not counterclockwise?
+            this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+            /// if the reference point is not the center, then this function needs to change!
+            ///ERROR
+            ///ERROR
+            ///ERROR
+            ///ERROR
+            ///ERROR
+            ///ERROR
+            ///ERROR
         }
         this.color = "#000000";
     }
@@ -724,8 +752,8 @@ class Diagram {
         }
 
 
-        /// Is this all unecessary???? it seems not that complex
-        // this should go back to being start or end
+        /// THIS IS DISORGANIZED, and there are way more if statements than necessary
+        /// BUT IT WORKS (and that took a damn long time and a lot of annoyance! 4-20-2020
         let textPositioning;
         if (textOnStartOrEnd === 'start') {
             /// setting text rotation, must go through each case
@@ -736,8 +764,8 @@ class Diagram {
                 textPositioning = 'lowerLeft';
                 textRotation = 3 * Math.PI / 2;
             } else if (Math.abs(startAngle - Math.PI ) < 1e-10) { // horizontal left
-                textPositioning = 'lowerLeft';
-                textRotation = Math.PI; // some errors here
+                textPositioning = 'upperRight';
+                textRotation = 0;
             } else if (Math.abs(startAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
                 textPositioning = 'lowerLeft';
                 textRotation = Math.PI / 2;
@@ -748,8 +776,13 @@ class Diagram {
                 textPositioning = 'lowerLeft';
                 textRotation = -1 * startAngle;
             } else if (startAngle > Math.PI && startAngle < Math.PI * 3 / 2) { // quadrant 3
-                textPositioning = 'lowerLeft';
-                textRotation = -1 * startAngle;
+                if (interiorOrExterior === 'exterior') {
+                    textPositioning = 'upperRight';
+                    textRotation = Math.PI - startAngle;
+                } else if (interiorOrExterior === 'interior') {
+                    textPositioning = 'upperRight';
+                    textRotation = Math.PI - startAngle;
+                }
             } else if (startAngle > Math.PI * 3 / 2 && startAngle < Math.PI * 2) { // quadrant 4
                 textPositioning = 'lowerLeft';
                 textRotation = -1 * startAngle;
@@ -762,20 +795,33 @@ class Diagram {
             /// add more functions here to label text on angle B!
             if (endAngle === 0 ) { // horizontal right
                 textRotation = 0;
-            } else if (Math.abs(endAngle - Math.PI / 2) < 1e-10) { // vertical up
-                textRotation = 0;
+            } else if (Math.abs(endAngle - Math.PI / 2) < 1e-10) { // vertical up  // when i made this pi /2 , it exposed a flaw in the range of text!
+                textRotation = 3 * Math.PI / 2;
             } else if (Math.abs(endAngle - Math.PI ) < 1e-10) { // horizontal left
+                textPositioning = 'lowerRight';
                 textRotation = 0;
             } else if (Math.abs(endAngle - Math.PI * 3 / 2 ) < 1e-10) { // vertical down
-                textRotation = 0;
+                textPositioning = 'lowerRight';
+                textRotation = 3 * Math.PI / 2;
             } else if (endAngle > 0 && endAngle < Math.PI / 2) { // quadrant 1
                 textRotation =  -1 * endAngle;
             } else if (endAngle > Math.PI / 2 && endAngle < Math.PI ) { // quadrant 2
-                textRotation = 0;
+                if (interiorOrExterior === 'exterior') {
+                    textPositioning = 'lowerRight';
+                    textRotation = Math.PI - endAngle;
+                } else {
+                    textRotation = -1 * endAngle;
+                }
             } else if (endAngle > Math.PI && endAngle < Math.PI * 3 / 2) { // quadrant 3
-                textRotation = 0;
+                if (interiorOrExterior === 'interior'){
+                    textPositioning = 'lowerRight';
+                    textRotation = Math.PI - endAngle;
+                } else if (interiorOrExterior === 'exterior') { // same either way!
+                    textPositioning = 'lowerRight';
+                    textRotation = Math.PI - endAngle;
+                }
             } else if (endAngle > Math.PI * 3 / 2 && endAngle < Math.PI * 2) { // quadrant 4
-                textRotation = 0;
+                textRotation = -1 * endAngle;
             } else {
                 textRotation = 0;
             }

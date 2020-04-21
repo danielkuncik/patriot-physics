@@ -28,7 +28,17 @@ function getAngleClosestToArc(startRadians, endRadians, testAngle) {
         newAngle = getAngleClosestToArcIfStartAngleLesser(startRadians, endRadians, testAngle);
     } else if (startRadians > endRadians) { // does cross zero
         endRadians += Math.PI * 2;
-        newAngle = getAngleClosestToArcIfStartAngleLesser(startRadians, endRadians, testAngle);
+        let option1 = getAngleClosestToArcIfStartAngleLesser(startRadians, endRadians, testAngle);
+        let option2 = getAngleClosestToArcIfStartAngleLesser(startRadians, endRadians, testAngle + Math.PI * 2);
+        let optionsArray = [
+            Math.abs(option1 - testAngle), Math.abs(option2 - testAngle)
+        ];
+        let index = getMinIndexOfArray(optionsArray);
+        if (index === 0) {
+            newAngle =option1;
+        } else if (index === 1) {
+            newAngle = option2;
+        }
     } else if (startRadians === endRadians) { // both angles equal
         newAngle = startRadians;
     }
@@ -69,9 +79,8 @@ runTest(Math.PI,0, 6,6);
 runTest(Math.PI,0, 3,Math.PI);
 runTest(Math.PI,0, 2,Math.PI);
 runTest(Math.PI,0, 1,0);
-
+runTest(2, Math.PI /2 , 0,0);
 */
-
 
 function simplifyAngle(angleInRadians) {
     while (angleInRadians < 0) {

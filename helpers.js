@@ -389,6 +389,7 @@ function getPreviousAttemptListItem(previousAttemptObject) {
         string = string + `You took this quiz on ${date} and scored ${previousAttemptObject.score} out of 20`;
         string = string + "<ul>";
         string = string + `<li><img src = '${previousAttemptObject.image_url_1}' /></li>`;
+        string = string + `<li><a href = '${previousAttemptObject.image_url_1}' >DOWNLOAD</a></li>`;
         string = string + `<li>Comment: ${previousAttemptObject.comment}</li>`;
         string = string + "</ul>";
     } else {

@@ -1,29 +1,29 @@
 
-<div id = 'test'></div>
+<!--<div id = 'test'></div>-->
 
-<script>
-    let myDiagram = new Diagram();
+<!--<script>-->
+<!--    let myDiagram = new Diagram();-->
 
-    let r = 3;
-    let B = new Point(1,1);
-    let A = new Point(1,0);
-    myDiagram.addSegment(origin, A);
-    myDiagram.addSegment(origin, B);
-    myDiagram.labelAngle('AA',A,origin,B,'exterior','A',false,0.3333333);
-    // it broke again
-    // make sure it always returns the angle you want
+<!--    let r = 3;-->
+<!--    let A = new Point(-3,0);-->
+<!--    let B = new Point(0,3);-->
+<!--    myDiagram.addSegment(origin, A);-->
+<!--    myDiagram.addSegment(origin, B);-->
+<!--    myDiagram.labelAngle('AA',A,origin,B,'interior','A',false,0.3333333);-->
+<!--    // it broke again-->
+<!--    // make sure it always returns the angle you want-->
 
-    // it cannot properly cross over the +X line
-
-
-    /// TO DO
-    // make sure that the label is correctly oriented
-    // the last thing i need to do is make the label actually good!
+<!--    // it cannot properly cross over the +X line-->
 
 
+<!--    /// TO DO-->
+<!--    // make sure that the label is correctly oriented-->
+<!--    // the last thing i need to do is make the label actually good!-->
 
-    $("#test").append(myDiagram.drawCanvas());
-</script>
+
+
+<!--    $("#test").append(myDiagram.drawCanvas());-->
+<!--</script>-->
 
 
 
@@ -55,7 +55,7 @@
 </ol>
 
 <script>
-    function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfReference) {
+    function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfReference, textAboveOrBelow) {
         if (referenceLine === undefined) {
             if (directionInDegrees > 0 && directionInDegrees <= 45) {
                 referenceLine = '+X';
@@ -83,6 +83,9 @@
                 sideOfReference = 'below';
             }
         }
+        if (textAboveOrBelow === undefined) {
+            textAboveOrBelow = 'above';
+        }
 
         if (unit === undefined) {
             unit = '';
@@ -94,7 +97,7 @@
             degreeLabel = directionInDegrees;
             angleReferenceEnd1 = 0;
             angleReferenceEnd2 = convertDegreesToRadians(directionInDegrees);
-        } else if (referenceLine === '+x' && sideOfReference === 'below') {
+        } else if (referenceLine === '+X' && sideOfReference === 'below') {
             degreeLabel = 360 - directionInDegrees;
             angleReferenceEnd2 = 0;
             angleReferenceEnd1 = convertDegreesToRadians(directionInDegrees);
@@ -141,15 +144,23 @@
         }
 
         myDiagram.addArrow(origin, vectorEndPoint);
-        myDiagram.labelLineAbove(origin, vectorEndPoint, label);
+        if (textAboveOrBelow === 'above') {
+            myDiagram.labelLineAbove(origin, vectorEndPoint, label);
+        } else if (textAboveOrBelow === 'below') {
+            myDiagram.labelLineBelow(origin, vectorEndPoint, label);
+        }
         myDiagram.addSegment(origin, referenceLineEndPoint);
-        myDiagram.labelAngle(degreeLabel, vectorEndPoint, origin, referenceLineEndPoint, 'interior','B',true,0.5);
+        let fontProportion = 0.4;
+        if (degreeLabel <= 20) {
+            fontProportion = 0.3;
+        }
+        myDiagram.labelAngle(degreeLabel, vectorEndPoint, origin, referenceLineEndPoint, 'interior','B',true,fontProportion);
         return myDiagram
     }
 
     $("#vector1").append(drawVector(30,50,'N','+X','above').drawCanvas(200));
     $("#vector2").append(drawVector(12,20,'N').drawCanvas(200));
-    $("#vector3").append(drawVector(50,75,'N').drawCanvas(200));
+    $("#vector3").append(drawVector(50,75,'N',undefined,undefined,'below').drawCanvas(200));
     $("#vector4").append(drawVector(80,220,'N').drawCanvas(200));
     $("#vector5").append(drawVector(19,270 - 15,'N').drawCanvas(200));
     $("#vector6").append(drawVector(100,330,'N').drawCanvas(200));
