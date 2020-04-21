@@ -1,0 +1,203 @@
+<p>
+    In a <a href = '/pod/mechanics/two_dimensional_dynamics/ramp_problems_1'>previous pod</a>, we looked at a block on a frictionless ramp,
+    and learned the most important technique of analyze a ramp problem:
+    rotating the coordinate axis.
+    Now, we will add kinetic friction, and the problem will become more complex.
+</p>
+
+<img src = '/podAssets/mechanics/two_dimensional_dynamics/ramp_problems_2_a.png' height = '200px' width ='auto' />
+
+<br>
+<p>
+    The block above is <emph>moving</emph> down the ramp.
+    There are three forces acting on the block:
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <ul>
+                <li>
+                    gravity
+                </li>
+                <li>
+                    normal force
+                </li>
+                <li>
+                    kinetic friction
+                </li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <div id = 'fbd'></div>
+        </div>
+    </div>
+</div>
+<p>
+    Gravity and normal force were discussed extensively in a <a href = '/pod/mechanics/two_dimensional_dynamics/ramp_problems_1'>previous pod</a>.
+    Now, we will focus on <strong>kinetic friction</strong>.
+</p>
+
+<ul class="principleList">
+    <li>
+        The magnitude of kinetic friction is given by
+        \( F_{frk} = \mu_k \cdot F_N \).
+        <ul>
+            <li>
+                \( \mu_k \) is the coefficient of kinetic friction.
+            </li>
+            <li>
+                \( F_N \) is the normal force.
+            </li>
+        </ul>
+    </li>
+    <li>
+        The direction of kinetic friction is always
+        opposite the direction something is moving.
+        in this case, the block is moving <emph>down the ramp</emph>,
+        so the direction of kinetic friction is <emph>up the ramp</emph>,
+        or the -X direction.
+    </li>
+</ul>
+
+<script>
+    $("#fbd").append(fastFBD([['down','Fg'],[30,'Ffrk'],[120,'Fn']]).drawCanvas(200));
+</script>
+
+
+<ol class="questionList">
+    <li class="question">
+        <img src = '/podAssets/mechanics/two_dimensional_dynamics/ramp_problems_2_b.png' height = '200px' width ='auto' />
+        <br>
+        A mass of 5 kg is on a ramp with an angle of incline of 40 degrees.
+        The surface of the ramp and teh surface of the block
+        have a coefficient of kinetic friction of 0.18.
+        <ol class="subQuestionList">
+            <li class="subQuestion">
+                Set up a coordinate axis and draw a free-body diagram
+                of the block on that coordinate axis.
+            </li>
+            <li class="subQuestion">
+                Break necessary forces into components and fill out the following table.
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5 border border-dark">
+                            X-Forces
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary"></div>
+                        <div class="col-5 border border-dark">
+                            Y-Forces
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary">
+
+                        </div>
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force in the x-dimension acting on the block \( \Sigma F_x \).
+            </li>
+            <li class="subQuestion">
+                Determine the magnitude and direction of the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+
+    <li class="question">
+        <img src = '/podAssets/mechanics/two_dimensional_dynamics/ramp_problems_2_c.png' height = '200px' width ='auto' />
+        <br>
+        A mass of 7 kg is on a ramp with an angle of incline of 15 degrees.
+        The surface of the ramp and teh surface of the block
+        have a coefficient of kinetic friction of 0.22.
+        <ol class="subQuestionList">
+            <li class="subQuestion">
+                Set up a coordinate axis and draw a free-body diagram
+                of the block on that coordinate axis.
+            </li>
+            <li class="subQuestion">
+                Break necessary forces into components and fill out the following table.
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5 border border-dark">
+                            X-Forces
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary"></div>
+                        <div class="col-5 border border-dark">
+                            Y-Forces
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary">
+
+                        </div>
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force in the x-dimension acting on the block \( \Sigma F_x \).
+            </li>
+            <li class="subQuestion">
+                Determine the magnitude and direction of the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<ol class="answerList"></ol>
