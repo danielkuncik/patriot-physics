@@ -13,7 +13,7 @@ hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
         output = output + `<li>Name: ${user.name}</li>`;
         output = output + `<li>Section: ${section.name}</li>`;
         output = output + `<li>Level: ${overallLevel}</li>`;
-        output = output + `<li>Total Number of Quiz Attempts: ${totalAttempts}</li>`;
+        output = output + `<li>Total Number of MiniQuiz Attempts: ${totalAttempts}</li>`;
         output = output + "</ul>";
     } else {
         output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>";
@@ -424,6 +424,18 @@ hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {
         string = string + "</ul>";
     }
     return new hbs.SafeString(string);
+});
+
+hbs.registerHelper('isQuizNotPassed',(superUnitKey, unitKey, podKey, gradeMap) => {
+    if (gradeMap) {
+        if (gradeMap[superUnitKey].units[unitKey].pods[podKey].score === 20) {
+            return false
+        } else {
+            return true
+        }
+    } else {
+        return true
+    }
 });
 
 module.exports = {

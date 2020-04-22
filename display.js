@@ -253,6 +253,7 @@ display_quiz = (req, res) => {
         layout: 'quizPageLayout.hbs',
         selectedUnitClusterKey: req.params.unitClusterKey,
         selectedUnitKey: req.params.unitKey,
+        selectedPodKey: req.params.podKey,
         letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
         title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
         pod_uuid: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].uuid,
