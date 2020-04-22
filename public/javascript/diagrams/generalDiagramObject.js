@@ -1242,6 +1242,9 @@ class Diagram {
             if (centering) {
                 xTranslation = (this.xMin + this.xMax) / 2;
             }
+        } else if (whichSide === 'absolute') {
+            xTranslation = 0;
+            yTranslation = 0;
         } else {
             return false
         }
