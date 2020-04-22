@@ -89,6 +89,17 @@ const load_grades = function(req, res, next) {
     }
 };
 
+const count_all_attempts = function(req, res, next) {
+    if (req.session.student) {
+        pool.query('SELECT * FROM quiz_attempts WHERE student_id = $1',[req.session.student.id], (error, result) => {
+            req.session.totalAttempts = result.rows.length;
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
 
 const check_if_logged_in = function(req, res, next) {
     if (req.session.student) {
@@ -105,6 +116,11 @@ const check_if_logged_in = function(req, res, next) {
         req.courseLevel = req.session.courseLevel;
     } else {
         req.courseLevel = undefined;
+    }
+    if (req.session.totalAttempts) {
+        req.totalAttemps = req.session.totalAttempts;
+    } else {
+        req.totalAttemps = 0;
     }
     if (req.session.gradeMap && req.session.overallLevel) {
         req.gradeMap = req.session.gradeMap;
@@ -178,5 +194,6 @@ module.exports = {
     load_grades,
     kick_out_if_not_logged_in,
     submit_quiz,
-    look_up_quiz_attempts
+    look_up_quiz_attempts,
+    count_all_attempts
 };

@@ -3,7 +3,7 @@ const unitMap = require(__dirname + '/public/unit_map');
 const { availableContent } = require('./findAvailableContent.js');
 
 
-hbs.registerHelper('userInfo', (user, section, overallLevel) => {
+hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
     let output;
     if (overallLevel === undefined) {
         overallLevel = 0;
@@ -12,7 +12,8 @@ hbs.registerHelper('userInfo', (user, section, overallLevel) => {
         output = "<p>Logged in as:</p><ul>";
         output = output + `<li>Name: ${user.name}</li>`;
         output = output + `<li>Section: ${section.name}</li>`;
-        output = output + `<li>Level ${overallLevel}</li>`;
+        output = output + `<li>Level: ${overallLevel}</li>`;
+        output = output + `<li>Total Number of Quiz Attempts: ${totalAttempts}</li>`;
         output = output + "</ul>";
     } else {
         output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>";

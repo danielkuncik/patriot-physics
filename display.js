@@ -18,7 +18,8 @@ display_home = (req,res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        courseLevel: req.courseLevel
+        courseLevel: req.courseLevel,
+        totalAttempts: req.totalAttemps
        // flash: req.flash
     });
 };
@@ -31,7 +32,8 @@ display_login_page = (req, res) => {
             user: req.user,
             section: req.section,
             overallLevel: req.overallLevel,
-            gradeMap: req.gradeMap
+            gradeMap: req.gradeMap,
+            totalAttempts: req.totalAttemps
         });
     } else {
         res.redirect('/');
@@ -48,7 +50,8 @@ display_logout_page = (req, res) => {
             user: req.user,
             section: req.section,
             overallLevel: req.overallLevel,
-            gradeMap: req.gradeMap
+            gradeMap: req.gradeMap,
+            totalAttempts: req.totalAttemps
         });
     }
 };
@@ -61,7 +64,8 @@ display_units_entry_page = (req,res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -75,7 +79,8 @@ display_super_unit_page = (req,res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     })
 };
 
@@ -92,7 +97,8 @@ display_unit_page = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -132,7 +138,8 @@ display_pod_page = (req, res) => {
             overallLevel: req.overallLevel,
             gradeMap: req.gradeMap,
             previousAttempts: req.previousAttempts,
-            ungradedQuizzes: req.ungradedQuizzes
+            ungradedQuizzes: req.ungradedQuizzes,
+            totalAttempts: req.totalAttemps
         });
     } else if (format === 'pdf') {
         let filePath = '/content/units/' + req.params.superUnitKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
@@ -150,7 +157,8 @@ display_lab_list_page = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -161,7 +169,8 @@ display_problemSet_list_page = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -172,7 +181,8 @@ display_lab_page = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -183,7 +193,8 @@ display_problemSet_page = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -194,7 +205,8 @@ display_quiz_entry_page = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 };
 
@@ -253,7 +265,8 @@ display_quiz = (req, res) => {
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
     });
 
     // all quizzes open
