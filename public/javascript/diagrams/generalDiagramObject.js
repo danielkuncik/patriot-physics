@@ -473,6 +473,10 @@ class Diagram {
     // i added a line to prevent creating duplicates!
     // 8-25-19: Circle function was breaking because of the duplicates
     addNewPoint(x,y,name) {
+        if (x === 0 && y === 0) {
+            x = Math.random() * 1e-10;
+            y = Math.random() * 1e-10;
+        }
         let pointAlreadyExists = this.searchForPoint(x,y);
         if (pointAlreadyExists) {
             return pointAlreadyExists
@@ -487,6 +491,9 @@ class Diagram {
     }
 
     addExistingPoint(existingPoint) {
+        if (existingPoint === origin) {
+            return this.addNewPoint(0,0,'origin');
+        }
         let pointAlreadySaved = this.searchForPoint(existingPoint.x,existingPoint.y);
         if (pointAlreadySaved) {
             return pointAlreadySaved
@@ -670,7 +677,7 @@ class Diagram {
 
     addArc(centerPoint, radius, startRadians, endRadians) {
         let center = this.addExistingPoint(centerPoint);
-        let thisArc = new Arc(centerPoint, radius, startRadians, endRadians);
+        let thisArc = new Arc(center, radius, startRadians, endRadians);
         this.addExistingPoint(thisArc.rangeBox.lowerLeftPoint);
         this.addExistingPoint(thisArc.rangeBox.upperLeftPoint);
         this.addExistingPoint(thisArc.rangeBox.lowerRightPoint);
@@ -681,6 +688,7 @@ class Diagram {
 
     // the arc radius will be the radiusProportion variable times the lesser of the two rays
     labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion) {
+        /// I need to create a way to label right angles!
         if (radiusProportion === undefined) {
             radiusProportion = 0.15;
         }
@@ -705,6 +713,9 @@ class Diagram {
 
         let angleA = outsidePointA.getAngleToHorizontal();
         let angleB = outsidePointB.getAngleToHorizontal();
+        if (angleA === angleB) {
+            return false /// cannot return
+        }
         let greaterAngle, lesserAngle;
         if (angleA > angleB) {
             greaterAngle = angleA;
@@ -1183,22 +1194,59 @@ class Diagram {
       }
 
     };
+    //
+    // replaceOriginWithUniquePoint() {
+    //     let i;
+    //     for (i = 0; i < this.points.length; i++) {
+    //         if (this.points[i] === origin) {
+    //             this.points[i] = new Point(Math.random()*1e-10, Math.random()*1e-10);
+    //         }
+    //     }
+    // }
 
     // mergeWithAnotherDiagram
-    merge(anotherDiagram, whichSide, bufferSpace) {
+    merge(anotherDiagram, whichSide, bufferSpace, centering) {
+        if (bufferSpace === undefined) {
+            bufferSpace = 0;
+        }
+
+        anotherDiagram.points.forEach((point) => {
+            if (point.x === 0 && point.y === 0) {
+                point = new Point(0,0);
+            }
+        });
         this.getRange();
         anotherDiagram.getRange();
+        let xTranslation, yTranslation;
         if (whichSide === 'right') {
-            anotherDiagram.translate(this.xMax + bufferSpace, 0);
+            xTranslation = this.xMax - anotherDiagram.xMin + bufferSpace;
+            yTranslation = 0;
+            if (centering) {
+                yTranslation = (this.yMin + this.yMax) / 2;
+            }
         } else if (whichSide === 'left') {
-            anotherDiagram.translate(-1 * this.xMin - bufferSpace, 0);
+            xTranslation = -1 * this.xMin + anotherDiagram.xMax - bufferSpace;
+            yTranslation = 0;
+            if (centering) {
+                yTranslation = (this.yMin + this.yMax) / 2;
+            }
         } else if (whichSide === 'top') {
-            anotherDiagram.translate(0, this.yMax + bufferSpace);
+            xTranslation = 0;
+            yTranslation = this.yMax - anotherDiagram.yMin + bufferSpace;
+            if (centering) {
+                xTranslation = (this.xMin + this.xMax) / 2;
+            }
         } else if (whichSide === 'bottom') {
-            anotherDiagram.translate(0, -1 * this.yMax - bufferSpace);
+            xTranslation = 0;
+            yTranslation = -1 * this.yMax + anotherDiagram.yMax - bufferSpace;
+            if (centering) {
+                xTranslation = (this.xMin + this.xMax) / 2;
+            }
         } else {
             return false
         }
+        anotherDiagram.translate(xTranslation, yTranslation);
+
 
         anotherDiagram.points.forEach((point) => {this.points.push(point)});
         anotherDiagram.segments.forEach((segment) => {this.segments.push(segment)});

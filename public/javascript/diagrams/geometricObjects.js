@@ -389,6 +389,9 @@ class Arc {
         this.radius = radius;
         startRadians = simplifyAngle(startRadians); // if the angle is outside the 0 to 2 pi range, converts into that range
         endRadians = simplifyAngle(endRadians);
+        if (startRadians === endRadians) {
+            return false
+        }
         this.startRadians = startRadians;
         this.endRadians = endRadians;
         if (this.startRadians < this.endRadians) {

@@ -1,0 +1,61 @@
+<p>
+    Use vector components to <strong>add</strong>
+    the following vectors.
+</p>
+
+<ol>
+    <li>
+        Break the vectors into horizontal and vertical components.
+    </li>
+    <li>
+        Add the horizontal components.
+    </li>
+    <li>
+        Add the vertical components.
+    </li>
+    <li>
+        Now you have a horizontal component and a vertical component.
+        Convert them into magnitude-direction form. (polar form).
+    </li>
+</ol>
+
+
+<ol class="questionList">
+    <li class="question">
+        <div id = 'vectorAddition1'></div>
+    </li>
+    <li class="question">
+        <div id = 'vectorAddition2'></div>
+    </li>
+    <li class="question">
+        <div id = 'vectorAddition3'></div>
+    </li>
+    <li class="question">
+        <div id = 'vectorAddition4'></div>
+    </li>
+</ol>
+
+<script>
+    let vector_1a = drawVector(10,90,'N');
+    let vector_1b = drawVector(30,45,'N');
+  //  vector_1a.merge(plusSign(),'right',2,true);
+    vector_1a.merge(plusSign(),'right',2,true);
+    vector_1a.merge(vector_1b,'right',2,false);
+
+    // let vector_2a = drawVector(20,120,'N');
+    // let vector_2b = drawVector(40,220,'N');
+    //
+    // let vector_3a = drawVector(50,180,'N');
+    // let vector_3b = drawVector(60,80,'N');
+    //
+    // let vector_4a = drawVector(30,320,'N');
+    // let vector_4b = drawVector(40,170,'N');
+
+    // vector_1a.merge(plusSign(),'right');//.merge(vector_1b,'right');
+    // let vectorAddition2 = vector_2a.merge(plusSign(),'right').merge(vector_2b,'right');
+    // let vectorAddition3 = vector_3a.merge(plusSign(),'right').merge(vector_3b,'right');
+    // let vectorAddition4 = vector_4a.merge(plusSign(),'right').merge(vector_4b,'right');
+
+    $("#vectorAddition1").append(vector_1a.drawCanvas());
+
+</script>
