@@ -156,6 +156,7 @@ const submit_quiz = function(req, res, next) {
             if (error) {
                 throw error
             }
+            req.session.totalAttempts += 1;
             next();
         });
     }
