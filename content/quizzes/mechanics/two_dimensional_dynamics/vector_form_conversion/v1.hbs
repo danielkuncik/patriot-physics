@@ -1,0 +1,50 @@
+<p class="directions">
+    Convert each of the following vectors into component form.
+    Please show your work and represent your answer in an appropriate notation.
+</p>
+
+<ol>
+    <li>
+        <br>
+        <div id = 'vectorProblem1'></div>
+    </li>
+    <li>
+        <br>
+        <div id = 'vectorProblem2'></div>
+    </li>
+</ol>
+
+<p class="directions">
+    Convert each of the following vectors into magnitude-direction form.
+    Please show your work and represent your answer in an appropriate notation.
+</p>
+
+
+<ol start = '3'>
+    <li>
+        <br>
+        <div id = 'vectorProblem3'></div>
+    </li>
+    <li>
+        <br>
+        <div id = 'vectorProblem4'></div>
+    </li>
+</ol>
+
+
+<script>
+    let vectorProblem1 = drawVector(50,130,'N');
+    let vectorProblem2 = drawVector(40,295,'N');
+
+    let vectorProblem3 = drawVector(20,0,'N');
+    vectorProblem3.merge(drawVector(15,90,'N'),'right');
+
+    let vectorProblem4 = drawVector(60,180,'N');
+    vectorProblem4.merge(drawVector(35,270,'N'),'left');
+
+    $("#vectorProblem1").append(vectorProblem1.drawCanvas(200));
+    $("#vectorProblem2").append(vectorProblem2.drawCanvas(200));
+    $("#vectorProblem3").append(vectorProblem3.drawCanvas(200));
+    $("#vectorProblem4").append(vectorProblem4.drawCanvas(200));
+
+</script>

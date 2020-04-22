@@ -1225,7 +1225,7 @@ class Diagram {
                 yTranslation = (this.yMin + this.yMax) / 2;
             }
         } else if (whichSide === 'left') {
-            xTranslation = -1 * this.xMin + anotherDiagram.xMax - bufferSpace;
+            xTranslation = this.xMin + anotherDiagram.xMax - bufferSpace;
             yTranslation = 0;
             if (centering) {
                 yTranslation = (this.yMin + this.yMax) / 2;
@@ -1238,7 +1238,7 @@ class Diagram {
             }
         } else if (whichSide === 'bottom') {
             xTranslation = 0;
-            yTranslation = -1 * this.yMax + anotherDiagram.yMax - bufferSpace;
+            yTranslation = this.yMax + anotherDiagram.yMax - bufferSpace;
             if (centering) {
                 xTranslation = (this.xMin + this.xMax) / 2;
             }

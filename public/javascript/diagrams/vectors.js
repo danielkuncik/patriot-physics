@@ -1,6 +1,6 @@
 function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfReference, textAboveOrBelow) {
     if (referenceLine === undefined) {
-        if (directionInDegrees > 0 && directionInDegrees <= 45) {
+        if (directionInDegrees >= 0 && directionInDegrees <= 45) {
             referenceLine = '+X';
             sideOfReference = 'above';
         } else if (directionInDegrees > 45 && directionInDegrees <= 90) {
