@@ -325,3 +325,40 @@ function makeMotionMapNotMoving() {
     motionMap4.multiplyRadius(1);
     return motionMap4
 }
+
+function arrow(direction, message) {
+    let secondPoint;
+    if (direction === 'right') {
+        secondPoint = new Point(1,0);
+    } else if (direction === 'left') {
+        secondPoint = new Point(-1,0);
+    } else if (direction === 'up') {
+        secondPoint = new Point(0,1);
+    } else if (direction === 'down') {
+        secondPoint = new Point(0,-1);
+    } else {
+        return false
+    }
+    let diagram = new Diagram();
+    diagram.addArrow(origin, secondPoint);
+    if (message) {
+        diagram.labelLineAbove(origin, secondPoint,message);
+    }
+    return diagram
+}
+
+function rightArrow(message) {
+    return arrow('right',message);
+}
+
+function leftArrow(message) {
+    return arrow('left', message);
+}
+
+function upArrow(message) {
+    return arrow('up', message);
+}
+
+function downArrow(message) {
+    return arrow('down', message);
+}

@@ -1027,6 +1027,14 @@ class Diagram {
         }
         let lineWidth = relativeFontSize * spacing;
         let leftX = centerLeftPoint.x;
+
+        // get width
+        let width = 0;
+        lettersArray.forEach((line) => {
+            if (getLengthOfLetters(line, relativeFontSize) > width) {
+                width = getLengthOfLetters(line, relativeFontSize);
+            }
+        });
         let boxHeight = relativeFontSize * lettersArray.length + (spacing - 1) * relativeFontSize * (lettersArray.length - 1);
         let topY = centerLeftPoint.y + boxHeight / 2;
         let q, thisY, nextText;
@@ -1034,6 +1042,11 @@ class Diagram {
             thisY = topY - lineWidth * q;
             nextText = this.addText(lettersArray[q],new Point(leftX, thisY),relativeFontSize);
             nextText.setAlignmentAndBaseline(textAlign,'top');
+            // rework this using the new system of text alignment and baseline
+        }
+        return {
+            height: boxHeight,
+            width: width
         }
     }
 

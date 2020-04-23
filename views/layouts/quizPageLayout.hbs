@@ -42,7 +42,7 @@
 
 {{#if (isQuizNotPassed selectedUnitClusterKey selectedUnitKey selectedPodKey gradeMap)}}
     <form action = '/submitMiniquiz?uuid={{pod_uuid}}' method="post" enctype="multipart/form-data">
-    <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf'/>
+    <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
     <br>
     <p>
         Please submit a <code>.jpg</code> or <code>.png</code> file.
@@ -55,7 +55,6 @@
 <h4>
     You already passed this quiz! Yay!
 </h4>
-
 {{/if}}
 
 <div class = 'no-print'>

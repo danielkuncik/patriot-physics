@@ -1,0 +1,79 @@
+<p>
+    In two previous pods,
+    we looked at a block on a ramp
+    with <a href = '/pod/mechanics/two_dimensional_dynamics/ramp_problems_1'>no friction</a>
+    and with <a href = '/pod/mechanics/two_dimensional_dynamics/ramp_problems_2'>kinetic friction only</a>.
+    In real life, if you place something on a sloped surface,
+    you must consider both <emph>static friction</emph>
+    and <emph>kinetic friction</emph>.
+    This involves the same principles as in the pod on
+    <a href = '/pod/mechanics/quantitative_dynamics/block_dragging_3'>dragging a block
+    on a horizontal surface with static and kinetic friction</a>.
+</p>
+
+
+<h3>
+    Flowchart of a ramp problem:
+</h3>
+
+<!--
+This flowchart looks awful!
+--->
+<div class="container">
+    <div class="row">
+        <div class="col-3 border border-dark">
+            Break the force of gravity into components.
+        </div>
+        <div class="col-1">
+            <div id = 'rightArrow1'></div>
+        </div>
+        <div class="col-3 border border-dark">
+            Find the magnitude of the normal force.
+        </div>
+        <div class="col-1">
+            <div id = 'rightArrow2'></div>
+        </div>
+        <div class="col-3 border border-dark">
+            Find the <strong>maximum</strong> force
+            of static friction.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col-3 border border-dark">
+            <div id = 'downArrow2'></div>
+        </div>
+        <div class="col-1">
+            <div id = 'leftArrow'></div>
+        </div>
+        <div class="col-3 border border-dark">
+            <div id = 'downArrow1'></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            Is the x-component of gravity
+            greater than maximum static friction?
+        </div>
+        <div class="col-4">
+            <div id = 'leftArrow'></div>
+        </div>
+        <div class="col-4">
+            Find the <strong>maximum</strong>
+            force of static friction.
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#rightArrow1").append(rightArrow().drawCanvas(80));
+    $("#rightArrow2").append(rightArrow().drawCanvas(80));
+    $("#leftArrow").append(leftArrow().drawCanvas(80));
+    $("#downArrow1").append(downArrow().drawCanvas(80));
+    $("#downArrow2").append(downArrow().drawCanvas(80));
+</script>
