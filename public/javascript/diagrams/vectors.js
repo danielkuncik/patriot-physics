@@ -102,11 +102,14 @@ function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfRe
 }
 
 
-function plusSign() {
+function plusSign(size) {
+    if (size === undefined) {
+        size = 1;
+    }
     let newDiagram = new Diagram();
 
-    newDiagram.addSegment(new Point(-1,0),new Point(1,0));
-    newDiagram.addSegment(new Point(0,-1),new Point(0,1));
+    newDiagram.addSegment(new Point(-1 * size,0),new Point(size,0));
+    newDiagram.addSegment(new Point(0,-1 * size),new Point(0,size));
 
     return newDiagram
 }

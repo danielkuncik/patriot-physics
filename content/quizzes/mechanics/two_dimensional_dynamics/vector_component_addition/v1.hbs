@@ -1,0 +1,34 @@
+<p class="directions">
+    Please add the following vectors
+    and write your answer as a magnitude
+    and direction.
+    For full credit, you must write all
+    of the calculations you completed.
+</p>
+
+<ol>
+    <li class="mb-5">
+        <br>
+        <div id = 'vectorProblem1'></div>
+    </li>
+    <li class="mt-5">
+        <br>
+        <div id = 'vectorProblem2'></div>
+    </li>
+</ol>
+
+<script>
+    let vector_1a = drawVector(100,50,'N');
+    let vector_1b = drawVector(120,200,'N');
+    vector_1a.merge(plusSign(20),'right',20,true);
+    vector_1a.merge(vector_1b,'right',20,false);
+
+
+    let vector_2a = drawVector(200, 300, 'N');
+    let vector_2b = drawVector(140, 290, 'N');
+    vector_2a.merge(plusSign(20),'right',20,true);
+    vector_2a.merge(vector_2b,'right',20,false);
+
+    $("#vectorProblem1").append(vector_1a.drawCanvas());
+    $("#vectorProblem2").append(vector_2a.drawCanvas());
+</script>
