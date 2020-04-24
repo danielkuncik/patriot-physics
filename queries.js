@@ -123,7 +123,6 @@ const check_if_logged_in = function(req, res, next) {
         req.totalAttemps = 0;
     }
     if (req.session.gradeMap && req.session.overallLevel) {
-        console.log(req.session.gradeMap);
         req.gradeMap = req.session.gradeMap.map;
         req.overallLevel = req.session.overallLevel;
     } else {
