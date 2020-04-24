@@ -195,11 +195,13 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
     if (unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle) {
         title = title + `: ${unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle}`;
     }
-    let score;
+    let score, pending;
     if (gradeMap) {
         score = gradeMap[superUnitKey].units[unitKey].pods[podKey].score;
+        pending = gradeMap[superUnitKey].units[unitKey].pods[podKey].pending;
     } else {
         score = 0;
+        pending = false;
     }
     let scoreMessage;
     if (score === 0) {
@@ -208,6 +210,9 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
         scoreMessage = '-- PASSED';
     } else {
         scoreMessage = `--${score} out of 20`;
+    }
+    if (pending) {
+        scoreMessage = scoreMessage + '=> New Score Pending';
     }
     let available = availableContent[superUnitKey].units[unitKey].pods[podKey].available;
     let link = `/pod/${superUnitKey}/${unitKey}/${podKey}`;

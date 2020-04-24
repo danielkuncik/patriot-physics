@@ -80,7 +80,7 @@ const load_grades = function(req, res, next) {
             });
             newGradeMap.calculateAllUnitLevels();
             // newGradeMap.calculateGrades(req.session.courseLevel);
-            req.session.gradeMap = newGradeMap.map;
+            req.session.gradeMap = newGradeMap;
             req.session.overallLevel = newGradeMap.calculateOverallLevel();
             next();
         });
@@ -123,7 +123,8 @@ const check_if_logged_in = function(req, res, next) {
         req.totalAttemps = 0;
     }
     if (req.session.gradeMap && req.session.overallLevel) {
-        req.gradeMap = req.session.gradeMap;
+        console.log(req.session.gradeMap);
+        req.gradeMap = req.session.gradeMap.map;
         req.overallLevel = req.session.overallLevel;
     } else {
         req.gradeMap = undefined;
@@ -157,6 +158,8 @@ const submit_quiz = function(req, res, next) {
                 throw error
             }
             req.session.totalAttempts += 1;
+            //req.session.gradeMap.setQuizPending(pod_uuid); this line is not working
+            // the functions not stored in the session object, need to think of a different way
             next();
         });
     }
@@ -189,6 +192,22 @@ const look_up_quiz_attempts = function(req, res, next) {
 };
 
 
+find_pending_quizzes = function(req, res, next) {
+    if (req.session.student) {
+        const id = req.session.student.id;
+        pool.query('SELECT pod_uuid FROM quiz_attempts WHERE student_id = $1 AND score IS NULL', [req.session.student.id], (err, results) => {
+            results.rows.forEach((result) => {
+                const pod_uuid = result.pod_uuid;
+                req.session.gradeMap.setQuizPending(pod_uuid);
+            });
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
+
 module.exports = {
     check_login,
     check_if_logged_in,
@@ -196,5 +215,6 @@ module.exports = {
     kick_out_if_not_logged_in,
     submit_quiz,
     look_up_quiz_attempts,
-    count_all_attempts
+    count_all_attempts,
+    find_pending_quizzes
 };
