@@ -195,6 +195,9 @@ find_pending_quizzes = function(req, res, next) {
     if (req.session.student) {
         const id = req.session.student.id;
         pool.query('SELECT pod_uuid FROM quiz_attempts WHERE student_id = $1 AND score IS NULL', [req.session.student.id], (err, results) => {
+            if (err) {
+                throw  err
+            }
             results.rows.forEach((result) => {
                 const pod_uuid = result.pod_uuid;
                 req.session.gradeMap.setQuizPending(pod_uuid);
