@@ -54,7 +54,8 @@ class GradeMap {
                     }
                     blankMap[superUnitKey].units[unitKey].pods[podKey] = {
                         score: 0,
-                        level: level
+                        level: level,
+                        pending: false
                     }
                 });
             });
@@ -110,6 +111,13 @@ class GradeMap {
         let selectionObject = getPodKeysByUUID(pod_uuid);
         if (selectionObject) {
             this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].score = score;
+        }
+    }
+
+    setQuizPending(pod_uuid) {
+        const selectionObject = getPodKeysByUUID(pod_uuid);
+        if (selectionObject) {
+            this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].pending = true;
         }
     }
 
