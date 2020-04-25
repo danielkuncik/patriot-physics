@@ -6,27 +6,29 @@
         <br>
         <img src = '/podAssets/mechanics/two_dimensional_dynamics/ramp_problems_4.png' height = '200px' width ='auto' />
         <ol class="subQuestionList" type = 'a'>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'fbd1'>
                 Draw a free-body diagram for the block in terms
                 of \( \theta \), \( g \), and \( m \).
-                Do not break any forces into components on the free-body diagram.
+                Do not break any forces into components on the free-body diagram,
+                but represent forces that can be broken into components
+                on the side of the diagram.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '\( \Sigma F = m g \sin \left( \theta \right) \text{  down the ramp} \)'>
                 Determine the magnitude and direction of net force acting on the block
                 in terms of \( \theta \), \( g \), and \( m \).
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '\( a = g \sin \left( \theta \right) \text{  down the ramp} \)'>
                 Determine the magnitude and direction of the acceleration of the block
                 in terms of \( \theta \) and \( g \).
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'If \( \theta = 0\), then \( \sin(\theta) =0 \) and \( \cos(\theta) = 1 \); the magnitude of the normal force is \( mg \) and the net force and acceleration are both zero.'>
                 Demonstrate that if \( \theta = 0 \),
                 the free-body diagram of the box is identical
                 to that of a box on a flat surface.
                 Show that the net force and acceleration of the block
                 are zero.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'If \( \theta = 0 \), then \( \cos(\theta) =0 \) and \( \sin(\theta) = 0 \); The normal force is zero, the net force is \( mg \) straight down, and the acceleration is \( g \) downward'>
                 Demonstrate that if \( \theta = 90^{\circ} \),
                 the free-body diagram of the block is identical
                 to that of a free-body diagram in free-fall.
@@ -41,23 +43,50 @@
         The block is already moving.
         <br>
         <img src = '/podAssets/mechanics/two_dimensional_dynamics/ramp_problems_4.png' height = '200px' width ='auto' />
-    <li class="subQuestion">
-        Draw a free-body diagram for the block in terms
-        of \( \theta \), \( g \), \( m \), and \( \mu_k \).
-        Do not break any forces into components on the free-body diagram.
-    </li>
-    <li class="subQuestion">
-        Determine the magnitude and direction of net force acting on the block
-        in terms of \( \theta \), \( g \), \( m \), and \( \mu_k \).
-    </li>
-    <li class="subQuestion">
-        Determine the magnitude and direction of the acceleration of the block
-        in terms of \( \theta \), \( g \), and \( \mu_k \).
-    </li>
-    <li class="subQuestion">
-        Demonstrate that if \( \mu_k = 0 \),
-        the free-body diagram, net force, and acceleration
-        are identical to that for a block on a frictionless ramp
-        (the previous problem).
-    </li>
+    <ol class="subQuestionList">
+        <li class="subQuestion" data-answer_id = 'fbd2'>
+            Draw a free-body diagram for the block in terms
+            of \( \theta \), \( g \), \( m \), and \( \mu_k \).
+            Do not break any forces into components on the free-body diagram.
+        </li>
+        <li class="subQuestion" data-answer = '\( \left| \Sigma F \right| = \left| m g \sin \left( \theta \right) - \mu_k m g \cos (\theta) \right| \)'>
+            Determine the magnitude of net force acting on the block
+            in terms of \( \theta \), \( g \), \( m \), and \( \mu_k \).
+            Note that because this questions asks specifically for magnitude
+            and not direction, you should write your expression within absolute value signs.
+        </li>
+        <li class="subQuestion" data-answer = 'The direction of net force is down the ramp is \( \sin(\theta) > \mu_k \cos(\theta) \) but up the ramp if otherwise'>
+            The direction of the net force is actually <emph>conditional</emph>.
+            State two different possible answers for direction (in words) and the condition of each answer.
+        </li>
+        <li class="subQuestion" data-answer = 'The block is moving downward, but slowing down.'>
+            It is stated in the problem that the block is moving down the ramp.
+            What does it mean if the net force is acting up the ramp.
+        </li>
+        <li class="subQuestion" data-answer = '\( a = g \sin \left( \theta \right) - \mu_k g \cos (\theta)\ \) \text{  down the ramp}'>
+            Assuming \( \sin(\theta) > \mu_k \cos(\theta) \).
+            determine the magnitude and direction of the acceleration of the block
+            in terms of \( \theta \), \( g \), and \( \mu_k \).
+        </li>
+        <li class="subQuestion" data-answer = 'If \( \mu_k = 0 \), then the frictional force disappears, \( \Sigma F = m g \sin \left( \theta \right) \), and \( a = g \sin \left( \theta \right) \), as in the problem above.'>
+            Demonstrate that if \( \mu_k = 0 \),
+            the free-body diagram, net force, and acceleration
+            are identical to that for a block on a frictionless ramp
+            (the previous problem).
+        </li>
+    </ol>
 </ol>
+
+<ol class="answerList"></ol>
+
+
+<script>
+    let fbd1 = fastFBD([['down','mg'],[150,'mg cos(θ)']]);
+    addAnswerObject('fbd1',fbd1.drawCanvas(150));
+
+    let fbd2 = fastFBD([['down','mg'],[150,'mg cos(θ)'],[40,'μ_k mg cos(θ)']]);
+    addAnswerObject('fbd2',fbd2.drawCanvas(150));
+
+
+
+</script>

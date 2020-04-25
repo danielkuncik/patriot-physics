@@ -1,40 +1,49 @@
 <ol class="questionList">
     <li class="question">
-        A block of mass \( m \) is on a frictionless ramp with angle of incline \( \theta \).
+        A block of mass \( m \) is on a ramp with angle of incline \( \theta \).
         The surface of the ramp and the block have a coefficient of kinetic friction of \( \mu_k \)
         and a coefficient of static friction \( \mu_s \).
+        Assume \( \mu_s > \mu_k \).
         <br>
         <img src = '/podAssets/mechanics/two_dimensional_dynamics/ramp_problems_4.png' height = '200px' width ='auto' />
         <ol class="subQuestionList" type = 'a'>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '\( \sin(\theta) > \mu_s \cos(\theta) \)'>
                 Determine a condition for the block to move
                 in terms of \( g \), \( \theta \), and \( \mu_s \).
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'Yes, because if as the ramp becomes steeper, \( \sin(\theta) \) becomes greater and \( \cos(\theta) \) becomes lesser.'>
+                The formula you determined above should be intuitive.
+                Briefly examine it.
+                If the ramp is steeper, is the block more likely to move?
+                If the ramp is less steep, is the block less likely to move?
+            </li>
+            <li class="subQuestion" data-answer_id = 'fbd1'>
                 Draw a free-body diagram for the block in the case that it
                 <emph>does</emph> move in terms of
                 \( m \), \( g \), \( \theta \), and \( \mu_k \).
                 Break any necessary forces into components on the side of your free-body diagram.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'fbd2'>
                 Draw a free-body diagram for the block in the case that it
                 <emph>does not</emph> move in terms of
                 \( m \), \( g \), and \( \theta \).
                 Break any necessary forces into components on the side of your free-body diagram.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '\( \Sigma F = m g \sin(\theta) - \mu_s m g \cos(\theta) \text{  down the ramp.} \)'>
                 Determine the magnitude and direction of the net force acting
                 on the block in the case that the
                 block <emph>does</emph> move in terms of
                 \( m \), \( g \), \( \theta \), and \( \mu_k \).
+                Note that because \( \mu_s > \mu_k \), and the condition for movement must be satisfied,
+                there is only one possible direction for the net force in this case.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '\( a = g \sin(\theta) - \mu_s g \cos(\theta) \text{  down the ramp.} \)'>
                 Determine the magnitude and direction of the acceleration acting
                 on the block in the case that the
                 block <emph>does</emph> move in terms of
                 \( g \), \( \theta \), and \( \mu_k \).
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '\( \Sigma F = 0 \) and \( a = 0 \).'>
                 Briefly, state the net force and acceleration of the block
                 in the the case that the block does not move.
             </li>
@@ -45,3 +54,13 @@
         </ol>
     </li>
 </ol>
+
+<ol class="answerList"></ol>
+
+<script>
+    let fbd1 = fastFBD([['down','mg'],[150,'mg cos(θ)'],[40,'μ_k mg cos(θ)']]);
+    addAnswerObject('fbd1',fbd1.drawCanvas(150));
+
+    let fbd2 = fastFBD([['down','mg'],[150,'mg cos(θ)'],[40,'mg sin(θ)']]);
+    addAnswerObject('fbd2',fbd2.drawCanvas(150));
+</script>
