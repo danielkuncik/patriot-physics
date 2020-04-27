@@ -8618,53 +8618,53 @@
         "level": 4,
         "pods":
         {
-          "angular_momentum_concepts":
+          "rotational_conserved_quantities_1":
           {
-            "title": "Angular Momentum Concepts",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
+            "title": "Rotational Conserved Quantities 1: Formula Basics",
+            "level": 1,
+            "horizontal": 5,
+            "letter": "A",
             "prerequisites": [],
-            "objective": "Analyze real world situations using the concept of angular momentum.",
-            "uuid": "aaacb784-234b-4ed6-9d38-c6ce45933184"
+            "objective": "Use the formulas for rotational conserved quantities to solve simple numerical questions.",
+            "uuid": "c5ae8527-be7d-44cd-ab86-6270a7905f8f"
           },
           "rotational_conservation_analogies":
           {
             "title": "Rotational Conservation Analogies",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "B",
+            "prerequisites": ["rotational_conserved_quantities_1"],
             "objective": "Draw analogies between conserved quantities for linear motion and rotational motion",
             "uuid": "bea047b3-ac5e-40ac-b032-1e67b2f35100"
-          },
-          "rotational_conserved_quantities_1":
-          {
-            "title": "Rotational Conserved Quantities 1: Formula Basics",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the formulas for rotational conserved quantities to solve simple numerical questions.",
-            "uuid": "c5ae8527-be7d-44cd-ab86-6270a7905f8f"
           },
           "rotational_conserved_quantities_2":
           {
             "title": "Rotational Conserved Quantities 2: Dimensional Analysis and Proportionality",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "C",
+            "prerequisites": ["rotational_conservation_analogies"],
             "objective": "Determine the dimensions of all rotation conserved quantities using the formulas to define them; use proportionality to analyze conserved rotational quantities.",
             "uuid": "f7594bbc-0cb8-43fb-9345-d6e2664d4a82"
+          },
+          "angular_momentum_concepts":
+          {
+            "title": "Angular Momentum Concepts",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["rotational_conserved_quantities_2"],
+            "objective": "Analyze real world situations using the concept of angular momentum.",
+            "uuid": "aaacb784-234b-4ed6-9d38-c6ce45933184"
           },
           "ice_skater_spin_qualitative":
           {
             "title": "Ice Skater Spin Qualitative",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["angular_momentum_concepts"],
             "objective": "Using the formulas related to angular momentum, describe how an ice skater (or other athlete) changes her rotational speed.",
             "uuid": "afc922c0-7425-4641-be63-aaed4a2809e1"
           },
@@ -8672,9 +8672,9 @@
           {
             "title": "Spirals and Knuckleballs",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["ice_skater_spin_qualitative"],
             "objective": "Qualitatively explain the phenomena of a football thrown with a spiral and a knuckleball by referring to the conservation of angular momentum.",
             "uuid": "37a3dbe1-250f-44e9-a636-5a9e81d906cb"
           },
@@ -8682,9 +8682,9 @@
           {
             "title": "Ice Skater Spin Quantitative",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["spirals_knukleballs"],
             "objective": "Use a quantitative model to predict how much spin will change when a spinner person moves their arms",
             "uuid": "531ef485-c523-4df6-add4-5f0071b8b69f"
           },
@@ -8692,9 +8692,9 @@
           {
             "title": "Rotational Kinetic Energy on a Ramp",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["ice_skater_spin_quantitative"],
             "objective": "Describe real-world situations using the conservation of energy, including rotational kinetic energy.",
             "examples":
             [
@@ -8707,9 +8707,9 @@
           {
             "title": "Rotation and the Work-Energy Theorem",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["rotational_kinetic_energy_on_ramp"],
             "objective": "Analyze situations including rotational kinetic energy using the work-energy theorem.",
             "uuid": "34475839-f2ce-481f-81da-b18ee9d976b6"
           },
@@ -8717,9 +8717,9 @@
           {
             "title": "Rotational Kinetic Energy from Different Points of View",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "J",
+            "prerequisites": ["rotation_work_energy_theorem"],
             "objective": "Analyze situations including rotational kinetic energy using different definitions of the system and surroundings",
             "example": "A ball rolls down a ramp; analyze the types of energy in which only the ball is the system and when there is a ball-earth system.",
             "uuid": "68f089ce-47b8-4675-bfaa-334207f8bba8"
@@ -8728,9 +8728,9 @@
           {
             "title": "Reinvent the Wheel",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "K",
+            "prerequisites": ["rotational_kinetic_energy_different_points_of_view"],
             "objective": "Compare how energy changes in a block sliding down a ramp with friction and a wheel rolling down the same ramp; make a conclusion regarding the use of wheels.",
             "uuid": "879e3c1f-a8fd-47c8-bb5f-d211d385c026"
           },
@@ -8738,9 +8738,9 @@
           {
             "title": "Precession of Axes",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["reinvent_the_wheel"],
             "objective": "Use conservation of angular momentum to explain why the earth's axes precess and the consequences of this precession.",
             "uuid": "ff42006a-2248-4feb-a8b5-83269d0b2505"
           }
