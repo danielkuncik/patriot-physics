@@ -19,7 +19,7 @@ function createQuestionAndAnswerList() {
     } else {
         withLetter = true;
     }
-
+    let collectedAnswerIds = [];
     $(".questionList").each((i) => {
         thisQuestionList = $(".questionList")[i];
         $(thisQuestionList).attr('start',String(questionNumber));
@@ -46,7 +46,8 @@ function createQuestionAndAnswerList() {
                 }
 
                 // object defined in fglobally run methods at the top
-                $(`#${thisAnswerID}`).append($(answerObjects[thisAnswerID]));
+                collectedAnswerIds.push(thisAnswerID);
+//                $(`#${thisAnswerID}`).append($(answerObjects[thisAnswerID]));
             } else if ($(thisQuestion).find("ol.subQuestionList").length === 1) {//isXinArray('ol.subQuestionList', $(thisQuestion).children() )) {
                 let subQuestionList, thisSubQuestion, subAnswerList, k, thisSubAnswer, subAnswerListType;
                 subQuestionList = $(thisQuestion).find("ol.subQuestionList")[0];
@@ -57,6 +58,10 @@ function createQuestionAndAnswerList() {
                     if ($(thisSubQuestion).data()['answer'] !== undefined) {
                         thisSubAnswer = $(thisSubQuestion).data()['answer'];
                         $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
+                    } else if (($(thisSubQuestion).data()['answer_id'] !== undefined)) {
+                        let thisSubAnswerID = $(thisSubQuestion).data()['answer_id'];
+                        $(subAnswerList).append(`<li id = '${thisSubAnswerID}'>  </li>`);
+                        collectedAnswerIds.push(thisSubAnswerID);
                     } else {
                         thisSubAnswer = 'xxx';
                         $(subAnswerList).append(`<li>${thisSubAnswer}</li>`);
@@ -79,6 +84,11 @@ function createQuestionAndAnswerList() {
             }
             questionNumber += 1;
         });
+    });
+    collectedAnswerIds.forEach((answerId) => {
+        if (answerObjects[answerId]) {
+            $(`#${answerId}`).append(answerObjects[answerId]);
+        }
     });
     questionListAlreadyCreated = true;
 }
