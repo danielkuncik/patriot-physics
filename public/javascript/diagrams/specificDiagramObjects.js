@@ -435,7 +435,6 @@ class FreeBodyDiagram extends Diagram {
 
 
 
-
 class Grid extends Diagram {
     constructor(numBoxesHorizontal, numBoxesVertical, thickness, boxWidth, boxHeight) {
         if (numBoxesHorizontal === undefined) {numBoxesHorizontal = 20;}

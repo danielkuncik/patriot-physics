@@ -60,12 +60,15 @@ class RotatingRod extends Diagram {
         }
     }
 
-    checkPosition(position, type) {
+    checkPosition(position, type, message) {
+        if (message === undefined) {
+            message = '';
+        }
         if (position > 0 && position > this.distanceRight) {
-            console.log(`ERROR: position of ${type} added outside of range`);
+            console.log(`ERROR: position of ${type} added outside of range: ${message}`);
             return false
         } else if (position < 0 && Math.abs(position) > this.distanceLeft) {
-            console.log(`ERROR: position of ${type} added outside of range`);
+            console.log(`ERROR: position of ${type} added outside of range: ${message}`);
             return false
         } else {
             return true
@@ -92,7 +95,7 @@ class RotatingRod extends Diagram {
     }
 
     addMass(massPosition, massQuantity, unit, addHashBoolean) {
-        this.checkPosition(massPosition, 'mass');
+        this.checkPosition(massPosition, 'mass', `position: ${massPosition}, quantity: ${massQuantity}`);
         if (unit === undefined) {
             unit = this.defaultMassUnit;
         }
