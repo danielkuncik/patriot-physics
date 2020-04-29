@@ -2713,6 +2713,7 @@
           "atwood_machines_1":
           {
             "title": "Atwood Machines 1",
+            "subtitle": "Friciton and Extra Mass",
             "level": 2,
             "horizontal": 3,
             "letter": "D",
@@ -2793,9 +2794,10 @@
             ],
             "uuid": "0a234c59-8363-4a9e-95ca-c379841c6bd6"
           },
-          "atwood_machine_3":
+          "atwood_machines_3":
           {
-            "title": "Atwood Machine 3: Symbolic Solutions",
+            "title": "Atwood Machines 3",
+            "subtitle": "Symbolic Solutions",
             "level": 4,
             "horizontal": 3,
             "letter": "K",
