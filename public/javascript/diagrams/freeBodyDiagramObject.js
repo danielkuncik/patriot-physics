@@ -230,16 +230,38 @@ class AtwoodFreeBodyDiagram extends Diagram {
        return maxMagnitude
    }
 
-   orderForcesByMagnitude() {
-       // reorders the force array from largest to smallest magnitude, so
-       // the largest magnitude always appears largest on the diagram
+    // reorders the force array from largest to smallest magnitude, so
+    // the largest magnitude always appears largest on the diagram
+    orderForcesByMagnitude() {
+       let forceOrderArray = [];
+       let k;
+       for (k = 0; k < this.forces.length; k++) {
+           forceOrderArray.push(k);
+       }
+       let q;
+       for (q = 0; q < this.forces.length; q++) {
+           let index1 = q;
+           let index2 = q + 1;
+           while (index2 < this.forces.length && this.forces[forceOrderArray[index1]].relativeMagnitude > this.forces[forceOrderArray[index2]].relativeMagnitude) {
+               let var1 = forceOrderArray[index1];
+               let var2 = forceOrderArray[index2];
+               forceOrderArray[index1] = var2;
+               forceOrderArray[index2] = var1;
+               index1++;
+               index2++;
+           }
+       }
+       return forceOrderArray
    }
 
    drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom) {
        const maxMagnitude = this.getMaxMagnitude();
        let radius = 2;
        this.addBlackCircle(origin,1);
-       this.forces.forEach((force) => {
+       const forceOrderArray = this.orderForcesByMagnitude();
+       let q;
+       for (q = 0; q < forceOrderArray.length; q++) {
+           const force = this.forces[forceOrderArray[q]];
            const magnitude = force.relativeMagnitude / maxMagnitude * this.largestForceInDegrees;
            const startRadians = convertDegreesToRadians(90 - magnitude / 2);
            const endRadians = convertDegreesToRadians(90 + magnitude / 2);
@@ -247,10 +269,10 @@ class AtwoodFreeBodyDiagram extends Diagram {
            this.addArc(origin,radius,startRadians,endRadians);
            this.addText(force.label, new Point(0, radius + 0.5),0.5);
 
-           // i just need to add the arrowhead!
+           this.addArrowhead(constructPointWithMagnitude(radius, endRadians),convertRadiansToDegrees(endRadians),0.5,20);
 
            radius += 2;
-       });
+       }
 
        return super.drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom);
    }

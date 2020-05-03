@@ -574,8 +574,13 @@ class Diagram {
         return rectangleObject
     }
 
-    addArrowhead(point, directionInDegrees, arrowheadLength, arrowheadAngleInDegrees) {
-
+    addArrowhead(centerPoint, directionInDegrees, arrowheadLength, arrowheadAngleInDegrees) {
+        const angle1 = convertDegreesToRadians(directionInDegrees - 90 - arrowheadAngleInDegrees);
+        const angle2 = convertDegreesToRadians(directionInDegrees - 90 + arrowheadAngleInDegrees);
+        const point1 = centerPoint.translateAndReproducePolar(arrowheadLength,angle1);
+        const point2 = centerPoint.translateAndReproducePolar(arrowheadLength,angle2);
+        this.addSegment(centerPoint, point1);
+        this.addSegment(centerPoint, point2);
     }
 
     /// add arrow
