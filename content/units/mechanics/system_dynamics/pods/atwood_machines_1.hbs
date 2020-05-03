@@ -173,23 +173,36 @@
                 Draw a schematic of the Atwood Machine.
                 Label each mass.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'atwood_fbd3'>
                 Draw a qualitative free-body diagram of the Atwood Machine system.
                 This free-body diagram should have only two forces acting
                 on it, one clockwise, and the other counterclockwise.
+                Indicate which is greater.
+                <script>
+                    let atwood_fbd3 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd3.addClockwiseForce('Gravity A',4.905);
+                    atwood_fbd3.addCounterClockwiseForce('Gravity B',2.943);
+                    addAnswerObject('atwood_fbd3',atwood_fbd3.drawCanvas(150));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_4'>
                 Using a formula, make a quantitative free-body diagram
                 of the Atwood Machine system.
                 Identify which formula you use.
+                <script>
+                    let atwood_fbd_4 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_4.addClockwiseForce('4.905 N',4.905);
+                    atwood_fbd_4.addCounterClockwiseForce('2.943 N',2.943);
+                    addAnswerObject('atwood_fbd_4',atwood_fbd_4.drawCanvas(150));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '1.96 N clockwise'>
                 Determine the magnitude and direction of the
                 net force acting on the Atwood Machine system.
                 The net force will be either clockwise or
                 counterclockwise.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '0.800 kg'>
                 Determine the total mass of the Atwood Machine system.
                 To find the total mass of a system,
                 add the mass of each part of that system.
