@@ -2713,7 +2713,7 @@
           "atwood_machines_1":
           {
             "title": "Atwood Machines 1",
-            "subtitle": "Friciton and Extra Mass",
+            "subtitle": "Introduction",
             "level": 2,
             "horizontal": 3,
             "letter": "D",
@@ -2747,6 +2747,7 @@
           "atwood_machines_2":
           {
             "title": "Atwood Machines 2",
+            "subtitle": "Friction and Extra Mass",
             "level": 3,
             "horizontal": 1,
             "letter": "G",
@@ -2820,7 +2821,8 @@
           },
           "atwood_machine_4":
           {
-            "title": "Atwood Machine 4: Proportionality",
+            "title": "Atwood Machine 4",
+            "subtitle": "Proportionality",
             "level": 4,
             "horizontal": 2,
             "letter": "L",
