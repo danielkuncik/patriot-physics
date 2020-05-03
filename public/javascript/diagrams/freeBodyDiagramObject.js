@@ -230,6 +230,10 @@ class AtwoodFreeBodyDiagram extends Diagram {
        return maxMagnitude
    }
 
+   orderForcesByMagnitude() {
+       // reorders the force array from largest to smallest magnitude, so
+       // the largest magnitude always appears largest on the diagram
+   }
 
    drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom) {
        const maxMagnitude = this.getMaxMagnitude();

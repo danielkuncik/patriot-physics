@@ -408,8 +408,15 @@ class ForceTableQualitative extends Table {
         } else if (!this.notesColumn && !this.objectColumn) {
             super.writeTextInRow(1,['force','direction','agent']);
         }
-        super.writeTextInCell(0,0, 'free-body diagram');
+        //super.writeTextInCell(0,0, 'free-body diagram');
         this.currentRow = 2;
+
+        let rowProportionArray = [4,0.5];
+        let i;
+        for (i = 2; i < this.numRows; i++) {
+            rowProportionArray.push(1);
+        }
+        this.setRowProportions(rowProportionArray);
     }
 
     addForce(name,direction,agent,object,note) {
@@ -424,6 +431,10 @@ class ForceTableQualitative extends Table {
         }
 
         this.currentRow += 1;
+    }
+
+    addFreeBodyDiagram(diagram) {
+        this.addDiagramToCell(0,0,diagram);
     }
 }
 

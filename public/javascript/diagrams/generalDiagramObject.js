@@ -574,6 +574,10 @@ class Diagram {
         return rectangleObject
     }
 
+    addArrowhead(point, directionInDegrees, arrowheadLength, arrowheadAngleInDegrees) {
+
+    }
+
     /// add arrow
     // right now, it's pretty bad
     addArrow(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {

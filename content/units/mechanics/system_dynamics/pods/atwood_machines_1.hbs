@@ -62,10 +62,19 @@
                 There are four total forces acting on the system.
                 <script>
                     let force_table_1 = new ForceTableQualitative(4,true);
-                    force_table_1.addForce('gravity','counterclockwise','earth','left mass');
-                    force_table_1.addForce('gravity','clockwise','earth','right mass');
-                    force_table_1.addForce('tension','counterclockwise','right mass','left mass');
-                    force_table_1.addForce('tension','clockwise','left mass','right mass');
+                    force_table_1.addForce('gravity A','counterclockwise','earth','left mass');
+                    force_table_1.addForce('gravity B','clockwise','earth','right mass');
+                    force_table_1.addForce('tension A','counterclockwise','right mass','left mass');
+                    force_table_1.addForce('tension B','clockwise','left mass','right mass');
+
+                    let atwoodFbd1 = new AtwoodFreeBodyDiagram();
+                    atwoodFbd1.addCounterClockwiseForce('gravity A',100);
+                    atwoodFbd1.addClockwiseForce('gravity B',50);
+                    atwoodFbd1.addCounterClockwiseForce('tension A',70);
+                    atwoodFbd1.addClockwiseForce('tension B',70);
+
+                    force_table_1.addFreeBodyDiagram(atwoodFbd1);
+
                     addAnswerObject('force_table_1',force_table_1.draw(300));
                 </script>
             </li>
@@ -78,10 +87,17 @@
                 There should now be only two forces in the free-body diagram.
                 <script>
                     let force_table_2 = new ForceTableQualitative(4,true,true);
-                    force_table_2.addForce('gravity','counterclockwise','earth','left mass','external');
-                    force_table_2.addForce('gravity','clockwise','earth','right mass','external');
-                    force_table_2.addForce('tension','counterclockwise','right mass','left mass','internal');
-                    force_table_2.addForce('tension','clockwise','left mass','right mass','internal');
+                    force_table_2.addForce('gravity A','counterclockwise','earth','left mass','external');
+                    force_table_2.addForce('gravity B','clockwise','earth','right mass','external');
+                    force_table_2.addForce('tension A','counterclockwise','right mass','left mass','internal');
+                    force_table_2.addForce('tension B','clockwise','left mass','right mass','internal');
+
+                    let atwoodFbd2 = new AtwoodFreeBodyDiagram();
+                    atwoodFbd2.addCounterClockwiseForce('gravity A',100);
+                    atwoodFbd2.addClockwiseForce('gravity B',50);
+                    force_table_2.addFreeBodyDiagram(atwoodFbd2);
+
+
                     addAnswerObject('force_table_2',force_table_2.draw(300));
                 </script>
             </li>
