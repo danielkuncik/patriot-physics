@@ -140,41 +140,6 @@ function printForceAbbreviated(item) {
 //     addForce(relativeMagnitude,angle,labelAbove, labelBelow) {
 
 
-// force array is a n x 2 matrix
-// the first item of each row is the magnitude, must be a number
-// the second item of each row is the direciton, can be a number or appropriate text
-// magnitude must be a number
-function fastFBD(forceArray, velocityDirection) {
-    let myFBD = new FreeBodyDiagram();
-    let relativeMagnitude, label, direction, theta, magnitudeOrLabel;
-    forceArray.forEach((force) => {
-        direction = force[0];
-        theta = processDirectionInput(direction);
-        magnitudeOrLabel = force[1]; /// processed as a label if a string or as a magnitude if a number
-        if (typeof(magnitudeOrLabel) === 'string') { /// if it is a label
-            label = magnitudeOrLabel;
-            if (force[2]) { // can add a relative magnitude quantitiy as third element, or it will default to 1
-                relativeMagnitude = force[2];
-            } else {
-                relativeMagnitude = 1;
-            }
-        } else if (typeof(magnitudeOrLabel) === 'number') { // if it is a magnitude
-            relativeMagnitude = magnitudeOrLabel;
-            label = printForceAbbreviated(magnitudeOrLabel);
-        }
-        myFBD.addForce(relativeMagnitude, theta, label);
-    });
-    if (velocityDirection) {
-        let velocityTheta = processDirectionInput(velocityDirection);
-        myFBD.addVelocityArrow(velocityTheta); // all default values
-    }
-    return myFBD;
-}
-
-function freeFallFBD() {
-    return fastFBD([['down','gravity']]);
-}
-
 
 /// Make simple qualitative kinematic graphs
 function makePositionGraphConstantVelocity() {

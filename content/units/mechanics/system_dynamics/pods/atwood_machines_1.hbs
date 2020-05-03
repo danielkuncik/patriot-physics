@@ -253,4 +253,14 @@
 
 </ol>
 
+
+<div id = 'putItHere'></div>
+
+<script>
+    let atwoodFBD = new AtwoodFreeBodyDiagram();
+    atwoodFBD.addForce('clockwise','21');
+
+    $("#putItHere").append(atwoodFBD.drawCanvas(300));
+</script>
+
 <ol class="answerList"></ol>
