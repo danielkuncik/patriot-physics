@@ -195,6 +195,8 @@ class Table {
         if (breakBefore) {
             this.cellInfoArray[i][j].diagramBreakBefore = true;
         }
+        // automatically added with no distortion
+
     }
 
     makeFirstRowHeaders() {
@@ -480,7 +482,7 @@ class Table {
                       if (this.cellInfoArray[i][j].diagramBreakBefore) {
                           $(thisCell).append($("<br>"));
                       }
-                      $(thisCell).append(this.cellInfoArray[i][j].diagram.drawCanvas(cellWidth * 0.75, cellHeight*0.75, unit));
+                      $(thisCell).append(this.cellInfoArray[i][j].diagram.drawCanvas(cellWidth * 0.75, cellHeight*0.75, false,unit));
                   }
                   if (this.cellInfoArray[i][j].list) {
                     let newList;

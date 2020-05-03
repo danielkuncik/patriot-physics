@@ -496,6 +496,10 @@ class Diagram {
         }
         let pointAlreadySaved = this.searchForPoint(existingPoint.x,existingPoint.y);
         if (pointAlreadySaved) {
+            // allow renaming of points
+            if (pointAlreadySaved.name !== existingPoint.name) {
+                pointAlreadySaved.setName(existingPoint.name);
+            }
             return pointAlreadySaved
         } else {
             if (existingPoint.name === undefined) {
@@ -575,8 +579,16 @@ class Diagram {
     }
 
     addArrowhead(centerPoint, directionInDegrees, arrowheadLength, arrowheadAngleInDegrees) {
-        const angle1 = convertDegreesToRadians(directionInDegrees - 90 - arrowheadAngleInDegrees);
-        const angle2 = convertDegreesToRadians(directionInDegrees - 90 + arrowheadAngleInDegrees);
+        let angle1, angle2;
+        /// THIS IS A BAND AID==> need to truly test to make sure this works!
+        if (directionInDegrees >= 90) {
+            console.log('here');
+            angle1 = convertDegreesToRadians(directionInDegrees - 90 - arrowheadAngleInDegrees);
+            angle2 = convertDegreesToRadians(directionInDegrees - 90 + arrowheadAngleInDegrees);
+        } else {
+            angle1 = convertDegreesToRadians(directionInDegrees + 90 - arrowheadAngleInDegrees);
+            angle2 = convertDegreesToRadians(directionInDegrees + 90 + arrowheadAngleInDegrees);
+        }
         const point1 = centerPoint.translateAndReproducePolar(arrowheadLength,angle1);
         const point2 = centerPoint.translateAndReproducePolar(arrowheadLength,angle2);
         this.addSegment(centerPoint, point1);

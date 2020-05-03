@@ -267,9 +267,21 @@ class AtwoodFreeBodyDiagram extends Diagram {
            const endRadians = convertDegreesToRadians(90 + magnitude / 2);
 
            this.addArc(origin,radius,startRadians,endRadians);
-           this.addText(force.label, new Point(0, radius + 0.5),0.5);
+           this.addText(force.label, new Point(0, radius + 0.5),1);
 
-           this.addArrowhead(constructPointWithMagnitude(radius, endRadians),convertRadiansToDegrees(endRadians),0.5,20);
+           // if the diagram is rescaled with double factor...
+           /// this function causes the arrowhead to end up in a different location
+           // how do i permenantly attach it to the end of the arc?
+           let arrowHeadCenterPoint, arrowHeadAngle;
+           if (force.direction === 'counterclockwise') {
+               arrowHeadCenterPoint = constructPointWithMagnitude(radius, endRadians);
+               arrowHeadAngle = convertRadiansToDegrees(endRadians);
+           } else if (force.direction === 'clockwise') {
+               arrowHeadCenterPoint = constructPointWithMagnitude(radius, startRadians);
+               arrowHeadAngle = convertRadiansToDegrees(startRadians);
+           }
+           console.log(arrowHeadAngle);
+           this.addArrowhead(arrowHeadCenterPoint,arrowHeadAngle,1.5,40);
 
            radius += 2;
        }

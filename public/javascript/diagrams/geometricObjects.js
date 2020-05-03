@@ -70,9 +70,12 @@ class Point {
         this.y *= scaleFactor;
     }
 
+
     rescaleDoubleFactor(xFactor, yFactor) {
         this.x *= xFactor;
         this.y *= yFactor;
+        // doesn't work well if the diagram includes circles and arcs!
+        // and the point must be coordinated with these!
     }
 
     reflectAboutXAxis() {
@@ -467,6 +470,9 @@ class Arc {
     }
 
     rescaleDoubleFactor(xFactor, yFactor) {
+        // this.elipse = true; // can make it elliptical if i want
+        // this.xRadius= this.radius * xFactor;
+        // this.yRadius = this.radius * yFactor;
         if (xFactor <= yFactor) {
             this.radius *= xFactor;
         } else {
