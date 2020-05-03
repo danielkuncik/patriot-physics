@@ -374,18 +374,56 @@ class forceTableQuantitative2D extends Table {
 
 // qualitative force table focuses on identifying agents and causes of forces
 class ForceTableQualitative extends Table {
-    constructor(numForces, notesColumnBoolean) {
+    constructor(numForces, objectColumnBoolean, notesColumnBoolean) {
         let numRows = 2 + numForces;
         let numColumns = 3;
         if (notesColumnBoolean) {
+            numColumns += 1;
+        }
+        if (objectColumnBoolean) {
             numColumns += 1;
         }
         super(numRows, numColumns);
 
         super.mergeRight(0,0);
         super.mergeRight(0,0);
-        super.writeTextInRow(1,['force','direction','agent']);
+        if (notesColumnBoolean) {
+            this.notesColumn = true;
+            super.mergeRight(0,0);
+        } else {
+            this.notesColumn = false;
+        }
+        if (objectColumnBoolean) {
+            this.objectColumn = true;
+            super.mergeRight(0,0);
+        } else {
+            this.objectColumn = false;
+        }
+        if (this.notesColumn && this.objectColumn) {
+            super.writeTextInRow(1,['force','direction','agent','object','notes']);
+        } else if (!this.notesColumn && this.objectColumn) {
+            super.writeTextInRow(1,['force','direction','agent','object']);
+        } else if (this.notesColumn && !this.objectColumn) {
+            super.writeTextInRow(1,['force','direction','agent','notes']);
+        } else if (!this.notesColumn && !this.objectColumn) {
+            super.writeTextInRow(1,['force','direction','agent']);
+        }
         super.writeTextInCell(0,0, 'free-body diagram');
+        this.currentRow = 2;
+    }
+
+    addForce(name,direction,agent,object,note) {
+        if ((this.objectColumn && object) && (this.notesColumn && note)) {
+            super.writeTextInRow(this.currentRow,[name,direction,agent,object, note]);
+        } else if (!(this.objectColumn && object) && (this.notesColumn && note)) {
+            super.writeTextInRow(this.currentRow,[name,direction,agent, note]);
+        } else if ((this.objectColumn && object) && !(this.notesColumn && note)) {
+            super.writeTextInRow(this.currentRow,[name,direction,agent,object]);
+        } else if (!(this.objectColumn && object) && !(this.notesColumn && note)) {
+            super.writeTextInRow(this.currentRow,[name,direction,agent]);
+        }
+
+        this.currentRow += 1;
     }
 }
 

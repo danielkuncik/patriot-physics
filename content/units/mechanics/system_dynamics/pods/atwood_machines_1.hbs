@@ -15,44 +15,79 @@
         We have an Atwood machine with <emph>more mass on the left</emph>.
         We assume that the pulley is frictionless and the string is weightless.
         <ol class="subQuestionList" type = 'a'>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'fbd1'>
                 Draw a free-body diagram of
                 the mass on the LEFT.
                 Only two forces act on this mass.
                 Identify each force, and identify the agent of that force.
                 {{>two_force_fbd}}
+                <script>
+                    let fbd1 = fastFBD([['down','gravity',2],['up','tension',1.5]]);
+                    addAnswerObject('fbd1', fbd1.drawCanvas(200));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'the net force is downward; gravity is stronger than tension because this mass is greater than the other mass.'>
                 The net force acting on this mass is <strong>not zero</strong>!
                 The mass is accelerating.
                 Determine which direction, and reflect this in your free-body diagram
                 by making one of the force vectors greater.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'fbd2'>
                 Draw a free-body diagram of
                 the mass on the RIGHT.
                 Only two forces act on this mass.
                 Identify each force, and identify the agent of that force.
                 {{>two_force_fbd}}
+                <script>
+                    let fbd2 = fastFBD([['down','gravity',1],['up','tension',1.5]]);
+                    addAnswerObject('fbd2',fbd2.drawCanvas(200));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'the net force is upward; the tension force is stronger than gravity because this mass is less than the other mass'>
                 The net force acting on this mass is <strong>not zero</strong>!
                 The mass is accelerating.
                 Determine which direction, and reflect this in your free-body diagram
                 by making one of the force vectors greater.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'force_table_1'>
                 Now, we are going to consider the Atwood Machine as a system,
                 in which <emph>both masses</emph> are a part of this system.
                 The two free-body diagrams you just drew,
                 in sum total, include <emph>four forces</emph>.
-                All four of these forces act on the system, however, they don't all count!
-                Of the four forces, identify which forces are <emph>internal forces</emph>
-                and which are <emph>external forces</emph>.
+                However, because the masses are pulling against each other,
+                we are going to structure this free-body diagram a little bit
+                differently from the ordinary.
+                Do not make the forces up and down, but make them <emph>clockwise</emph>
+                or <emph>counterclockwise</emph>.
+                There are four total forces acting on the system.
+                <script>
+                    let force_table_1 = new ForceTableQualitative(4,true);
+                    force_table_1.addForce('gravity','counterclockwise','earth','left mass');
+                    force_table_1.addForce('gravity','clockwise','earth','right mass');
+                    force_table_1.addForce('tension','counterclockwise','right mass','left mass');
+                    force_table_1.addForce('tension','clockwise','left mass','right mass');
+                    addAnswerObject('force_table_1',force_table_1.draw(300));
+                </script>
             </li>
-            <li class="subQuestion">
-                Newton's Third Law states taht whenever A
-                exerts a force on B, B exerts a froce on A
+            <li class="subQuestion" data-answer_id = 'force_table_2'>
+                All of the four forces you listed above do not all count!
+                Two of them are <emph>internal forces</emph>,
+                and two are <emph>external forces</emph>.
+                An internal force is one that acts from one part of the system on a different part of the system.
+                Identify the internal forces, and then delete them from your free-body diagram!
+                There should now be only two forces in the free-body diagram.
+                <script>
+                    let force_table_2 = new ForceTableQualitative(4,true,true);
+                    force_table_2.addForce('gravity','counterclockwise','earth','left mass','external');
+                    force_table_2.addForce('gravity','clockwise','earth','right mass','external');
+                    force_table_2.addForce('tension','counterclockwise','right mass','left mass','internal');
+                    force_table_2.addForce('tension','clockwise','left mass','right mass','internal');
+                    addAnswerObject('force_table_2',force_table_2.draw(300));
+                </script>
+            </li>
+            <li class="subQuestion" data-answer = 'The two tension forces are an action-reaction force pair: the right mass exerts a force counterclockwise on the left mass; the left mass exerts a force clockwise on the right mass'>
+                Newton's Third Law states that whenever A
+                exerts a force on B, B exerts a force on A
                 with equal magnitude and opposite direction.
                 All forces come in pairs, called an "Action-Reaction Force Pair",
                 though this is something of a misnomer, because one force
@@ -60,23 +95,14 @@
                 Demonstrate that the two internal forces to the system
                 are an action-reaction force pair.
             </li>
-            <li class="subQuestion">
-                Draw a new free-body diagram for the Atwood machine system.
-                This free-body diagram should include <emph>only</emph>
-                the external froces.
-                However, it is going to be a little different than a typical free-body diagram!
-                List one of the forces as "clockwise" and the other force as "counterclockwise,"
-                based on which direction they are pulling the system.
-                Also identify the agent of each force.
-            </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'Because the left mass is greater, the force of gravity pulling counterclockwise is greater than the force of gravity pulling clockwise; this the net force is counterclockwise'>
                 The system does not have net force zero, but has a net force
                 acting on it and is accelerating.
                 Identify which of the two forces is the greater one,
                 make sure this is represented in your free-body diagram,
                 and identify the net force acting on the Atwood machine system.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'The mass of the left will accelerate downward and the mass on the right will accelerate upward.'>
                 Briefly describe what will happen to the Atwood Machine system in real life.
             </li>
         </ol>
