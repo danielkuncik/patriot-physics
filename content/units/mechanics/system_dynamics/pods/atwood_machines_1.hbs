@@ -229,9 +229,9 @@
             <li class="subQuestion" data-answer_id = 'atwood_fbd_5'>
                 Draw a qualitative free-body diagram of the Atwood Machine system.
                 <script>
-                    let atwood_fbd_5 = AtwoodFreeBodyDiagram();
-                    atwood_fbd_5.addClockwiseForce('Gravity-right force');
-                    atwood_fbd_5.addCounterClockwiseForce('Gravity-left force');
+                    let atwood_fbd_5 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_5.addClockwiseForce('Gravity-right mass',14.7);
+                    atwood_fbd_5.addCounterClockwiseForce('Gravity-left mass',21.56);
                     addAnswerObject('atwood_fbd_5',atwood_fbd_5.drawCanvas(150));
                 </script>
             </li>
@@ -239,9 +239,9 @@
                 Using a formula, make a quantitative free-body diagram
                 of the Atwood Machine system.
                 <script>
-                    let atwood_fbd_6 = AtwoodFreeBodyDiagram();
-                    atwood_fbd_6.addClockwiseForce('14.7 N');
-                    atwood_fbd_6.addCounterClockwiseForce('21.56 N');
+                    let atwood_fbd_6 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_6.addClockwiseForce('14.7 N',14.7);
+                    atwood_fbd_6.addCounterClockwiseForce('21.56 N',21.56);
                     addAnswerObject('atwood_fbd_6',atwood_fbd_6.drawCanvas(150));
                 </script>
             </li>
@@ -271,8 +271,8 @@
                 of the Atwood Machine system.
                 <script>
                     let atwood_fbd_7 = new AtwoodFreeBodyDiagram();
-                    atwood_fbd_7.addClockwiseForce('7.84 N');
-                    atwood_fbd_7.addCounterClockwiseForce('8.82 N');
+                    atwood_fbd_7.addClockwiseForce('7.84 N',7.84);
+                    atwood_fbd_7.addCounterClockwiseForce('8.82 N',8.82);
                     addAnswerObject('atwood_fbd_7',atwood_fbd_7.drawCanvas(150));
                 </script>
             </li>
@@ -289,7 +289,6 @@
             </li>
         </ol>
     </li>
-
 </ol>
 
 

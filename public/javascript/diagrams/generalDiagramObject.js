@@ -582,7 +582,6 @@ class Diagram {
         let angle1, angle2;
         /// THIS IS A BAND AID==> need to truly test to make sure this works!
         if (directionInDegrees >= 90) {
-            console.log('here');
             angle1 = convertDegreesToRadians(directionInDegrees - 90 - arrowheadAngleInDegrees);
             angle2 = convertDegreesToRadians(directionInDegrees - 90 + arrowheadAngleInDegrees);
         } else {

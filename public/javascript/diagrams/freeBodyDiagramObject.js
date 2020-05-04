@@ -254,7 +254,11 @@ class AtwoodFreeBodyDiagram extends Diagram {
        return forceOrderArray
    }
 
-   drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom) {
+   addSideFBD(forceArray) {
+       this.sideFBD = fastFBD(forceArray);
+   }
+
+   createDiagramObject() {
        const maxMagnitude = this.getMaxMagnitude();
        let radius = 2;
        this.addBlackCircle(origin,1);
@@ -271,7 +275,7 @@ class AtwoodFreeBodyDiagram extends Diagram {
 
            // if the diagram is rescaled with double factor...
            /// this function causes the arrowhead to end up in a different location
-           // how do i permenantly attach it to the end of the arc?
+           // how do i permnantly attach it to the end of the arc?
            let arrowHeadCenterPoint, arrowHeadAngle;
            if (force.direction === 'counterclockwise') {
                arrowHeadCenterPoint = constructPointWithMagnitude(radius, endRadians);
@@ -280,12 +284,19 @@ class AtwoodFreeBodyDiagram extends Diagram {
                arrowHeadCenterPoint = constructPointWithMagnitude(radius, startRadians);
                arrowHeadAngle = convertRadiansToDegrees(startRadians);
            }
-           console.log(arrowHeadAngle);
            this.addArrowhead(arrowHeadCenterPoint,arrowHeadAngle,1.5,40);
 
            radius += 2;
        }
+       if (this.sideFBD) {
+           this.sideFBD.createDiagramObject();
+           this.sideFBD.rescaleSingleFactor(1.5 * this.forces.length);
+           this.merge(this.sideFBD, 'right',2, true);
+       }
+   }
 
+   drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom) {
+       this.createDiagramObject();
        return super.drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom);
    }
 
