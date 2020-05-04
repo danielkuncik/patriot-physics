@@ -226,18 +226,30 @@
                 Draw a schematic of the Atwood Machine.
                 Label each mass.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_5'>
                 Draw a qualitative free-body diagram of the Atwood Machine system.
+                <script>
+                    let atwood_fbd_5 = AtwoodFreeBodyDiagram();
+                    atwood_fbd_5.addClockwiseForce('Gravity-right force');
+                    atwood_fbd_5.addCounterClockwiseForce('Gravity-left force');
+                    addAnswerObject('atwood_fbd_5',atwood_fbd_5.drawCanvas(150));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_6'>
                 Using a formula, make a quantitative free-body diagram
                 of the Atwood Machine system.
+                <script>
+                    let atwood_fbd_6 = AtwoodFreeBodyDiagram();
+                    atwood_fbd_6.addClockwiseForce('14.7 N');
+                    atwood_fbd_6.addCounterClockwiseForce('21.56 N');
+                    addAnswerObject('atwood_fbd_6',atwood_fbd_6.drawCanvas(150));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '6.86 N clockwise'>
                 Determine the magnitude and direction of the
                 net force acting on the Atwood Machine system.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '3.7 kg'>
                 Determine the total mass of the Atwood Machine system.
             </li>
             <li class="subQuestion" data-answer = '1.85 m/s/s clockwise'>
@@ -254,25 +266,24 @@
         <br>
         Mass 2 = 0.800 kg [is on the right side]
         <ol class="subQuestionList" type = 'a'>
-            <li class="subQuestion">
-                Draw a schematic of the Atwood Machine.
-                Label each mass.
-            </li>
-            <li class="subQuestion">
-                Draw a qualitative free-body diagram of the Atwood Machine system.
-            </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_7'>
                 Using a formula, make a quantitative free-body diagram
                 of the Atwood Machine system.
+                <script>
+                    let atwood_fbd_7 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_7.addClockwiseForce('7.84 N');
+                    atwood_fbd_7.addCounterClockwiseForce('8.82 N');
+                    addAnswerObject('atwood_fbd_7',atwood_fbd_7.drawCanvas(150));
+                </script>
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '0.98 N counterclockwise'>
                 Determine the magnitude and direction of the
                 net force acting on the Atwood Machine system.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = '1.7 kg'>
                 Determine the total mass of the Atwood Machine system.
             </li>
-            <li class="subQuestion" data-answer = '0.576 m/s/s clockwise'>
+            <li class="subQuestion" data-answer = '0.576 m/s/s counterclockwise'>
                 Determine the magnitude and direction of the
                 acceleration of the Atwood Machine system.
             </li>
