@@ -7100,9 +7100,9 @@
         ],
         "pods":
         {
-          "where_are_molecules_faster":
+          "moving_molecules_1":
           {
-            "title": "Where are the molecules faster?",
+            "title": "Moving Molecules 1",
             "level": 1,
             "horizontal": null,
             "letter": "",
@@ -7119,7 +7119,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize how molecules move differently within different states of matter.",
-            "content": "All matter is made of moving molecules; molecules only virbarte in solids; molecules slip and slide in liquids; molecules move freely in a gas.",
+            "content": "All matter is made of moving molecules; molecules only vibrate in solids; molecules slip and slide in liquids; molecules move freely in a gas.",
             "uuid": "7369b3cb-3f5f-4e0c-8d48-83298f36c1d0"
           },
           "conduction_convection_radiation_1":
@@ -7133,17 +7133,6 @@
             "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
             "uuid": "df4b4438-84dd-4839-8cca-7eff718fa286"
           },
-          "conduction_convection_radiation_2":
-          {
-            "title": "Conduction, Convection, and Radiation 2",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation (but harder)",
-            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
-            "uuid": "097db657-4581-4d11-8309-aededcbf011c"
-          },
           "air_composition":
           {
             "title": "Air Composition",
@@ -7155,40 +7144,27 @@
             "content": "The air is composed of nitrogen, oxygen, carbon dioxide, water vapor, and argon",
             "uuid": "a73a7827-1b5d-4f88-bfa7-0e7c84cd5b0a"
           },
-          "air_pressure":
+          "moving_molecules_2":
           {
-            "title": "Air Pressure",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Define air pressure, give examples of how air pressure applies, explain why humans do not feel air pressure, define atmospheric pressure.",
-            "content": "Humans and all other objects are constantly bombarded by air molcules surrounding them, but do not feel it becuas it strikes every side of them equally.",
-            "uuid": "40b0fa11-3dfa-4d59-ad89-c93fc72a9d35"
-          },
-          "where_molecules_are_faster_2":
-          {
-            "title": "Where are the molecules faster 2",
+            "title": "Moving Molecules 2",
+            "subtitle": "Applications",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Describe where molecules move faster and give consequences of this; define temperature as average kinetic energy of molecules",
-            "idea": "Incorporate some of the level 1 quizzes into this.",
-            "content": "Temperature is the average kinetic energy of the molecules in an object; molecules that are warmer move faster, and this creates effects we can see, such as changes in the size of a balloon in different temperatures.",
-            "uuid": "3eab6b4c-52d5-472d-bf69-e534a741d32c"
-          },
-          "define_temperature":
-          {
-            "title": "Define Temperature",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Define temperature as the average kinetic energy of molecules.",
-            "content": "Temperature is defined as the average kinetic energy of the molecules an an object (and/or a quantity that is equal when two objects are in thermal equilibrium).",
-            "thought": "Need this single topic stand on its own, or can it be absorbed into another pod...it could be a memorizing pod like memorizing the conservation of energy in unit 110",
-            "uuid": "b23ac452-c171-4413-9374-d8679c9afaf1"
+            "objective": "Recognize and describe applications of molecules moving faster and slower",
+            "content": "Molecules move faster in objects with higher temperature and slower in objects with lower temperature; this fact produces observable results in the macroscopic world.",
+            "thought": "This doesn't stand well on its own, it shoudl be incorporated into another pod",
+            "examples":
+            [
+              "Food coloring spreads faster in hot water",
+              "Smells spread faster in hot air.",
+              "Apply to thermal expansion",
+              "Apply to basic gas laws",
+              "trash smells worse in the summer than the winter"
+            ],
+            "thought": "Is this identical to where are molecules moving faster 2?",
+            "uuid": "5980e1fd-920c-4388-9511-1864f7edc000"
           },
           "states_of_matter_2":
           {
@@ -7197,28 +7173,53 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Describe and draw diagrams showing how molecules move within each state of matter.",
+            "objective": "Describe and draw diagrams showing how molecules move within each state of matter; and use the terms microscopic and macroscopic",
             "content": "The macroscopic behavior of solids, liquids, and gasses can be correlated to the microscopic behavior of their atoms.",
             "uuid": "bb51aaf8-4019-4b30-b451-0f323235e47e"
           },
-          "kinetic_theory_applications":
+          "define_temperature":
           {
-            "title": "Kinetic Theory Applications",
+            "title": "Define Temperature",
             "level": 2,
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Recognize and describe applications of the kinetic theory of matter",
-            "content": "Molecules move faster in objects with higher temperature and slower in objects with lower temperature; this fact produces observable results in the macroscopic world.",
-            "examples":
-            [
-              "Food coloring spreads faster in hot water",
-              "Smells spread faster in hot air.",
-              "Apply to thermal expansion",
-              "Apply to basic gas laws"
-            ],
-            "thought": "Is this identical to where are molecules moving faster 2?",
-            "uuid": "5980e1fd-920c-4388-9511-1864f7edc000"
+            "objective": "Define temperature as the average kinetic energy of molecules; define the kinetic theory of matter",
+            "content": "Temperature is defined as the average kinetic energy of the molecules an an object (and/or a quantity that is equal when two objects are in thermal equilibrium); the kinetic theory of matter states that all matter is composed of moving molcules",
+            "uuid": "b23ac452-c171-4413-9374-d8679c9afaf1"
+          },
+          "conduction_convection_radiation_2":
+          {
+            "title": "Conduction, Convection, and Radiation 2",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation (but harder)",
+            "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
+            "uuid": "097db657-4581-4d11-8309-aededcbf011c"
+          },
+          "thermal_expansion":
+          {
+            "title": "Thermal Expansion",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Describe, on both a microscopic and macroscopic level, why and how thermal expansion and contraction occur in solids, liquids, and gasses.",
+            "content": "When temperature increases, molecules move faster and solids and liquids exapnd; when temperature decreases, molecuels move slower and solids and liquids contract.",
+            "uuid": "3eab6b4c-52d5-472d-bf69-e534a741d32c"
+          },
+          "air_pressure":
+          {
+            "title": "Air Pressure",
+            "level": 2,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Define air pressure, give examples of how air pressure applies, explain why humans do not feel air pressure, define atmospheric pressure.",
+            "content": "Humans and all other objects are constantly bombarded by air molcules surrounding them, but do not feel it becuas it strikes every side of them equally.",
+            "uuid": "40b0fa11-3dfa-4d59-ad89-c93fc72a9d35"
           },
           "entropy_1":
           {
