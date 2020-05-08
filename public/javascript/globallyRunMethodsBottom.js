@@ -108,6 +108,14 @@ $(".directions").prepend($("<strong>Directions: </strong>"));
 $(".imageCredit").prepend($("<span>Image Credit: </span>"));
 
 
+$(".definition").each((i) => {
+    let thisDefinition = $(".definition")[i];
+    if ($(thisDefinition).data()['word']) {
+        let word = $(thisDefinition).data()['word'];
+        $(thisDefinition).prepend(`<strong>${word}</strong><br><br>`);
+    }
+});
+
 
 // automatically places a box to sovle formula problems in any <div class = 'formulaBoxDiv'>
 // let myFormulaBox = new formulaBox();

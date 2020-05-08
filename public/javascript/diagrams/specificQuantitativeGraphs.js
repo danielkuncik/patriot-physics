@@ -211,3 +211,41 @@ class ElectricPotentialGraph {
     // the next major steps are to try to make branches and to add current measurements to the bottom row!
 
 }
+
+
+class HeatGraphs extends QuantitativeGraph() {
+    constructor(minTemp, maxTemp, qualitativeOrQuantitative, desiredAspectRatio, temperatureScale, maxHeatAdded) {
+        if (temperatureScale === undefined) {
+            temperatureScale = 'celsius';
+        }
+        if (desiredAspectRatio === undefined) {
+            desiredAspectRatio = 0.5;
+        }
+        let yLabel, xLabel, xMax;
+
+        if (temperatureScale === 'celsius') {
+            yLabel = 'Temperature (&#176;C)';
+        } else if (temperatureScale === 'kelvin') {
+            yLabel = 'Temperature (K)';
+        }
+        if (qualitativeOrQuantitative === 'qualitative') {
+            xLabel = 'Heat Added';
+            xMax = 1;
+        } else if (qualitativeOrQuantitative === 'quantitative') {
+            xLabel = 'Heat Added (J)';
+            xMax = maxHeatAdded;
+        }
+
+        super(0,xMax,minTemp,maxTemp,desiredAspectRatio);
+        super.labelAxes(xLabel, yLabel);
+    }
+
+
+    setHeatCapacity() {
+
+    }
+
+    setMass() {
+
+    }
+}
