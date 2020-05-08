@@ -7104,8 +7104,8 @@
           {
             "title": "Moving Molecules 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Recognize where molecules move faster between different options.",
             "content": "When an object is warmer, the molecules that make up that object move faster.",
@@ -7115,9 +7115,9 @@
           {
             "title": "States of Matter 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["moving_molecules_1"],
             "objective": "Recognize how molecules move differently within different states of matter.",
             "content": "All matter is made of moving molecules; molecules only vibrate in solids; molecules slip and slide in liquids; molecules move freely in a gas.",
             "uuid": "7369b3cb-3f5f-4e0c-8d48-83298f36c1d0"
@@ -7126,9 +7126,9 @@
           {
             "title": "Conduction, Convection, and Radiation 1",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["states_of_matter_1"],
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation",
             "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
             "uuid": "df4b4438-84dd-4839-8cca-7eff718fa286"
@@ -7137,9 +7137,9 @@
           {
             "title": "Air Composition",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["conduction_convection_radiation_1"],
             "objective": "Define what chemicals compose the air",
             "content": "The air is composed of nitrogen, oxygen, carbon dioxide, water vapor, and argon",
             "uuid": "a73a7827-1b5d-4f88-bfa7-0e7c84cd5b0a"
@@ -7149,12 +7149,11 @@
             "title": "Moving Molecules 2",
             "subtitle": "Applications",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["air_composition"],
             "objective": "Recognize and describe applications of molecules moving faster and slower",
             "content": "Molecules move faster in objects with higher temperature and slower in objects with lower temperature; this fact produces observable results in the macroscopic world.",
-            "thought": "This doesn't stand well on its own, it shoudl be incorporated into another pod",
             "examples":
             [
               "Food coloring spreads faster in hot water",
@@ -7163,16 +7162,15 @@
               "Apply to basic gas laws",
               "trash smells worse in the summer than the winter"
             ],
-            "thought": "Is this identical to where are molecules moving faster 2?",
             "uuid": "5980e1fd-920c-4388-9511-1864f7edc000"
           },
           "states_of_matter_2":
           {
             "title": "States of Matter 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["moving_molecules_2"],
             "objective": "Describe and draw diagrams showing how molecules move within each state of matter; and use the terms microscopic and macroscopic",
             "content": "The macroscopic behavior of solids, liquids, and gasses can be correlated to the microscopic behavior of their atoms.",
             "uuid": "bb51aaf8-4019-4b30-b451-0f323235e47e"
@@ -7181,9 +7179,9 @@
           {
             "title": "Define Temperature",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["states_of_matter_2"],
             "objective": "Define temperature as the average kinetic energy of molecules; define the kinetic theory of matter",
             "content": "Temperature is defined as the average kinetic energy of the molecules an an object (and/or a quantity that is equal when two objects are in thermal equilibrium); the kinetic theory of matter states that all matter is composed of moving molcules",
             "uuid": "b23ac452-c171-4413-9374-d8679c9afaf1"
@@ -7192,9 +7190,9 @@
           {
             "title": "Conduction, Convection, and Radiation 2",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["define_temperature"],
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation (but harder)",
             "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
             "uuid": "097db657-4581-4d11-8309-aededcbf011c"
@@ -7203,9 +7201,9 @@
           {
             "title": "Thermal Expansion",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["conduction_convection_radiation_2"],
             "objective": "Describe, on both a microscopic and macroscopic level, why and how thermal expansion and contraction occur in solids, liquids, and gasses.",
             "content": "When temperature increases, molecules move faster and solids and liquids exapnd; when temperature decreases, molecuels move slower and solids and liquids contract.",
             "uuid": "3eab6b4c-52d5-472d-bf69-e534a741d32c"
@@ -7214,9 +7212,9 @@
           {
             "title": "Air Pressure",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "J",
+            "prerequisites": ["thermal_expansion"],
             "objective": "Define air pressure, give examples of how air pressure applies, explain why humans do not feel air pressure, define atmospheric pressure.",
             "content": "Humans and all other objects are constantly bombarded by air molcules surrounding them, but do not feel it becuas it strikes every side of them equally.",
             "uuid": "40b0fa11-3dfa-4d59-ad89-c93fc72a9d35"
@@ -7225,9 +7223,9 @@
           {
             "title": "Entropy 1",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": -1,
+            "letter": "K",
+            "prerequisites": ["air_pressure"],
             "objective": "Define entropy, give examples of high and low entropy, and state the second law of thermodynamics.",
             "content": "Entropy is the degree of randomness in a system; the second law of thermodynamics states that the entropy of the universe is always increasing.",
             "uuid": "51fca915-5ca8-4738-bb6b-4e80c000d31b"
@@ -7236,9 +7234,9 @@
           {
             "title": "Entropy 2",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 0,
+            "letter": "L",
+            "prerequisites": ["entropy_1"],
             "objective": "Draw how energy changes qualitative as an object moves (learned in another unit), relate these results to the second law of thermodynamics",
             "content": "If a physicist traces the conservation of energy in a process, it frequently ends with thermal energy; thermal energy is the random, not directed, motion of molecules; thermal energy represents the most random motion of energy",
             "examples": [
@@ -7247,46 +7245,35 @@
             ],
             "uuid": "4ca233a9-7920-49ae-90b8-68bef20e16ae"
           },
-          "define_kinetic_theory":
-          {
-            "title": "Define the Kinetic Theory of Matter",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Define the kinetic theory of matter; relate to changes in temperature",
-            "content": "The kinetic theory of matter states that matter is made of particles that are always in motion; temperature reflects the average kinetic energy of these molecules in motion.",
-            "uuid": "95ff5fee-293b-4c65-b0b7-0e20bf91118f"
-          },
           "changes_of_state":
           {
             "title": "Changes of state",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["entropy_2"],
             "objective": "Explain what occurs on a molecular level during a change of state; explain why temperature does not change during a change of state",
-            "content": "When an object changes state, loose bonds between molecules either form or break; the moelcuels do not speed up or slow down.",
+            "content": "When an object changes state, loose bonds between molecules either form or break; the molecules do not speed up or slow down.",
             "uuid": "ca94dbd5-29e4-4f67-a362-aabf45c3ed05"
           },
-          "conduction_zeroth_law":
+          "conduction_thermal_equilibrium":
           {
-            "title": "Conduction and the Zeroth Law",
+            "title": "Conduction and Thermal Equilibrium",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Relate heat transfer by conduction to the zeroth law of thermodynamics, kinetic theory, and the mechanics of collisions",
-            "content": "The zeroth law of thermodynamics states that heat energy does not transfer between two objcets of equal temperature; during heat conduction energy kinetic transfers through collisions until temperatures are equal.",
+            "horizontal": 2,
+            "letter": "N",
+            "prerequisites": ["changes_of_state"],
+            "objective": "Relate heat transfer by conduction to the rules of heat transfer, kinetic theory, and the mechanics of collisions",
+            "content": "Heat energy transfers from a warmer object to a cooler one until they have the same temperature; during heat conduction energy kinetic transfers through collisions until temperatures are equal.",
             "uuid": "7128ff9b-e846-4e89-8777-0f9d83f75710"
           },
           "evaporation":
           {
             "title": "Evaporation",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "O",
+            "prerequisites": ["conduction_thermal_equilibrium"],
             "objective": "Contrast evaporation and boiling; explain how water cools due to evaporation; explain evaporation in open and closed containers.",
             "content": "Evaporation cools water because faster moving water molecules leave the water due to evaporation; liquids are frequently cooler than their environments and do not reach thermal equilibrium; liquids in sealed containers can reach thermal equilibrium.",
             "uuid": "8f6fc533-ccf8-40d9-91ed-f38294e85746"
@@ -7295,9 +7282,9 @@
           {
             "title": "Advanced Convection and Radiation",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "P",
+            "prerequisites": ["evaporation"],
             "objective": "Relate heat radiation to our knowledge of electromagnetic waves",
             "content": "All electromagnetic waves, but particularly infrared waves, transfer heat from one object to another.",
             "uuid": "1238fc80-6a2d-4320-ab0b-dc861ca83062"
@@ -7306,9 +7293,9 @@
           {
             "title": "Entropy 3",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "Q",
+            "prerequisites": ["advanced_convection_and_radiation"],
             "objective": "Compare random and non-random motion of molecules; (describe entropy change in common examples of energy transfer) -> already in entropy 2",
             "content": "When an object moves its molecules move, but not randomly; but the random motion represents the heat energy.",
             "uuid": "4f41acd6-6487-453c-ad30-94fa99c4ff1b"
@@ -7317,9 +7304,9 @@
           {
             "title": "Brownian Motion",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "R",
+            "prerequisites": ["entropy_3"],
             "objective": "Describe how molecules appear to be moving by not traveling in a random walk model.",
             "content": "Brownian motion is a more precise, mathematical way of analyzing molecuels random motion.",
             "uuid": "2180e67a-bae2-4812-9492-90187900fb29"
@@ -7328,9 +7315,9 @@
           {
             "title": "Entropy and Probability",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "S",
+            "prerequisites": ["brownian_motion"],
             "objective": "Relate common processes to probability theory",
             "content": "Principles of entropy follow when a physicist assumes that molecules move according to laws of probability.",
             "examples":
