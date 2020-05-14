@@ -116,6 +116,14 @@ $(".definition").each((i) => {
     }
 });
 
+// $(".principleList").each((i) => {
+//     let thisDefinition = $(".principleList")[i];
+//     if ($(thisDefinition).data()['word']) {
+//         let word = $(thisDefinition).data()['word'];
+//         $(thisDefinition).prepend(`<strong>${word}</strong><br><br>`);
+//     }
+// });
+
 
 // automatically places a box to sovle formula problems in any <div class = 'formulaBoxDiv'>
 // let myFormulaBox = new formulaBox();
