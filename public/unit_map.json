@@ -10,11 +10,7 @@
       {
         "title": "Algebra",
         "number": 1,
-        "level": 1,
         "uuid": "11d40c9a-642b-4f3c-8c51-36d8cec33049",
-        "completed": true,
-        "AP": true,
-        "honors": false,
         "pods":
         {
           "numeric_algebra_1":
@@ -80,11 +76,7 @@
       {
         "title": "Geometry",
         "number": 2,
-        "level": 1,
         "uuid": "c8d43915-52f0-4865-b1bd-3ba8459ce954",
-        "completed": true,
-        "AP": true,
-        "honors": false,
         "pods":
         {
           "trigonometry_1":
@@ -242,12 +234,8 @@
       "scientific_notation":
       {
         "title": "Scientific Notation and Orders of Magnitude",
-        "level": 1,
         "number": 3,
         "uuid": "d7d911e5-d316-419f-a4a0-5e0c2b80c7b4",
-        "completed": true,
-        "AP": true,
-        "honors": true,
         "pods":
         {
           "powers_of_ten":
@@ -422,12 +410,8 @@
       "dimensional_analysis":
       {
         "title": "Unit Conversion and Dimensional Analysis",
-        "level": 1,
         "number": 4,
         "uuid": "d4334f89-1229-4886-a6f7-fe789f3142b7",
-        "completed": true,
-        "AP": true,
-        "honors": true,
         "pods": {
           "conversion_factors_1":
           {
@@ -601,12 +585,8 @@
       "error_approximation":
       {
         "title": "Error Approximation and Significant Figures",
-        "level": 2,
         "number": 5,
         "uuid": "9439763f-f7ec-467d-ad2f-22314af0d955",
-        "completed": true,
-        "AP": true,
-        "honors": false,
         "pods":
         {
           "rounding":
@@ -721,12 +701,8 @@
       "proportionality":
       {
         "title": "Proportionality",
-        "completed": true,
         "number": 6,
         "uuid": "0b18ea88-441c-42fc-9eab-738145ceed09",
-        "AP": true,
-        "honors": true,
-        "A_level": false,
         "pods":
         {
           "numeric_proportionality_1":
@@ -814,12 +790,8 @@
       {
         "title": "Representing Functions",
         "vision": "Connect equations, graphs, and written descriptions of common functions",
-        "completed": true,
         "number": 7,
         "uuid": "a9b28ea1-8f07-4a5c-af88-0e0582189dd6",
-        "AP": true,
-        "honors": false,
-        "level": 2,
         "note": "All functions in this section will be represented by f(x) = ___, not by y = _____",
         "pods":
         {
@@ -969,12 +941,7 @@
       {
         "title": "Calculus Concepts",
         "level": 2,
-        "number": 8,
         "uuid": "c395ca34-95de-451c-871d-9bf4cd2b18a6",
-        "completed": true,
-        "AP": true,
-        "honors": false,
-        "A_level": false,
         "pods":
         {
           "finding_slope_1":
@@ -1137,12 +1104,7 @@
       {
         "title": "Calculus Operations",
         "level": 3,
-        "number": 9,
         "uuid": "3c69af31-35f8-4f37-af92-cffbcf972a3c",
-        "AP": false,
-        "honors": false,
-        "A_level": false,
-        "completed": null,
         "pods":
         {
           "differentiation_1":
@@ -1277,13 +1239,11 @@
           }
         }
       },
-      "back_of_envelp_calc":
+      "back_of_envelope_calculations":
       {
         "title": "Back of the Envelope Calculations",
-        "level": 2,
         "number": 10,
         "uuid": "f04c40cb-e526-4f4f-9aeb-cd5cb099e84d",
-        "completed": null,
         "enduring_understandings":
         [
           "When presented with some novel sitaution or problem,",
@@ -1342,9 +1302,12 @@
         "title": "Forward Kinematics Qualitative",
         "number": 1,
         "uuid": "2fb4c9a5-1966-4731-a9b5-9ff2ac63e99d",
-        "completed": false,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "position_graphs_motion_maps":
@@ -1496,17 +1459,19 @@
       "forward_kinematics_quantitative":
       {
         "title": "Forward Kinematics Quantitative",
-        "level": 1,
         "number": 2,
         "uuid": "24d4cf0c-eb66-4ec4-93e0-be8ccc175e34",
-        "completed": true,
-        "AP": true,
-        "honors": true,
         "enduring_understandings":
         [
           "Quantitative modeling of motion is at the core of physics.",
           "Creating mathematical graphs, equations, and functions that accurately describe how an object moves."
         ],
+        "standards":
+        {
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "speed_formula":
@@ -1732,11 +1697,14 @@
       "forward_and_backward_kinematics_qualitative":
       {
         "title": "Forward and Backwards Kinematics Qualitative",
-        "completed": false,
         "number": 3,
         "uuid": "149a4d0b-2417-4be1-a9fd-4130bf75322c",
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "position_graphs_2":
@@ -1893,11 +1861,14 @@
       "forward_and_backward_kinematics_quantitative":
       {
         "title": "Forward and Backwards Kinematics Quantitative",
-        "completed": false,
         "number": 4,
         "uuid": "88e0caed-d0db-451c-be13-d70fbb908d15",
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods" :
         {
           "very_basic_vectors_scalars":
@@ -2099,12 +2070,14 @@
       "identifying_forces":
       {
         "title": "Identifying Forces (Newton's Third Law)",
-        "level": 1,
         "number": 5,
         "uuid": "3d6c50c2-ad40-4c4e-bd5c-01e85e189923",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "newtons_third_law_1":
@@ -2254,12 +2227,14 @@
       "quantitative_dynamics":
       {
         "title": "Quantitative Dynamics (Newton's Second Law)",
-        "level": 1,
         "number": 6,
         "uuid": "330a7cbc-220b-4274-a775-db2f246d5de0",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "finding_net_force":
@@ -2471,13 +2446,15 @@
       "vector_force_analysis":
       {
         "title": "Vector Force Analysis (Newton's First Law)",
-        "level": 1,
         "number": 7,
         "uuid": "fca3f55a-1d59-4895-9500-776d09692cc8",
         "essential_questions": "When, how, and why do items move?",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "inertia_newtons_first_law":
@@ -2669,12 +2646,14 @@
       "system_dynamics":
       {
         "title": "System Dynamics",
-        "completed": true,
-        "AP": true,
         "number": 8,
         "uuid": "ff4fe055-7c5c-4dfe-979d-f4fb62b47e76",
-        "honors": false,
-        "level": 2,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "what_is_system":
@@ -2869,11 +2848,13 @@
       "relative_velocity":
       {
         "title": "Relative Velocity",
-        "completed": true,
-        "number": 9,
         "uuid": "73dfac86-91a4-4d68-8edc-ff5c04da3690",
-        "AP": true,
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "galilean_relativity_1":
@@ -2983,12 +2964,14 @@
       "conservation_of_energy_quantitative":
       {
         "title": "Conservation of Energy Quantitative",
-        "level": 1,
         "number": 10,
         "uuid": "302cfa26-138e-4545-a10e-cec109f637b6",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "energy_table_1":
@@ -3204,12 +3187,14 @@
       "work_and_power":
       {
         "title": "Work and Power",
-        "completed": true,
         "number": 11,
         "uuid": "45382793-f6b8-4f91-ba03-ceca0a60fb9a",
-        "AP": true,
-        "honors": false,
-        "level": 2,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "work_formula":
@@ -3402,12 +3387,14 @@
       "projectile_motion":
       {
         "title": "Projectile Motion",
-        "level": 3,
         "number": 12,
         "uuid": "d4ae16df-49db-4e68-98e7-e0208c0273cd",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "three_types_motion":
@@ -3650,11 +3637,14 @@
       "two_dimensional_dynamics":
       {
         "title": "Two-Dimensional Dynamics",
-        "completed": true,
         "number": 13,
         "uuid": "969e1743-ca8f-4a2d-9fa4-c5a6b87d619b",
-        "AP": true,
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "vector_form_conversion":
@@ -3838,12 +3828,14 @@
       "collisions_and_explosions":
       {
         "title": "Collisions and Explosions",
-        "level": 1,
         "number": 14,
         "uuid": "c3a0a725-9774-4afa-bdc0-c6773f6d8d5f",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "momentum_formula":
@@ -4021,11 +4013,14 @@
       "impulse":
       {
         "title": "Impulse",
-        "completed": true,
         "number": 15,
         "uuid": "4462b384-cd11-4448-989e-d7b2aec6b3e3",
-        "AP": true,
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "impulse_formula_1":
@@ -4147,12 +4142,14 @@
       "circular_motion":
       {
         "title": "Circular Motion",
-        "level": 3,
         "number": 16,
         "uuid": "97d4e437-6ced-42b0-ae2c-acd51f216951",
-        "completed": true,
-        "AP": true,
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "circular_vs_rotational_motion":
@@ -4368,22 +4365,28 @@
       "circular_motion_trigonometry":
       {
         "title": "Circular Motion Trigonometry",
-        "level": 3,
         "number": 17,
         "uuid": "426303fa-6f9a-42f8-b560-8ca850e1e452",
-        "completed": false,
         "vision": "Problems that require both circular motion and trigonometry: banking on a highway, using polar coordinates to describe motion",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "periodic_kinematics":
       {
         "title": "Periodic Kinematics",
         "level": 2,
-        "number": 18,
         "uuid": "481b4c44-cd77-4add-84ba-bf3ad163e49b",
-        "completed": true,
-        "AP": true,
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "period_and_frequency_1":
@@ -4492,11 +4495,13 @@
       {
         "title": "Periodic Dynamics",
         "level": 3,
-        "number": 19,
         "uuid": "f401a0c9-0779-44f7-a585-e7b575e22626",
-        "completed": true,
-        "AP": true,
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "spring_pendulum_energy_1":
@@ -4626,30 +4631,42 @@
       "machines":
       {
         "title": "Machines",
-        "completed": null,
-        "AP": false,
         "number": 20,
         "uuid": "0aacddec-c4c4-4ec5-bbe9-3a48b84cd92e",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "differential_equations_periodic_motion":
       {
         "title": "Differential Equations for Periodic Motion",
-        "level": 5,
-        "completed": null,
         "number": 21,
         "notes": "Solving differential equations for simple harmonic motion and analyzing the result.",
         "uuid": "bf35493c-a199-40f4-a5ee-937cba427097",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "potential_energy_functions":
       {
         "title": "Potential Energy Functions",
-        "level": 4,
-        "completed": null,
         "number": 22,
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics.",
         "uuid": "8cd92d50-ffbe-4f99-9cc4-c86762acde53",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       }
     }
@@ -4666,11 +4683,14 @@
       {
         "title": "Voltage and Current Concepts",
         "number": 1,
-        "completed": true,
-        "AP": true,
-        "honors": true,
         "uuid": "1683b193-3c12-46a6-9e24-ba51c5c74a7a",
         "note": "8-21-19 i feel like parallel circuit concepts and short circuit concepts belong in a different quiz ladder, and there need to be more quiz ladders on circuits certainly",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "very_basic_atoms":
@@ -4872,9 +4892,12 @@
         "number": 2,
         "limits": "Only contains circuits including batteries and resistors",
         "uuid": "e0d6f429-2f42-4e44-b0d8-6231da3c5f7c",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "ohms_law":
@@ -5035,8 +5058,14 @@
       {
         "title": "Circuit Construction 1",
         "number": 3,
-        "subtitle": "Batteries, Light Bulbs, Wires, Ressitors, Switches, Fuses",
+        "subtitle": "Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
         "uuid": "573b386d-2eb3-448f-82a1-3ffb8a248a4a",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "simplest_circuit":
@@ -5288,9 +5317,12 @@
         "title": "Wave Structure",
         "number": 1,
         "uuid": "a67a080f-76f5-4827-81db-0cea0723ac82",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "electromagnetic_vs_mechanical_waves_1":
@@ -5548,8 +5580,12 @@
         "number": 2,
         "notes": "Co-requisite with sound properties.",
         "uuid": "29ffb4e9-7935-4fad-a0f7-1bae0b49b70f",
-        "completed": true,
-        "AP": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "traveling_vs_standing_waves":
@@ -5716,9 +5752,12 @@
         "title": "Sound Properties",
         "number": 3,
         "uuid": "e0cef2a3-f424-446b-ab36-51923d67c12b",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "speed_of_sound_in_materials":
@@ -5829,8 +5868,12 @@
         "number": 4,
         "notes": "Potentially: Reflection and refraction should be separated from diffraction and interference; 8-22-19 DEFINITELY necessary",
         "uuid": "59ca5409-1566-4cfb-a4c9-77dc3e85aeb6",
-        "completed": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "wave_phenomena_basics":
@@ -5969,8 +6012,12 @@
           "These three values are related by fundamental constants.",
           "Frequency and energy are directly proportional, while wavelength is inversely proportional to both."
         ],
-        "completed": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "electromagnetic_wave_basics":
@@ -6131,8 +6178,12 @@
         [
           "I still need to add goals related to additive and subtractive processes"
         ],
-        "completed": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "basic_infrared_camera":
@@ -6300,7 +6351,12 @@
         "title": "Geometric Optics",
         "number": 7,
         "uuid": "9d9df16b-75e5-4f67-ac30-df1d27874fed",
-        "completed": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "lens_1":
@@ -6447,11 +6503,13 @@
       "conceptual_gravitation":
       {
         "title": "Conceptual Gravitation",
-        "number": 1,
-        "completed": true,
-        "AP": true,
-        "honors": true,
         "uuid": "fe0e231b-9579-4321-b256-7d7080a00ea7",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "basic_gravity":
@@ -6629,9 +6687,12 @@
         "title": "Conceptual Electrostatics",
         "number": 2,
         "uuid": "90ff203d-9e86-4676-8d9c-929ebd501a3d",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "electrostatic_basics":
@@ -6730,9 +6791,12 @@
         "title": "Inverse Square Laws",
         "number": 3,
         "uuid": "c7337cee-90d8-4353-9327-c83469252397",
-        "completed": true,
-        "AP": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "which_has_more_force_1":
@@ -6933,8 +6997,13 @@
         "title": "Quantitative Orbits",
         "number": 4,
         "uuid": "f8c896ee-3f78-453f-96b7-7d78be6d7112",
-        "completed": false,
         "vision": "Will contain information on conic sections, different types of orbits, quantitative analyses of Kepler's Laws, historical information on the importance of keplers laws and orbits in the development of science, and energy in orbits; For the AP curriculum, the universal gravitational potentail energy formual will be here",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "conceptual_magnetism":
@@ -6942,8 +7011,12 @@
         "title": "Conceptual Magnetism",
         "number": 5,
         "uuid": "88392edc-b6fa-4309-b8bd-199ba61bcbc9",
-        "completed": true,
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "simple_magnets":
@@ -7063,18 +7136,26 @@
       {
         "title": "Calculus Based Gravitation",
         "number": 4,
-        "completed": null,
         "uuid": "50378a88-caa5-455d-9e67-77e038b32a62",
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "maxwells_equations":
       {
         "title": "Maxwell's Equations",
-        "completed": null,
         "number": 5,
         "uuid": "b7dfa155-b6d2-4f1e-a232-5e0f14d096c3",
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       }
     }
@@ -7090,14 +7171,18 @@
       "kinetic_theory_of_matter_conceptual":
       {
         "title": "Kinetic Theory of Matter Conceptual",
-        "completed": true,
         "number": 1,
         "uuid": "83ee015e-d450-4a49-a462-67dfc1d28395",
-        "honors": true,
         "notes": [
           "Many of these quizzes and examples need to be combined!",
           "Does not include conduction, convection, and radiation, which must be added!"
         ],
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "moving_molecules_1":
@@ -7333,10 +7418,14 @@
       "heat_transfer_temperature_mathematical":
       {
         "title": "Heat Transfer and Temperature: Mathematical",
-        "completed": true,
         "number": 2,
         "uuid": "15d623cb-79bf-4e73-87f0-2e67cf52e73d",
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "heat_formula_1":
@@ -7497,11 +7586,15 @@
       "quantitative_gas_laws_thermal_expansion":
       {
         "title": "Quantitative Gas Laws and Thermal Expansion",
-        "completed": true,
         "number": 3,
         "uuid": "8bc5d4fb-42c6-4c70-b27c-c921f47e7b5b",
-        "honors": false,
         "notes": "I need more on proving the ideal gas law and connecting it to the combined gas law.",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "thermal_expansion_formulas":
@@ -7581,20 +7674,28 @@
       "heat_processes":
       {
         "title": "Heat Processes",
-        "completed": null,
-        "honors": false,
         "number": 4,
         "uuid": "0c45ad33-758a-42f7-9e1d-57313bcf1abb",
         "idea": "This unit will deal with heat processes on P-V graphs.",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "statistical_mechanics":
       {
         "title": "Statistical Mechanics",
-        "completed": null,
         "number": 5,
         "uuid": "ec3a9078-3b52-43e1-8883-e8cf2e663642",
-        "honors": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       }
     }
@@ -7616,10 +7717,14 @@
       "nuclear_reaction_formulas":
       {
         "title": "Nuclear Reaction Formulas",
-        "completed": true,
         "number": 1,
         "uuid": "4ce04daf-dadd-437e-9e37-e33710931f8c",
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "counting_parts_nucleus":
@@ -7762,10 +7867,14 @@
       "nuclear_reaction_concepts":
       {
         "title": "Nuclear Reaction Concepts",
-        "completed": true,
         "number": 2,
         "uuid": "1a60b911-3099-41b0-a84b-cf657a76fa64",
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "nuclear_reaction_basic_concepts":
@@ -7875,10 +7984,14 @@
       "atomic_spectra":
       {
         "title": "Atomic Spectra",
-        "completed": true,
         "number": 3,
         "uuid": "1df6f12d-d10a-4d45-b52a-cea8af9cd089",
-        "honors": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "energy_levels":
@@ -7966,11 +8079,16 @@
       "basic_quantum_theory":
       {
         "title": "Basic Quantum Theory",
+        "number": 4,
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
-        "completed": null,
         "uuid": "45760652-3931-4e35-9997-a5ab2052be64",
-        "pods": {},
-        "number": 4
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
+        "pods": {}
       }
     }
   },
@@ -7984,17 +8102,27 @@
       "special_relativity":
       {
         "title": "Special Relativity",
-        "completed": null,
         "number": 1,
         "uuid": "47254750-bdd9-4796-a766-2aeec453c3d1",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       },
       "general_relativity":
       {
         "title": "General Relativity",
-        "completed": null,
         "number": 2,
         "uuid": "2f705f14-0d19-44f7-a029-ce9ea8c645a0",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods": {}
       }
     }
@@ -8012,6 +8140,12 @@
         "number": 1,
         "uuid": "629defac-c440-4ab3-8092-0d4402fccf76",
         "completed": true,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "recognize_energy_types":
@@ -8105,6 +8239,12 @@
         "number": 2,
         "uuid": "3b6fd1e6-a5c2-4059-8c73-1c376a85581c",
         "completed": false,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "what_is_cosmology":
@@ -8199,13 +8339,16 @@
       "rotational_kinematics":
       {
         "title": "Rotational Kinematics",
-        "completed": true,
         "number": 19,
         "uuid": "6f8d4fd9-0ce2-4bb3-a70b-aa77f0a5a50b",
-        "AP": true,
-        "honors": false,
         "level": 4,
         "notes": "I need to add content on kinematic graphs...but this unit seems full with all this computational stuff",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "rotational_position_displacement":
@@ -8374,12 +8517,14 @@
       "rotational_dynamics":
       {
         "title": "Rotational Dynamics",
-        "completed": true,
         "number": 20,
         "uuid": "10f5a133-dee7-427a-b8a5-a28356b38131",
-        "AP": true,
-        "honors": false,
-        "level": 4,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "inertia_conceptual_review":
@@ -8605,12 +8750,14 @@
       "rotational_conservation_laws":
       {
         "title": "Rotation Conservation Laws",
-        "completed": true,
         "number": 21,
         "uuid": "1630928b-f2fa-4768-a594-0071f2394b94",
-        "AP": true,
-        "honors": false,
-        "level": 4,
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
         "pods":
         {
           "rotational_conserved_quantities_1":
