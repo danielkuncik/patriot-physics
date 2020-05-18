@@ -1,0 +1,71 @@
+{
+  "mass_2016":
+  {
+
+  },
+  "NGSS":
+  {
+    "HS-PS2-1": "Analyze data to support the claim that Newton's Second Law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.",
+    "HS-PS2-2": "Use mathematical representations to support the claim that the total momentum of a system of objects is conserved when there is no net force on the system.",
+    "HS-PS2-3": "Apply scientific and engineering ideas to design, evaluate, and refine a device that minimized the force on a macroscopic object during a collision.",
+    "HS-PS2-4": "Use mathematical representations of Newton's Law of Gravitation and Coulomb's Law to describe and predict the gravitational and electrostatic forces between objects.",
+    "HS-PS2-5": "Plan and conduct an investigation to provide evidence that an electric current can produce a magnetic field and that a changing magnetic field can produce an electric current."
+  },
+  "AP_physics_1_2019":
+  {
+    "science_practices":
+    {
+      "1":
+      {
+        "title": "Modeling",
+        "statement": "The student can use representations and models to communicate scientific phenomena and solve scientific problems.",
+        "pieces":
+        {
+          "1.1": "The student can create representations and models of natural or man-made phenomena and systems in the domain.",
+          "1.2": "The student can describe representations and models of natural or man-made phenomena and systems in the domain.",
+          "1.3": "The student can refine representations of models of natural or man-made phenomena and systems in the domain",
+          "1.4": "The student can use representations and models to analyze situations or solve problems qualitatively and quantitatively",
+          "1.5": "The student can re-express key elements of natural phenomena across multiple representations in the domain."
+        }
+      },
+      "2":
+      {
+        "title": "Mathematical Routines",
+        "statement": "The student can use mathematics appropriately",
+        "pieces":
+        {
+          "2.1": "The student can justify the selection of a mathematical routine to solve problems.",
+          "2.2": "The student can apply mathematical routines to quantities that describe natural phenomena",
+          "2.3": "The student can estimate quantities that describe natural phenomena."
+        }
+      }
+    },
+    "3.A":
+    {
+      "enduring_understanding": "All forces share certain common characteristics when considered by observers in inertial reference frames.",
+      "learning_objectives":
+      {
+        "3.A.1.1": "Express the motion of an object using narrative, mathematical, and graphical representations.",
+        "3.A.1.2": "Design an experimental investigation of the motion of an object",
+        "3.A.1.3": "Analyze experimental data describing the motion of an object and be able to express the results of the analysis using narrative, mathematical, and graphical representations."
+      },
+      "essential_knowledge":
+      {
+        "3.A.1": {
+          "statement": "An observer in a reference frame can describe the motion of an object using such quantities as position, displacement, distance, velocity, speed, and acceleration.",
+          "pieces":
+          {
+            "a": "Displacement, velocity, and acceleration are all vector quantities.",
+            "b": "Displacement is change in position. Velocity is the rate of change of position with time. Acceleration is the rate of change of velocity with time. Changes in each property are expressed by subtracting initial values from final values.",
+            "c": "A choice of reference frame determines the direction and the magnitude of each of these quantities.",
+            "d": "There are three fundamental interactions or forces in nature: the gravitational force, the electroweak force, and the strong force. The fundamental forces determine both the structure of objects and the motion of objects.",
+            "e": "In inertial reference frames, forces are detected by their influence on the motion (specifically the velocity) of an object. So force, like velocity, is a vector quantity. A force vector has magnitude and direction. When multiple forces are exerted on an object, the vector sum of these forces, referred to as the net force, causes a change in the motion of the object. The acceleration of the object is proportional to the net force.",
+            "f": "The kinematic equations only apply to constant acceleration situations. Circular motion and projectile motion are both included. There are three kinematic equations describing linear motion with constant acceleration in one and two dimensions.",
+            "g": "For rotational motion, there are analogous quantities such as angular position, angular velocity, and angular acceleration. There are three kinematic equations can describing angular motion with constant angular acceleration.",
+            "h": "This also includes situations where there is both a radial and tangential acceleration for an object moving in a circular path. For uniform circular motion of radius r, v is proportional to omega (for a given r) and proportional to r (for a given omega). Given a radius r and a period of rotation T, students derive and apply v = 2 pi r / T."
+          }
+        }
+      }
+    }
+  }
+}

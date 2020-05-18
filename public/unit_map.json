@@ -1985,8 +1985,8 @@
         "standards":
         {
           "mass_2016": "HS-PS2-1",
-          "NGSS": "",
-          "AP_Physics_1": ""
+          "NGSS": "HS-PS2-1",
+          "AP_Physics_1": "3.A.1.1; 4.A.2.3"
         },
         "pods":
         {
@@ -2149,8 +2149,8 @@
         "standards":
         {
           "mass_2016": "HS-PS2-1",
-          "NGSS": "",
-          "AP_Physics_1": ""
+          "NGSS": "HS-PS2-1",
+          "AP_Physics_1": "3.A.1.1; 3.A.1.2; 3.A.1.3; 3.A.1.b; 3.A.1.f; 4.A.1.a; 4.A.2.1; 4.A.2.3"
         },
         "pods":
         {
@@ -2381,9 +2381,9 @@
         "uuid": "149a4d0b-2417-4be1-a9fd-4130bf75322c",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
-          "AP_Physics_1": ""
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
+          "AP_Physics_1": "3.A.1.1; 3.A.1.a; 3.A.1.c; 4.A.2.3"
         },
         "pods":
         {
@@ -2545,9 +2545,9 @@
         "uuid": "88e0caed-d0db-451c-be13-d70fbb908d15",
         "standards":
         {
-          "mass_2016": "",
+          "mass_2016": null,
           "NGSS": "",
-          "AP_Physics_1": ""
+          "AP_Physics_1": "3.A.1.1; 3.A.1.a; 3.A.1.c; 3.A.1.2; 3.A.1.3; 3.A.1.b; 3.A.1.f; 4.A.1.a; 4.A.2.1; 4.A.2.3"
         },
         "pods" :
         {
@@ -2754,9 +2754,9 @@
         "number": 5,
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
-          "AP_Physics_1": ""
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
+          "AP_Physics_1": "3.A"
         },
         "pods":
         {
@@ -2871,8 +2871,8 @@
         "uuid": "d4ae16df-49db-4e68-98e7-e0208c0273cd",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -3130,8 +3130,8 @@
         "uuid": "3d6c50c2-ad40-4c4e-bd5c-01e85e189923",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -3287,8 +3287,8 @@
         "uuid": "330a7cbc-220b-4274-a775-db2f246d5de0",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -3507,8 +3507,8 @@
         "essential_questions": "When, how, and why do items move?",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -3706,8 +3706,8 @@
         "uuid": "ff4fe055-7c5c-4dfe-979d-f4fb62b47e76",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -3908,8 +3908,8 @@
         "uuid": "969e1743-ca8f-4a2d-9fa4-c5a6b87d619b",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -4099,8 +4099,8 @@
         "uuid": "97d4e437-6ced-42b0-ae2c-acd51f216951",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods":
@@ -4323,8 +4323,8 @@
         "vision": "Problems that require both circular motion and trigonometry: banking on a highway, using polar coordinates to describe motion",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-1",
+          "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
         "pods": {}
@@ -4345,8 +4345,8 @@
         "number": 1,
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-4",
+          "NGSS": "HS-PS2-4",
           "AP_Physics_1": ""
         },
         "pods":
@@ -4528,8 +4528,8 @@
         "uuid": "90ff203d-9e86-4676-8d9c-929ebd501a3d",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-4",
+          "NGSS": "HS-PS2-4",
           "AP_Physics_1": ""
         },
         "pods":
@@ -4632,8 +4632,8 @@
         "uuid": "c7337cee-90d8-4353-9327-c83469252397",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-4",
+          "NGSS": "HS-PS2-4",
           "AP_Physics_1": ""
         },
         "pods":
@@ -4839,8 +4839,8 @@
         "vision": "Will contain information on conic sections, different types of orbits, quantitative analyses of Kepler's Laws, historical information on the importance of keplers laws and orbits in the development of science, and energy in orbits; For the AP curriculum, the universal gravitational potentail energy formual will be here",
         "standards":
         {
-          "mass_2016": "",
-          "NGSS": "",
+          "mass_2016": "HS-PS2-4",
+          "NGSS": "HS-PS2-4",
           "AP_Physics_1": ""
         },
         "pods": {}
