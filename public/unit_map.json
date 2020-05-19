@@ -1330,6 +1330,7 @@
         "number": 1,
         "uuid": "629defac-c440-4ab3-8092-0d4402fccf76",
         "completed": true,
+        "note": "Eliminate repetitive pods, don't have multiple choice and open response in separate pods.",
         "standards":
         {
           "mass_2016": "",
@@ -1346,6 +1347,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize (multiple choice) single examples of different types of energy",
+            "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
             "uuid": "921c3035-4962-4622-b422-ccb58710b976"
           },
           "write_energy_types":
@@ -1356,6 +1358,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Write the names of different types of energy.",
+            "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
             "uuid": "bc66b87e-6ae3-4acd-a722-e9c9d5b282ae"
           },
           "state_law_conservation_of_energy":
@@ -1366,6 +1369,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "State, from memory, the law of conservation of energy.",
+            "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
             "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69"
           },
           "recognize_energy_transfer":
@@ -1376,6 +1380,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes",
+            "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
             "uuid": "6a207b48-29ac-4a96-9e0a-184884dd16d6"
           },
           "describe_energy_transfer_1":
@@ -1386,6 +1391,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Write, using tables as guidance, processes of 2 - 3 steps in which energy changes from one type to another; name these processes.",
+            "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
             "uuid": "0c891a7e-9af9-4ff4-af8a-436615ebb5bb"
           },
           "describe_energy_transfer_2":
@@ -1396,6 +1402,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Write without guidance energy transfer in four or more steps; name processes involved.",
+            "content": "If you trace the energy in your life backwards, it goes through many different transitions and many different types of energy.",
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
             "uuid": "67b012e0-eefc-479f-9bec-eea3eb753a9b"
           },
@@ -1407,6 +1414,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Connect (nearly) all forms of energy on earth back to light from the sun.",
+            "content": "All of the energy on earth, save geothermal and nuclear energy, can be traced back to light from the sun.",
             "notes": "The exceptions, which should be noted, are geothermal and nuclear energy.",
             "uuid": "2b8861c2-cee7-4667-a247-31f8535cad6a"
           },
@@ -1418,6 +1426,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Connect energy of the earth through the gravitational potential energy of space dust (which would eventually form the sun) back to the creation of energy during the big bang",
+            "content": "Under current cosmological models, all of the energy in the universe can be traced back to some moment in time in which is suddenly appeared, which is named the 'Big Bang.'",
             "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology",
             "uuid": "d559c9d8-97f6-4419-b473-bba084396131"
           }
@@ -1442,6 +1451,7 @@
             "title": "What is cosmology?",
             "level": 1,
             "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts",
+            "content": "Cosmology is the science of the entire universe. It deals with questions such as how was the universe created and how will it end.",
             "uuid": "efe593d7-9025-4b11-8e67-2cc8be526955"
           },
           "your_place_in_the_cosmos":
@@ -1449,6 +1459,8 @@
             "title": "Your Place in the Cosmos",
             "level": 1,
             "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc.",
+            "content": "The earth sits within a solar system, a galaxy, and a cluster of galaxies.",
+            "note": "Make sure to throw out a reference to Our Town",
             "uuid": "63741b84-5b2e-4ba1-8d23-c08f63321bbc"
           },
           "expansion_of_universe":
@@ -1456,6 +1468,7 @@
             "title": "The Expansion of the Universe",
             "level": 2,
             "objective": "Explain evidence that the universe is expanding from the red-shift of far away galaxies.",
+            "content": "All far away objects are moving farther away. The farther away an objects is, the faster it is moving away. This occurs because space itself is stretching.",
             "uuid": "8785ed8a-f96f-47d9-b450-694f43140450"
           },
           "cosmological_principle":
@@ -1463,6 +1476,7 @@
             "title": "The Cosmological Principle",
             "level": 2,
             "objective": "Describe evidence the universe is infinite; define the cosmological principle; give arguments in favor of the cosmological principle; ",
+            "content": "The cosmological principle states that the laws of physics are identical at all places in the universe, and the universe is infinite and without a center. No observer has a different view of the universe than any other, and earth cannot be the center of the universe.",
             "uuid": "6fb42fd0-b43d-4e19-ba11-f70a158768eb"
           },
           "infinite_and_expanding":
@@ -1470,6 +1484,7 @@
             "title": "Infinite and Expanding?",
             "level": 3,
             "objective": "Explain how the universe can be both infinite and expanding.",
+            "content": "The universe is infinite and is expanding because the space between galaxies is itself stretching.",
             "uuid": "ef9ce403-e0fe-40f6-ae1f-416758f539a7"
           },
           "big_bang":
@@ -1477,6 +1492,7 @@
             "title": "The Big Bang",
             "level": 3,
             "objective": "Explain how scientists created the big bang theory; properly define the big bang.",
+            "content": "If you follow the progress of the universe backwards, all matter and energy would eventually compress to one point. The moment at which all matter and energy emerged suddenly is referred to as the big bang. The big bang does not represent an explosion.",
             "uuid": "a6628647-2f30-4808-b0fc-349db2adeab7"
           },
           "stages_of_universe":
@@ -1484,6 +1500,7 @@
             "title": "Stages of the Universe",
             "level": 4,
             "objective": "Explain the stages of the development of the universe according to the big bang theory.",
+            "content": "As the universe expanded, matter took on different forms, from different forms of plasma into our current structure of atoms.",
             "uuid": "ed0be738-b4c5-4b60-86ec-b7930a782f23"
           },
           "comic_microwave_background":
@@ -1491,6 +1508,7 @@
             "title": "The Cosmic Microwave Background",
             "level": 4,
             "objective": "Explain the existence and discovery of the cosmic microwave background; examine how it gives evidence for the big bang theory",
+            "content": "In all directions, a very faint microwave signals exists as a remnant of the transition of matter from plasma to atoms.",
             "uuid": "7f8c3571-b1b0-4dc4-bb4a-d8002017c904"
           },
           "big_bang_limitations":
@@ -1498,6 +1516,7 @@
             "title": "Big Bang Limitations",
             "level": 4,
             "objective": "Explain limitations of the big bang theory and open questions within cosmology",
+            "content": "The big bang theory alone does not completely match observed data and must be modified with theories such as inflationary theory.",
             "uuid": "5026c22a-1133-4265-963d-276e19739f3e"
           },
           "your_own_brief_history_of_time":
@@ -1505,6 +1524,7 @@
             "title": "Your Own Brief History of Time",
             "level": 5,
             "objective": "Tell the story of the history of the universe, the solar system, the earth, life on earth, humans, and yourself beginning with the Big Bang and ending with this moment.",
+            "content": "We can trace our own lives within the history of the universe to the big bang.",
             "note": "Must incorporate information from physics, chemistry, biology, history, and any other relevant field",
             "uuid": "70123330-3d33-4181-81f7-221a339edffe"
           },
@@ -1513,6 +1533,7 @@
             "title": "Alternative Universes",
             "level": 6,
             "objective": "Within the big bang theory, imagine how if some variables were different our own experience in the universe would be different.",
+            "content": "We do not know why variables, such as the charge to mass ratio of an electron or the speed of light, have the precise values they do. If they were different, the progression of the universe may have been markedly different.",
             "uuid": "6ea078ce-b9f9-42e1-bc27-2a6d6d1c8b63"
           }
         }
@@ -1693,6 +1714,7 @@
             "letter": "N",
             "prerequisites": ["symbolic_energy"],
             "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by friction.",
+            "content": "A vertical spring system consists of an exchange between kinetic, gravitational potential, and elastic potential energy",
             "uuid": "baf26601-4f4d-4291-b6a1-58628787d3c5"
           },
           "algebraic_energy_analysis_1":
@@ -1704,6 +1726,7 @@
             "letter": "O",
             "prerequisites": ["vertical_spring_system"],
             "objective": "Symbolically analyze the energy of a pendulum system as it swings; write statements regarding the energy of the pendulum-earth system; symbolically determine crucial values regarding the pendulum using the Conservation of Energy.",
+            "content": "A pendulum system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "bd8d4ccc-c286-43d5-b8c3-33cd260abf53"
           },
           "algebraic_energy_analysis_2":
@@ -1715,6 +1738,7 @@
             "letter": "P",
             "prerequisites": ["algebraic_energy_analysis_1"],
             "objective": "Symbolically analyze the energy of a horizontal spring system as it moves; write statements regarding the energy of the mass-spring system; symbolically determine crucial values regarding the spring using the Conservation of Energy.",
+            "content": "A horizontal spring system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "52bb2f62-2004-4e77-9b7c-fee4670ea80a"
           },
           "algebraic_energy_analysis_3":
@@ -1726,6 +1750,7 @@
             "letter": "Q",
             "prerequisites": ["algebraic_energy_analysis_2"],
             "objective": "Symbolically analyze the energy of a vertical spring system as it moves; write statements regarding the energy of the mass-spring-earth system; symbolically determine crucial values regarding the spring using the Conservation of Energy.",
+            "content": "A vertical spring system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "f0598cca-316c-401c-a58f-fa261ac4be64"
           },
           "spidermans_energy":
@@ -1736,6 +1761,7 @@
             "letter": "R",
             "prerequisites": ["algebraic_energy_analysis_2"],
             "objective": "Analyze the potential energy of a fast moving spring that stretches as it falls.",
+            "content": "A physicist can invent a new model for a novel situation, such as a person (Spiderman) swinging from a stretching string.",
             "uuid": "d8c1eeef-f031-4afa-aa00-f1939205ba57"
           }
         }
