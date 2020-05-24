@@ -8571,18 +8571,28 @@
         "standards":
         {
           "mass_2016": "",
-          "NGSS": "",
+          "NGSS": "HS-PS1-8",
           "AP_Physics_1": ""
         },
         "pods":
         {
+          "parts_of_atom":
+          {
+            "title": "Parts of an Atom",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Identify the parts of an atom, with a particular focus on the nucleus; identify that most of the mass but very little space is contained in the nucleus of an atom.",
+            "content": "An atom is composed of neutrons and protons in a nucleus and electrons surrounding the nucleus; the nucleus comprises only a tiny portion of the space in an atom but almost all of the mass of an atom; nuclear physics deals with changes to the nucleus of an atom."
+          },
           "counting_parts_nucleus":
           {
             "title": "Counting Parts of a Nucleus",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "B",
+            "prerequisites": ["parts_of_atom"],
             "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation",
             "uuid": "54c0944e-1136-4764-83f6-c8eb4c4bf11f"
           },
@@ -8590,9 +8600,9 @@
           {
             "title": "Atomic Mass vs. Mass Number",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "C",
+            "prerequisites": ["counting_parts_nucleus"],
             "objective": "Differentiate between atomic mass and mass number; explain when each is useful",
             "uuid": "a12dfb4d-bfa5-4cf8-b1e8-69ec537e2df7"
           },
@@ -8600,9 +8610,9 @@
           {
             "title": "Alpha and Beta Decay",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "D",
+            "prerequisites": ["atomic_mass_vs_mass_number"],
             "objective": "Draw reactions involving alpha or beta decay of an isotope.",
             "uuid": "d92bcb89-ca28-4d8a-9b8a-f454592b958c"
           },
@@ -8610,41 +8620,41 @@
           {
             "title": "Complete a Nuclear Reaction",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fuision, or decay.",
+            "horizontal": 3,
+            "letter": "E",
+            "prerequisites": ["alpha_beta_decay"],
+            "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fusion, or decay.",
             "uuid": "92c2aa0e-f0ae-4118-af4a-52019cb2b93a"
-          },
-          "simple_half_life":
-          {
-            "title": "Simple Half Life",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Define half-life; answer simple questions",
-            "limits": "Problems in this pod do not require the half-life to be represented as a function.",
-            "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?",
-            "uuid": "f546aaa6-7dc2-49f7-828f-452a75ae25a5"
           },
           "identify_crucial_particles":
           {
             "title": "Identify Crucial Particles",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["complete_nuclear_reaction"],
             "objective": "Identify the particles most crucial to understanding nuclear reactions.",
             "uuid": "98ab58a0-8c9c-4bbe-9ff6-110e9b847586"
+          },
+          "simple_half_life":
+          {
+            "title": "Simple Half Life",
+            "level": 2,
+            "horizontal": 5,
+            "letter": "G",
+            "prerequisites": ["identify_crucial_particles"],
+            "objective": "Define half-life; answer simple questions",
+            "limits": "Problems in this pod do not require the half-life to be represented as a function.",
+            "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?",
+            "uuid": "f546aaa6-7dc2-49f7-828f-452a75ae25a5"
           },
           "written_reactions_1":
           {
             "title": "Written Reactions 1",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "H",
+            "prerequisites": ["simple_half_life"],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula.",
             "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction",
             "uuid": "7f6844f7-66bd-41ea-88bf-32bfabc0ea13"
@@ -8653,9 +8663,9 @@
           {
             "title": "Written Reactions 2",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "I",
+            "prerequisites": ["written_reactions_1"],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula; determine energy released by a nuclear reaction.",
             "notes": "This crucial topic should be broken into two sections",
             "uuid": "2ea95fd2-a83b-4050-b868-9ceba1f0f38a"
@@ -8664,9 +8674,9 @@
           {
             "title": "Half-Life Formulas",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "J",
+            "prerequisites": ["written_reactions_2"],
             "objective": "Represent half-life through an exponential decay function; use these formulas properly",
             "uuid": "1f299cfe-c4d6-4bd1-bf3f-0590c38ab3f3"
           },
@@ -8674,9 +8684,9 @@
           {
             "title": "Calculate Atomic Mass",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["half_life_formulas"],
             "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation.",
             "uuid": "7142ed0c-8ed4-40d7-b4f2-1e615ae24fd1"
           },
@@ -8684,9 +8694,9 @@
           {
             "title": "Decay Chain",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["calculate_atomic_mass"],
             "objective": "Use a table of isotopes to draft a decay chain for a particular isotope.",
             "uuid": "2708d867-e664-4e1d-b783-40aac856e09a"
           },
@@ -8694,9 +8704,9 @@
           {
             "title": "Nuclear Reactions in the Sun",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["decay_chain"],
             "objective": "Write and analyze the nuclear reactions occurring inside the sun; explain how they produce energy.",
             "uuid": "a3df6ae8-f120-4a9a-b7d0-7f0d0481465e"
           },
@@ -8704,11 +8714,11 @@
           {
             "title": "Remnants of an Isotope",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Based upon the decay chain and the half-life of a particular isotope, identify at particualr times what different products you will have and what radiation they will give off.",
-            "notes": "Good lead-in to a computation problem.",
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["nuclear_reactions_sun"],
+            "objective": "Based upon the decay chain and the half-life of a particular isotope, identify at particualr times what different products you will have and what radiation they will give off; identify what percentages of each element you will have at different times.",
+            "notes": "Good lead-in to a computation problem; should include some discussion of Technetium",
             "uuid": "940d640b-cddb-4e60-94da-85dae1d35b9c"
           }
         }
@@ -8763,7 +8773,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Differentiate between nuclear and chemical reactions",
+            "objective": "Differentiate between nuclear and chemical reactions; identify whether a formula depicts a nuclear reaction or a chemical reaction.",
             "uuid": "f40a2f31-e728-425f-ad8a-7eb4d9bbb5f2"
           },
           "nuclear_reaction_danger":
