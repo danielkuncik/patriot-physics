@@ -16,175 +16,89 @@
 
 <p class="definition" data-word = 'solve for a variable'>
     Imagine you have
-    \( Z = \text{some long function that includes } \( X \) \text{ and } \( Y \). \)
+    \( Z = \text{some long function that includes } X \text{ and } Y. \)
     Imagine that you are able to manipulate the equation so that instead,
     it looks like this:
-    \( Y = \text{some long function that includes } \( Z \) \text{ and } \( X \). \)
+    \( Y = \text{some long function that includes } Z \text{ and } X. \)
+    This is called "Solving for \( Y \) in terms of \( X \) and \( Z \)."
 </p>
 
 
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = '\( B = \frac{A}{C} \)'>
+    Solve for \( B \): <br>  \( A = B C \)
+  </li>
+  <li class = 'question' data-answer = '\( E = D - F \)'>
+    Solve for \( E \): <br> \( D = E + F \)
+  </li>
+  <li class = 'question' data-answer = '\( G = H + I \)'>
+    Solve for \( G \): <br> \( H = G - 1 \)
+  </li>
+  <li class = 'question' data-answer = '\( N = MO \)'>
+    Solve for \( N \): <br> \( M = \frac{N}{O} \)
+  </li>
+  <li class = 'question' data-answer = '\( Q = \frac{P}{5} \)'>
+    Solve for \( Q \): <br> \( P = 5 Q \)
+  </li>
+
+  <!--- Beginning of two-step problems --->
+  <li class = 'question' data-answer = '\( L = K - J \)'>
+    Solve for \( L \): <br> \( J = K - L \)
+  </li>
+  <!--- add directions here for solving for variables in the denominator
+    and add more solving for varaibles in the denominator problems
+  --->
+  <li class = 'question' data-answer = '\( R = \frac{T}{S} \)'>
+    Solve for \( R \): <br> \( \frac{S}{R} = T \)
+  </li>
+  <li class = 'question' data-answer = '\( m = \frac{E}{gh} \)'>
+    Solve for \( m \): <br> \( E = mgh \)
+  </li>
+  <li class = 'question' data-answer = '\( h = \frac{E}{mg} \)'>
+    Solve for \( h \): <br> \( E = mgh \)
+  </li>
+  <li class = 'question' data-answer = '\( m = \frac{2E}{v^2} \)'>
+    Solve for \( m \): <br> \( E = \frac{1}{2} m v^2 \)
+  </li>
+
+  <!---
+three step are supposed to be in symbolic algebra 2,
+so determine a point to move these questions to symbolic algebra 2!
+  -->
+  <li class = 'question' data-answer = '\( v = \sqrt{\frac{2E}{m}} \)'>
+    Solve for \( v \): <br> \( E = \frac{1}{2} m v^2 \)
+  </li>
+  <li class = 'question' data-answer = '\( F_1 = F_2 + ma \)'>
+    Solve for \( F_1 \): <br> \( F_1 - F_2 = m a \)
+  </li>
+  <li class = 'question' data-answer = '\( a = \frac{F_1 - F_2}{m} \)'>
+    Solve for \( a \): <br> \( F_1 - F_2 = ma \)
+  </li>
+  <li class = 'question' data-answer = '\( v_i = v_f - at \)'>
+    Solve for \( v_i \): <br> \( v_f = v_i + at \)
+  </li>
+  <li class = 'question' data-answer = '\( a = \frac{v_f - v_i}{t} \)'>
+    Solve for \( a \): <br> \( v_f = v_i + at \)
+  </li>
+  <li class = 'question' data-answer = '\( t = \frac{v_f - v_i}{a} \)'>
+    Solve for \( t \): <br> \( v_f = v_i + at \)
+  </li>
+  <li class = 'question' data-answer = '\( v = \sqrt{ar} \)'>
+    Solve for \( v \): <br> \( a = \frac{v^2}{r} \)
+  </li>
+  <li class = 'question' data-answer = '\( r = \frac{v^2}{a} \)'>
+    Solve for \( r \): <br> \( a = \frac{v^2}{r} \)
+  </li>
+  <li class = 'question' data-answer = '\( m_1 = \frac{F r^2}{G m_2} \)'>
+    Solve for \( m_1 \): <br> \( F = \frac{G m_1 m_2}{r^2} \)
+  </li>
+  <li class = 'question' data-answer = '\( m_2 = \frac{F r^2}{G m_1} \)'>
+    Solve for \( m_2 \): <br> \( F = \frac{G m_1 m_2}{r^2} \)
+  </li>
+  <li class = 'question' data-answer = '\( r = \frac{G m_1 m_2}{F} \)'>
+    Solve for \( r \): <br> \( F = \frac{G m_1 m_2}{r^2} \)
+  </li>
+</ol>
 
 
-
-<div id = 'put_questions_here'></div>
-<div id = 'put_answers_here'></div>
-
-<script>
-    var myProblems = new writtenProblemList();
-
-
-    /// ONE STEP EQUATIONS
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( B \\): <br>  \\( A = B C \\)",
-                "answer": "\\( B = \\frac{A}{C} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( E \\): <br> \\( D = E + F \\)",
-                "answer": "\\( E = D - F \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( G \\): <br> \\( H = G - 1 \\)",
-                "answer": "\\( G = H + I \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( N \\): <br> \\( M = \\frac{N}{O} \\)",
-                "answer": "\\( N = MO \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( Q \\): <br> \\( P = 5 Q \\)",
-                "answer": "\\( Q = \\frac{P}{5} \\)"
-            }
-    );
-
-    // two step
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( L \\): <br> \\( J = K - L \\)",
-                "answer": "\\( L = K - J \\)"
-            }
-    );
-
-    /// needs directions on solving for a variable in the denominator
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( R \\): <br> \\( \\frac{S}{R} = T \\)",
-                "answer": "\\( R = \\frac{T}{S} \\)"
-            }
-    );
-    //// There need to be more like that one!
-
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( m \\): <br> \\( E = mgh \\)",
-                "answer": "\\( m = \\frac{E}{gh} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( h \\): <br> \\( E = mgh \\)",
-                "answer": "\\( h = \\frac{E}{mg} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( m \\): <br> \\( E = \\frac{1}{2} m v^2 \\)",
-                "answer": "\\( m = \\frac{2E}{v^2} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( v \\): <br> \\( E = \\frac{1}{2} m v^2 \\)",
-                "answer": "\\( v = \\sqrt{\\frac{2E}{m}} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( F_1 \\): <br> \\( F_1 - F_2 = m a \\)",
-                "answer": "\\( F_1 = F_2 + ma \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( a \\): <br> \\( F_1 - F_2 = ma \\) ",
-                "answer": "\\( a = \\frac{F_1 - F_2}{m} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( v_i \\): <br> \\( v_f = v_i + at \\)",
-                "answer": "\\( v_i = v_f - at \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( a \\): <br> \\( v_f = v_i + at \\)",
-                "answer": "\\( a = \\frac{v_f - v_i}{t} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( t \\): <br> \\( v_f = v_i + at \\)",
-                "answer": "\\( t = \\frac{v_f - v_i}{a} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( v \\): <br> \\( a = \\frac{v^2}{r} \\)",
-                "answer": "\\( v = \\sqrt{ar} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( r \\): <br> \\( a = \\frac{v^2}{r} \\)",
-                "answer": "\\( r = \\frac{v^2}{a} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( m_1 \\): <br> \\( F = \\frac{G m_1 m_2}{r^2} \\)",
-                "answer": "\\( m_1 = \\frac{F r^2}{G m_2} \\)"
-            }
-    );
-
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( m_2 \\): <br> \\( F = \\frac{G m_1 m_2}{r^2} \\)",
-                "answer": "\\( m_2 = \\frac{F r^2}{G m_1} \\)"
-            }
-    );
-
-    myProblems.addProblem(
-            {
-                "question": "Solve for \\( r \\): <br> \\( F = \\frac{G m_1 m_2}{r^2} \\)",
-                "answer": "\\( r = \\frac{G m_1 m_2}{F} \\)"
-            }
-    );
-
-    myProblems.insertLists("put_questions_here", "put_answers_here");
-</script>
+<ol class = 'answerList'></ol>
