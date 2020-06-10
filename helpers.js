@@ -16,7 +16,8 @@ hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
         output = output + `<li>Total Number of MiniQuiz Attempts: ${totalAttempts}</li>`;
         output = output + "</ul>";
     } else {
-        output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>";
+        output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>" +
+            "<p>You do NOT need to log in for Step up Day or Summer Work!</p>";
     }
     return new hbs.SafeString(output)
 });

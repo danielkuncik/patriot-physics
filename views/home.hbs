@@ -33,24 +33,104 @@
 
 
 {{#if (isNoSection courseLevel)}}
-    <h3>
-        AP Physics
-    </h3>
-    <div class = 'ml-5'>
-        {{>ap_home_page}}
-    </div>
+    <div class="accordion" id = 'homePageAccordion'>
 
-    <h3>
-        Honors Physics
-    </h3>
-    <div class = 'ml-5'>
-        {{>honors_home_page}}
-    </div>
+        <div class="card">
+            <div class = 'card-header' id = 'AP_step_up_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_AP_step_up" aria-expanded="false" aria-controls="collapse_AP_step_up">
+                        AP Physics Step Up Day Videos
+                    </button>
+                </h3>
+            </div>
 
-    <h3>
-        Physics A
-    </h3>
-    <div class = 'ml-5'>
-        {{>a_level_home_page}}
+            <div id = 'collapse_AP_step_up' class = 'collapse' aria-labelledby="AP_step_up_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>AP_step_up_day_videos}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header' id = 'AP_summer_work_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_AP_summer_work" aria-expanded="false" aria-controls="collapse_AP_summer_work">
+                        AP Physics Summer Work
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_AP_summer_work' class = 'collapse' aria-labelledby="AP_summer_work_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>ap_physics_summer_work}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header' id = 'honors_step_up_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_honors_step_up" aria-expanded="false" aria-controls="collapse_honors_step_up">
+                        Honors Physics Step Up Day Videos
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_honors_step_up' class = 'collapse' aria-labelledby="honors_step_up_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>honors_step_up_day_videos}}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class = 'card-header' id = 'AP_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_AP" aria-expanded="false" aria-controls="collapse_AP">
+                        AP Physics Remote Learning Assignments
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_AP' class = 'collapse' aria-labelledby="AP_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>ap_home_page}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header' id = 'honors_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_honors" aria-expanded="false" aria-controls="collapse_honors">
+                        Honors Physics Remote Learning Assignments
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_honors' class = 'collapse' aria-labelledby="honors_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>honors_home_page}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header' id = 'honors_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_A" aria-expanded="false" aria-controls="collapse_A">
+                        Physics A Remote Learning Assignments
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_A' class = 'collapse' aria-labelledby="A_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>a_level_home_page}}
+                </div>
+            </div>
+        </div>
+
     </div>
 {{/if}}
