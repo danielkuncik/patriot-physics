@@ -587,7 +587,7 @@ function constructTriangleASA(vertexA, angle1inDegrees, side, angle2inDegrees) {
     return constructTriangleSAS(vertexA, side3, angle2inDegrees, side2);
 }
 
-function constructTriangleSSS(vertexA, side1, side2, side3) {
+function constructTriangleSSS(side1, side2, side3, vertexA) {
     let angleB = getAngleFromLawOfCosines(side3, side1, side2); // in degrees
     return constructTriangleSAS(vertexA, side1, angleB, side2);
 }

@@ -13,6 +13,29 @@ class GeometryPad extends Diagram {
         return newTriangle
     }
 
+    addTriangleSSS(side1, side2, side3, vertexA) {
+      let newTriangle = constructTriangleSSS(side1, side2, side3, vertexA);
+      this.triangles.push(newTriangle);
+      this.addExistingTraignleObject(newTriangle);
+      return newTriangle
+    }
+
+    labelTriangleLength(triangleObject, label, oppositeVertex) {
+      let end1, end2;
+      if (oppositeVertex === 'A') {
+        end1 = triangleObject.vertexB;
+        end2 = triangleObject.vertexC;
+      } else if (oppositeVertex === 'B') {
+        end1 = triangleObject.vertexA;
+        end2 = triangleObject.vertexC;
+      } else if (oppositeVertex === 'C') {
+        end1 = triangleObject.vertexA;
+        end2 = triangleObject.vertexB;
+      }
+      // label line outside function
+    }
+
+
     addExistingTriangleObject(triangleObject) {
         this.addExistingSegment(triangleObject.segmentA);
         this.addExistingSegment(triangleObject.segmentB);
