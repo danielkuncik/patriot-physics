@@ -32,6 +32,13 @@ class GeometryPad extends Diagram {
         end1 = triangleObject.vertexA;
         end2 = triangleObject.vertexB;
       }
+      const textLocation = getOptimalLocationOfText(end1, end2, 'clockwise'); // clockwise orientiation default
+      console.log(textLocation);
+      if (textLocation === 'above' || textLocation === 'left') {
+        this.labelLineAbove(end1, end2, label);
+      } else if (textLocation === 'below' || textLocation === 'right') {
+        this.labelLineBelow(end1, end2, label);
+      }
       // label line outside function
     }
 

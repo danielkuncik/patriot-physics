@@ -213,7 +213,7 @@ class ElectricPotentialGraph {
 }
 
 
-class HeatGraphs extends QuantitativeGraph() {
+class HeatGraphs extends QuantitativeGraph {
     constructor(minTemp, maxTemp, qualitativeOrQuantitative, desiredAspectRatio, temperatureScale, maxHeatAdded) {
         if (temperatureScale === undefined) {
             temperatureScale = 'celsius';

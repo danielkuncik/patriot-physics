@@ -533,7 +533,6 @@ class Diagram {
 
     // adds a segment object that already exists, independent of this particular diagram object
     addExistingSegment(segmentObject) {
-        console.log(segmentObject);
         let pointA = this.addExistingPoint(segmentObject.point1);
         let pointB = this.addExistingPoint(segmentObject.point2);
         this.segments.push(segmentObject);
@@ -870,6 +869,15 @@ class Diagram {
             text = this.addText(label,textReferencePoint,relativeFontSize,textRotation,textPositioning);
             text.addDegreeLabel(this);
         }
+    }
+
+    squareAngle(outsidePointA, vertex, outsidePointB, length) {
+      let proportionA = length / vertex.getDistanceToAnotherPoint(outsidePointA);
+      let proportionB = length / vertex.getDistanceToAnotherPoint(outsidePointB);
+      let pointA = vertex.interpolate(outsidePointA, proportionA);
+      let pointB = vertex.interpolate(outsidePointB, proportionB);
+
+      // now, i need to find the point where they intersect
     }
 
 

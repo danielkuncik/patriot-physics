@@ -31,6 +31,7 @@
     // $("#putItHere").append(myDiagram.drawCanvas(300));
 
     let myPad = new GeometryPad();
-    myPad.addTriangleSAS(origin, 1,60,1);
+    let triangle1 = myPad.addTriangleSAS(origin, 1,60,1);
+    myPad.labelTriangleLength(triangle1, 'xyz', 'C')
     $("#putItHere").append(myPad.drawCanvas(300));
 </script>
