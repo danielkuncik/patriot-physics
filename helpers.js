@@ -176,14 +176,14 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
     if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
         let href = `/miniquiz/${superUnitKey}/${unitKey}/${podKey}`;
         if (!loggedIn) {
-            link = link + "You must be logged in to take the miniquiz. Click <a href = '/login'>here</a> to login.";
+            link = link + "You must be logged in to take the miniquiz. Click <a href = '/login'>here</a> to login. You do not need to take the miniquiz for the summer work.";
         } else if (ungradedQuizzes) {
             link = link + "You are still waiting for your last attempt to be graded, so wait a little before taking this quiz again.";
         } else {
             link = link + ` <a href = '${href}'>GO TO MINIQUIZ</a>`;
         }
     } else {
-        link = link + 'Sorry, no miniquiz is available yet for this pod.';
+        link = link + 'Sorry, no miniquiz is available yet for this pod. You do not need to take the miniquiz for the summer work.';
     }
     link = link + '</h4>';
     return new hbs.SafeString(link);
