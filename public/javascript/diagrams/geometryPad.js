@@ -43,6 +43,7 @@ class GeometryPad extends Diagram {
     }
 
 
+
     addExistingTriangleObject(triangleObject) {
         this.addExistingSegment(triangleObject.segmentA);
         this.addExistingSegment(triangleObject.segmentB);
