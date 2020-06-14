@@ -330,20 +330,24 @@ class QualitativeGraph extends Diagram {
         }
         if (this.zeroLabel) {
             this.textDisplacement *= 3;
-            super.addText('0', new Point(this.xMin0 - this.textDisplacement/2, 0), this.relativeFontSize);
+            if (!this.textAlreadyAdded) {
+                super.addText('0', new Point(this.xMin0 - this.textDisplacement/2, 0), this.relativeFontSize);
+            }
             super.addDashedLine(new Point(this.xMin0, 0), new Point(this.xMax0, 0));
         }
 
-        if (this.xLabelPosition === 'end') {
-            super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
-        } else if (this.xLabelPosition === 'side') {
-            super.labelLineBelow(this.lowerLeft, this.lowerRight, this.xLabel, this.textDisplacement, this.relativeFontSize);
-        }
-        // add an option if you want the label int he center
-        if (this.yLabelPosition === 'end') {
-            super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
-        } else if (this.yLabelPosition === 'side') {
-            super.labelLineAbove(this.lowerLeft, this.upperLeft, this.yLabel, this.textDisplacement, this.relativeFontSize);
+        if (!this.textAlreadyAdded) {
+            if (this.xLabelPosition === 'end') {
+                super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
+            } else if (this.xLabelPosition === 'side') {
+                super.labelLineBelow(this.lowerLeft, this.lowerRight, this.xLabel, this.textDisplacement, this.relativeFontSize);
+            }
+            // add an option if you want the label int he center
+            if (this.yLabelPosition === 'end') {
+                super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
+            } else if (this.yLabelPosition === 'side') {
+                super.labelLineAbove(this.lowerLeft, this.upperLeft, this.yLabel, this.textDisplacement, this.relativeFontSize);
+            }
         }
 
         let pointRadius = minOfTwoValues(this.lowerRight.x - this.lowerLeft.x, this.upperRight.y - this.lowerRight.y) * 0.05;
@@ -371,6 +375,8 @@ class QualitativeGraph extends Diagram {
                 this.func.addToDiagram(this, this.yMultiplier, (this.xMax0 - this.xMin0) * 0.03);
             }
         }
+
+        this.textAlreadyAdded = true;
 
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
