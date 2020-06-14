@@ -208,7 +208,7 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
     if (score === 0) {
         scoreMessage = '';
     } else if (score >= 18) {
-        scoreMessage = '-- PASSED';
+        scoreMessage = '-- ACE';
     } else {
         scoreMessage = `--${score} out of 20`;
     }
