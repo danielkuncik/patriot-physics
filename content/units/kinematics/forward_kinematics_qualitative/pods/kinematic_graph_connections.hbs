@@ -1,8 +1,187 @@
 
-<div id = 'bigKinematicGraphTable'></div>
+<div class="container">
+    <div class = 'row'>
+        <div class = 'col-2 border border-dark'></div>
+        <div class="col-3 border border-dark">
+            Position-Time Graph
+        </div>
+        <div class="col-2 border border-dark">
+            Velocity-Time Graph
+        </div>
+        <div class="col-2 border border-dark">
+            Acceleration-Time Graph
+        </div>
+        <div class="col-3 border border-dark">
+            Motion Map
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark pt-3'>
+            Moving at a Constant Velocity
+        </div>
+        <div class="col-3 border border-dark pt-3" id = "positionA"></div>
+        <div class="col-2 border border-dark pt-3" id = "velocityA"></div>
+        <div class="col-2 border border-dark pt-3" id = 'accelerationA'></div>
+        <div class="col-3 border border-dark pt-3" id = 'motionMapA'></div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark'>
+            Accelerating from Rest
+        </div>
+        <div class="col-3 border border-dark pt-3" id = "positionB"></div>
+        <div class="col-2 border border-dark pt-3" id = "velocityB"></div>
+        <div class="col-2 border border-dark pt-3" id = 'accelerationB'></div>
+        <div class="col-3 border border-dark pt-3" id = 'motionMapB'></div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark pt-3'>
+            Slowing down to Rest
+        </div>
+        <div class="col-3 border border-dark pt-3" id = "positionC"></div>
+        <div class="col-2 border border-dark pt-3" id = "velocityC"></div>
+        <div class="col-2 border border-dark pt-3" id = 'accelerationC'></div>
+        <div class="col-3 border border-dark pt-3" id = 'motionMapC'></div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark pt-3'>
+            Not Moving
+        </div>
+        <div class="col-3 border border-dark pt-3" id = "positionD"></div>
+        <div class="col-2 border border-dark pt-3" id = "velocityD"></div>
+        <div class="col-2 border border-dark pt-3" id = 'accelerationD'></div>
+        <div class="col-3 border border-dark pt-3" id = 'motionMapD'></div>
+    </div>
+</div>
 
+
+<p class="directions">
+    The boxes below contain 11 different graphs.
+    They include position-time, velocity-time, and acceleration-time graphs.
+    Below the boxes are four descriptions of different types of motion.
+    For each description of motion, select three different graphs that
+    describe the motion of that object.
+    One of the graphs is used twice.
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxA-1'>
+            A:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxB-1'>
+            B:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxC-1'>
+            C:<br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxD-1'>
+            D:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxE-1'>
+            E:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxF-1'>
+            F:<br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxG-1'>
+            G:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxH-1'>
+            H:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxI-1'>
+            I:<br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxJ-1'>
+            J:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center" id = 'boxK-1'>
+            K:<br>
+        </div>
+        <div class="col-md-4 border border-dark pt-3 text-center bg-muted"></div>
+    </div>
+</div>
+
+<ol class="questionList">
+    <li class="question mb-3" data-answer = 'F, I, H'>
+        Select four graphs that describe moving at a constant velocity.
+    </li>
+    <li class="question mb-3" data-answer = 'C, D, K'>
+        Select four graphs that describe accelerating from rest.
+    </li>
+    <li class="question mb-3" data-answer = 'E, G, B'>
+        Select four graphs that describe slowing down to rest.
+    </li>
+    <li class="question mb-3" data-answer = 'J, A, H'>
+        Select four graphs that describe not moving.
+    </li>
+</ol>
+
+<!---
+add two more problems, that include more than one question each
+-->
 
 <script>
+    const positionA = makePositionGraphConstantVelocity();
+    const positionB = makePositionGraphPositiveAcceleration();
+    const positionC = makePositionGraphNegativeAcceleration();
+    const positionD = makePositionGraphNotMoving();
+
+    const velocityA = makeVelocityGraphConstantVelocity();
+    const velocityB = makeVelocityGraphPositiveAcceleration();
+    const velocityC = makeVelocityGraphNegativeAcceleration();
+    const velocityD = makeVelocityGraphNotMoving();
+
+    const accelerationA = makeAccelerationGraphZero();
+    const accelerationB = makeAccelerationGraphPositive();
+    const accelerationC = makeAccelerationGraphNegative();
+
+    const motionMapA = makeMotionMapConstantVelocity();
+    const motionMapB = makeMotionMapPositiveAcceleration();
+    const motionMapC = makeMotionMapNegativeAcceleration();
+    const motionMapD = makeMotionMapNotMoving();
+
+    $("#positionA").append(positionA.drawCanvas(150));
+    $("#positionB").append(positionB.drawCanvas(150));
+    $("#positionC").append(positionC.drawCanvas(150));
+    $("#positionD").append(positionD.drawCanvas(150));
+
+    $("#velocityA").append(velocityA.drawCanvas(150));
+    $("#velocityB").append(velocityB.drawCanvas(150));
+    $("#velocityC").append(velocityC.drawCanvas(150));
+    $("#velocityD").append(velocityD.drawCanvas(150));
+
+    $("#accelerationA").append(accelerationA.drawCanvas(150));
+    $("#accelerationB").append(accelerationB.drawCanvas(150));
+    $("#accelerationC").append(accelerationC.drawCanvas(150));
+    $("#accelerationD").append(accelerationA.drawCanvas(150));
+
+    $("#motionMapA").append(motionMapA.drawCanvas(150));
+    $("#motionMapB").append(motionMapB.drawCanvas(150));
+    $("#motionMapC").append(motionMapC.drawCanvas(150));
+    $("#motionMapD").append(motionMapD.drawCanvas(150));
+
+    $("#boxA-1").append(velocityD.drawCanvas(150));
+    $("#boxB-1").append(accelerationC.drawCanvas(150));
+    $("#boxC-1").append(positionB.drawCanvas(150));
+    $("#boxD-1").append(velocityB.drawCanvas(150));
+    $("#boxE-1").append(positionC.drawCanvas(150));
+    $("#boxF-1").append(positionA.drawCanvas(150));
+    $("#boxG-1").append(velocityC.drawCanvas(150));
+    $("#boxH-1").append(accelerationA.drawCanvas(150));
+    $("#boxI-1").append(velocityA.drawCanvas(150));
+    $("#boxJ-1").append(positionD.drawCanvas(150));
+    $("#boxK-1").append(accelerationB.drawCanvas(150));
+
+
+
+    /*
     let kinematicGraphTable = new Table(5, 5);
     kinematicGraphTable.addTopHeaders(['','Position-Time Graph', 'Velocity-Time Graph', 'Acceleration-Time Graph', 'Motion Map']);
     kinematicGraphTable.addSideHeaders(['', 'Moving at a constant velocity', 'Speeding up', 'Slowing down', 'Not moving']);
@@ -28,4 +207,7 @@
     kinematicGraphTable.addDiagramToCell(4,4,makeMotionMapNotMoving());
 
     $("#bigKinematicGraphTable").append(kinematicGraphTable.draw(1000,1000));
+*/
 </script>
+
+<ol class="answerList"></ol>
