@@ -6712,6 +6712,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Identify how the speed of sound changes in different media; define the term 'medium' in the content of waves",
+            "content": "Sound moves faster in denser materials; sound moves fastest in solids and slowest in gasses; a medium is the material through which a wave moves.",
             "uuid": "5c4f3b1b-a51b-44c9-94af-c8b3ceab0fb2"
           },
           "doppler_effect":
@@ -6722,6 +6723,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Identify how the Doppler effect changes sound; identify real world examples of the Doppler effect",
+            "content": "When a source of sound moves towards the receiver, it appears to have a higher frequency; when a source of sound moves away from the receiver it appears to have a lower frequency; the same effect occurs if the receiver moves.",
             "uuid": "41d96aae-aea5-476c-a588-0e0b099492f5"
           },
           "octaves_1":
@@ -6732,6 +6734,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Solve for all wavelengths and frequencies of a particular octave, with notes given.",
+            "content": "An octave is eight notes within a musical scale; the highest note of any octave has twice the frequency of the lowest note.",
             "uuid": "c0560e18-43be-4ecf-810a-a3fba717e2db"
           },
           "octaves_2":
@@ -6742,6 +6745,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Solve for all wavelengths and frequencies of a particular octave, with ratios of the octave given.",
+            "content": "The eight notes of an octave are related by particular ratios of frequencies that allow music made within that scale to be more pleasing to the ear.",
             "uuid": "79996866-9f7f-4675-9854-37cae568b1ce"
           },
           "doppler_effect_equation":
@@ -6752,6 +6756,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Numerically solve the Doppler effect equation and relate the result to a real life experience.",
+            "content": "The Doppler effect equation is used to calculate the apparent frequency of sound from a moving source, or sound heard by a moving receiver.",
             "uuid": "00109ef0-baba-4ad7-8156-71bd6e05e91b"
           },
           "doppler_diagrams":
@@ -6762,6 +6767,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Analyze diagrams of a wave front of sound; explain why the Doppler effect occurs.",
+            "content": "Sound waves can be represented by a series of circles indicating the wave fronts of the sound; the Doppler effect occurs because the sound waves get closer together or farther apart due to motion of the source of receiver",
             "uuid": "0b03a966-4372-409b-b16d-bff8320330b2"
           },
           "explain_speed_of_sound":
@@ -6772,6 +6778,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Explain why the speed of sound changes within different media.",
+            "content": "Because sound is a longitudinal wave that exists because each molecule pushes the molecule in front of it; more dense materials cause sound to move faster and more efficiently",
             "uuid": "99852d20-4d0b-4bf3-a27a-440e26060e91"
           },
           "doppler_algebra":
@@ -6781,7 +6788,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Algebraically solve the Doppler effect equation.",
+            "objective": "Symbolically solve the Doppler effect equation.",
+            "content": "New equations can be derived by symbolically solving the Doppler equation.",
             "uuid": "25c35423-5191-4e8e-9ea2-4823ca19b28f"
           },
           "doppler_proportionality":
@@ -6792,6 +6800,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Use proportionality to analyze the Doppler effect equation.",
+            "content": "The Doppler equation can be used to relate quantities such as the speed of the source or receiver to the frequency of sound heard.",
             "uuid": "b86da75a-176f-4403-b47c-d9ef2ed55b4f"
           },
           "sound_barrier":
@@ -6802,6 +6811,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Use diagrams of sound waves to explain the existence of the sound barrier, and what occurs when it is broken.",
+            "content": "The sound barrier exists because a source of sound moving near the speed of sound begins to catch up with the wave fronts it produces; the wave fronts are high density regions of air, creating the feeling of a wall or barrier",
             "uuid": "2394cbaa-76b0-41fc-a6f0-fa55c031778d"
           }
         }
