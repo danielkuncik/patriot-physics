@@ -6821,6 +6821,7 @@
         "title": "Wave Phenomena",
         "number": 4,
         "notes": "Potentially: Reflection and refraction should be separated from diffraction and interference; 8-22-19 DEFINITELY necessary",
+        "more notes": "There's alot missing, is there anything on the speed of light and the index of refraction...AP needs interference but not reflection and refraction",
         "uuid": "59ca5409-1566-4cfb-a4c9-77dc3e85aeb6",
         "standards":
         {
@@ -6835,6 +6836,7 @@
             "title": "Wave Phenomena Basics",
             "level": 1,
             "objective": "Identify real-world examples of reflection, refraction, interference, scattering, diffraction, and absorption of waves.",
+            "content": "When a wave crosses from one medium to another, it can undergo a phenomenon such as reflection, refraction, interference, scattering, diffraction, or absorption.",
             "uuid": "4ffcb6d3-cb40-4c97-a873-b4f90839b2f0"
           },
           "reflection_diagram_1":
@@ -6842,6 +6844,7 @@
             "title": "Reflection Diagram 1: Identification",
             "level": 1,
             "objective": "Given a diagram of reflection, identify elements of the diagrams. Identify the law of reflection",
+            "content": "When a ray of light strikes a barrier and reflections, a physicist can identify the incident ray, reflected ray, angle of incidence and angle of reflection; the angle of incidence always equals the angle of reflection.",
             "uuid": "f74f89b0-9131-47b0-a7d5-9a1b36f43194"
           },
           "reflection_diagram_2":
@@ -6849,6 +6852,7 @@
             "title": "Reflection Diagram 2: From Memory",
             "level": 2,
             "objective": "From memory, create diagrams A diagram of reflection. Demonstrate that this diagram illustrates the law of reflection.",
+            "content:": "When a ray of light strikes a barrier and reflections, a physicist can diagram the incident ray, reflected ray, angle of incidence and angle of reflection; the angle of incidence always equals the angle of reflection.",
             "uuid": "c6e1f160-2d52-4df0-88b4-f8dffa9dce86"
           },
           "refraction_diagrams_1":
@@ -6856,6 +6860,7 @@
             "title": "Refraction Diagrams 1: Identification",
             "level": 1,
             "objective": "Given a diagram of refraction, identify elements of the diagrams. Indicate whether light speeds of slows in the situation and what it could represent.",
+            "content": "When a ray of light enters a new medium and bends, a physicist can identify the incident ray, refracted ray, the angle of incidence, and the angle of refraction; if the light speeds up it bends outward and the angle of refraction is greater than the angle of incidence; if the light slows down in bends inward and the angle of refraction is less than the angle of incidence.",
             "uuid": "85096381-f8ff-4000-a04d-870b50efa7fa"
           },
           "refraction_diagrams_2":
@@ -6863,7 +6868,8 @@
             "title": "Refraction Diagrams 2: From Memory",
             "level": 2,
             "objective": "Given a diagram of refraction, identify elements of the diagrams. Indicate whether light speeds of slows in the situation and what it could represent.",
-            "idea": "should the quiz not indicate whether light must speed or slow, and leave that to be identified seperately?",
+            "content": "When a ray of light enters a new medium and bends, a physicist can diagram the incident ray, refracted ray, the angle of incidence, and the angle of refraction; if the light speeds up it bends outward and the angle of refraction is greater than the angle of incidence; if the light slows down in bends inward and the angle of refraction is less than the angle of incidence.",
+            "idea": "should the quiz not indicate whether light must speed or slow, and leave that to be identified separately?",
             "uuid": "14008f33-5080-47b4-b64f-8ed898a663a9"
           },
           "diffraction_scattering_diagrams":
@@ -6871,6 +6877,7 @@
             "title": "Diffraction and Scattering Diagrams",
             "level": 2,
             "objective": "Draw diagrams that illustrate the phenomena of diffraction and scattering.",
+            "content": "When a wave comes near a corner it bends around the corner; when a wave, particularly light, enters certain medium, it is scattered in many different directions.",
             "uuid": "c1ea7292-c470-483a-b051-95834906e60d"
           },
           "interference_diagrams_1":
@@ -6878,6 +6885,7 @@
             "title": "Interference Diagrams 1: Interference in Regularly Shaped Waves",
             "level": 2,
             "objective": "Draw and recognize diagrams that show examples of normally-shaped waves passing through each other.",
+            "content": "When two waves intersect, they pass through each other without affecting each other, and as they do they sum together to make a different shaped wave.",
             "uuid": "d6a11ea3-9f6e-4011-a5a9-643039a4f74f"
           },
           "interference_diagrams_2":
@@ -6885,6 +6893,7 @@
             "title": "Interference Diagrams 2: Interference in Non-Regularly Shaped Waves",
             "level": 3,
             "objective": "Draw and recognize diagrams that show non-regular examples of waves passing through each other.",
+            "content": "When two waves interfere, they sum together; if the two waves are irregularly shaped they make new shapes that are often unpredictable.",
             "uuid": "eccbce93-2269-46db-ba86-321b48df873a"
           },
           "wave_diagrams_3":
@@ -6892,6 +6901,7 @@
             "title": "Wave Diagrams 3: Multiple Instances of Reflection and Refraction",
             "level": 3,
             "objective": "Draw and label diagrams that include multiple instances of reflection and refraction.",
+            "content": "A ray of light can reflect off one surface and then refract through another, creating a pattern that is less obvious, but that can be tracked.",
             "uuid": "a5d2f18f-970f-4f73-b342-42a1519eb3a0"
           },
           "snells_law_basic":
@@ -6899,6 +6909,7 @@
             "title": "Snell's Law Basic",
             "level": 3,
             "objective": "Draw and label quantitative diagrams of refraction using Snell's Law.",
+            "content": "Snell's Law is a formula that allows a physicist to predict at what angle a light way will refract from the index of refraction of the materials the light crosses through.",
             "uuid": "15047c5f-da45-4514-a3e5-91d95127cd2c"
           },
           "huygens_principle":
@@ -6906,6 +6917,7 @@
             "title": "Huygen's Principle",
             "level": 3,
             "objective": "Use and diagram Huygen's Principle to explain why refraction occurs.",
+            "content": "Huygen's Principle states that every point on a wavefront  can be considered a new source of wavefronts; Huygen's principle can illustrate why a wave curves around a barrier.",
             "uuid": "93a88819-fd25-4d81-9b03-0d6a277645d9"
           },
           "diffraction_grating_diagram":
@@ -6913,6 +6925,7 @@
             "title": "Diffraction Grating Diagrams",
             "level": 3,
             "objective": "Draw diagrams that illustrate interference patterns as light travels through a diffraction grating.",
+            "content": "When light travels through a pattern of small holes, it first diffracts, then diffracted wavefronts interfere to create a pattern of dots or bands.",
             "uuid": "91848338-15d1-478f-85a4-019143ca42ac"
           },
           "snells_law_prism":
@@ -6920,6 +6933,7 @@
             "title": "Snell's Law Prism",
             "level": 4,
             "objective": "Use Snell's law to explain how a prism splits light into colors.",
+            "content": "Each wavelength of light has a slightly different index of refraction in glass and water, causing each wavelength to bend at a different angle and spread out all colors.",
             "uuid": "e976da72-2027-4ef3-b010-fa6ad4743459"
           },
           "finding_speed_of_light":
@@ -6927,6 +6941,7 @@
             "title": "Finding the speed of light",
             "level": 4,
             "objective": "Explain how the speed of light can be determined.",
+            "content": "The speed of light can be determined by having two beams travel different distances and interfere, causing a difference in phase that can be measured.",
             "notes": "Should be moved to lab unit?",
             "uuid": "aedf2b91-a3b6-4f49-9a11-d57e95049216"
           },
@@ -6935,6 +6950,7 @@
             "title": "Diffraction Grating Formula",
             "level": 4,
             "objective": "Use the diffraction grating formula to derive the wavelength of light.",
+            "content": "By studying the patterns of dots and bands produced when light travels through a diffraction grating, a physicist can derive a formula for the wavelength of specific colors of light.",
             "uuid": "34296eff-cea6-4f8f-8414-9ff78264d32b"
           },
           "discovery_of_dna_structure":
@@ -6942,6 +6958,7 @@
             "title": "Discovery of the DNA Structure",
             "level": 5,
             "objective": "Using a diagram of X-Ray diffraction, describe the structure of DNA and defend your answer.",
+            "content": "The pattern of a DNA molecules was determined by seeing the interference pattern made by X-Rays diffracting as they crossed through the bands of DNA.",
             "uuid": "1cf009f9-35d8-4f28-beb2-8881814b9bf0"
           },
           "rainbows_quantitative":
@@ -6949,6 +6966,7 @@
             "title": "Rainbows Quantitative",
             "level": 5,
             "objective": "Use Snell's Law and diagrams of refraction and reflection to quantitatively and qualitatively explain how a rainbow is made from raindrops.",
+            "content": "A physicist can use Snell's law and the laws of reflection to create a quantitative model of how a rainbow exists.",
             "uuid": "b237b9ba-d6fd-48fe-9e29-8b6db9f5cd73"
           }
         }
