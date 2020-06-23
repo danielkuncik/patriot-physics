@@ -1145,64 +1145,139 @@
           {
             "title": "Qualitative vs. Quantitative Reasoning",
             "level": 1,
-            "objective": "Define and give examples of qualitative and quantitative reasoning."
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Define and give examples of qualitative and quantitative reasoning.",
+            "content": "A quantitative study is based on numerical measurements; a qualitative study is based on categories, patterns, or non-numerical observations"
           },
           "identify_variables_1":
           {
             "title": "Identify Variables 1",
             "level": 1,
-            "objective": "Given a description of an experiment, identify the independent, dependent, and controlled variable of the experiment."
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["qualitative_vs_quantitative"],
+            "objective": "Given a description of an experiment, identify the independent, dependent, and controlled variable of the experiment.",
+            "content": "In an experiment, an independent variable is systematically changed; a dependent variable is systematically measured; and a controlled variable is kept constant."
           },
           "what_is_theory":
           {
             "title": "What is a theory?",
             "level": 2,
-            "objective": "Define the term 'theory'; give examples of theories that are consistent and inconsistent with data; differentiate between theoretical physics and experimental physics; define the terms theory, law, and model"
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["identify_variables_1"],
+            "objective": "Define the term 'theory'; discuss how theories are shown to be consistent and inconsistent with data; differentiate between theoretical physics and experimental physics; define the terms theory and law",
+            "content": "A theory is a simple explanation of how the universe works; theories are used to derive predicted observations; by making real observations, theories are shown to be consistent or inconsistent with data; a law is a theory that has been consistently validated; theoretical physicists develop new theories while experimental physicists test those theories."
           },
           "identify_variables_2":
           {
             "title": "Identify Variables 2",
             "level": 2,
+            "horizontal": 2,
+            "letter": "D",
+            "prerequisites": ["what_is_theory"],
             "objective": "Given a description of an experiment, identify the independent, dependent, and controlled variables of the experiment; identify more than one controlled variable; define the term 'experiment' in terms of independent, dependent, and controlled variables; identify whether each variable is qualitative or quantitative.",
+            "content": "In an experiment, an independent variable is systematically changed; a dependent variable is systematically measured; and a controlled variable is kept constant.",
             "notes": "More challenging examples than identify variables 1"
+          },
+          "good_theories":
+          {
+            "title": "Good Theories",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["identify_variables_2"],
+            "objective": "Define elements of a good theory: universality, parsimony, and clear limitations",
+            "content": "A universal theory applies to the entire universe; a parsimonious theory uses only a small number of simple rules; a theory with clear limitations has clearly defined conditions under which a different theory is used."
           },
           "inductive_vs_deductive":
           {
             "title": "Inductive and Deductive Reasoning",
             "level": 3,
-            "objective": "Define and give examples of inductive and deductive reasoning"
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["good_theories"],
+            "objective": "Define and give examples of inductive and deductive reasoning",
+            "content": "In a deductive study, a specific theory is used to make a prediction and then data is evaluated as either consistent or inconsistent with the theory; in an inductive study many different possibilities are tested to look for patterns and potential new theories."
           },
           "identify_variables_3":
           {
             "title": "Identify Variables 3",
             "subtitle": "The Pendulum Lab",
             "level": 3,
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["inductive_vs_deductive"],
             "objective": "Use the concept of dependent, independent, and controlled variables to describe a procedure that includes more than one experiment."
           },
           "design_experiment_1":
           {
             "title": "Design Experiment 1",
             "level": 3,
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["identify_variables_3"],
             "objective": "Design an experiment that requires one procedure using the terms independent variable, dependent variable, and controlled variable"
           },
           "limits_of_theories":
           {
             "title": "Limitations of Theories",
             "level": 4,
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["design_experiment_1"],
             "objective": "Give examples of how theories work within particular ranges; in particular, define the ranges of Newton's Laws."
           },
           "qualitative_vs_quantitative_difference":
           {
             "title": "Qualitatively Different vs. Qualitatively Different",
             "level": 4,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["limits_of_theories"],
             "objective": "Give examples of situations in which items (or people) are either quantitatively or qualitative different.",
             "notes": "Could have some connection to psychology, or to sports, eg: was michael jordan quantitatively or qualitative different."
           },
           "design_experiment_2":
           {
-            "title": "Design Experiment 3",
+            "title": "Design Experiment 2",
             "level": 4,
+            "horizontal": 1,
+            "letter": "K",
+            "prerequisites": ["qualitative_vs_quantitative_difference"],
             "objective": "Design a complex investigation involving more than one experiment using the terms independent variable, dependent variable, and controlled variable."
+          },
+          "peer_review_1":
+          {
+            "title": "Peer Review 1",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["design_experiment_2"],
+            "objective": "Complete a mock 'peer review' of a famous historical or hypothetical experiment.",
+            "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor."
+          },
+          "peer_review_2":
+          {
+            "title": "Peer Review 2",
+            "level": 5,
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["peer_review_1"],
+            "objective": "Complete a mock 'peer review' of a famous historical or hypothetical experiment.",
+            "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor."
+          },
+          "journal_research":
+          {
+            "title": "Journal Research",
+            "level": 6,
+            "horizontal": 4,
+            "letter": "N",
+            "prerequisites": ["peer_review_2"],
+            "objective": "Read a review articles from current scientific journals.",
+            "content": "New scientific studies are published in scientific journals."
           }
         }
       },
@@ -1376,6 +1451,14 @@
         "title": "Basic Statistics",
         "number": 4,
         "uuid": "7eb1e95d-0164-48cc-a054-64921ca42763",
+        "pods":
+        {}
+      },
+      "cognitive_psychology_of_physics":
+      {
+        "title": "Cognitive Psychology of Physics",
+        "number": 5,
+        "uuid": "8ee79b90-28f4-4c60-a39f-9e39a48efdbe",
         "pods":
         {}
       }
