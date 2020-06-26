@@ -8031,7 +8031,7 @@
             "letter": "C",
             "prerequisites": ["circuit_diagrams_1"],
             "objective": "Draw simple series and parallel circuits correctly; understand different symbols for a battery.",
-            "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack."
+            "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack.",
             "uuid": "8f39c5cf-bd20-488b-9ad9-d70f634bc48a"
           },
           "switches_1":
@@ -8065,7 +8065,7 @@
             "letter": "F",
             "prerequisites": ["short_circuits"],
             "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in parallel.",
-            "content": "Adding light bulbs in series dims all bulbs; light bulbs added in parallel are all bright."
+            "content": "Adding light bulbs in series dims all bulbs; light bulbs added in parallel are all bright.",
             "uuid": "899c86ec-437b-4ecb-baf4-25bb14441c8b"
           },
           "switch_challenges":
