@@ -7248,7 +7248,8 @@
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Explain an infrared camera very simply.",
+            "objective": "Explain how an infrared camera produces images; explain using the language of electromagnetic waves and not of 'seeing heat'.",
+            "content": "An infrared camera records the prescence of infrared waves; because infrared waves are given off by warmer objects, warmer objects such as people appear brighter in an infrared camera.",
             "examples":
             [
               "Why do humans appear white on an infrared camera?",
@@ -7264,6 +7265,7 @@
             "letter": "B",
             "prerequisites": ["basic_infrared_camera"],
             "objective": "Predict how objects of different color will reflect different photons of light.",
+            "content": "Objects with a color reflect the color of light they are and absorb other colors; white objects reflect all photons and black objects absorb all photons.",
             "uuid": "8afc5fb6-142b-498b-aed6-544ee9095eba"
           },
           "additive_color":
@@ -7274,6 +7276,7 @@
             "letter": "C",
             "prerequisites": ["reflection_color"],
             "objective": "Explain how colors of light combine to make different colors; relate this fact to light from the sun and flourescent lights",
+            "content": "All colors of light combined create white light; humans see red, blue, and green photons with their photoreceptors; red and green light appear yellow; red and blue light appear fuscia; green and blue light appaer cyan.",
             "uuid": "947c4549-ec68-4ef3-b752-674908de50c0"
           },
           "long_vs_short_wavelength":
@@ -7284,6 +7287,7 @@
             "letter": "D",
             "prerequisites": ["additive_color"],
             "objective": "Identify long and short wavelength electromagnetic waves and explain difference in how they would interact.",
+            "content": "As a rule of thumb, electromagnetic waves of long wavelength are 'tougher' and more able to move through materials unhindered; electromagnetic waves of short wavelength are 'weaker' and are more likely to be absorbed or scattered.",
             "uuid": "4a5bfac4-bb5f-4ac4-8ed6-241690d021ce"
           },
           "infrared_camera_advanced":
@@ -7293,12 +7297,13 @@
             "horizontal": 5,
             "letter": "E",
             "prerequisites": ["long_vs_short_wavelength"],
-            "objective": "Explain how different objects emit different wavelengths; ex",
+            "objective": "Explain how different objects emit different wavelengths",
+            "content": "Warmer objects emit higher frequency infrared waves, and the warmest emit visible light waves.",
             "examples":
             [
               "The wires inside a toaster appear red, why?",
               "How are the wires inside of a toaster similar to humans, how are they different, and how can different types of camera examine this difference.",
-              "How do objects of different human color appear on an infrared camera."
+              "How do objects of different human color appear on an infrared camera?"
             ],
             "uuid": "6a83aa43-d5cb-4b9d-b964-c0099c92327a"
           },
@@ -7310,6 +7315,7 @@
             "letter": "F",
             "prerequisites": ["infrared_camera_advanced"],
             "objective": "Define the terms 'radiation' and 'electromagnetic radiations,' differentiate between ionizing radiation and non-ionizing radiation; identify the health risks associated with ionizing radiation.",
+            "content": "All photons with an energy greater than 13.6 eV (in the ultraviolet range) are capable of turning an neutral atom into an ion, whick creates health risks in human bodies; the term 'radiation' in physics means all electromagnetic waves, many of which are not dangerous.",
             "uuid": "a4fc85bc-dafb-488d-8792-70bb99a54dfb"
           },
           "subtractive_color":
@@ -7320,6 +7326,7 @@
             "letter": "G",
             "prerequisites": ["safe_dangerous_radiation"],
             "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color.",
+            "content": "Paint works by absorbing and reflecting different colors; rules of mixing paint are thus different (and somewhat opposite) as the rules of mixing light.",
             "uuid": "65eb5789-d67f-48e8-b3c0-e22843641982"
           },
           "identify_applications_electromagnetic_waves":
@@ -7330,6 +7337,8 @@
             "letter": "H",
             "prerequisites": ["subtractive_color"],
             "objective": "In writing, identify human applications each of types of invisible electromagnetic waves; relate the particular uses of each wave to wavelength, frequency and energy",
+            "content": "Humans use long and short wavelength electromagnetic waves for many different applications.",
+            "notes": "should be split into long and short wavelength",
             "examples":
             [
               "What types of wave are most used for communication and why?",
@@ -7347,6 +7356,7 @@
             "letter": "I",
             "prerequisites": ["identify_applications_electromagnetic_waves"],
             "objective": "Explain how astronomers conduct astronomy in the radio, microwave and infrared ranges and what objects they see in these ranges.",
+            "content": "Radio and microwave astronomy are very crucial to cosmology and can be conducted easily from earth; infrared astronomy is crucial to studying the interstellar medium and is conducted via satellite",
             "uuid": "33abbcef-43c5-4b57-85e9-c2073c856302"
           },
           "short_wavelength_astronomy":
@@ -7357,6 +7367,7 @@
             "letter": "J",
             "prerequisites": ["long_wavelength_astronomy"],
             "objective": "Explain how astronomers conduct astronomy in the visible, ultraviolet, X-Ray and gamma ray ranges and what objects they see in these ranges.",
+            "content": "Space telescopes that see visible, ultraviolet, and X-Rays are able to collect far more information about the makeup for astronomical bodies; gamma ray observations can learn about gamma ray burts or cosmic gamma rays",
             "uuid": "c52b412f-d294-4d54-a4a4-3ae198a1c287"
           },
           "why_is_the_sky_blue":
@@ -7366,7 +7377,8 @@
             "horizontal": 2,
             "letter": "K",
             "prerequisites": ["short_wavelength_astronomy"],
-            "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue.",
+            "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue; explain why oceans are blue and sunsets are orange.",
+            "content": "The sky is blue because blue photons are scattered by the atmosphere; our eyes are more sensitive to blue photons than violet photons; oceans are blue because light reflects off the water; sunsets are orange because longer wavelength photons are scattered if light must travel through more of the atmosphere.",
             "uuid": "10cb00f4-f4c9-485e-84be-96026c185694"
           },
           "climate_change":
@@ -7377,6 +7389,7 @@
             "letter": "L",
             "prerequisites": ["why_is_the_sky_blue"],
             "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect.",
+            "content": "The atmosphere absorbs and re-emits infrared radiation given off by earth, raising earth's temperature; without this effect, earth would be too cold for humans to live; more CO2 an CH4 in the atomspehre will cause more radiation to be absobred and re-emitted, raising earth's average temperature.",
             "uuid": "8ab2a6fc-8f82-4e9a-9091-d9d97ea66d76"
           },
           "galaxy_in_all_wavelengths":
@@ -7387,6 +7400,7 @@
             "letter": "M",
             "prerequisites": ["climate_change"],
             "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum.",
+            "content": "To study a single galaxy in all wavelengths gives significant knowledge about the makeup of each galaxy.",
             "uuid": "b2b44856-a579-49b1-abe9-e1086785e8f8"
           },
           "electromagnetic_rube_goldberg_device":
@@ -7397,6 +7411,7 @@
             "letter": "N",
             "prerequisites": ["galaxy_in_all_wavelengths"],
             "objective": "Design a hypothetical device that uses each different type of electromagnetic wave to accomplish a small household task.",
+            "content": "Electromagnetic waves of different wavelengths can trigger different sensors.",
             "uuid": "73a4a640-ec23-4f63-afa4-d3c3b432d36c"
           }
         }
@@ -7422,6 +7437,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a convex lens with an object outside the focal length.",
+            "content": "A ray diagram shows an object and a lense; all rays that are parallel to the lens go through the focal point on the other side; where multiple rays converge an image is seen.",
             "uuid": "f262f6da-fb5b-41bf-a550-bc25816b6dfc"
           },
           "mirror_1":
@@ -7432,6 +7448,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a concave mirror with an object inside the focal range",
+            "content": "A ray diagram shows an object an a mirror; all rays that are parallel to the mirror reflect through the focal point; where multiple rays intersect an image is seen.",
             "uuid": "a0f0b26d-2770-4bd6-81e3-4b6479a9cc50"
           },
           "lens_mirror_equations_1":
@@ -7442,6 +7459,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Predict the location of an image from the position of an object and the focal length of a lens or mirror.",
+            "content": "The lens and mirror equations relate the position of an object and the focal length of a lens or mirror to the position of an image.",
             "uuid": "ac83781b-b141-415c-8be6-5ad8c0d1e5dd"
           },
           "lens_mirror_equations_2":
@@ -7452,6 +7470,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Given the location and height of an object and the focal length of a lens or mirror, predict the location of the image, the height of the image, if the image is real or virtual, if the image is upright or inverted",
+            "content": "The lens and mirror equations relate the position of an object and the focal length of a lens or mirror to the position and magnification of an image.",
             "uuid": "b49b5b9d-24eb-4060-a44d-c48465d6f551"
           },
           "lens_2":
@@ -7462,6 +7481,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a convex lens with an object inside the focal range",
+            "content": "If two rays do not intersect in a ray diagram, then they can be traced back to a point where they virtually intersect and create a virtual image.",
             "uuid": "4ebc4ced-39c5-4aae-a8c3-dea60d403de4"
           },
           "mirror_2":
@@ -7472,6 +7492,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a concave mirror with an object inside the focal range",
+            "content": "Virtual images can appear in mirros as well as lenses.",
             "uuid": "0581c2f2-a02d-489c-aa0f-a271626a4b4a"
           },
           "lens_3":
@@ -7482,6 +7503,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a concave lens with an object inside or outside of the focal range",
+            "content": "A concave lens follows similar rules to a convex lens, but is more likely to produce an enlarged and virtual image.",
             "uuid": "a4a26d51-070e-4ca9-acbc-c4bc87b8998b"
           },
           "mirror_3":
@@ -7492,6 +7514,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a convex mirror with an object inside or outside of the focal range",
+            "content": "A convex mirror follows similar rules to a concave mirror, but is more likely to produce an enlarged and virtual image.",
             "uuid": "284f48ab-6f63-44cf-9f25-c1234801c6ba"
           },
           "lens_4":
@@ -7502,6 +7525,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "For a convex or concave lenses with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the lens equations.",
+            "content": "A ray diagram can be used to manually measure the location and magnificiation of an image made by a lens, and should return the same result as the lens equation.",
             "uuid": "bdab09f4-8722-424f-88c8-dd8f219cfc32"
           },
           "mirror_4":
@@ -7511,7 +7535,8 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "For a convex or concave mirror with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the lens equations.",
+            "objective": "For a convex or concave mirror with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the mirror equations.",
+            "content": "A ray diagram can be used to manually measure the location and magnification of an image made by a mirror, and should return the same result as the mirror equation.",
             "uuid": "2733811f-552d-4995-8eaf-a7d5a04c9ad3"
           },
           "plane_mirrors":
@@ -7522,6 +7547,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw Ray Diagrams for plane mirrors; describe the double speed phenomenon",
+            "content": "A plane mirror createa a virtual image that can be measured using the law of reflection; an image of a person walking towards a mirror appears to move at twice the speed the person walks.",
             "uuid": "dd44c8d3-585a-415f-ae3d-f4490cebf045"
           },
           "multiple_lens_and_mirrors_A":
@@ -7532,6 +7558,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a setup involving multiple lenses and mirrors linked together. Confirm this diagram mathces the results given from the equations.",
+            "content": "A series of ray diagrams can be used to determine an image made by a sequence of multiple lenses and mirrors.",
             "uuid": "93462785-3d68-41cb-9bdf-ad4df8e87dc0"
           },
           "multiple_lens_and_mirrors_B":
@@ -7542,6 +7569,7 @@
             "letter": "",
             "prerequisites": [],
             "objective": "Draw a ray diagram for a setup involving multiple lenses and mirrors linked together. Confirm this diagram mathces the results given from the equations.",
+            "content": "A series of ray diagrams can be used to determine an image made by a sequence of multiple lenses and mirrors.",
             "uuid": "0cc6e510-8029-4be6-ae62-0118183e8875"
           }
         }
@@ -7578,6 +7606,7 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "Draw and explain atomic structure; recognize AC and DC current; explain why specific electrons move",
+            "content": "Atoms consist of protons, neutrons, and electrons; valence electrons move between atoms in an electric circuit; in a DC current electrons move on one direction while in AC curren they switch directions.",
             "uuid": "4dd93e3d-4d21-447f-ad73-c921b8084cc1"
           },
           "circuit_definitions_1":
@@ -7588,6 +7617,7 @@
             "letter": "B",
             "prerequisites": ["very_basic_atoms"],
             "objective": "Recognize the definitions and properties of voltage, current, resistance, and power.",
+            "content": "Voltage is the force that pushes charge around an electric circuit; current is the motion of charge around a circuit; resistance is how difficult it is for charge to move around the circuit; power is the rate at which energy changes form.",
             "uuid": "df740723-6c09-4089-b31f-d5ec76dac494"
           },
           "insulators_conductors":
@@ -7598,6 +7628,7 @@
             "letter": "C",
             "prerequisites": ["circuit_definitions_1"],
             "objective": "Recognize different insulators and conductors",
+            "content": "Conductors are made of metal and allow electric current to flow; insulators are made of nonmetals and do not allow electric current to flow.",
             "uuid": "32cb18ef-4f14-43ce-b456-8bef572323ca"
           },
           "energy_change_in_circuit":
@@ -7608,6 +7639,7 @@
             "letter": "D",
             "prerequisites": ["insulators_conductors"],
             "objective": "Describe how energy changes in an electric circuit consisting of only a battery, a lightbulb, and a wire.",
+            "content": "In an electric circuit, the electrochemical potential energy of a battery becomes electrical energy moving through wires, which then becomes other forms of energy when it reaches a light bulb or resistor.",
             "uuid": "c3d2b9a4-e293-4b22-85f5-b2cfc29066f2"
           },
           "circuit_definitions_2":
@@ -7618,6 +7650,7 @@
             "letter": "E",
             "prerequisites": ["energy_change_in_circuit"],
             "objective": "Memorize the definitions and properties of voltage, current, resistance, and power.",
+            "content": "Voltage is the force that pushes charge around an electric circuit; current is the motion of charge around a circuit; resistance is how difficult it is for charge to move around the circuit; power is the rate at which energy changes form.",
             "uuid": "84327931-2346-4c9d-b844-e3828f333fd6"
           },
           "organization_atoms":
@@ -7628,77 +7661,92 @@
             "letter": "F",
             "prerequisites": ["circuit_definitions_2"],
             "objective": "Draw how atoms are organized in insulators and conductors; relate this organization to how circuits operate within an electric circuit; explain why electrons and not protons and neutrons move in an electric circuit.",
+            "content": "In a conductor, valence electrons are shared among a grid of nuclei, allowing charge to flow; in an insulator, valence electrons are held in particular places, making it impossible for charge to flow.",
             "uuid": "4653ff1c-b3bd-41d6-98c9-e7486b10ae57"
           },
           "advanced_current_1":
           {
-            "title": "Advanced Current 1: How do Electrons Move",
+            "title": "Advanced Current 1",
+            "subtitle": "How do Electrons Move?",
             "level": 3,
             "horizontal": 2,
             "letter": "G",
             "prerequisites": ["organization_atoms"],
             "objective": "Differentiate between two theories of electron motion, one in which electrons all come from the battery and one in which they remain in the wire, select the theory, argue that electrons move slowly through a circuit",
+            "content": "Electrons do not move the whoel way around the circuit, but electrons already in a circuit are pushed by the battery.",
             "uuid": "fc56da19-2632-411e-9f81-f68db75f504d"
           },
           "advanced_voltage_1":
           {
-            "title": "Advanced Voltage 1: The Potato Battery",
+            "title": "Advanced Voltage 1",
+            "subtitle": "The Potato Battery",
             "level": 3,
             "horizontal": 3,
             "letter": "H",
             "prerequisites": ["advanced_current_1"],
             "objective": "Explain by referring to chemical princples why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery.",
+            "content": "A battery consists of an anode and a cathode connected by a wire and an electrolyte; the anode loses electrons and is oxidized while the cathode gains electrons and is reduced.",
             "uuid": "f7c85c91-82d5-487e-81cb-818f1aa6330e"
           },
           "advanced_current_2":
           {
-            "title": "Advanced Current 2: Implications of How Electrons Move",
+            "title": "Advanced Current 2",
+            "subtitle": "Implications of How Electrons Move",
             "level": 3,
             "horizontal": 4,
             "letter": "I",
             "prerequisites": ["advanced_voltage_1"],
             "objective": "Refer to concepts of how electrons move to explain how current changes in circuits with switches and resistors",
+            "content": "A switch immeidately stops and starts all current in a circuit.",
             "note": "Address misconception that closer light bulbs will be brighter.",
             "uuid": "9f3e1de7-19a0-4c45-8785-604f51cf9411"
           },
           "advanced_current_3":
           {
-            "title": "Advanced Current 3: Conventional Current",
+            "title": "Advanced Current 3",
+            "subtitle": "Conventional Current",
             "level": 3,
             "horizontal": 5,
             "letter": "J",
             "prerequisites": ["advanced_current_2"],
             "objective": "Untangle the conundrum that, mathematically, current flows the opposite way that electrons actually move.",
+            "content": "Current represents positive charge motion in the direction opposite that which negative charges move.",
             "uuid": "150d8b6c-0306-40df-81b1-c51acfdcd45d"
           },
           "advanced_current_4":
           {
-            "title": "Advanced Current 4: Electron Drift and Charge of a Wire",
+            "title": "Advanced Current 4",
+            "subtitle": "Electron Drift and Charge of a Wire",
             "level": 4,
             "horizontal": 5,
             "letter": "K",
             "prerequisites": ["advanced_current_3"],
             "objective": "Describe how electrons combine fast random motion with slow drift under and electric field; describe how an electric wire has a neutral charge.",
+            "content": "Electrons do not flow through a circuit but drift very slowly while also moving randomly; electric wires are not charged when current flows through them.",
             "uuid": "214790e5-0994-4f8c-a142-466bafbb3e9f"
           },
           "advanced_current_5":
           {
-            "title": "Advanced Current 5: Summation of Charge Motion",
+            "title": "Advanced Current 5",
+            "subtitle": "Summation of Charge Motion",
             "level": 4,
             "horizontal": 4,
             "letter": "L",
             "prerequisites": ["advanced_current_4"],
             "objective": "Describe current and the summation of motion of many charges, relate current to the total number of free-charges in a wire; differentaite between free and not-free electrons in a wire.",
+            "content": "slow motion of countless electrons produces an electric current",
             "uuid": "17934d7e-a57e-49b8-a59d-c687d5b780ae"
           },
           "advanced_voltage_2":
           {
-            "title": "Advanced Voltage 2: Battery Chemistry",
+            "title": "Advanced Voltage 2",
+            "subtitle": "Battery Chemistry",
             "level": 4,
             "horizontal": 3,
             "letter": "M",
             "prerequisites": ["advanced_current_5"],
             "objective": "Relate specific batteries to half-reactions and explain how electric current flows through the electrolyte",
+            "content": "A battery consists of a chemical reaction that involves electron exchange; half of this reaction occurs at the anode and the other half at the cathode; while negative charges move through the wire positive charges move through the electrolyte, creating a complete circuit of positive charge flow.",
             "uuid": "578da189-8e46-4041-8dd8-e20e815baf20"
           },
           "advanced_current_6":
@@ -7709,6 +7757,7 @@
             "letter": "N",
             "prerequisites": ["advanced_voltage_2"],
             "objective": "Describe how current can flow in bodies with charged particles other than water, such as a solution of ions.",
+            "content": "Any charged particle can be responsible for electric current, not only electrons.",
             "uuid": "9d4d0c34-e3c5-49b4-b9c0-662ee436c88b"
           },
           "rigorous_definition_current":
@@ -7719,6 +7768,7 @@
             "letter": "O",
             "prerequisites": ["advanced_current_6"],
             "objective": "Describe current at a point as charge per time through that point; explain an equation that relates electron drift velocity to current.",
+            "content": "Current is defined at a given point and is equal to the magnitude of (positive) charge passing that point divided by the time intrval.",
             "uuid": "512c0b83-9cbd-4a34-b6a7-f7fc6c889993"
           },
           "rigorous_definition_voltage":
@@ -7729,6 +7779,7 @@
             "letter": "P",
             "prerequisites": ["rigorous_definition_current"],
             "objective": "Describe Potential Difference between two points across a resistor as energy per charge.",
+            "content": "Voltage (potential difference) is defined as the energy gained or dissipated by a (positive) unit charge between two points.",
             "uuid": "419bdf9b-70a3-471b-ab83-c35545b270a4"
           },
           "rigorous_batteries":
@@ -7739,6 +7790,7 @@
             "letter": "Q",
             "prerequisites": ["rigorous_definition_voltage"],
             "objective": "Apply rigorous definitions of current and voltage to a battery",
+            "content": "A battery provides electrons on one end, absorbs electrons on the other, and adds a positive potential difference between cathode and anode.",
             "uuid": "b5eae1f2-0d39-4ea3-89a0-375ee327cac9"
           },
           "rigorous_definition_power":
@@ -7749,6 +7801,7 @@
             "letter": "R",
             "prerequisites": ["rigorous_batteries"],
             "objective": "Describe power as energy inputted or outputted into a circuit per unit time and explain how the power formula is consistent with definitions of current and potential difference.",
+            "content": "Power of a circuit represents the energy inputted or outputted per unit time; power is equal to current times voltage.",
             "uuid": "a8120217-37e1-4639-8ff5-0d5cad12b691"
           },
           "advanced_current_x":
@@ -7759,6 +7812,7 @@
             "letter": "S",
             "prerequisites": ["rigorous_definition_power"],
             "objective": "Design a physical model, such as a diagram, a video, or a skit, that accurately describes the motion of electrons on a complex circuit with mulitple resistors and switches in series and parallel.",
+            "content": "A circuit consists of exchange of electrons and positive charges through pushing randomly moving charged particles in a wire, while simultaneously outputting energy for some useful task.",
             "uuid": "3b95fead-b8e9-4aec-b861-b0239e10676e"
           }
         }
