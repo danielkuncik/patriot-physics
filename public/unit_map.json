@@ -6494,6 +6494,7 @@
             "letter": "M",
             "prerequisites": ["drawing_waves_2"],
             "objective": "Explain how to create transverse and longitudinal waves in multiple contexts; explain logically why sound is longitudinal and light is transverse.",
+            "content": "Transverse waves are created by particles pulling the particles behind them; longitudinal waves are created by particles pushing the particles in front of them",
             "uuid": "89fac701-3921-4af1-b7bd-f8f1da9296af"
           },
           "drawing_waves_3":
@@ -6504,6 +6505,7 @@
             "letter": "N",
             "prerequisites": ["making_transverse_longitudinal_waves"],
             "objective": "Draw waves of particular wavelength AND amplitude with every crest, trough, and center point correctly positioned.",
+            "content": "The wavelength should be the distance from crest to crest, from trough to trough, and twice then length from center point to center point; each trough should be halfway between two crests and vice versa; each center point should be evenly between a crest and a trough.",
             "note": "Crest, troughs, and middle points must all be correctly positioned, horizontally and vertically, for full credit.",
             "uuid": "7be86cc5-fe71-4a2a-8e8c-41676f68f08f"
           },
@@ -6515,6 +6517,7 @@
             "letter": "O",
             "prerequisites": ["drawing_waves_3"],
             "objective": "Identify how media change the speed of sound and the speed of light; identify why media has opposite effects on the speed of sound and of light.",
+            "content": "Sound moves faster in dense media because closer together particles can push each other quickly and more efficiently; light moves faster in less dense media because electromagnetic waves do not depend on media and any particles are in the way of the wave's progress.",
             "notes": "Also deals with the ideas of transverse and longitudinal waves..",
             "uuid": "535893bc-89d6-4dc5-9621-56c75beb0c15"
           },
@@ -6526,6 +6529,7 @@
             "letter": "P",
             "prerequisites": ["speed_of_sound_and_light_in_media"],
             "objective": "Write trigonometric functions that show the shape of a wave with a particular wavelength and amplitude",
+            "content": "Waves can be modeled mathematically as sine or cosine functions",
             "uuid": "a47841db-08da-4ef6-ada9-856bbcb405dc"
           },
           "drawing_waves_4":
@@ -6536,6 +6540,7 @@
             "letter": "Q",
             "prerequisites": ["trigonometric_waves_1"],
             "objective": "Draw waves with a particular wavelength, amplitude, and phase, with all crests, troughs, and center points drawn correctly.",
+            "content": "The phase of a wave indicates at what point in a cycle that wave begins.",
             "notes": "The wave must begin on a particular phase for full credit. Phases presented are 0, pi/2, pi, and 3pi/2",
             "uuid": "c381f8b4-ac3f-4d1a-bd8a-a721c49f6442"
           },
@@ -6547,6 +6552,7 @@
             "letter": "R",
             "prerequisites": ["drawing_waves_4"],
             "objective": "Write trigonometric functions that show the shape of a wave with a particular wavelength and amplitude",
+            "content": "Wavelength can be represented as a divider within a trigonometric function; amplitude can be represented by a multiplier outside the trigonometric function.",
             "uuid": "7aac4294-9384-47b2-aa4e-f8db49edba18"
           },
           "trigonometric_waves_3":
@@ -6557,6 +6563,7 @@
             "letter": "S",
             "prerequisites": ["trigonometric_waves_2"],
             "objective": "Write a trigonometric function that gives the position of a particle relative to time as a transverse wave passes through. Identify and explain pieces of this function.",
+            "content": "A traveling wave is represented by both a position and time term within a trigonometric function.",
             "uuid": "0d202143-b90b-4d91-9760-a8a88e0c7313"
           },
           "combined_transverse_longitudinal_waves":
@@ -6567,6 +6574,7 @@
             "letter": "T",
             "prerequisites": ["trigonometric_waves_3"],
             "objective": "Qualitatively analyze waves that combine transverse and longitudinal elements.",
+            "content": "Mechanical waves can combine transverse and longitudinal elements; particles move in circles when these waves pass through.",
             "uuid": "131ebd5f-af8c-44dc-89a8-0ffd98681db5"
           },
           "trigonometric_waves_4":
@@ -6577,6 +6585,7 @@
             "letter": "U",
             "prerequisites": ["combined_transverse_longitudinal_waves"],
             "objective": "Write a trigonometric function that gives the position of a particle relative to time as a longitudinal wave passes through. Identify and explain pieces of this function.",
+            "content": "A traveling wave is represented as a trigonometric function with both a time term and a position term inside.",
             "uuid": "ee42bb03-a2af-4989-aaac-25a1cf98140f"
           },
           "trigonometric_waves_5":
@@ -6587,6 +6596,7 @@
             "letter": "V",
             "prerequisites": ["trigonometric_waves_4"],
             "objective":"Write a trigonometric function that gives the position of a particle relative to time as a combined transverse/longitudinal wave passes through. Identify and explain pieces of this function.",
+            "content": "Phase is represented by another term within a trigonometric function, or by using a different trigonometric function.",
             "uuid": "fdb5533c-1256-4c11-abb4-dd6e2bd0fd3e"
           },
           "wave_structure_level_6":
@@ -8836,7 +8846,8 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "Identify the parts of an atom, with a particular focus on the nucleus; identify that most of the mass but very little space is contained in the nucleus of an atom.",
-            "content": "An atom is composed of neutrons and protons in a nucleus and electrons surrounding the nucleus; the nucleus comprises only a tiny portion of the space in an atom but almost all of the mass of an atom; nuclear physics deals with changes to the nucleus of an atom."
+            "content": "An atom is composed of neutrons and protons in a nucleus and electrons surrounding the nucleus; the nucleus comprises only a tiny portion of the space in an atom but almost all of the mass of an atom; nuclear physics deals with changes to the nucleus of an atom.",
+            "uuid": "aa2a4192-bcfd-47dc-a2f4-5cb37ae96811"
           },
           "counting_parts_nucleus":
           {
@@ -8846,6 +8857,7 @@
             "letter": "B",
             "prerequisites": ["parts_of_atom"],
             "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation",
+            "content": "The atomic number of a nucleus gives the number of protons and the charge; the mass number gives the total number of protons and neutrons; nuclide notation represents a nucleus by its atoic symbol, charge, and mass.",
             "uuid": "54c0944e-1136-4764-83f6-c8eb4c4bf11f"
           },
           "atomic_mass_vs_mass_number":
@@ -8856,6 +8868,7 @@
             "letter": "C",
             "prerequisites": ["counting_parts_nucleus"],
             "objective": "Differentiate between atomic mass and mass number; explain when each is useful",
+            "content": "The mass number is the mass of an individual nucleus and the atomic mass is the average mass of all nuclei of that element.",
             "uuid": "a12dfb4d-bfa5-4cf8-b1e8-69ec537e2df7"
           },
           "alpha_beta_decay":
@@ -8866,6 +8879,7 @@
             "letter": "D",
             "prerequisites": ["atomic_mass_vs_mass_number"],
             "objective": "Draw reactions involving alpha or beta decay of an isotope.",
+            "content": "In alpha decay, a nucleus gives off a Helium-4 nucleus; in beta decay a nucleus gives off an electron.",
             "uuid": "d92bcb89-ca28-4d8a-9b8a-f454592b958c"
           },
           "complete_nuclear_reaction":
@@ -8876,6 +8890,7 @@
             "letter": "E",
             "prerequisites": ["alpha_beta_decay"],
             "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fusion, or decay.",
+            "content": "A nuclear reaction is balanced by following the conservations of charge and mass; in a fission reaction a large nucleus breaks into many parts; in a fusion reaction multiple small nuclei combine to make a large nucleus",
             "uuid": "92c2aa0e-f0ae-4118-af4a-52019cb2b93a"
           },
           "identify_crucial_particles":
@@ -8886,6 +8901,7 @@
             "letter": "F",
             "prerequisites": ["complete_nuclear_reaction"],
             "objective": "Identify the particles most crucial to understanding nuclear reactions.",
+            "content": "The most important particles in nuclear reactions include alpha and beta particles, positrons, neutrinos, and different isotopes of hydrogen.",
             "uuid": "98ab58a0-8c9c-4bbe-9ff6-110e9b847586"
           },
           "simple_half_life":
@@ -8896,6 +8912,7 @@
             "letter": "G",
             "prerequisites": ["identify_crucial_particles"],
             "objective": "Define half-life; answer simple questions",
+            "content": "The half life of an nucleus is the time in which half of the mass of that isotope will have decayed.",
             "limits": "Problems in this pod do not require the half-life to be represented as a function.",
             "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?",
             "uuid": "f546aaa6-7dc2-49f7-828f-452a75ae25a5"
@@ -8908,6 +8925,7 @@
             "letter": "H",
             "prerequisites": ["simple_half_life"],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula.",
+            "content": "A physicist can translate between nuclear reactions written in words and formulas of those reactions",
             "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction",
             "uuid": "7f6844f7-66bd-41ea-88bf-32bfabc0ea13"
           },
@@ -8919,6 +8937,7 @@
             "letter": "I",
             "prerequisites": ["written_reactions_1"],
             "objective": "For a written description of a nuclear reaction, write the reaction in a proper formula; determine energy released by a nuclear reaction.",
+            "content": "A physicist can translate between nuclear reactions written in words and formulas of those reactions",
             "notes": "This crucial topic should be broken into two sections",
             "uuid": "2ea95fd2-a83b-4050-b868-9ceba1f0f38a"
           },
@@ -8930,6 +8949,7 @@
             "letter": "J",
             "prerequisites": ["written_reactions_2"],
             "objective": "Represent half-life through an exponential decay function; use these formulas properly",
+            "content": "The half-life can be represented mathematically through an exponential decay function.",
             "uuid": "1f299cfe-c4d6-4bd1-bf3f-0590c38ab3f3"
           },
           "calculate_atomic_mass":
@@ -8940,6 +8960,7 @@
             "letter": "K",
             "prerequisites": ["half_life_formulas"],
             "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation.",
+            "content": "Atomic mass is calculated through a weighted average of all isotopes of an element.",
             "uuid": "7142ed0c-8ed4-40d7-b4f2-1e615ae24fd1"
           },
           "decay_chain":
@@ -8950,6 +8971,7 @@
             "letter": "L",
             "prerequisites": ["calculate_atomic_mass"],
             "objective": "Use a table of isotopes to draft a decay chain for a particular isotope.",
+            "content": "A table of isotopes shows the decay patterns of each isotope; a physcist can use this information to show the process by which a nucleus decays until it becomes a stable nucleus.",
             "uuid": "2708d867-e664-4e1d-b783-40aac856e09a"
           },
           "nuclear_reactions_sun":
@@ -8960,6 +8982,7 @@
             "letter": "M",
             "prerequisites": ["decay_chain"],
             "objective": "Write and analyze the nuclear reactions occurring inside the sun; explain how they produce energy.",
+            "content": "Nuclear fusion reactions in the sun release enormous amounts of energy.",
             "uuid": "a3df6ae8-f120-4a9a-b7d0-7f0d0481465e"
           },
           "remnants_isotope":
@@ -8970,6 +8993,7 @@
             "letter": "N",
             "prerequisites": ["nuclear_reactions_sun"],
             "objective": "Based upon the decay chain and the half-life of a particular isotope, identify at particualr times what different products you will have and what radiation they will give off; identify what percentages of each element you will have at different times.",
+            "content": "By combining information about a decay chain with the half life of each step, a phsycist can determine what amounts of different elements will be present after a certain time spend decaying.",
             "notes": "Good lead-in to a computation problem; should include some discussion of Technetium",
             "uuid": "940d640b-cddb-4e60-94da-85dae1d35b9c"
           }
