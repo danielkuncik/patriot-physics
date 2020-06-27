@@ -1597,14 +1597,20 @@
           {
             "title": "What is cosmology?",
             "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
             "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts",
             "content": "Cosmology is the science of the entire universe. It deals with questions such as how was the universe created and how will it end.",
             "uuid": "efe593d7-9025-4b11-8e67-2cc8be526955"
           },
-          "your_place_in_cosmos":
+          "your_address_in_cosmos":
           {
-            "title": "Your Place in the Cosmos",
+            "title": "Your Address in the Cosmos",
             "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["what_is_cosmology"],
             "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc.",
             "content": "The earth sits within a solar system, a galaxy, and a cluster of galaxies.",
             "note": "Make sure to throw out a reference to Our Town",
@@ -1614,6 +1620,9 @@
           {
             "title": "The Expansion of the Universe",
             "level": 2,
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["your_address_in_cosmos"],
             "objective": "Explain evidence that the universe is expanding from the red-shift of far away galaxies.",
             "content": "All far away objects are moving farther away. The farther away an objects is, the faster it is moving away. This occurs because space itself is stretching.",
             "uuid": "8785ed8a-f96f-47d9-b450-694f43140450"
@@ -1622,6 +1631,9 @@
           {
             "title": "The Cosmological Principle",
             "level": 2,
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["expansion_of_universe"],
             "objective": "Describe evidence the universe is infinite; define the cosmological principle; give arguments in favor of the cosmological principle; ",
             "content": "The cosmological principle states that the laws of physics are identical at all places in the universe, and the universe is infinite and without a center. No observer has a different view of the universe than any other, and earth cannot be the center of the universe.",
             "uuid": "6fb42fd0-b43d-4e19-ba11-f70a158768eb"
@@ -1630,6 +1642,9 @@
           {
             "title": "Infinite and Expanding?",
             "level": 3,
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["cosmological_principle"],
             "objective": "Explain how the universe can be both infinite and expanding.",
             "content": "The universe is infinite and is expanding because the space between galaxies is itself stretching.",
             "uuid": "ef9ce403-e0fe-40f6-ae1f-416758f539a7"
@@ -1638,6 +1653,9 @@
           {
             "title": "The Big Bang",
             "level": 3,
+            "horizontal": 2,
+            "letter": "F",
+            "prerequisites": ["infinite_and_expanding"],
             "objective": "Explain how scientists created the big bang theory; properly define the big bang.",
             "content": "If you follow the progress of the universe backwards, all matter and energy would eventually compress to one point. The moment at which all matter and energy emerged suddenly is referred to as the big bang. The big bang does not represent an explosion.",
             "uuid": "a6628647-2f30-4808-b0fc-349db2adeab7"
@@ -1646,6 +1664,9 @@
           {
             "title": "Stages of the Universe",
             "level": 4,
+            "horizontal": 2,
+            "letter": "G",
+            "prerequisites": ["big_bang"],
             "objective": "Explain the stages of the development of the universe according to the big bang theory.",
             "content": "As the universe expanded, matter took on different forms, from different forms of plasma into our current structure of atoms.",
             "uuid": "ed0be738-b4c5-4b60-86ec-b7930a782f23"
@@ -1654,6 +1675,9 @@
           {
             "title": "The Cosmic Microwave Background",
             "level": 4,
+            "horizontal": 1,
+            "letter": "H",
+            "prerequisites": ["stages_of_universe"],
             "objective": "Explain the existence and discovery of the cosmic microwave background; examine how it gives evidence for the big bang theory",
             "content": "In all directions, a very faint microwave signals exists as a remnant of the transition of matter from plasma to atoms.",
             "uuid": "7f8c3571-b1b0-4dc4-bb4a-d8002017c904"
@@ -1662,6 +1686,9 @@
           {
             "title": "Big Bang Limitations",
             "level": 4,
+            "horizontal": 0,
+            "letter": "I",
+            "prerequisites": ["comic_microwave_background"],
             "objective": "Explain limitations of the big bang theory and open questions within cosmology",
             "content": "The big bang theory alone does not completely match observed data and must be modified with theories such as inflationary theory.",
             "uuid": "5026c22a-1133-4265-963d-276e19739f3e"
@@ -1670,6 +1697,9 @@
           {
             "title": "Your Own Brief History of Time",
             "level": 5,
+            "horizontal": 1,
+            "letter": "J",
+            "prerequisites": ["big_bang_limitations"],
             "objective": "Tell the story of the history of the universe, the solar system, the earth, life on earth, humans, and yourself beginning with the Big Bang and ending with this moment.",
             "content": "We can trace our own lives within the history of the universe to the big bang.",
             "note": "Must incorporate information from physics, chemistry, biology, history, and any other relevant field",
@@ -1679,6 +1709,9 @@
           {
             "title": "Alternative Universes",
             "level": 6,
+            "horizontal": 1,
+            "letter": "K",
+            "prerequisites": ["your_own_brief_history_of_time"],
             "objective": "Within the big bang theory, imagine how if some variables were different our own experience in the universe would be different.",
             "content": "We do not know why variables, such as the charge to mass ratio of an electron or the speed of light, have the precise values they do. If they were different, the progression of the universe may have been markedly different.",
             "uuid": "6ea078ce-b9f9-42e1-bc27-2a6d6d1c8b63"
