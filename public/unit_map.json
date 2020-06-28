@@ -431,7 +431,7 @@
         "number": 4,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -612,7 +612,7 @@
         "number": 5,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -706,8 +706,8 @@
         "vision": "Connect equations, graphs, and written descriptions of common functions",
         "number": 6,
         "value": {
-          "AP_physics_1": "mantle",
-          "honors_physics": "mantle",
+          "AP_physics_1": null,
+          "honors_physics": null,
           "physics_A": null
         },
         "uuid": "a9b28ea1-8f07-4a5c-af88-0e0582189dd6",
@@ -1185,7 +1185,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "innerCore"
         },
@@ -1338,7 +1338,7 @@
         "number": 2,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "mantle",
           "physics_A": "mantle"
         },
@@ -2043,7 +2043,7 @@
         "number": 4,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "outerCore"
         },
@@ -2298,7 +2298,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "innerCore",
           "physics_A": "innerCore"
         },
@@ -2877,7 +2877,7 @@
         "number": 4,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -3091,7 +3091,7 @@
         "title": "Relative Velocity",
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "mantle",
           "physics_A": "mantle"
         },
@@ -3480,7 +3480,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "innerCore"
         },
@@ -3868,7 +3868,7 @@
         "number": 3,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -4074,7 +4074,7 @@
         "number": 4,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -4282,7 +4282,7 @@
         "number": 5,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -4479,7 +4479,7 @@
         "number": 6,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -4926,7 +4926,7 @@
         "number": 2,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "innerCore"
         },
@@ -5036,7 +5036,7 @@
         "number": 3,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "innerCore",
           "physics_A": "mantle"
         },
@@ -5638,7 +5638,7 @@
         "number": 2,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "outerCore",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -5783,7 +5783,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "innerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "mantle"
         },
@@ -5904,7 +5904,7 @@
         "number": 2,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "mantle",
           "physics_A": null
         },
@@ -6076,7 +6076,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": null,
           "physics_A": null
         },
@@ -6654,7 +6654,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "innerCore",
           "physics_A": "innerCore"
         },
@@ -7110,7 +7110,7 @@
         "number": 3,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "innerCore"
         },
@@ -7241,7 +7241,7 @@
         "number": 4,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "innerCore"
         },
@@ -7950,7 +7950,7 @@
         "number": 2,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "outerCore"
         },
@@ -8363,7 +8363,7 @@
         "number": 1,
         "value":
         {
-          "AP_physics_1": "outerCore",
+          "AP_physics_1": "mantle",
           "honors_physics": "innerCore",
           "physics_A": "innerCore"
         },
