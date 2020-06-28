@@ -1554,7 +1554,7 @@
         {
           "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
-          "physics_A": "outerCore"
+          "physics_A": "innerCore"
         },
         "uuid": "629defac-c440-4ab3-8092-0d4402fccf76",
         "note": "Eliminate repetitive pods, don't have multiple choice and open response in separate pods.",
