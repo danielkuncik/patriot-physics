@@ -705,6 +705,11 @@
         "title": "Representing Functions",
         "vision": "Connect equations, graphs, and written descriptions of common functions",
         "number": 6,
+        "value": {
+          "AP_physics_1": "mantle",
+          "honors_physics": "mantle",
+          "physics_A": null
+        },
         "uuid": "a9b28ea1-8f07-4a5c-af88-0e0582189dd6",
         "note": "All functions in this section will be represented by f(x) = ___, not by y = _____",
         "pods":
@@ -9185,6 +9190,11 @@
       {
         "title": "Statistical Mechanics",
         "number": 5,
+        "value": {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "ec3a9078-3b52-43e1-8883-e8cf2e663642",
         "standards":
         {
