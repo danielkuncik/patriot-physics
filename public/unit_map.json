@@ -10,6 +10,12 @@
       {
         "title": "Algebra",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "mantle",
+          "physics_A": "mantle"
+        },
         "uuid": "11d40c9a-642b-4f3c-8c51-36d8cec33049",
         "pods":
         {
@@ -76,6 +82,12 @@
       {
         "title": "Geometry",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "mantle",
+          "physics_A": "mantle"
+        },
         "uuid": "c8d43915-52f0-4865-b1bd-3ba8459ce954",
         "pods":
         {
@@ -235,6 +247,12 @@
       {
         "title": "Scientific Notation and Orders of Magnitude",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "mantle",
+          "physics_A": "outerCore"
+        },
         "uuid": "d7d911e5-d316-419f-a4a0-5e0c2b80c7b4",
         "pods":
         {
@@ -411,6 +429,12 @@
       {
         "title": "Unit Conversion and Dimensional Analysis",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "d4334f89-1229-4886-a6f7-fe789f3142b7",
         "pods": {
           "conversion_factors_1":
@@ -586,6 +610,12 @@
       {
         "title": "Proportionality",
         "number": 5,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "0b18ea88-441c-42fc-9eab-738145ceed09",
         "pods":
         {
@@ -824,8 +854,13 @@
       "calculus_concepts":
       {
         "title": "Calculus Concepts",
-        "level": 2,
         "number": 7,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "c395ca34-95de-451c-871d-9bf4cd2b18a6",
         "pods":
         {
@@ -988,8 +1023,13 @@
       "calculus_operations":
       {
         "title": "Calculus Operations",
-        "level": 3,
         "number": 8,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "3c69af31-35f8-4f37-af92-cffbcf972a3c",
         "pods":
         {
@@ -1138,6 +1178,12 @@
       {
         "title": "Scientific Reasoning",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "7eb1e95d-0164-48cc-a054-64921ca42763",
         "pods":
         {
@@ -1285,6 +1331,12 @@
       {
         "title": "Error Approximation and Significant Figures",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "mantle",
+          "physics_A": "mantle"
+        },
         "uuid": "9439763f-f7ec-467d-ad2f-22314af0d955",
         "pods":
         {
@@ -1401,6 +1453,12 @@
       {
         "title": "Back of the Envelope Calculations",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "mantle",
+          "physics_A": "mantle"
+        },
         "uuid": "f04c40cb-e526-4f4f-9aeb-cd5cb099e84d",
         "enduring_understandings":
         [
@@ -1450,6 +1508,12 @@
       {
         "title": "Basic Statistics",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "7eb1e95d-0164-48cc-a054-64921ca42763",
         "pods":
         {}
@@ -1458,6 +1522,12 @@
       {
         "title": "Cognitive Psychology of Physics",
         "number": 5,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "8ee79b90-28f4-4c60-a39f-9e39a48efdbe",
         "pods":
         {}
@@ -1475,8 +1545,13 @@
       {
         "title": "Conceptual Conservation of Energy",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "outerCore",
+          "physics_A": "outerCore"
+        },
         "uuid": "629defac-c440-4ab3-8092-0d4402fccf76",
-        "completed": true,
         "note": "Eliminate repetitive pods, don't have multiple choice and open response in separate pods.",
         "standards":
         {
@@ -1583,8 +1658,13 @@
       {
         "title": "Cosmology",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "3b6fd1e6-a5c2-4059-8c73-1c376a85581c",
-        "completed": false,
         "standards":
         {
           "mass_2016": "",
@@ -1722,6 +1802,12 @@
       {
         "title": "Conservation of Energy Quantitative",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "302cfa26-138e-4545-a10e-cec109f637b6",
         "standards":
         {
@@ -1950,6 +2036,12 @@
       {
         "title": "Work and Power",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "outerCore"
+        },
         "uuid": "45382793-f6b8-4f91-ba03-ceca0a60fb9a",
         "standards":
         {
@@ -2150,6 +2242,12 @@
       {
         "title": "Machines",
         "number": 5,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "0aacddec-c4c4-4ec5-bbe9-3a48b84cd92e",
         "standards":
         {
@@ -2163,6 +2261,12 @@
       {
         "title": "Potential Energy Functions",
         "number": 6,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics.",
         "uuid": "8cd92d50-ffbe-4f99-9cc4-c86762acde53",
         "standards":
@@ -2187,6 +2291,12 @@
       {
         "title": "Forward Kinematics Qualitative",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "2fb4c9a5-1966-4731-a9b5-9ff2ac63e99d",
         "standards":
         {
@@ -2346,6 +2456,12 @@
       {
         "title": "Forward Kinematics Quantitative",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "24d4cf0c-eb66-4ec4-93e0-be8ccc175e34",
         "enduring_understandings":
         [
@@ -2584,6 +2700,12 @@
       {
         "title": "Forward and Backwards Kinematics Qualitative",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "149a4d0b-2417-4be1-a9fd-4130bf75322c",
         "standards":
         {
@@ -2748,6 +2870,12 @@
       {
         "title": "Forward and Backwards Kinematics Quantitative",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "88e0caed-d0db-451c-be13-d70fbb908d15",
         "standards":
         {
@@ -2956,6 +3084,12 @@
       "relative_velocity":
       {
         "title": "Relative Velocity",
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "mantle",
+          "physics_A": "mantle"
+        },
         "uuid": "73dfac86-91a4-4d68-8edc-ff5c04da3690",
         "number": 5,
         "standards":
@@ -3074,6 +3208,12 @@
       {
         "title": "Projectile Motion",
         "number": 6,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "d4ae16df-49db-4e68-98e7-e0208c0273cd",
         "standards":
         {
@@ -3333,6 +3473,12 @@
       {
         "title": "Identifying Forces (Newton's Third Law)",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "3d6c50c2-ad40-4c4e-bd5c-01e85e189923",
         "standards":
         {
@@ -3490,6 +3636,12 @@
       {
         "title": "Quantitative Dynamics (Newton's Second Law)",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "330a7cbc-220b-4274-a775-db2f246d5de0",
         "standards":
         {
@@ -3709,6 +3861,12 @@
       {
         "title": "Vector Force Analysis (Newton's First Law)",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "fca3f55a-1d59-4895-9500-776d09692cc8",
         "essential_questions": "When, how, and why do items move?",
         "standards":
@@ -3909,6 +4067,12 @@
       {
         "title": "System Dynamics",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "ff4fe055-7c5c-4dfe-979d-f4fb62b47e76",
         "standards":
         {
@@ -4111,6 +4275,12 @@
       {
         "title": "Two-Dimensional Dynamics",
         "number": 5,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "969e1743-ca8f-4a2d-9fa4-c5a6b87d619b",
         "standards":
         {
@@ -4302,6 +4472,12 @@
       {
         "title": "Circular Motion",
         "number": 6,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "97d4e437-6ced-42b0-ae2c-acd51f216951",
         "standards":
         {
@@ -4525,6 +4701,12 @@
       {
         "title": "Circular Motion Trigonometry",
         "number": 7,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "426303fa-6f9a-42f8-b560-8ca850e1e452",
         "vision": "Problems that require both circular motion and trigonometry: banking on a highway, using polar coordinates to describe motion",
         "standards":
@@ -4547,6 +4729,12 @@
       "conceptual_gravitation":
       {
         "title": "Conceptual Gravitation",
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "fe0e231b-9579-4321-b256-7d7080a00ea7",
         "number": 1,
         "standards":
@@ -4731,6 +4919,12 @@
       {
         "title": "Conceptual Electrostatics",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "90ff203d-9e86-4676-8d9c-929ebd501a3d",
         "standards":
         {
@@ -4835,6 +5029,12 @@
       {
         "title": "Inverse Square Laws",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "c7337cee-90d8-4353-9327-c83469252397",
         "standards":
         {
@@ -5041,6 +5241,12 @@
       {
         "title": "Quantitative Orbits",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "f8c896ee-3f78-453f-96b7-7d78be6d7112",
         "vision": "Will contain information on conic sections, different types of orbits, quantitative analyses of Kepler's Laws, historical information on the importance of keplers laws and orbits in the development of science, and energy in orbits; For the AP curriculum, the universal gravitational potentail energy formual will be here",
         "standards":
@@ -5055,6 +5261,12 @@
       {
         "title": "Conceptual Magnetism",
         "number": 5,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "88392edc-b6fa-4309-b8bd-199ba61bcbc9",
         "standards":
         {
@@ -5181,6 +5393,12 @@
       {
         "title": "Calculus Based Gravitation",
         "number": 6,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "50378a88-caa5-455d-9e67-77e038b32a62",
         "standards":
         {
@@ -5194,6 +5412,12 @@
       {
         "title": "Maxwell's Equations",
         "number": 7,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "b7dfa155-b6d2-4f1e-a232-5e0f14d096c3",
         "standards":
         {
@@ -5216,6 +5440,12 @@
       {
         "title": "Collisions and Explosions",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "c3a0a725-9774-4afa-bdc0-c6773f6d8d5f",
         "standards":
         {
@@ -5401,6 +5631,12 @@
       {
         "title": "Impulse",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "4462b384-cd11-4448-989e-d7b2aec6b3e3",
         "standards":
         {
@@ -5540,6 +5776,12 @@
         "title": "Periodic Kinematics",
         "level": 2,
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "481b4c44-cd77-4add-84ba-bf3ad163e49b",
         "standards":
         {
@@ -5654,8 +5896,13 @@
       "periodic_dynamics":
       {
         "title": "Periodic Dynamics",
-        "level": 3,
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "mantle",
+          "physics_A": null
+        },
         "uuid": "f401a0c9-0779-44f7-a585-e7b575e22626",
         "standards":
         {
@@ -5793,6 +6040,12 @@
       {
         "title": "Differential Equations for Periodic Motion",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "notes": "Solving differential equations for simple harmonic motion and analyzing the result.",
         "uuid": "bf35493c-a199-40f4-a5ee-937cba427097",
         "standards":
@@ -5816,6 +6069,12 @@
       {
         "title": "Rotational Kinematics",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "6f8d4fd9-0ce2-4bb3-a70b-aa77f0a5a50b",
         "notes": "I need to add content on kinematic graphs...but this unit seems full with all this computational stuff",
         "standards":
@@ -5993,6 +6252,12 @@
       {
         "title": "Rotational Dynamics",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "10f5a133-dee7-427a-b8a5-a28356b38131",
         "standards":
         {
@@ -6226,6 +6491,12 @@
       {
         "title": "Rotation Conservation Laws",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "1630928b-f2fa-4768-a594-0071f2394b94",
         "standards":
         {
@@ -6376,6 +6647,12 @@
       {
         "title": "Wave Structure",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "a67a080f-76f5-4827-81db-0cea0723ac82",
         "standards":
         {
@@ -6648,7 +6925,12 @@
       {
         "title": "Harmonics",
         "number": 2,
-        "notes": "Co-requisite with sound properties.",
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": null
+        },
         "uuid": "29ffb4e9-7935-4fad-a0f7-1bae0b49b70f",
         "standards":
         {
@@ -6821,6 +7103,12 @@
       {
         "title": "Sound Properties",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "e0cef2a3-f424-446b-ab36-51923d67c12b",
         "standards":
         {
@@ -6946,6 +7234,12 @@
       {
         "title": "Wave Phenomena",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "notes": "Potentially: Reflection and refraction should be separated from diffraction and interference; 8-22-19 DEFINITELY necessary",
         "more notes": "There's alot missing, is there anything on the speed of light and the index of refraction...AP needs interference but not reflection and refraction",
         "uuid": "59ca5409-1566-4cfb-a4c9-77dc3e85aeb6",
@@ -7101,6 +7395,12 @@
       {
         "title": "The Electromagnetic Spectrum: Quantitative",
         "number": 5,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "innerCore",
+          "physics_A": "outerCore"
+        },
         "uuid": "cfa4b5af-bb9d-48f5-9fbe-92367afab5e5",
         "enduring_understandings":
         [
@@ -7271,6 +7571,12 @@
       {
         "title": "The Electromagnetic Spectrum: Conceptual",
         "number": 6,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "b81577f0-2a1f-43f0-b2b4-60a8174053ed",
         "notes":
         [
@@ -7463,6 +7769,12 @@
       {
         "title": "Geometric Optics",
         "number": 7,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "outerCore",
+          "physics_A": null
+        },
         "uuid": "9d9df16b-75e5-4f67-ac30-df1d27874fed",
         "standards":
         {
@@ -7630,7 +7942,13 @@
       "voltage_and_current_concepts":
       {
         "title": "Voltage and Current Concepts",
-        "number": 1,
+        "number": 2,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "outerCore"
+        },
         "uuid": "1683b193-3c12-46a6-9e24-ba51c5c74a7a",
         "note": "8-21-19 i feel like parallel circuit concepts and short circuit concepts belong in a different quiz ladder, and there need to be more quiz ladders on circuits certainly",
         "standards":
@@ -7863,7 +8181,13 @@
       "dc_circuit_math_1":
       {
         "title": "DC Circuit Math 1: Batteries and Resistors",
-        "number": 2,
+        "number": 3,
+        "value":
+        {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "outerCore"
+        },
         "limits": "Only contains circuits including batteries and resistors",
         "uuid": "e0d6f429-2f42-4e44-b0d8-6231da3c5f7c",
         "standards":
@@ -8031,7 +8355,13 @@
       "circuit_construction_1":
       {
         "title": "Circuit Construction 1",
-        "number": 3,
+        "number": 1,
+        "value":
+        {
+          "AP_physics_1": "outerCore",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
         "subtitle": "Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
         "uuid": "573b386d-2eb3-448f-82a1-3ffb8a248a4a",
         "standards":
@@ -8314,6 +8644,12 @@
       {
         "title": "Kinetic Theory of Matter Conceptual",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "outerCore",
+          "physics_A": "innerCore"
+        },
         "uuid": "83ee015e-d450-4a49-a462-67dfc1d28395",
         "notes": [
           "Many of these quizzes and examples need to be combined!",
@@ -8561,6 +8897,12 @@
       {
         "title": "Heat Transfer and Temperature: Mathematical",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "innerCore",
+          "physics_A": "outerCore"
+        },
         "uuid": "15d623cb-79bf-4e73-87f0-2e67cf52e73d",
         "standards":
         {
@@ -8729,6 +9071,12 @@
       {
         "title": "Quantitative Gas Laws and Thermal Expansion",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "mantle",
+          "physics_A": "mantle"
+        },
         "uuid": "8bc5d4fb-42c6-4c70-b27c-c921f47e7b5b",
         "notes": "I need more on proving the ideal gas law and connecting it to the combined gas law.",
         "standards":
@@ -8817,6 +9165,12 @@
       {
         "title": "Heat Processes",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "0c45ad33-758a-42f7-9e1d-57313bcf1abb",
         "idea": "This unit will deal with heat processes on P-V graphs.",
         "standards":
@@ -8862,6 +9216,12 @@
       {
         "title": "Nuclear Reaction Formulas",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "innerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "4ce04daf-dadd-437e-9e37-e33710931f8c",
         "standards":
         {
@@ -9036,6 +9396,12 @@
       {
         "title": "Nuclear Reaction Concepts",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "1a60b911-3099-41b0-a84b-cf657a76fa64",
         "standards":
         {
@@ -9153,6 +9519,12 @@
       {
         "title": "Atomic Spectra",
         "number": 3,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "innerCore",
+          "physics_A": "mantle"
+        },
         "uuid": "1df6f12d-d10a-4d45-b52a-cea8af9cd089",
         "standards":
         {
@@ -9248,6 +9620,12 @@
       {
         "title": "Basic Quantum Theory",
         "number": 4,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": "outerCore",
+          "physics_A": "outerCore"
+        },
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
         "uuid": "45760652-3931-4e35-9997-a5ab2052be64",
         "standards":
@@ -9271,6 +9649,12 @@
       {
         "title": "Special Relativity",
         "number": 1,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "47254750-bdd9-4796-a766-2aeec453c3d1",
         "standards":
         {
@@ -9284,6 +9668,12 @@
       {
         "title": "General Relativity",
         "number": 2,
+        "value":
+        {
+          "AP_physics_1": null,
+          "honors_physics": null,
+          "physics_A": null
+        },
         "uuid": "2f705f14-0d19-44f7-a029-ce9ea8c645a0",
         "standards":
         {
