@@ -1,0 +1,17 @@
+Create three different types of motion graphs
+
+- motion labs that use a stopwatch and a ruler
+- motion labs that use a metronome
+- motion labs using video analysis (coach my video or vernier logger pro)
+(motion labs using photogates....)
+(motion labs using some sort of motion detector...)
+
+
+Cannon labs
+- determining initial y-velocity with just one shot
+- determining the optimal range
+- taking piles of data
+- testing the formula for range, determining initial y-velocity
+
+
+[you can set up an axis here!]

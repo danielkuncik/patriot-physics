@@ -4477,6 +4477,7 @@
       {
         "title": "Circular Motion",
         "number": 6,
+        "MUST ADD": "I need to add the idea of properly defining centripetal force, especially in cases where the centripetal force is a combination of forces or a component of forces (for the circular motion trigonometry unit)",
         "value":
         {
           "AP_physics_1": "outerCore",
@@ -4534,7 +4535,7 @@
             "horizontal": 1,
             "letter": "D",
             "prerequisites": ["circular_kinematics_1"],
-            "objective": "Identify the four relevant vectors for an object in circular motion: position, velocity, acceleration, and force.",
+            "objective": "Identify the four relevant vectors for an object in circular motion: position, velocity, acceleration, and net force.",
             "content": "When an object is moving in a circle and the origin is in the center of that circle, its position is radial and outward, its acceleration and force are radial and inward, and its velocity is tangential.",
             "uuid": "7cebce29-1469-46ea-be3f-729ef73f89e2"
           },
@@ -7024,6 +7025,17 @@
             "objective": "Given quantitative information on a single harmonic, find similar information on another harmonic.",
             "content": "By working out the pattern of how wavelengths and frequencies of harmonics are related, physicists can work out the pattern amongst harmonics without filling out a table of all harmonics.",
             "uuid": "1d2d49b1-3b76-47e6-9677-397d1fb8ef55"
+          },
+          "standing_wave_at_times":
+          {
+            "title": "Standing Wave at times",
+            "level": 3,
+            "horizontal": 5,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Draw what a standing wave will look like at each quarter period.",
+            "content": "At certain times, the standing wave shows a large pattern of crests and troughs, but at other times the string is actually straight.",
+            "uuid": "8347a124-44ed-45d2-8989-8568d0caf601"
           },
           "harmonics_5":
           {
