@@ -4721,7 +4721,66 @@
           "NGSS": "HS-PS2-1",
           "AP_Physics_1": ""
         },
-        "pods": {}
+        "pods":
+        {
+          "centripetal_force_components":
+          {
+            "title": "Centripetal Force Component",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "objective": "Identify situations in which the centripetal force is a component of another force or a sum of various components; draw free-body diagrams of such situations.",
+            "uuid": ""
+          },
+          "circular_motion_components":
+          {
+            "title": "Circular Motion Components",
+            "level": 2,
+            "objective": "With guidance, break down the free-body diagram of an object in circular motion; break froces into radial, tangential, and vertical components."
+          },
+          "tire_swings":
+          {
+            "title": "Tire Swings",
+            "level": 3,
+            "objective": "Analyze the motion of a mass hanging from a string and swining in a horizontal circle."
+          },
+          "banked_turns":
+          {
+            "title": "Banked Turns",
+            "level": 3,
+            "objective": "Analyze the motion of a car driving on a bank (or a runner on a banked turn)."
+          },
+          "wizard_circles":
+          {
+            "title": "Wizard Circles",
+            "level": 4,
+            "objective": "Analyze the motion of an object moving in a vertical circle in a different plane than the object."
+          },
+          "vertical_circle_functions":
+          {
+            "title": "Vertical Circle Functions",
+            "level": 5,
+            "objective": "Create functions for the position, velocity, acceleration, and net force acting on an object moving in a vertical circle as a function of time."
+          },
+          "lassos":
+          {
+            "title": "Lassos",
+            "level": 5,
+            "objective": "Analyze a rope in circular motion in all different planes."
+          },
+          "lasso_the_moon":
+          {
+            "title": "Lasso The Moon",
+            "level": 6,
+            "objective": "Create a model of a person literally trying to lasso the moon."
+          },
+          "multiple_string_circular_motion":
+          {
+            "title": "Multiple String Circular Motion",
+            "level": 6,
+            "objective": "Create a model of a ball, attached to multiple strings in different directions, moving in circular motion."
+          }
+        }
       }
     }
   },
