@@ -333,4 +333,5 @@ class KinematicStepwiseFunctions {
 // two issues:
 // the first issue was solved
 // 2- the velocity graph requires a forced yMin of 0...and i don't want that!
+// 3 - i need to add undefined points to accelration functions
 // so examine these issues more please

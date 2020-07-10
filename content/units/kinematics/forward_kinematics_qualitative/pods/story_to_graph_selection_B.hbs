@@ -533,6 +533,14 @@ and reviews the basics.
     </div>
 </ol>
 
+<ol class = 'questionList'>
+  <li class = 'question'>
+    One of the acceleration-time graphs was used twice.
+    Explain why the same acceleration-time graph
+    applied to two very different descriptions of motion.
+  </li>
+</ol>
+
 
 <div class="pageBreak"></div>
 <h5>
@@ -601,6 +609,19 @@ and reviews the basics.
 <h5>
     Acceleration-Time Graphs for Table 3
 </h5>
+<p>
+  Note that some of these graphs include <em>white circles</em>.
+  A <em>white circle</em> indicates an <em>undefined point</em>,
+  or that, at that particular time, we did not or cannot calculate acceleration.
+  Typically, it indicates a very abrupt change in velocity,
+  such as something starting or stopping motion in a short time.
+</p>
+<p>
+  Also note that one of these graphs is used twice,
+  because even though the two particular examples of motion
+  are very different, the <em>qualitative</em> description
+  of acceleration for each graph is identical.
+</p>
 <div class="container">
     <div class="row">
         <div class="col-md-6 border border-dark" id = 'acceleration-3-A'>
@@ -622,8 +643,7 @@ and reviews the basics.
         <div class="col-md-6 border border-dark" id = 'acceleration-3-E'>
             <strong>E:</strong><br>
         </div>
-        <div class="col-md-6 border border-dark" id = 'acceleration-3-F'>
-            <strong>F:</strong><br>
+        <div class="col-md-6 border border-dark bg-secondary" id = 'acceleration-3-F'>
         </div>
     </div>
 </div>
@@ -1023,15 +1043,53 @@ and reviews the basics.
 
     // A driver accelerates from rest, and after reaching his favorite speed,, continues driving at a constant velocity.
     // A F A E
+    let function33 = new KinematicStepwiseFunctions(0,0,1);
+    function33.addAcceleratedStep(1,5);
+    function33.addConstantVelocityStep(5);
+    let graphs33 = function33.makeQualitativeGraphs("");
+    $("#position-3-A").append(graphs33.positionGraph.drawCanvas(150));
+    $("#velocity-3-F").append(graphs33.velocityGraph.drawCanvas(150));
+    $("#acceleration-3-A").append(graphs33.accelerationGraph.drawCanvas(150));
+    $("#motionMap-3-E").append(graphs33.motionMap.drawCanvas(200));
 
     // A traffic light turns green. A driver accelerates from rest to a higher velocity. He then drives at a constant velocity for awhile, but eventuallyslows back down until he he stopped.
     // B E D B
+    let function34 = new KinematicStepwiseFunctions(0,0,1);
+    function34.addAcceleratedStep(1,3);
+    function34.addConstantVelocityStep(3);
+    function34.addAcceleratedStep(-1,3);
+    let graphs34 = function34.makeQualitativeGraphs("");
+    $("#position-3-B").append(graphs34.positionGraph.drawCanvas(150));
+    $("#velocity-3-E").append(graphs34.velocityGraph.drawCanvas(150));
+    $("#acceleration-3-D").append(graphs34.accelerationGraph.drawCanvas(150));
+    $("#motionMap-3-B").append(graphs34.motionMap.drawCanvas(200));
+
 
     // somebody is sitting on the couch watching tv, then they get up and go for a walk
     // F B B A
+    let function35 = new KinematicStepwiseFunctions(0);
+    function35.addStationaryStep(5);
+    function35.abruptVelocityChange(1);
+    function35.addConstantVelocityStep(5);
+    let graphs35 = function35.makeQualitativeGraphs("");
+    $("#position-3-F").append(graphs35.positionGraph.drawCanvas(150));
+    $("#velocity-3-B").append(graphs35.velocityGraph.drawCanvas(150));
+    $("#acceleration-3-B").append(graphs35.accelerationGraph.drawCanvas(150));
+    $("#motionMap-3-A").append(graphs35.motionMap.drawCanvas(200));
+
 
     // a car is driving forward at a constant speed, then hits a wall and stops
     // E A B F
+    let function36 = new KinematicStepwiseFunctions(0,5);
+    function36.addConstantVelocityStep(5);
+    function36.abruptStop();
+    function36.addStationaryStep(5);
+    let graphs36 = function36.makeQualitativeGraphs("");
+    $("#position-3-E").append(graphs36.positionGraph.drawCanvas(150));
+    $("#velocity-3-A").append(graphs36.velocityGraph.drawCanvas(150));
+  //  $("#acceleration-3-B").append(graphs36.accelerationGraph.drawCanvas(150)); identical to previous
+    $("#motionMap-3-F").append(graphs36.motionMap.drawCanvas(200));
+
 
 /*
     let storyTable = new Table(7, 5);
