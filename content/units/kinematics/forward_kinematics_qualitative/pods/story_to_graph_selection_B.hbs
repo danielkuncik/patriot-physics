@@ -5,18 +5,6 @@
 </p>
 
 
-<!---
-The first table should be single step motion,
-which introduces students to the idea
-and reviews the basics.
--->
-
-<!--<div id = 'storyTable'></div>-->
-<!--<div id = 'positionGraphTable'></div>-->
-<!--<div id = 'velocityGraphTable'></div>-->
-<!--<div id = 'accelerationGraphTable'></div>-->
-<!--<div id = 'motionMapTable'></div>-->
-
 <!--################################ Table 1 ###################################-->
 <div class="pageBreak"></div>
 <h4>
@@ -58,7 +46,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'C, D, A, A'>
                     Constant Velocity
                 </li>
             </div>
@@ -69,7 +57,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'D, B, B, D'>
                     Positive Acceleration
                 </li>
             </div>
@@ -80,7 +68,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'A, A, C, C'>
                     Negative Acceleration
                 </li>
             </div>
@@ -91,8 +79,8 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-                    Motion Map
+                <li class="question" data-answer = 'B, C, D, B'>
+                    Not Moving
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -155,6 +143,9 @@ and reviews the basics.
 <h5>
     Acceleration-Time Graphs for Table 1
 </h5>
+<p>
+  Note that one of the acceleration graphs is used twice.
+</p>
 <div class="container">
     <div class="row">
         <div class="col-md-6 border border-dark" id = 'acceleration-1-A'>
@@ -168,8 +159,7 @@ and reviews the basics.
         <div class="col-md-6 border border-dark" id = 'acceleration-1-C'>
             <strong>C:</strong><br>
         </div>
-        <div class="col-md-6 border border-dark" id = 'acceleration-1-D'>
-            <strong>D:</strong><br>
+        <div class="col-md-6 border border-dark bg-secondary" id = 'acceleration-1-D'>
         </div>
     </div>
 </div>
@@ -240,9 +230,9 @@ and reviews the basics.
             <div class="col-2 border border-dark"></div>
             <div class="col-2 border border-dark"></div>
         </div>
-        <div class="row" data-answer = 'A B D A'>
+        <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'A, B, D, A'>
                     Constant velocity followed by negative acceleration
                 </li>
             </div>
@@ -253,7 +243,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question" data-answer = 'E D A D'>
+                <li class="question" data-answer = 'E, D, A, D'>
                     Positive acceleration followed by constant velocity
                 </li>
             </div>
@@ -264,7 +254,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question" data-answer = 'D E C C'>
+                <li class="question" data-answer = 'D, E, C, C'>
                     Positive acceleration followed by negative acceleration
                 </li>
             </div>
@@ -275,7 +265,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question" data-answer = 'B A F E'>
+                <li class="question" data-answer = 'B, A, F, E'>
                     Negative acceleration followed by positive acceleration
                 </li>
             </div>
@@ -286,7 +276,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question" data-answer = 'F C B B'>
+                <li class="question" data-answer = 'F, C, B, B'>
                     Negative acceleration followed by constant velocity
                 </li>
             </div>
@@ -456,7 +446,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'C, D, C, D'>
                   A car is waiting at a red light.
                   The light turns green, the driver hits
                   the gas pedal, and the car begins accelerating.
@@ -469,7 +459,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'D, C, E, C'>
                   A driver begins at rest and floors the accelerator,
                   but the car slams straight into a brick wall and stops.
                 </li>
@@ -481,7 +471,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'A, F, A, E'>
                   A driver accelerates from rest,
                   and after reaching his favorite speed,
                   continues driving at a constant velocity.
@@ -494,7 +484,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'B, E, D, B'>
                   A traffic light turns green.
                   A driver accelerates from rest to a higher velocity.
                   He then drives at a constant velocity for awhile,
@@ -508,7 +498,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'F, B, B, A'>
                   Somebody is sitting on the couch watching TV.
                   They get up and go for a walk at a constant velocity.
                 </li>
@@ -520,7 +510,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'E, A, B, F'>
                   A car is driving forward at a constant speed when
                   it hits a wall and abruptly stops moving.
                 </li>
@@ -712,8 +702,11 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-
+                <li class="question" data-answer = 'D, D, F, A'>
+                  A traffic light turns green,
+                  and a driver accelerates from rest until
+                  he is driving at a constant velocity.
+                  Eventually, he slows back down to a stop.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -723,8 +716,12 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-
+                <li class="question" data-answer = 'F, C, E, E'>
+                  A car that is already moving slows
+                  down to a stop at a red light.
+                  It waits for a time.
+                  Then, the light turns green,
+                  and the car accelerates again.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -734,8 +731,14 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-
+                <li class="question" data-answer = 'C, F, B, D'>
+                  Someone is deiving on the highway
+                  at an unsafe speed,
+                  but sees a police car and decides
+                  to slow down.
+                  He drives past the speed car at a slower
+                  velocity. After passing the police car,
+                  he speeds back up to an unsafe speed.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -745,8 +748,12 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-
+                <li class="question" data-answer = 'E, B, A, B'>
+                  A driver is moving at a constant speed.
+                  A light in front of her turns red, and
+                  she begins to slow down.
+                  But before she stops,
+                  it turns green and she speeds back up.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -756,8 +763,12 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-
+                <li class="question" data-answer = 'B, A, D, C'>
+                  A driver is moving at a constant speed.
+                  He sees a yellow light and floors
+                  his accelerator in order to make it past.
+                  After shooting through the intsersection,
+                  he slows back down to a safe speed.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -767,8 +778,11 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
-
+                <li class="question" data-answer = 'A, E, C, F'>
+                  A driver begins from rest at a stop sign and accelerates,
+                  but before they even reach the speed limit,
+                  they see someone in the middle of the road
+                  and stop as fast as they can.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -937,21 +951,30 @@ and reviews the basics.
 
 <ol class="answerList"></ol>
 
-<!--<div id = 'test1'></div>-->
-<!--<div id = 'test2'></div>-->
-<!--<div id = 'test3'></div>-->
-<!--<div id = 'test4'></div>-->
-<!--<div id = 'test5'></div>-->
-
-
 <script>
-    // let myFunc = new KinematicStepwiseFunctions(0,10,2); // i need that two there...i don't particularly like it but it has to be there!
-    // myFunc.addAcceleratedStep(2,10);
-    // let graphs = myFunc.makeQualitativeGraphs();
-    // $("#test1").append(graphs.positionGraph.drawCanvas(300,300));
-    // $("#test2").append(graphs.velocityGraph.drawCanvas(300,300));
-    // $("#test3").append(graphs.accelertionGraph.drawCanvas(300,300));
-    // $("#test4").append(graphs.motionMap.drawCanvas(300,300));
+    // constant velocity: C, D, A, A
+    $("#position-1-C").append(makePositionGraphConstantVelocity().drawCanvas(150));
+    $("#velocity-1-D").append(makeVelocityGraphConstantVelocity().drawCanvas(150));
+    $("#acceleration-1-A").append(makeAccelerationGraphZero().drawCanvas(150));
+    $("#motionMap-1-A").append(makeMotionMapConstantVelocity().drawCanvas(200));
+
+    // positive acceleration: D, B, B, D
+    $("#position-1-D").append(makePositionGraphPositiveAcceleration().drawCanvas(150));
+    $("#velocity-1-B").append(makeVelocityGraphPositiveAcceleration().drawCanvas(150));
+    $("#acceleration-1-B").append(makeAccelerationGraphPositive().drawCanvas(150));
+    $("#motionMap-1-D").append(makeMotionMapPositiveAcceleration().drawCanvas(200));
+
+    // negative acceleration: A, A, C, C
+    $("#position-1-A").append(makePositionGraphNegativeAcceleration().drawCanvas(150));
+    $("#velocity-1-A").append(makeVelocityGraphNegativeAcceleration().drawCanvas(150));
+    $("#acceleration-1-C").append(makeAccelerationGraphNegative().drawCanvas(150));
+    $("#motionMap-1-C").append(makeMotionMapNegativeAcceleration().drawCanvas(200));
+
+    // not moving: B, C, D, B
+    $("#position-1-B").append(makePositionGraphNotMoving().drawCanvas(150));
+    $("#velocity-1-C").append(makeVelocityGraphNotMoving().drawCanvas(150));
+    $("#acceleration-1-A").append(makeAccelerationGraphZero());
+    $("#motionMap-1-B").append(makeMotionMapNotMoving().drawCanvas(200));
 
     let function21 = new KinematicStepwiseFunctions(0,5);
     function21.addConstantVelocityStep(5);
@@ -1091,43 +1114,75 @@ and reviews the basics.
     $("#motionMap-3-F").append(graphs36.motionMap.drawCanvas(200));
 
 
-/*
-    let storyTable = new Table(7, 5);
-    storyTable.addTopHeaders(['Story', 'Position-Time Graph', 'Velocity-Time Graph', 'Acceleration-Time Graph', 'Motion Map']);
-    storyTable.addSideHeaders(['Story', graphs1.story, graphs2.story, graphs3.story, graphs4.story, graphs5.story, graphs6.story]);
-    storyTable.setClassOfAllCells('storyTable');
+    // #1 D D F A
+    let function41 = new KinematicStepwiseFunctions(0,0,1);
+    function41.addAcceleratedStep(1,5);
+    function41.addConstantVelocityStep(5);
+    function41.addAcceleratedStep(-1,5);
+    let graphs41 = function41.makeQualitativeGraphs("");
+    $("#position-4-D").append(graphs41.positionGraph.drawCanvas(150));
+    $("#velocity-4-D").append(graphs41.velocityGraph.drawCanvas(150));
+    $("#acceleration-4-F").append(graphs41.accelerationGraph.drawCanvas(150));
+    $("#motionMap-4-A").append(graphs41.motionMap.drawCanvas(200));
 
-    $("#storyTable").append(storyTable.draw(500,500));
+    // #2 F C E E
+    let function42 = new KinematicStepwiseFunctions(0,5,-1);
+    function42.addAcceleratedStep(-1,5);
+    function42.addStationaryStep(5);
+    function42.addAcceleratedStep(1,5);
+    let graphs42 = function42.makeQualitativeGraphs("");
+    $("#position-4-F").append(graphs42.positionGraph.drawCanvas(150));
+    $("#velocity-4-C").append(graphs42.velocityGraph.drawCanvas(150));
+    $("#acceleration-4-E").append(graphs42.accelerationGraph.drawCanvas(150));
+    $("#motionMap-4-E").append(graphs42.motionMap.drawCanvas(200));
 
-    let positionGraphTable = new TableOfCanvasses(3,2,'Position Graph', 'position_table');
-    positionGraphTable.addDiagramsToCells([graphs1.positionGraph, graphs2.positionGraph,
-        graphs3.positionGraph, graphs4.positionGraph,
-        graphs5.positionGraph, graphs6.positionGraph]);
-    $("#positionGraphTable").append(positionGraphTable.draw(1200,800));
 
-    let velocityGraphTable = new TableOfCanvasses(3,2, 'Velocity Graph', 'velocity_table');
-    velocityGraphTable.addDiagramsToCells([
-        graphs1.velocityGraph, graphs2.velocityGraph,
-            graphs3.velocityGraph, graphs4.velocityGraph,
-            graphs5.velocityGraph, graphs6.velocityGraph
-    ]);
-    $("#velocityGraphTable").append(velocityGraphTable.draw(1200,800));
+    // # 3 C F B D
+    let function43 = new KinematicStepwiseFunctions(0,8,-1);
+    function43.addConstantVelocityStep(4);
+    function43.addAcceleratedStep(-3,1);
+    function43.addConstantVelocityStep(6);
+    function43.addAcceleratedStep(3,1);
+    function43.addConstantVelocityStep(4);
+    let graphs43 = function43.makeQualitativeGraphs("");
+    $("#position-4-C").append(graphs43.positionGraph.drawCanvas(150));
+    $("#velocity-4-F").append(graphs43.velocityGraph.drawCanvas(150));
+    $("#acceleration-4-B").append(graphs43.accelerationGraph.drawCanvas(150));
+    $("#motionMap-4-D").append(graphs43.motionMap.drawCanvas(200));
 
-    let accelerationGraphTable = new TableOfCanvasses(3, 2, 'Acceleration Graph', 'acceleration_table');
-    accelerationGraphTable.addDiagramsToCells([
-        graphs1.accelertionGraph, graphs2.accelertionGraph,
-            graphs3.accelertionGraph, graphs4.accelertionGraph,
-            graphs5.accelertionGraph, graphs6.accelertionGraph
-    ]);
-    $("#accelerationGraphTable").append(accelerationGraphTable.draw(1200,800));
+    // #4 E B A B
+    function44 = new KinematicStepwiseFunctions(0,6);
+    function44.addConstantVelocityStep(3);
+    function44.addAcceleratedStep(-1,3);
+    function44.addAcceleratedStep(1,3);
+    function44.addConstantVelocityStep(2);
+    let graphs44 = function44.makeQualitativeGraphs("");
+    $("#position-4-E").append(graphs44.positionGraph.drawCanvas(150));
+    $("#velocity-4-B").append(graphs44.velocityGraph.drawCanvas(150));
+    $("#acceleration-4-A").append(graphs44.accelerationGraph.drawCanvas(150));
+    $("#motionMap-4-B").append(graphs44.motionMap.drawCanvas(200));
 
-    let motionMapTable = new TableOfCanvasses(3, 2, 'Motion Map', "motion_map_table");
-    motionMapTable.addDiagramsToCells([
-        graphs1.motionMap, graphs2.motionMap,
-            graphs3.motionMap, graphs4.motionMap,
-            graphs5.motionMap, graphs6.motionMap
-    ]);
-    $("#motionMapTable").append(motionMapTable.draw(800,800));
-*/
-    // issues exist, but very significant progress has been made
+    // #5 B A D C
+    function45 = new KinematicStepwiseFunctions(0,5);
+    function45.addConstantVelocityStep(4);
+    function45.addAcceleratedStep(2,2);
+    function45.addAcceleratedStep(-2,2);
+    function45.addConstantVelocityStep(2);
+    let graphs45 = function45.makeQualitativeGraphs("");
+    $("#position-4-B").append(graphs45.positionGraph.drawCanvas(150));
+    $("#velocity-4-A").append(graphs45.velocityGraph.drawCanvas(150));
+    $("#acceleration-4-D").append(graphs45.accelerationGraph.drawCanvas(150));
+    $("#motionMap-4-C").append(graphs45.motionMap.drawCanvas(200));
+
+
+    // #6 A E C F
+    function46 = new KinematicStepwiseFunctions(0,0,1);
+    function46.addAcceleratedStep(1,6);
+    function46.addAcceleratedStep(-3,2);
+    let graphs46 = function46.makeQualitativeGraphs("");
+    $("#position-4-A").append(graphs46.positionGraph.drawCanvas(150));
+    $("#velocity-4-E").append(graphs46.velocityGraph.drawCanvas(150));
+    $("#acceleration-4-C").append(graphs46.accelerationGraph.drawCanvas(150));
+    $("#motionMap-4-F").append(graphs46.motionMap.drawCanvas(200));
+
 </script>
