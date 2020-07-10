@@ -231,7 +231,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'C, F, E, F'>
                     Constant velocity followed by positive acceleration
                 </li>
             </div>
@@ -240,7 +240,7 @@ and reviews the basics.
             <div class="col-2 border border-dark"></div>
             <div class="col-2 border border-dark"></div>
         </div>
-        <div class="row">
+        <div class="row" data-answer = 'A B D A'>
             <div class="col-4 border border-dark">
                 <li class="question">
                     Constant velocity followed by negative acceleration
@@ -253,7 +253,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'E D A D'>
                     Positive acceleration followed by constant velocity
                 </li>
             </div>
@@ -264,7 +264,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'D E C C'>
                     Positive acceleration followed by negative acceleration
                 </li>
             </div>
@@ -275,7 +275,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'B A F E'>
                     Negative acceleration followed by positive acceleration
                 </li>
             </div>
@@ -286,7 +286,7 @@ and reviews the basics.
         </div>
         <div class="row">
             <div class="col-4 border border-dark">
-                <li class="question">
+                <li class="question" data-answer = 'F C B B'>
                     Negative acceleration followed by constant velocity
                 </li>
             </div>
@@ -457,7 +457,9 @@ and reviews the basics.
         <div class="row">
             <div class="col-4 border border-dark">
                 <li class="question">
-
+                  A car is waiting at a red light.
+                  The light turns green, the driver hits
+                  the gas pedal, and the car begins accelerating.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -468,7 +470,8 @@ and reviews the basics.
         <div class="row">
             <div class="col-4 border border-dark">
                 <li class="question">
-
+                  A driver begins at rest and floors the accelerator,
+                  but the car slams straight into a brick wall and stops.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -479,7 +482,9 @@ and reviews the basics.
         <div class="row">
             <div class="col-4 border border-dark">
                 <li class="question">
-
+                  A driver accelerates from rest,
+                  and after reaching his favorite speed,
+                  continues driving at a constant velocity.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -490,7 +495,10 @@ and reviews the basics.
         <div class="row">
             <div class="col-4 border border-dark">
                 <li class="question">
-
+                  A traffic light turns green.
+                  A driver accelerates from rest to a higher velocity.
+                  He then drives at a constant velocity for awhile,
+                  but eventuallyslows back down until he he stopped.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -501,7 +509,8 @@ and reviews the basics.
         <div class="row">
             <div class="col-4 border border-dark">
                 <li class="question">
-
+                  Somebody is sitting on the couch watching TV.
+                  They get up and go for a walk at a constant velocity.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -512,7 +521,8 @@ and reviews the basics.
         <div class="row">
             <div class="col-4 border border-dark">
                 <li class="question">
-
+                  A car is driving forward at a constant speed when
+                  it hits a wall and abruptly stops moving.
                 </li>
             </div>
             <div class="col-2 border border-dark"></div>
@@ -923,41 +933,107 @@ and reviews the basics.
     // $("#test3").append(graphs.accelertionGraph.drawCanvas(300,300));
     // $("#test4").append(graphs.motionMap.drawCanvas(300,300));
 
-    let function1 = new KinematicStepwiseFunctions(0,5);
-    function1.addConstantVelocityStep(5);
-    function1.addAcceleratedStep(1.5,5);
-    let graphs1 = function1.makeQualitativeGraphs('1. Constant velocity followed by positive acceleration.');
-    // $("#test1").append(graphs1.story);
-    // $("#test2").append(graphs1.positionGraph.drawCanvas(300,300));
-    // $("#test3").append(graphs1.velocityGraph.drawCanvas(300,300));
-    // $("#test4").append(graphs1.accelertionGraph.drawCanvas(300,300));
-    // $("#test5").append(graphs1.motionMap.drawCanvas(300,300));
+    let function21 = new KinematicStepwiseFunctions(0,5);
+    function21.addConstantVelocityStep(5);
+    function21.addAcceleratedStep(1.5,5);
+    let graphs21 = function21.makeQualitativeGraphs('1. Constant velocity followed by positive acceleration.');
+    // C F E F
+    $("#position-2-C").append(graphs21.positionGraph.drawCanvas(150));
+    $("#velocity-2-F").append(graphs21.velocityGraph.drawCanvas(150));
+    $("#acceleration-2-E").append(graphs21.accelerationGraph.drawCanvas(150));
+    $("#motionMap-2-F").append(graphs21.motionMap.drawCanvas(200));
 
-    let function2 = new KinematicStepwiseFunctions(0,5);
-    function2.addConstantVelocityStep(5);
-    function2.addAcceleratedStep(-1, 5);
-    let graphs2 = function2.makeQualitativeGraphs('2. Constant velocity followed by negative acceleration.');
+    let function22 = new KinematicStepwiseFunctions(0,5);
+    function22.addConstantVelocityStep(5);
+    function22.addAcceleratedStep(-1, 5);
+    let graphs22 = function22.makeQualitativeGraphs('2. Constant velocity followed by negative acceleration.');
+    // A B D A
+    $("#position-2-A").append(graphs22.positionGraph.drawCanvas(150));
+    $("#velocity-2-B").append(graphs22.velocityGraph.drawCanvas(150));
+    $("#acceleration-2-D").append(graphs22.accelerationGraph.drawCanvas(150));
+    $("#motionMap-2-A").append(graphs22.motionMap.drawCanvas(200));
 
-    let function3 = new KinematicStepwiseFunctions(0,0,1);
-    function3.addAcceleratedStep(1,5);
-    function3.addConstantVelocityStep(5);
-    let graphs3 = function3.makeQualitativeGraphs('3. Positive acceleration followed by constant velocity');
+    let function23 = new KinematicStepwiseFunctions(0,0,1);
+    function23.addAcceleratedStep(1,5);
+    function23.addConstantVelocityStep(5);
+    let graphs23 = function23.makeQualitativeGraphs('3. Positive acceleration followed by constant velocity');
+    // E D A D
+    $("#position-2-E").append(graphs23.positionGraph.drawCanvas(150));
+    $("#velocity-2-D").append(graphs23.velocityGraph.drawCanvas(150));
+    $("#acceleration-2-A").append(graphs23.accelerationGraph.drawCanvas(150));
+    $("#motionMap-2-D").append(graphs23.motionMap.drawCanvas(200));
 
-    let function4 = new KinematicStepwiseFunctions(0,0,1);
-    function4.addAcceleratedStep(1,5);
-    function4.addAcceleratedStep(-1,5);
-    let graphs4 = function4.makeQualitativeGraphs('4. Positive acceleration followed by negative acceleration');
+    let function24 = new KinematicStepwiseFunctions(0,0,1);
+    function24.addAcceleratedStep(1,5);
+    function24.addAcceleratedStep(-1,5);
+    let graphs24 = function24.makeQualitativeGraphs('4. Positive acceleration followed by negative acceleration');
+    // D E C C
+    $("#position-2-D").append(graphs24.positionGraph.drawCanvas(150));
+    $("#velocity-2-E").append(graphs24.velocityGraph.drawCanvas(150));
+    $("#acceleration-2-C").append(graphs24.accelerationGraph.drawCanvas(150));
+    $("#motionMap-2-C").append(graphs24.motionMap.drawCanvas(200));
 
-    let function5 = new KinematicStepwiseFunctions(0,5,-1);
-    function5.addAcceleratedStep(-1,5);
-    function5.addAcceleratedStep(1,5);
-    let graphs5 = function5.makeQualitativeGraphs('5. Negative acceleration followed by negative acceleration');
 
-    let function6 = new KinematicStepwiseFunctions(0,10,-1);
-    function6.addAcceleratedStep(-1,5);
-    function6.addConstantVelocityStep(5);
-    let graphs6 = function6.makeQualitativeGraphs('6. Negative acceleration followed by constant velocity');
+    let function25 = new KinematicStepwiseFunctions(0,5,-1);
+    function25.addAcceleratedStep(-1,5);
+    function25.addAcceleratedStep(1,5);
+    let graphs25 = function25.makeQualitativeGraphs('5. Negative acceleration followed by negative acceleration');
+    // B A F E
+    $("#position-2-B").append(graphs25.positionGraph.drawCanvas(150));
+    $("#velocity-2-A").append(graphs25.velocityGraph.drawCanvas(150));
+    $("#acceleration-2-F").append(graphs25.accelerationGraph.drawCanvas(150));
+    $("#motionMap-2-E").append(graphs25.motionMap.drawCanvas(200));
 
+
+    let function26 = new KinematicStepwiseFunctions(0,10,-1);
+    function26.addAcceleratedStep(-1,5);
+    function26.addConstantVelocityStep(5);
+    let graphs26 = function26.makeQualitativeGraphs('6. Negative acceleration followed by constant velocity');
+    // F C B B
+    $("#position-2-F").append(graphs26.positionGraph.drawCanvas(150));
+    $("#velocity-2-C").append(graphs26.velocityGraph.drawCanvas(150));
+    $("#acceleration-2-B").append(graphs26.accelerationGraph.drawCanvas(150));
+    $("#motionMap-2-B").append(graphs26.motionMap.drawCanvas(200));
+
+
+    // table 3
+    // A car is waiting at a red light. The light turns green and the driver hits the gas.
+    // C D C D
+    let function31 = new KinematicStepwiseFunctions(0,0,0);
+    function31.addStationaryStep(5);
+    function31.addAcceleratedStep(5,5);
+    let graphs31 = function31.makeQualitativeGraphs('car at red light starts accelerating');
+    $("#position-3-C").append(graphs31.positionGraph.drawCanvas(150));
+    $("#velocity-3-D").append(graphs31.velocityGraph.drawCanvas(150));
+    $("#acceleration-3-C").append(graphs31.accelerationGraph.drawCanvas(150));
+    $("#motionMap-3-D").append(graphs31.motionMap.drawCanvas(200));
+
+    // A driver floors the accelreator and moves forward, but dries straight into a bwall and stops
+    // D C E C
+    let function32 = new KinematicStepwiseFunctions(0,0,1);
+    function32.addAcceleratedStep(2,5);
+    function32.abruptStop();
+    function32.addStationaryStep(5);
+    let graphs32 = function32.makeQualitativeGraphs("");
+    $("#position-3-D").append(graphs32.positionGraph.drawCanvas(150));
+    $("#velocity-3-C").append(graphs32.velocityGraph.drawCanvas(150));
+    $("#acceleration-3-E").append(graphs32.accelerationGraph.drawCanvas(150));
+    $("#motionMap-3-C").append(graphs32.motionMap.drawCanvas(200));
+
+
+    // A driver accelerates from rest, and after reaching his favorite speed,, continues driving at a constant velocity.
+    // A F A E
+
+    // A traffic light turns green. A driver accelerates from rest to a higher velocity. He then drives at a constant velocity for awhile, but eventuallyslows back down until he he stopped.
+    // B E D B
+
+    // somebody is sitting on the couch watching tv, then they get up and go for a walk
+    // F B B A
+
+    // a car is driving forward at a constant speed, then hits a wall and stops
+    // E A B F
+
+/*
     let storyTable = new Table(7, 5);
     storyTable.addTopHeaders(['Story', 'Position-Time Graph', 'Velocity-Time Graph', 'Acceleration-Time Graph', 'Motion Map']);
     storyTable.addSideHeaders(['Story', graphs1.story, graphs2.story, graphs3.story, graphs4.story, graphs5.story, graphs6.story]);
@@ -994,6 +1070,6 @@ and reviews the basics.
             graphs5.motionMap, graphs6.motionMap
     ]);
     $("#motionMapTable").append(motionMapTable.draw(800,800));
-
+*/
     // issues exist, but very significant progress has been made
 </script>

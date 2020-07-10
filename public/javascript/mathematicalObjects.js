@@ -290,6 +290,10 @@ class KinematicStepwiseFunctions {
         this.velocityFunction.forceYchange(newVelocity);
     }
 
+    abruptStop() {
+      this.abruptVelocityChange(0);
+    }
+
     /// i want to eventually add this, but not sure how i will graph it
     timeTravel(newTime) {
         this.currentTime = newTime;
@@ -306,20 +310,20 @@ class KinematicStepwiseFunctions {
         graphCollection.story = story;
         graphCollection.positionGraph = smartQualitativeFunctionGrapher(this.positionFunction);
         graphCollection.velocityGraph = smartQualitativeFunctionGrapher(this.velocityFunction);
-        graphCollection.accelertionGraph = smartQualitativeFunctionGrapher(this.accelerationFunction);
+        graphCollection.accelerationGraph = smartQualitativeFunctionGrapher(this.accelerationFunction);
         graphCollection.motionMap = new MotionMap(this.positionFunction, this.startTime, this.currentTime);
 
         if (labelsOnSide) {
             graphCollection.positionGraph.moveLabelsToSide();
             graphCollection.velocityGraph.moveLabelsToSide();
-            graphCollection.accelertionGraph.moveLabelsToSide();
+            graphCollection.accelerationGraph.moveLabelsToSide();
             graphCollection.positionGraph.labelAxes('time', 'position');
             graphCollection.velocityGraph.labelAxes('time', 'velocity');
-            graphCollection.accelertionGraph.labelAxes('time', 'acceleration');
+            graphCollection.accelerationGraph.labelAxes('time', 'acceleration');
         } else {
             graphCollection.positionGraph.labelAxes('t', `${dimension}(t)`);
             graphCollection.velocityGraph.labelAxes('t', 'v(t)');
-            graphCollection.accelertionGraph.labelAxes('t', 'a(t)');
+            graphCollection.accelerationGraph.labelAxes('t', 'a(t)');
         }
 
         return graphCollection;
@@ -327,6 +331,6 @@ class KinematicStepwiseFunctions {
 }
 
 // two issues:
-// 1 - the acceleration graph isn't being graphed
+// the first issue was solved
 // 2- the velocity graph requires a forced yMin of 0...and i don't want that!
 // so examine these issues more please
