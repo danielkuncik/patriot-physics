@@ -2367,9 +2367,9 @@
             "content": "The goal of qualitative kinematics is to determine how an object moves without determining why.",
             "uuid": "beb2106c-410e-44c1-8179-32a01059963d"
           },
-          "story_to_graph_selection_A":
+          "story_to_graph_selection_1":
           {
-            "title": "Story to Graph Selection A",
+            "title": "Story to Graph Selection 1",
             "level": 3,
             "horizontal": 0,
             "letter": "F",
@@ -2389,9 +2389,9 @@
             "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves.",
             "uuid": "8ae812b1-7da0-448a-91a0-f7ccb057ef1f"
           },
-          "story_to_graph_selection_B":
+          "story_to_graph_selection_2":
           {
-            "title": "Story to Graph Selection B",
+            "title": "Story to Graph Selection 1",
             "level": 3,
             "horizontal": 2,
             "letter": "G",
