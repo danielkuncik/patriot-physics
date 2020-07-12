@@ -2610,6 +2610,14 @@
             "content": "The kinematic equations can be when some object changes acceleration but its motion can be broken to several unique steps of independent motion.",
             "uuid": "be3e1545-b796-4a4a-bd4f-54078b8afe1b"
           },
+          "kinematic_equations_as_functions":
+          {
+            "title": "The Kinematic Equations as Functions",
+            "level": 4,
+            "horizontal": 6,
+            "letter": "X",
+            "objectives": "Write the kinematic equations as functions; explain this transition"
+          },
           "quantitative_kinematic_graphs_4A":
           {
             "title": "Quantitative Kinematic Graphs 4A",
