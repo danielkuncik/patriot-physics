@@ -161,3 +161,112 @@
         \( R = \frac{V^2}{P} \)
     </li>
 </ol>
+
+<div class = 'randomProblemDiv'></div>
+
+
+<script>
+
+  function generateIntegerCircuit(series) {
+    if (series === undefined) {
+      if (Math.rand() > 0.5) {
+        series = true;
+      } else {
+        series = false;
+      }
+    }
+    let numResistors = randInt(2,4);
+    let resistorArray = [], i;
+    for (i = 0; i < numResistors; i++) {
+      resistorArray.push({});
+    }
+
+    let problemObject;
+    let totalResistance, totalCurrent, totalVoltage, totalPower;
+    if (series) {
+      totalResistance = 0;
+      resistorArray.forEach((resistor) => {
+        resistor.resistance = randInt(2,6);
+        totalResistance += resistor.resistance;
+      });
+      totalCurrent = randInt(1,4);
+      totalVoltage = totalResistance * totalCurrent;
+      totalPower = toatlCurrent * totalVoltage;
+
+      resistorArray.forEach((resistor) => {
+        resistor.current = totalCurrent;
+        resistor.voltage = resistor.current * resistor.resistance;
+        resistor.power = resistor.current * resistor.voltage;
+      });
+
+      problemObject = {
+        series: series,
+        totalVoltage: totalVoltage,
+        totalCurrent: totalCurrent,
+        totalResistance: totalResistance;
+        totalPower: totalPower;
+        resistorArray: resistorArray
+      }
+    } else { // parallel
+      // more difficutl to randomly generate an integerproblem
+    }
+
+    return problemObject;
+  }
+
+  generateNonIntegerCircuit() {
+
+  }
+
+  function makeCircuitTable(numResistors, powerBoolean) {
+    let master = $("<div class = 'container'></div>");
+
+    if (numResistors === 2) {
+      // 4 columns: 3, 3, 3, 3
+      let row1 = $("<div class = 'row'></div>");
+
+      
+    } else if (numResistors === 3) {
+      // 5 columns: 3 2 2 2 3
+    } else if (numResistors === 4) {
+      // 6 columns: 2 2 2 2 2 2
+    }
+
+  }
+
+  displayCircuitProblem(problemObject) {
+    let circuitDiagram;
+    let simpleResistanceArray = [];
+    problemObject.resistorArray.forEach((resistor) => {
+      simpleResistanceArray.push(resistor.resistance);
+    });
+    if (problemObject.series) {
+      circuitDiagram = makeSimpleSeriesCircuit();
+    } else { // parallel
+      circuitDigram = makeSimpleParallelCircuit();
+    }
+
+    let master = $("<div class = 'container'></div>");
+
+    let row1 = $("<div class = 'row'></div>");
+    let col1 = $("<div class = 'col-12'></div>");
+    $(col1).append(circuitDigram.drawCanvas(400));
+    $(row1).append(col1);
+    $(master).append(row1);
+
+    let row2 = $("<div class = 'row'></div>");
+    let col21 = $("<div class = 'col-2'></div>");
+    let col2last $("<div class = 'col-3'>TOTAL</div>");
+    if (simpleResistanceArray.length === 2) {
+      let col22 =
+    } else if (simpleResistanceArray.length === 3) {
+
+    } else if (simpleResistanceArray.length === 4) {
+
+    }
+
+
+    return master
+  }
+
+</script>

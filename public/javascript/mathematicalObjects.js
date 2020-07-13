@@ -327,6 +327,9 @@ class KinematicStepwiseFunctions {
         }
 
         return graphCollection;
+
+    makeQuantitativeGraphs(story, labelsOnSide, dimension) {
+      
     }
 }
 

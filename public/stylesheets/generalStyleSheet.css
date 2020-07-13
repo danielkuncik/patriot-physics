@@ -257,3 +257,16 @@ h4.quizLink {
 p.dueDates {
     font-size: 14px;
 }
+
+
+input.autoNumber {
+  width: 200px;
+  height: 50px;
+  font-size: 40px;
+}
+
+input.autoAnswerButton {
+  width: 250px;
+  height: 70px;
+  font-size: 50px;
+}
