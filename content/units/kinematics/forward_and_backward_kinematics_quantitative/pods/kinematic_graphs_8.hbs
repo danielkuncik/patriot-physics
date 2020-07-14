@@ -25,9 +25,48 @@
   </li>
 </ol>
 
+<h4>
+    THE NEW WAY
+</h4>
+<ol class = 'questionList'>
+    <li class="question">
+        <div id = 'problem100'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class = 'subQuestion'>
+                Find the initial velocity.
+            </li>
+            <li class="subQuestion">
+                Find the acceleration.
+            </li>
+            <li class="subQuestion">
+                Find the final velocity.
+            </li>
+            <li class="subQuestion">
+                Draw a corresponding velocity-time graph.
+            </li>
+            <li class="subQuestion">
+                Draw a corresponding acceleration-time graph.
+            </li>
+        </ol>
+    </li>
+</ol>
 
 
 <script>
+    let problem100 = new KinematicsProblem(22,10,-1);
+    let positionGraph100 = problem100.makePositionGraph(0.8);
+    positionGraph100.addReferenceArray([5,10,15,22],[25,50]);
+    $("#problem100").append(positionGraph100.drawCanvas(200));
+    /*
+    need to think of a way to add reference?
+    pretty successful overall
+     */
+</script>
+
+
+<script>
+    // OLDER STUFF ON THE WAY
+
   function makeLinearVelocityGraph(problemObject) {
     let initial_velocity = problemObject.initial_velocity;
     let acceleration = problemObject.acceleration;

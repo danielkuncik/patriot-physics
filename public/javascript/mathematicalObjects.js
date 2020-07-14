@@ -24,7 +24,11 @@ class StepwiseFunctionObject {
     forceYchange(newY) {
         this.addVerticalLine(this.currentX, this.currentY, newY);
         this.currentY = newY;
+    }
 
+    moveCursor(newX, newY) {
+        this.currentX += newX;
+        this.currentY += newY;
     }
 
     addCurvedStep(curveFunction, xStep) {
@@ -161,6 +165,7 @@ class StepwiseFunctionObject {
         this.yMax = range.yMax;
     }
 
+
     testIfConstant() {
         this.getRange();
         if (this.yMin === this.yMax) {
@@ -220,6 +225,7 @@ function smartQualitativeFunctionGrapher(qualitativeStepwiseFunction, desiredAsp
     }
     return graph
 }
+
 
 // creates three stepwise functions
 // representing the position, velocity, and acceleration graphs of that particular functions
@@ -327,9 +333,10 @@ class KinematicStepwiseFunctions {
         }
 
         return graphCollection;
+    }
 
     makeQuantitativeGraphs(story, labelsOnSide, dimension) {
-      
+        return false
     }
 }
 

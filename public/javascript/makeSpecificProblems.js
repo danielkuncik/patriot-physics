@@ -53,52 +53,6 @@ function oneStepKinematicsProblem(initial_velocity, acceleration, time_interval,
 }
 
 
-//// I already created something like this, it was a success! so lets make more like this, on the same model
-class KinematicsProblem {
-  constructor(initial_velocity, acceleration, time_interval, initial_position) {
-    if (initial_position === undefined) {
-      initial_position = 0;
-    }
-    this.initial_velocity = initial_velocity;
-    this.current_time = time_interval;
-    this.initial_position = initial_position;
-    this.current_velocity = initial_velocity + acceleration * time_interval;
-    this.current_position = initial_velocity * time_interval + 0.5 * acceleration * time_interval**2;
-    this.displacement = this.current_position - initial_position;
-
-    this.currentVelocity = final_velocity;
-
-    this.steps = [];
-    this.addStep(initial_velocity, acceleration, time_interval, initial_position);
-  }
-
-
-  function addStep(acceleration, delta_t) {
-    const vi = this.current_velocity;
-    const delta_v = acceleration * delta_t;
-    const vf = vi + delta_v;
-    const delta_x = vi * delta_t + 0.5 * acceleration * delta_t**2;
-    this.current_time += delta_t;
-    this.current_velocity += delta_v;
-    this.current_position += delta_x;
-
-    this.steps.push({
-      initial_velocity:vi,
-      final_velocity:vf,
-      delta_v:vi,
-      delta_t:delta_t,
-      delta_x:delta_x,
-      acceleration:acceleration
-    });
-
-    this.total_displacement = this.current_position - this.initial_position;
-    this.average_velocity = this.total_displacement / this.current_time;
-    this.average_acceleration = (this.current_velocity - this.initial_velocity) / this.current_time;
-  }
-
-
-}
-
 
 function simpleMomentumProblem(massA, massB, viA, viB, vfA) {
   let piA = massA * viA;
