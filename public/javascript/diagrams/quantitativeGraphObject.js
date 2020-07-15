@@ -103,11 +103,7 @@ class QuantitativeGraph extends Diagram {
     }
 
 
-    /*
-    I need to add:
-    an option taht allows the label to be at the end of the graph, not on the axis
-     */
-    addXAxisHash(position, label, doYouWantTheLabelFarAway) {
+    addXAxisHash(position, label, doYouWantTheLabelFarAway, noLabel) {
         try {
             if (position < this.xMinOnGraph || position > this.xMaxOnGraph) {throw "ERROR: xAxis Hash out of range";}
         }
@@ -122,14 +118,16 @@ class QuantitativeGraph extends Diagram {
         let newHash = super.addTwoPointsAndSegment(position, this.hashLength / 2 + this.yMinOnGraph, position, -1 * this.hashLength / 2 + this.yMinOnGraph);
 
         let newLabel;
-        if (doYouWantTheLabelFarAway) {
-            newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement + this.yMinOnGraph), this.hashLabelFontSize, 0);
-        } else {
-            newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement), this.hashLabelFontSize, 0);
+        if (!noLabel) {
+          if (doYouWantTheLabelFarAway) {
+              newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement + this.yMinOnGraph), this.hashLabelFontSize, 0);
+          } else {
+              newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement), this.hashLabelFontSize, 0);
+          }
         }
         return newHash
     }
-    addYAxisHash(position, label, doYouWantTheLabelFarAway) {
+    addYAxisHash(position, label, doYouWantTheLabelFarAway, noLabel) {
         try {
             if (position < this.yMinOnGraphOriginal || position > this.yMaxOnGraphOriginal) {throw "ERROR: yAxis Hash out of range";}
         }
@@ -143,10 +141,12 @@ class QuantitativeGraph extends Diagram {
         let newHash = super.addTwoPointsAndSegment(this.hashLength / 2, position * this.yMultiplier, -1 * this.hashLength / 2, position * this.yMultiplier);
 
         let newLabel;
-        if (doYouWantTheLabelFarAway) {
-            let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement + this.xMinOnGraph, position * this.yMultiplier), this.hashLabelFontSize, 0);
-        } else {
-            let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement, position * this.yMultiplier), this.hashLabelFontSize, 0);
+        if (!noLabel) {
+          if (doYouWantTheLabelFarAway) {
+              let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement + this.xMinOnGraph, position * this.yMultiplier), this.hashLabelFontSize, 0);
+          } else {
+              let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement, position * this.yMultiplier), this.hashLabelFontSize, 0);
+          }
         }
         return newHash;
     }
@@ -165,7 +165,7 @@ class QuantitativeGraph extends Diagram {
         // adds a horizontal dotted line at this position on the y axis
     }
 
-    addXReference(position, referenceLineBoolean, hashMarkBoolean) {
+    addXReference(position, referenceLineBoolean, hashMarkBoolean, noLabel) {
         if (referenceLineBoolean === undefined) {
             referenceLineBoolean = true
         }
@@ -173,14 +173,14 @@ class QuantitativeGraph extends Diagram {
             hashMarkBoolean = true
         }
         if (referenceLineBoolean) {
-            this.addXAxisHash(position, String(roundValue(position,2)), true);
+          this.addXAxisReferenceLine(position);
         }
         if (hashMarkBoolean) {
-            this.addXAxisReferenceLine(position);
+          this.addXAxisHash(position, String(roundValue(position,2)), true);
         }
     }
 
-    addYReference(position, referenceLineBoolean, hashMarkBoolean) {
+    addYReference(position, referenceLineBoolean, hashMarkBoolean, noLabel) {
         if (referenceLineBoolean === undefined) {
             referenceLineBoolean = true
         }
@@ -188,10 +188,10 @@ class QuantitativeGraph extends Diagram {
             hashMarkBoolean = true
         }
         if (referenceLineBoolean) {
-            this.addYAxisHash(position, String(roundValue(position,2)), true);
+          this.addYAxisReferenceLine(position);
         }
         if (hashMarkBoolean) {
-            this.addYAxisReferenceLine(position);
+          this.addYAxisHash(position, String(roundValue(position,2)), true);
         }
     }
 
@@ -321,6 +321,83 @@ class QuantitativeGraph extends Diagram {
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
         return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
     }
-
 }
 
+
+/*
+I need to add:
+an option taht allows the label to be at the end of the graph, not on the axis
+
+options that need to exist here:
+- the hash can be in diffrent positions
+- there can be a full reference line, or a partial reference line, or no reference line
+- the label can be there or not there all all
+[i feel like this is enough that it needs to be its own object]
+ */
+
+// do i want separate for x and y?
+class Hash {
+  constructor(axis, value) {
+    if (axis !== 'x' && axis !== 'y') {
+      throw new Error('Axis must be X or Y');
+    }
+    this.axis = axis;
+    this.value = value;
+
+    // defaults
+    if (this.axis === 'x') {
+      this.position = 'bottom';
+    } else if (this.axis === 'y') {
+      this.position = 'left';
+    }
+    this.hash = true;
+    this.referenceLine = true;
+    this.label = String(value);
+
+    /// too add to graph later later
+    // if (axis === 'x' && (value < this.xMinOnGraph || value > this.xMaxOnGraph)) {
+    //   throw new Error('X position out of range');
+    // } else if (axis === 'y' && (value < this.yMinOnGraph || position > this.xMaxOnGraph)) {
+    //   throw new Error('Y position out or range');
+    // }
+  }
+  moveToTop() {
+    if (this.axis = 'x') {
+      this.position = 'top';
+    } else {
+      throw new Error ('y axis hash cannot be on top position');
+    }
+  }
+  moveToRight() {
+    if (this.axis = 'y') {
+      this.position = 'right';
+    } else {
+      throw new Error ('x axis hash cannot be on the right position position');
+    }
+  }
+  }
+
+  deleteReferenceLine() {
+    this.referenceLine = false;
+  }
+  deleteHash() {
+    this.hash = false;
+  }
+  changeLabel(newLabel) {
+    this.label = newLabel;
+  }
+  deleteLabel() {
+    this.label = false;
+  }
+
+  addToGraph(graph) {
+    if (this.axis === 'x' && (value < graph.xMinOnGraph || value > graph.xMaxOnGraph)) {
+      throw new Error('X position out of range');
+    } else if (this.axis === 'y' && (value < graph.yMinOnGraph || value > graph.xMaxOnGraph)) {
+      throw new Error('Y position out or range');
+    }
+    // here add functions to add the graph
+  }
+}
+
+let x = new Hash('g',2);

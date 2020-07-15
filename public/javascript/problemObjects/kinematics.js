@@ -43,7 +43,7 @@ class KinematicsProblem {
           x: this.currentPosition,
           v: this.currentVelocity,
           a: acceleration
-        ]; // crucial time points
+        }]; // crucial time points
 
         if (firstTimeInterval) { // you can make it without a first time interval
             if (initialVelocity === 0 && acceleration === 0) {
@@ -65,7 +65,7 @@ class KinematicsProblem {
     }
 
     addCrucialPoint(t,x,v,a) {
-      this.crucialTimes.push({
+      this.crucialPoints.push({
         t: t,
         x: x,
         v: v,
@@ -92,7 +92,7 @@ class KinematicsProblem {
             finalVelocity: finalVelocity,
             acceleration: acceleration
         });
-        this.addCrucialPoint(finalTime, finalPosition, finalVelocity, acceleration);
+        this.addCrucialPoint(initialTime + timeInterval, initialPosition + displacement, finalVelocity, acceleration);
         // what if it hits a max or min in the system
         if (initialPosition + displacement > this.maxPosition) {
             this.maxPosition = initialPosition + displacement;
@@ -151,12 +151,12 @@ class KinematicsProblem {
             if (displacementBeforeReversal > 0) { // downward parabola
                 if (this.currentPosition + displacementBeforeReversal > this.maxPosition) {
                     this.maxPosition = this.currentPosition + displacementBeforeReversal;
-                    this.addCrucialPoint(this.currentTime + this.timeBeforeReversal, this.maxPosition, 0, acceleration);
+                    this.addCrucialPoint(this.currentTime + timeBeforeReversal, this.maxPosition, 0, acceleration);
                 }
             } else if (displacementBeforeReversal < 0) { // upward parabola
                 if (this.currentPosition + displacementBeforeReversal < this.minPosition) {
                     this.minPosition = this.currentPosition + displacementBeforeReversal;
-                    this.addCrucialPoint(this.currentTime + this.timeBeforeReversal, this.minPosition, 0, acceleration);
+                    this.addCrucialPoint(this.currentTime + timeBeforeReversal, this.minPosition, 0, acceleration);
                 }
             }
         } else {
@@ -218,7 +218,8 @@ class KinematicsProblem {
     //     return graphCollection;
     // }
 
-    makePositionGraph(desiredAspectRatio, crucialTimeReferenceArray) {
+
+    makePositionGraph(desiredAspectRatio, crucialPointReferenceArray) {
         let myGraph = new QuantitativeGraph(0, this.currentTime, this.minPosition, this.maxPosition,desiredAspectRatio);
         this.steps.forEach((step) => {
             if (step.acceleration === 0) {
@@ -234,13 +235,14 @@ class KinematicsProblem {
             }
         });
         myGraph.labelAxes('time (s)', 'position (m/s)');
-        if (crucialTimeReferenceArray) {
+        if (crucialPointReferenceArray) {
           let timeReferenceArray = [], positionReferenceArray = [];
           this.crucialPoints.forEach((point) => {
+            console.log(point);
             timeReferenceArray.push(point.t);
             positionReferenceArray.push(point.x);
           });
-          this.addReferenceArrays(timeReferenceArray, positionReferenceArray);
+          myGraph.addReferenceArray(timeReferenceArray, positionReferenceArray);
         }
         return myGraph
     }
@@ -271,6 +273,9 @@ crucial position graph points
  - any zero point
  - any point at which the motion changes
  - any max or min point
+
+- create a way for it have the crucial points be multiples of each other
+
 */
 
 

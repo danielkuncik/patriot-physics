@@ -54,8 +54,8 @@
 
 <script>
     let problem100 = new KinematicsProblem(22,10,-1);
-    let positionGraph100 = problem100.makePositionGraph(0.8);
-    positionGraph100.addReferenceArray([5,10,15,22],[25,50]);
+    let positionGraph100 = problem100.makePositionGraph(0.8, true);
+    ///positionGraph100.addReferenceArray([5,10,15,22],[25,50]);
     $("#problem100").append(positionGraph100.drawCanvas(200));
     /*
     need to think of a way to add reference?
