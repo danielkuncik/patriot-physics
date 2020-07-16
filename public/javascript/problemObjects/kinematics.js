@@ -80,18 +80,42 @@ class KinematicsProblem {
         let finalVelocity = initialVelocity + timeInterval * acceleration;
         const initialPosition = this.currentPosition;
         const initialTime = this.currentTime;
+        let finalPosition = initialPosition + displacement;
         this.steps.push({
             initialTime: initialTime,
             finalTime: initialTime + timeInterval,
             timeInterval: timeInterval,
             initialPosition: initialPosition,
-            finalPosition: initialPosition + displacement,
+            finalPosition: finalPosition,
             distance: distance,
             displacement: displacement,
             initialVelocity: initialVelocity,
             finalVelocity: finalVelocity,
             acceleration: acceleration
         });
+        // adding a crucial point if there is a point at which position is zero
+        /// STILL DOESN"T WORK
+        if (initialPosition * finalPosition < 0) { /// if the position graph crosses the x-axis
+            let zeroPositionTime;
+            if (acceleration === 0) {
+                zeroPositionTime = -1 * initialPosition / initialVelocity;
+                this.addCrucialPoint(zeroPositionTime, 0, initialVelocity, 0);
+            } else {
+                let a = 0.5 * acceleration;
+                let b = initialVelocity;
+                let x = initialPosition;
+                let discriminant = b*b - 4 * a * c;
+                let root1 = ( -1 * b + Math.sqrt(discriminant) ) / 2 / a;
+                let root2 = ( -1 * b - Math.sqrt(discriminant) ) / 2 / a;
+                if (root1 > initialTime && root1 < initialTime + timeInterval) {
+                    this.addCrucialPoint(root1,0, initialVelocity + acceleration * root1, acceleration);
+                } else if (root2 > initialTime && root1 < initialTime + timeInterval) {
+                    this.addCrucialPoint(root2,0,initialVelocity +  acceleration * root2, acceleration);
+                }
+            }
+        }
+
+
         this.addCrucialPoint(initialTime + timeInterval, initialPosition + displacement, finalVelocity, acceleration);
         // what if it hits a max or min in the system
         if (initialPosition + displacement > this.maxPosition) {
@@ -219,7 +243,7 @@ class KinematicsProblem {
     // }
 
 
-    makePositionGraph(desiredAspectRatio, crucialPointReferenceArray) {
+    makePositionGraph(desiredAspectRatio, referenceArrayOption) {
         let myGraph = new QuantitativeGraph(0, this.currentTime, this.minPosition, this.maxPosition,desiredAspectRatio);
         this.steps.forEach((step) => {
             if (step.acceleration === 0) {
@@ -235,7 +259,7 @@ class KinematicsProblem {
             }
         });
         myGraph.labelAxes('time (s)', 'position (m/s)');
-        if (crucialPointReferenceArray) {
+        if (referenceArrayOption === 'minimal') {
           let timeReferenceArray = [], positionReferenceArray = [];
           this.crucialPoints.forEach((point) => {
             console.log(point);
@@ -243,6 +267,8 @@ class KinematicsProblem {
             positionReferenceArray.push(point.x);
           });
           myGraph.addReferenceArray(timeReferenceArray, positionReferenceArray);
+        } else if (referenceArrayOption === 'professional') {
+
         }
         return myGraph
     }

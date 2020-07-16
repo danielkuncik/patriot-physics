@@ -7,7 +7,7 @@
   </li>
 
   <li class = 'question'>
-    An object moves with initial position 0, intiial velocity 5 m/s
+    An object moves with initial position 0, initial velocity 5 m/s
     in the positive direction,
     and an acceleration of 2 m/s^2 in the negative direction,
     for a time of 12 seconds.
@@ -16,9 +16,9 @@
     and a momentary stop...connect these to corresponding positions on the position-time graph
   </li>
   <li class = 'question'>
-    An object moves with initial position 0, intiial velocity 5 m/s
+    An object moves with initial position 0, initial velocity 5 m/s
     in the positive direction,
-    and an acceleration of 2 m/s^2 in the postivive direction,
+    and an acceleration of 2 m/s^2 in the positive direction,
     for a time of 12 seconds.
     - draw all three kinematic graphs
     - there should be no 'turn around' explain why
@@ -54,9 +54,10 @@
 
 <script>
     let problem100 = new KinematicsProblem(22,10,-1);
-    let positionGraph100 = problem100.makePositionGraph(0.8, true);
+    let positionGraph100 = problem100.makePositionGraph(2, 'minimal');
+    // positionGraph100.automaticReferenceArray(12,8);
     ///positionGraph100.addReferenceArray([5,10,15,22],[25,50]);
-    $("#problem100").append(positionGraph100.drawCanvas(200));
+    $("#problem100").append(positionGraph100.drawCanvas(400,200));
     /*
     need to think of a way to add reference?
     pretty successful overall

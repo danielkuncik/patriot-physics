@@ -115,7 +115,9 @@ class QuantitativeGraph extends Diagram {
         // odn't i alwasy want the label far away??
         if (doYouWantTheLabelFarAway === undefined) {doYouWantTheLabelFarAway = true;}
 
-        let newHash = super.addTwoPointsAndSegment(position, this.hashLength / 2 + this.yMinOnGraph, position, -1 * this.hashLength / 2 + this.yMinOnGraph);
+//        let newHash = super.addTwoPointsAndSegment(position, this.hashLength / 2 + this.yMinOnGraph, position, -1 * this.hashLength / 2 + this.yMinOnGraph);
+        let newHash = super.addTwoPointsAndSegment(position, this.yMinOnGraph, position, -1 * this.hashLength / 2 + this.yMinOnGraph);
+
 
         let newLabel;
         if (!noLabel) {
@@ -138,7 +140,7 @@ class QuantitativeGraph extends Diagram {
         if (doYouWantTheLabelFarAway === undefined) {doYouWantTheLabelFarAway = false;}
 
 
-        let newHash = super.addTwoPointsAndSegment(this.hashLength / 2, position * this.yMultiplier, -1 * this.hashLength / 2, position * this.yMultiplier);
+        let newHash = super.addTwoPointsAndSegment(0, position * this.yMultiplier, this.xMinOnGraph - this.hashLength / 2, position * this.yMultiplier);
 
         let newLabel;
         if (!noLabel) {
@@ -206,28 +208,64 @@ class QuantitativeGraph extends Diagram {
         });
     }
 
+    // it should be required to have a zero
+    // I'm going to have to change the algorithm to require zero to be one of the values
+    // it will not necessarily reach the maximum and minimum values, but will come as close as possible while always including zero
     automaticReferenceArray(NumXHashMarks, NumYHashMarks) {
         if (typeof(NumXHashMarks) === 'number' && NumYHashMarks === undefined) { // option to include a single argument
             NumYHashMarks = NumXHashMarks;
         }
         if (NumXHashMarks === undefined) {NumXHashMarks = 6;}
         if (NumYHashMarks === undefined) {NumYHashMarks = 4;}
-        NumXHashMarks += 1; // so that the origin does not count against it!
-        NumYHashMarks += 1;
+        // NumXHashMarks += 1; // so that the origin does not count against it!
+        // NumYHashMarks += 1;
         if (NumXHashMarks < 2) {NumXHashMarks = 2;}
         if (NumYHashMarks < 2) {NumYHashMarks = 2;}
         let xInterval = (this.xMaxOnGraph - this.xMinOnGraph) / (NumXHashMarks  - 1);
-        let yInterval = (this.yMaxOnGraph / this.yMultiplier - this.yMinOnGraph / this.yMultiplier) / (NumYHashMarks  - 1);
+        let yInterval = (this.yMaxOnGraphOriginal - this.yMinOnGraphOriginal) / (NumYHashMarks  - 1);
+
+        const firstXHash = findFirstHash(this.xMinOnGraph, this.xMaxOnGraph, NumXHashMarks);
+        const firstYHash = findFirstHash(this.yMinOnGraphOriginal, this.yMaxOnGraphOriginal, NumYHashMarks);
+
+        // must include a zero
         let xReferenceArray = [];
         let yReferenceArray = [];
         let i, j;
+        let labelTheNext;
         for (i = 0; i < NumXHashMarks; i++) {
-            xReferenceArray.push(this.xMinOnGraph + i * xInterval);
+            //xReferenceArray.push(this.xMinOnGraph + i * xInterval);
+            let noLabel;
+            if (!labelTheNext) { // awkward, refactor later?
+                noLabel = true;
+            } else {
+                labelTheNext = false;
+            }
+            let value = firstXHash + i * xInterval;
+            if (value === 0) {
+                labelTheNext = true;
+            }
+
+            this.addXAxisHash(value,String(value),true,noLabel);
+            // add a reference line
         }
+        labelTheNext = false;
+        console.log(this.yMinOnGraphOriginal, this.yMaxOnGraphOriginal, yInterval);
         for (j = 0; j < NumYHashMarks; j++) {
-            yReferenceArray.push(this.yMinOnGraph / this.yMultiplier + j * yInterval);
+            let noLabel;
+            if (!labelTheNext) { // awkward, refactor later?
+                noLabel = true;
+            } else {
+                labelTheNext = false;
+            }
+            let value = (firstYHash + j * yInterval); // no y Multiplier here! (not qquite sure why)
+            let label = String(firstYHash + j * yInterval);
+            if (value === 0) {
+                labelTheNext = true;
+            }
+            this.addYAxisHash(value, label,true, noLabel);
+            /// closer, but still doens't work quite perfectly!
         }
-        this.addReferenceArray(xReferenceArray, yReferenceArray);
+        //this.addReferenceArray(xReferenceArray, yReferenceArray);
     }
 
     validatePoints(x1,y1,x2,y2) {
@@ -375,7 +413,6 @@ class Hash {
       throw new Error ('x axis hash cannot be on the right position position');
     }
   }
-  }
 
   deleteReferenceLine() {
     this.referenceLine = false;
@@ -400,4 +437,25 @@ class Hash {
   }
 }
 
-let x = new Hash('g',2);
+
+// determines an interval between hash marks and a position of the first hash mark such that
+// zero is always included
+function findFirstHash(min, max, numHashes) {
+    const interval = (max - min) / (numHashes - 1);
+    console.log(interval);
+    let firstHash;
+    if (min === 0)  {
+        firstHash = 0;
+    } else if (max === 0) {
+        firstHash = min;
+    } else if (min > 0 || max < 0) { // ill advised graphs that do not include zero
+        firstHash = min;
+    } else {
+        let test = 0;
+        while (test > min) {
+            test -= interval;
+        }
+        firstHash = test + interval;
+    }
+    return firstHash
+}
