@@ -172,7 +172,7 @@ hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMa
 
 // put i giant link if logged in, and a message to login if not
 hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, ungradedQuizzes) => {
-    let link = "<h4 class ='quizLink'>";
+    let link = "<h4 class ='quizLink no-print'>";
     if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
         let href = `/miniquiz/${superUnitKey}/${unitKey}/${podKey}`;
         if (!loggedIn) {

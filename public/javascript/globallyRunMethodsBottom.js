@@ -26,16 +26,16 @@ function createQuestionAndAnswerList() {
         $(thisQuestionList).find("li.question").each((j) => {
             thisQuestion = $(thisQuestionList).find("li.question")[j];
             if (withLetter) {
-                $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}:</strong> `);
+                $(thisQuestion).prepend(`<strong>${letter}.${questionNumber}: &nbsp; &nbsp; </strong> `);
             } else {
-                $(thisQuestion).prepend(`<strong>${questionNumber}:</strong> `);
+                $(thisQuestion).prepend(`<strong>${questionNumber}: &nbsp; </strong> `);
             }
             if ($(thisQuestion).data()['answer'] !== undefined) {
                 thisAnswer = $(thisQuestion).data()['answer'];
                 if (withLetter) {
-                    $(".answerList").append(`<li class = 'answer'>${letter}.${questionNumber}:   ${thisAnswer}</li>`);
+                    $(".answerList").append(`<li class = 'answer'>${letter}.${questionNumber}: &nbsp; &nbsp; ${thisAnswer}</li>`);
                 } else {
-                    $(".answerList").append(`<li class = 'answer'>${questionNumber}:   ${thisAnswer}</li>`);
+                    $(".answerList").append(`<li class = 'answer'>${questionNumber}: &nbsp; &nbsp; ${thisAnswer}</li>`);
                 }
             } else if ($(thisQuestion).data()['answer_id'] !== undefined) {
                 thisAnswerID = $(thisQuestion).data()['answer_id'];
@@ -57,10 +57,10 @@ function createQuestionAndAnswerList() {
                     thisSubQuestion = $(subQuestionList).find("li.subQuestion")[k];
                     if ($(thisSubQuestion).data()['answer'] !== undefined) {
                         thisSubAnswer = $(thisSubQuestion).data()['answer'];
-                        $(subAnswerList).append(`<li class = 'subAnswer'>${thisSubAnswer}</li>`);
+                        $(subAnswerList).append(`<li class = 'subAnswer'> &nbsp; &nbsp; ${thisSubAnswer}</li>`);
                     } else if (($(thisSubQuestion).data()['answer_id'] !== undefined)) {
                         let thisSubAnswerID = $(thisSubQuestion).data()['answer_id'];
-                        $(subAnswerList).append(`<li class = 'subAnswer' id = '${thisSubAnswerID}'>  </li>`);
+                        $(subAnswerList).append(`<li class = 'subAnswer' id = '${thisSubAnswerID}'> <br> </li>`);
                         collectedAnswerIds.push(thisSubAnswerID);
                     } else {
                         thisSubAnswer = 'xxx';
@@ -68,9 +68,9 @@ function createQuestionAndAnswerList() {
                     }
                 });
                 if (withLetter) {
-                    thisAnswer = $(`<li>${letter}.${questionNumber}:  </li>`);
+                    thisAnswer = $(`<li>${letter}.${questionNumber}: &nbsp; &nbsp; </li>`);
                 } else {
-                    thisAnswer = $(`<li>${questionNumber}:  </li>`);
+                    thisAnswer = $(`<li>${questionNumber}: &nbsp; &nbsp; </li>`);
                 }
                 $(thisAnswer).append(subAnswerList);
                 $(".answerList").append(thisAnswer);
