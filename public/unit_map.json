@@ -467,7 +467,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one to three conversion factors; properly write conversino factors to show how dimensional anlaysis is used",
+            "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one or two conversion factors; properly write conversion factors to show how dimensional anlaysis is used",
             "uuid": "1aa185f4-fa5d-4324-8086-9955ec8c81a0"
           },
           "dimensional_analysis_1":
@@ -489,7 +489,7 @@
             "horizontal": null,
             "letter": "",
             "prerequisites": [],
-            "objective": "Convert a quantity to a different unit using four or more conversion factors; in particular convert mph to m/s with four conversion factors; properly write conversion factors to show how dimensional analysis is used",
+            "objective": "Convert a quantity to a different unit using three, four or more conversion factors; in particular convert mph to m/s with four conversion factors; properly write conversion factors to show how dimensional analysis is used",
             "uuid": "3bb84e30-bf48-4dfa-b40e-4a2cd2c45666"
           },
           "conversion_factors_5":
