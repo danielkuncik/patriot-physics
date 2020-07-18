@@ -29,11 +29,19 @@ div.definitionBox {
 }
 
 li.question {
+    margin: 30px;
+}
 
+li.answer {
+    margin: 30px;
 }
 
 li.subQuestion {
+    margin: 20px;
+}
 
+li.subAnswer {
+    margin: 20px;
 }
 
 div.formulaSolvingTable {
