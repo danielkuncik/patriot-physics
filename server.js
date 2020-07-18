@@ -84,11 +84,10 @@ app.set('views', [__dirname + '/views',__dirname + '/content']);
 app.engine('hbs', hbs.express4({
    // extname: 'hbs',
     defaultView: 'default.hbs',
-    partialsDir: __dirname + '/views/partials',
+    partialsDir: [__dirname + '/views/partials',__dirname + '/content/information/styleGuide'],
     layoutsDir: __dirname + '/views/layouts'
 }));
 app.use(express.static(__dirname + '/public'));
-
 
 
 
@@ -111,6 +110,11 @@ app.post('/logout',(req, res) => {
     res.redirect('/');
 });
 
+//
+// app.get('/styleGuide/:styleKey', (req, res) => {
+//     const filepath = __dirname + '/content/information/styleGuide/' + req.params.styleKey;
+//     res.sendFile(filepath);
+// });
 
 app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page]);
 

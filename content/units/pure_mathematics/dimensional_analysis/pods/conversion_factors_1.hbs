@@ -1,0 +1,208 @@
+<p>
+    In this unit, we will learn a method for completing conversion problems
+    called the <em>conversion factor method</em>.
+    Even if you find conversion problems very easy, or even if you can just use Google for conversions,
+    mastering the conversion factor method is still crucial because it
+    is based upon the mathematical principles of <strong>dimensional analysis</strong>.
+    Dimensional analysis lays at the heart of all physics formulas.
+    In this pod, we will learn to use the conversion factor method for simple conversion problems,
+    those involving intuitive, well known units and only one conversion factor.
+    By conscientiously completing conversion problems, even very easy ones, with the conversion factor method,
+    you will begin to understand how units and formulas work.
+    Beyond that, once you start doing much harder conversion problems,
+    like those related to <a href = '/pod/waves/the_electromagnetic_spectrum_quantitative/photon_formulas_1'>electromagnetic wave quantities</a>,
+    the conversion factor method is the way to ensure that you will never make a mistake.
+</p>
+
+<h4>
+    Example Question
+</h4>
+<p>
+    "How many feet are in 36 inches?"
+</p>
+<p>
+    Obviously, the answer is 3. I know that you know that. However, the goal here
+    is not to learn an answer, but to learn how to use <em>a new method</em>.
+    It can be helpful to practice by using a problem that is pretty simple,
+    where you aren't stretching your mind to figure out what is going on.
+</p>
+
+<!--
+Every year, people complain about needing to use conversion factors!
+Every year, people say "but i can get the answer without doing all this, why do I need to do it etc. etc.
+Perhaps some year will be the year nobody whines about conversion factors.
+Until then, I will institute a list of consequences for complaining.
+1 person complains: snarky eye roll
+2 people complain: face palm
+3 people complain: obnoxiously didactic story
+4 people complain: explain physics problems in angry and sarcastic voice for one week
+5 people complain: over the top, authoritarian tirade
+-->
+
+<ol>
+    <li>
+        Write the original value as a fraction with 1 in the denominator:
+        $$
+        36 \, \text{inches} = \frac{36 \, \text{inches}}{1}
+        $$
+    </li>
+    <li>
+        Multiply by a <em>conversion factor</em> that will allow you to cancel out the unit you don't want and give
+        you the unit you do want.
+        A <em>conversion factor</em> is a fraction with equal values in the numerator and the denominator:
+        $$
+        \frac{36 \, \text{inches}}{1}
+        \left(
+        \frac{1 \, \text{foot}}{12 \, \text{inches}}
+        \right)
+        $$
+    </li>
+    <li>
+        Cancel out he units that are in both the numerator and the denominator, and ignore all of the 1s.
+        $$
+        \require{enclose}
+        \frac{36 \, \enclose{horizontalstrikethrough}{\text{inches}}}{1}
+        \left(
+        \frac{1 \, \text{foot}}{12 \, \enclose{horizontalstrikethrough}{\text{inches}}}
+        \right)
+        =
+        \frac{36 \, \text{feet}}{12}
+        $$
+    </li>
+    <li>
+        Now, just divide or multiply to get your answer!
+        $$
+        \frac{36 \, 3 }{}
+        $$
+    </li>
+</ol>
+<p>
+    Here is the answer written out fully:
+    $$
+
+    $$
+</p>
+
+<p>
+    For full credit on a conversion factor problem, you must complete the following steps,
+    as dictated in the <a href = '#'>style guide</a>.
+</p>
+<div class = 'styleGuide'>
+    {{> conversionFactors}}
+</div>
+
+
+<button class = 'btn btn-primary' type = 'button' data-toggle = 'collapse' data-target = '#didacticStory' aria-expanded = 'false' aria-control = 'didacticStory'>
+    Click here for a didactic story!
+</button>
+<div class = 'collapse' id = 'didacticStory'>
+    <div class = 'card card-body'>
+        <p>
+            Once upon a time, I had a very smart class of students, and they all said that conversions
+            were easy. So I gave them a quiz that required them to use conversion factors with very non-intuitive units,
+            units they could not easily imagine or understand. Their answers were off by a billion billion.
+            And that's not two billion, that's a <em>billion</em> billion!
+            The next day in class, I told them they were terrible at conversions, and we learned about feet an inches.
+            Of course, they could easily figure out conversion factors when it was presented with feet and inches, which they clearly understood.
+            When they redid the same quiz,
+            I told them they would not get full credit unless they used the conversion factor method correctly and completely.
+            They did much, much better.
+        </p>
+    </div>
+</div>
+
+
+<p class="directions">
+    Use proper conversion factors to complete each of the following problems.
+    If you cannot give a precise answer, please <a href = '/pod/science_practice/error_approximation/significant_figures_2'>round to three significant figures</a>.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question mb-5' data-answer = '\(
+        48 \, \text{inches} = \frac{48 \, \enclose{horizontalstrike}{\text{inches}} }{1} \left( \frac{1 \, \text{foot}}{12 \, \enclose{horizontalstrike}{\text{inches}}} \right) = \frac{48 \text{ feet}}{12} = 4 \text{ feet}
+    \)'>
+        Convert 48 inches to feet.<br>
+        (I know this question is easy, but uou still need to answer it, using <em>conversion factors</em>. See above.)
+        <br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        5 \, \text{feet} =
+        \frac{5 \, \enclose{horizontalstrike}{\text{feet}} }{1} \left( \frac{12 \, \text{inches} }{1 \, \enclose{horizontalstrike}{\text{foot}} } \right) = \frac{5 \cdot 12 \, \text{inches}}{1}  = 60 \, \text{inches}
+     \)'>
+        Convert 5 feet to inches.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        29 \, \text{feet} =
+        \frac{29 \, \enclose{horizontalstrike}{\text{feet}} }{1}
+        \left( \frac{1 \, \text{meter}}{3.28 \, \enclose{horizontalstrike}{\text{feet}}} \right) =
+        \frac{29 \, \text{meters}}{3.28} =
+        8.84 \, \text{meters}
+     \)'>
+        Convert 29 feet to meters.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        6 \, \text{meters} = \
+        \frac{6 \, \enclose{horizontalstrike}{\text{meters}} }{1}
+        \left( \frac{3.28 \, \text{feet} }{1 \, \enclose{horizontalstrike}{\text{meter}}} \right) =
+        \frac{6 \cdot 3.28 \, \text{feet}}{1} =
+        19.7 \, \text{feet}
+     \)'>
+        Convert 6 meters to feet.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        785 \, \text{hours} =
+        \frac{785 \, \enclose{horizontalstrike}{\text{hours}} }{1}
+        \left( \frac{1 \, \text{day}}{24 \, \enclose{horizontalstrike}{\text{hours}}} \right) =
+        \frac{785 \, \text{days}}{24} =
+        32.7 \, \text{days}
+     \)'>
+        Convert 785 hours to days.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        294 \, \text{hours} =
+        \frac{294 \, \enclose{horizontalstrike}{\text{hours}} }{1}
+        \left( \frac{1 \, \text{day}}{24 \, \enclose{horizontalstrike}{\text{hours}}} \right) =
+        \frac{294 \, \text{days}}{24} =
+        12.3 \, \text{days}
+     \)'>
+        Convert 294 hours to days.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        13 \, \text{days} =
+        \frac{13 \, \enclose{horizontalstrike}{\text{days}} }{1}
+        \left( \frac{24 \, \text{hours} }{1 \, \enclose{horizontalstrike}{\text{day}}} \right) =
+        \frac{13 \cdot 24 \, \text{hours}}{1} =
+        312 \, \text{hours}
+     \)'>
+        Convert 13 days to hours.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        24 \, \text{kilograms} =
+        \frac{24 \, \enclose{horizontalstrike}{\text{kilograms}} }{1}
+        \left( \frac{1 \, \text{slug} }{14.6 \, \enclose{horizontalstrike}{\text{kilograms}}} \right) =
+        \frac{24 \, \text{slugs}}{14.6} =
+        1.64 \, \text{slugs}
+     \)'>
+        Convert 24 kilograms to slugs.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        146 \, \text{slugs} =
+        \frac{146 \, \enclose{horizontalstrike}{\text{slugs}} }{1}
+        \left( \frac{14.6 \, \text{kilograms} }{1 \, \enclose{horizontalstrike}{\text{slug}}} \right) =
+        \frac{146 \cdot 14.6 \, \text{kilograms}}{1} =
+        2130 \, \text{kilograms}
+     \) (rounded to three significant figures)'>
+        Convert 146 slugs to kilograms.<br><br><br><br>
+    </li>
+    <li class = 'question mb-5' data-answer = '\(
+        21419 \, \text{feet} =
+        \frac{21419 \, \enclose{horizontalstrike}{\text{feet}} }{1}
+        \left( \frac{1 \, \text{mile}}{5280 \, \enclose{horizontalstrike}{\text{feet}}} \right) =
+        \frac{21419 \, \text{miles}}{5280} =
+        4.06 \, \text{miles}
+     \)'>
+        Convert 21,419 feet to miles.<br><br><br><br>
+    </li>
+</ol>
+
+<ol class = 'answerList'></ol>
