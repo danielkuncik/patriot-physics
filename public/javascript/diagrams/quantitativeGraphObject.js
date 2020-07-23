@@ -282,10 +282,22 @@ class QuantitativeGraph extends Diagram {
         }
     }
 
-    addSegmentAndTwoPoints(x1,y1,x2,y2) {
+    addSegmentAndTwoPoints(x1,y1,x2,y2,thickness) {
         this.validatePoints(x1,y1,x2,y2);
         let newSegment = super.addTwoPointsAndSegment(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
+        if (thickness) {
+            newSegment.setThickness(thickness);
+        }
         return newSegment
+    }
+
+    makeAxesThick(arrows, thickness) {
+        if (thickness === undefined) {
+            thickness = 4;
+        }
+        // still need to add arrows
+        this.addSegmentAndTwoPoints(this.xMinOnGraph, 0, this.xMaxOnGraph, 0, thickness);
+        this.addSegmentAndTwoPoints(0,this.yMinOnGraphOriginal, 0,this.yMaxOnGraphOriginal, thickness);
     }
 
     addSegmentWithArrowheadInCenter(x1,y1,x2,y2,arrowheadLength, arrowheadAngleInDegrees) {
@@ -340,11 +352,12 @@ class QuantitativeGraph extends Diagram {
         super.addFunctionGraph(rescaledFunction, xMin, xMax);
     }
 
-    addStepwiseLinearFunction(arrayOfPoints, circlesBoolean) {
+    addStepwiseLinearFunction(arrayOfPoints, circlesBoolean, thickness) {
         if (circlesBoolean === undefined) {circlesBoolean = true;}
         let k;
         for (k = 0; k < arrayOfPoints.length - 1; k++) {
-            this.addSegmentAndTwoPoints(arrayOfPoints[k][0], arrayOfPoints[k][1], arrayOfPoints[k + 1][0], arrayOfPoints[k + 1][1]);
+            console.log(thickness);
+            this.addSegmentAndTwoPoints(arrayOfPoints[k][0], arrayOfPoints[k][1], arrayOfPoints[k + 1][0], arrayOfPoints[k + 1][1],thickness);
         }
         if (circlesBoolean) {
             arrayOfPoints.forEach((point) => {this.addPointAsACircle(point[0], point[1]);});
