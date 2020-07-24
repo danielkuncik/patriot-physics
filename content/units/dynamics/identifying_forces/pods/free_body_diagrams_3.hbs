@@ -195,3 +195,107 @@ add more questions here
     The most common constraint forces are normal force, tension (sometimes), and static friction.
   </li>
 </ul>
+
+
+
+<h4>
+  Problems
+</h4>
+
+<h5>
+  Standing Man
+</h5>
+
+<p>
+  A person is standing up on the earth.
+  He is not moving.
+</p>
+
+<p>
+  Draw two free-body diagrams:
+</p>
+<ul>
+  <li>
+    The person (2 forces)
+  </li>
+  <li>
+    The earth (2 forces)
+  </li>
+</ul>
+
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-12'>
+      <strong>Free-Body Diagram of the Man</strong>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-md-8'>
+      <div class = 'row'>
+        <div class = 'col-12 border border-dark pb-5'><br><br><br></div>
+      </div>
+      <div class = 'row'>
+        <div class = 'col-3 border border-dark'>Type of Force</div>
+        <div class = 'col-3 border border-dark'>Direction</div>
+        <div class = 'col-3 border border-dark'>Agent</div>
+        <div class = 'col-3 border border-dark'>Object</div>
+      </div>
+      <div class = 'row'>
+        <div class = 'col-3 border border-dark pt-5'></div>
+        <div class = 'col-3 border border-dark pt-5'></div>
+        <div class = 'col-3 border border-dark pt-5'></div>
+        <div class = 'col-3 border border-dark pt-5'></div>
+      </div>
+      <div class = 'row'>
+        <div class = 'col-3 border border-dark pt-5'></div>
+        <div class = 'col-3 border border-dark pt-5'></div>
+        <div class = 'col-3 border border-dark pt-5'></div>
+        <div class = 'col-3 border border-dark pt-5'></div>
+      </div>
+    </div>
+    <div class = 'col-md-4 border border-dark pb-5'>
+      What is the net force acting on the man?<br><br>
+    </div>
+  </div>
+</div>
+
+<div id = 'putItHere'></div>
+
+
+<script>
+  function createFreeBodyDiagramTable(name, numForces, extraQuestion) {
+    let container = $("<div class = 'container'></div>");
+    let titleRow = $(`<div class = 'row'><div class = 'col-12'><strong>Free-Body Diagram of ${name}</strong></div></div>`);
+    $(container).append(titleRow);
+    let theBigRow = $("<div class = 'row'></div>");
+    let firstColumn = $("<div class = 'col-md-8'></div>");
+    let secondColumn = $(`<div class = 'col-md-4 border border-dark pb-5'>${extraQuestion}</div>`);
+
+    let row1 = $("<div class = 'row'></div>");
+    $(row1).append($("<div class = 'col-3 border border-dark'>Type of Force</div>"));
+    $(row1).append($("<div class = 'col-3 border border-dark'>Direction</div>"));
+    $(row1).append($("<div class = 'col-3 border border-dark'>Agent</div>"));
+    $(row1).append($("<div class = 'col-3 border border-dark'>Object</div>"));
+    $(firstColumn).append(row1);
+
+    let nextRow, i;
+    for (i = 0; i < numForces; i++) {
+      nextRow = $("<div class = 'row'></div>");
+
+      $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
+      $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
+      $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
+      $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
+
+      $(firstColumn).append(nextRow);
+    }
+
+    $(theBigRow).append(firstColumn);
+    $(theBigRow).append(secondColumn);
+    $(container).append(theBigRow);
+    return container
+  }
+
+  $("#putItHere").append(createFreeBodyDiagramTable('earth',4,'what is the meaning of life?'));
+</script>
