@@ -448,6 +448,16 @@
             "objective": "Convert a quantity to a different unit using a single conversion factor; properly write conversion factors to show how dimensional analysis is used",
             "uuid": "f9822f56-bff2-44b6-bacf-3093b6a13613"
           },
+          "divide_two_numbers":
+          {
+            "title": "Divide by two Numbers on a Calculator",
+            "level": 1,
+            "horizontal": null,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "Divide by two numbers on a calculator",
+            "uuid": "ee848617-5e3e-47a6-88da-f88c8d1fc00f"
+          },
           "conversion_factors_2":
           {
             "title": "Conversion Factors 2",
