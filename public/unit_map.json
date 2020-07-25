@@ -442,8 +442,8 @@
             "title": "Conversion Factors 1",
             "subtitle": "One-Step Conversions",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Convert a quantity to a different unit using a single conversion factor; properly write conversion factors to show how dimensional analysis is used",
             "uuid": "f9822f56-bff2-44b6-bacf-3093b6a13613"
@@ -452,8 +452,8 @@
           {
             "title": "Divide by two Numbers on a Calculator",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 3,
+            "letter": "B",
             "prerequisites": [],
             "objective": "Divide by two numbers on a calculator",
             "uuid": "ee848617-5e3e-47a6-88da-f88c8d1fc00f"
@@ -463,74 +463,74 @@
             "title": "Conversion Factors 2",
             "subtitle": "Two- and Three-Step Conversions",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["conversion_factors_1","divide_two_numbers"],
             "objective": "Convert a quantity to a different unit using two or three conversion factors; properly write conversion factors to show how dimensional analysis is used",
             "uuid": "f2216597-0d0c-4345-80a7-c3d5e676712d"
-          },
-          "conversion_factors_3":
-          {
-            "title": "Conversion Factors 3",
-            "subtitle": "Speed and Acceleration Conversions",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one or two conversion factors; properly write conversion factors to show how dimensional anlaysis is used",
-            "uuid": "1aa185f4-fa5d-4324-8086-9955ec8c81a0"
           },
           "dimensional_analysis_1":
           {
             "title": "Dimensional Analysis 1",
             "subtitle": "Simplifying Dimensions",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "D",
+            "prerequisites": ["conversion_factors_2"],
             "objective": "Simplify theoretical units made of meters, kilograms, and seconds of different powers in the numerator and denominator.",
             "uuid": "6103f008-389c-420f-b564-7914facbe69e"
+          },
+          "conversion_factors_3":
+          {
+            "title": "Conversion Factors 3",
+            "subtitle": "Speed and Acceleration Conversions",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "E",
+            "prerequisites": ["dimensional_analysis_1"],
+            "objective": "Convert a quantity that has units in the numerator and the denominator to different units using one or two conversion factors; properly write conversion factors to show how dimensional anlaysis is used",
+            "uuid": "1aa185f4-fa5d-4324-8086-9955ec8c81a0"
           },
           "conversion_factors_4":
           {
             "title": "Conversion Factors 4",
             "subtitle": "Four-Step Conversions",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "F",
+            "prerequisites": ["conversion_factors_3"],
             "objective": "Convert a quantity to a different unit using three, four or more conversion factors; in particular convert mph to m/s with four conversion factors; properly write conversion factors to show how dimensional analysis is used",
             "uuid": "3bb84e30-bf48-4dfa-b40e-4a2cd2c45666"
-          },
-          "conversion_factors_5":
-          {
-            "title": "Conversion Factors 5",
-            "subtitle": "Area, Volume, and acceleration Conversions",
-            "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Convert a quantity that has units raised to a power to different units using conversion factors; properly write conversino factors to show how dimensional anlaysis is used",
-            "uuid": "5c56e34f-6966-4b0c-a634-875f32dde936"
           },
           "dimensional_analysis_2":
           {
             "title": "Dimensional Analysis 2",
             "subtitle": "Simplifying Dimensions of Quantities",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "G",
+            "prerequisites": ["conversion_factors_4"],
             "objective": "Simplify dimensions made of different quantities, such as velocity and force, in numerators and denominators.",
             "uuid": "20b47cf7-ac8e-4e29-9906-5aa9db616ec7"
+          },
+          "conversion_factors_5":
+          {
+            "title": "Conversion Factors 5",
+            "subtitle": "Area, Volume, and Acceleration Conversions",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "H",
+            "prerequisites": ["dimensional_analysis_2"],
+            "objective": "Convert a quantity that has units raised to a power to different units using conversion factors; properly write conversino factors to show how dimensional anlaysis is used",
+            "uuid": "5c56e34f-6966-4b0c-a634-875f32dde936"
           },
           "dimensions_and_units":
           {
             "title": "Dimensions and Units",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "I",
+            "prerequisites": ["conversion_factors_5"],
             "objective": "Define the terms quantity, dimensions, unit, and SI unit; for crucial physics quantities give the quantity, dimension, SI unit, and other units.",
             "uuid": "eb23ccd4-77cb-42bd-929e-d8a3a4fc5760"
           },
@@ -538,9 +538,9 @@
           {
             "title": "Mathematical Foundations of Dimensional Analysis",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "J",
+            "prerequisites": ["dimensions_and_units"],
             "objective": "State and describe the mathematical principles behind dimensional analysis.",
             "notes":
             [
@@ -557,10 +557,10 @@
             "title": "Conversion Factors 6",
             "subtitle": "Using Conversion Factors with Formulas",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use conversion factors together with formulas to solve novel and nondirect problems.",
+            "horizontal": 2,
+            "letter": "K",
+            "prerequisites": ["mathematical_foundations_of_dimensional_analysis"],
+            "objective": "Use conversion factors together with formulas to solve novel and indirect problems.",
             "uuid": "942d640a-12b9-4c40-9172-bd25972990f9"
           },
           "dimensional_analysis_3":
@@ -568,29 +568,29 @@
             "title": "Dimensional Analysis 3",
             "subtitle": "Using Dimensional Analysis to Confirm Equations",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Confirm formulas and answers to symbolic algebra porblems with dimensional analysis.",
+            "horizontal": 3,
+            "letter": "L",
+            "prerequisites": ["conversion_factors_6"],
+            "objective": "Confirm formulas and answers to symbolic algebra problems with dimensional analysis.",
             "uuid": "4528b1e4-f120-4f8f-9f7c-52ca27f04ef7"
           },
           "derive_and_categorize_units":
           {
             "title": "Derive and Categorize Units",
             "level":4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "M",
+            "prerequisites": ["dimensional_analysis_3"],
             "objective": "Using physics formulas, derive all relevant physics quantities; categorize these quantities by their dimensions.",
             "uuid": "3d22fdf9-1f65-4795-9012-96c27bda9423"
           },
-          "google_interview_questions":
+          "google_interview_questions_1":
           {
             "title": "Google Interview Questions",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["derive_and_categorize_units"],
             "objective": "Use dimensional analysis to invent solutions to random, outside the box questions.",
             "uuid": "fc002087-1f8c-4f36-b26f-818a0367599e"
           },
@@ -598,9 +598,9 @@
           {
             "title": "SI Unit System",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "O",
+            "prerequisites": ["google_interview_questions_1"],
             "objective": "Explain the development, function, and purpose of the SI unit system.",
             "uuid": "5796d7b1-9a0a-454d-a972-98cc055418b5"
           },
@@ -608,11 +608,21 @@
           {
             "title": "Planck units",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "P",
+            "prerequisites": ["SI_unit_system"],
             "objective": "Use dimensional analysis to derive a set of units in which all physical constants are equal to one; Derive conversion factors between SI units and these units; Explain the significance of these units.",
             "uuid": "c179eb78-ae79-4e04-9d67-385a40ccba06"
+          },
+          "google_interview_questions_2":
+          {
+            "title": "Google Interview Questions 2",
+            "level": 6,
+            "horizontal": 1,
+            "letter": "Q",
+            "prerequisites": ["planck_units"],
+            "objective": "Invent interesting random, outside the box questions, and then answer them with dimensional analysis.",
+            "uuid": "fc002087-1f8c-4f36-b26f-818a0367599e"
           }
         }
       },
