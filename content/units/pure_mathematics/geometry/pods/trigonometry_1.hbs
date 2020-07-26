@@ -1,7 +1,7 @@
 
 <p class = 'definition' data-word = 'Right Triangle'>
   A <strong>right triangle</strong>
-  is a triagnle with one angle
+  is a triangle with one angle
   equal to 90 degrees.
 </p>
 
@@ -47,6 +47,12 @@
 </ol>
 
 <script>
+  let triangle1 = new GeometryPad();
+  triangle1.addTriangleSAS(3,90,4);
+  triangle1.makeOrientationCounterClockwise();
+  triangle1.labelTriangleLength('A',3);
+  triangle1.labelTriangleLength('C',4);
+  $("#triangle1").append(triangle1.drawCanvas(150));
 </script>
 
 

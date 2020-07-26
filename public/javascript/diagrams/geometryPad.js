@@ -4,9 +4,20 @@ class GeometryPad extends Diagram {
     constructor() {
         super();
         this.triangles = [];
+        this.orientation = 'clockwise';
     }
 
-    addTriangleSAS(vertexA, side1, angleInDegrees, side2) {
+    makeOrientationCounterClockwise() {
+      this.orientation = 'counterclockwise';
+    }
+    makeOrientitationClockwise() {
+      this.orientation = 'clockwise';
+    }
+
+    addTriangleSAS(side1, angleInDegrees, side2, vertexA) {
+      if (vertexA === undefined) {
+        vertexA = origin;
+      }
         let newTriangle = constructTriangleSAS(vertexA, side1, angleInDegrees, side2);
         this.triangles.push(newTriangle);
         this.addExistingTriangleObject(newTriangle);
@@ -14,13 +25,19 @@ class GeometryPad extends Diagram {
     }
 
     addTriangleSSS(side1, side2, side3, vertexA) {
+      if (vertexA === undefined) {
+        vertexA = origin;
+      }
       let newTriangle = constructTriangleSSS(side1, side2, side3, vertexA);
       this.triangles.push(newTriangle);
       this.addExistingTraignleObject(newTriangle);
       return newTriangle
     }
 
-    labelTriangleLength(triangleObject, label, oppositeVertex) {
+    labelTriangleLength(oppositeVertex, label, triangleObject) {
+      if (triangleObject === undefined) {
+        triangleObject = this.triangles[0];
+      }
       let end1, end2;
       if (oppositeVertex === 'A') {
         end1 = triangleObject.vertexB;
@@ -32,7 +49,7 @@ class GeometryPad extends Diagram {
         end1 = triangleObject.vertexA;
         end2 = triangleObject.vertexB;
       }
-      const textLocation = getOptimalLocationOfText(end1, end2, 'clockwise'); // clockwise orientiation default
+      const textLocation = getOptimalLocationOfText(end1, end2, this.orientation); // clockwise orientiation default
       console.log(textLocation);
       if (textLocation === 'above' || textLocation === 'left') {
         this.labelLineAbove(end1, end2, label);
@@ -41,8 +58,6 @@ class GeometryPad extends Diagram {
       }
       // label line outside function
     }
-
-
 
     addExistingTriangleObject(triangleObject) {
         this.addExistingSegment(triangleObject.segmentA);
