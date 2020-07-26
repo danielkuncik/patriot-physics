@@ -198,18 +198,22 @@ add more questions here
 
 
 
-<h4>
+<h3>
   Problems
-</h4>
+</h3>
 
-<h5>
-  Standing Man
-</h5>
+<h4>
+  Problem 1: Standing Man
+</h4>
 
 <p>
   A person is standing up on the earth.
   He is not moving.
 </p>
+
+<h5>
+  1A: Drawing Free-Body Diagrams
+</h5>
 
 <p>
   Draw two free-body diagrams:
@@ -223,9 +227,137 @@ add more questions here
   </li>
 </ul>
 
-<div id = 'personTable1'></div>
-<div id = 'earthTable1'></div>
+<div id = 'system1'></div>
 <script>
-  $("#personTable1").append($(freeBodyDiagramTable('the person',2,'Net Force:')));
-  $("#earthTable1").append($(freeBodyDiagramTable('the earth',2)));
+  let system1 = new SystemFBDs();
+  system1.addFBD('the person', 2, 'Net Force:');
+  system1.addFBD('the earth', 2);
+  $("#system1").append(system1.print());
 </script>
+
+
+<h5>
+  1B: Identifying Action-Reaction Pairs
+</h5>
+
+<p>
+  Identify two action-reaction pairs in this system.
+</p>
+
+<!---
+add section: idetnifying action-reaction pairs
+--->
+
+
+<h5>
+  1C: Identifying Balance Force Pairs
+</h5>
+
+<p>
+  In this system, one balanced force pair acts on the person.
+  Identify it.
+</p>
+
+<!---
+constraint forces etc.
+-->
+
+
+<p>
+  (A balanced force pair also acts on the earth.)
+</p>
+
+
+<h4>
+  Problem 2: Two Boxes Stacked on Top of Each Other
+</h4>
+
+<p>
+  Two boxes are stacked on top of each other,
+  on the surface of the earth.
+  None of the boxes is moving.
+</p>
+<p>
+  Draw a free-body diagram of each of these:
+</p>
+<ul>
+  <li>The top box (2 forces)</li>
+  <li>The bottom box (3 forces)</li>
+  <li>The earth (3 forces)</li>
+</ul>
+
+<div id = 'system2'></div>
+
+
+<script>
+  let system2 = new SystemFBDs();
+  system2.addFBD('the top box',2,'Net Force:');
+  system2.addFBD('the bottom box',3,'Net Force:');
+  system2.addFBS('the earth',3);
+</script>
+
+
+<!---
+idenfying balanced force pairs
+-->
+
+<h4>
+  Problem 3: Person Pushing a Big Box
+</h4>
+
+<p>
+  A person is pushing a heay box to the right across the surface of the earth.
+  Assume that he is pressing the ground with his feet, but his feet are not
+  slipping.
+  The person and the box both move at a constant velocity.
+</p>
+
+<h5>
+  3A: Drawing Free-Body Diagrams
+</h5>
+<p>Draw a Free-Body Diagram of each of the following:</p>
+<ul>
+  <li>The person (4 forces)</li>
+  <li>The box (4 forces)</li>
+  <li>The earth (6 forces)</li>
+</ul>
+
+<div id = 'system3'></div>
+
+<script>
+  let system3 = new SystemFBD();
+  system3.addFBD('the person',4);
+  system3.addFBD('the box',4);
+  system3.addFBD('the earth',6);
+  $("#system3").append(system3.print());
+</script>
+
+
+<h5>
+  3B: Identifying Action-Reaction Pairs
+</h5>
+
+
+<h5>
+  Identifying Balanced Force Pairs
+</h5>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    Identify two different balanced force pairs acting on the person.
+    For each one, identify one force as a <em>constraint force</em>.
+  </li>
+  <li class = 'question'>
+    Identify two different balanced force pairs acting on the block.
+  </li>
+</ol>
+
+<p>
+  Note: The applied force of the person pushing on the block
+  is sort of like a constraint force, because people will push
+  enough to reach a constant velocity.
+</p>
+
+<p>
+  Note that three balanced force pairs also act on the earth.
+</p>

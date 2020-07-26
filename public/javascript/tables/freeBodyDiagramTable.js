@@ -1,4 +1,6 @@
-function freeBodyDiagramTable(name, numForces, extraQuestion) {
+function freeBodyDiagramTable(name, numForces, extraQuestion, firstCount) {
+  if (firstCount === undefined) {firstCount = 0;}
+  let currentCount = firstCount;
   let container = $("<div class = 'container'></div>");
   let titleRow = $(`<div class = 'row'><div class = 'col-12'><strong>Free-Body Diagram of ${name}</strong></div></div>`);
   $(container).append(titleRow);
@@ -6,8 +8,9 @@ function freeBodyDiagramTable(name, numForces, extraQuestion) {
   let firstColumn = $("<div class = 'col-md-8'></div>");
 
   let row1 = $("<div class = 'row'></div>");
+  $(row1).append($("<div class = 'col-1 border border-dark'></div>"));
   $(row1).append($("<div class = 'col-3 border border-dark'>Type of Force</div>"));
-  $(row1).append($("<div class = 'col-3 border border-dark'>Direction</div>"));
+  $(row1).append($("<div class = 'col-2 border border-dark'>Direction</div>"));
   $(row1).append($("<div class = 'col-3 border border-dark'>Agent</div>"));
   $(row1).append($("<div class = 'col-3 border border-dark'>Object</div>"));
   $(firstColumn).append(row1);
@@ -16,11 +19,13 @@ function freeBodyDiagramTable(name, numForces, extraQuestion) {
   for (i = 0; i < numForces; i++) {
     nextRow = $("<div class = 'row'></div>");
 
+    $(nextRow).append($(`<div class = 'col-1 border border-dark pb-5'>${alphabetArray[currentCount]}</div>`));
     $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
-    $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
+    $(nextRow).append($("<div class = 'col-2 border border-dark pb-5'></div>"));
     $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
     $(nextRow).append($("<div class = 'col-3 border border-dark pb-5'></div>"));
 
+    currentCount += 1;
     $(firstColumn).append(nextRow);
   }
 
@@ -70,6 +75,22 @@ Model for the above function
     </div>
   </div>
 </div>
-
-
 */
+
+
+class SystemFBDs {
+  constructor() {
+    this.currentCount = 0;
+    this.div = $("<div></div>");
+  }
+
+  addFBD(name, numForces, extraQuestion) {
+    $(this.div).append(freeBodyDiagramTable(name, numForces, extraQuestion, this.currentCount));
+    $(this.div).append("<div class = 'm-5'></div>");
+    this.currentCount += numForces;
+  }
+
+  print() {
+    return this.div
+  }
+}
