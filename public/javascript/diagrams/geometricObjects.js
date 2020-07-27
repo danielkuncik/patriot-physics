@@ -197,6 +197,14 @@ class Point {
 
 // global variable origin
 const origin = new Point(0,0);
+/// in creating triangles
+/// the point 'origin' has caused lots of problems
+// so i added the function below as an alternative
+/// EXPLORE THIS!!!
+
+function makeOrigin() {
+    return new Point(0,0);
+}
 
 function constructPointWithMagnitude(magnitude, angleInRadians) {
     let x = magnitude * Math.cos(angleInRadians);
@@ -207,54 +215,133 @@ function constructPointWithMagnitude(magnitude, angleInRadians) {
 
 
 // between two points
+/*
+HAS BECOME A TOTAL FUCKING MESS
+trying to add vertical lines to this, should probably change the contructor to account for this
+need a break (5:30 7-26)
+I NEED A BREAK< COME BACK TO THIS
+ */
 class Line {
-    constructor(slope, yIntercept) {
-        this.yIntercept = yIntercept;
-        this.slope = slope;
+    constructor(pointA, pointB) {
+        if (pointA.getDistanceToAnotherPoint(pointB) < 1e-10) {
+            console.log('cannot make a line of two of the same point');
+            return false
+        } else if (Math.abs(pointA.y - pointB.y) < 1e-10) {
+            this.horizontal = true;
+            this.yValue = pointA.y;
+            this.slope = 0;
+            this.yIntercept = this.yValue;
+        } else if (Math.abs(pointA.x - pointB.x) < 1e-10) {
+            this.vertical = true;
+            this.xValue = pointA.x;
+            this.slope = Infinity;
+        } else {
+            this.slope = (pointB.y - pointA.y) / (pointB.x - pointA.x);
+            this.yIntercept = pointA.y - this.slope * pointA.x;
+        }
+    }
+
+    findYValueForXValue(xValue) {
+        if (this.horizontal) {
+            return this.yValue
+        } else if (this.vertical) {
+            return undefined
+        } else {
+            return this.yIntercept + this.slope + xValue;
+        }
+    }
+    findXValueForYValue(yValue) {
+        if (this.horizontal) {
+            return undefined
+        } else if (this.vertical) {
+            return this.xValue
+        } else {
+            return (yValue - this.yIntercept) / this.slope
+        }
     }
 
     findParallelLine(outsidePoint) {
-        let newSlope = this.slope;
-        let newYIntercept = outsidePoint.y - newSlope * outsidePoint.x;
-        return new Line(newSlope, newYIntercept)
+        let pointB;
+        if (this.horizontal) {
+            pointB = new Point(outsidePoint.x + 1,outsidePoint.y);
+        } else if (this.vertical) {
+            pointB = new Point(outsidePoint.x,outsidePoint.y + 1);
+        } else {
+            const deltaX = 1;
+            const deltaY = this.slope * deltaX;
+            pointB = new Point(outsidePoint.x + deltaX, outsidePoint.y + deltaX);
+        }
+        return new Line(outsidePoint, pointB)
     }
 
     // for any point outside aline, there is one point perpendicular to that point
     findPerpendicularLine(outsidePoint) {
-        let newSlope = -1 / this.slope;
-        let newYIntercept = outsidePoint.y - newSlope * outsidePoint.x;
+        let pointB;
+        if (this.horizontal) {
+            pointB = new Point(outsidePoint.x, outsidePoint.y + 1);
+        } else if (this.vertical) {
+            pointB = new Point(outsidePoint.x + 1, outsidePoint.y);
+        } else {
+            let newSlope = -1 / this.slope;
+            const deltaX = 1;
+            const deltaY = newSlope * deltaX;
+            pointB = new Point(outsidePoint.x + deltaX, outsidePoint.y + deltaX);
+        }
+        return new Line(outsidePoint, pointB)
     }
 
     findIntersectionWithAnotherLine(anotherLine) {
         if (this.slope === anotherLine.slope) {
             console.log('Cannot determine intersection between two parallel lines');
             return undefined
+        } else if (this.vertical) {
+            if (anotherLine.horizontal) {
+                return new Point(this.xValue, anotherLine.yValue); /// is this line redundant?
+            } else {
+                return new Point(this.xValue, anotherLine.findYValueForXValue(this.xValue));
+            }
+        } else if (this.horizontal) {
+            if (anotherLine.vertical) {
+                return new Point(anotherLine.xValue, this.yValue);  /// is this line redundant? this possiblity is already included int he findY Value for XVlaye funcion
+            } else {
+                return new Point(anotherLine.findXValueForYValue(this.yValue), this.yValue);
+            }
         } else {
-            let newX = (anotherLine.yIntercept - this.yIntercept) / (this.slope - anotherLine.slope);
-            let newY = this.slope * newX + this.yIntercept;
-            return new Point(newX, newY)
+            if (anotherLine.vertical) {
+                return new Point(anotherLine.xValue, this.findYValueForXValue(anotherLine.xValue));
+            } else if (anotherLine.horizontal) {
+                return new Point(this.findXValueForYValue(anotherLine.yValue), anotherLine.yValue);
+            } else {
+                let newX = (anotherLine.yIntercept - this.yIntercept) / (this.slope - anotherLine.slope);
+                let newY = this.slope * newX + this.yIntercept;
+                return new Point(newX, newY)
+            }
         }
     }
-
 }
 
-function constructLineFromTwoPoints(pointA, pointB) {
-    let slope = (pointB.y - pointA.y) / (pointB.x - pointA.x);
-    let yIntercept = pointA.y - slope * pointA.x;
-    return new Line(slope, yIntercept);
+function constructLineSlopeIntercept(slope, yIntercept) {
+    let pointA = new Point(0, yIntercept);
+    let pointB = new Point(1, yIntercept + 1 * slope);
+    return new Point(pointA, pointB)
 }
 
+
+function constructLineFromPointAndAngle(point, angleInRadians) {
+    let pointB = new Point(point.x + Math.cos(angleInRadians), point.y + Math.sin(angleInRadians));
+    return new Line(point, pointB);
+}
+
+// IMPROVE THIS
 class Ray {
     constructor(startPoint, slope) {
         this.startPoint = startPoint;
         this.slope = slope;
     }
-
-    turnIntoLine() {
-        let newSlope = this.slope;
-        let newYIntercept = this.startPoint.y - newSlope * this.startPoint.x;
-        return new Line(newSlope, newYIntercept)
-    }
+    //
+    // turnIntoLine() {
+    //     return constructLineFromPointAndAngle(pointB, this.angleInRaidans);
+    // }
 }
 
 function constructRayFromTwoPoints(startPoint, outsidePoint) {
@@ -273,7 +360,7 @@ class Segment {
         this.dotted = false;
         this.dashed = false;
 
-        this.line = constructLineFromTwoPoints(point1, point2); // a corresponding infinite line through this point
+        this.line = new Line(point1, point2); // a corresponding infinite line through this point
     }
 
     // do i want thickness to scale with the rest of the image??
@@ -490,7 +577,14 @@ class Polygon {
 }
 
 function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
-    let angleInRadians = Math.acos(((adjacentSide1**2 + adjacentSide1**2 - oppositeSide**2) / 2 / adjacentSide1 / adjacentSide2));
+    let cosine = (adjacentSide1**2 + adjacentSide2**2 - oppositeSide**2) / 2 / adjacentSide1 / adjacentSide2;
+    while (cosine > 1) {
+        cosine -= 1;
+    }
+    while (cosine < -1) {
+        cosine += 1;
+    }
+    const angleInRadians = Math.acos(cosine);
     return convertRadiansToDegrees(angleInRadians);
 }
 
@@ -513,6 +607,7 @@ class Triangle {
         this.segmentB = new Segment(this.vertexC, this.vertexA);
         this.segmentC = new Segment(this.vertexA, this.vertexB);
 
+        this.recommendedFontSize = (this.sideLengthA + this.sideLengthB + this.sideLengthC) / 3 * .2;
     }
 
     // altitude is a segment that begins at one vertex and makes a right angle with the opposite segment
@@ -557,7 +652,6 @@ class Triangle {
         DiagramObject.addExistingSegment(this.segmentB);
         DiagramObject.addExistingSegment(this.segmentC);
     }
-
 }
 
 function constructTriangleSAS(vertexA, side1, angleInDegrees, side2) {

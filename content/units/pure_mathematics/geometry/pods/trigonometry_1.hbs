@@ -48,13 +48,37 @@
 
 <script>
   let triangle1 = new GeometryPad();
-  triangle1.addTriangleSAS(3,90,4);
+  triangle1.addTriangleSAS(3,90,4); // as long as the point isn't the official point origin, it works, but when it is the origin, it fails
+  triangle1.makeRightTriangle();
   triangle1.makeOrientationCounterClockwise();
-  triangle1.labelTriangleLength('A',3);
-  triangle1.labelTriangleLength('C',4);
+  triangle1.labelTriangleLength('A'); /// i need to make this more automatic!!!
+  triangle1.labelTriangleLength('C');
   $("#triangle1").append(triangle1.drawCanvas(150));
 </script>
 
+
+<!--
+before translation
+0: Point {x: 3, y: 0, name: "A"} [vertex B]
+1: Point {x: 2.9999999999999996, y: 4, name: "B"} [vertex C]
+2: Point {x: 4.3203840920506664e-12, y: 3.07327612945304e-11, name: "origin"} [vertex A]
+
+before rescale
+0: Point {x: 2.9999999999770144, y: 2, name: "A"}
+1: Point {x: 2.999999999977014, y: 6, name: "B"}
+2: Point {x: 0, y: 2.000000000002069, name: "origin"}, what's up with this? the origin should never be moved [translation]
+
+after rescale
+0: Point {x: 54.99999999957859, y: 36.666666666666664, name: "A"}
+1: Point {x: 54.999999999578584, y: 110, name: "B"}
+2: Point {x: 0, y: 36.66666666670459, name: "origin"}
+
+
+Final [everything has translated DOWN by 2)????
+0: Point {x: 3, y: 0, name: "A"}
+1: Point {x: 2.9999999999999996, y: 4.000000000000001, name: "B"}
+2: Point {x: 8.577920526543722e-11, y: 3.986588836824012e-12, name: "origin"}
+-->
 
 
 <ol class = 'answerList'></ol>

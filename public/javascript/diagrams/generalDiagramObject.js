@@ -215,6 +215,9 @@ class Text {
         if (positioning === undefined) {
             positioning = 'center'
         }
+        if (typeof(letters) !== 'string') {
+            letters = String(letters);
+        }
         this.letters = letters;
         this.relativeFontSize = relativeFontSize;
         if (rotationAngleInRadians === undefined) {this.rotationAngleInRadians = 0} else {this.rotationAngleInRadians = rotationAngleInRadians}
@@ -877,7 +880,13 @@ class Diagram {
       let pointA = vertex.interpolate(outsidePointA, proportionA);
       let pointB = vertex.interpolate(outsidePointB, proportionB);
 
-      // now, i need to find the point where they intersect
+      let lineA = constructLineFromPointAndAngle(pointA, vertex.getAngleToAnotherPoint(pointB));
+      let lineB = constructLineFromPointAndAngle(pointB, vertex.getAngleToAnotherPoint(pointA));
+
+      let centerPoint = lineA.findIntersectionWithAnotherLine(lineB);
+
+      this.addSegment(pointA, centerPoint);
+      this.addSegment(pointB, centerPoint);
     }
 
 
