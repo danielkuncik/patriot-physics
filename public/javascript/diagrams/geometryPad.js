@@ -40,7 +40,7 @@ class GeometryPad extends Diagram {
 
     addTriangleSSS(side1, side2, side3, vertexA) {
       if (vertexA === undefined) {
-        vertexA = origin;
+        vertexA = makeOrigin();
       }
       let newTriangle = constructTriangleSSS(side1, side2, side3, vertexA);
       this.triangles.push(newTriangle);

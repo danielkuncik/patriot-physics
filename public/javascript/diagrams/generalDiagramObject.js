@@ -23,6 +23,7 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
 }
 
 
+// do i need to clarify this is inside/outside?
 // given a line at a certain angle, determines the optimal location of text
 function getOptimalLocationOfText(point1, point2, turningOrientation) {
     if (turningOrientation === undefined) {

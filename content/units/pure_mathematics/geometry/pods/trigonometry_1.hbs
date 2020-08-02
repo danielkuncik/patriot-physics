@@ -35,25 +35,73 @@
 </p>
 
 <ol class = 'questionList'>
-  <li class = 'question' id = 'triangle1'></li>
-  <li class = 'question' id = 'triangle2'></li>
-  <li class = 'question' id = 'triangle3'></li>
-  <li class = 'question' id = 'triangle4'></li>
-  <li class = 'question' id = 'triangle5'></li>
-  <li class = 'question' id = 'triangle6'></li>
-  <li class = 'question' id = 'triangle7'></li>
-  <li class = 'question' id = 'triangle8'></li>
-  <li class = 'question' id = 'triangle9'></li>
+  <li class = 'question' id = 'triangle1' data-answer = '5'><br></li>
+  <li class = 'question' id = 'triangle2' data-answer = '29'><br></li>
+  <li class = 'question' id = 'triangle3' data-answer = '36'><br></li>
+  <li class = 'question' id = 'triangle4' data-answer = '80'><br></li>
+  <li class = 'question' id = 'triangle5' data-answer = '48'><br></li>
+  <li class = 'question' id = 'triangle6' data-answer = '31.7'><br></li>
+  <li class = 'question' id = 'triangle7' data-answer = '50.6'><br></li>
+  <li class = 'question' id = 'triangle8' data-answer = '37.3'><br></li>
+  <li class = 'question' id = 'triangle9' data-answer = '113'><br></li>
 </ol>
 
 <script>
-  let triangle1 = new GeometryPad();
-  triangle1.addTriangleSAS(3,90,4); // as long as the point isn't the official point origin, it works, but when it is the origin, it fails
-  triangle1.makeRightTriangle();
-  triangle1.makeOrientationCounterClockwise();
-  triangle1.labelTriangleLength('A'); /// i need to make this more automatic!!!
-  triangle1.labelTriangleLength('C');
-  $("#triangle1").append(triangle1.drawCanvas(150));
+  // let triangle1 = new GeometryPad();
+  // triangle1.addTriangleSAS(3,90,4);// as long as the point isn't the official point origin, it works, but when it is the origin, it fails
+  // triangle1.makeRightTriangle();
+  // triangle1.makeOrientationCounterClockwise();
+  // triangle1.labelTriangleLength('A'); /// i need to make this more automatic!!!
+  // triangle1.labelTriangleLength('C');
+  // $("#triangle1").append(triangle1.drawCanvas(150));
+  //
+  // let triangle2 = new GeometryPad();
+  // triangle2.addTriangleSAS(20,90,21);
+  // triangle2.makeRightTriangle();
+  // triangle2.makeOrientationCounterClockwise();
+  // triangle2.labelTriangleLength('A');
+  // triangle2.labelTriangleLength('C');
+  // $("#triangle2").append(triangle2.drawCanvas(150));
+
+  function solveForHypotenuseProblem(leg1, leg2) {
+    let myTriangle = new GeometryPad();
+    myTriangle.addTriangleSAS(leg1,90,leg2);
+    myTriangle.makeRightTriangle();
+    myTriangle.makeOrientationCounterClockwise();
+    myTriangle.labelTriangleLength('A');
+    myTriangle.labelTriangleLength('C');
+    return myTriangle
+  }
+  $("#triangle1").append(solveForHypotenuseProblem(3,4).drawCanvas(150));
+  $("#triangle2").append(solveForHypotenuseProblem(20,21).drawCanvas(150));
+  $("#triangle8").append(solveForHypotenuseProblem(35.7,10.9).drawCanvas(150));
+  $("#triangle9").append(solveForHypotenuseProblem(85.1,75.1).drawCanvas(150));
+
+
+// not tested
+  function solveForLegProblem(knownLeg, hypotenuse) {
+    let unknownLeg = Math.sqrt(hypotenuse**2 - knownLeg**2);
+    let myTriangle = new GeometryPad();
+
+    myTriangle.addTriangleSSS(knownLeg, unknownLeg, hypotenuse);
+    myTriangle.makeRightTriangle();
+    myTriangle.makeOrientationCounterClockwise();
+    myTriangle.labelTriangleLength('C');
+    myTriangle.labelTriangleLength('B'); // not in correct location
+    // myTriangle.labelTriangleLength('A');
+    return myTriangle
+  }
+
+  $("#triangle3").append(solveForLegProblem(77,85).drawCanvas(150));
+  $("#triangle4").append(solveForLegProblem(39,89).drawCanvas(150));
+  $("#triangle5").append(solveForLegProblem(55,73).drawCanvas(150));
+  $("#triangle6").append(solveForLegProblem(29.1,43,).drawCanvas(150));
+  $("#triangle7").append(solveForLegProblem(6.46,51.0).drawCanvas(150));
+
+
+
+  // add a random problem generator
+
 </script>
 
 
