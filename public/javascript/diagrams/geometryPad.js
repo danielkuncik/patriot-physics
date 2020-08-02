@@ -61,8 +61,8 @@ class GeometryPad extends Diagram {
         end2 = triangleObject.vertexC;
         value = roundValue(triangleObject.sideLengthA,2);
       } else if (oppositeVertex === 'B') {
-        end1 = triangleObject.vertexA;
-        end2 = triangleObject.vertexC;
+        end1 = triangleObject.vertexC;
+        end2 = triangleObject.vertexA;
         value = roundValue(triangleObject.sideLengthB,2);
       } else if (oppositeVertex === 'C') {
         end1 = triangleObject.vertexA;
@@ -87,19 +87,22 @@ class GeometryPad extends Diagram {
         this.addExistingSegment(triangleObject.segmentC);
     }
 
-    makeRightTriangle(triangle) {
+    makeRightTriangle(triangle, squareLength) {
         if (this.fontSize === 0) { /// may create issues !!!
             this.calculateFontSize();
         }
         if (triangle === undefined) {
             triangle = this.triangles[0];
         }
+        if (squareLength === undefined) {
+          squareLength = this.fontSize;
+        }
         if (Math.abs(triangle.angleA - 90) < 1e-10) {
-            super.squareAngle(triangle.vertexC, triangle.vertexA, triangle.vertexB, this.fontSize);
+            super.squareAngle(triangle.vertexC, triangle.vertexA, triangle.vertexB, squareLength);
         } else if (Math.abs(triangle.angleB - 90) < 1e-10) {
-            super.squareAngle(triangle.vertexA, triangle.vertexB, triangle.vertexC, this.fontSize);
+            super.squareAngle(triangle.vertexA, triangle.vertexB, triangle.vertexC, squareLength);
         } else if (Math.abs(triangle.angleC - 90) < 1e-10) {
-            super.squareAngle(triangle.vertexB, triangle.vertexC, triangle.vertexA, this.fontSize);
+            super.squareAngle(triangle.vertexB, triangle.vertexC, triangle.vertexA, squareLength);
         }
     }
 
