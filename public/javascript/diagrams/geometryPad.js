@@ -81,6 +81,48 @@ class GeometryPad extends Diagram {
       // label line outside function
     }
 
+    labelAngle(vertex, label, degreeSymbol, triangleObject) {
+      if (triangleObject === undefined) {
+        triangleObject = this.triangles[0];
+      }
+      if (label === undefined) {
+        if (vertex === 'A') {
+          label = String(Math.round(triangleObject.angleA,2));
+        } else if (vertex === 'B') {
+          label = String(Math.round(triangleObject.angleB,2));
+        } else if (vertex === 'C') {
+          label = String(Math.round(triangleObject.angleC,2));
+        }
+        if (degreeSymbol === undefined) { // add degree symbol if label is default
+          degreeSymbol === true;
+        }
+      }
+
+      let outsidePoint1, vertexPoint, outsidePoint2;
+      if (vertex === 'A') {
+        outsidePoint1 = triangleObject.vertexC;
+        vertexPoint = triangleObject.vertexA;
+        outsidePoint2 = triangleObject.vertexB;
+      } else if (vertex === 'B') {
+        outsidePoint1 = triangleObject.vertexA;
+        vertexPoint = triangleObject.vertexB;
+        outsidePoint2 = triangleObject.vertexC;
+      } else if (vertex === 'C') {
+        outsidePoint1 = triangleObject.vertexB;
+        vertexPoint = triangleObject.vertexC;
+        outsidePoint2 = triangleObject.vertexA;
+      }
+      //     labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion) {
+      super.labelAngle(label, outsidePoint1, vertexPoint, outsidePoint2, undefined, undefined, degreeSymbol);
+    }
+
+    labelAngleTheta(vertex, triangleObject) {
+      this.labelAngle(vertex,'theta',false, triangleObject);
+    }
+    labelAnglePhi(vertex) {
+      this.labelAngle(vertex,'phi',false, triangleObject);
+    }
+
     addExistingTriangleObject(triangleObject) {
         this.addExistingSegment(triangleObject.segmentA);
         this.addExistingSegment(triangleObject.segmentB);
