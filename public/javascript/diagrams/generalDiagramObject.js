@@ -734,8 +734,13 @@ class Diagram {
             arcRadius = lengthB * radiusProportion;
         }
 
-        let angleA = outsidePointA.getAngleToHorizontal();
-        let angleB = outsidePointB.getAngleToHorizontal();
+        /// 8-2-2020: Back in april I wrote the first method, it broke today, but I reqrote it with a different method
+        // I am not sure if this one will break at that point, i so rigorously tested this in march
+        // let angleA = outsidePointA.getAngleToHorizontal();
+        // let angleB = outsidePointB.getAngleToHorizontal();
+        let angleA = vertex.getAngleToAnotherPoint(outsidePointA);
+        let angleB = vertex.getAngleToAnotherPoint(outsidePointB);
+        /// breaks if one of the points is the origin!
         if (angleA === angleB) {
             return false /// cannot return
         }
@@ -860,6 +865,7 @@ class Diagram {
                 textRotation = 0;
             }
             textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, endAngle);
+            textReferencePoint.translate(vertex.x, vertex.y);
 
 
             // MUCH MORE TO ADD HERE!

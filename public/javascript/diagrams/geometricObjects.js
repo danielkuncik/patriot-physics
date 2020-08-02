@@ -369,6 +369,21 @@ class Segment {
         this.thickness = newThickness;
     }
 
+    isHorizontal() {
+        if (this.line.horizontal) {
+            return true
+        } else {
+            return false
+        }
+    }
+    isVertical() {
+        if (this.line.vertical) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     setColor(newColor) {
         this.color = newColor;
     }
@@ -590,14 +605,29 @@ function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
 
 
 class Triangle {
-    constructor(vertexA, vertexB, vertexC) {
+    constructor(vertexA, vertexB, vertexC, forceRight) {
         this.vertexA = vertexA;
         this.vertexB = vertexB;
         this.vertexC = vertexC;
 
-        this.sideLengthA = vertexB.getDistanceToAnotherPoint(vertexC);
-        this.sideLengthB = vertexA.getDistanceToAnotherPoint(vertexC);
-        this.sideLengthC = vertexA.getDistanceToAnotherPoint(vertexB);
+        this.setParameters();
+
+        if (forceRight) {
+            this.forceRight();
+        }
+
+        this.setRightTriangleConvention(); // if right triangle, automatically sets the 90 degree vertex to C;
+
+        this.recommendedFontSize = (this.sideLengthA + this.sideLengthB + this.sideLengthC) / 3 * .2;
+    }
+
+    setParameters() {
+
+        this.right = this.isRightTriangle();
+
+        this.sideLengthA = this.vertexB.getDistanceToAnotherPoint(this.vertexC);
+        this.sideLengthB = this.vertexA.getDistanceToAnotherPoint(this.vertexC);
+        this.sideLengthC = this.vertexA.getDistanceToAnotherPoint(this.vertexB);
 
         this.angleA = getAngleFromLawOfCosines(this.sideLengthA, this.sideLengthB, this.sideLengthC);
         this.angleB = getAngleFromLawOfCosines(this.sideLengthB, this.sideLengthC, this.sideLengthA);
@@ -606,8 +636,98 @@ class Triangle {
         this.segmentA = new Segment(this.vertexB, this.vertexC);
         this.segmentB = new Segment(this.vertexC, this.vertexA);
         this.segmentC = new Segment(this.vertexA, this.vertexB);
+    }
 
-        this.recommendedFontSize = (this.sideLengthA + this.sideLengthB + this.sideLengthC) / 3 * .2;
+    // renames the verticies
+    // A becomes B; B becomes C; C becomes A
+    rotateVerticies() {
+        const oldVertexA = this.vertexA;
+        const oldVertexB = this.vertexB;
+        const oldVertexC = this.vertexC;
+
+        const oldSideLengthA = this.sideLengthA;
+        const oldSideLengthB = this.sideLengthB;
+        const oldSideLengthC = this.sideLengthC;
+
+        const oldAngleA = this.angleA;
+        const oldAngleB = this.angleB;
+        const oldAngleC = this.angleC;
+
+        const oldSegmentA = this.segmentA;
+        const oldSegmentB = this.segmentB;
+        const oldSegmentC = this.segmentC;
+
+        this.vertexA = oldVertexC;
+        this.vertexB = oldVertexA;
+        this.vertexC = oldVertexB;
+
+        this.sideLengthA = oldSideLengthC;
+        this.sideLengthB = oldSideLengthA;
+        this.sideLengthC = oldSideLengthB;
+
+        this.angleA = oldAngleC;
+        this.angleB = oldAngleA;
+        this.angleC = oldAngleB;
+
+        this.segmentA = oldSegmentC;
+        this.segmentB = oldSegmentA;
+        this.segmentC = oldSegmentB;
+    }
+
+    isRightTriangle() {
+        if (Math.abs(this.angleA - 90) || Math.abs(this.angleB - 90) || Math.abs(this.angleC - 90)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    // if a triangle is a right triangle,
+    /// rotates verticies so the hypotenuse is angle C
+    setRightTriangleConvention() {
+        if (Math.abs(this.angleA - 90) < 1e-10) {
+            this.rotateVerticies();
+            this.rotateVerticies();
+        } else if (Math.abs(this.angleB - 90) < 1e-10) {
+            this.rotateVerticies();
+        }
+    }
+
+    findAngleClosestTo90() {
+        const ninetyMinusA = Math.abs(this.angleA - 90);
+        const ninetyMinusB = Math.abs(this.angleB - 90);
+        const ninetyMinusC = Math.abs(this.angleC - 90);
+
+        let result;
+        if (ninetyMinusA <= ninetyMinusB && ninetyMinusA <= ninetyMinusC) {
+            result = 'A';
+        } else if (ninetyMinusB <= ninetyMinusA && ninetyMinusB <= ninetyMinusC) {
+            result = 'B';
+        } else if (ninetyMinusC <= ninetyMinusA && ninetyMinusC <= ninetyMinusB) {
+            result = 'C';
+        }
+        return result
+    }
+
+    // whichever angle is closest to 90 degrees is set to 90 degrees and the triangle is reformed
+    forceRight() {
+        const angleClosestTo90 = this.findAngleClosestTo90();
+        if (angleClosestTo90 === 'A') {
+            this.rotateVerticies();
+            this.rotateVerticies();
+        } else if (angleClosestTo90 === 'B') {
+            this.rotateVerticies();
+        } else if (angleClosestTo90 === 'C') {
+            // pass
+        }
+        const newVertexC = this.vertexC;
+        const newVertexA = new Point(newVertexC.x, newVertexC.y + this.sideLengthA);
+        const newVertexB = new Point(newVertexC.x - this.sideLengthB, newVertexC.y);
+
+        this.vertexA = newVertexA;
+        this.vertexB = newVertexB;
+        this.vertexC = newVertexC;
+        this.setParameters();
     }
 
     // altitude is a segment that begins at one vertex and makes a right angle with the opposite segment
@@ -654,20 +774,23 @@ class Triangle {
     }
 }
 
-function constructTriangleSAS(vertexA, side1, angleInDegrees, side2) {
+function constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA) {
     if (vertexA === undefined) {
-        vertexA = origin;
+        vertexA = makeOrigin();
     }
     let vertexB = vertexA.translateAndReproduce(side1, 0);
     let angleInRadians = convertDegreesToRadians(angleInDegrees);
     let vertexC = vertexB.translateAndReproduce(-1 * side2 * Math.cos(angleInRadians), side2 * Math.sin(angleInRadians));
-    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+    let newTriangle = new Triangle(vertexA, vertexB, vertexC, forceRight);
     return newTriangle
 }
 
 
 // its possible that the angles do not
-function constructTriangleASA(vertexA, angle1inDegrees, side, angle2inDegrees) {
+function constructTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA) {
+    if (vertexA === undefined) {
+        vertexA = makeOrigin();
+    }
     let angle3inDegrees = 180 - angle1inDegrees - angle2inDegrees;
     if (angle3inDegrees <= 0) {
         console.log('cannot have a triangle with total angle greater than 180');
@@ -678,12 +801,12 @@ function constructTriangleASA(vertexA, angle1inDegrees, side, angle2inDegrees) {
 
     let side3 = side; // renaming the side
     let side2 = side * Math.sin(angle3inRadians) / Math.sin(angle2inRadians); // law of sines
-    return constructTriangleSAS(vertexA, side3, angle2inDegrees, side2);
+    return constructTriangleSAS(vertexA, side3, angle2inDegrees, side2, forceRight);
 }
 
-function constructTriangleSSS(side1, side2, side3, vertexA) {
+function constructTriangleSSS(side1, side2, side3, forceRight, vertexA) {
     let angleB = getAngleFromLawOfCosines(side3, side1, side2); // in degrees
-    return constructTriangleSAS(vertexA, side1, angleB, side2);
+    return constructTriangleSAS(side1, angleB, side2, forceRight, vertexA);
 }
 
 
