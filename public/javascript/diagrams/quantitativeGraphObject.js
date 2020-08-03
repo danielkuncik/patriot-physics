@@ -282,11 +282,14 @@ class QuantitativeGraph extends Diagram {
         }
     }
 
-    addSegmentAndTwoPoints(x1,y1,x2,y2,thickness) {
+    addSegmentAndTwoPoints(x1,y1,x2,y2,thickness, color) {
         this.validatePoints(x1,y1,x2,y2);
         let newSegment = super.addTwoPointsAndSegment(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
         if (thickness) {
             newSegment.setThickness(thickness);
+        }
+        if (color) {
+            newSegment.setColor(color);
         }
         return newSegment
     }
@@ -362,6 +365,15 @@ class QuantitativeGraph extends Diagram {
         if (circlesBoolean) {
             arrayOfPoints.forEach((point) => {this.addPointAsACircle(point[0], point[1]);});
         }
+    }
+
+
+    // need to add color
+    addBar(width, height, lowerLeftX = 0, lowerLeftY = 0, color) {
+        this.addSegmentAndTwoPoints(lowerLeftX, lowerLeftY, lowerLeftX + width, lowerLeftY, color);
+        this.addSegmentAndTwoPoints(lowerLeftX + width, lowerLeftY, lowerLeftX + width, lowerLeftY + height, color);
+        this.addSegmentAndTwoPoints(lowerLeftX + width, lowerLeftY + height, lowerLeftX, lowerLeftY + height, color);
+        this.addSegmentAndTwoPoints(lowerLeftX, lowerLeftY + height, lowerLeftX, lowerLeftY, color);
     }
 
     // multiplies the y axis of the graph!
@@ -472,3 +484,19 @@ function findFirstHash(min, max, numHashes) {
     }
     return firstHash
 }
+
+class MomentumBarChart extends QuantitativeGraph {
+    constructor(maxMass, minVelocity, maxVelocity, massUnit = 'kg', velocityUnit = 'm/s') {
+        super(0,maxMass,minVelocity,maxVelocity);
+        super.labelAxes(`mass ${massUnit}`,`velocity ${velocityUnit}`);
+        this.currentMass = 0;
+    }
+
+    addMomentum(mass,velocity, color) {
+        super.addBar(mass,velocity,this.currentMass, color);
+        this.currentMass += mass;
+    }
+}
+/*
+test this tonight!
+ */
