@@ -189,6 +189,27 @@ class RangeBox {
         // used to fit a function graph in
     }
 
+    isPointInsideBox(point) { // UNTESTED
+        return (point.x > this.lowerLeftPoint.x && point.x < this.lowerRightPoint.x && point.x > this.lowerLeftPoint.y && point.y < this.upperLeftPoint.y)
+    }
+
+    // determines if a range box intersects a segment
+    doesItIntersectSegment(segment) { // UNTESTED
+        if (this.isPointInsideBox(segment.point1) && this.isPointInsideBox(segment.point2)) { // segment entirely inside of box
+            return true
+        } else if (segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.lowerRightPoint))) { // if the segment intersects the segments of this box
+            return true
+        } else if (segment.intersectionWithAnotherSegment(new Segment(this.lowerRightPoint,this.upperRightPoint))) {
+            return true
+        } else if (segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.upperLeftPoint))) {
+            return true
+        } else if (segment.intersectionWithAnotherSegment(new Segment(this.upperLeftPoint,this.upperRightPoint))) {
+            return true
+        } else {
+            return false
+        }
+    }
+
 
 }
 // does this make a duplicate of the center Point??
@@ -710,7 +731,7 @@ class Diagram {
     }
 
     // the arc radius will be the radiusProportion variable times the lesser of the two rays
-    labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion) {
+    labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion, lockedFontSize) {
         /// I need to create a way to label right angles!
         if (radiusProportion === undefined) {
             radiusProportion = 0.15;
@@ -871,6 +892,9 @@ class Diagram {
             // MUCH MORE TO ADD HERE!
         }
         let relativeFontSize = arcRadius * 0.5 * fontProportion;
+        if (lockedFontSize) {
+            relativeFontSize = lockedFontSize;
+        }
         let text;
         if (label) {
             if (addDegreeLabel) {
@@ -879,6 +903,7 @@ class Diagram {
             text = this.addText(label,textReferencePoint,relativeFontSize,textRotation,textPositioning);
             text.addDegreeLabel(this);
         }
+        return text
     }
 
     squareAngle(outsidePointA, vertex, outsidePointB, length) {

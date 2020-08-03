@@ -120,6 +120,7 @@
             "letter": "C",
             "prerequisites": [],
             "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle.",
+            "inClassOnly": true,
             "uuid": "3c023e8a-97b9-4f35-9007-f0e2f0bd01c5"
           },
           "circle_math_1":
@@ -143,6 +144,16 @@
             "objective": "Solve for pieces of a triangle using sine, cosine, and tangent.",
             "uuid": "9ab51df3-4d94-4db6-b3b5-b5ff2b9badf8"
           },
+          "trigonometry_3": {
+            "title": "Trigonometry 3",
+            "subtitle": "Inverse Trig Functions",
+            "level": 2,
+            "horizontal": 6,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Use inverse trig functions to solve for missing angles of a triangle",
+            "uuid": "cc841e57-06b7-45ee-9058-0cf259e0470d"
+          },
           "circle_math_2":
           {
             "title": "Circle Math 2",
@@ -153,9 +164,9 @@
             "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi.",
             "uuid": "85bf6171-46cd-445d-86a4-beaa8d4b41f4"
           },
-          "trigonometry_3":
+          "trigonometry_4":
           {
-            "title": "Trigonometry 3",
+            "title": "Trigonometry 4",
             "subtitle": "Two-Step SOHCAHTOA",
             "level": 3,
             "horizontal": 1,
@@ -2603,6 +2614,7 @@
             "letter": "H",
             "prerequisites": ["kinematic_equations_3"],
             "objective": "Memorize the kinematic equations.",
+            "inClassOnly": true,
             "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems.",
             "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086"
           },

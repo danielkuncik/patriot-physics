@@ -40,7 +40,9 @@ arialAspectRatios = {
     "=": 1, "(": 1, ")": 1,'°':1,
     "#": 1, ".": 1, "!": 1,
     "Ω": 1,
-    "Δ": 1
+    "Δ": 1,
+    "θ": 1,
+    "φ": 1
 };
 
 function getLengthOfLetters(letters, fontSize) {

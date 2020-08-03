@@ -231,13 +231,38 @@ class Line {
             this.yValue = pointA.y;
             this.slope = 0;
             this.yIntercept = this.yValue;
+            this.function = (x) => {return this.yValue}
         } else if (Math.abs(pointA.x - pointB.x) < 1e-10) {
             this.vertical = true;
             this.xValue = pointA.x;
             this.slope = Infinity;
+            // this.function = (x) => {return undefined} not very relevant
         } else {
             this.slope = (pointB.y - pointA.y) / (pointB.x - pointA.x);
             this.yIntercept = pointA.y - this.slope * pointA.x;
+            this.function = (x) => {return this.yIntercept + this.slope * x}
+        }
+    }
+
+    isPointOnLine(point) { // UNTESTED
+        if (this.horizontal) {
+            if (point.y === this.yValue) {
+                return true
+            } else {
+                return false
+            }
+        } else if (this.vertical) {
+            if (point.x === this.xValue) {
+                return true
+            } else {
+                return  false
+            }
+        } else {
+            if (Math.abs(this.function(point.x) - point.y) < 1e-10) {
+                return true
+            } else {
+                return false
+            }
         }
     }
 
@@ -427,6 +452,55 @@ class Segment {
         if (originalSlope >= 1e10) {return 0;} // due to floating Point arithmetic, a slope zero usually doesn't actually come out as zero!
         else if (originalSlope <= 1e-10) {return 1e10;} // if it returned Infinity, could lead to NaNs in later calculations
         else {return -1 / originalSlope;}
+    }
+
+
+    isPointOnSegment(point) { // UNTESETD
+        if (this.line.isPointOnLine(point)) {
+            if (this.isVertical()) {
+                let firstY;
+                let secondY;
+                if (this.point1.y <= this.point2.y) {
+                    firstY = this.point1.y;
+                    secondY = this.point2.y;
+                } else {
+                    firstY = this.point2.y;
+                    secondY = this.point1.y;
+                }
+                if (point.y >= firstY && point.y <= secondY) {
+                    return true
+                } else {
+                    return false
+                }
+            } else { // a point is on this segment if it intersects the line and it is within the domain of this segment
+                let firstX;
+                let secondX;
+                if (this.point1.x <= this.point2.x) {
+                    firstX = this.point1.x;
+                    secondX = this.point2.x;
+                } else {
+                    firstX = this.point2.x;
+                    secondX = this.point1.x;
+                }
+                if (point.x >= firstX && point <= secondX) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        } else {
+            return false
+        }
+    }
+
+    intersectionWithAnotherSegment(anotherSegment) { // UNTESTED
+        const intersectionPoint  = this.line.findIntersectionWithAnotherLine(anotherSegment.line);
+        if (!intersectionPoint) {
+            return false
+        }
+        if (this.isPointOnSegment(intersectionPoint) && anotherSegment.isPointOnSegment(intersectionPoint)) {
+            return true
+        }
     }
 
 }

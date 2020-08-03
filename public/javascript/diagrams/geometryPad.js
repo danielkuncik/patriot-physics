@@ -6,6 +6,7 @@ class GeometryPad extends Diagram {
         this.triangles = [];
         this.orientation = 'clockwise';
         this.fontSize = 0;
+        this.fontMultiplier = 1;
     }
 
     makeOrientationCounterClockwise() {
@@ -17,15 +18,26 @@ class GeometryPad extends Diagram {
 
     calculateFontSize() {
         let numerator = 0, denominator = 0;
-        this.triangles.forEach((triangle) => {
-            numerator += triangle.recommendedFontSize;
+        // this.triangles.forEach((triangle) => {
+        //     numerator += triangle.recommendedFontSize;
+        //     denominator += 1;
+        // });
+        this.segments.forEach((segment) => {
+            numerator += segment.getLength();
             denominator += 1;
         });
-        return this.setFontSize(numerator / denominator);
+        return this.setFontSize(numerator / denominator * 0.1);
     }
     setFontSize(newFontSize) {
         this.fontSize = newFontSize;
         return newFontSize
+    }
+
+    getFarAwayPoint() { // returns a point far away from the points of the problems
+        super.getRange();
+        const newX = (this.xMax + this.xMin) / 2;
+        const yUp = (this.yMax - this.yMin) * 0.2;
+        return new Point(newX, this.yMax + yUp);
     }
 
     addTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA) {
@@ -81,7 +93,10 @@ class GeometryPad extends Diagram {
       // label line outside function
     }
 
-    labelAngle(vertex, label, degreeSymbol, fontProportion, triangleObject) {
+    labelAngle(vertex, label, degreeSymbol, triangleObject) {
+        if (this.fontSize === 0) {
+            this.calculateFontSize();
+        }
       if (triangleObject === undefined) {
         triangleObject = this.triangles[0];
       }
@@ -98,24 +113,51 @@ class GeometryPad extends Diagram {
         }
       }
 
-      let outsidePoint1, vertexPoint, outsidePoint2;
-      if (vertex === 'A') {
+      let textOnAorB = 'A'; //confusing here, this means something different than the A, B, and C verticies of the triangle !
+        /// this is one the parameters of the 'label angle' function that determines on which segment the label appears
+      let outsidePoint1, vertexPoint, outsidePoint2, segmentAboveText; // segment above text is the segment that could potentially intersect a text box, creating a problem
+        if (vertex === 'A') {
         outsidePoint1 = triangleObject.vertexC;
         vertexPoint = triangleObject.vertexA;
         outsidePoint2 = triangleObject.vertexB;
+        if (textOnAorB === 'A') {
+            segmentAboveText = triangleObject.segmentC;
+        } else if (textOnAorB === 'B') {
+            segmentAboveText = triangleObject.segmentB;
+        }
       } else if (vertex === 'B') {
         outsidePoint1 = triangleObject.vertexA;
         vertexPoint = triangleObject.vertexB;
         outsidePoint2 = triangleObject.vertexC;
+          if (textOnAorB === 'A') {
+              segmentAboveText = triangleObject.segmentA;
+          } else if (textOnAorB === 'B') {
+              segmentAboveText = triangleObject.segmentC;
+          }
       } else if (vertex === 'C') {
         outsidePoint1 = triangleObject.vertexB;
         vertexPoint = triangleObject.vertexC;
         outsidePoint2 = triangleObject.vertexA;
+          if (textOnAorB === 'A') {
+              segmentAboveText = triangleObject.segmentB;
+          } else if (textOnAorB === 'B') {
+              segmentAboveText = triangleObject.segmentA;
+          }
       }
       //     labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion) {
         // creates a problem if one of the points is the origin
-      super.labelAngle(label, outsidePoint1, vertexPoint, outsidePoint2, 'interior', undefined, degreeSymbol, undefined, fontProportion);
+      let text = super.labelAngle(label, outsidePoint1, vertexPoint, outsidePoint2, 'interior', textOnAorB, degreeSymbol, undefined, undefined, this.fontSize);
+    /// i might want to do something with 'textOnAOrB' to avoid awkward text
+
+      if (text.rangeBox.doesItIntersectSegment(segmentAboveText)) {
+        console.log('Help! the text is being cut off!');
+        /// then, the text box will be moved to another area
+      }
     }
+    /*
+    Essentially, if the label intersects the space above it, then it should be moved
+     */
+
 
     labelAngleTheta(vertex, triangleObject) {
       this.labelAngle(vertex,'θ',false, triangleObject);
