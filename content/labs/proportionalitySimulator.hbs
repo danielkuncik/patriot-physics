@@ -1,0 +1,176 @@
+<h4>
+  Experiment 1
+</h4>
+<p>
+  You have two values, "A" and "B".
+  Figure out a relationship between them.
+  Write any value for A, and it will give you a value for B.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-4'>
+      A:<br>
+      <input type = 'number' id = 'A' value = '0'/>
+    </div>
+    <div class = 'col-md-4'>
+      <button class = 'btn btn-primary' id = 'giveMeB'>Give Me B</button>
+    </div>
+    <div class = 'col-md-4'>
+      B:<br>
+      <div id = 'B' />
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#giveMeB").click(() => {
+    const A = Number($("#A").val());
+    const B = A * 6;
+    $("#B").empty();
+    $("#B").append(`<p>${B}</p>`);
+  })
+</script>
+
+<h4>
+  Experiment 2
+</h4>
+
+<p>
+  You have two values, "C" and "D".
+  Figure out a relationship between them.
+  Write any value for C, and it will give you a value for D.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-4'>
+      C:<br>
+      <input type = 'number' id = 'C' value = '0'/>
+    </div>
+    <div class = 'col-md-4'>
+      <button class = 'btn btn-primary' id = 'giveMeD'>Give Me D</button>
+    </div>
+    <div class = 'col-md-4'>
+      D:<br>
+      <div id = 'D' />
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#giveMeD").click(() => {
+    const C = Number($("#C").val());
+    const D = 4 / C;
+    $("#D").empty();
+    $("#D").append(`<p>${D}</p>`);
+  })
+</script>
+
+
+<h4>
+  Experiment 3
+</h4>
+
+<p>
+  You have two values, "E" and "F".
+  Figure out a relationship between them.
+  Write any value for E, and it will give you a value for F.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-4'>
+      E:<br>
+      <input type = 'number' id = 'E' value = '0'/>
+    </div>
+    <div class = 'col-md-4'>
+      <button class = 'btn btn-primary' id = 'giveMeF'>Give Me F</button>
+    </div>
+    <div class = 'col-md-4'>
+      F:<br>
+      <div id = 'F' />
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#giveMeF").click(() => {
+    const E = Number($("#E").val());
+    const F = 5 * E * E;
+    $("#F").empty();
+    $("#F").append(`<p>${F}</p>`);
+  })
+</script>
+
+
+<h4>
+  Experiment 4
+</h4>
+
+<p>
+  You have two values, "G" and "H".
+  Figure out a relationship between them.
+  Write any value for G, and it will give you a value for H.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-4'>
+      G:<br>
+      <input type = 'number' id = 'G' value = '0'/>
+    </div>
+    <div class = 'col-md-4'>
+      <button class = 'btn btn-primary' id = 'giveMeH'>Give Me H</button>
+    </div>
+    <div class = 'col-md-4'>
+      H:<br>
+      <div id = 'H' />
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#giveMeH").click(() => {
+    const G = Number($("#G").val());
+    const H = 8 / G / G;
+    $("#H").empty();
+    $("#H").append(`<p>${H}</p>`);
+  })
+</script>
+
+
+<h4>
+  Experiment 5
+</h4>
+
+<p>
+  You have two values, "I" and "J".
+  Figure out a relationship between them.
+  Write any value for I, and it will give you a value for J.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-4'>
+      I:<br>
+      <input type = 'number' id = 'G' value = '0'/>
+    </div>
+    <div class = 'col-md-4'>
+      <button class = 'btn btn-primary' id = 'giveMeJ'>Give Me J</button>
+    </div>
+    <div class = 'col-md-4'>
+      J:<br>
+      <div id = 'J' />
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#giveMeJ").click(() => {
+    const I = Number($("#I").val());
+    const J = 5 * Math.sqrt(I);
+    $("#J").empty();
+    $("#J").append(`<p>${J}</p>`);
+  })
+</script>
