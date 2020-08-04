@@ -6,9 +6,25 @@
     but I ain't done much healing.
 </p>
 
+<div id = 'FBD' class = 'm-5'></div>
+
 <div id = 'putItHere'></div>
 
 <script>
+
+    $("#FBD").append(fastFBD([['up','tension',1.5],['down','gravity',1]]).drawCanvas());
+
+    let myMomentumGraph = new MomentumBarChart(50,-5,5, 2);
+    const m_cora = 20;
+    const m_violet= 25;
+    const vf_violet = -4;
+    const vf_cora = -1 * vf_violet * m_cora / m_violet;
+    myMomentumGraph.addMomentum(m_cora,vf_cora,'#FF0000');
+    myMomentumGraph.addMomentum(m_violet,vf_violet,'#EE82EE');
+
+
+    $("#putItHere").append(myMomentumGraph.drawCanvas());
+
     // let myCircuit = new CircuitDiagram();
     //
     // myCircuit.addCell('up',3);
@@ -30,8 +46,8 @@
     // myDiagram.addLinesNextToSegment(pointA, pointB,['A = 2','B = 3','C = 4'],'right',0);
     // $("#putItHere").append(myDiagram.drawCanvas(300));
 
-    let myPad = new GeometryPad();
-    let triangle1 = myPad.addTriangleSAS(origin, 1,60,1);
-    myPad.labelTriangleLength(triangle1, 'xyz', 'C')
-    $("#putItHere").append(myPad.drawCanvas(300));
+    // let myPad = new GeometryPad();
+    // let triangle1 = myPad.addTriangleSAS(origin, 1,60,1);
+    // myPad.labelTriangleLength(triangle1, 'xyz', 'C')
+    // $("#putItHere").append(myPad.drawCanvas(300));
 </script>

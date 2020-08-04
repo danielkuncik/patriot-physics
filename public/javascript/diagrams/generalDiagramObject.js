@@ -232,6 +232,7 @@ function constructRangeBoxFromExtremePoints(minX, minY, maxX, maxY) {
     return new RangeBox(minX, minY, width, height);
 }
 
+
 class Text {
     constructor(letters, referencePoint, relativeFontSize, rotationAngleInRadians, positioning) {
         if (positioning === undefined) {
@@ -290,7 +291,20 @@ class Text {
             let lowerLeftX = this.referencePoint.x - this.width;
             let lowerLeftY = this.referencePoint.y - this.height;
             this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        } else if (positioning === 'centerRight') {
+            this.alignment = 'right';
+            this.baseline = 'middle';
+            let lowerLeftX = this.referencePoint.x - this.width;
+            let lowerLeftY = this.referencePoint.y - this.height / 2;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+        } else if (positioning === 'centerLeft') {
+            this.alignment = 'left';
+            this.baseline = 'middle';
+            let lowerLeftX = this.referencePoint.x;
+            let lowerLeftY = this.referencePoint.y - this.height;
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
         }
+
         if (this.rotationAngleInRadians) { // should it be clockwise, not counterclockwise?
             this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
             /// if the reference point is not the center, then this function needs to change!
@@ -937,10 +951,10 @@ class Diagram {
 
 
     /// center Point need not already exist
-    addText(letters, centerPoint, relativeFontSize, rotation, positioning) {
-        let center = this.addExistingPoint(centerPoint);
-        let newText = new Text(letters, center, relativeFontSize, rotation, positioning);
-        this.addExistingPoint(newText.rangeBox.lowerLeftPoint);
+    addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
+        let center = this.addExistingPoint(referencePoint);
+        let newText = new Text(letters, referencePoint, relativeFontSize, rotation, positioning);
+        this.addExistingPoint(newText.rangeBox.lowerLeftPoint); // should i add a method to range box, 'add to diagram'?
         this.addExistingPoint(newText.rangeBox.upperLeftPoint);
         this.addExistingPoint(newText.rangeBox.lowerRightPoint);
         this.addExistingPoint(newText.rangeBox.upperRightPoint);

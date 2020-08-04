@@ -249,7 +249,6 @@ class QuantitativeGraph extends Diagram {
             // add a reference line
         }
         labelTheNext = false;
-        console.log(this.yMinOnGraphOriginal, this.yMaxOnGraphOriginal, yInterval);
         for (j = 0; j < NumYHashMarks; j++) {
             let noLabel;
             if (!labelTheNext) { // awkward, refactor later?
@@ -284,6 +283,7 @@ class QuantitativeGraph extends Diagram {
 
     addSegmentAndTwoPoints(x1,y1,x2,y2,thickness, color) {
         this.validatePoints(x1,y1,x2,y2);
+        console.log(x1,y1,x2,y2);
         let newSegment = super.addTwoPointsAndSegment(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
         if (thickness) {
             newSegment.setThickness(thickness);
@@ -291,6 +291,7 @@ class QuantitativeGraph extends Diagram {
         if (color) {
             newSegment.setColor(color);
         }
+        console.log(newSegment);
         return newSegment
     }
 
@@ -370,10 +371,11 @@ class QuantitativeGraph extends Diagram {
 
     // need to add color
     addBar(width, height, lowerLeftX = 0, lowerLeftY = 0, color) {
-        this.addSegmentAndTwoPoints(lowerLeftX, lowerLeftY, lowerLeftX + width, lowerLeftY, color);
-        this.addSegmentAndTwoPoints(lowerLeftX + width, lowerLeftY, lowerLeftX + width, lowerLeftY + height, color);
-        this.addSegmentAndTwoPoints(lowerLeftX + width, lowerLeftY + height, lowerLeftX, lowerLeftY + height, color);
-        this.addSegmentAndTwoPoints(lowerLeftX, lowerLeftY + height, lowerLeftX, lowerLeftY, color);
+        const thickness = 3;
+        this.addSegmentAndTwoPoints(lowerLeftX, lowerLeftY, lowerLeftX + width, lowerLeftY, thickness, color);
+        this.addSegmentAndTwoPoints(lowerLeftX + width, lowerLeftY, lowerLeftX + width, lowerLeftY + height, thickness, color);
+        this.addSegmentAndTwoPoints(lowerLeftX + width, lowerLeftY + height, lowerLeftX, lowerLeftY + height, thickness, color);
+        this.addSegmentAndTwoPoints(lowerLeftX, lowerLeftY + height, lowerLeftX, lowerLeftY, thickness, color);
     }
 
     // multiplies the y axis of the graph!
@@ -486,14 +488,14 @@ function findFirstHash(min, max, numHashes) {
 }
 
 class MomentumBarChart extends QuantitativeGraph {
-    constructor(maxMass, minVelocity, maxVelocity, massUnit = 'kg', velocityUnit = 'm/s') {
-        super(0,maxMass,minVelocity,maxVelocity);
+    constructor(maxMass, minVelocity, maxVelocity, desiredAspectRatio, massUnit = 'kg', velocityUnit = 'm/s') {
+        super(0,maxMass,minVelocity,maxVelocity,desiredAspectRatio);
         super.labelAxes(`mass ${massUnit}`,`velocity ${velocityUnit}`);
         this.currentMass = 0;
     }
 
     addMomentum(mass,velocity, color) {
-        super.addBar(mass,velocity,this.currentMass, color);
+        super.addBar(mass,velocity,this.currentMass, 0, color);
         this.currentMass += mass;
     }
 }
