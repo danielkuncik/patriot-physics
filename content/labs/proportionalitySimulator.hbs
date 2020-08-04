@@ -174,3 +174,59 @@
     $("#J").append(`<p>${J}</p>`);
   })
 </script>
+
+
+<h4>
+  Experiment 6
+</h4>
+
+<p>
+  You have two values, "K" and "L".
+  Figure out a relationship between them.
+  Write any value for K, and it will give you a value for L.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-4'>
+      K:<br>
+      <input type = 'number' id = 'K' value = '0'/>
+    </div>
+    <div class = 'col-md-4'>
+      <button class = 'btn btn-primary' id = 'giveMeL'>Give Me L</button>
+    </div>
+    <div class = 'col-md-4'>
+      L:<br>
+      <div id = 'L' />
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#giveMeL").click(() => {
+    const K = Number($("#K").val());
+    const L = 3 / Math.sqrt(K);
+    $("#L").empty();
+    $("#L").append(`<p>${L}</p>`);
+  })
+</script>
+
+
+<h4>
+  Analysis
+</h4>
+
+<ol>
+  <li>
+    For each of the six relationships,
+    figure out a <em>proportionality relationship</em>.
+    For six examples of proportionality relationships,
+    look <a href = '/pod/pure_mathematics/proportionality/numeric_proportionality_1'>here</a>
+    and </a href = '/pod/pure_mathematics/proportionality/numeric_proportionality_2'>here<a>.
+  </li>
+  <li>
+    Once you <em>think</em> you know the proportionality relationship
+    for each experiment, find a way to <strong>prove</strong> it is correct.
+    There are many different ways to do this!
+  </li>
+</ol>
