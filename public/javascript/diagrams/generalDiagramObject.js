@@ -210,6 +210,26 @@ class RangeBox {
         }
     }
 
+    addToDiagram(DiagramObject) {
+        DiagramObject.addExistingPoint(this.lowerLeftPoint);
+        DiagramObject.addExistingPoint(this.lowerRightPoint);
+        DiagramObject.addExistingPoint(this.upperLeftPoint);
+        DiagramObject.addExistingPoint(this.upperRightPoint);
+        DiagramObject.addExistingPoint(this.centerPoint);
+    }
+
+
+    addSegmentsToDiagram(DiagramObject, horizontalExtension = 0, verticalExtension = 0) {
+        let newLowerLeft = this.lowerLeftPoint.translateAndReproduce(-1 * horizontalExtension, -1 * verticalExtension);
+        let newUpperLeft = this.upperLeftPoint.translateAndReproduce(-1 * horizontalExtension, verticalExtension);
+        let newLowerRight = this.lowerRightPoint.translateAndReproduce(horizontalExtension, -1 * verticalExtension);
+        let newUpperRight = this.upperRightPoint.translateAndReproduce(horizontalExtension, verticalExtension);
+
+        DiagramObject.addSegment(newLowerLeft, newLowerRight);
+        DiagramObject.addSegment(newLowerRight, newUpperRight);
+        DiagramObject.addSegment(newUpperRight, newUpperLeft);
+        DiagramObject.addSegment(newUpperLeft, newLowerLeft);
+    }
 
 }
 // does this make a duplicate of the center Point??
@@ -317,6 +337,7 @@ class Text {
             ///ERROR
         }
         this.color = "#000000";
+
     }
 
 
@@ -389,6 +410,10 @@ class Text {
         // this.addCircle(circleCenter, circleRadius);
         // the circle is all coded, but it will look terrible until I fix my aspect ratio of text issue
 
+    }
+
+    drawBoxAround(DiagramObject, horizontalExtension, verticalExtension) {
+        this.rangeBox.addSegmentsToDiagram(DiagramObject, horizontalExtension, verticalExtension);
     }
 
 }
@@ -487,7 +512,22 @@ class Diagram {
         this.verticalRange = undefined;
         this.defaultSize = 500;
 
+        this.key = [];
+        this.keyFont = undefined;
+
         this.lockedRange = undefined;
+    }
+
+    addLineToKey(text, color) {
+        this.key.push({
+            text: text,
+            color: color
+        });
+    }
+
+
+    setKeyFont(keyFont) {
+        this.keyFont = keyFont;
     }
 
     lockRange(xMin, xMax, yMin, yMax) {
@@ -952,7 +992,7 @@ class Diagram {
 
     /// center Point need not already exist
     addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
-        let center = this.addExistingPoint(referencePoint);
+           let center = this.addExistingPoint(referencePoint); // figure out what this is used for!
         let newText = new Text(letters, referencePoint, relativeFontSize, rotation, positioning);
         this.addExistingPoint(newText.rangeBox.lowerLeftPoint); // should i add a method to range box, 'add to diagram'?
         this.addExistingPoint(newText.rangeBox.upperLeftPoint);
@@ -1457,6 +1497,29 @@ class Diagram {
         }
 
         this.getRange();
+
+        // add a key, if speecified
+        if (this.key.length > 0) {
+            let keyFontSizeDummy;
+            if (this.keyFont) {
+                keyFontSizeDummy = this.keyFont;
+            } else {
+                keyFontSizeDummy = (this.horizontalRange + this.verticalRange) / 2 * 0.05; // default value of the font of the key
+            }
+            const keyFontSize = keyFontSizeDummy;
+
+            const keyY = this.yMax + (keyFontSize * 1.5 * this.key.length + .5);
+            const keyX = (this.xMin + this.xMax) / 2;
+
+            let index = 0;
+            this.key.forEach((line) => {
+                let newText = this.addText(line.text,new Point(keyX, keyY - index * keyFontSize * 1.5),keyFontSize,0,'center');
+                newText.setColor(line.color);
+                index += 1;
+            });
+
+            this.getRange(); // get range again, with new text added
+        }
 
         try {
             if (this.horizontalRange === 0 ) throw 'Cannot draw canvas horizontal range = 0';

@@ -283,7 +283,6 @@ class QuantitativeGraph extends Diagram {
 
     addSegmentAndTwoPoints(x1,y1,x2,y2,thickness, color) {
         this.validatePoints(x1,y1,x2,y2);
-        console.log(x1,y1,x2,y2);
         let newSegment = super.addTwoPointsAndSegment(x1,y1 * this.yMultiplier,x2,y2 * this.yMultiplier);
         if (thickness) {
             newSegment.setThickness(thickness);
@@ -291,7 +290,6 @@ class QuantitativeGraph extends Diagram {
         if (color) {
             newSegment.setColor(color);
         }
-        console.log(newSegment);
         return newSegment
     }
 
@@ -487,18 +485,49 @@ function findFirstHash(min, max, numHashes) {
     return firstHash
 }
 
+/*
+this is a very awkward system once i add the impulse, think this over
+
+should there be one chart called 'bar chart', and then two extensions of it for momentum nad impulse?
+ */
 class MomentumBarChart extends QuantitativeGraph {
     constructor(maxMass, minVelocity, maxVelocity, desiredAspectRatio, massUnit = 'kg', velocityUnit = 'm/s') {
         super(0,maxMass,minVelocity,maxVelocity,desiredAspectRatio);
-        super.labelAxes(`mass ${massUnit}`,`velocity ${velocityUnit}`);
+        this.impulseBarChar = false;
+        this.massUnit = massUnit;
+        this.velocityUnit = velocityUnit;
         this.currentMass = 0;
+    }
+
+    turnIntoImpulseBarChart(forceUnit = 'N', timeUnit = 's') {
+        this.forceUnit = forceUnit;
+        this.timeUnit = timeUnit;
+        this.impulseBarChar = true;
     }
 
     addMomentum(mass,velocity, color) {
         super.addBar(mass,velocity,this.currentMass, 0, color);
         this.currentMass += mass;
     }
+
+    addZero(x,y,fontSize) {
+        if (fontSize === undefined) {
+            fontSize = this.axisLabelFontSize;
+        }
+        super.addText('0',new Point(x,y),fontSize);
+    }
+
+    drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {
+        if (this.impulseBarChar) { // turned into an impulse graph
+            super.labelAxes(`time (${this.timeUnit})`,`force (${this.forceUnit})`);
+        } else { // normal momentum graph
+            super.labelAxes(`mass (${this.massUnit})`,`velocity (${this.velocityUnit})`);
+        }
+
+        return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);
+    }
 }
 /*
 test this tonight!
  */
+
