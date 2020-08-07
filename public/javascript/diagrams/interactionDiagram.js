@@ -60,11 +60,18 @@ class InteractionDiagram extends Diagram {
         Object.keys(this.actors).forEach((name) => {
             const actor = this.actors[name];
             let newText = this.addText(name, actor.centerPoint, this.fontSize);
-            newText.drawBoxAround(this, actor.horizontalExtension, actor.verticalExtension);
-            this.actors[name].xMin = newText.rangeBox.lowerLeftPoint.x - actor.horizontalExtension;
-            this.actors[name].xMax = newText.rangeBox.lowerRightPoint.x + actor.horizontalExtension;
-            this.actors[name].yMin = newText.rangeBox.lowerLeftPoint.y - actor.verticalExtension;
-            this.actors[name].yMax = newText.rangeBox.upperLeftPoint.y + actor.verticalExtension;
+            // newText.extendRangeBox(actor.horizontalExtension, actor.verticalExtension);
+            newText.drawBoxAround(this, actor.horizontalExtension, actor.verticalExtension); // change in to two different functions????
+            // this.actors[name].xMin = newText.rangeBox.lowerLeftPoint.x;
+            // this.actors[name].xMax = newText.rangeBox.lowerRightPoint.x;
+            // this.actors[name].yMin = newText.rangeBox.lowerLeftPoint.y;
+            // this.actors[name].yMax = newText.rangeBox.upperLeftPoint.y;
+            this.actors[name].rangeBox = newText.rangeBox; // needed for below
+
+            // this.actors[name].xMin = newText.rangeBox.lowerLeftPoint.x - actor.horizontalExtension;
+            // this.actors[name].xMax = newText.rangeBox.lowerRightPoint.x + actor.horizontalExtension;
+            // this.actors[name].yMin = newText.rangeBox.lowerLeftPoint.y - actor.verticalExtension;
+            // this.actors[name].yMax = newText.rangeBox.upperLeftPoint.y + actor.verticalExtension;
         });
 
         // draw each interaction
@@ -83,21 +90,24 @@ class InteractionDiagram extends Diagram {
                 evenNumberForces = false;
             }
             this.interactions[key].forEach((interaction) => {
-                // let point1 = new Point(actor1.centerPoint.x, actor1.centerPoint.y); // duplicated
-                // let point2 = new Point(actor2.centerPoint.x, actor2.centerPoint.y);
                 let phi = theta;
                 if (evenNumberForces && index % 2 === 0) { // for even total number, add displacement on all even forces
                     currentDisplacement += this.fontSize;
                 } else if (!evenNumberForces && index % 2 === 1) { // for odd total number, add displacement on all odd forces
                     currentDisplacement += this.fontSize;
                 }
+                let thisDisplacement = currentDisplacement;
                 if (index % 2 === 0) {
                     phi += Math.PI;
+                    thisDisplacement *= -1;
                 }
-                let point1  = actor1.centerPoint.translateAndReproducePolar(currentDisplacement, phi);
-                let point2  = actor2.centerPoint.translateAndReproducePolar(currentDisplacement, phi);
-                super.addSegment(point1, point2);
-                super.labelLineAbove(point1,point2,interaction);
+                // let point1  = actor1.centerPoint.translateAndReproducePolar(currentDisplacement, phi);
+                // let point2  = actor2.centerPoint.translateAndReproducePolar(currentDisplacement, phi);
+                
+                let newSegment = actor1.rangeBox.segmentConnectingRangeBoxes(actor2.rangeBox, thisDisplacement);
+
+                super.addSegment(newSegment.point1, newSegment.point2);
+                super.labelLineAbove(newSegment.point1,newSegment.point2,interaction);
                 index++;
             });
         });
@@ -107,17 +117,17 @@ class InteractionDiagram extends Diagram {
             let systemXmin, systemYmin, systemXmax, systemYmax;
             this.system.forEach((actorName) => {
                 const actorObject = this.actors[actorName];
-                if (actorObject.xMin < systemXmin || systemXmin === undefined) {
-                    systemXmin = actorObject.xMin;
+                if (actorObject.rangeBox.xMin < systemXmin || systemXmin === undefined) {
+                    systemXmin = actorObject.rangeBox.xMin;
                 }
-                if (actorObject.xMax > systemXmax || systemXmax === undefined) {
-                    systemXmax = actorObject.xMax;
+                if (actorObject.rangeBox.xMax > systemXmax || systemXmax === undefined) {
+                    systemXmax = actorObject.rangeBox.xMax;
                 }
-                if (actorObject.yMin < systemYmin || systemYmin === undefined) {
-                    systemYmin = actorObject.yMin;
+                if (actorObject.rangeBox.yMin < systemYmin || systemYmin === undefined) {
+                    systemYmin = actorObject.rangeBox.yMin;
                 }
-                if (actorObject.yMax > systemYmax || systemYmax === undefined) {
-                    systemYmax = actorObject.yMax;
+                if (actorObject.rangeBox.yMax > systemYmax || systemYmax === undefined) {
+                    systemYmax = actorObject.rangeBox.yMax;
                 }
             });
             systemXmin -= this.fontSize*1.2;
@@ -139,4 +149,3 @@ class InteractionDiagram extends Diagram {
         return super.drawCanvas(maxWidth, maxHeight, forceSize, unit, wiggleRoom);
     }
 }
-

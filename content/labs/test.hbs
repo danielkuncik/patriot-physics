@@ -21,8 +21,11 @@
 
     let interactionDiagram = new InteractionDiagram();
     interactionDiagram.addActor('Knife',0,0, -.8, 0.5);
-    interactionDiagram.addActor('Watermelon',13,0, -1.2, 0.5);
+    interactionDiagram.addActor('Watermelon',13,5, -1.2, 0.5);
     interactionDiagram.addInteraction('strike','Knife','Watermelon');
+    interactionDiagram.addInteraction('pull','Knife','Watermelon');
+    interactionDiagram.addInteraction('push','Knife','Watermelon');
+    // interactionDiagram.addInteraction('strike','Knife','Watermelon');
     interactionDiagram.addActorToSystem('Watermelon');
     interactionDiagram.addActorToSystem('Knife');
     // pretty cool
@@ -30,43 +33,43 @@
 
     $("#putTheOtherOneHere").append(interactionDiagram.drawCanvas());
 
-
-    $("#FBD").append(fastFBD([['up','tension',1.5],['down','gravity',1]]).drawCanvas());
-
-    const m_knife = .25;
-    const m_watermelon= 3;
-    const vi_knife = 26;
-    const vi_watermelon = 0;
-    const vf_knife = 2;
-    const vf_watermelon = 2;
-    let delta_t = 0.0232;
-    let F_on_knife = (vf_knife * m_knife + vf_watermelon * m_watermelon  - vi_knife * m_knife - vi_watermelon * m_watermelon)/ delta_t;
-    let initialMomentumGraph = new MomentumBarChart(m_knife + m_watermelon,0,vi_knife,1);
-    initialMomentumGraph.addMomentum(m_knife,vi_knife,'#FF0000');
-    initialMomentumGraph.addMomentum(m_watermelon,vi_watermelon,'#00FF00');
-    initialMomentumGraph.addLineToKey('Watermelon','#00FF00');
-    initialMomentumGraph.addLineToKey('Knife','#FF0000');
-    initialMomentumGraph.addReferenceArray([m_knife,m_knife+m_watermelon],[0,vf_knife,vi_knife]);
-
-    let finalMomentumGraph = new MomentumBarChart(m_knife + m_watermelon,0,vi_knife,1);
-    finalMomentumGraph.addMomentum(m_knife,0,'#FF0000');
-    finalMomentumGraph.addMomentum(m_watermelon,0,'#00FF00');
-    finalMomentumGraph.addLineToKey('Watermelon','#00FF00');
-    finalMomentumGraph.addLineToKey('Knife','#FF0000');
-    finalMomentumGraph.addReferenceArray([m_knife,m_knife + m_watermelon],[0,vf_knife,vi_knife]);
-
-    $("#putItHere").append(initialMomentumGraph.drawCanvas());
-    $("#finalGraphHere").append(finalMomentumGraph.drawCanvas());
-
-
-    delta_t = 2.5;
-    let change_in_p = -6.5;
-    let F = change_in_p / delta_t;
-   let myImpulseGraph = new MomentumBarChart(delta_t,F,0);
-   myImpulseGraph.turnIntoImpulseBarChart();
-   myImpulseGraph.addMomentum(delta_t,F,'#FF0000');
-   myImpulseGraph.addReferenceArray([0,delta_t],[F,0]);
-   $("#impulseGraphHere").append(myImpulseGraph.drawCanvas());
+   //
+   //  $("#FBD").append(fastFBD([['up','tension',1.5],['down','gravity',1]]).drawCanvas());
+   //
+   //  const m_knife = .25;
+   //  const m_watermelon= 3;
+   //  const vi_knife = 26;
+   //  const vi_watermelon = 0;
+   //  const vf_knife = 2;
+   //  const vf_watermelon = 2;
+   //  let delta_t = 0.0232;
+   //  let F_on_knife = (vf_knife * m_knife + vf_watermelon * m_watermelon  - vi_knife * m_knife - vi_watermelon * m_watermelon)/ delta_t;
+   //  let initialMomentumGraph = new MomentumBarChart(m_knife + m_watermelon,0,vi_knife,1);
+   //  initialMomentumGraph.addMomentum(m_knife,vi_knife,'#FF0000');
+   //  initialMomentumGraph.addMomentum(m_watermelon,vi_watermelon,'#00FF00');
+   //  initialMomentumGraph.addLineToKey('Watermelon','#00FF00');
+   //  initialMomentumGraph.addLineToKey('Knife','#FF0000');
+   //  initialMomentumGraph.addReferenceArray([m_knife,m_knife+m_watermelon],[0,vf_knife,vi_knife]);
+   //
+   //  let finalMomentumGraph = new MomentumBarChart(m_knife + m_watermelon,0,vi_knife,1);
+   //  finalMomentumGraph.addMomentum(m_knife,0,'#FF0000');
+   //  finalMomentumGraph.addMomentum(m_watermelon,0,'#00FF00');
+   //  finalMomentumGraph.addLineToKey('Watermelon','#00FF00');
+   //  finalMomentumGraph.addLineToKey('Knife','#FF0000');
+   //  finalMomentumGraph.addReferenceArray([m_knife,m_knife + m_watermelon],[0,vf_knife,vi_knife]);
+   //
+   //  $("#putItHere").append(initialMomentumGraph.drawCanvas());
+   //  $("#finalGraphHere").append(finalMomentumGraph.drawCanvas());
+   //
+   //
+   //  delta_t = 2.5;
+   //  let change_in_p = -6.5;
+   //  let F = change_in_p / delta_t;
+   // let myImpulseGraph = new MomentumBarChart(delta_t,F,0);
+   // myImpulseGraph.turnIntoImpulseBarChart();
+   // myImpulseGraph.addMomentum(delta_t,F,'#FF0000');
+   // myImpulseGraph.addReferenceArray([0,delta_t],[F,0]);
+   // $("#impulseGraphHere").append(myImpulseGraph.drawCanvas());
     //
     // let momentumGraph1 = new MomentumBarChart(10,-3,3);
     // momentumGraph1.addZero(5,.4);

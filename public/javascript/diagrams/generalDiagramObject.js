@@ -145,20 +145,24 @@ function grayscale0to20(score) {
 // the box should always belong to an object!
 class RangeBox {
     constructor(lowerLeftX, lowerLeftY, width, height) {
-        let bottomY = lowerLeftY;
-        let topY = lowerLeftY + height;
-        let rightX = lowerLeftX + width;
-        let leftX = lowerLeftX;
-        this.lowerLeftPoint = new Point(leftX, bottomY);
-        this.upperLeftPoint = new Point(leftX, topY);
-        this.lowerRightPoint = new Point(rightX, bottomY);
-        this.upperRightPoint = new Point(rightX, topY);
-        // console.log(this.lowerLeftPoint.x);
-        // console.log(isNaN(this.lowerLeftPoint.x));
-        // console.log(typeof(this.lowerLeftPoint.x));
-        // console.log(this.lowerLeftPoint);
-        this.centerPoint = new Point(leftX + width / 2, bottomY + height / 2);
+        this.yMin = lowerLeftY;
+        this.yMax = lowerLeftY + height;
+        this.xMax = lowerLeftX + width;
+        this.xMin = lowerLeftX;
+        this.lowerLeftPoint = new Point(this.xMin, this.yMin);
+        this.upperLeftPoint = new Point(this.xMin, this.yMax);
+        this.lowerRightPoint = new Point(this.xMax, this.yMin);
+        this.upperRightPoint = new Point(this.xMax, this.yMax);
+        this.centerPoint = new Point(this.xMin + width / 2, this.yMin + height / 2);
         this.segments = [];
+    }
+
+    // can also be used to contract,
+    extend(horizontalExtension, verticalExtension) {
+      this.lowerLeftPoint.translate(-1 * horizontalExtension, -1 * verticalExtension);
+      this.upperLeftPoint.translate(-1 * horizontalExtension, verticalExtension);
+      this.lowerRightPoint.translate(horizontalExtension, -1 * verticalExtension);
+      this.upperRightPoint.translate(horizontalExtension, verticalExtension);
     }
 
 
@@ -210,6 +214,62 @@ class RangeBox {
         }
     }
 
+    intersectionsWithSegment(segment) {
+      let intersections = [];
+      let possibility1 = segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.lowerRightPoint));
+      let possibility2 = segment.intersectionWithAnotherSegment(new Segment(this.lowerRightPoint,this.upperRightPoint));
+      let possibility3 = segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.upperLeftPoint));
+      let possibility4 = segment.intersectionWithAnotherSegment(new Segment(this.upperLeftPoint,this.upperRightPoint));
+      if (possibility1) {
+        intersections.push(posibility1);
+      }
+      if (possibility2) {
+        intersections.push(posibility2);
+      }
+      if (possibility3) {
+        intersections.push(posibility3);
+      }
+      if (possibility4) {
+        intersections.push(posibility4);
+      }
+      return intersections
+    }
+
+    // cuts a segment so it does not include pieces within the range box
+    // returns an array of segments!
+    cutSegment(segment) {
+      const intersections = this.intersectionsWithSegment(segment);
+      let result = [];
+      if (intersections.length === 0) {
+        console.log('xxx');
+        // pass
+        // but what if the whole segment is inside?
+      } else if (intersections.length === 1) {
+        console.log('yyy');
+        // finds one intersection point
+        // one end point is inside rangebox
+
+        if (isPointInside(segment.point1)) {
+          let newSegment = new Segment(intersections[0], segment.point2);
+          result.push(newSegment);
+        } else if (isPointInside(segment.point2)) {
+          let newSegment = new Segment(intersections[0], segment.point1);
+          result.push(newSegment);
+        }
+      } else if (intersections.length === 2) {
+        console.log('zzz');
+        // more complicated, will return 2 segments
+      }
+      return result
+    }
+    /// odd results possible if the point lands on the range box?
+
+    // on or inside
+    isPointInside(point) {
+      return point.x >= this.xMin && point.x <= this.xMax && point.y >= this.yMin && point.y <= this.yMax
+    }
+
+
     addToDiagram(DiagramObject) {
         DiagramObject.addExistingPoint(this.lowerLeftPoint);
         DiagramObject.addExistingPoint(this.lowerRightPoint);
@@ -220,15 +280,47 @@ class RangeBox {
 
 
     addSegmentsToDiagram(DiagramObject, horizontalExtension = 0, verticalExtension = 0) {
-        let newLowerLeft = this.lowerLeftPoint.translateAndReproduce(-1 * horizontalExtension, -1 * verticalExtension);
-        let newUpperLeft = this.upperLeftPoint.translateAndReproduce(-1 * horizontalExtension, verticalExtension);
-        let newLowerRight = this.lowerRightPoint.translateAndReproduce(horizontalExtension, -1 * verticalExtension);
-        let newUpperRight = this.upperRightPoint.translateAndReproduce(horizontalExtension, verticalExtension);
+        // let newLowerLeft = this.lowerLeftPoint.translateAndReproduce(-1 * horizontalExtension, -1 * verticalExtension);
+        // let newUpperLeft = this.upperLeftPoint.translateAndReproduce(-1 * horizontalExtension, verticalExtension);
+        // let newLowerRight = this.lowerRightPoint.translateAndReproduce(horizontalExtension, -1 * verticalExtension);
+        // let newUpperRight = this.upperRightPoint.translateAndReproduce(horizontalExtension, verticalExtension);
 
-        DiagramObject.addSegment(newLowerLeft, newLowerRight);
-        DiagramObject.addSegment(newLowerRight, newUpperRight);
-        DiagramObject.addSegment(newUpperRight, newUpperLeft);
-        DiagramObject.addSegment(newUpperLeft, newLowerLeft);
+        this.extend(horizontalExtension, verticalExtension);
+        DiagramObject.addSegment(this.lowerLeftPoint, this.lowerRightPoint);
+        DiagramObject.addSegment(this.lowerRightPoint, this.upperRightPoint);
+        DiagramObject.addSegment(this.upperRightPoint, this.upperLeftPoint);
+        DiagramObject.addSegment(this.upperLeftPoint, this.lowerLeftPoint);
+
+        // DiagramObject.addSegment(newLowerLeft, newLowerRight);
+        // DiagramObject.addSegment(newLowerRight, newUpperRight);
+        // DiagramObject.addSegment(newUpperRight, newUpperLeft);
+        // DiagramObject.addSegment(newUpperLeft, newLowerLeft);
+    }
+
+    segmentConnectingRangeBoxes(anotherRangeBox, displacement = 0) {
+      let center1 = this.centerPoint;
+      let center2 = anotherRangeBox.centerPoint;
+
+      // add diplacement here
+      let theta = center1.getAngleToAnotherPoint(center2) - Math.PI / 2;
+      let start1 = center1.translateAndReproducePolar(displacement, theta);
+      let start2 = center2.translateAndReproducePolar(displacement, theta);
+
+      let testSegment1 = new Segment(start1, start2);
+
+      let testSegment2;
+      let result1 = this.cutSegment(testSegment1);
+      if (result1.length === 0) {
+        testSegment2 = testSegment1;
+      } else if (result.length === 1) {
+        testSegment2 = result[0];
+      } else if (result.length === 2) {
+        // no result
+      }
+
+
+
+      return testSegment2;
     }
 
 }
@@ -352,6 +444,10 @@ class Text {
         } else {
             this.relativeFontSize *= yFactor;
         }
+    }
+
+    extendRangeBox(horizontalExtension, verticalExtension) {
+      this.rangeBox.extend(horizontalExtension, verticalExtension);
     }
 
     setRelativeFontSize(newRelativeFontSize) {
