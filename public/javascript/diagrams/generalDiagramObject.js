@@ -145,18 +145,15 @@ function grayscale0to20(score) {
 // the box should always belong to an object!
 class RangeBox {
     constructor(lowerLeftX, lowerLeftY, width, height) {
-        this.yMin = lowerLeftY;
-        this.yMax = lowerLeftY + height;
-        this.xMax = lowerLeftX + width;
-        this.xMin = lowerLeftX;
-        this.lowerLeftPoint = new Point(this.xMin, this.yMin);
-        this.upperLeftPoint = new Point(this.xMin, this.yMax);
-        this.lowerRightPoint = new Point(this.xMax, this.yMin);
-        this.upperRightPoint = new Point(this.xMax, this.yMax);
-        this.width = this.xMax - this.xMin;
-        this.height = this.yMax - this.yMin;
+        this.lowerLeftPoint = new Point(lowerLeftX, lowerLeftY);
+        this.upperLeftPoint = new Point(lowerLeftX, lowerLeftY + height);
+        this.lowerRightPoint = new Point(lowerLeftX + width, lowerLeftY);
+        this.upperRightPoint = new Point(lowerLeftX + width, lowerLeftY + height);
+        this.resetMinAndMax();
+        this.resetWidthAndHeight();
         this.centerPoint = new Point(this.xMin + width / 2, this.yMin + height / 2);
         this.segments = [];
+        this.rotation = 0;
     }
 
     resetWidthAndHeight() {
@@ -187,12 +184,32 @@ class RangeBox {
     }
 
 
-    // can also be used to contract,
+    // can also be used to contract, with negative values
+    // what if I rotate?
     extend(horizontalExtension, verticalExtension) {
-      this.lowerLeftPoint.translate(-1 * horizontalExtension, -1 * verticalExtension);
-      this.upperLeftPoint.translate(-1 * horizontalExtension, verticalExtension);
-      this.lowerRightPoint.translate(horizontalExtension, -1 * verticalExtension);
-      this.upperRightPoint.translate(horizontalExtension, verticalExtension);
+        // const h = Math.sqrt(horizontalExtension**2 + verticalExtension**2);
+        // if (h === 0) {
+        //     return false
+        // }
+        // let phi;
+        // if (horizontalExtension === 0) {
+        //     phi = Math.PI / 2;
+        // } else if (verticalExtension === 0) {
+        //     phi = 0;
+        // } else {
+        //     phi = Math.atan(verticalExtension/ horizontalExtension);
+        // }
+        // console.log(phi);
+        // const theta = phi + this.rotation;
+        // console.log(theta);
+        const rotatedHorizontalExtension = horizontalExtension * Math.cos(this.rotation) - verticalExtension * Math.sin(this.rotation);
+        const rotatedVerticalExtension = horizontalExtension * Math.sin(this.rotation) + verticalExtension * Math.cos(this.rotation);
+        console.log(rotatedHorizontalExtension, rotatedVerticalExtension);
+        /// problem here!
+      this.lowerLeftPoint.translate(-1 * rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
+      this.upperLeftPoint.translate(-1 * rotatedHorizontalExtension, rotatedVerticalExtension);
+      this.lowerRightPoint.translate(rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
+      this.upperRightPoint.translate(rotatedHorizontalExtension, rotatedVerticalExtension);
       this.resetMinAndMax();
       this.resetWidthAndHeight();
     }
@@ -200,6 +217,7 @@ class RangeBox {
 
     /// How do I reset min and max in this situation!
     rotateCounterClockwiseAboutCenter(angleInRadians) {
+        this.rotation += angleInRadians;
         this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint); // i need unit tests for the point rotate method
         this.upperLeftPoint.rotate(angleInRadians, this.centerPoint);
         this.lowerRightPoint.rotate(angleInRadians, this.centerPoint);
@@ -209,6 +227,7 @@ class RangeBox {
 
     // how do i result min and Max in this situation!
     rotateClockwiseAboutCenter(angleInRadians) {
+        this.rotation -= angleInRadians;
         this.lowerLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
         this.upperLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
         this.lowerRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
@@ -226,7 +245,7 @@ class RangeBox {
         this.resetMinAndMax();
     }
 
-    rescale(xMultiplier, yMultiplier) {
+    stretch(xMultiplier, yMultiplier) {
         const horizontalExtension = this.width * (xMultiplier - 1);
         const verticalExtension = this.height * (yMultiplier - 1);
         this.extend(horizontalExtension, verticalExtension);
@@ -431,7 +450,7 @@ class Text {
         if (rotationAngleInRadians === undefined) {this.rotationAngleInRadians = 0} else {this.rotationAngleInRadians = rotationAngleInRadians}
 
         this.width = getLengthOfLetters(letters, this.relativeFontSize);
-        this.height = this.relativeFontSize / 2;
+        this.height = this.relativeFontSize;
 
 
         this.font = 'Arial';
@@ -491,7 +510,7 @@ class Text {
         }
 
         if (this.rotationAngleInRadians) { // should it be clockwise, not counterclockwise?
-            this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
+            this.rangeBox.rotateClockwiseAboutCenter(this.rotationAngleInRadians);
             /// if the reference point is not the center, then this function needs to change!
             ///ERROR
             ///ERROR
@@ -521,6 +540,10 @@ class Text {
 
     extendRangeBox(horizontalExtension, verticalExtension) {
       this.rangeBox.extend(horizontalExtension, verticalExtension);
+    }
+
+    stretchRangeBox(horizontalMultiplier, verticalMultiplier) {
+        this.rangeBox.stretch(horizontalMultiplier, verticalMultiplier);
     }
 
     setRelativeFontSize(newRelativeFontSize) {
@@ -1161,7 +1184,7 @@ class Diagram {
 
     /// center Point need not already exist
     addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
-           let center = this.addExistingPoint(referencePoint); // figure out what this is used for!
+        this.addExistingPoint(referencePoint); // figure out what this is used for!
         let newText = new Text(letters, referencePoint, relativeFontSize, rotation, positioning);
         this.addExistingPoint(newText.rangeBox.lowerLeftPoint); // should i add a method to range box, 'add to diagram'?
         this.addExistingPoint(newText.rangeBox.upperLeftPoint);
@@ -1197,6 +1220,7 @@ class Diagram {
         // as defined by https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate
         // rotation angle is CLOCKWISE in radians
         // there are probably more bugs here!
+        // 8-8-2020: considering reversing this: if I do I must reverse it in the range box also
         if (quadrant === '1') {
             phi = Math.PI /2 - theta;
             textRotation = -1 * theta;
