@@ -272,7 +272,7 @@ class Line {
         } else if (this.vertical) {
             return undefined
         } else {
-            return this.yIntercept + this.slope + xValue;
+            return this.yIntercept + this.slope * xValue;
         }
     }
     findXValueForYValue(yValue) {
@@ -317,7 +317,6 @@ class Line {
 
     findIntersectionWithAnotherLine(anotherLine) {
         if (this.slope === anotherLine.slope) {
-            console.log('Cannot determine intersection between two parallel lines');
             return undefined
         } else if (this.vertical) {
             if (anotherLine.horizontal) {
@@ -482,7 +481,7 @@ class Segment {
                     firstX = this.point2.x;
                     secondX = this.point1.x;
                 }
-                if (point.x >= firstX && point <= secondX) {
+                if (point.x >= firstX && point.x <= secondX) {
                     return true
                 } else {
                     return false
@@ -499,7 +498,7 @@ class Segment {
             return false
         }
         if (this.isPointOnSegment(intersectionPoint) && anotherSegment.isPointOnSegment(intersectionPoint)) {
-            return true
+            return intersectionPoint
         }
     }
 

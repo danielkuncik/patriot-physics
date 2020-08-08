@@ -20,14 +20,15 @@
 <script>
 
     let interactionDiagram = new InteractionDiagram();
-    interactionDiagram.addActor('Knife',0,0, -.8, 0.5);
-    interactionDiagram.addActor('Watermelon',13,5, -1.2, 0.5);
+    interactionDiagram.addActor('Knife',0,0, -.8, 0.9);
+    interactionDiagram.addActor('Watermelon',0,-10, -1.2, 0.9);
     interactionDiagram.addInteraction('strike','Knife','Watermelon');
     interactionDiagram.addInteraction('pull','Knife','Watermelon');
     interactionDiagram.addInteraction('push','Knife','Watermelon');
+    interactionDiagram.addInteraction('blow','Knife','Watermelon');
     // interactionDiagram.addInteraction('strike','Knife','Watermelon');
-    interactionDiagram.addActorToSystem('Watermelon');
-    interactionDiagram.addActorToSystem('Knife');
+    //interactionDiagram.addActorToSystem('Watermelon');
+    // interactionDiagram.addActorToSystem('Knife');
     // pretty cool
 
 

@@ -103,7 +103,7 @@ class InteractionDiagram extends Diagram {
                 }
                 // let point1  = actor1.centerPoint.translateAndReproducePolar(currentDisplacement, phi);
                 // let point2  = actor2.centerPoint.translateAndReproducePolar(currentDisplacement, phi);
-                
+
                 let newSegment = actor1.rangeBox.segmentConnectingRangeBoxes(actor2.rangeBox, thisDisplacement);
 
                 super.addSegment(newSegment.point1, newSegment.point2);

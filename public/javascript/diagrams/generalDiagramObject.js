@@ -153,9 +153,39 @@ class RangeBox {
         this.upperLeftPoint = new Point(this.xMin, this.yMax);
         this.lowerRightPoint = new Point(this.xMax, this.yMin);
         this.upperRightPoint = new Point(this.xMax, this.yMax);
+        this.width = this.xMax - this.xMin;
+        this.height = this.yMax - this.yMin;
         this.centerPoint = new Point(this.xMin + width / 2, this.yMin + height / 2);
         this.segments = [];
     }
+
+    resetWidthAndHeight() {
+        this.width = this.lowerRightPoint.x - this.lowerLeftPoint.x;
+        this.height = this.upperLeftPoint.y - this.lowerLeftPoint.y;
+    }
+
+    resetMinAndMax() {
+        let xMin = this.lowerLeftPoint.x, xMax = this.lowerLeftPoint.x, yMin = this.lowerLeftPoint.y, yMax = this.lowerLeftPoint.y;
+        [this.lowerRightPoint, this.upperRightPoint, this.upperLeftPoint].forEach((point) => {
+            if (point.x < xMin) {
+                xMin = point.x;
+            }
+            if (point.x > xMax) {
+                xMax = point.x;
+            }
+            if (point.y < yMin) {
+                yMin = point.y;
+            }
+            if (point.y > yMax) {
+                yMax = point.y;
+            }
+            this.xMin = xMin;
+            this.xMax = xMax;
+            this.yMin = yMin;
+            this.yMax = yMax;
+        });
+    }
+
 
     // can also be used to contract,
     extend(horizontalExtension, verticalExtension) {
@@ -163,21 +193,27 @@ class RangeBox {
       this.upperLeftPoint.translate(-1 * horizontalExtension, verticalExtension);
       this.lowerRightPoint.translate(horizontalExtension, -1 * verticalExtension);
       this.upperRightPoint.translate(horizontalExtension, verticalExtension);
+      this.resetMinAndMax();
+      this.resetWidthAndHeight();
     }
 
 
+    /// How do I reset min and max in this situation!
     rotateCounterClockwiseAboutCenter(angleInRadians) {
         this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint); // i need unit tests for the point rotate method
         this.upperLeftPoint.rotate(angleInRadians, this.centerPoint);
         this.lowerRightPoint.rotate(angleInRadians, this.centerPoint);
         this.upperRightPoint.rotate(angleInRadians, this.centerPoint);
+        this.resetMinAndMax();
     }
 
+    // how do i result min and Max in this situation!
     rotateClockwiseAboutCenter(angleInRadians) {
         this.lowerLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
         this.upperLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
         this.lowerRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
         this.upperRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
+        this.resetMinAndMax();
     }
 
 
@@ -187,14 +223,17 @@ class RangeBox {
         this.upperLeftPoint.translate(xTranslation, yTranslation);
         this.upperRightPoint.translate(xTranslation, yTranslation);
         this.lowerRightPoint.translate(xTranslation, yTranslation);
+        this.resetMinAndMax();
     }
 
-    rescaleVertically(yMultiplier) {
-        // used to fit a function graph in
+    rescale(xMultiplier, yMultiplier) {
+        const horizontalExtension = this.width * (xMultiplier - 1);
+        const verticalExtension = this.height * (yMultiplier - 1);
+        this.extend(horizontalExtension, verticalExtension);
     }
 
     isPointInsideBox(point) { // UNTESTED
-        return (point.x > this.lowerLeftPoint.x && point.x < this.lowerRightPoint.x && point.x > this.lowerLeftPoint.y && point.y < this.upperLeftPoint.y)
+        return (point.x > this.xMin && point.x < this.xMax && point.y > this.yMin && point.y < this.yMax)
     }
 
     // determines if a range box intersects a segment
@@ -221,16 +260,16 @@ class RangeBox {
       let possibility3 = segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.upperLeftPoint));
       let possibility4 = segment.intersectionWithAnotherSegment(new Segment(this.upperLeftPoint,this.upperRightPoint));
       if (possibility1) {
-        intersections.push(posibility1);
+        intersections.push(possibility1);
       }
       if (possibility2) {
-        intersections.push(posibility2);
+        intersections.push(possibility2);
       }
       if (possibility3) {
-        intersections.push(posibility3);
+        intersections.push(possibility3);
       }
       if (possibility4) {
-        intersections.push(posibility4);
+        intersections.push(possibility4);
       }
       return intersections
     }
@@ -241,33 +280,46 @@ class RangeBox {
       const intersections = this.intersectionsWithSegment(segment);
       let result = [];
       if (intersections.length === 0) {
-        console.log('xxx');
         // pass
         // but what if the whole segment is inside?
       } else if (intersections.length === 1) {
-        console.log('yyy');
         // finds one intersection point
         // one end point is inside rangebox
-
-        if (isPointInside(segment.point1)) {
+        if (this.isPointInsideBox(segment.point1)) {
           let newSegment = new Segment(intersections[0], segment.point2);
           result.push(newSegment);
-        } else if (isPointInside(segment.point2)) {
+        } else if (this.isPointInsideBox(segment.point2)) {
           let newSegment = new Segment(intersections[0], segment.point1);
           result.push(newSegment);
+        } else {
+            console.log('ERROR: intersection found but segment not determined to be inside box', segment, this);
         }
       } else if (intersections.length === 2) {
-        console.log('zzz');
+          let intersection1 = intersections[0];
+          let intersection2 = intersections[1];
+          let endA = segment.point1;
+          let endB = segment.point2;
+          if (endA.getDistanceToAnotherPoint(intersection1) < endA.getDistanceToAnotherPoint(intersection2)) {
+              let newSegment1 = new Segment(endA, intersection1);
+              let newSegment2 = new Segment(endB, intersection2);
+              result.push(newSegment1);
+              result.push(newSegment2);
+          } else {
+              let newSegment1 = new Segment(endB, intersection1);
+              let newSegment2 = new Segment(endA, intersection2);
+              result.push(newSegment2);
+              result.push(newSegment1);
+          }
         // more complicated, will return 2 segments
       }
       return result
     }
     /// odd results possible if the point lands on the range box?
 
-    // on or inside
-    isPointInside(point) {
-      return point.x >= this.xMin && point.x <= this.xMax && point.y >= this.yMin && point.y <= this.yMax
-    }
+    // // on or inside
+    // isPointInside(point) {
+    //   return point.x >= this.xMin && point.x <= this.xMax && point.y >= this.yMin && point.y <= this.yMax
+    // }
 
 
     addToDiagram(DiagramObject) {
@@ -312,15 +364,36 @@ class RangeBox {
       let result1 = this.cutSegment(testSegment1);
       if (result1.length === 0) {
         testSegment2 = testSegment1;
-      } else if (result.length === 1) {
-        testSegment2 = result[0];
-      } else if (result.length === 2) {
-        // no result
+      } else if (result1.length === 1) {
+        testSegment2 = result1[0];
+      } else if (result1.length === 2) { // the segment was cut into two by the function, pick the one that goes closest to the center of the other box
+          let segment1 = result1[0];
+          let segment2 = result1[1];
+          if (segment1.point1.getDistanceToAnotherPoint(anotherRangeBox.centerPoint) < segment2.point1.getDistanceToAnotherPoint(anotherRangeBox.centerPoint)) {
+              testSegment2 = segment1;
+          } else {
+              testSegment2 = segment2;
+          }
+
       }
 
+      let testSegment3;
+      let result2 = anotherRangeBox.cutSegment(testSegment2);
+      if (result2.length === 0) {
+          testSegment3 = testSegment2;
+      } else if (result2.length === 1) {
+          testSegment3 = result2[0];
+      } else if (result2.length === 2) { // result formatted so that the non-intersecting end is point1
+          let segment1 = result2[0];
+          let segment2 = result2[1];
+          if (segment1.point1.getDistanceToAnotherPoint(this.centerPoint) < segment2.point1.getDistanceToAnotherPoint(this.centerPoint)) {
+              testSegment3 = segment1;
+          } else {
+              testSegment3 = segment2;
+          }
+      }
 
-
-      return testSegment2;
+      return testSegment3;
     }
 
 }
