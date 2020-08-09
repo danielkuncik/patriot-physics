@@ -3573,9 +3573,20 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["newtons_third_law_2"],
-            "objective": "Draw from memory the most common free-body diagrams.",
-            "content": "The most common free-body diagrams include a person not moving, an object being pushed, and an object being lifted up.",
+            "objective": "Draw from memory the most common free-body diagrams; identify agent and object of each force.",
+            "content": "The most common free-body diagrams include a person not moving, an object being pushed, and an object being lifted up; every force has an agent and an object.",
             "uuid": "d1407520-ed3b-4b99-be8b-6f710c4039f3"
+          },
+          "interaction_diagrams":
+          {
+            "title": "Interaction Diagrams",
+            "level": 2,
+            "horizontal": 5,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Draw interaction diagrams for common dynamic situations",
+            "content": "An interaction diagram shows a line between interacting objects; each line represents a force",
+            "uuid": "22f3ef6f-a1f7-46d2-8605-506180bd1c9b"
           },
           "earth_is_round":
           {
@@ -3663,6 +3674,17 @@
               "Relate contact forces to electrostatic forces and use this relationship to defend Newton's Third Law for contact forces."
             ],
             "uuid": "3ad59a24-9370-485d-aaa2-69e7cf830379"
+          },
+          "simplest_free_body_diagram":
+          {
+            "title": "The Simplest Free-Body Diagram",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "Y",
+            "prerequisites": [],
+            "objective": "Explain common misconceptions related to teh free-body diagram of a stationary object.",
+            "content": "The free-body diagram of a block on a table shows normal force upwards and gravity downwards; the normal force exerted by the table cannot be observed but can be inferred; these two forces are not an action-reaction pair because they act on the same object.",
+            "uuid": "65a6c4eb-b36c-46ff-9527-4c1e823dde79"
           },
           "breaking_boards":
           {

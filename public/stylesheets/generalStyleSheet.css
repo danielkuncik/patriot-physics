@@ -193,14 +193,6 @@ ol.fillInTheBlank li {
     display: inline;
 }
 
-@media print
-{
-  .no-print
-  {
-    display: none !important;
-  }
-
-}
 
 div.styleGuide {
     font-family: "Courier New"
@@ -281,4 +273,23 @@ input.autoAnswerButton {
   width: 250px;
   height: 70px;
   font-size: 50px;
+}
+
+
+p.introduction {
+    font-family: "Verdana";
+    color: blue;
+}
+
+@media print
+{
+    .no-print
+    {
+        display: none !important;
+    }
+
+    p.introduction {
+        color: black;
+    }
+
 }

@@ -1,0 +1,102 @@
+<p class = 'introduction'>
+    In all previous pods, we have drawn free-body diagrams of a single object.
+    However, to truly understand dynamics, the study of why things move how they do,
+    we need to consider how multiple objects interact with each other.
+    To begin doing so, we will start drawing a diagram called <strong>interaction diagrams</strong>,
+    in which all forces are depicted as interactions between different objects.
+</p>
+
+<h4>
+    Interaction Diagrams
+</h4>
+
+<p>
+    A force is really an <em>interaction</em> between two objects.
+    It is not that one object exerts a force on the other,
+    but that both objects interact with each other.
+</p>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            A person is standing on the earth.
+        </div>
+        <div class="col-md-6 mb-2" id = 'person_on_earth'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            A person is standing on top of a table, which is at rest on the earth.
+        </div>
+        <div class="col-md-6 mb-2" id = 'person_on_table'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            A boxing match! Muhammad Ali punches George Foreman, while the stand on the surface of the earth.
+        </div>
+        <div class="col-md-6 mb-2" id = 'boxing_match'>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            A person is pushing a box across the floor, which is part of a building on planet earth.
+        </div>
+        <div class="col-md-6 mb-2" id = 'pushing_box'>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let person_on_earth = new InteractionDiagram();
+    person_on_earth.addActor('person',0,10);
+    person_on_earth.addActor('earth',0,0);
+    person_on_earth.addInteraction('gravity','person','earth');
+    person_on_earth.addInteraction('normal','person','earth');
+
+    let person_on_table = new InteractionDiagram();
+    person_on_table.addActor('person',0,20);
+    person_on_table.addActor('table',10,10);
+    person_on_table.addActor('earth',0,0);
+    person_on_table.addInteraction('normal','person','table');
+    person_on_table.addInteraction('normal','table','earth');
+    person_on_table.addInteraction('gravity','table','earth');
+    person_on_table.addInteraction('gravity','person','earth');
+
+    let boxing_match = new InteractionDiagram();
+    boxing_match.addActor('Muhammad Ali',-10,10,-2);
+    boxing_match.addActor('George Foreman',10,10,-2);
+    boxing_match.addActor('earth',0,0);
+    boxing_match.addInteraction('punch','Muhammad Ali','George Foreman');
+    boxing_match.addInteraction('gravity','Muhammad Ali','earth');
+    boxing_match.addInteraction('gravity','George Foreman','earth');
+    boxing_match.addInteraction('normal','Muhammad Ali','earth');
+    boxing_match.addInteraction('normal','George Foreman','earth');
+
+    let pushing_box = new InteractionDiagram();
+    pushing_box.addActor('person',10,20);
+    pushing_box.addActor('box',-10,20);
+    pushing_box.addActor('floor',0,10);
+    pushing_box.addActor('earth',0,0);
+    pushing_box.addInteraction('push','person','box');
+    pushing_box.addInteraction('friction','person','floor');
+    pushing_box.addInteraction('friction','box','floor');
+    pushing_box.addInteraction('normal','person','floor');
+    pushing_box.addInteraction('normal','box','floor');
+    pushing_box.addInteraction('gravity','person','earth');
+    pushing_box.addInteraction('gravity','box','earth');
+    pushing_box.addInteraction('gravity','floor','earth');
+    pushing_box.addInteraction('normal','floor','earth');
+
+
+    $("#person_on_earth").append(person_on_earth.drawCanvas());
+    $("#person_on_table").append(person_on_table.drawCanvas());
+    $("#boxing_match").append(boxing_match.drawCanvas());
+    $("#pushing_box").append(pushing_box.drawCanvas());
+</script>
