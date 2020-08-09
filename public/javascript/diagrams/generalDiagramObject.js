@@ -187,6 +187,17 @@ class RangeBox {
     // can also be used to contract, with negative values
     // what if I rotate?
     extend(horizontalExtension, verticalExtension) {
+        let currentRotation = this.rotation;
+        if (currentRotation) {
+            this.rotateCounterClockwiseAboutCenter(currentRotation)
+        }
+        this.lowerLeftPoint.translate(-1 * horizontalExtension, -1 * verticalExtension);
+        this.upperLeftPoint.translate(-1 * horizontalExtension, verticalExtension);
+        this.lowerRightPoint.translate(horizontalExtension, -1 * verticalExtension);
+        this.upperRightPoint.translate(horizontalExtension, verticalExtension);
+        if (currentRotation) {
+            this.rotateCounterClockwiseAboutCenter(-1 * currentRotation)
+        }
         // const h = Math.sqrt(horizontalExtension**2 + verticalExtension**2);
         // if (h === 0) {
         //     return false
@@ -201,15 +212,15 @@ class RangeBox {
         // }
         // console.log(phi);
         // const theta = phi + this.rotation;
-        // console.log(theta);
-        const rotatedHorizontalExtension = horizontalExtension * Math.cos(this.rotation) - verticalExtension * Math.sin(this.rotation);
-        const rotatedVerticalExtension = horizontalExtension * Math.sin(this.rotation) + verticalExtension * Math.cos(this.rotation);
-        console.log(rotatedHorizontalExtension, rotatedVerticalExtension);
-        /// problem here!
-      this.lowerLeftPoint.translate(-1 * rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
-      this.upperLeftPoint.translate(-1 * rotatedHorizontalExtension, rotatedVerticalExtension);
-      this.lowerRightPoint.translate(rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
-      this.upperRightPoint.translate(rotatedHorizontalExtension, rotatedVerticalExtension);
+      //   // console.log(theta);
+      //   const rotatedHorizontalExtension = horizontalExtension * Math.cos(this.rotation) - verticalExtension * Math.sin(this.rotation);
+      //   const rotatedVerticalExtension = horizontalExtension * Math.sin(this.rotation) + verticalExtension * Math.cos(this.rotation);
+      //   console.log(rotatedHorizontalExtension, rotatedVerticalExtension);
+      //   /// problem here!
+      // this.lowerLeftPoint.translate(-1 * rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
+      // this.upperLeftPoint.translate(-1 * rotatedHorizontalExtension, rotatedVerticalExtension);
+      // this.lowerRightPoint.translate(rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
+      // this.upperRightPoint.translate(rotatedHorizontalExtension, rotatedVerticalExtension);
       this.resetMinAndMax();
       this.resetWidthAndHeight();
     }
