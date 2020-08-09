@@ -1,0 +1,146 @@
+
+<h4>
+  Very Common Forces
+</h4>
+
+<p class = 'definition' data-word = 'Contact Force'>
+  Any force acused by actually hitting something.
+  Examples: psuhes, punches, pulls, kicks, head butt.
+  When a contact force is exerted by a person,
+  it is sometimes called an <em>applied force</em>.
+</p>
+<p class = 'definition' data-word = 'Gravity'>
+  The force of all masses attracting all other masses.
+  <br>
+  When on earth, the force of gravity is also called
+  <em>weight</em> an always points <em>downward</em>.
+</p>
+<p class = 'definition' data-word = 'Normal Force'>
+  A force that acts <em>perpendicular</em> to a surface.
+  Usually, this is a force that is opposite the force
+  of gravity and holds you up.
+</p>
+<p class = 'definition' data-word = 'Friction'>
+  A force that affects anything sliding on a surface.
+  Always resists motion.
+</p>
+<p class = 'definition' data-word = 'Air Resistance'>
+  The force of air pushing back on something as it moves.
+  Air resistance affects things that have a large surface area
+  and move very fast.
+  It is also called <em>drag</em>.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = 'contact force'>
+    What type of force is a punch to the stomach?
+  </li>
+  <li class = 'question' data-answer = 'gravity; weight'>
+    What kind of force makes you fall down? [2 answers]
+  </li>
+  <li class = 'question' data-answer = 'weight'>
+    What is another name for gravity, when you are earth.
+  </li>
+  <li class = 'question' data-answer = 'friction'>
+    What force keeps your books from sliding off the table?
+  </li>
+  <li class = 'question' data-answer = 'air resistance; drag'>
+    What force do you feel when you put your hand out the window of a
+    speeding car?
+  </li>
+  <li class = 'question' data-answer = 'friction'>
+    What force is very low when you are on ice?
+  </li>
+  <li class = 'question' data-answer = 'normal force'>
+    What force holds you up when you sit in a chair?
+  </li>
+  <li class = 'question' data-answre = 'drag'>
+    What is another name for air resistance?
+  </li>
+</ol>
+
+
+<h4>
+  Important Free-Body Diagrams
+</h4>
+
+<p class = 'definition' data-word = 'Free-Body Diagram'>
+  A <strong>free-body diagram</strong> shows all of the forces
+  acting on an object, each represented as an arrow.
+</p>
+
+<p>
+  Drawing good free-body diagrams is the first step to mastering
+  dynamics. Forces cause all changes in motion, and a
+  free-body diagrams shows the forces acting on some object.
+  In this pod, we will begin to draw <em>qualitative</em>
+  free-body diagrams on an object.
+</p>
+
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-md-6 mb-2'>
+      A person sitting in a chair.
+      <!-- IMAGE -->
+    </div>
+    <div class = 'col-md-6 mb-2' id = 'person_in_chair'>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-md-6 mb-2'>
+      A weight being lifted by a weightlifter
+    </div>
+    <div class = 'col-md-6 mb-2' id = 'lifting_weights'>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-md-6 mb-2'>
+      A block being pushed by someone across the floor.
+    </div>
+    <div class = 'col-md-6 mb-2' id ='person_pushing_block'>
+
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-md-6 mb-2'>
+      Someone falling down at a low velocity.
+    </div>
+    <div class = 'col-md-6 mb-2' id = 'person_falling_low_velocity'>
+
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-md-6 mb-2'>
+      Someone falling down with a high velocity.
+    </div>
+    <div class = 'col-md-6 mb-2' id = 'person_falling_high_velocity'>
+
+    </div>
+  </div>
+</div>
+
+<!--
+include agents????
+-->
+
+<h4>
+  Questions
+</h4>
+
+<p class = 'directions'>
+  For each situation, draw a relevant free-body diagram.
+</p>
+
+<ol class = 'questionList'>
+
+</ol>
+
+
+<script>
+  $("#person_in_chair").append(fastFBD([['up','normal force'],['down','gravity']]).drawCanvas(200));
+  $("#lifting_weights").append(fastFBD([['up','applied force'],['down','gravity']]).drawCanvas(200));
+  $("#person_pushing_block").append(fastFBD([['right','applied force'],['up','normal force'],['left','friction'],['down','gravity']]).drawCanvas(200));
+  $("#person_falling_low_velocity").append(fastFBD([['down','gravity']]).drawCanvas(200));
+  $("#person_falling_high_velocity").append(fastFBD([['down','gravity'],['up','air resistance']]).drawCanvas(200));
+</script>
