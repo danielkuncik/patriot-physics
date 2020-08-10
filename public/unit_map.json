@@ -3533,57 +3533,57 @@
         },
         "pods":
         {
-          "newtons_third_law_1":
-          {
-            "title": "Newton's Third Law 1",
-            "level": 1,
-            "horizontal": 4,
-            "letter": "A",
-            "prerequisites": [],
-            "objective": "State Newton's Third Law and recognize examples of how it applies.",
-            "content": "Newton's Third Law states that if A exerts a force on B, B exerts a force on A with equal magnitude and opposite direction.",
-            "uuid": "ba788275-38c8-4ad2-b33a-e7be53b5adb5"
-          },
           "free_body_diagrams_1":
           {
             "title": "Free-Body Diagrams 1",
             "level": 1,
             "horizontal": 3,
-            "letter": "B",
-            "prerequisites": ["newtons_third_law_1"],
+            "letter": "A",
+            "prerequisites": [],
             "objective": "Recognize the forces in the most common free-body diagrams.",
             "content": "In free-body diagrams, all forces are represented as arrows showing the direction that force acts; the most common forces in our lives are gravity, normal forces, applied forces, friction, and tension.",
             "uuid": "1a4b0bb4-1a7c-4dbe-a7d2-26f925a4787c"
+          },
+          "newtons_third_law_1":
+          {
+            "title": "Newton's Third Law 1",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["free_body_diagrams_1"],
+            "objective": "State Newton's Third Law and recognize examples of how it applies.",
+            "content": "Newton's Third Law states that if A exerts a force on B, B exerts a force on A with equal magnitude and opposite direction.",
+            "uuid": "ba788275-38c8-4ad2-b33a-e7be53b5adb5"
+          },
+          "free_body_diagrams_2":
+          {
+            "title": "Free-Body Diagrams 2",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["newtons_third_law_1"],
+            "objective": "Draw from memory the most common free-body diagrams; identify agent and object of each force.",
+            "content": "The most common free-body diagrams include a person not moving, an object being pushed, and an object being lifted up; every force has an agent and an object.",
+            "uuid": "d1407520-ed3b-4b99-be8b-6f710c4039f3"
           },
           "newtons_third_law_2":
           {
             "title": "Newton's Third Law 2",
             "level": 2,
             "horizontal": 3,
-            "letter": "C",
-            "prerequisites": ["free_body_diagrams_1"],
+            "letter": "D",
+            "prerequisites": ["free_body_diagrams_2"],
             "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking.",
             "content": "Newtons Third Law allows humans to move by pushing off a surface, and allows a rocket to move by pushing material downward.",
             "uuid": "c3654d28-90a4-4d13-af2b-03a6a7404efc"
-          },
-          "free_body_diagrams_2":
-          {
-            "title": "Free-Body Diagrams 2",
-            "level": 2,
-            "horizontal": 4,
-            "letter": "D",
-            "prerequisites": ["newtons_third_law_2"],
-            "objective": "Draw from memory the most common free-body diagrams; identify agent and object of each force.",
-            "content": "The most common free-body diagrams include a person not moving, an object being pushed, and an object being lifted up; every force has an agent and an object.",
-            "uuid": "d1407520-ed3b-4b99-be8b-6f710c4039f3"
           },
           "interaction_diagrams":
           {
             "title": "Interaction Diagrams",
             "level": 2,
-            "horizontal": 5,
-            "letter": "X",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "E",
+            "prerequisites": ["newtons_third_law_2"],
             "objective": "Draw interaction diagrams for common dynamic situations",
             "content": "An interaction diagram shows a line between interacting objects; each line represents a force",
             "uuid": "22f3ef6f-a1f7-46d2-8605-506180bd1c9b"
@@ -3593,8 +3593,8 @@
             "title": "The Earth is Round",
             "level": 3,
             "horizontal": 4,
-            "letter": "E",
-            "prerequisites": ["free_body_diagrams_2"],
+            "letter": "F",
+            "prerequisites": ["interaction_diagrams"],
             "objective": "Properly use the terms gravity and weight; properly identify the direction of the force of weight; identify the reaction force to weight",
             "content": "Physicists use the term weight to describe the force of gravity on a planet; the directions humans call downward is actually inward, towards the center of the earth; the reaction force of our weight is a force we exert on the earth.",
             "uuid": "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f"
@@ -3605,7 +3605,7 @@
             "subtitle": "Identify Action-Reaction Force Pairs",
             "level": 3,
             "horizontal": 3,
-            "letter": "F",
+            "letter": "G",
             "prerequisites": ["earth_is_round"],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; differentiate between action-reaction force pairs and balanced force pairs",
             "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite",
@@ -3617,7 +3617,7 @@
             "subtitle": "Identify More Action-Reaction Force Pairs",
             "level": 3,
             "horizontal": 2,
-            "letter": "G",
+            "letter": "H",
             "prerequisites": ["free_body_diagrams_3"],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; differentiate between action-reaction force pairs and balanced force pairs",
             "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite",
@@ -3629,7 +3629,7 @@
             "title": "Subatomic Contact Forces",
             "level": 3,
             "horizontal": 1,
-            "letter": "H",
+            "letter": "I",
             "prerequisites": ["free_body_diagrams_4"],
             "objective": "Relate contact forces to electrostatic forces. Relate Newton's Third Law to these electrostatic forces.",
             "content": "Contact forces and applied forces are in fact electrostatic forces acting between subatomic particles of two objects.",
@@ -3640,7 +3640,7 @@
             "title": "The Lazy Donkey Paradox",
             "level": 4,
             "horizontal": 1,
-            "letter": "I",
+            "letter": "J",
             "prerequisites": ["subatomic_contact_forces"],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force.",
             "content": "Newton's Third Law seems to imply that no object may ever move because two forces always cancel each other out (a paradox), but it does not because the action and reaction forces act on two different objects.",
@@ -3651,7 +3651,7 @@
             "title": "System free-body diagrams",
             "level": 4,
             "horizontal": 2,
-            "letter": "J",
+            "letter": "K",
             "prerequisites": ["lazy_donkey_paradox"],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; combine free-body diagrams to create systems and identify internal and external forces within the system.",
             "content": "Systems can be created by combining all of the forces acting on an object; forces internal to a system are always action-reaction pairs.",
@@ -3663,7 +3663,7 @@
             "subtitle": "Forces as a Duality",
             "level": 4,
             "horizontal": 3,
-            "letter": "K",
+            "letter": "L",
             "prerequisites": ["system_free_body_diagrams"],
             "objective": "Complete a series of objectives related to more abstract applications of Newton's Third Law.",
             "content": "As students develop more in depth knowledge of physics, they should see pairs of forces not as one action and a separate reaction but as two forces that always exist together in a duality.",
@@ -3680,8 +3680,8 @@
             "title": "The Simplest Free-Body Diagram",
             "level": 4,
             "horizontal": 4,
-            "letter": "Y",
-            "prerequisites": [],
+            "letter": "M",
+            "prerequisites": ["newtons_third_law_3"],
             "objective": "Explain common misconceptions related to teh free-body diagram of a stationary object.",
             "content": "The free-body diagram of a block on a table shows normal force upwards and gravity downwards; the normal force exerted by the table cannot be observed but can be inferred; these two forces are not an action-reaction pair because they act on the same object.",
             "uuid": "65a6c4eb-b36c-46ff-9527-4c1e823dde79"
@@ -3690,9 +3690,9 @@
           {
             "title": "Breaking Boards",
             "level": 5,
-            "horizontal": 3,
-            "letter": "L",
-            "prerequisites": ["newtons_third_law_3"],
+            "horizontal":4,
+            "letter": "N",
+            "prerequisites": ["simplest_free_body_diagram"],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force",
             "content": "All objects have a maximum value of force they can absorb before breaking, and you cannot apply a force greater than that value to any object, even if you are able.",
             "uuid": "30aae335-61a0-45bb-b652-76c50766f57b"
