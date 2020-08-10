@@ -231,8 +231,20 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
 
 hbs.registerHelper('listOfPods', (superUnitKey, unitKey, gradeMap) => {
     let list = "<ul class = 'podList'>";
+    levelList = {1:[],2:[],3:[],4:[],5:[],6:[]};
     Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+        let level = unitMap[superUnitKey].units[unitKey].pods[podKey].level;
+        levelList[level].push(podKey);
+        // list = list + makePodListItem(superUnitKey, unitKey, podKey, gradeMap);
+    });
+    Object.keys(levelList).forEach((level) => {
+      list = list + "<li>";
+      list = list + `<h5>Level ${level}</h5>`;
+      list = list + "<ul>";
+      levelList[level].forEach((podKey) => {
         list = list + makePodListItem(superUnitKey, unitKey, podKey, gradeMap);
+      });
+      list = list + "</ul></li>";
     });
     list = list + "</ul>";
     return new hbs.SafeString(list)
