@@ -136,9 +136,9 @@
   question1.addInteraction('normal','person','earth');
 
   let question2 = new InteractionDiagram();
-  question2.addActor('person',0,10);
+  question2.addActor('person',10,10);
   question2.addActor('rope',0,20);
-  question2.addActor('earth',0,0);
+  question2.addActor('earth',10,0);
   question2.addActor('building',20,20);
   question2.addInteraction('gravity','person','earth');
   question2.addInteraction('gravity','rope','earth');
@@ -153,9 +153,10 @@
   question3.addActor('boxer B',8,0);
   question3.addInteraction('punch','boxer A','boxer B');
 
-  addAnswerObject('question1',question1);
-  addAnswerObject('question2',question2);
-  addAnswerObject('question3',question3);
+  addAnswerObject('question1',question1.drawCanvas());
+  addAnswerObject('question2',question2.drawCanvas());
+  addAnswerObject('question3',question3.drawCanvas());
+
 </script>
 
 
