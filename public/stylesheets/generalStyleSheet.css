@@ -48,9 +48,10 @@ div.formulaSolvingTable {
 
 }
 
-p.imageCredit {
+p.imageCredit, p.videoCredit {
     font-size: 8px;
 }
+
 
 ul.principleList {
     border-style: solid;

@@ -109,6 +109,8 @@ $(".introduction").prepend($("<strong>Introduction: </strong>"));
 
 
 $(".imageCredit").prepend($("<span>Image Credit: </span>"));
+$(".videoCredit").prepend($("<span>Video Credit: </span>"));
+
 
 
 $(".definition").each((i) => {
