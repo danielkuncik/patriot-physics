@@ -105,6 +105,9 @@ $("ol.answerList").prepend($("<h4 class = 'answerHeader'>Answers:</h4>"))
 // automatically palces the term "Directons" in bold at the front
 $(".directions").prepend($("<strong>Directions: </strong>"));
 
+$(".introduction").prepend($("<strong>Introduction: </strong>"));
+
+
 $(".imageCredit").prepend($("<span>Image Credit: </span>"));
 
 

@@ -53,6 +53,7 @@
 </div>
 
 
+
 <script>
     let person_on_earth = new InteractionDiagram();
     person_on_earth.addActor('person',0,10);
@@ -100,3 +101,62 @@
     $("#boxing_match").append(boxing_match.drawCanvas());
     $("#pushing_box").append(pushing_box.drawCanvas());
 </script>
+
+
+<h4>
+  Questions
+</h4>
+
+<p class = 'directions'>
+  For each situation described, draw an interaction diagram.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer_id = 'question1'>
+    Draw an interaction diagram for a person who is standing on top of a building
+    which is situated on the earth.
+  </li>
+  <li class = 'question' data-answer_id = 'question2'>
+    Draw an interaction diagram for a person who is hanging from a rope.
+    The rope is tied to a building, which is on top of the earth.
+  </li>
+  <li class = 'question' data-answer_id = 'question3'>
+    Draw an interaction diagram for one boxer punching another boxer in <em>outer space</em>.
+  </li>
+</ol>
+
+<script>
+  let question1 = new InteractionDiagram();
+  question1.addActor('person',5,20);
+  question1.addActor('building',-5,10);
+  question1.addActor('earth',0,0);
+  question1.addInteraction('gravity','person','earth');
+  question1.addInteraction('gravity','building','earth');
+  question1.addInteraction('normal','person','building');
+  question1.addInteraction('normal','person','earth');
+
+  let question2 = new InteractionDiagram();
+  question2.addActor('person',0,10);
+  question2.addActor('rope',0,20);
+  question2.addActor('earth',0,0);
+  question2.addActor('building',20,20);
+  question2.addInteraction('gravity','person','earth');
+  question2.addInteraction('gravity','rope','earth');
+  question2.addInteraction('gravity','building','earth');
+  question2.addInteraction('tension','person','rope');
+  question2.addInteraction('contact','rope','building');
+  question2.addInteraction('normal','building','earth');
+
+
+  let question3 = new InteractionDiagram();
+  question3.addActor('boxer A',-8,0);
+  question3.addActor('boxer B',8,0);
+  question3.addInteraction('punch','boxer A','boxer B');
+
+  addAnswerObject('question1',question1);
+  addAnswerObject('question2',question2);
+  addAnswerObject('question3',question3);
+</script>
+
+
+<ol class = 'answerList'></ol>
