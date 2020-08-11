@@ -1,5 +1,74 @@
 
+<div class = 'container'>
+    <div class="row">
+        <div class="col-md-6" id = 'exampleTriangle'>
+        </div>
+        <div class="col-md-6">
+            <p>
+                We typically label angles by the Greek letter \( \theta \),
+                pronounced "theta."
+                Once we have singled out a particular angle,
+                each side has a new name:
+            </p>
+            <ul>
+                <li>
+                    A is the <strong>opposite</strong> of \( \theta \).
+                </li>
+                <li>
+                    B is the <strong>adjacent</strong> of \( \theta \).
+                </li>
+                <li>
+                    C is the <strong>hypotenuse</strong>.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-md-6'>
+            <ul>
+                <li class = 'm-1'>
+                    \( \sin \theta = \frac{\text{opposite}}{\text{hypotenuse}} \)
+                </li>
+                <li class = 'm-1'>
+                    \( \cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}} \)
+                </li>
+                <li class = 'm-1'>
+                    \( \tan \theta = \frac{\text{opposite}}{\text{adjacent}} \)
+                </li>
+            </ul>
+        </div>
+        <div class = 'col-md-6'>
+            <p>
+                Whenever we know what an angle is, we can use the three <em>trigonometric functions</em>:
+                the sine, the cosine, and the tangent.
+                To remember these three formulas, we use the silly word "SOHCAHTOA,"
+                which stands for:
+                "Sine is opposite over hypotenuse; cosine is adjacent over hypotenuse; tangent is opposite over adjacent."
+            </p>
+        </div>
+    </div>
+</div>
 
+<!--
+a video here
+-->
+
+
+<script>
+    let exampleTriangle = new GeometryPad();
+    exampleTriangle.addTriangleSSS(3,4,5,true);
+    exampleTriangle.addRightAngleMarker();
+    exampleTriangle.makeOrientationCounterClockwise();
+    exampleTriangle.labelSide('A','A');
+    exampleTriangle.labelSide('B','B');
+    exampleTriangle.labelSide('C','H');
+    exampleTriangle.labelAngleTheta('A');
+    $("#exampleTriangle").append(exampleTriangle.drawCanvas(300));
+</script>
+
+<h4>
+    Problems
+</h4>
 <ol class="questionList">
     <div class = 'container'>
         <div class="row">
@@ -22,8 +91,127 @@
             <div class="col-md-6 mb-5">
                 <li class="question" data-answer = '24' id = 'triangle5'><br></li>
             </div>
+            <div class="col-md-6 mb-5">
+                <li class="question" data-answer = '4' id = 'triangle6'><br></li>
+            </div>
+
         </div>
     </div>
+</ol>
+
+<h4>
+    Variable in Denominator
+</h4>
+
+<p>
+    In some trigonometry problems, the unknown variable will be located in the denominator!
+    In this case, the most straightforward method is to first multiply both sides of the equation by the unknown variable,
+    then solve for it:
+</p>
+<h5>
+    Example:
+</h5>
+<p>
+    $$ \require{enclose}
+        48 = \frac{76}{X} \\
+        48  \cdot X = \frac{76}{\enclose{horizontalstrike}{X}} \cdot \enclose{horizontalstrike}{X} \\
+        48 \cdot X = 76 \\
+        X = \frac{76}{48} = 1.583
+    $$
+</p>
+
+<p class="directions">
+    Solve for \( x \) in each of the problems below.
+    Please give all answers to 4 significant figures of accuracy.
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = "\( x = 1.327 \)">
+        \(
+            49 = \frac{65}{x}
+        \)
+    </li>
+    <li class="question" data-answer = "\( x = 1.242 \)">
+        \(
+            66 = \frac{82}{x}
+        \)
+    </li>
+    <li class="question" data-answer = "\( x = 0.5952 \)">
+        \(
+            42 = \frac{25}{x}
+        \)
+    </li>
+</ol>
+
+<h4>
+    Trigonometry Problems with Variable in Denominator
+</h4>
+
+<ol class="questionList">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <li class="question" id = 'triangle7' data-answer = '8'><br></li>
+            </div>
+            <div class="col-md-6 mb-5">
+                <li class="question" id = 'triangle8' data-answer = '29'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <li class="question" id = 'triangle9' data-answer = '73'><br></li>
+            </div>
+            <div class="col-md-6 mb-5">
+                <li class="question" id = 'triangle10' data-answer = '25'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <li class="question" id = 'triangle11'><br>
+                    Coming SOON!
+                </li>
+            </div>
+            <div class="col-md-6 mb-5">
+                <li class="question" id = 'triangle12'><br>
+                    Coming SOON!
+                </li>
+            </div>
+        </div>
+    </div>
+</ol>
+
+<h4>
+    Saying the Names Right!
+</h4>
+
+<ul>
+    <li>
+        Whenever we use the sine function, we write the abbreviation \( \sin \),
+        but when reading this out loud you always say "sine!"
+    </li>
+    <li>
+        Whenever we use the cosine function, we write the abbreviation \( \cos \),
+        but when reading this out loud you always say "cosine!"
+    </li>
+    <li>
+        Whenever we use the tangent function, we write the abbreviation \( \tan \),
+        but when reading this out loud you always say "tangent!"
+    </li>
+</ul>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'The sine of 90 degrees is 1.'>
+        How do you read out loud the following equation:
+        \( \sin 90^{\circ} = 1 \).
+    </li>
+    <li class="question" data-answer = 'The cosine of 90 degrees is 0.'>
+        How do you read out loud the following equation:
+        \( \cos 90^{\circ} = 0 \).
+    </li>
+    <li class="question" data-answer = 'The tangent of 45 degrees is 1.'>
+        How do you read out loud the following equation:
+        \( \tan 45^{\circ} = 1 \).
+    </li>
 </ol>
 
 <ol class="answerList"></ol>
@@ -32,7 +220,18 @@
 
     $("#triangle1").append(cosineProblem(5,13).drawCanvas(250));
     $("#triangle2").append(sineProblem(36,85).drawCanvas(250));
-    $("#triangle3").append(cosineProblem(13,85).drawCanvas(250));
-    $("#triangle4").append(sineProblem(12,37).drawCanvas(250));
+    let triangle3 = cosineProblem(13,85, undefined, undefined, true);
+    triangle3.setKeyFont(8);
+    $("#triangle3").append(triangle3.drawCanvas(300));
+    let triangle4 = sineProblem(12,37, undefined, 2);
+    $("#triangle4").append(triangle4.drawCanvas(250));
     $("#triangle5").append(cosineProblem(24,25).drawCanvas(250));
+    $("#triangle6").append(tangentProblem(3,4).drawCanvas(250));
+
+    $("#triangle7").append(cotangentProblem(8,17).drawCanvas(250));
+    $("#triangle8").append(cosecantProblem(20,29).drawCanvas(250));
+    $("#triangle9").append(secantProblem(48,73).drawCanvas(250));
+    $("#triangle10").append(secantProblem(7,25, undefined, 1.4).drawCanvas(300));
+    // triangle 11 => cotangent problem
+    // triangle 12 => cosecant problem
 </script>

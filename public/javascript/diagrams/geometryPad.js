@@ -93,7 +93,7 @@ class GeometryPad extends Diagram {
       // label line outside function
     }
 
-    labelAngle(vertex, label, degreeSymbol, triangleObject) {
+    labelAngle(vertex, label, degreeSymbol, triangleObject, moveToKey) {
         if (this.fontSize === 0) {
             this.calculateFontSize();
         }
@@ -146,13 +146,20 @@ class GeometryPad extends Diagram {
       }
       //     labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion) {
         // creates a problem if one of the points is the origin
-      let text = super.labelAngle(label, outsidePoint1, vertexPoint, outsidePoint2, 'interior', textOnAorB, degreeSymbol, undefined, undefined, this.fontSize);
+
+        if (moveToKey) {
+            let text = super.labelAngle('θ', outsidePoint1, vertexPoint, outsidePoint2, 'interior', textOnAorB, false, undefined, undefined, this.fontSize);
+            let newLabel = `θ = ${label}`;
+            if (degreeSymbol) {
+                newLabel = newLabel + '°';
+            }
+            super.addLineToKey(newLabel);
+        } else {
+            let text = super.labelAngle(label, outsidePoint1, vertexPoint, outsidePoint2, 'interior', textOnAorB, degreeSymbol, undefined, undefined, this.fontSize);
+        }
     /// i might want to do something with 'textOnAOrB' to avoid awkward text
 
-      if (text.rangeBox.doesItIntersectSegment(segmentAboveText)) {
-        console.log('Help! the text is being cut off!');
-        /// then, the text box will be moved to another area
-      }
+
     }
     /*
     Essentially, if the label intersects the space above it, then it should be moved
@@ -250,12 +257,15 @@ function solveForLegProblem(knownLeg, hypotenuse, squareLength) {
 }
 
 //    $("#triangle1").append(SOHCAHTOAsideProblem(5,12,13,'A','C','A').drawCanvas(250));
-function SOHCAHTOAsideProblem(legA, hypotenuse, knownAngle, knownSide, unknownSide) {
+function SOHCAHTOAsideProblem(legA, hypotenuse, knownAngle, knownSide, unknownSide, fontSize, moveAngleLabelToKey) {
     let myTriangle = new GeometryPad();
+    if (fontSize) {
+        myTriangle.setFontSize(fontSize);
+    }
     myTriangle.addTriangleSSS(legA,Math.sqrt(hypotenuse**2 - legA**2), hypotenuse,true);
     myTriangle.makeOrientationCounterClockwise();
     myTriangle.addRightAngleMarker();
-    myTriangle.labelAngle(knownAngle,undefined,undefined,undefined);
+    myTriangle.labelAngle(knownAngle,undefined,undefined,undefined, moveAngleLabelToKey);
     myTriangle.labelSide(knownSide);
     myTriangle.labelUnknownSideOfTriangle(unknownSide);
     return myTriangle
@@ -269,35 +279,56 @@ function selectTheOtherLeg(thisLeg) {
     }
 }
 
-function sineProblem(legA,hypotenuse,knownAngle = 'A') {
+function sineProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) {
     const knownSide = 'C';
     const unknownSide = knownAngle;
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide);
+    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize,moveAngleLabelToKey);
 }
-function cosineProblem(legA,hypotenuse,knownAngle = 'A') {
+function cosineProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) {
     const knownSide = 'C';
     const unknownSide = selectTheOtherLeg(knownAngle);
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide);
+    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize,moveAngleLabelToKey);
 }
-function tangentProblem(legA,hypotenuse,knownAngle ='A') {
+function tangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) {
     const knownSide = selectTheOtherLeg(knownAngle);
     const unknownSide = knownAngle;
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide);
+    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
 }
-function secantProblem(legA,hypotenuse,knownAngle = 'A') { // reciprocal of cosine
+function secantProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) { // reciprocal of cosine
     const knownSide = selectTheOtherLeg(knownAngle);
     const unknownSide = 'C';
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide);
+    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
 }
 
-function cosecantProblem(legA,hypotenuse,knownAngle ='A') { // reciprocal of sine
+function cosecantProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) { // reciprocal of sine
     const knownSide = knownAngle;
     const unknownSide = 'C';
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide);
+    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
 }
 
-function cotangentProblem(legA,hypotenuse,knownAngle ='A') { //reciprocal of tangent
+function cotangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) { //reciprocal of tangent
     const knownSide = knownAngle;
     const unknownSide = selectTheOtherLeg(knownAngle);
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide);
+    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
+}
+
+function inverseSineProblem(opposite, hypotenuse, unknownAngle = 'A', fontSize) {
+    const adjacent = Math.sqrt(hypotenuse**2 - opposite**2);
+
+}
+
+function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize) {
+    const opposite = Math.sqrt(hypotenuse**2 - adjacent**2);
+}
+
+function inverseTangentProblem(opposite, adjacent, unknownAngle = 'A', fontSize) {
+    let triangle = new GeometryPad();
+    triangle.addTriangleSAS(opposite,90,adjacent);
+    triangle.makeOrientationCounterClockwise();
+    triangle.addRightAngleMarker();
+    if (unknownAngle === 'A') {
+
+    } else if (unknownAngle === 'B') {
+
+    }
 }

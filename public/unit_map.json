@@ -136,12 +136,12 @@
           "trigonometry_2":
           {
             "title": "Trigonometry 2",
-            "subtitle": "One-Step SOHCAHTOA",
+            "subtitle": "Trigonometric Functions",
             "level": 2,
             "horizontal": 1,
             "letter": "E",
             "prerequisites": ["trigonometry_1"],
-            "objective": "Solve for pieces of a triangle using sine, cosine, and tangent.",
+            "objective": "Solve for unknown sides of a triangle using sine, cosine, and tangent, including problems in which the unknown side is in the denominator",
             "uuid": "9ab51df3-4d94-4db6-b3b5-b5ff2b9badf8"
           },
           "trigonometry_3": {
@@ -161,18 +161,18 @@
             "horizontal": 4,
             "letter": "F",
             "prerequisites": ["pi", "circle_math_1"],
-            "objective": "Solve numeric problems relating elements of a circle with mutliple algebraic steps; explain in words the significance of pi.",
+            "objective": "Solve numeric problems relating elements of a circle with multiple algebraic steps; explain in words the significance of pi.",
             "uuid": "85bf6171-46cd-445d-86a4-beaa8d4b41f4"
           },
           "trigonometry_4":
           {
             "title": "Trigonometry 4",
-            "subtitle": "Two-Step SOHCAHTOA",
+            "subtitle": "Complete Triangles",
             "level": 3,
             "horizontal": 1,
             "letter": "G",
             "prerequisites": ["trigonometry_2"],
-            "objective": "Solve trigonometric problems with variables in the denominator; given the minimum necessary pieces of information determine all other information regarding a triangle.",
+            "objective": "Given the minimum necessary pieces of information determine all other information regarding a triangle.",
             "uuid": "a5b60619-bb7e-497c-b47a-d8d05eda261d"
           },
           "laser_pointer_1":
