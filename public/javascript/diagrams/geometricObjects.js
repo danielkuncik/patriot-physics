@@ -696,8 +696,6 @@ class Triangle {
 
     setParameters() {
 
-        this.right = this.isRightTriangle();
-
         this.sideLengthA = this.vertexB.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthB = this.vertexA.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthC = this.vertexA.getDistanceToAnotherPoint(this.vertexB);
@@ -705,6 +703,8 @@ class Triangle {
         this.angleA = getAngleFromLawOfCosines(this.sideLengthA, this.sideLengthB, this.sideLengthC);
         this.angleB = getAngleFromLawOfCosines(this.sideLengthB, this.sideLengthC, this.sideLengthA);
         this.angleC = 180 - this.angleA - this.angleB;
+
+        this.right = this.isRightTriangle();
 
         this.segmentA = new Segment(this.vertexB, this.vertexC);
         this.segmentB = new Segment(this.vertexC, this.vertexA);
@@ -748,7 +748,7 @@ class Triangle {
     }
 
     isRightTriangle() {
-        if (Math.abs(this.angleA - 90) || Math.abs(this.angleB - 90) || Math.abs(this.angleC - 90)) {
+        if (Math.abs(this.angleA - 90) < 1e-10 || Math.abs(this.angleB - 90) < 1e-10 || Math.abs(this.angleC - 90) < 1e-10) {
             return true
         } else {
             return false
@@ -864,22 +864,49 @@ function constructTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight
     if (vertexA === undefined) {
         vertexA = makeOrigin();
     }
-    let angle3inDegrees = 180 - angle1inDegrees - angle2inDegrees;
+    const angle3inDegrees = 180 - angle1inDegrees - angle2inDegrees;
     if (angle3inDegrees <= 0) {
         console.log('cannot have a triangle with total angle greater than 180');
+        return false
     }
-    //let angle1inRadians = convertDegreesToRadians(angle1inDegrees);
-    let angle2inRadians = convertDegreesToRadians(angle2inDegrees);
-    let angle3inRadians = convertDegreesToRadians(angle3inDegrees);
+    const angle1inRadians = convertDegreesToRadians(angle1inDegrees);
+    const angle2inRadians = convertDegreesToRadians(angle2inDegrees);
 
-    let side3 = side; // renaming the side
-    let side2 = side * Math.sin(angle3inRadians) / Math.sin(angle2inRadians); // law of sines
-    return constructTriangleSAS(vertexA, side3, angle2inDegrees, side2, forceRight);
+    const lineA = new constructLineFromPointAndAngle(vertexA, angle1inRadians);
+    const vertexB = new Point(vertexA.x + side, vertexA.y);
+    const lineB = new constructLineFromPointAndAngle(vertexB, Math.PI - angle2inRadians);
+    const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
+
+    return new Triangle(vertexA, vertexB, vertexC, forceRight);
+
+
+    // let side3 = side; // renaming the side
+    // let side2 = side3 / Math.sin(angle3inRadians) * Math.sin(angle2inRadians); // law of sine
+    // console.log(side3, angle2inDegrees, side2);
+    // return constructTriangleSAS(side3, angle2inDegrees, side2, forceRight, vertexA);
 }
 
 function constructTriangleSSS(side1, side2, side3, forceRight, vertexA) {
     let angleB = getAngleFromLawOfCosines(side3, side1, side2); // in degrees
     return constructTriangleSAS(side1, angleB, side2, forceRight, vertexA);
+}
+
+
+/// CHECK ON::: funny behavior if the SECOND angle is 90 degrees!
+/// in some cases, swapping the angle gave a different triangle, so check on that
+/// the third side is coming in with the label on the wrong side!
+function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA) {
+
+    const angle3inDegrees = 180 - angle1inDegrees - angle2inDegrees;
+    if (angle3inDegrees <= 0) {
+        console.log('cannot have a triangle with total angle greater than 180');
+        return false
+    }
+    const vertexB = new Point(vertexA.x + side, vertexA.y);
+    const lineA = constructLineFromPointAndAngle(vertexB, convertDegreesToRadians(180 - angle1inDegrees));
+    const lineB = constructLineFromPointAndAngle(vertexA, convertDegreesToRadians(angle3inDegrees));
+    const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
+    return new Triangle(vertexA, vertexB, vertexC, forceRight);
 }
 
 

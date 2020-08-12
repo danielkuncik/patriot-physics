@@ -2,9 +2,9 @@
     Inverse Trigonometric Functions
 </h4>
 
-<p>
+<p class="introduction">
     In all of the previous problems, we knew an angle and were looking for the value of a side.
-    What if we were in the opposite situation: we knew two sides, and we wanted to find an angle.
+    What if we were in the opposite situation: we knew two sides, and we wanted to find an angle?
     In order to complete that problem, we would use an <em>inverse trigonometric function</em>.
 </p>
 
@@ -16,3 +16,65 @@ PUT INTO A NEW POD!
 make sure to explain what the inverse functions actually mean:
 inverse sine of 0.56 tells us what angle has a sine of 0.56 !
 -->
+
+
+<ol class="questionList">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '30' id = 'triangle1'><br></li>
+            </div>
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '45' id = 'triangle2'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '14' id = 'triangle3'><br></li>
+            </div>
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '73' id = 'triangle4'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '59' id = 'triangle5'><br></li>
+            </div>
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '39' id = 'triangle6'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '23' id = 'triangle7'><br></li>
+            </div>
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '35' id = 'triangle8'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '84' id = 'triangle9'><br></li>
+            </div>
+            <div class="col-md-6 mb-2">
+                <li class="question" data-answer = '43' id = 'triangle10'><br></li>
+            </div>
+        </div>
+    </div>
+</ol>
+
+<script>
+    $("#triangle1").append(inverseSineProblem(13,26,'B').drawCanvas(300));
+    $("#triangle2").append(inverseSineProblem(9.9,14).drawCanvas(300));
+    $("#triangle3").append(inverseCosineProblem(24,24.74).drawCanvas(300));
+    $("#triangle4").append(inverseCosineProblem(5.55,19,'B').drawCanvas(300));
+    $("#triangle5").append(inverseTangentProblem(4,2.45).drawCanvas(300));
+    $("#triangle6").append(inverseTangentProblem(17.8,22,'B').drawCanvas(300));
+    $("#triangle7").append(inverseSineProblem(9.28,10).drawCanvas(300));
+    $("#triangle8").append(inverseTangentProblem(6,8.6,"B").drawCanvas(300));
+    $("#triangle9").append(inverseCosineProblem(1.26,12).drawCanvas(300));
+    $("#triangle10").append(inverseSineProblem(7,10.2,'B').drawCanvas(300));
+</script>
+
+
+<ol class="answerList"></ol>

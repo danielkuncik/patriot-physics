@@ -4,7 +4,7 @@ class GeometryPad extends Diagram {
     constructor() {
         super();
         this.triangles = [];
-        this.orientation = 'clockwise';
+        this.orientation = 'counterclockwise'; // default
         this.fontSize = 0;
         this.fontMultiplier = 1;
     }
@@ -60,6 +60,26 @@ class GeometryPad extends Diagram {
       return newTriangle
     }
 
+    addTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA) {
+        if (vertexA === undefined) {
+            vertexA = makeOrigin();
+        }
+        let newTriangle = constructTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA);
+        this.triangles.push(newTriangle);
+        this.addExistingTriangleObject(newTriangle);
+        return newTriangle
+    }
+
+    addTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA) {
+        if (vertexA === undefined) {
+            vertexA = makeOrigin();
+        }
+        let newTriangle = constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA);
+        this.triangles.push(newTriangle);
+        this.addExistingTriangleObject(newTriangle);
+        return newTriangle
+    }
+
     labelSide(oppositeVertex, label, triangleObject) {
         if (this.fontSize === 0) { /// may create issues !!!
             this.calculateFontSize();
@@ -99,6 +119,20 @@ class GeometryPad extends Diagram {
         }
       if (triangleObject === undefined) {
         triangleObject = this.triangles[0];
+      }
+      if (moveToKey === undefined) {
+          const minSideLength = this.fontSize * 3;
+          const minAngle = 15;
+          if (vertex === 'A') {
+              moveToKey = triangleObject.angleA < minAngle || triangleObject.sideLengthB < minSideLength || triangleObject.sideLengthC < minSideLength;
+          } else if (vertex === 'B') {
+              moveToKey = triangleObject.angleB < minAngle || triangleObject.sideLengthA < minSideLength || triangleObject.sideLengthC < minSideLength;
+          } else if (vertex === 'C') {
+              moveToKey = triangleObject.angleC < minAngle || triangleObject.sideLengthA < minSideLength || triangleObject.sideLengthB < minSideLength;
+          }
+          if (label === 'θ') {
+              moveToKey = false;
+          }
       }
       if (label === undefined) {
         if (vertex === 'A') {
@@ -187,7 +221,11 @@ class GeometryPad extends Diagram {
             triangle = this.triangles[0];
         }
         if (squareLength === undefined) {
-          squareLength = this.fontSize;
+            if (triangle.right) {
+                squareLength = Math.min(this.fontSize, triangle.sideLengthA * 0.3, triangle.sideLengthB * 0.3);
+            } else {
+                squareLength = this.fontSize;
+            }
         }
         if (Math.abs(triangle.angleA - 90) < 1e-10) {
             super.squareAngle(triangle.vertexC, triangle.vertexA, triangle.vertexB, squareLength);
@@ -196,6 +234,26 @@ class GeometryPad extends Diagram {
         } else if (Math.abs(triangle.angleC - 90) < 1e-10) {
             super.squareAngle(triangle.vertexB, triangle.vertexC, triangle.vertexA, squareLength);
         }
+    }
+
+    // under what conditions should i move information to the key?
+    // very low angles or very short sides
+    showAllTriangleInformation(triangleObject) {
+        if (triangleObject === undefined) {
+            triangleObject = this.triangles[0];
+        }
+        if (triangleObject.right) {
+            this.addRightAngleMarker(undefined, triangleObject);
+            this.labelAngle('A',undefined,true,triangleObject);
+            this.labelAngle('B',undefined,true,triangleObject);
+        } else {
+            this.labelAngle('A',undefined,true,triangleObject);
+            this.labelAngle('B',undefined,true,triangleObject);
+            this.labelAngle('C',undefined,true,triangleObject);
+        }
+        this.labelSide('A',undefined,triangleObject);
+        this.labelSide('B',undefined,triangleObject);
+        this.labelSide('C',undefined,triangleObject);
     }
 
 
@@ -227,108 +285,4 @@ class GeometryPad extends Diagram {
         this.labelSide(side,label,triangleObject);
     }
 
-}
-
-/*
-GEOMETRY PAD PROBLEMS
- */
-function solveForHypotenuseProblem(leg1, leg2) {
-    let myTriangle = new GeometryPad();
-    myTriangle.addTriangleSAS(leg1,90,leg2);
-    myTriangle.addRightAngleMarker();
-    myTriangle.makeOrientationCounterClockwise();
-    myTriangle.labelSide('A');
-    myTriangle.labelSide('B');
-    myTriangle.labelUnknownSideOfTriangle('C');
-    return myTriangle
-}
-
-function solveForLegProblem(knownLeg, hypotenuse, squareLength) {
-    let unknownLeg = Math.sqrt(hypotenuse**2 - knownLeg**2);
-    let myTriangle = new GeometryPad();
-
-    myTriangle.addTriangleSSS(knownLeg, unknownLeg, hypotenuse);
-    myTriangle.addRightAngleMarker(squareLength);
-    myTriangle.makeOrientationCounterClockwise();
-    myTriangle.labelSide('A');
-    myTriangle.labelSide('C');
-    myTriangle.labelUnknownSideOfTriangle('B');
-    return myTriangle
-}
-
-//    $("#triangle1").append(SOHCAHTOAsideProblem(5,12,13,'A','C','A').drawCanvas(250));
-function SOHCAHTOAsideProblem(legA, hypotenuse, knownAngle, knownSide, unknownSide, fontSize, moveAngleLabelToKey) {
-    let myTriangle = new GeometryPad();
-    if (fontSize) {
-        myTriangle.setFontSize(fontSize);
-    }
-    myTriangle.addTriangleSSS(legA,Math.sqrt(hypotenuse**2 - legA**2), hypotenuse,true);
-    myTriangle.makeOrientationCounterClockwise();
-    myTriangle.addRightAngleMarker();
-    myTriangle.labelAngle(knownAngle,undefined,undefined,undefined, moveAngleLabelToKey);
-    myTriangle.labelSide(knownSide);
-    myTriangle.labelUnknownSideOfTriangle(unknownSide);
-    return myTriangle
-}
-
-function selectTheOtherLeg(thisLeg) {
-    if (thisLeg === 'A') {
-        return 'B'
-    } else if (thisLeg === 'B') {
-        return 'A'
-    }
-}
-
-function sineProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) {
-    const knownSide = 'C';
-    const unknownSide = knownAngle;
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize,moveAngleLabelToKey);
-}
-function cosineProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) {
-    const knownSide = 'C';
-    const unknownSide = selectTheOtherLeg(knownAngle);
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize,moveAngleLabelToKey);
-}
-function tangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) {
-    const knownSide = selectTheOtherLeg(knownAngle);
-    const unknownSide = knownAngle;
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
-}
-function secantProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) { // reciprocal of cosine
-    const knownSide = selectTheOtherLeg(knownAngle);
-    const unknownSide = 'C';
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
-}
-
-function cosecantProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) { // reciprocal of sine
-    const knownSide = knownAngle;
-    const unknownSide = 'C';
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
-}
-
-function cotangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) { //reciprocal of tangent
-    const knownSide = knownAngle;
-    const unknownSide = selectTheOtherLeg(knownAngle);
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
-}
-
-function inverseSineProblem(opposite, hypotenuse, unknownAngle = 'A', fontSize) {
-    const adjacent = Math.sqrt(hypotenuse**2 - opposite**2);
-
-}
-
-function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize) {
-    const opposite = Math.sqrt(hypotenuse**2 - adjacent**2);
-}
-
-function inverseTangentProblem(opposite, adjacent, unknownAngle = 'A', fontSize) {
-    let triangle = new GeometryPad();
-    triangle.addTriangleSAS(opposite,90,adjacent);
-    triangle.makeOrientationCounterClockwise();
-    triangle.addRightAngleMarker();
-    if (unknownAngle === 'A') {
-
-    } else if (unknownAngle === 'B') {
-
-    }
 }
