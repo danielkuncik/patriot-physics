@@ -3,6 +3,7 @@ TO DO: (8-12-2020)
 - finish making all the functions to create different types of polygons: trapezoid, parallelogram, and regular polygon
 - add the polygons to the geometry pad object, so that they all appear there
 - read through triangle to make sure it is consistent and nonredundant with polygon
+- make square, rectangle, and other types into subclasses of polygon, instead of only functions= especially
  */
 
 
@@ -949,8 +950,6 @@ class Triangle extends Polygon {
         this.segmentA = oldSegmentC;
         this.segmentB = oldSegmentA;
         this.segmentC = oldSegmentB;
-
-        super.rotateVertices();
     }
 
     isRightTriangle() {
