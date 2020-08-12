@@ -4,6 +4,7 @@ class GeometryPad extends Diagram {
     constructor() {
         super();
         this.triangles = [];
+        this.polygons = [];
         this.orientation = 'counterclockwise'; // default
         this.fontSize = 0;
         this.fontMultiplier = 1;
@@ -33,60 +34,41 @@ class GeometryPad extends Diagram {
         return newFontSize
     }
 
-    getFarAwayPoint() { // returns a point far away from the points of the problems
-        super.getRange();
-        const newX = (this.xMax + this.xMin) / 2;
-        const yUp = (this.yMax - this.yMin) * 0.2;
-        return new Point(newX, this.yMax + yUp);
-    }
 
-    addTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA) {
-      if (vertexA === undefined) {
-        vertexA = makeOrigin();
-      }
+    /// ##########################################
+    /// TRIANGLE METHODS
+    addTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA);
         this.triangles.push(newTriangle);
         this.addExistingTriangleObject(newTriangle);
         return newTriangle
     }
 
-    addTriangleSSS(side1, side2, side3, forceRight, vertexA) {
-      if (vertexA === undefined) {
-        vertexA = makeOrigin();
-      }
+    addTriangleSSS(side1, side2, side3, forceRight, vertexA = makeOrigin()) {
       let newTriangle = constructTriangleSSS(side1, side2, side3, forceRight, vertexA);
       this.triangles.push(newTriangle);
       this.addExistingTriangleObject(newTriangle);
       return newTriangle
     }
 
-    addTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA) {
-        if (vertexA === undefined) {
-            vertexA = makeOrigin();
-        }
+    addTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA);
         this.triangles.push(newTriangle);
         this.addExistingTriangleObject(newTriangle);
         return newTriangle
     }
 
-    addTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA) {
-        if (vertexA === undefined) {
-            vertexA = makeOrigin();
-        }
+    addTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA);
         this.triangles.push(newTriangle);
         this.addExistingTriangleObject(newTriangle);
         return newTriangle
     }
 
-    labelSide(oppositeVertex, label, triangleObject) {
+    labelSideOfTriangle(oppositeVertex, label, triangleObject = this.triangles[0]) {
         if (this.fontSize === 0) { /// may create issues !!!
             this.calculateFontSize();
         }
-      if (triangleObject === undefined) {
-        triangleObject = this.triangles[0];
-      }
       let end1, end2, value;
       if (oppositeVertex === 'A') {
         end1 = triangleObject.vertexB;
@@ -113,13 +95,10 @@ class GeometryPad extends Diagram {
       // label line outside function
     }
 
-    labelAngle(vertex, label, degreeSymbol, triangleObject, moveToKey) {
+    labelAngleOfTriangle(vertex, label, degreeSymbol, triangleObject = this.triangles[0], moveToKey) {
         if (this.fontSize === 0) {
             this.calculateFontSize();
         }
-      if (triangleObject === undefined) {
-        triangleObject = this.triangles[0];
-      }
       if (moveToKey === undefined) {
           const minSideLength = this.fontSize * 3;
           const minAngle = 15;
@@ -200,11 +179,11 @@ class GeometryPad extends Diagram {
      */
 
 
-    labelAngleTheta(vertex, triangleObject) {
-      this.labelAngle(vertex,'θ',false, triangleObject);
+    labelAngleOfTriangleTheta(vertex, triangleObject) {
+      this.labelAngleOfTriangle(vertex,'θ',false, triangleObject);
     }
-    labelAnglePhi(vertex, triangleObject) {
-      this.labelAngle(vertex,'φ',false, triangleObject);
+    labelAngleOfTrianglePhi(vertex, triangleObject) {
+      this.labelAngleOfTriangle(vertex,'φ',false, triangleObject);
     }
 
     addExistingTriangleObject(triangleObject) {
@@ -213,54 +192,46 @@ class GeometryPad extends Diagram {
         this.addExistingSegment(triangleObject.segmentC);
     }
 
-    addRightAngleMarker(squareLength,triangle) {
+    addRightTriangleMarker(squareLength,triangleObject = this.triangles[0]) {
         if (this.fontSize === 0) { /// may create issues !!!
             this.calculateFontSize();
         }
-        if (triangle === undefined) {
-            triangle = this.triangles[0];
-        }
+
         if (squareLength === undefined) {
-            if (triangle.right) {
-                squareLength = Math.min(this.fontSize, triangle.sideLengthA * 0.3, triangle.sideLengthB * 0.3);
+            if (triangleObject.right) {
+                squareLength = Math.min(this.fontSize, triangleObject.sideLengthA * 0.3, triangleObject.sideLengthB * 0.3);
             } else {
                 squareLength = this.fontSize;
             }
         }
-        if (Math.abs(triangle.angleA - 90) < 1e-10) {
-            super.squareAngle(triangle.vertexC, triangle.vertexA, triangle.vertexB, squareLength);
-        } else if (Math.abs(triangle.angleB - 90) < 1e-10) {
-            super.squareAngle(triangle.vertexA, triangle.vertexB, triangle.vertexC, squareLength);
-        } else if (Math.abs(triangle.angleC - 90) < 1e-10) {
-            super.squareAngle(triangle.vertexB, triangle.vertexC, triangle.vertexA, squareLength);
+        if (Math.abs(triangleObject.angleA - 90) < 1e-10) {
+            super.squareAngle(triangleObject.vertexC, triangleObject.vertexA, triangleObject.vertexB, squareLength);
+        } else if (Math.abs(triangleObject.angleB - 90) < 1e-10) {
+            super.squareAngle(triangleObject.vertexA, triangleObject.vertexB, triangleObject.vertexC, squareLength);
+        } else if (Math.abs(triangleObject.angleC - 90) < 1e-10) {
+            super.squareAngle(triangleObject.vertexB, triangleObject.vertexC, triangleObject.vertexA, squareLength);
         }
     }
 
     // under what conditions should i move information to the key?
     // very low angles or very short sides
-    showAllTriangleInformation(triangleObject) {
-        if (triangleObject === undefined) {
-            triangleObject = this.triangles[0];
-        }
+    showAllTriangleInformation(triangleObject = this.triangles[0]) {
         if (triangleObject.right) {
-            this.addRightAngleMarker(undefined, triangleObject);
-            this.labelAngle('A',undefined,true,triangleObject);
-            this.labelAngle('B',undefined,true,triangleObject);
+            this.addRightTriangleMarker(undefined, triangleObject);
+            this.labelAngleOfTriangle('A',undefined,true,triangleObject);
+            this.labelAngleOfTriangle('B',undefined,true,triangleObject);
         } else {
-            this.labelAngle('A',undefined,true,triangleObject);
-            this.labelAngle('B',undefined,true,triangleObject);
-            this.labelAngle('C',undefined,true,triangleObject);
+            this.labelAngleOfTriangle('A',undefined,true,triangleObject);
+            this.labelAngleOfTriangle('B',undefined,true,triangleObject);
+            this.labelAngleOfTriangle('C',undefined,true,triangleObject);
         }
-        this.labelSide('A',undefined,triangleObject);
-        this.labelSide('B',undefined,triangleObject);
-        this.labelSide('C',undefined,triangleObject);
+        this.labelSideOfTriangle('A',undefined,triangleObject);
+        this.labelSideOfTriangle('B',undefined,triangleObject);
+        this.labelSideOfTriangle('C',undefined,triangleObject);
     }
 
 
-    labelUnknownSideOfTriangle(side,triangleObject) {
-        if (triangleObject === undefined) {
-            triangleObject = this.triangles[0];
-        }
+    labelUnknownSideOfTriangle(side,triangleObject = this.triangles[0]) {
         let label, selectedSegment;
         if (triangleObject.right && side === 'C') {
             label = 'H';
@@ -282,7 +253,13 @@ class GeometryPad extends Diagram {
             }
         }
         //    labelSide(oppositeVertex, label, triangleObject) {
-        this.labelSide(side,label,triangleObject);
+        this.labelSideOfTriangle(side,label,triangleObject);
     }
+
+
+    // #####################################################################
+    /// POLYGON METHODS
+    /// "polygon" here refers to the polygon object, which covers all polygons with 4 or more sides, but not triangles
+
 
 }

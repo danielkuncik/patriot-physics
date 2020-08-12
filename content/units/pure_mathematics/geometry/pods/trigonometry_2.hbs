@@ -57,12 +57,12 @@ a video here
 <script>
     let exampleTriangle = new GeometryPad();
     exampleTriangle.addTriangleSSS(3,4,5,true);
-    exampleTriangle.addRightAngleMarker();
+    exampleTriangle.addRightTriangleMarker();
     exampleTriangle.makeOrientationCounterClockwise();
-    exampleTriangle.labelSide('A','A');
-    exampleTriangle.labelSide('B','B');
-    exampleTriangle.labelSide('C','H');
-    exampleTriangle.labelAngleTheta('A');
+    exampleTriangle.labelSideOfTriangle('A','A');
+    exampleTriangle.labelSideOfTriangle('B','B');
+    exampleTriangle.labelSideOfTriangle('C','H');
+    exampleTriangle.labelAngleOfTriangleTheta('A');
     $("#exampleTriangle").append(exampleTriangle.drawCanvas(300));
 </script>
 

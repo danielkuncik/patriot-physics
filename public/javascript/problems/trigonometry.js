@@ -5,15 +5,17 @@ TO DO:
 - add a rotation method that allows the triangles to rotate
 - then...develop a random triangle problem generator???
 - fix the angles that show up on the hypotenuse rather than the side
+
+- revise constructTriangleSSS method to use true compass and ruler construction, rather than the law of sines
  */
 
 
 function solveForHypotenuseProblem(leg1, leg2) {
     let myTriangle = new GeometryPad();
     myTriangle.addTriangleSAS(leg1,90,leg2);
-    myTriangle.addRightAngleMarker();
-    myTriangle.labelSide('A');
-    myTriangle.labelSide('B');
+    myTriangle.addRightTriangleMarker();
+    myTriangle.labelSideOfTriangle('A');
+    myTriangle.labelSideOfTriangle('B');
     myTriangle.labelUnknownSideOfTriangle('C');
     return myTriangle
 }
@@ -23,9 +25,9 @@ function solveForLegProblem(knownLeg, hypotenuse, squareLength) {
     let myTriangle = new GeometryPad();
 
     myTriangle.addTriangleSSS(knownLeg, unknownLeg, hypotenuse);
-    myTriangle.addRightAngleMarker(squareLength);
-    myTriangle.labelSide('A');
-    myTriangle.labelSide('C');
+    myTriangle.addRightTriangleMarker(squareLength);
+    myTriangle.labelSideOfTriangle('A');
+    myTriangle.labelSideOfTriangle('C');
     myTriangle.labelUnknownSideOfTriangle('B');
     return myTriangle
 }
@@ -37,9 +39,9 @@ function SOHCAHTOAsideProblem(legA, hypotenuse, knownAngle, knownSide, unknownSi
         myTriangle.setFontSize(fontSize);
     }
     myTriangle.addTriangleSSS(legA,Math.sqrt(hypotenuse**2 - legA**2), hypotenuse,true);
-    myTriangle.addRightAngleMarker();
-    myTriangle.labelAngle(knownAngle,undefined,undefined,undefined, moveAngleLabelToKey);
-    myTriangle.labelSide(knownSide);
+    myTriangle.addRightTriangleMarker();
+    myTriangle.labelAngleOfTriangle(knownAngle,undefined,undefined,undefined, moveAngleLabelToKey);
+    myTriangle.labelSideOfTriangle(knownSide);
     myTriangle.labelUnknownSideOfTriangle(unknownSide);
     return myTriangle
 }
@@ -108,16 +110,16 @@ function inverseTangentProblem(opposite, adjacent, unknownAngle = 'A', fontSize)
     let triangle = new GeometryPad();
     if (unknownAngle === 'A') {
         triangle.addTriangleSAS(opposite,90,adjacent);
-        triangle.labelAngle('A','θ');
+        triangle.labelAngleOfTriangle('A','θ');
 
     } else if (unknownAngle === 'B') {
         triangle.addTriangleSAS(adjacent,90,opposite);
-        triangle.labelAngle('B','θ');
+        triangle.labelAngleOfTriangle('B','θ');
 
     }
-    triangle.addRightAngleMarker();
-    triangle.labelSide('A');
-    triangle.labelSide('B');
+    triangle.addRightTriangleMarker();
+    triangle.labelSideOfTriangle('A');
+    triangle.labelSideOfTriangle('B');
     return triangle
 }
 
@@ -125,15 +127,15 @@ function inverseSineProblem(opposite, hypotenuse, unknownAngle = 'A', fontSize) 
     let triangle = new GeometryPad();
     if (unknownAngle === 'A') {
         triangle.addTriangleSSS(opposite,Math.sqrt(hypotenuse**2 - opposite**2), hypotenuse);
-        triangle.labelAngle('A','θ');
-        triangle.labelSide('A');
+        triangle.labelAngleOfTriangle('A','θ');
+        triangle.labelSideOfTriangle('A');
     } else if (unknownAngle === 'B') {
         triangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - opposite**2), opposite, hypotenuse);
-        triangle.labelAngle('B','θ');
-        triangle.labelSide('B');
+        triangle.labelAngleOfTriangle('B','θ');
+        triangle.labelSideOfTriangle('B');
     }
-    triangle.addRightAngleMarker();
-    triangle.labelSide('C');
+    triangle.addRightTriangleMarker();
+    triangle.labelSideOfTriangle('C');
     return triangle
 }
 
@@ -142,15 +144,15 @@ function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize
     let triangle = new GeometryPad();
     if (unknownAngle === 'A') {
         triangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - adjacent**2), adjacent, hypotenuse);
-        triangle.labelAngle('A','θ');
-        triangle.labelSide('A');
+        triangle.labelAngleOfTriangle('A','θ');
+        triangle.labelSideOfTriangle('A');
     } else if (unknownAngle === 'B') {
         triangle.addTriangleSSS(adjacent,Math.sqrt(hypotenuse**2 - adjacent**2), hypotenuse);
-        triangle.labelAngle('B','θ');
-        triangle.labelSide('B');
+        triangle.labelAngleOfTriangle('B','θ');
+        triangle.labelSideOfTriangle('B');
     }
-    triangle.addRightAngleMarker();
-    triangle.labelSide('C');
+    triangle.addRightTriangleMarker();
+    triangle.labelSideOfTriangle('C');
     return triangle
 }
 
@@ -166,12 +168,12 @@ function unknownRightTriangle1(leg1, leg2, swap) { // two legs known
         problemTriangle.addTriangleSSS(leg1, leg2, Math.sqrt(leg1**2 + leg2**2));
         answerTriangle.addTriangleSSS(leg2, leg1, Math.sqrt(leg1**2 + leg2**2));
     }
-    problemTriangle.addRightAngleMarker();
-    problemTriangle.labelAngle('A','??');
-    problemTriangle.labelAngle('B','??');
-    problemTriangle.labelSide('A');
-    problemTriangle.labelSide('B');
-    problemTriangle.labelSide('C','??');
+    problemTriangle.addRightTriangleMarker();
+    problemTriangle.labelAngleOfTriangle('A','??');
+    problemTriangle.labelAngleOfTriangle('B','??');
+    problemTriangle.labelSideOfTriangle('A');
+    problemTriangle.labelSideOfTriangle('B');
+    problemTriangle.labelSideOfTriangle('C','??');
     answerTriangle.showAllTriangleInformation();
     return {
         problem: problemTriangle,
@@ -187,18 +189,18 @@ function unknownRightTriangle2(leg1, hypotenuse, swap) { // one leg and hypotenu
     if (swap) {
         problemTriangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - leg1**2),leg1,hypotenuse);
         answerTriangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - leg1**2),leg1,hypotenuse);
-        problemTriangle.labelSide('A','??');
-        problemTriangle.labelSide('B');
+        problemTriangle.labelSideOfTriangle('A','??');
+        problemTriangle.labelSideOfTriangle('B');
     } else {
         problemTriangle.addTriangleSSS(leg1,Math.sqrt(hypotenuse**2 - leg1**2),hypotenuse);
         answerTriangle.addTriangleSSS(leg1,Math.sqrt(hypotenuse**2 - leg1**2),hypotenuse);
-        problemTriangle.labelSide('B','??');
-        problemTriangle.labelSide('A');
+        problemTriangle.labelSideOfTriangle('B','??');
+        problemTriangle.labelSideOfTriangle('A');
     }
-    problemTriangle.labelSide('C');
-    problemTriangle.addRightAngleMarker();
-    problemTriangle.labelAngle('A','??');
-    problemTriangle.labelAngle('B','??');
+    problemTriangle.labelSideOfTriangle('C');
+    problemTriangle.addRightTriangleMarker();
+    problemTriangle.labelAngleOfTriangle('A','??');
+    problemTriangle.labelAngleOfTriangle('B','??');
     answerTriangle.showAllTriangleInformation();
     return {
         problem: problemTriangle,
@@ -212,20 +214,20 @@ function unknownRightTriangle3(leg, angle, swap) { ///if swap, the opposite angl
     if (swap) {
         problemTriangle.addTriangleASA(angle, leg, 90);
         answerTriangle.addTriangleASA(angle, leg, 90);
-        problemTriangle.labelAngle('A');
-        problemTriangle.labelAngle('B','??');
-        problemTriangle.labelSide('A');
-        problemTriangle.labelSide('B','??');
+        problemTriangle.labelAngleOfTriangle('A');
+        problemTriangle.labelAngleOfTriangle('B','??');
+        problemTriangle.labelSideOfTriangle('A');
+        problemTriangle.labelSideOfTriangle('B','??');
     } else {
         problemTriangle.addTriangleASA(90, leg, angle);
         answerTriangle.addTriangleASA(90, leg, angle);
-        problemTriangle.labelAngle('A');
-        problemTriangle.labelAngle('B','??');
-        problemTriangle.labelSide('B');
-        problemTriangle.labelSide('A','??');
+        problemTriangle.labelAngleOfTriangle('A');
+        problemTriangle.labelAngleOfTriangle('B','??');
+        problemTriangle.labelSideOfTriangle('B');
+        problemTriangle.labelSideOfTriangle('A','??');
     }
-    problemTriangle.addRightAngleMarker();
-    problemTriangle.labelSide('C','??');
+    problemTriangle.addRightTriangleMarker();
+    problemTriangle.labelSideOfTriangle('C','??');
     answerTriangle.showAllTriangleInformation();
     return {
         problem: problemTriangle,
@@ -240,18 +242,18 @@ function unknownRightTriangle4(angle, hypotenuse, swap) {
     if (swap) {
         problemTriangle.addTriangleSAA(hypotenuse, angle, 90);
         answerTriangle.addTriangleSAA(hypotenuse, angle, 90);
-        problemTriangle.labelAngle('B');
-        problemTriangle.labelAngle('A','??');
+        problemTriangle.labelAngleOfTriangle('B');
+        problemTriangle.labelAngleOfTriangle('A','??');
     } else {
         problemTriangle.addTriangleSAA(hypotenuse, angle, 90);
         answerTriangle.addTriangleSAA(hypotenuse, angle,90);
-        problemTriangle.labelAngle('A');
-        problemTriangle.labelAngle('B','??');
+        problemTriangle.labelAngleOfTriangle('A');
+        problemTriangle.labelAngleOfTriangle('B','??');
     }
-    problemTriangle.addRightAngleMarker();
-    problemTriangle.labelSide('C');
-    problemTriangle.labelSide('A','??');
-    problemTriangle.labelSide('B','??');
+    problemTriangle.addRightTriangleMarker();
+    problemTriangle.labelSideOfTriangle('C');
+    problemTriangle.labelSideOfTriangle('A','??');
+    problemTriangle.labelSideOfTriangle('B','??');
     answerTriangle.showAllTriangleInformation();
     return {
         problem: problemTriangle,

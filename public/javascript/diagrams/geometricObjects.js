@@ -657,12 +657,6 @@ class Arc {
 
 }
 
-// maybe this isn't that helpful an object
-class Polygon {
-    constructor(vertexArray) {
-        this.vertexArray = vertexArray;
-    }
-}
 
 function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
     let cosine = (adjacentSide1**2 + adjacentSide2**2 - oppositeSide**2) / 2 / adjacentSide1 / adjacentSide2;
@@ -682,6 +676,8 @@ class Triangle {
         this.vertexA = vertexA;
         this.vertexB = vertexB;
         this.vertexC = vertexC;
+
+        this.triangle = true;
 
         this.setParameters();
 
@@ -910,14 +906,6 @@ function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight
 }
 
 
-/// how will i actually DRAW these!
-
-/*
-Do i want all of these objects to exist as geometric objects separate from the objects that are
-included in a diagram????
-i'm starting to lean in that direction
- */
-
 // always returns the interior angle!!
 function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
     const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
@@ -927,3 +915,62 @@ function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
     let cosTheta = (a**2 + b**2 - c**2) / (2 * a * b);
     return Math.acos(cosTheta)
 }
+
+
+/// covers all polygons with 4 or greater sides
+// DOES NOT include triangles, because they have a different set of methods
+/// counterclockwise convention: the side that is counterclockwise of each vertex has the same name as that vertex
+// counterclockwise convention: the angle counterclockwise on each vertex has the same name as that vertex
+class Polygon {
+    constructor(arrayOfVertices) {
+        if (arrayOfVertices.length <= 2) {
+            console.log('Must have greater than 2 vertices to create polygon!');
+            return false
+        } else if (arrayOfVertices.length === 3) {
+            return new Triangle(arrayOfVertices[0],arrayOfVertices[1],arrayOfVertices[2]);
+        } else {
+            this.polygon = true;
+            this.vertices = arrayOfVertices;
+            this.calculateParameters();
+        }
+    }
+
+    calculateParameters() {
+        this.lengths = [];
+        this.anglesInRadians = [];
+        this.anglesInDegrees = [];
+        let i;
+        const penultimateVertex = this.vertices[this.vertices.length - 2];
+        const lastVertex = this.vertices[this.vertices.length - 1];
+        const firstVertex = this.vertices[0];
+        const secondVertex = this.vertices[1];
+        this.lengths.push(firstVertex.getDistanceToAnotherPoint(secondVertex));
+        this.anglesInRadians.push(getAngleOfTwoRays(lastVertex,firstVertex,secondVertex));
+        for (i = 1; i < this.vertices.length - 1; i++ ) {
+            const previousVertex = this.vertices[i - 1];
+            const thisVertex = this.vertices[i];
+            const nextVertex = this.vertices[i + 1];
+            this.lengths.push(thisVertex.getDistanceToAnotherPoint(nextVertex));
+            this.anglesInRadians.push(getAngleOfTwoRays(previousVertex, thisVertex, nextVertex)); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
+        }
+        this.lengths.push(lastVertex.getDistanceToAnotherPoint(firstVertex));
+        this.anglesInRadians.push(getAngleOfTwoRays(penultimateVertex, lastVertex, firstVertex));
+
+        this.anglesInRadians.forEach((angleInRadians) => {
+           this.anglesInDegrees.push(convertRadiansToDegrees(angleInRadians));
+        });
+    }
+}
+
+function rectangle(width, height, vertex0 = makeOrigin()) {
+    let arrayOfVertices = [vertex0];
+    arrayOfVertices.push(new Point(vertex0.x + width, vertex0.y));
+    arrayOfVertices.push(new Point(vertex0.x + width, vertex0.y + height));
+    arrayOfVertices.push(new Point(vertex0.x, vertex0.y + height));
+    return new Polygon(arrayOfVertices)
+}
+
+function square(sideLength, vertex0) {
+    return rectangle(sideLength, sideLength, vertex0)
+}
+
