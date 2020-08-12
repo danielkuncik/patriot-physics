@@ -1,3 +1,10 @@
+/*
+TO DO: (8-12-2020)
+- finish making all the functions to create different types of polygons: trapezoid, parallelogram, and regular polygon
+- add the polygons to the geometry pad object, so that they all appear there
+- read through triangle to make sure it is consistent and nonredundant with polygon
+ */
+
 
 class Point {
     constructor(x, y, name) {
@@ -214,13 +221,6 @@ function constructPointWithMagnitude(magnitude, angleInRadians) {
 }
 
 
-// between two points
-/*
-HAS BECOME A TOTAL FUCKING MESS
-trying to add vertical lines to this, should probably change the contructor to account for this
-need a break (5:30 7-26)
-I NEED A BREAK< COME BACK TO THIS
- */
 class Line {
     constructor(pointA, pointB) {
         if (pointA.getDistanceToAnotherPoint(pointB) < 1e-10) {
@@ -350,13 +350,20 @@ function constructLineSlopeIntercept(slope, yIntercept) {
     return new Point(pointA, pointB)
 }
 
+function constructVerticalLine(xValue) {
+    return new Line(new Point(xValue, 0), new Point(xValue, 1));
+}
+
+function constructHorizontalLine(yValue) {
+    return new Line(new Point(0, yValue), new Point(yValue, 1));
+}
 
 function constructLineFromPointAndAngle(point, angleInRadians) {
     let pointB = new Point(point.x + Math.cos(angleInRadians), point.y + Math.sin(angleInRadians));
     return new Line(point, pointB);
 }
 
-// IMPROVE THIS
+// IMPROVE THIS, make this relevant!
 class Ray {
     constructor(startPoint, slope) {
         this.startPoint = startPoint;
@@ -671,15 +678,216 @@ function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
 }
 
 
-class Triangle {
+// always returns the interior angle!!
+function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
+    const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
+    const a = vertex.getDistanceToAnotherPoint(outsidePointA);
+    const b = vertex.getDistanceToAnotherPoint(outsidePointB);
+
+    let cosTheta = (a**2 + b**2 - c**2) / (2 * a * b);
+    return Math.acos(cosTheta)
+}
+
+
+/// covers all polygons with 4 or greater sides
+// DOES NOT include triangles, because they have a different set of methods
+/// counterclockwise convention: the side that is counterclockwise of each vertex has the same name as that vertex
+// counterclockwise convention: the angle counterclockwise on each vertex has the same name as that vertex
+class Polygon {
+    constructor(arrayOfVertices) {
+        if (arrayOfVertices.length <= 2) {
+            console.log('Must have greater than 2 vertices to create polygon!');
+            return false
+        } else {
+            this.polygon = true;
+            this.vertices = arrayOfVertices;
+            this.calculateParameters();
+        }
+        this.orientation = 'counterclockwise';
+    }
+
+    makeOrientationClockwise() {
+        this.orientation = 'clockwise';
+    }
+
+    makeOrientationCounterclockwise() {
+        this.orientation = 'counterclockwise';
+    }
+
+    calculateParameters() {
+        this.lengths = [];
+        this.angles = [];
+        let i;
+        const penultimateVertex = this.vertices[this.vertices.length - 2];
+        const lastVertex = this.vertices[this.vertices.length - 1];
+        const firstVertex = this.vertices[0];
+        const secondVertex = this.vertices[1];
+        this.lengths.push(firstVertex.getDistanceToAnotherPoint(secondVertex));
+        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(lastVertex,firstVertex,secondVertex)));
+        for (i = 1; i < this.vertices.length - 1; i++ ) {
+            const previousVertex = this.vertices[i - 1];
+            const thisVertex = this.vertices[i];
+            const nextVertex = this.vertices[i + 1];
+            this.lengths.push(thisVertex.getDistanceToAnotherPoint(nextVertex));
+            this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(previousVertex, thisVertex, nextVertex))); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
+        }
+        this.lengths.push(lastVertex.getDistanceToAnotherPoint(firstVertex));
+        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(penultimateVertex, lastVertex, firstVertex)));
+
+    }
+
+    //returns three points with the vertex of the given index in the middle
+    getThreeVertices(index) {
+        let points;
+        if (index === 0) {
+            points = [ this.vertices[this.vertices.length - 1], this.vertices[0], this.vertices[1]];
+        } else if (index === this.vertices.length - 1) {
+            points = [this.vertices[index - 1], this.vertices[index], this.vertices[0]];
+        } else if (index > this.vertices.length - 1) {
+            console.log('ERROR: index given out of range');
+        } else {
+            points = [this.vertices[index - 1], this.vertices[index], this.vertices[index + 1]];
+        }
+        return points
+    }
+
+    // rotates vertices counterclockwise
+    // the previous vertex0 becomes vertex1, the previous vertex1 becomes vertex2 etc.
+    // the previous final vertex becomes vertex0
+    rotateVertices() {
+        if (this.vertices.length === 3) {
+            console.log('ERROR: using rotateVerticies for triangle, use rotateTriangleVerticies function')
+        }
+        const oldVertexArray = this.vertices;
+        const oldLengthArray = this.lengths;
+        const oldAngleArray = this.angles;
+
+        let newVertexArray = oldVertexArray[oldVertexArray.length - 1];
+        let newLengthArray = oldLengthArray[oldVertexArray.length - 1];
+        let newAngleArray = oldAngleArray[oldVertexArray.length - 1];
+
+        let j;
+        for (j = 1; j < oldVertexArray.length - 1; j++) {
+            newVertexArray.push(oldVertexArray[j - 1]);
+            newLengthArray.push(oldLengthArray[j - 1]);
+            newAngleArray.push(oldAngleArray[j - 1]);
+        }
+        this.vertices = newVertexArray;
+        this.lengths = newLengthArray;
+        this.angles = newAngleArray;
+    }
+}
+
+
+
+/*
+still must complete:
+- trapezoid
+- parallelogram
+- regular polygon
+ */
+
+function rectangle(width, height, vertex0 = makeOrigin()) {
+    const vertex1 = vertex0.translateAndReproduce(0,height);
+    const vertex2 = vertex0.translateAndReproduce(width,height);
+    const vertex3 = vertex0.translateAndReproduce(width,0);
+    return new Polygon([vertex0, vertex1, vertex2, vertex3])
+}
+
+function square(sideLength, vertex0) {
+    return rectangle(sideLength, sideLength, vertex0)
+}
+
+/// THESE ALL NEED TO BE A COUNTERCLOCKWISE ORIENTATION!!!!
+function rhombus(sideLength, angle1inDegrees, vertex0 = makeOrigin()) {
+    const angle1inRadians = convertDegreesToRadians(angle1inDegrees);
+    const angle2inRadians = Math.PI - angle1inRadians;
+    const vertex1 = vertex0.translateAndReproducePolar(sideLength, Math.PI / 2 - angle1inRadians / 2);
+    const vertex3 = vertex0.translateAndReproducePolar(sideLength, Math.PI / 2 + angle1inRadians / 2);
+    const vertex2 = vertex3.translateAndReproducePolar(sideLength, angle2inRadians / 2);
+    return new Polygon([vertex0, vertex1, vertex2, vertex3]);
+}
+
+function trapezoid(base1, base2, lowAngle1inDegrees, lowAngle2inDegrees, vertex0 = makeOrigin()) {
+    const vertex1 = new Point(vertex0.x + base1, vertex0.y);
+    //// NOT SURE WHERE TO GO FROM HERE!
+}
+
+function isoscelesTrapezoid(base1, base2, lowAngleInDegrees, vertex0) {
+    return trapezoid(base1, base2, lowAngleInDegrees, lowAngleInDegrees, vertex0)
+}
+
+
+/// THESE ALL NEED TO BE A COUNTERCLOCKWISE ORIENTATION!!!!
+function rightTrapezoid(base1, base2, height, vertex0 = makeOrigin()) {
+    const vertex1 = vertex0.translateAndReproduce(0,height);
+    const vertex2 = vertex3.translateAndReproduce(base2,0);
+    const vertex3 = vertex0.translateAndReproduce(base1,0);
+    return new Polygon([vertex0,vertex1,vertex2,vertex3])
+}
+
+function parallelogram() {
+
+}
+
+function regularPentagon(sideLength) {
+    return constructRegularPolygon(5, sideLength)
+}
+
+function homePlate(scaleFactor, vertex0 = makeOrigin()) {
+    const base = 17 * scaleFactor; // based on MLB official rules
+    const height = 8.5 * scaleFactor;
+    const topSides = 12 * scaleFactor;
+    const theta = Math.acos(base / 2 / topSides);
+
+    const vertex4 = vertex0.translateAndReproduce(base,0);
+    const vertex3 = vertex1.translateAndReproducePolar(0,height);
+    const vertex1 = vertex0.translateAndReproducePolar(0,height);
+    const vertex2 = vertex4.translateAndReproducePolar(topSides, theta);
+    return new Polygon([vertex0, vertex1, vertex2, vertex3, vertex4]);
+}
+
+function regularHexagon(sideLength) {
+    return constructRegularPolygon(6, sideLength)
+
+}
+
+function regularOctagon(sideLength) {
+    return constructRegularPolygon(8, sideLength)
+}
+
+
+//// INCOMPLETE!!!!!!!
+function constructRegularPolygon(nSides, sideLength, vertex0 = makeOrigin()) {
+    const theta =  convertDegreesToRadians((nSides - 2) * 180 / nSides);
+    this.currentAngle = 0;
+    let i;
+    let vertexArray = [vertex0];
+    for (i = 0; i < nSides; i++) {
+        let phi = undefined;
+        /// figure out a recursive function that always gives the next angle, relative to the horizontal, of a regular polygon
+        vertexArray.push(vertexArray[i].translateAndReproducePolar(sideLength,phi));
+    }
+    return new Polygon(vertexArray)
+}
+
+
+/// should I make this a subclass of polygon?????
+/// there isn't anything about these methods that make it inconsistent with the methods of polygon!!
+// triangle can be a subclass of polygon, with verxtexA, vertexB, and vertexC => none of these variables are defined in the polygon method!
+// and many of the methods are consistent
+class Triangle extends Polygon {
     constructor(vertexA, vertexB, vertexC, forceRight) {
+        super([vertexA, vertexB, vertexC]);
+
         this.vertexA = vertexA;
         this.vertexB = vertexB;
         this.vertexC = vertexC;
 
         this.triangle = true;
 
-        this.setParameters();
+
+        this.calculateTriangleParameters();
 
         if (forceRight) {
             this.forceRight();
@@ -690,7 +898,7 @@ class Triangle {
         this.recommendedFontSize = (this.sideLengthA + this.sideLengthB + this.sideLengthC) / 3 * .2;
     }
 
-    setParameters() {
+    calculateTriangleParameters() {
 
         this.sideLengthA = this.vertexB.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthB = this.vertexA.getDistanceToAnotherPoint(this.vertexC);
@@ -709,7 +917,7 @@ class Triangle {
 
     // renames the verticies
     // A becomes B; B becomes C; C becomes A
-    rotateVerticies() {
+    rotateTriangleVertices() {
         const oldVertexA = this.vertexA;
         const oldVertexB = this.vertexB;
         const oldVertexC = this.vertexC;
@@ -741,6 +949,8 @@ class Triangle {
         this.segmentA = oldSegmentC;
         this.segmentB = oldSegmentA;
         this.segmentC = oldSegmentB;
+
+        super.rotateVertices();
     }
 
     isRightTriangle() {
@@ -755,10 +965,10 @@ class Triangle {
     /// rotates verticies so the hypotenuse is angle C
     setRightTriangleConvention() {
         if (Math.abs(this.angleA - 90) < 1e-10) {
-            this.rotateVerticies();
-            this.rotateVerticies();
+            this.rotateTriangleVertices();
+            this.rotateTriangleVertices();
         } else if (Math.abs(this.angleB - 90) < 1e-10) {
-            this.rotateVerticies();
+            this.rotateTriangleVertices();
         }
     }
 
@@ -782,10 +992,10 @@ class Triangle {
     forceRight() {
         const angleClosestTo90 = this.findAngleClosestTo90();
         if (angleClosestTo90 === 'A') {
-            this.rotateVerticies();
-            this.rotateVerticies();
+            this.rotateTriangleVertices();
+            this.rotateTriangleVertices();
         } else if (angleClosestTo90 === 'B') {
-            this.rotateVerticies();
+            this.rotateTriangleVertices();
         } else if (angleClosestTo90 === 'C') {
             // pass
         }
@@ -796,7 +1006,7 @@ class Triangle {
         this.vertexA = newVertexA;
         this.vertexB = newVertexB;
         this.vertexC = newVertexC;
-        this.setParameters();
+        this.calculateTriangleParameters();
     }
 
     // altitude is a segment that begins at one vertex and makes a right angle with the opposite segment
@@ -904,73 +1114,3 @@ function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight
     const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
     return new Triangle(vertexA, vertexB, vertexC, forceRight);
 }
-
-
-// always returns the interior angle!!
-function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
-    const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
-    const a = vertex.getDistanceToAnotherPoint(outsidePointA);
-    const b = vertex.getDistanceToAnotherPoint(outsidePointB);
-
-    let cosTheta = (a**2 + b**2 - c**2) / (2 * a * b);
-    return Math.acos(cosTheta)
-}
-
-
-/// covers all polygons with 4 or greater sides
-// DOES NOT include triangles, because they have a different set of methods
-/// counterclockwise convention: the side that is counterclockwise of each vertex has the same name as that vertex
-// counterclockwise convention: the angle counterclockwise on each vertex has the same name as that vertex
-class Polygon {
-    constructor(arrayOfVertices) {
-        if (arrayOfVertices.length <= 2) {
-            console.log('Must have greater than 2 vertices to create polygon!');
-            return false
-        } else if (arrayOfVertices.length === 3) {
-            return new Triangle(arrayOfVertices[0],arrayOfVertices[1],arrayOfVertices[2]);
-        } else {
-            this.polygon = true;
-            this.vertices = arrayOfVertices;
-            this.calculateParameters();
-        }
-    }
-
-    calculateParameters() {
-        this.lengths = [];
-        this.anglesInRadians = [];
-        this.anglesInDegrees = [];
-        let i;
-        const penultimateVertex = this.vertices[this.vertices.length - 2];
-        const lastVertex = this.vertices[this.vertices.length - 1];
-        const firstVertex = this.vertices[0];
-        const secondVertex = this.vertices[1];
-        this.lengths.push(firstVertex.getDistanceToAnotherPoint(secondVertex));
-        this.anglesInRadians.push(getAngleOfTwoRays(lastVertex,firstVertex,secondVertex));
-        for (i = 1; i < this.vertices.length - 1; i++ ) {
-            const previousVertex = this.vertices[i - 1];
-            const thisVertex = this.vertices[i];
-            const nextVertex = this.vertices[i + 1];
-            this.lengths.push(thisVertex.getDistanceToAnotherPoint(nextVertex));
-            this.anglesInRadians.push(getAngleOfTwoRays(previousVertex, thisVertex, nextVertex)); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
-        }
-        this.lengths.push(lastVertex.getDistanceToAnotherPoint(firstVertex));
-        this.anglesInRadians.push(getAngleOfTwoRays(penultimateVertex, lastVertex, firstVertex));
-
-        this.anglesInRadians.forEach((angleInRadians) => {
-           this.anglesInDegrees.push(convertRadiansToDegrees(angleInRadians));
-        });
-    }
-}
-
-function rectangle(width, height, vertex0 = makeOrigin()) {
-    let arrayOfVertices = [vertex0];
-    arrayOfVertices.push(new Point(vertex0.x + width, vertex0.y));
-    arrayOfVertices.push(new Point(vertex0.x + width, vertex0.y + height));
-    arrayOfVertices.push(new Point(vertex0.x, vertex0.y + height));
-    return new Polygon(arrayOfVertices)
-}
-
-function square(sideLength, vertex0) {
-    return rectangle(sideLength, sideLength, vertex0)
-}
-

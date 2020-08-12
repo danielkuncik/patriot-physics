@@ -1,4 +1,12 @@
 
+/*
+To do: (8-12-2020)
+- make sure triangles appear as polygons
+- add all of the functions to create different types of polygon
+- use this to create a very good AREA pod
+- create functions to label polygons
+ */
+
 // for making shapes etc.
 class GeometryPad extends Diagram {
     constructor() {
@@ -261,5 +269,72 @@ class GeometryPad extends Diagram {
     /// POLYGON METHODS
     /// "polygon" here refers to the polygon object, which covers all polygons with 4 or more sides, but not triangles
 
+    addExistingPolygon(polygonObject) {
+
+    }
+
+    addSquare(sideLength, vertex0 = makeOrigin()) {
+
+    }
+
+    addRectangle(width, height, vertex0 = makeOrigin()) {
+
+    }
+
+    addTrapezoid() {
+
+    }
+
+    addIsoscelesTrapezoid() {
+
+    }
+
+    addRightTrapezoid() {
+
+    }
+
+    addParallelogram() {
+
+    }
+
+    addRhombus() {
+
+    }
+
+    addRegularPentagon() {
+
+    }
+
+    addHomePlate() {
+
+    }
+
+    addRegularHexagon() {
+
+    }
+
+    addRegularOctagon(sideLength) {
+
+    }
+
+    addStopSign(sideLength) {
+        this.addRegularOctagon(sideLength);
+    }
+
+    labelAngleOfPolygon(vertexIndex, label, degreeSymbol, polygonObject = this.polygons[0]) {
+        if (this.fontSize === 0) {this.calculateFontSize();}
+    }
+
+    squareAngleOfPolygon(vertexIndex, polygonObject = this.polygons[0]) {
+        if (this.fontSize === 0) {this.calculateFontSize();}
+    }
+
+    squareAllRightAnglesOfPolygon(polygonObject = this.polygons[0]) {
+
+    }
+
+    labelSideOfPolygon(vertexIndex, label, polygonObject = this.polygons[0]) {
+        if (this.fontSize === 0) {this.calculateFontSize();}
+    }
 
 }
