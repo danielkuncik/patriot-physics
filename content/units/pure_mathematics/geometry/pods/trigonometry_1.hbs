@@ -1,4 +1,10 @@
 
+<!--
+To do:
+- create two separate sections
+'solve for hypotensue problem, solve for leg problem
+-->
+
 <p class = 'definition' data-word = 'Right Triangle'>
   A <strong>right triangle</strong>
   is a triangle with one angle
@@ -104,25 +110,21 @@
       <div class = 'col-md-6 mb-5'>
         <li class = 'question' id = 'randomProblem4'><br></li>
       </div>
+    </div>
+  </div>
+</ol>
 
 <script>
 
   appendProblem('triangle1',solveForHypotenuseProblem(3,4));
   appendProblem('triangle2',solveForHypotenuseProblem(20,21));
-//  appendProblem('triangle3',solveForHyptenuseProblem());
-//  $("#triangle1").append(solveForHypotenuseProblem(3,4).drawCanvas(300));
-
-
-  // $("#triangle2").append(solveForHypotenuseProblem(20,21).drawCanvas(300));
-  // $("#triangle8").append(solveForHypotenuseProblem(35.7,10.9).drawCanvas(300));
-  // $("#triangle9").append(solveForHypotenuseProblem(85.1,75.1).drawCanvas(300));
-  //
-  //
-  // $("#triangle3").append(solveForLegProblem(77,85).drawCanvas(300));
-  // $("#triangle4").append(solveForLegProblem(39,89).drawCanvas(300));
-  // $("#triangle5").append(solveForLegProblem(55,73).drawCanvas(300));
-  // $("#triangle6").append(solveForLegProblem(29.1,43).drawCanvas(300));
-  // $("#triangle7").append(solveForLegProblem(6.46,51.0,3).drawCanvas(300));
+  appendProblem('triangle3',solveForLegProblem(77,85));
+  appendProblem('triangle4',solveForLegProblem(39,89));
+  appendProblem('triangle5',solveForLegProblem(55,73));
+  appendProblem('triangle6',solveForLegProblem(29.1,43));
+  appendProblem('triangle7',solveForLegProblem(6.46,51.0));
+  appendProblem('triangle8',solveForHypotenuseProblem(10.9,35.7));
+  appendProblem('triangle9',solveForHypotenuseProblem(75.1,85.1));
 
 
   appendProblem('randomProblem1',randomPythagoreanTheoremProblem());
@@ -130,33 +132,9 @@
   appendProblem('randomProblem3',randomPythagoreanTheoremProblem());
   appendProblem('randomProblem4',randomPythagoreanTheoremProblem());
 
-  // add a random problem generator
 
 </script>
 
-
-<!--
-before translation
-0: Point {x: 3, y: 0, name: "A"} [vertex B]
-1: Point {x: 2.9999999999999996, y: 4, name: "B"} [vertex C]
-2: Point {x: 4.3203840920506664e-12, y: 3.07327612945304e-11, name: "origin"} [vertex A]
-
-before rescale
-0: Point {x: 2.9999999999770144, y: 2, name: "A"}
-1: Point {x: 2.999999999977014, y: 6, name: "B"}
-2: Point {x: 0, y: 2.000000000002069, name: "origin"}, what's up with this? the origin should never be moved [translation]
-
-after rescale
-0: Point {x: 54.99999999957859, y: 36.666666666666664, name: "A"}
-1: Point {x: 54.999999999578584, y: 110, name: "B"}
-2: Point {x: 0, y: 36.66666666670459, name: "origin"}
-
-
-Final [everything has translated DOWN by 2)????
-0: Point {x: 3, y: 0, name: "A"}
-1: Point {x: 2.9999999999999996, y: 4.000000000000001, name: "B"}
-2: Point {x: 8.577920526543722e-11, y: 3.986588836824012e-12, name: "origin"}
--->
 
 
 <ol class = 'answerList'></ol>

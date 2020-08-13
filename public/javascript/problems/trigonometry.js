@@ -118,16 +118,57 @@ you should always enter the known information,
 never the unknown information or irrelevant information!!!
  */
 
-function sineProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) {
-    const knownSide = 'C';
-    const unknownSide = knownAngle;
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize,moveAngleLabelToKey);
+// SOLVING FOR SIDE PROBLEMS
+
+function sideProblem(type, knownSide, knownAngle, swap) {
+    let answer;
+    let problem = new GeometryPad();
+
 }
-function cosineProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) {
-    const knownSide = 'C';
-    const unknownSide = selectTheOtherLeg(knownAngle);
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize,moveAngleLabelToKey);
+
+function sineProblem(hypotenuse,angleInDegrees,swap) {
+    let answer;
+    let problem = new GeometryPad();
+    if (!swap) {
+        problem.addTriangleSAA(hypotenuse,angleInDegrees,90);
+        problem.labelUnknownSideOfTriangle('B');
+        problem.labelAngleOfTriangle('B');
+        answer = problem.triangles[0].sideLengthB;
+    } else {
+        problem.addTriangleSAA(hypotenuse,90 - angleInDegrees, 90);
+        problem.labelUnknownSideOfTriangle('A');
+        problem.labelAngleOfTriangle('A');
+        answer = problem.triangles[0].sideLengthA;
+    }
+    problem.labelSideOfTriangle('C');
+    problem.addRightTriangleMarker();
+    return {
+        problem: problem,
+        answer: answer
+    }
 }
+function cosineProblem(hypotenuse, angleInDegrees, swap) {
+    let answer;
+    let problem = new GeometryPad();
+    if (!swap) {
+        problem.addTriangleSAA(hypotenuse,angleInDegrees,90);
+        problem.labelUnknownSideOfTriangle('A');
+        problem.labelAngleOfTriangle('B');
+        answer = problem.triangles[0].sideLengthA;
+    } else {
+        problem.addTriangleSAA(hypotenuse,90 - angleInDegrees, 90);
+        problem.labelUnknownSideOfTriangle('A');
+        problem.labelAngleOfTriangle('B');
+        answer = problem.triangles[0].sideLengthA;
+    }
+    problem.labelSideOfTriangle('C');
+    problem.addRightTriangleMarker();
+    return {
+        problem: problem,
+        answer: answer
+    }
+}
+
 function tangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) {
     const knownSide = selectTheOtherLeg(knownAngle);
     const unknownSide = knownAngle;
@@ -159,6 +200,7 @@ function inverseSineProblem(opposite, hypotenuse, unknownAngle = 'A', fontSize) 
 function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize) {
     const opposite = Math.sqrt(hypotenuse**2 - adjacent**2);
 }
+
 
 function inverseTangentProblem(opposite, adjacent, unknownAngle = 'A', fontSize) {
     let triangle = new GeometryPad();

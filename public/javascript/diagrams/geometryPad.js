@@ -264,6 +264,10 @@ class GeometryPad extends Diagram {
         this.labelSideOfTriangle(side,label,triangleObject);
     }
 
+    rotateTriangle(angleInDegrees, triangleObject = this.triangles[0]) {
+        triangleObject.rotate(angleInDegrees);
+    }
+
 
     // #####################################################################
     /// POLYGON METHODS

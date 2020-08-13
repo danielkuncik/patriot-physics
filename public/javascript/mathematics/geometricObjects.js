@@ -1050,6 +1050,16 @@ class Triangle extends Polygon {
         DiagramObject.addExistingSegment(this.segmentB);
         DiagramObject.addExistingSegment(this.segmentC);
     }
+
+    // definitely does not work!!!!
+    /// FIX THIS! I need it to make my triangles face the correct way all the time!
+    rotate(angleInDegrees) {
+        const centroid = this.getCentroid();
+        const theta = convertDegreesToRadians(angleInDegrees);
+        this.vertexA.rotate(theta, centroid);
+        this.vertexB.rotate(theta, centroid);
+        this.vertexB.rotate(theta, centroid);
+    }
 }
 
 function constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA) {
@@ -1100,6 +1110,7 @@ function constructTriangleSSS(side1, side2, side3, forceRight, vertexA) {
 /// CHECK ON::: funny behavior if the SECOND angle is 90 degrees!
 /// in some cases, swapping the angle gave a different triangle, so check on that
 /// the third side is coming in with the label on the wrong side!
+/// Sometimes returns points insid ethe triangle instead of outside
 function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA) {
 
     const angle3inDegrees = 180 - angle1inDegrees - angle2inDegrees;
@@ -1111,5 +1122,7 @@ function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight
     const lineA = constructLineFromPointAndAngle(vertexB, convertDegreesToRadians(180 - angle1inDegrees));
     const lineB = constructLineFromPointAndAngle(vertexA, convertDegreesToRadians(angle3inDegrees));
     const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
-    return new Triangle(vertexA, vertexB, vertexC, forceRight);
+    let newTriangle = new Triangle(vertexA, vertexB, vertexC, forceRight);
+    //newTriangle.rotate(180);
+    return newTriangle
 }

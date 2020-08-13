@@ -17,3 +17,7 @@ function coinFlip() {
 function randomPythagoreanTripleUnder100() {
   return pythagoreanTriples[randInt(0,15)];
 }
+
+function randomComplementaryAngles() {
+  return complementaryAngles[randInt(0,complementaryAngles.length - 1)];
+}

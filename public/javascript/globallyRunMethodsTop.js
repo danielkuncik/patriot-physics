@@ -10,6 +10,10 @@ function addAnswer(id, answer) {
     $(`#${id}`).attr('data-answer',answer);
 }
 
+/*
+I need to add a sig fig counter here!
+ */
+
 // change width and height to make them in terms of the screen
 function appendProblem(id, problemObject, width = 300, height = 300) {
   const problem = problemObject.problem;
@@ -23,7 +27,7 @@ function appendProblem(id, problemObject, width = 300, height = 300) {
   if (typeof(answer) === 'string') {
     $(`#${id}`).attr('data-answer',answer);
   } else if (typeof(answer) === 'number') {
-    $(`#${id}`).attr('data-answer',String(answer));
+    $(`#${id}`).attr('data-answer',String(roundValue(answer,2)));
   } else if (typeof(answer) === 'object' && answer.diagram) {
     const answerID = `${id}_ans`;
     $(`#${id}`).attr('data-answer_id',answerID);
