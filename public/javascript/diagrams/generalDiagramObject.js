@@ -13,7 +13,6 @@ which i could use to better fit it into spaces
 // and for all points to be positive (as though all in quadrant 1)
 
 
-
 function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {
     var scale = 1;
     if (originalWidth !== maxWidth || originalHeight !== maxHeight) {
@@ -701,6 +700,7 @@ class FunctionGraph {
 
 class Diagram {
     constructor() {
+        this.diagram = true;
         this.points = [];
         this.segments = [];
         this.circles = [];

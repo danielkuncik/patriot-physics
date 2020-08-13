@@ -10,10 +10,28 @@ function addAnswer(id, answer) {
     $(`#${id}`).attr('data-answer',answer);
 }
 
+// change width and height to make them in terms of the screen
+function appendProblem(id, problemObject, width = 300, height = 300) {
+  const problem = problemObject.problem;
+  const answer = problemObject.answer;
+  if (typeof(problem) === 'string') {
+    $(`#${id}`).append($(`<p>${problem}</p>`));
+  } else if (typeof(problem) === 'object' && problem.diagram) {
+    $(`#${id}`).append(problem.drawCanvas(width, height));
+  }
+
+  if (typeof(answer) === 'string') {
+    $(`#${id}`).attr('data-answer',answer);
+  } else if (typeof(answer) === 'number') {
+    $(`#${id}`).attr('data-answer',String(answer));
+  } else if (typeof(answer) === 'object' && answer.diagram) {
+    const answerID = `${id}_ans`;
+    $(`#${id}`).attr('data-answer_id',answerID);
+    addAnswerObject(answerId, answer.drawCanvas(width, height));
+  }
+}
+
 
 
 let questionListAlreadyCreated = false; /// this global variable makes it so that
 // the question and answer list function is run only once
-
-
-

@@ -38,7 +38,7 @@
   <div class = 'container'>
     <div class = 'row'>
       <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle1' data-answer = '5'><br></li>
+        <li class = 'question' id = 'triangle1'><br></li>
       </div>
       <div class = 'col-md-6 mb-5'>
         <li class = 'question' id = 'triangle2' data-answer = '29'><br></li>
@@ -79,20 +79,56 @@
   </div>
 </ol>
 
+<h4>
+  Random Problems
+</h4>
+<p>
+  You do not need to complete these in order to receive full credit for this assignment.
+</p>
+
+
+<ol class = 'questionList'>
+  <div class = 'container'>
+    <div class = 'row'>
+      <div class = 'col-md-6 mb-5'>
+        <li class = 'question' id = 'randomProblem1'><br></li>
+      </div>
+      <div class = 'col-md-6 mb-5'>
+        <li class = 'question' id = 'randomProblem2'><br></li>
+      </div>
+    </div>
+    <div class = 'row'>
+      <div class = 'col-md-6 mb-5'>
+        <li class = 'question' id = 'randomProblem3'><br></li>
+      </div>
+      <div class = 'col-md-6 mb-5'>
+        <li class = 'question' id = 'randomProblem4'><br></li>
+      </div>
+
 <script>
 
-  $("#triangle1").append(solveForHypotenuseProblem(3,4).drawCanvas(300));
-  $("#triangle2").append(solveForHypotenuseProblem(20,21).drawCanvas(300));
-  $("#triangle8").append(solveForHypotenuseProblem(35.7,10.9).drawCanvas(300));
-  $("#triangle9").append(solveForHypotenuseProblem(85.1,75.1).drawCanvas(300));
+  appendProblem('triangle1',solveForHypotenuseProblem(3,4));
+  appendProblem('triangle2',solveForHypotenuseProblem(20,21));
+//  appendProblem('triangle3',solveForHyptenuseProblem());
+//  $("#triangle1").append(solveForHypotenuseProblem(3,4).drawCanvas(300));
 
 
-  $("#triangle3").append(solveForLegProblem(77,85).drawCanvas(300));
-  $("#triangle4").append(solveForLegProblem(39,89).drawCanvas(300));
-  $("#triangle5").append(solveForLegProblem(55,73).drawCanvas(300));
-  $("#triangle6").append(solveForLegProblem(29.1,43).drawCanvas(300));
-  $("#triangle7").append(solveForLegProblem(6.46,51.0,3).drawCanvas(300));
+  // $("#triangle2").append(solveForHypotenuseProblem(20,21).drawCanvas(300));
+  // $("#triangle8").append(solveForHypotenuseProblem(35.7,10.9).drawCanvas(300));
+  // $("#triangle9").append(solveForHypotenuseProblem(85.1,75.1).drawCanvas(300));
+  //
+  //
+  // $("#triangle3").append(solveForLegProblem(77,85).drawCanvas(300));
+  // $("#triangle4").append(solveForLegProblem(39,89).drawCanvas(300));
+  // $("#triangle5").append(solveForLegProblem(55,73).drawCanvas(300));
+  // $("#triangle6").append(solveForLegProblem(29.1,43).drawCanvas(300));
+  // $("#triangle7").append(solveForLegProblem(6.46,51.0,3).drawCanvas(300));
 
+
+  appendProblem('randomProblem1',randomPythagoreanTheoremProblem());
+  appendProblem('randomProblem2',randomPythagoreanTheoremProblem());
+  appendProblem('randomProblem3',randomPythagoreanTheoremProblem());
+  appendProblem('randomProblem4',randomPythagoreanTheoremProblem());
 
   // add a random problem generator
 

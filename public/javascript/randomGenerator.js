@@ -8,3 +8,12 @@ function randInt(m,n) {
 function randNumber(m,n,numDecimals) {
   return randInt(m*numDecimals, n*numDecimals) / numDecimals;
 }
+
+
+function coinFlip() {
+  return Math.random() > 0.5
+}
+
+function randomPythagoreanTripleUnder100() {
+  return pythagoreanTriples[randInt(0,15)];
+}
