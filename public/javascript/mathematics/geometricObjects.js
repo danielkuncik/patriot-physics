@@ -777,6 +777,15 @@ class Polygon {
         this.lengths = newLengthArray;
         this.angles = newAngleArray;
     }
+
+
+    rotateAboutPoint(angleInDegrees, centerPoint) {
+      const theta = convertDegreesToRadians(angleInDegrees);
+      this.vertices.forEach((vertex) => {
+        console.log(vertex, centerPoint);
+        vertex.rotate(theta, centerPoint);
+      });
+    }
 }
 
 
@@ -788,16 +797,7 @@ still must complete:
 - regular polygon
  */
 
-function rectangle(width, height, vertex0 = makeOrigin()) {
-    const vertex1 = vertex0.translateAndReproduce(0,height);
-    const vertex2 = vertex0.translateAndReproduce(width,height);
-    const vertex3 = vertex0.translateAndReproduce(width,0);
-    return new Polygon([vertex0, vertex1, vertex2, vertex3])
-}
 
-function square(sideLength, vertex0) {
-    return rectangle(sideLength, sideLength, vertex0)
-}
 
 /// THESE ALL NEED TO BE A COUNTERCLOCKWISE ORIENTATION!!!!
 function rhombus(sideLength, angle1inDegrees, vertex0 = makeOrigin()) {
@@ -1053,13 +1053,17 @@ class Triangle extends Polygon {
 
     // definitely does not work!!!!
     /// FIX THIS! I need it to make my triangles face the correct way all the time!
-    rotate(angleInDegrees) {
-        const centroid = this.getCentroid();
+    spin(angleInDegrees) {
         const theta = convertDegreesToRadians(angleInDegrees);
+        const centroid = this.getCentroid();
         this.vertexA.rotate(theta, centroid);
         this.vertexB.rotate(theta, centroid);
-        this.vertexB.rotate(theta, centroid);
+        this.vertexC.rotate(theta, centroid);
     }
+}
+
+function constructEquilateralTriangle(sideLength, vertexA) {
+  return constructTriangleSSS(sideLength, sideLength, sideLength, false, vertexA)
 }
 
 function constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA) {
@@ -1112,7 +1116,6 @@ function constructTriangleSSS(side1, side2, side3, forceRight, vertexA) {
 /// the third side is coming in with the label on the wrong side!
 /// Sometimes returns points insid ethe triangle instead of outside
 function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA) {
-
     const angle3inDegrees = 180 - angle1inDegrees - angle2inDegrees;
     if (angle3inDegrees <= 0) {
         console.log('cannot have a triangle with total angle greater than 180');
@@ -1125,4 +1128,44 @@ function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight
     let newTriangle = new Triangle(vertexA, vertexB, vertexC, forceRight);
     //newTriangle.rotate(180);
     return newTriangle
+}
+
+function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, vertexA) {
+  const theta = convertDegreesToRadians(angleA);
+  const x = hypotenuse * Math.cos(theta);
+  const y = hypotenuse * Math.sin(theta);
+  const vertexC = vertexA.translateAndReproduce(x,0);
+  const vertexB = vertexA.translateAndReproduce(x,y);
+  let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+  return newTriangle
+}
+
+class Rectangle extends Polygon {
+  constructor(width, height, vertex0) {
+    const vertex1 = vertex0.translateAndReproduce(0,height);
+    const vertex2 = vertex0.translateAndReproduce(width,height);
+    const vertex3 = vertex0.translateAndReproduce(width,0);
+    super([vertex0, vertex1, vertex2, vertex3]);
+  }
+
+  // diagonal through vertex 0 and vertex 2
+  getDiagonal0() {
+    return new Segment(this.vertices[0],this.vertices[2]);
+  }
+  getDiagonal1() {
+    return new Segment(this.vertices[1],this.vertices[3]);
+  }
+  getCenter() {
+    return this.getDiagonal0().intersectionWithAnotherSegment(this.getDiagonal1())
+  }
+  spinAboutCenter(angleInDegrees) {
+    super.rotateAboutPoint(angleInDegrees, this.getCenter())
+  }
+
+}
+
+class Square extends Rectangle {
+  constructor(sideLength, vertex0) {
+    super(sideLength, sideLength, vertex0);
+  }
 }

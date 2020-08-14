@@ -12,7 +12,8 @@ class GeometryPad extends Diagram {
     constructor() {
         super();
         this.triangles = [];
-        this.polygons = [];
+        this.unclassifiedPolygons = [];
+        this.rectangles = [];
         this.orientation = 'counterclockwise'; // default
         this.fontSize = 0;
         this.fontMultiplier = 1;
@@ -45,32 +46,46 @@ class GeometryPad extends Diagram {
 
     /// ##########################################
     /// TRIANGLE METHODS
+    addTriangleObject(triangleObject) {
+      this.triangles.push(triangleObject);
+      super.addExistingPoint(triangleObject.vertexA);
+      super.addExistingPoint(triangleObject.vertexB);
+      super.addExistingPoint(triangleObject.vertexC);
+      super.addExistingSegment(triangleObject.segmentA);
+      super.addExistingSegment(triangleObject.segmentB);
+      super.addExistingSegment(triangleObject.segmentC);
+      return triangleObject
+    }
+
+
     addTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA);
-        this.triangles.push(newTriangle);
-        this.addExistingTriangleObject(newTriangle);
-        return newTriangle
+        return this.addTriangleObject(newTriangle)
     }
 
     addTriangleSSS(side1, side2, side3, forceRight, vertexA = makeOrigin()) {
       let newTriangle = constructTriangleSSS(side1, side2, side3, forceRight, vertexA);
-      this.triangles.push(newTriangle);
-      this.addExistingTriangleObject(newTriangle);
-      return newTriangle
+      return this.addTriangleObject(newTriangle)
     }
 
     addTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA);
-        this.triangles.push(newTriangle);
-        this.addExistingTriangleObject(newTriangle);
-        return newTriangle
+        return this.addTriangleObject(newTriangle)
     }
 
     addTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA);
-        this.triangles.push(newTriangle);
-        this.addExistingTriangleObject(newTriangle);
-        return newTriangle
+        return this.addTriangleObject(newTriangle)
+    }
+
+    addEquilateralTriangle(sideLength, vertexA = makeOrigin()) {
+      let newTriangle = constructEquilateralTriangle(sideLength, vertexA);
+      return this.addTriangleObject(newTriangle)
+    }
+
+    addRightTriangleHypotenuseAngle(hypotenuse, angleA, vertexA = makeOrigin()) {
+      let newTriangle = constructRightTriangleHypotenuseAngle(hypotenuse, angleA, vertexA);
+      return this.addTriangleObject(newTriangle)
     }
 
     labelSideOfTriangle(oppositeVertex, label, triangleObject = this.triangles[0]) {
@@ -194,11 +209,11 @@ class GeometryPad extends Diagram {
       this.labelAngleOfTriangle(vertex,'φ',false, triangleObject);
     }
 
-    addExistingTriangleObject(triangleObject) {
-        this.addExistingSegment(triangleObject.segmentA);
-        this.addExistingSegment(triangleObject.segmentB);
-        this.addExistingSegment(triangleObject.segmentC);
-    }
+    // addTriangleToDiagram(triangleObject) {
+    //     this.addExistingSegment(triangleObject.segmentA);
+    //     this.addExistingSegment(triangleObject.segmentB);
+    //     this.addExistingSegment(triangleObject.segmentC);
+    // }
 
     addRightTriangleMarker(squareLength,triangleObject = this.triangles[0]) {
         if (this.fontSize === 0) { /// may create issues !!!
@@ -264,8 +279,8 @@ class GeometryPad extends Diagram {
         this.labelSideOfTriangle(side,label,triangleObject);
     }
 
-    rotateTriangle(angleInDegrees, triangleObject = this.triangles[0]) {
-        triangleObject.rotate(angleInDegrees);
+    spinTriangle(angleInDegrees, triangleObject = this.triangles[0]) {
+        triangleObject.spin(angleInDegrees);
     }
 
 
@@ -273,16 +288,29 @@ class GeometryPad extends Diagram {
     /// POLYGON METHODS
     /// "polygon" here refers to the polygon object, which covers all polygons with 4 or more sides, but not triangles
 
-    addExistingPolygon(polygonObject) {
-
+    addNonTrianglePolygonToDiagram(polygonObject) {
+      let i, thisVertex, lastVertex = polygonObject.vertices[polygonObject.vertices.length - 1];
+      for (i = 0; i < polygonObject.vertices.length; i++) {
+        thisVertex = polygonObject.vertices[i];
+        super.addSegment(lastVertex,thisVertex);
+        lastVertex = thisVertex;
+      }
     }
 
     addSquare(sideLength, vertex0 = makeOrigin()) {
-
+      let newSquare = new Square(sideLength);
+      this.rectangles.push(newSquare);
+      this.addNonTrianglePolygonToDiagram(newSquare);
     }
 
     addRectangle(width, height, vertex0 = makeOrigin()) {
+      let newRectangle = new Rectangle(width, height, vertex0);
+      this.rectangles.push(newRectangle);
+      this.addNonTrianglePolygonToDiagram(newRectangle);
+    }
 
+    spinRectangle(angleInDegrees, rectangleObject = this.rectangles[0]) {
+      rectangleObject.spinAboutCenter(angleInDegrees);
     }
 
     addTrapezoid() {

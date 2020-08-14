@@ -19,6 +19,10 @@
 
 <script>
 
+  let myTriangle = new GeometryPad();
+  myTriangle.addRightTriangleHypotenuseAngle(5,45);
+  $("#putItHere").append(myTriangle.drawCanvas());
+
 //    let interactionDiagram = new InteractionDiagram();
 //    interactionDiagram.addActor('Knife',0,0, -5, 2);
 //    interactionDiagram.addActor('Watermelon',0,-10, -1.2, 0.9);
@@ -35,21 +39,21 @@
     // $("#putTheOtherOneHere").append(interactionDiagram.drawCanvas());
 
 
-
-    let newDiagram = new Diagram();
-    //     addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
-    let newText = newDiagram.addText('hello its me', makeOrigin(),1,Math.PI / 2);
-    newText.extendRangeBox(4,0);
-    newText.drawBoxAround(newDiagram);
-    // newText.rangeBox.addSegmentsToDiagram(newDiagram);
-    newDiagram.addBlackCircle(makeOrigin(),0.25);
-    // newDiagram.addBlackCircle(new Point(-6,0),.25);
-    // newDiagram.addBlackCircle(new Point(-12,0),.25);
-    // newDiagram.addBlackCircle(new Point(6,0),.25);
-    // newDiagram.addText('hello its me', origin,1,Math.PI / 4);
-    $("#putItHere").append(newDiagram.drawCanvas(1000));
-
    //
+   //  let newDiagram = new Diagram();
+   //  //     addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
+   //  let newText = newDiagram.addText('hello its me', makeOrigin(),1,Math.PI / 2);
+   //  newText.extendRangeBox(4,0);
+   //  newText.drawBoxAround(newDiagram);
+   //  // newText.rangeBox.addSegmentsToDiagram(newDiagram);
+   //  newDiagram.addBlackCircle(makeOrigin(),0.25);
+   //  // newDiagram.addBlackCircle(new Point(-6,0),.25);
+   //  // newDiagram.addBlackCircle(new Point(-12,0),.25);
+   //  // newDiagram.addBlackCircle(new Point(6,0),.25);
+   //  // newDiagram.addText('hello its me', origin,1,Math.PI / 4);
+   //  $("#putItHere").append(newDiagram.drawCanvas(1000));
+   //
+   // //
    //  $("#FBD").append(fastFBD([['up','tension',1.5],['down','gravity',1]]).drawCanvas());
    //
    //  const m_knife = .25;
