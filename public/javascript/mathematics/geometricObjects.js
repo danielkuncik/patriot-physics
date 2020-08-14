@@ -897,6 +897,8 @@ class Triangle extends Polygon {
         this.setRightTriangleConvention(); // if right triangle, automatically sets the 90 degree vertex to C;
 
         this.recommendedFontSize = (this.sideLengthA + this.sideLengthB + this.sideLengthC) / 3 * .2;
+
+        this.area = this.calculateArea();
     }
 
     calculateTriangleParameters() {
@@ -958,6 +960,18 @@ class Triangle extends Polygon {
         } else {
             return false
         }
+    }
+
+    // 8-13-2020: giving answers slightly too high, a problem with 'get length?, or 'get altitude?'
+    calculateArea() {
+        let area;
+        if (this.right) {
+            area = 0.5 * this.sideLengthA * this.sideLengthB;
+        } else {
+            console.log('WARNING: calculate triangle area function can give slightly incorrect answers');
+            area = 0.5 * this.sideLengthA * this.getAltitude('A').getLength();
+        }
+        return area
     }
 
     // if a triangle is a right triangle,
@@ -1168,6 +1182,7 @@ class Rectangle extends Polygon {
     const vertex2 = vertex0.translateAndReproduce(width,height);
     const vertex3 = vertex0.translateAndReproduce(width,0);
     super([vertex0, vertex1, vertex2, vertex3]);
+    this.area = width * height;
   }
 
   // diagonal through vertex 0 and vertex 2

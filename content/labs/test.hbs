@@ -20,7 +20,9 @@
 <script>
 
   let myTriangle = new GeometryPad();
-  myTriangle.addRightTriangleHypotenuseAngle(5,45);
+  myTriangle.addEquilateralTriangle(3);
+  myTriangle.spinTriangle(180);
+  console.log(myTriangle.triangles[0].area);
   $("#putItHere").append(myTriangle.drawCanvas());
 
 //    let interactionDiagram = new InteractionDiagram();
