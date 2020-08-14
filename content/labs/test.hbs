@@ -20,8 +20,11 @@
 <script>
 
   let myTriangle = new GeometryPad();
-  myTriangle.addEquilateralTriangle(3);
-  myTriangle.spinTriangle(180);
+  let vertexA = new Point(-4,8);
+  let vertexB = new Point(-1,0);
+  let vertexC = new Point(2,0);
+  myTriangle.addTriangleVertices(vertexA, vertexB, vertexC);
+  myTriangle.addTriangleAltitude('A');
   console.log(myTriangle.triangles[0].area);
   $("#putItHere").append(myTriangle.drawCanvas());
 

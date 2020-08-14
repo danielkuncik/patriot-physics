@@ -57,6 +57,10 @@ class GeometryPad extends Diagram {
       return triangleObject
     }
 
+    addTriangleVertices(vertexA, vertexB, vertexC) {
+        let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+        return this.addTriangleObject(newTriangle)
+    }
 
     addTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA = makeOrigin()) {
         let newTriangle = constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA);
@@ -289,6 +293,27 @@ class GeometryPad extends Diagram {
     spinTriangle(angleInDegrees, triangleObject = this.triangles[0]) {
         triangleObject.spin(angleInDegrees);
     }
+
+    addTriangleAltitude(whichVertex, dashed, squareLabel = true, triangleObject = this.triangles[0]) {
+        let altitude = triangleObject.getAltitude(whichVertex);
+        if (dashed) {
+            altitude.turnIntoDashedLine();
+        }
+        super.addExistingSegment(altitude);
+        if (squareLabel) {
+            let otherVertex;
+            if (whichVertex === 'A') {
+                otherVertex = triangleObject.vertexB;
+            } else if (whichVertex === 'B') {
+                otherVertex = triangleObject.vertexC;
+            } else if (whichVertex === 'C') {
+                otherVertex = triangleObject.vertexA;
+            }
+            super.squareAngle(altitude.point1, altitude.point2, otherVertex, altitude.getLength() * 0.06);
+        }
+        return altitude
+    }
+
 
 
     // #####################################################################

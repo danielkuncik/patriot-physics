@@ -4,6 +4,8 @@ TO DO: (8-12-2020)
 - add the polygons to the geometry pad object, so that they all appear there
 - read through triangle to make sure it is consistent and nonredundant with polygon
 - make square, rectangle, and other types into subclasses of polygon, instead of only functions= especially
+
+- fix triangle area function
  */
 
 
