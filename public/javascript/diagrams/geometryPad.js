@@ -83,9 +83,16 @@ class GeometryPad extends Diagram {
       return this.addTriangleObject(newTriangle)
     }
 
-    addRightTriangleHypotenuseAngle(hypotenuse, angleA, vertexA = makeOrigin()) {
-      let newTriangle = constructRightTriangleHypotenuseAngle(hypotenuse, angleA, vertexA);
-      return this.addTriangleObject(newTriangle)
+    addRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) {
+      return this.addTriangleObject(constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA))
+    }
+
+    addRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigin()) {
+        return this.addTriangleObject(constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA));
+    }
+
+    addRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA = makeOrigin()) {
+        return this.addTriangleObject(constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA));
     }
 
     labelSideOfTriangle(oppositeVertex, label, triangleObject = this.triangles[0]) {

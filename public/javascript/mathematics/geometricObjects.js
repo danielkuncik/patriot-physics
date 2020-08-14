@@ -1130,14 +1130,36 @@ function constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight
     return newTriangle
 }
 
-function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, vertexA) {
+function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA) {
   const theta = convertDegreesToRadians(angleA);
-  const x = hypotenuse * Math.cos(theta);
-  const y = hypotenuse * Math.sin(theta);
+  let x = hypotenuse * Math.cos(theta);
+  let y = hypotenuse * Math.sin(theta);
+  if (swapLegs) {
+      const oldX = x;
+      const oldY = y;
+      x = oldY;
+      y = oldX;
+  }
   const vertexC = vertexA.translateAndReproduce(x,0);
   const vertexB = vertexA.translateAndReproduce(x,y);
-  let newTriangle = new Triangle(vertexA, vertexB, vertexC);
-  return newTriangle
+  return new Triangle(vertexA, vertexB, vertexC);
+}
+
+function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA) {
+    if (swapLegs) {
+        const oldxLeg = xLeg;
+        const oldyLeg = yLeg;
+        xLeg = oldyLeg;
+        yLeg = oldxLeg;
+    }
+    const vertexC = vertexA.translateAndReproduce(xLeg,0);
+    const vertexB = vertexA.translateAndReproduce(xLeg,yLeg);
+    return new Triangle(vertexA, vertexB, vertexC);
+}
+
+function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA) {
+    const yLeg = Math.sqrt(hypotenuse**2 - xLeg**2);
+    return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
 }
 
 class Rectangle extends Polygon {
