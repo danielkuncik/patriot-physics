@@ -23,11 +23,16 @@ function isStringOfDigits(string) {
   return result
 }
 
-class PhysicsNumber {
-  constructor(firstSigFig, otherSigFigs,exponent = 0, exact = false)
+// values in physics problems
+// allow the mathematical methods to accept these as an input????
+class PhysicsValue {
+  constructor(variable, unit, firstSigFig, otherSigFigs,exponent = 0, exact = false)
     if (!isStringOfDigits(otherSigFigs) || !isDigit(firstSigFig) || !isInteger(exponent)) {
       return false
     }
+    this.physicsValue = true;
+    this.unit = unit;
+    this.variable = variable;
     this.firstSigFig = firstSigFig;
     this.otherSigFigs = otherSigFigs;
     this.exponent = exponent;
@@ -55,7 +60,7 @@ class PhysicsNumber {
 
   }
 
-  floatingPoint() {
+  getFloatingPoint() {
 
   }
 
@@ -70,7 +75,7 @@ class PhysicsNumber {
 
   }
   divide(anotherPhysicsNumber) {
-    
+
   }
 }
 
