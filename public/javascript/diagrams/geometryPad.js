@@ -120,7 +120,9 @@ class GeometryPad extends Diagram {
       if (label === undefined) {
           label = String(value);
       }
+      console.log(end1, end2, this.orientation);
       const textLocation = getOptimalLocationOfText(end1, end2, this.orientation); // clockwise orientiation default
+      console.log(textLocation);
       if (textLocation === 'above' || textLocation === 'left') {
         this.labelLineAbove(end1, end2, label, this.fontSize / 2 , this.fontSize);
       } else if (textLocation === 'below' || textLocation === 'right') {

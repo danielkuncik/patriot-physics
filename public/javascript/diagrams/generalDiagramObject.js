@@ -32,15 +32,17 @@ function getOptimalLocationOfText(point1, point2, turningOrientation) {
     let bestSpot;
 
 
+    console.log(point1, point2, turningOrientation);
+    console.log(convertRadiansToDegrees(angleInRadians));
     // optimal spots for counter-clockwise orientation
     if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {
         bestSpot = 'below';
     } else if (angleInRadians >= Math.PI / 4 && angleInRadians <= 3 * Math.PI / 4) {
-        bestSpot = 'right';
+        bestSpot = 'left';
     } else if (angleInRadians > 3 * Math.PI / 4 && angleInRadians < 5 * Math.PI / 4) {
         bestSpot = 'above';
     } else if (angleInRadians >= 5 * Math.PI / 4 && angleInRadians <= 7 * Math.PI / 4) {
-        bestSpot = 'left';
+        bestSpot = 'right';
     } else if (angleInRadians > 7 * Math.PI / 4 && angleInRadians <= Math.PI * 2 ) {
         bestSpot =  'below';
     } else {
@@ -1107,6 +1109,7 @@ class Diagram {
                 textRotation = 0;
             }
             textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, startAngle);
+            textReferencePoint.translate(vertex.x, vertex.y);
         } else if (textOnStartOrEnd === 'end') {
             textPositioning = 'upperLeft';
             /// add more functions here to label text on angle B!
@@ -1146,7 +1149,7 @@ class Diagram {
             textReferencePoint.translate(vertex.x, vertex.y);
 
 
-            // MUCH MORE TO ADD HERE!
+            // MUCH MORE TO ADD HERE! (not sure what)
         }
         let relativeFontSize = arcRadius * 0.5 * fontProportion;
         if (lockedFontSize) {

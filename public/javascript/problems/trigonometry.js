@@ -126,22 +126,13 @@ function sideProblem(type, knownSide, knownAngle, swap) {
 
 }
 
-function sineProblem(hypotenuse,angleInDegrees,swap) {
-    let answer;
+function sineProblem(hypotenuse,angleInDegrees,swapLegs) {
     let problem = new GeometryPad();
-    if (!swap) {
-        problem.addTriangleSAA(hypotenuse,angleInDegrees,90);
-        problem.labelUnknownSideOfTriangle('B');
-        problem.labelAngleOfTriangle('B');
-        answer = problem.triangles[0].sideLengthB;
-    } else {
-        problem.addTriangleSAA(hypotenuse,90 - angleInDegrees, 90);
-        problem.labelUnknownSideOfTriangle('A');
-        problem.labelAngleOfTriangle('A');
-        answer = problem.triangles[0].sideLengthA;
-    }
+    problem.addRightTriangleHypotenuseAngle(hypotenuse, angleInDegrees, swapLegs);
     problem.labelSideOfTriangle('C');
     problem.addRightTriangleMarker();
+    problem.labelAngleOfTriangle('B');
+    const answer = problem.triangles[0].sideLengthB;
     return {
         problem: problem,
         answer: answer

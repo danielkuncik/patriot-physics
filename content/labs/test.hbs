@@ -8,6 +8,12 @@
 
 <div id = 'FBD' class = 'm-5'></div>
 
+<ol class ='questionList'>
+  <li class = 'question' id = 'triangle2'>
+  </li>
+</ol>
+
+<ol class = 'answerList'></ol>
 
 
 <div id = 'putItHere' class = 'm-5'></div>
@@ -19,14 +25,20 @@
 
 <script>
 
-  let myTriangle = new GeometryPad();
-  let vertexA = new Point(-4,8);
-  let vertexB = new Point(-1,0);
-  let vertexC = new Point(2,0);
-  myTriangle.addTriangleVertices(vertexA, vertexB, vertexC);
-  myTriangle.addTriangleAltitude('A');
-  console.log(myTriangle.triangles[0].area);
-  $("#putItHere").append(myTriangle.drawCanvas());
+  // let myTriangle = new GeometryPad();
+  // let vertexA = new Point(-4,8);
+  // let vertexB = new Point(-1,0);
+  // let vertexC = new Point(2,0);
+  // myTriangle.addTriangleVertices(vertexA, vertexB, vertexC);
+  // myTriangle.addTriangleAltitude('A');
+  // console.log(myTriangle.triangles[0].area);
+
+  let problem = sineProblem(85,25.06,true);
+  appendProblem('triangle2', problem);
+  const myTriangle = problem.problem.triangles[0];
+  console.log(myTriangle);
+
+  // $("#putItHere").append(myTriangle.drawCanvas());
 
 //    let interactionDiagram = new InteractionDiagram();
 //    interactionDiagram.addActor('Knife',0,0, -5, 2);
