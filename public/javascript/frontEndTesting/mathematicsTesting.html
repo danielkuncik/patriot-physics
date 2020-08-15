@@ -15,10 +15,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script src = './frontEndTesting.js'></script>
-<!-- <script src = './reference.js'></script> -->
+<script src = '../mathematics/reference.js'></script>
 <script src = '../mathematics/numberTheory.js'></script>
-<!--<script src = './functionObjects.js'></script>-->
-<!--<script src = './geometricObjects.js'></script>-->
+<!-- <script src = '../mathematics/functionObjects.js'></script>
+<script src = '../mathematics/geometricObjects.js'></script> -->
 
 <div id = 'putItHere'></div>
 
@@ -41,7 +41,24 @@
     mathTests.addSubCategory('numberTheory','listOfPrimes','Seive of Eratothanes');
     mathTests.assertEqualArraysStrict(listOfPrimes(2),[2],'numberTheory','listOfPrimes');
     mathTests.assertEqualArraysStrict(listOfPrimes(10),[2,3,5,7],'numberTheory','listOfPrimes');
-    // any list of primes longer than 2 results in an infinite loop!
+    mathTests.assertEqualStrict(listOfPrimes(541)[99],541,'numberTheory', 'listOfPrimes'); // 541 is the 100th prime number!
+
+    mathTests.addSubCategory('numberTheory','isNumberPrime','Is Number Prime?');
+    mathTests.assertEqualStrict(isNumberPrime(7), true, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(51), false, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(73), true, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(8), false, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(99), false, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(3863), true, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(3863), true, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(8583), false, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(10007), true, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(10009), true, 'numberTheory','isNumberPrime');
+    mathTests.assertEqualStrict(isNumberPrime(10011), false, 'numberTheory','isNumberPrime');
+
+    //// WTF how can 10007 and 10009 both be prime??? I thought if I picked two odds right next to each other, they couldn't both be prime, but they are!
+
+
 
     $("#putItHere").append(mathTests.printAllTests());
 </script>

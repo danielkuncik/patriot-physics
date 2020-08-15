@@ -23,8 +23,37 @@ function listOfPrimes(upperBound) {
   }
   return listOfPrimes
 }
+
+const primesUpTo100 = listOfPrimes(100);
+const primesUpTo1000 = listOfPrimes(1000);
+
+
+function isNumberPrime(number) {
+  if (number <= 1000) {
+    if (primesUpTo1000.includes(number)) {
+      return true
+    } else {
+      return false
+    }
+  } else {
+    let primeLimit
+    if (number % 2 === 0) {
+      return false
+    } else {
+      primeLimit = (number + 1) / 2;
+      const list = listOfPrimes(primeLimit); // you only actually need to go to half of the number,
+      let k;
+      for (k = 0; k < list.length; k++) {
+        if (number % list[k] === 0) {
+          return false
+        }
+      }
+      return true
+    }
+  }
+}
+
 //
-// // const primesUpTo100 = listOfPrimes(100);
 //
 //
 // function primeFactorization(number) {
