@@ -14,19 +14,13 @@
 <!-- Bootstrap js-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script src = '../frontEndTesting.js'></script>
-<script src = './reference.js'></script>
-<script src = './numberTheory.js'></script>
+<script src = './frontEndTesting.js'></script>
+<!-- <script src = './reference.js'></script> -->
+<script src = '../mathematics/numberTheory.js'></script>
 <!--<script src = './functionObjects.js'></script>-->
 <!--<script src = './geometricObjects.js'></script>-->
 
-
-<h3>
-    hey i'm here buddy
-</h3>
-
-
-<div id = 'testsHere'></div>
+<div id = 'putItHere'></div>
 
 <script>
     let mathTests = new TestPackage('Math Tests');
@@ -34,19 +28,22 @@
     //Number theory
     mathTests.addCategory('numberTheory', 'Number Theory');
 
-    mathTests.addSubcategory('numberTheory','isInteger','isInteger Function');
-
+    mathTests.addSubCategory('numberTheory','isInteger','isInteger Function');
     mathTests.assertEqualStrict(isInteger(2),true,'numberTheory','isInteger');
     mathTests.assertEqualStrict(isInteger(0),true,'numberTheory','isInteger');
-    mathTests.assertEqualStrict(isInteger(392857.02),true,'numberTheory','isInteger');
-    mathTests.assertEqualStrict(isInteger(-12),false,'numberTheory','isInteger');
+    mathTests.assertEqualStrict(isInteger(392857),true,'numberTheory','isInteger');
+    mathTests.assertEqualStrict(isInteger(392857.02),false,'numberTheory','isInteger');
+    mathTests.assertEqualStrict(isInteger(-12),true,'numberTheory','isInteger');
     mathTests.assertEqualStrict(isInteger(-214),true,'numberTheory','isInteger');
     mathTests.assertEqualStrict(isInteger(0.5),false,'numberTheory','isInteger');
     mathTests.assertEqualStrict(isInteger(213.123),false,'numberTheory','isInteger');
 
-    // success!
+    mathTests.addSubCategory('numberTheory','listOfPrimes','Seive of Eratothanes');
+    mathTests.assertEqualArraysStrict(listOfPrimes(2),[2],'numberTheory','listOfPrimes');
+    mathTests.assertEqualArraysStrict(listOfPrimes(10),[2,3,5,7],'numberTheory','listOfPrimes');
+    // any list of primes longer than 2 results in an infinite loop!
 
-    $("#testsHere").append(mathTests.printAllTests());
+    $("#putItHere").append(mathTests.printAllTests());
 </script>
 
 

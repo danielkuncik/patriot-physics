@@ -35,13 +35,13 @@ class TestPackage {
     }
 
     // add default name based on the category key
-    addSubcategory(categoryKey, key, name) {
+    addSubCategory(categoryKey, key, name) {
         if (!this.categories[categoryKey]) {
             return false
-        } else if (Object.keys(this.categories[categoryKey]).includes(key)) {
+        } else if (Object.keys(this.categories[categoryKey].subCategories).includes(key)) {
             return false
         } else {
-            this.categories[categoryKey][key] = {
+            this.categories[categoryKey].subCategories[key] = {
                 name: name,
                 tests: []
             };
@@ -71,7 +71,7 @@ class TestPackage {
         if (categoryKey && this.categories[categoryKey]) {
             let categoryName = this.categories[categoryKey].name;
             if (subCategoryKey && this.categories[categoryKey].subCategories[subCategoryKey]) {
-                let subCategoryName = this.categories[categoryKey][subCategoryKey].name;
+                let subCategoryName = this.categories[categoryKey].subCategories[subCategoryKey].name;
                 name = `${categoryName}: ${subCategoryKey} Test ${this.categories[categoryKey].subCategories[subCategoryKey].tests.length + 1}`;
             } else {
                 name = `${categoryName} Unattached Test ${this.categories[categoryKey].unattachedTests.length + 1}`;
@@ -100,6 +100,40 @@ class TestPackage {
             failMessage = `value ${entered} entered; expected ${expected}`;
         }
         this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
+    }
+
+    assertEqualArraysStrict(entered, expected, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+      let pass, failMessage;
+      if (typeof(entered) !== 'object') {
+        failMessage = 'Entered variable not of type object';
+        pass = false;
+      } else if (typeof(expected) !== 'object') {
+        failMessage = 'Expected variable not of type object';
+        pass = false;
+      } else if (entered.length === undefined) {
+        failMessage = 'Entered object not an array';
+        pass = false;
+      } else if (expected.length === undefined) {
+        failMessage = 'Entered object not an array';
+        pass = false;
+      } else if (entered.length !== expected.length) {
+        failMessage = `Entered array of length ${entered.length}; expected array of length ${expected.length}`;
+        pass = false;
+      } else {
+        let j;
+        failMessage = '';
+        pass = true;
+        for (j = 0; j < entered.length; j++) {
+          if (entered[j] !== expected[j]) {
+            failMessage = failMessage + 'Entered array element ${j} = ${entered[j]}; expected array element ${j} = ${expected[j]}';
+            if (failMessage.length > 100) { // 100 characters total
+              break;
+            }
+            pass = false;
+          }
+        }
+      }
+      this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
     }
 
     // privateMethod!

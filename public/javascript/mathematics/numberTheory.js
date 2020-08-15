@@ -5,24 +5,24 @@ function isInteger(number) {
 
 // produces a list of prime numbers up to the upper bound
 // uses the seive of eratothanes
-// function listOfPrimes(upperBound) {
-//   let allNumbers = [undefined,undefined];
-//   let i;
-//   for (i = 2; i <= upperBound; i++) {
-//     allNumbers.push(true);
-//   }
-//   let p, q, k;
-//   let listOfPrimes = [];
-//   for (p = 2; p <= upperBound; p++) {
-//     if (allNumbers[p]) {
-//       listOfPrimes.push(p);
-//       for (q = p * 2; q <= upperBound; p += p) {
-//         allNumbers[q] = false;
-//       }
-//     }
-//   }
-//   return listOfPrimes
-// }
+function listOfPrimes(upperBound) {
+  let allNumbers = [undefined,undefined];
+  let i;
+  for (i = 2; i <= upperBound; i++) {
+    allNumbers.push(true);
+  }
+  let p, q, k;
+  let listOfPrimes = [];
+  for (p = 2; p <= upperBound; p++) {
+    if (allNumbers[p]) {
+      listOfPrimes.push(p);
+      for (q = p * 2; q <= upperBound; q += p) {
+        allNumbers[q] = false;
+      }
+    }
+  }
+  return listOfPrimes
+}
 //
 // // const primesUpTo100 = listOfPrimes(100);
 //
