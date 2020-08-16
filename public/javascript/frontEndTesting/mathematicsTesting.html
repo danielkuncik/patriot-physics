@@ -17,8 +17,8 @@
 <script src = './frontEndTesting.js'></script>
 <script src = '../mathematics/reference.js'></script>
 <script src = '../mathematics/numberTheory.js'></script>
-<!-- <script src = '../mathematics/functionObjects.js'></script>
-<script src = '../mathematics/geometricObjects.js'></script> -->
+<script src = '../mathematics/functionObjects.js'></script>
+<!-- <script src = '../mathematics/geometricObjects.js'></script> -->
 
 <div id = 'putItHere'></div>
 
@@ -56,9 +56,20 @@
     mathTests.assertEqualStrict(isNumberPrime(10009), true, 'numberTheory','isNumberPrime');
     mathTests.assertEqualStrict(isNumberPrime(10011), false, 'numberTheory','isNumberPrime');
     mathTests.assertEqualStrict(isNumberPrime(5142192), false, 'numberTheory','isNumberPrime');
-
-
     //// WTF how can 10007 and 10009 both be prime??? I thought if I picked two odds right next to each other, they couldn't both be prime, but they are!
+
+
+    //####################################################################################################
+    //Function Objects
+
+    mathTests.addCategory('functionObjects','Function Objects');
+
+    mathTests.addSubCategory('functionObjects', 'linearFunctions', "Linear Functions");
+    let line1 = new LinearFunction(5,0);
+    mathTests.assertEqualStrict(line1.runFunction(4),20,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line1.xIntercept,0,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line1.differentiate(22),5,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line1.integrate(3,9),(15 + 45) / 2 * 6,'functionObjects','linearFunctions');
 
 
 

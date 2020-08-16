@@ -22,7 +22,7 @@ class MathematicalFunction {
     }
   }
 
-  isValueInDomain(x) => {
+  isValueInDomain(x) {
     return ((x > this.xMin || (x === this.xMin && this.closedCircleAtMin)) && (x < this.xMax || (x === this.xMax && this.closedCircleAtMax)) && !this.undefinedPoints.includes(x))
   }
 
@@ -57,8 +57,8 @@ class MathematicalFunction {
   differentiate(x) {
     if (!this.isValueInDomain(x)) {
       return undefined
-    } else if (this.derivative) {
-      return this.derivative.runFunction(x)
+    } else if (this.getDerivative()) {
+      return this.getDerivative().runFunction(x)
     } else {
       return this.differentiateBruteForce(x)
     }
@@ -78,20 +78,18 @@ class MathematicalFunction {
   }
 
   integrate(xMin = this.xMin, xMax = this.xMax) {
-    if (!this.isValueInDomain(xMin) || !this.isValueInDomain(xMax) || xMin = -Infinity || xMax = Infinity) {
+    if (!this.isValueInDomain(xMin) || !this.isValueInDomain(xMax) || xMin === -Infinity || xMax === Infinity) {
       return undefined
-    } else if (this.antiderivative) {
-      return this.antiderivative.runFunction(xMax) - this.antiderivative.runFunction(xMin)
     } else if (this.getAntiDerivative()) {
-      let antiDerivative = this.getAntiDerivative()
-      return antiDerivative.runFunction(xMax) - this.antiDerivative.runFunction(xMin)
+      let antiDerivative = this.getAntiDerivative();
+      return antiDerivative.runFunction(xMax) - antiDerivative.runFunction(xMin)
     } else {
       return this.integrateBruteForce(xMin, xMax)
     }
   }
 
   differentiateBruteForce(x, halfStep = 0.001 * (this.xMin - this.xMax)) {
-    if (!this.isValueInDomain(x) || !this.isValueInDomain(x - halfStep) || !this.isValueInDomain(x + halfstep)) {
+    if (!this.isValueInDomain(x) || !this.isValueInDomain(x - halfStep) || !this.isValueInDomain(x + halfStep)) {
       return undefined
     } else {
       return (this.runFunction(x + halfStep) - this.runFunction(x - halfStep)) / (halfStep * 2)
@@ -149,10 +147,11 @@ class StepwiseFunction extends MathematicalFunction {
 class Polynomial extends MathematicalFunction { // in array, begin with the HIGHEST power coefficient
   constructor(arrayOfCoefficients, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
     super(xMin, xMax, closedCircleAtMin, closedCircleAtMax);
+    this.arrayOfCoefficients = arrayOfCoefficients;
 
     super.defineFunction((x) => {
       let value = 0, i, coefficient, power;
-      for (i = 0; i < arrayOfCoefficients.length, i++) {
+      for (i = 0; i < arrayOfCoefficients.length; i++) {
         coefficient = arrayOfCoefficients[i];
         power = arrayOfCoefficients.length - 1 - i;
         value += coefficient * x**power;
@@ -160,6 +159,9 @@ class Polynomial extends MathematicalFunction { // in array, begin with the HIGH
       return value
     });
 
+  }
+
+  getDerivative() {
     if (this.arrayOfCoefficients.length === 0) {
       this.derivative = new ZeroFunction(this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax);
     } else {
@@ -175,8 +177,9 @@ class Polynomial extends MathematicalFunction { // in array, begin with the HIGH
     }
   }
 
-  this.getAntiDerivative() { /// i cannot define the antideritaive above, because it will craete an infinite loop!
-    let antiDerivativeCoefficients = [0]; /// defined with constant zero
+
+  getAntiDerivative(constant = 0) { /// i cannot define the antideritaive above, because it will craete an infinite loop!
+    let antiDerivativeCoefficients = [constant]; /// defined with constant zero
     let i;
     for (i = arrayOfCoefficients.length - 1; i > 0; i--) {
       coefficient = arrayOfCoefficients[i];
@@ -202,8 +205,6 @@ class LinearFunction extends Polynomial {
     // this shoudl redfine the function defined above in the polynomial constructor ?
     super.defineFunction((x) => {return this.slope * x + this.yIntercept})
 
-    this.derivative = new ConstantFunction(this.slope, this.xMin, this.xMax);
-    this.antiderivative = new QuadraticFunction(0.5 * this.slope, this.yIntercept, 0); // all anitderivatives defiend with constant 0
 
     /// range finder is not to be used separately, only within the range function above!
     // figure out how to make this a private class, that can only be called in the super function above
@@ -218,6 +219,14 @@ class LinearFunction extends Polynomial {
     }
   }
 
+  getDerivative() {
+    return new ConstantFunction(this.slope, this.xMin, this.xMax);
+  }
+
+  getAntiDerivative(constant = 0) { // add constant here
+    return new QuadraticFunction(0.5 * this.slope, this.yIntercept, constant);
+  }
+
 }
 
 class ConstantFunction extends LinearFunction {
@@ -225,25 +234,39 @@ class ConstantFunction extends LinearFunction {
     super(0, value, xMin, xMax, closedCircleAtMin, closedCircleAtMax);
     this.value = value;
 
-    this.derivative = new ZeroFunction(this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax);
-    this.antiderivative = new LinearFunction(this.value, 0, this.xMin, this.yMax, this.closedCircleAtMin, this.closedCircleAtMax);
-
     this.rangeFinder = (xMin, xMax) => {
       return [this.value, this.value]
     }
+  }
 
+  getDerivative() {
+      return new ZeroFunction(this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax);
+  }
+
+  getAntiDertivative(constant = 0) {
+      return new LinearFunction(this.value, constant, this.xMin, this.yMax, this.closedCircleAtMin, this.closedCircleAtMax);
   }
 }
 
 // maybe just make this ex
 class ZeroFunction extends ConstantFunction {
   constructor(xMin, xMax, closedCirlceAtMin, closedCircleAtMax) {
-    super(0, xMin, xMax, closedCircleAtMin, closedCircleAtMax);
+    super(0, xMin, xMax, closedCirlceAtMin, closedCircleAtMax);
 
-    this.derivative = this;
-    this.antiderivative = this; // defined with constant zero
     this.rangeFinder = (xMin, xMax) => {
       return [0, 0]
+    }
+  }
+
+  getDerivative() {
+    return this
+  }
+
+  getAntiDerivative(constant = 0) {
+    if (constant === 0) {
+      return this;
+    } else {
+      return new ConstantFunction(constant, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax)
     }
   }
 }
@@ -263,20 +286,25 @@ class QuadraticFunction extends Polynomial {
       return a*x*x + b*x + c
     });
 
-    this.derivative = new LinearFunction(2 * this.x, this.b, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax);
-    this.antiDerivative = new Polynomial([a/3, b/2, c, 0], this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax); //redundant?
-
     let vertexX = -1 * this.b / 2 / this.a
-    if (super(isValeInDomain(vertexX)) {
+    if (super.isValueInDomain(vertexX)) {
       let vertexY = this.a*vertexX * vertexX + this.b * vertexX + this.c;
       this.vertexX = vertexX;
       this.vertexY = vertexY;
-      this.vertex = new Point(this.vertexX, this.vertexY); // make sure points are defined first?? is this necessary??
-    }) else {
+      // this.vertex = new Point(this.vertexX, this.vertexY); // make sure points are defined first?? is this necessary??
+    } else {
       this.vertexX = undefined;
       this.vertexY = undefined;
       this.vertex = undefined;
     }
+  }
+
+  getDerivative() {
+    return new LinearFunction(2 * this.x, this.b, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax)
+  }
+
+  getAntiDerivative(constant = 0) {
+    new Polynomial([a/3, b/2, c, constant], this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax); //redundant?
   }
 }
 

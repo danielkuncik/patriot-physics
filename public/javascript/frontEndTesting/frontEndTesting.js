@@ -58,7 +58,7 @@ class TestPackage {
                 this.categories[categoryKey].unattachedTests.push(newTest);
             }
         } else {
-            this.categories.unattachedTests.push(newTest);
+            this.unattachedTests.push(newTest);
         }
         this.totalTests++;
         if (this.totalTests % 10 === 0) { // every ten tests, automatically count all??? useful???
