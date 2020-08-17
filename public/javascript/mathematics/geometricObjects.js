@@ -1133,7 +1133,7 @@ function constructEquilateralTriangle(sideLength, vertexA = makeOrigin()) { // c
   return new Triangle(vertexA, vertexB, vertexC);
 }
 
-function constructIsocelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation
+function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation
   let vertexB = vertexA.translateAndReproduce(width / 2, height);
   let vertexC = vertexA.translateAndReproduce(width, 0);
   return new Triangle(vertexA, vertexB, vertexC)

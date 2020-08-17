@@ -6,6 +6,7 @@ to do:
 - a stepwise function must be a list of single functions!
 - come up with a way to differentaite many times, if you need it?
 - figure out how to manke range finder a private function and make sure it works as such
+- rewrite differentaite twice
 */
 
 class MathematicalFunction {
@@ -15,6 +16,7 @@ class MathematicalFunction {
     this.closedCircleAtMin = closedCircleAtMin;
     this.closedCircleAtMax = closedCircleAtMax;
     this.undefinedPoints = [];
+    this.function = (x) => {return undefined};
   }
 
   addUndefinedPoint(x) {
@@ -27,17 +29,6 @@ class MathematicalFunction {
 
   isValueInDomain(x) {
     return ((x > this.xMin || (x === this.xMin && this.closedCircleAtMin)) && (x < this.xMax || (x === this.xMax && this.closedCircleAtMax)) && !this.undefinedPoints.includes(x))
-  }
-
-  // can be redefined
-  defineFunction(func) { // used in defining each subclass
-    this.function = (x) => {
-      if (!this.isValueInDomain(x)) {
-        return undefined
-      } else {
-        return func(x)
-      }
-    }
   }
 
   runFunction(x) {
@@ -60,13 +51,17 @@ class MathematicalFunction {
   differentiate(x) {
     if (!this.isValueInDomain(x)) {
       return undefined
-    } else if (this.getDerivative()) {
-      return this.getDerivative().runFunction(x)
+    } else if (this.derivative) { // if it gets the derivative, it recrods it, but does not create an infinite loop
+      return this.derivative.runFunction(x)
+    } else if (this.getDerivative()) { /// can i add 'this.derivative here, so that it recrods the derivative if finds it'
+      this.derivative = this.getDerivative();
+      return this.derivative.runFunction(x)
     } else {
       return this.differentiateBruteForce(x)
     }
   }
 
+// needs to be rewritten!!!!
   differentiateTwice(x) {
     if (!this.isValueInDomain(x)) {
       return undefined
@@ -137,6 +132,24 @@ class MathematicalFunction {
 
 }
 
+class SingleFunction extends MathematicalFunction {
+  constructor(xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
+    super(xMin, xMax, closedCircleAtMin, closedCircleAtMax);
+  }
+
+  // can be redefined
+  defineFunction(func) { // used in defining each subclass
+    this.function = (x) => {
+      if (!super.isValueInDomain(x)) {
+        return undefined
+      } else {
+        return func(x)
+      }
+    }
+  }
+
+}
+
 
 /// think about this
 /// i already have something to start with!
@@ -147,7 +160,7 @@ class StepwiseFunction extends MathematicalFunction {
 }
 
 // do i want this?????
-class Polynomial extends MathematicalFunction { // in array, begin with the HIGHEST power coefficient
+class Polynomial extends SingleFunction { // in array, begin with the HIGHEST power coefficient
   constructor(arrayOfCoefficients, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
     super(xMin, xMax, closedCircleAtMin, closedCircleAtMax);
     this.arrayOfCoefficients = arrayOfCoefficients;
@@ -205,7 +218,7 @@ class LinearFunction extends Polynomial {
       this.xIntercept = -1 * this.yIntercept / this.slope;
     }
 
-    // this shoudl redfine the function defined above in the polynomial constructor ?
+    // this should redfine the function defined above in the polynomial constructor ?
     super.defineFunction((x) => {return this.slope * x + this.yIntercept})
   }
 
@@ -313,7 +326,7 @@ class QuadraticFunction extends Polynomial {
   }
 }
 
-class ExponentialFunction extends MathematicalFunction {
+class ExponentialFunction extends SingleFunction {
   constructor(coefficient, base, coefficientOfPower = 1, xMin, xMax, closedCircleAtMin, closedCircleAtMax, displacement = 0, addedConstant = 0) {
     super(xMin, xMax, closedCircleAtMin, closedCircleAtMax);
     this.coefficient = coefficient;

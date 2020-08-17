@@ -62,42 +62,46 @@ class GeometryPad extends Diagram {
         return this.addTriangleObject(newTriangle)
     }
 
-    addTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA = makeOrigin()) {
-        let newTriangle = constructTriangleSAS(side1, angleInDegrees, side2, forceRight, vertexA);
-        return this.addTriangleObject(newTriangle)
+    addEquilateralTriangle(sideLength, vertexA) {
+      return this.addTriangle(constructEquilateralTriangle(sideLength, vertexA));
+    }
+    addIsoscelesTriangle(width, height, vertexA) {
+      return this.addTriangle(constructIsocelesTriangle(width, height, vertexA))
     }
 
-    addTriangleSSS(side1, side2, side3, forceRight, vertexA = makeOrigin()) {
-      let newTriangle = constructTriangleSSS(side1, side2, side3, forceRight, vertexA);
-      return this.addTriangleObject(newTriangle)
+    // PRIVATE METHOD!!!
+    addRightTriangle(triangleObject, rightAngleMarker) {
+      let newTriangle = this.addTriangle(triangleObject);
+      if (rightAngleMarker) {
+        this.addRightAngleMarker(newTriangle)
+      }
+      return newTriangle
     }
 
-    addTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA = makeOrigin()) {
-        let newTriangle = constructTriangleASA(angle1inDegrees, side, angle2inDegrees, forceRight, vertexA);
-        return this.addTriangleObject(newTriangle)
+    addRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, rightAngleMarker = true, vertexA) {
+      return this.addRightTriangle(constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA), rightAngleMarker);
     }
 
-    addTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA = makeOrigin()) {
-        let newTriangle = constructTriangleSAA(side, angle1inDegrees, angle2inDegrees, forceRight, vertexA);
-        return this.addTriangleObject(newTriangle)
+    addRightTriangleTwoLegs(xLeg, yLeg, swapLegs, rightAngleMarker = true, vertexA) {
+       return this.addTriangle(constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA), rightAngleMarker)
+    }
+    addRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, rightAngleMarker = true, vertexA) {
+      return this.addTriangle(constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA), rightAngleMarker)
+    }
+    
+    addTriangleSAS(sideC, angleBinDegrees, sideA, vertexA) {
+      return this.addTriangle(constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA))
+    }
+    addTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA) {
+      return this.addTriangle(constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA))
+    }
+    addTriangleSSS(sideC, sideB, sideA, vertexA) {
+      return this.addTriangle(constructTriangleSSS(sideC, sideB, sidea, vertexA))
+    }
+    addTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) {
+      return this.addTriangle(constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA))
     }
 
-    addEquilateralTriangle(sideLength, vertexA = makeOrigin()) {
-      let newTriangle = constructEquilateralTriangle(sideLength, vertexA);
-      return this.addTriangleObject(newTriangle)
-    }
-
-    addRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) {
-      return this.addTriangleObject(constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA))
-    }
-
-    addRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigin()) {
-        return this.addTriangleObject(constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA));
-    }
-
-    addRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA = makeOrigin()) {
-        return this.addTriangleObject(constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA));
-    }
 
     labelSideOfTriangle(oppositeVertex, label, triangleObject = this.triangles[0]) {
         if (this.fontSize === 0) { /// may create issues !!!

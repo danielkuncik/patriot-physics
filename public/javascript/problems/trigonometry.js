@@ -10,79 +10,37 @@ TO DO:
  */
 
 
-function solveForHypotenuseProblem(leg1, leg2, swap) {
-    let myTriangle = new GeometryPad();
-    if (!swap) {
-      myTriangle.addTriangleSAS(leg1,90,leg2);
-    } else {
-      myTriangle.addTriangleSAS(leg2,90,leg1);
-    }
-    myTriangle.addRightTriangleMarker();
-    myTriangle.labelSideOfTriangle('A');
-    myTriangle.labelSideOfTriangle('B');
-    myTriangle.labelUnknownSideOfTriangle('C');
+function solveForHypotenuseProblem(xLeg, yLeg, swapLegs) {
+    let myTrianglePad = new GeometryPad();
+    myTrianglePad.addRightTriangleTwoLegs(xLeg, yLeg, swapLegs);
     return {
-      problem: myTriangle,
-      answer: myTriangle.triangles[0].sideLengthC
+      problem: myTrianglePad,
+      answer: myTrianglePad.triangles[0].sideLengthC
     }
 }
 
-function solveForLegProblem(knownLeg, hypotenuse, squareLength, swap) {
-    let unknownLeg = Math.sqrt(hypotenuse**2 - knownLeg**2);
-    /// i don't like how it creats the answer before creating the problem!!!
-    let myTriangle = new GeometryPad();
+function solveForLegProblem(hypotenuse, knownLeg, swapLegs) {
+    let myTrianglePad = new GeometryPad();
+    myTrianglePad.addRightTriangleHypotenuseLeg(hypotenuse, knownLeg, swapLegs);
     let answer;
-    if (!swap) {
-      myTriangle.addTriangleSSS(knownLeg, unknownLeg, hypotenuse);
-      myTriangle.labelSideOfTriangle('A');
-      myTriangle.labelUnknownSideOfTriangle('B');
-      answer = myTriangle.triangles[0].sideLengthB;
+    if (swapLegs) {
+      answer = myTrianglePad.triangles[0].sideLengthB
     } else {
-      myTriangle.addTriangleSSS(unknownLeg, knownLeg, hypotenuse);
-      myTriangle.labelSideOfTriangle('B');
-      myTriangle.labelUnknownSideOfTriangle('A');
-      answer = myTriangle.triangles[0].sideLengthA;
+      answer = myTrianglePad.triangles[0].sideLengthA
     }
-    myTriangle.addRightTriangleMarker(squareLength);
-    myTriangle.labelSideOfTriangle('C');
     return {
-      problem: myTriangle,
+      problem: myTrianglePad,
       answer: answer
     }
-    return myTriangle
 }
 
 function randomPythagoreanTheoremProblem() {
   const pythagoreanTriple = randomPythagoreanTripleUnder100();
-  let myTriangle = new GeometryPad();
-  let answer;
   if (coinFlip()) {
-    myTriangle.addTriangleSSS(pythagoreanTriple[0], pythagoreanTriple[1], pythagoreanTriple[2]);
+    return solveForHypotenuseProblem(pythagoreanTriple[0], pythagoreanTriple[1], coinFlip())
   } else {
-    myTriangle.addTriangleSSS(pythagoreanTriple[1], pythagoreanTriple[0], pythagoreanTriple[2]);
-  }
-  myTriangle.addRightTriangleMarker();
-  if (coinFlip()) { // look for hypotenuse
-    myTriangle.labelSideOfTriangle('A');
-    myTriangle.labelSideOfTriangle('B');
-    myTriangle.labelUnknownSideOfTriangle('C');
-    answer = myTriangle.triangles[0].sideLengthC;
-  } else {
-    if (coinFlip()) {
-      myTriangle.labelSideOfTriangle('A');
-      myTriangle.labelUnknownSideOfTriangle('B');
-      myTriangle.labelSideOfTriangle('C');
-      answer = myTriangle.triangles[0].sideLengthB;
-    } else {
-      myTriangle.labelUnknownSideOfTriangle('A');
-      myTriangle.labelSideOfTriangle('B');
-      myTriangle.labelSideOfTriangle('C');
-      answer = myTriangle.triangles[0].sideLengthA;
-    }
-  }
-  return {
-    problem: myTriangle,
-    answer: answer
+    const knownLeg = coinFlip() ? pythagoreanTriple[0] : pythagoreanTriple[1];
+    return solveForLegProblem(pythagoreanTriple[2],knownLeg, coinFlip())
   }
 }
 

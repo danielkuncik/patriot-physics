@@ -72,7 +72,7 @@
     let line1 = new LinearFunction(5,0);
     mathTests.assertEqualStrict(line1.runFunction(4),20,'functionObjects','linearFunctions');
     mathTests.assertEqualStrict(line1.xIntercept,0,'functionObjects','linearFunctions');
-    mathTests.assertEqualStrict(line1.differentiate(22),5,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line1.differentiate(22),5,'functionObjects','linearFunctions', 'derivative X');
     mathTests.assertEqualStrict(line1.integrate(3,9),(15 + 45) / 2 * 6,'functionObjects','linearFunctions');
 
     let line2 = new LinearFunction(-3,4,6,10);
@@ -182,7 +182,7 @@
     mathTests.assertEqualFloat(triangle1.sideLengthC,10,'geometricObjects','triangleConstruction');
 
 
-    let triangle2 = constructIsocelesTriangle(20,40);
+    let triangle2 = constructIsoscelesTriangle(20,40);
     mathTests.assertEqualFloat(triangle2.vertexA.x,0,'geometricObjects','triangleConstruction');
     mathTests.assertEqualFloat(triangle2.vertexA.y,0,'geometricObjects','triangleConstruction');
     mathTests.assertEqualFloat(triangle2.vertexB.x,10,'geometricObjects','triangleConstruction');
