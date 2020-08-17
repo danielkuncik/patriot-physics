@@ -5,6 +5,11 @@ To do: (8-12-2020)
 - add all of the functions to create different types of polygon
 - use this to create a very good AREA pod
 - create functions to label polygons
+
+
+- this function should have its own draw canvas
+- the labels need to be entered on their own
+
  */
 
 // for making shapes etc.
@@ -89,7 +94,7 @@ class GeometryPad extends Diagram {
       return this.addTriangleObject(constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA))
     }
     addTriangleSSS(sideC, sideB, sideA, vertexA) {
-      return this.addTriangleObject(constructTriangleSSS(sideC, sideB, sidea, vertexA))
+      return this.addTriangleObject(constructTriangleSSS(sideC, sideB, sideA, vertexA))
     }
     addTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) {
       return this.addTriangleObject(constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA))
@@ -269,7 +274,7 @@ class GeometryPad extends Diagram {
 //    labelAngleOfTriangle(vertex, label, degreeSymbol, triangleObject = this.triangles[0], moveToKey) {
 
     // perhaps I could make an array of possible unknowns, and pop them out as i use them
-    labelUnknownAngleOfTrianlge(angle, triangleObject = this.triangles[0]) {
+    labelUnknownAngleOfTriangle(vertex, triangleObject = this.triangles[0]) {
       const label = this.possibleUnknownAngleLabels[0];
       this.possibleUnknownAngleLabels.shift();
       this.labelAngleOfTriangle(vertex, label, false, triangleObject);

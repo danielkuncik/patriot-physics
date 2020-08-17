@@ -1105,6 +1105,16 @@ class Triangle extends Polygon {
         return medianA.line.findIntersectionWithAnotherLine(medianB.line);
     }
 
+    getSideLength(oppositeVertex) {
+      if (oppositeVertex === 'A') {
+        return this.sideLengthA
+      } else if (oppositeVertex === 'B') {
+        return this.sideLengthB
+      } else if (oppositeVertex === 'C') {
+        return this.sideLengthC
+      }
+    }
+
     translate(xTranslation, yTranslation) {
         // how will this affect altitudes and medians?....need to think about this.
     }
@@ -1174,6 +1184,7 @@ function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA
 
 
 function constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA = makeOrigin()) { // counterlockwise orientation
+    console.log(sideC, angleBinDegrees, sideA, vertexA);
     let vertexB = vertexA.translateAndReproduce(sideC, 0);
     let angleBInRadians = convertDegreesToRadians(angleBInDegrees);
     let vertexC = vertexB.translateAndReproduce(-1 * sideA * Math.cos(angleBInRadians), sideA * Math.sin(angleBInRadians));

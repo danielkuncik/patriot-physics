@@ -10,6 +10,9 @@ TO DO:
  */
 
 
+//##########################################################
+// Pythagorean Theorem Problems
+
 function solveForHypotenuseProblem(xLeg, yLeg, swapLegs, rotationInDegrees) {
     let myTrianglePad = new GeometryPad();
     let problem = new Problem();
@@ -54,111 +57,83 @@ function randomPythagoreanTheoremProblem(probabilityOfRotation = 0) {
   }
 }
 
-//    $("#triangle1").append(SOHCAHTOAsideProblem(5,12,13,'A','C','A').drawCanvas(250));
-function SOHCAHTOAsideProblem(legA, hypotenuse, knownAngle, knownSide, unknownSide, fontSize, moveAngleLabelToKey) {
-    let myTriangle = new GeometryPad();
-    if (fontSize) {
-        myTriangle.setFontSize(fontSize);
-    }
-    myTriangle.addTriangleSSS(legA,Math.sqrt(hypotenuse**2 - legA**2), hypotenuse,true);
-    myTriangle.addRightTriangleMarker();
-    myTriangle.labelAngleOfTriangle(knownAngle,undefined,undefined,undefined, moveAngleLabelToKey);
-    myTriangle.labelSideOfTriangle(knownSide);
-    myTriangle.labelUnknownSideOfTriangle(unknownSide);
-    return myTriangle
-}
 
-function selectTheOtherLeg(thisLeg) {
-    if (thisLeg === 'A') {
-        return 'B'
-    } else if (thisLeg === 'B') {
-        return 'A'
-    }
-}
-
-/*
-CHANGE NEEDED
-CHANGE NEEDED
-CHANGE NEEDED
-CHANGE NEEDED
-These functions creating automatic trigonometry problems are weird and should be changed
-you should always enter the known information,
-never the unknown information or irrelevant information!!!
- */
-
+//##########################################################
+// SOHCAHTOA: solving for side
 // SOLVING FOR SIDE PROBLEMS
 
-function sideProblem(type, knownSide, knownAngle, swap) {
-    let answer;
-    let problem = new GeometryPad();
-
+function SOHCAHTOAproblem(triangleObject, knownSide, knownAngle, unknownSide) {
+    let trianglePad = new GeometryPad;
+    let problem = new Problem;
+    trianglePad.addTriangleObject(triangleObject);
+    trianglePad.labelSideOfTriangle(knownSide);
+    trianglePad.labelAngleOfTriangle(knownAngle);
+    problem.addAnswer(trianglePad.labelUnknownSideOfTriangle(unknownSide),trianglePad.triangles[0].getSideLength(unknownSide));
+    problem.addDiagram(trianglePad);
+    return problem
 }
 
 function sineProblem(hypotenuse,angleInDegrees,swapLegs) {
-    let problem = new GeometryPad();
-    problem.addRightTriangleHypotenuseAngle(hypotenuse, angleInDegrees, swapLegs);
-    problem.labelSideOfTriangle('C');
-    problem.addRightTriangleMarker();
-    problem.labelAngleOfTriangle('B');
-    const answer = problem.triangles[0].sideLengthB;
-    return {
-        problem: problem,
-        answer: answer
-    }
-}
-function cosineProblem(hypotenuse, angleInDegrees, swap) {
-    let answer;
-    let problem = new GeometryPad();
-    if (!swap) {
-        problem.addTriangleSAA(hypotenuse,angleInDegrees,90);
-        problem.labelUnknownSideOfTriangle('A');
-        problem.labelAngleOfTriangle('B');
-        answer = problem.triangles[0].sideLengthA;
+    let myTriangle = constructRightTriangleHypotenuseAngle(hypotenuse, angleInDegrees, swapLegs);
+    if (swapLegs) {
+      return SOHCAHTOAproblem(myTriangle, 'C','B','B');
     } else {
-        problem.addTriangleSAA(hypotenuse,90 - angleInDegrees, 90);
-        problem.labelUnknownSideOfTriangle('A');
-        problem.labelAngleOfTriangle('B');
-        answer = problem.triangles[0].sideLengthA;
-    }
-    problem.labelSideOfTriangle('C');
-    problem.addRightTriangleMarker();
-    return {
-        problem: problem,
-        answer: answer
+      return SOHCAHTOAproblem(myTriangle, 'C','A','A');
     }
 }
 
-function tangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) {
-    const knownSide = selectTheOtherLeg(knownAngle);
-    const unknownSide = knownAngle;
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
-}
-function secantProblem(legA,hypotenuse,knownAngle = 'A', fontSize, moveAngleLabelToKey) { // reciprocal of cosine
-    const knownSide = selectTheOtherLeg(knownAngle);
-    const unknownSide = 'C';
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
+
+function cosineProblem(hypotenuse, angleInDegrees, swapLegs) {
+  let myTriangle = constructRightTriangleHypotenuseAngle(hypotenuse, angleInDegrees, swapLegs);
+  if (swapLegs) {
+    return SOHCAHTOAproblem(myTriangle, 'C','B','A');
+  } else {
+    return SOHCAHTOAproblem(myTriangle, 'C','A','B');
+  }
 }
 
-function cosecantProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) { // reciprocal of sine
-    const knownSide = knownAngle;
-    const unknownSide = 'C';
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
+function tangentProblem(adjacent, angleInDegrees, swapLegs) {
+  let myTriangle = constructRightTriangleTwoLegs(adjacent, adjacent * Math.tan(convertDegreesToRadians(angleInDegrees)), swapLegs);
+  if (swapLegs) {
+    return SOHCAHTOAproblem(myTriangle, 'A', 'B', 'B');
+  } else {
+    return SOHCAHTOAproblem(myTriangle, 'B', 'A', 'A');
+  }
 }
 
-function cotangentProblem(legA,hypotenuse,knownAngle ='A', fontSize, moveAngleLabelToKey) { //reciprocal of tangent
-    const knownSide = knownAngle;
-    const unknownSide = selectTheOtherLeg(knownAngle);
-    return SOHCAHTOAsideProblem(legA,hypotenuse,knownAngle,knownSide,unknownSide, fontSize, moveAngleLabelToKey);
+
+/// in both cases, either 'swap legs' or not, the known angle and known side should be the one's that are
+/// enetered as arguments of the function
+function secantProblem(adjacent, angleInDegrees, swapLegs) { // reciprocal of cosine
+  let myTriangle = constructRightTriangleHypotenuseAngle(adjacent / Math.cos(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
+  if (swapLegs) {
+    return SOHCAHTOAproblem(myTriangle, 'A', 'B', 'C');
+  } else {
+    return SOHCAHTOAproblem(myTriangle, 'B', 'A', 'C');
+  }
 }
 
-function inverseSineProblem(opposite, hypotenuse, unknownAngle = 'A', fontSize) {
-    const adjacent = Math.sqrt(hypotenuse**2 - opposite**2);
-
+function cosecantProblem(opposite, angleInDegrees, swapLegs) { // reciprocal of sine
+  let myTriangle = constructRightTriangleHypotenuseAngle(opposite / Math.sin(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
+  if (swapLegs) {
+    return SOHCAHTOAproblem(myTriangle, 'B', 'B', 'C');
+  } else {
+    return SOHCAHTOAproblem(myTriangle, 'A', 'A', 'C');
+  }
 }
 
-function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize) {
-    const opposite = Math.sqrt(hypotenuse**2 - adjacent**2);
+function cotangentProblem(opposite, angleInDegrees, swapLegs) { //reciprocal of tangent
+  let myTriangle = constructRightTriangleTwoLegs(opposite / Math.tan(convertDegreesToRadians(angleInDegrees)), opposite, swapLegs);
+  if (swapLegs) {
+    return SOHCAHTOAproblem(myTriangle, 'B', 'B', 'A');
+  } else {
+    return SOHCAHTOAproblem(myTriangle, 'A', 'A', 'B');
+  }
 }
+
+/// ############################################################
+/// angle probelms: know two sides and solve for an angle
+
 
 
 function inverseTangentProblem(opposite, adjacent, unknownAngle = 'A', fontSize) {
@@ -211,7 +186,9 @@ function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize
     return triangle
 }
 
-// these functions generate problems in which the entire problem is this
+//##########################################################
+// Unknown triangle problems: knowing minimum information, solve for all unknown information abotua  triangle
+
 
 function unknownRightTriangle1(leg1, leg2, swap) { // two legs known
     let problemTriangle = new GeometryPad();

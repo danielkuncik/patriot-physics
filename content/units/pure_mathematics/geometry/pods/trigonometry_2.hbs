@@ -55,15 +55,13 @@ a video here
 
 
 <script>
-    let exampleTriangle = new GeometryPad();
-    exampleTriangle.addTriangleSSS(3,4,5,true);
-    exampleTriangle.addRightTriangleMarker();
-    exampleTriangle.makeOrientationCounterClockwise();
-    exampleTriangle.labelSideOfTriangle('A','A');
-    exampleTriangle.labelSideOfTriangle('B','B');
-    exampleTriangle.labelSideOfTriangle('C','H');
-    exampleTriangle.labelAngleOfTriangleTheta('A');
-    $("#exampleTriangle").append(exampleTriangle.drawCanvas(300));
+    let exampleTrianglePad = new GeometryPad();
+    exampleTrianglePad.addRightTriangleTwoLegs(3,4);
+    exampleTrianglePad.labelSideOfTriangle('A','A');
+    exampleTrianglePad.labelSideOfTriangle('B','B');
+    exampleTrianglePad.labelSideOfTriangle('C','H');
+    exampleTrianglePad.labelUnknownAngleOfTriangle('A');
+    $("#exampleTriangle").append(exampleTrianglePad.drawCanvas(300));
 </script>
 
 <h4>
@@ -77,27 +75,27 @@ a video here
 <ol class="questionList">
     <div class = 'container'>
         <div class="row">
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle1'><br></li>
+            <div class="col-md-6 mb-5" id = 'triangle1'>
+                <!-- <li class="question" id = 'triangle1'><br></li> -->
             </div>
-            <div class="col-md-6 mb-5">
-                <li class="question" data-answer = '36' id = 'triangle2'><br></li>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-5">
-                <li class="question" data-answer = '13' id = 'triangle3'><br></li>
-            </div>
-            <div class="col-md-6 mb-5">
-                <li class="question" data-answer = '12' id = 'triangle4'><br></li>
+            <div class="col-md-6 mb-5" id = 'triangle2'>
+                <!-- <li class="question" data-answer = '36' id = 'triangle2'><br></li> -->
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 mb-5">
-                <li class="question" data-answer = '24' id = 'triangle5'><br></li>
+            <div class="col-md-6 mb-5" id = 'triangle3'>
+                <!-- <li class="question" data-answer = '13' id = 'triangle3'><br></li> -->
             </div>
-            <div class="col-md-6 mb-5">
-                <li class="question" data-answer = '4' id = 'triangle6'><br></li>
+            <div class="col-md-6 mb-5" id = 'triangle4'>
+                <!-- <li class="question" data-answer = '12' id = 'triangle4'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle5'>
+                <!-- <li class="question" data-answer = '24' id = 'triangle5'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle6'>
+                <!-- <li class="question" data-answer = '4' id = 'triangle6'><br></li> -->
             </div>
 
         </div>
@@ -155,31 +153,31 @@ a video here
 <ol class="questionList">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle7' data-answer = '8'><br></li>
+            <div class="col-md-6 mb-5" id = 'triangle7'>
+                <!-- <li class="question" id = 'triangle7' data-answer = '8'><br></li> -->
             </div>
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle8' data-answer = '29'><br></li>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle9' data-answer = '73'><br></li>
-            </div>
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle10' data-answer = '25'><br></li>
+            <div class="col-md-6 mb-5" id = 'triangle8'>
+                <!-- <li class="question" id = 'triangle8' data-answer = '29'><br></li> -->
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle11'><br>
-                    Coming SOON!
-                </li>
+            <div class="col-md-6 mb-5" id = 'triangle9'>
+                <!-- <li class="question" id = 'triangle9' data-answer = '73'><br></li> -->
             </div>
-            <div class="col-md-6 mb-5">
-                <li class="question" id = 'triangle12'><br>
+            <div class="col-md-6 mb-5" id = 'triangle10'>
+                <!-- <li class="question" id = 'triangle10' data-answer = '25'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle11'>
+                <!-- <li class="question" id = 'triangle11'><br>
                     Coming SOON!
-                </li>
+                </li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle12'>
+                <!-- <li class="question" id = 'triangle12'><br>
+                    Coming SOON!
+                </li> -->
             </div>
         </div>
     </div>
@@ -222,6 +220,7 @@ a video here
 <h4>
     Extra Practice
 </h4>
+<!-- replace with random problems!-->
 <p>
     (Not required to receive full credit for this assignment.)
 </p>
@@ -229,10 +228,10 @@ a video here
 <ol class="questionList">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-2" id = 'triangle13'>
                 <li class="question" id = 'triangle13'><br></li>
             </div>
-            <div class="col-md-6 mb-2">
+            <div class="col-md-6 mb-2" id = 'triangle14'>
                 <li class="question" id = 'triangle14'><br></li>
             </div>
         </div>
@@ -267,37 +266,31 @@ a video here
 <ol class="answerList"></ol>
 
 <script>
+    cosineProblem(13,67.38).displayProblem('triangle1');
+    sineProblem(85,25.06).displayProblem('triangle2');
+    cosineProblem(85,81.20).displayProblem('triangle3');
+    sineProblem(37,18.92).displayProblem('triangle4');
+    cosineProblem(25,16.26).displayProblem('triangle5');
+    tangentProblem(3,53.13, true).displayProblem('triangle6');
 
-    // problem: some of the entries are inside the triangle, not outside
+    cotangentProblem(3,11.31).displayProblem('triangle7');
+    cosecantProblem(20,43.60).displayProblem('triangle8');
+    secantProblem(48,48.89, true).displayProblem('triangle9');
+    secantProblem(7,73.74).displayProblem('triangle10');
 
-    // $("#triangle1").append(cosineProblem(5,13).drawCanvas(250));
-    appendProblem('triangle1',cosineProblem(13,67.38));
-    appendProblem('triangle2',sineProblem(85,25.06,true));
-    // let triangle3 = cosineProblem(13,85, undefined, undefined, true);
-    // triangle3.setKeyFont(8);
-    // $("#triangle3").append(triangle3.drawCanvas(300));
-    appendProblem('triangle3',cosineProblem(85,81.20));
-    appendProblem('triangle4',sineProblem(37,18.92));
-    // $("#triangle5").append(cosineProblemroblem(24,25).drawCanvas(250));
-    appendProblem('triangle5',cosineProblem(25,16.26));
-    $("#triangle6").append(tangentProblem(3,4).drawCanvas(250));
-
-    $("#triangle7").append(cotangentProblem(8,17).drawCanvas(250));
-    $("#triangle8").append(cosecantProblem(20,29).drawCanvas(250));
-    $("#triangle9").append(secantProblem(48,73).drawCanvas(250));
-    $("#triangle10").append(secantProblem(7,25, undefined, 1.4).drawCanvas(300));
+// good
     // triangle 11 => cotangent problem
     // triangle 12 => cosecant problem
 
-    appendProblem('triangle13',sineProblem(109,33.40));
-    appendProblem('triangle14',sineProblem(149,20.02));
-    // $("#triangle15").append(cosineProblem(132,157).drawCanvas(300));
-    appendProblem('triangle15',cosineProblem(157,32.77));
-    // $("#triangle16").append(cosineProblem(165,173).drawCanvas(300));
-    appendProblem('triangle16',cosineProblem(173,17.49));
-    $("#triangle17").append(tangentProblem(133,205).drawCanvas(300));
-    $("#triangle18").append(tangentProblem(84,202.2671500763285).drawCanvas(300));
-    // $("#triangle19").append(cosineProblem(102,169).drawCanvas(300));
-    appendProblem('triangle19',cosineProblem(169,52.87));
-    appendProblem('triangle20',sineProblem(149,69.98,true));
+    // appendProblem('triangle13',sineProblem(109,33.40));
+    // appendProblem('triangle14',sineProblem(149,20.02));
+    // // $("#triangle15").append(cosineProblem(132,157).drawCanvas(300));
+    // appendProblem('triangle15',cosineProblem(157,32.77));
+    // // $("#triangle16").append(cosineProblem(165,173).drawCanvas(300));
+    // appendProblem('triangle16',cosineProblem(173,17.49));
+    // $("#triangle17").append(tangentProblem(133,205).drawCanvas(300));
+    // $("#triangle18").append(tangentProblem(84,202.2671500763285).drawCanvas(300));
+    // // $("#triangle19").append(cosineProblem(102,169).drawCanvas(300));
+    // appendProblem('triangle19',cosineProblem(169,52.87));
+    // appendProblem('triangle20',sineProblem(149,69.98,true));
 </script>

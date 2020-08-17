@@ -80,3 +80,8 @@ class Problem {
     addAnswerObject(answerID, answer);
   }
 }
+
+
+
+/// ADD A PROBLEM LIST OBJECT!!!!!!!
+/// not to replace, but to supplement the questionList and answerList classes I already have
