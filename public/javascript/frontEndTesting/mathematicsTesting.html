@@ -18,11 +18,15 @@
 <script src = '../mathematics/reference.js'></script>
 <script src = '../mathematics/numberTheory.js'></script>
 <script src = '../mathematics/functionObjects.js'></script>
-<!-- <script src = '../mathematics/geometricObjects.js'></script> -->
+<script src = '../mathematics/geometricObjects.js'></script>
 
 <div id = 'putItHere'></div>
 
 <script>
+  /*
+  To do:
+  - add more tests of functions
+  */
     let mathTests = new TestPackage('Math Tests');
     //####################################################################################################
     //Number theory
@@ -93,6 +97,16 @@
     mathTests.assertEqualStrict(line4.differentiate(-6),-6, 'functionObjects','linearFunctions');
     mathTests.assertEqualStrict(line4.integrate(),undefined, 'functionObjects','linearFunctions');
     mathTests.assertEqualStrict(line4.integrate(-9),147, 'functionObjects','linearFunctions');
+
+    //####################################################################################################
+    //Geometric Objects
+    mathTests.addCategory('geometricObjects','Geometric Objects');
+
+    mathTests.addSubCategory('geometricObjects','points','Point Tests');
+    let point1 = makeOrigin();
+
+    let point2 = new Point(2,2);
+    mathTests.assertEqualStrict(point2.x, 2, 'geometricObjects', 'points');
 
     $("#putItHere").append(mathTests.printAllTests());
 </script>

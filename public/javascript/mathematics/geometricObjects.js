@@ -1164,9 +1164,9 @@ function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA
     return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
 }
 
-function constructIsocelesTriangle(width, height, vertexA = makeOrigin()) { // coutnerclockwise orientation
+function constructIsocelesTriangle(width, height, vertexA = makeOrigin()) { // counterclockwise orientation
   let vertexB = vertexA.translateAndReproduce(width / 2, height);
-  let vertexB = vertexA.translateAndReproduce(width, 0);
+  let vertexC = vertexA.translateAndReproduce(width, 0);
   return newTriangle(vertexA, vertexB, vertexC)
 }
 

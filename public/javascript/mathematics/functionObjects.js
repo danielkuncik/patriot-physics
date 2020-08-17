@@ -2,6 +2,9 @@
 to do:
 - deal with discontinuities
 - add stepwise functions
+- break 'Mathematical Function' into two subclasses: single Function and stepwise function
+- a stepwise function must be a list of single functions!
+- come up with a way to differentaite many times, if you need it?
 - figure out how to manke range finder a private function and make sure it works as such
 */
 
@@ -254,8 +257,8 @@ class ZeroFunction extends ConstantFunction {
     super(0, xMin, xMax, closedCirlceAtMin, closedCircleAtMax);
 
     }
-  }
 
+// private function
   rangeFinder(xMin, xMax) {
     return [0, 0]
   }

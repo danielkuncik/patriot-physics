@@ -1,3 +1,7 @@
+/*
+to do:
+build and test prime factorization and greatest common factor functions
+*/
 
 function isInteger(number) {
   return number % 1 === 0
