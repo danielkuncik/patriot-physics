@@ -12,43 +12,35 @@ TO DO:
 
 function solveForHypotenuseProblem(xLeg, yLeg, swapLegs, rotationInDegrees) {
     let myTrianglePad = new GeometryPad();
+    let problem = new Problem();
     myTrianglePad.addRightTriangleTwoLegs(xLeg, yLeg, swapLegs);
-    myTrianglePad.labelSideOfTriangle('A');
-    myTrianglePad.labelSideOfTriangle('B');
-    myTrianglePad.labelUnknownSideOfTriangle('C');
     if (rotationInDegrees) {
       myTrianglePad.spinTriangle(rotationInDegrees);
     }
-    return {
-      problem: myTrianglePad,
-      answer: myTrianglePad.triangles[0].sideLengthC
-    }
+    myTrianglePad.labelSideOfTriangle('A');
+    myTrianglePad.labelSideOfTriangle('B');
+    problem.addAnswer(myTrianglePad.labelUnknownSideOfTriangle('C'),myTrianglePad.triangles[0].sideLengthC);
+    problem.addDiagram(myTrianglePad);
+    return problem
 }
 
 function solveForLegProblem(hypotenuse, knownLeg, swapLegs, rotationInDegrees) {
     let myTrianglePad = new GeometryPad();
+    let problem = new Problem();
     myTrianglePad.addRightTriangleHypotenuseLeg(hypotenuse, knownLeg, swapLegs);
     myTrianglePad.labelSideOfTriangle('C');
-    if (!swapLegs) {
-      myTrianglePad.labelSideOfTriangle('A');
-      myTrianglePad.labelUnknownSideOfTriangle('B');
-    } else {
-      myTrianglePad.labelSideOfTriangle('B');
-      myTrianglePad.labelUnknownSideOfTriangle('A');
-    }
     if (rotationInDegrees) {
       myTrianglePad.spinTriangle(rotationInDegrees);
     }
-    let answer;
-    if (swapLegs) {
-      answer = myTrianglePad.triangles[0].sideLengthB
+    if (!swapLegs) {
+      myTrianglePad.labelSideOfTriangle('A');
+      problem.addAnswer(myTrianglePad.labelUnknownSideOfTriangle('B'),myTrianglePad.triangles[0].sideLengthB);
     } else {
-      answer = myTrianglePad.triangles[0].sideLengthA
+      myTrianglePad.labelSideOfTriangle('B');
+      problem.addAnswer(myTrianglePad.labelUnknownSideOfTriangle('A'),myTrianglePad.triangles[0].sideLengthA);
     }
-    return {
-      problem: myTrianglePad,
-      answer: answer
-    }
+    problem.addDiagram(myTrianglePad);
+    return problem
 }
 
 function randomPythagoreanTheoremProblem(probabilityOfRotation = 0) {

@@ -43,40 +43,40 @@ To do:
 <ol class = 'questionList'>
   <div class = 'container'>
     <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle1'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'triangle1'>
+        <!-- <li class = 'question' id = 'triangle1'><br></li> -->
       </div>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle2'><br></li>
-      </div>
-    </div>
-    <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle3'><br></li>
-      </div>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle4'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'triangle2'>
+        <!-- <li class = 'question' id = 'triangle2'><br></li> -->
       </div>
     </div>
     <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle5'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'triangle3'>
+        <!-- <li class = 'question' id = 'triangle3'><br></li> -->
       </div>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle6'><br></li>
-      </div>
-    </div>
-    <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle7'><br></li>
-      </div>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle8'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'triangle4'>
+        <!-- <li class = 'question' id = 'triangle4'><br></li> -->
       </div>
     </div>
     <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'triangle9'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'triangle5'>
+        <!-- <li class = 'question' id = 'triangle5'><br></li> -->
+      </div>
+      <div class = 'col-md-6 mb-5' id = 'triangle6'>
+        <!-- <li class = 'question' id = 'triangle6'><br></li> -->
+      </div>
+    </div>
+    <div class = 'row'>
+      <div class = 'col-md-6 mb-5' id = 'triangle7'>
+        <!-- <li class = 'question' id = 'triangle7'><br></li> -->
+      </div>
+      <div class = 'col-md-6 mb-5' id = 'triangle8'>
+        <!-- <li class = 'question' id = 'triangle8'><br></li> -->
+      </div>
+    </div>
+    <div class = 'row'>
+      <div class = 'col-md-6 mb-5' id = 'triangle9'>
+        <!-- <li class = 'question' id = 'triangle9'><br></li> -->
       </div>
       <div class = 'col-md-6 mb-5'>
 
@@ -96,19 +96,19 @@ To do:
 <ol class = 'questionList'>
   <div class = 'container'>
     <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'randomProblem1'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'randomProblem1'>
+        <!-- <li class = 'question' id = 'randomProblem1'><br></li> -->
       </div>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'randomProblem2'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'randomProblem2'>
+        <!-- <li class = 'question' id = 'randomProblem2'><br></li> -->
       </div>
     </div>
     <div class = 'row'>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'randomProblem3'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'randomProblem3'>
+        <!-- <li class = 'question' id = 'randomProblem3'><br></li> -->
       </div>
-      <div class = 'col-md-6 mb-5'>
-        <li class = 'question' id = 'randomProblem4'><br></li>
+      <div class = 'col-md-6 mb-5' id = 'randomProblem4'>
+        <!-- <li class = 'question' id = 'randomProblem4'><br></li> -->
       </div>
     </div>
   </div>
@@ -116,23 +116,24 @@ To do:
 
 <script>
 
-  appendProblem('triangle1',solveForHypotenuseProblem(3,4));
-  appendProblem('triangle2',solveForHypotenuseProblem(20,21));
-  appendProblem('triangle3',solveForLegProblem(85,77));
-  appendProblem('triangle4',solveForLegProblem(89,39));
-  appendProblem('triangle5',solveForLegProblem(73,55));
-  appendProblem('triangle6',solveForLegProblem(43,29.1));
-  appendProblem('triangle7',solveForLegProblem(51.0,6.46));
-  appendProblem('triangle8',solveForHypotenuseProblem(10.9,35.7));
-  appendProblem('triangle9',solveForHypotenuseProblem(75.1,85.1));
+  solveForHypotenuseProblem(3,4).displayProblem('triangle1');
+  solveForHypotenuseProblem(20,21).displayProblem('triangle2');
+  solveForLegProblem(85,77).displayProblem('triangle3');
 
-  // 
-  // appendProblem('randomProblem1',randomPythagoreanTheoremProblem());
-  // appendProblem('randomProblem2',randomPythagoreanTheoremProblem());
-  // appendProblem('randomProblem3',randomPythagoreanTheoremProblem());
-  // appendProblem('randomProblem4',randomPythagoreanTheoremProblem());
-  //
-  //
+
+  solveForLegProblem(89,39).displayProblem('triangle4');
+  solveForLegProblem(73,55).displayProblem('triangle5');
+  solveForLegProblem(43,29.1).displayProblem('triangle6');
+  solveForLegProblem(51.0,6.46).displayProblem('triangle7');
+  solveForHypotenuseProblem(10.9,35.7).displayProblem('triangle8');
+  solveForHypotenuseProblem(75.1,85.1).displayProblem('triangle9');
+
+randomPythagoreanTheoremProblem().displayProblem('randomProblem1');
+randomPythagoreanTheoremProblem().displayProblem('randomProblem2');
+randomPythagoreanTheoremProblem().displayProblem('randomProblem3');
+randomPythagoreanTheoremProblem().displayProblem('randomProblem4');
+
+
 </script>
 
 

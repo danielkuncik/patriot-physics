@@ -16,6 +16,7 @@ class GeometryPad extends Diagram {
         this.rectangles = [];
         this.fontSize = 0;
         this.fontMultiplier = 1;
+        this.possibleUnknownAngleLabels = ['theta','phi','alpha','beta'];
     }
 
     calculateFontSize() {
@@ -122,8 +123,8 @@ class GeometryPad extends Diagram {
       } else if (textLocation === 'below' || textLocation === 'right') {
         this.labelLineBelow(end1, end2, label, this.fontSize / 2, this.fontSize);
       }
-      // label line outside function
     }
+    //    labelAngleOfTriangle(vertex, label, degreeSymbol, triangleObject = this.triangles[0], moveToKey) {
 
     labelAngleOfTriangle(vertex, label, degreeSymbol, triangleObject = this.triangles[0], moveToKey) {
         if (this.fontSize === 0) {
@@ -209,13 +210,6 @@ class GeometryPad extends Diagram {
      */
 
 
-    labelAngleOfTriangleTheta(vertex, triangleObject) {
-      this.labelAngleOfTriangle(vertex,'θ',false, triangleObject);
-    }
-    labelAngleOfTrianglePhi(vertex, triangleObject) {
-      this.labelAngleOfTriangle(vertex,'φ',false, triangleObject);
-    }
-
     // addTriangleToDiagram(triangleObject) {
     //     this.addExistingSegment(triangleObject.segmentA);
     //     this.addExistingSegment(triangleObject.segmentB);
@@ -272,6 +266,16 @@ class GeometryPad extends Diagram {
         this.labelSideOfTriangle('C',undefined,triangleObject);
     }
 
+//    labelAngleOfTriangle(vertex, label, degreeSymbol, triangleObject = this.triangles[0], moveToKey) {
+
+    // perhaps I could make an array of possible unknowns, and pop them out as i use them
+    labelUnknownAngleOfTrianlge(angle, triangleObject = this.triangles[0]) {
+      const label = this.possibleUnknownAngleLabels[0];
+      this.possibleUnknownAngleLabels.shift();
+      this.labelAngleOfTriangle(vertex, label, false, triangleObject);
+      return label;
+    }
+
 
     labelUnknownSideOfTriangle(side,triangleObject = this.triangles[0]) {
         let label, selectedSegment;
@@ -296,8 +300,11 @@ class GeometryPad extends Diagram {
         }
         //    labelSide(oppositeVertex, label, triangleObject) {
         this.labelSideOfTriangle(side,label,triangleObject);
+        return label
     }
 
+    /// screws up all of the labels!!
+    // i need to check how my pointers are working in order to fix this
     spinTriangle(angleInDegrees, triangleObject = this.triangles[0]) {
         triangleObject.spin(angleInDegrees);
     }
