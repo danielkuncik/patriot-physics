@@ -14,16 +14,8 @@ class GeometryPad extends Diagram {
         this.triangles = [];
         this.unclassifiedPolygons = [];
         this.rectangles = [];
-        this.orientation = 'counterclockwise'; // default
         this.fontSize = 0;
         this.fontMultiplier = 1;
-    }
-
-    makeOrientationCounterClockwise() {
-      this.orientation = 'counterclockwise';
-    }
-    makeOrientationClockwise() {
-      this.orientation = 'clockwise';
     }
 
     calculateFontSize() {
@@ -124,7 +116,7 @@ class GeometryPad extends Diagram {
       if (label === undefined) {
           label = String(value);
       }
-      const textLocation = getOptimalLocationOfText(end1, end2, this.orientation); // clockwise orientiation default
+      const textLocation = getOptimalLocationOfText(end1, end2, triangleObject.orientation); // clockwise orientiation default
       if (textLocation === 'above' || textLocation === 'left') {
         this.labelLineAbove(end1, end2, label, this.fontSize / 2 , this.fontSize);
       } else if (textLocation === 'below' || textLocation === 'right') {

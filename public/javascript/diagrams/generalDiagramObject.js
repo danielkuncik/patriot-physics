@@ -26,34 +26,59 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
 /// I think this is all messed up, fix it!
 // do i need to clarify this is inside/outside?
 // given a line at a certain angle, determines the optimal location of text
-function getOptimalLocationOfText(point1, point2, turningOrientation) {
-    if (turningOrientation === undefined) {
-        turningOrientation = 'clockwise';
-    }
-    const angleInRadians = point1.getAngleToAnotherPoint(point2);
+function getOptimalLocationOfText(point1, point2, turningOrientation = 'clockwise') {
+    const quadrant = point1.getQuadrantOfAnotherPoint(point2);
     let bestSpot;
 
-
+    // optimal locations for clockwise orientation
+    switch(point1.getQuadrantOfAnotherPoint(point2)) {
+      case '1':
+        bestSpot = 'left';
+        break;
+      case '2':
+        bestSpot = 'left';
+        break;
+      case '3':
+        bestSpot = 'right';
+        break;
+      case '4':
+        bestSpot = 'right';
+        break;
+      case '+X':
+        bestSpot = 'above';
+        break;
+      case '-X':
+        bestSpot = 'below';
+        break;
+      case '+Y':
+        bestSpot = 'left';
+        break;
+      case '-Y':
+        bestSpot = 'right';
+        break;
+      default:
+        bestSpot = undefined;
+    }
 
     // make clockwise the default
     //// FIX FIX FIX FIX FIX
     /// make clockwise default and fix this
 
     // optimal spots for counter-clockwise orientation
-    if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {
-        bestSpot = 'below';
-    } else if (angleInRadians >= Math.PI / 4 && angleInRadians <= 3 * Math.PI / 4) {
-        bestSpot = 'left';
-    } else if (angleInRadians > 3 * Math.PI / 4 && angleInRadians < 5 * Math.PI / 4) {
-        bestSpot = 'above';
-    } else if (angleInRadians >= 5 * Math.PI / 4 && angleInRadians <= 7 * Math.PI / 4) {
-        bestSpot = 'right';
-    } else if (angleInRadians > 7 * Math.PI / 4 && angleInRadians <= Math.PI * 2 ) {
-        bestSpot =  'below';
-    } else {
-        bestSpot = undefined;
-    }
-    if (turningOrientation === 'clockwise') { // rather than clockwise
+    // if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {
+    //     bestSpot = 'below';
+    // } else if (angleInRadians >= Math.PI / 4 && angleInRadians <= 3 * Math.PI / 4) {
+    //     bestSpot = 'left';
+    // } else if (angleInRadians > 3 * Math.PI / 4 && angleInRadians < 5 * Math.PI / 4) {
+    //     bestSpot = 'above';
+    // } else if (angleInRadians >= 5 * Math.PI / 4 && angleInRadians <= 7 * Math.PI / 4) {
+    //     bestSpot = 'right';
+    // } else if (angleInRadians > 7 * Math.PI / 4 && angleInRadians <= Math.PI * 2 ) {
+    //     bestSpot =  'below';
+    // } else {
+    //     bestSpot = undefined;
+    // }
+    if (turningOrientation === 'counterclockwise') { // rather than clockwise
         if (bestSpot === 'right') {
             bestSpot = 'left';
         } else if (bestSpot === 'left') {
