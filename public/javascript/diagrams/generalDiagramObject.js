@@ -34,10 +34,10 @@ function getOptimalLocationOfText(point1, point2, turningOrientation) {
     let bestSpot;
 
 
-    console.log(point1, point2, turningOrientation);
-    console.log(convertRadiansToDegrees(angleInRadians));
 
     // make clockwise the default
+    //// FIX FIX FIX FIX FIX
+    /// make clockwise default and fix this
 
     // optimal spots for counter-clockwise orientation
     if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {

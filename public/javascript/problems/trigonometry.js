@@ -10,18 +10,35 @@ TO DO:
  */
 
 
-function solveForHypotenuseProblem(xLeg, yLeg, swapLegs) {
+function solveForHypotenuseProblem(xLeg, yLeg, swapLegs, rotationInDegrees) {
     let myTrianglePad = new GeometryPad();
     myTrianglePad.addRightTriangleTwoLegs(xLeg, yLeg, swapLegs);
+    myTrianglePad.labelSideOfTriangle('A');
+    myTrianglePad.labelSideOfTriangle('B');
+    myTrianglePad.labelUnknownSideOfTriangle('C');
+    if (rotationInDegrees) {
+      myTrianglePad.spinTriangle(rotationInDegrees);
+    }
     return {
       problem: myTrianglePad,
       answer: myTrianglePad.triangles[0].sideLengthC
     }
 }
 
-function solveForLegProblem(hypotenuse, knownLeg, swapLegs) {
+function solveForLegProblem(hypotenuse, knownLeg, swapLegs, rotationInDegrees) {
     let myTrianglePad = new GeometryPad();
     myTrianglePad.addRightTriangleHypotenuseLeg(hypotenuse, knownLeg, swapLegs);
+    myTrianglePad.labelSideOfTriangle('C');
+    if (!swapLegs) {
+      myTrianglePad.labelSideOfTriangle('A');
+      myTrianglePad.labelUnknownSideOfTriangle('B');
+    } else {
+      myTrianglePad.labelSideOfTriangle('B');
+      myTrianglePad.labelUnknownSideOfTriangle('A');
+    }
+    if (rotationInDegrees) {
+      myTrianglePad.spinTriangle(rotationInDegrees);
+    }
     let answer;
     if (swapLegs) {
       answer = myTrianglePad.triangles[0].sideLengthB
@@ -34,13 +51,14 @@ function solveForLegProblem(hypotenuse, knownLeg, swapLegs) {
     }
 }
 
-function randomPythagoreanTheoremProblem() {
+function randomPythagoreanTheoremProblem(probabilityOfRotation = 0) {
   const pythagoreanTriple = randomPythagoreanTripleUnder100();
+  const rotation = weightedCoinFlip(probabilityOfRotation) ? randInt(0,360) : undefined;
   if (coinFlip()) {
-    return solveForHypotenuseProblem(pythagoreanTriple[0], pythagoreanTriple[1], coinFlip())
+    return solveForHypotenuseProblem(pythagoreanTriple[0], pythagoreanTriple[1], coinFlip(), rotation)
   } else {
     const knownLeg = coinFlip() ? pythagoreanTriple[0] : pythagoreanTriple[1];
-    return solveForLegProblem(pythagoreanTriple[2],knownLeg, coinFlip())
+    return solveForLegProblem(pythagoreanTriple[2],knownLeg, coinFlip(), rotation)
   }
 }
 

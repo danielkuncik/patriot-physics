@@ -1166,6 +1166,7 @@ function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigi
     return new Triangle(vertexA, vertexB, vertexC);
 }
 
+// add error message if hypotenuse is shorter than leg
 function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
     const yLeg = Math.sqrt(hypotenuse**2 - xLeg**2);
     return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)

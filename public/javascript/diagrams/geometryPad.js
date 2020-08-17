@@ -63,17 +63,17 @@ class GeometryPad extends Diagram {
     }
 
     addEquilateralTriangle(sideLength, vertexA) {
-      return this.addTriangle(constructEquilateralTriangle(sideLength, vertexA));
+      return this.addTriangleObject(constructEquilateralTriangle(sideLength, vertexA));
     }
     addIsoscelesTriangle(width, height, vertexA) {
-      return this.addTriangle(constructIsocelesTriangle(width, height, vertexA))
+      return this.addTriangleObject(constructIsocelesTriangle(width, height, vertexA))
     }
 
     // PRIVATE METHOD!!!
     addRightTriangle(triangleObject, rightAngleMarker) {
-      let newTriangle = this.addTriangle(triangleObject);
+      let newTriangle = this.addTriangleObject(triangleObject);
       if (rightAngleMarker) {
-        this.addRightAngleMarker(newTriangle)
+        this.squareTriangleVertexC(newTriangle)
       }
       return newTriangle
     }
@@ -83,23 +83,23 @@ class GeometryPad extends Diagram {
     }
 
     addRightTriangleTwoLegs(xLeg, yLeg, swapLegs, rightAngleMarker = true, vertexA) {
-       return this.addTriangle(constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA), rightAngleMarker)
+       return this.addRightTriangle(constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA), rightAngleMarker)
     }
     addRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, rightAngleMarker = true, vertexA) {
-      return this.addTriangle(constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA), rightAngleMarker)
+      return this.addRightTriangle(constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA), rightAngleMarker)
     }
-    
+
     addTriangleSAS(sideC, angleBinDegrees, sideA, vertexA) {
-      return this.addTriangle(constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA))
+      return this.addTriangleObject(constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA))
     }
     addTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA) {
-      return this.addTriangle(constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA))
+      return this.addTriangleObject(constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA))
     }
     addTriangleSSS(sideC, sideB, sideA, vertexA) {
-      return this.addTriangle(constructTriangleSSS(sideC, sideB, sidea, vertexA))
+      return this.addTriangleObject(constructTriangleSSS(sideC, sideB, sidea, vertexA))
     }
     addTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) {
-      return this.addTriangle(constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA))
+      return this.addTriangleObject(constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA))
     }
 
 
@@ -124,9 +124,7 @@ class GeometryPad extends Diagram {
       if (label === undefined) {
           label = String(value);
       }
-      console.log(end1, end2, this.orientation);
       const textLocation = getOptimalLocationOfText(end1, end2, this.orientation); // clockwise orientiation default
-      console.log(textLocation);
       if (textLocation === 'above' || textLocation === 'left') {
         this.labelLineAbove(end1, end2, label, this.fontSize / 2 , this.fontSize);
       } else if (textLocation === 'below' || textLocation === 'right') {
@@ -232,24 +230,36 @@ class GeometryPad extends Diagram {
     //     this.addExistingSegment(triangleObject.segmentC);
     // }
 
-    addRightTriangleMarker(squareLength,triangleObject = this.triangles[0]) {
-        if (this.fontSize === 0) { /// may create issues !!!
-            this.calculateFontSize();
-        }
+/// PRIVATE METHOD
+    defaultSquareLengthOfTriangle(triangleObject) {
+      if (this.fontSize === 0) {
+        this.fontSize = this.calculateFontSize();
+      }
+      if (triangleObject.right) {
+           return Math.min(this.fontSize, triangleObject.sideLengthA * 0.3, triangleObject.sideLengthB * 0.3);
+      } else {
+           return Math.min(this.fontSize, triangleObject.sideLengthA * 0.3, triangleObject.sideLengthB * 0.3, triangleObject.sideLengthC);
+      }
+    }
 
-        if (squareLength === undefined) {
-            if (triangleObject.right) {
-                squareLength = Math.min(this.fontSize, triangleObject.sideLengthA * 0.3, triangleObject.sideLengthB * 0.3);
-            } else {
-                squareLength = this.fontSize;
-            }
-        }
+    squareTriangleVertexA(triangleObject = this.triangles[0], squareLength = this.defaultSquareLengthOfTriangle(triangleObject)) {
+        super.squareAngle(triangleObject.vertexC, triangleObject.vertexA, triangleObject.vertexB, squareLength);
+    }
+    squareTriangleVertexB(triangleObject = this.triangles[0], squareLength = this.defaultSquareLengthOfTriangle(triangleObject)) {
+        super.squareAngle(triangleObject.vertexA, triangleObject.vertexB, triangleObject.vertexC, squareLength);
+    }
+    squareTriangleVertexC(triangleObject = this.triangles[0], squareLength = this.defaultSquareLengthOfTriangle(triangleObject)) {
+        super.squareAngle(triangleObject.vertexB, triangleObject.vertexC, triangleObject.vertexA, squareLength);
+    }
+
+    /// does this funciton have a use????? it's supposed to be vertex C
+    addAutomaticRightTriangleMarker(triangleObject = this.triangles[0], squareLength = defaultSquareLengthOfTriangle(triangleObject)) {
         if (Math.abs(triangleObject.angleA - 90) < 1e-10) {
-            super.squareAngle(triangleObject.vertexC, triangleObject.vertexA, triangleObject.vertexB, squareLength);
+          this.squareTriangleVertexA(triangleObject, squareLength);
         } else if (Math.abs(triangleObject.angleB - 90) < 1e-10) {
-            super.squareAngle(triangleObject.vertexA, triangleObject.vertexB, triangleObject.vertexC, squareLength);
+          this.squareTriangleVertexB(triangleObject, squareLength);
         } else if (Math.abs(triangleObject.angleC - 90) < 1e-10) {
-            super.squareAngle(triangleObject.vertexB, triangleObject.vertexC, triangleObject.vertexA, squareLength);
+          this.squareTriangleVertexC(triangleObject, squareLength);
         }
     }
 
@@ -257,7 +267,7 @@ class GeometryPad extends Diagram {
     // very low angles or very short sides
     showAllTriangleInformation(triangleObject = this.triangles[0]) {
         if (triangleObject.right) {
-            this.addRightTriangleMarker(undefined, triangleObject);
+            this.addAutomaticRightTriangleMarker(undefined, triangleObject);
             this.labelAngleOfTriangle('A',undefined,true,triangleObject);
             this.labelAngleOfTriangle('B',undefined,true,triangleObject);
         } else {

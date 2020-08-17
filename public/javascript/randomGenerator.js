@@ -10,6 +10,10 @@ function randNumber(m,n,numDecimals) {
 }
 
 
+function weightedCoinFlip(probabilityOfTrue) {
+  return Math.random() > (1 - probabilityOfTrue)
+}
+
 function coinFlip() {
   return Math.random() > 0.5
 }
