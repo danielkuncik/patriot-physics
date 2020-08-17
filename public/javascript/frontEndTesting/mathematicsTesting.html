@@ -71,7 +71,28 @@
     mathTests.assertEqualStrict(line1.differentiate(22),5,'functionObjects','linearFunctions');
     mathTests.assertEqualStrict(line1.integrate(3,9),(15 + 45) / 2 * 6,'functionObjects','linearFunctions');
 
+    let line2 = new LinearFunction(-3,4,6,10);
+    mathTests.assertEqualStrict(line2.runFunction(8),-3 * 8 + 4,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line2.runFunction(10), -3 * 10 + 4, 'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line2.runFunction(10.1),undefined,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line2.differentiate(4),undefined,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line2.differentiate(7),-3,'functionObjects','linearFunctions');
 
+
+    let line3 = new LinearFunction(2,-10,-5,5,false,false);
+    mathTests.assertEqualStrict(line3.runFunction(-5),undefined,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line3.runFunction(-4.9),2 * -4.9 - 10,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line3.runFunction(5),undefined,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line3.differentiate(5),undefined,'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line3.differentiate(4.9),2,'functionObjects','linearFunctions');
+
+    let line4 = new LinearFunction(-6,4,-10,-6,false,true);
+    mathTests.assertEqualStrict(line4.runFunction(-10),undefined, 'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line4.runFunction(-6),40, 'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line4.differentiate(-10),undefined, 'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line4.differentiate(-6),-6, 'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line4.integrate(),undefined, 'functionObjects','linearFunctions');
+    mathTests.assertEqualStrict(line4.integrate(-9),147, 'functionObjects','linearFunctions');
 
     $("#putItHere").append(mathTests.printAllTests());
 </script>

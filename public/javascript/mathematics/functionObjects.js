@@ -204,18 +204,17 @@ class LinearFunction extends Polynomial {
 
     // this shoudl redfine the function defined above in the polynomial constructor ?
     super.defineFunction((x) => {return this.slope * x + this.yIntercept})
+  }
 
-
-    /// range finder is not to be used separately, only within the range function above!
-    // figure out how to make this a private class, that can only be called in the super function above
-    this.rangeFinder = (xMin, xMax) => {
-      if (this.slope > 0) {
-        return [super.runFunction(xMin), super.runFunction(xMax)]
-      } else if (this.slope < 0) {
-        return [super.runFunction(xMax), super.runFunction(xMin)]
-      } else if (this.slope === 0) {
-        return [this.yIntercept, this.yIntercept]
-      }
+  /// range finder is not to be used separately, only within the range function above!
+  // figure out how to make this a private class, that can only be called in the super function above
+  rangeFinder(xMin, xMax) {
+    if (this.slope > 0) {
+      return [super.runFunction(xMin), super.runFunction(xMax)]
+    } else if (this.slope < 0) {
+      return [super.runFunction(xMax), super.runFunction(xMin)]
+    } else if (this.slope === 0) {
+      return [this.yIntercept, this.yIntercept]
     }
   }
 
@@ -234,9 +233,10 @@ class ConstantFunction extends LinearFunction {
     super(0, value, xMin, xMax, closedCircleAtMin, closedCircleAtMax);
     this.value = value;
 
-    this.rangeFinder = (xMin, xMax) => {
-      return [this.value, this.value]
-    }
+  }
+
+  rangeFinder(xMin, xMax) {
+    return [this.value, this.value]
   }
 
   getDerivative() {
@@ -253,9 +253,11 @@ class ZeroFunction extends ConstantFunction {
   constructor(xMin, xMax, closedCirlceAtMin, closedCircleAtMax) {
     super(0, xMin, xMax, closedCirlceAtMin, closedCircleAtMax);
 
-    this.rangeFinder = (xMin, xMax) => {
-      return [0, 0]
     }
+  }
+
+  rangeFinder(xMin, xMax) {
+    return [0, 0]
   }
 
   getDerivative() {
