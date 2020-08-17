@@ -93,7 +93,7 @@ class TestPackage {
     }
 
     // add failure message
-    assertEqualFloat(entered,expected, categoryKey, subCategoryKey, name) {
+    assertEqualFloat(entered,expected, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         const pass = Math.abs(entered - expected) < 1e-10;
         let failMessage;
         if (!pass) {

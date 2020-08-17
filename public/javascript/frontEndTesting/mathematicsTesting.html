@@ -105,10 +105,120 @@
     mathTests.addSubCategory('geometricObjects','points','Point Tests');
     let point1 = makeOrigin();
 
+    mathTests.addSubCategory('geometricObjects','pointRotation','Point Rotation Tests');
     let point2 = new Point(2,2);
-    mathTests.assertEqualStrict(point2.x, 2, 'geometricObjects', 'points');
+    mathTests.assertEqualFloat(point2.x, 2, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point2.y, 2, 'geometricObjects', 'pointRotation');
+    point2.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point2.x, -2, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point2.y, 2, 'geometricObjects', 'pointRotation');
+    point2.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point2.x, -2, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point2.y, -2, 'geometricObjects', 'pointRotation');
+    point2.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point2.x, 2, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point2.y, -2, 'geometricObjects', 'pointRotation');
+    point2.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point2.x, 2, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point2.y, 2, 'geometricObjects', 'pointRotation');
+
+    let point3 = new Point(-4,6);
+    mathTests.assertEqualFloat(point3.x, -4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point3.y, 6, 'geometricObjects', 'pointRotation');
+    point3.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point3.x, -6, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point3.y, -4, 'geometricObjects', 'pointRotation');
+    point3.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point3.x, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point3.y, -6, 'geometricObjects', 'pointRotation');
+    point3.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point3.x, 6, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point3.y, 4, 'geometricObjects', 'pointRotation');
+    point3.rotate(Math.PI / 2);
+    mathTests.assertEqualFloat(point3.x, -4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point3.y, 6, 'geometricObjects', 'pointRotation');
+
+    // add some more where it begins on an axis and rotates 30, 45, or 60 degrees
+    let point4 = new Point(10,0);
+    point4.rotate(convertDegreesToRadians(60));
+    mathTests.assertEqualFloat(point4.x, 5, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualFloat(point4.y, 5 * Math.sqrt(3), 'geometricObjects', 'pointRotation');
+
+    // add some where it rotates about a point besides the origin
+
+    mathTests.addSubCategory('geometricObjects','pointAngle','Point Angle Tests');
+
+    let point10 = new Point(3,5);
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,6)),'1','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,6)),'2','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(makeOrigin()),'3','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(10,0)),'4','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,5)),'+X','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,5)),'-X','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,6)),'+Y','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,4)),'-Y','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,-1000)),'-Y','geometricObjects','pointAngle');
+    mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,5)),'0','geometricObjects','pointAngle');
+
+
+    /// Triangle construction tests
+    mathTests.addSubCategory('geometricObjects','triangleConstruction','Triangle Construction Tests');
+
+    let triangle1 = constructEquilateralTriangle(10);
+    mathTests.assertEqualFloat(triangle1.vertexA.x,0,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.vertexA.y,0,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.vertexB.x,5,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.vertexB.y,5 * Math.sqrt(3),'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.vertexC.x,10,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.vertexC.y,0,'geometricObjects','triangleConstruction');
+    // test angles and side lengths
+
+    mathTests.assertEqualFloat(triangle1.angleA,60,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.angleB,60,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.angleC,60,'geometricObjects','triangleConstruction');
+
+    mathTests.assertEqualFloat(triangle1.sideLengthA,10,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.sideLengthB,10,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle1.sideLengthC,10,'geometricObjects','triangleConstruction');
+
+
+    let triangle2 = constructIsocelesTriangle(20,40);
+    mathTests.assertEqualFloat(triangle2.vertexA.x,0,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle2.vertexA.y,0,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle2.vertexB.x,10,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle2.vertexB.y,40,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle2.vertexC.x,20,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle2.vertexC.y,0,'geometricObjects','triangleConstruction');
+
+    // add tests of angles and sides
+    // mathTests.assertEqualFloat(triangle2.angleA,0,'geometricObjects','triangleConstruction');
+    // mathTests.assertEqualFloat(triangle2.angleB,0,'geometricObjects','triangleConstruction');
+    // mathTests.assertEqualFloat(triangle2.angleC,0,'geometricObjects','triangleConstruction');
+    //
+    // mathTests.assertEqualFloat(triangle2.sideLengthA,0,'geometricObjects','triangleConstruction');
+    // mathTests.assertEqualFloat(triangle2.sideLengthB,0,'geometricObjects','triangleConstruction');
+    // mathTests.assertEqualFloat(triangle2.sideLengthC,0,'geometricObjects','triangleConstruction');
+
+
+    let triangle3 = constructRightTriangleHypotenuseAngle(4,45);
+    mathTests.assertEqualFloat(triangle3.vertexA.x,0,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.vertexA.y,0,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.vertexB.x, 4 / Math.sqrt(2),'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.vertexB.y, 4 / Math.sqrt(2),'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.vertexC.x, 4 / Math.sqrt(2),'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.vertexC.y,0,'geometricObjects','triangleConstruction');
+
+    mathTests.assertEqualFloat(triangle3.angleA,45,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.angleB,45,'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.angleC,90,'geometricObjects','triangleConstruction');
+
+    mathTests.assertEqualFloat(triangle3.sideLengthA,4 / Math.sqrt(2),'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.sideLengthB,4 / Math.sqrt(2),'geometricObjects','triangleConstruction');
+    mathTests.assertEqualFloat(triangle3.sideLengthC,4,'geometricObjects','triangleConstruction');
+
 
     $("#putItHere").append(mathTests.printAllTests());
+
 </script>
 
 

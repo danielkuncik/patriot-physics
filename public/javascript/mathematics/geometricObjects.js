@@ -9,6 +9,51 @@ TO DO: (8-12-2020)
  */
 
 
+ function convertDegreesToRadians(angle) {
+     return angle / 180 * Math.PI;
+ }
+
+ function convertRadiansToDegrees(angle) {
+     return angle / Math.PI * 180;
+ }
+
+ // turns a string in text to an appropriate angle in radians
+ function turnTextToRadians(text) {
+     var theta;
+     switch(text) {
+         case 'right':
+             theta = 0;
+             break;
+         case 'left':
+             theta = Math.PI;
+             break;
+         case 'up':
+             theta = Math.PI / 2;
+             break;
+         case "down":
+             theta = Math.PI * 3 / 2;
+             break;
+         case "east":
+             theta = 0;
+             break;
+         case "west":
+             theta = Math.PI;
+             break;
+         case "north":
+             theta = Math.PI / 2;
+             break;
+         case "south":
+             theta = Math.PI * 3 / 2;
+             break;
+         default:
+             theta = undefined;
+             break;
+     }
+     return theta;
+ }
+
+
+
 class Point {
     constructor(x, y, name) {
         this.x = x;
@@ -93,7 +138,7 @@ class Point {
     }
 
     getQuadrant() {
-        if (Math.abs(this.x) < 1e-10 && Math.abs(this.y) < 1e-10) {return 'origin';}
+        if (Math.abs(this.x) < 1e-10 && Math.abs(this.y) < 1e-10) {return '0';} // change this name?
         else if (this.x > 0 && Math.abs(this.y) < 1e-10 ) {return '+X';}
         else if (this.x < 0 && Math.abs(this.y) < 1e-10 ) {return '-X';}
         else if (Math.abs(this.x) < 1e-10 && this.y > 0) {return '+Y';}
@@ -107,6 +152,7 @@ class Point {
 
     // returns the angle in radians between the x-axis and a line Segment from the origin to this Point
     // returns angles theta such that 0 <= theta < 2pi
+    // remake this using sqwitch?
     getAngleToHorizontal() {
         let theta;
         const quadrant = this.getQuadrant();
@@ -706,7 +752,7 @@ class Polygon {
             this.vertices = arrayOfVertices;
             this.calculateParameters();
         }
-        this.orientation = 'counterclockwise';
+        this.orientation = 'clockwise'; // default orientation
     }
 
     setOrientationClockwise() {
@@ -1081,58 +1127,19 @@ class Triangle extends Polygon {
     }
 }
 
-function constructEquilateralTriangle(sideLength, vertexA = makeOrigin()) { // counterclockwise orientation
-  let vertexB = vertexA.translateAndReproduce(sideLength, 0);
-  let vertexC = vertexA.translateAndReproduce(sideLength / 2, sideLength / 2 * Math.sqrt(3));
+function constructEquilateralTriangle(sideLength, vertexA = makeOrigin()) { // clockwise orientation
+  let vertexB = vertexA.translateAndReproduce(sideLength / 2, sideLength / 2 * Math.sqrt(3));
+  let vertexC = vertexA.translateAndReproduce(sideLength, 0);
   return new Triangle(vertexA, vertexB, vertexC);
 }
 
-function constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA = makeOrigin()) { // clockwise orientation
-    let vertexB = vertexA.translateAndReproduce(sideC, 0);
-    let angleBInRadians = convertDegreesToRadians(angleBInDegrees);
-    let vertexC = vertexB.translateAndReproduce(-1 * sideA * Math.cos(angleBInRadians), sideA * Math.sin(angleBInRadians));
-    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
-    newTriangle.setOrientationClockwise();
-    return newTriangle
+function constructIsocelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation
+  let vertexB = vertexA.translateAndReproduce(width / 2, height);
+  let vertexC = vertexA.translateAndReproduce(width, 0);
+  return new Triangle(vertexA, vertexB, vertexC)
 }
 
-
-// its possible that the angles do not
-function constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA = makeOrigin()) { // clockwise orientation
-    const angleCinDegrees = 180 - angle1inDegrees - angle2inDegrees;
-    if (angle3inDegrees <= 0) {
-        console.log('cannot have a triangle with total angle greater than 180');
-        return false
-    }
-    const angleAinRadians = convertDegreesToRadians(angleAinDegrees);
-    const angleBinRadians = convertDegreesToRadians(angleBinDegrees);
-
-
-    const lineB = new constructLineFromPointAndAngle(vertexA, angleAinRadians);
-    const vertexB = vertexA.translateAndReproduce(sideC, 0);
-    const lineA = new constructLineFromPointAndAngle(vertexB, Math.PI - angleBinRadians);
-    const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
-    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
-    newTriangle.setOrientationClockwise();
-    return newTriangle
-}
-
-function constructTriangleSSS(sideC, sideB, sideA, vertexA) { // clockwise orientation
-    let angleB = getAngleFromLawOfCosines(sideA, sideB, sideC); // in degrees
-    return constructTriangleSAS(sideC, angleB, sideA, vertexA);
-}
-
-
-function constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) { // clockwise orientation
-    const angleBinDegrees = 180 - angleCinDegrees - angleAinDegrees;
-    if (angleBinDegrees <= 0) {
-        console.log('cannot have a triangle with total angle greater than 180');
-        return false
-    }
-    return constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA);
-}
-
-function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA) { // counterclockwise orientation
+function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
   const theta = convertDegreesToRadians(angleA);
   let x = hypotenuse * Math.cos(theta);
   let y = hypotenuse * Math.sin(theta);
@@ -1147,7 +1154,7 @@ function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, ver
   return new Triangle(vertexA, vertexB, vertexC);
 }
 
-function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA) { // counterclockwise orientation
+function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
     if (swapLegs) {
         const oldxLeg = xLeg;
         const oldyLeg = yLeg;
@@ -1159,16 +1166,58 @@ function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA) { // count
     return new Triangle(vertexA, vertexB, vertexC);
 }
 
-function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA) { // counterclockwise orientation
+function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
     const yLeg = Math.sqrt(hypotenuse**2 - xLeg**2);
     return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
 }
 
-function constructIsocelesTriangle(width, height, vertexA = makeOrigin()) { // counterclockwise orientation
-  let vertexB = vertexA.translateAndReproduce(width / 2, height);
-  let vertexC = vertexA.translateAndReproduce(width, 0);
-  return newTriangle(vertexA, vertexB, vertexC)
+
+function constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA = makeOrigin()) { // counterlockwise orientation
+    let vertexB = vertexA.translateAndReproduce(sideC, 0);
+    let angleBInRadians = convertDegreesToRadians(angleBInDegrees);
+    let vertexC = vertexB.translateAndReproduce(-1 * sideA * Math.cos(angleBInRadians), sideA * Math.sin(angleBInRadians));
+    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+    newTriangle.setOrientationCounterClockwise();
+    return newTriangle
 }
+
+
+// its possible that the angles do not
+function constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA = makeOrigin()) { // counterclockwise orientation
+    const angleCinDegrees = 180 - angle1inDegrees - angle2inDegrees;
+    if (angle3inDegrees <= 0) {
+        console.log('cannot have a triangle with total angle greater than 180');
+        return false
+    }
+    const angleAinRadians = convertDegreesToRadians(angleAinDegrees);
+    const angleBinRadians = convertDegreesToRadians(angleBinDegrees);
+
+
+    const lineB = new constructLineFromPointAndAngle(vertexA, angleAinRadians);
+    const vertexB = vertexA.translateAndReproduce(sideC, 0);
+    const lineA = new constructLineFromPointAndAngle(vertexB, Math.PI - angleBinRadians);
+    const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
+    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+    newTriangle.setOrientationCounterClockwise();
+    return newTriangle
+}
+
+function constructTriangleSSS(sideC, sideB, sideA, vertexA) { // counterclockwise orientation
+    let angleB = getAngleFromLawOfCosines(sideA, sideB, sideC); // in degrees
+    return constructTriangleSAS(sideC, angleB, sideA, vertexA);
+}
+
+
+function constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) { // counterclockwiseOrientation orientation
+    const angleBinDegrees = 180 - angleCinDegrees - angleAinDegrees;
+    if (angleBinDegrees <= 0) {
+        console.log('cannot have a triangle with total angle greater than 180');
+        return false
+    }
+    return constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA);
+}
+
+
 
 class Rectangle extends Polygon {
   constructor(width, height, vertex0) {

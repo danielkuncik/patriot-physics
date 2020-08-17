@@ -55,14 +55,6 @@ function getMaxOfArray(array) {
     }
 }
 
-function convertDegreesToRadians(angle) {
-    return angle / 180 * Math.PI;
-}
-
-function convertRadiansToDegrees(angle) {
-    return angle / Math.PI * 180;
-}
-
 function roundValue(value, numDecimalPlaces) {
     return Math.floor(value * 10**numDecimalPlaces) / 10**numDecimalPlaces
 }
@@ -163,40 +155,6 @@ function cutOffFunction(func, xMin, xMax, forcedYMin, forcedYMax) {
 
 }
 
-// turns a string in text to an appropriate angle in radians
-function turnTextToRadians(text) {
-    var theta;
-    switch(text) {
-        case 'right':
-            theta = 0;
-            break;
-        case 'left':
-            theta = Math.PI;
-            break;
-        case 'up':
-            theta = Math.PI / 2;
-            break;
-        case "down":
-            theta = Math.PI * 3 / 2;
-            break;
-        case "east":
-            theta = 0;
-            break;
-        case "west":
-            theta = Math.PI;
-            break;
-        case "north":
-            theta = Math.PI / 2;
-            break;
-        case "south":
-            theta = Math.PI * 3 / 2;
-            break;
-        default:
-            theta = undefined;
-            break;
-    }
-    return theta;
-}
 
 // given an inputted direction
 // tries to figure out what the user meant, and returns a value in radians

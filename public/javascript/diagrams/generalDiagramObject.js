@@ -22,6 +22,8 @@ function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) 
 }
 
 
+
+/// I think this is all messed up, fix it!
 // do i need to clarify this is inside/outside?
 // given a line at a certain angle, determines the optimal location of text
 function getOptimalLocationOfText(point1, point2, turningOrientation) {
@@ -34,6 +36,9 @@ function getOptimalLocationOfText(point1, point2, turningOrientation) {
 
     console.log(point1, point2, turningOrientation);
     console.log(convertRadiansToDegrees(angleInRadians));
+
+    // make clockwise the default
+
     // optimal spots for counter-clockwise orientation
     if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {
         bestSpot = 'below';
