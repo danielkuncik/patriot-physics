@@ -23,13 +23,45 @@ function isStringOfDigits(string) {
   return result
 }
 
+function lookUpUnit(unit) {
+
+}
+
+
+function convertUnitToSI(unit) {
+  /// look up information from the JSON file
+
+}
+
+function multiplySIUnits(dimension1, dimension2) {
+
+}
+
+function multiplyUnits(unit1, unit2) {
+
+}
+
+
+function constructMagnitudeFromFloat(float, unit, numSigFigs, exact = false) {
+
+}
+
 // look up my previous work on numerical strings!
 class Magnitude {
   constructor(numericalString, unit, exact = false) {
-
-
-    this.magnitude = true;
+    this.isAmagnitude = true;
     this.unit = unit;
+
+    this.firstSigFig = undefined;
+    this.otherSigFigs = undefined;
+    this.orderOfMagnitude = undefined;
+    this.numSigFigs = undefined;
+
+
+    /// not sure i want this line...
+    // this value is used for if a problem calls for continued operations
+    this.floatValue = Number(numericalString);
+
     // this.firstSigFig = firstSigFig;
     // this.otherSigFigs = otherSigFigs;
     // this.exponent = exponent;
@@ -37,10 +69,52 @@ class Magnitude {
     if (exact) {
       this.numSigFigs = Infinity;
     } else {
-      this.numSigFigs = 1 + this.otherSigFigs.length;
+
     }
 
   }
+
+  round(numSigFigs) {
+
+  }
+
+  // will be used for more exact results in operations
+  setFloatValue(float) {
+    this.floatValue = float;
+  }
+
+  addZeroes(numZeroes) {
+
+  }
+
+  multiply(anotherMagnitude) {
+
+  }
+
+  divide(anotherMagnitude) {
+
+  }
+
+  square() {
+
+  }
+
+  add(anotherMagnitude) { /// returns result in the unit of this magnitude!
+
+  }
+
+  subtract(anotherMagnitude) {
+
+  }
+
+  convertToSIUnit() {
+
+  }
+
+  convertToAnotherUnit(anotherUnit) {
+
+  }
+
 }
 
 class Direction {
