@@ -68,16 +68,6 @@ class Magnitude {
       this.positive = true;//default
     }
 
-    // delete leading zeros
-    numericalString = this.deleteLeadingZeros(numericalString);
-    if (numericalString.length === 0) { // if it was only zeroes
-      this.isAMagnitude = true;
-      this.zero = true;
-      this.firstSigFig = '0';
-      this.otherSigFigs = '';
-      this.numSigFigs = 1; /// is this true??? how do you determine the number of sig figs of a zero?
-    }
-
     // deal with E
     let exponentString = undefined;
     let eLocation = numericalString.indexOf('e');
@@ -99,9 +89,18 @@ class Magnitude {
       }
     }
 
-    // values with decimal places
-    if (numericalString.indexOf('.') !== -1) {
-        console.log('xxx');
+      // delete leading zeros
+      let leadingZeros = 0;
+      while (numericalString[0] === '0') {
+          numericalString = numericalString.slice(1);
+          leadingZeros++;
+      }
+      if ((numericalString.length === 0 || numericalString === '.') && leadingZeros > 0) { // if it was only zeroes
+          return this.setValueZero(1,exact);
+      }
+
+
+    if (numericalString.indexOf('.') !== -1) {  // values with decimal places
         const decimalPoint = numericalString.indexOf('.');
         const beforeDecimal = numericalString.slice(0, decimalPoint);
         let afterDecimal = numericalString.slice(decimalPoint + 1, numericalString.length);
@@ -113,14 +112,21 @@ class Magnitude {
                 this.otherSigFigs = beforeDecimal.slice(1, beforeDecimal.length) + afterDecimal;
                 this.numSigFigs = 1 + this.otherSigFigs.length;
             } else { // no digits before decimal
-                this.orderOfMagnitude -= 1;
+                let leadingZerosAfterDecimal = 0;
+                // this.orderOfMagnitude -= 1;
                 while (afterDecimal[0] === '0') {
                     afterDecimal = afterDecimal.slice(1);
-                    this.orderOfMagnitude -= 1;
+                    // this.orderOfMagnitude -= 1;
+                    leadingZerosAfterDecimal++;
                 }
-                this.firstSigFig = afterDecimal[0];
-                this.otherSigFigs = afterDecimal.slice(1, afterDecimal.length);
-                this.numSigFigs = 1 + this.otherSigFigs.length
+                if (afterDecimal.length === 0) { // if it was only zeros
+                    return this.setValueZero(1 + leadingZerosAfterDecimal, exact);
+                } else {
+                    this.orderOfMagnitude -= 1 + leadingZerosAfterDecimal;
+                    this.firstSigFig = afterDecimal[0];
+                    this.otherSigFigs = afterDecimal.slice(1, afterDecimal.length);
+                    this.numSigFigs = 1 + this.otherSigFigs.length
+                }
             }
         } else {
             this.isAmagnitude = false;
@@ -142,16 +148,6 @@ class Magnitude {
     }
     this.unit = unit;
 
-
-
-    /// not sure i want this line...
-    // this value is used for if a problem calls for continued operations
-    // this.floatValue = Number(numericalString);
-
-    // this.firstSigFig = firstSigFig;
-    // this.otherSigFigs = otherSigFigs;
-    // this.exponent = exponent;
-
     if (exact) {
       this.numSigFigs = Infinity;
     } else {
@@ -160,14 +156,27 @@ class Magnitude {
 
   }
 
-
-    /// PRIVATE FUNCTION
-  deleteLeadingZeros(numString) {
-    while (numString[0] === '0') {
-        numString = numString.slice(1);
-    }
-    return numString;
+  setValueZero(numSigFigs = 1, exact = false) {
+      this.isAmagnitude = true;
+      this.zero = true;
+      this.positive = undefined;
+      this.orderOfMagnitude = undefined;
+      this.numSigFigs = numSigFigs;
+      this.firstSigFig = '0';
+      if (exact) {
+          this.numSigFigs = Infinity;
+          this.otherSigFigs = '';
+      } else {
+          this.numSigFigs = numSigFigs;
+          this.otherSigFigs = '';
+          let i;
+          for (i = 1; i < this.numSigFigs; i++) {
+              this.otherSigFigs = this.otherSigFigs + '0';
+          }
+      }
+      return true
   }
+
 
   // PRIVATE FUNCTION
   readExponentString(exponentString) {
@@ -227,3 +236,4 @@ class Magnitude {
   }
 
 }
+
