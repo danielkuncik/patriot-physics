@@ -102,8 +102,6 @@ function tangentProblem(adjacent, angleInDegrees, swapLegs) {
 }
 
 
-/// in both cases, either 'swap legs' or not, the known angle and known side should be the one's that are
-/// enetered as arguments of the function
 function secantProblem(adjacent, angleInDegrees, swapLegs) { // reciprocal of cosine
   let myTriangle = constructRightTriangleHypotenuseAngle(adjacent / Math.cos(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
   if (swapLegs) {
@@ -129,6 +127,88 @@ function cotangentProblem(opposite, angleInDegrees, swapLegs) { //reciprocal of 
   } else {
     return SOHCAHTOAproblem(myTriangle, 'A', 'A', 'B');
   }
+}
+
+
+function randomSOHCAHTOAProblem(simpleOnly) {
+    let probType = simpleOnly ? randInt(1,3) : randInt(1,6);
+    let triangleObject, swapLegs = coinFlip();
+    if (swapLegs) {probType *= -1;}
+    if (coinFlip()) {
+        const sides = randomPythagoreanTripleUnder100();
+        triangleObject = constructRightTriangleTwoLegs(sides[0], sides[1], swapLegs);
+    } else {
+        const angles = randomComplementaryAngles();
+        const angleA = coinFlip() ? angles[0] : angles[1];
+        const hypotenuse = randInt(1,100);
+        triangleObject = constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs);
+    }
+    let knownSide, knownAngle, unknownSide;
+    switch (probType) {
+        case 1: // sine
+            knownSide = 'C';
+            knownAngle = 'A';
+            unknownSide = 'A';
+            break;
+        case -1:
+            knownSide = 'C';
+            knownAngle = 'B';
+            unknownSide = 'B';
+            break;
+        case 2: // cosine
+            knownSide = 'C';
+            knownAngle = 'A';
+            unknownSide = 'B';
+            break;
+        case -2:
+            knownSide = 'C';
+            knownAngle = 'B';
+            unknownSide = 'A';
+            break;
+        case 3: // tangent
+            knownSide = 'B';
+            knownAngle = 'A';
+            unknownSide = 'A';
+            break;
+        case -3:
+            knownSide = 'A';
+            knownAngle = 'B';
+            unknownSide = 'B';
+            break;
+        case 4:  // secant
+            knownSide = 'B';
+            knownAngle = 'A';
+            unknownSide = 'C';
+            break;
+        case -4:
+            knownSide = 'A';
+            knownAngle = 'B';
+            unknownSide = 'C';
+            break;
+        case 5: // cosecant
+            knownSide = 'A';
+            knownAngle = 'A';
+            unknownSide = 'C';
+            break;
+        case -5:
+            knownSide = 'B';
+            knownAngle = 'B';
+            unknownSide = 'C';
+            break;
+        case 6: // cotangent
+            knownSide = 'A';
+            knownAngle = 'A';
+            unknownSide = 'B';
+            break;
+        case -6:
+            knownSide = 'B';
+            knownAngle = 'B';
+            unknownSide = 'A';
+            break;
+        default:
+            break;
+    }
+    return SOHCAHTOAproblem(triangleObject, knownSide, knownAngle, unknownSide);
 }
 
 /// ############################################################

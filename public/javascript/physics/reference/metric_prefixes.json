@@ -1,0 +1,72 @@
+{
+  "peta":
+  {
+    "conversion_factor": 1E15,
+    "abbreviation": "P"
+  },
+  "tera":
+  {
+    "conversion_factor": 1E12,
+    "abbreviation": "T"
+  },
+  "giga":
+  {
+    "conversion_factor": 1E9,
+    "abbreviation": "G"
+  },
+  "mega":
+  {
+    "conversion_factor": 1E6,
+    "abbreviation": "M"
+  },
+  "kilo":
+  {
+    "conversion_factor": 1000,
+    "abbreviation": "k"
+  },
+  "hecto":
+  {
+    "conversion_factor": 100,
+    "abbreviation": "h"
+  },
+  "deca":
+  {
+    "conversion_factor": 10,
+    "abbreviation": "da"
+  },
+  "deci":
+  {
+    "conversion_factor": 0.1,
+    "abbreviation": "d"
+  },
+  "centi":
+  {
+    "conversion_factor": 0.01,
+    "abbreviation": "c"
+  },
+  "milli":
+  {
+    "conversion_factor": 0.001,
+    "abbreviation": "m"
+  },
+  "micro":
+  {
+    "conversion_factor": 1E-6,
+    "abbreviation": "μ"
+  },
+  "nano":
+  {
+    "conversion_factor": 1E-9,
+    "abbreviation": "n"
+  },
+  "pico":
+  {
+    "conversion_factor": 1E-12,
+    "abbreviation": "p"
+  },
+  "femto":
+  {
+    "conversion_factor": 1E-15,
+    "abbreviation": "f"
+  }
+}

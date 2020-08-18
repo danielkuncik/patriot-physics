@@ -1,0 +1,138 @@
+{
+  "meter": {
+    "dimension": "length",
+    "SI": true,
+    "base": true,
+    "metric": true,
+    "abbreviation": "m"
+  },
+  "foot": {
+    "dimension": "length",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "ft",
+    "plural": "feet",
+    "conversion_factor": 0.3048
+  },
+  "inch": {
+    "dimension": "length",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "in",
+    "conversion_factor": 0.0254
+  },
+  "mile": {
+    "dimension": "length",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "in",
+    "conversion_factor": 1609.34
+  },
+  "pound": {
+    "dimension": "mass",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "lb",
+    "conversion_factor": 0.453592
+  },
+  "second": {
+    "dimension": "time",
+    "SI": true,
+    "base": true,
+    "metric": true,
+    "abbreviation": "m"
+  },
+  "minute": {
+    "dimension": "time",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "min"
+  },
+  "hour": {
+    "dimension": "time",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "hr"
+  },
+  "day": {
+    "dimension": "time",
+    "SI": false,
+    "metric": false,
+    "abbreviation": "day"
+  },
+  "Kelvin": {
+    "dimension": "temperature",
+    "SI": true,
+    "metric": true,
+    "base": true,
+    "abbreviation": "K"
+  },
+  "Rankine": {
+    "dimension": "temperature",
+    "SI": false,
+    "metric": false,
+    "conversion_factor": 0.555556,
+    "abbreviation": "°Ra"
+  },
+  "Celsius": {
+    "dimension": "temperature",
+    "SI": false,
+    "metric": false,
+    "conversion_factor": 1,
+    "zero_offset": 273.15,
+    "abbreviation": "°C"
+  },
+  "Fahrenheit": {
+    "dimension": "temperature",
+    "SI": false,
+    "metric": false,
+    "conversion_factor": 0.555556,
+    "zero_offset": -459.67,
+    "abbreviation": "°F"
+  },
+  "Newton": {
+    "dimension": "force",
+    "SI": true,
+    "metric": true,
+    "abbreviation": "N"
+  },
+  "Dyne": {
+    "dimension": "force",
+    "SI": false,
+    "metric": false,
+    "conversion_factor": 0.00001,
+    "abbreviation": "dyn"
+  },
+  "Joule": {
+    "dimension": "energy",
+    "SI": true,
+    "metric": true,
+    "abbreviation": "J"
+  },
+  "electronVolt": {
+    "dimension": "energy",
+    "SI": false,
+    "metric": true,
+    "conversion_factor": 1.602E-19,
+    "abbreviation": "eV"
+  },
+  "Watt": {
+    "dimension": "power",
+    "SI": true,
+    "metric": true,
+    "abbreviation": "W"
+  },
+  "Ampere": {
+    "dimension": "current",
+    "SI": true,
+    "base": true,
+    "metric": true,
+  },
+  "Coulomb": {
+    "dimension": "charge",
+    "SI": true,
+    "metric": true,
+    "conversion_factor": 1,
+    "abbreviation": "C"
+  }
+}

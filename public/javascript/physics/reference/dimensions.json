@@ -1,0 +1,97 @@
+{
+  "length": {
+    "base": true,
+    "SI_unit": "meter",
+    "other_units": [
+      "foot", "inch", "mile"
+    ]
+  },
+  "mass": {
+    "base": true,
+    "SI_unit": "kilogram",
+    "other_units": [
+      "pound"
+    ]
+  },
+  "time": {
+    "base": true,
+    "SI_unit": "second",
+    "other_units": [
+      "minute", "hour", "day"
+    ]
+  },
+  "temperature": {
+    "base": true,
+    "SI_unit": "Kelvin",
+    "other_unit": [
+      "Rankine"
+    ],
+    "other_scale": [
+      "Celsius", "Fahrenheit"
+    ]
+  },
+  "current": {
+    "base": true,
+    "SI_unit": "Ampere"
+  },
+  "velocity": {
+    "base": false,
+    "derivation": {
+      "length": 1,
+      "time": -1
+    }
+  },
+  "acceleration": {
+    "base": false,
+    "derivation": {
+      "length": 1,
+      "time": -2
+    }
+  },
+  "force": {
+    "base": false,
+    "derivation": {
+      "mass": 1,
+      "length": 1,
+      "time": -2
+    },
+    "SI_unit_special_name": "Newton",
+    "other_unit_names": [
+      "Dyne"
+    ]
+  },
+  "momentum": {
+    "base": false,
+    "derivation": {
+      "mass": 1,
+      "length": 1,
+      "time": -1
+    }
+  },
+  "energy": {
+    "base": false,
+    "derivation": {
+      "mass": 1,
+      "length": 2,
+      "time": -2
+    },
+    "SI_unit_special_name": "Joule"
+  },
+  "power": {
+    "base": false,
+    "derivation": {
+      "mass": 1,
+      "length": 2,
+      "time": -3
+    },
+    "SI_unit_special_name": "Watt"
+  },
+  "charge": {
+    "base": false,
+    "derivation": {
+      "current": 1,
+      "time": 1
+    },
+    "SI_unit_special_name": "Coulomb"
+  }
+}

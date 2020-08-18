@@ -23,5 +23,9 @@ function randomPythagoreanTripleUnder100() {
 }
 
 function randomComplementaryAngles() {
+  return complementaryAngles[randInt(0, complementaryAngles.length - 1)];
+}
+
+function randomComplementaryAngles() {
   return complementaryAngles[randInt(0,complementaryAngles.length - 1)];
 }
