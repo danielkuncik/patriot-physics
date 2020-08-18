@@ -2,6 +2,9 @@
  * Created by danielkuncik on 5/28/17.
  */
 
+
+/// Replace this function with 'indexOf()'
+
 // find character
 // returns the first index of a particular string containing a character, otherwise returns false
 function findCharacter(string, char) {

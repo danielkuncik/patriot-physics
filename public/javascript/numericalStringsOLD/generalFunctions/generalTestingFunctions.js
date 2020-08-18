@@ -2,6 +2,11 @@
  * Created by danielkuncik on 5/28/17.
  * A set of functions for testing javascript functions
  * These can only test the results of individual functions
+
+8-18-2020: i'll use the new functions i wrote earlier
+make assert not eqal
+
+
  */
 
 function add_test(result) {
@@ -110,4 +115,3 @@ function testFunction(func, name, testValue, args, correct) {
 }
 
 // a global variable, is there a way to change this???
-

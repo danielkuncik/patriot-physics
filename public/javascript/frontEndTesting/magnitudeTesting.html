@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+<body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src = './frontEndTesting.js'></script>
+<!-- <script src = '../physics/numericalStrings/numericalStringValidations.js'></script>
+<script src = '../physics/numericalStrings/numericalStringInformationGathering.js'></script> -->
+<script src = '../physics/magnitude.js'></script>
+
+<div id = 'putItHere'></div>
+
+<script>
+  let magnitudeTests = new TestPackage('Magnitude Tests');
+  magnitudeTests.addCategory('constructor','Constructor Tests');
+
+
+/*
+// basis of tests
+magnitudeTests.assertEqualStrict(mag001.isAmagnitude, true, 'constructor', 'undefined');
+magnitudeTests.assertEqualStrict(mag001.firstSigFig, undefined, 'constructor', 'undefined');
+magnitudeTests.assertEqualStrict(mag001.otherSigFigs, undefined, 'constructor', 'undefined');
+magnitudeTests.assertEqualStrict(mag001.orderOfMagnitude, undefined, 'constructor', 'undefined');
+magnitudeTests.assertEqualStrict(mag001.numSigFigs, undefined, 'constructor', 'undefined');
+magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'undefined');
+*/
+
+  magnitudeTests.addSubCategory('constructor', 'integers', 'Integers');
+  let mag001 = new Magnitude('1235124');
+  magnitudeTests.assertEqualStrict(mag001.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag001.firstSigFig, '1', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag001.otherSigFigs, '235124', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag001.orderOfMagnitude, 6, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag001.numSigFigs, 7, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag001.positive, true, 'constructor', 'integers');
+
+  let mag002 = new Magnitude('12412123');
+  magnitudeTests.assertEqualStrict(mag002.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag002.firstSigFig, '1', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag002.otherSigFigs, '2412123', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag002.orderOfMagnitude, 7, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag002.numSigFigs, 8, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag002.positive, true, 'constructor', 'integers');
+
+
+  let mag003 = new Magnitude('12');
+  magnitudeTests.assertEqualStrict(mag003.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag003.firstSigFig, '1', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag003.otherSigFigs, '2', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag003.orderOfMagnitude, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag003.numSigFigs, 2, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag003.positive, true, 'constructor', 'integers');
+
+  let mag004 = new Magnitude('+99');
+  magnitudeTests.assertEqualStrict(mag004.isAmagnitude, true, 'constructor', 'integers', '+99');
+  magnitudeTests.assertEqualStrict(mag004.firstSigFig, '9', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag004.otherSigFigs, '9', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag004.orderOfMagnitude, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag004.numSigFigs, 2, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag004.positive, true, 'constructor', 'integers');
+
+  let mag005 = new Magnitude('-106');
+  magnitudeTests.assertEqualStrict(mag005.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag005.firstSigFig, '1', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag005.otherSigFigs, '06', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag005.orderOfMagnitude, 2, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag005.numSigFigs, 3, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag005.positive, false, 'constructor', 'integers');
+
+  let mag006 = new Magnitude('5000');
+  magnitudeTests.assertEqualStrict(mag006.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag006.firstSigFig, '5', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag006.otherSigFigs, '', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag006.orderOfMagnitude, 3, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag006.numSigFigs, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag006.positive, true, 'constructor', 'integers');
+
+  let mag007 = new Magnitude('80');
+  magnitudeTests.assertEqualStrict(mag007.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag007.firstSigFig, '8', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag007.otherSigFigs, '', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag007.orderOfMagnitude, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag007.numSigFigs, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag007.positive, true, 'constructor', 'integers');
+
+  let mag008 = new Magnitude('5001');
+  magnitudeTests.assertEqualStrict(mag008.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag008.firstSigFig, '5', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag008.otherSigFigs, '001', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag008.orderOfMagnitude, 3, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag008.numSigFigs, 4, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag008.positive, true, 'constructor', 'integers');
+
+  let mag009 = new Magnitude('00000082');
+  magnitudeTests.assertEqualStrict(mag009.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag009.firstSigFig, '8', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag009.otherSigFigs, '2', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag009.orderOfMagnitude, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag009.numSigFigs, 2, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag009.positive, true, 'constructor', 'integers');
+
+
+  let mag010 = new Magnitude('010');
+  magnitudeTests.assertEqualStrict(mag010.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag010.firstSigFig, '1', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag010.otherSigFigs, '', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag010.orderOfMagnitude, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag010.numSigFigs, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag010.positive, true, 'constructor', 'integers');
+
+  let mag011 = new Magnitude('-0041');
+  magnitudeTests.assertEqualStrict(mag011.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag011.firstSigFig, '4', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag011.otherSigFigs, '1', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag011.orderOfMagnitude, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag011.numSigFigs, 2, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag011.positive, false, 'constructor', 'integers');
+
+  let mag012 = new Magnitude('00005');
+  magnitudeTests.assertEqualStrict(mag012.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag012.firstSigFig, '5', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag012.otherSigFigs, '', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag012.orderOfMagnitude, 0, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag012.numSigFigs, 1, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(mag012.positive, true, 'constructor', 'integers');
+
+
+  magnitudeTests.addSubCategory('constructor', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
+  let mag101 = new Magnitude('123.4','meters');
+  let mag105 = new Magnitude('0.000','meters');
+  let mag106 = new Magnitude('3.0e8','meters');
+  let mag107 = new Magnitude('-0231.12','meters');
+  let mag108 = new Magnitude('-12','meters');
+  let mag109 = new Magnitude('+.54','meters');
+  let mag110 = new Magnitude('12412.31421','meters');
+  let mag111 = new Magnitude('-.3142','meters');
+  let mag112 = new Magnitude('12421','meters');
+  let mag113 = new Magnitude('.54','meters');
+
+
+  magnitudeTests.addSubCategory('constructor', 'nonNumericalStrings', 'Non NumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('mrkuncik','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('hello. its. me.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('dan.dfe','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+
+  magnitudeTests.assertEqualStrict(new Magnitude('4251215u351421','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('4214124.121412.42142','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('daniel kuncik','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('undefined','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('undefined','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
+
+  magnitudeTests.assertEqualStrict(new Magnitude('+.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('-.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('.+','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+
+
+
+
+
+
+  $("#putItHere").append(magnitudeTests.printAllTests());
+
+</script>
+
+
+
+</body>
+</html>

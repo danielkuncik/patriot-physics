@@ -92,6 +92,15 @@ class TestPackage {
         this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
     }
 
+    assertNotEqualStrict(entered, notExpected, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        const pass = entered !== expected;
+        let failMessage;
+        if (!pass) {
+            failMessage = `Not Equal Strict Fail: value ${entered} entered; did not expect ${expected}`;
+        }
+        this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
+    }
+
     // add failure message
     assertEqualFloat(entered,expected, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         const pass = Math.abs(entered - expected) < 1e-10;
@@ -135,6 +144,7 @@ class TestPackage {
       }
       this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
     }
+
 
     // privateMethod!
     countAllTests() {

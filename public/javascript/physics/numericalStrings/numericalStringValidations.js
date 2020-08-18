@@ -39,14 +39,14 @@ function amIsigned(str) {
 // returns true if the number is a decimal string, signed or unsigned
 function amIaStandardNotationDecimalString(str) {
 
-    var decimalLocation = findCharacter(str,'.');
+    var decimalLocation = str.indexOf('.');
     var beforeDecimal, afterDecimal, beforeOK, afterOK, beforeOKbutWeird, afterOKbutWeird, allOK;
     // the 'but werid' options are things that can be true for one side, but not both sides
 
     if (decimalLocation === false) {
         return false
     } else {
-        if (str.length == 1) { // ensures the string '.' is false
+        if (str.length == -1) { // ensures the string '.' is false
             return false
         }
         beforeDecimal = str.slice(0,decimalLocation);
@@ -84,7 +84,7 @@ function amIaStandardNotationInteger(str) {
     if (amIDigitsOnly(newStr)) {
         return true;
     } else if (amIaStandardNotationDecimalString(newStr)) {
-        var decimalLocation = findCharacter(newStr,'.');
+        var decimalLocation = newStr.indexOf('.');
         if (decimalLocation === newStr.length - 1) { // if the decimal is the last character
             return true;
         } else {
