@@ -321,7 +321,14 @@ class Magnitude {
     }
 
     // delete leading zeros
-    numericalString = deleteLeadingZeros(numericalString);
+    numericalString = deleteLeadingZeros(numericalString)
+    if (numericalString.length === 0) { // if it was only zeroes
+      this.isAMagnitude = true;
+      this.zero = true;
+      this.firstSigFig = '0';
+      this.otherSigFigs = '';
+      this.numSigFigs = 1; /// is this true??? how do you determine the number of sig figs of a zero?
+    }
 
     // deal with E
     let exponentString = undefined;
@@ -358,10 +365,32 @@ class Magnitude {
       this.orderOfMagnitude += this.otherSigFigs.length;
 
       // deal with decimals!!!
-    } else if (standardNotationDecimalString(numericalString)) {
-      this.isAmagnitude = true;
-
-
+    } else if (numericalString.indexOf('.') !== undefined) {
+      const decimalPoint = numericalString.indexOf('.');
+      const beforeDecimal = numericalString.slice(0,decimalPoint);
+      let afterDecimal = numericalString.slice(decimalPoint + 1, numericalString.length);
+      if (digitsOnly(beforeDecimal) && digitsOnly(afterDecimal) && (beforeDecimal.length > 0 || afterDecimal.length > 0)) {
+        this.isAmagnitude = true;
+        if (beforeDecimal.length > 0) {
+          this.firstSigFig = beforeDecimal[0];
+          this.orderOfMagnitude = beforeDecimal.length - 1;
+          this.otherSigFigs = beforeDecimal.slice(1,beforeDecimal.length) + afterDecimal;
+          this.numSigFigs = 1 + this.otherSigFigs.length;
+        } else { // no values before decimal
+          /// test if it is all zeroes first!
+          this.orderOfMagnitude -= 1;
+          while (afterDecimal[0] === '0') {
+              afterDecimal = afterDecimal.slice(1);
+              this.orderOfMagnitude -= 1;
+          }
+          this.firstSigFig = afterDecimal[0];
+          this.otherSigFigs = afterDecimal.slice(1,afterDecimal.length);
+          this.numSigFigs = 1 + this.otherSigFigs.length
+        }
+      } else {
+        this.isAmagnitude = false;
+        return false
+      }
     } else {
       this.isAmagnitude = false;
       return false

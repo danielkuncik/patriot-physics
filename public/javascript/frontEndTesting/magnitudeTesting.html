@@ -138,15 +138,154 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
 
   magnitudeTests.addSubCategory('constructor', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
   let mag101 = new Magnitude('123.4','meters');
-  let mag105 = new Magnitude('0.000','meters');
-  let mag106 = new Magnitude('3.0e8','meters');
-  let mag107 = new Magnitude('-0231.12','meters');
-  let mag108 = new Magnitude('-12','meters');
-  let mag109 = new Magnitude('+.54','meters');
-  let mag110 = new Magnitude('12412.31421','meters');
-  let mag111 = new Magnitude('-.3142','meters');
-  let mag112 = new Magnitude('12421','meters');
-  let mag113 = new Magnitude('.54','meters');
+  magnitudeTests.assertEqualStrict(mag101.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag101.firstSigFig, '1', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag101.otherSigFigs, '234', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag101.orderOfMagnitude, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag101.numSigFigs, 4, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag101.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+
+  let mag102 = new Magnitude('123.4000','meters');
+  magnitudeTests.assertEqualStrict(mag102.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag102.firstSigFig, '1', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag102.otherSigFigs, '234000', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag102.orderOfMagnitude, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag102.numSigFigs, 7, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag102.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+
+  let mag103 = new Magnitude('30000.0','meters');
+  magnitudeTests.assertEqualStrict(mag103.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag103.firstSigFig, '3', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag103.otherSigFigs, '00000', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag103.orderOfMagnitude, 4, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag103.numSigFigs, 6, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag103.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag104 = new Magnitude('-0231.12','meters');
+  magnitudeTests.assertEqualStrict(mag104.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag104.firstSigFig, '2', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag104.otherSigFigs, '3112', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag104.orderOfMagnitude, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag104.numSigFigs, 5, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag104.positive, false, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag105 = new Magnitude('-12','meters');
+  magnitudeTests.assertEqualStrict(mag105.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag105.firstSigFig, '1', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag105.otherSigFigs, '2', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag105.orderOfMagnitude, 1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag105.numSigFigs, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag105.positive, false, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag106 = new Magnitude('+.54','meters');
+  magnitudeTests.assertEqualStrict(mag106.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag106.firstSigFig, '5', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag106.otherSigFigs, '4', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag106.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag106.numSigFigs, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag106.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag107 = new Magnitude('12412.31421','meters');
+  magnitudeTests.assertEqualStrict(mag107.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag107.firstSigFig, '1', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag107.otherSigFigs, '241231421', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag107.orderOfMagnitude, 4, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag107.numSigFigs, 10, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag107.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag108 = new Magnitude('-.3142','meters');
+  magnitudeTests.assertEqualStrict(mag108.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag108.firstSigFig, '3', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag108.otherSigFigs, '142', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag108.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag108.numSigFigs, 4, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag108.positive, false, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag109 = new Magnitude('124210.','meters');
+  magnitudeTests.assertEqualStrict(mag109.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag109.firstSigFig, '1', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag109.otherSigFigs, '24210', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag109.orderOfMagnitude, 5, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag109.numSigFigs, 6, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag109.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag110 = new Magnitude('.54','meters');
+  magnitudeTests.assertEqualStrict(mag110.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag110.firstSigFig, '5', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag110.otherSigFigs, '4', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag110.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag110.numSigFigs, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag110.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag111 = new Magnitude('.540000','meters');
+  magnitudeTests.assertEqualStrict(mag111.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag111.firstSigFig, '5', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag111.otherSigFigs, '40000', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag111.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag111.numSigFigs, 6, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag111.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag112 = new Magnitude('50.','meters');
+  magnitudeTests.assertEqualStrict(mag112.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag112.firstSigFig, '5', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag112.otherSigFigs, '0', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag112.orderOfMagnitude, 1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag112.numSigFigs, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag112.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag113 = new Magnitude('0.6','meters');
+  magnitudeTests.assertEqualStrict(mag113.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag113.firstSigFig, '6', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag113.otherSigFigs, '', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag113.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag113.numSigFigs, 1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag113.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag114 = new Magnitude('.6','meters');
+  magnitudeTests.assertEqualStrict(mag114.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag114.firstSigFig, '6', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag114.otherSigFigs, '', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag114.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag114.numSigFigs, 1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag114.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag115 = new Magnitude('.60','meters');
+  magnitudeTests.assertEqualStrict(mag115.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag115.firstSigFig, '6', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag115.otherSigFigs, '0', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag115.orderOfMagnitude, -1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag115.numSigFigs, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag115.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+  let mag116 = new Magnitude('.00006','meters');
+  magnitudeTests.assertEqualStrict(mag116.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag116.firstSigFig, '6', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag116.otherSigFigs, '', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag116.orderOfMagnitude, -5, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag116.numSigFigs, 1, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag116.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+
+  let mag117 = new Magnitude('.000060','meters');
+  magnitudeTests.assertEqualStrict(mag117.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag117.firstSigFig, '6', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag117.otherSigFigs, '0', 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag117.orderOfMagnitude, -5, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag117.numSigFigs, 2, 'constructor', 'standardNotationDecimalStrings');
+  magnitudeTests.assertEqualStrict(mag117.positive, true, 'constructor', 'standardNotationDecimalStrings');
+
+
+// add a category of ZEROS!
+// let mag102 = new Magnitude('0.000','meters');
+// magnitudeTests.assertEqualStrict(mag102.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
+// magnitudeTests.assertEqualStrict(mag102.firstSigFig, '0', 'constructor', 'standardNotationDecimalStrings');
+// magnitudeTests.assertEqualStrict(mag102.otherSigFigs, '000', 'constructor', 'standardNotationDecimalStrings');
+// magnitudeTests.assertEqualStrict(mag102.orderOfMagnitude, 0, 'constructor', 'standardNotationDecimalStrings');
+// magnitudeTests.assertEqualStrict(mag102.numSigFigs, 4, 'constructor', 'standardNotationDecimalStrings');
+// magnitudeTests.assertEqualStrict(mag102.positive, false, 'constructor', 'standardNotationDecimalStrings');
+//
 
 
   magnitudeTests.addSubCategory('constructor', 'nonNumericalStrings', 'Non NumericalStrings');
@@ -163,9 +302,27 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(new Magnitude('+.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
   magnitudeTests.assertEqualStrict(new Magnitude('-.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
   magnitudeTests.assertEqualStrict(new Magnitude('.+','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(new Magnitude('.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
   magnitudeTests.assertEqualStrict(new Magnitude('','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
 
+/*
+['3.0e8',true],
+['45.3e4',false],
+['99',false],
+['4e5',true],
+['4.e5',true], // weird, but acceptable
+['0003e4',false],
+['3.14e-9',true],
+['.42e2',false],
+['6E-3',true],
+['+4.56e3',true],
+['-5.78e-9',true],
+['+5E3',true],
+['-6e-9',true],
+['+8.e4',true], // again, weird, but acceptable
+['.9e7',false],
 
+*/
 
 
 

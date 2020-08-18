@@ -72,7 +72,7 @@ class TestPackage {
             let categoryName = this.categories[categoryKey].name;
             if (subCategoryKey && this.categories[categoryKey].subCategories[subCategoryKey]) {
                 let subCategoryName = this.categories[categoryKey].subCategories[subCategoryKey].name;
-                name = `${categoryName}: ${subCategoryKey} Test ${this.categories[categoryKey].subCategories[subCategoryKey].tests.length + 1}`;
+                name = `${categoryName}: ${subCategoryName} Test ${this.categories[categoryKey].subCategories[subCategoryKey].tests.length + 1}`;
             } else {
                 name = `${categoryName} Unattached Test ${this.categories[categoryKey].unattachedTests.length + 1}`;
             }
