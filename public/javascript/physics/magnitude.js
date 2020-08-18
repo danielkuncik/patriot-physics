@@ -73,7 +73,7 @@ function readExponentString(exponentString) {
   let sign = 1;
   if (exponentString[0] === '+') {
     exponentString = exponentString.slice(1,exponentString.length);
-  } else if (exponentString[0] === '+') {
+  } else if (exponentString[0] === '-') {
     sign = -1;
     exponentString = exponentString.slice(1,exponentString.length);
   }
@@ -321,7 +321,7 @@ class Magnitude {
     }
 
     // delete leading zeros
-    numericalString = deleteLeadingZeros(numericalString)
+    numericalString = deleteLeadingZeros(numericalString);
     if (numericalString.length === 0) { // if it was only zeroes
       this.isAMagnitude = true;
       this.zero = true;
@@ -347,7 +347,7 @@ class Magnitude {
         this.isAmagnitude = false;
         return false
       } else {
-        this.orderOfMagnitude = exponent
+        this.orderOfMagnitude = exponent;
       }
     }
 
@@ -373,7 +373,7 @@ class Magnitude {
         this.isAmagnitude = true;
         if (beforeDecimal.length > 0) {
           this.firstSigFig = beforeDecimal[0];
-          this.orderOfMagnitude = beforeDecimal.length - 1;
+          this.orderOfMagnitude += beforeDecimal.length - 1;
           this.otherSigFigs = beforeDecimal.slice(1,beforeDecimal.length) + afterDecimal;
           this.numSigFigs = 1 + this.otherSigFigs.length;
         } else { // no values before decimal
