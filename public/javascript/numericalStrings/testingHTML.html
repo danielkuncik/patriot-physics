@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>HTML file created to run tests of javascript functions</p>
+
+<h1 id = 'test_result'></h1>
+
+
+<div id = 'failing_test_location'></div>
+
+
+<p>A small steel rod is placed in 5 L of water. The initial temperature of the steel rod is , and the initial temperature of the water is 10 &#x2103;</p>
+<p>It&#039;s the bee&#039;s knees.</p>
+<p>The direction of the satellite&#39;s motion is constantly changing.</p>
+
+<script>
+    var full_result = 'green';
+    consoleInfo = true;
+</script>
+
+<!-- General Functions -->
+<script src = 'generalFunctions/generalStringFunctions.js'></script>
+<script src = 'generalFunctions/generalTestingFunctions.js'></script>
+
+<!-- Validations -->
+<script src = 'numericalStringValidations/numericalStringValidations.js'></script>
+
+<!-- Numerical String Methods -->
+<script src = 'numericalStringMethods/numericalStringInformationGathering.js'></script>
+<script src = 'numericalStringMethods/numericalStringMiscellaneousFunctions.js'></script>
+<script src = 'numericalStringMethods/numericalStringConversions.js'></script>
+<script src = 'numericalStringMethods/numericalStringRounding.js'></script>
+<script src = 'numericalStringMethods/numericalStringCoreMethods.js'></script>
+
+<!-- Random Number Generation -->
+<script src = 'randomNumberGeneration/randomNumberGeneration.js'></script>
+
+
+<!-- Testing Functions -->
+<!--
+<script src = 'numericalStringTests/testNumericalStringValidations.js'></script>
+<script src = 'numericalStringTests/testNumericalStringInformationGathering.js'></script>
+<script src = 'numericalStringTests/testNumericalStringConversions.js'></script>
+<script src = 'numericalStringTests/testNumericalStringRounding.js'></script>
+<script src = 'numericalStringTests/testRandomNumberGeneration.js'></script>
+<script src = 'numericalStringTests/testNumericalStringMiscellaneousFunctions.js'></script>
+<script src = 'numericalStringTests/testNumericalStringCoreMethods.js'></script>
+-->
+
+<script>
+    document.getElementById('test_result').innerHTML = full_result;
+</script>
+</body>
+</html>
