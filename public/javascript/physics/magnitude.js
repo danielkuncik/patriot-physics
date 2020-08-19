@@ -281,17 +281,23 @@ class Magnitude {
     }
   }
 
-  getString() {
+  getString(abbreviateUnit = true) {
+    // let printUnit = abbreviateUnit ? this.unit.abbreviation : this.unit.name;  FOR ONCE I FIX THIS!!!!
+      let printUnit = this.unit;
+      // determine the best way to write it
+  }
+
+  printStandardNotationNumber() { // returns false if this is impossible to the correct number of significant figures
+
+  }
+  printScientificNotationNumber() {
 
   }
 
   getFloat() {
-
+      return this.intermediateValue ? this.intermediateValue : Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`)
   }
 
-  getValue() {
-      return this.intermediateValue ? this.intermediateValue : this.getFloat()
-  }
 
   addZeroes(numZeroes) {
 
@@ -327,3 +333,6 @@ class Magnitude {
 
 }
 
+function constructMagnitudeFromFloat(float, numSigFigs, unit, exact = false) {
+    return new Magnitude(float.toExponential(numSigFigs - 1), unit)
+}
