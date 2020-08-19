@@ -147,6 +147,8 @@ class Magnitude {
     if (exact) {
       this.numSigFigs = Infinity;
     }
+    this.intermediateValue = undefined; /// a float value used for calculations, but not presentation
+      // for problems
 
   }
 
@@ -198,13 +200,27 @@ class Magnitude {
     }
   }
 
-  round(numSigFigs) {
+  round(newSigFigs) {
+    if (newSigFigs > this.numSigFigs) {
+        // console.log('unable to add significant figures to a magnitude');
+        return this
+    } else if (newSigFigs === this.numSigFigs) {
+        return this
+    } else {
+
+    }
+  }
+
+  getString() {
 
   }
 
-  // will be used for more exact results in operations
-  setFloatValue(float) {
-    this.floatValue = float;
+  getFloat() {
+
+  }
+
+  getValue() {
+      return this.intermediateValue ? this.intermediateValue : this.getFloat()
   }
 
   addZeroes(numZeroes) {
