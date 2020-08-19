@@ -39,6 +39,20 @@ function digitsOnly(str) {
 }
 
 
+function allNines(numString) {
+    let i;
+    for (i = 0; i < numString.length; i++) {
+        if (numString[i] !== '9') {
+            return false
+        }
+    }
+    return true
+}
+
+function reassignDigit(numString, index, newDigit) {
+    return numString.slice(0,index) + newDigit + numString.slice(index + 1, numString.length);
+}
+
 function roundUpCharacter(char) {
     switch (char) {
         case '0':
@@ -64,6 +78,10 @@ function roundUpCharacter(char) {
         default:
             return null;
     }
+}
+
+function roundUpDigit(numString, index) {
+    return reassignDigit(numString, index, roundUpCharacter(numString[index]))
 }
 
 
@@ -234,13 +252,31 @@ class Magnitude {
     } else if (newSigFigs === this.numSigFigs) {
         return this
     } else {
+        this.numSigFigs = newSigFigs;
         let numString = this.firstSigFig + this.otherSigFigs;
-        let characterArray = numString.slice(newSigFigs).split("");
-
-        // the next string
         let testChar = numString[newSigFigs];
-        if (testChar === '5' || testChar === '6' || testChar === '7' || testChar === '8' || testChar === '9') {
-
+        let numStringNew = numString.slice(0,newSigFigs);
+        if (testChar === '0' || testChar === '1' || testChar === '2' || testChar === '3' || testChar === '4') {  // round down
+            this.firstSigFig = numStringNew[0];
+            this.otherSigFigs = numStringNew.slice(1,newSigFigs); /// chech this
+        } else { // round up
+            if (allNines(numString)) { // numstring is all 9s
+                numStringNew = '1';
+                let k;
+                for (k = 0; k < this.numSigFigs - 1; k++) {
+                    numStringNew = numStringNew + '0';
+                }
+                this.orderOfMagnitude += 1;
+            } else { /// numstring not all 9s
+                let index = newSigFigs - 1;
+                while (numStringNew[index] === '9') {
+                    numStringNew = reassignDigit(numStringNew, index, '0');
+                    index--;
+                }
+                numStringNew = roundUpDigit(numStringNew,index);
+            }
+            this.firstSigFig = numStringNew[0];
+            this.otherSigFigs = numStringNew.slice(1,numStringNew.length);
         }
     }
   }
