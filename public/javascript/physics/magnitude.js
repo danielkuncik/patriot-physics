@@ -39,6 +39,33 @@ function digitsOnly(str) {
 }
 
 
+function roundUpCharacter(char) {
+    switch (char) {
+        case '0':
+            return '1';
+        case '1':
+            return '2';
+        case '2':
+            return '3';
+        case '3':
+            return '4';
+        case '4':
+            return '5';
+        case '5':
+            return '6';
+        case '6':
+            return '7';
+        case '7':
+            return '8';
+        case '8':
+            return '9';
+        case '9':
+            return '0';
+        default:
+            return null;
+    }
+}
+
 
 
 // look up my previous work on numerical strings!
@@ -207,7 +234,14 @@ class Magnitude {
     } else if (newSigFigs === this.numSigFigs) {
         return this
     } else {
+        let numString = this.firstSigFig + this.otherSigFigs;
+        let characterArray = numString.slice(newSigFigs).split("");
 
+        // the next string
+        let testChar = numString[newSigFigs];
+        if (testChar === '5' || testChar === '6' || testChar === '7' || testChar === '8' || testChar === '9') {
+
+        }
     }
   }
 
