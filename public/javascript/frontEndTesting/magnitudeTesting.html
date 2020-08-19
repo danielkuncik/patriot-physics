@@ -641,46 +641,166 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
 
 
   magnitudeTests.addSubCategory('constructor', 'nonNumericalStrings', 'Non NumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('mrkuncik','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('hello. its. me.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('dan.dfe','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
 
-  magnitudeTests.assertEqualStrict(new Magnitude('4251215u351421','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('4214124.121412.42142','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('daniel kuncik','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('1.23,e4.5','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('.e5','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('-e4','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('+e+3','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('E6','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('undefined','meters').isAmagnitude, false,  'constructor', 'nonNumericalStrings');
+  let mag401 = new Magnitude('mrkuncik','meters');
+  magnitudeTests.assertEqualStrict(mag401.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag401.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag401.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag401.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag401.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag401.positive, undefined, 'constructor', 'nonNumericalStrings');
 
+  let mag402 = new Magnitude('hello. its. me.','meters');
+  magnitudeTests.assertEqualStrict(mag402.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag402.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag402.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag402.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag402.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag402.positive, undefined, 'constructor', 'nonNumericalStrings');
 
-  magnitudeTests.assertEqualStrict(new Magnitude('+.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('-.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('.+','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('.','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  magnitudeTests.assertEqualStrict(new Magnitude('','meters').isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  let mag403 = new Magnitude('dan.dfe','meters');
+  magnitudeTests.assertEqualStrict(mag403.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag403.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag403.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag403.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag403.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag403.positive, undefined, 'constructor', 'nonNumericalStrings');
 
-/*
-['3.0e8',true],
-['45.3e4',false],
-['99',false],
-['4e5',true],
-['4.e5',true], // weird, but acceptable
-['0003e4',false],
-['3.14e-9',true],
-['.42e2',false],
-['6E-3',true],
-['+4.56e3',true],
-['-5.78e-9',true],
-['+5E3',true],
-['-6e-9',true],
-['+8.e4',true], // again, weird, but acceptable
-['.9e7',false],
+  let mag404 = new Magnitude('4251215u351421','meters');
+  magnitudeTests.assertEqualStrict(mag404.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag404.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag404.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag404.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag404.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag404.positive, undefined, 'constructor', 'nonNumericalStrings');
 
-*/
+  let mag405 = new Magnitude('4214124.121412.42142','meters');
+  magnitudeTests.assertEqualStrict(mag405.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag405.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag405.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag405.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag405.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag405.positive, undefined, 'constructor', 'nonNumericalStrings');
 
+  let mag406 = new Magnitude('daniel kuncik','meters');
+  magnitudeTests.assertEqualStrict(mag406.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag406.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag406.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag406.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag406.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag406.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag407 = new Magnitude('1.23,e4.5','meters');
+  magnitudeTests.assertEqualStrict(mag407.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag407.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag407.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag407.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag407.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag407.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag408 = new Magnitude('.e5','meters');
+  magnitudeTests.assertEqualStrict(mag408.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag408.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag408.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag408.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag408.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag408.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag409 = new Magnitude('-e4','meters');
+  magnitudeTests.assertEqualStrict(mag409.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag409.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag409.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag409.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag409.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag409.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag410 = new Magnitude('+e+3','meters');
+  magnitudeTests.assertEqualStrict(mag410.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag410.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag410.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag410.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag410.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag410.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag411 = new Magnitude('E6');
+  magnitudeTests.assertEqualStrict(mag411.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag411.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag411.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag411.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag411.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag411.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag412 = new Magnitude(undefined);
+  magnitudeTests.assertEqualStrict(mag412.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag412.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag412.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag412.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag412.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag412.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag413 = new Magnitude('+.');
+  magnitudeTests.assertEqualStrict(mag413.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag413.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag413.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag413.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag413.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag413.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag414 = new Magnitude('-.');
+  magnitudeTests.assertEqualStrict(mag414.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag414.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag414.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag414.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag414.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag414.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag415 = new Magnitude("-.");
+  magnitudeTests.assertEqualStrict(mag415.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag415.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag415.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag415.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag415.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag415.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag416 = new Magnitude(".+");
+  magnitudeTests.assertEqualStrict(mag416.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag416.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag416.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag416.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag416.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag416.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag417 = new Magnitude(".");
+  magnitudeTests.assertEqualStrict(mag417.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag417.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag417.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag417.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag417.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag417.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag418 = new Magnitude("");
+  magnitudeTests.assertEqualStrict(mag418.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag418.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag418.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag418.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag418.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag418.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag419 = new Magnitude("+");
+  magnitudeTests.assertEqualStrict(mag419.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag419.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag419.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag419.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag419.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag419.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  let mag420 = new Magnitude("-");
+  magnitudeTests.assertEqualStrict(mag420.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag420.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag420.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag420.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag420.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
+  magnitudeTests.assertEqualStrict(mag420.positive, undefined, 'constructor', 'nonNumericalStrings');
 
 
 

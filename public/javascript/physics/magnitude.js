@@ -53,8 +53,7 @@ class Magnitude {
 
     // invalid types
     if ((typeof(numericalString) !== 'string') || numericalString.length === 0) {
-      this.isAmagnitude = false;
-      return false
+      return this.invalidate()
     }
 
     // sign
@@ -82,8 +81,7 @@ class Magnitude {
       numericalString = numericalString.slice(0,eLocation);
       let exponent = this.readExponentString(exponentString);
       if (exponent === undefined) {
-        this.isAmagnitude = false;
-        return false
+        return this.invalidate()
       } else {
         this.orderOfMagnitude = exponent;
       }
@@ -129,8 +127,7 @@ class Magnitude {
                 }
             }
         } else {
-            this.isAmagnitude = false;
-            return false
+            return this.invalidate();
         }
     } else if (digitsOnly(numericalString) && numericalString.length > 0) { // integers
         this.isAmagnitude = true;
@@ -143,17 +140,24 @@ class Magnitude {
         this.numSigFigs = 1 + this.otherSigFigs.length;
         this.orderOfMagnitude += this.otherSigFigs.length;
     } else {
-        this.isAmagnitude = false;
-        return false
+        return this.invalidate()
     }
     this.unit = unit;
 
     if (exact) {
       this.numSigFigs = Infinity;
-    } else {
-
     }
 
+  }
+
+  invalidate() {
+      this.isAmagnitude = false;
+      this.firstSigFig = undefined;
+      this.otherSigFigs = undefined;
+      this.orderOfMagnitude = undefined;
+      this.numSigFigs = undefined;
+      this.positive = undefined;
+      return false
   }
 
   setValueZero(numSigFigs = 1, exact = false) {
