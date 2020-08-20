@@ -558,6 +558,18 @@ class Angle extends Magnitude {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
         super(numString, undefined, intermediateValue, exact);
         this.degrees = degrees;
+
+        // add routine to ensure that it is between 0 and 360
+        // or some other requirement
+    }
+
+    getDegreesFloat() {
+      let float = super.getFloat();
+      if (!this.degrees) {
+          float *= (180 / Math.PI);
+      }
+      return float
+
     }
 
     getRadiansFloat() {
@@ -567,6 +579,9 @@ class Angle extends Magnitude {
         }
         return float
     }
+    // add trigonometric functions to replace those above?
+    // or do the ones above work fine?????
+    // get rid of the 'degree functions' above, and just go with the radian functions
 
     printString() {
 
@@ -575,5 +590,12 @@ class Angle extends Magnitude {
     printStringInTermsOfPi() {
 
     }
+
 }
 
+//    return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
+//     constructor(numString, degrees = true, intermediateValue, exact = false) {
+
+function constructAngleFloat(float, numSigFigs, degrees = true, exact = false) {
+  return new Angle(float.toExponential(numSigFigs - 1), degrees, float, exact)
+}

@@ -8,13 +8,6 @@ to accept physics numbers as values?????
 */
 
 
-
-class Direction {
-  constructor() {
-
-  }
-}
-
 // values in physics problems
 // allow the mathematical methods to accept these as an input????
 class Quantity {
