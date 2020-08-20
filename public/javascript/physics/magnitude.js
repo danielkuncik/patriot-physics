@@ -62,6 +62,9 @@ function roundUpDigit(numString, index) {
     return reassignDigit(numString, index, roundUpCharacter(numString[index]))
 }
 
+/*
+how do i set a magnitude to infinity
+*/
 
 
 // look up my previous work on numerical strings!
@@ -196,18 +199,52 @@ class Magnitude {
       this.orderOfMagnitude = undefined;
       this.numSigFigs = numSigFigs;
       this.firstSigFig = '0';
+      this.unit = undefined;
       if (exact) {
           this.numSigFigs = Infinity;
           this.otherSigFigs = '';
+          this.exact = true;
       } else {
           this.numSigFigs = numSigFigs;
           this.otherSigFigs = '';
+          this.exact = false;
           let i;
           for (i = 1; i < this.numSigFigs; i++) {
               this.otherSigFigs = this.otherSigFigs + '0';
           }
       }
       return true
+  }
+
+
+/*
+this.firstSigFig = undefined;
+this.otherSigFigs = undefined;
+this.orderOfMagnitude = undefined;
+this.numSigFigs = undefined;
+this.positive = undefined;
+this.isAmagnitude = undefined;
+*/
+
+// not done
+  setValueInfinity() {
+    this.isAmagnitude = true;
+    this.infinity = true;
+    this.numSigFigs = Infinity;
+    this.exact = true;
+    this.positive = true;
+    this.firstSigFig = undefined;
+    this.otherSigFigs = undefined;
+    this.orderOfMagnitude = undefined;
+  }
+
+  reverseSign() {
+    this.positive = !this.positive;
+  }
+
+  setValueNegInfinity() {
+    this.setValueInfinity();
+    this.reverseSign();
   }
 
 
@@ -294,19 +331,37 @@ class Magnitude {
 
   }
 
+/// what if negative???
   getFloat() {
-      return this.intermediateValue ? this.intermediateValue : Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`)
+      let val;
+      let sign = this.positive ? 1 : -1;
+      if (this.infinity) {
+        val = Infinity * this.sign;
+      } else if (this.zero) {
+        val = 0;
+      } else if (this.intermediateValue) {
+        val = intermediateValue;
+      } else {
+        val = Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
+      }
+      return val
   }
 
   // see if this works with my changes to the unit object
   testSameUnit(anotherMagnitude) {
       if (this.unit === undefined && anotherMagnitude.unit === undefined) {
           return true
+      } else if (this.zero || anotherMagnitude.zero) { // zero can be added to any unit
+        return true
       } else if (this.unit === undefined || anotherMagnitude.unit === undefined) {
           return false
       } else {
           return this.unit.name === anotherMagnitude.unit.name // how do i deal with derived units??
       }
+  }
+
+  canAddVectors() {
+
   }
 
   addMag(anotherMagnitude) {
@@ -315,10 +370,17 @@ class Magnitude {
           return false
       }
       const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
-      const unit = this.unit;
+      let newUnit;
+      if (this.zero && anotherMagnitude.zero) { // can add two zeros to get another zero, which is unitless [redundant???]
+        newUnit = undefined;
+      } else if (this.zero) { // can add this unit to a zero and get this magnitude again [unless the zero has fewer sig figs]
+        newUnit = anotherMagnitude.unit;
+      } else {
+        newUnit = this.unit
+      }
       const exact = newSigFigs === Infinity;
       const newFloat = this.getFloat() + anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   multiplyMag(anotherMagnitude) {
@@ -326,7 +388,7 @@ class Magnitude {
       const newUnit = multiplyUnits(this.unit, anotherMagnitude.unit);
       const exact = newSigFigs === Infinity;
       const newFloat = this.getFloat() * anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   divide(anotherMagnitude) {
@@ -334,7 +396,7 @@ class Magnitude {
       const newUnit = divideUnits(this.unit, anotherMagnitude.unit);
       const exact = newSigFigs === Infinity;
       const newFloat = this.getFloat() / anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   squareMag() {
@@ -342,7 +404,7 @@ class Magnitude {
     const newUnit = multiplyUnits(this.unit, this.unit);
     const exact = this.numSigFigs === Infinity;
     const newFloat = this.getFloat()**2;
-    return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+    return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   squareRootMag() {
@@ -350,7 +412,7 @@ class Magnitude {
       const newUnit = multiplyUnits(this.unit, this.unit);
       const exact = this.numSigFigs === Infinity;
       const newFloat = Math.sqrt(this.getFloat()**2);
-      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   powerMag(exponent) {
@@ -358,7 +420,7 @@ class Magnitude {
       const newUnit = multiplyUnits(this.unit, this.unit);
       const exact = this.numSigFigs === Infinity;
       const newFloat = this.getFloat()**exponent;
-      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   pythagoreanAddMag(anotherMagnitude) {
@@ -370,7 +432,7 @@ class Magnitude {
       const unit = this.unit;
       const exact = newSigFigs === Infinity;
       const newFloat = Math.sqrt(this.getFloat()**2 + anotherMagnitude.getFloat()**2);
-      return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
     pythagoreanSubtractMag(anotherMagnitude) {
@@ -382,7 +444,7 @@ class Magnitude {
         const unit = this.unit;
         const exact = newSigFigs === Infinity;
         const newFloat = Math.sqrt(this.getFloat()**2 - anotherMagnitude.getFloat()**2);
-        return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
+        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
     }
 
 
@@ -395,7 +457,7 @@ class Magnitude {
       const unit = this.unit;
       const exact = newSigFigs === Infinity;
       const newFloat = this.getFloat() - anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   // trig functions: too much repeated code here!!!
@@ -409,7 +471,7 @@ class Magnitude {
     const newSigFigs = this.numSigFigs;
     const exact = newSigFigs === Infinity;
     const newUnit = undefined;
-    return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+    return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   cosMag() {
@@ -421,7 +483,7 @@ class Magnitude {
       const newSigFigs = this.numSigFigs;
       const exact = newSigFigs === Infinity;
       const newUnit = undefined;
-      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   tanMag() {
@@ -433,7 +495,7 @@ class Magnitude {
       const newSigFigs = this.numSigFigs;
       const exact = newSigFigs === Infinity;
       const newUnit = undefined;
-      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
 
@@ -446,7 +508,7 @@ class Magnitude {
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
     }
     inverseCosMag() {
         if (this.unit !== undefined) {
@@ -457,7 +519,7 @@ class Magnitude {
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
 
     }
     inverseTanMag() {
@@ -469,12 +531,16 @@ class Magnitude {
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
     }
 }
 
 function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = false) {
     return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
+}
+
+function constructZeroMagnitude(exact = true) {
+  return new Magnitude('0',undefined,exact);
 }
 
 

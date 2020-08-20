@@ -1567,7 +1567,127 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
 
 */
 
+///###################################################################
+///###################################################################
+/// operations testing
 
+
+magnitudeTests.addCategory('operations','Operations');
+magnitudeTests.addSubCategory('operations','addition','Addition');
+
+let mag3001a = new Magnitude('2');
+let mag3001b = new Magnitude('2');  //4
+let mag3001 = mag3001a.addMag(mag3001b);
+magnitudeTests.assertEqualStrict(mag3001.isAmagnitude, true, 'operations','addition');
+magnitudeTests.assertEqualStrict(mag3001.firstSigFig, '4', 'operations','addition');
+magnitudeTests.assertEqualStrict(mag3001.otherSigFigs, '', 'operations','addition');
+magnitudeTests.assertEqualStrict(mag3001.orderOfMagnitude, 0, 'operations','addition');
+magnitudeTests.assertEqualStrict(mag3001.numSigFigs, 1, 'operations','addition');
+magnitudeTests.assertEqualStrict(mag3001.positive, true, 'operations','addition');
+magnitudeTests.assertEqualFloat(mag3001.intermediateValue, 4, 'operations', 'addition');
+
+let mag3002a = new Magnitude('2.0');
+let mag3002b = new Magnitude('2'); // 4
+let mag3002 = mag3002a.addMag(mag3002b);
+magnitudeTests.assertEqualStrict(mag3002.isAmagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3002.firstSigFig, '4', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3002.otherSigFigs, '', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3002.orderOfMagnitude, 0, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3002.numSigFigs, 1, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3002.positive, true, 'operations','addition')
+magnitudeTests.assertEqualFloat(mag3002.intermediateValue, 4, 'operations', 'addition');
+
+let mag3003a = new Magnitude('2.0');
+let mag3003b = new Magnitude('2.0'); // 4.0
+let mag3003 = mag3003a.addMag(mag3003b);
+magnitudeTests.assertEqualStrict(mag3003.isAmagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3003.firstSigFig, '4', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3003.otherSigFigs, '0', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3003.orderOfMagnitude, 0, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3003.numSigFigs, 2, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3003.positive, true, 'operations','addition')
+magnitudeTests.assertEqualFloat(mag3003.intermediateValue, 4, 'operations', 'addition');
+
+let mag3004a = new Magnitude('1000');
+let mag3004b = new Magnitude('1500');
+let mag3004 = mag3004a.addMag(mag3004b); // 3000
+magnitudeTests.assertEqualStrict(mag3004.isAmagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3004.firstSigFig, '3', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3004.otherSigFigs, '', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3004.orderOfMagnitude, 3, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3004.numSigFigs, 1, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3004.positive, true, 'operations','addition')
+magnitudeTests.assertEqualFloat(mag3004.intermediateValue, 2500, 'operations', 'addition');
+
+let mag3005a = new Magnitude('3e8');
+let mag3005b = new Magnitude('5'); /// 3e8
+let mag3005 = mag3005a.addMag(mag3005b);
+magnitudeTests.assertEqualStrict(mag3005.isAmagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3005.firstSigFig, '3', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3005.otherSigFigs, '', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3005.orderOfMagnitude, 8, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3005.numSigFigs, 1, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3005.positive, true, 'operations','addition')
+magnitudeTests.assertEqualFloat(mag3005.intermediateValue, 300000005, 'operations', 'addition');
+
+let mag3006a = new Magnitude('3.00000000e8');
+let mag3006b = new Magnitude('5.00000000000'); // 3.0000005e8
+let mag3006 = mag3006a.addMag(mag3006b);
+magnitudeTests.assertEqualStrict(mag3006.isAmagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3006.firstSigFig, '3', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3006.otherSigFigs, '00000005', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3006.orderOfMagnitude, 8, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3006.numSigFigs, 9, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3006.positive, true, 'operations','addition')
+magnitudeTests.assertEqualFloat(mag3006.intermediateValue, 300000005, 'operations', 'addition');
+
+
+let mag3007a = new Magnitude('3e8');
+let mag3007b = new Magnitude('5.000000000');
+let mag3007 = mag3007a.addMag(mag3007b);
+magnitudeTests.assertEqualStrict(mag3007.isAmagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3007.firstSigFig, '3', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3007.otherSigFigs, '', 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3007.orderOfMagnitude, 8, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3007.numSigFigs, 1, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3007.positive, true, 'operations','addition')
+magnitudeTests.assertEqualFloat(mag3007.intermediateValue, 300000005, 'operations', 'addition');
+
+/*
+ADD SOME NEGATIVES
+ADD SOME 999s
+add some zeros
+add some inifnities
+let mag3008a = new Magnitude(undefined);
+let mag3008b = new Magnitude(undefined);
+let mag3008 = mag3008a.addMag(mag3008b);
+magnitudeTests.assertEqualStrict(mag3008.isAMagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3008.firstSigFig, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3008.otherSigFigs, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3008.orderOfMagnitude, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3008.numSigFigs, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3008.positive, undefined, 'operations','addition')
+
+let mag3009a = new Magnitude(undefined);
+let mag3009b = new Magnitude(undefined);
+let mag3009 = mag3009a.addMag(mag3009b);
+magnitudeTests.assertEqualStrict(mag3009.isAMagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3009.firstSigFig, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3009.otherSigFigs, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3009.orderOfMagnitude, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3009.numSigFigs, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3009.positive, undefined, 'operations','addition')
+
+let mag3010a = new Magnitude(undefined);
+let mag3010b = new Magnitude(undefined);
+let mag3010 = mag3010a.addMag(mag3010b);
+magnitudeTests.assertEqualStrict(mag3010.isAMagnitude, true, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3010.firstSigFig, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3010.otherSigFigs, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3010.orderOfMagnitude, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3010.numSigFigs, undefined, 'operations','addition')
+magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addition')
+*/
 
 
 

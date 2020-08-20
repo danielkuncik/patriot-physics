@@ -7,6 +7,7 @@ class Actor {
       this.mass = mass; /// a scalar object
       this.initialPosition = initialPosition; // a vector object
       this.initialVelocity = initialVelocity; // a scalar object
+      this.forces = [];
     }
 
 
@@ -15,12 +16,18 @@ class Actor {
     }
 
     findNetForce(time = 0) { // returns free-body diagram at some time [returns a diagram object]
-
+      let netForceSoFar = constructZeroVector();/// the variable inside of this should be net force
+      this.forces.forEach((force) => {
+        netForceSoFar = netForceSoFar.addVector(force); /// what if forces vary with time???? // add net force as a variable!
+      });
+      return netForceSoFar
     }
 
     findAcceleration(time = 0) {
-
+      return findNetForce(time).divideByScalar(this.mass)
     }
+
+
 
 }
 
