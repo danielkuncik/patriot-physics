@@ -400,7 +400,7 @@ class Magnitude {
 
   // trig functions: too much repeated code here!!!
     // make a private function that brings these together
-  sinRadiansMag() {
+  sinMag() {
     if (this.unit !== undefined) {
         console.log('can only complete trig functions on a unitless quantity');
         return false
@@ -412,7 +412,7 @@ class Magnitude {
     return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-  cosRadiansMag() {
+  cosMag() {
       if (this.unit !== undefined) {
           console.log('can only complete trig functions on a unitless quantity');
           return false
@@ -424,7 +424,7 @@ class Magnitude {
       return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-  tanRadiansMag() {
+  tanMag() {
       if (this.unit !== undefined) {
           console.log('can only complete trig functions on a unitless quantity');
           return false
@@ -436,45 +436,8 @@ class Magnitude {
       return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-    sinDegreeMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const newFloat = Math.sin(this.getFloat() / 180 * Math.PI);
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-    }
 
-    cosDegreeMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const newFloat = Math.sin(this.getFloat() / 180 * Math.PI);
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-
-    }
-
-    tanDegreeMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const newFloat = Math.sin(this.getFloat() / 180 * Math.PI);
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-
-    }
-
-    inverseSinRadianMag() {
+    inverseSinMag() {
         if (this.unit !== undefined) {
             console.log('can only complete trig functions on a unitless quantity');
             return false
@@ -485,7 +448,7 @@ class Magnitude {
         const newUnit = undefined;
         return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
     }
-    inverseCosRadianMag() {
+    inverseCosMag() {
         if (this.unit !== undefined) {
             console.log('can only complete trig functions on a unitless quantity');
             return false
@@ -497,7 +460,7 @@ class Magnitude {
         return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
 
     }
-    inverseTanRadianMag() {
+    inverseTanMag() {
         if (this.unit !== undefined) {
             console.log('can only complete trig functions on a unitless quantity');
             return false
@@ -507,45 +470,7 @@ class Magnitude {
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
         return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-
     }
-    inverseSinDegreeMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const newFloat = Math.asin(this.getFloat()) * 180 / Math.PI;
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-    }
-    inverseCosDegreeMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const newFloat = Math.acos(this.getFloat()) * 180 / Math.PI;
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-
-    }
-    inverseTanDegreeMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const newFloat = Math.atan(this.getFloat()) * 180 / Math.PI;
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
-
-    }
-
-
 }
 
 function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = false) {
@@ -563,16 +488,7 @@ class Angle extends Magnitude {
         // or some other requirement
     }
 
-    getDegreesFloat() {
-      let float = super.getFloat();
-      if (!this.degrees) {
-          float *= (180 / Math.PI);
-      }
-      return float
-
-    }
-
-    getRadiansFloat() {
+    getFloat() { /// float is always in radians, even when the information is in degrees
         let float = super.getFloat();
         if (this.degrees) {
             float *= (Math.PI / 180);

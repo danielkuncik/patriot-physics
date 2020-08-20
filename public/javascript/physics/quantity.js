@@ -11,75 +11,67 @@ to accept physics numbers as values?????
 // values in physics problems
 // allow the mathematical methods to accept these as an input????
 class Quantity {
-  constructor(variable) {
+  constructor(variableObject) {
     this.variable = variable;
   }
-  // constructor(variable, unit, firstSigFig, otherSigFigs,exponent = 0, exact = false) {
-  //   if (!isStringOfDigits(otherSigFigs) || !isDigit(firstSigFig) || !isInteger(exponent)) {
-  //     return false
-  //   }
-  //   this.quantity = true;
-  //   this.unit = unit;
-  //   this.variable = variable;
-  //   this.firstSigFig = firstSigFig;
-  //   this.otherSigFigs = otherSigFigs;
-  //   this.exponent = exponent;
-  //   if (exact) {
-  //     this.numSigFigs = Infinity;
-  //   } else {
-  //     this.numSigFigs = 1 + this.otherSigFigs.length;
-  //   }
-  //   // significant figure must be a string of digits
-  // }
-  //
-  // stringSciNot() {
-  //   let sign;
-  //   if (exponent > 0) {
-  //     sign = '+';
-  //   } else if (exponent < 0) {
-  //     sign = '-';
-  //   } else if (exponent === 0) {
-  //     sign = '';
-  //   }
-  //   return `${this.firstSigFig}.${this.otherSigFigs}e${sign}${Math.abs(this.exponent)}`
-  // }
-  //
-  // stringStandardNot() {
-  //
-  // }
-  //
-  // getFloatingPoint() {
-  //
-  // }
-  //
-  // round() {
-  //
-  // }
-  //
-  //
-  // /// operations between physics numbers
-  // /// => convert to floating points, then round ?
-  // multiply(anotherPhysicsNumber) {
-  //
-  // }
-  // divide(anotherPhysicsNumber) {
-  //
-  // }
 }
 
 class ScalarQuantity extends Quantity {
-  constructor(variable, numericalString, unit, exact = false) {
+  constructor(variable, magnitude) {
     super(variable);
-    this.magnitude = new Magnitude(numericalString, unit, exact);
+    this.magnitude = magnitude;
   }
 }
 
 class VectorQuantity extends Quantity {
+  constructor(variable, magnitude, direction) {
+    super(variable);
+    this.magnitude = mangitude;
+    this.direction = direction;
+
+    // (if magnitude = 0, direction = undefined, and unit = undefined)
+
+    // should return three magnitudes with the correct number of significant figures
+    this.x = this.magnitude.multiplyMag(this.direction.theta.cosMag() * this.direction.phi.cosMag());
+    this.y = this.magnitude.multiplyMag(this.direction.theta.sinMag() * this.direction.phi.cosMag());
+    this.z = this.magnitude.multiplyMag(this.phi.direction.sinMag());
+  }
+
+  function checkSameVariableAndUnit(anotherVector) {
+    /// put something here!!!
+  }
+
+  function addVector(anotherVector) {
+    if (checkSameVariableAndUnit(anotherVector)) {
+      return constructVectorFromComponents(this.variable, this.magnitude.unit, this.x + anotherVector.x, this.y + anotherVector.y, this.z + anotherVector.z)
+    } else {
+      return false
+    }
+  }
+
+  function subtractVector(anotherVector) {
+    if (checkSameVariableAndUnit(anotherVector)) {
+      return constructVectorFromComponents(this.variable, this.magnitude.unit, this.x - anotherVector.x, this.y - anotherVector.y, this.z - anotherVector.z)
+    } else {
+      return false
+    }
+  }
+
+  function dotProduct(anotherVector) {
+    // multipy the varibles to get a new variable
+    // then, return a scalar
+  }
+
+  function crossProduct(anotherVector) {
+    // multiply the varaibles to get a new variable
+    // then, return a scalar
+  }
 
 }
 
 
-function constructPhysicsNumberFromString(string) {
-  /// use numerical string methods from before
-  // i spent a long time on this in june 2017!
+function constructVectorFromComponents(variable, unitObject, xComponent, yComponent, zComponent) {
+
 }
+
+/// add some shortcut constructors, to construct simple vectors very fast
