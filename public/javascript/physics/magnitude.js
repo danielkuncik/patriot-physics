@@ -551,3 +551,29 @@ class Magnitude {
 function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = false) {
     return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
 }
+
+
+//  constructor(numericalString, unitObject, intermediateValue, exact = false) {
+class Angle extends Magnitude {
+    constructor(numString, degrees = true, intermediateValue, exact = false) {
+        super(numString, undefined, intermediateValue, exact);
+        this.degrees = degrees;
+    }
+
+    getRadiansFloat() {
+        let float = super.getFloat();
+        if (this.degrees) {
+            float *= (Math.PI / 180);
+        }
+        return float
+    }
+
+    printString() {
+
+    }
+
+    printStringInTermsOfPi() {
+
+    }
+}
+
