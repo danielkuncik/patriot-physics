@@ -35,12 +35,19 @@
     "abbreviation": "lb",
     "conversion_factor": 0.453592
   },
+  "kilogram": {
+    "dimension": "mass",
+    "SI": true,
+    "metric": true,
+    "abbreviation": "kg",
+    "conversion_factor": 1
+  },
   "second": {
     "dimension": "time",
     "SI": true,
     "base": true,
     "metric": true,
-    "abbreviation": "m"
+    "abbreviation": "s"
   },
   "minute": {
     "dimension": "time",

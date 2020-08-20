@@ -1,25 +1,3 @@
-function lookUpUnit(unit) {
-
-}
-
-
-function convertUnitToSI(unit) {
-  /// look up information from the JSON file
-
-}
-
-function multiplySIUnits(dimension1, dimension2) {
-
-}
-
-function multiplyUnits(unit1, unit2) {
-
-}
-
-
-function constructMagnitudeFromFloat(float, unit, numSigFigs, exact = false) {
-
-}
 
 // returns true if 'char' is a single character and a digit 0 - 9
 function amIaDigit(char) {
@@ -88,7 +66,7 @@ function roundUpDigit(numString, index) {
 
 // look up my previous work on numerical strings!
 class Magnitude {
-  constructor(numericalString, unit, exact = false) {
+  constructor(numericalString, unitObject, intermediateValue, exact = false) {
     this.firstSigFig = undefined;
     this.otherSigFigs = undefined;
     this.orderOfMagnitude = undefined;
@@ -187,13 +165,16 @@ class Magnitude {
     } else {
         return this.invalidate()
     }
-    this.unit = unit;
 
     if (exact) {
       this.numSigFigs = Infinity;
+      this.exact = true;
+    } else {
+        this.exact = false;
     }
-    this.intermediateValue = undefined; /// a float value used for calculations, but not presentation
-      // for problems
+    this.intermediateValue = intermediateValue ? intermediateValue : undefined; /// in case this magnitude is an 'intermediate step' within a larger problem
+
+    this.unit = unitObject;
 
   }
 
@@ -204,6 +185,7 @@ class Magnitude {
       this.orderOfMagnitude = undefined;
       this.numSigFigs = undefined;
       this.positive = undefined;
+      this.exact = undefined;
       return false
   }
 
@@ -281,6 +263,24 @@ class Magnitude {
     }
   }
 
+  /// rework this to make it works with either names or derivation????
+    // check that they have the same DIMENSION, and if they do complete the operation...
+  convertUnit(newUnitObject) {
+    if (this.unit === undefined) {
+        console.log('ERROR: cannot convert a unitless magnitude');
+        return false
+    } else if (areTwoUnitsTheSameDimension(this.unit, newUnitObject)) {
+        console.log('ERROR: cannot convert to unit of a different dimension'); // add some more informaiton
+        return false
+    } else {
+        const conversionFactor = this.unit.conversion_factor / newUnitObject.conversion_factor; // how many sig figs are in this conversion factor? is that being considered???
+        const newFloat = this.getFloat() * conversionFactor;
+        return constructMagnitudeFromFloat(newFloat, this.numSigFigs, newUnitObject, this.exact);
+        // I don't like this!!! I wish it would not create a new magnitude, but it would retain the original one, just with a new unit
+        // i could do that if i take most of the constructor function and put it into a function, then run that function
+    }
+  }
+
   getString(abbreviateUnit = true) {
     // let printUnit = abbreviateUnit ? this.unit.abbreviation : this.unit.name;  FOR ONCE I FIX THIS!!!!
       let printUnit = this.unit;
@@ -298,41 +298,256 @@ class Magnitude {
       return this.intermediateValue ? this.intermediateValue : Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`)
   }
 
-
-  addZeroes(numZeroes) {
-
+  // see if this works with my changes to the unit object
+  testSameUnit(anotherMagnitude) {
+      if (this.unit === undefined && anotherMagnitude.unit === undefined) {
+          return true
+      } else if (this.unit === undefined || anotherMagnitude.unit === undefined) {
+          return false
+      } else {
+          return this.unit.name === anotherMagnitude.unit.name // how do i deal with derived units??
+      }
   }
 
-  multiply(anotherMagnitude) {
+  addMag(anotherMagnitude) {
+      if (!this.testSameUnit(anotherMagnitude)) {
+          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
+          return false
+      }
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      const unit = this.unit;
+      const exact = newSigFigs === Infinity;
+      const newFloat = this.getFloat() + anotherMagnitude.getFloat();
+      return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
+  }
 
+  multiplyMag(anotherMagnitude) {
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      const newUnit = multiplyUnits(this.unit, anotherMagnitude.unit);
+      const exact = newSigFigs === Infinity;
+      const newFloat = this.getFloat() * anotherMagnitude.getFloat();
+      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
   divide(anotherMagnitude) {
-
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      const newUnit = divideUnits(this.unit, anotherMagnitude.unit);
+      const exact = newSigFigs === Infinity;
+      const newFloat = this.getFloat() / anotherMagnitude.getFloat();
+      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-  square() {
-
+  squareMag() {
+    const newSigFigs = this.numSigFigs;
+    const newUnit = multiplyUnits(this.unit, this.unit);
+    const exact = this.numSigFigs === Infinity;
+    const newFloat = this.getFloat()**2;
+    return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-  add(anotherMagnitude) { /// returns result in the unit of this magnitude!
-
+  squareRootMag() {
+      const newSigFigs = this.numSigFigs;
+      const newUnit = multiplyUnits(this.unit, this.unit);
+      const exact = this.numSigFigs === Infinity;
+      const newFloat = Math.sqrt(this.getFloat()**2);
+      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-  subtract(anotherMagnitude) {
-
+  powerMag(exponent) {
+      const newSigFigs = this.numSigFigs;
+      const newUnit = multiplyUnits(this.unit, this.unit);
+      const exact = this.numSigFigs === Infinity;
+      const newFloat = this.getFloat()**exponent;
+      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
   }
 
-  convertToSIUnit() {
-
+  pythagoreanAddMag(anotherMagnitude) {
+      if (!this.testSameUnit(anotherMagnitude)) {
+          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
+          return false
+      }
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      const unit = this.unit;
+      const exact = newSigFigs === Infinity;
+      const newFloat = Math.sqrt(this.getFloat()**2 + anotherMagnitude.getFloat()**2);
+      return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
   }
 
-  convertToAnotherUnit(anotherUnit) {
+    pythagoreanSubtractMag(anotherMagnitude) {
+        if (!this.testSameUnit(anotherMagnitude)) {
+            console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
+            return false
+        }
+        const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+        const unit = this.unit;
+        const exact = newSigFigs === Infinity;
+        const newFloat = Math.sqrt(this.getFloat()**2 - anotherMagnitude.getFloat()**2);
+        return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
+    }
 
+
+  subtractMag(anotherMagnitude) {
+      if (!this.testSameUnit(anotherMagnitude)) {
+          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
+          return false
+      }
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      const unit = this.unit;
+      const exact = newSigFigs === Infinity;
+      const newFloat = this.getFloat() - anotherMagnitude.getFloat();
+      return constructMagnitudeFromFloat(newFloat, unit, newSigFigs, exact)
   }
+
+  // trig functions: too much repeated code here!!!
+    // make a private function that brings these together
+  sinRadiansMag() {
+    if (this.unit !== undefined) {
+        console.log('can only complete trig functions on a unitless quantity');
+        return false
+    }
+    const newFloat = Math.sin(this.getFloat());
+    const newSigFigs = this.numSigFigs;
+    const exact = newSigFigs === Infinity;
+    const newUnit = undefined;
+    return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+  }
+
+  cosRadiansMag() {
+      if (this.unit !== undefined) {
+          console.log('can only complete trig functions on a unitless quantity');
+          return false
+      }
+      const newFloat = Math.cos(this.getFloat());
+      const newSigFigs = this.numSigFigs;
+      const exact = newSigFigs === Infinity;
+      const newUnit = undefined;
+      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+  }
+
+  tanRadiansMag() {
+      if (this.unit !== undefined) {
+          console.log('can only complete trig functions on a unitless quantity');
+          return false
+      }
+      const newFloat = Math.tan(this.getFloat());
+      const newSigFigs = this.numSigFigs;
+      const exact = newSigFigs === Infinity;
+      const newUnit = undefined;
+      return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+  }
+
+    sinDegreeMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.sin(this.getFloat() / 180 * Math.PI);
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+    }
+
+    cosDegreeMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.sin(this.getFloat() / 180 * Math.PI);
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+
+    }
+
+    tanDegreeMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.sin(this.getFloat() / 180 * Math.PI);
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+
+    }
+
+    inverseSinRadianMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.asin(this.getFloat());
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+    }
+    inverseCosRadianMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.acos(this.getFloat());
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+
+    }
+    inverseTanRadianMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.atan(this.getFloat());
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+
+    }
+    inverseSinDegreeMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.asin(this.getFloat()) * 180 / Math.PI;
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+    }
+    inverseCosDegreeMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.acos(this.getFloat()) * 180 / Math.PI;
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+
+    }
+    inverseTanDegreeMag() {
+        if (this.unit !== undefined) {
+            console.log('can only complete trig functions on a unitless quantity');
+            return false
+        }
+        const newFloat = Math.atan(this.getFloat()) * 180 / Math.PI;
+        const newSigFigs = this.numSigFigs;
+        const exact = newSigFigs === Infinity;
+        const newUnit = undefined;
+        return constructMagnitudeFromFloat(newFloat, newUnit, newSigFigs, exact)
+
+    }
+
 
 }
 
-function constructMagnitudeFromFloat(float, numSigFigs, unit, exact = false) {
-    return new Magnitude(float.toExponential(numSigFigs - 1), unit)
+function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = false) {
+    return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
 }
