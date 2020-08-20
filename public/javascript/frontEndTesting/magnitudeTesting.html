@@ -886,88 +886,112 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag2010.orderOfMagnitude, 1, 'constructFromFloat', 'integers');
   magnitudeTests.assertEqualStrict(mag2010.numSigFigs, 5, 'constructFromFloat', 'integers');
   magnitudeTests.assertEqualStrict(mag2010.positive, false, 'constructFromFloat', 'integers');
+
+  magnitudeTests.addSubCategory('constructFromFloat','decimalsExponents', 'Decimal Exponent');
+  let mag2101 = constructMagnitudeFromFloat(-2e8,4);
+  magnitudeTests.assertEqualStrict(mag2101.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2101.firstSigFig, '2', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2101.otherSigFigs, '000', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2101.orderOfMagnitude, 8, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2101.numSigFigs, 4, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2101.positive, false, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2102 = constructMagnitudeFromFloat(1e6,1);
+  magnitudeTests.assertEqualStrict(mag2102.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2102.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2102.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2102.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2102.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2102.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2103 = constructMagnitudeFromFloat(1.234567e8,1);
+  magnitudeTests.assertEqualStrict(mag2103.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2103.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2103.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2103.orderOfMagnitude, 8, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2103.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2103.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2104 = constructMagnitudeFromFloat(1234.567e8,2);
+  magnitudeTests.assertEqualStrict(mag2104.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2104.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2104.otherSigFigs, '2', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2104.orderOfMagnitude, 11, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2104.numSigFigs, 2, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2104.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2105 = constructMagnitudeFromFloat(1234.567e8,10);
+  magnitudeTests.assertEqualStrict(mag2105.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2105.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2105.otherSigFigs, '234567000', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2105.orderOfMagnitude, 11, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2105.numSigFigs, 10, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2105.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2106 = constructMagnitudeFromFloat(-1e6,5);
+  magnitudeTests.assertEqualStrict(mag2106.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2106.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2106.otherSigFigs, '0000', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2106.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2106.numSigFigs, 5, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2106.positive, false, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2107 = constructMagnitudeFromFloat(0.00031235e-2,3);
+  magnitudeTests.assertEqualStrict(mag2107.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2107.firstSigFig, '3', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2107.otherSigFigs, '12', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2107.orderOfMagnitude, -6, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2107.numSigFigs, 3, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2107.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2108 = constructMagnitudeFromFloat(9.999e5,1);
+  magnitudeTests.assertEqualStrict(mag2108.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2108a = constructMagnitudeFromFloat(9.999e5,2);
+  magnitudeTests.assertEqualStrict(mag2108a.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108a.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108a.otherSigFigs, '0', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108a.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108a.numSigFigs, 2, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108a.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2108b = constructMagnitudeFromFloat(9.999e5,3);
+  magnitudeTests.assertEqualStrict(mag2108b.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108b.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108b.otherSigFigs, '00', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108b.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108b.numSigFigs, 3, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2108b.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2109 = constructMagnitudeFromFloat(9.999e5,4);
+  magnitudeTests.assertEqualStrict(mag2109.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109.firstSigFig, '9', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109.otherSigFigs, '999', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109.orderOfMagnitude,5, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109.numSigFigs, 4, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2109a = constructMagnitudeFromFloat(9.999e5,5);
+  magnitudeTests.assertEqualStrict(mag2109a.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109a.firstSigFig, '9', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109a.otherSigFigs, '9990', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109a.orderOfMagnitude, 5, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109a.numSigFigs, 5, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2109a.positive, true, 'constructFromFloat', 'decimalsExponents');
+
+  let mag2110 = constructMagnitudeFromFloat(98765e-10,1);
+  magnitudeTests.assertEqualStrict(mag2110.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2110.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2110.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2110.orderOfMagnitude, -5, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2110.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
+  magnitudeTests.assertEqualStrict(mag2110.positive, true, 'constructFromFloat', 'decimalsExponents');
 /*
-  magnitudeTests.addSubCategory('constructFromFloat','decimals', 'Decimals');
-  let mag2101 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2101.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2101.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2101.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2101.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2101.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2101.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2102 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2102.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2102.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2102.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2102.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2102.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2102.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2103 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2103.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2103.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2103.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2103.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2103.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2103.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2104 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2104.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2104.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2104.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2104.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2104.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2104.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2105 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2105.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2105.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2105.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2105.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2105.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2105.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2106 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2106.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2106.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2106.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2106.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2106.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2106.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2107 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2107.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2107.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2107.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2107.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2107.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2107.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2108 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2108.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2108.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2108.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2108.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2108.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2108.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2109 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2109.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2109.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2109.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2109.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2109.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2109.positive, undefined, 'constructFromFloat', 'decimals');
-
-  let mag2110 = constructMagnitudeFromFloat(undefined,undefined);
-  magnitudeTests.assertEqualStrict(mag2110.isAmagnitude, true, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2110.firstSigFig, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2110.otherSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2110.orderOfMagnitude, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2110.numSigFigs, undefined, 'constructFromFloat', 'decimals');
-  magnitudeTests.assertEqualStrict(mag2110.positive, undefined, 'constructFromFloat', 'decimals');
-
   magnitudeTests.addSubCategory('constructFromFloat','integersExponents', 'Integers With Exponents');
   let mag2201 = constructMagnitudeFromFloat(undefined,undefined);
   magnitudeTests.assertEqualStrict(mag2201.isAmagnitude, true, 'constructFromFloat', 'integersExponents');
@@ -1048,7 +1072,7 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag2210.orderOfMagnitude, undefined, 'constructFromFloat', 'integersExponents');
   magnitudeTests.assertEqualStrict(mag2210.numSigFigs, undefined, 'constructFromFloat', 'integersExponents');
   magnitudeTests.assertEqualStrict(mag2210.positive, undefined, 'constructFromFloat', 'integersExponents');
-
+/*
   magnitudeTests.addSubCategory('constructFromFloat','decimalsExponents', 'Decimals With Exponents');
   let mag2301 = constructMagnitudeFromFloat(undefined,undefined);
   magnitudeTests.assertEqualStrict(mag2301.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
