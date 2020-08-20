@@ -238,6 +238,7 @@ this.isAmagnitude = undefined;
     this.orderOfMagnitude = undefined;
   }
 
+  //// PRIVATE METHOD!!!
   reverseSign() {
     this.positive = !this.positive;
   }
@@ -383,6 +384,10 @@ this.isAmagnitude = undefined;
       return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
+  subtractMag(anotherMagnitude) {
+    return this.addMag(anotherMagnitude.reverseSign());
+  }
+
   multiplyMag(anotherMagnitude) {
       const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
       const newUnit = multiplyUnits(this.unit, anotherMagnitude.unit);
@@ -448,17 +453,6 @@ this.isAmagnitude = undefined;
     }
 
 
-  subtractMag(anotherMagnitude) {
-      if (!this.testSameUnit(anotherMagnitude)) {
-          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
-          return false
-      }
-      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
-      const unit = this.unit;
-      const exact = newSigFigs === Infinity;
-      const newFloat = this.getFloat() - anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
-  }
 
   // trig functions: too much repeated code here!!!
     // make a private function that brings these together
