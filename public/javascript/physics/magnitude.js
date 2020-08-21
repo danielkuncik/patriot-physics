@@ -243,6 +243,10 @@ this.isAmagnitude = undefined;
     this.positive = !this.positive;
   }
 
+  abs() {
+      this.positive = true;
+  }
+
   setValueNegInfinity() {
     this.setValueInfinity();
     this.reverseSign();
@@ -333,15 +337,15 @@ this.isAmagnitude = undefined;
   }
 
 /// what if negative???
-  getFloat() {
+  getFloat(abs = false) { // argument is to get absolute value
       let val;
-      let sign = this.positive ? 1 : -1;
+      let sign = this.positive || abs ? 1 : -1;
       if (this.infinity) {
-        val = Infinity * this.sign;
+        val = Infinity * sign;
       } else if (this.zero) {
         val = 0;
       } else if (this.intermediateValue) {
-        val = intermediateValue;
+        val = this.intermediateValue;
       } else {
         val = Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
       }
@@ -385,7 +389,10 @@ this.isAmagnitude = undefined;
   }
 
   subtractMag(anotherMagnitude) {
-    return this.addMag(anotherMagnitude.reverseSign());
+    anotherMagnitude.reverseSign();
+    const result =  this.addMag(anotherMagnitude);
+    anotherMagnitude.reverseSign();
+    return result
   }
 
   multiplyMag(anotherMagnitude) {

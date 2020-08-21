@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src = './frontEndTesting.js'></script>
+<script src = '../physics/magnitude.js'></script>
+<script src = '../mathematics/geometricObjectsWithMagnitude.js'></script>
+
+
+<div id = 'putItHere'></div>
+
+<script>
+    /*
+    To do:
+    - add more tests of functions
+    */
+    let mathTests = new TestPackage('Math Tests');
+
+    //####################################################################################################
+    //Geometric Objects
+    mathTests.addCategory('geometricObjects','Geometric Objects');
+
+    mathTests.addSubCategory('geometricObjects','points','Point Tests');
+    // let point1 = makeOrigin();
+
+    const pi = new Magnitude('3.14159265358979323846');
+
+    let x2 = new Magnitude('2.00');
+    let y2 = new Magnitude('2.00');
+    let rotationAngle = new Angle('90.0');
+    let point2 = new Point(x2,y2);
+
+    mathTests.addSubCategory('geometricObjects','pointRotation','Point Rotation Tests');
+    console.log(point2);
+
+    mathTests.assertEqualStrict(point2.getQuadrant(), '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.x.firstSigFig, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.x.otherSigFigs, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.x.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.x.numSigFigs, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.x.positive, undefined, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point2.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.y.firstSigFig, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.y.otherSigFigs, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.y.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.y.numSigFigs, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point2.y.positive, undefined, 'geometricObjects', 'pointRotation');
+/*
+    point2.rotate(rotationAngle);
+    magnitudeTests.assertEqualStrict(point2.x.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    magnitudeTests.assertEqualStrict(point2.y.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    point2.rotate(rotationAngle);
+    magnitudeTests.assertEqualStrict(point2.x.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    magnitudeTests.assertEqualStrict(point2.y.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    point2.rotate(rotationAngle);
+    magnitudeTests.assertEqualStrict(point2.x.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    magnitudeTests.assertEqualStrict(point2.y.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    point2.rotate(rotationAngle);
+    magnitudeTests.assertEqualStrict(point2.x.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.x.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+    magnitudeTests.assertEqualStrict(point2.y.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.firstSigFig, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.otherSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.orderOfMagnitude, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.numSigFigs, undefined, 'constructFromFloat', 'decimalsExponents');
+    magnitudeTests.assertEqualStrict(point2.y.positive, undefined, 'constructFromFloat', 'decimalsExponents');
+
+
+    /*
+        let point3 = new Point(-4,6);
+        mathTests.assertEqualFloat(point3.x, -4, 'geometricObjects', 'pointRotation');
+        mathTests.assertEqualFloat(point3.y, 6, 'geometricObjects', 'pointRotation');
+        point3.rotate(Math.PI / 2);
+        mathTests.assertEqualFloat(point3.x, -6, 'geometricObjects', 'pointRotation');
+        mathTests.assertEqualFloat(point3.y, -4, 'geometricObjects', 'pointRotation');
+        point3.rotate(Math.PI / 2);
+        mathTests.assertEqualFloat(point3.x, 4, 'geometricObjects', 'pointRotation');
+        mathTests.assertEqualFloat(point3.y, -6, 'geometricObjects', 'pointRotation');
+        point3.rotate(Math.PI / 2);
+        mathTests.assertEqualFloat(point3.x, 6, 'geometricObjects', 'pointRotation');
+        mathTests.assertEqualFloat(point3.y, 4, 'geometricObjects', 'pointRotation');
+        point3.rotate(Math.PI / 2);
+        mathTests.assertEqualFloat(point3.x, -4, 'geometricObjects', 'pointRotation');
+        mathTests.assertEqualFloat(point3.y, 6, 'geometricObjects', 'pointRotation');
+
+        // add some more where it begins on an axis and rotates 30, 45, or 60 degrees
+        let point4 = new Point(10,0);
+        point4.rotate(convertDegreesToRadians(60));
+        mathTests.assertEqualFloat(point4.x, 5, 'geometricObjects', 'pointRotation');
+        mathTests.assertEqualFloat(point4.y, 5 * Math.sqrt(3), 'geometricObjects', 'pointRotation');
+
+        // add some where it rotates about a point besides the origin
+
+        mathTests.addSubCategory('geometricObjects','pointAngle','Point Angle Tests');
+
+        let point10 = new Point(3,5);
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,6)),'1','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,6)),'2','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(makeOrigin()),'3','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(10,0)),'4','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,5)),'+X','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,5)),'-X','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,6)),'+Y','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,4)),'-Y','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,-1000)),'-Y','geometricObjects','pointAngle');
+        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,5)),'0','geometricObjects','pointAngle');
+
+    */
+    $("#putItHere").append(mathTests.printAllTests());
+
+
+</script>
+
+
+</body>
+</html>
