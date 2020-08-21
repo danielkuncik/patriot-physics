@@ -238,9 +238,15 @@ this.isAmagnitude = undefined;
     this.orderOfMagnitude = undefined;
   }
 
-  //// PRIVATE METHOD!!!
+  //// PRIVATE METHOD!!! [but i'm using it in the point object]
   reverseSign() {
-    this.positive = !this.positive;
+      if (this.zero) {
+          return false
+      } else {
+          console.log(this.positive);
+          this.positive = !this.positive;
+          console.log(this.positive);
+      }
   }
 
   abs() {
@@ -388,11 +394,25 @@ this.isAmagnitude = undefined;
       return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
+  ///8-21-2020: several times I've tried to fix this by putting it in terms of addMag,
+    // reducing repeated code, but it keeps failing when I do that
   subtractMag(anotherMagnitude) {
-    anotherMagnitude.reverseSign();
-    const result =  this.addMag(anotherMagnitude);
-    anotherMagnitude.reverseSign();
-    return result
+      if (!this.testSameUnit(anotherMagnitude)) {
+          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
+          return false
+      }
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      let newUnit;
+      if (this.zero && anotherMagnitude.zero) { // can add two zeros to get another zero, which is unitless [redundant???]
+          newUnit = undefined;
+      } else if (this.zero) { // can add this unit to a zero and get this magnitude again [unless the zero has fewer sig figs]
+          newUnit = anotherMagnitude.unit;
+      } else {
+          newUnit = this.unit
+      }
+      const exact = newSigFigs === Infinity;
+      const newFloat = this.getFloat() - anotherMagnitude.getFloat();
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
   multiplyMag(anotherMagnitude) {
@@ -536,12 +556,20 @@ this.isAmagnitude = undefined;
     }
 }
 
+// keep working
 function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = false) {
     return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
 }
 
-function constructZeroMagnitude(exact = true) {
-  return new Magnitude('0',undefined,exact);
+function constructZeroMagnitude(numSigFigs = 3, exact = true) {
+    let string = '0.';
+    if (!exact < numSigFigs !== Infinity) {
+        let i;
+        for (i = 0; i < numSigFigs; i++) {
+            string = string + '0';
+        }
+    }
+    return new Magnitude('0',undefined,exact);
 }
 
 

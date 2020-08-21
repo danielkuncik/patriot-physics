@@ -311,15 +311,24 @@ function readUnitDerivation(unitDerivationObject) {
 }
 
 function multiplyUnits(unitObject1, unitObject2) {
-    let newDerivation = unitObject1.derivation;
-    Object.keys(unitObject2.derivation).forEach((baseUnit) => {
-        if (newDerivation[baseUnit]) {
-            newDerivation[baseUnit] += unitObject2.derivation[baseUnit];
-        } else {
-            newDerivation[baseUnit] = unitObject2.derivation[baseUnit];
-        }
-    });
-    return readUnitDerivation(newDerivation)
+    /// figure out what to do here if these are undefined!!!!!
+    if (unitObject1 === undefined && unitObject2 === undefined) {
+        return undefined
+    } else if (unitObject1 === undefined) {
+        return unitObject2
+    } else if (unitObject2 === undefined) {
+        return unitObject1
+    } else {
+        let newDerivation = unitObject1.derivation;
+        Object.keys(unitObject2.derivation).forEach((baseUnit) => {
+            if (newDerivation[baseUnit]) {
+                newDerivation[baseUnit] += unitObject2.derivation[baseUnit];
+            } else {
+                newDerivation[baseUnit] = unitObject2.derivation[baseUnit];
+            }
+        });
+        return readUnitDerivation(newDerivation)
+    }
 }
 
 function divideUnits(unitObject1, unitObject2) {
@@ -337,18 +346,18 @@ function divideUnits(unitObject1, unitObject2) {
 /*
 move this to a true testing html document
  */
-const unit1 = readUnitName('meter');
-const unit2 = readUnitName('second');
-const unit3 = readUnitName('kilogram');
-const unit4 = divideUnits(unit1, unit2);
-const unit5 = divideUnits(unit4, unit2);
-const unit6 = multiplyUnits(unit3, unit5);
-console.log(unit1);
-console.log(unit2);
-console.log(unit3);
-console.log(unit4);
-console.log(unit5);
-console.log(unit6);
+// const unit1 = readUnitName('meter');
+// const unit2 = readUnitName('second');
+// const unit3 = readUnitName('kilogram');
+// const unit4 = divideUnits(unit1, unit2);
+// const unit5 = divideUnits(unit4, unit2);
+// const unit6 = multiplyUnits(unit3, unit5);
+// console.log(unit1);
+// console.log(unit2);
+// console.log(unit3);
+// console.log(unit4);
+// console.log(unit5);
+// console.log(unit6);
 /*
 qualities of derived units
 dimension => look up?

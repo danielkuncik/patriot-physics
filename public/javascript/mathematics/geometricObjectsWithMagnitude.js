@@ -67,14 +67,17 @@ class Point {
 
     // rotates a Point around the center Point by a certain angle
     // default center Point is origin
-    rotate(rotationAngleInRadians, centerRotationPoint) {
-        if (centerRotationPoint === undefined) {centerRotationPoint = origin;}
-        this.translate(-1 * centerRotationPoint.x, -1 * centerRotationPoint.y);
-        let xPrime = this.x * Math.cos(rotationAngleInRadians) - this.y * Math.sin(rotationAngleInRadians);
-        let yPrime = this.y * Math.cos(rotationAngleInRadians) + this.x * Math.sin(rotationAngleInRadians);
+    rotate(angleObject, centerPoint = makeOrigin()) {
+        this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
+        /// it worked, but it just didn't actually rotate!!!
+        console.log(this.x.multiplyMag(angleObject.cosMag()));
+        console.log(this.y.multiplyMag(angleObject.sinMag()));
+        console.log((this.x.multiplyMag(angleObject.cosMag())).subtractMag(this.y.multiplyMag(angleObject.sinMag())));
+        const xPrime = (this.x.multiplyMag(angleObject.cosMag())).subtractMag(this.y.multiplyMag(angleObject.sinMag()));
+        const yPrime = (this.y.multiplyMag(angleObject.cosMag())).addMag(this.x.multiplyMag(angleObject.sinMag()));
         this.x = xPrime;
         this.y = yPrime;
-        this.translate(centerRotationPoint.x, centerRotationPoint.y);
+        this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
     }
 
     rescaleSingleFactor(scaleFactor) {
@@ -205,4 +208,10 @@ class Point {
             yComponent: yComponent
         }
     }
+}
+
+function makeOrigin() {
+    let x = constructZeroMagnitude(true);
+    let y = constructZeroMagnitude(true);
+    return new Point(x,y);
 }
