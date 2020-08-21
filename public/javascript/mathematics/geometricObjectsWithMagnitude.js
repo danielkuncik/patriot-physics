@@ -69,10 +69,6 @@ class Point {
     // default center Point is origin
     rotate(angleObject, centerPoint = makeOrigin()) {
         this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
-        /// it worked, but it just didn't actually rotate!!!
-        console.log(this.x.multiplyMag(angleObject.cosMag()));
-        console.log(this.y.multiplyMag(angleObject.sinMag()));
-        console.log((this.x.multiplyMag(angleObject.cosMag())).subtractMag(this.y.multiplyMag(angleObject.sinMag())));
         const xPrime = (this.x.multiplyMag(angleObject.cosMag())).subtractMag(this.y.multiplyMag(angleObject.sinMag()));
         const yPrime = (this.y.multiplyMag(angleObject.cosMag())).addMag(this.x.multiplyMag(angleObject.sinMag()));
         this.x = xPrime;
@@ -80,26 +76,26 @@ class Point {
         this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
     }
 
-    rescaleSingleFactor(scaleFactor) {
-        this.x *= scaleFactor;
-        this.y *= scaleFactor;
+    rescaleSingleFactor(scaleFactorMagnitude) {
+        this.x = this.x.multiplyMag(scaleFactorMagnitude);
+        this.y = this.y.multiplyMag(scaleFactorMagnitude);
     }
 
 
-    rescaleDoubleFactor(xFactor, yFactor) {
-        this.x *= xFactor;
-        this.y *= yFactor;
+    rescaleDoubleFactor(xScaleFactorMagnitude, yScaleFactorMagnitude) {
+        this.x = this.x.multiplyMag(xScaleFactorMagnitude);
+        this.y = this.y.multiplyMag(yScaleFactorMagnitude);
         // doesn't work well if the diagram includes circles and arcs!
         // and the point must be coordinated with these!
     }
 
     reflectAboutXAxis() {
-        this.y *= -1;
+        this.y.reverseSign();
     }
 
     getQuadrant() {
         if (this.x.zero && this.y.zero) {return '0';} // change this name?
-        else if (this.x.zero && this.y.zero) {return '+X';}
+        else if (this.x.positive && this.y.zero) {return '+X';}
         else if (!this.x.positive && this.y.zero) {return '-X';}
         else if (this.x.zero && this.y.positive) {return '+Y';}
         else if (this.x.zero && !this.y.positive) {return '-Y';}

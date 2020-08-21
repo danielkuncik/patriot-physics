@@ -38,12 +38,109 @@
 
     const pi = new Magnitude('3.14159265358979323846');
 
+    mathTests.addSubCategory('geometricObjects','pointRotation','Point Rotation Tests');
+
+    let x1 = new Magnitude('2.000');
+    let y1 = new Magnitude('0.00000000');
+    let rotationAngle = new Angle('90.00');
+    let point1 = new Point(x1, y1);
+
+    mathTests.assertEqualStrict(point1.getQuadrant(), '+X', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.zero, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.positive, true, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point1.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.zero, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.firstSigFig, '0', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.otherSigFigs, '00000000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.numSigFigs, 9, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.positive, undefined, 'geometricObjects', 'pointRotation');
+
+    point1.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point1.getQuadrant(), '+Y', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.zero, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.firstSigFig, '0', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.positive, undefined, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point1.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.zero, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.positive, true, 'geometricObjects', 'pointRotation');
+
+    point1.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point1.getQuadrant(), '-X', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.zero, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.positive, false, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point1.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.zero, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.firstSigFig, '0', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.positive, undefined, 'geometricObjects', 'pointRotation');
+
+    point1.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point1.getQuadrant(), '-Y', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.zero, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.firstSigFig, '0', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.positive, undefined, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point1.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.zero, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.positive, false, 'geometricObjects', 'pointRotation');
+
+    point1.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point1.getQuadrant(), '+X', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.zero, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.x.positive, true, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point1.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.zero, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.firstSigFig, '0', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.orderOfMagnitude, undefined, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.numSigFigs, 4, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point1.y.positive, undefined, 'geometricObjects', 'pointRotation');
+
+
+
     let x2 = new Magnitude('2.00');
     let y2 = new Magnitude('2.00');
-    let rotationAngle = new Angle('90.0');
+    //let rotationAngle = new Angle('90.0');
     let point2 = new Point(x2,y2);
 
-    mathTests.addSubCategory('geometricObjects','pointRotation','Point Rotation Tests');
 
     mathTests.assertEqualStrict(point2.getQuadrant(), '1', 'geometricObjects', 'pointRotation');
     mathTests.assertEqualStrict(point2.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
@@ -123,6 +220,92 @@
     mathTests.assertEqualStrict(point2.y.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
     mathTests.assertEqualStrict(point2.y.numSigFigs, 3, 'geometricObjects', 'pointRotation');
     mathTests.assertEqualStrict(point2.y.positive, true, 'geometricObjects', 'pointRotation');
+
+    let x3 = new Magnitude('10');
+    let y3 = new Magnitude('2.00');
+    //let rotationAngle = new Angle('90.0');
+    let point3 = new Point(x3,y3);
+
+
+    mathTests.assertEqualStrict(point3.getQuadrant(), '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.firstSigFig, '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.orderOfMagnitude, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.positive, true, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point3.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.otherSigFigs, '00', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.numSigFigs, 3, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.positive, true, 'geometricObjects', 'pointRotation');
+
+    point3.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point3.getQuadrant(), '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.positive, false, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point3.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.firstSigFig, '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.orderOfMagnitude, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.positive, true, 'geometricObjects', 'pointRotation');
+
+    point3.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point3.getQuadrant(), '3', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.firstSigFig, '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.orderOfMagnitude, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.positive, false, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point3.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.positive, false, 'geometricObjects', 'pointRotation');
+
+    point3.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point3.getQuadrant(), '4', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.positive, true, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point3.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.firstSigFig, '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.orderOfMagnitude, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.positive, false, 'geometricObjects', 'pointRotation');
+
+    point3.rotate(rotationAngle);
+    mathTests.assertEqualStrict(point3.getQuadrant(), '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.firstSigFig, '1', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.orderOfMagnitude, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.x.positive, true, 'geometricObjects', 'pointRotation');
+
+    mathTests.assertEqualStrict(point3.y.isAmagnitude, true, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.firstSigFig, '2', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.otherSigFigs, '', 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.orderOfMagnitude, 0, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.numSigFigs, 1, 'geometricObjects', 'pointRotation');
+    mathTests.assertEqualStrict(point3.y.positive, true, 'geometricObjects', 'pointRotation');
+
 
 
     /*
