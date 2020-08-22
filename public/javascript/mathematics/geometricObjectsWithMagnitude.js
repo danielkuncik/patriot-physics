@@ -1,3 +1,7 @@
+
+const pi = new Magnitude('3.14159265358979323846');
+console.log(pi);
+
 class Point {
     constructor(xMagnitude, yMagnitude, name) {
         if (!xMagnitude.isAmagnitude || !yMagnitude.isAmagnitude) {
@@ -112,7 +116,7 @@ class Point {
     getAngleToHorizontal() {
         let theta;
         const quadrant = this.getQuadrant();
-        if (quadrant === '1') {theta = Math.atan(this.y / this.x);}
+        if (quadrant === '1') {theta = (this.y.divideMag(this.x)).inverseTanMag();}
         /// inefficient, but very reliable
         else if (quadrant === '2') {theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
         else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}

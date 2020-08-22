@@ -468,47 +468,59 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag225.orderOfMagnitude, 9, 'constructor', 'exponentStrings');
   magnitudeTests.assertEqualStrict(mag225.numSigFigs, 5, 'constructor', 'exponentStrings');
   magnitudeTests.assertEqualStrict(mag225.positive, true, 'constructor', 'exponentStrings');
-/*
-  let mag226 = new Magnitude('undefined');
+
+
+  let mag226 = new Magnitude('30.e2');
   magnitudeTests.assertEqualStrict(mag226.isAmagnitude, true, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag226.firstSigFig, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag226.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag226.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag226.numSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag226.positive, undefined, 'constructor', 'exponentStrings');
+  magnitudeTests.assertEqualStrict(mag226.firstSigFig, '3', 'constructor', 'exponentStrings');
+  magnitudeTests.assertEqualStrict(mag226.otherSigFigs, '0', 'constructor', 'exponentStrings');
+  magnitudeTests.assertEqualStrict(mag226.orderOfMagnitude, 3, 'constructor', 'exponentStrings');
+  magnitudeTests.assertEqualStrict(mag226.numSigFigs, 2, 'constructor', 'exponentStrings');
+  magnitudeTests.assertEqualStrict(mag226.positive, true, 'constructor', 'exponentStrings');
 
-  let mag227 = new Magnitude('undefined');
-  magnitudeTests.assertEqualStrict(mag227.isAmagnitude, true, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag227.firstSigFig, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag227.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag227.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag227.numSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag227.positive, undefined, 'constructor', 'exponentStrings');
+  console.log(mag226);
 
-  let mag228 = new Magnitude('undefined');
-  magnitudeTests.assertEqualStrict(mag228.isAmagnitude, true, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag228.firstSigFig, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag228.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag228.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag228.numSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag228.positive, undefined, 'constructor', 'exponentStrings');
+  /*
+    let mag226 = new Magnitude('undefined');
+    magnitudeTests.assertEqualStrict(mag226.isAmagnitude, true, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag226.firstSigFig, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag226.otherSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag226.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag226.numSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag226.positive, undefined, 'constructor', 'exponentStrings');
 
-  let mag229 = new Magnitude('undefined');
-  magnitudeTests.assertEqualStrict(mag229.isAmagnitude, true, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag229.firstSigFig, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag229.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag229.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag229.numSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag229.positive, undefined, 'constructor', 'exponentStrings');
+    let mag227 = new Magnitude('undefined');
+    magnitudeTests.assertEqualStrict(mag227.isAmagnitude, true, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag227.firstSigFig, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag227.otherSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag227.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag227.numSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag227.positive, undefined, 'constructor', 'exponentStrings');
 
-  let mag230 = new Magnitude('undefined');
-  magnitudeTests.assertEqualStrict(mag230.isAmagnitude, true, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag230.firstSigFig, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag230.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag230.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag230.numSigFigs, undefined, 'constructor', 'exponentStrings');
-  magnitudeTests.assertEqualStrict(mag230.positive, undefined, 'constructor', 'exponentStrings');
-*/
+    let mag228 = new Magnitude('undefined');
+    magnitudeTests.assertEqualStrict(mag228.isAmagnitude, true, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag228.firstSigFig, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag228.otherSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag228.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag228.numSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag228.positive, undefined, 'constructor', 'exponentStrings');
+
+    let mag229 = new Magnitude('undefined');
+    magnitudeTests.assertEqualStrict(mag229.isAmagnitude, true, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag229.firstSigFig, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag229.otherSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag229.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag229.numSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag229.positive, undefined, 'constructor', 'exponentStrings');
+
+    let mag230 = new Magnitude('undefined');
+    magnitudeTests.assertEqualStrict(mag230.isAmagnitude, true, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag230.firstSigFig, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag230.otherSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag230.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag230.numSigFigs, undefined, 'constructor', 'exponentStrings');
+    magnitudeTests.assertEqualStrict(mag230.positive, undefined, 'constructor', 'exponentStrings');
+  */
 
   // add a category of ZEROS!
 // let mag102 = new Magnitude('0.000','meters');
@@ -1689,10 +1701,54 @@ magnitudeTests.assertEqualStrict(mag3010.numSigFigs, undefined, 'operations','ad
 magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addition')
 */
 
+  ///###################################################################
+  ///###################################################################
+  /// print testing
+
+  magnitudeTests.addCategory('printing','Printing');
+  magnitudeTests.addSubCategory('printing','integers','Integers');
 
 
+  let mag4001 = new Magnitude('3000');
+  magnitudeTests.assertEqualStrict(mag4001.printStandardNotation(),'3000','printing','integers');
+  magnitudeTests.assertEqualStrict(mag4001.printScientificNotation(),'3e3','printing','integers');
+
+  let mag4001a = new Magnitude('3000.');
+  magnitudeTests.assertEqualStrict(mag4001a.printStandardNotation(),'3000.','printing','integers');
+  magnitudeTests.assertEqualStrict(mag4001a.printScientificNotation(),'3.000e3','printing','integers');
 
 
+  let mag4002 = new Magnitude('3002');
+  magnitudeTests.assertEqualStrict(mag4002.printStandardNotation(),'3002','printing','integers');
+  magnitudeTests.assertEqualStrict(mag4002.printScientificNotation(),'3.002e3','printing','integers');
+
+  let mag4003 = new Magnitude('30.e2');
+  magnitudeTests.assertEqualStrict(mag4003.printStandardNotation(),'3.0e3','printing','integers'); // cannot show that the first zero is significant in standard notation
+  magnitudeTests.assertEqualStrict(mag4003.printScientificNotation(),'3.0e3','printing','integers');
+
+  let mag4004 = new Magnitude('5');
+  magnitudeTests.assertEqualStrict(mag4004.printStandardNotation(), '5', 'printing', 'integers');
+  magnitudeTests.assertEqualStrict(mag4004.printScientificNotation(), '5e0', 'printing', 'integers');
+
+  let mag4005 = new Magnitude('5.0');
+  magnitudeTests.assertEqualStrict(mag4005.printStandardNotation(), '5.0', 'printing', 'integers');
+  magnitudeTests.assertEqualStrict(mag4005.printScientificNotation(), '5.0e0', 'printing', 'integers');
+
+  let mag4006 = new Magnitude('.6');
+  magnitudeTests.assertEqualStrict(mag4006.printStandardNotation(), '0.6', 'printing', 'integers');
+  magnitudeTests.assertEqualStrict(mag4006.printScientificNotation(), '6e-1', 'printing', 'integers');
+
+  let mag4007 = new Magnitude('0.0000456');
+  magnitudeTests.assertEqualStrict(mag4007.printStandardNotation(), '0.0000456', 'printing', 'integers');
+  magnitudeTests.assertEqualStrict(mag4007.printScientificNotation(), '4.56e-5', 'printing', 'integers');
+
+  let mag4008 = new Magnitude('123.456');
+  magnitudeTests.assertEqualStrict(mag4008.printStandardNotation(), '123.456', 'printing', 'integers');
+  magnitudeTests.assertEqualStrict(mag4008.printScientificNotation(), '1.23456e2', 'printing', 'integers');
+
+  let mag4009 = new Magnitude('1600');
+  magnitudeTests.assertEqualStrict(mag4009.printStandardNotation(), '1600', 'printing', 'integers');
+  magnitudeTests.assertEqualStrict(mag4009.printScientificNotation(), '1.6e3', 'printing', 'integers');
 
 
   $("#putItHere").append(magnitudeTests.printAllTests());

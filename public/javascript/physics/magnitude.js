@@ -16,6 +16,26 @@ function digitsOnly(str) {
     return true;
 }
 
+function makeStringOfZeros(numZeros) {
+    let k, zeroString = '';
+    for (k = 0; k < numZeros; k++) {
+        zeroString = zeroString + '0';
+    }
+    return zeroString
+}
+
+function countTrailingZeros(string) {
+    let numTrailingZeros = 0;
+    let k;
+    for (k = string.length - 1; k >= 0; k-- ){
+        if (string[k] === '0') {
+            numTrailingZeros++;
+        } else {
+            return numTrailingZeros
+        }
+    }
+    return numTrailingZeros
+}
 
 function allNines(numString) {
     let i;
@@ -212,12 +232,8 @@ class Magnitude {
           this.exact = true;
       } else {
           this.numSigFigs = numSigFigs;
-          this.otherSigFigs = '';
+          this.otherSigFigs = makeStringOfZeros(this.numSigFigs - 1);
           this.exact = false;
-          let i;
-          for (i = 1; i < this.numSigFigs; i++) {
-              this.otherSigFigs = this.otherSigFigs + '0';
-          }
       }
       return true
   }
@@ -345,11 +361,42 @@ this.isAmagnitude = undefined;
       // determine the best way to write it
   }
 
-  printStandardNotationNumber() { // returns false if this is impossible to the correct number of significant figures
-
+  // what about signs????
+  printStandardNotation() { // returns false if this is impossible to the correct number of significant figures
+      const sign = !this.positive ? '-' : '';
+    if (this.orderOfMagnitude > 0 && this.orderOfMagnitude > this.numSigFigs - 1) {
+        if (this.otherSigFigs[this.numSigFigs - 2] === '0') {
+            return this.printScientificNotation(); /// in this event, you cannot print a standard notation number with the correct number of significant figures
+        }
+        return `${sign}${this.firstSigFig}${this.otherSigFigs}${makeStringOfZeros(this.orderOfMagnitude - this.numSigFigs + 1)}` // a special case => what about a number with SIGNIFICANT zeros on the end
+    } else if (this.orderOfMagnitude > 0 && this.orderOfMagnitude === this.numSigFigs - 1) {
+        return `${sign}${this.firstSigFig}${this.otherSigFigs}${this.otherSigFigs[this.numSigFigs - 2] === '0' ? '.' : ''}`
+    } else if (this.orderOfMagnitude > 0 && this.orderOfMagnitude < this.numSigFigs - 1) {
+        return `${sign}${this.firstSigFig}${this.otherSigFigs.slice(0,this.orderOfMagnitude)}.${this.otherSigFigs.slice(this.orderOfMagnitude, this.numSigFigs - 1)}`
+    } else if (this.orderOfMagnitude === 0) {
+        if (this.otherSigFigs.length > 0) {
+            return `${sign}${this.firstSigFig}.${this.otherSigFigs}`
+        } else {
+            return `${sign}${this.firstSigFig}`
+        }
+    } else if (this.orderOfMagnitude < 0) {
+        return `${sign}0.${makeStringOfZeros(Math.abs(this.orderOfMagnitude) - 1)}${this.firstSigFig}${this.otherSigFigs}`
+    }
+    /// what about zeros???
   }
-  printScientificNotationNumber() {
 
+  printScientificNotation() {
+      if (this.numSigFigs === 1) {
+          return `${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
+      } else {
+          return `${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
+      }
+  }
+
+  printOptimal() {
+      let standardNot = this.printStandardNotation();
+      let sciNot = this.printScientificNotation();
+      return standardNot.length <= sciNot.length ? standardNot : sciNot
   }
 
 /// what if negative???
@@ -433,12 +480,16 @@ this.isAmagnitude = undefined;
       return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact)
   }
 
-  divide(anotherMagnitude) {
+  divideMag(anotherMagnitude) {
       const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
       const newUnit = divideUnits(this.unit, anotherMagnitude.unit);
       const exact = newSigFigs === Infinity;
       const newFloat = this.getFloat() / anotherMagnitude.getFloat();
       return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+  }
+
+  multiplyMagExactConstant(exactConstant) {
+      return constructMagnitudeFromFloat(this.getFloat() * exactConstant, this.numSigFigs, this.unit, this.exact, this.zeroLimit);
   }
 
   squareMag() {
@@ -538,8 +589,7 @@ this.isAmagnitude = undefined;
         const newFloat = Math.asin(this.getFloat());
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+        return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
     }
     inverseCosMag() {
         if (this.unit !== undefined) {
@@ -550,7 +600,7 @@ this.isAmagnitude = undefined;
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+        return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
 
     }
     inverseTanMag() {
@@ -562,7 +612,7 @@ this.isAmagnitude = undefined;
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+        return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
     }
 }
 
@@ -583,10 +633,7 @@ function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = 
 function constructZeroMagnitude(numSigFigs = 3, exact = true) { /// what about intermediate value??? can zero still have intermediate value????
     let string = '0.';
     if (!exact < numSigFigs !== Infinity) {
-        let i;
-        for (i = 0; i < numSigFigs - 1; i++) {
-            string = string + '0'; /// inefficient? can i bypass the typical constructor?
-        }
+        string = string + makeStringOfZeros(numSigFigs - 1);
     }
     return new Magnitude(string,undefined,exact);
 }
@@ -626,6 +673,18 @@ class Angle extends Magnitude {
 //    return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
 //     constructor(numString, degrees = true, intermediateValue, exact = false) {
 
-function constructAngleFloat(float, numSigFigs, degrees = true, exact = false) {
+function constructAngleFloat(float, numSigFigs, degrees = true, exact = false, zeroLimit) {
   return new Angle(float.toExponential(numSigFigs - 1), degrees, float, exact)
+}
+
+function constructZeroAngle(float, numSigFigs, exact = false) {
+    let string = '0.';
+    if (!exact < numSigFigs !== Infinity) {
+        let i;
+        for (i = 0; i < numSigFigs - 1; i++) {
+            string = string + '0'; /// inefficient? can i bypass the typical constructor?
+        }
+    }
+    return new Angle(string,undefined, undefined,exact);
+
 }
