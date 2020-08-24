@@ -1,3 +1,4 @@
 {
-
+  "definition_of_average_speed": "average_speed = distance / time_interval",
+  "king_of_kinematic_equations": "displacement = initial_velocity * time_interval + 0.5 * initial_velocity * time_interval ** 2"
 }
