@@ -1,6 +1,5 @@
 
 const pi = new Magnitude('3.14159265358979323846');
-console.log(pi);
 
 class Point {
     constructor(xMagnitude, yMagnitude, name) {
@@ -110,23 +109,20 @@ class Point {
         else {return false;}
     }
 
-    // returns the angle in radians between the x-axis and a line Segment from the origin to this Point
-    // returns angles theta such that 0 <= theta < 2pi
-    // remake this using sqwitch?
+    // returns angle object
     getAngleToHorizontal() {
         let theta;
         const quadrant = this.getQuadrant();
-        if (quadrant === '1') {theta = (this.y.divideMag(this.x)).inverseTanMag();}
-        /// inefficient, but very reliable
-        else if (quadrant === '2') {theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
-        else if (quadrant === '3') {theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}
-        else if (quadrant === '4') {theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
-        else if (quadrant === '+X') {theta = 0;}
-        else if (quadrant === '-X') {theta = Math.PI;}
-        else if (quadrant === '+Y') {theta = Math.PI / 2;}
-        else if (quadrant === '-Y') {theta = 3 * Math.PI / 2;}
-        else theta = undefined;
-        return theta
+        const numSigFigs = Math.min(this.x.numSigFigs, this.y.numSigFigs, 15); // if it is exact, it will go down to 15
+        if (quadrant === '1') {return constructAngleFloat(Math.atan(this.y.getFloat() / this.x.getFloat()), numSigFigs, false) }
+        else if (quadrant === '2'){return constructAngleFloat(Math.PI / 2 + Math.atan(-1 * this.x.getFloat()/this.y.getFloat()), numSigFigs, false) } //{theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
+        else if (quadrant === '3') {return constructAngleFloat(Math.PI + Math.atan(this.y.getFloat()/this.x.getFloat()), numSigFigs, false)  }//{theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}
+        else if (quadrant === '4') {return constructAngleFloat(Math.PI * 3 / 2 + Math.atan(-1 * this.x.getFloat() / this.y.getFloat() ), numSigFigs, false) } //{theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
+        else if (quadrant === '+X') {return constructAngleFloat(0, numSigFigs, false)}//{theta = 0;}
+        else if (quadrant === '-X') {return constructAngleFloat(Math.PI, numSigFigs)}//{theta = Math.PI;}
+        else if (quadrant === '+Y') {return constructAngleFloat(Math.PI / 2, numSigFigs)}//{theta = Math.PI / 2;}
+        else if (quadrant === '-Y') {return constructAngleFloat(Math.PI * 3 / 2, numSigFigs)}//{theta = 3 * Math.PI / 2;}
+        else return undefined;
     }
 
     getMagnitude() {

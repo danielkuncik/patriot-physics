@@ -332,15 +332,34 @@ function multiplyUnits(unitObject1, unitObject2) {
 }
 
 function divideUnits(unitObject1, unitObject2) {
-    let newDerivation = unitObject1.derivation;
-    Object.keys(unitObject2.derivation).forEach((baseUnit) => {
-        if (newDerivation[baseUnit]) {
-            newDerivation[baseUnit] -= unitObject2.derivation[baseUnit];
-        } else {
-            newDerivation[baseUnit] = -1 * unitObject2.derivation[baseUnit];
-        }
+
+    /// figure out what to do here if these are undefined!!!!!
+    if (unitObject1 === undefined && unitObject2 === undefined) {
+        return undefined
+    } else if (unitObject1 === undefined) {
+        return inverseUnit(unitObject2)
+    } else if (unitObject2 === undefined) {
+        return unitObject1
+    } else {
+        let newDerivation = unitObject1.derivation;
+        Object.keys(unitObject2.derivation).forEach((baseUnit) => {
+            if (newDerivation[baseUnit]) {
+                newDerivation[baseUnit] -= unitObject2.derivation[baseUnit];
+            } else {
+                newDerivation[baseUnit] = -1 * unitObject2.derivation[baseUnit];
+            }
+        });
+        return readUnitDerivation(newDerivation)
+    }
+}
+
+function inverseUnit(unitObject) {
+    const oldDerivation = unitObject.derivation;
+    let newDerivation = {};
+    Object.keys(oldDerivation).forEach((key) => {
+        newDerivation[key] = -1 * oldDerivation[key];
     });
-    return readUnitDerivation(newDerivation)
+    return newDerivation
 }
 
 /*

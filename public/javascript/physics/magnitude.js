@@ -4,6 +4,8 @@ function amIaDigit(char) {
     return char === '0' || char === '1' || char === '2' || char === '3' || char === '4' || char === '5' || char === '6' || char === '7' || char === '8' || char === '9';
 }
 
+const maxSigFigs = 15; /// beyond this value, javscript number cannot be confied to be accurate
+
 // returns TRUE if the string contains only digits 0 - 9
 function digitsOnly(str) {
     let i;
@@ -195,6 +197,9 @@ class Magnitude {
       this.exact = true;
     } else {
         this.exact = false;
+        if (this.numSigFigs > 15) { /// beyond 15, javacsript number objects cannot be confirmed to be accurate, so no magnitude may have greater than this number of significant figures unless it is exact
+            this.numSigFigs = 15;
+        }
     }
     this.intermediateValue = intermediateValue ? intermediateValue : undefined; /// in case this magnitude is an 'intermediate step' within a larger problem
 
@@ -587,8 +592,8 @@ this.isAmagnitude = undefined;
             return false
         }
         const newFloat = Math.asin(this.getFloat());
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
+        const newSigFigs = Math.min(this.numSigFigs, 15);
+        const exact = false; // // this operation always reduces the number of sig figs to 15
         return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
     }
     inverseCosMag() {
@@ -597,8 +602,8 @@ this.isAmagnitude = undefined;
             return false
         }
         const newFloat = Math.acos(this.getFloat());
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
+        const newSigFigs = Math.min(this.numSigFigs, 15);
+        const exact = false; // this operation always reduces the number of sig figs to 15
         const newUnit = undefined;
         return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
 
@@ -609,8 +614,8 @@ this.isAmagnitude = undefined;
             return false
         }
         const newFloat = Math.atan(this.getFloat());
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
+        const newSigFigs = Math.min(this.numSigFigs, 15);
+        const exact = false; // this operation always reduces the number of sig figs to 15
         const newUnit = undefined;
         return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
     }
@@ -644,6 +649,7 @@ class Angle extends Magnitude {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
         super(numString, undefined, intermediateValue, exact);
         this.degrees = degrees;
+        this.isAnAngle = true;
 
         // add routine to ensure that it is between 0 and 360
         // or some other requirement
@@ -656,11 +662,20 @@ class Angle extends Magnitude {
         }
         return float
     }
-    // add trigonometric functions to replace those above?
-    // or do the ones above work fine?????
-    // get rid of the 'degree functions' above, and just go with the radian functions
 
-    printString() {
+    add90Degrees() {
+        return this.addMag(get90Degrees(undefined,true));
+    }
+    add180Degrees() {
+        return this.addMag(get180Degrees(undefined,true));
+    }
+
+    add270Degrees() {
+        return this.addMag(get270Degrees(undefined,true));
+    }
+
+
+    printString(degrees = true) {
 
     }
 
@@ -669,6 +684,21 @@ class Angle extends Magnitude {
     }
 
 }
+
+function getZeroDegrees(numSigFigs, exact = true) {
+    return constructAngleFloat(0,numSigFigs,true, exact);
+}
+function get90Degrees(numSigFigs, exact = true) {
+    return constructAngleFloat(90,numSigFigs,true, exact);
+}
+function get180Degrees(numSigFigs, exact = true) {
+    return constructAngleFloat(180,numSigFigs,true, exact);
+}
+function get270Degrees(numSigFigs, exact = true) {
+    return constructAngleFloat(270,numSigFigs,true, exact);
+}
+
+
 
 //    return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
 //     constructor(numString, degrees = true, intermediateValue, exact = false) {

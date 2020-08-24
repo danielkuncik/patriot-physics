@@ -347,6 +347,134 @@
         mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,5)),'0','geometricObjects','pointAngle');
 
     */
+
+    /// ##########################################################################################
+    /// ##########################################################################################
+    // point angles
+
+    mathTests.addSubCategory('geometricObjects','pointAngles','Point Angle Tests');
+
+    const x100 = new Magnitude('1.00');
+    const y100 = new Magnitude('0.00');
+    const point100 = new Point(x100, y100);
+    const angle100 = point100.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle100.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle100.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle100.firstSigFig, '0', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle100.otherSigFigs, '00', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle100.orderOfMagnitude, undefined, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle100.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle100.positive, undefined, 'geometricObjects', 'pointAngles');
+
+    const x101 = new Magnitude('1.00');
+    const y101 = new Magnitude('1.00');
+    const point101 = new Point(x101, y101);
+    const angle101 = point101.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle101.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101.firstSigFig, '7', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101.otherSigFigs, '85', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101.orderOfMagnitude, -1, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x101a = new Magnitude('1.00');
+    const y101a = new Magnitude('1');
+    const point101a = new Point(x101a, y101a);
+    const angle101a = point101a.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle101a.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101a.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101a.firstSigFig, '8', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101a.otherSigFigs, '', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101a.orderOfMagnitude, -1, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101a.numSigFigs, 1, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101a.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x101b = new Magnitude('1.000000000');
+    const y101b = new Magnitude('1.000000000');
+    const point101b = new Point(x101b, y101b);
+    const angle101b = point101b.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle101b.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101b.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101b.firstSigFig, '7', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101b.otherSigFigs, '853981634', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101b.orderOfMagnitude, -1, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101b.numSigFigs, 10, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle101b.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x102 = new Magnitude('-1.00');
+    const y102 = new Magnitude('1.00');
+    const point102 = new Point(x102, y102);
+    const angle102 = point102.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle102.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle102.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle102.firstSigFig, '2', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle102.otherSigFigs, '36', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle102.orderOfMagnitude, 0, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle102.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle102.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x103 = new Magnitude('-1.00');
+    const y103 = new Magnitude('-1.00');
+    const point103 = new Point(x103, y103);
+    const angle103 = point103.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle103.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle103.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle103.firstSigFig, '3', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle103.otherSigFigs, '93', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle103.orderOfMagnitude, 0, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle103.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle103.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x104 = new Magnitude('1.00');
+    const y104 = new Magnitude('-1.00');
+    const point104 = new Point(x104, y104);
+    const angle104 = point104.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle104.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle104.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle104.firstSigFig, '5', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle104.otherSigFigs, '50', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle104.orderOfMagnitude, 0, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle104.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle104.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x105 = new Magnitude('0.00');
+    const y105 = new Magnitude('1.00');
+    const point105 = new Point(x105, y105);
+    const angle105 = point105.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle105.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle105.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle105.firstSigFig, '1', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle105.otherSigFigs, '57', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle105.orderOfMagnitude, 0, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle105.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle105.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x106 = new Magnitude('-1.00');
+    const y106 = new Magnitude('0.00');
+    const point106 = new Point(x106, y106);
+    const angle106 = point106.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle106.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle106.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle106.firstSigFig, '3', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle106.otherSigFigs, '14', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle106.orderOfMagnitude, 0, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle106.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle106.positive, true, 'geometricObjects', 'pointAngles');
+
+    const x107 = new Magnitude('0.00');
+    const y107 = new Magnitude('-1.00');
+    const point107 = new Point(x107, y107);
+    const angle107 = point107.getAngleToHorizontal();
+    mathTests.assertEqualStrict(angle107.isAmagnitude, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle107.isAnAngle, true, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle107.firstSigFig, '4', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle107.otherSigFigs, '71', 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle107.orderOfMagnitude, 0, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle107.numSigFigs, 3, 'geometricObjects', 'pointAngles');
+    mathTests.assertEqualStrict(angle107.positive, true, 'geometricObjects', 'pointAngles');
+
+
     $("#putItHere").append(mathTests.printAllTests());
 
 
