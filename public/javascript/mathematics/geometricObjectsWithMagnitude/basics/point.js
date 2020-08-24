@@ -125,8 +125,8 @@ class Point {
         else return undefined;
     }
 
-    getMagnitude() {
-        return Math.sqrt(this.x**2 + this.y**2)
+    getDistanceToOrigin() {
+        return this.x.pythagoreanAddMag(this.y)
     }
 
     getDistanceToAnotherPoint(anotherPoint) {
@@ -211,3 +211,12 @@ function makeOrigin() {
     let y = constructZeroMagnitude(true);
     return new Point(x,y);
 }
+
+/*
+function constructPointWithMagnitude(magnitude, angleInRadians) {
+    let x = magnitude * Math.cos(angleInRadians);
+    let y = magnitude * Math.sin(angleInRadians);
+    let newPoint = new Point(x, y);
+    return newPoint;
+}
+ */
