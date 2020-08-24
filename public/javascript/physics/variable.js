@@ -2,28 +2,33 @@ const variables = {
   "position":
   {
     "vector": true,
-    "dimension": "length"
+    "dimension": "length",
+    "symbol": "x"
   },
   "distance":
   {
     "vector": false,
-    "dimension": "length"
+    "dimension": "length",
+    "symbol": "d"
   },
   "displacement":
   {
     "vector": true,
-    "dimension": "length"
+    "dimension": "length",
+    "symbol": "delta_x"
   },
   "force":
   {
     "vector": true,
-    "dimension": "force"
+    "dimension": "force",
+    "symbol": "F"
   },
   "net_force":
   {
     "vector": true,
     "name": "Net Force",
-    "dimension": "force"
+    "dimension": "force",
+    "symbol": "Sigma_F"
   },
   "coefficient_of_kinetic_friction":
   {
@@ -36,13 +41,37 @@ const variables = {
     "vector": false,
     "dimension": null,
     "symbol": "mu_s"
+  },
+  "time":
+  {
+    "vector": false,
+    "dimension": "time",
+    "symbol": "t"
+  },
+  "time_interval":
+  {
+    "vector": false,
+    "name": "time interval"
+    "dimension": "time",
+    "symbol": "Delta_t"
+  },
+  "intermediate": {
+    "name": undefined
   }
 }
 
-const selectVariable(name) {
-  if (variables[name]) {
-    return variables[name]
+const selectVariable(key) {
+  if (variables[key]) {
+    let variable = variables[key]
+    if (!variable[name]) {
+      variable[name] = key;
+    }
+    return variable
   } else {
     return false
   }
+}
+
+const intermediateVariableObject = {
+  "name": "intermediate"
 }

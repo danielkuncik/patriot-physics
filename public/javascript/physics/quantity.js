@@ -11,21 +11,67 @@ to accept physics numbers as values?????
 // values in physics problems
 // allow the mathematical methods to accept these as an input????
 class Quantity {
-  constructor(variableObject) {
-    this.variable = variable;
+  constructor(variableKey) {
+    this.variableKey = variableKey;
+    this.variableObject = selectVariable(key);
   }
+}
+/// what about variable keys???? those are needed in order to use formulas
+
+function findVariableInQuantityList(variableKey, quantityList) {
+  let i;
+  for (i = 0; i < quantityList.length; i++) {
+    if (quantityList[i].variableKey === variableKey) {
+      return quantityList[i]
+    }
+  }
+  return undefined
 }
 
 class ScalarQuantity extends Quantity {
-  constructor(variable, magnitude) {
-    super(variable);
-    this.magnitude = magnitude;
+  constructor(variableKey, magnitudeObject) {
+    super(variableKey);
+    if (this.variableObject.vector) {
+      console.log('cannot create scalar quantity object for vector variable');
+      return false
+    }
+    this.magnitude = magnitudeObject;
+
+    /// I need to incldue a check that the magnitude object has the correct units!!!
+  }
+
+  printAsEquation(prtintFullName) {
+    let variablePrint = printName ? this.varaible.name : this.variable.abbreviation;
+    return `${variablePrint} = ${this.magnitude.printOptimal()}`
+  }
+
+  printMagnitude() {
+    return.this.magnitude.printOptimal();
+  }
+
+  addScalar(anotherScalar, variableKey = "intermediate") { // i need to confirm that the addition is sanctioned by a formula???
+    return new ScalarQuantity(variableObject, this.magnitudeObject.addMag(anotherScalar.magnitude))
+  }
+
+  subtractScalar(anotherScalar, variableKey = "intermediate") { // i need to confirm that the addition is sanctioned by a formula???
+    return new ScalarQuantity(variableObject, this.magnitudeObject.subtractMag(anotherScalar.magnitude))
+  }
+
+  multiplyScalar(anotherScalar, variableKey = "intermediate") { /// i need to confirm that the multiplication is sanctioned by a formula
+    return new ScalarQuantity(variableObject, this.magnitudeObject.multiplyMag(anotherScalar.magnitude))
+  }
+
+  divideScalar(anotherScalar, variableKey = "intermediate") { /// i need to confirm that the multiplication is sanctioned by a formula
+    return new ScalarQuantity(variableObject, this.magnitudeObject.divideMag(anotherScalar.magnitude))
   }
 }
 
 class VectorQuantity extends Quantity {
-  constructor(variable, magnitude, direction) {
-    super(variable);
+  constructor(variableKey, magnitude, direction) {
+    super(variableKey);
+    if (!this.variable.vector) {
+      console.log('cannot create vector quantity from scalar variable');
+    }
 
     // (if magnitude = 0, direction = undefined, and unit = undefined)
     if (magnitude.zero) {
