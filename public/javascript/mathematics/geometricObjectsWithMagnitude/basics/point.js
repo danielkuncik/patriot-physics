@@ -140,8 +140,8 @@ class Point {
         return intermediatePoint.getAngleToHorizontal()
     }
 
-    isEqualToAnotherPoint(anotherPoint) {
-        if ((this.x === anotherPoint.x) && (this.y === anotherPoint.y)) {
+    isEqualToAnotherPoint(anotherPoint, numSigFigs_x, numSigFigs_y = numSigFigs_x) {
+        if (this.x.isEqual(anotherPoint.x, numSigFigs_x) && (this.y.isEqual(anotherPoint.y, numSigFigs_y))) {
             return true
         } else {
             return false
@@ -151,10 +151,8 @@ class Point {
     // if this Point were the origin
     // in what quadrant woul the other Point be?
     getQuadrantOfAnotherPoint(anotherPoint) {
-        anotherPoint.translate(-1 * this.x, -1 * this.y);
-        let quadrant = anotherPoint.getQuadrant();
-        anotherPoint.translate(this.x, this.y);
-        return quadrant;
+        const intermediatePoint = anotherPoint.translateAndReproduce(this.x, this.y);
+        return intermediatePoint.getQuadrant()
     }
 
     // returns a new Point
@@ -162,59 +160,59 @@ class Point {
     // at a distance the length between the points * proportion
     // so if propotion = 0.5, it will be halfway between the points
     // and if proportion = 2, it will be twice as far away as the other Point (so it can actually interpolate and extrapolate)
-    interpolate(anotherPoint, proportion) {
+    // what if proportion is negative????
+    interpolate(anotherPoint, proportionMagnitude) {
         let theta = this.getAngleToAnotherPoint(anotherPoint);
-        let L = this.getDistanceToAnotherPoint(anotherPoint) * proportion;
-        let x = this.x + L * Math.cos(theta);
-        let y = this.y + L * Math.sin(theta);
-        return new Point(x, y);
+        let L = this.getDistanceToAnotherPoint(anotherPoint).multiplyMag(proportionMagnitude);
+        return constructPointPolar(L, theta)
     }
 
+    // this is identical to 'translatePolarAndReproduce
     // returns a new Point which is a particular length away at angle theta
-    getAnotherPointWithTrig(length, thetaInRadians) {
-        let newX, newY;
-        newX = this.x + length * Math.cos(thetaInRadians);
-        newY = this.y + length * Math.sin(thetaInRadians);
-        return new Point(newX,newY)
-    }
+    // getAnotherPointWithTrig(length, thetaInRadians) {
+    //     let newX, newY;
+    //     newX = this.x + length * Math.cos(thetaInRadians);
+    //     newY = this.y + length * Math.sin(thetaInRadians);
+    //     return new Point(newX,newY)
+    // }
 
+    // this shouldn't be here, if you want this, use a line, not a point
     // returns an angle theta in Radians
     // of  a line that is perpendicular to the line between this point and another point
-    getPerpendicularAngle(anotherPoint) {
-        let theta = this.getAngleToAnotherPoint(anotherPoint);
-        theta += Math.PI / 2;
-        if (theta > Math.PI * 2) {
-            theta -= Math.PI * 2;
-        }
-        return theta;
-    }
+    // getPerpendicularAngle(anotherPoint) {
+    //     let theta = this.getAngleToAnotherPoint(anotherPoint);
+    //     theta += Math.PI / 2;
+    //     if (theta > Math.PI * 2) {
+    //         theta -= Math.PI * 2;
+    //     }
+    //     return theta;
+    // }
 
+    // i've never even used this
     // gives x and y components of a vector made from this vector and another point
-    getComponentsToAnotherPoint(anotherPoint, axisRotationInRadians) {
-        if (axisRotationInRadians === undefined) {axisRotationInRadians = 0;}
-        let xComponent, yComponent;
-        let theta = this.getAngleToAnotherPoint(anotherPoint);
-        let L = this.getDistanceToAnotherPoint(anotherPoint);
-        xComponent = L * Math.cos(theta);
-        yComponent = L * Math.sin(theta);
-        return  {
-            xComponent: xComponent,
-            yComponent: yComponent
-        }
-    }
+    // getComponentsToAnotherPoint(anotherPoint, axisRotationInRadians) {
+    //     if (axisRotationInRadians === undefined) {axisRotationInRadians = 0;}
+    //     let xComponent, yComponent;
+    //     let theta = this.getAngleToAnotherPoint(anotherPoint);
+    //     let L = this.getDistanceToAnotherPoint(anotherPoint);
+    //     xComponent = L * Math.cos(theta);
+    //     yComponent = L * Math.sin(theta);
+    //     return  {
+    //         xComponent: xComponent,
+    //         yComponent: yComponent
+    //     }
+    // }
 }
 
 function makeOrigin() {
     let x = constructZeroMagnitude(true);
     let y = constructZeroMagnitude(true);
-    return new Point(x,y);
+    return new Point(x,y)
 }
 
-/*
-function constructPointWithMagnitude(magnitude, angleInRadians) {
-    let x = magnitude * Math.cos(angleInRadians);
-    let y = magnitude * Math.sin(angleInRadians);
-    let newPoint = new Point(x, y);
-    return newPoint;
+function constructPointPolar(radiusMagnitude, angle) {
+    const x = radiusMagnitude.multiplyMag(angle.cosMag());
+    const y = radiusMagnitude.multiplyMag(angle.sinMag());
+    return new Point(x,y)
 }
- */
+

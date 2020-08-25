@@ -691,6 +691,33 @@
     pointTests.assertEqualStrict(distance305.numSigFigs, 3, 'pointObject', 'distanceToAnotherPoint');
     pointTests.assertEqualStrict(distance305.positive, true, 'pointObject', 'distanceToAnotherPoint');
 
+    //#############################################################################
+    //#############################################################################
+    // Interpolate tests
+    pointTests.addSubCategory('pointObject','interpolate','Interpolate Tests');
+
+    const x401a = new Magnitude('0');
+    const y401a = new Magnitude('0');
+    const x401b = new Magnitude('10');
+    const y401b = new Magnitude('10');
+    const point401a = new Point(x401a, y401a);
+    const point401b = new Point(x401b, y401b);
+    const point401 = point401a.interpolate(point401b, new Magnitude('0.5')); // should be (5,5)
+    pointTests.assertEqualStrict(point401.x.isAmagnitude, true, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.x.firstSigFig, '5', 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.x.otherSigFigs, '', 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.x.orderOfMagnitude, 0, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.x.numSigFigs, 1, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.x.positive, true, 'pointObject', 'interpolate');
+
+    pointTests.assertEqualStrict(point401.y.isAmagnitude, true, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.y.firstSigFig, '5', 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.y.otherSigFigs, '', 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.y.orderOfMagnitude, 0, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.y.numSigFigs, 1, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point401.y.positive, true, 'pointObject', 'interpolate');
+
+
 
 
     $("#putItHere").append(pointTests.printAllTests());
