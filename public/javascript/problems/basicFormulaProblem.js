@@ -7,10 +7,27 @@ class FormulaProblem {
   }
 }
 
+
+// construct objets
+class Formula {
+
+}
+
+
+function findAverageSpeedProblem(distanceVariable, timeVariable) {
+  const averageSpeedMagnitude = distanceMagnitude.divideMag(timeMagnitude);
+  let newProblem = new Problem();
+  newProblem.addQuestionString('I move a distance of ${distanceVariable.printOptimal()} in a time of ${timeVariable.printOptimal()}. What is my average speed?');
+  newProblem.add
+}
+
 /*
 let's start with speed = distance / time
-
+you need to create two scalar quantities
 */
+
+
+// i need to have quantities,
 
 // essentially, three magnitudes are inputted and four are
 
