@@ -22,7 +22,7 @@
     const y303ba = new Magnitude('-678');
     const point303aa = new Point(x303aa, y303aa);
     const point303ba = new Point(x303ba, y303ba);
-    const distance303a = point303aa.getDistanceToAnotherPoint(point303b); ///300.8205445111753 => rounded to 3.0e2
+    const distance303a = point303aa.getDistanceToAnotherPoint(point303ba); ///300.8205445111753 => rounded to 3.0e2
     pointTests.assertEqualStrict(distance303a.isAmagnitude, true, 'pointObject', 'distanceToAnotherPoint');
     pointTests.assertEqualStrict(distance303a.firstSigFig, '3', 'pointObject', 'distanceToAnotherPoint');
     pointTests.assertEqualStrict(distance303a.otherSigFigs, '0', 'pointObject', 'distanceToAnotherPoint','xx');
