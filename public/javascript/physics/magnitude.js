@@ -524,6 +524,10 @@ this.isAmagnitude = undefined;
       return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
   }
 
+  inverse() {
+    return new Magnitude('1', undefined, undefined, true).divideMag(this);
+  }
+
   multiplyMagExactConstant(exactConstant) {
       return constructMagnitudeFromFloat(this.getFloat() * exactConstant, this.numSigFigs, this.unit, this.exact, this.zeroLimit);
   }

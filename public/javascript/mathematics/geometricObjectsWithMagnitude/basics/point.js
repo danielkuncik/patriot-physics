@@ -125,10 +125,12 @@ class Point {
         else return undefined;
     }
 
+    // this works only if x and y have the same unit
     getDistanceToOrigin() {
         return this.x.pythagoreanAddMag(this.y)
     }
 
+    // works only if points have the same unit
     getDistanceToAnotherPoint(anotherPoint) {
         return (this.x.subtractMag(anotherPoint.x)).pythagoreanAddMag(this.y.subtractMag(anotherPoint.y));
     }
@@ -215,4 +217,3 @@ function constructPointPolar(radiusMagnitude, angle) {
     const y = radiusMagnitude.multiplyMag(angle.sinMag());
     return new Point(x,y)
 }
-

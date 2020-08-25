@@ -264,6 +264,7 @@ function readUnitName(unitName) {
     }
 }
 
+
 function readUnitDerivation(unitDerivationObject) {
     let conversionFactor = 1;
     let SI = true;
@@ -397,22 +398,29 @@ function readUnit(unitNameOrDerivation) {
 
 // check this
 function areTwoUnitsTheSameDimension(unit1, unit2) {
-    const dimension1 = unit1.dimension_derivation;
-    const dimension2 = unit2.dimension_derivation;
-    const dimension1Keys = Object.keys(dimension1);
-    const dimension2Keys = Object.keys(dimension2);
-    if (dimension1Keys.length !== dimension2Keys.length) {
-        return false
-    } else {
-        let i;
-        for (i = 0; i < dimension1Keys.length; i++) {
-            let thisDimensionKey = dimension1Keys[i];
-            if (!(dimension2[thisDimensionKey] && dimension1[thisDimensionKey] === dimension2[thisDimensionKey])) {
-                return false
-            }
-        }
-        return true
-    }
+    return areTwoDerivationObjectsTheSame(unit1.dimension_derivation, unit2.dimension_derivation)
+}
+
+function areTwoDerivationObjectsTheSame(derivationObject1, derivationObject2) {
+  const derivation1Keys = Object.keys(derivationObject1);
+  const derivation2Keys = Object.keys(derivationObject2);
+  if (derivation1Keys.length !== derivation2Keys.length) {
+      return false
+  } else {
+      let i;
+      for (i = 0; i < derivation1Keys.length; i++) {
+          let thisDerivationKey = derivation1Keys[i];
+          if (!(derivationObject2[thisDerivationKey] && dimension1[thisDimensionKey] === dimension2[thisDimensionKey])) {
+              return false
+          }
+      }
+      return true
+  }
+}
+
+// make sure two units are the same unit!
+function areSameUnit(unit1, unit2) {
+  return areTwoDerivationObectsTheSame(unit1.derivation, unit2.derivation)
 }
 
 /*
