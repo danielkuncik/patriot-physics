@@ -437,6 +437,39 @@ this.isAmagnitude = undefined;
 
   }
 
+  // testes if equal up to a certain number of sig figs
+  isEqual(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+    if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot test equality to more sig figs than a magnitude has
+        return false
+    } else if (this.unit !== anotherMagnitude.unit) { // if different units, automatically not equal
+        return false
+    } else if (this.orderOfMagnitude !== anotherMagnitude.orderOfMagnitude) { // if different orders of magnitude, cannot be equal
+        return false
+    } else if (this.positive !== anotherMagnitude.positive) { // if different signs, cannot be equal
+        return false
+    } else {
+        console.log(5);
+        if (numSigFigs < Infinity) { /// both not exact
+            const string1 = (this.firstSigFig + this.otherSigFigs).slice(0,numSigFigs);
+            const string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs).slice(0,numSigFigs);
+            if (string1 === string2) {
+                return true
+            } else {
+                return false
+            }
+        } else { // if both are exact
+            console.log('made it');
+            const string1 = (this.firstSigFig + this.otherSigFigs);
+            const string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
+            if (string1 === string2) {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+  }
+
   addMag(anotherMagnitude) {
       if (!this.testSameUnit(anotherMagnitude)) {
           console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?

@@ -136,10 +136,8 @@ class Point {
     /// if this Point were the origin, returns the angle to the horizontal of the other Point
     // returns angles theta such that 0 <= theta < 2pi
     getAngleToAnotherPoint(anotherPoint) {
-        anotherPoint.translate(-1 * this.x, -1 * this.y);
-        let theta = anotherPoint.getAngleToHorizontal();
-        anotherPoint.translate(this.x, this.y);
-        return theta;
+        const intermediatePoint = anotherPoint.translateAndReproduce(this.x, this.y);
+        return intermediatePoint.getAngleToHorizontal()
     }
 
     isEqualToAnotherPoint(anotherPoint) {

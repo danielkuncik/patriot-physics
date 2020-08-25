@@ -487,8 +487,6 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag226.numSigFigs, 2, 'constructor', 'exponentStrings');
   magnitudeTests.assertEqualStrict(mag226.positive, true, 'constructor', 'exponentStrings');
 
-  console.log(mag226);
-
   /*
     let mag226 = new Magnitude('undefined');
     magnitudeTests.assertEqualStrict(mag226.isAmagnitude, true, 'constructor', 'exponentStrings');
@@ -1759,6 +1757,15 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   magnitudeTests.assertEqualStrict(mag4009.printStandardNotation(), '1600', 'printing', 'integers');
   magnitudeTests.assertEqualStrict(mag4009.printScientificNotation(), '1.6e3', 'printing', 'integers');
 
+  ///###################################################################
+  ///###################################################################
+  /// equality testing
+  magnitudeTests.addCategory('equality','Equality');
+  magnitudeTests.addSubCategory('equality','equality1','Equality 1');
+
+  let mag5001a = new Magnitude('2');
+  let mag5001b = new Magnitude('2.0');
+  magnitudeTests.assertEqualStrict(mag5001a.isEqual(mag5001b),true, 'equality', 'equality1');
 
   $("#putItHere").append(magnitudeTests.printAllTests());
 
