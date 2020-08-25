@@ -130,7 +130,7 @@ class Point {
     }
 
     getDistanceToAnotherPoint(anotherPoint) {
-        return Math.sqrt((this.x - anotherPoint.x)**2 + (this.y - anotherPoint.y)**2);
+        return (this.x.subtractMag(anotherPoint.x)).pythagoreanAddMag(this.y.subtractMag(anotherPoint.y));
     }
 
     /// if this Point were the origin, returns the angle to the horizontal of the other Point

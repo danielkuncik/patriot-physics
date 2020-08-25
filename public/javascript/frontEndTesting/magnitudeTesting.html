@@ -135,6 +135,15 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag012.positive, true, 'constructor', 'integers');
 
 
+  const x303ba = new Magnitude('-80.');
+  magnitudeTests.assertEqualStrict(x303ba.isAmagnitude, true, 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(x303ba.firstSigFig, '8', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(x303ba.otherSigFigs, '0', 'constructor', 'integers');
+  magnitudeTests.assertEqualStrict(x303ba.orderOfMagnitude, 1, 'constructor', 'integers','yyy');
+  magnitudeTests.assertEqualStrict(x303ba.numSigFigs, 2, 'constructor', 'integers','qqq');
+  magnitudeTests.assertEqualStrict(x303ba.positive, false, 'constructor', 'integers');
+
+
   magnitudeTests.addSubCategory('constructor', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
   let mag101 = new Magnitude('123.4','meters');
   magnitudeTests.assertEqualStrict(mag101.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
