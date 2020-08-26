@@ -27,7 +27,7 @@
   let lineTests = new TestPackage('Line Tests');
 
   lineTests.addCategory('construction','Construction');
-  lineTests.addSubCategory('construction','construction1','Construction 1');
+  lineTests.addSubCategory('construction','construction1','Construction From Points');
 
   const point001a = makeOrigin(3);
   const point001bx = new Magnitude('4.00');
@@ -153,6 +153,70 @@ lineTests.assertEqualStrict(line001.slope.numSigFigs, undefined, 'construction',
 lineTests.assertEqualStrict(line001.slope.positive, true, 'construction', 'construction1');
 
 */
+
+lineTests.addSubCategory('construction','construction2','Construction From Slope Intercept');
+
+const slope101 = new Magnitude('-4.00');
+const yIntercept101 = new Magnitude('8.0');
+const line101 = constructLineSlopeIntercept(slope101, yIntercept101, '101'); /// y = -4 * x + 8
+console.log(line101.print());
+
+lineTests.assertEqualStrict(line101.horizontal, false, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.vertical, false, 'construction', 'construction2');
+
+lineTests.assertEqualStrict(line101.yIntercept.isAmagnitude, true, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.zero, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.firstSigFig, '8', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.otherSigFigs, '0', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.orderOfMagnitude, 0, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.numSigFigs, 2, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.positive, true, 'construction', 'construction2');
+
+lineTests.assertEqualStrict(line101.slope.isAmagnitude, true, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.zero, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.firstSigFig, '4', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.otherSigFigs, '00', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.orderOfMagnitude, 0, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.numSigFigs, 3, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.positive, false, 'construction', 'construction2');
+
+const y101 = line101.function(new Magnitude('10')); //  - 4 * 5 + 8 = -32
+lineTests.assertEqualStrict(y101.isAmagnitude, true, 'construction', 'construction2');
+lineTests.assertEqualStrict(y101.zero, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(y101.firstSigFig, '3', 'construction', 'construction2');
+lineTests.assertEqualStrict(y101.otherSigFigs, '', 'construction', 'construction2');
+lineTests.assertEqualFloat(y101.getFloat(), -32, 'construction', 'construction2','rrr');
+lineTests.assertEqualStrict(y101.orderOfMagnitude, 1, 'construction', 'construction2');
+lineTests.assertEqualStrict(y101.numSigFigs, 1, 'construction', 'construction2');
+lineTests.assertEqualStrict(y101.positive, false, 'construction', 'construction2');
+
+
+/*
+lineTests.assertEqualStrict(line101.horizontal, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.vertical, undefined, 'construction', 'construction2');
+
+lineTests.assertEqualStrict(line101.yIntercept.isAmagnitude, true, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.zero, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.firstSigFig, '', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.otherSigFigs, '', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.orderOfMagnitude, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.numSigFigs, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.yIntercept.positive, true, 'construction', 'construction2');
+
+lineTests.assertEqualStrict(line101.slope.isAmagnitude, true, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.zero, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.firstSigFig, '', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.otherSigFigs, '', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.orderOfMagnitude, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.numSigFigs, undefined, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.positive, true, 'construction', 'construction2');
+
+*/
+
+lineTests.addCategory('intersection','Intersection Tests');
+lineTests.addSubCategory('intersection','intersection 1', 'Intersection Tests 1');
+
+
 
   $("#putItHere").append(lineTests.printAllTests());
 

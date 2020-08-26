@@ -16,7 +16,7 @@ UNITS UNITS UNITS
 
 class Line {
     constructor(pointA, pointB, name = 'unnamed') {
-        if (pointA.getDistanceToAnotherPoint(pointB).zero) {
+        if (pointA.getDistanceToAnotherPoint(pointB).zero) { /// need to have a different 'same point' test, not this one, which requires identical units!!!
             console.log('cannot make a line of two of the same point');
             return false
         } else if (!areSameUnit(pointA.x.unit, pointB.x.unit) || !areSameUnit(pointA.y.unit, pointB.y.unit)) {
@@ -152,8 +152,10 @@ class Line {
     }
 }
 
+/// issue: siginificant figures can be lost!
+/// how will this handle units if yIntercept is zero????
 /// redo these with magnitudes
-function constructLineSlopeIntercept(slope, yIntercept) {
+function constructLineSlopeIntercept(slope, yIntercept, name) {
     let pointA = new Point(constructZeroMagnitude(undefined, true), yIntercept);
     //// here, i need to get the x unit!!!
     const yUnit = yIntercept.unit;
@@ -161,7 +163,10 @@ function constructLineSlopeIntercept(slope, yIntercept) {
     const delta_x = new Magnitude(`1e${slope.orderOfMagnitude}`,xUnit,undefined, true);
     const delta_y = delta_x.multiplyMag(slope);
     let pointB = new Point(delta_x, yIntercept.addMag(delta_y));
-    return new Point(pointA, pointB)
+    console.log(pointA.print());
+    console.log(pointB.print());
+    console.log(pointA, pointB);
+    return new Line(pointA, pointB, name)
 }
 
 function constructVerticalLine(xValue, yUnit) {

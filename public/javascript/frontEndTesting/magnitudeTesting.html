@@ -657,6 +657,15 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag314.numSigFigs, 5, 'constructor', 'zeros');
   magnitudeTests.assertEqualStrict(mag314.positive, undefined, 'constructor', 'zeros');
 
+  let mag315 = constructZeroMagnitude(undefined, true); // zero magnitude with infinite sig figs
+  magnitudeTests.assertEqualStrict(mag315.isAmagnitude, true, 'constructor', 'zeros');
+  magnitudeTests.assertEqualStrict(mag315.zero, true, 'constructor', 'zeros');
+  magnitudeTests.assertEqualStrict(mag315.firstSigFig, '0', 'constructor', 'zeros');
+  magnitudeTests.assertEqualStrict(mag315.otherSigFigs, '', 'constructor', 'zeros');
+  magnitudeTests.assertEqualStrict(mag315.orderOfMagnitude, undefined, 'constructor', 'zeros');
+  magnitudeTests.assertEqualStrict(mag315.numSigFigs, Infinity, 'constructor', 'zeros');
+  magnitudeTests.assertEqualStrict(mag315.positive, undefined, 'constructor', 'zeros');
+
 
   magnitudeTests.addSubCategory('constructor', 'nonNumericalStrings', 'Non NumericalStrings');
 

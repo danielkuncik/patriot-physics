@@ -88,6 +88,12 @@ function roundUpDigit(numString, index) {
 how do i set a magnitude to infinity
 */
 
+/*
+think about how i deal with units of zero,
+maybe there should be an 'aspiring unit?????', because in later functions that employ units
+having a zero screws it up
+*/
+
 
 // look up my previous work on numerical strings!
 class Magnitude {
@@ -367,7 +373,8 @@ this.isAmagnitude = undefined;
   }
 
   // what about signs????
-  printStandardNotation() { // returns false if this is impossible to the correct number of significant figures
+  /// need to work on the 'exactly!!!!'
+  printStandardNotation(printWordEactly) { // returns false if this is impossible to the correct number of significant figures
       if (this.zero) {
           return this.printZero()
       }
@@ -393,10 +400,11 @@ this.isAmagnitude = undefined;
     /// what about zeros???
   }
 
-  printZero() {
+  printZero(printWordExactly) {
+    const exactly = (printWordExactly && this.numSigFigs === Infinity) ? 'exactly ' : '';
       if (this.zero) {
         if (this.numSigFigs === Infinity || this.numSigFigs === 1) {
-            return '0'
+            return `${exactly}0`
         } else {
             return `0.${this.otherSigFigs}`
         }
@@ -405,23 +413,24 @@ this.isAmagnitude = undefined;
       }
   }
 
-  printScientificNotation() {
+  printScientificNotation(printWordExactly) {
       if (this.zero) {
-          return this.printZero()
+          return this.printZero(printWordExactly)
       }
+      const exactly = (printWordExactly && this.numSigFigs === Infinity) ? 'exactly ' : '';
       if (this.numSigFigs === 1) {
           return `${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
       } else {
-          return `${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
+          return `${exactly}${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
       }
   }
 
-  printOptimal() {
+  printOptimal(printWordExactly) { // if print exactly is selected, it prints the word exatly
       if (this.zero) {
-          return this.printZero()
+          return this.printZero(printWordExactly)
       }
-      let standardNot = this.printStandardNotation();
-      let sciNot = this.printScientificNotation();
+      let standardNot = this.printStandardNotation(printWordExactly);
+      let sciNot = this.printScientificNotation(printWordExactly);
       return standardNot.length <= sciNot.length ? standardNot : sciNot
   }
 
@@ -637,7 +646,11 @@ this.isAmagnitude = undefined;
 }
 
 // keep working
-function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = false, zeroLimit = 1e-10) {
+function constructMagnitudeFromFloat(float, numSigFigs, unitObject, exact = false, zeroLimit = 1e-10) {
+    if (numSigFigs === Infinity) {
+      numSigFigs = undefined;
+      exact = true;
+    }
     if (Math.abs(float) < zeroLimit) {
         return constructZeroMagnitude(numSigFigs, exact);
     } else {
@@ -655,7 +668,7 @@ function constructZeroMagnitude(numSigFigs, exact = !numSigFigs ? true : false) 
     if (!exact < numSigFigs !== Infinity) {
         string = string + makeStringOfZeros(numSigFigs - 1);
     }
-    return new Magnitude(string,undefined,exact);
+    return new Magnitude(string,undefined,undefined,exact);
 }
 
 

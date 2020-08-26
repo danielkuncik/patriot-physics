@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Tests</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+<body>
+  <!-- jQuery -->
+  <script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+  <!-- popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- Bootstrap js-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src = './frontEndTesting.js'></script>
+<script src = '../physics/reference/units.js'></script>
+<script src = '../physics/magnitude.js'></script>
+<script src = '../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
+<script src = '../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
+
+
+<div id = 'putItHere'></div>
+
+<script>
+    let randomTests = new TestPackage('Random Tests');
+
+    const slope101 = new Magnitude('-4.00');
+    const yIntercept101 = new Magnitude('8.0');
+    const point306a = new Point(constructZeroMagnitude(undefined, true), yIntercept101);
+    const delta_x = new Magnitude(`1e${slope101.orderOfMagnitude}`,undefined,undefined, true);
+    const delta_y = delta_x.multiplyMag(slope101);
+    const point306b = new Point(delta_x, yIntercept101.addMag(delta_y));
+    const distance306 = point306a.getDistanceToAnotherPoint(point306b); // square root of 17 => 4.12310562562 => 4.1
+    randomTests.assertEqualStrict(distance306.isAmagnitude, true);
+    randomTests.assertEqualStrict(distance306.firstSigFig, '4');
+    randomTests.assertEqualStrict(distance306.otherSigFigs, '1');
+    randomTests.assertEqualStrict(distance306.orderOfMagnitude, 0);
+    randomTests.assertEqualStrict(distance306.numSigFigs, 2);
+    randomTests.assertEqualStrict(distance306.positive, true);
+
+
+
+    const slope101a = new Magnitude('-4.00');
+    const yIntercept101a = new Magnitude('8.0'); /// slope loses a sig fig!!!
+    const line101 = constructLineSlopeIntercept(slope101a, yIntercept101a, '101'); /// y = -4 * x + 8
+    console.log(line101.print());
+
+    randomTests.assertEqualStrict(line101.horizontal, false);
+    randomTests.assertEqualStrict(line101.vertical, false);
+
+    randomTests.assertEqualStrict(line101.yIntercept.isAmagnitude, true);
+    randomTests.assertEqualStrict(line101.yIntercept.zero, undefined);
+    randomTests.assertEqualStrict(line101.yIntercept.firstSigFig, '8');
+    randomTests.assertEqualStrict(line101.yIntercept.otherSigFigs, '0');
+    randomTests.assertEqualStrict(line101.yIntercept.orderOfMagnitude, 0);
+    randomTests.assertEqualStrict(line101.yIntercept.numSigFigs, 2);
+    randomTests.assertEqualStrict(line101.yIntercept.positive, true);
+
+    randomTests.assertEqualStrict(line101.slope.isAmagnitude, true);
+    randomTests.assertEqualStrict(line101.slope.zero, undefined);
+    randomTests.assertEqualStrict(line101.slope.firstSigFig, '4');
+    randomTests.assertEqualStrict(line101.slope.otherSigFigs, '0');
+    randomTests.assertEqualStrict(line101.slope.orderOfMagnitude, 0);
+    randomTests.assertEqualStrict(line101.slope.numSigFigs, 2);
+    randomTests.assertEqualStrict(line101.slope.positive, false);
+
+    const y101 = line101.function(new Magnitude('10')); //  - 4 * 5 + 8 = -32
+    randomTests.assertEqualStrict(y101.isAmagnitude, true);
+    randomTests.assertEqualStrict(y101.zero, undefined);
+    randomTests.assertEqualStrict(y101.firstSigFig, '3');
+    randomTests.assertEqualStrict(y101.otherSigFigs, '');
+    randomTests.assertEqualFloat(y101.getFloat(), -32);
+    randomTests.assertEqualStrict(y101.orderOfMagnitude, 1);
+    randomTests.assertEqualStrict(y101.numSigFigs, 1);
+    randomTests.assertEqualStrict(y101.positive, false);
+
+    $("#putItHere").append(randomTests.printAllTests());
+
+</script>
+
+</body>
+</html>
