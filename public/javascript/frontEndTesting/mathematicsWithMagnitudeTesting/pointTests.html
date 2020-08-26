@@ -747,20 +747,20 @@
     pointTests.assertEqualStrict(point403.y.numSigFigs, 3, 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point403.y.positive, false, 'pointObject', 'interpolate');
 
-    const point404 = point401a.interpolate(point401b, new Magnitude('3')); // should be (-10,-10)
+    const point404 = point401a.interpolate(point401b, new Magnitude('3')); // should be (30,30)
     pointTests.assertEqualStrict(point404.x.isAmagnitude, true, 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.x.firstSigFig, '3', 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.x.otherSigFigs, '', 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.x.orderOfMagnitude, 1, 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.x.numSigFigs, 1, 'pointObject', 'interpolate');
-    pointTests.assertEqualStrict(point404.x.positive, false, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point404.x.positive, true, 'pointObject', 'interpolate');
 
     pointTests.assertEqualStrict(point404.y.isAmagnitude, true, 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.y.firstSigFig, '3', 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.y.otherSigFigs, '', 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.y.orderOfMagnitude, 1, 'pointObject', 'interpolate');
     pointTests.assertEqualStrict(point404.y.numSigFigs, 1, 'pointObject', 'interpolate');
-    pointTests.assertEqualStrict(point404.y.positive, false, 'pointObject', 'interpolate');
+    pointTests.assertEqualStrict(point404.y.positive, true, 'pointObject', 'interpolate');
 
 
     $("#putItHere").append(pointTests.printAllTests());

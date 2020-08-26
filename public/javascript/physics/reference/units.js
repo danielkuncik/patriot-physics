@@ -420,7 +420,13 @@ function areTwoDerivationObjectsTheSame(derivationObject1, derivationObject2) {
 
 // make sure two units are the same unit!
 function areSameUnit(unit1, unit2) {
-  return areTwoDerivationObectsTheSame(unit1.derivation, unit2.derivation)
+    if (unit1 === undefined && unit2 === undefined) {
+        return true
+    } else if (unit1 === undefined || unit2 === undefined) {
+        return false
+    } else {
+        return areTwoDerivationObjectsTheSame(unit1.derivation, unit2.derivation)
+    }
 }
 
 /*
