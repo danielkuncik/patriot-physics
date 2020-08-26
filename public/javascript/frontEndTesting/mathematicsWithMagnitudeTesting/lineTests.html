@@ -70,7 +70,7 @@
   const point002by = new Magnitude('8.00');
   const point002a = new Point(point002ax, point002ay, 'point002a');
   const point002b = new Point(point002bx, point002by, 'point002b');
-  const line002 = new Line(point002a, point002b, '002'); /// y = 4 + 3 * x
+  const line002 = new Line(point002a, point002b, '002'); /// y = 4 + 1.333333 * x
   console.log(line002.print());
   lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
@@ -85,8 +85,9 @@
 
   lineTests.assertEqualStrict(line002.slope.isAmagnitude, true, 'construction', 'construction1');
   lineTests.assertEqualStrict(line002.slope.zero, undefined, 'construction', 'construction1');
-  lineTests.assertEqualStrict(line002.slope.firstSigFig, '3', 'construction', 'construction1');
-  lineTests.assertEqualStrict(line002.slope.otherSigFigs, '00', 'construction', 'construction1');
+  lineTests.assertEqualStrict(line002.slope.firstSigFig, '1', 'construction', 'construction1');
+  lineTests.assertEqualStrict(line002.slope.otherSigFigs, '33', 'construction', 'construction1');
+  lineTests.assertEqualFloat(line002.slope.getFloat(), 4/3, 'construction', 'construction1');
   lineTests.assertEqualStrict(line002.slope.orderOfMagnitude, 0, 'construction', 'construction1');
   lineTests.assertEqualStrict(line002.slope.numSigFigs, 3, 'construction', 'construction1');
   lineTests.assertEqualStrict(line002.slope.positive, true, 'construction', 'construction1');
@@ -95,9 +96,10 @@
   const y002 = line002.function(x002);  ///  y = 4 + 3 * (-5) = 3 - 15 = -11
   lineTests.assertEqualStrict(y002.isAmagnitude, true, 'construction', 'construction1');
   lineTests.assertEqualStrict(y002.zero, undefined, 'construction', 'construction1');
-  lineTests.assertEqualStrict(y002.firstSigFig, '1', 'construction', 'construction1');
-  lineTests.assertEqualStrict(y002.otherSigFigs, '10', 'construction', 'construction1');
-  lineTests.assertEqualStrict(y002.orderOfMagnitude, 1, 'construction', 'construction1');
+  lineTests.assertEqualStrict(y002.firstSigFig, '2', 'construction', 'construction1');
+  lineTests.assertEqualStrict(y002.otherSigFigs, '67', 'construction', 'construction1');
+  lineTests.assertEqualFloat(y002.getFloat(), 4 + 4 / 3 * (-5), 'construction', 'construction1');
+  lineTests.assertEqualStrict(y002.orderOfMagnitude, 0, 'construction', 'construction1');
   lineTests.assertEqualStrict(y002.numSigFigs, 3, 'construction', 'construction1');
   lineTests.assertEqualStrict(y002.positive, false, 'construction', 'construction1');
 
@@ -105,7 +107,7 @@
   const point003ax = new Magnitude('0.00');
   const point003ay = new Magnitude('6.00');
   const point003bx = new Magnitude('10.0');
-  const point003by = new Magnitude('-36.0');
+  const point003by = new Magnitude('-34.0');
   const point003a = new Point(point003ax, point003ay, 'point003a');
   const point003b = new Point(point003bx, point003by, 'point003b');
   const line003 = new Line(point003a, point003b, '003'); /// y = 6 + -4 * x
