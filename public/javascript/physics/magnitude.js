@@ -368,6 +368,9 @@ this.isAmagnitude = undefined;
 
   // what about signs????
   printStandardNotation() { // returns false if this is impossible to the correct number of significant figures
+      if (this.zero) {
+          return this.printZero()
+      }
       const sign = !this.positive ? '-' : '';
     if (this.orderOfMagnitude > 0 && this.orderOfMagnitude > this.numSigFigs - 1) {
         if (this.otherSigFigs[this.numSigFigs - 2] === '0') {
@@ -390,7 +393,22 @@ this.isAmagnitude = undefined;
     /// what about zeros???
   }
 
+  printZero() {
+      if (this.zero) {
+        if (this.numSigFigs === Infinity || this.numSigFigs === 1) {
+            return '0'
+        } else {
+            return `0.${this.otherSigFigs}`
+        }
+      } else {
+          return undefined
+      }
+  }
+
   printScientificNotation() {
+      if (this.zero) {
+          return this.printZero()
+      }
       if (this.numSigFigs === 1) {
           return `${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
       } else {
@@ -399,6 +417,9 @@ this.isAmagnitude = undefined;
   }
 
   printOptimal() {
+      if (this.zero) {
+          return this.printZero()
+      }
       let standardNot = this.printStandardNotation();
       let sciNot = this.printScientificNotation();
       return standardNot.length <= sciNot.length ? standardNot : sciNot
@@ -629,7 +650,7 @@ function constructMagnitudeFromFloat(float, numSigFigs = 3, unitObject, exact = 
 /// this is going to take some thought....
 // add a 'zero limit' argument, anything under that is roudned to zero???  think that over
 
-function constructZeroMagnitude(numSigFigs = 3, exact = true) { /// what about intermediate value??? can zero still have intermediate value????
+function constructZeroMagnitude(numSigFigs, exact = !numSigFigs ? true : false) { /// if nothing is entered, numSigFigs is false
     let string = '0.';
     if (!exact < numSigFigs !== Infinity) {
         string = string + makeStringOfZeros(numSigFigs - 1);

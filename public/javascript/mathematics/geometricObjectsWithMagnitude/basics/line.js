@@ -15,7 +15,7 @@ UNITS UNITS UNITS
 */
 
 class Line {
-    constructor(pointA, pointB) {
+    constructor(pointA, pointB, name = 'unnamed') {
         if (pointA.getDistanceToAnotherPoint(pointB).zero) {
             console.log('cannot make a line of two of the same point');
             return false
@@ -26,7 +26,7 @@ class Line {
           this.xUnit = pointA.x.unit;
           this.yUnit = pointA.y.unit;
         }
-
+        this.name = name;
 
         if (pointA.y.isEqual(pointB.y)) { /// horizontal lines
             this.horizontal = true;
@@ -43,12 +43,16 @@ class Line {
             this.function((xMagnitude) => {return undefined})
             // this.function = (x) => {return undefined} not very relevant
         } else { /// diagonal lines
-            this.vertical = true;
+            this.vertical = false;
             this.horizontal = false;
             this.slope = (pointB.y.subtractMag(pointA.y)).divideMag(pointB.x.subtractMag(pointA.x));
             this.yIntercept = pointA.y.subtractMag(this.slope.multiplyMag(pointA.x));
             this.function = (xMagnitude) => {return this.yIntercept.addMag(this.slope.multiplyMag(xMagnitude))}
         }
+    }
+
+    print() {
+        return `Line ${this.name} : y = ${this.slope.printOptimal()}  * x + ${this.yIntercept.printOptimal()}`
     }
 
     isPointOnLine(point, numSigFigs) { // UNTESTED

@@ -2,7 +2,7 @@
 const pi = new Magnitude('3.14159265358979323846');
 
 class Point {
-    constructor(xMagnitude, yMagnitude, name) {
+    constructor(xMagnitude, yMagnitude, name = 'unnamed') {
         if (!xMagnitude.isAmagnitude || !yMagnitude.isAmagnitude) {
             return false
         }
@@ -10,6 +10,10 @@ class Point {
         this.y = yMagnitude;
         this.name = name;
         //    this.uuid = create_UUID();
+    }
+
+    print() {
+        return `Point ${this.name}: X => ${this.x.printOptimal()} Y => ${this.y.printOptimal()}`
     }
 
     setName(newName) {
@@ -206,9 +210,9 @@ class Point {
     // }
 }
 
-function makeOrigin() {
-    let x = constructZeroMagnitude(true);
-    let y = constructZeroMagnitude(true);
+function makeOrigin(numSigFigs, exact) { // exact is true if numSigFigs is not enetered
+    let x = constructZeroMagnitude(numSigFigs, exact);
+    let y = constructZeroMagnitude(numSigFigs, exact);
     return new Point(x,y)
 }
 

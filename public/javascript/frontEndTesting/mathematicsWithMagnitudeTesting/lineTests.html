@@ -29,13 +29,14 @@
   lineTests.addCategory('construction','Construction');
   lineTests.addSubCategory('construction','construction1','Construction 1');
 
-  const point001a = makeOrigin();
+  const point001a = makeOrigin(3);
   const point001bx = new Magnitude('4.00');
   const point001by = new Magnitude('8.00');
-  const point001b = new Point(point001bx, point001by);
-  const line001 = new Line(point001a, point001b); /// y = 2 * x
-  lineTests.assertEqualStrict(line001.yIntercept.horizontal, false, 'construction', 'construction1');
-  lineTests.assertEqualStrict(line001.yIntercept.vertical, false, 'construction', 'construction1');
+  const point001b = new Point(point001bx, point001by, 'point001B');
+  const line001 = new Line(point001a, point001b, '001'); /// y = 2 * x
+  console.log(line001.print());
+  lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
+  lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
 
   lineTests.assertEqualStrict(line001.yIntercept.isAmagnitude, true, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.yIntercept.zero, true, 'construction', 'construction1');
@@ -49,7 +50,7 @@
   lineTests.assertEqualStrict(line001.slope.zero, undefined, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.slope.firstSigFig, '2', 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.slope.otherSigFigs, '00', 'construction', 'construction1');
-  lineTests.assertEqualStrict(line001.slope.orderOfMagnitude, 1, 'construction', 'construction1');
+  lineTests.assertEqualStrict(line001.slope.orderOfMagnitude, 0, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.slope.numSigFigs, 3, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.slope.positive, true, 'construction', 'construction1');
 
@@ -67,11 +68,12 @@
   const point002ay = new Magnitude('4.00');
   const point002bx = new Magnitude('3.00');
   const point002by = new Magnitude('8.00');
-  const point002a = new Point(point002ax, point002ay);
-  const point002b = new Point(point002bx, point002by);
-  const line002 = new Line(point002a, point002b); /// y = 4 + 3 * x
-  lineTests.assertEqualStrict(line001.yIntercept.horizontal, false, 'construction', 'construction1');
-  lineTests.assertEqualStrict(line001.yIntercept.vertical, false, 'construction', 'construction1');
+  const point002a = new Point(point002ax, point002ay, 'point002a');
+  const point002b = new Point(point002bx, point002by, 'point002b');
+  const line002 = new Line(point002a, point002b, '002'); /// y = 4 + 3 * x
+  console.log(line002.print());
+  lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
+  lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
 
   lineTests.assertEqualStrict(line002.yIntercept.isAmagnitude, true, 'construction', 'construction1');
   lineTests.assertEqualStrict(line002.yIntercept.zero, undefined, 'construction', 'construction1');
@@ -104,11 +106,12 @@
   const point003ay = new Magnitude('6.00');
   const point003bx = new Magnitude('10.0');
   const point003by = new Magnitude('-36.0');
-  const point003a = new Point(point003ax, point003ay);
-  const point003b = new Point(point003bx, point003by);
-  const line003 = new Line(point003a, point003b); /// y = 6 + -4 * x
-  lineTests.assertEqualStrict(line003.yIntercept.horizontal, false, 'construction', 'construction1');
-  lineTests.assertEqualStrict(line003.yIntercept.vertical, false, 'construction', 'construction1');
+  const point003a = new Point(point003ax, point003ay, 'point003a');
+  const point003b = new Point(point003bx, point003by, 'point003b');
+  const line003 = new Line(point003a, point003b, '003'); /// y = 6 + -4 * x
+  console.log(line003.print());
+  lineTests.assertEqualStrict(line003.horizontal, false, 'construction', 'construction1');
+  lineTests.assertEqualStrict(line003.vertical, false, 'construction', 'construction1');
 
   lineTests.assertEqualStrict(line003.yIntercept.isAmagnitude, true, 'construction', 'construction1');
   lineTests.assertEqualStrict(line003.yIntercept.zero, undefined, 'construction', 'construction1');
@@ -128,8 +131,8 @@
 
 
 /*
-lineTests.assertEqualStrict(line001.yIntercept.horizontal, undefined, 'construction', 'construction1');
-lineTests.assertEqualStrict(line001.yIntercept.vertical, undefined, 'construction', 'construction1');
+lineTests.assertEqualStrict(line001.horizontal, undefined, 'construction', 'construction1');
+lineTests.assertEqualStrict(line001.vertical, undefined, 'construction', 'construction1');
 
 lineTests.assertEqualStrict(line001.yIntercept.isAmagnitude, true, 'construction', 'construction1');
 lineTests.assertEqualStrict(line001.yIntercept.zero, undefined, 'construction', 'construction1');
