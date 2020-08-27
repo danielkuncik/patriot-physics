@@ -49,6 +49,7 @@ class Line {
             this.yIntercept = pointA.y.subtractMag(this.slope.multiplyMag(pointA.x));
             this.function = (xMagnitude) => {return this.yIntercept.addMag(this.slope.multiplyMag(xMagnitude))}
         }
+
     }
 
     print() {
@@ -156,6 +157,9 @@ class Line {
 /// how will this handle units if yIntercept is zero????
 /// redo these with magnitudes
 function constructLineSlopeIntercept(slope, yIntercept, name) {
+    if (slope.numSigFigs !== yIntercept.numSigFigs) {
+        console.log('WARNING: significant figures lost while constructing a line from slope and intercept');
+    }
     let pointA = new Point(constructZeroMagnitude(undefined, true), yIntercept);
     //// here, i need to get the x unit!!!
     const yUnit = yIntercept.unit;

@@ -470,9 +470,9 @@ this.isAmagnitude = undefined;
   // testes if equal up to a certain number of sig figs
   isEqual(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
     if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot test equality to more sig figs than a magnitude has
-        return false
+        return undefined
     } else if (this.unit !== anotherMagnitude.unit) { // if different units, automatically not equal
-        return false
+        return undefined
     } else if (this.orderOfMagnitude !== anotherMagnitude.orderOfMagnitude) { // if different orders of magnitude, cannot be equal
         return false
     } else if (this.positive !== anotherMagnitude.positive) { // if different signs, cannot be equal
@@ -496,6 +496,67 @@ this.isAmagnitude = undefined;
             }
         }
     }
+  }
+
+  // tests if one magnitude is greater than another one, up to a certain number of significant figures
+  greaterThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+      if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes with different units
+          return undefined
+      } else if (this.orderOfMagnitude > anotherMagnitude.orderOfMagnitude) {
+          return true
+      } else if (this.orderOfMagnitude < anotherMagnitude.orderOfMagnitude) {
+          return false
+      } else if (this.orderOfMagnitude === anotherMagnitude.orderOfMagnitude) {
+          if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot compare to more sig figs than a magnitude has
+              return undefined
+          } else {
+              let string1, string2;
+              if (numSigFigs < Infinity) { /// both not exact
+                  string1 = (this.firstSigFig + this.otherSigFigs).slice(0, numSigFigs);
+                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs).slice(0, numSigFigs);
+              } else { // if both are exact
+                  string1 = (this.firstSigFig + this.otherSigFigs);
+                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
+              }
+              let i;
+              for (i = 0; i < numSigFigs; i++) {
+                  if (!(Number(string1[i]) > Number(string2[i]))) {
+                      return false
+                  }
+              }
+              return true
+          }
+      }
+  }
+
+  lessThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+      if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes with different units
+          return undefined
+      } else if (this.orderOfMagnitude > anotherMagnitude.orderOfMagnitude) {
+          return false
+      } else if (this.orderOfMagnitude < anotherMagnitude.orderOfMagnitude) {
+          return true
+      } else if (this.orderOfMagnitude === anotherMagnitude.orderOfMagnitude) {
+          if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot compare to more sig figs than a magnitude has
+              return undefined
+          } else {
+              let string1, string2;
+              if (numSigFigs < Infinity) { /// both not exact
+                  string1 = (this.firstSigFig + this.otherSigFigs).slice(0, numSigFigs);
+                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs).slice(0, numSigFigs);
+              } else { // if both are exact
+                  string1 = (this.firstSigFig + this.otherSigFigs);
+                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
+              }
+              let i;
+              for (i = 0; i < numSigFigs; i++) {
+                  if (!(Number(string1[i]) < Number(string2[i]))) {
+                      return false
+                  }
+              }
+              return true
+          }
+      }
   }
 
   addMag(anotherMagnitude) {
