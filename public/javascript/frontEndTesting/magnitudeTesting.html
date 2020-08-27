@@ -1769,12 +1769,18 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   ///###################################################################
   ///###################################################################
   /// equality testing
-  magnitudeTests.addCategory('equality','Equality');
-  magnitudeTests.addSubCategory('equality','equality1','Equality 1');
+  magnitudeTests.addCategory('comparison','Comparison');
+  magnitudeTests.addSubCategory('comparison','equality','Equality');
 
   let mag5001a = new Magnitude('2');
   let mag5001b = new Magnitude('2.0');
   magnitudeTests.assertEqualStrict(mag5001a.isEqual(mag5001b),true, 'equality', 'equality1');
+  magnitudeTests.assertEqualStrict(mag5001a.isEqual(mag5001b, 2),undefined, 'equality', 'equality1');
+
+  ///###################################################################
+  ///###################################################################
+  /// inequality testing
+
 
   $("#putItHere").append(magnitudeTests.printAllTests());
 

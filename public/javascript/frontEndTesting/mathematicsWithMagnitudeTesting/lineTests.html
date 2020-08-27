@@ -175,9 +175,9 @@ lineTests.assertEqualStrict(line101.yIntercept.positive, true, 'construction', '
 lineTests.assertEqualStrict(line101.slope.isAmagnitude, true, 'construction', 'construction2');
 lineTests.assertEqualStrict(line101.slope.zero, undefined, 'construction', 'construction2');
 lineTests.assertEqualStrict(line101.slope.firstSigFig, '4', 'construction', 'construction2');
-lineTests.assertEqualStrict(line101.slope.otherSigFigs, '00', 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.otherSigFigs, '0', 'construction', 'construction2'); // one sig fig lost
 lineTests.assertEqualStrict(line101.slope.orderOfMagnitude, 0, 'construction', 'construction2');
-lineTests.assertEqualStrict(line101.slope.numSigFigs, 3, 'construction', 'construction2');
+lineTests.assertEqualStrict(line101.slope.numSigFigs, 2, 'construction', 'construction2'); // one sig fig lost
 lineTests.assertEqualStrict(line101.slope.positive, false, 'construction', 'construction2');
 
 const y101 = line101.function(new Magnitude('10')); //  - 4 * 5 + 8 = -32
