@@ -789,6 +789,7 @@
     const point501c = new Point(new Magnitude('0.00'),new Magnitude('1.00'));
     const angle501 = getAngleOfTwoRays(point501a, point501b, point501c); // should be a 90 degree angle
     const angle501b = angle501.convertToDegrees();
+   // const angle501c = angle501b.convertToRadians();
 
     pointTests.assertEqualStrict(angle501.isAmagnitude, true, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501.firstSigFig, '1', 'pointObject', 'getAngle');
@@ -803,6 +804,15 @@
     pointTests.assertEqualStrict(angle501b.orderOfMagnitude, 1, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.numSigFigs, 3, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.positive, true, 'pointObject', 'getAngle');
+
+    // i need to figure this out
+    // pointTests.assertEqualStrict(angle501c.isAmagnitude, true, 'pointObject', 'getAngle');
+    // pointTests.assertEqualStrict(angle501c.firstSigFig, '1', 'pointObject', 'getAngle');
+    // pointTests.assertEqualStrict(angle501c.otherSigFigs, '57', 'pointObject', 'getAngle');
+    // pointTests.assertEqualStrict(angle501c.orderOfMagnitude, 0, 'pointObject', 'getAngle');
+    // pointTests.assertEqualStrict(angle501c.numSigFigs, 3, 'pointObject', 'getAngle');
+    // pointTests.assertEqualStrict(angle501c.positive, true, 'pointObject', 'getAngle');
+
 
     /*
         pointTests.assertEqualStrict(angle501.isAmagnitude, true, 'pointObject', 'getAngle');

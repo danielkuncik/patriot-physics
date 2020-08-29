@@ -95,6 +95,7 @@ having a zero screws it up
 */
 
 
+
 // look up my previous work on numerical strings!
 class Magnitude {
   constructor(numericalString, unitObject, intermediateValue, exact = false) {
@@ -559,45 +560,65 @@ this.isAmagnitude = undefined;
       }
   }
 
-  addMag(anotherMagnitude) {
-      if (!this.testSameUnit(anotherMagnitude)) {
-          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
-          return false
-      }
-      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
-      let newUnit;
-      if (this.zero && anotherMagnitude.zero) { // can add two zeros to get another zero, which is unitless [redundant???]
-        newUnit = undefined;
-      } else if (this.zero) { // can add this unit to a zero and get this magnitude again [unless the zero has fewer sig figs]
-        newUnit = anotherMagnitude.unit;
+  // PRIVATE METHOD!!!!
+  // for addition, subtraction, pythagorean addition, pythagorean subtraction
+  addOrSubtract(operation, anotherMagnitude, zeroLimit = this.zeroLimit) {
+      let canIdoIt; // you can only add or subtract magnitudes of the same unit, but any zero can always be added or subtracted
+      if (this.unit === undefined && anotherMagnitude.unit === undefined) { // two undefined functions can be added
+          canIdoIt = true;
+      } else if (this.zero || anotherMagnitude.zero) { // zero can be added to any unit
+          canIdoIt = true;
+      } else if (this.unit === undefined || anotherMagnitude.unit === undefined) {
+          canIdoIt = false;
       } else {
-        newUnit = this.unit
+          canIdoIt = areSameUnit(this.unit, anotherMagnitude.unit)
       }
-      const exact = newSigFigs === Infinity;
-      const newFloat = this.getFloat() + anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
-  }
-
-  ///8-21-2020: several times I've tried to fix this by putting it in terms of addMag,
-    // reducing repeated code, but it keeps failing when I do that
-  subtractMag(anotherMagnitude) {
-      if (!this.testSameUnit(anotherMagnitude)) {
-          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
+      if (!canIdoIt) {
           return false
       }
-      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+
+      // get new unit
       let newUnit;
       if (this.zero && anotherMagnitude.zero) { // can add two zeros to get another zero, which is unitless [redundant???]
           newUnit = undefined;
       } else if (this.zero) { // can add this unit to a zero and get this magnitude again [unless the zero has fewer sig figs]
           newUnit = anotherMagnitude.unit;
-      } else {
+      } else { // either the same unit, or the other magnitude is zero
           newUnit = this.unit
       }
+
+      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+
       const exact = newSigFigs === Infinity;
-      const newFloat = this.getFloat() - anotherMagnitude.getFloat();
-      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+      let newFloat;
+      if (operation === '+') {
+          newFloat = this.getFloat() + anotherMagnitude.getFloat();
+      } else if (operation === '-') {
+          newFloat = this.getFloat() - anotherMagnitude.getFloat();
+      } else if (operation === 'pythagorean_+') {
+          newFloat = Math.sqrt(this.getFloat()**2 + anotherMagnitude.getFloat()**2);
+      } else if (operation === 'pythagorean_-') {
+          newFloat = Math.sqrt(this.getFloat()**2 - anotherMagnitude.getFloat()**2);
+      }
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, zeroLimit)
   }
+
+  addMag(anotherMagnitude, zeroLimit) {
+      return this.addOrSubtract('+', anotherMagnitude, zeroLimit)
+  }
+
+  subtractMag(anotherMagnitude, zeroLimit) {
+    return this.addOrSubtract('-', anotherMagnitude, zeroLimit)
+  }
+
+  pythagoreanAddMag(anotherMagnitude, zeroLimit) {
+    return this.addOrSubtract('pythagorean_+', anotherMagnitude, zeroLimit)
+  }
+
+  pythagoreanSubtractMag(anotherMagnitude, zeroLimit) {
+    return this.addOrSubtract('pythagorean_-', anotherMagnitude, zeroLimit)
+  }
+
 
   multiplyMag(anotherMagnitude) {
       const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
@@ -651,30 +672,6 @@ this.isAmagnitude = undefined;
       const newFloat = this.getFloat()**exponent;
       return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
   }
-
-  pythagoreanAddMag(anotherMagnitude) {
-      if (!this.testSameUnit(anotherMagnitude)) {
-          console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
-          return false
-      }
-      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
-      const newUnit = this.unit;
-      const exact = newSigFigs === Infinity;
-      const newFloat = Math.sqrt(this.getFloat()**2 + anotherMagnitude.getFloat()**2);
-      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
-  }
-
-    pythagoreanSubtractMag(anotherMagnitude) {
-        if (!this.testSameUnit(anotherMagnitude)) {
-            console.log('ERROR: cannot add magnitudes of different unit'); // add an automatic conversion?
-            return false
-        }
-        const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
-        const newUnit = this.unit;
-        const exact = newSigFigs === Infinity;
-        const newFloat = Math.sqrt(this.getFloat()**2 - anotherMagnitude.getFloat()**2);
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
-    }
 
     inverseSinMag() {
         if (this.unit !== undefined) {
@@ -749,6 +746,11 @@ class Angle extends Magnitude {
         // add routine to ensure that it is between 0 and 360
         // or some other requirement
     }
+
+    /*
+    need to remake the 'operations' for angles
+    such as addition, subtraction, etc.
+     */
 
     getFloat() { /// float is always in radians, even when the information is in degrees
         let float = super.getFloat();
