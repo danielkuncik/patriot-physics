@@ -481,87 +481,70 @@ this.isAmagnitude = undefined;
 
   }
 
-  // testes if equal up to a certain number of sig figs
-  isEqualTo(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
-    if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot test equality to more sig figs than a magnitude has
-        return undefined
-    } else if (this.unit !== anotherMagnitude.unit) { // if different units, automatically not equal
-        return undefined
-    } else if (this.orderOfMagnitude !== anotherMagnitude.orderOfMagnitude) { // if different orders of magnitude, cannot be equal
-        return false
-    } else if (this.positive !== anotherMagnitude.positive) { // if different signs, cannot be equal
-        return false
-    } else {
-        if (numSigFigs < Infinity) { /// both not exact
-            const tempMag1 = this.roundAndDuplicate(numSigFigs);
-            const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs);
-            const string1 = (tempMag1.firstSigFig + tempMag1.otherSigFigs);
-            const string2 = (tempMag2.firstSigFig + tempMag2.otherSigFigs).slice(0,numSigFigs);
-            return string1 === string2
-        } else { // if both are exact
-            const string1 = (this.firstSigFig + this.otherSigFigs);
-            const string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
-            if (string1 === string2) {
-                return true
-            } else {
-                return false
-            }
-        }
-    }
-  }
-
-  // tests if one magnitude is greater than another one, up to a certain number of significant figures
-  isGreaterThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
-      if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes with different units
+  // what about signs?????
+  comparisonTest(type, anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+      if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes of different units
           return undefined
-      } else if (this.orderOfMagnitude > anotherMagnitude.orderOfMagnitude) {
-          return true
-      } else if (this.orderOfMagnitude < anotherMagnitude.orderOfMagnitude) {
-          return false
-      } else if (this.orderOfMagnitude === anotherMagnitude.orderOfMagnitude) {
-          if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot compare to more sig figs than a magnitude has
-              return undefined
-          } else {
-              let string1, string2;
-              if (numSigFigs < Infinity) { /// both not exact
-                const tempMag1 = this.roundAndDuplicate(numSigFigs);
-                const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs);
-                const string1 = (tempMag1.firstSigFig + tempMag1.otherSigFigs);
-                const string2 = (tempMag2.firstSigFig + tempMag2.otherSigFigs).slice(0,numSigFigs);
-                return Number(string1) > Number(string2)
-              } else { // if both are exact
-                  string1 = (this.firstSigFig + this.otherSigFigs);
-                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
-                  return '????'
-              }
+      } else if (numSigFigs > Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) { // asking for more sig figs than you actually have
+          /*
+          In this case, i need to figure out if they COULD possibly be equal, or not, to a greater number of sig figs
+          example:
+          0.5 and 0.456, no
+          to one sig fig these are equal
+          to two or more sig figs, we are not sure, they could be equal, greater, or less
+
+          but, 8.0 and 4
+          no matter how many sig figs you have, will never be equal!
+           */
+          let tempMag1, tempMag2;
+          if (this.numSigFigs < anotherMagnitude.numSigFigs) {
+              tempMag1 = this.duplicate();
+              tempMag2 = anotherMagnitude.roundAndDuplicate(this.numSigFigs);
+          } else if (this.numSigFigs === anotherMagnitude.numSigFigs) {
+              tempMag1 = this.duplicate();
+              tempMag2 = anotherMagnitude.duplicate();
+          } else if (this.numSigFigs > anotherMagnitude.numSigFigs) {
+              tempMag1 = this.roundAndDuplicate(anotherMagnitude.numSigFigs);
+              tempMag2 = anotherMagnitude.duplicate();
           }
+          if (this.compareMagnitudesWithEqualNumbersOfSigFigs('equal', tempMag1, tempMag2)) {
+              return undefined // if equal when rounded to the same number of significant figures, then you cannot conduct a comparison test
+          } else { ///
+              return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) // otherwise, you can compare them once they are the same number of sig figs
+          }
+      } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs < Infinity) { // asking for fewer sig figs than you have (what about exact????)
+          const tempMag1 = this.roundAndDuplicate(numSigFigs);
+          const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs); // now they have the same number of sig figs
+          return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2)
+      } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs === Infinity) {
+          // two exact numbers
+          return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, this, anotherMagnitude)
+          return undefined
       }
   }
 
-  isLessThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
-      if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes with different units
-          return undefined
-      } else if (this.orderOfMagnitude > anotherMagnitude.orderOfMagnitude) {
-          return false
-      } else if (this.orderOfMagnitude < anotherMagnitude.orderOfMagnitude) {
-          return true
-      } else if (this.orderOfMagnitude === anotherMagnitude.orderOfMagnitude) {
-          if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot compare to more sig figs than a magnitude has
-              return undefined
-          } else {
-              let string1, string2;
-              if (numSigFigs < Infinity) { /// both not exact
-                const tempMag1 = this.roundAndDuplicate(numSigFigs);
-                const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs);
-                const string1 = (tempMag1.firstSigFig + tempMag1.otherSigFigs);
-                const string2 = (tempMag2.firstSigFig + tempMag2.otherSigFigs).slice(0,numSigFigs);
-                return Number(string1) < Number(string2)
-              } else { // if both are exact
-                  string1 = (this.firstSigFig + this.otherSigFigs);
-                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
-                  return '????'
-              }
-          }
+  // testes if equal up to a certain number of sig figs
+  isEqualTo(anotherMagnitude, numSigFigs) {
+          return this.comparisonTest('equal', anotherMagnitude, numSigFigs)
+  }
+
+  isGreaterThan(anotherMagnitude, numSigFigs) {
+      return this.comparisonTest('greater', anotherMagnitude, numSigFigs)
+  }
+  isLessThan(anotherMagnitude, numSigFigs) {
+      return this.comparisonTest('lesser', anotherMagnitude, numSigFigs)
+  }
+
+  //// PRIVATE FUNCTION!
+  compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) {
+      const num1 = Number(`${tempMag1.sign===false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}`); // do not use getFloat(), because intermediate values should not be used for comparison testing
+      const num2 = Number(`${tempMag2.sign===false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}`);
+      if (type === 'equal') {
+          return num1 === num2
+      } else if (type === 'greater') {
+          return num1 > num2
+      } else if (type === 'lesser') {
+          return num1 < num2
       }
   }
 
@@ -853,3 +836,5 @@ function constructZeroAngle(float, numSigFigs, exact = false) {
     return new Angle(string,undefined, undefined,exact);
 
 }
+
+

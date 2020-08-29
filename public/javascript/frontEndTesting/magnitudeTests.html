@@ -1780,7 +1780,7 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   ///###################################################################
   ///###################################################################
   /// comparison testing
-/*  magnitudeTests.addCategory('comparison','Comparison');
+  magnitudeTests.addCategory('comparison','Comparison');
   magnitudeTests.addSubCategory('comparison','comparison1','Comparison1');
 
   let mag5001a = new Magnitude('2');
@@ -1826,21 +1826,21 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
 
   let mag5007a = new Magnitude('0.456');
   let mag5007b = new Magnitude('0.5');
-  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1','xxx');
+  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5007a.isLessThan(mag5007b), false, 'comparison', 'comparison1');
-  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b,2), undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b,2), undefined, 'comparison', 'comparison1'); // in this case, because you only have one sig fig of 0.5, it COULD be less than 0.456 to two significant figures, but you don't know!
   magnitudeTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b,2), undefined, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5007a.isLessThan(mag5007b,2), undefined, 'comparison', 'comparison1');
 
   let mag5008a = new Magnitude('7.89');
   let mag5008b = new Magnitude('10.4');
-  magnitudeTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b), false, 'comparison', 'comparison1');
-  magnitudeTests.assertEqualStrict(mag5008a.isLessThan(mag5008b), false, 'comparison', 'comparison1');
-  magnitudeTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b, 1), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isLessThan(mag5008b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b, 1), false, 'comparison', 'comparison1'); // rounds to 8 and 10
   magnitudeTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b, 1), false, 'comparison', 'comparison1');
-  magnitudeTests.assertEqualStrict(mag5008a.isLessThan(mag5008b, 1), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isLessThan(mag5008b, 1), true, 'comparison', 'comparison1');
 
 
   let mag5009a = new Magnitude('0.4e10');
@@ -1854,7 +1854,67 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   magnitudeTests.assertEqualStrict(mag5010a.isEqualTo(mag5010b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5010a.isGreaterThan(mag5010b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5010a.isLessThan(mag5010b), true, 'comparison', 'comparison1');
-*/
+
+  let mag5011a = new Magnitude('5');
+  let mag5011b = new Magnitude('50');
+  magnitudeTests.assertEqualStrict(mag5011a.isEqualTo(mag5011b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5011a.isGreaterThan(mag5011b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5011a.isLessThan(mag5011b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5011a.isEqualTo(mag5011b,4), false, 'comparison', 'comparison1'); // these two magnitudes, even to 4 significant figures, can never be equal!
+  magnitudeTests.assertEqualStrict(mag5011a.isGreaterThan(mag5011b,4), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5011a.isLessThan(mag5011b,4), true, 'comparison', 'comparison1');
+
+  let mag5012a = new Magnitude('10.');
+  let mag5012b = new Magnitude('9.9');
+  magnitudeTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b,2), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b,2), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5012a.isLessThan(mag5012b,2), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b,1), true, 'comparison', 'comparison1'); // equal to one significant figure
+  magnitudeTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b,1), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5012a.isLessThan(mag5012b,1), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b), false, 'comparison', 'comparison1'); // roudns to two sig figs
+  magnitudeTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5012a.isLessThan(mag5012b), false, 'comparison', 'comparison1');
+
+  let mag5013a = new Magnitude('10');
+  let mag5013b = new Magnitude('9.9');
+  magnitudeTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b,2 ), undefined, 'comparison', 'comparison1'); /// cannot determine
+  magnitudeTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b,2), undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5013a.isLessThan(mag5013b,2), undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b,1), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b,1), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5013a.isLessThan(mag5013b,1), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b), true, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  magnitudeTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5013a.isLessThan(mag5013b), false, 'comparison', 'comparison1');
+
+  let mag5014a = new Magnitude('3', undefined, undefined, true); // exactly 3
+  let mag5014b = new Magnitude('2', undefined, undefined, true); // exactly 2
+  magnitudeTests.assertEqualStrict(mag5014a.isEqualTo(mag5014b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  magnitudeTests.assertEqualStrict(mag5014a.isGreaterThan(mag5014b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5014a.isLessThan(mag5014b), false, 'comparison', 'comparison1');
+
+  let mag5015a = new Magnitude('3', undefined, undefined, true); // exactly 3
+  let mag5015b = new Magnitude('4', undefined, undefined, true); // exactly 4
+  magnitudeTests.assertEqualStrict(mag5015a.isEqualTo(mag5015b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  magnitudeTests.assertEqualStrict(mag5015a.isGreaterThan(mag5015b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5015a.isLessThan(mag5015b), true, 'comparison', 'comparison1');
+
+  let mag5016a = new Magnitude('3', undefined, undefined, true); // exactly 3
+  let mag5016b = new Magnitude('3', undefined, undefined, true); // exactly 3
+  magnitudeTests.assertEqualStrict(mag5016a.isEqualTo(mag5016b), true, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  magnitudeTests.assertEqualStrict(mag5016a.isGreaterThan(mag5016b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5016a.isLessThan(mag5016b), false, 'comparison', 'comparison1');
+
+  let mag5017a = new Magnitude('8');
+  let mag5017b = new Magnitude('4');
+  magnitudeTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5017a.isLessThan(mag5017b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b,2 ), false, 'comparison', 'comparison1'); /// you only have one sig fig each, but even if you added more sig figs, 4 would never be greater than 8!
+  magnitudeTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b,2), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5017a.isLessThan(mag5017b,2), false, 'comparison', 'comparison1');
+
 
   $("#putItHere").append(magnitudeTests.printAllTests());
 

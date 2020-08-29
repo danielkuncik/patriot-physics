@@ -26,22 +26,23 @@
 <script>
     let randomTests = new TestPackage('Random Tests');
 
-    let mag1019 = new Magnitude('56.2'); //56
-    mag1019.round(2);
-    randomTests.assertEqualStrict(mag1019.firstSigFig, '5');
-    randomTests.assertEqualStrict(mag1019.otherSigFigs, '6');
-    randomTests.assertEqualStrict(mag1019.orderOfMagnitude, 1);
-    randomTests.assertEqualStrict(mag1019.numSigFigs, 2);
-    const mag1019a = mag1019.roundAndDuplicate(1);
-    randomTests.assertEqualStrict(mag1019a.firstSigFig, '6');
-    randomTests.assertEqualStrict(mag1019a.otherSigFigs, '');
-    randomTests.assertEqualStrict(mag1019a.orderOfMagnitude, 1);
-    randomTests.assertEqualStrict(mag1019a.numSigFigs, 1);
-    // does not change original
-    randomTests.assertEqualStrict(mag1019.firstSigFig, '5');
-    randomTests.assertEqualStrict(mag1019.otherSigFigs, '6');
-    randomTests.assertEqualStrict(mag1019.orderOfMagnitude, 1);
-    randomTests.assertEqualStrict(mag1019.numSigFigs, 2);
+    let mag5014a = new Magnitude('3', undefined, undefined, true); // exactly 3
+    let mag5014b = new Magnitude('2', undefined, undefined, true); // exactly 2
+    randomTests.assertEqualStrict(mag5014a.isEqualTo(mag5014b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+    randomTests.assertEqualStrict(mag5014a.isGreaterThan(mag5014b), true, 'comparison', 'comparison1');
+    randomTests.assertEqualStrict(mag5014a.isLessThan(mag5014b), false, 'comparison', 'comparison1');
+
+    let mag5015a = new Magnitude('3', undefined, undefined, true); // exactly 3
+    let mag5015b = new Magnitude('4', undefined, undefined, true); // exactly 4
+    randomTests.assertEqualStrict(mag5015a.isEqualTo(mag5015b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+    randomTests.assertEqualStrict(mag5015a.isGreaterThan(mag5015b), false, 'comparison', 'comparison1');
+    randomTests.assertEqualStrict(mag5015a.isLessThan(mag5015b), true, 'comparison', 'comparison1');
+
+    let mag5016a = new Magnitude('3', undefined, undefined, true); // exactly 3
+    let mag5016b = new Magnitude('3', undefined, undefined, true); // exactly 3
+    randomTests.assertEqualStrict(mag5016a.isEqualTo(mag5016b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+    randomTests.assertEqualStrict(mag5016a.isGreaterThan(mag5016b), false, 'comparison', 'comparison1');
+    randomTests.assertEqualStrict(mag5016a.isLessThan(mag5016b), true, 'comparison', 'comparison1');
 
     $("#putItHere").append(randomTests.printAllTests());
 
