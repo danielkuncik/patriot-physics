@@ -623,7 +623,12 @@ this.isAmagnitude = undefined;
       return constructMagnitudeFromFloat(this.getFloat() * exactConstant, this.numSigFigs, this.unit, this.exact, this.zeroLimit);
   }
 
-  squareMag() {
+    divideMagExactConstant(exactConstant) {
+        return constructMagnitudeFromFloat(this.getFloat() / exactConstant, this.numSigFigs, this.unit, this.exact, this.zeroLimit);
+    }
+
+
+    squareMag() {
     const newSigFigs = this.numSigFigs;
     const newUnit = multiplyUnits(this.unit, this.unit);
     const exact = this.numSigFigs === Infinity;
@@ -732,6 +737,7 @@ function constructZeroMagnitude(numSigFigs, exact = !numSigFigs ? true : false) 
     return new Magnitude(string,undefined,undefined,exact);
 }
 
+const pi = new Magnitude('3.14159265358979323846');
 
 //  constructor(numericalString, unitObject, intermediateValue, exact = false) {
 class Angle extends Magnitude {
@@ -750,6 +756,22 @@ class Angle extends Magnitude {
             float *= (Math.PI / 180);
         }
         return float
+    }
+
+    convertToDegrees() {
+        if (this.degrees) {
+            return this
+        } else {
+            return (this.multiplyMagExactConstant(180)).divideMag(pi)
+        }
+    }
+
+    convertToRadians() {
+        if (!this.degrees) {
+            return this
+        } else {
+            return (this.multiplyMag(pi)).divideMagExactConstant(180)
+        }
     }
 
     add90Degrees() {

@@ -779,6 +779,41 @@
     pointTests.assertEqualStrict(point404.y.positive, true, 'pointObject', 'interpolate');
 
 
+    //#############################################################################
+    //#############################################################################
+    // Get angle tests
+    pointTests.addSubCategory('pointObject','getAngle','Get Angle From Points');
+
+    const point501a = new Point(new Magnitude('1.00'),new Magnitude('0.00'));
+    const point501b = makeOrigin(3);
+    const point501c = new Point(new Magnitude('0.00'),new Magnitude('1.00'));
+    const angle501 = getAngleOfTwoRays(point501a, point501b, point501c); // should be a 90 degree angle
+    const angle501b = angle501.convertToDegrees();
+
+    pointTests.assertEqualStrict(angle501.isAmagnitude, true, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.firstSigFig, '1', 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.otherSigFigs, '57', 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.orderOfMagnitude, 0, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.numSigFigs, 3, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.positive, true, 'pointObject', 'getAngle');
+
+    pointTests.assertEqualStrict(angle501b.isAmagnitude, true, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501b.firstSigFig, '9', 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501b.otherSigFigs, '00', 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501b.orderOfMagnitude, 1, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501b.numSigFigs, 3, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501b.positive, true, 'pointObject', 'getAngle');
+
+    /*
+        pointTests.assertEqualStrict(angle501.isAmagnitude, true, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.firstSigFig, undefined, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.otherSigFigs, undefined, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.orderOfMagnitude, undefined, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.numSigFigs, undefined, 'pointObject', 'getAngle');
+    pointTests.assertEqualStrict(angle501.positive, undefined, 'pointObject', 'getAngle');
+
+     */
+
     $("#putItHere").append(pointTests.printAllTests());
 
 

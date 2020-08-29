@@ -1,6 +1,4 @@
 
-const pi = new Magnitude('3.14159265358979323846');
-
 class Point {
     constructor(xMagnitude, yMagnitude, name = 'unnamed') {
         if (!xMagnitude.isAmagnitude || !yMagnitude.isAmagnitude) {
@@ -220,4 +218,15 @@ function constructPointPolar(radiusMagnitude, angle) {
     const x = radiusMagnitude.multiplyMag(angle.cosMag());
     const y = radiusMagnitude.multiplyMag(angle.sinMag());
     return new Point(x,y)
+}
+
+
+// always returns the interior angle!!
+function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB, degrees) {
+    const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
+    const a = vertex.getDistanceToAnotherPoint(outsidePointA);
+    const b = vertex.getDistanceToAnotherPoint(outsidePointB);
+
+    const cosTheta = (a.squareMag().addMag(b.squareMag())).subtractMag((c.squareMag())).divideMag((a.multiplyMag(b).multiplyMagExactConstant(2)));
+    return cosTheta.inverseCosMag()
 }
