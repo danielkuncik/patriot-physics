@@ -14,21 +14,27 @@ having a zero screws it up
 // essentially a physics number with units
 class Magnitude extends PhysicsNumber {
   constructor(numericalString, unitObject, intermediateValue, exact = false) {
+    super(numericalString, intermediateValue, exact);
     this.unit = unitObject;
 
   }
 
 
   duplicate() {
-    const string = `${this.sign === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`;
+    const string = !this.zero ? `${this.sign === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}` : `${this.firstSigFig}.${this.otherSigFigs}`;
     const exact = this.numSigFigs === Infinity;
-    const = this.unit;
+    const unit = this.unit;
     const intermediateValue = this.intermediateValue;
     return new Magnitude(string, unit, intermediateValue, exact)
-
   }
 
-  /// rework this to make it works with either names or derivation????
+  roundAndDuplicate(numSigFigs) {
+      let tempMag = this.duplicate();
+      tempMag.round(numSigFigs);
+      return tempMag;
+  }
+
+    /// rework this to make it works with either names or derivation????
     // check that they have the same DIMENSION, and if they do complete the operation...
   convertUnit(newUnitObject) {
     if (this.unit === undefined) {
@@ -114,7 +120,7 @@ class Magnitude extends PhysicsNumber {
 
   // testes if equal up to a certain number of sig figs
   isEqualTo(anotherMagnitude, numSigFigs) {
-          return this.comparisonTest('=', anotherMagnitude, numSigFigs)
+      return this.comparisonTest('=', anotherMagnitude, numSigFigs)
   }
 
   isGreaterThan(anotherMagnitude, numSigFigs) {
@@ -133,8 +139,10 @@ class Magnitude extends PhysicsNumber {
 
   //// PRIVATE FUNCTION!
   compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) {
-      const num1 = Number(`${tempMag1.sign===false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}`); // do not use getFloat(), because intermediate values should not be used for comparison testing
-      const num2 = Number(`${tempMag2.sign===false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}`);
+      const string1 = !tempMag1.zero ? `${tempMag1.sign === false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}` : `${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}`;
+      const string2 = !tempMag2.zero ? `${tempMag1.sign === false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}` : `${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}`;
+      const num1 = Number(string1); // do not use getFloat(), because intermediate values should not be used for comparison testing
+      const num2 = Number(string2);
       if (type === '=') {
           return num1 === num2
       } else if (type === '>') {
@@ -315,7 +323,7 @@ function constructMagnitudeFromFloat(float, numSigFigs, unitObject, exact = fals
 /// this is going to take some thought....
 // add a 'zero limit' argument, anything under that is roudned to zero???  think that over
 
-function constructZeroMagnitude(numSigFigs, exact = !numSigFigs ? true : false) { /// if nothing is entered, numSigFigs is false
+function constructZeroMagnitude(numSigFigs, exact = numSigFigs === undefined) { /// if nothing is entered, numSigFigs is false
     let string = '0.';
     if (!exact < numSigFigs !== Infinity) {
         string = string + makeStringOfZeros(numSigFigs - 1);

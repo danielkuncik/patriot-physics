@@ -145,7 +145,7 @@ class TestPackage {
       this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
     }
 
-    addFailedTest(categoryKey, subCategoryKey, this.testDefaultName(categoryKey, subCategoryKey), message) {
+    addFailedTest(categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey), message) {
       let newTest = new Test(name, false, message);
       this.addTest(newTest, categoryKey, subCategoryKey);
     }
@@ -162,22 +162,22 @@ class TestPackage {
       }
       this.assertEqualStrict(magnitude.isAmagnitude, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
       if (equalObject.firstSigFig) {
-        this.assertEqualStrict(magnitude.firstSigFig, equalObject[firstSigFig], categoryKey, subCategoryKey, `${name}: first sig fig:`);
+        this.assertEqualStrict(magnitude.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
       }
       if (equalObject.otherSigFigs) {
-        this.assertEqualStrict(magnitude.otherSigFigs, equalObject[otherSigFigs], categoryKey, subcategoryKey, `${name}: other sig figs:`);
+        this.assertEqualStrict(magnitude.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
       }
       if (equalObject.orderOfMagnitude) {
-        this.assertEqualStrict(magnitude.orderOfMagnitude, equalObject[orderOfMagnitude], categoryKey, subcategoryKey, `${name}: order of magnitude: `);
+        this.assertEqualStrict(magnitude.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
       }
       if (equalObject.numSigFigs) {
-        this.assertEqualStrict(magnitude.numSigFigs, equalObject[numSigFigs], categoryKey, subcategoryKey, `${name}: Number of Sig Figs: `);
+        this.assertEqualStrict(magnitude.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
       }
       if (equalObject.positive) {
-        this.assertEqualStrict(magnitude.positive, equalObject[positive], categoryKey, subcategoryKey, `${name}: Positive `);
+        this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
       }
       if (equalObject.float) {
-        this.assertEqualFloat(magnitude.getFloat(), equalObject[float], categoryKey, subCategoryKey, `${name}: Float`, 10**{magnitude.orderOfMagnitude - 15});
+        this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
       }
       // add printing 
       // add unit

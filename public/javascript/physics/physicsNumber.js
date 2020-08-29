@@ -329,19 +329,6 @@ class PhysicsNumber {
     }
   }
 
-  duplicate() {
-    const string = `${this.sign === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`;
-    const exact = this.numSigFigs === Infinity;
-    const intermediateValue = this.intermediateValue;
-    return new PhysicsNumber(string, intermediateValue, exact)
-  }
-
-  roundAndDuplicate(numSigFigs) {
-    let tempMag = this.duplicate();
-    tempMag.round(numSigFigs);
-    return tempMag
-  }
-
   // what about signs????
   /// need to work on the 'exactly!!!!'
   printStandardNotation() { // returns false if this is impossible to the correct number of significant figures
@@ -372,7 +359,7 @@ class PhysicsNumber {
 
   /// private function
   printZero() {
-    const exactly = (printWordExactly && this.numSigFigs === Infinity) ? 'exactly ' : '';
+    const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
       if (this.zero) {
         if (this.numSigFigs === Infinity || this.numSigFigs === 1) {
             return `${exactly}0`
@@ -388,7 +375,7 @@ class PhysicsNumber {
       if (this.zero) {
           return this.printZero()
       }
-      const exactly = (printWordExactly && this.numSigFigs === Infinity) ? 'exactly ' : '';
+      const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
       if (this.numSigFigs === 1) {
           return `${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
       } else {
@@ -398,10 +385,10 @@ class PhysicsNumber {
 
   printOptimal() { // if print exactly is selected, it prints the word exatly
       if (this.zero) {
-          return this.printZero(printWordExactly)
+          return this.printZero()
       }
-      let standardNot = this.printStandardNotation(printWordExactly);
-      let sciNot = this.printScientificNotation(printWordExactly);
+      let standardNot = this.printStandardNotation();
+      let sciNot = this.printScientificNotation();
       return standardNot.length <= sciNot.length ? standardNot : sciNot
   }
 

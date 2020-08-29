@@ -17,6 +17,7 @@
 <script src = './frontEndTesting.js'></script>
 <!-- <script src = '../physics/numericalStrings/numericalStringValidations.js'></script>
 <script src = '../physics/numericalStrings/numericalStringInformationGathering.js'></script> -->
+<script src = '../physics/physicsNumber.js'></script>
 <script src = '../physics/magnitude.js'></script>
 
 <div id = 'putItHere'></div>
@@ -38,12 +39,12 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.addSubCategory('constructor', 'integers', 'Integers');
   let mag001 = new Magnitude('1235124');
   magnitudeTests.assertMagnitude(mag001, {
-    "firstSigFig": 1,
+    "firstSigFig": '1',
     "otherSigFigs": "235124",
     "orderOfMagnitude": 6,
     "numSigFigs": 7,
     "positive": true
-  })
+  }, 'constructor', 'integers');
   
   let mag002 = new Magnitude('12412123');
   magnitudeTests.assertEqualStrict(mag002.isAmagnitude, true, 'constructor', 'integers');
@@ -1915,6 +1916,18 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   magnitudeTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b,2 ), false, 'comparison', 'comparison1'); /// you only have one sig fig each, but even if you added more sig figs, 4 would never be greater than 8!
   magnitudeTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b,2), true, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5017a.isLessThan(mag5017b,2), false, 'comparison', 'comparison1');
+
+  let mag5018a = new Magnitude('0.00');
+  let mag5018b = new Magnitude('0.00');
+  magnitudeTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isLessThan(mag5018b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,2 ), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,2), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,2), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,4), undefined, 'comparison', 'comparison1'); /// do not have the fourth sig to tell if they continue to be zero
+  magnitudeTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,4), undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,4), undefined, 'comparison', 'comparison1');
 
 
   $("#putItHere").append(magnitudeTests.printAllTests());

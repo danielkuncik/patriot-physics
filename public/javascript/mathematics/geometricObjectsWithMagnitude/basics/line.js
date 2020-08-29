@@ -18,14 +18,14 @@ class Line {
         }
         this.name = name;
 
-        if (pointA.y.isEqual(pointB.y)) { /// horizontal lines
+        if (pointA.y.isEqualTo(pointB.y)) { /// horizontal lines
             this.horizontal = true;
             this.vertical = false;
             this.yValue = pointA.y;
             this.slope = 0;
             this.yIntercept = this.yValue;
             this.function = (xMagnitude) => {return this.yValue}
-        } else if (pointA.x.isEqual(pointB.x)) { /// vertical lines
+        } else if (pointA.x.isEqualTo(pointB.x)) { /// vertical lines
             this.vertical = true;
             this.horizontal = false;
             this.xValue = pointA.x;
@@ -46,7 +46,7 @@ class Line {
         return `Line ${this.name} : y = ${this.slope.printOptimal()}  * x + ${this.yIntercept.printOptimal()}`
     }
 
-    isPointOnLine(point, numSigFigs) { // UNTESTED
+    isPointOnLine(point, numSigFigs) {
         if (this.horizontal) {
             return point.y.isEqualTo(this.yValue, numSigFigs)
         } else if (this.vertical) {
@@ -109,7 +109,7 @@ class Line {
     }
 
     isParallel(anotherLine, numSigFigs) {
-      return this.slope.isEqual(anotherLine.slope, numSigFigs)
+      return this.slope.isEqualTo(anotherLine.slope, numSigFigs)
     }
 
     findIntersectionWithAnotherLine(anotherLine) {
@@ -157,9 +157,6 @@ function constructLineSlopeIntercept(slope, yIntercept, name) {
     const delta_x = new Magnitude(`1e${slope.orderOfMagnitude}`,xUnit,undefined, true);
     const delta_y = delta_x.multiplyMag(slope);
     let pointB = new Point(delta_x, yIntercept.addMag(delta_y));
-    console.log(pointA.print());
-    console.log(pointB.print());
-    console.log(pointA, pointB);
     return new Line(pointA, pointB, name)
 }
 

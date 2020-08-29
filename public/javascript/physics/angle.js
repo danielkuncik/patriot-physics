@@ -2,7 +2,7 @@ const pi = new Magnitude('3.14159265358979323846');
 
 class Angle extends PhysicsNumber {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
-        super(numString, undefined, intermediateValue, exact);
+        super(numString, intermediateValue, exact);
         this.degrees = degrees;
         this.isAnAngle = true;
 

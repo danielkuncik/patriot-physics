@@ -16,7 +16,9 @@
 
 <script src = '../frontEndTesting.js'></script>
 <script src = '../../physics/reference/units.js'></script>
+<script src = '../../physics/physicsNumber.js'></script>
 <script src = '../../physics/magnitude.js'></script>
+<script src = '../../physics/angle.js'></script>
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
 
@@ -34,7 +36,6 @@
   const point001by = new Magnitude('8.00');
   const point001b = new Point(point001bx, point001by, 'point001B');
   const line001 = new Line(point001a, point001b, '001'); /// y = 2 * x
-  console.log(line001.print());
   lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
 
@@ -71,7 +72,6 @@
   const point002a = new Point(point002ax, point002ay, 'point002a');
   const point002b = new Point(point002bx, point002by, 'point002b');
   const line002 = new Line(point002a, point002b, '002'); /// y = 4 + 1.333333 * x
-  console.log(line002.print());
   lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
 
@@ -111,7 +111,6 @@
   const point003a = new Point(point003ax, point003ay, 'point003a');
   const point003b = new Point(point003bx, point003by, 'point003b');
   const line003 = new Line(point003a, point003b, '003'); /// y = 6 + -4 * x
-  console.log(line003.print());
   lineTests.assertEqualStrict(line003.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line003.vertical, false, 'construction', 'construction1');
 
@@ -159,7 +158,6 @@ lineTests.addSubCategory('construction','construction2','Construction From Slope
 const slope101 = new Magnitude('-4.00');
 const yIntercept101 = new Magnitude('8.0');
 const line101 = constructLineSlopeIntercept(slope101, yIntercept101, '101'); /// y = -4 * x + 8
-console.log(line101.print());
 
 lineTests.assertEqualStrict(line101.horizontal, false, 'construction', 'construction2');
 lineTests.assertEqualStrict(line101.vertical, false, 'construction', 'construction2');
