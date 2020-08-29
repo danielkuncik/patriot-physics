@@ -1768,18 +1768,81 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
 
   ///###################################################################
   ///###################################################################
-  /// equality testing
+  /// comparison testing
   magnitudeTests.addCategory('comparison','Comparison');
-  magnitudeTests.addSubCategory('comparison','equality','Equality');
+  magnitudeTests.addSubCategory('comparison','comparison1','Comparison1');
 
   let mag5001a = new Magnitude('2');
   let mag5001b = new Magnitude('2.0');
-  magnitudeTests.assertEqualStrict(mag5001a.isEqual(mag5001b),true, 'equality', 'equality1');
-  magnitudeTests.assertEqualStrict(mag5001a.isEqual(mag5001b, 2),undefined, 'equality', 'equality1');
+  magnitudeTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b, 2),undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5001a.isGreaterThan(mag5001b),false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5001a.isLessThan(mag5001b),false, 'comparison', 'comparison1');
 
-  ///###################################################################
-  ///###################################################################
-  /// inequality testing
+  let mag5002a = new Magnitude('3');
+  let mag5002b = new Magnitude('4');
+  magnitudeTests.assertEqualStrict(mag5002a.isEqualTo(mag5002b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5002a.isGreaterThan(mag5002b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5002a.isLessThan(mag5002b), true, 'comparison', 'comparison1');
+
+  let mag5003a = new Magnitude('6.78');
+  let mag5003b = new Magnitude('6.79');
+  magnitudeTests.assertEqualStrict(mag5003a.isEqualTo(mag5003b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5003a.isGreaterThan(mag5003b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5003a.isLessThan(mag5003b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5003a.isEqualTo(mag5003b, 2), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5003a.isGreaterThan(mag5003b, 2), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5003a.isLessThan(mag5003b, 2), false, 'comparison', 'comparison1');
+
+
+  let mag5004a = new Magnitude('10');
+  let mag5004b = new Magnitude('9');
+  magnitudeTests.assertEqualStrict(mag5004a.isEqualTo(mag5004b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5004a.isGreaterThan(mag5004b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5004a.isLessThan(mag5004b), false, 'comparison', 'comparison1');
+
+  let mag5005a = new Magnitude('11');
+  let mag5005b = new Magnitude('9');
+  magnitudeTests.assertEqualStrict(mag5005a.isEqualTo(mag5005b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5005a.isGreaterThan(mag5005b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5005a.isLessThan(mag5005b), false, 'comparison', 'comparison1');
+
+  let mag5006a = new Magnitude('0.456');
+  let mag5006b = new Magnitude('0.456');
+  magnitudeTests.assertEqualStrict(mag5006a.isEqualTo(mag5006b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5006a.isGreaterThan(mag5006b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5006a.isLessThan(mag5006b), false, 'comparison', 'comparison1');
+
+  let mag5007a = new Magnitude('0.456');
+  let mag5007b = new Magnitude('0.5');
+  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isLessThan(mag5007b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b,2), undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b,2), undefined, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isLessThan(mag5007b,2), undefined, 'comparison', 'comparison1');
+
+  let mag5008a = new Magnitude('7.89');
+  let mag5008b = new Magnitude('10.4');
+  magnitudeTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isLessThan(mag5008b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b, 1), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b, 1), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5008a.isLessThan(mag5008b, 1), false, 'comparison', 'comparison1');
+
+
+  let mag5009a = new Magnitude('0.4e10');
+  let mag5009b = new Magnitude('1000000');
+  magnitudeTests.assertEqualStrict(mag5009a.isEqualTo(mag5009b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5009a.isGreaterThan(mag5009b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5009a.isLessThan(mag5009b), false, 'comparison', 'comparison1');
+
+  let mag5010a = new Magnitude('5.34e8');
+  let mag5010b = new Magnitude('5.34e9');
+  magnitudeTests.assertEqualStrict(mag5010a.isEqualTo(mag5010b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5010a.isGreaterThan(mag5010b), false, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5010a.isLessThan(mag5010b), true, 'comparison', 'comparison1');
 
 
   $("#putItHere").append(magnitudeTests.printAllTests());

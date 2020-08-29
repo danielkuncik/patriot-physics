@@ -468,7 +468,7 @@ this.isAmagnitude = undefined;
   }
 
   // testes if equal up to a certain number of sig figs
-  isEqual(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+  isEqualTo(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
     if (this.numSigFigs < numSigFigs || anotherMagnitude.numSigFigs < numSigFigs) { /// cannot test equality to more sig figs than a magnitude has
         return undefined
     } else if (this.unit !== anotherMagnitude.unit) { // if different units, automatically not equal
@@ -499,7 +499,7 @@ this.isAmagnitude = undefined;
   }
 
   // tests if one magnitude is greater than another one, up to a certain number of significant figures
-  greaterThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+  isGreaterThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
       if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes with different units
           return undefined
       } else if (this.orderOfMagnitude > anotherMagnitude.orderOfMagnitude) {
@@ -529,7 +529,7 @@ this.isAmagnitude = undefined;
       }
   }
 
-  lessThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+  isLessThan(anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
       if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes with different units
           return undefined
       } else if (this.orderOfMagnitude > anotherMagnitude.orderOfMagnitude) {
