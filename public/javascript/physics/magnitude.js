@@ -348,6 +348,20 @@ this.isAmagnitude = undefined;
     }
   }
 
+  duplicate() {
+    const string = `${this.sign === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`;
+    const exact = this.numSigFigs === Infinity;
+    const unit = this.unit;
+    const intermediateValue = this.intermediateValue;
+    return new Magnitude(string, unit, intermediateValue, exact)
+  }
+
+  roundAndDuplicate(numSigFigs) {
+    let tempMag = this.duplicate();
+    tempMag.round(numSigFigs);
+    return tempMag
+  }
+
   /// rework this to make it works with either names or derivation????
     // check that they have the same DIMENSION, and if they do complete the operation...
   convertUnit(newUnitObject) {
@@ -479,13 +493,11 @@ this.isAmagnitude = undefined;
         return false
     } else {
         if (numSigFigs < Infinity) { /// both not exact
-            const string1 = (this.firstSigFig + this.otherSigFigs).slice(0,numSigFigs);
-            const string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs).slice(0,numSigFigs);
-            if (string1 === string2) {
-                return true
-            } else {
-                return false
-            }
+            const tempMag1 = this.roundAndDuplicate(numSigFigs);
+            const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs);
+            const string1 = (tempMag1.firstSigFig + tempMag1.otherSigFigs);
+            const string2 = (tempMag2.firstSigFig + tempMag2.otherSigFigs).slice(0,numSigFigs);
+            return string1 === string2
         } else { // if both are exact
             const string1 = (this.firstSigFig + this.otherSigFigs);
             const string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
@@ -512,19 +524,16 @@ this.isAmagnitude = undefined;
           } else {
               let string1, string2;
               if (numSigFigs < Infinity) { /// both not exact
-                  string1 = (this.firstSigFig + this.otherSigFigs).slice(0, numSigFigs);
-                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs).slice(0, numSigFigs);
+                const tempMag1 = this.roundAndDuplicate(numSigFigs);
+                const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs);
+                const string1 = (tempMag1.firstSigFig + tempMag1.otherSigFigs);
+                const string2 = (tempMag2.firstSigFig + tempMag2.otherSigFigs).slice(0,numSigFigs);
+                return Number(string1) > Number(string2)
               } else { // if both are exact
                   string1 = (this.firstSigFig + this.otherSigFigs);
                   string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
+                  return '????'
               }
-              let i;
-              for (i = 0; i < numSigFigs; i++) {
-                  if (!(Number(string1[i]) > Number(string2[i]))) {
-                      return false
-                  }
-              }
-              return true
           }
       }
   }
@@ -542,19 +551,16 @@ this.isAmagnitude = undefined;
           } else {
               let string1, string2;
               if (numSigFigs < Infinity) { /// both not exact
-                  string1 = (this.firstSigFig + this.otherSigFigs).slice(0, numSigFigs);
-                  string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs).slice(0, numSigFigs);
+                const tempMag1 = this.roundAndDuplicate(numSigFigs);
+                const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs);
+                const string1 = (tempMag1.firstSigFig + tempMag1.otherSigFigs);
+                const string2 = (tempMag2.firstSigFig + tempMag2.otherSigFigs).slice(0,numSigFigs);
+                return Number(string1) < Number(string2)
               } else { // if both are exact
                   string1 = (this.firstSigFig + this.otherSigFigs);
                   string2 = (anotherMagnitude.firstSigFig + anotherMagnitude.otherSigFigs);
+                  return '????'
               }
-              let i;
-              for (i = 0; i < numSigFigs; i++) {
-                  if (!(Number(string1[i]) < Number(string2[i]))) {
-                      return false
-                  }
-              }
-              return true
           }
       }
   }

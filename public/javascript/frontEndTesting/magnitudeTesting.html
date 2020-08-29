@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Magnitude Tests</title>
     <!-- Bootstrap CSS --->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
@@ -1445,6 +1445,17 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag1019.otherSigFigs, '6', 'rounding', 'standardNotationRounding');
   magnitudeTests.assertEqualStrict(mag1019.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
   magnitudeTests.assertEqualStrict(mag1019.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  const mag1019a = mag1019.roundAndDuplicate(1);
+  magnitudeTests.assertEqualStrict(mag1019a.firstSigFig, '6', 'rounding', 'standardNotationRounding');
+  magnitudeTests.assertEqualStrict(mag1019a.otherSigFigs, '', 'rounding', 'standardNotationRounding');
+  magnitudeTests.assertEqualStrict(mag1019a.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
+  magnitudeTests.assertEqualStrict(mag1019a.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  // does not change original
+  magnitudeTests.assertEqualStrict(mag1019.firstSigFig, '5', 'rounding', 'standardNotationRounding');
+  magnitudeTests.assertEqualStrict(mag1019.otherSigFigs, '6', 'rounding', 'standardNotationRounding');
+  magnitudeTests.assertEqualStrict(mag1019.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
+  magnitudeTests.assertEqualStrict(mag1019.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+
 
   let mag1020 = new Magnitude('60.2'); // 60.
   mag1020.round(2);
@@ -1769,7 +1780,7 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   ///###################################################################
   ///###################################################################
   /// comparison testing
-  magnitudeTests.addCategory('comparison','Comparison');
+/*  magnitudeTests.addCategory('comparison','Comparison');
   magnitudeTests.addSubCategory('comparison','comparison1','Comparison1');
 
   let mag5001a = new Magnitude('2');
@@ -1815,7 +1826,7 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
 
   let mag5007a = new Magnitude('0.456');
   let mag5007b = new Magnitude('0.5');
-  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1');
+  magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1','xxx');
   magnitudeTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5007a.isLessThan(mag5007b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b,2), undefined, 'comparison', 'comparison1');
@@ -1843,7 +1854,7 @@ magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addi
   magnitudeTests.assertEqualStrict(mag5010a.isEqualTo(mag5010b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5010a.isGreaterThan(mag5010b), false, 'comparison', 'comparison1');
   magnitudeTests.assertEqualStrict(mag5010a.isLessThan(mag5010b), true, 'comparison', 'comparison1');
-
+*/
 
   $("#putItHere").append(magnitudeTests.printAllTests());
 
