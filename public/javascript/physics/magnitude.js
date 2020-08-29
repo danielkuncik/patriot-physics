@@ -107,6 +107,9 @@ class Magnitude {
     this.isAmagnitude = undefined;
     this.zeroLimit = undefined;
 
+    this.isAnAngle = false; // used for angles below
+    this.degrees = undefined;
+
     // invalid types
     if ((typeof(numericalString) !== 'string') || numericalString.length === 0) {
       return this.invalidate()
@@ -560,6 +563,7 @@ this.isAmagnitude = undefined;
       }
   }
 
+
   // PRIVATE METHOD!!!!
   // for addition, subtraction, pythagorean addition, pythagorean subtraction
   addOrSubtract(operation, anotherMagnitude, zeroLimit = this.zeroLimit) {
@@ -752,19 +756,19 @@ class Angle extends Magnitude {
     such as addition, subtraction, etc.
      */
 
-    getFloat() { /// float is always in radians, even when the information is in degrees
-        let float = super.getFloat();
-        if (this.degrees) {
-            float *= (Math.PI / 180);
-        }
-        return float
-    }
+    // getFloat() { /// float is always in radians, even when the information is in degrees
+    //     //     let float = super.getFloat();
+    //     //     if (this.degrees) {
+    //     //         float *= (Math.PI / 180);
+    //     //     }
+    //     //     return float
+    //     // }
 
     convertToDegrees() {
         if (this.degrees) {
             return this
         } else {
-            return (this.multiplyMagExactConstant(180)).divideMag(pi)
+            return constructAngleFloat(this.getFloat() * 180 / Math.PI, this.numSigFigs, true, this.exact, this.zeroLimit);
         }
     }
 
@@ -772,19 +776,59 @@ class Angle extends Magnitude {
         if (!this.degrees) {
             return this
         } else {
-            return (this.multiplyMag(pi)).divideMagExactConstant(180)
+            return constructAngleFloat(this.getFloat() * Math.PI / 180, this.numSigFigs, false, this.exact, this.zeroLimit);
         }
     }
 
+    // private method
+    // always returns in the same 'unit', degrees or radians, as the original
+    addOrSubtractAngle(operation, anotherAngle, zeroLimit = this.zeroLimit) {
+        let float1, float2, degrees, newSigFigs, exact;
+        if (!this.degrees && !anotherAngle.degrees) { // can be made more efficient, but i like how understandable it is
+            float1 = this.getFloat();
+            float2 = anotherAngle.getFloat();
+            degrees = false;
+        } else if (this.degrees && !anotherAngle.degrees) {
+            float1 = this.getFloat();
+            float2 = anotherAngle.getFloat * 180 / Math.PI;
+            degrees = true;
+        } else if (!this.degrees && anotherAngle.degrees) {
+            float1 = this.getFloat();
+            float2 = anotherAngle.getFloat / 180 * Math.PI;
+            degrees = false;
+        } else if (this.degrees && anotherAngle.degrees) {
+            float1 = this.getFloat();
+            float2 = anotherAngle.getFloat();
+            degrees = true;
+        }
+        newSigFigs = Math.min(this.numSigFigs, anotherAngle.numSigFigs);
+        exact = newSigFigs === Infinity;
+        let newFloat;
+        if (operation === '+') {
+            newFloat = float1 + float2;
+        } else if (operation === '-') {
+            newFloat = float1 - float2;
+        }
+        return constructAngleFloat(newFloat, newSigFigs, degrees, exact, zeroLimit)
+    }
+
+    addAngle(anotherAngle, zeroLimit) {
+        return this.addOrSubtractAngle('+',anotherAngle, zeroLimit)
+    }
+
+    subtractAngle(anotherAngle, zeroLimit) {
+        return this.addOrSubtractAngle('-',anotherAngle, zeroLimit)
+    }
+
     add90Degrees() {
-        return this.addMag(get90Degrees(undefined,true));
+        return this.addAngle(get90Degrees(undefined,true));
     }
     add180Degrees() {
-        return this.addMag(get180Degrees(undefined,true));
+        return this.addAngle(get180Degrees(undefined,true));
     }
 
     add270Degrees() {
-        return this.addMag(get270Degrees(undefined,true));
+        return this.addAngle(get270Degrees(undefined,true));
     }
 
 
@@ -804,7 +848,8 @@ class Angle extends Magnitude {
             console.log('can only complete trig functions on a unitless quantity');
             return false
         }
-        const newFloat = Math.sin(this.getFloat());
+        const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
+        const newFloat = Math.sin(radiansFloat);
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
@@ -816,7 +861,8 @@ class Angle extends Magnitude {
             console.log('can only complete trig functions on a unitless quantity');
             return false
         }
-        const newFloat = Math.cos(this.getFloat());
+        const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
+        const newFloat = Math.cos(radiansFloat);
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
@@ -828,7 +874,8 @@ class Angle extends Magnitude {
             console.log('can only complete trig functions on a unitless quantity');
             return false
         }
-        const newFloat = Math.tan(this.getFloat());
+        const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
+        const newFloat = Math.tan(radiansFloat);
         const newSigFigs = this.numSigFigs;
         const exact = newSigFigs === Infinity;
         const newUnit = undefined;
