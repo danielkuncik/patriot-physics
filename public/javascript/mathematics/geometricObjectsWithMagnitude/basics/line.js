@@ -1,17 +1,7 @@
 /*
-TO DO: (8-12-2020)
-- finish making all the functions to create different types of polygons: trapezoid, parallelogram, and regular polygon
-- add the polygons to the geometry pad object, so that they all appear there
-- read through triangle to make sure it is consistent and nonredundant with polygon
-- make square, rectangle, and other types into subclasses of polygon, instead of only functions= especially
-
-- fix triangle area function
- */
-
-/// make units one of the objects!!!!
-/*
 UNITS UNITS UNITS
 - deal with the units of the line, pointA and pointB
+
 */
 
 class Line {
@@ -58,14 +48,14 @@ class Line {
 
     isPointOnLine(point, numSigFigs) { // UNTESTED
         if (this.horizontal) {
-            return point.y.isEqual(this.yValue, numSigFigs)
+            return point.y.isEqualTo(this.yValue, numSigFigs)
         } else if (this.vertical) {
-            return point.x.isEqual(this.xValue, numSigFigs)
+            return point.x.isEqualTo(this.xValue, numSigFigs)
         } else {
             const x = point.x;
             const y1 = point.y;
             const y2 = this.function(x);
-            return y1.isEqual(y2, numSigFigs);
+            return y1.isEqualTo(y2, numSigFigs);
         }
     }
 

@@ -1,12 +1,54 @@
+/*
+I need to add something here:
+open and or closed circles on the end, some segments have open circles on the end
+
+
+To Do =>
+to the point on segment, add a num sig figs argument
+ */
+
 class Segment {
-    constructor(point1, point2) {
+    constructor(point1, point2, closedCircleAtPoint1 = true, closedCircleAtPoint2 = true) {
         this.point1 = point1;
         this.point2 = point2;
+        this.closedCircleAtPoint1 = closedCircleAtPoint1;
+        this.closedCircleAtPoint2 = closedCircleAtPoint2;
         // this.thickness = 2;
         // this.color = "#000000";
         // this.cap = "butt";
         // this.dotted = false;
         // this.dashed = false;
+
+        // adopting convention of first and second points
+        this.firstPoint = undefined;
+        this.secondPoint = undefined;
+        this.closedCircleAtFirstPoint = undefined;
+        this.closedCircleAtSecondPoint = undefined;
+        if (this.isVertical()) { // if vertical, first point always below
+            if (this.point1.y.isLessThan(this.point2.y)) {
+                this.firstPoint = this.point1;
+                this.secondPoint = this.point2;
+                this.closedCircleAtFirstPoint = this.closedCircleAtPoint1;
+                this.closedCircleAtSecondPoint = this.closedCircleAtPoint2;
+            } else {
+                this.firstPoint = this.point2;
+                this.secondPoint = this.point1;
+                this.closedCircleAtFirstPoint = this.closedCircleAtPoint2;
+                this.closedCircleAtSecondPoint = this.closedCircleAtPoint1;
+            }
+        } else { // else, first point always to right
+            if (this.point1.x.isLessThan(this.point2.x)) {
+                this.firstPoint = this.point1;
+                this.secondPoint = this.point2;
+                this.closedCircleAtFirstPoint = this.closedCircleAtPoint1;
+                this.closedCircleAtSecondPoint = this.closedCircleAtPoint2;
+            } else {
+                this.firstPoint = this.point2;
+                this.secondPoint = this.point1;
+                this.closedCircleAtFirstPoint = this.closedCircleAtPoint2;
+                this.closedCircleAtSecondPoint = this.closedCircleAtPoint1;
+            }
+        }
 
         this.line = new Line(point1, point2); // a corresponding infinite line through this point
     }
@@ -69,46 +111,21 @@ class Segment {
 
     // gets the slope of a line perpendicular to this line
     getPerpendicularSlope(point1, point2) {
-        const originalSlope = getSlope(point1, point2);
-        if (originalSlope >= 1e10) {return 0;} // due to floating Point arithmetic, a slope zero usually doesn't actually come out as zero!
-        else if (originalSlope <= 1e-10) {return 1e10;} // if it returned Infinity, could lead to NaNs in later calculations
-        else {return -1 / originalSlope;}
+        return this.line.getPerpendicularSlope();
+        // const originalSlope = getSlope(point1, point2);
+        // if (originalSlope >= 1e10) {return 0;} // due to floating Point arithmetic, a slope zero usually doesn't actually come out as zero!
+        // else if (originalSlope <= 1e-10) {return 1e10;} // if it returned Infinity, could lead to NaNs in later calculations
+        // else {return -1 / originalSlope;}
     }
 
 
-    // fix to adapt to magnitudes
-    isPointOnSegment(point) { // UNTESETD
-        if (this.line.isPointOnLine(point)) {
+
+    isPointOnSegment(point, numSigFigs) { // UNTESETD
+        if (this.line.isPointOnLine(point, numSigFigs)) { // point must be on line in order to be on a segment!
             if (this.isVertical()) {
-                let firstY;
-                let secondY;
-                if (this.point1.y <= this.point2.y) {
-                    firstY = this.point1.y;
-                    secondY = this.point2.y;
-                } else {
-                    firstY = this.point2.y;
-                    secondY = this.point1.y;
-                }
-                if (point.y >= firstY && point.y <= secondY) {
-                    return true
-                } else {
-                    return false
-                }
-            } else { // a point is on this segment if it intersects the line and it is within the domain of this segment
-                let firstX;
-                let secondX;
-                if (this.point1.x <= this.point2.x) {
-                    firstX = this.point1.x;
-                    secondX = this.point2.x;
-                } else {
-                    firstX = this.point2.x;
-                    secondX = this.point1.x;
-                }
-                if (point.x >= firstX && point.x <= secondX) {
-                    return true
-                } else {
-                    return false
-                }
+                return ((this.closedCircleAtPoint1 && point.y.isGreaterThanOrEqualTo(this.point1.y, numSigFigs)) || point.y.isGreaterThan(this.point1.y, numSigFigs)) && ((this.closedCircleAtPoint2 && point.y.isLessThanOrEqualTo(this.point2.y, numSigFigs)) || point.y.isLessThan(this.point2.y, numSigFigs))
+            } else {
+                 return ((this.closedCircleAtPoint1 && point.x.isGreaterThanOrEqualTo(this.point1.x, numSigFigs)) || point.x.isGreaterThan(this.point1.x, numSigFigs)) && ((this.closedCircleAtPoint2 && point.x.isLessThanOrEqualTo(this.point2.x, numSigFigs)) || point.x.isLessThan(this.point2.x, numSigFigs))
             }
         } else {
             return false

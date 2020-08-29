@@ -507,7 +507,7 @@ this.isAmagnitude = undefined;
               tempMag1 = this.roundAndDuplicate(anotherMagnitude.numSigFigs);
               tempMag2 = anotherMagnitude.duplicate();
           }
-          if (this.compareMagnitudesWithEqualNumbersOfSigFigs('equal', tempMag1, tempMag2)) {
+          if (this.compareMagnitudesWithEqualNumbersOfSigFigs('=', tempMag1, tempMag2)) {
               return undefined // if equal when rounded to the same number of significant figures, then you cannot conduct a comparison test
           } else { ///
               return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) // otherwise, you can compare them once they are the same number of sig figs
@@ -525,26 +525,37 @@ this.isAmagnitude = undefined;
 
   // testes if equal up to a certain number of sig figs
   isEqualTo(anotherMagnitude, numSigFigs) {
-          return this.comparisonTest('equal', anotherMagnitude, numSigFigs)
+          return this.comparisonTest('=', anotherMagnitude, numSigFigs)
   }
 
   isGreaterThan(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('greater', anotherMagnitude, numSigFigs)
+      return this.comparisonTest('>', anotherMagnitude, numSigFigs)
   }
   isLessThan(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('lesser', anotherMagnitude, numSigFigs)
+      return this.comparisonTest('<', anotherMagnitude, numSigFigs)
+  }
+  isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
+      return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
+  }
+
+  isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
+      return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
   }
 
   //// PRIVATE FUNCTION!
   compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) {
       const num1 = Number(`${tempMag1.sign===false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}`); // do not use getFloat(), because intermediate values should not be used for comparison testing
       const num2 = Number(`${tempMag2.sign===false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}`);
-      if (type === 'equal') {
+      if (type === '=') {
           return num1 === num2
-      } else if (type === 'greater') {
+      } else if (type === '>') {
           return num1 > num2
-      } else if (type === 'lesser') {
+      } else if (type === '<') {
           return num1 < num2
+      } else if (type === '>=') {
+          return num1 >= num2
+      } else if (type === '<=') {
+          return num1 <= num2
       }
   }
 
