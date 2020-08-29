@@ -217,6 +217,15 @@ lineTests.addCategory('intersection','Intersection Tests');
 lineTests.addSubCategory('intersection','intersection 1', 'Intersection Tests 1');
 
 
+lineTests.addCategory('pointOnLine', 'Point on Line');
+lineTests.addSubCategory('pointOnLine', 'pointOnLine1', 'Point On Line 1');
+
+const line301 = constructLineSlopeIntercept(new Magnitude('5.00'), constructZeroMagnitude(3));
+const point301a = new Point(new Magnitude('2.00'), new Magnitude('10.0'));
+const point301b = new Point(new Magnitude('2.00'), new Magnitude('15.0'));
+lineTests.assertEqualStrict(line301.isPointOnLine(point301a), true, 'pointOnLine', 'pointOnLine1');
+lineTests.assertEqualStrict(line301.isPointOnLine(point301b), false, 'pointOnLine', 'pointOnLine1');
+
 
   $("#putItHere").append(lineTests.printAllTests());
 
