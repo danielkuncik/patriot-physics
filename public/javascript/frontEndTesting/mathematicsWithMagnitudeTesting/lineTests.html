@@ -223,8 +223,14 @@ lineTests.addSubCategory('pointOnLine', 'pointOnLine1', 'Point On Line 1');
 const line301 = constructLineSlopeIntercept(new Magnitude('5.00'), constructZeroMagnitude(3));
 const point301a = new Point(new Magnitude('2.00'), new Magnitude('10.0'));
 const point301b = new Point(new Magnitude('2.00'), new Magnitude('15.0'));
+const point301c = new Point(new Magnitude('-4.00'), new Magnitude('20.0'));
+const point301d = new Point(new Magnitude('8.00'), new Magnitude('39.0'));
+const point301e = makeOrigin(3);
 lineTests.assertEqualStrict(line301.isPointOnLine(point301a), true, 'pointOnLine', 'pointOnLine1');
 lineTests.assertEqualStrict(line301.isPointOnLine(point301b), false, 'pointOnLine', 'pointOnLine1');
+lineTests.assertEqualStrict(line301.isPointOnLine(point301c), true, 'pointOnLine', 'pointOnLine1');
+lineTests.assertEqualStrict(line301.isPointOnLine(point301d), false, 'pointOnLine', 'pointOnLine1');
+lineTests.assertEqualStrict(line301.isPointOnLine(point301e), true, 'pointOnLine', 'pointOnLine1');
 
 
   $("#putItHere").append(lineTests.printAllTests());

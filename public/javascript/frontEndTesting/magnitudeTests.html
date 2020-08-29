@@ -37,13 +37,14 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
 
   magnitudeTests.addSubCategory('constructor', 'integers', 'Integers');
   let mag001 = new Magnitude('1235124');
-  magnitudeTests.assertEqualStrict(mag001.isAmagnitude, true, 'constructor', 'integers');
-  magnitudeTests.assertEqualStrict(mag001.firstSigFig, '1', 'constructor', 'integers');
-  magnitudeTests.assertEqualStrict(mag001.otherSigFigs, '235124', 'constructor', 'integers');
-  magnitudeTests.assertEqualStrict(mag001.orderOfMagnitude, 6, 'constructor', 'integers');
-  magnitudeTests.assertEqualStrict(mag001.numSigFigs, 7, 'constructor', 'integers');
-  magnitudeTests.assertEqualStrict(mag001.positive, true, 'constructor', 'integers');
-
+  magnitudeTests.assertMagnitude(mag001, {
+    "firstSigFig": 1,
+    "otherSigFigs": "235124",
+    "orderOfMagnitude": 6,
+    "numSigFigs": 7,
+    "positive": true
+  })
+  
   let mag002 = new Magnitude('12412123');
   magnitudeTests.assertEqualStrict(mag002.isAmagnitude, true, 'constructor', 'integers');
   magnitudeTests.assertEqualStrict(mag002.firstSigFig, '1', 'constructor', 'integers');
