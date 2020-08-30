@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+<body>
+<script src = '../frontEndTesting.js'></script>
+<script src = '../../physics/reference/units.js'></script>
+<script src = '../../physics/physicsNumber.js'></script>
+<script src = '../../physics/magnitude.js'></script>
+<script src = '../../physics/angle.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/segment.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/polygon.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/triangle.js'></script>
+
+<div id = 'putItHere'></div>
+
+
+<script>
+    let triangleTests = new TestPackage('Triangle Tests');
+    triangleTests.addCategory('construction', 'Construction Tests');
+    triangleTests.addCategory('construction', 'construction1', 'Construct From Points');
+    triangleTests.addCategory('construction', 'construction2', 'Construct Equilateral Triangle');
+    triangleTests.addCategory('construction', 'construction3', 'Construct Isosceles Triangle');
+    triangleTests.addCategory('construction', 'construction4', 'Construct Right Triangle Hypotenuse Angle');
+    triangleTests.addCategory('construction', 'construction5', 'Construct Right Triangle Two Legs');
+    triangleTests.addCategory('construction', 'construction6', 'Construct Right Triangle Hypotenuse Leg');
+    triangleTests.addCategory('construction', 'construction7', 'Construct SAS');
+    triangleTests.addCategory('construction', 'construction8', 'Construct ASA');
+    triangleTests.addCategory('construction', 'construction9', 'Construct SSS');
+    triangleTests.addCategory('construction', 'construction10', 'Construct AAS');
+
+    let triangle1 = constructEquilateralTriangle(10);
+    triangleTests.assertEqualFloat(triangle1.vertexA.x,0,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.vertexA.y,0,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.vertexB.x,5,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.vertexB.y,5 * Math.sqrt(3),'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.vertexC.x,10,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.vertexC.y,0,'construction','construction2');
+
+    triangleTests.assertEqualFloat(triangle1.angleA,60,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.angleB,60,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.angleC,60,'construction','construction2');
+
+    triangleTests.assertEqualFloat(triangle1.sideLengthA,10,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.sideLengthB,10,'construction','construction2');
+    triangleTests.assertEqualFloat(triangle1.sideLengthC,10,'construction','construction2');
+
+
+    let triangle2 = constructIsoscelesTriangle(20,40);
+    triangleTests.assertEqualFloat(triangle2.vertexA.x,0,'construction', 'construction3');
+    triangleTests.assertEqualFloat(triangle2.vertexA.y,0,'construction', 'construction3');
+    triangleTests.assertEqualFloat(triangle2.vertexB.x,10,'construction', 'construction3');
+    triangleTests.assertEqualFloat(triangle2.vertexB.y,40,'construction', 'construction3');
+    triangleTests.assertEqualFloat(triangle2.vertexC.x,20,'construction', 'construction3');
+    triangleTests.assertEqualFloat(triangle2.vertexC.y,0,'construction', 'construction3');
+
+    // mathTests.assertEqualFloat(triangle2.angleA,0,'construction', 'construction3');
+    // mathTests.assertEqualFloat(triangle2.angleB,0,'construction', 'construction3');
+    // mathTests.assertEqualFloat(triangle2.angleC,0,'construction', 'construction3');
+    //
+    // mathTests.assertEqualFloat(triangle2.sideLengthA,0,'construction', 'construction3');
+    // mathTests.assertEqualFloat(triangle2.sideLengthB,0,'construction', 'construction3');
+    // mathTests.assertEqualFloat(triangle2.sideLengthC,0,'construction', 'construction3');
+
+
+    let triangle3 = constructRightTriangleHypotenuseAngle(4,45);
+    triangleTests.assertEqualFloat(triangle3.vertexA.x,0,'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.vertexA.y,0,'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.vertexB.x, 4 / Math.sqrt(2),'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.vertexB.y, 4 / Math.sqrt(2),'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.vertexC.x, 4 / Math.sqrt(2),'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.vertexC.y,0,'construction', 'construction4');
+
+    triangleTests.assertEqualFloat(triangle3.angleA,45,'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.angleB,45,'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.angleC,90,'construction', 'construction4');
+
+    triangleTests.assertEqualFloat(triangle3.sideLengthA,4 / Math.sqrt(2),'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.sideLengthB,4 / Math.sqrt(2),'construction', 'construction4');
+    triangleTests.assertEqualFloat(triangle3.sideLengthC,4,'construction', 'construction4');
+
+
+    $("#putItHere").append(triangleTests.printAllTests());
+
+</script>
+
+</body>
+</html>

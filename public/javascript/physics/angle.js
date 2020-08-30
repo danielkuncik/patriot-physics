@@ -1,4 +1,3 @@
-const pi = new Magnitude('3.14159265358979323846');
 
 class Angle extends PhysicsNumber {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
@@ -77,6 +76,45 @@ class Angle extends PhysicsNumber {
         return this.addAngle(get270Degrees(undefined,true));
     }
 
+    // make same units
+    makeSameUnits(anotherAngle) {
+        if (this.degrees) {
+            return anotherAngle.convertToDegrees()
+        } else {
+            return anotherAngle.convertToRadians()
+        }
+    }
+
+
+    // testes if equal up to a certain number of sig figs
+    isEqualTo(anotherAngle, numSigFigs) {
+       const tempAngle = this.makeSameUnits(anotherAngle);
+       return super.isEqualTo(tempAngle, numSigFigs)
+    }
+
+    isGreaterThan(anotherAngle, numSigFigs) {
+        const tempAngle = this.makeSameUnits(anotherAngle);
+        return super.isGreaterThan(tempAngle, numSigFigs)
+    }
+
+    isLessThan(anotherAngle, numSigFigs) {
+        const tempAngle = this.makeSameUnits(anotherAngle);
+        return super.isLessThan(tempAngle, numSigFigs)
+    }
+
+    isGreaterThanOrEqualTo(anotherAngle, numSigFigs) {
+        const tempAngle = this.makeSameUnits(anotherAngle);
+        return super.isGreaterThanOrEqualTo(tempAngle, numSigFigs)
+    }
+
+    isLessThanOrEqualTo(anotherAngle, numSigFigs) {
+        const tempAngle = this.makeSameUnits(anotherAngle);
+        return super.isLessThanOrEqualTo(tempAngle, numSigFigs)
+    }
+
+    isRight(numSigFigs = this.numSigFigs) {
+        return this.isEqualTo(new Angle('90',true, undefined, true), numSigFigs)
+    }
 
     printString(degrees = true) {
 
@@ -159,4 +197,17 @@ function constructZeroAngle(float, numSigFigs, exact = false) {
     }
     return new Angle(string,undefined, undefined,exact);
 
+}
+
+
+/// not yet converted!
+// converts an angle that is outside the range of 0 to 2pi into that range
+function simplifyAngle(angleInRadians) {
+    while (angleInRadians < 0) {
+        angleInRadians += 2 * Math.PI;
+    }
+    while (angleInRadians >= Math.PI * 2) {
+        angleInRadians -= 2 * Math.PI;
+    }
+    return angleInRadians
 }

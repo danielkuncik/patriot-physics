@@ -28,17 +28,61 @@
 <script>
     let randomTests = new TestPackage('Random Tests');
 
-    let mag5018a = new Magnitude('0.00');
-    let mag5018b = new Magnitude('0.00');
-    randomTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b), true, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b), false, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isLessThan(mag5018b), false, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,2 ), true, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,2), false, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,2), false, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,4), undefined, 'comparison', 'comparison1'); /// do not have the fourth sig to tell if they continue to be zero
-    randomTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,4), undefined, 'comparison', 'comparison1');
-    randomTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,4), undefined, 'comparison', 'comparison1');
+    let mag1036 = new Magnitude('90',undefined,undefined,true); // 90 exact rounds to 100!!!!
+    mag1036.round(1);
+    randomTests.assertMagnitude(mag1036, {
+        "firstSigFig": "9",
+        "otherSigFigs": "",
+        "numSigFigs": 1,
+        "orderOfMagnitude": 1,
+        "positive": true,
+        "float": 90
+    }, 'rounding', 'exactRounding');
+
+    let mag1037 = new Magnitude('90',undefined,undefined,false); // same issue, but not exact
+    mag1037.round(1);
+    randomTests.assertMagnitude(mag1037, {
+        "firstSigFig": "9",
+        "otherSigFigs": "",
+        "numSigFigs": 1,
+        "orderOfMagnitude": 1,
+        "positive": true,
+        "float": 90
+    }, 'rounding', 'exactRounding');
+
+    let mag1038 = new Magnitude('90.0',undefined,undefined,false); // same issue, but not exact
+    mag1038.round(1);
+    randomTests.assertMagnitude(mag1038, {
+        "firstSigFig": "9",
+        "otherSigFigs": "",
+        "numSigFigs": 1,
+        "orderOfMagnitude": 1,
+        "positive": true,
+        "float": 90
+    }, 'rounding', 'exactRounding');
+
+    let mag1039 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
+    mag1039.round(1);
+    randomTests.assertMagnitude(mag1039, {
+        "firstSigFig": "1",
+        "otherSigFigs": "",
+        "numSigFigs": 1,
+        "orderOfMagnitude": 2,
+        "positive": true,
+        "float": 100
+    }, 'rounding', 'exactRounding');
+
+    let mag1040 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
+    mag1040.round(2);
+    randomTests.assertMagnitude(mag1040, {
+        "firstSigFig": "9",
+        "otherSigFigs": "9",
+        "numSigFigs": 2,
+        "orderOfMagnitude": 1,
+        "positive": true,
+        "float": 99
+    }, 'rounding', 'exactRounding');
+
 
     $("#putItHere").append(randomTests.printAllTests());
 

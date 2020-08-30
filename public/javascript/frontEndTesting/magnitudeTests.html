@@ -1570,43 +1570,102 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag1035.otherSigFigs, '', 'rounding', 'standardNotationRounding');
   magnitudeTests.assertEqualStrict(mag1035.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
   magnitudeTests.assertEqualStrict(mag1035.numSigFigs, 1, 'rounding', 'standardNotationRounding');
-/*
-  let mag1036 = new Magnitude(undefined);
-  mag1036.round();
-  magnitudeTests.assertEqualStrict(mag1036.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1036.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1036.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1036.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
 
-  let mag1037 = new Magnitude(undefined);
-  mag1037.round();
-  magnitudeTests.assertEqualStrict(mag1037.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1037.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1037.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1037.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+  magnitudeTests.addSubCategory('rounding', 'exactRounding', 'Rounding Exact Values to Unexact Values');
 
-  let mag1038 = new Magnitude(undefined);
-  mag1038.round();
-  magnitudeTests.assertEqualStrict(mag1038.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1038.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1038.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1038.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+  let mag1036 = new Magnitude('90',undefined,undefined,true); // 90 exact rounds to 100!!!!
+  mag1036.round(1);
+  magnitudeTests.assertMagnitude(mag1036, {
+      "firstSigFig": "9",
+      "otherSigFigs": "",
+      "numSigFigs": 1,
+      "orderOfMagnitude": 1,
+      "positive": true,
+      "float": 90
+  }, 'rounding', 'exactRounding');
 
-  let mag1039 = new Magnitude(undefined);
-  mag1039.round();
-  magnitudeTests.assertEqualStrict(mag1039.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1039.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1039.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1039.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+  let mag1037 = new Magnitude('90',undefined,undefined,false); // same issue, but not exact
+  mag1037.round(1);
+  magnitudeTests.assertMagnitude(mag1037, {
+      "firstSigFig": "9",
+      "otherSigFigs": "",
+      "numSigFigs": 1,
+      "orderOfMagnitude": 1,
+      "positive": true,
+      "float": 90
+  }, 'rounding', 'exactRounding');
 
-  let mag1040 = new Magnitude(undefined);
-  mag1040.round();
-  magnitudeTests.assertEqualStrict(mag1040.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1040.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1040.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
-  magnitudeTests.assertEqualStrict(mag1040.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+  let mag1038 = new Magnitude('90.0',undefined,undefined,false); // same issue, but not exact
+  mag1038.round(1);
+  magnitudeTests.assertMagnitude(mag1038, {
+      "firstSigFig": "9",
+      "otherSigFigs": "",
+      "numSigFigs": 1,
+      "orderOfMagnitude": 1,
+      "positive": true,
+      "float": 90
+  }, 'rounding', 'exactRounding');
 
-*/
+  let mag1039 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
+  mag1039.round(1);
+  magnitudeTests.assertMagnitude(mag1039, {
+      "firstSigFig": "1",
+      "otherSigFigs": "",
+      "numSigFigs": 1,
+      "orderOfMagnitude": 2,
+      "positive": true,
+      "float": 100
+  }, 'rounding', 'exactRounding');
+
+  let mag1040 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
+  mag1040.round(2);
+  magnitudeTests.assertMagnitude(mag1040, {
+      "firstSigFig": "9",
+      "otherSigFigs": "9",
+      "numSigFigs": 2,
+      "orderOfMagnitude": 1,
+      "positive": true,
+      "float": 99
+  }, 'rounding', 'exactRounding');
+
+
+  /*
+    let mag1036 = new Magnitude(undefined);
+    mag1036.round();
+    magnitudeTests.assertEqualStrict(mag1036.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1036.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1036.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1036.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+
+    let mag1037 = new Magnitude(undefined);
+    mag1037.round();
+    magnitudeTests.assertEqualStrict(mag1037.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1037.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1037.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1037.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+
+    let mag1038 = new Magnitude(undefined);
+    mag1038.round();
+    magnitudeTests.assertEqualStrict(mag1038.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1038.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1038.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1038.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+
+    let mag1039 = new Magnitude(undefined);
+    mag1039.round();
+    magnitudeTests.assertEqualStrict(mag1039.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1039.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1039.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1039.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+
+    let mag1040 = new Magnitude(undefined);
+    mag1040.round();
+    magnitudeTests.assertEqualStrict(mag1040.firstSigFig, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1040.otherSigFigs, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1040.orderOfMagnitude, undefined, 'rounding', 'standardNotationRounding');
+    magnitudeTests.assertEqualStrict(mag1040.numSigFigs, undefined, 'rounding', 'standardNotationRounding');
+
+  */
 
 ///###################################################################
 ///###################################################################

@@ -252,7 +252,26 @@ class PhysicsNumber {
     this.orderOfMagnitude = undefined;
   }
 
-  //// PRIVATE METHOD!!! [but i'm using it in the point object]
+    setValueNegInfinity() {
+        this.setValueInfinity();
+        this.reverseSign();
+    }
+
+
+    duplicate() {
+        const string = !this.zero ? `${this.positive === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}` : `${this.firstSigFig}.${this.otherSigFigs}`;
+        const exact = this.numSigFigs === Infinity;
+        const intermediateValue = this.intermediateValue;
+        return new PhysicsNumber(string, intermediateValue, exact)
+    }
+
+    roundAndDuplicate(numSigFigs) {
+        let tempMag = this.duplicate();
+        tempMag.round(numSigFigs);
+        return tempMag;
+    }
+
+    //// PRIVATE METHOD!!! [but i'm using it in the point object]
   reverseSign() {
       if (this.zero) {
           return false
@@ -265,11 +284,6 @@ class PhysicsNumber {
 
   abs() {
       this.positive = true;
-  }
-
-  setValueNegInfinity() {
-    this.setValueInfinity();
-    this.reverseSign();
   }
 
   setZeroLimit(newZeroLimit) { // for low values (less than order og magnitude -10; ensures they will not be erased automatically during operations
@@ -293,39 +307,50 @@ class PhysicsNumber {
     }
   }
 
+  /// PRIVATE FUNCTION
+  roundToFewerSigFigs(newSigFigs) {
+      this.numSigFigs = newSigFigs;
+      let numString = this.firstSigFig + this.otherSigFigs;
+      let testChar = numString[newSigFigs];
+      let numStringNew = numString.slice(0,newSigFigs);
+      if (testChar === '0' || testChar === '1' || testChar === '2' || testChar === '3' || testChar === '4') {  // round down
+          this.firstSigFig = numStringNew[0];
+          this.otherSigFigs = numStringNew.slice(1,newSigFigs); /// chech this
+      } else { // round up
+          if (allNines(numString)) { // numstring is all 9s
+              numStringNew = '1';
+              let k;
+              for (k = 0; k < this.numSigFigs - 1; k++) {
+                  numStringNew = numStringNew + '0';
+              }
+              this.orderOfMagnitude += 1;
+          } else { /// numstring not all 9s
+              let index = newSigFigs - 1;
+              while (numStringNew[index] === '9') {
+                  numStringNew = reassignDigit(numStringNew, index, '0');
+                  index--;
+              }
+              numStringNew = roundUpDigit(numStringNew,index);
+          }
+          this.firstSigFig = numStringNew[0];
+          this.otherSigFigs = numStringNew.slice(1,numStringNew.length);
+      }
+  }
+
   round(newSigFigs) {
     if (newSigFigs > this.numSigFigs) {
         // console.log('unable to add significant figures to a magnitude');
         return this
     } else if (newSigFigs === this.numSigFigs) {
         return this
-    } else {
-        this.numSigFigs = newSigFigs;
-        let numString = this.firstSigFig + this.otherSigFigs;
-        let testChar = numString[newSigFigs];
-        let numStringNew = numString.slice(0,newSigFigs);
-        if (testChar === '0' || testChar === '1' || testChar === '2' || testChar === '3' || testChar === '4') {  // round down
-            this.firstSigFig = numStringNew[0];
-            this.otherSigFigs = numStringNew.slice(1,newSigFigs); /// chech this
-        } else { // round up
-            if (allNines(numString)) { // numstring is all 9s
-                numStringNew = '1';
-                let k;
-                for (k = 0; k < this.numSigFigs - 1; k++) {
-                    numStringNew = numStringNew + '0';
-                }
-                this.orderOfMagnitude += 1;
-            } else { /// numstring not all 9s
-                let index = newSigFigs - 1;
-                while (numStringNew[index] === '9') {
-                    numStringNew = reassignDigit(numStringNew, index, '0');
-                    index--;
-                }
-                numStringNew = roundUpDigit(numStringNew,index);
-            }
-            this.firstSigFig = numStringNew[0];
-            this.otherSigFigs = numStringNew.slice(1,numStringNew.length);
+    } else if (this.numSigFigs === Infinity) {
+        let i;
+        for (i = 0; i < newSigFigs+ 2; i++) {
+            this.otherSigFigs = this.otherSigFigs + '0'; // add lots of zeros, then round to fewer sig figs
         }
+        this.roundToFewerSigFigs(newSigFigs);
+    } else {
+        this.roundToFewerSigFigs(newSigFigs)
     }
   }
 
@@ -407,4 +432,85 @@ class PhysicsNumber {
       }
       return val
   }
+
+
+    // what about signs?????
+    comparisonTest(type, anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
+      if (numSigFigs > Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) { // asking for more sig figs than you actually have
+            /*
+            In this case, i need to figure out if they COULD possibly be equal, or not, to a greater number of sig figs
+            example:
+            0.5 and 0.456, no
+            to one sig fig these are equal
+            to two or more sig figs, we are not sure, they could be equal, greater, or less
+
+            but, 8.0 and 4
+            no matter how many sig figs you have, will never be equal!
+             */
+            let tempMag1, tempMag2;
+            if (this.numSigFigs < anotherMagnitude.numSigFigs) {
+                tempMag1 = this.duplicate();
+                tempMag2 = anotherMagnitude.roundAndDuplicate(this.numSigFigs);
+            } else if (this.numSigFigs === anotherMagnitude.numSigFigs) {
+                tempMag1 = this.duplicate();
+                tempMag2 = anotherMagnitude.duplicate();
+            } else if (this.numSigFigs > anotherMagnitude.numSigFigs) {
+                tempMag1 = this.roundAndDuplicate(anotherMagnitude.numSigFigs);
+                tempMag2 = anotherMagnitude.duplicate();
+            }
+            if (this.comparePhysicsNumbersWithEqualNumbersOfSigFigs('=', tempMag1, tempMag2)) {
+                return undefined // if equal when rounded to the same number of significant figures, then you cannot conduct a comparison test
+            } else { ///
+                return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) // otherwise, you can compare them once they are the same number of sig figs
+            }
+        } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs < Infinity) { // asking for fewer sig figs than you have (what about exact????)
+            const tempMag1 = this.roundAndDuplicate(numSigFigs);
+            const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs); // now they have the same number of sig figs
+          console.log(tempMag1, tempMag2);
+            return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2)
+        } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs === Infinity) {
+            // two exact numbers
+            return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, this, anotherMagnitude)
+            return undefined
+        }
+    }
+
+    // testes if equal up to a certain number of sig figs
+    isEqualTo(anotherMagnitude, numSigFigs) {
+        return this.comparisonTest('=', anotherMagnitude, numSigFigs)
+    }
+
+    isGreaterThan(anotherMagnitude, numSigFigs) {
+        return this.comparisonTest('>', anotherMagnitude, numSigFigs)
+    }
+    isLessThan(anotherMagnitude, numSigFigs) {
+        return this.comparisonTest('<', anotherMagnitude, numSigFigs)
+    }
+    isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
+        return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
+    }
+
+    isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
+        return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
+    }
+
+    //// PRIVATE FUNCTION!
+    comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) {
+        const string1 = !tempMag1.zero ? `${tempMag1.positive === false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}` : `${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}`;
+        const string2 = !tempMag2.zero ? `${tempMag1.positive === false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}` : `${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}`;
+        const num1 = Number(string1); // do not use getFloat(), because intermediate values should not be used for comparison testing
+        const num2 = Number(string2);
+        if (type === '=') {
+            return num1 === num2
+        } else if (type === '>') {
+            return num1 > num2
+        } else if (type === '<') {
+            return num1 < num2
+        } else if (type === '>=') {
+            return num1 >= num2
+        } else if (type === '<=') {
+            return num1 <= num2
+        }
+    }
+
 }

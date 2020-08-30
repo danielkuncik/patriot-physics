@@ -21,7 +21,7 @@ class Magnitude extends PhysicsNumber {
 
 
   duplicate() {
-    const string = !this.zero ? `${this.sign === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}` : `${this.firstSigFig}.${this.otherSigFigs}`;
+    const string = !this.zero ? `${this.positive === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}` : `${this.firstSigFig}.${this.otherSigFigs}`;
     const exact = this.numSigFigs === Infinity;
     const unit = this.unit;
     const intermediateValue = this.intermediateValue;
@@ -76,88 +76,41 @@ class Magnitude extends PhysicsNumber {
 
   }
 
-  // what about signs?????
-  comparisonTest(type, anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
-      if (this.unit !== anotherMagnitude.unit) { // cannot compare magnitudes of different units
-          return undefined
-      } else if (numSigFigs > Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) { // asking for more sig figs than you actually have
-          /*
-          In this case, i need to figure out if they COULD possibly be equal, or not, to a greater number of sig figs
-          example:
-          0.5 and 0.456, no
-          to one sig fig these are equal
-          to two or more sig figs, we are not sure, they could be equal, greater, or less
-
-          but, 8.0 and 4
-          no matter how many sig figs you have, will never be equal!
-           */
-          let tempMag1, tempMag2;
-          if (this.numSigFigs < anotherMagnitude.numSigFigs) {
-              tempMag1 = this.duplicate();
-              tempMag2 = anotherMagnitude.roundAndDuplicate(this.numSigFigs);
-          } else if (this.numSigFigs === anotherMagnitude.numSigFigs) {
-              tempMag1 = this.duplicate();
-              tempMag2 = anotherMagnitude.duplicate();
-          } else if (this.numSigFigs > anotherMagnitude.numSigFigs) {
-              tempMag1 = this.roundAndDuplicate(anotherMagnitude.numSigFigs);
-              tempMag2 = anotherMagnitude.duplicate();
-          }
-          if (this.compareMagnitudesWithEqualNumbersOfSigFigs('=', tempMag1, tempMag2)) {
-              return undefined // if equal when rounded to the same number of significant figures, then you cannot conduct a comparison test
-          } else { ///
-              return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) // otherwise, you can compare them once they are the same number of sig figs
-          }
-      } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs < Infinity) { // asking for fewer sig figs than you have (what about exact????)
-          const tempMag1 = this.roundAndDuplicate(numSigFigs);
-          const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs); // now they have the same number of sig figs
-          return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2)
-      } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs === Infinity) {
-          // two exact numbers
-          return this.compareMagnitudesWithEqualNumbersOfSigFigs(type, this, anotherMagnitude)
-          return undefined
+    // testes if equal up to a certain number of sig figs
+    isEqualTo(anotherMagnitude, numSigFigs) {
+      if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+        return super.isEqualTo(anotherMagnitude, numSigFigs)
       }
-  }
+    }
 
-  // testes if equal up to a certain number of sig figs
-  isEqualTo(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('=', anotherMagnitude, numSigFigs)
-  }
+    isGreaterThan(anotherMagnitude, numSigFigs) {
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+            return super.isGreaterThan(anotherMagnitude, numSigFigs)
+        }
+    }
 
-  isGreaterThan(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('>', anotherMagnitude, numSigFigs)
-  }
-  isLessThan(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('<', anotherMagnitude, numSigFigs)
-  }
-  isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
-  }
+    isLessThan(anotherMagnitude, numSigFigs) {
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+            return super.isLessThan(anotherMagnitude, numSigFigs)
+        }
+    }
 
-  isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
-      return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
-  }
+    isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+            return super.isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs)
+        }
+    }
 
-  //// PRIVATE FUNCTION!
-  compareMagnitudesWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) {
-      const string1 = !tempMag1.zero ? `${tempMag1.sign === false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}` : `${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}`;
-      const string2 = !tempMag2.zero ? `${tempMag1.sign === false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}` : `${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}`;
-      const num1 = Number(string1); // do not use getFloat(), because intermediate values should not be used for comparison testing
-      const num2 = Number(string2);
-      if (type === '=') {
-          return num1 === num2
-      } else if (type === '>') {
-          return num1 > num2
-      } else if (type === '<') {
-          return num1 < num2
-      } else if (type === '>=') {
-          return num1 >= num2
-      } else if (type === '<=') {
-          return num1 <= num2
-      }
-  }
+    isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+            return super.isLessThanOrEqualTo(anotherMagnitude, numSigFigs)
+        }
+    }
 
 
-  // PRIVATE METHOD!!!!
+
+
+    // PRIVATE METHOD!!!!
   // for addition, subtraction, pythagorean addition, pythagorean subtraction
   addOrSubtract(operation, anotherMagnitude, zeroLimit = this.zeroLimit) {
       let canIdoIt; // you can only add or subtract magnitudes of the same unit, but any zero can always be added or subtracted
