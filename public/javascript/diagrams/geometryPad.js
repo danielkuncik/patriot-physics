@@ -13,7 +13,7 @@ To do: (8-12-2020)
  */
 
 // for making shapes etc.
-class GeometryPad extends Diagram {
+class GeometryPad extends DiagramF {
     constructor() {
         super();
         this.triangles = [];
@@ -56,12 +56,12 @@ class GeometryPad extends Diagram {
     }
 
     addTriangleVertices(vertexA, vertexB, vertexC) {
-        let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+        let newTriangle = new TriangleF(vertexA, vertexB, vertexC);
         return this.addTriangleObject(newTriangle)
     }
 
     addEquilateralTriangle(sideLength, vertexA) {
-      return this.addTriangleObject(constructEquilateralTriangle(sideLength, vertexA));
+      return this.addTriangleObject(constructEquilateralTriangleF(sideLength, vertexA));
     }
     addIsoscelesTriangle(width, height, vertexA) {
       return this.addTriangleObject(constructIsocelesTriangle(width, height, vertexA))
@@ -77,27 +77,27 @@ class GeometryPad extends Diagram {
     }
 
     addRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, rightAngleMarker = true, vertexA) {
-      return this.addRightTriangle(constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA), rightAngleMarker);
+      return this.addRightTriangle(constructRightTriangleHypotenuseAngleF(hypotenuse, angleA, swapLegs, vertexA), rightAngleMarker);
     }
 
     addRightTriangleTwoLegs(xLeg, yLeg, swapLegs, rightAngleMarker = true, vertexA) {
-       return this.addRightTriangle(constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA), rightAngleMarker)
+       return this.addRightTriangle(constructRightTriangleTwoLegsF(xLeg, yLeg, swapLegs, vertexA), rightAngleMarker)
     }
     addRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, rightAngleMarker = true, vertexA) {
-      return this.addRightTriangle(constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA), rightAngleMarker)
+      return this.addRightTriangle(constructRightTriangleHypotenuseLegF(hypotenuse, xLeg, swapLegs, vertexA), rightAngleMarker)
     }
 
     addTriangleSAS(sideC, angleBinDegrees, sideA, vertexA) {
-      return this.addTriangleObject(constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA))
+      return this.addTriangleObject(constructTriangleSASF(sideC, angleBinDegrees, sideA, vertexA))
     }
     addTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA) {
-      return this.addTriangleObject(constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA))
+      return this.addTriangleObject(constructTriangleASAF(angleAinDegrees, sideC, angleBinDegrees, vertexA))
     }
     addTriangleSSS(sideC, sideB, sideA, vertexA) {
-      return this.addTriangleObject(constructTriangleSSS(sideC, sideB, sideA, vertexA))
+      return this.addTriangleObject(constructTriangleSSSF(sideC, sideB, sideA, vertexA))
     }
     addTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) {
-      return this.addTriangleObject(constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA))
+      return this.addTriangleObject(constructTriangleAASF(angleCinDegrees, angleAinDegrees, sideC, vertexA))
     }
 
 
@@ -349,14 +349,14 @@ class GeometryPad extends Diagram {
       }
     }
 
-    addSquare(sideLength, vertex0 = makeOrigin()) {
-      let newSquare = new Square(sideLength);
+    addSquare(sideLength, vertex0 = makeOriginF()) {
+      let newSquare = new SquareF(sideLength);
       this.rectangles.push(newSquare);
       this.addNonTrianglePolygonToDiagram(newSquare);
     }
 
-    addRectangle(width, height, vertex0 = makeOrigin()) {
-      let newRectangle = new Rectangle(width, height, vertex0);
+    addRectangle(width, height, vertex0 = makeOriginF()) {
+      let newRectangle = new RectangleF(width, height, vertex0);
       this.rectangles.push(newRectangle);
       this.addNonTrianglePolygonToDiagram(newRectangle);
     }

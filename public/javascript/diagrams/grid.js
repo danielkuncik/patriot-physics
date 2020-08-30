@@ -1,4 +1,4 @@
-class Grid extends Diagram {
+class Grid extends DiagramF {
     constructor(numBoxesHorizontal, numBoxesVertical, thickness, boxWidth, boxHeight) {
         if (numBoxesHorizontal === undefined) {numBoxesHorizontal = 20;}
         if (numBoxesVertical === undefined) {numBoxesVertical = 10;}
@@ -12,11 +12,11 @@ class Grid extends Diagram {
 
         let q;
         for (q = 0; q <= numBoxesHorizontal; q++) {
-            let newSegment = super.addSegment(new Point(q * boxWidth, 0), new Point((q * boxWidth), totalHeight));
+            let newSegment = super.addSegment(new PointF(q * boxWidth, 0), new PointF((q * boxWidth), totalHeight));
             newSegment.setThickness(thickness);
         }
         for (q = 0; q <= numBoxesVertical; q++) {
-            let newSegment = super.addSegment(new Point(0, q * boxHeight), new Point(totalWidth, q * boxHeight));
+            let newSegment = super.addSegment(new PointF(0, q * boxHeight), new PointF(totalWidth, q * boxHeight));
             newSegment.setThickness(thickness);
         }
     }

@@ -72,18 +72,18 @@ function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfRe
         degreeLabel = 0;
     }
 
-    let myDiagram = new Diagram();
-    let vectorEndPoint = constructPointWithMagnitude(magnitude, convertDegreesToRadians(directionInDegrees));
+    let myDiagram = new DiagramF();
+    let vectorEndPoint = constructPointWithMagnitudeF(magnitude, convertDegreesToRadians(directionInDegrees));
     let referenceLineEndPoint;
     let referenceLineMagnitude = magnitude * 0.5;
     if (referenceLine === '+X') {
-        referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, 0);
+        referenceLineEndPoint = constructPointWithMagnitudeF(referenceLineMagnitude, 0);
     } else if (referenceLine === '+Y') {
-        referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, Math.PI / 2);
+        referenceLineEndPoint = constructPointWithMagnitudeF(referenceLineMagnitude, Math.PI / 2);
     } else if (referenceLine === '-X') {
-        referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, Math.PI);
+        referenceLineEndPoint = constructPointWithMagnitudeF(referenceLineMagnitude, Math.PI);
     } else if (referenceLine === '-Y') {
-        referenceLineEndPoint = constructPointWithMagnitude(referenceLineMagnitude, Math.PI * 3 / 2);
+        referenceLineEndPoint = constructPointWithMagnitudeF(referenceLineMagnitude, Math.PI * 3 / 2);
     }
 
     myDiagram.addArrow(origin, vectorEndPoint);
@@ -106,10 +106,10 @@ function plusSign(size) {
     if (size === undefined) {
         size = 1;
     }
-    let newDiagram = new Diagram();
+    let newDiagram = new DiagramF();
 
-    newDiagram.addSegment(new Point(-1 * size,0),new Point(size,0));
-    newDiagram.addSegment(new Point(0,-1 * size),new Point(0,size));
+    newDiagram.addSegment(new PointF(-1 * size,0),new PointF(size,0));
+    newDiagram.addSegment(new PointF(0,-1 * size),new PointF(0,size));
 
     return newDiagram
 }

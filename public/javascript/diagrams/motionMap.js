@@ -1,4 +1,4 @@
-class MotionMap extends Diagram {
+class MotionMap extends DiagramF {
     constructor(positionFunction, tMin, tMax, numDots, direction, forcedRadius) {
         super();
 
@@ -61,7 +61,7 @@ class MotionMap extends Diagram {
         let q, magnitude;
         for (q = 0; q < this.positionValues.length; q++) {
             magnitude = this.positionValues[q];
-            positionPoints.push(constructPointWithMagnitude(magnitude, this.theta));
+            positionPoints.push(constructPointWithMagnitudeF(magnitude, this.theta));
         }
         return positionPoints;
     }
@@ -161,7 +161,7 @@ class VelocityTimeGraph extends QuantitativeGraph {
 
 
 
-class Compass extends Diagram {
+class Compass extends DiagramF {
   constructor(horizontalBoolean, verticalBoolean) {
     super();
     if (horizontalBoolean === undefined) {
@@ -219,14 +219,14 @@ class Compass extends Diagram {
     let textDisplacement = relativeFontSize * 0.7
 
     if (this.horizontal) {
-      super.addTwoHeadedArrow(new Point(-1,0), new Point(1,0));
-      super.addText(this.westLabel,new Point(-1 - textDisplacement ,0), relativeFontSize);
-      super.addText(this.eastLabel, new Point(1 + textDisplacement, 0), relativeFontSize);
+      super.addTwoHeadedArrow(new PointF(-1,0), new PointF(1,0));
+      super.addText(this.westLabel,new PointF(-1 - textDisplacement ,0), relativeFontSize);
+      super.addText(this.eastLabel, new PointF(1 + textDisplacement, 0), relativeFontSize);
     }
     if (this.vertical) {
-      super.addTwoHeadedArrow(new Point(0,-1), new Point(0,1));
-      super.addText(this.southLabel, new Point(0, -1 - textDisplacement), relativeFontSize);
-      super.addText(this.northLabel, new Point(0, 1 + textDisplacement), relativeFontSize);
+      super.addTwoHeadedArrow(new PointF(0,-1), new PointF(0,1));
+      super.addText(this.southLabel, new PointF(0, -1 - textDisplacement), relativeFontSize);
+      super.addText(this.northLabel, new PointF(0, 1 + textDisplacement), relativeFontSize);
     }
 
     return super.drawCanvas(maxWidth, maxHeight, unit, wiggleRoom);

@@ -1,6 +1,6 @@
 
 
-class CircularMotionDiagram extends Diagram {
+class CircularMotionDiagram extends DiagramF {
     constructor(direction, radius, numberOfDirectionIndicators, firstDirectionIndicator) {
         if (direction === undefined) {
             direction = 'counterclockwise'
@@ -61,7 +61,7 @@ class CircularMotionDiagram extends Diagram {
     }
 
     getPointOnCircle(positionInRadians) {
-        return new Point(this.radius * Math.cos(positionInRadians), this.radius * Math.sin(positionInRadians))
+        return new PointF(this.radius * Math.cos(positionInRadians), this.radius * Math.sin(positionInRadians))
     }
 
     addVisiblePoint(positionInRadians) {

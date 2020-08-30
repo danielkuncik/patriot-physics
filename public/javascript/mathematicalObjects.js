@@ -189,7 +189,7 @@ class StepwiseFunctionObject {
             Diagram.addTwoPointsAndSegment(vertLine.x, vertLine.y1 * yMultiplier, vertLine.x, vertLine.y2 * yMultiplier);
         });
         this.points.forEach((point) => {
-            let newCirc = Diagram.addCircle(new Point(point.x, point.y * yMultiplier), pointRadius);
+            let newCirc = Diagram.addCircle(new PointF(point.x, point.y * yMultiplier), pointRadius);
             if (point.type === 'defined') {
                 newCirc.setFillColor('#000000');
                 newCirc.fill();

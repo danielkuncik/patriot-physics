@@ -1,6 +1,6 @@
 // different than quantiative graph!
 // designed for graphs with no numbers!
-class QualitativeGraph extends Diagram {
+class QualitativeGraph extends DiagramF {
     constructor(yFunc, xMin, xMax, desiredAspectRatio, forcedYmin, forcedYmax) {
         super();
 
@@ -121,10 +121,10 @@ class QualitativeGraph extends Diagram {
         /// i think there's lots of unnecessary cod ein this part
         if (this.Yforced) {
             this.setMultiplier();
-            this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
-            this.leftEndHorizontal = new Point(this.xMin0, 0);
-            this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
-            this.rightEndHorizontal = new Point(this.xMax0, 0);
+            this.bottomEndVertical = new PointF(0, this.yMin0 * this.yMultiplier);
+            this.leftEndHorizontal = new PointF(this.xMin0, 0);
+            this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
+            this.rightEndHorizontal = new PointF(this.xMax0, 0);
         } else {
             if (this.quadrant1 && !this.quadrant2 && !this.quadrant3 && !this.quadrant4) {
                 this.xMin0 = 0;
@@ -133,8 +133,8 @@ class QualitativeGraph extends Diagram {
                 // quadrant 1 only
                 this.bottomEndVertical = origin;
                 this.leftEndHorizontal = origin;
-                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
-                this.rightEndHorizontal = new Point(this.xMax0, 0);
+                this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new PointF(this.xMax0, 0);
             } else if (this.quadrant2 && !this.quadrant1 && !this.quadrant3 && !this.quadrant4) {
                 // quadrant 2 only
                 this.xMax0 = 0;
@@ -142,8 +142,8 @@ class QualitativeGraph extends Diagram {
                 this.setMultiplier();
 
                 this.bottomEndVertical = origin;
-                this.leftEndHorizontal = new Point(this.xMin0, 0);
-                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.leftEndHorizontal = new PointF(this.xMin0, 0);
+                this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
                 this.rightEndHorizontal = origin;
             } else if (this.quadrant3 && !this.quadrant1 && !this.quadrant2 && !this.quadrant4) {
                 // quadrant 3 only
@@ -151,8 +151,8 @@ class QualitativeGraph extends Diagram {
                 this.yMax0 = 0;
                 this.setMultiplier();
 
-                this.bottomEndVertical = new Point(0,this.yMin0 * this.yMultiplier);
-                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.bottomEndVertical = new PointF(0,this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new PointF(this.xMin0, 0);
                 this.topEndVertical = origin;
                 this.rightEndHorizontal = origin
             } else if (this.quadrant4 && !this.quadrant1 && !this.quadrant2 && !this.quadrant3) {
@@ -161,60 +161,60 @@ class QualitativeGraph extends Diagram {
                 this.yMax0 = 0;
                 this.setMultiplier();
 
-                this.bottomEndVertical = new Point(0,this.yMin0 * this.yMultiplier);
+                this.bottomEndVertical = new PointF(0,this.yMin0 * this.yMultiplier);
                 this.leftEndHorizontal = origin;
                 this.topEndVertical = origin;
-                this.rightEndHorizontal = new Point(this.xMax0, 0);
+                this.rightEndHorizontal = new PointF(this.xMax0, 0);
             } else if (this.quadrant1 && this.quadrant2 && !this.quadrant3 && !this.quadrant4) {
                 // quadrants 1 and 2
                 this.yMax0 = 0;
                 this.setMultiplier();
 
                 this.bottomEndVertical = origin;
-                this.leftEndHorizontal = new Point(this.xMin0, 0);
-                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
-                this.rightEndHorizontal = new Point(this.xMax0, 0);
+                this.leftEndHorizontal = new PointF(this.xMin0, 0);
+                this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new PointF(this.xMax0, 0);
             } else if (this.quadrant3 && this.quadrant4 && !this.quadrant1 && !this.quadrant2) {
                 // quadrants 3 and 4
                 this.yMax0 = 0;
                 this.setMultiplier();
 
-                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
-                this.leftEndHorizontal = new Point(this.xMin0, 0);
+                this.bottomEndVertical = new PointF(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new PointF(this.xMin0, 0);
                 this.topEndVertical = origin;
-                this.rightEndHorizontal = new Point(this.xMax0, 0);
+                this.rightEndHorizontal = new PointF(this.xMax0, 0);
             } else if (this.quadrant1 && this.quadrant4 && !this.quadrant2 && !this.quadrant3) {
                 // quadrants 1 and 4
                 this.xMin0 = 0;
                 this.setMultiplier();
 
-                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
+                this.bottomEndVertical = new PointF(0, this.yMin0 * this.yMultiplier);
                 this.leftEndHorizontal = origin;
-                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
-                this.rightEndHorizontal = new Point(this.xMax0, 0);
+                this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new PointF(this.xMax0, 0);
             } else if (this.quadrant2 && this.quadrant3 && !this.quadrant1 && !this.quadrant4) {
                 // quadrants 2 and 3
                 this.xMax0 = 0;
                 this.setMultiplier();
 
-                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
-                this.leftEndHorizontal = new Point(this.xMin0, 0);
-                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
+                this.bottomEndVertical = new PointF(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new PointF(this.xMin0, 0);
+                this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
                 this.rightEndHorizontal = origin;
             } else {
                 this.setMultiplier();
-                this.bottomEndVertical = new Point(0, this.yMin0 * this.yMultiplier);
-                this.leftEndHorizontal = new Point(this.xMin0, 0);
-                this.topEndVertical = new Point(0, this.yMax0 * this.yMultiplier);
-                this.rightEndHorizontal = new Point(this.xMax0, 0);
+                this.bottomEndVertical = new PointF(0, this.yMin0 * this.yMultiplier);
+                this.leftEndHorizontal = new PointF(this.xMin0, 0);
+                this.topEndVertical = new PointF(0, this.yMax0 * this.yMultiplier);
+                this.rightEndHorizontal = new PointF(this.xMax0, 0);
             }
         }
 
         // corners
-        this.lowerLeft = new Point(this.leftEndHorizontal.x, this.bottomEndVertical.y);
-        this.upperLeft = new Point(this.leftEndHorizontal.x, this.topEndVertical.y);
-        this.lowerRight = new Point(this.rightEndHorizontal.x, this.bottomEndVertical.y);
-        this.upperRight = new Point(this.rightEndHorizontal.x, this.topEndVertical.y);
+        this.lowerLeft = new PointF(this.leftEndHorizontal.x, this.bottomEndVertical.y);
+        this.upperLeft = new PointF(this.leftEndHorizontal.x, this.topEndVertical.y);
+        this.lowerRight = new PointF(this.rightEndHorizontal.x, this.bottomEndVertical.y);
+        this.upperRight = new PointF(this.rightEndHorizontal.x, this.topEndVertical.y);
 
 
         this.horizontalAxis = true;
@@ -331,20 +331,20 @@ class QualitativeGraph extends Diagram {
         if (this.zeroLabel) {
             this.textDisplacement *= 3;
             if (!this.textAlreadyAdded) {
-                super.addText('0', new Point(this.xMin0 - this.textDisplacement/2, 0), this.relativeFontSize);
+                super.addText('0', new PointF(this.xMin0 - this.textDisplacement/2, 0), this.relativeFontSize);
             }
-            super.addDashedLine(new Point(this.xMin0, 0), new Point(this.xMax0, 0));
+            super.addDashedLine(new PointF(this.xMin0, 0), new PointF(this.xMax0, 0));
         }
 
         if (!this.textAlreadyAdded) {
             if (this.xLabelPosition === 'end') {
-                super.addText(this.xLabel, new Point(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
+                super.addText(this.xLabel, new PointF(this.xMax0 + this.textDisplacement, 0), this.relativeFontSize);
             } else if (this.xLabelPosition === 'side') {
                 super.labelLineBelow(this.lowerLeft, this.lowerRight, this.xLabel, this.textDisplacement, this.relativeFontSize);
             }
             // add an option if you want the label int he center
             if (this.yLabelPosition === 'end') {
-                super.addText(this.yLabel, new Point(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
+                super.addText(this.yLabel, new PointF(0, this.yMultiplier * this.yMax0 + this.textDisplacement), this.relativeFontSize);
             } else if (this.yLabelPosition === 'side') {
                 super.labelLineAbove(this.lowerLeft, this.upperLeft, this.yLabel, this.textDisplacement, this.relativeFontSize);
             }
@@ -353,7 +353,7 @@ class QualitativeGraph extends Diagram {
         let pointRadius = minOfTwoValues(this.lowerRight.x - this.lowerLeft.x, this.upperRight.y - this.lowerRight.y) * 0.05;
 
         this.pointsOnGraph.forEach((point) => {
-            let newCircle = super.addCircle(new Point(point.x, point.y * this.yMultiplier), pointRadius);
+            let newCircle = super.addCircle(new PointF(point.x, point.y * this.yMultiplier), pointRadius);
             if (point.type === 'defined') {
                 newCircle.fill();
             }

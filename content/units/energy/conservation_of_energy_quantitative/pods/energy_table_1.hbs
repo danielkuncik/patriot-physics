@@ -98,13 +98,13 @@
     function drawRamp(letter, ballPosition) {
         // ball position is from 0 to 1
         // the function doesn't work correctly if it is equal to 0 or 1
-        let myDiagram = new Diagram();
+        let myDiagram = new DiagramF();
         let endOfRamp1 = origin;
         let topOfRamp = myDiagram.addNewPoint(1,0);
         let bottomOfRamp = myDiagram.addNewPoint(3,-2);
         let endOfRamp2 = myDiagram.addNewPoint(4,-2);
 
-        myDiagram.addText(letter, new Point(3,-0.5), 0.5);
+        myDiagram.addText(letter, new PointF(3,-0.5), 0.5);
         myDiagram.addSegment(endOfRamp1, topOfRamp);
         let rampSegment = myDiagram.addSegment(topOfRamp, bottomOfRamp);
         myDiagram.addSegment(bottomOfRamp, endOfRamp2);

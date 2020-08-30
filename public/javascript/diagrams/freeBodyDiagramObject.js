@@ -1,4 +1,4 @@
-class FreeBodyDiagram extends Diagram {
+class FreeBodyDiagram extends DiagramF {
     constructor() {
         super();
         this.forces = [];
@@ -22,7 +22,7 @@ class FreeBodyDiagram extends Diagram {
     // if force is vertical, label above will add Text on the left and label below will ad Text on the right
     addForce(relativeMagnitude,angleInRadians,labelAbove, labelBelow) {
         if (this.maxForce < relativeMagnitude) {this.maxForce = relativeMagnitude;}
-        let endPoint = new Point(relativeMagnitude * Math.cos(angleInRadians), relativeMagnitude * Math.sin(angleInRadians));
+        let endPoint = new PointF(relativeMagnitude * Math.cos(angleInRadians), relativeMagnitude * Math.sin(angleInRadians));
         this.forces.push(
             {
                 "relativeMagnitude": relativeMagnitude,
@@ -136,7 +136,7 @@ class FreeBodyDiagram extends Diagram {
 
 
         this.forces.forEach((force) => {
-            force.startPoint = constructPointWithMagnitude(this.circleRadius, force.angle);
+            force.startPoint = constructPointWithMagnitudeF(this.circleRadius, force.angle);
         });
 
         this.displaceOverlappingForces();
@@ -151,13 +151,13 @@ class FreeBodyDiagram extends Diagram {
         if (this.velocityArrow) { // add an arrow, seperate from the free-body diagram, indicating velocity of an object
             let velocityArrowStartPoint;
             if (this.velocityArrow.location === 'upperRight') { // this method can make the velocity kind of far away
-                velocityArrowStartPoint = new Point(this.maxForce * 1.1, this.maxForce * 1.1);
+                velocityArrowStartPoint = new PointF(this.maxForce * 1.1, this.maxForce * 1.1);
             } else if (this.velocityArrow.location === 'lowerRight') {
-                velocityArrowStartPoint = new Point(this.maxForce * 1.1, this.maxForce * -1.1);
+                velocityArrowStartPoint = new PointF(this.maxForce * 1.1, this.maxForce * -1.1);
             } else if (this.velocityArrow.location === 'lowerLeft') {
-                velocityArrowStartPoint = new Point(this.maxForce * -1.1, this.maxForce * -1.1);
+                velocityArrowStartPoint = new PointF(this.maxForce * -1.1, this.maxForce * -1.1);
             } else if (this.velocityArrow.location === 'upperLeft') {
-                velocityArrowStartPoint = new Point(this.maxForce * -1.1, this.maxForce * 1.1);
+                velocityArrowStartPoint = new PointF(this.maxForce * -1.1, this.maxForce * 1.1);
             } else {
                 console.log('ERROR: invalid velocity arrow location given');
                 velocityArrowStartPoint = origin
@@ -186,7 +186,7 @@ class FreeBodyDiagram extends Diagram {
 
 
 // a new free-body diagram specifically for Atwood Machines
-class AtwoodFreeBodyDiagram extends Diagram {
+class AtwoodFreeBodyDiagram extends DiagramF {
    constructor() {
        super();
        this.forces = [];
@@ -271,17 +271,17 @@ class AtwoodFreeBodyDiagram extends Diagram {
            const endRadians = convertDegreesToRadians(90 + magnitude / 2);
 
            this.addArc(origin,radius,startRadians,endRadians);
-           this.addText(force.label, new Point(0, radius + 0.5),1);
+           this.addText(force.label, new PointF(0, radius + 0.5),1);
 
            // if the diagram is rescaled with double factor...
            /// this function causes the arrowhead to end up in a different location
            // how do i permnantly attach it to the end of the arc?
            let arrowHeadCenterPoint, arrowHeadAngle;
            if (force.direction === 'counterclockwise') {
-               arrowHeadCenterPoint = constructPointWithMagnitude(radius, endRadians);
+               arrowHeadCenterPoint = constructPointWithMagnitudeF(radius, endRadians);
                arrowHeadAngle = convertRadiansToDegrees(endRadians);
            } else if (force.direction === 'clockwise') {
-               arrowHeadCenterPoint = constructPointWithMagnitude(radius, startRadians);
+               arrowHeadCenterPoint = constructPointWithMagnitudeF(radius, startRadians);
                arrowHeadAngle = convertRadiansToDegrees(startRadians);
            }
            this.addArrowhead(arrowHeadCenterPoint,arrowHeadAngle,1.5,40);

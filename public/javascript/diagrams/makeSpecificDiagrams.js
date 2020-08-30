@@ -294,17 +294,17 @@ function makeMotionMapNotMoving() {
 function arrow(direction, message) {
     let secondPoint;
     if (direction === 'right') {
-        secondPoint = new Point(1,0);
+        secondPoint = new PointF(1,0);
     } else if (direction === 'left') {
-        secondPoint = new Point(-1,0);
+        secondPoint = new PointF(-1,0);
     } else if (direction === 'up') {
-        secondPoint = new Point(0,1);
+        secondPoint = new PointF(0,1);
     } else if (direction === 'down') {
-        secondPoint = new Point(0,-1);
+        secondPoint = new PointF(0,-1);
     } else {
         return false
     }
-    let diagram = new Diagram();
+    let diagram = new DiagramF();
     diagram.addArrow(origin, secondPoint);
     if (message) {
         diagram.labelLineAbove(origin, secondPoint,message);

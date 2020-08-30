@@ -9,10 +9,10 @@ should it be primarily cursor based
 
 i want to reorganize this a little
  */
-class CircuitDiagram extends Diagram {
+class CircuitDiagram extends DiagramF {
     constructor() {
         super();
-        this.cursor = new Point(0,0); // i used to have this set to the origin, but then i somehow moved the origin
+        this.cursor = new PointF(0,0); // i used to have this set to the origin, but then i somehow moved the origin
         this.fontSize = undefined;
         this.automaticallyNameAllResisors = false;
         this.numResistors = 0;
@@ -32,7 +32,7 @@ class CircuitDiagram extends Diagram {
 
     // points must already exist?
     addWire(directionInput, length) {
-        let pointA = new Point(this.cursor.x, this.cursor.y);
+        let pointA = new PointF(this.cursor.x, this.cursor.y);
         let directionInRadians = processDirectionInput(directionInput);
         let pointB = pointA.getAnotherPointWithTrig(length, directionInRadians);
         let newWire = super.addSegment(pointA, pointB);
@@ -265,7 +265,7 @@ class CircuitDiagram extends Diagram {
         if (radius === undefined) {
             radius = 0.3333;
         }
-        const centerPoint = new Point(this.cursor.x, this.cursor.y);
+        const centerPoint = new PointF(this.cursor.x, this.cursor.y);
         super.addBlackCircle(centerPoint, radius);
     }
 
@@ -324,7 +324,7 @@ class CircuitDiagram extends Diagram {
 
     /// will be deprecated after all elements are added with cursor
     addElementWithCursor(elementType, endPointX, endPointY, labelAbove, labelBelow) {
-        let nextPoint = new Point(endPointX, endPointY);
+        let nextPoint = new PointF(endPointX, endPointY);
         let directionInRadians = (this.cursor).getAngleToAnotherPoint(nextPoint);
         let length = this.cursor.getDistanceToAnotherPoint(nextPoint);
         if (elementType === 'wire') {

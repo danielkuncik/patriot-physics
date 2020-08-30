@@ -1,4 +1,4 @@
-class UnitMap extends Diagram {
+class UnitMap extends DiagramF {
     constructor() {
         super();
         this.pods = {};
@@ -24,7 +24,7 @@ class UnitMap extends Diagram {
             };
         x = (horizontalPosition - 1) * (this.horizontalSpaceBetween + this.radius * 2);
         y = (level - 1) * (this.verticalSpaceBetween + this.radius * 2);
-        newPod.center = new Point(x,y);
+        newPod.center = new PointF(x,y);
 
         this.pods[key] = newPod;
 

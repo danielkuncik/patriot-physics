@@ -558,7 +558,7 @@ but only INTERNAL forces can cause potential energy
 
 <script>
     let ballSystemFBD = freeFallFBD();
-    let ballEarthSystemFBD = new Diagram();
+    let ballEarthSystemFBD = new DiagramF();
     ballEarthSystemFBD.addBlackCircle(origin,1);
 
     let bookSystemFBD = fastFBD([['down','gravity'],['up','applied']]);

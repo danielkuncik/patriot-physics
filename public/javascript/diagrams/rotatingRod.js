@@ -1,4 +1,4 @@
-class RotatingRod extends Diagram {
+class RotatingRod extends DiagramF {
     constructor(distanceLeft, distanceRight, thetaInDegrees, distanceUnit) {
         super();
         if (distanceRight === undefined) {

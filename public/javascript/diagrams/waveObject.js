@@ -332,7 +332,7 @@ class Wave {
         if (maxHeight === undefined) {
             maxHeight = maxWidth;
         }
-        let WaveDiagram = new Diagram();
+        let WaveDiagram = new DiagramF();
         if (this.type === 'transverse') {
             WaveDiagram.addFunctionGraph(this.function, 0, this.xMax);
 
@@ -346,7 +346,7 @@ class Wave {
             /// function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {
 
 
-            let scale = nondistortedResize(this.xMax, this.totalHeight, maxWidth, maxHeight);
+            let scale = nondistortedResizeF(this.xMax, this.totalHeight, maxWidth, maxHeight);
             let areaOnScreen = this.xMax * this.totalHeight * scale; // get the area in pixels
             let numDots = areaOnScreen * this.dotDensity;
             let dotRadius = areaOnScreen * 0.00003;
@@ -359,7 +359,7 @@ class Wave {
                 monteCarloPoint = Math.random() * this.amplitude * 2;
 
                 if (monteCarloPoint < this.function(xTest) + this.amplitude) {
-                    WaveDiagram.addBlackCircle(new Point(xTest, yTest), dotRadius);
+                    WaveDiagram.addBlackCircle(new PointF(xTest, yTest), dotRadius);
                 } else {
                     i -= 1;
                 }
@@ -369,44 +369,44 @@ class Wave {
         }
 
         if (this.centerLine) {
-            let centerLine = WaveDiagram.addSegment(new Point(0,0), new Point(this.xMax, 0));
+            let centerLine = WaveDiagram.addSegment(new PointF(0,0), new PointF(this.xMax, 0));
             if (this.centerLineDashed) {
                 centerLine.turnIntoDashedLine();
             }
         }
 
         this.circles.forEach((circle) => {
-            let newCircle = WaveDiagram.addCircle(new Point(circle.x, circle.y),circle.radius);
+            let newCircle = WaveDiagram.addCircle(new PointF(circle.x, circle.y),circle.radius);
             if (circle.filled) {
                 newCircle.fill();
             }
         });
 
         this.aboveArrows.forEach((arrow) => {
-            WaveDiagram.addArrow(new Point(arrow.x, this.amplitude * 1.4),new Point(arrow.x, 1.1 * this.amplitude), this.amplitude* 0.06);
+            WaveDiagram.addArrow(new PointF(arrow.x, this.amplitude * 1.4),new PointF(arrow.x, 1.1 * this.amplitude), this.amplitude* 0.06);
             if (arrow.label) {
-                WaveDiagram.addText(arrow.label, new Point(arrow.x, this.amplitude * 1.5), this.amplitude * 0.2);
+                WaveDiagram.addText(arrow.label, new PointF(arrow.x, this.amplitude * 1.5), this.amplitude * 0.2);
             }
         });
         this.belowArrows.forEach((arrow) => {
-            WaveDiagram.addArrow(new Point(arrow.x, this.amplitude * -1.4),new Point(arrow.x, -1.1 * this.amplitude), this.amplitude * 0.06);
+            WaveDiagram.addArrow(new PointF(arrow.x, this.amplitude * -1.4),new PointF(arrow.x, -1.1 * this.amplitude), this.amplitude * 0.06);
             if (arrow.label) {
-                WaveDiagram.addText(arrow.label, new Point(arrow.x, this.amplitude * -1.5), this.amplitude * 0.2);
+                WaveDiagram.addText(arrow.label, new PointF(arrow.x, this.amplitude * -1.5), this.amplitude * 0.2);
             }
         });
 
         const sideLength = this.amplitude * 0.12;
         this.topDistanceMarkers.forEach((arrow) => {
-            let point1 = new Point(arrow.x1, this.amplitude + arrow.extraDisplacement + sideLength);
-            let point2 = new Point(arrow.x2, this.amplitude + arrow.extraDisplacement + sideLength);
+            let point1 = new PointF(arrow.x1, this.amplitude + arrow.extraDisplacement + sideLength);
+            let point2 = new PointF(arrow.x2, this.amplitude + arrow.extraDisplacement + sideLength);
             WaveDiagram.addDistanceMarker(point1, point2, sideLength);
             if (arrow.label) {
                 WaveDiagram.labelLine(point1,point2,arrow.label,'',this.amplitude*0.1, this.amplitude*0.2);
             }
         });
         this.bottomDistanceMarkers.forEach((arrow) => {
-            let point1 = new Point(arrow.x1, -1 * this.amplitude - arrow.extraDisplacement - sideLength);
-            let point2 = new Point(arrow.x2, -1 * this.amplitude - arrow.extraDisplacement - sideLength);
+            let point1 = new PointF(arrow.x1, -1 * this.amplitude - arrow.extraDisplacement - sideLength);
+            let point2 = new PointF(arrow.x2, -1 * this.amplitude - arrow.extraDisplacement - sideLength);
             WaveDiagram.addDistanceMarker(point1, point2, sideLength);
             if (arrow.label) {
                 WaveDiagram.labelLine(point1,point2,'',arrow.label,this.amplitude*0.1, this.amplitude*0.2);
@@ -414,8 +414,8 @@ class Wave {
         });
 
         this.verticalArrows.forEach((arrow) => {
-            let point1 = new Point(arrow.x, arrow.y1);
-            let point2 = new Point(arrow.x, arrow.y2);
+            let point1 = new PointF(arrow.x, arrow.y1);
+            let point2 = new PointF(arrow.x, arrow.y2);
             WaveDiagram.addTwoHeadedArrow(point1, point2, this.amplitude * 0.12);
             if (arrow.label) {
                 WaveDiagram.labelLine(point1, point2, arrow.label, '', this.amplitude * 0.05, this.amplitude * 0.1);

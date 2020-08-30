@@ -13,7 +13,7 @@ which i could use to better fit it into spaces
 // and for all points to be positive (as though all in quadrant 1)
 
 
-function nondistortedResize(originalWidth, originalHeight, maxWidth, maxHeight) {
+function nondistortedResizeF(originalWidth, originalHeight, maxWidth, maxHeight) {
     var scale = 1;
     if (originalWidth !== maxWidth || originalHeight !== maxHeight) {
         scale = minOfTwoValues(maxWidth / originalWidth, maxHeight / originalHeight);
@@ -174,15 +174,15 @@ function grayscale0to20(score) {
 
 
 // the box should always belong to an object!
-class RangeBox {
+class RangeBoxF {
     constructor(lowerLeftX, lowerLeftY, width, height) {
-        this.lowerLeftPoint = new Point(lowerLeftX, lowerLeftY);
-        this.upperLeftPoint = new Point(lowerLeftX, lowerLeftY + height);
-        this.lowerRightPoint = new Point(lowerLeftX + width, lowerLeftY);
-        this.upperRightPoint = new Point(lowerLeftX + width, lowerLeftY + height);
+        this.lowerLeftPoint = new PointF(lowerLeftX, lowerLeftY);
+        this.upperLeftPoint = new PointF(lowerLeftX, lowerLeftY + height);
+        this.lowerRightPoint = new PointF(lowerLeftX + width, lowerLeftY);
+        this.upperRightPoint = new PointF(lowerLeftX + width, lowerLeftY + height);
         this.resetMinAndMax();
         this.resetWidthAndHeight();
-        this.centerPoint = new Point(this.xMin + width / 2, this.yMin + height / 2);
+        this.centerPoint = new PointF(this.xMin + width / 2, this.yMin + height / 2);
         this.segments = [];
         this.rotation = 0;
     }
@@ -301,13 +301,13 @@ class RangeBox {
     doesItIntersectSegment(segment) { // UNTESTED
         if (this.isPointInsideBox(segment.point1) && this.isPointInsideBox(segment.point2)) { // segment entirely inside of box
             return true
-        } else if (segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.lowerRightPoint))) { // if the segment intersects the segments of this box
+        } else if (segment.intersectionWithAnotherSegment(new SegmentF(this.lowerLeftPoint,this.lowerRightPoint))) { // if the segment intersects the segments of this box
             return true
-        } else if (segment.intersectionWithAnotherSegment(new Segment(this.lowerRightPoint,this.upperRightPoint))) {
+        } else if (segment.intersectionWithAnotherSegment(new SegmentF(this.lowerRightPoint,this.upperRightPoint))) {
             return true
-        } else if (segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.upperLeftPoint))) {
+        } else if (segment.intersectionWithAnotherSegment(new SegmentF(this.lowerLeftPoint,this.upperLeftPoint))) {
             return true
-        } else if (segment.intersectionWithAnotherSegment(new Segment(this.upperLeftPoint,this.upperRightPoint))) {
+        } else if (segment.intersectionWithAnotherSegment(new SegmentF(this.upperLeftPoint,this.upperRightPoint))) {
             return true
         } else {
             return false
@@ -316,10 +316,10 @@ class RangeBox {
 
     intersectionsWithSegment(segment) {
       let intersections = [];
-      let possibility1 = segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.lowerRightPoint));
-      let possibility2 = segment.intersectionWithAnotherSegment(new Segment(this.lowerRightPoint,this.upperRightPoint));
-      let possibility3 = segment.intersectionWithAnotherSegment(new Segment(this.lowerLeftPoint,this.upperLeftPoint));
-      let possibility4 = segment.intersectionWithAnotherSegment(new Segment(this.upperLeftPoint,this.upperRightPoint));
+      let possibility1 = segment.intersectionWithAnotherSegment(new SegmentF(this.lowerLeftPoint,this.lowerRightPoint));
+      let possibility2 = segment.intersectionWithAnotherSegment(new SegmentF(this.lowerRightPoint,this.upperRightPoint));
+      let possibility3 = segment.intersectionWithAnotherSegment(new SegmentF(this.lowerLeftPoint,this.upperLeftPoint));
+      let possibility4 = segment.intersectionWithAnotherSegment(new SegmentF(this.upperLeftPoint,this.upperRightPoint));
       if (possibility1) {
         intersections.push(possibility1);
       }
@@ -347,10 +347,10 @@ class RangeBox {
         // finds one intersection point
         // one end point is inside rangebox
         if (this.isPointInsideBox(segment.point1)) {
-          let newSegment = new Segment(intersections[0], segment.point2);
+          let newSegment = new SegmentF(intersections[0], segment.point2);
           result.push(newSegment);
         } else if (this.isPointInsideBox(segment.point2)) {
-          let newSegment = new Segment(intersections[0], segment.point1);
+          let newSegment = new SegmentF(intersections[0], segment.point1);
           result.push(newSegment);
         } else {
             console.log('ERROR: intersection found but segment not determined to be inside box', segment, this);
@@ -361,13 +361,13 @@ class RangeBox {
           let endA = segment.point1;
           let endB = segment.point2;
           if (endA.getDistanceToAnotherPoint(intersection1) < endA.getDistanceToAnotherPoint(intersection2)) {
-              let newSegment1 = new Segment(endA, intersection1);
-              let newSegment2 = new Segment(endB, intersection2);
+              let newSegment1 = new SegmentF(endA, intersection1);
+              let newSegment2 = new SegmentF(endB, intersection2);
               result.push(newSegment1);
               result.push(newSegment2);
           } else {
-              let newSegment1 = new Segment(endB, intersection1);
-              let newSegment2 = new Segment(endA, intersection2);
+              let newSegment1 = new SegmentF(endB, intersection1);
+              let newSegment2 = new SegmentF(endA, intersection2);
               result.push(newSegment2);
               result.push(newSegment1);
           }
@@ -419,7 +419,7 @@ class RangeBox {
       let start1 = center1.translateAndReproducePolar(displacement, theta);
       let start2 = center2.translateAndReproducePolar(displacement, theta);
 
-      let testSegment1 = new Segment(start1, start2);
+      let testSegment1 = new SegmentF(start1, start2);
 
       let testSegment2;
       let result1 = this.cutSegment(testSegment1);
@@ -459,14 +459,14 @@ class RangeBox {
 
 }
 // does this make a duplicate of the center Point??
-function constructRangeBoxFromCenter(centerPoint, width, height) {
+function constructRangeBoxFromCenterF(centerPoint, width, height) {
     let lowerLeftX = centerPoint.x - width/2;
     let lowerLeftY = centerPoint.y - height/2;
-    let newRangeBox = new RangeBox(lowerLeftX, lowerLeftY, width, height);
+    let newRangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, width, height);
     return newRangeBox;
 }
 
-function constructRangeBoxFromExtremePoints(minX, minY, maxX, maxY) {
+function constructRangeBoxFromExtremePointsF(minX, minY, maxX, maxY) {
     if (maxX <= minX) {
         console.log('ERROR: range box error- max X must be greater than min X');
     }
@@ -475,11 +475,11 @@ function constructRangeBoxFromExtremePoints(minX, minY, maxX, maxY) {
     }
     let width = maxX - minX;
     let height = maxY - minY;
-    return new RangeBox(minX, minY, width, height);
+    return new RangeBoxF(minX, minY, width, height);
 }
 
 
-class Text {
+class TextF {
     constructor(letters, referencePoint, relativeFontSize, rotationAngleInRadians, positioning) {
         if (positioning === undefined) {
             positioning = 'center'
@@ -502,53 +502,53 @@ class Text {
             this.alignment = 'center'; // default
             this.baseline = 'middle';
             this.centerPoint = referencePoint;
-            this.rangeBox = constructRangeBoxFromCenter(this.centerPoint, this.width, this.height);
+            this.rangeBox = constructRangeBoxFromCenterF(this.centerPoint, this.width, this.height);
         } else if (positioning === 'lowerLeft') {
             this.alignment = 'left';
             this.baseline = 'alphabetic';
-            this.rangeBox = new RangeBox(this.referencePoint.x, this.referencePoint.y, this.width, this.height); // construc from lower left corner is default
+            this.rangeBox = new RangeBoxF(this.referencePoint.x, this.referencePoint.y, this.width, this.height); // construc from lower left corner is default
         } else if (positioning === 'aboveCenter') {
             this.alignment = 'center';
             this.baseline = 'alphabetic';
             let lowerLeftX = this.referencePoint.x - this.width/2;
             let lowerLeftY = this.referencePoint.y;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         }  else if (positioning === 'belowCenter') {
             this.alignment = 'center';
             this.baseline = 'hanging';
             let lowerLeftX = this.referencePoint.x - this.width/2;
             let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         } else if (positioning === 'upperLeft') {
             this.alignment = 'left';
             this.baseline = 'hanging';
             let lowerLeftX = this.referencePoint.x;
             let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         } else if (positioning === 'lowerRight') {
             this.alignment = 'right';
             this.baseline = 'alphabetic';
             let lowerLeftX = this.referencePoint.x - this.width;
             let lowerLeftY = this.referencePoint.y;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         } else if (positioning === 'upperRight') {
             this.alignment = 'right';
             this.baseline = 'hanging';
             let lowerLeftX = this.referencePoint.x - this.width;
             let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         } else if (positioning === 'centerRight') {
             this.alignment = 'right';
             this.baseline = 'middle';
             let lowerLeftX = this.referencePoint.x - this.width;
             let lowerLeftY = this.referencePoint.y - this.height / 2;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         } else if (positioning === 'centerLeft') {
             this.alignment = 'left';
             this.baseline = 'middle';
             let lowerLeftX = this.referencePoint.x;
             let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
+            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
         }
 
         if (this.rotationAngleInRadians) { // should it be clockwise, not counterclockwise?
@@ -675,7 +675,7 @@ class FunctionGraph {
         }
         this.makeSolid();
 
-        this.rangeBox = new RangeBox(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
+        this.rangeBox = new RangeBoxF(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
     }
 
     getRange(Nsteps) {
@@ -730,7 +730,7 @@ class FunctionGraph {
 }
 
 
-class Diagram {
+class DiagramF {
     constructor() {
         this.diagram = true;
         this.points = [];
@@ -798,7 +798,7 @@ class Diagram {
             if (name === undefined) {
                 name = numberToLetter(this.points.length);
             }
-            let newPoint = new Point(x,y,name);
+            let newPoint = new PointF(x,y,name);
             this.points.push(newPoint);
             return newPoint
         }
@@ -840,7 +840,7 @@ class Diagram {
     addSegment(point1, point2) {
         let pointA = this.addExistingPoint(point1);
         let pointB = this.addExistingPoint(point2);
-        let newSegment = new Segment(pointA, pointB);
+        let newSegment = new SegmentF(pointA, pointB);
         this.segments.push(newSegment);
         return newSegment
     }
@@ -958,7 +958,7 @@ class Diagram {
     // in case you want a line with an arrowhead in the middle of it
     addArrowHeadBetweenPoints(point1, point2, arrowHeadLength, arrowheadAngleInDegrees) {
         let arrowHeadAngleInRadians = convertDegreesToRadians(arrowheadAngleInDegrees);
-        let centerPointOfSegment = new Point((point1.x + point2.x)/2, (point1.y + point2.y)/2);
+        let centerPointOfSegment = new PointF((point1.x + point2.x)/2, (point1.y + point2.y)/2);
 
         // center it so the center, not the head, of the arrow is in the center of the segment
         // looks much more centered
@@ -966,7 +966,7 @@ class Diagram {
         let segmentToHorizontalAngle = point1.getAngleToAnotherPoint(point2);
         let xDisplacement = totalDisplacement * Math.cos(segmentToHorizontalAngle);
         let yDisplacement = totalDisplacement * Math.sin(segmentToHorizontalAngle);
-        let arrowHeadCenter = new Point(centerPointOfSegment.x + xDisplacement, centerPointOfSegment.y + yDisplacement);
+        let arrowHeadCenter = new PointF(centerPointOfSegment.x + xDisplacement, centerPointOfSegment.y + yDisplacement);
 
         let theta = point1.getAngleToAnotherPoint(point2) + Math.PI;
         let end1 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta + arrowHeadAngleInRadians);
@@ -988,7 +988,7 @@ class Diagram {
     // Point must already exist? NO
     addCircle(centerPoint, radius) {
         let center = this.addExistingPoint(centerPoint);
-        let thisCircle = new Circle(center, radius);
+        let thisCircle = new CircleF(center, radius);
         this.addExistingPoint(thisCircle.rangeBox.lowerLeftPoint);
         this.addExistingPoint(thisCircle.rangeBox.upperLeftPoint);
         this.addExistingPoint(thisCircle.rangeBox.lowerRightPoint);
@@ -1010,7 +1010,7 @@ class Diagram {
 
     addArc(centerPoint, radius, startRadians, endRadians) {
         let center = this.addExistingPoint(centerPoint);
-        let thisArc = new Arc(center, radius, startRadians, endRadians);
+        let thisArc = new ArcF(center, radius, startRadians, endRadians);
         this.addExistingPoint(thisArc.rangeBox.lowerLeftPoint);
         this.addExistingPoint(thisArc.rangeBox.upperLeftPoint);
         this.addExistingPoint(thisArc.rangeBox.lowerRightPoint);
@@ -1138,7 +1138,7 @@ class Diagram {
             } else {
                 textRotation = 0;
             }
-            textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, startAngle);
+            textReferencePoint = constructPointWithMagnitudeF(arcRadius * 1.1, startAngle);
             textReferencePoint.translate(vertex.x, vertex.y);
         } else if (textOnStartOrEnd === 'end') {
             textPositioning = 'upperLeft';
@@ -1175,7 +1175,7 @@ class Diagram {
             } else {
                 textRotation = 0;
             }
-            textReferencePoint = constructPointWithMagnitude(arcRadius * 1.1, endAngle);
+            textReferencePoint = constructPointWithMagnitudeF(arcRadius * 1.1, endAngle);
             textReferencePoint.translate(vertex.x, vertex.y);
 
 
@@ -1202,8 +1202,8 @@ class Diagram {
       let pointA = vertex.interpolate(outsidePointA, proportionA);
       let pointB = vertex.interpolate(outsidePointB, proportionB);
 
-      let lineA = constructLineFromPointAndAngle(pointA, vertex.getAngleToAnotherPoint(pointB));
-      let lineB = constructLineFromPointAndAngle(pointB, vertex.getAngleToAnotherPoint(pointA));
+      let lineA = constructLineFromPointAndAngleF(pointA, vertex.getAngleToAnotherPoint(pointB));
+      let lineB = constructLineFromPointAndAngleF(pointB, vertex.getAngleToAnotherPoint(pointA));
 
       let centerPoint = lineA.findIntersectionWithAnotherLine(lineB);
 
@@ -1229,7 +1229,7 @@ class Diagram {
     /// center Point need not already exist
     addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
         this.addExistingPoint(referencePoint); // figure out what this is used for!
-        let newText = new Text(letters, referencePoint, relativeFontSize, rotation, positioning);
+        let newText = new TextF(letters, referencePoint, relativeFontSize, rotation, positioning);
         this.addExistingPoint(newText.rangeBox.lowerLeftPoint); // should i add a method to range box, 'add to diagram'?
         this.addExistingPoint(newText.rangeBox.upperLeftPoint);
         this.addExistingPoint(newText.rangeBox.lowerRightPoint);
@@ -1312,10 +1312,10 @@ class Diagram {
 
         let textAboveObject, textBelowObject;
         if (textAbove) {
-            textAboveObject = this.addText(textAbove, new Point(aboveX, aboveY), relativeFontSize, textRotation, 'aboveCenter');
+            textAboveObject = this.addText(textAbove, new PointF(aboveX, aboveY), relativeFontSize, textRotation, 'aboveCenter');
         }
         if (textBelow) {
-            textBelowObject = this.addText(textBelow, new Point(belowX, belowY), relativeFontSize, textRotation,'belowCenter');
+            textBelowObject = this.addText(textBelow, new PointF(belowX, belowY), relativeFontSize, textRotation,'belowCenter');
         }
 
         if (textAbove) {
@@ -1400,7 +1400,7 @@ class Diagram {
         let q, thisY, nextText;
         for (q = 0; q < lettersArray.length; q++) {
             thisY = topY - lineWidth * q;
-            nextText = this.addText(lettersArray[q],new Point(leftX, thisY),relativeFontSize);
+            nextText = this.addText(lettersArray[q],new PointF(leftX, thisY),relativeFontSize);
             nextText.setAlignmentAndBaseline(textAlign,'top');
             // rework this using the new system of text alignment and baseline
         }
@@ -1585,7 +1585,7 @@ class Diagram {
 
         anotherDiagram.points.forEach((point) => {
             if (point.x === 0 && point.y === 0) {
-                point = new Point(0,0);
+                point = new PointF(0,0);
             }
         });
         this.getRange();
@@ -1750,7 +1750,7 @@ class Diagram {
 
             let index = 0;
             this.key.forEach((line) => {
-                let newText = this.addText(line.text,new Point(keyX, keyY - index * keyFontSize * 1.5),keyFontSize,0,'center');
+                let newText = this.addText(line.text,new PointF(keyX, keyY - index * keyFontSize * 1.5),keyFontSize,0,'center');
                 newText.setColor(line.color);
                 index += 1;
             });
@@ -1775,7 +1775,7 @@ class Diagram {
 
         let scaleFactor, xScaleFactor, yScaleFactor, canvasWidth, canvasHeight;
         if (!forceSize) {
-            scaleFactor = nondistortedResize(this.horizontalRange, this.verticalRange, maxWidth - wiggleRoom * 2, maxHeight - wiggleRoom * 2);
+            scaleFactor = nondistortedResizeF(this.horizontalRange, this.verticalRange, maxWidth - wiggleRoom * 2, maxHeight - wiggleRoom * 2);
             this.rescaleSingleFactor(scaleFactor);
             canvasWidth = this.horizontalRange * scaleFactor + wiggleRoom * 2;
             canvasHeight = this.verticalRange * scaleFactor + wiggleRoom * 2;

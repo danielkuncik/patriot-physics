@@ -1,5 +1,5 @@
 
-class InteractionDiagram extends Diagram {
+class InteractionDiagram extends DiagramF {
     constructor() {
         super();
 
@@ -15,7 +15,7 @@ class InteractionDiagram extends Diagram {
     // NAMES MUST BE UNIQUE!
     addActor(name, xPosition, yPosition, horizontalExtension, verticalExtension) {
         let newActor = {
-            centerPoint: new Point(xPosition, yPosition),
+            centerPoint: new PointF(xPosition, yPosition),
             horizontalExtension: horizontalExtension,
             verticalExtension: verticalExtension
         };
@@ -135,10 +135,10 @@ class InteractionDiagram extends Diagram {
             systemYmin -= this.fontSize*1.2;
             systemYmax += this.fontSize*1.2;
 
-            let systemLowerLeft = new Point(systemXmin, systemYmin);
-            let systemLowerRight = new Point(systemXmax, systemYmin);
-            let systemUpperLeft = new Point(systemXmin, systemYmax);
-            let systemUpperRight = new Point(systemXmax, systemYmax);
+            let systemLowerLeft = new PointF(systemXmin, systemYmin);
+            let systemLowerRight = new PointF(systemXmax, systemYmin);
+            let systemUpperLeft = new PointF(systemXmin, systemYmax);
+            let systemUpperRight = new PointF(systemXmax, systemYmax);
 
             super.addDottedLine(systemLowerLeft,systemLowerRight);
             super.addDottedLine(systemLowerRight, systemUpperRight);

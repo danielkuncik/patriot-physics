@@ -14,21 +14,21 @@ why is pi important?
 
 <script>
     function radiusDiagram(angleInRadians) {
-        let radiusDiagram = new Diagram();
+        let radiusDiagram = new DiagramF();
         radiusDiagram.addBlackCircle(origin,.5);
         radiusDiagram.addCircle(origin,10);
-        const outsidePoint = constructPointWithMagnitude(10,angleInRadians);
+        const outsidePoint = constructPointWithMagnitudeF(10,angleInRadians);
         radiusDiagram.addSegment(origin,outsidePoint);
         radiusDiagram.labelLineAbove(origin,outsidePoint,'radius');
         return radiusDiagram
     }
 
     function diameterDiagram(angleInRadians) {
-        let diameterDiagram = new Diagram();
+        let diameterDiagram = new DiagramF();
         diameterDiagram.addBlackCircle(origin,.5);
         diameterDiagram.addCircle(origin,10);
-        const pointA = constructPointWithMagnitude(10,angleInRadians);
-        const pointB = constructPointWithMagnitude(10,angleInRadians + Math.PI);
+        const pointA = constructPointWithMagnitudeF(10,angleInRadians);
+        const pointB = constructPointWithMagnitudeF(10,angleInRadians + Math.PI);
         diameterDiagram.addSegment(pointA,pointB);
         diameterDiagram.labelLineAbove(pointA,pointB,'diameter',0.7,1.5);
         return diameterDiagram

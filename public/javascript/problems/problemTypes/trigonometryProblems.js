@@ -74,7 +74,7 @@ function SOHCAHTOAproblem(triangleObject, knownSide, knownAngle, unknownSide) {
 }
 
 function sineProblem(hypotenuse,angleInDegrees,swapLegs) {
-    let myTriangle = constructRightTriangleHypotenuseAngle(hypotenuse, angleInDegrees, swapLegs);
+    let myTriangle = constructRightTriangleHypotenuseAngleF(hypotenuse, angleInDegrees, swapLegs);
     if (swapLegs) {
       return SOHCAHTOAproblem(myTriangle, 'C','B','B');
     } else {
@@ -84,7 +84,7 @@ function sineProblem(hypotenuse,angleInDegrees,swapLegs) {
 
 
 function cosineProblem(hypotenuse, angleInDegrees, swapLegs) {
-  let myTriangle = constructRightTriangleHypotenuseAngle(hypotenuse, angleInDegrees, swapLegs);
+  let myTriangle = constructRightTriangleHypotenuseAngleF(hypotenuse, angleInDegrees, swapLegs);
   if (swapLegs) {
     return SOHCAHTOAproblem(myTriangle, 'C','B','A');
   } else {
@@ -93,7 +93,7 @@ function cosineProblem(hypotenuse, angleInDegrees, swapLegs) {
 }
 
 function tangentProblem(adjacent, angleInDegrees, swapLegs) {
-  let myTriangle = constructRightTriangleTwoLegs(adjacent, adjacent * Math.tan(convertDegreesToRadians(angleInDegrees)), swapLegs);
+  let myTriangle = constructRightTriangleTwoLegsF(adjacent, adjacent * Math.tan(convertDegreesToRadians(angleInDegrees)), swapLegs);
   if (swapLegs) {
     return SOHCAHTOAproblem(myTriangle, 'A', 'B', 'B');
   } else {
@@ -103,7 +103,7 @@ function tangentProblem(adjacent, angleInDegrees, swapLegs) {
 
 
 function secantProblem(adjacent, angleInDegrees, swapLegs) { // reciprocal of cosine
-  let myTriangle = constructRightTriangleHypotenuseAngle(adjacent / Math.cos(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
+  let myTriangle = constructRightTriangleHypotenuseAngleF(adjacent / Math.cos(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
   if (swapLegs) {
     return SOHCAHTOAproblem(myTriangle, 'A', 'B', 'C');
   } else {
@@ -112,7 +112,7 @@ function secantProblem(adjacent, angleInDegrees, swapLegs) { // reciprocal of co
 }
 
 function cosecantProblem(opposite, angleInDegrees, swapLegs) { // reciprocal of sine
-  let myTriangle = constructRightTriangleHypotenuseAngle(opposite / Math.sin(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
+  let myTriangle = constructRightTriangleHypotenuseAngleF(opposite / Math.sin(convertDegreesToRadians(angleInDegrees)), angleInDegrees, swapLegs);
   if (swapLegs) {
     return SOHCAHTOAproblem(myTriangle, 'B', 'B', 'C');
   } else {
@@ -121,7 +121,7 @@ function cosecantProblem(opposite, angleInDegrees, swapLegs) { // reciprocal of 
 }
 
 function cotangentProblem(opposite, angleInDegrees, swapLegs) { //reciprocal of tangent
-  let myTriangle = constructRightTriangleTwoLegs(opposite / Math.tan(convertDegreesToRadians(angleInDegrees)), opposite, swapLegs);
+  let myTriangle = constructRightTriangleTwoLegsF(opposite / Math.tan(convertDegreesToRadians(angleInDegrees)), opposite, swapLegs);
   if (swapLegs) {
     return SOHCAHTOAproblem(myTriangle, 'B', 'B', 'A');
   } else {
@@ -136,12 +136,12 @@ function randomSOHCAHTOAProblem(simpleOnly) {
     if (swapLegs) {probType *= -1;}
     if (coinFlip()) {
         const sides = randomPythagoreanTripleUnder100();
-        triangleObject = constructRightTriangleTwoLegs(sides[0], sides[1], swapLegs);
+        triangleObject = constructRightTriangleTwoLegsF(sides[0], sides[1], swapLegs);
     } else {
         const angles = randomComplementaryAngles();
         const angleA = coinFlip() ? angles[0] : angles[1];
         const hypotenuse = randInt(1,100);
-        triangleObject = constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs);
+        triangleObject = constructRightTriangleHypotenuseAngleF(hypotenuse, angleA, swapLegs);
     }
     let knownSide, knownAngle, unknownSide;
     switch (probType) {

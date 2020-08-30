@@ -3,7 +3,7 @@
 /// without actualyl changing anything about the graph
 /// 2 - i need to redo the dashed/dotted line function above!
 //// so that it does not make a million points, and it makes lines that look a whole lot better!
-class QuantitativeGraph extends Diagram {
+class QuantitativeGraph extends DiagramF {
     constructor(xMinOnGraph, xMaxOnGraph, yMinOnGraph, yMaxOnGraph, desiredAspectRatio) {
         super();
         // these variables are different than those for the canvas
@@ -64,9 +64,9 @@ class QuantitativeGraph extends Diagram {
     }
 
     labelAxes(xLabel, yLabel) {
-        let lowerLeftCorner = new Point(this.xMinOnGraph, this.yMinOnGraph);
-        let lowerRightCorner = new Point(this.xMaxOnGraph, this.yMinOnGraph);
-        let upperLeftCorner = new Point(this.xMinOnGraph, this.yMaxOnGraph);
+        let lowerLeftCorner = new PointF(this.xMinOnGraph, this.yMinOnGraph);
+        let lowerRightCorner = new PointF(this.xMaxOnGraph, this.yMinOnGraph);
+        let upperLeftCorner = new PointF(this.xMinOnGraph, this.yMaxOnGraph);
 
         this.xAxisLabel = super.labelLineBelow(lowerLeftCorner, lowerRightCorner, xLabel, this.axisTextDisplacement, this.axisLabelFontSize);
         this.yAxisLabel = super.labelLineAbove(lowerLeftCorner, upperLeftCorner, yLabel, this.axisTextDisplacement, this.axisLabelFontSize);
@@ -122,9 +122,9 @@ class QuantitativeGraph extends Diagram {
         let newLabel;
         if (!noLabel) {
           if (doYouWantTheLabelFarAway) {
-              newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement + this.yMinOnGraph), this.hashLabelFontSize, 0);
+              newLabel = super.addText(label, new PointF(position, -1 * this.hashLabelDisplacement + this.yMinOnGraph), this.hashLabelFontSize, 0);
           } else {
-              newLabel = super.addText(label, new Point(position, -1 * this.hashLabelDisplacement), this.hashLabelFontSize, 0);
+              newLabel = super.addText(label, new PointF(position, -1 * this.hashLabelDisplacement), this.hashLabelFontSize, 0);
           }
         }
         return newHash
@@ -145,9 +145,9 @@ class QuantitativeGraph extends Diagram {
         let newLabel;
         if (!noLabel) {
           if (doYouWantTheLabelFarAway) {
-              let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement + this.xMinOnGraph, position * this.yMultiplier), this.hashLabelFontSize, 0);
+              let newLabel = super.addText(label, new PointF(-1 * this.hashLabelDisplacement + this.xMinOnGraph, position * this.yMultiplier), this.hashLabelFontSize, 0);
           } else {
-              let newLabel = super.addText(label, new Point(-1 * this.hashLabelDisplacement, position * this.yMultiplier), this.hashLabelFontSize, 0);
+              let newLabel = super.addText(label, new PointF(-1 * this.hashLabelDisplacement, position * this.yMultiplier), this.hashLabelFontSize, 0);
           }
         }
         return newHash;
@@ -156,13 +156,13 @@ class QuantitativeGraph extends Diagram {
     /// i will need to put some thought into how the dotted lines work so that they look nice!
     // adds a dotted line
     addXAxisReferenceLine(position) {
-        super.addDottedLine(new Point(position, this.yMinOnGraph), new Point(position, this.yMaxOnGraph), 15);
+        super.addDottedLine(new PointF(position, this.yMinOnGraph), new PointF(position, this.yMaxOnGraph), 15);
         // function here
         // adds a vertical dotted line at this position on the axis
     }
 
     addYAxisReferenceLine(position) {
-        super.addDottedLine(new Point(this.xMinOnGraph, position * this.yMultiplier), new Point(this.xMaxOnGraph, position * this.yMultiplier), 15);
+        super.addDottedLine(new PointF(this.xMinOnGraph, position * this.yMultiplier), new PointF(this.xMaxOnGraph, position * this.yMultiplier), 15);
         // function here
         // adds a horizontal dotted line at this position on the y axis
     }
@@ -304,18 +304,18 @@ class QuantitativeGraph extends Diagram {
 
     addSegmentWithArrowheadInCenter(x1,y1,x2,y2,arrowheadLength, arrowheadAngleInDegrees) {
         this.validatePoints(x1,y1,x2,y2);
-        super.addSegmentWithArrowheadInCenter(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier),arrowheadLength, arrowheadAngleInDegrees);
+        super.addSegmentWithArrowheadInCenter(new PointF(x1,y1 * this.yMultiplier),new PointF(x2,y2 * this.yMultiplier),arrowheadLength, arrowheadAngleInDegrees);
     }
 
     labelBetweenTwoPoints(x1,y1,x2,y2,labelAbove,labelBelow,textDisplacement, relativeFontSize) {
         this.validatePoints(x1,y1,x2,y2);
-        super.labelLine(new Point(x1,y1 * this.yMultiplier),new Point(x2,y2 * this.yMultiplier),labelAbove,labelBelow,textDisplacement, relativeFontSize);
+        super.labelLine(new PointF(x1,y1 * this.yMultiplier),new PointF(x2,y2 * this.yMultiplier),labelAbove,labelBelow,textDisplacement, relativeFontSize);
     }
 
     // used to add lines of text
     // replaces a previous function from before...
     addLinesNextToSegment(x1,y1,x2,y2,textArray,location,extraDisplacement,relativeFontSize, spacing) {
-        super.addLinesNextToSegment(new Point(x1,y1 * this.yMultiplier), new Point(x2,y2 * this.yMultiplier), textArray,  location, extraDisplacement, relativeFontSize, spacing);
+        super.addLinesNextToSegment(new PointF(x1,y1 * this.yMultiplier), new PointF(x2,y2 * this.yMultiplier), textArray,  location, extraDisplacement, relativeFontSize, spacing);
     }
 
 
@@ -325,7 +325,7 @@ class QuantitativeGraph extends Diagram {
         // but in the one above (which works) the new Point is decaled in the super function
         // but new points are declared here in many functinos of this class...a mystery
         // look at super.addCircle
-        let centerPoint = new Point(x,y * this.yMultiplier);
+        let centerPoint = new PointF(x,y * this.yMultiplier);
         let newCircle = super.addCircle(centerPoint, this.pointRadius);
         newCircle.fill();
         return newCircle;
@@ -333,7 +333,7 @@ class QuantitativeGraph extends Diagram {
 
     // adds a white circuit with a letter in it
     addLetterPoint(letter,x,y) {
-        let centerPoint = new Point(x,y * this.yMultiplier);
+        let centerPoint = new PointF(x,y * this.yMultiplier);
         let newCircle = super.addCircle(centerPoint, this.pointRadius);
         newCircle.fillWhite();
         let newText = super.addText(letter, centerPoint, this.pointRadius * 1.7);
@@ -514,7 +514,7 @@ class MomentumBarChart extends QuantitativeGraph {
         if (fontSize === undefined) {
             fontSize = this.axisLabelFontSize;
         }
-        super.addText('0',new Point(x,y),fontSize);
+        super.addText('0',new PointF(x,y),fontSize);
     }
 
     drawCanvas(maxWidth, maxHeight, unit, wiggleRoom) {

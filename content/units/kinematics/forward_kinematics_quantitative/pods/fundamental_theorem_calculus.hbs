@@ -47,12 +47,12 @@
 //     labelLineAbove(point1, point2, text, textDisplacement, relativeFontSize) {
 //     labelLineBelow(point1, point2, text, textDisplacement, relativeFontSize) {
 
-    let arrows = new Diagram();
-    let pointA = new Point(0,1);
-    let pointB = new Point(3,1);
+    let arrows = new DiagramF();
+    let pointA = new PointF(0,1);
+    let pointB = new PointF(3,1);
     arrows.addArrow(pointA, pointB);
     arrows.labelLineAbove(pointA, pointB, 'slope'); // this needs to be a better function
-    let pointC = new Point(3,0);
+    let pointC = new PointF(3,0);
     let pointD = origin;
     arrows.addArrow(pointC, pointD);
     arrows.labelLineBelow(pointC, pointD, 'area under curve');

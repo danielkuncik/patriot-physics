@@ -95,36 +95,36 @@
 
 <div id = 'dangerousRadiationDiagram'></div>
 <script>
-    let dangerousRadiationDiagram = new Diagram();
-    dangerousRadiationDiagram.addText('Radio Waves',new Point(0,14),1.5,0,'upperRight');
-    dangerousRadiationDiagram.addText('Microwaves',new Point(0,12),1.5,0,'upperRight');
-    dangerousRadiationDiagram.addText('Infrared Waves',new Point(0,10),1.5,0,'upperRight');
-    dangerousRadiationDiagram.addText('Visible Light',new Point(0,8),1.5,0,'upperRight');
-    dangerousRadiationDiagram.addText('Ultraviolet Light',new Point(0,6),1.5,0,'upperRight');
-    dangerousRadiationDiagram.addText('X-Ray',new Point(0,4),1.5,0,'upperRight');
-    dangerousRadiationDiagram.addText('Gamma Ray',new Point(0,2),1.5,0,'upperRight');
+    let dangerousRadiationDiagram = new DiagramF();
+    dangerousRadiationDiagram.addText('Radio Waves',new PointF(0,14),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Microwaves',new PointF(0,12),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Infrared Waves',new PointF(0,10),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Visible Light',new PointF(0,8),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Ultraviolet Light',new PointF(0,6),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('X-Ray',new PointF(0,4),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Gamma Ray',new PointF(0,2),1.5,0,'upperRight');
 
     const length = 12;
     const betweenPieces = 0.5;
     const verticalPosition = 5.5;
-    dangerousRadiationDiagram.addSegment(new Point(betweenPieces,verticalPosition), new Point(betweenPieces + length,verticalPosition));
+    dangerousRadiationDiagram.addSegment(new PointF(betweenPieces,verticalPosition), new PointF(betweenPieces + length,verticalPosition));
 
-    dangerousRadiationDiagram.addText('13.6 eV',new Point(2 * betweenPieces + length, verticalPosition), 1.2,0,'centerLeft');
+    dangerousRadiationDiagram.addText('13.6 eV',new PointF(2 * betweenPieces + length, verticalPosition), 1.2,0,'centerLeft');
 
-    let arrowPoint1A = new Point(betweenPieces + length / 5, verticalPosition + betweenPieces);
-    let arrowPoint1B = new Point(betweenPieces + length / 5, 14);
-    let arrowPoint2A = new Point(betweenPieces + length / 5, verticalPosition - betweenPieces);
-    let arrowPoint2B = new Point(betweenPieces + length / 5, 0.5);
+    let arrowPoint1A = new PointF(betweenPieces + length / 5, verticalPosition + betweenPieces);
+    let arrowPoint1B = new PointF(betweenPieces + length / 5, 14);
+    let arrowPoint2A = new PointF(betweenPieces + length / 5, verticalPosition - betweenPieces);
+    let arrowPoint2B = new PointF(betweenPieces + length / 5, 0.5);
     dangerousRadiationDiagram.addArrow(arrowPoint1A, arrowPoint1B);
     dangerousRadiationDiagram.labelLineAbove(arrowPoint1A,arrowPoint1B,'Lesser Energy',betweenPieces / 2,0.8);
     dangerousRadiationDiagram.addArrow(arrowPoint2A, arrowPoint2B);
     dangerousRadiationDiagram.labelLineAbove(arrowPoint2A,arrowPoint2B,'Greater Energy',betweenPieces / 2,0.8);
 
 
-    dangerousRadiationDiagram.addText('Non-Ionizing', new Point(betweenPieces + length / 3,10),1.5,0,'centerLeft');
-    dangerousRadiationDiagram.addText('Radiation', new Point(betweenPieces + length / 3,8),1.5,0,'centerLeft');
-    dangerousRadiationDiagram.addText('Ionizing', new Point(betweenPieces + length / 3,3),1.5,0,'centerLeft');
-    dangerousRadiationDiagram.addText('Radiation', new Point(betweenPieces + length / 3,1),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Non-Ionizing', new PointF(betweenPieces + length / 3,10),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Radiation', new PointF(betweenPieces + length / 3,8),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Ionizing', new PointF(betweenPieces + length / 3,3),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Radiation', new PointF(betweenPieces + length / 3,1),1.5,0,'centerLeft');
 
 
     $("#dangerousRadiationDiagram").append(dangerousRadiationDiagram.drawCanvas());

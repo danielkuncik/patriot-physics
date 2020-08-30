@@ -1,5 +1,5 @@
 /// this should be combined with the block problem area!
-class SpringProblem extends Diagram {
+class SpringProblem extends DiagramF {
     constructor() {
         super();
     }
@@ -69,16 +69,16 @@ class HorizontalSpringProblem extends SpringProblem {
         this.maxCanvasWidth = 300;
         this.maxCanvasHeight = 300;
 
-        this.corner = new Point(0, -1 * this.springWidth);
-        this.wallTop = new Point(0, this.springWidth * 2);
-        this.floorEnd = new Point(equilibirumLength * 2, -1 * this.springWidth);
+        this.corner = new PointF(0, -1 * this.springWidth);
+        this.wallTop = new PointF(0, this.springWidth * 2);
+        this.floorEnd = new PointF(equilibirumLength * 2, -1 * this.springWidth);
 
         this.wall = super.addSegment(this.corner, this.wallTop);
         this.floor = super.addSegment(this.corner, this.floorEnd);
 
         // default spring length is the
         this.springLength = this.equilibriumLength;
-        this.springEndPoint = new Point(0, this.springLength);
+        this.springEndPoint = new PointF(0, this.springLength);
 
         this.mass = undefined;
 
@@ -93,7 +93,7 @@ class HorizontalSpringProblem extends SpringProblem {
     stretchSpringAbsolute(newSpringLength) {
         let xTranslation = newSpringLength - this.springLength;
         this.springLength = newSpringLength;
-        this.springEndPoint = new Point(this.springLength, 0);
+        this.springEndPoint = new PointF(this.springLength, 0);
         // if (this.mass) {
         //         //     this.mass.lowerLeft.translate(xTranslation, 0);
         //         //     this.mass.upperLeft.translate(xTranslation, 0);
@@ -112,15 +112,15 @@ class HorizontalSpringProblem extends SpringProblem {
         let length = this.springWidth * 2 * relativeLength;
         let textDisplacement = this.springWidth * 0.7;
         let relativeFontSize = this.springWidth * 0.7;
-        let arrowCenterPoint = new Point(this.springEndPoint.x + this.springWidth, this.springWidth * 1.5);
+        let arrowCenterPoint = new PointF(this.springEndPoint.x + this.springWidth, this.springWidth * 1.5);
         let arrowBackPoint;
         let arrowFrontPoint;
         if (direction === 'right') {
-            arrowFrontPoint = new Point(arrowCenterPoint.x + length / 2, arrowCenterPoint.y);
-            arrowBackPoint = new Point(arrowCenterPoint.x - length / 2, arrowCenterPoint.y);
+            arrowFrontPoint = new PointF(arrowCenterPoint.x + length / 2, arrowCenterPoint.y);
+            arrowBackPoint = new PointF(arrowCenterPoint.x - length / 2, arrowCenterPoint.y);
         } else if (direction === 'left') {
-            arrowFrontPoint = new Point(arrowCenterPoint.x - length / 2, arrowCenterPoint.y);
-            arrowBackPoint = new Point(arrowCenterPoint.x + length / 2, arrowCenterPoint.y);
+            arrowFrontPoint = new PointF(arrowCenterPoint.x - length / 2, arrowCenterPoint.y);
+            arrowBackPoint = new PointF(arrowCenterPoint.x + length / 2, arrowCenterPoint.y);
         }
         super.addArrow(arrowBackPoint, arrowFrontPoint, this.springWidth * 0.6);
         super.labelLineAbove(arrowBackPoint, arrowFrontPoint, label, textDisplacement, relativeFontSize);
@@ -286,9 +286,9 @@ class Vector {
             let point2;
             let components = point1.getComponentsToAnotherPoint(point3, convertDegreesToRadians(axisRotationInDegrees));
             if (this.components.horizontalFirstBoolean) {
-                point2 = new Point(point1.x + components.xComponent, point1.y);
+                point2 = new PointF(point1.x + components.xComponent, point1.y);
             } else { // vertical first
-                point2 = new Point(point1.x, point1.y + components.yComponent);
+                point2 = new PointF(point1.x, point1.y + components.yComponent);
             }
 
             diagramObject.addArrow(point1, point2);
@@ -419,7 +419,7 @@ class Block {
 }
 
 
-class BlockProblem extends Diagram {
+class BlockProblem extends DiagramF {
     constructor() {
         super();
         this.appliedForces = [];
@@ -515,7 +515,7 @@ class BlockProblem extends Diagram {
         let rightEndPoint = origin.getAnotherPointWithTrig(this.length/2, theta);
         super.addSegment(leftEndPoint, rightEndPoint);
         if (this.ramp) {
-            let cornerPoint = new Point(leftEndPoint.x + this.length * Math.cos(theta), leftEndPoint.y);
+            let cornerPoint = new PointF(leftEndPoint.x + this.length * Math.cos(theta), leftEndPoint.y);
             super.addSegment(leftEndPoint, cornerPoint);
             super.addSegment(cornerPoint, rightEndPoint);
         }

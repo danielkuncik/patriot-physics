@@ -54,7 +54,7 @@ TO DO: (8-12-2020)
 
 
 
-class Point {
+class PointF {
     constructor(x, y, name) {
         this.x = x;
         this.y = y;
@@ -85,14 +85,14 @@ class Point {
     translateAndReproduce(xTranslation, yTranslation) {
         let newX = this.x + xTranslation;
         let newY = this.y + yTranslation;
-        let newPoint = new Point(newX, newY);
+        let newPoint = new PointF(newX, newY);
         return newPoint
     }
 
     translateAndReproducePolar(length, thetaInRadians) {
         let xTranslation = length * Math.cos(thetaInRadians);
         let yTranslation = length * Math.sin(thetaInRadians);
-        let newPoint = new Point(this.x + xTranslation, this.y + yTranslation);
+        let newPoint = new PointF(this.x + xTranslation, this.y + yTranslation);
         return newPoint
     }
 
@@ -104,7 +104,7 @@ class Point {
         // let newX = this.x + xTranslation * Math.cos(rotation) + yTranslation * Math.sin(rotation);
         // let newY = this.y + xTranslation * Math.sin(rotation) - yTranslation * Math.cos(rotation);
         // let newPoint = new Point(newX, newY);
-        let newPoint = new Point(xPrime, yPrime);
+        let newPoint = new PointF(xPrime, yPrime);
         return newPoint
     }
 
@@ -213,7 +213,7 @@ class Point {
         let L = this.getDistanceToAnotherPoint(anotherPoint) * proportion;
         let x = this.x + L * Math.cos(theta);
         let y = this.y + L * Math.sin(theta);
-        return new Point(x, y);
+        return new PointF(x, y);
     }
 
     // returns a new Point which is a particular length away at angle theta
@@ -221,7 +221,7 @@ class Point {
         let newX, newY;
         newX = this.x + length * Math.cos(thetaInRadians);
         newY = this.y + length * Math.sin(thetaInRadians);
-        return new Point(newX,newY)
+        return new PointF(newX,newY)
     }
 
     // returns an angle theta in Radians
@@ -252,25 +252,25 @@ class Point {
 
 
 // global variable origin
-const origin = new Point(0,0);
+const origin = new PointF(0,0);
 /// in creating triangles
 /// the point 'origin' has caused lots of problems
 // so i added the function below as an alternative
 /// EXPLORE THIS!!!
 
-function makeOrigin() {
-    return new Point(0,0);
+function makeOriginF() {
+    return new PointF(0,0);
 }
 
-function constructPointWithMagnitude(magnitude, angleInRadians) {
+function constructPointWithMagnitudeF(magnitude, angleInRadians) {
     let x = magnitude * Math.cos(angleInRadians);
     let y = magnitude * Math.sin(angleInRadians);
-    let newPoint = new Point(x, y);
+    let newPoint = new PointF(x, y);
     return newPoint;
 }
 
 
-class Line {
+class LineF {
     constructor(pointA, pointB) {
         if (pointA.getDistanceToAnotherPoint(pointB) < 1e-10) {
             console.log('cannot make a line of two of the same point');
@@ -337,31 +337,31 @@ class Line {
     findParallelLine(outsidePoint) {
         let pointB;
         if (this.horizontal) {
-            pointB = new Point(outsidePoint.x + 1,outsidePoint.y);
+            pointB = new PointF(outsidePoint.x + 1,outsidePoint.y);
         } else if (this.vertical) {
-            pointB = new Point(outsidePoint.x,outsidePoint.y + 1);
+            pointB = new PointF(outsidePoint.x,outsidePoint.y + 1);
         } else {
             const deltaX = 1;
             const deltaY = this.slope * deltaX;
-            pointB = new Point(outsidePoint.x + deltaX, outsidePoint.y + deltaX);
+            pointB = new PointF(outsidePoint.x + deltaX, outsidePoint.y + deltaX);
         }
-        return new Line(outsidePoint, pointB)
+        return new LineF(outsidePoint, pointB)
     }
 
     // for any point outside aline, there is one point perpendicular to that point
     findPerpendicularLine(outsidePoint) {
         let pointB;
         if (this.horizontal) {
-            pointB = new Point(outsidePoint.x, outsidePoint.y + 1);
+            pointB = new PointF(outsidePoint.x, outsidePoint.y + 1);
         } else if (this.vertical) {
-            pointB = new Point(outsidePoint.x + 1, outsidePoint.y);
+            pointB = new PointF(outsidePoint.x + 1, outsidePoint.y);
         } else {
             let newSlope = -1 / this.slope;
             const deltaX = 1;
             const deltaY = newSlope * deltaX;
-            pointB = new Point(outsidePoint.x + deltaX, outsidePoint.y + deltaX);
+            pointB = new PointF(outsidePoint.x + deltaX, outsidePoint.y + deltaX);
         }
-        return new Line(outsidePoint, pointB)
+        return new LineF(outsidePoint, pointB)
     }
 
     findIntersectionWithAnotherLine(anotherLine) {
@@ -369,68 +369,68 @@ class Line {
             return undefined
         } else if (this.vertical) {
             if (anotherLine.horizontal) {
-                return new Point(this.xValue, anotherLine.yValue); /// is this line redundant?
+                return new PointF(this.xValue, anotherLine.yValue); /// is this line redundant?
             } else {
-                return new Point(this.xValue, anotherLine.findYValueForXValue(this.xValue));
+                return new PointF(this.xValue, anotherLine.findYValueForXValue(this.xValue));
             }
         } else if (this.horizontal) {
             if (anotherLine.vertical) {
-                return new Point(anotherLine.xValue, this.yValue);  /// is this line redundant? this possiblity is already included int he findY Value for XVlaye funcion
+                return new PointF(anotherLine.xValue, this.yValue);  /// is this line redundant? this possiblity is already included int he findY Value for XVlaye funcion
             } else {
-                return new Point(anotherLine.findXValueForYValue(this.yValue), this.yValue);
+                return new PointF(anotherLine.findXValueForYValue(this.yValue), this.yValue);
             }
         } else {
             if (anotherLine.vertical) {
-                return new Point(anotherLine.xValue, this.findYValueForXValue(anotherLine.xValue));
+                return new PointF(anotherLine.xValue, this.findYValueForXValue(anotherLine.xValue));
             } else if (anotherLine.horizontal) {
-                return new Point(this.findXValueForYValue(anotherLine.yValue), anotherLine.yValue);
+                return new PointF(this.findXValueForYValue(anotherLine.yValue), anotherLine.yValue);
             } else {
                 let newX = (anotherLine.yIntercept - this.yIntercept) / (this.slope - anotherLine.slope);
                 let newY = this.slope * newX + this.yIntercept;
-                return new Point(newX, newY)
+                return new PointF(newX, newY)
             }
         }
     }
 }
 
-function constructLineSlopeIntercept(slope, yIntercept) {
-    let pointA = new Point(0, yIntercept);
-    let pointB = new Point(1, yIntercept + 1 * slope);
-    return new Point(pointA, pointB)
+function constructLineSlopeInterceptF(slope, yIntercept) {
+    let pointA = new PointF(0, yIntercept);
+    let pointB = new PointF(1, yIntercept + 1 * slope);
+    return new PointF(pointA, pointB)
 }
 
-function constructVerticalLine(xValue) {
-    return new Line(new Point(xValue, 0), new Point(xValue, 1));
+function constructVerticalLineF(xValue) {
+    return new LineF(new PointF(xValue, 0), new PointF(xValue, 1));
 }
 
-function constructHorizontalLine(yValue) {
-    return new Line(new Point(0, yValue), new Point(yValue, 1));
+function constructHorizontalLineF(yValue) {
+    return new LineF(new PointF(0, yValue), new PointF(yValue, 1));
 }
 
-function constructLineFromPointAndAngle(point, angleInRadians) {
-    let pointB = new Point(point.x + Math.cos(angleInRadians), point.y + Math.sin(angleInRadians));
-    return new Line(point, pointB);
+function constructLineFromPointAndAngleF(point, angleInRadians) {
+    let pointB = new PointF(point.x + Math.cos(angleInRadians), point.y + Math.sin(angleInRadians));
+    return new LineF(point, pointB);
 }
 
-// IMPROVE THIS, make this relevant!
-class Ray {
-    constructor(startPoint, slope) {
-        this.startPoint = startPoint;
-        this.slope = slope;
-    }
-    //
-    // turnIntoLine() {
-    //     return constructLineFromPointAndAngle(pointB, this.angleInRaidans);
-    // }
-}
+// // IMPROVE THIS, make this relevant!
+// class Ray {
+//     constructor(startPoint, slope) {
+//         this.startPoint = startPoint;
+//         this.slope = slope;
+//     }
+//     //
+//     // turnIntoLine() {
+//     //     return constructLineFromPointAndAngle(pointB, this.angleInRaidans);
+//     // }
+// }
+//
+// function constructRayFromTwoPoints(startPoint, outsidePoint) {
+//     let slope = (outsidePoint.y - startPoint.y) / (outsidePoint.x - startPoint.x);
+//     return new Ray(startPoint, slope)
+// }
 
-function constructRayFromTwoPoints(startPoint, outsidePoint) {
-    let slope = (outsidePoint.y - startPoint.y) / (outsidePoint.x - startPoint.x);
-    return new Ray(startPoint, slope)
-}
 
-
-class Segment {
+class SegmentF {
     constructor(point1, point2) {
         this.point1 = point1;
         this.point2 = point2;
@@ -440,7 +440,7 @@ class Segment {
         this.dotted = false;
         this.dashed = false;
 
-        this.line = new Line(point1, point2); // a corresponding infinite line through this point
+        this.line = new LineF(point1, point2); // a corresponding infinite line through this point
     }
 
     // do i want thickness to scale with the rest of the image??
@@ -560,7 +560,7 @@ class Segment {
 
 }
 
-class Circle {
+class CircleF {
     constructor(centerPoint, radius) {
         //this.centerPoint = centerPoint;
         this.radius = radius;
@@ -569,7 +569,7 @@ class Circle {
         this.lineColor = "#000000";
         this.fillColor = "#000000";
         this.center = centerPoint;
-        this.rangeBox = constructRangeBoxFromCenter(centerPoint, radius * 2, radius * 2);
+        this.rangeBox = constructRangeBoxFromCenterF(centerPoint, radius * 2, radius * 2);
     }
 
     setFillColor(newColor) {
@@ -605,7 +605,7 @@ class Circle {
 
 
 // converts an angle that is outside the range of 0 to 2pi into that range
-function simplifyAngle(angleInRadians) {
+function simplifyAngleF(angleInRadians) {
     while (angleInRadians < 0) {
         angleInRadians += 2 * Math.PI;
     }
@@ -617,12 +617,12 @@ function simplifyAngle(angleInRadians) {
 
 // start radians and end radians are based on starting at +X and going counter-clockwise
 // always counterclockwise!
-class Arc {
+class ArcF {
     constructor(centerPoint, radius, startRadians, endRadians) {
         this.center = centerPoint;
         this.radius = radius;
-        startRadians = simplifyAngle(startRadians); // if the angle is outside the 0 to 2 pi range, converts into that range
-        endRadians = simplifyAngle(endRadians);
+        startRadians = simplifyAngleF(startRadians); // if the angle is outside the 0 to 2 pi range, converts into that range
+        endRadians = simplifyAngleF(endRadians);
         if (startRadians === endRadians) {
             return false
         }
@@ -639,7 +639,7 @@ class Arc {
         }
 
         // not quite perfect, look at some cases
-        this.rangeBox = constructRangeBoxFromExtremePoints(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
+        this.rangeBox = constructRangeBoxFromExtremePointsF(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY());
     }
 
     // gets the closest point to a particular angle on
@@ -728,7 +728,7 @@ function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
 
 
 // always returns the interior angle!!
-function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
+function getAngleOfTwoRaysF(outsidePointA, vertex, outsidePointB) {
     const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
     const a = vertex.getDistanceToAnotherPoint(outsidePointA);
     const b = vertex.getDistanceToAnotherPoint(outsidePointB);
@@ -742,7 +742,7 @@ function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB) {
 // DOES NOT include triangles, because they have a different set of methods
 /// counterclockwise convention: the side that is counterclockwise of each vertex has the same name as that vertex
 // counterclockwise convention: the angle counterclockwise on each vertex has the same name as that vertex
-class Polygon {
+class PolygonF {
     constructor(arrayOfVertices) {
         if (arrayOfVertices.length <= 2) {
             console.log('Must have greater than 2 vertices to create polygon!');
@@ -772,16 +772,16 @@ class Polygon {
         const firstVertex = this.vertices[0];
         const secondVertex = this.vertices[1];
         this.lengths.push(firstVertex.getDistanceToAnotherPoint(secondVertex));
-        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(lastVertex,firstVertex,secondVertex)));
+        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRaysF(lastVertex,firstVertex,secondVertex)));
         for (i = 1; i < this.vertices.length - 1; i++ ) {
             const previousVertex = this.vertices[i - 1];
             const thisVertex = this.vertices[i];
             const nextVertex = this.vertices[i + 1];
             this.lengths.push(thisVertex.getDistanceToAnotherPoint(nextVertex));
-            this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(previousVertex, thisVertex, nextVertex))); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
+            this.angles.push(convertRadiansToDegrees(getAngleOfTwoRaysF(previousVertex, thisVertex, nextVertex))); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
         }
         this.lengths.push(lastVertex.getDistanceToAnotherPoint(firstVertex));
-        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(penultimateVertex, lastVertex, firstVertex)));
+        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRaysF(penultimateVertex, lastVertex, firstVertex)));
 
     }
 
@@ -848,42 +848,42 @@ still must complete:
 
 
 /// THESE ALL NEED TO BE A COUNTERCLOCKWISE ORIENTATION!!!!
-function rhombus(sideLength, angle1inDegrees, vertex0 = makeOrigin()) {
+function rhombusF(sideLength, angle1inDegrees, vertex0 = makeOriginF()) {
     const angle1inRadians = convertDegreesToRadians(angle1inDegrees);
     const angle2inRadians = Math.PI - angle1inRadians;
     const vertex1 = vertex0.translateAndReproducePolar(sideLength, Math.PI / 2 - angle1inRadians / 2);
     const vertex3 = vertex0.translateAndReproducePolar(sideLength, Math.PI / 2 + angle1inRadians / 2);
     const vertex2 = vertex3.translateAndReproducePolar(sideLength, angle2inRadians / 2);
-    return new Polygon([vertex0, vertex1, vertex2, vertex3]);
+    return new PolygonF([vertex0, vertex1, vertex2, vertex3]);
 }
 
-function trapezoid(base1, base2, lowAngle1inDegrees, lowAngle2inDegrees, vertex0 = makeOrigin()) {
-    const vertex1 = new Point(vertex0.x + base1, vertex0.y);
+function trapezoidF(base1, base2, lowAngle1inDegrees, lowAngle2inDegrees, vertex0 = makeOriginF()) {
+    const vertex1 = new PointF(vertex0.x + base1, vertex0.y);
     //// NOT SURE WHERE TO GO FROM HERE!
 }
 
-function isoscelesTrapezoid(base1, base2, lowAngleInDegrees, vertex0) {
-    return trapezoid(base1, base2, lowAngleInDegrees, lowAngleInDegrees, vertex0)
+function isoscelesTrapezoidF(base1, base2, lowAngleInDegrees, vertex0) {
+    return trapezoidF(base1, base2, lowAngleInDegrees, lowAngleInDegrees, vertex0)
 }
 
 
 /// THESE ALL NEED TO BE A COUNTERCLOCKWISE ORIENTATION!!!!
-function rightTrapezoid(base1, base2, height, vertex0 = makeOrigin()) {
+function rightTrapezoidF(base1, base2, height, vertex0 = makeOriginF()) {
     const vertex1 = vertex0.translateAndReproduce(0,height);
     const vertex2 = vertex3.translateAndReproduce(base2,0);
     const vertex3 = vertex0.translateAndReproduce(base1,0);
-    return new Polygon([vertex0,vertex1,vertex2,vertex3])
+    return new PolygonF([vertex0,vertex1,vertex2,vertex3])
 }
 
-function parallelogram() {
+function parallelogramF() {
 
 }
 
-function regularPentagon(sideLength) {
-    return constructRegularPolygon(5, sideLength)
+function regularPentagonF(sideLength) {
+    return constructRegularPolygonF(5, sideLength)
 }
 
-function homePlate(scaleFactor, vertex0 = makeOrigin()) {
+function homePlateF(scaleFactor, vertex0 = makeOriginF()) {
     const base = 17 * scaleFactor; // based on MLB official rules
     const height = 8.5 * scaleFactor;
     const topSides = 12 * scaleFactor;
@@ -893,21 +893,21 @@ function homePlate(scaleFactor, vertex0 = makeOrigin()) {
     const vertex3 = vertex1.translateAndReproducePolar(0,height);
     const vertex1 = vertex0.translateAndReproducePolar(0,height);
     const vertex2 = vertex4.translateAndReproducePolar(topSides, theta);
-    return new Polygon([vertex0, vertex1, vertex2, vertex3, vertex4]);
+    return new PolygonF([vertex0, vertex1, vertex2, vertex3, vertex4]);
 }
 
-function regularHexagon(sideLength) {
-    return constructRegularPolygon(6, sideLength)
+function regularHexagonF(sideLength) {
+    return constructRegularPolygonF(6, sideLength)
 
 }
 
-function regularOctagon(sideLength) {
-    return constructRegularPolygon(8, sideLength)
+function regularOctagonF(sideLength) {
+    return constructRegularPolygonF(8, sideLength)
 }
 
 
 //// INCOMPLETE!!!!!!!
-function constructRegularPolygon(nSides, sideLength, vertex0 = makeOrigin()) {
+function constructRegularPolygonF(nSides, sideLength, vertex0 = makeOriginF()) {
     const theta =  convertDegreesToRadians((nSides - 2) * 180 / nSides);
     this.currentAngle = 0;
     let i;
@@ -917,7 +917,7 @@ function constructRegularPolygon(nSides, sideLength, vertex0 = makeOrigin()) {
         /// figure out a recursive function that always gives the next angle, relative to the horizontal, of a regular polygon
         vertexArray.push(vertexArray[i].translateAndReproducePolar(sideLength,phi));
     }
-    return new Polygon(vertexArray)
+    return new PolygonF(vertexArray)
 }
 
 
@@ -925,7 +925,7 @@ function constructRegularPolygon(nSides, sideLength, vertex0 = makeOrigin()) {
 /// there isn't anything about these methods that make it inconsistent with the methods of polygon!!
 // triangle can be a subclass of polygon, with verxtexA, vertexB, and vertexC => none of these variables are defined in the polygon method!
 // and many of the methods are consistent
-class Triangle extends Polygon {
+class TriangleF extends PolygonF {
     constructor(vertexA, vertexB, vertexC) {
         super([vertexA, vertexB, vertexC]);
 
@@ -958,9 +958,9 @@ class Triangle extends Polygon {
 
         this.right = this.isRightTriangle();
 
-        this.segmentA = new Segment(this.vertexB, this.vertexC);
-        this.segmentB = new Segment(this.vertexC, this.vertexA);
-        this.segmentC = new Segment(this.vertexA, this.vertexB);
+        this.segmentA = new SegmentF(this.vertexB, this.vertexC);
+        this.segmentB = new SegmentF(this.vertexC, this.vertexA);
+        this.segmentC = new SegmentF(this.vertexA, this.vertexB);
     }
 
     // renames the verticies
@@ -1075,11 +1075,11 @@ class Triangle extends Polygon {
     // altitude is a segment that begins at one vertex and makes a right angle with the opposite segment
     getAltitude(whichVertex) {
         if (whichVertex === 'A') {
-            return new Segment(this.vertexA, this.segmentA.line.findIntersectionWithAnotherLine(this.segmentA.line.findPerpendicularLine(this.vertexA)));
+            return new SegmentF(this.vertexA, this.segmentA.line.findIntersectionWithAnotherLine(this.segmentA.line.findPerpendicularLine(this.vertexA)));
         } else if (whichVertex === 'B') {
-            return new Segment(this.vertexB, this.segmentB.line.findIntersectionWithAnotherLine(this.segmentB.line.findPerpendicularLine(this.vertexB)));
+            return new SegmentF(this.vertexB, this.segmentB.line.findIntersectionWithAnotherLine(this.segmentB.line.findPerpendicularLine(this.vertexB)));
         } else if (whichVertex === 'C') {
-            return new Segment(this.vertexC, this.segmentC.line.findIntersectionWithAnotherLine(this.segmentC.line.findPerpendicularLine(this.vertexC)));
+            return new SegmentF(this.vertexC, this.segmentC.line.findIntersectionWithAnotherLine(this.segmentC.line.findPerpendicularLine(this.vertexC)));
         } else {
             return undefined
         }
@@ -1088,11 +1088,11 @@ class Triangle extends Polygon {
     // a median is a segment that begins at one vertex and ends at the midpoint of the opposite segment
     getMedian(whichVertex) {
         if (whichVertex === 'A') {
-            return new Segment(this.vertexA, this.vertexB.interpolate(this.vertexC, 0.5));
+            return new SegmentF(this.vertexA, this.vertexB.interpolate(this.vertexC, 0.5));
         } else if (whichVertex === 'B') {
-            return new Segment(this.vertexB, this.vertexC.interpolate(this.vertexA, 0.5));
+            return new SegmentF(this.vertexB, this.vertexC.interpolate(this.vertexA, 0.5));
         } else if (whichVertex === 'C') {
-            return new Segment(this.vertexC, this.vertexA.interpolate(this.vertexB, 0.5));
+            return new SegmentF(this.vertexC, this.vertexA.interpolate(this.vertexB, 0.5));
         } else {
             return undefined
         }
@@ -1137,19 +1137,19 @@ class Triangle extends Polygon {
     }
 }
 
-function constructEquilateralTriangle(sideLength, vertexA = makeOrigin()) { // clockwise orientation
+function constructEquilateralTriangleF(sideLength, vertexA = makeOriginF()) { // clockwise orientation
   let vertexB = vertexA.translateAndReproduce(sideLength / 2, sideLength / 2 * Math.sqrt(3));
   let vertexC = vertexA.translateAndReproduce(sideLength, 0);
-  return new Triangle(vertexA, vertexB, vertexC);
+  return new TriangleF(vertexA, vertexB, vertexC);
 }
 
-function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation
+function constructIsoscelesTriangleF(width, height, vertexA = makeOriginF()) { // clockwise orientation
   let vertexB = vertexA.translateAndReproduce(width / 2, height);
   let vertexC = vertexA.translateAndReproduce(width, 0);
-  return new Triangle(vertexA, vertexB, vertexC)
+  return new TriangleF(vertexA, vertexB, vertexC)
 }
 
-function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
+function constructRightTriangleHypotenuseAngleF(hypotenuse, angleA, swapLegs, vertexA = makeOriginF()) { // clockwise orientation
   const theta = convertDegreesToRadians(angleA);
   let x = hypotenuse * Math.cos(theta);
   let y = hypotenuse * Math.sin(theta);
@@ -1161,10 +1161,10 @@ function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, ver
   }
   const vertexC = vertexA.translateAndReproduce(x,0);
   const vertexB = vertexA.translateAndReproduce(x,y);
-  return new Triangle(vertexA, vertexB, vertexC);
+  return new TriangleF(vertexA, vertexB, vertexC);
 }
 
-function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
+function constructRightTriangleTwoLegsF(xLeg, yLeg, swapLegs, vertexA = makeOriginF()) { // clockwise orientation
     if (swapLegs) {
         const oldxLeg = xLeg;
         const oldyLeg = yLeg;
@@ -1173,29 +1173,29 @@ function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigi
     }
     const vertexC = vertexA.translateAndReproduce(xLeg,0);
     const vertexB = vertexA.translateAndReproduce(xLeg,yLeg);
-    return new Triangle(vertexA, vertexB, vertexC);
+    return new TriangleF(vertexA, vertexB, vertexC);
 }
 
 // add error message if hypotenuse is shorter than leg
-function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
+function constructRightTriangleHypotenuseLegF(hypotenuse, xLeg, swapLegs, vertexA = makeOriginF()) { // clockwise orientation
     const yLeg = Math.sqrt(hypotenuse**2 - xLeg**2);
-    return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
+    return constructRightTriangleTwoLegsF(xLeg, yLeg, swapLegs, vertexA)
 }
 
 
-function constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA = makeOrigin()) { // counterlockwise orientation
+function constructTriangleSASF(sideC, angleBinDegrees, sideA, vertexA = makeOriginF()) { // counterlockwise orientation
     console.log(sideC, angleBinDegrees, sideA, vertexA);
     let vertexB = vertexA.translateAndReproduce(sideC, 0);
     let angleBInRadians = convertDegreesToRadians(angleBInDegrees);
     let vertexC = vertexB.translateAndReproduce(-1 * sideA * Math.cos(angleBInRadians), sideA * Math.sin(angleBInRadians));
-    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+    let newTriangle = new TriangleF(vertexA, vertexB, vertexC);
     newTriangle.setOrientationCounterClockwise();
     return newTriangle
 }
 
 
 // its possible that the angles do not
-function constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA = makeOrigin()) { // counterclockwise orientation
+function constructTriangleASAF(angleAinDegrees, sideC, angleBinDegrees, vertexA = makeOriginF()) { // counterclockwise orientation
     const angleCinDegrees = 180 - angle1inDegrees - angle2inDegrees;
     if (angle3inDegrees <= 0) {
         console.log('cannot have a triangle with total angle greater than 180');
@@ -1205,33 +1205,33 @@ function constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA =
     const angleBinRadians = convertDegreesToRadians(angleBinDegrees);
 
 
-    const lineB = new constructLineFromPointAndAngle(vertexA, angleAinRadians);
+    const lineB = new constructLineFromPointAndAngleF(vertexA, angleAinRadians);
     const vertexB = vertexA.translateAndReproduce(sideC, 0);
-    const lineA = new constructLineFromPointAndAngle(vertexB, Math.PI - angleBinRadians);
+    const lineA = new constructLineFromPointAndAngleF(vertexB, Math.PI - angleBinRadians);
     const vertexC = lineA.findIntersectionWithAnotherLine(lineB);
-    let newTriangle = new Triangle(vertexA, vertexB, vertexC);
+    let newTriangle = new TriangleF(vertexA, vertexB, vertexC);
     newTriangle.setOrientationCounterClockwise();
     return newTriangle
 }
 
-function constructTriangleSSS(sideC, sideB, sideA, vertexA) { // counterclockwise orientation
+function constructTriangleSSSF(sideC, sideB, sideA, vertexA) { // counterclockwise orientation
     let angleB = getAngleFromLawOfCosines(sideA, sideB, sideC); // in degrees
-    return constructTriangleSAS(sideC, angleB, sideA, vertexA);
+    return constructTriangleSASF(sideC, angleB, sideA, vertexA);
 }
 
 
-function constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) { // counterclockwiseOrientation orientation
+function constructTriangleAASF(angleCinDegrees, angleAinDegrees, sideC, vertexA) { // counterclockwiseOrientation orientation
     const angleBinDegrees = 180 - angleCinDegrees - angleAinDegrees;
     if (angleBinDegrees <= 0) {
         console.log('cannot have a triangle with total angle greater than 180');
         return false
     }
-    return constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA);
+    return constructTriangleASAF(angleAinDegrees, sideC, angleBinDegrees, vertexA);
 }
 
 
 
-class Rectangle extends Polygon {
+class RectangleF extends PolygonF {
   constructor(width, height, vertex0) {
     const vertex1 = vertex0.translateAndReproduce(0,height);
     const vertex2 = vertex0.translateAndReproduce(width,height);
@@ -1242,10 +1242,10 @@ class Rectangle extends Polygon {
 
   // diagonal through vertex 0 and vertex 2
   getDiagonal0() {
-    return new Segment(this.vertices[0],this.vertices[2]);
+    return new SegmentF(this.vertices[0],this.vertices[2]);
   }
   getDiagonal1() {
-    return new Segment(this.vertices[1],this.vertices[3]);
+    return new SegmentF(this.vertices[1],this.vertices[3]);
   }
   getCenter() {
     return this.getDiagonal0().intersectionWithAnotherSegment(this.getDiagonal1())
@@ -1256,7 +1256,7 @@ class Rectangle extends Polygon {
 
 }
 
-class Square extends Rectangle {
+class SquareF extends RectangleF {
   constructor(sideLength, vertex0) {
     super(sideLength, sideLength, vertex0);
   }
