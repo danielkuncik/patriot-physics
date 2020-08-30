@@ -141,23 +141,22 @@ class Angle extends PhysicsNumber {
     }
 
     /// PRIVATE METHOD!!!!!
-    trigFunction(function, zeroLimit) {
+    trigFunction(trigFunction, zeroLimit) {
       const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
       let newFloat;
-      if (function === 'sin') {
+      if (trigFunction === 'sin') {
         newFloat = Math.sin(radiansFloat);
-      } else if (function === 'cos') {
+      } else if (trigFunction === 'cos') {
         newFloat = Math.cos(radiansFloat);
-      } else if (function === 'tan') {
+      } else if (trigFunction === 'tan') {
         newFloat = Math.tan(radiansFloat);
-      } else if (function === 'sec') {
+      } else if (trigFunction === 'sec') {
         newFloat = 1 / Math.cos(radiansFloat);
-      } else if (function === 'csc') {
+      } else if (trigFunction === 'csc') {
         newFloat = 1 / Math.sin(radiansFloat);
-      } else if (function = 'cot') {
+      } else if (trigFunction = 'cot') {
         newFloat = 1 / Math.tan(radiansFloat);
       }
-      const newFloat = Math.sin(radiansFloat);
       const newSigFigs = this.numSigFigs;
       const exact = newSigFigs === Infinity;
       const newUnit = undefined;

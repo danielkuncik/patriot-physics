@@ -22,10 +22,6 @@ class Triangle extends Polygon {
 
     calculateTriangleParameters() {
 
-        console.log(this.vertexA.print());
-        console.log(this.vertexB.print());
-        console.log(this.vertexC.print());
-
         this.sideLengthA = this.vertexB.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthB = this.vertexA.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthC = this.vertexA.getDistanceToAnotherPoint(this.vertexB);
@@ -196,14 +192,14 @@ function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // 
 // this will be tougher
 function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
     let x = (angleA.cosAngle()).multiplyMag(hypotenuse);
-    let y = (angleA.sinAngle()).multiplyMag(hypotenuse);;
+    let y = (angleA.sinAngle()).multiplyMag(hypotenuse);
     if (swapLegs) {
         const oldX = x;
         const oldY = y;
         x = oldY;
         y = oldX;
     }
-    const vertexC = vertexA.translateAndReproduce(x,0);
+    const vertexC = vertexA.translateAndReproduce(x,constructZeroMagnitude(undefined,true));
     const vertexB = vertexA.translateAndReproduce(x,y);
     return new Triangle(vertexA, vertexB, vertexC);
 }

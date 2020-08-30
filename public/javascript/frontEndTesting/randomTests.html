@@ -14,13 +14,16 @@
   <!-- Bootstrap js-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script src = './frontEndTesting.js'></script>
-<script src = '../physics/reference/units.js'></script>
-<script src = '../physics/physicsNumber.js'></script>
-<script src = '../physics/magnitude.js'></script>
-<script src = '../physics/angle.js'></script>
-<script src = '../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
-<script src = '../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
+  <script src = './frontEndTesting.js'></script>
+  <script src = '../mathematics/numbers/units.js'></script>
+  <script src = '../mathematics/numbers/physicsNumber.js'></script>
+  <script src = '../mathematics/numbers/magnitude.js'></script>
+  <script src = '../mathematics/numbers/angle.js'></script>
+  <script src = '../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
+  <script src = '../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
+  <script src = '../mathematics/geometricObjectsWithMagnitude/basics/segment.js'></script>
+  <script src = '../mathematics/geometricObjectsWithMagnitude/polygons/polygon.js'></script>
+  <script src = '../mathematics/geometricObjectsWithMagnitude/polygons/triangle.js'></script>
 
 
 <div id = 'putItHere'></div>
@@ -28,61 +31,44 @@
 <script>
     let randomTests = new TestPackage('Random Tests');
 
-    let mag1036 = new Magnitude('90',undefined,undefined,true); // 90 exact rounds to 100!!!!
-    mag1036.round(1);
-    randomTests.assertMagnitude(mag1036, {
-        "firstSigFig": "9",
-        "otherSigFigs": "",
-        "numSigFigs": 1,
-        "orderOfMagnitude": 1,
-        "positive": true,
-        "float": 90
-    }, 'rounding', 'exactRounding');
+    let triangle3 = constructRightTriangleHypotenuseAngle(new Magnitude('4.0'),new Angle('45'));
+    randomTests.assertMagnitude(triangle3.vertexA.x, {
+        "float": 0
+    }, 'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.vertexA.y, {
+        "float": 0
+    }, 'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.vertexB.x, {
+        "float": 4 / Math.sqrt(2)
+    }, 'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.vertexB.y, {
+        "float": 4 / Math.sqrt(2)
+    }, 'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.vertexC.x, {
+        "float": 4 / Math.sqrt(2)
+    }, 'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.vertexC.y, {
+        "float": 0
+    }, 'construction', 'construction4');
 
-    let mag1037 = new Magnitude('90',undefined,undefined,false); // same issue, but not exact
-    mag1037.round(1);
-    randomTests.assertMagnitude(mag1037, {
-        "firstSigFig": "9",
-        "otherSigFigs": "",
-        "numSigFigs": 1,
-        "orderOfMagnitude": 1,
-        "positive": true,
-        "float": 90
-    }, 'rounding', 'exactRounding');
-
-    let mag1038 = new Magnitude('90.0',undefined,undefined,false); // same issue, but not exact
-    mag1038.round(1);
-    randomTests.assertMagnitude(mag1038, {
-        "firstSigFig": "9",
-        "otherSigFigs": "",
-        "numSigFigs": 1,
-        "orderOfMagnitude": 1,
-        "positive": true,
-        "float": 90
-    }, 'rounding', 'exactRounding');
-
-    let mag1039 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
-    mag1039.round(1);
-    randomTests.assertMagnitude(mag1039, {
-        "firstSigFig": "1",
-        "otherSigFigs": "",
-        "numSigFigs": 1,
-        "orderOfMagnitude": 2,
-        "positive": true,
-        "float": 100
-    }, 'rounding', 'exactRounding');
-
-    let mag1040 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
-    mag1040.round(2);
-    randomTests.assertMagnitude(mag1040, {
-        "firstSigFig": "9",
-        "otherSigFigs": "9",
-        "numSigFigs": 2,
-        "orderOfMagnitude": 1,
-        "positive": true,
-        "float": 99
-    }, 'rounding', 'exactRounding');
-
+    randomTests.assertMagnitude(triangle3.angleA, {
+        float: 45
+    },'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.angleB, {
+        float: 45
+    },'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.angleC, {
+        float: 90
+    },'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.sideLengthA, {
+        float: 4 / Math.sqrt(2)
+    },'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.sideLengthB, {
+        float: 4 / Math.sqrt(2)
+    },'construction', 'construction4');
+    randomTests.assertMagnitude(triangle3.sideLengthC, {
+        float: 4
+    },'construction', 'construction4');
 
     $("#putItHere").append(randomTests.printAllTests());
 

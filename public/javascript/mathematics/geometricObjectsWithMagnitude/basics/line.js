@@ -24,20 +24,20 @@ class Line {
             this.yValue = pointA.y;
             this.slope = 0;
             this.yIntercept = this.yValue;
-            this.function = (xMagnitude) => {return this.yValue}
+            this.function = (xMagnitude) => {return this.yValue};
         } else if (pointA.x.isEqualTo(pointB.x)) { /// vertical lines
             this.vertical = true;
             this.horizontal = false;
             this.xValue = pointA.x;
             this.slope = Infinity;
-            this.function((xMagnitude) => {return undefined})
+            this.function = (xMagnitude) => {return undefined};
             // this.function = (x) => {return undefined} not very relevant
         } else { /// diagonal lines
             this.vertical = false;
             this.horizontal = false;
             this.slope = (pointB.y.subtractMag(pointA.y)).divideMag(pointB.x.subtractMag(pointA.x));
             this.yIntercept = pointA.y.subtractMag(this.slope.multiplyMag(pointA.x));
-            this.function = (xMagnitude) => {return this.yIntercept.addMag(this.slope.multiplyMag(xMagnitude))}
+            this.function = (xMagnitude) => {return this.yIntercept.addMag(this.slope.multiplyMag(xMagnitude))};
         }
 
     }
