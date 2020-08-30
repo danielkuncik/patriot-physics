@@ -276,9 +276,7 @@ class PhysicsNumber {
       if (this.zero) {
           return false
       } else {
-          console.log(this.positive);
           this.positive = !this.positive;
-          console.log(this.positive);
       }
   }
 

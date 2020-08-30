@@ -9,7 +9,6 @@ think about how i deal with units of zero,
 maybe there should be an 'aspiring unit?????', because in later functions that employ units
 having a zero screws it up
 */
-console.log('magnitude');
 
 // essentially a physics number with units
 class Magnitude extends PhysicsNumber {

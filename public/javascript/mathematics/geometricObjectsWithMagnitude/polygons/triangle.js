@@ -17,10 +17,14 @@ class Triangle extends Polygon {
 
         this.recommendedFontSize = (this.sideLengthA.getFloat() + this.sideLengthB.getFloat() + this.sideLengthC.getFloat()) / 3 * .2;
 
-        this.area = this.calculateArea();
+        //this.area = this.calculateArea();
     }
 
     calculateTriangleParameters() {
+
+        console.log(this.vertexA.print());
+        console.log(this.vertexB.print());
+        console.log(this.vertexC.print());
 
         this.sideLengthA = this.vertexB.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthB = this.vertexA.getDistanceToAnotherPoint(this.vertexC);
@@ -180,13 +184,10 @@ class Triangle extends Polygon {
 function constructEquilateralTriangle(sideLength, vertexA = makeOrigin()) { // clockwise orientation
     let vertexB = vertexA.translateAndReproduce(sideLength.multiplyMagExactConstant(0.5), sideLength.multiplyMagExactConstant(0.5 * Math.sqrt(3)));
     let vertexC = vertexA.translateAndReproduce(sideLength, constructZeroMagnitude(undefined, true));
-    console.log(vertexA.print())
-    console.log(vertexB.print())
-    console.log(vertexC.print())
     return new Triangle(vertexA, vertexB, vertexC);
 }
 
-function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation
+function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation, B is the top
     let vertexB = vertexA.translateAndReproduce(width.multiplyMagExactConstant(0.5), height);
     let vertexC = vertexA.translateAndReproduce(width, constructZeroMagnitude(undefined,true));
     return new Triangle(vertexA, vertexB, vertexC)

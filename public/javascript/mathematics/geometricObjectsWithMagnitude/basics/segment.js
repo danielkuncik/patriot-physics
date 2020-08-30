@@ -18,6 +18,8 @@ class Segment {
         // this.cap = "butt";
         // this.dotted = false;
         // this.dashed = false;
+        this.line = new Line(point1, point2); // a corresponding infinite line through this point
+
 
         // adopting convention of first and second points
         this.firstPoint = undefined;
@@ -50,7 +52,6 @@ class Segment {
             }
         }
 
-        this.line = new Line(point1, point2); // a corresponding infinite line through this point
     }
 
     // do i want thickness to scale with the rest of the image??

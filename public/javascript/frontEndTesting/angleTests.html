@@ -94,9 +94,55 @@
         degrees: true,
         numSigFigs: 1,
         float: 60
-    }, 'construction', 'lawOfCosines', 'Equilateral Triangle');
+    }, 'construction', 'lawOfCosines', 'Equilateral Triangle one sig fig');
 
 
+    let side103c = new Magnitude('2.83');
+    let side103a = new Magnitude('4.00');
+    let side103b = new Magnitude('2.83');
+    const angle103 = getAngleFromLawOfCosines(side103c, side103a, side103b); /// should be 60 degrees
+    angleTests.assertAngle(angle103, {
+        firstSigFig: '4',
+        otherSigFigs: '50',
+        orderOfMagnitude: 1,
+        positive: true,
+        degrees: true,
+        numSigFigs: 3
+        //float: float is not exact here, you have 45 to three sig figs, but you don't have accuracy beyond that
+    }, 'construction', 'lawOfCosines');
+
+    let side104c = new Magnitude('2.8284271247');
+    let side104a = new Magnitude('4.00000000');
+    let side104b = new Magnitude('2.8284271247');
+    const angle104 = getAngleFromLawOfCosines(side104c, side104a, side104b); /// should be 60 degrees
+    angleTests.assertAngle(angle104, {
+        firstSigFig: '4',
+        otherSigFigs: '50000000',
+        orderOfMagnitude: 1,
+        positive: true,
+        degrees: true,
+        numSigFigs: 9
+        //float: float is not exact here, you have 45 to three sig figs, but you don't have accuracy beyond that
+    }, 'construction', 'lawOfCosines');
+    console.log(angle104.getFloat()); // without adding two extra sig figs to each side, it is off in a single sig fig
+
+
+    /*
+    let side101a = new Magnitude('3.00');
+    let side101b = new Magnitude('3.00');
+    let side101c = new Magnitude('3.00');
+    const angle101 = getAngleFromLawOfCosines(side101a, side101b, side101c); /// should be 60 degrees
+    angleTests.assertAngle(angle101, {
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 1,
+        positive: true,
+        degrees: true,
+        numSigFigs: 3,
+        float: 60
+    }, 'construction', 'lawOfCosines');
+
+     */
 
     $("#putItHere").append(angleTests.printAllTests());
 

@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 <body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
 <script src = '../frontEndTesting.js'></script>
-<script src = '../../mathematics/numbers/reference/units.js'></script>
+<script src = '../../mathematics/numbers/units.js'></script>
 <script src = '../../mathematics/numbers/physicsNumber.js'></script>
 <script src = '../../mathematics/numbers/magnitude.js'></script>
 <script src = '../../mathematics/numbers/angle.js'></script>
@@ -24,16 +32,16 @@
 <script>
     let triangleTests = new TestPackage('Triangle Tests');
     triangleTests.addCategory('construction', 'Construction Tests');
-    triangleTests.addCategory('construction', 'construction1', 'Construct From Points');
-    triangleTests.addCategory('construction', 'construction2', 'Construct Equilateral Triangle');
-    triangleTests.addCategory('construction', 'construction3', 'Construct Isosceles Triangle');
-    triangleTests.addCategory('construction', 'construction4', 'Construct Right Triangle Hypotenuse Angle');
-    triangleTests.addCategory('construction', 'construction5', 'Construct Right Triangle Two Legs');
-    triangleTests.addCategory('construction', 'construction6', 'Construct Right Triangle Hypotenuse Leg');
-    triangleTests.addCategory('construction', 'construction7', 'Construct SAS');
-    triangleTests.addCategory('construction', 'construction8', 'Construct ASA');
-    triangleTests.addCategory('construction', 'construction9', 'Construct SSS');
-    triangleTests.addCategory('construction', 'construction10', 'Construct AAS');
+    triangleTests.addSubCategory('construction', 'construction1', 'Construct From Points');
+    triangleTests.addSubCategory('construction', 'construction2', 'Construct Equilateral Triangle');
+    triangleTests.addSubCategory('construction', 'construction3', 'Construct Isosceles Triangle');
+    triangleTests.addSubCategory('construction', 'construction4', 'Construct Right Triangle Hypotenuse Angle');
+    triangleTests.addSubCategory('construction', 'construction5', 'Construct Right Triangle Two Legs');
+    triangleTests.addSubCategory('construction', 'construction6', 'Construct Right Triangle Hypotenuse Leg');
+    triangleTests.addSubCategory('construction', 'construction7', 'Construct SAS');
+    triangleTests.addSubCategory('construction', 'construction8', 'Construct ASA');
+    triangleTests.addSubCategory('construction', 'construction9', 'Construct SSS');
+    triangleTests.addSubCategory('construction', 'construction10', 'Construct AAS');
 
     let triangle1 = constructEquilateralTriangle(new Magnitude('10.0'));
     triangleTests.assertMagnitude(triangle1.vertexA.x, {
@@ -75,44 +83,44 @@
     },'construction', 'construction2');
 
 
+    // in an isosceles triangle, A and C are low and B is high
     let triangle2 = constructIsoscelesTriangle(new Magnitude('20.0'),new Magnitude('40.0'));
     triangleTests.assertMagnitude(triangle2.vertexA.x, {
         "float": 0
-    }, 'construction', 'construction1');
+    }, 'construction', 'construction3');
     triangleTests.assertMagnitude(triangle2.vertexA.y, {
         "float": 0
-    }, 'construction', 'construction1');
+    }, 'construction', 'construction3');
     triangleTests.assertMagnitude(triangle2.vertexB.x, {
         "float": 10
-    }, 'construction', 'construction1');
+    }, 'construction', 'construction3');
     triangleTests.assertMagnitude(triangle2.vertexB.y, {
         "float": 40
-    }, 'construction', 'construction1');
+    }, 'construction', 'construction3','vertex B x');
     triangleTests.assertMagnitude(triangle2.vertexC.x, {
         "float": 20
-    }, 'construction', 'construction1');
+    }, 'construction', 'construction3');
     triangleTests.assertMagnitude(triangle2.vertexC.y, {
         "float": 0
-    }, 'construction', 'construction1');
-
+    }, 'construction', 'construction3','vertex C y');
     triangleTests.assertMagnitude(triangle2.angleA, {
-        float: Math.atan(0.5) * 180 / Math.PI * 2
-    },'construction', 'construction2');
+        float: Math.atan(4) * 180 / Math.PI
+    },'construction', 'construction3', 'angle A');
     triangleTests.assertMagnitude(triangle2.angleB, {
-        float: Math.atan(2) * 180 / Math.PI
-    },'construction', 'construction2');
+        float: Math.atan(0.25) * 180 / Math.PI * 2
+    },'construction', 'construction3', 'angle B');
     triangleTests.assertMagnitude(triangle2.angleC, {
-        float: Math.atan(2) * 180 / Math.PI
-    },'construction', 'construction2');
+        float: Math.atan(4) * 180 / Math.PI
+    },'construction', 'construction3', 'angle C');
     triangleTests.assertMagnitude(triangle2.sideLengthA, {
-        float: 20
-    },'construction', 'construction2');
-    triangleTests.assertMagnitude(triangle2.sideLengthB, {
         float: Math.sqrt(10**2 + 40**2)
-    },'construction', 'construction2');
+    },'construction', 'construction3','sideLengthA');
+    triangleTests.assertMagnitude(triangle2.sideLengthB, {
+        float: 20
+    },'construction', 'construction3', 'sideLength B');
     triangleTests.assertMagnitude(triangle2.sideLengthC, {
         float: Math.sqrt(10**2 + 40**2)
-    },'construction', 'construction2');
+    },'construction', 'construction3');
 
 /*
     let triangle3 = constructRightTriangleHypotenuseAngle(new Magnitude('4.0'),new Angle('45'));
