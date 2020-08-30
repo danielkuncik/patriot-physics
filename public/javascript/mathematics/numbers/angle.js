@@ -140,46 +140,53 @@ class Angle extends PhysicsNumber {
         }
     }
 
-    // these should only exist in the angles
-    // trig functions: too much repeated code here!!!
-    // make a private function that brings these together
-    sinMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
-        const newFloat = Math.sin(radiansFloat);
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+    /// PRIVATE METHOD!!!!!
+    trigFunction(function, zeroLimit) {
+      const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
+      let newFloat;
+      if (function === 'sin') {
+        newFloat = Math.sin(radiansFloat);
+      } else if (function === 'cos') {
+        newFloat = Math.cos(radiansFloat);
+      } else if (function === 'tan') {
+        newFloat = Math.tan(radiansFloat);
+      } else if (function === 'sec') {
+        newFloat = 1 / Math.cos(radiansFloat);
+      } else if (function === 'csc') {
+        newFloat = 1 / Math.sin(radiansFloat);
+      } else if (function = 'cot') {
+        newFloat = 1 / Math.tan(radiansFloat);
+      }
+      const newFloat = Math.sin(radiansFloat);
+      const newSigFigs = this.numSigFigs;
+      const exact = newSigFigs === Infinity;
+      const newUnit = undefined;
+      return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, zeroLimit)
+
     }
 
-    cosMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
-        const newFloat = Math.cos(radiansFloat);
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+    sinAngle(zeroLimit = this.zeroLimit) {
+      return this.trigFunction('sin', zeroLimit)
     }
 
-    tanMag() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
-        const radiansFloat = this.degrees ? this.getFloat() / 180 * Math.PI : this.getFloat();
-        const newFloat = Math.tan(radiansFloat);
-        const newSigFigs = this.numSigFigs;
-        const exact = newSigFigs === Infinity;
-        const newUnit = undefined;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+    cosAngle(zeroLimit = this.zeroLimit) {
+      return this.trigFunction('cos', zeroLimit)
+    }
+
+    tanAngle(zeroLimit = this.zeroLimit) {
+      return this.trigFunction('tan', zeroLimit)
+    }
+
+    secAngle(zeroLimit = this.zeroLimit) {
+      return this.trigFunction('sec', zeroLimit)
+    }
+
+    cscAngle(zeroLimit = this.zeroLimit) {
+      return this.trigFunction('csc', zeroLimit)
+    }
+
+    cotAngle(zeroLimit = this.zeroLimit) {
+      return this.trigFunction('cot', zeroLimit)
     }
 
 

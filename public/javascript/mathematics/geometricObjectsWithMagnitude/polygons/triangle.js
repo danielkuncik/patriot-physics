@@ -195,9 +195,8 @@ function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // 
 
 // this will be tougher
 function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
-    const theta = convertDegreesToRadians(angleA);
-    let x = hypotenuse * Math.cos(theta);
-    let y = hypotenuse * Math.sin(theta);
+    let x = (angleA.cosAngle()).multiplyMag(hypotenuse);
+    let y = (angleA.sinAngle()).multiplyMag(hypotenuse);;
     if (swapLegs) {
         const oldX = x;
         const oldY = y;
@@ -223,7 +222,7 @@ function constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA = makeOrigi
 
 // add error message if hypotenuse is shorter than leg
 function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
-    const yLeg = Math.sqrt(hypotenuse**2 - xLeg**2);
+    const yLeg = hypotenuse.pythagoreanSubtractMag(xLeg);
     return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
 }
 
@@ -273,4 +272,3 @@ function constructTriangleAAS(angleCinDegrees, angleAinDegrees, sideC, vertexA) 
     }
     return constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA);
 }
-
