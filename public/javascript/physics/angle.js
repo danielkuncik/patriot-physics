@@ -9,6 +9,14 @@ class Angle extends PhysicsNumber {
         // or some other requirement
     }
 
+    duplicate() {
+        const string = !this.zero ? `${this.positive === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}` : `${this.firstSigFig}.${this.otherSigFigs}`;
+        const exact = this.numSigFigs === Infinity;
+        const intermediateValue = this.intermediateValue;
+        const degrees = this.degrees;
+        return new PhysicsNumber(string, degrees, intermediateValue, exact)
+    }
+
     convertToDegrees() {
         if (this.degrees) {
             return this
@@ -116,12 +124,20 @@ class Angle extends PhysicsNumber {
         return this.isEqualTo(new Angle('90',true, undefined, true), numSigFigs)
     }
 
-    printString(degrees = true) {
-
+    printString() {
+        if (this.degrees) {
+            return super.printOptimal() + '°'
+        } else {
+            return super.printOptimal() + ' rad'
+        }
     }
 
     printStringInTermsOfPi() {
+        if (this.degrees) {
+            return undefined
+        } else {
 
+        }
     }
 
     // these should only exist in the angles
@@ -210,4 +226,18 @@ function simplifyAngle(angleInRadians) {
         angleInRadians -= 2 * Math.PI;
     }
     return angleInRadians
+}
+
+// figure this out!
+// convert this to physicsNumbers
+function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
+    let cosine = (adjacentSide1**2 + adjacentSide2**2 - oppositeSide**2) / 2 / adjacentSide1 / adjacentSide2;
+    while (cosine > 1) {
+        cosine -= 1;
+    }
+    while (cosine < -1) {
+        cosine += 1;
+    }
+    const angleInRadians = Math.acos(cosine);
+    return convertRadiansToDegrees(angleInRadians);
 }

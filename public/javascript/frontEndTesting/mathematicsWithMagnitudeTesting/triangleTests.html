@@ -15,8 +15,8 @@
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/segment.js'></script>
-<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/polygon.js'></script>
-<script src = '../../mathematics/geometricObjectsWithMagnitude/basics/triangle.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/polygons/polygon.js'></script>
+<script src = '../../mathematics/geometricObjectsWithMagnitude/polygons/triangle.js'></script>
 
 <div id = 'putItHere'></div>
 
@@ -35,56 +35,125 @@
     triangleTests.addCategory('construction', 'construction9', 'Construct SSS');
     triangleTests.addCategory('construction', 'construction10', 'Construct AAS');
 
-    let triangle1 = constructEquilateralTriangle(10);
-    triangleTests.assertEqualFloat(triangle1.vertexA.x,0,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.vertexA.y,0,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.vertexB.x,5,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.vertexB.y,5 * Math.sqrt(3),'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.vertexC.x,10,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.vertexC.y,0,'construction','construction2');
+    let triangle1 = constructEquilateralTriangle(new Magnitude('10.0'));
+    triangleTests.assertMagnitude(triangle1.vertexA.x, {
+        float: 0
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.vertexA.y, {
+        float: 0
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.vertexB.x, {
+        float: 5
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.vertexB.y, {
+        float: 5 * Math.sqrt(3)
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.vertexC.x, {
+        float: 10
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.vertexC.y, {
+        float: 0
+    },'construction', 'construction2');
 
-    triangleTests.assertEqualFloat(triangle1.angleA,60,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.angleB,60,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.angleC,60,'construction','construction2');
-
-    triangleTests.assertEqualFloat(triangle1.sideLengthA,10,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.sideLengthB,10,'construction','construction2');
-    triangleTests.assertEqualFloat(triangle1.sideLengthC,10,'construction','construction2');
-
-
-    let triangle2 = constructIsoscelesTriangle(20,40);
-    triangleTests.assertEqualFloat(triangle2.vertexA.x,0,'construction', 'construction3');
-    triangleTests.assertEqualFloat(triangle2.vertexA.y,0,'construction', 'construction3');
-    triangleTests.assertEqualFloat(triangle2.vertexB.x,10,'construction', 'construction3');
-    triangleTests.assertEqualFloat(triangle2.vertexB.y,40,'construction', 'construction3');
-    triangleTests.assertEqualFloat(triangle2.vertexC.x,20,'construction', 'construction3');
-    triangleTests.assertEqualFloat(triangle2.vertexC.y,0,'construction', 'construction3');
-
-    // mathTests.assertEqualFloat(triangle2.angleA,0,'construction', 'construction3');
-    // mathTests.assertEqualFloat(triangle2.angleB,0,'construction', 'construction3');
-    // mathTests.assertEqualFloat(triangle2.angleC,0,'construction', 'construction3');
-    //
-    // mathTests.assertEqualFloat(triangle2.sideLengthA,0,'construction', 'construction3');
-    // mathTests.assertEqualFloat(triangle2.sideLengthB,0,'construction', 'construction3');
-    // mathTests.assertEqualFloat(triangle2.sideLengthC,0,'construction', 'construction3');
+    triangleTests.assertMagnitude(triangle1.angleA, {
+        float: 60
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.angleB, {
+        float: 60
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.angleC, {
+        float: 60
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.sideLengthA, {
+        float: 10
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.sideLengthB, {
+        float: 10
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle1.sideLengthC, {
+        float: 10
+    },'construction', 'construction2');
 
 
-    let triangle3 = constructRightTriangleHypotenuseAngle(4,45);
-    triangleTests.assertEqualFloat(triangle3.vertexA.x,0,'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.vertexA.y,0,'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.vertexB.x, 4 / Math.sqrt(2),'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.vertexB.y, 4 / Math.sqrt(2),'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.vertexC.x, 4 / Math.sqrt(2),'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.vertexC.y,0,'construction', 'construction4');
+    let triangle2 = constructIsoscelesTriangle(new Magnitude('20.0'),new Magnitude('40.0'));
+    triangleTests.assertMagnitude(triangle2.vertexA.x, {
+        "float": 0
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle2.vertexA.y, {
+        "float": 0
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle2.vertexB.x, {
+        "float": 10
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle2.vertexB.y, {
+        "float": 40
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle2.vertexC.x, {
+        "float": 20
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle2.vertexC.y, {
+        "float": 0
+    }, 'construction', 'construction1');
 
-    triangleTests.assertEqualFloat(triangle3.angleA,45,'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.angleB,45,'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.angleC,90,'construction', 'construction4');
+    triangleTests.assertMagnitude(triangle2.angleA, {
+        float: Math.atan(0.5) * 180 / Math.PI * 2
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle2.angleB, {
+        float: Math.atan(2) * 180 / Math.PI
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle2.angleC, {
+        float: Math.atan(2) * 180 / Math.PI
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle2.sideLengthA, {
+        float: 20
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle2.sideLengthB, {
+        float: Math.sqrt(10**2 + 40**2)
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle2.sideLengthC, {
+        float: Math.sqrt(10**2 + 40**2)
+    },'construction', 'construction2');
 
-    triangleTests.assertEqualFloat(triangle3.sideLengthA,4 / Math.sqrt(2),'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.sideLengthB,4 / Math.sqrt(2),'construction', 'construction4');
-    triangleTests.assertEqualFloat(triangle3.sideLengthC,4,'construction', 'construction4');
+/*
+    let triangle3 = constructRightTriangleHypotenuseAngle(new Magnitude('4.0'),new Angle('45'));
+    triangleTests.assertMagnitude(triangle3.vertexA.x, {
+        "float": 0
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle3.vertexA.y, {
+        "float": 0
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle3.vertexB.x, {
+        "float": 4 / Math.sqrt(2)
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle3.vertexB.y, {
+        "float": 4 / Math.sqrt(2)
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle3.vertexC.x, {
+        "float": 4 / Math.sqrt(2)
+    }, 'construction', 'construction1');
+    triangleTests.assertMagnitude(triangle3.vertexC.y, {
+        "float": 0
+    }, 'construction', 'construction1');
 
+    triangleTests.assertMagnitude(triangle3.angleA, {
+        float: 45
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle3.angleB, {
+        float: 45
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle3.angleC, {
+        float: 90
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle3.sideLengthA, {
+        float: 4 / Math.sqrt(2)
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle3.sideLengthB, {
+        float: 4 / Math.sqrt(2)
+    },'construction', 'construction2');
+    triangleTests.assertMagnitude(triangle3.sideLengthC, {
+        float: 4
+    },'construction', 'construction2');
+*/
 
     $("#putItHere").append(triangleTests.printAllTests());
 

@@ -30,16 +30,16 @@ class Polygon {
         const firstVertex = this.vertices[0];
         const secondVertex = this.vertices[1];
         this.lengths.push(firstVertex.getDistanceToAnotherPoint(secondVertex));
-        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(lastVertex,firstVertex,secondVertex)));
+        this.angles.push(getAngleOfTwoRays(lastVertex,firstVertex,secondVertex));
         for (i = 1; i < this.vertices.length - 1; i++ ) {
             const previousVertex = this.vertices[i - 1];
             const thisVertex = this.vertices[i];
             const nextVertex = this.vertices[i + 1];
             this.lengths.push(thisVertex.getDistanceToAnotherPoint(nextVertex));
-            this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(previousVertex, thisVertex, nextVertex))); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
+            this.angles.push(getAngleOfTwoRays(previousVertex, thisVertex, nextVertex)); // always returns the interior angle!!!! WILL NOT WORK FOR CONVEX polygons
         }
         this.lengths.push(lastVertex.getDistanceToAnotherPoint(firstVertex));
-        this.angles.push(convertRadiansToDegrees(getAngleOfTwoRays(penultimateVertex, lastVertex, firstVertex)));
+        this.angles.push(getAngleOfTwoRays(penultimateVertex, lastVertex, firstVertex));
 
     }
 

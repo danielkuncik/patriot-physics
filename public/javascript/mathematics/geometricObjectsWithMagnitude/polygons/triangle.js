@@ -38,22 +38,24 @@ class Triangle extends Polygon {
     }
 
 
-    isRightTriangle() {
-        if (Math.abs(this.angleA - 90) < 1e-10 || Math.abs(this.angleB - 90) < 1e-10 || Math.abs(this.angleC - 90) < 1e-10) {
-            return true
-        } else {
-            return false
-        }
+    isRightTriangle(numSigFigs) {
+        return this.angleA.isRight(numSigFigs) || this.angleB.isRight(numSigFigs) || this.angleC.isRight(numSigFigs)
     }
 
     // 8-13-2020: giving answers slightly too high, a problem with 'get length?, or 'get altitude?'
     calculateArea() {
         let area;
-        if (this.right) {
-            area = 0.5 * this.sideLengthA * this.sideLengthB;
+        if (this.right) { // what if it is right, but a different function was used to get it and C is not the right angle
+            if (this.angleC.isRight()) {
+                return (this.sideLengthA.multiplyMag(this.sideLengthB)).multiplyMagExactConstant(0.5)
+            } else if (this.angleB.isRight()) {
+                return (this.sideLengthA.multiplyMag(this.sideLengthC)).multiplyMagExactConstant(0.5)
+            } else if (this.angleA.isRight()) {
+                return (this.sideLengthB.multiplyMag(this.sideLengthC)).multiplyMagExactConstant(0.5)
+            }
         } else {
             console.log('WARNING: calculate triangle area function can give slightly incorrect answers');
-            area = 0.5 * this.sideLengthA * this.getAltitude('A').getLength();
+            area = (this.sideLengthA.multiplyMag(this.getAltitude('A').getLength())).multiplyMagExactConstant(0.5);
         }
         return area
     }
@@ -127,11 +129,11 @@ class Triangle extends Polygon {
     // a median is a segment that begins at one vertex and ends at the midpoint of the opposite segment
     getMedian(whichVertex) {
         if (whichVertex === 'A') {
-            return new Segment(this.vertexA, this.vertexB.interpolate(this.vertexC, 0.5));
+            return new Segment(this.vertexA, this.vertexB.interpolate(this.vertexC, new Magnitude(0.5, undefined, undefined, true)));
         } else if (whichVertex === 'B') {
-            return new Segment(this.vertexB, this.vertexC.interpolate(this.vertexA, 0.5));
+            return new Segment(this.vertexB, this.vertexC.interpolate(this.vertexA, new Magnitude(0.5, undefined, undefined, true)));
         } else if (whichVertex === 'C') {
-            return new Segment(this.vertexC, this.vertexA.interpolate(this.vertexB, 0.5));
+            return new Segment(this.vertexC, this.vertexA.interpolate(this.vertexB, new Magnitude(0.5, undefined, undefined, true)));
         } else {
             return undefined
         }
@@ -167,27 +169,30 @@ class Triangle extends Polygon {
 
     // definitely does not work!!!!
     /// FIX THIS! I need it to make my triangles face the correct way all the time!
-    spin(angleInDegrees) {
-        const theta = convertDegreesToRadians(angleInDegrees);
+    spin(angleObject) {
         const centroid = this.getCentroid();
-        this.vertexA.rotate(theta, centroid);
-        this.vertexB.rotate(theta, centroid);
-        this.vertexC.rotate(theta, centroid);
+        this.vertexA.rotate(angleObject, centroid);
+        this.vertexB.rotate(angleObject, centroid);
+        this.vertexC.rotate(angleObject, centroid);
     }
 }
 
 function constructEquilateralTriangle(sideLength, vertexA = makeOrigin()) { // clockwise orientation
-    let vertexB = vertexA.translateAndReproduce(sideLength / 2, sideLength / 2 * Math.sqrt(3));
-    let vertexC = vertexA.translateAndReproduce(sideLength, 0);
+    let vertexB = vertexA.translateAndReproduce(sideLength.multiplyMagExactConstant(0.5), sideLength.multiplyMagExactConstant(0.5 * Math.sqrt(3)));
+    let vertexC = vertexA.translateAndReproduce(sideLength, constructZeroMagnitude(undefined, true));
+    console.log(vertexA.print())
+    console.log(vertexB.print())
+    console.log(vertexC.print())
     return new Triangle(vertexA, vertexB, vertexC);
 }
 
 function constructIsoscelesTriangle(width, height, vertexA = makeOrigin()) { // clockwise orientation
-    let vertexB = vertexA.translateAndReproduce(width / 2, height);
-    let vertexC = vertexA.translateAndReproduce(width, 0);
+    let vertexB = vertexA.translateAndReproduce(width.multiplyMagExactConstant(0.5), height);
+    let vertexC = vertexA.translateAndReproduce(width, constructZeroMagnitude(undefined,true));
     return new Triangle(vertexA, vertexB, vertexC)
 }
 
+// this will be tougher
 function constructRightTriangleHypotenuseAngle(hypotenuse, angleA, swapLegs, vertexA = makeOrigin()) { // clockwise orientation
     const theta = convertDegreesToRadians(angleA);
     let x = hypotenuse * Math.cos(theta);

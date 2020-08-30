@@ -32,7 +32,7 @@
     const angle1 = new Angle('90.0');
     angleTests.assertEqualStrict(angle1.isRight(), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle1.isRight(1), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle1.isRight(3), true, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle1.isRight(2), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle1.isRight(3), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle1.isRight(4), undefined, 'comparison', 'comparison1'); // undefined here means that we cannot confirm it is or is not equal to 90
     angleTests.assertEqualStrict(angle1.isRight(5), undefined, 'comparison', 'comparison1');
@@ -40,20 +40,28 @@
     const angle2 = new Angle('90');
     angleTests.assertEqualStrict(angle2.isRight(), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle2.isRight(1), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle2.isRight(3), undefined, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle2.isRight(2), undefined, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle2.isRight(3), undefined, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle2.isRight(4), undefined, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle2.isRight(5), undefined, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle2.isRight(6), undefined, 'comparison', 'comparison1');
-    const angle3 = new Angle('90',true, undefined, true);
+    const angle3 = new Angle('90',true, undefined, true);//exactly 90
     angleTests.assertEqualStrict(angle3.isRight(), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle3.isRight(1), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle3.isRight(3), true, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle3.isRight(2), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle3.isRight(3), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle3.isRight(4), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle3.isRight(5), true, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle3.isRight(6), true, 'comparison', 'comparison1');
 
+    const angle4 = new Angle('85');
+    angleTests.assertEqualStrict(angle4.isRight(), false, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle4.isRight(1), true, 'comparison', 'comparison1'); // to one significant figure, 85 rounds up to 90
+    angleTests.assertEqualStrict(angle4.isRight(2), false, 'comparison', 'comparison1'); // to 2 significant figures, 85 is clearly not equal to 90
+    angleTests.assertEqualStrict(angle4.isRight(3), false, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle4.isRight(4), false, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle4.isRight(5), false, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle4.isRight(6), false, 'comparison', 'comparison1');
 
 
     $("#putItHere").append(angleTests.printAllTests());
