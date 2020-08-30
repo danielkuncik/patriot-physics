@@ -16,10 +16,10 @@
 
 
 <script src = './frontEndTesting.js'></script>
-<!-- <script src = '../physics/numericalStrings/numericalStringValidations.js'></script>
-<script src = '../physics/numericalStrings/numericalStringInformationGathering.js'></script> -->
-<script src = '../physics/physicsNumber.js'></script>
-<script src = '../physics/angle.js'></script>
+<script src = '../mathematics/numbers/units.js'></script>
+<script src = '../mathematics/numbers/physicsNumber.js'></script>
+<script src = '../mathematics/numbers/magnitude.js'></script>
+<script src = '../mathematics/numbers/angle.js'></script>
 
 <div id = 'putItHere'></div>
 
@@ -62,6 +62,40 @@
     angleTests.assertEqualStrict(angle4.isRight(4), false, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle4.isRight(5), false, 'comparison', 'comparison1');
     angleTests.assertEqualStrict(angle4.isRight(6), false, 'comparison', 'comparison1');
+
+    /// ####################
+    angleTests.addCategory('construction', 'Construction Tests');
+    angleTests.addSubCategory('construction', 'lawOfCosines', 'Construct from Law of Cosines');
+    let side101a = new Magnitude('3.00');
+    let side101b = new Magnitude('3.00');
+    let side101c = new Magnitude('3.00');
+    const angle101 = getAngleFromLawOfCosines(side101a, side101b, side101c); /// should be 60 degrees
+    angleTests.assertAngle(angle101, {
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 1,
+        positive: true,
+        degrees: true,
+        numSigFigs: 3,
+        float: 60
+    }, 'construction', 'lawOfCosines', 'Equilateral Triangle');
+
+    angleTests.addCategory('construction', 'Construction Tests');
+    angleTests.addSubCategory('construction', 'lawOfCosines', 'Construct from Law of Cosines');
+    let side102a = new Magnitude('3.00');
+    let side102b = new Magnitude('3');
+    let side102c = new Magnitude('3.00');
+    const angle102 = getAngleFromLawOfCosines(side102a, side102b, side102c); /// should be 60 degrees
+    angleTests.assertAngle(angle102, {
+        firstSigFig: '6',
+        otherSigFigs: '',
+        orderOfMagnitude: 1,
+        positive: true,
+        degrees: true,
+        numSigFigs: 1,
+        float: 60
+    }, 'construction', 'lawOfCosines', 'Equilateral Triangle');
+
 
 
     $("#putItHere").append(angleTests.printAllTests());

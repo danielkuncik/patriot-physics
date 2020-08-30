@@ -15,10 +15,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script src = '../frontEndTesting.js'></script>
-<script src = '../../physics/reference/units.js'></script>
-<script src = '../../physics/physicsNumber.js'></script>
-<script src = '../../physics/magnitude.js'></script>
-<script src = '../../physics/angle.js'></script>
+<script src = '../../mathematics/numbers/units.js'></script>
+<script src = '../../mathematics/numbers/physicsNumber.js'></script>
+<script src = '../../mathematics/numbers/magnitude.js'></script>
+<script src = '../../mathematics/numbers/angle.js'></script>
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/point.js'></script>
 <script src = '../../mathematics/geometricObjectsWithMagnitude/basics/line.js'></script>
 
@@ -31,11 +31,11 @@
   lineTests.addCategory('construction','Construction');
   lineTests.addSubCategory('construction','construction1','Construction From Points');
 
-  const point001a = makeOriginF(3);
+  const point001a = makeOrigin(3);
   const point001bx = new Magnitude('4.00');
   const point001by = new Magnitude('8.00');
-  const point001b = new PointF(point001bx, point001by, 'point001B');
-  const line001 = new LineF(point001a, point001b, '001'); /// y = 2 * x
+  const point001b = new Point(point001bx, point001by, 'point001B');
+  const line001 = new Line(point001a, point001b, '001'); /// y = 2 * x
   lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
 
@@ -69,9 +69,9 @@
   const point002ay = new Magnitude('4.00');
   const point002bx = new Magnitude('3.00');
   const point002by = new Magnitude('8.00');
-  const point002a = new PointF(point002ax, point002ay, 'point002a');
-  const point002b = new PointF(point002bx, point002by, 'point002b');
-  const line002 = new LineF(point002a, point002b, '002'); /// y = 4 + 1.333333 * x
+  const point002a = new Point(point002ax, point002ay, 'point002a');
+  const point002b = new Point(point002bx, point002by, 'point002b');
+  const line002 = new Line(point002a, point002b, '002'); /// y = 4 + 1.333333 * x
   lineTests.assertEqualStrict(line001.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line001.vertical, false, 'construction', 'construction1');
 
@@ -108,9 +108,9 @@
   const point003ay = new Magnitude('6.00');
   const point003bx = new Magnitude('10.0');
   const point003by = new Magnitude('-34.0');
-  const point003a = new PointF(point003ax, point003ay, 'point003a');
-  const point003b = new PointF(point003bx, point003by, 'point003b');
-  const line003 = new LineF(point003a, point003b, '003'); /// y = 6 + -4 * x
+  const point003a = new Point(point003ax, point003ay, 'point003a');
+  const point003b = new Point(point003bx, point003by, 'point003b');
+  const line003 = new Line(point003a, point003b, '003'); /// y = 6 + -4 * x
   lineTests.assertEqualStrict(line003.horizontal, false, 'construction', 'construction1');
   lineTests.assertEqualStrict(line003.vertical, false, 'construction', 'construction1');
 
@@ -157,7 +157,7 @@ lineTests.addSubCategory('construction','construction2','Construction From Slope
 
 const slope101 = new Magnitude('-4.00');
 const yIntercept101 = new Magnitude('8.0');
-const line101 = constructLineSlopeInterceptF(slope101, yIntercept101, '101'); /// y = -4 * x + 8
+const line101 = constructLineSlopeIntercept(slope101, yIntercept101, '101'); /// y = -4 * x + 8
 
 lineTests.assertEqualStrict(line101.horizontal, false, 'construction', 'construction2');
 lineTests.assertEqualStrict(line101.vertical, false, 'construction', 'construction2');
@@ -218,12 +218,12 @@ lineTests.addSubCategory('intersection','intersection 1', 'Intersection Tests 1'
 lineTests.addCategory('pointOnLine', 'Point on Line');
 lineTests.addSubCategory('pointOnLine', 'pointOnLine1', 'Point On Line 1');
 
-const line301 = constructLineSlopeInterceptF(new Magnitude('5.00'), constructZeroMagnitude(3));
-const point301a = new PointF(new Magnitude('2.00'), new Magnitude('10.0'));
-const point301b = new PointF(new Magnitude('2.00'), new Magnitude('15.0'));
-const point301c = new PointF(new Magnitude('-4.00'), new Magnitude('20.0'));
-const point301d = new PointF(new Magnitude('8.00'), new Magnitude('39.0'));
-const point301e = makeOriginF(3);
+const line301 = constructLineSlopeIntercept(new Magnitude('5.00'), constructZeroMagnitude(3));
+const point301a = new Point(new Magnitude('2.00'), new Magnitude('10.0'));
+const point301b = new Point(new Magnitude('2.00'), new Magnitude('15.0'));
+const point301c = new Point(new Magnitude('-4.00'), new Magnitude('20.0'));
+const point301d = new Point(new Magnitude('8.00'), new Magnitude('39.0'));
+const point301e = makeOrigin(3);
 lineTests.assertEqualStrict(line301.isPointOnLine(point301a), true, 'pointOnLine', 'pointOnLine1');
 lineTests.assertEqualStrict(line301.isPointOnLine(point301b), false, 'pointOnLine', 'pointOnLine1');
 lineTests.assertEqualStrict(line301.isPointOnLine(point301c), true, 'pointOnLine', 'pointOnLine1');

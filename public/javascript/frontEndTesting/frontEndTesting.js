@@ -183,6 +183,42 @@ class TestPackage {
       // add unit
     }
 
+    assertAngle(angle, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        // add check that it is an object
+        if (typeof(angle) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Magnitude");
+            return false
+        }
+        if (typeof(equalObject) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
+            return false
+        }
+        this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
+        if (equalObject.firstSigFig) {
+            this.assertEqualStrict(angle.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
+        }
+        if (equalObject.otherSigFigs) {
+            this.assertEqualStrict(angle.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
+        }
+        if (equalObject.degrees) {
+            this.assertEqualStrict(angle.degrees, equalObject["degrees"], categoryKey, subCategoryKey, `${name}: unit:`);
+        }
+        if (equalObject.orderOfMagnitude) {
+            this.assertEqualStrict(angle.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
+        }
+        if (equalObject.numSigFigs) {
+            this.assertEqualStrict(angle.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
+        }
+        if (equalObject.positive) {
+            this.assertEqualStrict(angle.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
+        }
+        if (equalObject.float) {
+            this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
+        }
+        // add printing
+        // add unit
+    }
+
 
     // privateMethod!
     countAllTests() {

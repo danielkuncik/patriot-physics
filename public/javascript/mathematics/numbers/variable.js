@@ -51,7 +51,7 @@ const variables = {
   "time_interval":
   {
     "vector": false,
-    "name": "time interval"
+    "name": "time interval",
     "dimension": "time",
     "symbol": "Delta_t"
   },
@@ -60,7 +60,7 @@ const variables = {
   }
 }
 
-const selectVariable(key) {
+function selectVariable(key) {
   if (variables[key]) {
     let variable = variables[key]
     if (!variable[name]) {

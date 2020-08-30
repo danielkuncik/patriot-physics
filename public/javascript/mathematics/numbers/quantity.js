@@ -46,7 +46,7 @@ class ScalarQuantity extends Quantity {
   }
 
   printMagnitude() {
-    return.this.magnitude.printOptimal();
+    return this.magnitude.printOptimal();
   }
 
   addScalar(anotherScalar, variableKey = "intermediate") { // i need to confirm that the addition is sanctioned by a formula???
@@ -90,13 +90,13 @@ class VectorQuantity extends Quantity {
 
   }
 
-  function checkSameVariableAndUnit(anotherVector) {
+  checkSameVariableAndUnit(anotherVector) {
     /// put something here!!!
   }
 
   /// in these functions I always included "this.variable", but that is wrong!!!
   /// operating on vectors results in a different varaible, as dictated by equation!
-  function addVector(newVariable, anotherVector) {
+  addVector(newVariable, anotherVector) {
     if (checkSameVariableAndUnit(anotherVector)) {
       return constructVectorFromComponents(this.variable, this.magnitude.unit, this.x + anotherVector.x, this.y + anotherVector.y, this.z + anotherVector.z)
     } else {
@@ -104,7 +104,7 @@ class VectorQuantity extends Quantity {
     }
   }
 
-  function subtractVector(newVariable, anotherVector) {
+  subtractVector(newVariable, anotherVector) {
     if (checkSameVariableAndUnit(anotherVector)) {
       return constructVectorFromComponents(this.variable, this.magnitude.unit, this.x - anotherVector.x, this.y - anotherVector.y, this.z - anotherVector.z)
     } else {
@@ -112,21 +112,21 @@ class VectorQuantity extends Quantity {
     }
   }
 
-  function multiplyByScalar(newVariable, scalar) { /// creates a new variable!!!!
+  multiplyByScalar(newVariable, scalar) { /// creates a new variable!!!!
     const newMagnitude = this.magnitude.multiplyMag(scalar.magnitude);
     return new Vector();
   }
 
-  function divideByScalar(newVariable, scalar) {
+  divideByScalar(newVariable, scalar) {
 
   }
 
-  function dotProduct(newVariable, anotherVector) {
+  dotProduct(newVariable, anotherVector) {
     // multipy the varibles to get a new variable
     // then, return a scalar
   }
 
-  function crossProduct(newVariable,anotherVector) {
+  crossProduct(newVariable,anotherVector) {
     // multiply the varaibles to get a new variable
     // then, return a scalar
   }

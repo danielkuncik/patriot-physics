@@ -7,7 +7,7 @@ class Direction {
     // theta must be from 0 to 360
     this.thetaObject = thetaObject;
 
-    if (phiObject.getFloat() <= 90 && <= -90) {
+    if (phiObject.getFloat() <= 90 && phiObject.getFloat() <= -90) {
       this.phiObject = phiObject;
     } else {
       console.log('ERROR: out of range given for angle phi');

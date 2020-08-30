@@ -230,14 +230,16 @@ function simplifyAngle(angleInRadians) {
 
 // figure this out!
 // convert this to physicsNumbers
-function getAngleFromLawOfCosines(oppositeSide, adjacentSide1, adjacentSide2) {
-    let cosine = (adjacentSide1**2 + adjacentSide2**2 - oppositeSide**2) / 2 / adjacentSide1 / adjacentSide2;
-    while (cosine > 1) {
-        cosine -= 1;
-    }
-    while (cosine < -1) {
-        cosine += 1;
-    }
-    const angleInRadians = Math.acos(cosine);
-    return convertRadiansToDegrees(angleInRadians);
+function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSide2Mag) {
+    let temp1 = (adjacentSide1Mag.squareMag().addMag(adjacentSide2Mag.squareMag())).subtractMag(oppositeSideMag.squareMag());
+    let temp2 = (adjacentSide1Mag.multiplyMag(adjacentSide2Mag)).multiplyMagExactConstant(2);
+    let cosine = temp1.divideMag(temp2);
+    // while (cosine > 1) {
+    //     cosine -= 1;
+    // }
+    // while (cosine < -1) {
+    //     cosine += 1;
+    // }
+    const angleInRadians = cosine.inverseCosMag();
+    return angleInRadians.convertToDegrees();
 }
