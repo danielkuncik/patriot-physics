@@ -170,7 +170,8 @@ function constructHorizontalLine(yValue, xUnit) {
 
 /// still need to make this work!!!!
 // i can;'t see a way to guarantee this works in this system
-// function constructLineFromPointAndAngle(point = makeOrigin(), angle) {
+// note this: if your point is the origin, it can have no units!
+// function constructLineFromPointAndAngle(point = makeOrigin(), angle, xUnit, yUnit) {
 //
 //     let pointB = new Point(point.x + Math.cos(angleInRadians), point.y + Math.sin(angleInRadians));
 //     return new Line(point, pointB);

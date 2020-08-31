@@ -17,7 +17,7 @@ class Polygon {
         this.orientation = 'clockwise';
     }
 
-    setOrientationCounterclockwise() {
+    setOrientationCounterClockwise() {
         this.orientation = 'counterclockwise';
     }
 

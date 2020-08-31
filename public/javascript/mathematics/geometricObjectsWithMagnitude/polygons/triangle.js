@@ -223,16 +223,19 @@ function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA
 }
 
 
-function constructTriangleSAS(sideC, angleBinDegrees, sideA, vertexA = makeOrigin()) { // counterlockwise orientation
-    console.log(sideC, angleBinDegrees, sideA, vertexA);
-    let vertexB = vertexA.translateAndReproduce(sideC, 0);
-    let angleBInRadians = convertDegreesToRadians(angleBInDegrees);
-    let vertexC = vertexB.translateAndReproduce(-1 * sideA * Math.cos(angleBInRadians), sideA * Math.sin(angleBInRadians));
+function constructTriangleSAS(sideC, angleB, sideA, vertexA = makeOrigin()) { // counterlockwise orientation
+    let vertexB = vertexA.translateAndReproduce(sideC, constructZeroMagnitude(undefined, true));
+    const xTrans = (sideA.multiplyMag(angleB.cosAngle())).reverseSign();
+    const yTrans = sideA.multiplyMag(angleB.sinAngle());
+    let vertexC = vertexB.translateAndReproduce(xTrans, yTrans);
     let newTriangle = new Triangle(vertexA, vertexB, vertexC);
     newTriangle.setOrientationCounterClockwise();
     return newTriangle
 }
 
+
+//// this much more!!!!
+// 8 -30-2020 exhausted from coding!
 
 // its possible that the angles do not
 function constructTriangleASA(angleAinDegrees, sideC, angleBinDegrees, vertexA = makeOrigin()) { // counterclockwise orientation
