@@ -161,22 +161,22 @@ class TestPackage {
         return false
       }
       this.assertEqualStrict(magnitude.isAmagnitude, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
-      if (equalObject.firstSigFig) {
+      if (equalObject.firstSigFig !== undefined) {
         this.assertEqualStrict(magnitude.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
       }
-      if (equalObject.otherSigFigs) {
+      if (equalObject.otherSigFigs !== undefined) {
         this.assertEqualStrict(magnitude.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
       }
-      if (equalObject.orderOfMagnitude) {
+      if (equalObject.orderOfMagnitude !== undefined) {
         this.assertEqualStrict(magnitude.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
       }
-      if (equalObject.numSigFigs) {
+      if (equalObject.numSigFigs !== undefined) {
         this.assertEqualStrict(magnitude.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
       }
-      if (equalObject.positive) {
+      if (equalObject.positive !== undefined) {
         this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
       }
-      if (equalObject.float) {
+      if (equalObject.float !== undefined) {
         this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
       }
       // add printing 
@@ -194,25 +194,25 @@ class TestPackage {
             return false
         }
         this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
-        if (equalObject.firstSigFig) {
+        if (equalObject.firstSigFig !== undefined) {
             this.assertEqualStrict(angle.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
         }
-        if (equalObject.otherSigFigs) {
+        if (equalObject.otherSigFigs !== undefined) {
             this.assertEqualStrict(angle.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
         }
-        if (equalObject.degrees) {
+        if (equalObject.degrees !== undefined) {
             this.assertEqualStrict(angle.degrees, equalObject["degrees"], categoryKey, subCategoryKey, `${name}: unit:`);
         }
-        if (equalObject.orderOfMagnitude) {
+        if (equalObject.orderOfMagnitude !== undefined) {
             this.assertEqualStrict(angle.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
         }
-        if (equalObject.numSigFigs) {
+        if (equalObject.numSigFigs !== undefined) {
             this.assertEqualStrict(angle.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
         }
-        if (equalObject.positive) {
+        if (equalObject.positive !== undefined) {
             this.assertEqualStrict(angle.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
         }
-        if (equalObject.float) {
+        if (equalObject.float !== undefined) {
             this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
         }
         // add printing

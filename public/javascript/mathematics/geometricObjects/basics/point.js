@@ -31,8 +31,8 @@ class Point {
         if (!radius.isAmagnitude || !angleObject.isAmagnitude) {
             return false
         }
-        let xTranslation = radius.multiplyMag(angleObject.cosMag());
-        let yTranslation = radius.multiplyMag(angleObject.sinMag());
+        let xTranslation = radius.multiplyMag(angleObject.cosAngle());
+        let yTranslation = radius.multiplyMag(angleObject.sinAngle());
         this.translate(xTranslation, yTranslation);
     }
 
@@ -60,22 +60,22 @@ class Point {
     /// [do i want to keep tihis???]
     // creates a new point by rotating the canvas, then translating
     // does not work if rotation is negative
-    rotatedRectangleTransformAndReproduce(rotationAngle, xTranslationMagnitude, yTranslationMagnitude) {
-        let xPrime = xTranslation * Math.cos(rotation) - yTranslation * Math.sin(rotation) + this.x;
-        let yPrime = yTranslation * Math.cos(rotation) + xTranslation * Math.sin(rotation) + this.y;
-        // let newX = this.x + xTranslation * Math.cos(rotation) + yTranslation * Math.sin(rotation);
-        // let newY = this.y + xTranslation * Math.sin(rotation) - yTranslation * Math.cos(rotation);
-        // let newPoint = new Point(newX, newY);
-        let newPoint = new Point(xPrime, yPrime);
-        return newPoint
-    }
+    // rotatedRectangleTransformAndReproduce(rotationAngle, xTranslationMagnitude, yTranslationMagnitude) {
+    //     let xPrime = xTranslation * Math.cos(rotation) - yTranslation * Math.sin(rotation) + this.x;
+    //     let yPrime = yTranslation * Math.cos(rotation) + xTranslation * Math.sin(rotation) + this.y;
+    //     // let newX = this.x + xTranslation * Math.cos(rotation) + yTranslation * Math.sin(rotation);
+    //     // let newY = this.y + xTranslation * Math.sin(rotation) - yTranslation * Math.cos(rotation);
+    //     // let newPoint = new Point(newX, newY);
+    //     let newPoint = new Point(xPrime, yPrime);
+    //     return newPoint
+    // }
 
     // rotates a Point around the center Point by a certain angle
     // default center Point is origin
     rotate(angleObject, centerPoint = makeOrigin()) {
         this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
-        const xPrime = (this.x.multiplyMag(angleObject.cosAngle())).subtractMag(this.y.multiplyMag(angleObject.cosAngle()));
-        const yPrime = (this.y.multiplyMag(angleObject.cosAngle())).addMag(this.x.multiplyMag(angleObject.cosAngle()));
+        const xPrime = (this.x.multiplyMag(angleObject.cosAngle())).subtractMag(this.y.multiplyMag(angleObject.sinAngle()));
+        const yPrime = (this.x.multiplyMag(angleObject.sinAngle())).addMag(this.y.multiplyMag(angleObject.cosAngle()));
         this.x = xPrime;
         this.y = yPrime;
         this.translate(centerPoint.x, centerPoint.y);
@@ -216,8 +216,8 @@ function makeOrigin(numSigFigs, exact) { // exact is true if numSigFigs is not e
 }
 
 function constructPointPolar(radiusMagnitude, angle) {
-    const x = radiusMagnitude.multiplyMag(angle.cosMag());
-    const y = radiusMagnitude.multiplyMag(angle.sinMag());
+    const x = radiusMagnitude.multiplyMag(angle.cosAngle());
+    const y = radiusMagnitude.multiplyMag(angle.sinAngle());
     return new Point(x,y)
 }
 

@@ -231,12 +231,14 @@ class RangeBox {
 
 }
 // does this make a duplicate of the center Point??
-function constructRangeBoxFromCenterF(centerPoint, width, height) {
+function constructRangeBoxFromCenter(centerPoint, width, height) {
+    console.log(centerPoint, width, height);
     let lowerLeftPoint = centerPoint.translateAndReproduce((width.divideMagExactConstant(2)).reverseSign(), (height.divideMagExactConstant(2)).reverseSign());
-    return new RangeBoxF(lowerLeftPoint, width, height);
+    console.log(lowerLeftPoint);
+    return new RangeBox(lowerLeftPoint, width, height);
 }
 
-function constructRangeBoxFromExtremePointsF(minX, minY, maxX, maxY) {
+function constructRangeBoxFromExtremes(minX, minY, maxX, maxY) {
     if (maxX <= minX) {
         console.log('ERROR: range box error- max X must be greater than min X');
         return false

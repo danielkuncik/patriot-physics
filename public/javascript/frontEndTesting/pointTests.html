@@ -69,13 +69,13 @@
     pointTests.assertEqualStrict(point1.x.numSigFigs, 4, 'pointObject', 'pointRotation');
     pointTests.assertEqualStrict(point1.x.positive, undefined, 'pointObject', 'pointRotation');
 
-    pointTests.assertEqualStrict(point1.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.zero, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.positive, true, 'pointObject', 'pointRotation');
+    pointTests.assertMagnitude(point1.y, {
+        "firstSigFig": '2',
+        "otherSigFigs": '000',
+        'orderOfMagnitude': 0,
+        "numSigFigs": 4,
+        'positive': true
+    }, 'pointObject', 'pointRotation');
 
     point1.rotate(rotationAngle);
     pointTests.assertEqualStrict(point1.getQuadrant(), '-X', 'pointObject', 'pointRotation');
@@ -824,6 +824,50 @@
     pointTests.assertEqualStrict(angle501.positive, undefined, 'pointObject', 'getAngle');
 
      */
+    /// translation
+    pointTests.addSubCategory('pointObject','translation','Translation');
+    let x601 = new Magnitude('5.0000');
+    let y601 = new Magnitude('5.0000');
+    let point601a = new Point(x601, y601);
+    let width = new Magnitude('2.0000');
+    let height = new Magnitude('2.0000');
+    let xTranslation = width.divideMagExactConstant(2).reverseSign();
+    let yTranslation = height.divideMagExactConstant(2).reverseSign();
+    pointTests.assertMagnitude(xTranslation, {
+        "firstSigFig": '1',
+        "otherSigFigs": '0000',
+        "numSigFigs": 5,
+        "orderOfMagnitude": 0,
+        "positive": false,
+        "float": -1
+    }, 'pointObject', 'translation');
+    pointTests.assertMagnitude(yTranslation, {
+        "firstSigFig": '1',
+        "otherSigFigs": '0000',
+        "numSigFigs": 5,
+        "orderOfMagnitude": 0,
+        "positive": false,
+        "float": -1
+    }, 'pointObject', 'translation');
+
+    let point601 = point601a.translateAndReproduce(xTranslation, yTranslation);
+    pointTests.assertMagnitude(point601.x, {
+        "firstSigFig": '5',
+        "otherSigFigs": '0000',
+        "numSigFigs": '5',
+        "orderOfMagnitude": 0,
+        "positive": true,
+        "float": 5
+    }, 'pointObject', 'translation');
+    pointTests.assertMagnitude(point601.y, {
+        "firstSigFig": '5',
+        "otherSigFigs": '0000',
+        "numSigFigs": '5',
+        "orderOfMagnitude": 0,
+        "positive": true,
+        "float": 5
+    }, 'pointObject', 'translation');
+
 
     $("#putItHere").append(pointTests.printAllTests());
 

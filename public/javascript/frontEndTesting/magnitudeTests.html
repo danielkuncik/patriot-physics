@@ -1753,6 +1753,28 @@ magnitudeTests.assertEqualStrict(mag3007.numSigFigs, 1, 'operations','addition')
 magnitudeTests.assertEqualStrict(mag3007.positive, true, 'operations','addition')
 magnitudeTests.assertEqualFloat(mag3007.intermediateValue, 300000005, 'operations', 'addition');
 
+
+magnitudeTests.addSubCategory('operations','reverseSign','Reverse Sign');
+let mag3008a = new Magnitude('2.00');
+let mag3008 = mag3008a.reverseSign();
+magnitudeTests.assertMagnitude(mag3008a, {
+    "firstSigFig": '2',
+    "otherSigFigs": '00',
+    'orderOfMagnitude': 0,
+    'numSigFigs': 3,
+    'float': 2,
+    'positive': true
+}, 'operations', 'reverseSign');
+
+  magnitudeTests.assertMagnitude(mag3008, {
+      "firstSigFig": '2',
+      "otherSigFigs": '00',
+      'orderOfMagnitude': 0,
+      'numSigFigs': 3,
+      'float': -2,
+      'positive': false
+  }, 'operations', 'reverseSign');
+
 /*
 ADD SOME NEGATIVES
 ADD SOME 999s

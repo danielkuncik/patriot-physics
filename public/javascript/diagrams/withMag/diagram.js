@@ -1232,17 +1232,19 @@ class Diagram {
             }
 
         });
+*/
         this.circles.forEach((circleObject) => {
             ctx.fillStyle = circleObject.fillColor;
             ctx.strokeStyle = circleObject.lineColor;
             ctx.lineWidth = circleObject.lineThickness;
 
             ctx.beginPath();
-            ctx.arc(wiggleRoom + circleObject.center.x, canvasHeight - wiggleRoom - circleObject.center.y, circleObject.radius, 0, Math.PI * 2);
+            ctx.arc(wiggleRoom + circleObject.center.x.float(), canvasHeight - wiggleRoom - circleObject.center.y.float(), circleObject.radius.float(), 0, Math.PI * 2);
             ctx.stroke();
             if (circleObject.filled) {ctx.fill();}
         });
 
+        /*
         this.arcs.forEach((arcObject) => {
             /// ARC SECTION
             ctx.strokeStyle = "#000000";

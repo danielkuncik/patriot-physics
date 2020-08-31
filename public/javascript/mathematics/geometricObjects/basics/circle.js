@@ -1,6 +1,6 @@
 class Circle {
     constructor(centerPoint, radius) {
-        this.centerPoint = centerPoint;
+        this.center = centerPoint;
         this.radius = radius;
         this.diagramQualities = {
             filled: false,
@@ -8,8 +8,7 @@ class Circle {
             lineColor: "#000000",
             fillColor: "#000000"
         };
-        this.center = centerPoint;
-        this.rangeBox = constructRangeBoxFromCenter(centerPoint, radius * 2, radius * 2);
+        this.rangeBox = constructRangeBoxFromCenter(this.center, this.radius.multiplyMagExactConstant(2), this.radius.multiplyMagExactConstant(2));
     }
 
     setFillColor(newColor) {

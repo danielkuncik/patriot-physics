@@ -271,15 +271,6 @@ class PhysicsNumber {
         return tempMag;
     }
 
-  reverseSign() {
-      let newNumber = this.duplicate();
-      if (newNumber.zero) {
-          return newNumber
-      } else {
-          newNumber.positive = !newNumber.positive;
-          return newNumber
-      }
-  }
 
   abs() {
       this.positive = true;

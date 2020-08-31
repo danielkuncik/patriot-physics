@@ -31,44 +31,19 @@
 <script>
     let randomTests = new TestPackage('Random Tests');
 
-    let triangle3 = constructRightTriangleHypotenuseAngle(new Magnitude('4.0'),new Angle('45'));
-    randomTests.assertMagnitude(triangle3.vertexA.x, {
-        "float": 0
-    }, 'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.vertexA.y, {
-        "float": 0
-    }, 'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.vertexB.x, {
-        "float": 4 / Math.sqrt(2)
-    }, 'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.vertexB.y, {
-        "float": 4 / Math.sqrt(2)
-    }, 'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.vertexC.x, {
-        "float": 4 / Math.sqrt(2)
-    }, 'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.vertexC.y, {
-        "float": 0
-    }, 'construction', 'construction4');
+    let x1 = new Magnitude('2.000');
+    let y1 = new Magnitude('0.00000000');
+    let rotationAngle = new Angle('90.00');
+    let point1 = new Point(x1, y1);
+    point1.rotate(rotationAngle);
 
-    randomTests.assertMagnitude(triangle3.angleA, {
-        float: 45
-    },'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.angleB, {
-        float: 45
-    },'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.angleC, {
-        float: 90
-    },'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.sideLengthA, {
-        float: 4 / Math.sqrt(2)
-    },'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.sideLengthB, {
-        float: 4 / Math.sqrt(2)
-    },'construction', 'construction4');
-    randomTests.assertMagnitude(triangle3.sideLengthC, {
-        float: 4
-    },'construction', 'construction4');
+    randomTests.assertMagnitude(point1.y, {
+      "firstSigFig": '2',
+      "otherSigFigs": '000',
+      'orderOfMagnitude': 0,
+      "numSigFigs": 4,
+      'positive': true
+    }, 'pointObject', 'pointRotation');
 
     $("#putItHere").append(randomTests.printAllTests());
 
