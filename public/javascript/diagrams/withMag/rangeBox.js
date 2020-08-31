@@ -1,5 +1,5 @@
 // the box should always belong to an object!
-class RangeBoxF {
+class RangeBox {
     constructor(lowerLeftX, lowerLeftY, width, height) {
         this.lowerLeftPoint = new PointF(lowerLeftX, lowerLeftY);
         this.upperLeftPoint = new PointF(lowerLeftX, lowerLeftY + height);

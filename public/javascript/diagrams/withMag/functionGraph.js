@@ -1,4 +1,4 @@
-class FunctionGraph {
+class FunctionGraphNEW {
     constructor(func, xMin, xMax, forcedYmin, forcedYmax) {
         this.function = func;
         this.xMin = xMin;

@@ -34,7 +34,7 @@ class Problem {
     return questionItem
   }
 
-  addAnswerVariableObject(variableObject);
+//  addAnswerVariableObject(variableObject);
 
   addAnswer(variable, answer, name = variable) {
     let thisAnswer = {

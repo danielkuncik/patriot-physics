@@ -96,12 +96,6 @@ class Diagram {
         this.arcs = [];
         this.texts = [];
         this.functionGraphs = [];
-        this.xMax = undefined;
-        this.xMin = undefined;
-        this.yMax = undefined;
-        this.yMin = undefined;
-        this.horizontalRange = undefined;
-        this.verticalRange = undefined;
         this.defaultSize = 500;
 
         this.key = [];
@@ -1027,15 +1021,12 @@ class Diagram {
             });
         }
 
-        let horizontalRange = xMax - xMin;
-        let verticalRange = yMax - yMin;
-
         this.xMax = xMax;
         this.xMin = xMin;
         this.yMax = yMax;
         this.yMin = yMin;
-        this.horizontalRange = horizontalRange;
-        this.verticalRange = verticalRange;
+        this.horizontalRange = xMax - xMin;
+        this.verticalRange = yMax - yMin;
 
         return true
     }
@@ -1093,7 +1084,7 @@ class Diagram {
 
 
         // transform to prepare for canvas;
-        this.translate(this.xMin.reverseSign(), this.yMin.reverseSign());
+        this.translate(-1 * this.xMin, -1 * this.yMin);
 
 
         let scaleFactor, xScaleFactor, yScaleFactor, canvasWidth, canvasHeight;
@@ -1153,7 +1144,7 @@ class Diagram {
                 ctx.beginPath();
                 ctx.setLineDash([]);
                 ctx.moveTo(wiggleRoom + segment.point1.x.getFloat(), canvasHeight - wiggleRoom - segment.point1.y.getFloat());
-                ctx.lineTo(wiggleRoom + segment.point2.x.getFloat(), canvasHeight - wiggleRoom - segment.point2.y.getFloat();
+                ctx.lineTo(wiggleRoom + segment.point2.x.getFloat(), canvasHeight - wiggleRoom - segment.point2.y.getFloat());
                 ctx.stroke();
             }
         });

@@ -68,7 +68,7 @@ function getOptimalLocationOfText(point1, point2, turningOrientation = 'clockwis
     return bestSpot
 }
 
-class TextF {
+class Text {
     constructor(letters, referencePoint, relativeFontSize, rotationAngleInRadians, positioning) {
         if (positioning === undefined) {
             positioning = 'center'
