@@ -1,27 +1,30 @@
 class MathematicalFunction {
-    constructor(xMin = -Infinity, xMax = Infinity, closedCircleAtMin = true, closedCircleAtMax = true) {
+    constructor(xMin = constructNegativeInfinity(), xMax = constructInfinity(), closedCircleAtMin = true, closedCircleAtMax = true) {
         this.xMin = xMin;
         this.xMax = xMax;
         this.closedCircleAtMin = closedCircleAtMin;
         this.closedCircleAtMax = closedCircleAtMax;
         this.undefinedPoints = [];
-        this.function = (x) => {return undefined};
+        this.func = (x) => {return undefined};
+        this.rangeFinder = undefined;
+        this.getDerivative = undefined;
+        this.getAntiDerivative = undefined;
     }
 
-    addUndefinedPoint(x) {
-        if (isValueInDomain(x)) {
-            this.undefinedPoints.push(x);
+    addUndefinedPoint(xMag) {
+        if (this.isValueInDomain(xMag)) {
+            this.undefinedPoints.push(xMag);
         } else {
-            console.log(`addUndefinedPoint Error: value ${x} already outside domain`);
+            console.log(`addUndefinedPoint Error: value ${xMag} already outside domain`);
         }
     }
 
-    isValueInDomain(x) {
-        return ((x > this.xMin || (x === this.xMin && this.closedCircleAtMin)) && (x < this.xMax || (x === this.xMax && this.closedCircleAtMax)) && !this.undefinedPoints.includes(x))
+    isValueInDomain(xMag) {
+        return (x.isGreaterThan(this.xMin)|| (x.isEqualTo(this.xMin) && this.closedCircleAtMin)) && (x.isLessThan(this.xMax) || (x.isEqualTo(this.xMax) && this.closedCircleAtMax)) && !this.undefinedPoints.includes(xMag)
     }
 
     runFunction(x) {
-        return this.function(x)
+        return this.func(x)
     }
 
     // define 'range finder' in subclasses, which overwrites brute force method!
@@ -75,43 +78,45 @@ class MathematicalFunction {
         }
     }
 
-    differentiateBruteForce(x, halfStep = 0.001 * (this.xMin - this.xMax)) {
-        if (!this.isValueInDomain(x) || !this.isValueInDomain(x - halfStep) || !this.isValueInDomain(x + halfStep)) {
+    differentiateBruteForce(x, halfStep = (this.xMin.subtractMag(this.xMax)).multiplyMagExactConstant(0.001)) {
+        if (!this.isValueInDomain(x) || !this.isValueInDomain(x.subtractMag(halfStep)) || !this.isValueInDomain(x.addMag(halfStep))) {
             return undefined
         } else {
-            return (this.runFunction(x + halfStep) - this.runFunction(x - halfStep)) / (halfStep * 2)
-        }
+            return ((this.runFunction(x.addMag(halfStep))).subtractMag(this.runFunction(x.subtractMag(halfStep)))).divideMag(halfStep.multiplyMagExactConstant(2))
+        }// awkward code!
     }
 
     /// will break if it hits an undefined point
+    // TO DO: create a more efficient method that uses floats and only corrects the number of significant figures at the end
     integrateBruteForce(xMin = this.xMin, xMax = this.xMax, nSteps = 100) {
         if ((xMin === -Infinity || xMax === Infinity) || !this.isValueInDomain(xMin) || !this.isValueInDomain(xMax)) {
             return undefined
         } else {
             let k;
-            let totalArea = 0;
-            const step = (xMax - xMin) / nSteps;
+            let totalArea = constructZeroMagnitude();
+            const step = (xMax.subtractMag(xMin)).divideMagExactConstant(nSteps);
             for (k = 0; k < nSteps; k++) {
-                let x1 = xMin + k * step;
-                let x2 = x1 + step;
-                totalArea += (x1 + x2) / 2 * step;
+                let x1 = xMin.addMag(step.multiplyMagExactConstant(k));
+                let x2 = x1.addMag(step);
+                totalArea += x1.addMag(x2).divideMag(step.multiplyMagExactConstant(2));
             }
             return totalArea
         }
     }
 
+    // TO DO: figure out a better method that uses floats and only corrects the significant figures at the end
     findRangeOverIntervalByBruteForce(xMin = this.xMin, xMax = this.xMax, Nsteps = 1000) {
         if ((xMin === -Infinity || xMax === Infinity) || !this.isValueInDomain(xMin) || !this.isValueInDomain(xMax)) {
             return undefined
         } else {
             let yMin = this.runFunction(xMin), yMax = this.runFunction(xMin);
-            let k, thisYvalue;
-            const step = (xMax - xMin) / Nsteps;
+            let k, thisYValue;
+            const step = (xMax.subtractMag(xMin)).divideMagExactConstant(Nsteps);
             for (k = 1; k < Nsteps; k++) {
-                thisYvalue = this.runFunction(xMin + steps * k);
-                if (thisYValue < yMin) {
+                thisYValue = this.runFunction(xMin.addMag(step.multiplyMagExactConstant(k)));
+                if (thisYValue.isLessThan(yMin)) {
                     yMin = thisYValue;
-                } else if (thisYValue > yMax) {
+                } else if (thisYValue.isGreaterThan(yMax)) {
                     yMax = thisYValue;
                 }
             }

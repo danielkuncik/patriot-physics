@@ -294,3 +294,11 @@ function constructZeroMagnitude(numSigFigs, exact = numSigFigs === undefined) { 
     }
     return new Magnitude(string,undefined,undefined,exact);
 }
+
+function constructInfinity(unitObject) {
+    return new Magnitude('+Infinity', unitObject, undefined, undefined)
+}
+
+function constructNegativeInfinity(unitObject) {
+    return new Magnitude('-Infinity', unitObject, undefined, undefined)
+}

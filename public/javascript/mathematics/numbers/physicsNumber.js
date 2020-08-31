@@ -114,6 +114,10 @@ class PhysicsNumber {
       this.positive = true;//default
     }
 
+    if (numericalString === 'Infinity') {
+        this.setValueInfinity();
+    }
+
     // deal with E
     let exponentString = undefined;
     let eLocation = numericalString.indexOf('e');
@@ -246,16 +250,12 @@ class PhysicsNumber {
     this.infinity = true;
     this.numSigFigs = Infinity;
     this.exact = true;
-    this.positive = true;
     this.firstSigFig = undefined;
     this.otherSigFigs = undefined;
     this.orderOfMagnitude = undefined;
+    // positive attribute is set elsewhere is set elsewhere
   }
 
-    setValueNegInfinity() {
-        this.setValueInfinity();
-        this.reverseSign();
-    }
 
 
     duplicate() {

@@ -1,21 +1,21 @@
 // maybe just make this ex
 class ZeroFunction extends ConstantFunction {
-    constructor(xMin, xMax, closedCirlceAtMin, closedCircleAtMax) {
-        super(0, xMin, xMax, closedCirlceAtMin, closedCircleAtMax);
+    constructor(xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
+        super(constructZeroMagnitude(), xMin, xMax, closedCircleAtMin, closedCircleAtMax);
 
     }
 
 // private function
     rangeFinder(xMin, xMax) {
-        return [0, 0]
+        return [constructZeroMagnitude(), constructZeroMagnitude()]
     }
 
     getDerivative() {
         return this
     }
 
-    getAntiDerivative(constant = 0) {
-        if (constant === 0) {
+    getAntiDerivative(constant = constructZeroMagnitude()) {
+        if (constant.zero) {
             return this;
         } else {
             return new ConstantFunction(constant, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax)

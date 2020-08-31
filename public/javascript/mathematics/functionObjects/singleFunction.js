@@ -5,7 +5,7 @@ class SingleFunction extends MathematicalFunction {
 
     // can be redefined
     defineFunction(func) { // used in defining each subclass
-        this.function = (x) => {
+        this.func = (x) => {
             if (!super.isValueInDomain(x)) {
                 return undefined
             } else {

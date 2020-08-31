@@ -17,11 +17,11 @@ class LinearFunction extends Polynomial {
     /// range finder is not to be used separately, only within the range function above!
     // figure out how to make this a private class, that can only be called in the super function above
     rangeFinder(xMin, xMax) {
-        if (this.slope > 0) {
+        if (this.slope.positive) {
             return [super.runFunction(xMin), super.runFunction(xMax)]
-        } else if (this.slope < 0) {
+        } else if (this.slope.positive === false) {
             return [super.runFunction(xMax), super.runFunction(xMin)]
-        } else if (this.slope === 0) {
+        } else if (this.slope.zero) {
             return [this.yIntercept, this.yIntercept]
         }
     }
@@ -30,7 +30,7 @@ class LinearFunction extends Polynomial {
         return new ConstantFunction(this.slope, this.xMin, this.xMax);
     }
 
-    getAntiDerivative(constant = 0) { // add constant here
+    getAntiDerivative(constant = constructZeroMagnitude()) { // add constant here
         return new QuadraticFunction(0.5 * this.slope, this.yIntercept, constant);
     }
 

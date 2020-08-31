@@ -10,15 +10,15 @@ class QuadraticFunction extends Polynomial {
         this.c = c;
 
         super.defineFunction((x) => {
-            return a*x*x + b*x + c
+            return (a.multiplyMag(x.squareMag()).addMag(b.multiplyMag(x))).addMag(c)
         });
 
-        let vertexX = -1 * this.b / 2 / this.a
+        let vertexX = (this.b.divideMag(this.a.multiplyMagExactConstant(2))).reverseSign();
         if (super.isValueInDomain(vertexX)) {
-            let vertexY = this.a*vertexX * vertexX + this.b * vertexX + this.c;
+            let vertexY = this.runFunction(vertexX);
             this.vertexX = vertexX;
             this.vertexY = vertexY;
-            // this.vertex = new Point(this.vertexX, this.vertexY); // make sure points are defined first?? is this necessary??
+            this.vertex = new Point(this.vertexX, this.vertexY);
         } else {
             this.vertexX = undefined;
             this.vertexY = undefined;
@@ -27,10 +27,10 @@ class QuadraticFunction extends Polynomial {
     }
 
     getDerivative() {
-        return new LinearFunction(2 * this.x, this.b, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax)
+        return new LinearFunction(this.a.multiplyMagExactConstant(2), this.b, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax)
     }
 
-    getAntiDerivative(constant = 0) {
-        new Polynomial([a/3, b/2, c, constant], this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax); //redundant?
+    getAntiDerivative(constant = constructZeroMagnitude()) {
+        new Polynomial([this.a.divideMagExactConstant(3), this.b.divideMagExactConstant(2), c, constant], this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax); //redundant?
     }
 }
