@@ -74,28 +74,29 @@ class Point {
     // default center Point is origin
     rotate(angleObject, centerPoint = makeOrigin()) {
         this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
-        const xPrime = (this.x.multiplyMag(angleObject.cosMag())).subtractMag(this.y.multiplyMag(angleObject.sinMag()));
-        const yPrime = (this.y.multiplyMag(angleObject.cosMag())).addMag(this.x.multiplyMag(angleObject.sinMag()));
+        const xPrime = (this.x.multiplyMag(angleObject.cosAngle())).subtractMag(this.y.multiplyMag(angleObject.cosAngle()));
+        const yPrime = (this.y.multiplyMag(angleObject.cosAngle())).addMag(this.x.multiplyMag(angleObject.cosAngle()));
         this.x = xPrime;
         this.y = yPrime;
-        this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
+        this.translate(centerPoint.x, centerPoint.y);
     }
 
-    rescaleSingleFactor(scaleFactorMagnitude) {
-        this.x = this.x.multiplyMag(scaleFactorMagnitude);
-        this.y = this.y.multiplyMag(scaleFactorMagnitude);
+    rescaleSingleFactor(scaleFactorFloat) {
+        this.x = this.x.multiplyMagExactConstant(scaleFactorFloat);
+        this.y = this.y.multiplyMagExactConstant(scaleFactorFloat);
     }
 
 
-    rescaleDoubleFactor(xScaleFactorMagnitude, yScaleFactorMagnitude) {
-        this.x = this.x.multiplyMag(xScaleFactorMagnitude);
-        this.y = this.y.multiplyMag(yScaleFactorMagnitude);
+    rescaleDoubleFactor(xScaleFactorFloat, yScaleFactorFloat) {
+        this.x = this.x.multiplyMagExactConstant(xScaleFactorFloat);
+        this.y = this.y.multiplyMagExactConstant(yScaleFactorFloat);
         // doesn't work well if the diagram includes circles and arcs!
         // and the point must be coordinated with these!
     }
 
     reflectAboutXAxis() {
-        this.y.reverseSign();
+        let newY = (this.y).reverseSign();
+        this.y = newY
     }
 
     getQuadrant() {

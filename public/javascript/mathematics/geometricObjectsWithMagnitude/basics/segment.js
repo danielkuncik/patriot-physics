@@ -110,6 +110,10 @@ class Segment {
         return this.line.slope
     }
 
+    getCenter() {
+        return this.point1.interpolate(this.point2, new Magnitude('0.5', undefined,undefined,true)) /// does this need to be different if there is a unit?????
+    }
+
     // gets the slope of a line perpendicular to this line
     getPerpendicularSlope(point1, point2) {
         return this.line.getPerpendicularSlope();

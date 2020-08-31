@@ -17,6 +17,16 @@ class Angle extends PhysicsNumber {
         return new PhysicsNumber(string, degrees, intermediateValue, exact)
     }
 
+    reverseSign() { // need to remake this because i needed to remake duplicate
+        let newNumber = this.duplicate();
+        if (newNumber.zero) {
+            return newNumber
+        } else {
+            newNumber.positive = !newNumber.positive;
+            return newNumber
+        }
+    }
+
     convertToDegrees() {
         if (this.degrees) {
             return this
@@ -32,6 +42,7 @@ class Angle extends PhysicsNumber {
             return constructAngleFloat(this.getFloat() * Math.PI / 180, this.numSigFigs, false, this.exact, this.zeroLimit);
         }
     }
+
 
     // private method
     // always returns in the same 'unit', degrees or radians, as the original

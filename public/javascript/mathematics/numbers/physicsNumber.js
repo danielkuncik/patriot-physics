@@ -271,12 +271,13 @@ class PhysicsNumber {
         return tempMag;
     }
 
-    //// PRIVATE METHOD!!! [but i'm using it in the point object]
   reverseSign() {
-      if (this.zero) {
-          return false
+      let newNumber = this.duplicate();
+      if (newNumber.zero) {
+          return newNumber
       } else {
-          this.positive = !this.positive;
+          newNumber.positive = !newNumber.positive;
+          return newNumber
       }
   }
 

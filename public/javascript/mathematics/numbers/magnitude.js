@@ -107,6 +107,16 @@ class Magnitude extends PhysicsNumber {
     }
 
 
+    //// PRIVATE METHOD!!! [but i'm using it in the point object]
+    reverseSign() {
+        let newNumber = this.duplicate();
+        if (newNumber.zero) {
+            return newNumber
+        } else {
+            newNumber.positive = !newNumber.positive;
+            return newNumber
+        }
+    }
 
 
     // PRIVATE METHOD!!!!
