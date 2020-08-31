@@ -29,23 +29,25 @@
 <div id = 'putItHere'></div>
 
 <script>
-    let randomTests = new TestPackage('Random Tests');
+    let randomTest = new TestPackage('Random Tests');
 
-    let x1 = new Magnitude('2.000');
-    let y1 = new Magnitude('0.00000000');
-    let rotationAngle = new Angle('90.00');
-    let point1 = new Point(x1, y1);
-    point1.rotate(rotationAngle);
+    let width = new Magnitude('2.0000');
+    //let xTranslation = (new Magnitude('1.0000')).reverseSign();
+    let temp = width.divideMagExactConstant(2);
+    console.log(temp);
+    let xTranslation = temp.reverseSign();
+    console.log(xTranslation);
+    //let xTranslation = (width.divideMagExactConstant(2)).reverseSign();
+    randomTest.assertMagnitude(xTranslation, {
+      "firstSigFig": '1',
+      "otherSigFigs": '0000',
+      "numSigFigs": 5,
+      "orderOfMagnitude": 0,
+      "positive": false,
+      "float": -1
+    }, 'pointObject', 'translation');
 
-    randomTests.assertMagnitude(point1.y, {
-      "firstSigFig": '2',
-      "otherSigFigs": '000',
-      'orderOfMagnitude': 0,
-      "numSigFigs": 4,
-      'positive': true
-    }, 'pointObject', 'pointRotation');
-
-    $("#putItHere").append(randomTests.printAllTests());
+    $("#putItHere").append(randomTest.printAllTests());
 
 </script>
 

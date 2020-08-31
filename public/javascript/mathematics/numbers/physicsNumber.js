@@ -409,18 +409,16 @@ class PhysicsNumber {
 
 /// what if negative???
   getFloat(abs = false) { // argument is to get absolute value
-      let val;
       let sign = this.positive || abs ? 1 : -1;
       if (this.infinity) {
-        val = Infinity * sign;
+        return Infinity * sign;
       } else if (this.zero) {
-        val = 0;
+        return 0;
       } else if (this.intermediateValue) {
-        val = this.intermediateValue;
+        return this.intermediateValue;
       } else {
-        val = Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
+        return Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
       }
-      return val
   }
 
 

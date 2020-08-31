@@ -23,6 +23,9 @@ class Angle extends PhysicsNumber {
             return newNumber
         } else {
             newNumber.positive = !newNumber.positive;
+            if (this.intermediateValue) {
+                newNumber.intermediateValue *= -1; // this was a good bug to find! 8-31-2020, 2:30 pm!
+            }
             return newNumber
         }
     }
