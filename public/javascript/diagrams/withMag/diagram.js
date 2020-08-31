@@ -325,7 +325,7 @@ class Diagram {
         this.addPoint(circleObject.center);
         this.circles.push(circleObject);
         this.addRangeBox(circleObject.rangeBox);
-        return c;
+        return circleObject;
     }
     /// if the Point already exists, eg. because it is the end of a line,
     /// then this function does not work properly!
@@ -1239,7 +1239,7 @@ class Diagram {
             ctx.lineWidth = circleObject.lineThickness;
 
             ctx.beginPath();
-            ctx.arc(wiggleRoom + circleObject.center.x.float(), canvasHeight - wiggleRoom - circleObject.center.y.float(), circleObject.radius.float(), 0, Math.PI * 2);
+            ctx.arc(wiggleRoom + circleObject.center.x.getFloat(), canvasHeight - wiggleRoom - circleObject.center.y.getFloat(), circleObject.radius.getFloat(), 0, Math.PI * 2);
             ctx.stroke();
             if (circleObject.filled) {ctx.fill();}
         });
