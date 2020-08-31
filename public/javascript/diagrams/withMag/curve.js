@@ -1,3 +1,5 @@
+
+// forcedYmin and forcedYmax: any points above the ymax and below the ymin will be automatically cut off
 class Curve {
     constructor(func, xMin, xMax, forcedYmin, forcedYmax) {
         this.function = func;
