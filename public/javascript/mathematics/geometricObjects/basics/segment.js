@@ -13,12 +13,14 @@ class Segment {
         this.point2 = point2;
         this.closedCircleAtPoint1 = closedCircleAtPoint1;
         this.closedCircleAtPoint2 = closedCircleAtPoint2;
-        // this.thickness = 2;
-        // this.color = "#000000";
-        // this.cap = "butt";
-        // this.dotted = false;
-        // this.dashed = false;
         this.line = new Line(point1, point2); // a corresponding infinite line through this point
+        this.diagramQualities = {
+            thickness: 2,
+            color: "#000000",
+            cap: "butt",
+            dotted: false,
+            dashed: false
+        };
 
 
         // adopting convention of first and second points
@@ -75,8 +77,12 @@ class Segment {
         }
     }
 
+    setThickness(newThickness) {
+        this.diagramQualities.thickness = newThickness
+    }
+
     setColor(newColor) {
-        this.color = newColor;
+        this.diagramQualities.color = newColor;
     }
 
     getLength() {
@@ -86,12 +92,12 @@ class Segment {
     /// i need a way to customize dot sizes and dash sizes!!!
     /// right now, it is set to 1/30 times the average of the width and height of the whole canvas!
     turnIntoDottedLine() {
-        this.dotted = true;
+        this.diagramQualities.dotted = true;
         this.setThickness(1);
     };
 
     turnIntoDashedLine() {
-        this.dashed = true;
+        this.diagramQualities.dashed = true;
     }
 
     // // if Point 1 were the origin, returns the angle to the horizontal of Point 2

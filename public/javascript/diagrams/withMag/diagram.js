@@ -210,9 +210,16 @@ class Diagram {
     //     return newSegment
     // }
 
-    // this is a different thing than the rectangle object defined above
-    // i need to come up with a different name for that object
     addRangeBox(rangeBoxObject) {
+        this.addPoint(rangeBoxObject.lowerLeftPoint);
+        this.addPoint(rangeBoxObject.lowerRightPoint);
+        this.addPoint(rangeBoxObject.upperLeftPoint);
+        this.addPoint(rangeBoxObject.upperRightPoint);
+    }
+
+    drawRangeBox(rangeBoxObject) {
+        this.addRangeBox(rangeBoxObject);
+
         this.addSegment(new Segment(rangeBoxObject.lowerLeftPoint, rangeBoxObject.lowerRightPoint));
         this.addSegment(new Segment(rangeBoxObject.lowerRightPoint, rangeBoxObject.upperRightPoint));
         this.addSegment(new Segment(rangeBoxObject.upperRightPoint, rangeBoxObject.upperLeftPoint));
@@ -226,7 +233,6 @@ class Diagram {
         };
 
         return rectangleObject
-
     }
 
     addArrowhead(centerPoint, pointingAngle, arrowheadLength, arrowHeadAngle = new Angle('20.00000')) {
@@ -276,59 +282,62 @@ class Diagram {
     addDistanceMarker(segment, sideLength) { // line with hash marks on the ends
         this.addTwoHeadedArrow(segment, sideLength, get90Degrees(undefined, true));
     }
-/*
-    // in case you want a line with an arrowhead in the middle of it
-    addArrowHeadBetweenPoints(point1, point2, arrowHeadLength, arrowheadAngleInDegrees) {
-        let arrowHeadAngleInRadians = convertDegreesToRadians(arrowheadAngleInDegrees);
-        let centerPointOfSegment = new PointF((point1.x + point2.x)/2, (point1.y + point2.y)/2);
 
-        // center it so the center, not the head, of the arrow is in the center of the segment
-        // looks much more centered
-        let totalDisplacement = arrowHeadLength / 2 * Math.cos(arrowHeadAngleInRadians);
-        let segmentToHorizontalAngle = point1.getAngleToAnotherPoint(point2);
-        let xDisplacement = totalDisplacement * Math.cos(segmentToHorizontalAngle);
-        let yDisplacement = totalDisplacement * Math.sin(segmentToHorizontalAngle);
-        let arrowHeadCenter = new PointF(centerPointOfSegment.x + xDisplacement, centerPointOfSegment.y + yDisplacement);
-
-        let theta = point1.getAngleToAnotherPoint(point2) + Math.PI;
-        let end1 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta + arrowHeadAngleInRadians);
-        let end2 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta - arrowHeadAngleInRadians);
-        this.addSegment(arrowHeadCenter, end1);
-        this.addSegment(arrowHeadCenter, end2);
+    addArrowHeadInMiddleOfSegment(segment, arrowHeadLocationFloat = 0.5, arrowheadLength = segment.getLength().multiplyMagExactConstant(0.1), arrowHeadAngle = new Angle('20.00000')) {
+        let point1 = segment.point1;
+        let point2 = segment.point2;
+        let point3 = point1.interpolate(point2, constructMagnitudeFromFloat(arrowHeadLocationFloat,undefined,undefined,true));
+        this.addArrow(point1, point3);
+        this.addSegment(point1,point2);
     }
+    // // in case you want a line with an arrowhead in the middle of it
+    // addArrowHeadBetweenPoints(point1, point2, arrowHeadLength, arrowheadAngleInDegrees) {
+    //     let arrowHeadAngleInRadians = convertDegreesToRadians(arrowheadAngleInDegrees);
+    //     let centerPointOfSegment = new PointF((point1.x + point2.x)/2, (point1.y + point2.y)/2);
+    //
+    //     // center it so the center, not the head, of the arrow is in the center of the segment
+    //     // looks much more centered
+    //     let totalDisplacement = arrowHeadLength / 2 * Math.cos(arrowHeadAngleInRadians);
+    //     let segmentToHorizontalAngle = point1.getAngleToAnotherPoint(point2);
+    //     let xDisplacement = totalDisplacement * Math.cos(segmentToHorizontalAngle);
+    //     let yDisplacement = totalDisplacement * Math.sin(segmentToHorizontalAngle);
+    //     let arrowHeadCenter = new PointF(centerPointOfSegment.x + xDisplacement, centerPointOfSegment.y + yDisplacement);
+    //
+    //     let theta = point1.getAngleToAnotherPoint(point2) + Math.PI;
+    //     let end1 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta + arrowHeadAngleInRadians);
+    //     let end2 = arrowHeadCenter.getAnotherPointWithTrig(arrowHeadLength, theta - arrowHeadAngleInRadians);
+    //     this.addSegment(arrowHeadCenter, end1);
+    //     this.addSegment(arrowHeadCenter, end2);
+    // }
+    //
+    // addSegmentWithArrowheadInCenter(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
+    //     if (arrowheadAngleInDegrees === undefined) {arrowheadAngleInDegrees = 30;}
+    //     if (arrowheadLength === undefined) {arrowheadLength = point1.getDistanceToAnotherPoint(point2) * 0.15;}
+    //     let newSegment = this.addSegment(point1, point2);
+    //     this.addArrowHeadBetweenPoints(point1, point2, arrowheadLength, arrowheadAngleInDegrees);
+    //     return newSegment
+    // }
 
-    addSegmentWithArrowheadInCenter(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
-        if (arrowheadAngleInDegrees === undefined) {arrowheadAngleInDegrees = 30;}
-        if (arrowheadLength === undefined) {arrowheadLength = point1.getDistanceToAnotherPoint(point2) * 0.15;}
-        let newSegment = this.addSegment(point1, point2);
-        this.addArrowHeadBetweenPoints(point1, point2, arrowheadLength, arrowheadAngleInDegrees);
-        return newSegment
-    }
 
-/*
     // add Circle
     // Point must already exist? NO
-    addCircle(centerPoint, radius) {
-        let center = this.addExistingPoint(centerPoint);
-        let thisCircle = new CircleF(center, radius);
-        this.addExistingPoint(thisCircle.rangeBox.lowerLeftPoint);
-        this.addExistingPoint(thisCircle.rangeBox.upperLeftPoint);
-        this.addExistingPoint(thisCircle.rangeBox.lowerRightPoint);
-        this.addExistingPoint(thisCircle.rangeBox.upperRightPoint);
-        this.circles.push(thisCircle);
-        return thisCircle;
+    addCircle(circleObject) {
+        this.addPoint(circleObject.center);
+        this.circles.push(circleObject);
+        this.addRangeBox(circleObject.rangeBox);
+        return c;
     }
     /// if the Point already exists, eg. because it is the end of a line,
     /// then this function does not work properly!
 
 
-    addBlackCircle(centerPoint, radius) {
-        let circle = this.addCircle(centerPoint, radius);
-        circle.setFillColor('#000000');
-        circle.fill();
-        return circle
-    }
-
+    // addBlackCircle(centerPoint, radius) {
+    //     let circle = this.addCircle(centerPoint, radius);
+    //     circle.setFillColor('#000000');
+    //     circle.fill();
+    //     return circle
+    // }
+/*
 
     addArc(centerPoint, radius, startRadians, endRadians) {
         let center = this.addExistingPoint(centerPoint);
@@ -340,7 +349,7 @@ class Diagram {
         this.arcs.push(thisArc);
         return thisArc
     }
-
+/*
     // the arc radius will be the radiusProportion variable times the lesser of the two rays
     labelAngle(label, outsidePointA, vertex, outsidePointB, interiorOrExterior, textOnAorB, addDegreeLabel, radiusProportion, fontProportion, lockedFontSize) {
         /// I need to create a way to label right angles!
@@ -1114,10 +1123,10 @@ class Diagram {
         // should i make this variable?
         let dotSize = (this.horizontalRange + this.verticalRange) / 2 / 30;
         this.segments.forEach((segment) => {
-            ctx.lineWidth = segment.thickness;
-            ctx.lineCap = segment.lineCap;
-            ctx.strokeStyle = segment.color;
-            if (segment.dotted) {
+            ctx.lineWidth = segment.diagramQualities.thickness;
+            ctx.lineCap = segment.diagramQualities.lineCap;
+            ctx.strokeStyle = segment.diagramQualities.color;
+            if (segment.diagramQualities.dotted) {
                 let q;
                 let length = segment.getLength().getFloat();
                 let theta = segment.getAngleToHorizontal().getFloat();
@@ -1130,7 +1139,7 @@ class Diagram {
                         ctx.stroke();
                     }
                 }
-            } else if (segment.dashed) {
+            } else if (segment.diagramQualities.dashed) {
                 let length = segment.getLength().getFloat();
                 let Ndashes = 7;
                 //let solidToSpaceRatio = 0.5;

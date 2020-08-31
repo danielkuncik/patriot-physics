@@ -201,26 +201,21 @@ class Angle extends PhysicsNumber {
 
 
 }
-
-function getZeroDegrees(numSigFigs, exact = true) {
-    return constructAngleFloat(0,numSigFigs,true, exact);
-}
-function get90Degrees(numSigFigs, exact = true) {
+function get90Degrees(numSigFigs, exact = numSigFigs === undefined) {
     return constructAngleFloat(90,numSigFigs,true, exact);
 }
-function get180Degrees(numSigFigs, exact = true) {
+function get180Degrees(numSigFigs, exact = numSigFigs === undefined) {
     return constructAngleFloat(180,numSigFigs,true, exact);
 }
-function get270Degrees(numSigFigs, exact = true) {
+function get270Degrees(numSigFigs, exact = numSigFigs === undefined) {
     return constructAngleFloat(270,numSigFigs,true, exact);
 }
-
 
 function constructAngleFloat(float, numSigFigs, degrees = true, exact = false, zeroLimit) {
   return new Angle(float.toExponential(numSigFigs - 1), degrees, float, exact)
 }
 
-function constructZeroAngle(float, numSigFigs, exact = false) {
+function constructZeroAngle(numSigFigs, exact = numSigFigs === undefined) {
     let string = '0.';
     if (!exact < numSigFigs !== Infinity) {
         let i;

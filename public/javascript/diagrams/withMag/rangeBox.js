@@ -1,35 +1,38 @@
-// the box should always belong to an object!
+// a range box is a rectangle around text, a circle, an arc, or a curve.
+// it has two purposes:
+// 1 - to ensure that the space around an irregular object is included in the full range of a diagram
+// 2 - to become a boarder if required (often for text)
 class RangeBox {
-    constructor(lowerLeftX, lowerLeftY, width, height) {
-        this.lowerLeftPoint = new PointF(lowerLeftX, lowerLeftY);
-        this.upperLeftPoint = new PointF(lowerLeftX, lowerLeftY + height);
-        this.lowerRightPoint = new PointF(lowerLeftX + width, lowerLeftY);
-        this.upperRightPoint = new PointF(lowerLeftX + width, lowerLeftY + height);
+    constructor(lowerLeftPoint, width, height) {
+        this.lowerLeftPoint = lowerLeftPoint;
+        this.upperLeftPoint = lowerLeftPoint.translateAndReproduce(constructZeroMagnitude(), height);
+        this.lowerRightPoint = lowerLeftPoint.translateAndReproduce(width, constructZeroMagnitude());
+        this.upperRightPoint = lowerLeftPoint.translateAndReproduce(width, height);
         this.resetMinAndMax();
         this.resetWidthAndHeight();
-        this.centerPoint = new PointF(this.xMin + width / 2, this.yMin + height / 2);
+        this.centerPoint = this.lowerLeftPoint.interpolate(this.upperRightPoint, new Magnitude('0.5',undefined,undefined,true));
         this.segments = [];
-        this.rotation = 0;
+        this.rotation = constructZeroAngle();
     }
 
     resetWidthAndHeight() {
-        this.width = this.lowerRightPoint.x - this.lowerLeftPoint.x;
-        this.height = this.upperLeftPoint.y - this.lowerLeftPoint.y;
+        this.width = this.lowerRightPoint.x.subtractMag(this.lowerLeftPoint.x);
+        this.height = this.upperLeftPoint.y.subtractMag(this.lowerLeftPoint.y);
     }
 
     resetMinAndMax() {
         let xMin = this.lowerLeftPoint.x, xMax = this.lowerLeftPoint.x, yMin = this.lowerLeftPoint.y, yMax = this.lowerLeftPoint.y;
         [this.lowerRightPoint, this.upperRightPoint, this.upperLeftPoint].forEach((point) => {
-            if (point.x < xMin) {
+            if (point.x.isLessThan(xMin)) {
                 xMin = point.x;
             }
-            if (point.x > xMax) {
+            if (point.x.isGreaterThan(xMax)) {
                 xMax = point.x;
             }
-            if (point.y < yMin) {
+            if (point.y.isLessThan(yMin)) {
                 yMin = point.y;
             }
-            if (point.y > yMax) {
+            if (point.y.isGreaterThan(yMax)) {
                 yMax = point.y;
             }
             this.xMin = xMin;
@@ -47,58 +50,33 @@ class RangeBox {
         if (currentRotation) {
             this.rotateCounterClockwiseAboutCenter(currentRotation)
         }
-        this.lowerLeftPoint.translate(-1 * horizontalExtension, -1 * verticalExtension);
-        this.upperLeftPoint.translate(-1 * horizontalExtension, verticalExtension);
-        this.lowerRightPoint.translate(horizontalExtension, -1 * verticalExtension);
+        this.lowerLeftPoint.translate(horizontalExtension.reverseSign(), verticalExtension.reverseSign());
+        this.upperLeftPoint.translate(horizontalExtension.reverseSign(), verticalExtension);
+        this.lowerRightPoint.translate(horizontalExtension, verticalExtension.reverseSign());
         this.upperRightPoint.translate(horizontalExtension, verticalExtension);
         if (currentRotation) {
-            this.rotateCounterClockwiseAboutCenter(-1 * currentRotation)
+            this.rotateCounterClockwiseAboutCenter(currentRotation.reverseSign())
         }
-        // const h = Math.sqrt(horizontalExtension**2 + verticalExtension**2);
-        // if (h === 0) {
-        //     return false
-        // }
-        // let phi;
-        // if (horizontalExtension === 0) {
-        //     phi = Math.PI / 2;
-        // } else if (verticalExtension === 0) {
-        //     phi = 0;
-        // } else {
-        //     phi = Math.atan(verticalExtension/ horizontalExtension);
-        // }
-        // console.log(phi);
-        // const theta = phi + this.rotation;
-        //   // console.log(theta);
-        //   const rotatedHorizontalExtension = horizontalExtension * Math.cos(this.rotation) - verticalExtension * Math.sin(this.rotation);
-        //   const rotatedVerticalExtension = horizontalExtension * Math.sin(this.rotation) + verticalExtension * Math.cos(this.rotation);
-        //   console.log(rotatedHorizontalExtension, rotatedVerticalExtension);
-        //   /// problem here!
-        // this.lowerLeftPoint.translate(-1 * rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
-        // this.upperLeftPoint.translate(-1 * rotatedHorizontalExtension, rotatedVerticalExtension);
-        // this.lowerRightPoint.translate(rotatedHorizontalExtension, -1 * rotatedVerticalExtension);
-        // this.upperRightPoint.translate(rotatedHorizontalExtension, rotatedVerticalExtension);
         this.resetMinAndMax();
         this.resetWidthAndHeight();
     }
 
 
-    /// How do I reset min and max in this situation!
-    rotateCounterClockwiseAboutCenter(angleInRadians) {
-        this.rotation += angleInRadians;
-        this.lowerLeftPoint.rotate(angleInRadians, this.centerPoint); // i need unit tests for the point rotate method
-        this.upperLeftPoint.rotate(angleInRadians, this.centerPoint);
-        this.lowerRightPoint.rotate(angleInRadians, this.centerPoint);
-        this.upperRightPoint.rotate(angleInRadians, this.centerPoint);
+    rotateCounterClockwiseAboutCenter(angle) {
+        this.rotation = this.rotation.addAngle(angle);
+        this.lowerLeftPoint.rotate(angle, this.centerPoint); // i need unit tests for the point rotate method
+        this.upperLeftPoint.rotate(angle, this.centerPoint);
+        this.lowerRightPoint.rotate(angle, this.centerPoint);
+        this.upperRightPoint.rotate(angle, this.centerPoint);
         this.resetMinAndMax();
     }
 
-    // how do i result min and Max in this situation!
-    rotateClockwiseAboutCenter(angleInRadians) {
-        this.rotation -= angleInRadians;
-        this.lowerLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
-        this.upperLeftPoint.rotate(-1 * angleInRadians, this.centerPoint);
-        this.lowerRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
-        this.upperRightPoint.rotate(-1 * angleInRadians, this.centerPoint);
+    rotateClockwiseAboutCenter(angle) {
+        this.rotation = this.rotation.subtractAngle(angle);
+        this.lowerLeftPoint.rotate(angle.reverseSign(), this.centerPoint);
+        this.upperLeftPoint.rotate(angle.reverseSign(), this.centerPoint);
+        this.lowerRightPoint.rotate(angle.reverseSign(), this.centerPoint);
+        this.upperRightPoint.rotate(angle.reverseSign(), this.centerPoint);
         this.resetMinAndMax();
     }
 
@@ -113,15 +91,16 @@ class RangeBox {
     }
 
     stretch(xMultiplier, yMultiplier) {
-        const horizontalExtension = this.width * (xMultiplier - 1);
-        const verticalExtension = this.height * (yMultiplier - 1);
+        const horizontalExtension = this.width.multiplyMag(xMultiplier.subtractMag(constructMagnitudeFromFloat('1',undefined,undefined,true)));
+        const verticalExtension = this.height.multiplyMag(yMultiplier.subtractMag(constructMagnitudeFromFloat('1',undefined,undefined,true)));
         this.extend(horizontalExtension, verticalExtension);
     }
 
     isPointInsideBox(point) { // UNTESTED
-        return (point.x > this.xMin && point.x < this.xMax && point.y > this.yMin && point.y < this.yMax)
+        return (point.x.isGreaterThan(this.xMin) && point.x.isLessThan(this.xMax) && point.y.isGreaterThan(this.yMin) && point.y.isLessThan(this.yMax))
     }
 
+    ////// up to here!
     // determines if a range box intersects a segment
     doesItIntersectSegment(segment) { // UNTESTED
         if (this.isPointInsideBox(segment.point1) && this.isPointInsideBox(segment.point2)) { // segment entirely inside of box
@@ -185,7 +164,7 @@ class RangeBox {
             let intersection2 = intersections[1];
             let endA = segment.point1;
             let endB = segment.point2;
-            if (endA.getDistanceToAnotherPoint(intersection1) < endA.getDistanceToAnotherPoint(intersection2)) {
+            if (endA.getDistanceToAnotherPoint(intersection1).isLessThan(endA.getDistanceToAnotherPoint(intersection2))) {
                 let newSegment1 = new SegmentF(endA, intersection1);
                 let newSegment2 = new SegmentF(endB, intersection2);
                 result.push(newSegment1);
@@ -202,45 +181,13 @@ class RangeBox {
     }
     /// odd results possible if the point lands on the range box?
 
-    // // on or inside
-    // isPointInside(point) {
-    //   return point.x >= this.xMin && point.x <= this.xMax && point.y >= this.yMin && point.y <= this.yMax
-    // }
-
-
-    addToDiagram(DiagramObject) {
-        DiagramObject.addExistingPoint(this.lowerLeftPoint);
-        DiagramObject.addExistingPoint(this.lowerRightPoint);
-        DiagramObject.addExistingPoint(this.upperLeftPoint);
-        DiagramObject.addExistingPoint(this.upperRightPoint);
-        DiagramObject.addExistingPoint(this.centerPoint);
-    }
-
-
-    addSegmentsToDiagram(DiagramObject, horizontalExtension = 0, verticalExtension = 0) {
-        // let newLowerLeft = this.lowerLeftPoint.translateAndReproduce(-1 * horizontalExtension, -1 * verticalExtension);
-        // let newUpperLeft = this.upperLeftPoint.translateAndReproduce(-1 * horizontalExtension, verticalExtension);
-        // let newLowerRight = this.lowerRightPoint.translateAndReproduce(horizontalExtension, -1 * verticalExtension);
-        // let newUpperRight = this.upperRightPoint.translateAndReproduce(horizontalExtension, verticalExtension);
-
-        this.extend(horizontalExtension, verticalExtension);
-        DiagramObject.addSegment(this.lowerLeftPoint, this.lowerRightPoint);
-        DiagramObject.addSegment(this.lowerRightPoint, this.upperRightPoint);
-        DiagramObject.addSegment(this.upperRightPoint, this.upperLeftPoint);
-        DiagramObject.addSegment(this.upperLeftPoint, this.lowerLeftPoint);
-
-        // DiagramObject.addSegment(newLowerLeft, newLowerRight);
-        // DiagramObject.addSegment(newLowerRight, newUpperRight);
-        // DiagramObject.addSegment(newUpperRight, newUpperLeft);
-        // DiagramObject.addSegment(newUpperLeft, newLowerLeft);
-    }
 
     segmentConnectingRangeBoxes(anotherRangeBox, displacement = 0) {
         let center1 = this.centerPoint;
         let center2 = anotherRangeBox.centerPoint;
 
         // add diplacement here
-        let theta = center1.getAngleToAnotherPoint(center2) - Math.PI / 2;
+        let theta = center1.getAngleToAnotherPoint(center2).subtractAngle(get90Degrees());
         let start1 = center1.translateAndReproducePolar(displacement, theta);
         let start2 = center2.translateAndReproducePolar(displacement, theta);
 
@@ -255,7 +202,7 @@ class RangeBox {
         } else if (result1.length === 2) { // the segment was cut into two by the function, pick the one that goes closest to the center of the other box
             let segment1 = result1[0];
             let segment2 = result1[1];
-            if (segment1.point1.getDistanceToAnotherPoint(anotherRangeBox.centerPoint) < segment2.point1.getDistanceToAnotherPoint(anotherRangeBox.centerPoint)) {
+            if (segment1.point1.getDistanceToAnotherPoint(anotherRangeBox.centerPoint).isLessThan(segment2.point1.getDistanceToAnotherPoint(anotherRangeBox.centerPoint))) {
                 testSegment2 = segment1;
             } else {
                 testSegment2 = segment2;
@@ -272,7 +219,7 @@ class RangeBox {
         } else if (result2.length === 2) { // result formatted so that the non-intersecting end is point1
             let segment1 = result2[0];
             let segment2 = result2[1];
-            if (segment1.point1.getDistanceToAnotherPoint(this.centerPoint) < segment2.point1.getDistanceToAnotherPoint(this.centerPoint)) {
+            if (segment1.point1.getDistanceToAnotherPoint(this.centerPoint).isLessThan(segment2.point1.getDistanceToAnotherPoint(this.centerPoint))) {
                 testSegment3 = segment1;
             } else {
                 testSegment3 = segment2;
@@ -285,20 +232,20 @@ class RangeBox {
 }
 // does this make a duplicate of the center Point??
 function constructRangeBoxFromCenterF(centerPoint, width, height) {
-    let lowerLeftX = centerPoint.x - width/2;
-    let lowerLeftY = centerPoint.y - height/2;
-    let newRangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, width, height);
-    return newRangeBox;
+    let lowerLeftPoint = centerPoint.translateAndReproduce((width.divideMagExactConstant(2)).reverseSign(), (height.divideMagExactConstant(2)).reverseSign());
+    return new RangeBoxF(lowerLeftPoint, width, height);
 }
 
 function constructRangeBoxFromExtremePointsF(minX, minY, maxX, maxY) {
     if (maxX <= minX) {
         console.log('ERROR: range box error- max X must be greater than min X');
+        return false
     }
     if (maxY <= minY) {
         console.log('ERROR: range box error- maxY must be greater than min Y');
+        return false
     }
-    let width = maxX - minX;
-    let height = maxY - minY;
-    return new RangeBoxF(minX, minY, width, height);
+    let width = maxX.subtractMag(minX);
+    let height = maxY.subtractMag(minY);
+    return new RangeBoxF(new Point(minX, minY), width, height);
 }
