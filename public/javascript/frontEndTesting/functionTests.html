@@ -33,10 +33,26 @@
 
 <script>
     let functionTests = new TestPackage('Function Tests');
-    functionTests.addCategory('constant','Constant Function');
+    functionTests.addCategory('constant','Constant Functions');
     functionTests.addSubCategory('constant','run','Run Constant Function');
     functionTests.addSubCategory('constant','differentiate','Differentiate Constant Function');
     functionTests.addSubCategory('constant','integrate','Integrate Constant Function');
+
+    functionTests.addCategory('linear','Linear Functions');
+    functionTests.addSubCategory('linear','run','Run Linear Function');
+    functionTests.addSubCategory('linear','differentiate','Differentiate Linear Function');
+    functionTests.addSubCategory('linear','integrate','Integrate Linear Function');
+
+    functionTests.addCategory('quadratic','Quadratic Functions');
+    functionTests.addSubCategory('quadratic','run','Run Quadratic Function');
+    functionTests.addSubCategory('quadratic','differentiate','Differentiate Quadratic Function');
+    functionTests.addSubCategory('quadratic','integrate','Integrate Quadratic Function');
+
+    functionTests.addCategory('zero','Zero Functions');
+    functionTests.addSubCategory('zero','run','Run Zero Function');
+    functionTests.addSubCategory('zero','differentiate','Differentiate Zero Function');
+    functionTests.addSubCategory('zero','integrate','Integrate Zero Function');
+
 
     let func001 = new ConstantFunction(new Magnitude('4.00')); // identical to constant function; infinity to neg infinity
     functionTests.assertMagnitude(func001.runFunction(new Magnitude('5.00')), {
@@ -64,6 +80,43 @@
         positive: true,
         float: 12
     }, 'constant','integrate');
+
+
+
+    let func101 = new LinearFunction(new Magnitude('6.00'), new Magnitude('2.00')); // 6x + 2
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('5.00')), { /// 32.0
+        firstSigFig: '3',
+        otherSigFigs: '20',
+        orderOfMagnitude: 1,
+        numSigFigs: 3,
+        positive: true,
+        float: 32
+    }, 'linear', 'run');
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('-4.00')), { /// -22.0
+        firstSigFig: '2',
+        otherSigFigs: '20',
+        orderOfMagnitude: 1,
+        numSigFigs: 3,
+        positive: false,
+        float: -22
+    }, 'linear', 'run');
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('20.0')), { /// 6 * 20 + 2 = 120 + 2 = 122
+        firstSigFig: '1',
+        otherSigFigs: '22',
+        orderOfMagnitude: 2,
+        numSigFigs: 3,
+        positive: true,
+        float: 122
+    }, 'linear', 'run');
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('20')), { /// 6 * 20 + 2 = 120 + 2 = 122 => 100
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 2,
+        numSigFigs: 1,
+        positive: true,
+        float: 122 // intermediate value
+    }, 'linear', 'run');
+
 
     $("#putItHere").append(functionTests.printAllTests());
 
