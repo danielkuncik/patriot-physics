@@ -149,6 +149,8 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
+    functionTests.assertEqualStrict(func101.differentiate(constructInfinity()), undefined, 'linear', 'differentiate');
+    functionTests.assertEqualStrict(func101.differentiate(constructNegativeInfinity()), undefined, 'linear', 'differentiate');
 
 
     $("#putItHere").append(functionTests.printAllTests());
