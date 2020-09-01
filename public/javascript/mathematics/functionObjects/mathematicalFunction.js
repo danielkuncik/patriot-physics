@@ -6,7 +6,6 @@ class MathematicalFunction {
         this.closedCircleAtMax = closedCircleAtMax;
         this.undefinedPoints = [];
         this.func = undefined;
-        this.rangeFinder = undefined;
     }
 
     addUndefinedPoint(xMag) {
@@ -30,6 +29,10 @@ class MathematicalFunction {
     }
 
     getAntiDerivative() {
+        return undefined
+    }
+
+    rangeFinder(xMin = this.xMin, xMax = this.xMax) {
         return undefined
     }
 
@@ -76,9 +79,11 @@ class MathematicalFunction {
     integrate(xMin = this.xMin, xMax = this.xMax) {
         if (!this.isValueInDomain(xMin) || !this.isValueInDomain(xMax) || xMin === -Infinity || xMax === Infinity) {
             return undefined
+        } else if (this.antiDerivative) {
+            return (this.antiDerivative.runFunction(xMax)).subtractMag(this.antiDerivative.runFunction(xMin))
         } else if (this.getAntiDerivative()) {
-            let antiDerivative = this.getAntiDerivative();
-            return antiDerivative.runFunction(xMax) - antiDerivative.runFunction(xMin)
+            this.antiDerivative = this.getAntiDerivative();
+            return (this.antiDerivative.runFunction(xMax)).subtractMag(this.antiDerivative.runFunction(xMin))
         } else {
             return this.integrateBruteForce(xMin, xMax)
         }

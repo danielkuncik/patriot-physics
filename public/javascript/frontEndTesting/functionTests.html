@@ -47,8 +47,6 @@
         positive: true,
         float: 4
     }, 'constant', 'run');
-    const myFloat = (func001.differentiate(new Magnitude('10.0')).getFloat());
-    console.log(typeof(myFloat));
     functionTests.assertMagnitude(func001.differentiate(new Magnitude('10.0')), {
         firstSigFig: '0',
         otherSigFigs: '00',
@@ -58,6 +56,14 @@
         positive: undefined,
         float: 0
     }, 'constant', 'differentiate');
+    functionTests.assertMagnitude(func001.integrate(new Magnitude('2.00'),new Magnitude('5.00')), {
+        firstSigFig: '1',
+        otherSigFigs: '20',
+        orderOfMagnitude: 1,
+        numSigFigs: 3,
+        positive: true,
+        float: 12
+    }, 'constant','integrate');
 
     $("#putItHere").append(functionTests.printAllTests());
 

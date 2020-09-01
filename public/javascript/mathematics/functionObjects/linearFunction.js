@@ -13,7 +13,6 @@ class LinearFunction extends Polynomial {
         this.func = (x) => {return (this.slope.multiplyMag(x)).addMag(this.yIntercept)};
 
         // this should redfine the function defined above in the polynomial constructor ?
-        super.defineFunction((x) => {return this.slope * x + this.yIntercept})
     }
 
     /// range finder is not to be used separately, only within the range function above!
