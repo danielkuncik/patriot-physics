@@ -117,6 +117,39 @@
         float: 122 // intermediate value
     }, 'linear', 'run');
 
+    functionTests.assertMagnitude(func101.differentiate(new Magnitude('6.00')),{
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        positive: true,
+        float: 6
+    }, 'linear', 'differentiate');
+    functionTests.assertMagnitude(func101.differentiate(new Magnitude('0.00')),{
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        positive: true,
+        float: 6
+    }, 'linear', 'differentiate');
+    functionTests.assertMagnitude(func101.differentiate(constructZeroMagnitude(1)),{
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3, // even though the input has only one sig fig, it is not a part of the calculation of the derivative, the derivative of a linear function returns the slope regardless!
+        positive: true,
+        float: 6
+    }, 'linear', 'differentiate');
+    functionTests.assertMagnitude(func101.differentiate(new Magnitude('-123456.0')),{
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        positive: true,
+        float: 6
+    }, 'linear', 'differentiate');
+
 
     $("#putItHere").append(functionTests.printAllTests());
 
