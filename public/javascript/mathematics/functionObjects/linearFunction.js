@@ -4,10 +4,10 @@ class LinearFunction extends Polynomial {
 
         this.slope = slope;
         this.yIntercept = yIntercept;
-        if (this.slope === 0) {
+        if (this.slope.zero) {
             this.xIntercept = undefined;
         } else {
-            this.xIntercept = -1 * this.yIntercept / this.slope;
+            this.xIntercept = (this.yIntercept.divideMag(this.slope)).reverseSign();
         }
 
         // this should redfine the function defined above in the polynomial constructor ?

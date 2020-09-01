@@ -1,7 +1,9 @@
 class ConstantFunction extends LinearFunction {
     constructor(value, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
-        super(0, value, xMin, xMax, closedCircleAtMin, closedCircleAtMax);
+        super(constructZeroMagnitude(), value, xMin, xMax, closedCircleAtMin, closedCircleAtMax);
         this.value = value;
+
+        // i want to write a more complicated version of 'define function'
     }
 
     rangeFinder(xMin, xMax) {

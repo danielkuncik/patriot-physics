@@ -20,7 +20,7 @@ class MathematicalFunction {
     }
 
     isValueInDomain(xMag) {
-        return (x.isGreaterThan(this.xMin)|| (x.isEqualTo(this.xMin) && this.closedCircleAtMin)) && (x.isLessThan(this.xMax) || (x.isEqualTo(this.xMax) && this.closedCircleAtMax)) && !this.undefinedPoints.includes(xMag)
+        return (xMag.isGreaterThan(this.xMin)|| (xMag.isEqualTo(this.xMin) && this.closedCircleAtMin)) && (xMag.isLessThan(this.xMax) || (x.isEqualTo(this.xMax) && this.closedCircleAtMax)) && !this.undefinedPoints.includes(xMag)
     }
 
     runFunction(x) {

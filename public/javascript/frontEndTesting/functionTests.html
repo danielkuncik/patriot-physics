@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function Tests</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+<body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src = './frontEndTesting.js'></script>
+<script src = '../mathematics/numbers/units.js'></script>
+<script src = '../mathematics/numbers/physicsNumber.js'></script>
+<script src = '../mathematics/numbers/magnitude.js'></script>
+<script src = '../mathematics/numbers/angle.js'></script>
+
+<script src = '../mathematics/functionObjects/mathematicalFunction.js'></script>
+<script src = '../mathematics/functionObjects/singleFunction.js'></script>
+<script src = '../mathematics/functionObjects/stepwiseFunction.js'></script>
+<script src = '../mathematics/functionObjects/polynomial.js'></script>
+<script src = '../mathematics/functionObjects/quadraticFunction.js'></script>
+<script src = '../mathematics/functionObjects/linearFunction.js'></script>
+<script src = '../mathematics/functionObjects/constantFunction.js'></script>
+<script src = '../mathematics/functionObjects/zeroFunction.js'></script>
+
+<div id = 'putItHere'></div>
+
+<script>
+    let functionTests = new TestPackage('Function Tests');
+    functionTests.addCategory('constant','Constant Function');
+    functionTests.addSubCategory('constant','run','Run Constant Function');
+    functionTests.addSubCategory('constant','differentiate','Differentiate Constant Function');
+    functionTests.addSubCategory('constant','integrate','Integrate Constant Function');
+
+    let func001 = new ConstantFunction(new Magnitude('4.00')); // identical to constant function; infinity to neg infinity
+    functionTests.assertMagnitude(func001.runFunction(new Magnitude('5.00')), {
+        firstSigFig: '4',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        positive: true,
+        float: 4
+    }, 'constant', 'run');
+
+    $("#putItHere").append(functionTests.printAllTests());
+
+</script>
+
+</body>
+</html>
