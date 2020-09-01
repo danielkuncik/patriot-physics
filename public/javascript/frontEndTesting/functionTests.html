@@ -47,13 +47,15 @@
         positive: true,
         float: 4
     }, 'constant', 'run');
+    const myFloat = (func001.differentiate(new Magnitude('10.0')).getFloat());
+    console.log(typeof(myFloat));
     functionTests.assertMagnitude(func001.differentiate(new Magnitude('10.0')), {
         firstSigFig: '0',
         otherSigFigs: '00',
         orderOfMagnitude: undefined,
         zero: true,
         numSigFigs: 3,
-        positive: true,
+        positive: undefined,
         float: 0
     }, 'constant', 'differentiate');
 

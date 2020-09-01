@@ -1,7 +1,7 @@
 // maybe just make this ex
 class ZeroFunction extends ConstantFunction {
-    constructor(xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
-        super(constructZeroMagnitude(), xMin, xMax, closedCircleAtMin, closedCircleAtMax);
+    constructor(numSigFigs, exact = numSigFigs === undefined, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
+        super(constructZeroMagnitude(numSigFigs, exact), xMin, xMax, closedCircleAtMin, closedCircleAtMax);
 
     }
 

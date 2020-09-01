@@ -177,7 +177,11 @@ class TestPackage {
         this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
       }
       if (equalObject.float !== undefined) {
-        this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
+          if (magnitude.zero) {
+              this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
+          } else {
+              this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
+          }
       }
       // add printing 
       // add unit
@@ -213,7 +217,11 @@ class TestPackage {
             this.assertEqualStrict(angle.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
         }
         if (equalObject.float !== undefined) {
-            this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
+            if (angle.zero) {
+                this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
+            } else {
+                this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
+            }
         }
         // add printing
         // add unit

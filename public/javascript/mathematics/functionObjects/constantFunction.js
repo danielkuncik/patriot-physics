@@ -13,7 +13,7 @@ class ConstantFunction extends LinearFunction {
     }
 
     getDerivative() {
-        return new ZeroFunction(this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax);
+        return new ZeroFunction(this.value.numSigFigs,undefined,this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax);
     }
 
     getAntiDerivative(constant = constructZeroMagnitude()) {
