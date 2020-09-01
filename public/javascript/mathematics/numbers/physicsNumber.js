@@ -116,6 +116,7 @@ class PhysicsNumber {
 
     if (numericalString === 'Infinity') {
         this.setValueInfinity();
+        return false
     }
 
     // deal with E
@@ -457,27 +458,82 @@ class PhysicsNumber {
             return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2)
         } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs === Infinity) {
             // two exact numbers
-            return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, this, anotherMagnitude)
+            return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, this, anotherMagnitude);
             return undefined
         }
     }
 
     // testes if equal up to a certain number of sig figs
     isEqualTo(anotherMagnitude, numSigFigs) {
+        if (this.infinity || anotherMagnitude.infinity) {
+            return undefined
+        }
         return this.comparisonTest('=', anotherMagnitude, numSigFigs)
     }
 
     isGreaterThan(anotherMagnitude, numSigFigs) {
+        if (this.infinity && anotherMagnitude.infinity) {
+            if (this.positive && !anotherMagnitude.positive) {
+                return true
+            } else if (!this.positive && anotherMagnitude.positive) {
+                return false
+            } else {
+                return undefined
+            }
+        } else if (this.infinity) {
+            return this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
+        } else if (anotherMagnitude.infinity) {
+            return !anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        }
         return this.comparisonTest('>', anotherMagnitude, numSigFigs)
     }
     isLessThan(anotherMagnitude, numSigFigs) {
+        if (this.infinity && anotherMagnitude.infinity) {
+            if (this.positive && !anotherMagnitude.positive) {
+                return false
+            } else if (!this.positive && anotherMagnitude.positive) {
+                return true
+            } else {
+                return undefined
+            }
+        } else if (this.infinity) {
+            return !this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
+        } else if (anotherMagnitude.infinity) {
+            return anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        }
         return this.comparisonTest('<', anotherMagnitude, numSigFigs)
     }
     isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
+        if (this.infinity && anotherMagnitude.infinity) {
+            if (this.positive && !anotherMagnitude.positive) {
+                return true
+            } else if (!this.positive && anotherMagnitude.positive) {
+                return false
+            } else {
+                return undefined
+            }
+        } else if (this.infinity) {
+            return this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
+        } else if (anotherMagnitude.infinity) {
+            return !anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        }
         return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
     }
 
     isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
+        if (this.infinity && anotherMagnitude.infinity) {
+            if (this.positive && !anotherMagnitude.positive) {
+                return false
+            } else if (!this.positive && anotherMagnitude.positive) {
+                return true
+            } else {
+                return undefined
+            }
+        } else if (this.infinity) {
+            return !this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
+        } else if (anotherMagnitude.infinity) {
+            return anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        }
         return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
     }
 

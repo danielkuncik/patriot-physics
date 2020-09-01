@@ -3,7 +3,6 @@ class Polynomial extends SingleFunction { // in array, begin with the HIGHEST po
     constructor(arrayOfCoefficients, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
         super(xMin, xMax, closedCircleAtMin, closedCircleAtMax);
         this.arrayOfCoefficients = arrayOfCoefficients;
-        console.log(arrayOfCoefficients);
 
         this.func = (x) => {
             let value = 0, i, coefficient, power;

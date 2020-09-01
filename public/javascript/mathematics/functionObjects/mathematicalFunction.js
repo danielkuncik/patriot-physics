@@ -7,8 +7,6 @@ class MathematicalFunction {
         this.undefinedPoints = [];
         this.func = undefined;
         this.rangeFinder = undefined;
-        this.getDerivative = undefined;
-        this.getAntiDerivative = undefined;
     }
 
     addUndefinedPoint(xMag) {
@@ -20,11 +18,19 @@ class MathematicalFunction {
     }
 
     isValueInDomain(xMag) {
-        return (xMag.isGreaterThan(this.xMin)|| (xMag.isEqualTo(this.xMin) && this.closedCircleAtMin)) && (xMag.isLessThan(this.xMax) || (x.isEqualTo(this.xMax) && this.closedCircleAtMax)) && !this.undefinedPoints.includes(xMag)
+        return (xMag.isGreaterThan(this.xMin)|| (xMag.isEqualTo(this.xMin) && this.closedCircleAtMin)) && (xMag.isLessThan(this.xMax) || (xMag.isEqualTo(this.xMax) && this.closedCircleAtMax)) && !this.undefinedPoints.includes(xMag)
     }
 
     runFunction(x) {
         return this.func(x)
+    }
+
+    getDerivative() {
+        return undefined
+    }
+
+    getAntiDerivative() {
+        return undefined
     }
 
     // define 'range finder' in subclasses, which overwrites brute force method!
