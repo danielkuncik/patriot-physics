@@ -10,6 +10,8 @@ class LinearFunction extends Polynomial {
             this.xIntercept = (this.yIntercept.divideMag(this.slope)).reverseSign();
         }
 
+        this.func = (x) => {return (this.slope.multiplyMag(x)).addMag(this.yIntercept)};
+
         // this should redfine the function defined above in the polynomial constructor ?
         super.defineFunction((x) => {return this.slope * x + this.yIntercept})
     }

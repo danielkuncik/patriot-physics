@@ -5,7 +5,7 @@ class Polynomial extends SingleFunction { // in array, begin with the HIGHEST po
         this.arrayOfCoefficients = arrayOfCoefficients;
         console.log(arrayOfCoefficients);
 
-        super.defineFunction((x) => {
+        this.func = (x) => {
             let value = 0, i, coefficient, power;
             for (i = 0; i < arrayOfCoefficients.length; i++) {
                 coefficient = arrayOfCoefficients[i];
@@ -13,7 +13,7 @@ class Polynomial extends SingleFunction { // in array, begin with the HIGHEST po
                 value += coefficient.multiplyMag(x.powerMag(power));
             }
             return value
-        });
+        };
 
     }
 

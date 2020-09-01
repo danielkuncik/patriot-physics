@@ -5,7 +5,7 @@ class MathematicalFunction {
         this.closedCircleAtMin = closedCircleAtMin;
         this.closedCircleAtMax = closedCircleAtMax;
         this.undefinedPoints = [];
-        this.func = (x) => {return undefined};
+        this.func = undefined;
         this.rangeFinder = undefined;
         this.getDerivative = undefined;
         this.getAntiDerivative = undefined;

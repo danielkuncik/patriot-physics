@@ -3,8 +3,10 @@ class ConstantFunction extends LinearFunction {
         super(constructZeroMagnitude(), value, xMin, xMax, closedCircleAtMin, closedCircleAtMax);
         this.value = value;
 
+        this.func = (x) => {return this.value};
         // i want to write a more complicated version of 'define function'
     }
+
 
     rangeFinder(xMin, xMax) {
         return [this.value, this.value]

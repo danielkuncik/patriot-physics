@@ -47,6 +47,15 @@
         positive: true,
         float: 4
     }, 'constant', 'run');
+    functionTests.assertMagnitude(func001.differentiate(new Magnitude('10.0')), {
+        firstSigFig: '0',
+        otherSigFigs: '00',
+        orderOfMagnitude: undefined,
+        zero: true,
+        numSigFigs: 3,
+        positive: true,
+        float: 0
+    }, 'constant', 'differentiate');
 
     $("#putItHere").append(functionTests.printAllTests());
 
