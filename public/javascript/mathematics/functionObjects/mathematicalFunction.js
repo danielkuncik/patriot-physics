@@ -60,13 +60,17 @@ class MathematicalFunction {
 
     differentiate(x) {
         if (!this.isValueInDomain(x)) {
+            console.log('1');
             return undefined
         } else if (this.derivative) { // if it gets the derivative, it recrods it, but does not create an infinite loop
+            console.log('2');
             return this.derivative.runFunction(x)
         } else if (this.getDerivative()) { /// can i add 'this.derivative here, so that it recrods the derivative if finds it'
+            console.log('3');
             this.derivative = this.getDerivative();
             return this.derivative.runFunction(x)
         } else {
+            console.log('4');
             return this.differentiateBruteForce(x)
         }
     }
@@ -100,6 +104,8 @@ class MathematicalFunction {
 
     differentiateBruteForce(x, halfStep = (this.xMin.subtractMag(this.xMax)).multiplyMagExactConstant(0.001)) {
         if (!this.isValueInDomain(x) || !this.isValueInDomain(x.subtractMag(halfStep)) || !this.isValueInDomain(x.addMag(halfStep))) {
+            return undefined
+        } else if (x.infinity) {
             return undefined
         } else {
             return ((this.runFunction(x.addMag(halfStep))).subtractMag(this.runFunction(x.subtractMag(halfStep)))).divideMag(halfStep.multiplyMagExactConstant(2))

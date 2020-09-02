@@ -25,27 +25,38 @@
   <script src = '../mathematics/geometricObjects/polygons/polygon.js'></script>
   <script src = '../mathematics/geometricObjects/polygons/triangle.js'></script>
 
+  <script src = '../mathematics/functionObjects/mathematicalFunction.js'></script>
+  <script src = '../mathematics/functionObjects/singleFunction.js'></script>
+  <script src = '../mathematics/functionObjects/stepwiseFunction.js'></script>
+  <script src = '../mathematics/functionObjects/polynomial.js'></script>
+  <script src = '../mathematics/functionObjects/quadraticFunction.js'></script>
+  <script src = '../mathematics/functionObjects/linearFunction.js'></script>
+  <script src = '../mathematics/functionObjects/constantFunction.js'></script>
+  <script src = '../mathematics/functionObjects/zeroFunction.js'></script>
 
 <div id = 'putItHere'></div>
 
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let width = new Magnitude('2.0000');
-    //let xTranslation = (new Magnitude('1.0000')).reverseSign();
-    let temp = width.divideMagExactConstant(2);
-    console.log(temp);
-    let xTranslation = temp.reverseSign();
-    console.log(xTranslation);
-    //let xTranslation = (width.divideMagExactConstant(2)).reverseSign();
-    randomTest.assertMagnitude(xTranslation, {
-      "firstSigFig": '1',
-      "otherSigFigs": '0000',
-      "numSigFigs": 5,
-      "orderOfMagnitude": 0,
-      "positive": false,
-      "float": -1
-    }, 'pointObject', 'translation');
+    let func101 = new LinearFunction(new Magnitude('6.00'), new Magnitude('2.00')); // 6x + 2
+
+    randomTest.assertEqualStrict(func101.differentiate(constructInfinity()), {
+      firstSigFig: '6',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      numSigFigs: 3,
+      positive: true,
+      float: 6
+    }, 'linear', 'differentiate');
+    randomTest.assertEqualStrict(func101.differentiate(constructNegativeInfinity()), {
+      firstSigFig: '6',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      numSigFigs: 3,
+      positive: true,
+      float: 6
+    }, 'linear', 'differentiate');
 
     $("#putItHere").append(randomTest.printAllTests());
 

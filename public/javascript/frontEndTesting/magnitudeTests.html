@@ -1811,6 +1811,55 @@ magnitudeTests.assertEqualStrict(mag3010.numSigFigs, undefined, 'operations','ad
 magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addition')
 */
 
+
+magnitudeTests.addSubCategory('operations','infinities','Operations With Infinity');
+
+    let mag3100a = new Magnitude('4.0');
+    let mag3100b = constructInfinity();
+    magnitudeTests.assertMagnitude(mag3100a.addMag(mag3100b), {
+        "infinity": true,
+        "positive": true,
+        "float": Infinity
+    }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100b.addMag(mag3100a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100a.subtractMag(mag3100b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100b.addMag(mag3100a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100a.multiplyMag(mag3100b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100b.multiplyMag(mag3100a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100a.divideMag(mag3100b), {
+      "infinity": true,
+      "positive": true,
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100b.divideMag(mag3100a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+
+
+  /// need to make a NaN option for physicsNumber
+
   ///###################################################################
   ///###################################################################
   /// print testing

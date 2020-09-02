@@ -176,9 +176,14 @@ class TestPackage {
       if (equalObject.positive !== undefined) {
         this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
       }
-      if (equalObject.float !== undefined) {
+        if (equalObject.infinity !== undefined) {
+            this.assertEqualStrict(magnitude.infinity, equalObject["infinity"], categoryKey, subCategoryKey, `${name}: Infinity `);
+        }
+        if (equalObject.float !== undefined) {
           if (magnitude.zero) {
               this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
+          } else if (magnitude.infinity) {
+              this.assertEqualStrict(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`);
           } else {
               this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
           }

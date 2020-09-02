@@ -271,6 +271,11 @@ class Magnitude extends PhysicsNumber {
 
 // keep working
 function constructMagnitudeFromFloat(float, numSigFigs, unitObject, exact = false, zeroLimit = 1e-10) {
+    if (float === Infinity) {
+        return constructInfinity(unitObject)
+    } else if (float === -Infinity) {
+        return constructNegativeInfinity(unitObject)
+    }
     if (numSigFigs === Infinity) {
       numSigFigs = undefined;
       exact = true;
