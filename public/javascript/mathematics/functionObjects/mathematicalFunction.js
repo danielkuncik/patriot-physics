@@ -2,8 +2,17 @@ class MathematicalFunction {
     constructor(xMin = constructNegativeInfinity(), xMax = constructInfinity(), closedCircleAtMin = true, closedCircleAtMax = true) {
         this.xMin = xMin;
         this.xMax = xMax;
-        this.closedCircleAtMin = closedCircleAtMin;
-        this.closedCircleAtMax = closedCircleAtMax;
+        /// add some rules, like min cannot be less than max
+        if (xMin.infinity && !xMin.positive) {
+            this.closedCircleAtMin = undefined;
+        } else {
+            this.closedCircleAtMin = closedCircleAtMin;
+        }
+        if (this.xMax.infinity && xMax.positive) {
+            this.closedCircleAtMax = undefined;
+        } else {
+            this.closedCircleAtMax = closedCircleAtMax;
+        }
         this.undefinedPoints = [];
         this.func = undefined;
     }
@@ -17,7 +26,7 @@ class MathematicalFunction {
     }
 
     isValueInDomain(xMag) {
-        return (xMag.isGreaterThan(this.xMin)|| (xMag.isEqualTo(this.xMin) && this.closedCircleAtMin)) && (xMag.isLessThan(this.xMax) || (xMag.isEqualTo(this.xMax) && this.closedCircleAtMax)) && !this.undefinedPoints.includes(xMag)
+        return (xMag.isGreaterThan(this.xMin)|| (xMag.isEqualTo(this.xMin) && (this.closedCircleAtMin || (this.xMin.infinity && !this.xMin.positive))) && (xMag.isLessThan(this.xMax) || (xMag.isEqualTo(this.xMax) && (this.closedCircleAtMax || (this.xMax.infinity && this.xMax.positive))))) && !this.undefinedPoints.includes(xMag)
     }
 
     runFunction(x) {

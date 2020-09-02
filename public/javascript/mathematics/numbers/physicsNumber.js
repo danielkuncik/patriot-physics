@@ -463,78 +463,94 @@ class PhysicsNumber {
         }
     }
 
+    // private function!!!
+    compareInfinities(anotherMagnitude) {
+      if (this.infinity && anotherMagnitude.infinity) {
+          if (this.positive && anotherMagnitude.positive) {
+              return '='
+          } else if (!this.positive && !anotherMagnitude.positive) {
+              return '='
+          } else if (this.positive && !anotherMagnitude.positive) {
+              return '>'
+          } else if (!this.positive && anotherMagnitude.positive) {
+              return '<'
+          }
+      } else if (this.infinity) {
+          if (this.positive) {
+              return '>'
+          } else {
+              return '<'
+          }
+      } else if (anotherMagnitude.infinity) {
+          if (anotherMagnitude.positive) {
+              return '<'
+          } else {
+              return '>'
+          }
+      } else {
+          return undefined
+      }
+    }
+
     // testes if equal up to a certain number of sig figs
     isEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.infinity || anotherMagnitude.infinity) {
-            return undefined
+        if (this.compareInfinities(anotherMagnitude)) {
+            if (this.compareInfinities(anotherMagnitude) === '=') {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return this.comparisonTest('=', anotherMagnitude, numSigFigs)
         }
-        return this.comparisonTest('=', anotherMagnitude, numSigFigs)
     }
 
     isGreaterThan(anotherMagnitude, numSigFigs) {
-        if (this.infinity && anotherMagnitude.infinity) {
-            if (this.positive && !anotherMagnitude.positive) {
+        if (this.compareInfinities(anotherMagnitude)) {
+            if (this.compareInfinities(anotherMagnitude) === '>') {
                 return true
-            } else if (!this.positive && anotherMagnitude.positive) {
-                return false
             } else {
-                return undefined
+                return false
             }
-        } else if (this.infinity) {
-            return this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
-        } else if (anotherMagnitude.infinity) {
-            return !anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        } else {
+            return this.comparisonTest('>', anotherMagnitude, numSigFigs)
         }
-        return this.comparisonTest('>', anotherMagnitude, numSigFigs)
     }
     isLessThan(anotherMagnitude, numSigFigs) {
-        if (this.infinity && anotherMagnitude.infinity) {
-            if (this.positive && !anotherMagnitude.positive) {
-                return false
-            } else if (!this.positive && anotherMagnitude.positive) {
+        if (this.compareInfinities(anotherMagnitude)) {
+            if (this.compareInfinities(anotherMagnitude) === '<') {
                 return true
             } else {
-                return undefined
+                return false
             }
-        } else if (this.infinity) {
-            return !this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
-        } else if (anotherMagnitude.infinity) {
-            return anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        } else {
+            return this.comparisonTest('<', anotherMagnitude, numSigFigs)
         }
-        return this.comparisonTest('<', anotherMagnitude, numSigFigs)
     }
     isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.infinity && anotherMagnitude.infinity) {
-            if (this.positive && !anotherMagnitude.positive) {
+        if (this.compareInfinities(anotherMagnitude)) {
+            let test = this.compareInfinities(anotherMagnitude);
+            if (test === '>' || test ==='=') {
                 return true
-            } else if (!this.positive && anotherMagnitude.positive) {
-                return false
             } else {
-                return undefined
+                return false
             }
-        } else if (this.infinity) {
-            return this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
-        } else if (anotherMagnitude.infinity) {
-            return !anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        } else {
+            return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
         }
-        return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
     }
 
     isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.infinity && anotherMagnitude.infinity) {
-            if (this.positive && !anotherMagnitude.positive) {
-                return false
-            } else if (!this.positive && anotherMagnitude.positive) {
+        if (this.compareInfinities(anotherMagnitude)) {
+            let test = this.compareInfinities(anotherMagnitude);
+            if (test === '<' || test ==='=') {
                 return true
             } else {
-                return undefined
+                return false
             }
-        } else if (this.infinity) {
-            return !this.positive // if this is positive infinity, it is always greater; if this is negative infinity, it is always lesser
-        } else if (anotherMagnitude.infinity) {
-            return anotherMagnitude.positive // if the other is positive infinity, this is always lesser; if this is neg
+        } else {
+            return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
         }
-        return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
     }
 
     //// PRIVATE FUNCTION!
