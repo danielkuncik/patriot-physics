@@ -149,8 +149,22 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
-    functionTests.assertEqualStrict(func101.differentiate(constructInfinity()), undefined, 'linear', 'differentiate');
-    functionTests.assertEqualStrict(func101.differentiate(constructNegativeInfinity()), undefined, 'linear', 'differentiate');
+    functionTests.assertEqualStrict(func101.differentiate(constructInfinity()), {
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        positive: true,
+        float: 6
+    }, 'linear', 'differentiate');
+    functionTests.assertEqualStrict(func101.differentiate(constructNegativeInfinity()), {
+        firstSigFig: '6',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        positive: true,
+        float: 6
+    }, 'linear', 'differentiate');
 
 
     $("#putItHere").append(functionTests.printAllTests());
