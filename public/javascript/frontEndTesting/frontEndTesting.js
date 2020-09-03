@@ -179,6 +179,9 @@ class TestPackage {
         if (equalObject.infinity !== undefined) {
             this.assertEqualStrict(magnitude.infinity, equalObject["infinity"], categoryKey, subCategoryKey, `${name}: Infinity `);
         }
+        if (equalObject.exact !== undefined) {
+            this.assertEqualStrict(magnitude.exact, equalObject["exact"], categoryKey, subCategoryKey, `${name}: Exact `);
+        }
         if (equalObject.float !== undefined) {
           if (magnitude.zero) {
               this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
@@ -190,6 +193,15 @@ class TestPackage {
       }
       // add printing 
       // add unit
+    }
+
+    assertNotMagnitude(notMagnitude, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        this.assertEqualStrict(notMagnitude.isAmagnitude, false, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
+        this.assertEqualStrict(notMagnitude.firstSigFig, undefined, categoryKey, subCategoryKey), `${name}: firstSigFig`;
+        this.assertEqualStrict(notMagnitude.otherSigFigs, undefined, categoryKey, subCategoryKey, `${name}: otherSigFigs`);
+        this.assertEqualStrict(notMagnitude.orderOfMagnitude, undefined, categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
+        this.assertEqualStrict(notMagnitude.numSigFigs, undefined, categoryKey, subCategoryKey, `${name}: numSigFigs`);
+        this.assertEqualStrict(notMagnitude.positive, undefined, categoryKey, subCategoryKey, `${name}: positive`);
     }
 
     assertAngle(angle, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {

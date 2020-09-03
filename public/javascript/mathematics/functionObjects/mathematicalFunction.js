@@ -1,3 +1,15 @@
+/*
+To Do
+9-2-2020
+
+- create a new method called 'float function' for each function that returns a float version of a function
+- redesign all recursive methods to use 'float function' instead of the normal run function
+- create a quality called 'parameter sig figs' that gives the number of significant figures in the parameters of a function,
+- use parameter sig figs with recursive methods
+- create a method called 'get arc length' with each function [have a recursive brute force version and shortcut versions]
+
+ */
+
 class MathematicalFunction {
     constructor(xMin = constructNegativeInfinity(), xMax = constructInfinity(), closedCircleAtMin = true, closedCircleAtMax = true) {
         this.xMin = xMin;

@@ -1828,13 +1828,13 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
   }, 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3100a.subtractMag(mag3100b), {
       "infinity": true,
-      "positive": true,
-      "float": Infinity
-  }, 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3100b.addMag(mag3100a), {
-      "infinity": true,
       "positive": false,
       "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3100b.subtractMag(mag3100a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
   }, 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3100a.multiplyMag(mag3100b), {
       "infinity": true,
@@ -1847,8 +1847,11 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "float": Infinity
   }, 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3100a.divideMag(mag3100b), {
-      "infinity": true,
-      "positive": true,
+      "positive": undefined,
+      "zero": true,
+      "exact": true, // this will be tough
+      "numSigFigs": Infinity,
+      "firstSigFig": '0',
       "float": 0
   }, 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3100b.divideMag(mag3100a), {
@@ -1857,8 +1860,241 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "float": Infinity
   }, 'operations', 'infinities');
 
+  let mag3101a = new Magnitude('4.0');
+  let mag3101b = constructNegativeInfinity();
+  magnitudeTests.assertMagnitude(mag3101a.addMag(mag3101b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101b.addMag(mag3101a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101a.subtractMag(mag3101b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101b.subtractMag(mag3101a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101a.multiplyMag(mag3101b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101b.multiplyMag(mag3101a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101a.divideMag(mag3101b), {
+      "positive": undefined,
+      "zero": true,
+      "exact": true, // this will be tough
+      "numSigFigs": Infinity,
+      "firstSigFig": '0',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3101b.divideMag(mag3101a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
 
-  /// need to make a NaN option for physicsNumber
+  /// add tests of comparing two infinities
+  // this is where i may need a 'NaN' quality
+
+  let mag3102a = constructInfinity();
+  let mag3102b = constructInfinity();
+  magnitudeTests.assertMagnitude(mag3102a.addMag(mag3102b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3102b.addMag(mag3102a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3102a.subtractMag(mag3102b), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3102b.subtractMag(mag3102a),'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3102a.multiplyMag(mag3102b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3102b.multiplyMag(mag3102a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3102a.divideMag(mag3102b), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3102b.divideMag(mag3102a), 'operations', 'infinities');
+
+
+  let mag3103a = constructNegativeInfinity();
+  let mag3103b = constructNegativeInfinity();
+  magnitudeTests.assertMagnitude(mag3103a.addMag(mag3103b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3103b.addMag(mag3103a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3103b.subtractMag(mag3103a), 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3103a.multiplyMag(mag3103b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3103b.multiplyMag(mag3103a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3103a.divideMag(mag3103b), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3103b.divideMag(mag3103a),'operations', 'infinities');
+
+
+  let mag3104a = constructInfinity();
+  let mag3104b = constructNegativeInfinity();
+  magnitudeTests.assertNotMagnitude(mag3104a.addMag(mag3104b),'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3104b.addMag(mag3104a),'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3104a.subtractMag(mag3104b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3104b.subtractMag(mag3104a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3104a.multiplyMag(mag3104b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3104b.multiplyMag(mag3104a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3104a.divideMag(mag3104b),'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3104b.divideMag(mag3104a),'operations', 'infinities');
+
+  let mag3105a = constructZeroMagnitude(5);
+  let mag3105b = constructInfinity();
+  magnitudeTests.assertMagnitude(mag3105a.addMag(mag3105b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105b.addMag(mag3105a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105a.subtractMag(mag3105b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105b.subtractMag(mag3105a), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105a.multiplyMag(mag3105b), {
+      "infinity": true,
+      "positive": undefined,
+      "zero": true,
+      "numSigFigs": 5,
+      "firstSigFig": '0',
+      "otherSigFigs": '0000',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105b.multiplyMag(mag3105a), {
+      "infinity": true,
+      "positive": undefined,
+      "zero": true,
+      "numSigFigs": 5,
+      "firstSigFig": '0',
+      "otherSigFigs": '0000',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105a.divideMag(mag3105b), {
+      "positive": undefined,
+      "zero": true,
+      "exact": true,
+      "numSigFigs": Infinity,
+      "firstSigFig": '0',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3105b.divideMag(mag3105a),'operations', 'infinities');
+
+
+  let mag3106a = constructZeroMagnitude(4);
+  let mag3106b = constructNegativeInfinity();
+  magnitudeTests.assertMagnitude(mag3106a.addMag(mag3106b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106b.addMag(mag3106a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106a.subtractMag(mag3106b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106b.subtractMag(mag3106a), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106a.multiplyMag(mag3106b), {
+      "infinity": true,
+      "positive": undefined,
+      "zero": true,
+      "numSigFigs": 4,
+      "firstSigFig": '0',
+      "otherSigFigs": '000',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106b.multiplyMag(mag3106a), {
+      "infinity": true,
+      "positive": undefined,
+      "zero": true,
+      "numSigFigs": 4,
+      "firstSigFig": '0',
+      "otherSigFigs": '000',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106a.divideMag(mag3106b), {
+      "positive": undefined,
+      "zero": true,
+      "exact": true,
+      "numSigFigs": Infinity,
+      "firstSigFig": '0',
+      "float": 0
+  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3106b.divideMag(mag3106a),'operations', 'infinities');
+
+
+
 
   ///###################################################################
   ///###################################################################
