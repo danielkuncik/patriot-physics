@@ -18,6 +18,7 @@
 <!-- <script src = '../physics/numericalStrings1/numericalStringValidations.js'></script>
 <script src = '../physics/numericalStrings1/numericalStringInformationGathering.js'></script> -->
 <script src = '../mathematics/numbers/physicsNumber.js'></script>
+<script src = '../mathematics/numbers/units.js'></script>
 <script src = '../mathematics/numbers/magnitude.js'></script>
 
 <div id = 'putItHere'></div>
@@ -830,6 +831,8 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
   magnitudeTests.assertEqualStrict(mag420.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
   magnitudeTests.assertEqualStrict(mag420.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
   magnitudeTests.assertEqualStrict(mag420.positive, undefined, 'constructor', 'nonNumericalStrings');
+
+  magnitudeTests.assertNotMagnitude(constructInvalidMagnitude(), 'constructor', 'nonNumericalStrings');
 
   // ##############################################################
   // construct from float
@@ -1949,7 +1952,7 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "positive": false,
       "float": -Infinity
   }, 'operations', 'infinities');
-  magnitudeTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities','xxx');
   magnitudeTests.assertNotMagnitude(mag3103b.subtractMag(mag3103a), 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3103a.multiplyMag(mag3103b), {
       "infinity": true,

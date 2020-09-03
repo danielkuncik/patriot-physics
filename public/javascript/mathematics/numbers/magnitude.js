@@ -14,6 +14,7 @@ having a zero screws it up
 class Magnitude extends PhysicsNumber {
   constructor(numericalString, unitObject, intermediateValue, exact = false) {
     super(numericalString, intermediateValue, exact);
+    this.isAmagnitude = this.isAphysicsNumber; // will need to consider units here!!
     this.unit = unitObject;
 
   }
@@ -190,6 +191,11 @@ class Magnitude extends PhysicsNumber {
   }
 
   divideMag(anotherMagnitude) {
+      if (!this.infinity && anotherMagnitude.infinity) {
+          return constructZeroMagnitude()
+      } else if (this.infinity && anotherMagnitude.infinity) {
+          return constructInvalidMagnitude()
+      }
       const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
       const newUnit = divideUnits(this.unit, anotherMagnitude.unit);
       const exact = newSigFigs === Infinity;
@@ -271,6 +277,9 @@ class Magnitude extends PhysicsNumber {
 
 // keep working
 function constructMagnitudeFromFloat(float, numSigFigs, unitObject, exact = false, zeroLimit = 1e-10) {
+    if (isNaN(float)) {
+        return constructInvalidMagnitude
+    }
     if (float === Infinity) {
         return constructInfinity(unitObject)
     } else if (float === -Infinity) {
@@ -306,4 +315,8 @@ function constructInfinity(unitObject) {
 
 function constructNegativeInfinity(unitObject) {
     return new Magnitude('-Infinity', unitObject, undefined, undefined)
+}
+
+function constructInvalidMagnitude() {
+    return new Magnitude('NaN');ss
 }

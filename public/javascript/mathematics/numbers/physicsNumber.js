@@ -92,7 +92,7 @@ class PhysicsNumber {
     this.orderOfMagnitude = undefined;
     this.numSigFigs = undefined;
     this.positive = undefined;
-    this.isAmagnitude = undefined;
+    this.isAphysicsNumber = undefined;
     this.zeroLimit = undefined;
 
     this.isAnAngle = false; // used for angles below
@@ -155,7 +155,7 @@ class PhysicsNumber {
         const beforeDecimal = numericalString.slice(0, decimalPoint);
         let afterDecimal = numericalString.slice(decimalPoint + 1, numericalString.length);
         if (digitsOnly(beforeDecimal) && digitsOnly(afterDecimal) && (beforeDecimal.length > 0 || afterDecimal.length > 0)) {
-            this.isAmagnitude = true;
+            this.isAphysicsNumber = true;
             if (beforeDecimal.length > 0) {
                 this.firstSigFig = beforeDecimal[0];
                 this.orderOfMagnitude += beforeDecimal.length - 1;
@@ -182,7 +182,7 @@ class PhysicsNumber {
             return this.invalidate();
         }
     } else if (digitsOnly(numericalString) && numericalString.length > 0) { // integers
-        this.isAmagnitude = true;
+        this.isAphysicsNumber= true;
         while (numericalString[numericalString.length - 1] === '0') {
             numericalString = numericalString.slice(0,numericalString.length - 1);
             this.orderOfMagnitude++;
@@ -214,7 +214,7 @@ class PhysicsNumber {
   }
 
   invalidate() {
-      this.isAmagnitude = false;
+      this.isAphysicsNumber = false;
       this.firstSigFig = undefined;
       this.otherSigFigs = undefined;
       this.orderOfMagnitude = undefined;
@@ -225,7 +225,7 @@ class PhysicsNumber {
   }
 
   setValueZero(numSigFigs = 1, exact = false) {
-      this.isAmagnitude = true;
+      this.isAphysicsNumber = true;
       this.zero = true;
       this.positive = undefined;
       this.orderOfMagnitude = undefined;
@@ -247,7 +247,7 @@ class PhysicsNumber {
 
 // not done
   setValueInfinity() {
-    this.isAmagnitude = true;
+    this.isAphysicsNumber = true;
     this.infinity = true;
     this.numSigFigs = Infinity;
     this.exact = true;
