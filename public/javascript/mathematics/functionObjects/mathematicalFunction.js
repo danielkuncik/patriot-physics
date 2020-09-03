@@ -25,6 +25,12 @@ class MathematicalFunction {
         }
     }
 
+
+    // float function
+    // a float based version of the function
+    // not utilizing magnitudes and not considering significant figures
+    // more efficient for long recursive operations
+
     isValueInDomain(xMag) {
         return (xMag.isGreaterThan(this.xMin)|| (xMag.isEqualTo(this.xMin) && (this.closedCircleAtMin || (this.xMin.infinity && !this.xMin.positive))) && (xMag.isLessThan(this.xMax) || (xMag.isEqualTo(this.xMax) && (this.closedCircleAtMax || (this.xMax.infinity && this.xMax.positive))))) && !this.undefinedPoints.includes(xMag)
     }
@@ -41,6 +47,7 @@ class MathematicalFunction {
         return undefined
     }
 
+    // private function???
     rangeFinder(xMin = this.xMin, xMax = this.xMax) {
         return undefined
     }
@@ -149,5 +156,25 @@ class MathematicalFunction {
             return [yMin, yMax]
         }
     }
+
+
+    /*
+    Add a functino to find ARC LENGTH
+    getArcLength() {
+        const Nsteps = 1000;
+        let i;
+        const range = this.xMax - this.xMin;
+        let arcLength = 0, x1, y1, x2,y2;
+        for (i = 0; i < Nsteps; i++) {
+            x1 = this.function(this.xMin + i / Nsteps * range);
+            x2 = x1 + 1 / Nsteps;
+            y1 = this.function(x1);
+            y2 = this.function(x2);
+            arcLength += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+        }
+        return arcLength;
+    }
+     */
+
 
 }

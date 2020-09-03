@@ -12,6 +12,10 @@ class LinearFunction extends Polynomial {
 
         this.func = (x) => {return (this.slope.multiplyMag(x)).addMag(this.yIntercept)};
 
+        const slopeFloat = this.slope.getFloat();
+        const yInterceptFloat = this.yIntercept.getFloat();
+        this.floatFunc = (x) => {return slopeFloat * x + yInterceptFloat}
+
         // this should redfine the function defined above in the polynomial constructor ?
     }
 

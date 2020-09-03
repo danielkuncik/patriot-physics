@@ -24,6 +24,11 @@ class QuadraticFunction extends Polynomial {
             this.vertexY = undefined;
             this.vertex = undefined;
         }
+
+        const aFloat = this.a.getFloat();
+        const bFloat = this.b.getFloat();
+        const cFloat = this.c.getFloat();
+        this.floatFunc = (x) => {return a * x * x + b * x + c };
     }
 
     getDerivative() {

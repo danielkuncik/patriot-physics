@@ -1,43 +1,59 @@
 
-// forcedYmin and forcedYmax: any points above the ymax and below the ymin will be automatically cut off
+// upperCutoff => all lines above this will be cut off
+// lowerCutoff => all lines below this will be cut off
 class Curve {
-    constructor(func, xMin, xMax, forcedYmin, forcedYmax) {
-        this.function = func;
-        this.xMin = xMin;
-        this.xMax = xMax;
-        // error if xMin is less than xMax
-        let range = this.getRange();
-        this.Yforced = false;
-        if (forcedYmin !== undefined) {
-            this.yMin = forcedYmin;
-            this.Yforced = true;
-        } else {
-            this.yMin = range[0];
+    constructor(functionObject, upperCutoff, lowerCutoff) {
+        if (functionObject.xMin === -Infinity) {
+            return undefined
         }
-        if (forcedYmax !== undefined) {
-            this.yMax = forcedYmax;
-            this.Yforced = true;
-        } else {
-            this.yMax = range[1];
+        if (functionObject.xMax === Infinity) {
+            return undefined
         }
+        this.func = functionObject;
+
+        let range = this.func.findRangeOverInterval();
+
+        this.upperCutoff = upperCutoff;
+        this.lowerCutoff = lowerCutoff;
+
+        this.xMin = functionObject.xMin;
+        this.xMax = functionObject.xMax;
+        this.yMin = range[0];
+        this.yMax = range[1];
+
+        this.cutoff = false;
+        if (this.upperCutoff !== undefined) {
+            if (this.upperCutoff.isLessThan(this.yMin)) {
+                this.yMax = this.upperCutoff;
+                this.cutoff = true;
+            }
+        }
+        if (this.lowerCutoff !== undefined) {
+            if (this.lowerCutoff.isGreaterThan(this.yMax)) {
+                this.yMin = this.lowerCutoff;
+                this.cutoff = true;
+            }
+        }
+
+        if (this.yMin === -Infinity) {
+            return undefined
+        }
+        if (this.yMax === Infinity) {
+            return undefined
+        }
+
+        this.diagramQualities = {
+            dashed: false,
+            dashLength: undefined,
+            thickness: 2,
+            color: "black",
+            lineCap: "butt"
+        };
+
+
         this.makeSolid();
 
-        this.rangeBox = new RangeBoxF(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
-    }
-
-    getRange(Nsteps) {
-        if (Nsteps === undefined) {Nsteps = 500;}
-        let i, xVal, yVal;
-        let yMax = this.function(this.xMin);
-        let yMin = yMax;
-        let xStep = (this.xMax - this.xMin) / Nsteps;
-        for (i = 0; i <= Nsteps; i++) {
-            xVal = this.xMin + i * xStep;
-            yVal = this.function(xVal);
-            if (yVal < yMin) {yMin = yVal;}
-            if (yVal > yMax) {yMax = yVal;}
-        }
-        return [yMin, yMax];
+        this.rangeBox = new RangeBox(this.xMin,this.yMin,(this.xMax - this.xMin), (this.yMax - this.yMin));
     }
 
     rescaleVertically(yMultiplier) {
@@ -45,32 +61,24 @@ class Curve {
     }
 
     makeDashed(numDashes) {
-        this.dashed = true;
-        this.dashLength = this.getDashLength(numDashes);
+        this.diagramQualities = {
+            dashed: true,
+            dashLength: this.getDashLength(numDashes)
+        };
     }
 
     makeSolid() {
-        this.dashed = false;
-        this.dashLength = undefined;
+        this.diagramQualities = {
+            dashed: false,
+            dashLength: undefined
+        };
     }
 
-    getArcLength() {
-        const Nsteps = 1000;
-        let i;
-        const range = this.xMax - this.xMin;
-        let arcLength = 0, x1, y1, x2,y2;
-        for (i = 0; i < Nsteps; i++) {
-            x1 = this.function(this.xMin + i / Nsteps * range);
-            x2 = x1 + 1 / Nsteps;
-            y1 = this.function(x1);
-            y2 = this.function(x2);
-            arcLength += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
-        }
-        return arcLength;
-    }
+    // add a function to add arrows?
+
 
     getDashLength(numDashes) {
-        const arcLength = this.getArcLength();
+        const arcLength = this.func.getArcLength(); // make sure to define this!!!!
         const numDashesAndSpaces = numDashes + (numDashes - 1); // always begin and end on a dash
         return arcLength / numDashesAndSpaces;
     }

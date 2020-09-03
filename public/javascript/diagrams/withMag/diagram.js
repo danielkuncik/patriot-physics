@@ -95,7 +95,7 @@ class Diagram {
         this.circles = [];
         this.arcs = [];
         this.texts = [];
-        this.functionGraphs = [];
+        this.curves = [];
         this.defaultSize = 500;
 
         this.key = [];
@@ -542,21 +542,16 @@ class Diagram {
         this.addSegment(pointB, centerPoint);
     }
 
+*/
 
 
-    // should i add some sort of a workaround, in case a linear function etc. is inputted
-    /// that makes it graph more clearly?
-    addFunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax) {
-        let thisFunctionGraph = new FunctionGraph(func, xMin, xMax, forcedYmin, forcedYmax);
-        this.addExistingPoint(thisFunctionGraph.rangeBox.lowerLeftPoint);
-        this.addExistingPoint(thisFunctionGraph.rangeBox.upperLeftPoint);
-        this.addExistingPoint(thisFunctionGraph.rangeBox.lowerRightPoint);
-        this.addExistingPoint(thisFunctionGraph.rangeBox.upperRightPoint);
-        this.functionGraphs.push(thisFunctionGraph);
-        return thisFunctionGraph;
+    addCurve(curveObject) {
+        this.curves.push(curveObject);
+        this.addRangeBox(curveObject.rangeBox);
+        return curveObject
     }
 
-
+/*
     /// center Point need not already exist
     addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
         this.addExistingPoint(referencePoint); // figure out what this is used for!
@@ -1159,26 +1154,27 @@ class Diagram {
         });
 
         ctx.setLineDash([]);
-/*
-        this.functionGraphs.forEach((FunctionGraphObject) => { /// in desperate need of some refartoring, to make it easier to comprehend what's going on
+
+        // 9-2-2020: still working on this and adapting it to the new 'mathematical function objects'
+        /// I need to create the 'float function'  => that will make this more efficient!!!
+        this.curves.forEach((curveObject) => { /// in desperate need of some refartoring, to make it easier to comprehend what's going on
             // too many different options in their own method and too much repeated code
-            ctx.lineWidth = 2;
-            ctx.lineCap = 'butt';
-            ctx.strokeStyle = 'black'; // can change later!
-            let Nsteps = 200;
-            let k, thisXVal, thisYVal, lastXVal, lastYval;
-            let range = FunctionGraphObject.xMax - FunctionGraphObject.xMin;
-            let xSteps = range / Nsteps;
-            lastXVal = FunctionGraphObject.xMin;
-            lastYval = FunctionGraphObject.function(lastXVal);
-            let yMax, yMin;
-            if (FunctionGraphObject.Yforced) {
-                yMax = FunctionGraphObject.yMax;
-                yMin = FunctionGraphObject.yMin;
-                for (k = 1; k <= Nsteps; k++) {
-                    thisXVal = FunctionGraphObject.xMin + xSteps * k;
-                    thisYVal = FunctionGraphObject.function(thisXVal);
-                    if (thisYVal > yMax || thisYVal < yMin) {
+            ctx.lineWidth = curveObject.diagramQualities.thickness; // make these a
+            ctx.lineCap = curveObject.diagramQualities.lineCap;
+            ctx.strokeStyle = curveObject.diagramQualities.color; // can change later!
+            let nSteps = 200;
+            let thisXVal, thisYVal, lastXVal, lastYval;
+            const curveXmin = curveObject.xMin.getFloat(); // do not confuse these with
+            const curveYmin = curveObject.yMin.getFloat();
+            const curveXmax = curveObject.yMax.getFloat();
+            const curveYmax = curveObject.xMax.getFloat();
+            let step = (curveXmax - curveXmin) / nSteps;
+            lastXVal = curveXmin; // why do i need this?
+            lastYval = curveObject.floatFunc(curveXmin);
+            if (curveObject.cutoff) {
+                for (thisXVal = curveXmin; thisXVal <= curveXmin; thisXVal += step) {
+                    thisYVal = curveObject.floatFunc(thisXVal); // make a 'float function'
+                    if (thisYVal > yMax || thisYVal < yMin) { // cutoff
                         // pass
                     } else {
                         ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * yScaleFactor);
@@ -1189,18 +1185,19 @@ class Diagram {
                     lastXVal = thisXVal;
                     lastYval = thisYVal;
                 }
-            } else if (FunctionGraphObject.dashed) {
+            } else if (curveObject.dashed) {
                 let dashOn = true;
-                let dashLength = FunctionGraphObject.dashLength;
+                let dashLength = curveObject.dashLength;
                 let sinceLastDashStart = 0;
 
                 let x1,x2,y1,y2;
+                let k;
 
-                for (k = 0; k < Nsteps; k++) { // a slightly different method here
-                    x1 = FunctionGraphObject.xMin + xSteps * k;
-                    x2 = x1 + xSteps;
-                    y1 = FunctionGraphObject.function(x1);
-                    y2 = FunctionGraphObject.function(x2);
+                for (k = 0; k < nSteps; k++) { // a slightly different method here
+                    x1 = curveObject.xMin.getFloat() + step * k;
+                    x2 = x1 + step;
+                    y1 = curveObject.floatFunc(x1);
+                    y2 = curveObject.floatFunc(x2);
 
                     sinceLastDashStart += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
                     if (sinceLastDashStart > dashLength) {
@@ -1215,11 +1212,11 @@ class Diagram {
                 }
 
                 /// so, i cannot have a yForced value on a dashed object!
+                // need to fix that!
 
-            } else {
-                for (k = 1; k <= Nsteps; k++) {
-                    thisXVal = FunctionGraphObject.xMin + xSteps * k;
-                    thisYVal = FunctionGraphObject.function(thisXVal);
+            } else { // no cutoffs or dashes
+                for (thisXVal = curveXmin; thisXVal <= curveXmin; thisXVal += step) {
+                    thisYVal = curveObject.floatFunc(thisXVal);
 
                     ctx.moveTo(wiggleRoom + (lastXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (lastYval - this.yMin) * yScaleFactor);
                     ctx.lineTo(wiggleRoom + (thisXVal - this.xMin) * xScaleFactor, canvasHeight - wiggleRoom - (thisYVal - this.yMin) * yScaleFactor);
@@ -1227,12 +1224,11 @@ class Diagram {
 
                     lastXVal = thisXVal;
                     lastYval = thisYVal;
-
                 }
             }
 
         });
-*/
+
         this.circles.forEach((circleObject) => {
             ctx.fillStyle = circleObject.fillColor;
             ctx.strokeStyle = circleObject.lineColor;
