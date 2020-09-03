@@ -1952,7 +1952,7 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "positive": false,
       "float": -Infinity
   }, 'operations', 'infinities');
-  magnitudeTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities','xxx');
+  magnitudeTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities');
   magnitudeTests.assertNotMagnitude(mag3103b.subtractMag(mag3103a), 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3103a.multiplyMag(mag3103b), {
       "infinity": true,
@@ -2017,24 +2017,8 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "positive": true,
       "float": Infinity
   }, 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3105a.multiplyMag(mag3105b), {
-      "infinity": true,
-      "positive": undefined,
-      "zero": true,
-      "numSigFigs": 5,
-      "firstSigFig": '0',
-      "otherSigFigs": '0000',
-      "float": 0
-  }, 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3105b.multiplyMag(mag3105a), {
-      "infinity": true,
-      "positive": undefined,
-      "zero": true,
-      "numSigFigs": 5,
-      "firstSigFig": '0',
-      "otherSigFigs": '0000',
-      "float": 0
-  }, 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3105a.multiplyMag(mag3105b),'operations', 'infinities');// zero times infinity is undefined!
+  magnitudeTests.assertMagnitude(mag3105b.multiplyMag(mag3105a), 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3105a.divideMag(mag3105b), {
       "positive": undefined,
       "zero": true,
@@ -2043,7 +2027,11 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "firstSigFig": '0',
       "float": 0
   }, 'operations', 'infinities');
-  magnitudeTests.assertNotMagnitude(mag3105b.divideMag(mag3105a),'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3105b.divideMag(mag3105a),{ // Infinity divided by 0 is infinity
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  },'operations', 'infinities');
 
 
   let mag3106a = constructZeroMagnitude(4);
@@ -2068,24 +2056,8 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "positive": false,
       "float": -Infinity
   }, 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3106a.multiplyMag(mag3106b), {
-      "infinity": true,
-      "positive": undefined,
-      "zero": true,
-      "numSigFigs": 4,
-      "firstSigFig": '0',
-      "otherSigFigs": '000',
-      "float": 0
-  }, 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3106b.multiplyMag(mag3106a), {
-      "infinity": true,
-      "positive": undefined,
-      "zero": true,
-      "numSigFigs": 4,
-      "firstSigFig": '0',
-      "otherSigFigs": '000',
-      "float": 0
-  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106a.multiplyMag(mag3106b), 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106b.multiplyMag(mag3106a), 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3106a.divideMag(mag3106b), {
       "positive": undefined,
       "zero": true,
@@ -2094,8 +2066,43 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "firstSigFig": '0',
       "float": 0
   }, 'operations', 'infinities');
-  magnitudeTests.assertNotMagnitude(mag3106b.divideMag(mag3106a),'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3106b.divideMag(mag3106a),{ // -infinity divided by 0 is -infinity
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  },'operations', 'infinities');
 
+  let mag3107a = new Magnitude('5.00');
+  let mag3107b = new Magnitude('0.00');
+  magnitudeTests.assertMagnitude(mag3107a.divideMag(mag3107b), {
+      "infinity": true,
+      "positive": true,
+      "float": Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3107b.divideMag(mag3107a),{ // infinity divided by 0 is infinity
+      "positive": undefined,
+      "zero": true,
+      "numSigFigs": 3,
+      "firstSigFig": '0',
+      "otherSigFigs": '00',
+      "float": 0
+  },'operations', 'infinities');
+
+  let mag3108a = new Magnitude('-5.00');
+  let mag3108b = new Magnitude('0.00');
+  magnitudeTests.assertMagnitude(mag3108a.divideMag(mag3108b), {
+      "infinity": true,
+      "positive": false,
+      "float": -Infinity
+  }, 'operations', 'infinities');
+  magnitudeTests.assertMagnitude(mag3108b.divideMag(mag3108a),{ // infinity divided by 0 is infinity
+      "positive": undefined,
+      "zero": true,
+      "numSigFigs": 3,
+      "firstSigFig": '0',
+      "otherSigFigs": '00',
+      "float": 0
+  },'operations', 'infinities');
 
 
 

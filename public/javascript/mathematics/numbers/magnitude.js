@@ -278,7 +278,7 @@ class Magnitude extends PhysicsNumber {
 // keep working
 function constructMagnitudeFromFloat(float, numSigFigs, unitObject, exact = false, zeroLimit = 1e-10) {
     if (isNaN(float)) {
-        return constructInvalidMagnitude
+        return constructInvalidMagnitude()
     }
     if (float === Infinity) {
         return constructInfinity(unitObject)
@@ -318,5 +318,5 @@ function constructNegativeInfinity(unitObject) {
 }
 
 function constructInvalidMagnitude() {
-    return new Magnitude('NaN');ss
+    return new Magnitude('NaN');
 }
