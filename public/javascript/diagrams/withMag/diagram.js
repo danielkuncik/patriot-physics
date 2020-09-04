@@ -1194,7 +1194,7 @@ class Diagram {
                 let k;
 
                 for (k = 0; k < nSteps; k++) { // a slightly different method here
-                    x1 = curveObject.xMin.getFloat() + step * k;
+                    x1 = curveXmin + step * k;
                     x2 = x1 + step;
                     y1 = curveObject.floatFunc(x1);
                     y2 = curveObject.floatFunc(x2);
