@@ -39,11 +39,23 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let mag3103a = constructNegativeInfinity();
-    let mag3103b = constructNegativeInfinity();
-    let c  = mag3103a.subtractMag(mag3103b);
-    console.log(c);
-    randomTest.assertNotMagnitude(c, 'operations', 'infinities','xxx');
+    let func101 = new LinearFunction(new Magnitude('6.00'), new Magnitude('2.00')); // 6x + 2
+    randomTest.assertEqualStrict(func101.differentiate(constructInfinity()), {
+      firstSigFig: '6',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      numSigFigs: 3,
+      positive: true,
+      float: 6
+    }, 'linear', 'differentiate');
+    randomTest.assertEqualStrict(func101.differentiate(constructNegativeInfinity()), {
+      firstSigFig: '6',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      numSigFigs: 3,
+      positive: true,
+      float: 6
+    }, 'linear', 'differentiate');
 
     $("#putItHere").append(randomTest.printAllTests());
 
