@@ -1,6 +1,6 @@
 class BingoBoard {
-    constructor(firstWordArray = [], name = 'bingo') {
-        this.words = firstWordArray;
+    constructor(name = 'bingo') {
+        this.words = [];
         this.name = name;
     }
 
@@ -86,6 +86,7 @@ class BingoBoard {
 
             for (j = 0; j < size; j++) {
 
+
                 const wordInt = randInt(0,wordArray.length - 1);
                 let word = wordArray[wordInt];
                 wordArray.splice(wordInt,1);
@@ -93,18 +94,20 @@ class BingoBoard {
 
                 if (word === 'free') {
                     thisCol = $(`<div class = "col-${colSize} border border-dark p-5 bingoFreeSpace" id = "${spaceID}">FREE</div>`);
-                    this.clicked[j].push(true);
+                    this.clicked[i].push(true);
                 } else {
                     thisCol = $(`<div class = "col-${colSize} border border-dark p-5 bingoSpace" id = "${spaceID}">${word}</div>`);
-                    this.clicked[j].push(false);
+                    this.clicked[i].push(false);
 
-                    $(`#${spaceID}`).click(() => {
-                        $(`#${spaceID}`).addClass("bg-success");
-                        $(`#${spaceID}`).addClass("text-danger");
-                        this.clicked[i][j] = true;
-                        if (this.testIfWon()) {
-                            $("#winSpace").append("<p>YOU WON!</p>");
-                        }
+                    console.log(spaceID);
+                    $(`#${spaceID}`).click( () => {
+                        console.log('here');
+                        // $(`#${spaceID}`).addClass("bg-success");
+                        // $(`#${spaceID}`).addClass("text-danger");
+                        // this.clicked[i][j] = true;
+                        // if (this.testIfWon()) {
+                        //     $("#winSpace").append("<p>YOU WON!</p>");
+                        // }
                     });
                 }
 
