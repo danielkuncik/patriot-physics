@@ -24,4 +24,8 @@ class ConstantFunction extends LinearFunction {
     getAntiDerivative(constant = constructZeroMagnitude()) {
         return new LinearFunction(this.value, constant, this.xMin, this.yMax, this.closedCircleAtMin, this.closedCircleAtMax);
     }
+
+    arcLengthFunction(xMin, xMax) {
+        return xMax.subtractMag(xMin)
+    }
 }

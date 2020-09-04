@@ -41,4 +41,16 @@ class LinearFunction extends Polynomial {
         return new QuadraticFunction(0.5 * this.slope, this.yIntercept, constant);
     }
 
+    arcLengthFunction(xMin, xMax) {
+        let x1 = xMin;
+        let x2 = xMax;
+        let y1 = this.runFunction(x1);
+        let y2 = this.runFunction(x2);
+
+        let deltaX = x2.subtractMag(x1);
+        let deltaY = y2.subtractMag(y1);
+
+        return deltaX.pythagoreanAddMag(deltaY)
+    }
+
 }

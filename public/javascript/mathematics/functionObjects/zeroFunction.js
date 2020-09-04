@@ -24,4 +24,6 @@ class ZeroFunction extends ConstantFunction {
             return new ConstantFunction(constant, this.xMin, this.xMax, this.closedCircleAtMin, this.closedCircleAtMax)
         }
     }
+
+    // arc length function already defined
 }

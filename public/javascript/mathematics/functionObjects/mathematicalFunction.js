@@ -27,6 +27,9 @@ class MathematicalFunction {
         }
         this.undefinedPoints = [];
         this.func = undefined;
+        this.floatFunc = undefined;
+        this.parameterSigFigs = 0;
+        this.arcLengthFunction = undefined;
     }
 
     addUndefinedPoint(xMag) {
@@ -49,6 +52,10 @@ class MathematicalFunction {
 
     runFunction(x) {
         return this.func(x)
+    }
+
+    runFloatFunction(x) {
+        return this.floatFunc(x);
     }
 
     getDerivative() {
@@ -127,6 +134,16 @@ class MathematicalFunction {
         }// awkward code!
     }
 
+    getArcLength(xMin = this.xMin, xMax = this.xMax) {
+        if (!this.isValueInDomain(xMin) || !this.isValueInDomain(xMax) || xMin === -Infinity || xMax === Infinity) {
+            return undefined
+        } else if (this.arcLengthFunction !== undefined) {
+            return this.arcLenthFunction(xMin, xMax);
+        } else {
+            return this.findArcLengthBruteForce(xMin, xMax)
+        }
+    }
+
     /// will break if it hits an undefined point
     // TO DO: create a more efficient method that uses floats and only corrects the number of significant figures at the end
     integrateBruteForce(xMin = this.xMin, xMax = this.xMax, nSteps = 100) {
@@ -134,14 +151,16 @@ class MathematicalFunction {
             return undefined
         } else {
             let k;
+            const finalSigFigs = Math.min(xMin.numSigFigs, xMax.numSigFigs, this.parameterSigFigs);
             let totalArea = constructZeroMagnitude();
-            const step = (xMax.subtractMag(xMin)).divideMagExactConstant(nSteps);
-            for (k = 0; k < nSteps; k++) {
-                let x1 = xMin.addMag(step.multiplyMagExactConstant(k));
-                let x2 = x1.addMag(step);
-                totalArea += x1.addMag(x2).divideMag(step.multiplyMagExactConstant(2));
+            let floatXmin = xMin.getFloat();
+            const step = (xMax.getFloat - floatXmin) / nSteps;
+            for (k = 0; k < nSteps; k++) { // can be more efficient?
+                let x1 = floatXmin + step * k;
+                let x2 = x1 + step;
+                totalArea += (x1 + x2) / 2 * step;
             }
-            return totalArea
+            return constructMagnitudeFromFloat(totalArea, finalSigFigs); // consider units?????
         }
     }
 
@@ -150,39 +169,44 @@ class MathematicalFunction {
         if ((xMin === -Infinity || xMax === Infinity) || !this.isValueInDomain(xMin) || !this.isValueInDomain(xMax)) {
             return undefined
         } else {
-            let yMin = this.runFunction(xMin), yMax = this.runFunction(xMin);
+            const finalSigFigs = Math.min(xMin.numSigFigs, xMax.numSigFigs, this.parameterSigFigs);
+            const xMinFloat = xMin.float();
+            let yMin = this.runFloatFunction(xMinFloat), yMax = this.runFloatFunction(xMinFloat);
             let k, thisYValue;
-            const step = (xMax.subtractMag(xMin)).divideMagExactConstant(Nsteps);
-            for (k = 1; k < Nsteps; k++) {
-                thisYValue = this.runFunction(xMin.addMag(step.multiplyMagExactConstant(k)));
-                if (thisYValue.isLessThan(yMin)) {
+            const step = (xMax.getFloat() - xMinFloat) / Nsteps;
+            for (k = 1; k < Nsteps; k++) { // can be more efficient?
+                thisYValue = this.runFloatFunction(xMinFloat + step * k);
+                if (thisYValue < yMin) {
                     yMin = thisYValue;
-                } else if (thisYValue.isGreaterThan(yMax)) {
+                }
+                else if (thisYValue > yMax) {
                     yMax = thisYValue;
                 }
             }
-            return [yMin, yMax]
+            return [constructMagnitudeFromFloat(yMin, finalSigFigs), constructMagnitudeFromFloat(yMax, finalSigFigs)]
         }
     }
 
-
-    /*
-    Add a functino to find ARC LENGTH
-    getArcLength() {
-        const Nsteps = 1000;
-        let i;
-        const range = this.xMax - this.xMin;
-        let arcLength = 0, x1, y1, x2,y2;
-        for (i = 0; i < Nsteps; i++) {
-            x1 = this.function(this.xMin + i / Nsteps * range);
-            x2 = x1 + 1 / Nsteps;
-            y1 = this.function(x1);
-            y2 = this.function(x2);
-            arcLength += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+    findArcLengthBruteForce(xMin = this.xMin, xMax = this.xMax, Nsteps = 1000) {
+        if ((xMin === -Infinity || xMax === Infinity) || !this.isValueInDomain(xMin) || !this.isValueInDomain(xMax)) {
+            return undefined
+        } else {
+            const xMinFloat = xMin.getFloat();
+            const finalSigFigs = Math.min(xMin.numSigFigs, xMax.numSigFigs, this.parameterSigFigs);
+            let i;
+            const step = (xMax.getFloat() - xMinFloat) / Nsteps;
+            let arcLength = 0;
+            for (k = 0; k < Nsteps; k++) {
+                let x1 = xMinFloat + k * step;
+                let x2 = x1 + step;
+                let y1 = this.runFloatFunction(x1);
+                let y2 = this.runFloatFunction(x2);
+                arcLength += Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+            }
+            return constructMagnitudeFromFloat(arcLength, finalSigFigs)
         }
-        return arcLength;
     }
-     */
+
 
 
 }
