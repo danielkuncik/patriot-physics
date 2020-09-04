@@ -3,6 +3,7 @@ class ZeroFunction extends ConstantFunction {
     constructor(numSigFigs, exact = numSigFigs === undefined, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
         super(constructZeroMagnitude(numSigFigs, exact), xMin, xMax, closedCircleAtMin, closedCircleAtMax);
 
+        this.parameterSigFigs = numSigFigs;
         this.floatFunc = (x) => {return 0}
 
     }

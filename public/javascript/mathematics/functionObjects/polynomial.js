@@ -14,6 +14,27 @@ class Polynomial extends SingleFunction { // in array, begin with the HIGHEST po
             return value
         };
 
+        let minSigFigs = Infinity;
+        let arrayOfCoefficientsFloat = [];
+        let k;
+        for (k = 0; k < arrayOfCoefficients.length; k++) {
+            if (arrayOfCoefficients[k].numSigFigs < minSigFigs) {
+                minSigFigs = arrayOfCoefficients[k].numSigFigs;
+            }
+            arrayOfCoefficientsFloat.push(arrayOfCoefficients[k].getFloat());
+        }
+        this.parameterSigFigs = minSigFigs;
+
+        this.floatFunc = (x) => {
+            let value = 0, i, coefficient, power;
+            for (i = 0; i < arrayOfCoefficientsFloat.length; i++) {
+                coefficient = arrayOfCoefficientsFloat[i];
+                power = arrayOfCoefficientsFloat.length - 1 - i;
+                value += coefficient * x**power;
+            }
+            return value
+        };
+
     }
 
     getDerivative() {

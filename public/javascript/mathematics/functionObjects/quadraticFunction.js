@@ -1,5 +1,5 @@
 class QuadraticFunction extends Polynomial {
-    constructor(a, b, c, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
+    constructor(a, b = constructZeroMagnitude(), c = constructZeroMagnitude(), xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
         if (a === 0) {
             return new LinearFunction(b, c, xMax, xMin, closedCircleAtMin, closedCircleAtMax)
         }
@@ -28,7 +28,10 @@ class QuadraticFunction extends Polynomial {
         const aFloat = this.a.getFloat();
         const bFloat = this.b.getFloat();
         const cFloat = this.c.getFloat();
-        this.floatFunc = (x) => {return a * x * x + b * x + c };
+
+        this.parameterSigFigs = Math.min(a.numSigFigs, b.numSigFigs, c.numSigFigs);
+
+        this.floatFunc = (x) => {return aFloat * x * x + bFloat * x + cFloat };
     }
 
     getDerivative() {

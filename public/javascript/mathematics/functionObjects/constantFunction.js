@@ -7,6 +7,8 @@ class ConstantFunction extends LinearFunction {
         // i want to write a more complicated version of 'define function'
 
         const constantFloat = this.value.getFloat();
+
+        this.parameterSigFigs = value.numSigFigs;
         this.floatFunc = (x) => {return constantFloat}
     }
 

@@ -1,5 +1,5 @@
 class LinearFunction extends Polynomial {
-    constructor(slope, yIntercept, xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
+    constructor(slope, yIntercept = constructZeroMagnitude(), xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
         super([slope, yIntercept], xMin, xMax, closedCircleAtMin, closedCircleAtMax);
 
         this.slope = slope;
@@ -14,6 +14,8 @@ class LinearFunction extends Polynomial {
 
         const slopeFloat = this.slope.getFloat();
         const yInterceptFloat = this.yIntercept.getFloat();
+
+        this.parameterSigFigs = Math.min(slope.numSigFigs, yIntercept.numSigFigs);
         this.floatFunc = (x) => {return slopeFloat * x + yInterceptFloat}
 
         // this should redfine the function defined above in the polynomial constructor ?
