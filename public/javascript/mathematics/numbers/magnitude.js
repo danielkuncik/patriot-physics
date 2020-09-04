@@ -76,6 +76,14 @@ class Magnitude extends PhysicsNumber {
 
   }
 
+  absMag() {
+      if (this.positive === false) {
+          return this.reverseSign()
+      } else {
+          return this
+      }
+  }
+
     // testes if equal up to a certain number of sig figs
     isEqualTo(anotherMagnitude, numSigFigs) {
       if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared

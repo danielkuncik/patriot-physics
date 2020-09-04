@@ -30,6 +30,7 @@ class MathematicalFunction {
         this.floatFunc = undefined;
         this.parameterSigFigs = 0;
         this.arcLengthFunction = undefined;
+        this.distanceFinder= undefined;
     }
 
     addUndefinedPoint(xMag) {
@@ -144,6 +145,16 @@ class MathematicalFunction {
         }
     }
 
+    getDistance(xMin = this.xMin, xMax = this.xMax) {
+        if (!this.isValueInDomain(xMin) || !this.isValueInDomain(xMax)) {
+            return undefined
+        } else if (this.distanceFinder !== undefined) {
+            return this.distanceFinder(xMin, xMax)
+        } else {
+            return this.getDistanceByBruteForce(xMin, xMax)
+        }
+    }
+
     /// will break if it hits an undefined point
     // TO DO: create a more efficient method that uses floats and only corrects the number of significant figures at the end
     integrateBruteForce(xMin = this.xMin, xMax = this.xMax, nSteps = 100) {
@@ -193,7 +204,7 @@ class MathematicalFunction {
         } else {
             const xMinFloat = xMin.getFloat();
             const finalSigFigs = Math.min(xMin.numSigFigs, xMax.numSigFigs, this.parameterSigFigs);
-            let i;
+            let k;
             const step = (xMax.getFloat() - xMinFloat) / Nsteps;
             let arcLength = 0;
             for (k = 0; k < Nsteps; k++) {
@@ -207,6 +218,25 @@ class MathematicalFunction {
         }
     }
 
+    getDistanceByBruteForce(xMin, xMax, Nsteps = 1000) {
+        if ((xMin === -Infinity || xMax === Infinity) || !this.isValueInDomain(xMin) || !this.isValueInDomain(xMax)) {
+            return undefined
+        } else {
+            const xMinFloat = xMin.getFloat();
+            const finalSigFigs = Math.min(xMin.numSigFigs, xMax.numSigFigs, this.parameterSigFigs);
+            let i;
+            const step = (xMax.getFloat() - xMinFloat) / Nsteps;
+            let distance = 0;
+            for (i = 0; i < Nsteps; i++) {
+                let x1 = xMinFloat + k * step;
+                let x2 = x1 + step;
+                let y1 = this.runFloatFunction(x1);
+                let y2 = this.runFloatFunction(x2);
+                distance += Math.abs(y2 - y1);
+            }
+            return constructMagnitudeFromFloat(distance, finalSigFigs)
+        }
+    }
 
 
 }
