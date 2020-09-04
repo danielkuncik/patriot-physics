@@ -1,4 +1,6 @@
 
+let pageAnswers = {};
+
 // will need to be improved and beefed up as I add more automatically solving problems
 class Problem {
   constructor(id = create_UUID()) {
@@ -19,7 +21,7 @@ class Problem {
     this.question.diagram = diagramObject;
   }
 
-  displayQuestion(diagramWidth= 300, diagramHeight = diagramWidth) {
+  displayQuestionAsLi(diagramWidth= 300, diagramHeight = diagramWidth) {
     let questionItem = $("<li class = 'question'></li>");
     if (this.question.directions) {
       $(questionItem).append(`<p>${this.question.directions}</p>`);
@@ -38,16 +40,26 @@ class Problem {
 
   addAnswer(variable, answer, name = variable) {
     let thisAnswer = {
-      name: name
+      name: name,
+      id: create_UUID()
     };
     if (typeof(answer) === 'string') {
         thisAnswer["string"] = answer;
+        thisAnswer['type'] = 'string';
     } else if (typeof(answer) === 'number') {
       thisAnswer["string"] = String(answer);
+      thisAnswer['type'] = 'float';
+      thisAnswer['float'] = answer;
     } else if (typeof(answer) === 'object') {
-        /// give options for physics number, diagram, etc.
+        if (answer.isAmagnitude) {
+          thisAnswer["type"] = 'magnitude';
+          thisAnswer["magnitude"] = answer;
+          thisAnswer['string'] = answer.printOptimal();
+        }
+      /// give options for physics number, diagram, etc.
     }
     this.answers[variable] = thisAnswer;
+    pageAnswers[thisAnswer.id] = thisAnswer;
     return thisAnswer
   }
 
@@ -56,7 +68,7 @@ class Problem {
   }
 
   // change globally run methods bottom to make this more smooth?
-  displayAnswer() {
+  displayAnswerAsLi() { // needs to be an input
     if (Object.keys(this.answers).length === 1) {
       let variable = Object.keys(this.answers)[0];
       // return $(`<li class = 'answer'>${variable} = ${this.answers[variable].string}</li>`);
@@ -72,14 +84,37 @@ class Problem {
     }
   }
 
+  // private method
+  createAnswerInput(answerObject) {
+    let inputType;
+    if (answerObject.type === 'float') {
+      inputType = 'input'
+    } else if (answerObject.type === 'string') {
+      inputType = 'number';
+    } else if (answerObject.type === 'magnitude') {
+      inputType = 'number'; // but it's more complicated, that's ok for now!
+    }
+    let input = $(`<input type = '${inputType}' id = '${answerObject.id}'/>`); // add a class
+    let commentSpace = $(`<p class = 'comment' id = 'comment-${answerObject.id}'/>`);
+    let finalDiv = $("<div></div>");
+    $(finalDiv).append(input);
+    $(finalDiv).append(commentSpace);
+    return finalDiv
+  }
+
 // lets see if it works
-  displayProblem(appendID) {
-    let question = this.displayQuestion();
+  displayProblem(appendID) { // as Li
+    let question = this.displayQuestionAsLi();
     const answerID = `${this.id}_answer`;
     $(question).attr('data-answer_id',answerID);
-    let answer = this.displayAnswer();
+    let answer = this.displayAnswerAsLi();
     $(`#${appendID}`).append(question);
     addAnswerObject(answerID, answer);
+  }
+
+  displayProblemAsLi(appendID) {
+    let question = this.displayQuestionAsLi();
+
   }
 }
 

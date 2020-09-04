@@ -136,3 +136,32 @@ $(".definition").each((i) => {
 // myFormulaBox.insertTableByClass('formulaBoxDiv');
 let formulaSolvingTable2 = new FormulaSolvingTable();
 $(".formulaSolvingTable").append(formulaSolvingTable2.draw(600,300));
+
+
+
+/// answer button
+$("div.answerButton").each((div) => {
+    $(div).append($("<button value = 'answer' class = 'answerButton' />"))
+});
+
+function clickAnswerButton() {
+    Object.keys(pageAnswers).forEach((uuid) => {
+        let inputSpace = $(`#${uuid}`);
+        const input = $(inputSpace).val();
+        if (input === '') {
+            return undefined
+        }
+        const inputtedAnswer = new Magnitude(input);
+        const answer = pageAnswers[uuid].magnitude; // for magnitudes
+        const result = answer.correctInputtedAnswer(inputtedAnswer);
+        // display result
+        if (result.correct) {
+            $(inputSpace).addClass('border border-success'); // delete class first?
+        } else {
+            $(inputSpace).addClass('border border-danger');
+        }
+        if (result.comment) {
+            $(`#comment-${uuid}`).append(`<span>${result.comment}</span>`);
+        }
+    });
+}

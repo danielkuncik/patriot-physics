@@ -60,6 +60,7 @@ class Magnitude extends PhysicsNumber {
 
 
   // see if this works with my changes to the unit object
+    // this is not good!
   testSameUnit(anotherMagnitude) {
       if (this.unit === undefined && anotherMagnitude.unit === undefined) {
           return true
@@ -281,6 +282,12 @@ class Magnitude extends PhysicsNumber {
         const newUnit = undefined;
         return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
     }
+
+    correctInputtedAnswer(inputtedAnswer, type = 'exact', acceptedPercentDifference) {
+        // deal with units here!
+        return super.correctInputtedAnswer(inputtedAnswer, type, acceptedPercentDifference)
+    }
+
 }
 
 // keep working
@@ -302,6 +309,8 @@ function constructMagnitudeFromFloat(float, numSigFigs, unitObject, exact = fals
     } else {
         return new Magnitude(float.toExponential(numSigFigs - 1), unitObject, float, exact) // saves the intermediate value to use in future operations
     }
+
+
 }
 /// a big issue:
 /// very small values, made from operating on floating points, are not being roudned to zero
