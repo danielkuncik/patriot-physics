@@ -74,10 +74,10 @@ class TestPackage {
                 let subCategoryName = this.categories[categoryKey].subCategories[subCategoryKey].name;
                 name = `${categoryName}: ${subCategoryName} Test ${this.categories[categoryKey].subCategories[subCategoryKey].tests.length + 1}`;
             } else {
-                name = `${categoryName} Unattached Test ${this.categories[categoryKey].unattachedTests.length + 1}`;
+                name = `${categoryName} Unattached Test ${this.categories[categoryKey].unattachedTests.length + 1} ${subCategoryKey ? `Subcategory Key ${subCategoryKey}` : ''}`;
             }
         } else {
-            name = `Unattached Test ${this.unattachedTests.length + 1}`;
+            name = `Unattached Test ${this.unattachedTests.length + 1} ${categoryKey ? `Category Key ${categoryKey}` : ''} ${subCategoryKey ? `Subcategory Key ${subCategoryKey}` : ''}`;
         }
         return name;
     }

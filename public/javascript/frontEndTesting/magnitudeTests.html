@@ -2018,7 +2018,7 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "float": Infinity
   }, 'operations', 'infinities');
   magnitudeTests.assertNotMagnitude(mag3105a.multiplyMag(mag3105b),'operations', 'infinities');// zero times infinity is undefined!
-  magnitudeTests.assertMagnitude(mag3105b.multiplyMag(mag3105a), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3105b.multiplyMag(mag3105a), 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3105a.divideMag(mag3105b), {
       "positive": undefined,
       "zero": true,
@@ -2056,8 +2056,8 @@ magnitudeTests.addSubCategory('operations','infinities','Operations With Infinit
       "positive": false,
       "float": -Infinity
   }, 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3106a.multiplyMag(mag3106b), 'operations', 'infinities');
-  magnitudeTests.assertMagnitude(mag3106b.multiplyMag(mag3106a), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3106a.multiplyMag(mag3106b), 'operations', 'infinities');
+  magnitudeTests.assertNotMagnitude(mag3106b.multiplyMag(mag3106a), 'operations', 'infinities');
   magnitudeTests.assertMagnitude(mag3106a.divideMag(mag3106b), {
       "positive": undefined,
       "zero": true,
