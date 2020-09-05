@@ -20,6 +20,9 @@
 <script src = '../mathematics/numbers/magnitude.js'></script>
 <script src = '../mathematics/numbers/angle.js'></script>
 
+<script src = '../mathematics/geometricObjects/basics/point.js'></script>
+
+
 <script src = '../mathematics/functionObjects/mathematicalFunction.js'></script>
 <script src = '../mathematics/functionObjects/singleFunction.js'></script>
 <script src = '../mathematics/functionObjects/stepwiseFunction.js'></script>
@@ -83,8 +86,8 @@
 
 
 
-    let func101 = new LinearFunction(new Magnitude('6.00'), new Magnitude('2.00')); // 6x + 2
-    functionTests.assertMagnitude(func101.runFunction(new Magnitude('5.00')), { /// 32.0
+    let func002 = new LinearFunction(new Magnitude('6.00'), new Magnitude('2.00')); // 6x + 2
+    functionTests.assertMagnitude(func002.runFunction(new Magnitude('5.00')), { /// 32.0
         firstSigFig: '3',
         otherSigFigs: '20',
         orderOfMagnitude: 1,
@@ -92,7 +95,7 @@
         positive: true,
         float: 32
     }, 'linear', 'run');
-    functionTests.assertMagnitude(func101.runFunction(new Magnitude('-4.00')), { /// -22.0
+    functionTests.assertMagnitude(func002.runFunction(new Magnitude('-4.00')), { /// -22.0
         firstSigFig: '2',
         otherSigFigs: '20',
         orderOfMagnitude: 1,
@@ -100,7 +103,7 @@
         positive: false,
         float: -22
     }, 'linear', 'run');
-    functionTests.assertMagnitude(func101.runFunction(new Magnitude('20.0')), { /// 6 * 20 + 2 = 120 + 2 = 122
+    functionTests.assertMagnitude(func002.runFunction(new Magnitude('20.0')), { /// 6 * 20 + 2 = 120 + 2 = 122
         firstSigFig: '1',
         otherSigFigs: '22',
         orderOfMagnitude: 2,
@@ -108,7 +111,7 @@
         positive: true,
         float: 122
     }, 'linear', 'run');
-    functionTests.assertMagnitude(func101.runFunction(new Magnitude('20')), { /// 6 * 20 + 2 = 120 + 2 = 122 => 100
+    functionTests.assertMagnitude(func002.runFunction(new Magnitude('20')), { /// 6 * 20 + 2 = 120 + 2 = 122 => 100
         firstSigFig: '1',
         otherSigFigs: '',
         orderOfMagnitude: 2,
@@ -117,7 +120,7 @@
         float: 122 // intermediate value
     }, 'linear', 'run');
 
-    functionTests.assertMagnitude(func101.differentiate(new Magnitude('6.00')),{
+    functionTests.assertMagnitude(func002.differentiate(new Magnitude('6.00')),{
         firstSigFig: '6',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
@@ -125,7 +128,7 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
-    functionTests.assertMagnitude(func101.differentiate(new Magnitude('0.00')),{
+    functionTests.assertMagnitude(func002.differentiate(new Magnitude('0.00')),{
         firstSigFig: '6',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
@@ -133,7 +136,7 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
-    functionTests.assertMagnitude(func101.differentiate(constructZeroMagnitude(1)),{
+    functionTests.assertMagnitude(func002.differentiate(constructZeroMagnitude(1)),{
         firstSigFig: '6',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
@@ -141,7 +144,7 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
-    functionTests.assertMagnitude(func101.differentiate(new Magnitude('-123456.0')),{
+    functionTests.assertMagnitude(func002.differentiate(new Magnitude('-123456.0')),{
         firstSigFig: '6',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
@@ -149,7 +152,7 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
-    functionTests.assertMagnitude(func101.differentiate(constructInfinity()), {
+    functionTests.assertMagnitude(func002.differentiate(constructInfinity()), {
         firstSigFig: '6',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
@@ -157,7 +160,7 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
-    functionTests.assertMagnitude(func101.differentiate(constructNegativeInfinity()), {
+    functionTests.assertMagnitude(func002.differentiate(constructNegativeInfinity()), {
         firstSigFig: '6',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
@@ -165,6 +168,44 @@
         positive: true,
         float: 6
     }, 'linear', 'differentiate');
+
+    let func101 = new QuadraticFunction(new Magnitude('2.00'));
+    functionTests.assertZeroMagnitude(func101.runFunction(constructZeroMagnitude()), 3, 'quadratic', 'run');
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('4.00')), {
+        firstSigFig: '3',
+        otherSigFigs: '20',
+        orderOfMagnitude: 1,
+        numSigFigs: 3,
+        positive: true,
+        float: 32
+    }, 'quadratic', 'run');
+
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('-4.00')), {
+        firstSigFig: '3',
+        otherSigFigs: '20',
+        orderOfMagnitude: 1,
+        numSigFigs: 3,
+        positive: true,
+        float: 32
+    }, 'quadratic', 'run');
+
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('10')), {
+        firstSigFig: '2',
+        otherSigFigs: '',
+        orderOfMagnitude: 2,
+        numSigFigs: 1,
+        positive: true,
+        float: 200
+    }, 'quadratic', 'run');
+
+    functionTests.assertMagnitude(func101.runFunction(new Magnitude('-10')), {
+        firstSigFig: '2',
+        otherSigFigs: '',
+        orderOfMagnitude: 2,
+        numSigFigs: 1,
+        positive: true,
+        float: 200
+    }, 'quadratic', 'run');
 
 
     $("#putItHere").append(functionTests.printAllTests());

@@ -195,6 +195,27 @@ class TestPackage {
       // add unit
     }
 
+    assertZeroMagnitude(magnitude, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        let otherSigFigs, exact = undefined;
+        if (numSigFigs !== Infinity) {
+            otherSigFigs = makeStringOfZeros(numSigFigs - 1);
+        } else {
+            otherSigFigs = '';
+            exact = true;
+        }
+        this.assertMagnitude(magnitude, {
+            'firstSigFig': '0',
+            'otherSigFigs': otherSigFigs,
+            'numSigFigs': numSigFigs,
+            'exact': exact,
+            'zero': true,
+            'positive': undefined,
+            orderOfMagnitude: undefined,
+            float: 0
+        }, categoryKey, subCategoryKey, name);
+
+    }
+
     assertNotMagnitude(notMagnitude, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         this.assertEqualStrict(notMagnitude.isAmagnitude, false, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
         this.assertEqualStrict(notMagnitude.firstSigFig, undefined, categoryKey, subCategoryKey), `${name}: firstSigFig`;

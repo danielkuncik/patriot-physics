@@ -356,7 +356,6 @@
     const y100 = new Magnitude('0.00');
     const point100 = new Point(x100, y100);
     const angle100 = point100.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle100.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle100.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle100.firstSigFig, '0', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle100.otherSigFigs, '00', 'pointObject', 'pointAngles');
@@ -368,7 +367,6 @@
     const y101 = new Magnitude('1.00');
     const point101 = new Point(x101, y101);
     const angle101 = point101.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle101.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101.firstSigFig, '7', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101.otherSigFigs, '85', 'pointObject', 'pointAngles');
@@ -380,7 +378,6 @@
     const y101a = new Magnitude('1');
     const point101a = new Point(x101a, y101a);
     const angle101a = point101a.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle101a.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101a.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101a.firstSigFig, '8', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101a.otherSigFigs, '', 'pointObject', 'pointAngles');
@@ -392,7 +389,6 @@
     const y101b = new Magnitude('1.000000000');
     const point101b = new Point(x101b, y101b);
     const angle101b = point101b.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle101b.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101b.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101b.firstSigFig, '7', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle101b.otherSigFigs, '853981634', 'pointObject', 'pointAngles');
@@ -404,7 +400,6 @@
     const y102 = new Magnitude('1.00');
     const point102 = new Point(x102, y102);
     const angle102 = point102.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle102.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle102.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle102.firstSigFig, '2', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle102.otherSigFigs, '36', 'pointObject', 'pointAngles');
@@ -416,7 +411,6 @@
     const y103 = new Magnitude('-1.00');
     const point103 = new Point(x103, y103);
     const angle103 = point103.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle103.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle103.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle103.firstSigFig, '3', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle103.otherSigFigs, '93', 'pointObject', 'pointAngles');
@@ -428,7 +422,6 @@
     const y104 = new Magnitude('-1.00');
     const point104 = new Point(x104, y104);
     const angle104 = point104.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle104.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle104.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle104.firstSigFig, '5', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle104.otherSigFigs, '50', 'pointObject', 'pointAngles');
@@ -440,7 +433,6 @@
     const y105 = new Magnitude('1.00');
     const point105 = new Point(x105, y105);
     const angle105 = point105.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle105.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle105.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle105.firstSigFig, '1', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle105.otherSigFigs, '57', 'pointObject', 'pointAngles');
@@ -452,7 +444,6 @@
     const y106 = new Magnitude('0.00');
     const point106 = new Point(x106, y106);
     const angle106 = point106.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle106.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle106.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle106.firstSigFig, '3', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle106.otherSigFigs, '14', 'pointObject', 'pointAngles');
@@ -464,7 +455,6 @@
     const y107 = new Magnitude('-1.00');
     const point107 = new Point(x107, y107);
     const angle107 = point107.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle107.isAmagnitude, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle107.isAnAngle, true, 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle107.firstSigFig, '4', 'pointObject', 'pointAngles');
     pointTests.assertEqualStrict(angle107.otherSigFigs, '71', 'pointObject', 'pointAngles');
@@ -793,21 +783,18 @@
     const angle501b = angle501.convertToDegrees();
     const angle501c = angle501b.convertToRadians();
 
-    pointTests.assertEqualStrict(angle501.isAmagnitude, true, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501.firstSigFig, '1', 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501.otherSigFigs, '57', 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501.orderOfMagnitude, 0, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501.numSigFigs, 3, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501.positive, true, 'pointObject', 'getAngle');
 
-    pointTests.assertEqualStrict(angle501b.isAmagnitude, true, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.firstSigFig, '9', 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.otherSigFigs, '00', 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.orderOfMagnitude, 1, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.numSigFigs, 3, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501b.positive, true, 'pointObject', 'getAngle');
 
-    pointTests.assertEqualStrict(angle501c.isAmagnitude, true, 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501c.firstSigFig, '1', 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501c.otherSigFigs, '57', 'pointObject', 'getAngle');
     pointTests.assertEqualStrict(angle501c.orderOfMagnitude, 0, 'pointObject', 'getAngle');

@@ -63,13 +63,13 @@
         float: 0
     },'construction', 'construction2');
 
-    triangleTests.assertMagnitude(triangle1.angleA, {
+    triangleTests.assertAngle(triangle1.angleA, {
         float: 60
     },'construction', 'construction2');
-    triangleTests.assertMagnitude(triangle1.angleB, {
+    triangleTests.assertAngle(triangle1.angleB, {
         float: 60
     },'construction', 'construction2');
-    triangleTests.assertMagnitude(triangle1.angleC, {
+    triangleTests.assertAngle(triangle1.angleC, {
         float: 60
     },'construction', 'construction2');
     triangleTests.assertMagnitude(triangle1.sideLengthA, {
@@ -103,13 +103,13 @@
     triangleTests.assertMagnitude(triangle2.vertexC.y, {
         "float": 0
     }, 'construction', 'construction3','vertex C y');
-    triangleTests.assertMagnitude(triangle2.angleA, {
+    triangleTests.assertAngle(triangle2.angleA, {
         float: Math.atan(4) * 180 / Math.PI
     },'construction', 'construction3', 'angle A');
-    triangleTests.assertMagnitude(triangle2.angleB, {
+    triangleTests.assertAngle(triangle2.angleB, {
         float: Math.atan(0.25) * 180 / Math.PI * 2
     },'construction', 'construction3', 'angle B');
-    triangleTests.assertMagnitude(triangle2.angleC, {
+    triangleTests.assertAngle(triangle2.angleC, {
         float: Math.atan(4) * 180 / Math.PI
     },'construction', 'construction3', 'angle C');
     triangleTests.assertMagnitude(triangle2.sideLengthA, {
@@ -143,13 +143,13 @@
         "float": 0
     }, 'construction', 'construction4');
 
-    triangleTests.assertMagnitude(triangle3.angleA, {
+    triangleTests.assertAngle(triangle3.angleA, {
         float: 45
     },'construction', 'construction4');
-    triangleTests.assertMagnitude(triangle3.angleB, {
+    triangleTests.assertAngle(triangle3.angleB, {
         float: 45
     },'construction', 'construction4');
-    triangleTests.assertMagnitude(triangle3.angleC, {
+    triangleTests.assertAngle(triangle3.angleC, {
         float: 90
     },'construction', 'construction4');
     triangleTests.assertMagnitude(triangle3.sideLengthA, {

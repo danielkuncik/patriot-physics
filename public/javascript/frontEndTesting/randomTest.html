@@ -39,23 +39,17 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let func101 = new LinearFunction(new Magnitude('6.00'), new Magnitude('2.00')); // 6x + 2
-    randomTest.assertEqualStrict(func101.differentiate(constructInfinity()), {
-      firstSigFig: '6',
-      otherSigFigs: '00',
-      orderOfMagnitude: 0,
-      numSigFigs: 3,
-      positive: true,
-      float: 6
-    }, 'linear', 'differentiate');
-    randomTest.assertEqualStrict(func101.differentiate(constructNegativeInfinity()), {
-      firstSigFig: '6',
-      otherSigFigs: '00',
-      orderOfMagnitude: 0,
-      numSigFigs: 3,
-      positive: true,
-      float: 6
-    }, 'linear', 'differentiate');
+    const x100 = new Magnitude('1.00');
+    const y100 = new Magnitude('0.00');
+    const point100 = new Point(x100, y100);
+    const angle100 = point100.getAngleToHorizontal();
+    pointTests.assertEqualStrict(angle100.isAmagnitude, true, 'pointObject', 'pointAngles');
+    pointTests.assertEqualStrict(angle100.isAnAngle, true, 'pointObject', 'pointAngles');
+    pointTests.assertEqualStrict(angle100.firstSigFig, '0', 'pointObject', 'pointAngles');
+    pointTests.assertEqualStrict(angle100.otherSigFigs, '00', 'pointObject', 'pointAngles');
+    pointTests.assertEqualStrict(angle100.orderOfMagnitude, undefined, 'pointObject', 'pointAngles');
+    pointTests.assertEqualStrict(angle100.numSigFigs, 3, 'pointObject', 'pointAngles');
+    pointTests.assertEqualStrict(angle100.positive, undefined, 'pointObject', 'pointAngles');
 
     $("#putItHere").append(randomTest.printAllTests());
 
