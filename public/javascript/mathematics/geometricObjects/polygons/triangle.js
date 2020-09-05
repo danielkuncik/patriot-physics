@@ -244,6 +244,15 @@ function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA
     return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
 }
 
+function constructRightTriangleLegAngleF(sideB,angleA, swapLegs, vertexA = makeOriginF()) {
+  // handle swap legs!
+  let vertexC = vertexA.translateAndReproduce(sideB, 0);
+  let sideA = sideB * angleA.tanAngle();
+  let vertexB = vertexC.translateAndReproduce(0, sideA);
+  return new TriangleF(vertexA, vertexB, vertexC)
+}
+
+
 
 function constructTriangleSAS(sideC, angleB, sideA, vertexA = makeOrigin()) { // counterlockwise orientation
     let vertexB = vertexA.translateAndReproduce(sideC, constructZeroMagnitude(undefined, true));
