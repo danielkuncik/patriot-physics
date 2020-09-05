@@ -216,54 +216,49 @@ function randomSOHCAHTOAProblem(simpleOnly) {
 
 
 
-function inverseTangentProblem(opposite, adjacent, unknownAngle = 'A', fontSize) {
-    let triangle = new GeometryPad();
-    if (unknownAngle === 'A') {
-        triangle.addTriangleSAS(opposite,90,adjacent);
-        triangle.labelAngleOfTriangle('A','θ');
-
-    } else if (unknownAngle === 'B') {
-        triangle.addTriangleSAS(adjacent,90,opposite);
-        triangle.labelAngleOfTriangle('B','θ');
-
-    }
-    triangle.addRightTriangleMarker();
-    triangle.labelSideOfTriangle('A');
-    triangle.labelSideOfTriangle('B');
-    return triangle
+function inverseTangentProblem(opposite, adjacent, swapLegs) {
+    let myTrianglePad = new GeometryPad();
+    let problem = new Problem();
+    myTrianglePad.addRightTriangleTwoLegs(opposite, adjacent, swapLegs);
+    myTrianglePad.labelSideOfTriangle('A');
+    myTrianglePad.labelSideOfTriangle('B');
+    let unknownAngle = swapLegs ? 'B' : 'A';
+    let answer = swapLegs ? myTrianglePad.triangles[0].angleB : myTrianglePad.triangles[0].angleA;
+    myTrianglePad.labelUnknownAngleOfTriangle(unknownAngle);
+    problem.addAnswer('θ', answer);
+    problem.addDiagram(myTrianglePad);
+    return problem
 }
 
-function inverseSineProblem(opposite, hypotenuse, unknownAngle = 'A', fontSize) {
-    let triangle = new GeometryPad();
-    if (unknownAngle === 'A') {
-        triangle.addTriangleSSS(opposite,Math.sqrt(hypotenuse**2 - opposite**2), hypotenuse);
-        triangle.labelAngleOfTriangle('A','θ');
-        triangle.labelSideOfTriangle('A');
-    } else if (unknownAngle === 'B') {
-        triangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - opposite**2), opposite, hypotenuse);
-        triangle.labelAngleOfTriangle('B','θ');
-        triangle.labelSideOfTriangle('B');
-    }
-    triangle.addRightTriangleMarker();
-    triangle.labelSideOfTriangle('C');
-    return triangle
+function inverseSineProblem(opposite, hypotenuse, swapLegs) {
+    let myTrianglePad = new GeometryPad();
+    let problem = new Problem();
+    myTrianglePad.addRightTriangleHypotenuseLeg(hypotenuse, opposite, swapLegs);
+    myTrianglePad.labelSideOfTriangle('C');
+    let unknownAngle = swapLegs ? 'B' : 'A';
+    let knownSide = unknownAngle;
+    let answer = swapLegs ? myTrianglePad.triangles[0].angleB : myTrianglePad.triangles[0].angleA;
+    myTrianglePad.labelUnknownAngleOfTriangle(unknownAngle);
+    myTrianglePad.labelSideOfTriangle(knownSide);
+    problem.addAnswer('θ', answer);
+    problem.addDiagram(myTrianglePad);
+    return problem
 }
 
 
-function inverseCosineProblem(adjacent, hypotenuse, unknownAngle = 'A', fontSize) {
-    let triangle = new GeometryPad();
-    if (unknownAngle === 'A') {
-        triangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - adjacent**2), adjacent, hypotenuse);
-        triangle.labelAngleOfTriangle('A','θ');
-        triangle.labelSideOfTriangle('A');
-    } else if (unknownAngle === 'B') {
-        triangle.addTriangleSSS(adjacent,Math.sqrt(hypotenuse**2 - adjacent**2), hypotenuse);
-        triangle.labelAngleOfTriangle('B','θ');
-        triangle.labelSideOfTriangle('B');
-    }
-    triangle.addRightTriangleMarker();
-    triangle.labelSideOfTriangle('C');
-    return triangle
+function inverseCosineProblem(adjacent, hypotenuse, swapLegs) {
+    let myTrianglePad = new GeometryPad();
+    let problem = new Problem();
+    myTrianglePad.addRightTriangleHypotenuseLeg(hypotenuse, adjacent, swapLegs);
+    myTrianglePad.labelSideOfTriangle('C');
+    let unknownAngle = swapLegs ? 'B' : 'A';
+    let knownSide = swapLegs ? 'A' : 'B';
+    let answer = swapLegs ? myTrianglePad.triangles[0].angleB : myTrianglePad.triangles[0].angleA;
+    myTrianglePad.labelUnknownAngleOfTriangle(unknownAngle);
+    myTrianglePad.labelSideOfTriangle(knownSide);
+    problem.addAnswer('θ', answer);
+    problem.addDiagram(myTrianglePad);
+    return problem
 }
 
 //##########################################################

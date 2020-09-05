@@ -952,8 +952,8 @@ class TriangleF extends PolygonF {
         this.sideLengthB = this.vertexA.getDistanceToAnotherPoint(this.vertexC);
         this.sideLengthC = this.vertexA.getDistanceToAnotherPoint(this.vertexB);
 
-        this.angleA = getAngleFromLawOfCosines(this.sideLengthA, this.sideLengthB, this.sideLengthC);
-        this.angleB = getAngleFromLawOfCosines(this.sideLengthB, this.sideLengthC, this.sideLengthA);
+        this.angleA = getAngleFromLawOfCosinesF(this.sideLengthA, this.sideLengthB, this.sideLengthC);
+        this.angleB = getAngleFromLawOfCosinesF(this.sideLengthB, this.sideLengthC, this.sideLengthA);
         this.angleC = 180 - this.angleA - this.angleB;
 
         this.right = this.isRightTriangle();
@@ -1260,4 +1260,10 @@ class SquareF extends RectangleF {
   constructor(sideLength, vertex0) {
     super(sideLength, sideLength, vertex0);
   }
+}
+
+function getAngleFromLawOfCosinesF(c, a, b) {
+    let cosTheta = (a*a + b*b - c*c) / (2 * a * b);
+    let theta = Math.acos(cosTheta);
+    return convertRadiansToDegrees(theta)
 }

@@ -21,7 +21,7 @@ class GeometryPad extends DiagramF {
         this.rectangles = [];
         this.fontSize = 0;
         this.fontMultiplier = 1;
-        this.possibleUnknownAngleLabels = ['theta','phi','alpha','beta'];
+        this.possibleUnknownAngleLabels = ['θ','φ','α','β'];
     }
 
     calculateFontSize() {
