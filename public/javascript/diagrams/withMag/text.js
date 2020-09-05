@@ -1,12 +1,11 @@
 /// I think this is all messed up, fix it!
 // do i need to clarify this is inside/outside?
 // given a line at a certain angle, determines the optimal location of text
-function getOptimalLocationOfText(point1, point2, turningOrientation = 'clockwise') {
-    const quadrant = point1.getQuadrantOfAnotherPoint(point2);
+function getOptimalLocationOfText(segment, turningOrientation = 'clockwise') {
     let bestSpot;
 
     // optimal locations for clockwise orientation
-    switch(point1.getQuadrantOfAnotherPoint(point2)) {
+    switch(segment.point1.getQuadrantOfAnotherPoint(segment.point2)) {
         case '1':
             bestSpot = 'left';
             break;
@@ -69,7 +68,7 @@ function getOptimalLocationOfText(point1, point2, turningOrientation = 'clockwis
 }
 
 class Text {
-    constructor(letters, referencePoint, relativeFontSize, rotationAngleInRadians, positioning) {
+    constructor(letters, referencePoint, relativeFontSize, positioning, rotationAngle) {
         if (positioning === undefined) {
             positioning = 'center'
         }
@@ -83,6 +82,10 @@ class Text {
         this.width = getLengthOfLetters(letters, this.relativeFontSize);
         this.height = this.relativeFontSize;
 
+        this.boxAround = false;
+
+        this.rotationAngle = rotationAngle;
+
 
         this.font = 'Arial';
         this.referencePoint = referencePoint;
@@ -91,57 +94,51 @@ class Text {
             this.alignment = 'center'; // default
             this.baseline = 'middle';
             this.centerPoint = referencePoint;
-            this.rangeBox = constructRangeBoxFromCenterF(this.centerPoint, this.width, this.height);
+            this.rangeBox = constructRangeBoxFromCenter(this.centerPoint, this.width, this.height);
         } else if (positioning === 'lowerLeft') {
             this.alignment = 'left';
             this.baseline = 'alphabetic';
-            this.rangeBox = new RangeBoxF(this.referencePoint.x, this.referencePoint.y, this.width, this.height); // construc from lower left corner is default
+            let lowerLeftPoint = referencePoint;
+            this.rangeBox = new RangeBox(referencePoint, this.width, this.height); // construc from lower left corner is default
         } else if (positioning === 'aboveCenter') {
             this.alignment = 'center';
             this.baseline = 'alphabetic';
-            let lowerLeftX = this.referencePoint.x - this.width/2;
-            let lowerLeftY = this.referencePoint.y;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint.translateAndReproduce((this.width.divideMagExactConstant(2)).reverseSign(), constructZeroMagnitude())
+            this.rangeBox = new RangeBox(lowerLeftX, lowerLeftY, this.width, this.height);
         }  else if (positioning === 'belowCenter') {
             this.alignment = 'center';
             this.baseline = 'hanging';
-            let lowerLeftX = this.referencePoint.x - this.width/2;
-            let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint.translateAndReproduce((this.width.divideMagExactConstant(2)).reverseSide, this.height.reverseSign())
+            this.rangeBox = new RangeBox(lowerLeftPoint, this.width, this.height);
         } else if (positioning === 'upperLeft') {
             this.alignment = 'left';
             this.baseline = 'hanging';
-            let lowerLeftX = this.referencePoint.x;
-            let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint(constructZeroMagnitude(), this.height.reverseSide());
+            this.rangeBox = new RangeBox(lowerLeftPoint, this.width, this.height);
         } else if (positioning === 'lowerRight') {
             this.alignment = 'right';
             this.baseline = 'alphabetic';
-            let lowerLeftX = this.referencePoint.x - this.width;
-            let lowerLeftY = this.referencePoint.y;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint(this.width.reverseSide(), constructZeroMagnitude());
+            this.rangeBox = new RangeBox(lowerLeftPoint, this.width, this.height);
         } else if (positioning === 'upperRight') {
             this.alignment = 'right';
             this.baseline = 'hanging';
-            let lowerLeftX = this.referencePoint.x - this.width;
-            let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint(this.width.reverseSide(), this.height.reverseSide());
+            this.rangeBox = new RangeBox(lowerLeftPoint, this.width, this.height);
         } else if (positioning === 'centerRight') {
             this.alignment = 'right';
             this.baseline = 'middle';
-            let lowerLeftX = this.referencePoint.x - this.width;
-            let lowerLeftY = this.referencePoint.y - this.height / 2;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint(this.width.reverseSide(), (this.height.divideMagExactConstant(2)).reverseSide());
+            this.rangeBox = new RangeBox(lowerLeftPoint, this.width, this.height);
         } else if (positioning === 'centerLeft') {
             this.alignment = 'left';
             this.baseline = 'middle';
-            let lowerLeftX = this.referencePoint.x;
-            let lowerLeftY = this.referencePoint.y - this.height;
-            this.rangeBox = new RangeBoxF(lowerLeftX, lowerLeftY, this.width, this.height);
+            let lowerLeftPoint = this.referencePoint(constructZeroMagnitude(), this.height.reverseSide());
+            this.rangeBox = new RangeBox(lowerLeftPoint, this.width, this.height);
         }
 
-        if (this.rotationAngleInRadians) { // should it be clockwise, not counterclockwise?
-            this.rangeBox.rotateClockwiseAboutCenter(this.rotationAngleInRadians);
+        if (this.rotationAngle) { // should it be clockwise, not counterclockwise?
+            this.rangeBox.rotateClockwiseAboutCenter(this.rotationAngle);
             /// if the reference point is not the center, then this function needs to change!
             ///ERROR
             ///ERROR
@@ -221,22 +218,72 @@ class Text {
         this.rangeBox.rotateCounterClockwiseAboutCenter(this.rotationAngleInRadians);
     }
 
-    addDegreeLabel(diagramObject) {
-        let circleRadius = this.relativeFontSize * 0.1;
-
-        // position the little circle
-        let point1 = this.rangeBox.upperRightPoint;
-        let point2 = this.rangeBox.lowerRightPoint;
-        let d = point1.getDistanceToAnotherPoint(point2);
-        let theta = point1.getAngleToAnotherPoint(point2);
-        let circleCenter = point1.transformAndReproduce(theta, circleRadius * 1.3, circleRadius * 1.3);
-        // this.addCircle(circleCenter, circleRadius);
-        // the circle is all coded, but it will look terrible until I fix my aspect ratio of text issue
-
-    }
+    // addDegreeLabel(diagramObject) {
+    //     let circleRadius = this.relativeFontSize * 0.1;
+    //
+    //     // position the little circle
+    //     let point1 = this.rangeBox.upperRightPoint;
+    //     let point2 = this.rangeBox.lowerRightPoint;
+    //     let d = point1.getDistanceToAnotherPoint(point2);
+    //     let theta = point1.getAngleToAnotherPoint(point2);
+    //     let circleCenter = point1.transformAndReproduce(theta, circleRadius * 1.3, circleRadius * 1.3);
+    //     // this.addCircle(circleCenter, circleRadius);
+    //     // the circle is all coded, but it will look terrible until I fix my aspect ratio of text issue
+    //
+    // }
 
     drawBoxAround(DiagramObject, horizontalExtension, verticalExtension) {
-        this.rangeBox.addSegmentsToDiagram(DiagramObject, horizontalExtension, verticalExtension);
+        this.boxAround = true;
     }
 
+}
+
+
+labelSegment(letters, segment, position, relativeFontSize = (this.segment.getLength()).multiplyMagExactConstant(0.1), textDisplacement = relativeFontSize.divideMagExactConstant(2), positionOnSegment = new Magnitude(0.5, undefined, undefined, true)) {
+    let referencePoint = segment.pointA.interpolate(segment.pointB, positionOnSegment);
+
+    let positioning;
+    if (position === 'above') {
+      positioning = 'belowCenter';
+    } else if (position === 'below') {
+      positioning = 'aboveCenter'; // hanging
+    }
+    // add right and left
+
+    let rotationAngle = segment.getAngleToHorizontal();
+
+    return new Text(letters, referencePoint, relativeFontSize, positioning, rotationAngle)
+}
+
+labelSegmentAbove(letters, segment, relativeFontSize, textDisplacement, positionOnSegment) {
+    return labelSegment(letters, segment, 'above', relativeFontSize, textDisplacement, positionOnSegment)
+}
+labelSegmentBelow(letters, segment, relativeFontSize, textDisplacement, positionOnSegment) {
+    return labelSegment(letters, segment, 'below', relativeFontSize, textDisplacement, positionOnSegment)
+}
+labelSegmentRight(letters, segment, relativeFontSize, textDisplacement, positionOnSegment) {
+    return labelSegment(letters, segment, 'right', relativeFontSize, textDisplacement, positionOnSegment)
+}
+labelSegmentLeft(letters, segment, relativeFontSize, textDisplacement, positionOnSegment) {
+    return labelSegment(letters, segment, 'left', relativeFontSize, textDisplacement, positionOnSegment)
+}
+
+
+
+labelSegmentClockwise(letters, segment, relativeFontSize, textDisplacement, positionOnSegment) {
+  let position = getOptimalLocationOfText(segment, turningOrientation = 'clockwise');
+  return labelSegment(letters, segment, position, relativeFontSize, textDisplacement, positionOnSegment)
+}
+
+labelSegmentCounterClockwise() {
+  let position = getOptimalLocationOfText(segment, turningOrientation = 'counterclockwise');
+  return labelSegment(letters, segment, position, relativeFontSize, textDisplacement, positionOnSegment)
+}
+
+linesOfText() {
+  //// lines of text
+}
+
+linesOfTextNextToSegment() {
+  // lines of text next to segment
 }

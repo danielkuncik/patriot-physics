@@ -551,158 +551,21 @@ class Diagram {
         return curveObject
     }
 
+    addText(textObject) {
+      this.addRangeBox(textObject.rangeBox);
+      this.texts.push(textObject);
+      if (textObject.boxAround) {
+        let rangeBox = textObject.rangeBox();
+        this.addSegment(new Segment(rangeBox.lowerLeftPoint, rangeBox.lowerRightPoint));
+        this.addSegment(new Segment(rangeBox.lowerRightPoint, rangeBox.upperRightPoint));
+        this.addSegment(new Segment(rangeBox.upperRightPoint, rangeBox.upperLeftPoint));
+        this.addSegment(new Segment(rangeBox.upperLeftPoint, rangeBox.lowerLeftPoint));
+      }
+      // what do i do about the other segments
+      return textObject
+    }
+
 /*
-    /// center Point need not already exist
-    addText(letters, referencePoint, relativeFontSize, rotation, positioning) {
-        this.addExistingPoint(referencePoint); // figure out what this is used for!
-        let newText = new TextF(letters, referencePoint, relativeFontSize, rotation, positioning);
-        this.addExistingPoint(newText.rangeBox.lowerLeftPoint); // should i add a method to range box, 'add to diagram'?
-        this.addExistingPoint(newText.rangeBox.upperLeftPoint);
-        this.addExistingPoint(newText.rangeBox.lowerRightPoint);
-        this.addExistingPoint(newText.rangeBox.upperRightPoint);
-        // this.addExistingPoint(newText.RangeBox.centerPoint); /// shoudl center Point already exist though???
-        this.texts.push(newText);
-        return newText
-    }
-
-    // creates Text above and below a line
-    // if line is vertical "Text above" is to the left and "textBelow" is to the right
-    // returns textAbove if it exists
-    // if only textBelow exists, returns textBelow
-    // i need to create a function that labels a segment
-    labelLine(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize, textPosition) {
-        if (textPosition === undefined) {
-            textPosition = 0.5;
-        }
-        let centerOfText = point1.interpolate(point2, textPosition);
-        let theta = point1.getAngleToAnotherPoint(point2);
-        let textRotation;
-        if (relativeFontSize === undefined) {
-            relativeFontSize = point1.getDistanceToAnotherPoint(point2) * 0.1;
-        }
-        if (textDisplacement === undefined) {
-            textDisplacement = 0;
-        }
-
-        let phi;
-        let quadrant = point1.getQuadrantOfAnotherPoint(point2);
-
-        // as defined by https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate
-        // rotation angle is CLOCKWISE in radians
-        // there are probably more bugs here!
-        // 8-8-2020: considering reversing this: if I do I must reverse it in the range box also
-        if (quadrant === '1') {
-            phi = Math.PI /2 - theta;
-            textRotation = -1 * theta;
-        } else if (quadrant === '2') {
-            textRotation = Math.PI - theta; // continues to perplex me
-            phi = Math.PI / 2 - textRotation;
-        } else if (quadrant === '3') {
-            textRotation = Math.PI - theta;
-            // textRotation = theta + Math.PI / 2;
-            phi = 3 * Math.PI / 2 - theta; // have not fully tested this
-        } else if (quadrant === '4') {
-            textRotation = -1 * theta;
-            phi = Math.PI / 2 - textRotation;
-            //phi = 2* Math.PI - theta;
-        } else if (quadrant === '+Y' || quadrant === '-Y') {
-            textRotation = 3 * Math.PI / 2;
-            // phi undefined
-        } else if (quadrant === '+X' || quadrant === 'X') {
-            textRotation = 0
-            // phi undefined
-        }
-
-
-        let aboveX = centerOfText.x, belowX = centerOfText.x;
-        let aboveY = centerOfText.y, belowY = centerOfText.y;
-
-        // i know this is inefficient, but it is easy to understand
-        if (quadrant === '1' || quadrant === '3') { // up right line
-            aboveX -= textDisplacement * Math.cos(phi);
-            aboveY += textDisplacement * Math.sin(phi);
-            belowX += textDisplacement * Math.cos(phi);
-            belowY -= textDisplacement * Math.sin(phi);
-        } else if (quadrant === '2' || quadrant === '4') { // up left line
-            aboveX += textDisplacement * Math.cos(phi);
-            aboveY += textDisplacement * Math.sin(phi);
-            belowX -= textDisplacement * Math.cos(phi);
-            belowY -= textDisplacement * Math.sin(phi);
-        } else if (quadrant === '+Y' || quadrant === '-Y') { // vertical line
-            aboveX -= textDisplacement;
-            belowX += textDisplacement;
-        } else if (quadrant === "+X" || quadrant === '-X') { // horizontal line
-            aboveY += textDisplacement;
-            belowY -= textDisplacement;
-        }
-
-        let textAboveObject, textBelowObject;
-        if (textAbove) {
-            textAboveObject = this.addText(textAbove, new PointF(aboveX, aboveY), relativeFontSize, textRotation, 'aboveCenter');
-        }
-        if (textBelow) {
-            textBelowObject = this.addText(textBelow, new PointF(belowX, belowY), relativeFontSize, textRotation,'belowCenter');
-        }
-
-        if (textAbove) {
-            return textAboveObject
-        } else if (textBelow) {
-            return textBelowObject
-        } else {
-            return undefined
-        }
-    };
-
-
-    labelLineAbove(point1, point2, text, textDisplacement, relativeFontSize) {
-        let obj = this.labelLine(point1, point2, text, undefined, textDisplacement, relativeFontSize);
-        return obj
-    }
-
-    labelLineBelow(point1, point2, text, textDisplacement, relativeFontSize) {
-        let obj = this.labelLine(point1, point2, undefined, text, textDisplacement, relativeFontSize);
-        return obj
-    }
-
-    getOppositeOrientation(orientation) {
-        if (orientation === 'clockwise') {
-            return 'counterclockwise'
-        } else if (orientation === 'counterclockwise') {
-            return 'clockwise'
-        }
-    }
-
-    // these are used for labeling lines outside or inside of a box
-    // the orientation is clockwise or counterclockwise
-    labelLineOutside(point1, point2, text, textDisplacement, relativeFontSize, textOrientation) {
-        if (textOrientation === undefined) {
-            textOrientation = 'clockwise';
-        }
-        let aboveOrBelow;
-        const optimalTextLocation = getOptimalLocationOfText(point1, point2, textOrientation);
-        if (optimalTextLocation === 'left') {
-            aboveOrBelow = 'above';
-        } else if (optimalTextLocation === 'above') {
-            aboveOrBelow = 'above';
-        } else if (optimalTextLocation === 'right') {
-            aboveOrBelow = 'below';
-        } else if (optimalTextLocation === 'below') {
-            aboveOrBelow = 'below';
-        }
-        if (aboveOrBelow === 'below') {
-            this.labelLineBelow(point1, point2, text, textDisplacement, relativeFontSize);
-        } else if (aboveOrBelow === 'above') {
-            this.labelLineAbove(point1, point2, text, textDisplacement, relativeFontSize);
-        }
-    }
-
-    labelLineInside(point1, point2, text, textDisplacement, relativeFontSize, textOrientation) {
-        if (textOrientation === undefined) {
-            textOrientation = 'clockwise';
-        }
-        this.labelLineOutside(point1, point2, text, textDisplacement, relativeFontSize, this.getOppositeOrientation(textOrientation));
-    }
-
     // you are not allowed to rotate lines
     addLinesOfText(lettersArray, centerLeftPoint, relativeFontSize, spacing, textAlign) {
         if (spacing === undefined) {

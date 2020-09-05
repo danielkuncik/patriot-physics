@@ -244,7 +244,7 @@ function constructRightTriangleHypotenuseLeg(hypotenuse, xLeg, swapLegs, vertexA
     return constructRightTriangleTwoLegs(xLeg, yLeg, swapLegs, vertexA)
 }
 
-function constructRightTriangleLegAngleF(sideB,angleA, swapLegs, vertexA = makeOriginF()) {
+function constructRightTriangleLegAngle(sideB,angleA, swapLegs, vertexA = makeOriginF()) {
   // handle swap legs!
   let vertexC = vertexA.translateAndReproduce(sideB, 0);
   let sideA = sideB * angleA.tanAngle();

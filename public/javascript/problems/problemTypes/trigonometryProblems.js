@@ -330,7 +330,6 @@ function unknownRightTriangleHypotenuseLeg(hypotenuse, leg, swap) { // one leg a
   let problem = new Problem();
 
   let myTriangle = constructRightTriangleHypotenuseLegF(hypotenuse, leg, swap);
-  console.log(myTriangle);
 
   problemTrianglePad.addTriangleObject(myTriangle);
   answerTrianglePad.addTriangleObject(myTriangle);

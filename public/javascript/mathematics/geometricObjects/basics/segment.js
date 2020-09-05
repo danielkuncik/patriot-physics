@@ -153,4 +153,8 @@ class Segment {
         }
     }
 
+    getAngleToHorizontal() {
+      return this.pointA.getAngleToAnotherPoint(this.pointB)
+    }
+
 }
