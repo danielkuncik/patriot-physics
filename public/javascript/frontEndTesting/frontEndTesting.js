@@ -191,7 +191,18 @@ class TestPackage {
               this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
           }
       }
-      // add printing 
+
+      if (equalObject.printOptimal !== undefined) {
+        this.assertEqualString(magnitude.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
+      }
+      if (equalObject.printStandard !== undefined) {
+        this.assertEqualString(magnitude.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
+
+      }
+      if (equalObject.printScientific !== undefined) {
+        this.assertEqualString(magnitude.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
+      }
+      // add printing
       // add unit
     }
 

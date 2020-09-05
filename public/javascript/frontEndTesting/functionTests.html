@@ -261,6 +261,47 @@
     functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude(4)), 4, 'quadratic', 'run');
     functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude()), Infinity, 'quadratic', 'run');
 
+    functionTests.assertMagnitude(func103.runFunction(new Magnitude('2.0')),{ // -5 * 2**2  = -20
+      firstSigFig: '2',
+      otherSigFigs: '0',
+      orderOfMagnitude: 1,
+      numSigFigs: 2,
+      positive: false,
+      float: -20
+    }, 'quadratic', 'run')
+
+    functionTests.assertMagnitude(func103.runFunction(new Magnitude('-2.0')),{ // no change from above
+      firstSigFig: '2',
+      otherSigFigs: '0',
+      orderOfMagnitude: 1,
+      numSigFigs: 2,
+      positive: false,
+      float: -20
+    }, 'quadratic', 'run')
+
+    functionTests.assertMagnitude(func103.runFunction(new Magnitude('-100')),{ ///-5 * 100 * 100 => -50000 -5e4
+      firstSigFig: '5',
+      otherSigFigs: '',
+      orderOfMagnitude: 4,
+      numSigFigs: 1,
+      positive: false,
+      float: -50000,
+      printStandard: "-50000",
+      printScientific: "-5e4"
+    }, 'quadratic', 'run')
+
+    functionTests.assertMagnitude(func103.runFunction(new Magnitude('-100.')),{ ///-5 * 100 * 100 => -50000 -5e4
+      firstSigFig: '5',
+      otherSigFigs: '0',
+      orderOfMagnitude: 4,
+      numSigFigs: 2,
+      positive: false,
+      float: -50000,
+      printStandard: "-5.0e4",
+      printScientific: "-5.0e4"
+    }, 'quadratic', 'run')
+
+
     $("#putItHere").append(functionTests.printAllTests());
 
 </script>
