@@ -193,14 +193,14 @@ class TestPackage {
       }
 
       if (equalObject.printOptimal !== undefined) {
-        this.assertEqualString(magnitude.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
+        this.assertEqualStrict(magnitude.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
       }
       if (equalObject.printStandard !== undefined) {
-        this.assertEqualString(magnitude.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
+        this.assertEqualStrict(magnitude.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
 
       }
       if (equalObject.printScientific !== undefined) {
-        this.assertEqualString(magnitude.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
+        this.assertEqualStrict(magnitude.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
       }
       // add printing
       // add unit

@@ -37,21 +37,25 @@
 <script>
     let functionTests = new TestPackage('Function Tests');
     functionTests.addCategory('constant','Constant Functions');
+    functionTests.addSubCategory('constant','parameters','Constant Function Parameters');
     functionTests.addSubCategory('constant','run','Run Constant Function');
     functionTests.addSubCategory('constant','differentiate','Differentiate Constant Function');
     functionTests.addSubCategory('constant','integrate','Integrate Constant Function');
 
     functionTests.addCategory('linear','Linear Functions');
+    functionTests.addSubCategory('linear','parameters','Linear Function Parameters');
     functionTests.addSubCategory('linear','run','Run Linear Function');
     functionTests.addSubCategory('linear','differentiate','Differentiate Linear Function');
     functionTests.addSubCategory('linear','integrate','Integrate Linear Function');
 
     functionTests.addCategory('quadratic','Quadratic Functions');
+    functionTests.addSubCategory('quadratic','parameters','Quadratic Function Parameters');
     functionTests.addSubCategory('quadratic','run','Run Quadratic Function');
     functionTests.addSubCategory('quadratic','differentiate','Differentiate Quadratic Function');
     functionTests.addSubCategory('quadratic','integrate','Integrate Quadratic Function');
 
     functionTests.addCategory('zero','Zero Functions');
+    functionTests.addSubCategory('zero','parameters','Zero Function Parameters');
     functionTests.addSubCategory('zero','run','Run Zero Function');
     functionTests.addSubCategory('zero','differentiate','Differentiate Zero Function');
     functionTests.addSubCategory('zero','integrate','Integrate Zero Function');
@@ -257,6 +261,7 @@
 
 
     let func103 = new QuadraticFunction(new Magnitude('-5.0'));
+    functionTests.assertEqualStrict(func103.parameterSigFigs, 2, 'quadratic', 'parameters');
     functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude(1)), 1, 'quadratic', 'run');
     functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude(4)), 4, 'quadratic', 'run');
     functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude()), Infinity, 'quadratic', 'run');
@@ -300,6 +305,30 @@
       printStandard: "-5.0e4",
       printScientific: "-5.0e4"
     }, 'quadratic', 'run')
+
+    functionTests.assertMagnitude(func103.differentiate(new Magnitude('2.00')), { // -5 * 2 * 2 = -20 => -20. [2 sig figs]
+      firstSigFig: '2',
+      otherSigFigs: '0',
+      orderOfMagnitude: 1,
+      numSigFigs: 2,
+      positive: false,
+      float: -20,
+      printStandard: '-20.',
+      printScientifc: '-2.0e1',
+      printOptimal: '-20.'
+    }, 'quadratic', 'differentiate')
+
+    functionTests.assertMagnitude(func103.differentiate(new Magnitude('-2.00')), { // -5 * 2 * -2 = 20 => 20. [2 sig figs]
+      firstSigFig: '2',
+      otherSigFigs: '0',
+      orderOfMagnitude: 1,
+      numSigFigs: 2,
+      positive: true,
+      float: 20,
+      printStandard: '20.',
+      printScientifc: '2.0e1',
+      printOptimal: '20.'
+    }, 'quadratic', 'differentiate')
 
 
     $("#putItHere").append(functionTests.printAllTests());

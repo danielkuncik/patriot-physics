@@ -191,8 +191,18 @@ class Magnitude extends PhysicsNumber {
   }
 
 
+// can make more efficient for zeros?
   multiplyMag(anotherMagnitude) {
-      const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+    let newSigFigs;
+      if (this.zero && anotherMagnitude.zero) { // rules of sig fig multiplication are a little different if one of the values is zero
+        newSigFigs = Math.max(this.numSigFigs, anotherMagnitude.numSigFigs);
+      } else if (this.zero) {
+        newSigFigs = this.numSigFigs;
+      } else if (anotherMagnitude.zero) {
+        newSigFigs = anotherMagnitude.numSigFigs;
+      } else {
+        newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+      }
       const newUnit = multiplyUnits(this.unit, anotherMagnitude.unit);
       const exact = newSigFigs === Infinity;
       const newFloat = this.getFloat() * anotherMagnitude.getFloat();

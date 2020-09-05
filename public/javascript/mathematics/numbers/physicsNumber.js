@@ -392,10 +392,11 @@ class PhysicsNumber {
           return this.printZero()
       }
       const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
+      const sign = (this.positive === false) ? '-' : '';
       if (this.numSigFigs === 1) {
-          return `${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
+          return `${sign}${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
       } else {
-          return `${exactly}${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
+          return `${exactly}${sign}${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
       }
   }
 
@@ -638,4 +639,3 @@ class PhysicsNumber {
 function percentDifference(inputted, expected) {
     return (Math.abs(inputted - expected) / expected) * 100
 }
-
