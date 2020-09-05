@@ -170,7 +170,7 @@
     }, 'linear', 'differentiate');
 
     let func101 = new QuadraticFunction(new Magnitude('2.00'));
-    functionTests.assertZeroMagnitude(func101.runFunction(constructZeroMagnitude()), 3, 'quadratic', 'run');
+    functionTests.assertZeroMagnitude(func101.runFunction(constructZeroMagnitude()), Infinity, 'quadratic', 'run'); // exact zero times any number should be zero
     functionTests.assertMagnitude(func101.runFunction(new Magnitude('4.00')), {
         firstSigFig: '3',
         otherSigFigs: '20',
@@ -208,7 +208,7 @@
     }, 'quadratic', 'run');
 
     functionTests.assertMagnitude(func101.differentiate(new Magnitude('3.00')), { // y = 4x = 12
-        firstSigFig: '1',
+        'firstSigFig': '1',
         'otherSigFigs': '20',
         'orderOfMagnitude': 1,
         'numSigFigs': 3,
@@ -217,7 +217,7 @@
     }, 'quadratic', 'differentiate');
 
     functionTests.assertMagnitude(func101.differentiate(new Magnitude('-3.00')), { // y = 4x = 12
-        firstSigFig: '1',
+        'firstSigFig': '1',
         'otherSigFigs': '20',
         'orderOfMagnitude': 1,
         'numSigFigs': 3,
@@ -226,7 +226,7 @@
     }, 'quadratic', 'differentiate');
 
     functionTests.assertMagnitude(func101.differentiate(new Magnitude('3')), { // y = 4x = 12
-        firstSigFig: '1',
+        'firstSigFig': '1',
         'otherSigFigs': '',
         'orderOfMagnitude': 1,
         'numSigFigs': 1,
@@ -235,13 +235,31 @@
     }, 'quadratic', 'differentiate');
 
     functionTests.assertMagnitude(func101.differentiate(new Magnitude('-3')), { // y = 4x = 12
-        firstSigFig: '1',
+        'firstSigFig': '1',
         'otherSigFigs': '',
         'orderOfMagnitude': 1,
         'numSigFigs': 1,
         'positive': false,
         'float': -12
     }, 'quadratic', 'differentiate');
+
+    let func102 = new QuadraticFunction(); // default is y = x^2
+    console.log(func102);
+
+    functionTests.assertMagnitude(func102.runFunction(new Magnitude('8')), { // 64
+      firstSigFig: '6',
+      otherSigFigs: '',
+      orderOfMagnitude: 1,
+      numSigFigs: 1,
+      positive: true,
+      float: 64
+    }, 'quadratic', 'run');
+
+
+    let func103 = new QuadraticFunction(new Magnitude('-5.0'));
+    functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude(1)), 1, 'quadratic', 'run');
+    functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude(4)), 4, 'quadratic', 'run');
+    functionTests.assertZeroMagnitude(func103.runFunction(constructZeroMagnitude()), Infinity, 'quadratic', 'run');
 
     $("#putItHere").append(functionTests.printAllTests());
 

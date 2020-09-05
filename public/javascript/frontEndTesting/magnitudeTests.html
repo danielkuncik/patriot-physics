@@ -46,7 +46,7 @@ magnitudeTests.assertEqualStrict(mag001.positive, undefined, 'constructor', 'und
     "numSigFigs": 7,
     "positive": true
   }, 'constructor', 'integers');
-  
+
   let mag002 = new Magnitude('12412123');
   magnitudeTests.assertEqualStrict(mag002.isAmagnitude, true, 'constructor', 'integers');
   magnitudeTests.assertEqualStrict(mag002.firstSigFig, '1', 'constructor', 'integers');
@@ -1813,6 +1813,14 @@ magnitudeTests.assertEqualStrict(mag3010.orderOfMagnitude, undefined, 'operation
 magnitudeTests.assertEqualStrict(mag3010.numSigFigs, undefined, 'operations','addition')
 magnitudeTests.assertEqualStrict(mag3010.positive, undefined, 'operations','addition')
 */
+
+magnitudeTests.addSubCategory('operations','zeroes','Operations With Zero');
+
+let mag3050a = constructZeroMagnitude(); // exactly zero
+let mag3050b = new Magnitude('5.00');
+
+magnitudeTests.assertZeroMagnitude(mag3050a.multiplyMag(mag3050b), Infinity, 'operations', 'zeroes'); /// a number times exactly zero should be exactly zero; regradless of initial sig figs
+magnitudeTests.assertZeroMagnitude(mag3050b.multiplyMag(mag3050a), Infinity, 'operations', 'zeroes');
 
 
 magnitudeTests.addSubCategory('operations','infinities','Operations With Infinity');

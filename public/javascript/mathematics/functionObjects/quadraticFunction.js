@@ -1,5 +1,5 @@
 class QuadraticFunction extends Polynomial {
-    constructor(a, b = constructZeroMagnitude(), c = constructZeroMagnitude(), xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
+    constructor(a = new Magnitude('1', undefined, undefined, true), b = constructZeroMagnitude(), c = constructZeroMagnitude(), xMin, xMax, closedCircleAtMin, closedCircleAtMax) {
         if (a === 0) {
             return new LinearFunction(b, c, xMax, xMin, closedCircleAtMin, closedCircleAtMax)
         }

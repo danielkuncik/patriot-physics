@@ -763,6 +763,7 @@ class PolygonF {
         this.orientation = 'counterclockwise';
     }
 
+
     calculateParameters() {
         this.lengths = [];
         this.angles = [];
@@ -997,6 +998,27 @@ class TriangleF extends PolygonF {
         this.segmentA = oldSegmentC;
         this.segmentB = oldSegmentA;
         this.segmentC = oldSegmentB;
+    }
+
+    getSideLength(side) {
+      if (side === 'A') {
+        return this.sideLengthA
+      } else if (side === 'B') {
+        return this.sideLengthB
+      } else if (side === 'C') {
+        return this.sideLengthC
+      }
+      // add options for H, X, and Y
+    }
+
+    getAngle(vertex) {
+      if (vertex === 'A') {
+        return this.angleA
+      } else if (vertex === 'B') {
+        return this.angleB
+      } else if (vertex === 'C') {
+        return this.angleC
+      }
     }
 
     isRightTriangle() {

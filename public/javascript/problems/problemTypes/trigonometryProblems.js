@@ -265,7 +265,40 @@ function inverseCosineProblem(adjacent, hypotenuse, swapLegs) {
 // Unknown triangle problems: knowing minimum information, solve for all unknown information abotua  triangle
 
 
-function unknownRightTriangle1(leg1, leg2, swap) { // two legs known
+function unknownRightTriangleLegLeg(leg1, leg2, swap) { // two legs known
+    let problemTrianglePad = newGeometryPad();
+    let answerTrianglePad = newGeometryPad();
+    let problem = new Problem();
+
+    let myTriangle = constructRightTriangleTwoLegsF(leg1, leg2, swap);
+
+    problemTrianglePad.addTriangle(myTriangle);
+    answerTrianglePad.addTriangle(myTriangle);
+
+    problemTrianglePad.labelTriangleSide('A');
+    problemTrianglePad.labelTriangleSide('B');
+
+    answerTrianglePad.labelTriangleSide('A');
+    answerTrianglePad.labelTriangleSide('B');
+
+    let var1 = problemTrianglePad.labelUnknownTriangleSide('C');
+    answerTrianglePad.labelTriangleSide('C');
+    problem.addAnswer(var1, myTriangle.getSideLength('C'));
+
+    let var2 = problemTrianglePad.labelUnknownAngle('A');
+    answerTrianglePad.labelTriangleAngle('A');
+    problem.addAnswer(var2, myTriangle.getAngle('A'));
+
+    let var3 = problemTrianglePad.labelUnknownAngle('B');
+    answerTrianglePad.labelTriangleAngle('B');
+    problem.addAnswer(var3, myTriangle.getAngle('B'));
+
+    problem.addDiagram(problemTrianglePad);
+    problem.addAnswer('diagram',answerTrianglePad);
+
+    return problem
+
+/*
     let problemTriangle = new GeometryPad();
     let answerTriangle = new GeometryPad();
     if (swap) {
@@ -286,12 +319,49 @@ function unknownRightTriangle1(leg1, leg2, swap) { // two legs known
         problem: problemTriangle,
         answer: answerTriangle
     }
+    */
 }
 
 
 /// CHECK THAT THE KNOWN INFORMATION IS THE INFORMATION PRESENTED!!!!!
-function unknownRightTriangle2(leg1, hypotenuse, swap) { // one leg and hypotenuse known
-    let problemTriangle = new GeometryPad();
+function unknownRightTriangleHypotenuseLeg(hypotenuse, leg, swap) { // one leg and hypotenuse known
+  let problemTrianglePad = newGeometryPad();
+  let answerTrianglePad = newGeometryPad();
+  let problem = new Problem();
+
+  let myTriangle = constructRightTriangleHypotenuseLegF(hypotenuse, leg, swap);
+
+  problemTrianglePad.addTriangle(myTriangle);
+  answerTrianglePad.addTriangle(myTriangle);
+
+  let knownSide = swap ? 'B' : 'A';
+  let unknownSide = swap ? 'A' : 'B';
+
+  problemTrianglePad.labelTriangleSide(knownSide);
+  answerTrianglePad.labelTriangleSide(unknownSide);
+
+  let var1 = problemTrianglePad.labelTriangleSide(unknownSide);
+  answerTrianglePad.labelTriangleSide(unknownSide);
+  problem.addAnswer(var1, triangle.getSide(unknownSide));
+
+  problemTrianglePad.labelTriangleSide('C'); // hypotenuse known
+  answerTrianglePad.labelTriangleSide('C');
+
+  let var2 = problemTrianglePad.labelUnknownAngle('A');
+  answerTrianglePad.labelTriangleAngle('A');
+  problem.addAnswer(var2, myTriangle.getAngle('A'));
+
+  let var3 = problemTrianglePad.labelUnknownAngle('B');
+  answerTrianglePad.labelTriangleAngle('B');
+  problem.addAnswer(var3, myTriangle.getAngle('B'));
+
+  problem.addDiagram(problemTrianglePad);
+  problem.addAnswer('diagram',answerTrianglePad);
+
+  return problem
+
+
+  /*  let problemTriangle = new GeometryPad();
     let answerTriangle = new GeometryPad();
     if (swap) {
         problemTriangle.addTriangleSSS(Math.sqrt(hypotenuse**2 - leg1**2),leg1,hypotenuse);
@@ -313,10 +383,50 @@ function unknownRightTriangle2(leg1, hypotenuse, swap) { // one leg and hypotenu
         problem: problemTriangle,
         answer: answerTriangle
     }
+    */
 }
 
-function unknownRightTriangle3(leg, angle, swap) { ///if swap, the opposite angle becomes the known information!
-    let problemTriangle = new GeometryPad();
+function unknownRightTriangleLegAngle(leg, angle, swap) { ///if swap, the opposite angle becomes the known information!
+
+  let problemTrianglePad = newGeometryPad();
+  let answerTrianglePad = newGeometryPad();
+  let problem = new Problem();
+
+  let myTriangle = constructRightTriangleLegAngleF(leg, angle, swap);
+
+  let unknownAngle = swap ? 'B' : 'A';
+  let knownAngle = swap ? 'A': 'B';
+
+  let unknownLeg = swap ? 'B' : 'A'; // is there more than one option here, should I have multiple swaps of legs and angles???
+  let knownLeg = swap ? 'A': 'B';
+
+  problemTrianglePad.addTriangle(myTriangle);
+  answerTrianglePad.addTriangle(myTriangle);
+
+  problemTrianglePad.labelTriangleSide(knownLeg);
+  answerTrianglePad.labelTriangleSide(knownLeg);
+
+  let var1 = problemTrianglePad.labelUnknownTriangleSide(unknownSide); // reverse these if swap???
+  answerTrianglePad.labelTriangleSide(unknownSide);
+  problem.addAnswer(var1, myTriangle.getSideLength(unknownSide));
+
+  let var2 = problemTrianglePad.labelUnknownTriangleSide('C');
+  answerTrianglePad.labelTriangleSide('C');
+  problem.addAnswer(var2, myTriangle.getSideLength('C'));
+
+  problemTrianglePad.labelAngle(knownAngle);
+  answerTrianglePad.labelTriangleAngle(knownAngle);
+  
+  let var3 = problemTrianglePad.labelUnknownAngle(unknownAngle);
+  answerTrianglePad.labelTriangleAngle(unknownAngle);
+  problem.addAnswer(var3, myTriangle.getAngle(unknownAngle));
+
+  problem.addDiagram(problemTrianglePad);
+  problem.addAnswer('diagram',answerTrianglePad);
+
+  return problem
+
+  /*  let problemTriangle = new GeometryPad();
     let answerTriangle = new GeometryPad();
     if (swap) {
         problemTriangle.addTriangleASA(angle, leg, 90);
@@ -339,11 +449,48 @@ function unknownRightTriangle3(leg, angle, swap) { ///if swap, the opposite angl
     return {
         problem: problemTriangle,
         answer: answerTriangle
-    }
+    } */
 }
 
-function unknownRightTriangle4(angle, hypotenuse, swap) {
-    let problemTriangle = new GeometryPad();
+function unknownRightTriangleHypotenuseAngle(hypotenuse, angle, swap) {
+
+  let problemTrianglePad = newGeometryPad();
+  let answerTrianglePad = newGeometryPad();
+  let problem = new Problem();
+
+  let myTriangle = constructRightTriangleHypotenuseAngleF(hypotenuse, angle, swap);
+
+  let unknownAngle = swap ? 'B' : 'A';
+  let knownAngle = swap ? 'A': 'B';
+
+  problemTrianglePad.addTriangle(myTriangle);
+  answerTrianglePad.addTriangle(myTriangle);
+
+  let var1 = problemTrianglePad.labelUnknownTriangleSide('A'); // reverse these if swap???
+  let var2 = problemTrianglePad.labelUnknownTriangleSide('B');
+  answerTrianglePad.labelTriangleSide('A');
+  answerTrianglePad.labelTriangleSide('B');
+  problem.addAnswer(var1, myTriangle.getSideLength('A'));
+  problem.addAnswer(var2, myTriangle.getSideLength('B'));
+
+  problemTrianglePad.labelTriangleSide('C');
+  answerTrianglePad.labelTriangleSide('C');
+
+  problemTrianglePad.labelAngle(knownAngle);
+  answerTrianglePad.labelTriangleAngle(knownAngle);
+
+
+  let var3 = problemTrianglePad.labelUnknownAngle(unknownAngle);
+  answerTrianglePad.labelTriangleAngle(unknownAngle);
+  problem.addAnswer(var3, myTriangle.getAngle(unknownAngle));
+
+  problem.addDiagram(problemTrianglePad);
+  problem.addAnswer('diagram',answerTrianglePad);
+
+  return problem
+
+
+    /*let problemTriangle = new GeometryPad();
     let answerTriangle = new GeometryPad();
 
     if (swap) {
@@ -365,5 +512,5 @@ function unknownRightTriangle4(angle, hypotenuse, swap) {
     return {
         problem: problemTriangle,
         answer: answerTriangle
-    }
+    }*/
 }

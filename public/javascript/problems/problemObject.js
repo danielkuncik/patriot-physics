@@ -56,6 +56,10 @@ class Problem {
           thisAnswer["magnitude"] = answer;
           thisAnswer['string'] = answer.printOptimal();
         }
+        if (answer.diagram) {
+          thisAnswer["type"] = 'diagram';
+          thisAnswer["diagram"] = answer;
+        }
       /// give options for physics number, diagram, etc.
     }
     this.answers[variable] = thisAnswer;

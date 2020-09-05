@@ -42,6 +42,28 @@ class Triangle extends Polygon {
         return this.angleA.isRight(numSigFigs) || this.angleB.isRight(numSigFigs) || this.angleC.isRight(numSigFigs)
     }
 
+    getSideLength(side) {
+      if (side === 'A') {
+        return this.sideLengthA
+      } else if (side === 'B') {
+        return this.sideLengthB
+      } else if (side === 'C') {
+        return this.sideLengthC
+      }
+      // add options for H, X, and Y
+    }
+
+    getAngle(vertex) {
+      if (vertex === 'A') {
+        return this.angleA
+      } else if (vertex === 'B') {
+        return this.angleB
+      } else if (vertex === 'C') {
+        return this.angleC
+      }
+    }
+
+
     // 8-13-2020: giving answers slightly too high, a problem with 'get length?, or 'get altitude?'
     calculateArea() {
         let area;
