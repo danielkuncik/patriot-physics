@@ -151,10 +151,7 @@ function clickAnswerButton() {
         if (input === '') {
             return undefined
         }
-        const inputtedAnswer = new Magnitude(input);
-        const answer = pageAnswers[uuid].magnitude; // for magnitudes
-        const result = answer.correctInputtedAnswer(inputtedAnswer);
-        // display result
+        const result = checkAnswer(uuid, input);
         if (result.correct) {
             $(inputSpace).addClass('border border-success'); // delete class first?
         } else {

@@ -38,7 +38,7 @@ class Problem {
 
 //  addAnswerVariableObject(variableObject);
 
-  addAnswer(variable, answer, name = variable) {
+  addAnswer(variable, answer, exact = false, name = variable) {
     let thisAnswer = {
       name: name,
       id: create_UUID()
@@ -48,8 +48,13 @@ class Problem {
         thisAnswer['type'] = 'string';
     } else if (typeof(answer) === 'number') {
       thisAnswer["string"] = String(answer);
-      thisAnswer['type'] = 'float';
-      thisAnswer['float'] = answer;
+      if (exact) {
+        thisAnswer['type'] = 'exactNumber';
+        thisAnswer['number'] = answer;
+      } else {
+        thisAnswer['type'] = 'float';
+        thisAnswer['float'] = answer;
+      }
     } else if (typeof(answer) === 'object') {
         if (answer.isAmagnitude) {
           thisAnswer["type"] = 'magnitude';
@@ -66,6 +71,7 @@ class Problem {
     pageAnswers[thisAnswer.id] = thisAnswer;
     return thisAnswer
   }
+
 
   deleteAnswer() {
     this.answer = undefined;
@@ -122,6 +128,27 @@ class Problem {
   }
 }
 
+function checkAnswer(uuid, input) {
+  const answerObject = pageAnswers[uuid];
+  if (answerObject.type === 'string') {
+    return {
+      correct: input === answerObject.string
+    }
+  } else if (answerObject.type === 'exactNumber') {
+    return {
+      correct: Number(input) === answerObject.number
+    }
+  } else if (answerObject.type === 'float') {
+      return {
+        correct: percentDifference(Number(input), answerObject.float) < 1
+      }
+  } else if (answerObject.type === 'magnitude') {
+      let newMagnitude = new Magnitude(input); // consider units
+      return answerObject.magnitude.correctInputtedAnswer(input)
+  } else if (answerObject.type === 'diagram') {
+      return undefined // not sure how to handle this
+  }
+}
 
 
 /// ADD A PROBLEM LIST OBJECT!!!!!!!
