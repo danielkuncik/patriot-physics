@@ -27,10 +27,24 @@
 let myDiagram = new Diagram();
 let point1 = makeOrigin(undefined, true);
 let point2 = new Point(new Magnitude('3.000'), new Magnitude('3.0000'));
-myDiagram.addSegment(new Segment(point1, point2));
+let mySegment = new Segment(point1, point2);
+let angle = mySegment.getAngleToHorizontal().convertToDegrees(); // i should make this a test! create 'segment tests'
+console.log(angle.printString());
+myDiagram.addSegment(mySegment);
 let pointCenter = new Point(new Magnitude('5.0000'), new Magnitude('5.0000'));
 let radius = new Magnitude('1.0000');
 myDiagram.addCircle(new Circle(pointCenter, radius));
+
+//     constructor(letters, referencePoint, relativeFontSize, positioning, rotationAngle) {
+let myText = new Text('xxx', pointCenter, 1); // a little too small but it works
+myDiagram.addText(myText);
+
+let text2 = mySegment.labelAbove('qqq');
+text2.drawBorder();
+
+
+myDiagram.addText(text2);
+
 $("#putItHere").append(myDiagram.drawCanvas());
 
 

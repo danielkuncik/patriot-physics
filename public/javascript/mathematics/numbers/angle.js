@@ -14,7 +14,7 @@ class Angle extends PhysicsNumber {
         const exact = this.numSigFigs === Infinity;
         const intermediateValue = this.intermediateValue;
         const degrees = this.degrees;
-        return new PhysicsNumber(string, degrees, intermediateValue, exact)
+        return new Angle(string, degrees, intermediateValue, exact)
     }
 
     reverseSign() { // need to remake this because i needed to remake duplicate

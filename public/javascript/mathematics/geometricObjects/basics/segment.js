@@ -154,7 +154,121 @@ class Segment {
     }
 
     getAngleToHorizontal() {
-      return this.pointA.getAngleToAnotherPoint(this.pointB)
+      return this.point1.getAngleToAnotherPoint(this.point2)
     }
+
+
+
+    // creating text
+    // think about whether I want these to be methods of segment
+
+    getOptimalLocationOfText(turningOrientation = 'clockwise') {
+        let bestSpot;
+
+        // optimal locations for clockwise orientation
+        switch(this.point1.getQuadrantOfAnotherPoint(this.point2)) {
+            case '1':
+                bestSpot = 'left';
+                break;
+            case '2':
+                bestSpot = 'left';
+                break;
+            case '3':
+                bestSpot = 'right';
+                break;
+            case '4':
+                bestSpot = 'right';
+                break;
+            case '+X':
+                bestSpot = 'above';
+                break;
+            case '-X':
+                bestSpot = 'below';
+                break;
+            case '+Y':
+                bestSpot = 'left';
+                break;
+            case '-Y':
+                bestSpot = 'right';
+                break;
+            default:
+                bestSpot = undefined;
+        }
+
+        // make clockwise the default
+        //// FIX FIX FIX FIX FIX
+        /// make clockwise default and fix this
+
+        // optimal spots for counter-clockwise orientation
+        // if (angleInRadians >= 0 && angleInRadians < Math.PI / 4) {
+        //     bestSpot = 'below';
+        // } else if (angleInRadians >= Math.PI / 4 && angleInRadians <= 3 * Math.PI / 4) {
+        //     bestSpot = 'left';
+        // } else if (angleInRadians > 3 * Math.PI / 4 && angleInRadians < 5 * Math.PI / 4) {
+        //     bestSpot = 'above';
+        // } else if (angleInRadians >= 5 * Math.PI / 4 && angleInRadians <= 7 * Math.PI / 4) {
+        //     bestSpot = 'right';
+        // } else if (angleInRadians > 7 * Math.PI / 4 && angleInRadians <= Math.PI * 2 ) {
+        //     bestSpot =  'below';
+        // } else {
+        //     bestSpot = undefined;
+        // }
+        if (turningOrientation === 'counterclockwise') { // rather than clockwise
+            if (bestSpot === 'right') {
+                bestSpot = 'left';
+            } else if (bestSpot === 'left') {
+                bestSpot = 'right';
+            } else if (bestSpot === 'above') {
+                bestSpot = 'below';
+            } else if (bestSpot === 'below') {
+                bestSpot = 'above';
+            }
+        }
+
+        return bestSpot
+    }
+
+    label(letters, position, relativeFontSizeFloat = (this.getLength()).getFloat() * 0.1, textDisplacement = constructMagnitudeFromFloat(relativeFontSizeFloat / 2, undefined, undefined, true), positionOnSegment = 0.5) {
+        let referencePoint = this.point1.interpolate(this.point2, positionOnSegment);
+
+        let positioning;
+        if (position === 'above') {
+          positioning = 'aboveCenter';
+        } else if (position === 'below') {
+          positioning = 'belowCenter'; // hanging
+        }
+        // add right and left
+
+       let rotationAngle = this.getAngleToHorizontal();
+
+        return new Text(letters, referencePoint, relativeFontSizeFloat, positioning, rotationAngle)
+    }
+
+    labelAbove(letters, relativeFontSize, textDisplacement, positionOnSegment) {
+        return this.label(letters, 'above', relativeFontSize, textDisplacement, positionOnSegment)
+    }
+
+    labelBelow(letters, relativeFontSize, textDisplacement, positionOnSegment) {
+        return this.label(letters, 'below', relativeFontSize, textDisplacement, positionOnSegment)
+    }
+
+    labelRight(letters, relativeFontSize, textDisplacement, positionOnSegment) {
+        return this.label(letters, 'right', relativeFontSize, textDisplacement, positionOnSegment)
+    }
+
+    labelLeft(letters, relativeFontSize, textDisplacement, positionOnSegment) {
+        return this.label(letters, 'left', relativeFontSize, textDisplacement, positionOnSegment)
+    }
+
+    labelClockwise(letters, relativeFontSize, textDisplacement, positionOnSegment) {
+      let position = this.getOptimalLocationOfText('clockwise');
+      return this.label(letters, position, relativeFontSize, textDisplacement, positionOnSegment)
+    }
+
+    labelCounterClockwise() {
+      let position = this.getOptimalLocationOfText('counterclockwise');
+      return this.label(letters, position, relativeFontSize, textDisplacement, positionOnSegment)
+    }
+
 
 }

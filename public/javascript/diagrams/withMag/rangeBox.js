@@ -232,9 +232,7 @@ class RangeBox {
 }
 // does this make a duplicate of the center Point??
 function constructRangeBoxFromCenter(centerPoint, width, height) {
-    console.log(centerPoint, width, height);
     let lowerLeftPoint = centerPoint.translateAndReproduce((width.divideMagExactConstant(2)).reverseSign(), (height.divideMagExactConstant(2)).reverseSign());
-    console.log(lowerLeftPoint);
     return new RangeBox(lowerLeftPoint, width, height);
 }
 

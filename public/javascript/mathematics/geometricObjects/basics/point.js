@@ -49,11 +49,11 @@ class Point {
 
     /// I CHANGED THE NAME!!! (from trnalstae and reproduce polar)
     translatePolarAndReproduce(radius, angleObject) {
-        if (!radius.isAmagnitude || !angleObject.isAmagnitude) {
+        if (!radius.isAmagnitude || !angleObject.isAnAngle) {
             return false
         }
-        let xTranslation = radius.multiplyMag(angleObject.cosMag());
-        let yTranslation = radius.multiplyMag(angleObject.sinMag());
+        let xTranslation = radius.multiplyMag(angleObject.cosAngle());
+        let yTranslation = radius.multiplyMag(angleObject.sinAngle());
         return this.translateAndReproduce(xTranslation, yTranslation)
     }
 
@@ -166,10 +166,18 @@ class Point {
     // so if propotion = 0.5, it will be halfway between the points
     // and if proportion = 2, it will be twice as far away as the other Point (so it can actually interpolate and extrapolate)
     // what if proportion is negative????
-    interpolate(anotherPoint, proportionMagnitude) {
+    interpolate(anotherPoint, proportion) {
+        let proportionMagnitude;
+        if (typeof(proportion) === 'number') {
+          proportionMagnitude = constructMagnitudeFromFloat(proportion, undefined, undefined, true);
+        } else if (typeof(proportion) === 'object' && proportion.isAmagnitude) {
+          proportionMagnitude = proportion;
+        } else {
+          return undefined
+        }
         let theta = this.getAngleToAnotherPoint(anotherPoint);
         let L = this.getDistanceToAnotherPoint(anotherPoint).multiplyMag(proportionMagnitude);
-        return constructPointPolar(L, theta)
+        return this.translatePolarAndReproduce(L, theta)
     }
 
     // this is identical to 'translatePolarAndReproduce

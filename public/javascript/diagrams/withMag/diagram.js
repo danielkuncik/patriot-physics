@@ -553,9 +553,10 @@ class Diagram {
 
     addText(textObject) {
       this.addRangeBox(textObject.rangeBox);
+      this.addPoint(textObject.referencePoint); // otherwise it won't scale
       this.texts.push(textObject);
-      if (textObject.boxAround) {
-        let rangeBox = textObject.rangeBox();
+      if (textObject.solidBorder) {
+        let rangeBox = textObject.rangeBox;
         this.addSegment(new Segment(rangeBox.lowerLeftPoint, rangeBox.lowerRightPoint));
         this.addSegment(new Segment(rangeBox.lowerRightPoint, rangeBox.upperRightPoint));
         this.addSegment(new Segment(rangeBox.upperRightPoint, rangeBox.upperLeftPoint));
@@ -1146,28 +1147,34 @@ class Diagram {
             ctx.arc(wiggleRoom + arcObject.center.x, canvasHeight - wiggleRoom - arcObject.center.y, arcObject.radius, start, end, anticlockwise);
             ctx.stroke();
         });
-
+*/
         /// texts come last so they are not written over
         this.texts.forEach((textObject) => {
-            ctx.font = String(textObject.relativeFontSize) + unit + " " + String(textObject.font);
+            const fontSize = textObject.relativeFontSize;
+            ctx.font = `${fontSize}${unit} ${textObject.font}`;//String(font) + unit + " " + String(textObject.font);
             ctx.fillStyle = textObject.color;
             ctx.textAlign = textObject.alignment;
             ctx.textBaseline = textObject.baseline;
+            const rotation = textObject.rotationAngle ? (textObject.rotationAngle.convertToRadians()).getFloat() : 0;
+      
+            console.log(ctx.textAlign);
+            console.log(ctx.textBaseline);
 
             //// MUST ADD IF/THEN STATEMENT TO SET THE REFERENCE POINT BASED UPON THE TEXT ALIGNMENT AND BASELINE
+            // not sure what this means? i have that in the text object definition
 
-            if (Math.abs(textObject.rotationAngleInRadians) > 1e-10) {
-                ctx.translate(wiggleRoom + textObject.referencePoint.x, canvasHeight - textObject.referencePoint.y - wiggleRoom);
-                ctx.rotate(textObject.rotationAngleInRadians);
+            if (Math.abs(rotation) > 1e-10) {
+                ctx.translate(wiggleRoom + textObject.referencePoint.x.getFloat(), canvasHeight - textObject.referencePoint.y.getFloat() - wiggleRoom);
+                ctx.rotate(-1 *rotation);
                 ctx.fillText(textObject.letters, 0, 0);
-                ctx.rotate(-1 * textObject.rotationAngleInRadians);
-                ctx.translate(-1 * (wiggleRoom + textObject.referencePoint.x), -1 * ( canvasHeight - textObject.referencePoint.y - wiggleRoom));
+                ctx.rotate(rotation);
+                ctx.translate(-1 * (wiggleRoom + textObject.referencePoint.x.getFloat()), -1 * ( canvasHeight - textObject.referencePoint.y.getFloat() - wiggleRoom));
             } else {
-                ctx.fillText(textObject.letters, wiggleRoom + textObject.referencePoint.x, canvasHeight - textObject.referencePoint.y - wiggleRoom);
+                ctx.fillText(textObject.letters, wiggleRoom + textObject.referencePoint.x.getFloat(), canvasHeight - textObject.referencePoint.y.getFloat() - wiggleRoom);
             }
 
         });
-*/
+
 
         // before finishing, undo transformations
         if (!forceSize) {
