@@ -1778,6 +1778,112 @@ magnitudeTests.assertMagnitude(mag3008a, {
       'positive': false
   }, 'operations', 'reverseSign');
 
+
+  magnitudeTests.addSubCategory('operations', 'differentOrderOfMagnitudeAddition', 'Addition of Different Orders of Magnitude');
+
+  let mag3301a = new Magnitude('1000000');
+  let mag3301b = new Magnitude('2');
+
+  magnitudeTests.assertMagnitude(mag3301a.addMag(mag3301b),{
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: 6,
+    numSigFigs: 1,
+    float: 1000002,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  magnitudeTests.assertMagnitude(mag3301b.addMag(mag3301a),{
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: 6,
+    numSigFigs: 1,
+    float: 1000002,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  let mag3302a = new Magnitude('1.00e6');
+  let mag3302b = new Magnitude('2');
+  magnitudeTests.assertMagnitude(mag3302a.addMag(mag3302b),{
+    firstSigFig: '1',
+    otherSigFigs: '00',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    float: 1000002,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  magnitudeTests.assertMagnitude(mag3302b.addMag(mag3302a),{
+    firstSigFig: '1',
+    otherSigFigs: '00',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    float: 1000002,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  let mag3303a = new Magnitude('1.00e6');
+  let mag3303b = new Magnitude('2e4');
+
+  magnitudeTests.assertMagnitude(mag3303a.addMag(mag3303b),{
+    firstSigFig: '1',
+    otherSigFigs: '02',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    float: 1020000,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  magnitudeTests.assertMagnitude(mag3303b.addMag(mag3303a),{
+    firstSigFig: '1',
+    otherSigFigs: '02',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    float: 1020000,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  let mag3304a = new Magnitude('1.00e6');
+  let mag3304b = new Magnitude('2e5');
+  magnitudeTests.assertMagnitude(mag3304a.addMag(mag3304b),{
+    firstSigFig: '1',
+    otherSigFigs: '2',
+    orderOfMagnitude: 6,
+    numSigFigs: 2,
+    float: 1200000,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  magnitudeTests.assertMagnitude(mag3304b.addMag(mag3304a),{
+    firstSigFig: '1',
+    otherSigFigs: '2',
+    orderOfMagnitude: 6,
+    numSigFigs: 2,
+    float: 1200000,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  let mag3305a = new Magnitude('1.00e6');
+  let mag3305b = new Magnitude('2.0e5');
+  magnitudeTests.assertMagnitude(mag3305a.addMag(mag3305b),{
+    firstSigFig: '1',
+    otherSigFigs: '20',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    float: 1200000,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+  magnitudeTests.assertMagnitude(mag3305b.addMag(mag3305a),{
+    firstSigFig: '1',
+    otherSigFigs: '20',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    float: 1200000,
+    positive: true
+  },'operations','differentOrderOfMagnitudeAddition');
+
+
 /*
 ADD SOME NEGATIVES
 ADD SOME 999s
