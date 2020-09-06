@@ -16,6 +16,7 @@
 <p class = 'directions'>
     For each value, determine how many significant figures there are:
 </p>
+<div class = 'addAnswerButton'></div>
 
 <ol class = 'questionList'>
     <li class = 'question' data-answer = '2'>
@@ -46,6 +47,45 @@
         0.0000004
     </li>
 </ol>
+<div class = 'addAnswerButton'></div>
+
+<ol class="questionList">
+    <div class = 'container'>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number1'></div>
+            <div class = 'col-md-6' id = 'number2'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number3'></div>
+            <div class = 'col-md-6' id = 'number4'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number5'></div>
+            <div class = 'col-md-6' id = 'number6'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number7'></div>
+            <div class = 'col-md-6' id = 'number8'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number9'></div>
+            <div class = 'col-md-6' id = 'number10'></div>
+        </div>
+    </div>
+</ol>
+<div class = 'addAnswerButton'></div>
+<script>
+    countingSigFigs('42').displayProblemAsInputOneAnswer('number1');
+    countingSigFigs('42.3').displayProblemAsInputOneAnswer('number2');
+    countingSigFigs('42.0').displayProblemAsInputOneAnswer('number3');
+    countingSigFigs('042.0').displayProblemAsInputOneAnswer('number4');
+    countingSigFigs('2.99e3').displayProblemAsInputOneAnswer('number5');
+    countingSigFigs('5.97219e24','kg').displayProblemAsInputOneAnswer('number6');
+    countingSigFigs('4.560e-3','kg').displayProblemAsInputOneAnswer('number7');
+    countingSigFigs('0.00540').displayProblemAsInputOneAnswer('number8');
+    countingSigFigs('0.0000004').displayProblemAsInputOneAnswer('number9');
+    countingSigFigs('0.00000040000').displayProblemAsInputOneAnswer('number10');
+</script>
 
 <h4>
     An extra rule:

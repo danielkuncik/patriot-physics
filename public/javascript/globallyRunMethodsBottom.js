@@ -140,25 +140,38 @@ $(".formulaSolvingTable").append(formulaSolvingTable2.draw(600,300));
 
 
 /// answer button
-$("div.answerButton").each((div) => {
-    $(div).append($("<button value = 'answer' class = 'answerButton' />"))
-});
+// console.log($("div.answerButton"));
+$("div.addAnswerButton").append($("<button class = 'answerButton' onclick = 'clickAnswerButton()'>ANSWER</button>"));
 
 function clickAnswerButton() {
+    let allRight = true;
     Object.keys(pageAnswers).forEach((uuid) => {
         let inputSpace = $(`#${uuid}`);
         const input = $(inputSpace).val();
         if (input === '') {
+            $(inputSpace).removeClass('border border-danger'); // delete class first?
+            $(inputSpace).removeClass('border border-success'); // delete class first?
+            allRight = false;
             return undefined
         }
         const result = checkAnswer(uuid, input);
         if (result.correct) {
+            $(inputSpace).removeClass('border border-danger'); // delete class first?
             $(inputSpace).addClass('border border-success'); // delete class first?
         } else {
+            $(inputSpace).removeClass('border border-success'); // delete class first?
             $(inputSpace).addClass('border border-danger');
+            allRight = false;
         }
         if (result.comment) {
             $(`#comment-${uuid}`).append(`<span>${result.comment}</span>`);
         }
     });
+    if (allRight) {
+        $("button.answerButton").empty();
+        $("button.answerButton").append("<span>😎</span>");
+    } else {
+        $("button.answerButton").empty();
+        $("button.answerButton").append("<span>ANSWER</span>");
+    }
 }

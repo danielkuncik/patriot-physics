@@ -294,3 +294,16 @@ p.introduction {
     }
 
 }
+
+
+button.answerButton {
+    width: 200px;
+    height: 80px;
+    font-size: 30px;
+}
+
+input.integerInput {
+    width: 100px;
+    height: 60px;
+    font-size: 25px;
+}

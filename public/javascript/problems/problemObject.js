@@ -46,18 +46,22 @@ class Problem {
     if (typeof(answer) === 'string') {
         thisAnswer["string"] = answer;
         thisAnswer['type'] = 'string';
+        thisAnswer.inputType = 'input';
     } else if (typeof(answer) === 'number') {
       thisAnswer["string"] = String(answer);
+      thisAnswer.inputType = 'number';
       if (exact) {
         thisAnswer['type'] = 'exactNumber';
         thisAnswer['number'] = answer;
+        thisAnswer.inputClass = 'integerInput';
       } else {
         thisAnswer['type'] = 'float';
         thisAnswer['float'] = answer;
       }
     } else if (typeof(answer) === 'object') {
-        if (answer.isAmagnitude) {
-          thisAnswer["type"] = 'magnitude';
+      if (answer.isAmagnitude) {
+        thisAnswer.inputType = 'number';
+        thisAnswer["type"] = 'magnitude';
           thisAnswer["magnitude"] = answer;
           thisAnswer['string'] = answer.printOptimal();
         }
@@ -96,15 +100,9 @@ class Problem {
 
   // private method
   createAnswerInput(answerObject) {
-    let inputType;
-    if (answerObject.type === 'float') {
-      inputType = 'input'
-    } else if (answerObject.type === 'string') {
-      inputType = 'number';
-    } else if (answerObject.type === 'magnitude') {
-      inputType = 'number'; // but it's more complicated, that's ok for now!
-    }
-    let input = $(`<input type = '${inputType}' id = '${answerObject.id}'/>`); // add a class
+    let inputType = answerObject.inputType;
+    let inputClass = answerObject.inputClass;
+    let input = $(`<input type = '${inputType}' id = '${answerObject.id}' class = '${inputClass}'/>`); // add a class
     let commentSpace = $(`<p class = 'comment' id = 'comment-${answerObject.id}'/>`);
     let finalDiv = $("<div></div>");
     $(finalDiv).append(input);
@@ -125,6 +123,14 @@ class Problem {
   displayProblemAsLi(appendID) {
     let question = this.displayQuestionAsLi();
 
+  }
+
+  displayProblemAsInputOneAnswer(appendID, answerObject = this.answers[Object.keys(this.answers)[0]]) {
+    let questionLi = this.displayQuestionAsLi();
+    let answerInput = this.createAnswerInput(answerObject);
+    $(`#${appendID}`).append(questionLi);
+    $(`#${appendID}`).append("<br>");
+    $(`#${appendID}`).append(answerInput);
   }
 }
 
