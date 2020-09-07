@@ -207,6 +207,7 @@ class Measurement {
             } else {
               this.numSigFigs = numSigFigs;
             }
+            this.float = Number(stringOrFloat);
         } else if (typeof(stringOrFloat) === 'number') { // process float input
             if (isNaN(stringOrFloat)) {
                 this.invalidate();
@@ -229,10 +230,26 @@ class Measurement {
     }
 
     getFirstSigFig() {
+        if (this.isNegative()) {
+            return this.getFloat().toString()[1]
+        } else {
+            return this.getFloat().toString()[0]
+        }
         return this.firstSigFig
     }
     getOtherSigFigs() {
-        return this.otherSigFigs
+        let numString1 = this.getFloat().toString(); // is there a more efficient way using 'to exponential'???
+        let numString2 = numString1.split('e')[0];
+        let numString3 = numString2.replace('.','');
+        let numString4 = numString3.replace('-','');
+        if (this.isExact()) {
+            return numString4.slice(1)
+        } else {
+            while (numString4.length < this.numSigFigs) {
+                numString4 = numString4 + '0';
+            }
+            return numString4.slice(1,this.numSigFigs)
+        }
     }
     getOrderOfMagnitude() {
         return this.orderOfMagnitude
@@ -438,16 +455,18 @@ class Measurement {
 
 /// what if negative???
     getFloat(abs = false) { // argument is to get absolute value
-        let sign = this.positive || abs ? 1 : -1;
-        if (this.infinity) {
-            return Infinity * sign;
-        } else if (this.zero) {
-            return 0;
-        } else if (this.intermediateValue) {
-            return this.intermediateValue;
-        } else {
-            return Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
-        }
+        return this.float;
+
+        // let sign = this.isPositive() || abs ? 1 : -1;
+        // if (this.isInfinity) {
+        //     return Infinity * sign;
+        // } else if (this.zero) {
+        //     return 0;
+        // } else if (this.intermediateValue) {
+        //     return this.intermediateValue;
+        // } else {
+        //     return Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
+        // }
     }
 
 
