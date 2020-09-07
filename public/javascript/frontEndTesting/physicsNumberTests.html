@@ -29,11 +29,11 @@
 
   physicsNumberTests.addSubCategory('constructor', 'integers', 'Integers');
   physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('1235124'), {
-    "firstSigFig": '1',
-    "otherSigFigs": "235124",
-    "orderOfMagnitude": 6,
-    "numSigFigs": 7,
-    "positive": true
+    firstSigFig: '1',
+    otherSigFigs: "235124",
+    orderOfMagnitude: 6,
+    numSigFigs: 7,
+    positive: true
   }, 'constructor', 'integers');
 
   physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('12412123'), {
@@ -578,190 +578,227 @@
 
   physicsNumberTests.addSubCategory('constructFromFloat','integers', 'Integers');
 
-  let mag2001 = constructMagnitudeFromFloat(4,3);
-  physicsNumberTests.assertEqualStrict(mag2001.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2001.firstSigFig, '4', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2001.otherSigFigs, '00', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2001.orderOfMagnitude, 0, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2001.numSigFigs, 3, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2001.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(4,3), {
+    firstSigFig: '4',
+    otherSigFigs: '00',
+    orderOfMagnitude: 0,
+    numSigFigs: 3,
+    positive: true,
+    float: 4
+  }, 'constructFromFloat','integers')
 
-  let mag2002 = constructMagnitudeFromFloat(4,1);
-  physicsNumberTests.assertEqualStrict(mag2002.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2002.firstSigFig, '4', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2002.otherSigFigs, '', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2002.orderOfMagnitude, 0, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2002.numSigFigs, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2002.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(4,1), {
+    firstSigFig: '4',
+    otherSigFigs: '',
+    orderOfMagnitude: 0,
+    numSigFigs: 1,
+    positive: true,
+    float: 4
+  }, 'constructFromFloat','integers')
 
-  let mag2003 = constructMagnitudeFromFloat(23,1);
-  physicsNumberTests.assertEqualStrict(mag2003.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2003.firstSigFig, '2', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2003.otherSigFigs, '', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2003.orderOfMagnitude, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2003.numSigFigs, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2003.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(23,1), {
+    firstSigFig: '2',
+    otherSigFigs: '',
+    orderOfMagnitude: 1,
+    numSigFigs: 1,
+    positive: true,
+    float: 23
+  }, 'constructFromFloat','integers')
 
-  let mag2004 = constructMagnitudeFromFloat(26,1);
-  physicsNumberTests.assertEqualStrict(mag2004.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2004.firstSigFig, '3', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2004.otherSigFigs, '', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2004.orderOfMagnitude, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2004.numSigFigs, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2004.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(26,1), {
+    firstSigFig: '3',
+    otherSigFigs: '',
+    orderOfMagnitude: 1,
+    numSigFigs: 1,
+    positive: true,
+    float: 26
+  }, 'constructFromFloat','integers')
 
-  let mag2005 = constructMagnitudeFromFloat(500,7);
-  physicsNumberTests.assertEqualStrict(mag2005.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2005.firstSigFig, '5', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2005.otherSigFigs, '000000', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2005.orderOfMagnitude, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2005.numSigFigs, 7, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2005.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(500,7), {
+    firstSigFig: '5',
+    otherSigFigs: '000000',
+    orderOfMagnitude: 2,
+    numSigFigs: 7,
+    positive: true,
+    float: 500
+  }, 'constructFromFloat','integers')
 
   let mag2006 = constructMagnitudeFromFloat(99,1);
-  physicsNumberTests.assertEqualStrict(mag2006.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2006.firstSigFig, '1', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2006.otherSigFigs, '', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2006.orderOfMagnitude, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2006.numSigFigs, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2006.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(99,1), {
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: 2,
+    numSigFigs: 1,
+    positive: true,
+    float: 99
+  }, 'constructFromFloat','integers')
 
   let mag2007 = constructMagnitudeFromFloat(602,4);
-  physicsNumberTests.assertEqualStrict(mag2007.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2007.firstSigFig, '6', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2007.otherSigFigs, '020', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2007.orderOfMagnitude, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2007.numSigFigs, 4, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2007.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(602,4), {
+    firstSigFig: '6',
+    otherSigFigs: '020',
+    orderOfMagnitude: 2,
+    numSigFigs: 4,
+    positive: true,
+    float: 602
+  }, 'constructFromFloat','integers')
 
   let mag2008 = constructMagnitudeFromFloat(602,2);
-  physicsNumberTests.assertEqualStrict(mag2008.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2008.firstSigFig, '6', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2008.otherSigFigs, '0', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2008.orderOfMagnitude, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2008.numSigFigs, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2008.positive, true, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(602,2), {
+    firstSigFig: '6',
+    otherSigFigs: '0',
+    orderOfMagnitude: 2,
+    numSigFigs: 2,
+    positive: true,
+    float: 602
+  }, 'constructFromFloat','integers')
 
   let mag2009 = constructMagnitudeFromFloat(-605,2);
-  physicsNumberTests.assertEqualStrict(mag2009.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2009.firstSigFig, '6', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2009.otherSigFigs, '1', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2009.orderOfMagnitude, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2009.numSigFigs, 2, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2009.positive, false, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-605,2), {
+    firstSigFig: '6',
+    otherSigFigs: '1',
+    orderOfMagnitude: 2,
+    numSigFigs: 2,
+    positive: false,
+    float: -605
+  }, 'constructFromFloat','integers')
 
-  let mag2010 = constructMagnitudeFromFloat(-12,5);
-  physicsNumberTests.assertEqualStrict(mag2010.isAmagnitude, true, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2010.firstSigFig, '1', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2010.otherSigFigs, '2000', 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2010.orderOfMagnitude, 1, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2010.numSigFigs, 5, 'constructFromFloat', 'integers');
-  physicsNumberTests.assertEqualStrict(mag2010.positive, false, 'constructFromFloat', 'integers');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-12,5), {
+    firstSigFig: '1',
+    otherSigFigs: '2000',
+    orderOfMagnitude: 1,
+    numSigFigs: 5,
+    positive: false,
+    float: -12
+  }, 'constructFromFloat','integers')
 
-  physicsNumberTests.addSubCategory('constructFromFloat','decimalsExponents', 'Decimal Exponent');
-  let mag2101 = constructMagnitudeFromFloat(-2e8,4);
-  physicsNumberTests.assertEqualStrict(mag2101.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2101.firstSigFig, '2', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2101.otherSigFigs, '000', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2101.orderOfMagnitude, 8, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2101.numSigFigs, 4, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2101.positive, false, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.addSubCategory('constructFromFloat','integerExponents', 'Integers with Exponents');
+  physicsNumberTests.addSubCategory('constructFromFloat','decimalsExponents', 'Decimal Exponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-2e8,4), {
+    firstSigFig: '2',
+    otherSigFigs: '000',
+    orderOfMagnitude: 8,
+    numSigFigs: 4,
+    positive: false,
+    float: -2e8
+  }, 'constructFromFloat','integerExponents')
 
-  let mag2102 = constructMagnitudeFromFloat(1e6,1);
-  physicsNumberTests.assertEqualStrict(mag2102.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2102.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2102.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2102.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2102.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2102.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1e6,1), {
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: 6,
+    numSigFigs: 1,
+    positive: true,
+    float: 1e6
+  }, 'constructFromFloat','integerExponents')
 
-  let mag2103 = constructMagnitudeFromFloat(1.234567e8,1);
-  physicsNumberTests.assertEqualStrict(mag2103.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2103.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2103.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2103.orderOfMagnitude, 8, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2103.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2103.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1.234567e8,1), {
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: 8,
+    numSigFigs: 1,
+    positive: true,
+    float: 1.234567e8
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2104 = constructMagnitudeFromFloat(1234.567e8,2);
-  physicsNumberTests.assertEqualStrict(mag2104.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2104.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2104.otherSigFigs, '2', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2104.orderOfMagnitude, 11, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2104.numSigFigs, 2, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2104.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1234.567e8,2), {
+    firstSigFig: '1',
+    otherSigFigs: '2',
+    orderOfMagnitude: 11,
+    numSigFigs: 2,
+    positive: true,
+    float: 1234.567e8
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2105 = constructMagnitudeFromFloat(1234.567e8,10);
-  physicsNumberTests.assertEqualStrict(mag2105.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2105.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2105.otherSigFigs, '234567000', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2105.orderOfMagnitude, 11, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2105.numSigFigs, 10, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2105.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1234.567e8,10), {
+    firstSigFig: '1',
+    otherSigFigs: '234567000',
+    orderOfMagnitude: 11,
+    numSigFigs: 10,
+    positive: true,
+    float: 1234.567e8
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2106 = constructMagnitudeFromFloat(-1e6,5);
-  physicsNumberTests.assertEqualStrict(mag2106.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2106.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2106.otherSigFigs, '0000', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2106.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2106.numSigFigs, 5, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2106.positive, false, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-1e6,5), {
+    firstSigFig: '1',
+    otherSigFigs: '0000',
+    orderOfMagnitude: 6,
+    numSigFigs: 5,
+    positive: false,
+    float: -1e6
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2107 = constructMagnitudeFromFloat(0.00031235e-2,3);
-  physicsNumberTests.assertEqualStrict(mag2107.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2107.firstSigFig, '3', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2107.otherSigFigs, '12', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2107.orderOfMagnitude, -6, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2107.numSigFigs, 3, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2107.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(0.00031235e-2,3), {
+    firstSigFig: '3',
+    otherSigFigs: '12',
+    orderOfMagnitude: -6,
+    numSigFigs: 3,
+    positive: true,
+    float: 0.00031235e-2
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2108 = constructMagnitudeFromFloat(9.999e5,1);
-  physicsNumberTests.assertEqualStrict(mag2108.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,1), {
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: 6,
+    numSigFigs: 1,
+    positive: true,
+    float: 9.999e5
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2108a = constructMagnitudeFromFloat(9.999e5,2);
-  physicsNumberTests.assertEqualStrict(mag2108a.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108a.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108a.otherSigFigs, '0', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108a.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108a.numSigFigs, 2, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108a.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,2), {
+    firstSigFig: '1',
+    otherSigFigs: '0',
+    orderOfMagnitude: 6,
+    numSigFigs: 2,
+    positive: true,
+    float: 9.999e5
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2108b = constructMagnitudeFromFloat(9.999e5,3);
-  physicsNumberTests.assertEqualStrict(mag2108b.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108b.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108b.otherSigFigs, '00', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108b.orderOfMagnitude, 6, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108b.numSigFigs, 3, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2108b.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,3), {
+    firstSigFig: '1',
+    otherSigFigs: '00',
+    orderOfMagnitude: 6,
+    numSigFigs: 3,
+    positive: true,
+    float: 9.999e5
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2109 = constructMagnitudeFromFloat(9.999e5,4);
-  physicsNumberTests.assertEqualStrict(mag2109.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109.firstSigFig, '9', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109.otherSigFigs, '999', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109.orderOfMagnitude,5, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109.numSigFigs, 4, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,4), {
+    firstSigFig: '9',
+    otherSigFigs: '999',
+    orderOfMagnitude: 5,
+    numSigFigs: 4,
+    positive: true,
+    float: 9.999e5
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2109a = constructMagnitudeFromFloat(9.999e5,5);
-  physicsNumberTests.assertEqualStrict(mag2109a.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109a.firstSigFig, '9', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109a.otherSigFigs, '9990', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109a.orderOfMagnitude, 5, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109a.numSigFigs, 5, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2109a.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,5), {
+    firstSigFig: '9',
+    otherSigFigs: '9990',
+    orderOfMagnitude: 5,
+    numSigFigs: 5,
+    positive: true,
+    float: 9.999e5
+  }, 'constructFromFloat','decimalsExponents')
 
-  let mag2110 = constructMagnitudeFromFloat(98765e-10,1);
-  physicsNumberTests.assertEqualStrict(mag2110.isAmagnitude, true, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2110.firstSigFig, '1', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2110.otherSigFigs, '', 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2110.orderOfMagnitude, -5, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2110.numSigFigs, 1, 'constructFromFloat', 'decimalsExponents');
-  physicsNumberTests.assertEqualStrict(mag2110.positive, true, 'constructFromFloat', 'decimalsExponents');
+  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(98765e-10,1), {
+    firstSigFig: '1',
+    otherSigFigs: '',
+    orderOfMagnitude: -5,
+    numSigFigs: 1,
+    positive: true,
+    float: 98765e-10
+  }, 'constructFromFloat','decimalsExponents')
+
+  physicsNumberTests.addSubCategory('constructFromFloat','zeros','Zeros')
+  physicsNumberTests.assertPhysicsNumberZero(constructMagnitudeFromFloat(0.000,2),2,'constructFromFloat','zeros')
+
+/*
+is it possible there is a time when the float is not zero, but the number is zero?
+*/
+
+
 /*
   magnitudeTests.addSubCategory('constructFromFloat','integersExponents', 'Integers With Exponents');
   let mag2201 = constructMagnitudeFromFloat(undefined,undefined);
@@ -1407,56 +1444,56 @@
   let mag1036 = new Magnitude('90',undefined,undefined,true); // 90 exact rounds to 100!!!!
   mag1036.round(1);
   physicsNumberTests.assertMagnitude(mag1036, {
-      "firstSigFig": "9",
-      "otherSigFigs": "",
-      "numSigFigs": 1,
-      "orderOfMagnitude": 1,
-      "positive": true,
-      "float": 90
+      firstSigFig: "9",
+      otherSigFigs: "",
+      numSigFigs: 1,
+      orderOfMagnitude: 1,
+      positive: true,
+      float: 90
   }, 'rounding', 'exactRounding');
 
   let mag1037 = new Magnitude('90',undefined,undefined,false); // same issue, but not exact
   mag1037.round(1);
   physicsNumberTests.assertMagnitude(mag1037, {
-      "firstSigFig": "9",
-      "otherSigFigs": "",
-      "numSigFigs": 1,
-      "orderOfMagnitude": 1,
-      "positive": true,
-      "float": 90
+      firstSigFig: "9",
+      otherSigFigs: "",
+      numSigFigs: 1,
+      orderOfMagnitude: 1,
+      positive: true,
+      float: 90
   }, 'rounding', 'exactRounding');
 
   let mag1038 = new Magnitude('90.0',undefined,undefined,false); // same issue, but not exact
   mag1038.round(1);
   physicsNumberTests.assertMagnitude(mag1038, {
-      "firstSigFig": "9",
-      "otherSigFigs": "",
-      "numSigFigs": 1,
-      "orderOfMagnitude": 1,
-      "positive": true,
-      "float": 90
+      firstSigFig: "9",
+      otherSigFigs: "",
+      numSigFigs: 1,
+      orderOfMagnitude: 1,
+      positive: true,
+      float: 90
   }, 'rounding', 'exactRounding');
 
   let mag1039 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
   mag1039.round(1);
   physicsNumberTests.assertMagnitude(mag1039, {
-      "firstSigFig": "1",
-      "otherSigFigs": "",
-      "numSigFigs": 1,
-      "orderOfMagnitude": 2,
-      "positive": true,
-      "float": 100
+      firstSigFig: "1",
+      otherSigFigs: "",
+      numSigFigs: 1,
+      orderOfMagnitude: 2,
+      positive: true,
+      float: 100
   }, 'rounding', 'exactRounding');
 
   let mag1040 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
   mag1040.round(2);
   physicsNumberTests.assertMagnitude(mag1040, {
-      "firstSigFig": "9",
-      "otherSigFigs": "9",
-      "numSigFigs": 2,
-      "orderOfMagnitude": 1,
-      "positive": true,
-      "float": 99
+      firstSigFig: "9",
+      otherSigFigs: "9",
+      numSigFigs: 2,
+      orderOfMagnitude: 1,
+      positive: true,
+      float: 99
   }, 'rounding', 'exactRounding');
 
 
@@ -1664,21 +1701,21 @@ physicsNumberTests.addSubCategory('operations','reverseSign','Reverse Sign');
 let mag3008a = new Magnitude('2.00');
 let mag3008 = mag3008a.reverseSign();
 physicsNumberTests.assertMagnitude(mag3008a, {
-    "firstSigFig": '2',
-    "otherSigFigs": '00',
-    'orderOfMagnitude': 0,
-    'numSigFigs': 3,
-    'float': 2,
-    'positive': true
+    firstSigFig: '2',
+    otherSigFigs: '00',
+    orderOfMagnitude: 0,
+    numSigFigs: 3,
+    float: 2,
+    positive: true
 }, 'operations', 'reverseSign');
 
   physicsNumberTests.assertMagnitude(mag3008, {
-      "firstSigFig": '2',
-      "otherSigFigs": '00',
-      'orderOfMagnitude': 0,
-      'numSigFigs': 3,
-      'float': -2,
-      'positive': false
+      firstSigFig: '2',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      numSigFigs: 3,
+      float: -2,
+      positive: false
   }, 'operations', 'reverseSign');
 
 /*
@@ -1809,93 +1846,93 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
     let mag3100a = new Magnitude('4.0');
     let mag3100b = constructInfinity();
     physicsNumberTests.assertMagnitude(mag3100a.addMag(mag3100b), {
-        "infinity": true,
-        "positive": true,
-        "float": Infinity
+        infinity: true,
+        positive: true,
+        float: Infinity
     }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100b.addMag(mag3100a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100a.subtractMag(mag3100b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100b.subtractMag(mag3100a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100a.multiplyMag(mag3100b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100b.multiplyMag(mag3100a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100a.divideMag(mag3100b), {
-      "positive": undefined,
-      "zero": true,
-      "exact": true, // this will be tough
-      "numSigFigs": Infinity,
-      "firstSigFig": '0',
-      "float": 0
+      positive: undefined,
+      zero: true,
+      exact: true, // this will be tough
+      numSigFigs: Infinity,
+      firstSigFig: '0',
+      float: 0
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3100b.divideMag(mag3100a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
 
   let mag3101a = new Magnitude('4.0');
   let mag3101b = constructNegativeInfinity();
   physicsNumberTests.assertMagnitude(mag3101a.addMag(mag3101b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101b.addMag(mag3101a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101a.subtractMag(mag3101b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101b.subtractMag(mag3101a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101a.multiplyMag(mag3101b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101b.multiplyMag(mag3101a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101a.divideMag(mag3101b), {
-      "positive": undefined,
-      "zero": true,
-      "exact": true, // this will be tough
-      "numSigFigs": Infinity,
-      "firstSigFig": '0',
-      "float": 0
+      positive: undefined,
+      zero: true,
+      exact: true, // this will be tough
+      numSigFigs: Infinity,
+      firstSigFig: '0',
+      float: 0
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3101b.divideMag(mag3101a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
 
   /// add tests of comparing two infinities
@@ -1904,26 +1941,26 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   let mag3102a = constructInfinity();
   let mag3102b = constructInfinity();
   physicsNumberTests.assertMagnitude(mag3102a.addMag(mag3102b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3102b.addMag(mag3102a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3102a.subtractMag(mag3102b), 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3102b.subtractMag(mag3102a),'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3102a.multiplyMag(mag3102b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3102b.multiplyMag(mag3102a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3102a.divideMag(mag3102b), 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3102b.divideMag(mag3102a), 'operations', 'infinities');
@@ -1932,26 +1969,26 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   let mag3103a = constructNegativeInfinity();
   let mag3103b = constructNegativeInfinity();
   physicsNumberTests.assertMagnitude(mag3103a.addMag(mag3103b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3103b.addMag(mag3103a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3103b.subtractMag(mag3103a), 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3103a.multiplyMag(mag3103b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3103b.multiplyMag(mag3103a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3103a.divideMag(mag3103b), 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3103b.divideMag(mag3103a),'operations', 'infinities');
@@ -1962,24 +1999,24 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   physicsNumberTests.assertNotMagnitude(mag3104a.addMag(mag3104b),'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3104b.addMag(mag3104a),'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3104a.subtractMag(mag3104b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3104b.subtractMag(mag3104a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3104a.multiplyMag(mag3104b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3104b.multiplyMag(mag3104a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3104a.divideMag(mag3104b),'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3104b.divideMag(mag3104a),'operations', 'infinities');
@@ -1987,110 +2024,110 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   let mag3105a = constructZeroMagnitude(5);
   let mag3105b = constructInfinity();
   physicsNumberTests.assertMagnitude(mag3105a.addMag(mag3105b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3105b.addMag(mag3105a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3105a.subtractMag(mag3105b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3105b.subtractMag(mag3105a), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3105a.multiplyMag(mag3105b),'operations', 'infinities');// zero times infinity is undefined!
   physicsNumberTests.assertNotMagnitude(mag3105b.multiplyMag(mag3105a), 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3105a.divideMag(mag3105b), {
-      "positive": undefined,
-      "zero": true,
-      "exact": true,
-      "numSigFigs": Infinity,
-      "firstSigFig": '0',
-      "float": 0
+      positive: undefined,
+      zero: true,
+      exact: true,
+      numSigFigs: Infinity,
+      firstSigFig: '0',
+      float: 0
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3105b.divideMag(mag3105a),{ // Infinity divided by 0 is infinity
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   },'operations', 'infinities');
 
 
   let mag3106a = constructZeroMagnitude(4);
   let mag3106b = constructNegativeInfinity();
   physicsNumberTests.assertMagnitude(mag3106a.addMag(mag3106b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3106b.addMag(mag3106a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3106a.subtractMag(mag3106b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3106b.subtractMag(mag3106a), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3106a.multiplyMag(mag3106b), 'operations', 'infinities');
   physicsNumberTests.assertNotMagnitude(mag3106b.multiplyMag(mag3106a), 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3106a.divideMag(mag3106b), {
-      "positive": undefined,
-      "zero": true,
-      "exact": true,
-      "numSigFigs": Infinity,
-      "firstSigFig": '0',
-      "float": 0
+      positive: undefined,
+      zero: true,
+      exact: true,
+      numSigFigs: Infinity,
+      firstSigFig: '0',
+      float: 0
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3106b.divideMag(mag3106a),{ // -infinity divided by 0 is -infinity
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   },'operations', 'infinities');
 
   let mag3107a = new Magnitude('5.00');
   let mag3107b = new Magnitude('0.00');
   physicsNumberTests.assertMagnitude(mag3107a.divideMag(mag3107b), {
-      "infinity": true,
-      "positive": true,
-      "float": Infinity
+      infinity: true,
+      positive: true,
+      float: Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3107b.divideMag(mag3107a),{ // infinity divided by 0 is infinity
-      "positive": undefined,
-      "zero": true,
-      "numSigFigs": 3,
-      "firstSigFig": '0',
-      "otherSigFigs": '00',
-      "float": 0
+      positive: undefined,
+      zero: true,
+      numSigFigs: 3,
+      firstSigFig: '0',
+      otherSigFigs: '00',
+      float: 0
   },'operations', 'infinities');
 
   let mag3108a = new Magnitude('-5.00');
   let mag3108b = new Magnitude('0.00');
   physicsNumberTests.assertMagnitude(mag3108a.divideMag(mag3108b), {
-      "infinity": true,
-      "positive": false,
-      "float": -Infinity
+      infinity: true,
+      positive: false,
+      float: -Infinity
   }, 'operations', 'infinities');
   physicsNumberTests.assertMagnitude(mag3108b.divideMag(mag3108a),{ // infinity divided by 0 is infinity
-      "positive": undefined,
-      "zero": true,
-      "numSigFigs": 3,
-      "firstSigFig": '0',
-      "otherSigFigs": '00',
-      "float": 0
+      positive: undefined,
+      zero: true,
+      numSigFigs: 3,
+      firstSigFig: '0',
+      otherSigFigs: '00',
+      float: 0
   },'operations', 'infinities');
 
 
