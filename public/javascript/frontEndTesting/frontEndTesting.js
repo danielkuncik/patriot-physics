@@ -207,6 +207,35 @@ class TestPackage {
       }
     }
 
+    assertPhysicsNumberZero(physicsNumber, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        let otherSigFigs, exact = undefined;
+        if (numSigFigs !== Infinity) {
+            otherSigFigs = makeStringOfZeros(numSigFigs - 1);
+        } else {
+            otherSigFigs = '';
+            exact = true;
+        }
+        this.assertPhysicsNumber(physicsNumber, {
+            firstSigFig: '0',
+            otherSigFigs: otherSigFigs,
+            numSigFigs: numSigFigs,
+            exact: exact,
+            zero: true,
+            positive: undefined,
+            orderOfMagnitude: undefined,
+            float: 0
+        }, categoryKey, subCategoryKey, name);
+    }
+
+    assertNotPhysicsNumber(notPhysicsNumber, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        this.assertEqualStrict(notPhysicsNumber.isAphysicsNumber, false, categoryKey, subCategoryKey, `${name}: isAphysicsNumber`);
+        this.assertEqualStrict(notPhysicsNumber.firstSigFig, undefined, categoryKey, subCategoryKey), `${name}: firstSigFig`;
+        this.assertEqualStrict(notPhysicsNumber.otherSigFigs, undefined, categoryKey, subCategoryKey, `${name}: otherSigFigs`);
+        this.assertEqualStrict(notPhysicsNumber.orderOfMagnitude, undefined, categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
+        this.assertEqualStrict(notPhysicsNumber.numSigFigs, undefined, categoryKey, subCategoryKey, `${name}: numSigFigs`);
+        this.assertEqualStrict(notPhysicsNumber.positive, undefined, categoryKey, subCategoryKey, `${name}: positive`);
+    }
+
     assertMagnitude(magnitude, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
       // add check that it is an object
       if (typeof(magnitude) !== 'object') {

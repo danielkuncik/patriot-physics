@@ -527,296 +527,50 @@
 //
 
   physicsNumberTests.addSubCategory('constructor','zeros','Zeros');
-  let mag301 = new Magnitude('0');
-  physicsNumberTests.assertEqualStrict(mag301.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag301.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag301.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag301.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag301.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag301.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag301.positive, undefined, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.0'), 2, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.0000'), 5, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000.'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000.000'), 4, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('-0000'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('+0000'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0e8'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000e-8'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.000E6'), 4, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('00000.'), 1, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('.0'), 2, 'constructor', 'zeros');
+  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('.0000'), 5, 'constructor', 'zeros'); // this is five significant figures because it gets the first zero for free!
+  physicsNumberTests.assertPhysicsNumberZero(constructZeroMagnitude(undefined, true), Infinity, 'constructor', 'zeros'); // zero magnitude with infinite sig figs
 
-  let mag302 = new Magnitude('0.0');
-  physicsNumberTests.assertEqualStrict(mag302.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag302.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag302.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag302.otherSigFigs, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag302.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag302.numSigFigs, 2, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag302.positive, undefined, 'constructor', 'zeros');
-
-  let mag303 = new Magnitude('0.0000');
-  physicsNumberTests.assertEqualStrict(mag303.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag303.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag303.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag303.otherSigFigs, '0000', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag303.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag303.numSigFigs, 5, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag303.positive, undefined, 'constructor', 'zeros');
-
-  let mag304 = new Magnitude('0000');
-  physicsNumberTests.assertEqualStrict(mag304.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag304.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag304.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag304.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag304.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag304.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag304.positive, undefined, 'constructor', 'zeros');
-
-  let mag305 = new Magnitude('0000.000');
-  physicsNumberTests.assertEqualStrict(mag305.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag305.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag305.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag305.otherSigFigs, '000', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag305.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag305.numSigFigs, 4, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag305.positive, undefined, 'constructor', 'zeros');
-
-  let mag306 = new Magnitude('-0000');
-  physicsNumberTests.assertEqualStrict(mag306.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag306.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag306.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag306.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag306.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag306.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag306.positive, undefined, 'constructor', 'zeros');
-
-  let mag307 = new Magnitude('+0000');
-  physicsNumberTests.assertEqualStrict(mag307.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag307.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag307.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag307.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag307.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag307.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag307.positive, undefined, 'constructor', 'zeros');
-
-  let mag308 = new Magnitude('0e8');
-  physicsNumberTests.assertEqualStrict(mag308.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag308.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag308.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag308.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag308.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag308.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag308.positive, undefined, 'constructor', 'zeros');
-
-  let mag309 = new Magnitude('0000e-8');
-  physicsNumberTests.assertEqualStrict(mag309.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag309.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag309.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag309.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag309.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag309.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag309.positive, undefined, 'constructor', 'zeros');
-
-  let mag310 = new Magnitude('0.000E6');
-  physicsNumberTests.assertEqualStrict(mag310.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag310.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag310.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag310.otherSigFigs, '000', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag310.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag310.numSigFigs, 4, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag310.positive, undefined, 'constructor', 'zeros');
-
-  let mag311 = new Magnitude('00000.');
-  physicsNumberTests.assertEqualStrict(mag311.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag311.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag311.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag311.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag311.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag311.numSigFigs, 1, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag311.positive, undefined, 'constructor', 'zeros');
-
-  let mag313 = new Magnitude('.0');
-  physicsNumberTests.assertEqualStrict(mag313.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag313.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag313.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag313.otherSigFigs, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag313.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag313.numSigFigs, 2, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag313.positive, undefined, 'constructor', 'zeros');
-
-  let mag314 = new Magnitude('.0000'); // this is five significant figures because it gets the first zero for free!
-  physicsNumberTests.assertEqualStrict(mag314.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag314.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag314.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag314.otherSigFigs, '0000', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag314.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag314.numSigFigs, 5, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag314.positive, undefined, 'constructor', 'zeros');
-
-  let mag315 = constructZeroMagnitude(undefined, true); // zero magnitude with infinite sig figs
-  physicsNumberTests.assertEqualStrict(mag315.isAmagnitude, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag315.zero, true, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag315.firstSigFig, '0', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag315.otherSigFigs, '', 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag315.orderOfMagnitude, undefined, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag315.numSigFigs, Infinity, 'constructor', 'zeros');
-  physicsNumberTests.assertEqualStrict(mag315.positive, undefined, 'constructor', 'zeros');
 
 
   physicsNumberTests.addSubCategory('constructor', 'nonNumericalStrings', 'Non NumericalStrings');
 
-  let mag401 = new Magnitude('mrkuncik','meters');
-  physicsNumberTests.assertEqualStrict(mag401.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag401.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag401.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag401.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag401.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag401.positive, undefined, 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('mrkuncik'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('hello. its. me.'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('dan.dfe'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('4251215u351421'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('4251215e3514e21'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('4214124.121412.42142'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('daniel kuncik'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('1.23,e4.5'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('.e5'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('-e4'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('+e+3'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('E6'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber(undefined), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('+.'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('-.'), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("-."), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber(".+"), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("."), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber(""), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("+"), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("-"), 'constructor', 'nonNumericalStrings');
+  physicsNumberTests.assertNotPhysicsNumber(constructInvalidMagnitude(), 'constructor', 'nonNumericalStrings');
 
-  let mag402 = new Magnitude('hello. its. me.','meters');
-  physicsNumberTests.assertEqualStrict(mag402.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag402.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag402.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag402.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag402.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag402.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag403 = new Magnitude('dan.dfe','meters');
-  physicsNumberTests.assertEqualStrict(mag403.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag403.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag403.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag403.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag403.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag403.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag404 = new Magnitude('4251215u351421','meters');
-  physicsNumberTests.assertEqualStrict(mag404.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag404.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag404.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag404.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag404.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag404.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag405 = new Magnitude('4214124.121412.42142','meters');
-  physicsNumberTests.assertEqualStrict(mag405.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag405.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag405.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag405.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag405.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag405.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag406 = new Magnitude('daniel kuncik','meters');
-  physicsNumberTests.assertEqualStrict(mag406.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag406.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag406.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag406.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag406.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag406.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag407 = new Magnitude('1.23,e4.5','meters');
-  physicsNumberTests.assertEqualStrict(mag407.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag407.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag407.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag407.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag407.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag407.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag408 = new Magnitude('.e5','meters');
-  physicsNumberTests.assertEqualStrict(mag408.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag408.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag408.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag408.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag408.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag408.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag409 = new Magnitude('-e4','meters');
-  physicsNumberTests.assertEqualStrict(mag409.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag409.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag409.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag409.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag409.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag409.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag410 = new Magnitude('+e+3','meters');
-  physicsNumberTests.assertEqualStrict(mag410.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag410.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag410.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag410.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag410.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag410.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag411 = new Magnitude('E6');
-  physicsNumberTests.assertEqualStrict(mag411.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag411.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag411.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag411.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag411.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag411.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag412 = new Magnitude(undefined);
-  physicsNumberTests.assertEqualStrict(mag412.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag412.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag412.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag412.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag412.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag412.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag413 = new Magnitude('+.');
-  physicsNumberTests.assertEqualStrict(mag413.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag413.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag413.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag413.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag413.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag413.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag414 = new Magnitude('-.');
-  physicsNumberTests.assertEqualStrict(mag414.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag414.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag414.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag414.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag414.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag414.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag415 = new Magnitude("-.");
-  physicsNumberTests.assertEqualStrict(mag415.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag415.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag415.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag415.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag415.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag415.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag416 = new Magnitude(".+");
-  physicsNumberTests.assertEqualStrict(mag416.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag416.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag416.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag416.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag416.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag416.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag417 = new Magnitude(".");
-  physicsNumberTests.assertEqualStrict(mag417.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag417.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag417.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag417.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag417.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag417.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag418 = new Magnitude("");
-  physicsNumberTests.assertEqualStrict(mag418.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag418.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag418.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag418.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag418.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag418.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag419 = new Magnitude("+");
-  physicsNumberTests.assertEqualStrict(mag419.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag419.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag419.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag419.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag419.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag419.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  let mag420 = new Magnitude("-");
-  physicsNumberTests.assertEqualStrict(mag420.isAmagnitude, false, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag420.firstSigFig, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag420.otherSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag420.orderOfMagnitude, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag420.numSigFigs, undefined, 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertEqualStrict(mag420.positive, undefined, 'constructor', 'nonNumericalStrings');
-
-  physicsNumberTests.assertNotMagnitude(constructInvalidMagnitude(), 'constructor', 'nonNumericalStrings');
 
   // ##############################################################
   // construct from float
