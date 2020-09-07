@@ -1057,260 +1057,350 @@
 
   let mag1001 = new Magnitude('1245'); //1200
   mag1001.round(2);
-  physicsNumberTests.assertEqualStrict(mag1001.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1001.otherSigFigs, '2', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1001.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1001.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1001, {
+      firstSigFig: '1',
+      otherSigFigs: '2',
+      orderOfMagnitude: 3,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1002 = new Magnitude('1265'); // 1300
   mag1002.round(2);
-  physicsNumberTests.assertEqualStrict(mag1002.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1002.otherSigFigs, '3', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1002.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1002.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1002, {
+      firstSigFig: '1',
+      otherSigFigs: '3',
+      orderOfMagnitude: 3,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
+
 
 
   let mag1003 = new Magnitude('1245'); // 1250
   mag1003.round(3);
-  physicsNumberTests.assertEqualStrict(mag1003.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1003.otherSigFigs, '25', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1003.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1003.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1003, {
+      firstSigFig: '1',
+      otherSigFigs: '25',
+      orderOfMagnitude: 3,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1004 = new Magnitude('1245'); // 1000
   mag1004.round(1);
-  physicsNumberTests.assertEqualStrict(mag1004.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1004.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1004.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1004.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1004, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 3,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1005 = new Magnitude('1500'); // 2000
   mag1005.round(1);
-  physicsNumberTests.assertEqualStrict(mag1005.firstSigFig, '2', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1005.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1005.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1005.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1005, {
+      firstSigFig: '2',
+      otherSigFigs: '',
+      orderOfMagnitude: 3,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1006 = new Magnitude('1499'); // 1000
   mag1006.round(1);
-  physicsNumberTests.assertEqualStrict(mag1006.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1006.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1006.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1006.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1006, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 3,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1007 = new Magnitude('1245'); // FAIL
   mag1007.round(6);
-  physicsNumberTests.assertEqualStrict(mag1007.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1007.otherSigFigs, '245', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1007.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1007.numSigFigs, 4, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1007, {
+      firstSigFig: '1',
+      otherSigFigs: '245',
+      orderOfMagnitude: 3,
+      numSigFigs: 4
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1008 = new Magnitude('0.0000345'); // 0.00003
   mag1008.round(1);
-  physicsNumberTests.assertEqualStrict(mag1008.firstSigFig, '3', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1008.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1008.orderOfMagnitude, -5, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1008.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1008, {
+      firstSigFig: '3',
+      otherSigFigs: '',
+      orderOfMagnitude: -5,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1009 = new Magnitude('0.0000345'); // 0.0000345 return this
   mag1009.round(3);
-  physicsNumberTests.assertEqualStrict(mag1009.firstSigFig, '3', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1009.otherSigFigs, '45', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1009.orderOfMagnitude, -5, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1009.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1009, {
+      firstSigFig: '3',
+      otherSigFigs: '45',
+      orderOfMagnitude: -5,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1010 = new Magnitude('0.0000345'); // FAIL
   mag1010.round(8);
-  physicsNumberTests.assertEqualStrict(mag1010.firstSigFig, '3', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1010.otherSigFigs, '45', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1010.orderOfMagnitude, -5, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1010.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1010, {
+      firstSigFig: '3',
+      otherSigFigs: '45',
+      orderOfMagnitude: -5,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1011 = new Magnitude('1000000.3'); //1000000.
   mag1011.round(7);
-  physicsNumberTests.assertEqualStrict(mag1011.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1011.otherSigFigs, '000000', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1011.orderOfMagnitude, 6, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1011.numSigFigs, 7, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1011, {
+      firstSigFig: '1',
+      otherSigFigs: '000000',
+      orderOfMagnitude: 6,
+      numSigFigs: 7
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1012 = new Magnitude('1000000'); // fail
   mag1012.round(4);
-  physicsNumberTests.assertEqualStrict(mag1012.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1012.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1012.orderOfMagnitude, 6, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1012.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1012, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 6,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1013 = new Magnitude('1030000'); /// no change
   mag1013.round(3);
-  physicsNumberTests.assertEqualStrict(mag1013.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1013.otherSigFigs, '03', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1013.orderOfMagnitude, 6, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1013.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1013, {
+      firstSigFig: '1',
+      otherSigFigs: '03',
+      orderOfMagnitude: 6,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
+
 
   let mag1014 = new Magnitude('1030000'); // FAIL
   mag1014.round(4);
-  physicsNumberTests.assertEqualStrict(mag1014.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1014.otherSigFigs, '03', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1014.orderOfMagnitude, 6, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1014.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1014, { // FAIL: cannot round to more sig figs
+      firstSigFig: '1',
+      otherSigFigs: '03',
+      orderOfMagnitude: 6,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
 
-  let mag1015 = new Magnitude('1030000'); // 1.0e6
+
+  let mag1015 = new Magnitude('1030000');
   mag1015.round(2);
-  physicsNumberTests.assertEqualStrict(mag1015.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1015.otherSigFigs, '0', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1015.orderOfMagnitude, 6, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1015.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1015, { // 1.0e6
+      firstSigFig: '1',
+      otherSigFigs: '0',
+      orderOfMagnitude: 6,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
-  let mag1016 = new Magnitude('1000000'); // no change
+  let mag1016 = new Magnitude('1000000');
   mag1016.round(1);
-  physicsNumberTests.assertEqualStrict(mag1016.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1016.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1016.orderOfMagnitude, 6, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1016.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1016, { // no change
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 6,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1017 = new Magnitude('12.456'); //12.5
   mag1017.round(3);
-  physicsNumberTests.assertEqualStrict(mag1017.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1017.otherSigFigs, '25', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1017.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1017.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1017, {
+      firstSigFig: '1',
+      otherSigFigs: '25',
+      orderOfMagnitude: 1,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1018 = new Magnitude('56.8'); // 57
   mag1018.round(2);
-  physicsNumberTests.assertEqualStrict(mag1018.firstSigFig, '5', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1018.otherSigFigs, '7', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1018.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1018.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1018, {
+      firstSigFig: '5',
+      otherSigFigs: '7',
+      orderOfMagnitude: 1,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1019 = new Magnitude('56.2'); //56
   mag1019.round(2);
-  physicsNumberTests.assertEqualStrict(mag1019.firstSigFig, '5', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019.otherSigFigs, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1019, {
+      firstSigFig: '5',
+      otherSigFigs: '6',
+      orderOfMagnitude: 1,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
+
   const mag1019a = mag1019.roundAndDuplicate(1);
-  physicsNumberTests.assertEqualStrict(mag1019a.firstSigFig, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019a.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019a.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019a.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1019a, {
+      firstSigFig: '6',
+      otherSigFigs: '',
+      orderOfMagnitude: 1,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
+
   // does not change original
-  physicsNumberTests.assertEqualStrict(mag1019.firstSigFig, '5', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019.otherSigFigs, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1019.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1019, {
+      firstSigFig: '5',
+      otherSigFigs: '6',
+      orderOfMagnitude: 1,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
+
 
 
   let mag1020 = new Magnitude('60.2'); // 60.
   mag1020.round(2);
-  physicsNumberTests.assertEqualStrict(mag1020.firstSigFig, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1020.otherSigFigs, '0', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1020.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1020.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1020, {
+      firstSigFig: '6',
+      otherSigFigs: '0',
+      orderOfMagnitude: 1,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1021 = new Magnitude('60.5'); //61
   mag1021.round(2);
-  physicsNumberTests.assertEqualStrict(mag1021.firstSigFig, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1021.otherSigFigs, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1021.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1021.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1021, {
+      firstSigFig: '6',
+      otherSigFigs: '1',
+      orderOfMagnitude: 1,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1022 = new Magnitude('60.5'); //6e1
   mag1022.round(1);
-  physicsNumberTests.assertEqualStrict(mag1022.firstSigFig, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1022.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1022.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1022.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1022, {
+      firstSigFig: '6',
+      otherSigFigs: '',
+      orderOfMagnitude: 1,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1023 = new Magnitude('99.5553'); // 99.555
   mag1023.round(5);
-  physicsNumberTests.assertEqualStrict(mag1023.firstSigFig, '9', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1023.otherSigFigs, '9555', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1023.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1023.numSigFigs, 5, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1023, {
+      firstSigFig: '9',
+      otherSigFigs: '9555',
+      orderOfMagnitude: 1,
+      numSigFigs: 5
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1024 = new Magnitude('00122.3456'); //00122.3
   mag1024.round(4);
-  physicsNumberTests.assertEqualStrict(mag1024.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1024.otherSigFigs, '223', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1024.orderOfMagnitude, 2, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1024.numSigFigs, 4, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1024, {
+      firstSigFig: '1',
+      otherSigFigs: '223',
+      orderOfMagnitude: 2,
+      numSigFigs: 4
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1025 = new Magnitude('00122.3756'); //00122.4
   mag1025.round(4);
-  physicsNumberTests.assertEqualStrict(mag1025.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1025.otherSigFigs, '224', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1025.orderOfMagnitude, 2, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1025.numSigFigs, 4, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1025, {
+      firstSigFig: '1',
+      otherSigFigs: '224',
+      orderOfMagnitude: 2,
+      numSigFigs: 4
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1026 = new Magnitude('1999'); // 2.0e3
   mag1026.round(2);
-  physicsNumberTests.assertEqualStrict(mag1026.firstSigFig, '2', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1026.otherSigFigs, '0', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1026.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1026.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1026, {
+      firstSigFig: '2',
+      otherSigFigs: '0',
+      orderOfMagnitude: 3,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1027 = new Magnitude('1999'); // 2e3
   mag1027.round(1);
-  physicsNumberTests.assertEqualStrict(mag1027.firstSigFig, '2', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1027.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1027.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1027.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1027, {
+      firstSigFig: '2',
+      otherSigFigs: '',
+      orderOfMagnitude: 3,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1028 = new Magnitude('1999'); // 2.00e3
   mag1028.round(3);
-  physicsNumberTests.assertEqualStrict(mag1028.firstSigFig, '2', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1028.otherSigFigs, '00', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1028.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1028.numSigFigs, 3, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1028, {
+      firstSigFig: '2',
+      otherSigFigs: '00',
+      orderOfMagnitude: 3,
+      numSigFigs: 3
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1029 = new Magnitude('1'); // return this
   mag1029.round(1);
-  physicsNumberTests.assertEqualStrict(mag1029.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1029.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1029.orderOfMagnitude, 0, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1029.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1029, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 0,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1030 = new Magnitude('80'); // FAIL
   mag1030.round(2);
-  physicsNumberTests.assertEqualStrict(mag1030.firstSigFig, '8', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1030.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1030.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1030.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1030, {
+      firstSigFig: '8',
+      otherSigFigs: '',
+      orderOfMagnitude: 1,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1031 = new Magnitude('80'); // return this
   mag1031.round(1);
-  physicsNumberTests.assertEqualStrict(mag1031.firstSigFig, '8', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1031.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1031.orderOfMagnitude, 1, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1031.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1031, {
+      firstSigFig: '8',
+      otherSigFigs: '',
+      orderOfMagnitude: 1,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
-  let mag1032 = new Magnitude('000650'); // FAIL
+  let mag1032 = new Magnitude('000650');
   mag1032.round(3);
-  physicsNumberTests.assertEqualStrict(mag1032.firstSigFig, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1032.otherSigFigs, '5', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1032.orderOfMagnitude, 2, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1032.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1032, { // FAIL
+      firstSigFig: '6',
+      otherSigFigs: '5',
+      orderOfMagnitude: 2,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1033 = new Magnitude('000650'); // 650
   mag1033.round(2);
-  physicsNumberTests.assertEqualStrict(mag1033.firstSigFig, '6', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1033.otherSigFigs, '5', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1033.orderOfMagnitude, 2, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1033.numSigFigs, 2, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1033, {
+      firstSigFig: '6',
+      otherSigFigs: '5',
+      orderOfMagnitude: 2,
+      numSigFigs: 2
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1034 = new Magnitude('000650'); // 700
   mag1034.round(1);
-  physicsNumberTests.assertEqualStrict(mag1034.firstSigFig, '7', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1034.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1034.orderOfMagnitude, 2, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1034.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1034, { // 700
+      firstSigFig: '7',
+      otherSigFigs: '',
+      orderOfMagnitude: 2,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   let mag1035 = new Magnitude('999');
   mag1035.round(1);
-  physicsNumberTests.assertEqualStrict(mag1035.firstSigFig, '1', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1035.otherSigFigs, '', 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1035.orderOfMagnitude, 3, 'rounding', 'standardNotationRounding');
-  physicsNumberTests.assertEqualStrict(mag1035.numSigFigs, 1, 'rounding', 'standardNotationRounding');
+  physicsNumberTests.assertPhysicsNumber(mag1035, { // 1000
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 3,
+      numSigFigs: 1
+  }, 'rounding', 'standardNotationRounding');
 
   physicsNumberTests.addSubCategory('rounding', 'exactRounding', 'Rounding Exact Values to Unexact Values');
 
