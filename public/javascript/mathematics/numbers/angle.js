@@ -1,13 +1,42 @@
 
+/*
+would it all work if i saved only a float and a number of sig figs???
+*/
+
 class Angle extends PhysicsNumber {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
         super(numString, intermediateValue, exact);
+          // simplify angle should be automatic!
+
+          // get num sig figs
+          // get float
+          // then remake an angle without that?
         this.degrees = degrees;
         this.isAnAngle = true;
 
         // add routine to ensure that it is between 0 and 360
         // or some other requirement
     }
+
+    isInDegrees() {
+      retun this.degrees
+    }
+
+    simplifyAngle() { // should be automatic
+      let test = (this.convertToDegrees()).getFloat();
+      while (test <= 0) {
+        test += 360;
+      }
+      while (test > 360) {
+        test -= 360;
+      }
+      if (!this.degrees) {
+        test *= Math.PI;
+        test /= 180;
+      }
+      return constructAngleFromFloat();
+    }
+
 
     duplicate() {
         const string = !this.zero ? `${this.positive === false ? '-' : ''}${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}` : `${this.firstSigFig}.${this.otherSigFigs}`;
@@ -227,7 +256,10 @@ function constructZeroAngle(numSigFigs, exact = numSigFigs === undefined) {
         }
     }
     return new Angle(string,undefined, undefined,exact);
+}
 
+function get360Degrees(numSigFigs, exact = numSigFigs === undefined) {
+  return constructAngleFloat(360,numSigFigs,true exact);
 }
 
 

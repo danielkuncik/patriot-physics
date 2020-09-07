@@ -150,6 +150,63 @@ class TestPackage {
       this.addTest(newTest, categoryKey, subCategoryKey);
     }
 
+    assertPhysicsNumber(physicsNumber, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+      // add check that it is an object
+      if (typeof(physicsNumber) !== 'object') {
+        this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Physics Number");
+        return false
+      }
+      if (typeof(equalObject) !== 'object') {
+        this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
+        return false
+      }
+      this.assertEqualStrict(physicsNumber.isAphysicsNumber, true, categoryKey, subCategoryKey, `${name}: isAphysicsNumber`);
+      if (equalObject.firstSigFig !== undefined) {
+        this.assertEqualStrict(physicsNumber.getFirstSigFig(), equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
+      }
+      if (equalObject.otherSigFigs !== undefined) {
+        this.assertEqualStrict(physicsNumber.getOtherSigFigs(), equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
+      }
+      if (equalObject.orderOfMagnitude !== undefined) {
+        this.assertEqualStrict(physicsNumber.getOrderOfMagnitude(), equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
+      }
+      if (equalObject.numSigFigs !== undefined) {
+        this.assertEqualStrict(physicsNumber.getNumSigFigs(), equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
+      }
+      if (equalObject.positive !== undefined) {
+        this.assertEqualStrict(physicsNumber.isPositive(), equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
+      }
+        if (equalObject.infinity !== undefined) {
+            this.assertEqualStrict(physicsNumber.isInfinity(), equalObject["infinity"], categoryKey, subCategoryKey, `${name}: Infinity `);
+        }
+        if (equalObject.exact !== undefined) {
+            this.assertEqualStrict(physicsNumber.isExact(), equalObject["exact"], categoryKey, subCategoryKey, `${name}: Exact `);
+        }
+        if (equalObject.zero !== undefined) {
+          this.assertEqualStrict(physicsNumber.isZero(), equalObject["zero"], categoryKey, subCategoryKey, `${name}: Zero `);
+        }
+        if (equalObject.float !== undefined) {
+          if (physicsNumber.zero) {
+              this.assertEqualFloat(physicsNumber.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
+          } else if (physicsNumber.infinity) {
+              this.assertEqualStrict(physicsNumber.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`);
+          } else {
+              this.assertEqualFloat(physicsNumber.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(physicsNumber.getOrderOfMagnitude() - 15));
+          }
+      }
+
+      if (equalObject.printStandard !== undefined) {
+        this.assertEqualStrict(physicsNumber.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
+
+      }
+      if (equalObject.printScientific !== undefined) {
+        this.assertEqualStrict(physicsNumber.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
+      }
+      if (equalObject.printOptimal !== undefined) {
+        this.assertEqualStrict(physicsNumber.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
+      }
+    }
+
     assertMagnitude(magnitude, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
       // add check that it is an object
       if (typeof(magnitude) !== 'object') {
@@ -160,48 +217,49 @@ class TestPackage {
         this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
         return false
       }
+      this.assertPhysicsNumber(magnitude, equalObject, categoryKey, subCategoryKey, name);
       this.assertEqualStrict(magnitude.isAmagnitude, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
-      if (equalObject.firstSigFig !== undefined) {
-        this.assertEqualStrict(magnitude.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
-      }
-      if (equalObject.otherSigFigs !== undefined) {
-        this.assertEqualStrict(magnitude.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
-      }
-      if (equalObject.orderOfMagnitude !== undefined) {
-        this.assertEqualStrict(magnitude.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
-      }
-      if (equalObject.numSigFigs !== undefined) {
-        this.assertEqualStrict(magnitude.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
-      }
-      if (equalObject.positive !== undefined) {
-        this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
-      }
-        if (equalObject.infinity !== undefined) {
-            this.assertEqualStrict(magnitude.infinity, equalObject["infinity"], categoryKey, subCategoryKey, `${name}: Infinity `);
-        }
-        if (equalObject.exact !== undefined) {
-            this.assertEqualStrict(magnitude.exact, equalObject["exact"], categoryKey, subCategoryKey, `${name}: Exact `);
-        }
-        if (equalObject.float !== undefined) {
-          if (magnitude.zero) {
-              this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
-          } else if (magnitude.infinity) {
-              this.assertEqualStrict(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`);
-          } else {
-              this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
-          }
-      }
-
-      if (equalObject.printOptimal !== undefined) {
-        this.assertEqualStrict(magnitude.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
-      }
-      if (equalObject.printStandard !== undefined) {
-        this.assertEqualStrict(magnitude.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
-
-      }
-      if (equalObject.printScientific !== undefined) {
-        this.assertEqualStrict(magnitude.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
-      }
+      // if (equalObject.firstSigFig !== undefined) {
+      //   this.assertEqualStrict(magnitude.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
+      // }
+      // if (equalObject.otherSigFigs !== undefined) {
+      //   this.assertEqualStrict(magnitude.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
+      // }
+      // if (equalObject.orderOfMagnitude !== undefined) {
+      //   this.assertEqualStrict(magnitude.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
+      // }
+      // if (equalObject.numSigFigs !== undefined) {
+      //   this.assertEqualStrict(magnitude.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
+      // }
+      // if (equalObject.positive !== undefined) {
+      //   this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
+      // }
+      //   if (equalObject.infinity !== undefined) {
+      //       this.assertEqualStrict(magnitude.infinity, equalObject["infinity"], categoryKey, subCategoryKey, `${name}: Infinity `);
+      //   }
+      //   if (equalObject.exact !== undefined) {
+      //       this.assertEqualStrict(magnitude.exact, equalObject["exact"], categoryKey, subCategoryKey, `${name}: Exact `);
+      //   }
+      //   if (equalObject.float !== undefined) {
+      //     if (magnitude.zero) {
+      //         this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
+      //     } else if (magnitude.infinity) {
+      //         this.assertEqualStrict(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`);
+      //     } else {
+      //         this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
+      //     }
+      // }
+      //
+      // if (equalObject.printOptimal !== undefined) {
+      //   this.assertEqualStrict(magnitude.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
+      // }
+      // if (equalObject.printStandard !== undefined) {
+      //   this.assertEqualStrict(magnitude.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
+      //
+      // }
+      // if (equalObject.printScientific !== undefined) {
+      //   this.assertEqualStrict(magnitude.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
+      // }
       // add printing
       // add unit
     }
@@ -246,32 +304,33 @@ class TestPackage {
             this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
             return false
         }
+        this.assertPhysicsNumber(angle, equalObject,categoryKey, subCategoryKey, name);
         this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
-        if (equalObject.firstSigFig !== undefined) {
-            this.assertEqualStrict(angle.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
-        }
-        if (equalObject.otherSigFigs !== undefined) {
-            this.assertEqualStrict(angle.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
-        }
+        // if (equalObject.firstSigFig !== undefined) {
+        //     this.assertEqualStrict(angle.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
+        // }
+        // if (equalObject.otherSigFigs !== undefined) {
+        //     this.assertEqualStrict(angle.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
+        // }
         if (equalObject.degrees !== undefined) {
-            this.assertEqualStrict(angle.degrees, equalObject["degrees"], categoryKey, subCategoryKey, `${name}: unit:`);
+            this.assertEqualStrict(angle.isInDegrees(), equalObject["degrees"], categoryKey, subCategoryKey, `${name}: unit:`);
         }
-        if (equalObject.orderOfMagnitude !== undefined) {
-            this.assertEqualStrict(angle.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
-        }
-        if (equalObject.numSigFigs !== undefined) {
-            this.assertEqualStrict(angle.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
-        }
-        if (equalObject.positive !== undefined) {
-            this.assertEqualStrict(angle.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
-        }
-        if (equalObject.float !== undefined) {
-            if (angle.zero) {
-                this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
-            } else {
-                this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
-            }
-        }
+        // if (equalObject.orderOfMagnitude !== undefined) {
+        //     this.assertEqualStrict(angle.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
+        // }
+        // if (equalObject.numSigFigs !== undefined) {
+        //     this.assertEqualStrict(angle.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
+        // }
+        // if (equalObject.positive !== undefined) {
+        //     this.assertEqualStrict(angle.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
+        // }
+        // if (equalObject.float !== undefined) {
+        //     if (angle.zero) {
+        //         this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
+        //     } else {
+        //         this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
+        //     }
+        // }
         // add printing
         // add unit
     }

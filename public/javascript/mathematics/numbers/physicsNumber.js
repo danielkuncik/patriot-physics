@@ -213,6 +213,31 @@ class PhysicsNumber {
     }
   }
 
+  getFirstSigFig() {
+    return this.firstSigFig
+  }
+  getOtherSigFigs() {
+    return this.otherSigFigs
+  }
+  getOrderOfMagnitude() {
+    return this.orderOfMagnitude
+  }
+  getNumSigFigs() {
+    return this.numSigFigs
+  }
+  isPositive() {
+    return this.positive
+  }
+  isExact() {
+    return this.exact || this.numSigFigs === Infinity
+  }
+  isZero() {
+    return this.zero
+  }
+  isInfinity() {
+    return this.infinity
+  }
+
   invalidate() {
       this.isAphysicsNumber = false;
       this.firstSigFig = undefined;
