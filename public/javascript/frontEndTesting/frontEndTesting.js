@@ -229,7 +229,7 @@ class TestPackage {
 
     assertNotMeasurement(notMeasurement, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         this.assertEqualStrict(notMeasurement.isAmeasurement, false, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
-        this.assertEqualStrict(notMeasurement.getFirstSigFig(), undefined, categoryKey, subCategoryKey), `${name}: firstSigFig`;
+        this.assertEqualStrict(notMeasurement.getFirstSigFig(), undefined, categoryKey, subCategoryKey, `${name}: firstSigFig`);
         this.assertEqualStrict(notMeasurement.getOtherSigFigs(), undefined, categoryKey, subCategoryKey, `${name}: otherSigFigs`);
         this.assertEqualStrict(notMeasurement.getOrderOfMagnitude(), undefined, categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
         this.assertEqualStrict(notMeasurement.getNumSigFigs(), undefined, categoryKey, subCategoryKey, `${name}: numSigFigs`);

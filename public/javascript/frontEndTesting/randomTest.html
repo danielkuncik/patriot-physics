@@ -40,14 +40,7 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    randomTest.assertMeasurement(new Measurement('123.4','meters'), {
-        firstSigFig: '1',
-        otherSigFigs: '234',
-        orderOfMagnitude: 2,
-        numSigFigs: 4,
-        positive: true
-    }, 'constructFromString', 'standardNotationDecimalStrings');
-
+    randomTest.assertNotMeasurement(new Measurement('4251215e3514e21'), 'constructFromString', 'nonNumericalStrings','xxx');
 
     $("#putItHere").append(randomTest.printAllTests());
 

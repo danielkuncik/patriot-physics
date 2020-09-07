@@ -100,6 +100,13 @@ function roundUpDigit(numString, index) {
     return reassignDigit(numString, index, roundUpCharacter(numString[index]))
 }
 
+function validateExponentString(exponentString) {
+  if (exponentString[0] === '+' || exponentString[0] === '-') {
+      exponentString = exponentString.slice(1,exponentString.length);
+  }
+  return digitsOnly(exponentString)
+}
+
 // PRIVATE FUNCTION
 function readExponentString(exponentString) {
     let sign = 1;
@@ -135,7 +142,11 @@ function countSigFigs(numericalString) {
         eLocation = numericalString.indexOf('E');
     }
     if (eLocation !== -1) { // if there is an exponent
-        numericalString = numericalString.slice(0, eLocation);
+      let exponentString = numericalString.slice(eLocation + 1); // check that this is right
+      if (!validateExponentString(exponentString)) {
+        return undefined
+      }
+      numericalString = numericalString.slice(0, eLocation);
     }
     // do i need to validate the string beyond?
 
@@ -229,7 +240,33 @@ class Measurement {
         }
     }
 
+    /// what if negative???
+    getFloat(abs = false) { // argument is to get absolute value
+          if (!this.isAmeasurement) {
+            return undefined
+          }
+            if (abs) {
+                return Math.abs(this.float)
+            } else {
+                return this.float;
+            }
+
+            // let sign = this.isPositive() || abs ? 1 : -1;
+            // if (this.isInfinity) {
+            //     return Infinity * sign;
+            // } else if (this.zero) {
+            //     return 0;
+            // } else if (this.intermediateValue) {
+            //     return this.intermediateValue;
+            // } else {
+            //     return Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
+            // }
+    }
+
     getFirstSigFig() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         if (this.isNegative()) {
             return this.getFloat().toString()[1]
         } else {
@@ -238,6 +275,9 @@ class Measurement {
         return this.firstSigFig
     }
     getOtherSigFigs() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         let numString1 = this.getFloat().toString(); // is there a more efficient way using 'to exponential'???
         let numString2 = numString1.split('e')[0];
         let numString3 = numString2.replace('.','');
@@ -252,6 +292,9 @@ class Measurement {
         }
     }
     getOrderOfMagnitude() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         let testFloat = this.getFloat(true);
         if (testFloat === 0) {
             return undefined
@@ -270,21 +313,39 @@ class Measurement {
     }
 
     getNumSigFigs() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         return this.numSigFigs
     }
     isPositive() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         return this.getFloat() > 0
     }
     isNegative() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         return this.getFloat() < 0
     }
     isExact() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         return this.numSigFigs === Infinity
     }
     isZero() {
-        return this.zero
+        if (!this.isAmeasurement) {
+          return undefined
+        }
+        return this.getFloat === 0
     }
     isInfinity() {
+        if (!this.isAmeasurement) {
+          return undefined
+        }
         return this.infinity
     }
 
@@ -466,26 +527,6 @@ class Measurement {
         let standardNot = this.printStandardNotation();
         let sciNot = this.printScientificNotation();
         return standardNot.length <= sciNot.length ? standardNot : sciNot
-    }
-
-/// what if negative???
-    getFloat(abs = false) { // argument is to get absolute value
-        if (abs) {
-            return Math.abs(this.float)
-        } else {
-            return this.float;
-        }
-
-        // let sign = this.isPositive() || abs ? 1 : -1;
-        // if (this.isInfinity) {
-        //     return Infinity * sign;
-        // } else if (this.zero) {
-        //     return 0;
-        // } else if (this.intermediateValue) {
-        //     return this.intermediateValue;
-        // } else {
-        //     return Number(`${this.firstSigFig}.${this.otherSigFigs}e${this.orderOfMagnitude}`) * sign;
-        // }
     }
 
 
