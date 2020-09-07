@@ -1,3 +1,20 @@
+/*
+possibility to refactor,
+
+constructor(stringOrFloat,numSigFigsIfFloat, exact) {
+    - then, it completes separate issues
+    - it stores only two values
+    'float' and 'numsig figs'
+    all of the functions i am running already need to be run out of these two
+
+    everything comes from those two!
+
+   [or not, think about whether this is a good idea....]
+}
+
+ */
+
+
 // returns true if 'char' is a single character and a digit 0 - 9
 function amIaDigit(char) {
     return char === '0' || char === '1' || char === '2' || char === '3' || char === '4' || char === '5' || char === '6' || char === '7' || char === '8' || char === '9';
