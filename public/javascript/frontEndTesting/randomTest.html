@@ -40,9 +40,13 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let mag5009a = new Measurement('0.4e10');
-    let mag5009b = new Measurement('1000000');
-    randomTest.assertEqualStrict(mag5009a.isEqualTo(mag5009b), false, 'comparison', 'comparison1');
+    randomTest.assertMeasurement(new Measurement('123.4','meters'), {
+        firstSigFig: '1',
+        otherSigFigs: '234',
+        orderOfMagnitude: 2,
+        numSigFigs: 4,
+        positive: true
+    }, 'constructFromString', 'standardNotationDecimalStrings');
 
 
     $("#putItHere").append(randomTest.printAllTests());

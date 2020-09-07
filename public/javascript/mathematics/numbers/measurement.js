@@ -118,70 +118,26 @@ function readExponentString(exponentString) {
 
 
 function countSigFigs(numericalString) {
-    return 0
-    let positive;
-    let orderOfMagnitude;
-    let numSigFigs;
-    let firstSigFig;
-    let otherSigFigs;
-    let infinity;
-    let valid = true;
-    let zero;
-
-    // sign
+    // // sign
     if (numericalString[0] === '+') {
-        positive = true;
         numericalString = numericalString.slice(1);
     } else if (numericalString[0] === '-') {
-        positive = false;
         numericalString = numericalString.slice(1);
-    } else {
-        positive = true;//default
     }
 
     if (numericalString === 'Infinity') {
-        infinity = true;
-        return {
-            positive: positive,
-            orderOfMagnitude: orderOfMagnitude,
-            numSigFigs: numSigFigs,
-            firstSigFig: firstSigFig,
-            otherSigFigs: otherSigFigs,
-            infinity: infinity,
-            zero: zero,
-            valid: valid
-        }
+        return Infinity // inifite sig figs
     }
 
     // deal with E
-    let exponentString = undefined;
     let eLocation = numericalString.indexOf('e');
     if (eLocation === -1) {
         eLocation = numericalString.indexOf('E');
     }
-    if (eLocation === -1) { /// no exponent given
-        orderOfMagnitude = 0;
-        exponentString = '';
-    } else {
-        exponentString = numericalString.slice(eLocation + 1, numericalString.length);
+    if (eLocation !== -1) { // if there is an exponent
         numericalString = numericalString.slice(0, eLocation);
-        let exponent = readExponentString(exponentString);
-        if (exponent === undefined) {
-            valid = false;
-            return {
-                positive: positive,
-                orderOfMagnitude: orderOfMagnitude,
-                numSigFigs: numSigFigs,
-                firstSigFig: firstSigFig,
-                otherSigFigs: otherSigFigs,
-                infinity: infinity,
-                zero: zero,
-                valid: valid
-            }
-        } else {
-            this.orderOfMagnitude = exponent;
-        }
     }
+    // do i need to validate the string beyond?
 
     // delete leading zeros
     let leadingZeros = 0;
@@ -190,30 +146,18 @@ function countSigFigs(numericalString) {
         leadingZeros++;
     }
     if ((numericalString.length === 0 || numericalString === '.') && leadingZeros > 0) { // if it was only zeroes
-        let zero = true;
-        return {
-            positive: false,
-            orderOfMagnitude: undefined,
-            numSigFigs: 1,
-            firstSigFig: '0',
-            otherSigFigs: '',
-            infinity: false,
-            zero: true,
-            valid: true
-        };
+        return 1 // one one sig fig if only zeros
     }
 
 
     if (numericalString.indexOf('.') !== -1) {  // values with decimal places
         const decimalPoint = numericalString.indexOf('.');
-        const beforeDecimal = numericalString.slice(0, decimalPoint);
+        const beforeDecimal = numericalString.slice(0, decimalPoint); // make more efficient with 'split???'
         let afterDecimal = numericalString.slice(decimalPoint + 1, numericalString.length);
         if (digitsOnly(beforeDecimal) && digitsOnly(afterDecimal) && (beforeDecimal.length > 0 || afterDecimal.length > 0)) {
             if (beforeDecimal.length > 0) {
-                firstSigFig = beforeDecimal[0];
-                orderOfMagnitude += beforeDecimal.length - 1;
-                otherSigFigs = beforeDecimal.slice(1, beforeDecimal.length) + afterDecimal;
-                numSigFigs = 1 + otherSigFigs.length;
+                let otherSigFigs = beforeDecimal.slice(1, beforeDecimal.length) + afterDecimal;
+                return 1 + otherSigFigs.length;
             } else { // no digits before decimal
                 let leadingZerosAfterDecimal = 0;
                 // this.orderOfMagnitude -= 1;
@@ -223,74 +167,24 @@ function countSigFigs(numericalString) {
                     leadingZerosAfterDecimal++;
                 }
                 if (afterDecimal.length === 0) { // if it was only zeros
-                    zero = true;
-                    positive = undefined;
-                    orderOfMagnitude = undefined;
-                    firstSigFig = '0';
-                    numSigFigs = 1 + leadingZerosAfterDecimal;
-                    otherSigFigs = makeStringOfZeros(this.numSigFigs - 1);
-                    return {
-                        positive: positive,
-                        orderOfMagnitude: orderOfMagnitude,
-                        numSigFigs: numSigFigs,
-                        firstSigFig: firstSigFig,
-                        otherSigFigs: otherSigFigs,
-                        infinity: infinity,
-                        zero: zero,
-                        valid: true
-                    }
-
+                     return 1 + leadingZerosAfterDecimal;
                 } else {
-                    orderOfMagnitude -= 1 + leadingZerosAfterDecimal;
-                    firstSigFig = afterDecimal[0];
-                    otherSigFigs = afterDecimal.slice(1, afterDecimal.length);
-                    numSigFigs = 1 + otherSigFigs.length
+                    let otherSigFigs = afterDecimal.slice(1, afterDecimal.length);
+                    return 1 + otherSigFigs.length
                 }
             }
         } else {
-            return {
-                positive: positive,
-                orderOfMagnitude: orderOfMagnitude,
-                numSigFigs: numSigFigs,
-                firstSigFig: firstSigFig,
-                otherSigFigs: otherSigFigs,
-                infinity: infinity,
-                zero: zero,
-                valid: false
-            }
+            return undefined
         }
-    } else if (digitsOnly(numericalString) && numericalString.length > 0) { // integers
+    } else if (digitsOnly(numericalString) && numericalString.length > 0) { // integers with no .
         while (numericalString[numericalString.length - 1] === '0') {
             numericalString = numericalString.slice(0,numericalString.length - 1);
-            orderOfMagnitude++;
         }
-        firstSigFig = numericalString[0];
-        otherSigFigs = numericalString.slice(1,numericalString.length);
-        numSigFigs = 1 + otherSigFigs.length;
-        orderOfMagnitude += otherSigFigs.length;
+        let otherSigFigs = numericalString.slice(1,numericalString.length);
+        return numSigFigs = 1 + otherSigFigs.length;
     } else {
-        return {
-            positive: positive,
-            orderOfMagnitude: orderOfMagnitude,
-            numSigFigs: numSigFigs,
-            firstSigFig: firstSigFig,
-            otherSigFigs: otherSigFigs,
-            infinity: infinity,
-            zero: zero,
-            valid: false
-        }
+        return undefined
     }
-    return {
-        positive: positive,
-        orderOfMagnitude: orderOfMagnitude,
-        numSigFigs: numSigFigs,
-        firstSigFig: firstSigFig,
-        otherSigFigs: otherSigFigs,
-        infinity: infinity,
-        zero: zero,
-        valid: valid
-    }
-
 }
 
 //const maxSigFigs =  12;
@@ -306,9 +200,14 @@ class Measurement {
                 return undefined
             }
             this.isAmeasurement = true;
-            this.numSigFigs = countSigFigs(stringOrFloat);
-
-        } else if (typeof(stringOrFloat) === 'number') {
+            let numSigFigs = countSigFigs(stringOrFloat);
+            if (!numSigFigs) {
+              this.invalidate();
+              return undefined
+            } else {
+              this.numSigFigs = numSigFigs;
+            }
+        } else if (typeof(stringOrFloat) === 'number') { // process float input
             if (isNaN(stringOrFloat)) {
                 this.invalidate();
                 return undefined
@@ -323,7 +222,7 @@ class Measurement {
             } else {
                 this.numSigFigs = numSigFigsIfFloat
             }
-        } else {
+        } else { // neither string nor float input
             this.invalidate();
             return undefined
         }
@@ -919,4 +818,3 @@ class Measurement {
 function percentDifference(inputted, expected) {
     return (Math.abs(inputted - expected) / expected) * 100
 }
-
