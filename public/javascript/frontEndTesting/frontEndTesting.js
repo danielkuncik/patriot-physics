@@ -160,7 +160,7 @@ class TestPackage {
         this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
         return false
       }
-      this.assertEqualStrict(physicsNumber.isAphysicsNumber, true, categoryKey, subCategoryKey, `${name}: isAphysicsNumber`);
+      this.assertEqualStrict(physicsNumber.isAmeasurement, true, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
       if (equalObject.firstSigFig !== undefined) {
         this.assertEqualStrict(physicsNumber.getFirstSigFig(), equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
       }

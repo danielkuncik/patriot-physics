@@ -25,16 +25,16 @@
 
 <script>
   let measurementTests = new TestPackage('Measurement Tests');
-  measurementTests.addCategory('construction','Construction Tests');
+  measurementTests.addCategory('constructFromString','Construction Tests from String');
 
-  measurementTests.addSubCategory('construction', 'integers', 'Integers');
+  measurementTests.addSubCategory('constructFromString', 'integers', 'Integers');
   measurementTests.assertMeasurement(new Measurement('1235124'), {
     firstSigFig: '1',
     otherSigFigs: "235124",
     orderOfMagnitude: 6,
     numSigFigs: 7,
     positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('12412123'), {
       firstSigFig: '1',
@@ -42,7 +42,7 @@
       orderOfMagnitude: 7,
       numSigFigs: 8,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
 
   measurementTests.assertMeasurement(new Measurement('12'), {
@@ -51,7 +51,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('+99'), {
       firstSigFig: '9',
@@ -59,7 +59,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('-106'), {
       firstSigFig: '1',
@@ -67,7 +67,7 @@
       orderOfMagnitude: 2,
       numSigFigs: 3,
       positive: false
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('5000'), {
       firstSigFig: '5',
@@ -75,7 +75,7 @@
       orderOfMagnitude: 3,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('80'), {
       firstSigFig: '8',
@@ -83,7 +83,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('5001'), {
       firstSigFig: '5',
@@ -91,7 +91,7 @@
       orderOfMagnitude: 3,
       numSigFigs: 4,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('00000082'), {
       firstSigFig: '8',
@@ -99,7 +99,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('010'), {
       firstSigFig: '1',
@@ -107,7 +107,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('-0041'), {
       firstSigFig: '4',
@@ -115,7 +115,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: false
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('00005'), {
       firstSigFig: '5',
@@ -123,7 +123,7 @@
       orderOfMagnitude: 0,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('-80.'), {
       firstSigFig: '8',
@@ -131,16 +131,16 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: false
-  }, 'construction', 'integers');
+  }, 'constructFromString', 'integers');
 
-  measurementTests.addSubCategory('construction', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
+  measurementTests.addSubCategory('constructFromString', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
   measurementTests.assertMeasurement(new Measurement('123.4','meters'), {
       firstSigFig: '1',
       otherSigFigs: '234',
       orderOfMagnitude: 2,
       numSigFigs: 4,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('123.4000','meters'), {
       firstSigFig: '1',
@@ -148,7 +148,7 @@
       orderOfMagnitude: 2,
       numSigFigs: 7,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('30000.0','meters'), {
       firstSigFig: '3',
@@ -156,7 +156,7 @@
       orderOfMagnitude: 4,
       numSigFigs: 6,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('-0231.12','meters'), {
       firstSigFig: '2',
@@ -164,7 +164,7 @@
       orderOfMagnitude: 2,
       numSigFigs: 5,
       positive: false
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('-12','meters'), {
       firstSigFig: '1',
@@ -172,7 +172,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: false
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('+.54','meters'), {
       firstSigFig: '5',
@@ -180,7 +180,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('12412.31421'), {
       firstSigFig: '1',
@@ -188,7 +188,7 @@
       orderOfMagnitude: 4,
       numSigFigs: 10,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('-.3142'), {
       firstSigFig: '3',
@@ -196,7 +196,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 4,
       positive: false
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('124210.'), {
       firstSigFig: '1',
@@ -204,7 +204,7 @@
       orderOfMagnitude: 5,
       numSigFigs: 6,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('.54'), {
       firstSigFig: '5',
@@ -212,7 +212,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('.540000'), {
       firstSigFig: '5',
@@ -220,7 +220,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 6,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('50.'), {
       firstSigFig: '5',
@@ -228,7 +228,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('0.6'), {
       firstSigFig: '6',
@@ -236,7 +236,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('.6'), {
       firstSigFig: '6',
@@ -244,7 +244,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('.60'), {
       firstSigFig: '6',
@@ -252,7 +252,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('.00006'), {
       firstSigFig: '6',
@@ -260,7 +260,7 @@
       orderOfMagnitude: -5,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('.000060'), {
       firstSigFig: '6',
@@ -268,18 +268,18 @@
       orderOfMagnitude: -5,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'standardNotationDecimalStrings');
+  }, 'constructFromString', 'standardNotationDecimalStrings');
 
 
 
-  measurementTests.addSubCategory('construction', 'exponentStrings', 'Exponent Numerical Strings');
+  measurementTests.addSubCategory('constructFromString', 'exponentStrings', 'Exponent Numerical Strings');
   measurementTests.assertMeasurement(new Measurement('3.0e8'), {
       firstSigFig: '3',
       otherSigFigs: '0',
       orderOfMagnitude: 8,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('12e-7'), {
       firstSigFig: '1',
@@ -287,7 +287,7 @@
       orderOfMagnitude: -6,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('123e+8'), {
       firstSigFig: '1',
@@ -295,7 +295,7 @@
       orderOfMagnitude: 10,
       numSigFigs: 3,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('125e9'), {
       firstSigFig: '1',
@@ -303,7 +303,7 @@
       orderOfMagnitude: 11,
       numSigFigs: 3,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('001e-7'), {
       firstSigFig: '1',
@@ -311,7 +311,7 @@
       orderOfMagnitude: -7,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('.34e3'), {
       firstSigFig: '3',
@@ -319,7 +319,7 @@
       orderOfMagnitude: 2,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('45.3e4'), {
       firstSigFig: '4',
@@ -327,7 +327,7 @@
       orderOfMagnitude: 5,
       numSigFigs: 3,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('4e5'), {
       firstSigFig: '4',
@@ -335,7 +335,7 @@
       orderOfMagnitude: 5,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('4.e5'), {
       firstSigFig: '4',
@@ -343,7 +343,7 @@
       orderOfMagnitude: 5,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('0003e4'), {
       firstSigFig: '3',
@@ -351,7 +351,7 @@
       orderOfMagnitude: 4,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('3.14e-9'), {
       firstSigFig: '3',
@@ -359,7 +359,7 @@
       orderOfMagnitude: -9,
       numSigFigs: 3,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('.42e2'), {
       firstSigFig: '4',
@@ -367,7 +367,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('6E-3'), {
       firstSigFig: '6',
@@ -375,7 +375,7 @@
       orderOfMagnitude: -3,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('+4.56e3'), {
       firstSigFig: '4',
@@ -383,7 +383,7 @@
       orderOfMagnitude: 3,
       numSigFigs: 3,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('-5.78e-9'), {
       firstSigFig: '5',
@@ -391,7 +391,7 @@
       orderOfMagnitude: -9,
       numSigFigs: 3,
       positive: false
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('+5E3'), {
       firstSigFig: '5',
@@ -399,7 +399,7 @@
       orderOfMagnitude: 3,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('-6e-9'), {
       firstSigFig: '6',
@@ -407,7 +407,7 @@
       orderOfMagnitude: -9,
       numSigFigs: 1,
       positive: false
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('+8.e4'), {
       firstSigFig: '8',
@@ -415,7 +415,7 @@
       orderOfMagnitude: 4,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('.9e7'), {
       firstSigFig: '9',
@@ -423,7 +423,7 @@
       orderOfMagnitude: 6,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('430e2'), {
       firstSigFig: '4',
@@ -431,7 +431,7 @@
       orderOfMagnitude: 4,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('5000E-9'), {
       firstSigFig: '5',
@@ -439,7 +439,7 @@
       orderOfMagnitude: -6,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('60000E7'), {
       firstSigFig: '6',
@@ -447,7 +447,7 @@
       orderOfMagnitude: 11,
       numSigFigs: 1,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('60000.E7'), {
       firstSigFig: '6',
@@ -455,7 +455,7 @@
       orderOfMagnitude: 11,
       numSigFigs: 5,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('600.00E7'), {
       firstSigFig: '6',
@@ -463,7 +463,7 @@
       orderOfMagnitude: 9,
       numSigFigs: 5,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
   measurementTests.assertMeasurement(new Measurement('30.e2'), {
       firstSigFig: '3',
@@ -471,7 +471,7 @@
       orderOfMagnitude: 3,
       numSigFigs: 2,
       positive: true
-  }, 'construction', 'exponentStrings');
+  }, 'constructFromString', 'exponentStrings');
 
 
   /*
@@ -526,49 +526,49 @@
 // magnitudeTests.assertEqualStrict(mag102.positive, false, 'constructor', 'standardNotationDecimalStrings');
 //
 
-  measurementTests.addSubCategory('construction','zeros','Zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0.'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0.0'), 2, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0.0000'), 5, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0000'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0000.'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0000.000'), 4, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('-0000'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('+0000'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0e8'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0000e-8'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('0.000E6'), 4, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('00000.'), 1, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('.0'), 2, 'construction', 'zeros');
-  measurementTests.assertMeasurementZero(new Measurement('.0000'), 5, 'construction', 'zeros'); // this is five significant figures because it gets the first zero for free!
-  measurementTests.assertMeasurementZero(new Measurement(0), Infinity, 'construction', 'zeros'); // zero magnitude with infinite sig figs
+  measurementTests.addSubCategory('constructFromString','zeros','Zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.0'), 2, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.0000'), 5, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000.'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000.000'), 4, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('-0000'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('+0000'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0e8'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000e-8'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.000E6'), 4, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('00000.'), 1, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('.0'), 2, 'constructFromString', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('.0000'), 5, 'constructFromString', 'zeros'); // this is five significant figures because it gets the first zero for free!
+  measurementTests.assertMeasurementZero(new Measurement(0), Infinity, 'constructFromString', 'zeros'); // zero magnitude with infinite sig figs
 
 
 
-  measurementTests.addSubCategory('construction', 'nonNumericalStrings', 'Non NumericalStrings');
+  measurementTests.addSubCategory('constructFromString', 'nonNumericalStrings', 'Non NumericalStrings');
 
-  measurementTests.assertNotMeasurement(new Measurement('mrkuncik'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('hello. its. me.'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('dan.dfe'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('4251215u351421'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('4251215e3514e21'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('4214124.121412.42142'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('daniel kuncik'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('1.23,e4.5'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('.e5'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('-e4'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('+e+3'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('E6'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement(undefined), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('+.'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement('-.'), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement("-."), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement(".+"), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement("."), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement(""), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement("+"), 'construction', 'nonNumericalStrings');
-  measurementTests.assertNotMeasurement(new Measurement("-"), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('mrkuncik'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('hello. its. me.'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('dan.dfe'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('4251215u351421'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('4251215e3514e21'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('4214124.121412.42142'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('daniel kuncik'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('1.23,e4.5'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('.e5'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('-e4'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('+e+3'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('E6'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement(undefined), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('+.'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('-.'), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("-."), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement(".+"), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("."), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement(""), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("+"), 'constructFromString', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("-"), 'constructFromString', 'nonNumericalStrings');
 
 
   // ##############################################################
@@ -788,6 +788,7 @@
 
   measurementTests.addSubCategory('constructFromFloat','zeros','Zeros');
   measurementTests.assertMeasurementZero(new Measurement(0.000,2),2,'constructFromFloat','zeros');
+
 
 /*
 is it possible there is a time when the float is not zero, but the number is zero?
@@ -1080,6 +1081,8 @@ is it possible there is a time when the float is not zero, but the number is zer
   magnitudeTests.assertEqualStrict(mag2505.positive, undefined, 'constructFromFloat', 'exact');
 */
 
+
+/*
   // ##############################################################
   // ##############################################################
   // ROUNDING TESTS
@@ -1818,6 +1821,7 @@ ADD SOME 999s
 add some zeros
 add some inifnities
 */
+/*
 measurementTests.addSubCategory('operations','zeroes','Operations With Zero');
 
 let mag3050a = new Measurement(0); // exactly zero
@@ -2398,7 +2402,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   measurementTests.assertEqualStrict(mag5023b.isGreaterThanOrEqualTo(mag5023a),false,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5023b.isLessThanOrEqualTo(mag5023a),true,'comparison','comparison2');
 
-
+*/
   $("#putItHere").append(measurementTests.printAllTests());
 
 </script>

@@ -118,6 +118,7 @@ function readExponentString(exponentString) {
 
 
 function countSigFigs(numericalString) {
+    return 0
     let positive;
     let orderOfMagnitude;
     let numSigFigs;
@@ -298,112 +299,34 @@ function countSigFigs(numericalString) {
 // this class will really only be used in its subclasses: angle, temperature, and magnitude
 class Measurement {
     constructor(stringOrFloat, numSigFigsIfFloat = Infinity, zeroLimit = 1e-15) {
-        this.firstSigFig = undefined;
-        this.otherSigFigs = undefined;
-        this.orderOfMagnitude = undefined;
-        this.numSigFigs = undefined;
-        this.positive = undefined;
-        this.isAphysicsNumber = undefined;
-        this.zeroLimit = undefined;
-
         let obj;
         if (typeof(stringOrFloat) === 'string') { // process string
             if (stringOrFloat.length === 0) {
                 this.invalidate();
                 return undefined
             }
-            obj = countSigFigs(stringOrFloat);
+            this.isAmeasurement = true;
+            this.numSigFigs = countSigFigs(stringOrFloat);
 
         } else if (typeof(stringOrFloat) === 'number') {
             if (isNaN(stringOrFloat)) {
                 this.invalidate();
                 return undefined
             }
-            if (stringOrFloat === Infinity) {
-                obj = {
-                    positive: true,
-                    orderOfMagnitude: undefined,
-                    numSigFigs: Infinity,
-                    firstSigFig: undefined,
-                    otherSigFigs: undefined,
-                    infinity: true,
-                    zero: false,
-                    valid: false
-                }
-            } else if (stringOrFloat === -Infinity) {
-                obj = {
-                    positive: false,
-                    orderOfMagnitude: undefined,
-                    numSigFigs: Infinity,
-                    firstSigFig: undefined,
-                    otherSigFigs: undefined,
-                    infinity: true,
-                    zero: false,
-                    valid: false
-                }
+            this.isAmeasurement = true;
+            if (Math.abs(stringOrFloat) < zeroLimit) {
+                stringOrFloat = 0;
             }
-            if (numSigFigsIfFloat === Infinity) {
-                this.intermediateValue = stringOrFloat;
+            this.float = stringOrFloat;
+            if (stringOrFloat === Infinity || stringOrFloat === -Infinity) {
                 this.numSigFigs = Infinity;
-                // need more here???
-                obj = {
-                    positive: undefined,
-                    orderOfMagnitude: undefined,
-                    numSigFigs: Infinity,
-                    firstSigFig: undefined,
-                    otherSigFigs: undefined,
-                    infinity: undefined,
-                    zero: undefined,
-                    valid: true
-                }
-            } else if (Math.abs(stringOrFloat) < zeroLimit) {
-                obj = {
-                    positive: false,
-                    orderOfMagnitude: undefined,
-                    numSigFigs: numSigFigsIfFloat,
-                    firstSigFig: undefined,
-                    otherSigFigs: undefined,
-                    infinity: true,
-                    zero: false,
-                    valid: false
-                }
             } else {
-                let string = stringOrFloat.toExponential(numSigFigsIfFloat - 1);
-                obj = countSigFigs(string);
+                this.numSigFigs = numSigFigsIfFloat
             }
-            this.intermediateValue = stringOrFloat;
-            this.numSigFigs = numSigFigsIfFloat;
         } else {
             this.invalidate();
             return undefined
         }
-
-        this.positive = obj.positive;
-        this.orderOfMagnitude = obj.orderOfMagnitude;
-        this.numSigFigs = obj.numSigFigs;
-        this.firstSigFig = obj.firstSigFig;
-        this.otherSigFigs = obj.otherSigFigs;
-        this.infinity = obj.infinity;
-        this.zero = obj.zero;
-        this.valid = obj.valid
-
-        //
-        // if (exact) {
-        //     this.numSigFigs = Infinity;
-        //     this.exact = true;
-        // } else {
-        //     this.exact = false;
-        //     if (this.numSigFigs > 15) { /// beyond 15, javacsript number objects cannot be confirmed to be accurate, so no magnitude may have greater than this number of significant figures unless it is exact
-        //         this.numSigFigs = 15;
-        //     }
-        // }
-        // this.intermediateValue = intermediateValue ? intermediateValue : undefined; /// in case this magnitude is an 'intermediate step' within a larger problem
-        //
-        // if (this.orderOfMagnitude < -8) { /// for all operations, if it goes below this value, it will round down to zero
-        //     this.zeroLimit = 10**(this.orderOfMagnitude - 3);
-        // } else {
-        //     this.zeroLimit = 1e-10;
-        // }
     }
 
     getFirstSigFig() {
@@ -435,13 +358,9 @@ class Measurement {
     }
 
     invalidate() {
-        this.isAphysicsNumber = false;
-        this.firstSigFig = undefined;
-        this.otherSigFigs = undefined;
-        this.orderOfMagnitude = undefined;
+        this.isAmeasurement = false;
+        this.float = NaN;
         this.numSigFigs = undefined;
-        this.positive = undefined;
-        this.exact = undefined;
         return false
     }
 
