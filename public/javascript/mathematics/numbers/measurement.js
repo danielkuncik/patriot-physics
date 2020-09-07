@@ -252,8 +252,23 @@ class Measurement {
         }
     }
     getOrderOfMagnitude() {
-        return this.orderOfMagnitude
+        let testFloat = this.getFloat(true);
+        if (testFloat === 0) {
+            return undefined
+        } else {
+            let orderOfMagnitude = 0;
+            while (testFloat > 10) {
+                orderOfMagnitude++;
+                testFloat /= 10;
+            }
+            while (testFloat < 1) {
+                orderOfMagnitude--;
+                testFloat *= 10;
+            }
+            return orderOfMagnitude
+        }
     }
+
     getNumSigFigs() {
         return this.numSigFigs
     }
@@ -455,7 +470,11 @@ class Measurement {
 
 /// what if negative???
     getFloat(abs = false) { // argument is to get absolute value
-        return this.float;
+        if (abs) {
+            return Math.abs(this.float)
+        } else {
+            return this.float;
+        }
 
         // let sign = this.isPositive() || abs ? 1 : -1;
         // if (this.isInfinity) {
