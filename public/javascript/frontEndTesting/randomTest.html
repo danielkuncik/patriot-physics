@@ -16,40 +16,34 @@
 
   <script src = './frontEndTesting.js'></script>
   <script src = '../mathematics/numbers/units.js'></script>
-  <script src = '../mathematics/numbers/physicsNumber.js'></script>
-  <script src = '../mathematics/numbers/magnitude.js'></script>
-  <script src = '../mathematics/numbers/angle.js'></script>
-  <script src = '../mathematics/geometricObjects/basics/point.js'></script>
-  <script src = '../mathematics/geometricObjects/basics/line.js'></script>
-  <script src = '../mathematics/geometricObjects/basics/segment.js'></script>
-  <script src = '../mathematics/geometricObjects/polygons/polygon.js'></script>
-  <script src = '../mathematics/geometricObjects/polygons/triangle.js'></script>
+  <script src = '../mathematics/numbers/measurement.js'></script>
+<!--  <script src = '../mathematics/numbers/physicsNumber.js'></script>-->
+<!--  <script src = '../mathematics/numbers/magnitude.js'></script>-->
+<!--  <script src = '../mathematics/numbers/angle.js'></script>-->
+<!--  <script src = '../mathematics/geometricObjects/basics/point.js'></script>-->
+<!--  <script src = '../mathematics/geometricObjects/basics/line.js'></script>-->
+<!--  <script src = '../mathematics/geometricObjects/basics/segment.js'></script>-->
+<!--  <script src = '../mathematics/geometricObjects/polygons/polygon.js'></script>-->
+<!--  <script src = '../mathematics/geometricObjects/polygons/triangle.js'></script>-->
 
-  <script src = '../mathematics/functionObjects/mathematicalFunction.js'></script>
-  <script src = '../mathematics/functionObjects/singleFunction.js'></script>
-  <script src = '../mathematics/functionObjects/stepwiseFunction.js'></script>
-  <script src = '../mathematics/functionObjects/polynomial.js'></script>
-  <script src = '../mathematics/functionObjects/quadraticFunction.js'></script>
-  <script src = '../mathematics/functionObjects/linearFunction.js'></script>
-  <script src = '../mathematics/functionObjects/constantFunction.js'></script>
-  <script src = '../mathematics/functionObjects/zeroFunction.js'></script>
+<!--  <script src = '../mathematics/functionObjects/mathematicalFunction.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/singleFunction.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/stepwiseFunction.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/polynomial.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/quadraticFunction.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/linearFunction.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/constantFunction.js'></script>-->
+<!--  <script src = '../mathematics/functionObjects/zeroFunction.js'></script>-->
 
 <div id = 'putItHere'></div>
 
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    const x100 = new Magnitude('1.00');
-    const y100 = new Magnitude('0.00');
-    const point100 = new Point(x100, y100);
-    const angle100 = point100.getAngleToHorizontal();
-    pointTests.assertEqualStrict(angle100.isAmagnitude, true, 'pointObject', 'pointAngles');
-    pointTests.assertEqualStrict(angle100.isAnAngle, true, 'pointObject', 'pointAngles');
-    pointTests.assertEqualStrict(angle100.firstSigFig, '0', 'pointObject', 'pointAngles');
-    pointTests.assertEqualStrict(angle100.otherSigFigs, '00', 'pointObject', 'pointAngles');
-    pointTests.assertEqualStrict(angle100.orderOfMagnitude, undefined, 'pointObject', 'pointAngles');
-    pointTests.assertEqualStrict(angle100.numSigFigs, 3, 'pointObject', 'pointAngles');
-    pointTests.assertEqualStrict(angle100.positive, undefined, 'pointObject', 'pointAngles');
+    let mag5009a = new Measurement('0.4e10');
+    let mag5009b = new Measurement('1000000');
+    randomTest.assertEqualStrict(mag5009a.isEqualTo(mag5009b), false, 'comparison', 'comparison1');
+
 
     $("#putItHere").append(randomTest.printAllTests());
 

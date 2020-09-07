@@ -150,7 +150,7 @@ class TestPackage {
       this.addTest(newTest, categoryKey, subCategoryKey);
     }
 
-    assertPhysicsNumber(physicsNumber, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+    assertMeasurement(physicsNumber, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
       // add check that it is an object
       if (typeof(physicsNumber) !== 'object') {
         this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Physics Number");
@@ -207,7 +207,7 @@ class TestPackage {
       }
     }
 
-    assertPhysicsNumberZero(physicsNumber, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+    assertMeasurementZero(physicsNumber, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         let otherSigFigs, exact = undefined;
         if (numSigFigs !== Infinity) {
             otherSigFigs = makeStringOfZeros(numSigFigs - 1);
@@ -215,7 +215,7 @@ class TestPackage {
             otherSigFigs = '';
             exact = true;
         }
-        this.assertPhysicsNumber(physicsNumber, {
+        this.assertMeasurement(physicsNumber, {
             firstSigFig: '0',
             otherSigFigs: otherSigFigs,
             numSigFigs: numSigFigs,
@@ -227,7 +227,7 @@ class TestPackage {
         }, categoryKey, subCategoryKey, name);
     }
 
-    assertNotPhysicsNumber(notPhysicsNumber, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+    assertNotMeasurement(notPhysicsNumber, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         this.assertEqualStrict(notPhysicsNumber.isAphysicsNumber, false, categoryKey, subCategoryKey, `${name}: isAphysicsNumber`);
         this.assertEqualStrict(notPhysicsNumber.firstSigFig, undefined, categoryKey, subCategoryKey), `${name}: firstSigFig`;
         this.assertEqualStrict(notPhysicsNumber.otherSigFigs, undefined, categoryKey, subCategoryKey, `${name}: otherSigFigs`);
@@ -246,7 +246,7 @@ class TestPackage {
         this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
         return false
       }
-      this.assertPhysicsNumber(magnitude, equalObject, categoryKey, subCategoryKey, name);
+      this.assertMeasurement(magnitude, equalObject, categoryKey, subCategoryKey, name);
       this.assertEqualStrict(magnitude.isAmagnitude, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
       // if (equalObject.firstSigFig !== undefined) {
       //   this.assertEqualStrict(magnitude.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
@@ -333,7 +333,7 @@ class TestPackage {
             this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
             return false
         }
-        this.assertPhysicsNumber(angle, equalObject,categoryKey, subCategoryKey, name);
+        this.assertMeasurement(angle, equalObject,categoryKey, subCategoryKey, name);
         this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
         // if (equalObject.firstSigFig !== undefined) {
         //     this.assertEqualStrict(angle.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);

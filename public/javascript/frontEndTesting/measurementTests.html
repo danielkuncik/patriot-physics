@@ -17,461 +17,461 @@
 <script src = './frontEndTesting.js'></script>
 <!-- <script src = '../physics/numericalStrings1/numericalStringValidations.js'></script>
 <script src = '../physics/numericalStrings1/numericalStringInformationGathering.js'></script> -->
-<script src = '../mathematics/numbers/physicsNumber.js'></script>
-<script src = '../mathematics/numbers/units.js'></script>
-<script src = '../mathematics/numbers/magnitude.js'></script>
+<script src = '../mathematics/numbers/measurement.js'></script>
+<!--<script src = '../mathematics/numbers/units.js'></script>-->
+<!--<script src = '../mathematics/numbers/magnitude.js'></script>-->
 
 <div id = 'putItHere'></div>
 
 <script>
-  let physicsNumberTests = new TestPackage('Physics Number Tests');
-  physicsNumberTests.addCategory('constructor','Constructor Tests');
+  let measurementTests = new TestPackage('Measurement Tests');
+  measurementTests.addCategory('construction','Construction Tests');
 
-  physicsNumberTests.addSubCategory('constructor', 'integers', 'Integers');
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('1235124'), {
+  measurementTests.addSubCategory('construction', 'integers', 'Integers');
+  measurementTests.assertMeasurement(new Measurement('1235124'), {
     firstSigFig: '1',
     otherSigFigs: "235124",
     orderOfMagnitude: 6,
     numSigFigs: 7,
     positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('12412123'), {
+  measurementTests.assertMeasurement(new Measurement('12412123'), {
       firstSigFig: '1',
       otherSigFigs: '2412123',
       orderOfMagnitude: 7,
       numSigFigs: 8,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('12'), {
+  measurementTests.assertMeasurement(new Measurement('12'), {
       firstSigFig: '1',
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('+99'), {
+  measurementTests.assertMeasurement(new Measurement('+99'), {
       firstSigFig: '9',
       otherSigFigs: '9',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-106'), {
+  measurementTests.assertMeasurement(new Measurement('-106'), {
       firstSigFig: '1',
       otherSigFigs: '06',
       orderOfMagnitude: 2,
       numSigFigs: 3,
       positive: false
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('5000'), {
+  measurementTests.assertMeasurement(new Measurement('5000'), {
       firstSigFig: '5',
       otherSigFigs: '',
       orderOfMagnitude: 3,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('80'), {
+  measurementTests.assertMeasurement(new Measurement('80'), {
       firstSigFig: '8',
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('5001'), {
+  measurementTests.assertMeasurement(new Measurement('5001'), {
       firstSigFig: '5',
       otherSigFigs: '001',
       orderOfMagnitude: 3,
       numSigFigs: 4,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('00000082'), {
+  measurementTests.assertMeasurement(new Measurement('00000082'), {
       firstSigFig: '8',
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('010'), {
+  measurementTests.assertMeasurement(new Measurement('010'), {
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-0041'), {
+  measurementTests.assertMeasurement(new Measurement('-0041'), {
       firstSigFig: '4',
       otherSigFigs: '1',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: false
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('00005'), {
+  measurementTests.assertMeasurement(new Measurement('00005'), {
       firstSigFig: '5',
       otherSigFigs: '',
       orderOfMagnitude: 0,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-80.'), {
+  measurementTests.assertMeasurement(new Measurement('-80.'), {
       firstSigFig: '8',
       otherSigFigs: '0',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: false
-  }, 'constructor', 'integers');
+  }, 'construction', 'integers');
 
-  physicsNumberTests.addSubCategory('constructor', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('123.4','meters'), {
+  measurementTests.addSubCategory('construction', 'standardNotationDecimalStrings', 'Standard Notation Decimal Strings');
+  measurementTests.assertMeasurement(new Measurement('123.4','meters'), {
       firstSigFig: '1',
       otherSigFigs: '234',
       orderOfMagnitude: 2,
       numSigFigs: 4,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('123.4000','meters'), {
+  measurementTests.assertMeasurement(new Measurement('123.4000','meters'), {
       firstSigFig: '1',
       otherSigFigs: '234000',
       orderOfMagnitude: 2,
       numSigFigs: 7,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('30000.0','meters'), {
+  measurementTests.assertMeasurement(new Measurement('30000.0','meters'), {
       firstSigFig: '3',
       otherSigFigs: '00000',
       orderOfMagnitude: 4,
       numSigFigs: 6,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-0231.12','meters'), {
+  measurementTests.assertMeasurement(new Measurement('-0231.12','meters'), {
       firstSigFig: '2',
       otherSigFigs: '3112',
       orderOfMagnitude: 2,
       numSigFigs: 5,
       positive: false
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-12','meters'), {
+  measurementTests.assertMeasurement(new Measurement('-12','meters'), {
       firstSigFig: '1',
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: false
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('+.54','meters'), {
+  measurementTests.assertMeasurement(new Measurement('+.54','meters'), {
       firstSigFig: '5',
       otherSigFigs: '4',
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('12412.31421'), {
+  measurementTests.assertMeasurement(new Measurement('12412.31421'), {
       firstSigFig: '1',
       otherSigFigs: '241231421',
       orderOfMagnitude: 4,
       numSigFigs: 10,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-.3142'), {
+  measurementTests.assertMeasurement(new Measurement('-.3142'), {
       firstSigFig: '3',
       otherSigFigs: '142',
       orderOfMagnitude: -1,
       numSigFigs: 4,
       positive: false
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('124210.'), {
+  measurementTests.assertMeasurement(new Measurement('124210.'), {
       firstSigFig: '1',
       otherSigFigs: '24210',
       orderOfMagnitude: 5,
       numSigFigs: 6,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.54'), {
+  measurementTests.assertMeasurement(new Measurement('.54'), {
       firstSigFig: '5',
       otherSigFigs: '4',
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.540000'), {
+  measurementTests.assertMeasurement(new Measurement('.540000'), {
       firstSigFig: '5',
       otherSigFigs: '40000',
       orderOfMagnitude: -1,
       numSigFigs: 6,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('50.'), {
+  measurementTests.assertMeasurement(new Measurement('50.'), {
       firstSigFig: '5',
       otherSigFigs: '0',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('0.6'), {
+  measurementTests.assertMeasurement(new Measurement('0.6'), {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: -1,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.6'), {
+  measurementTests.assertMeasurement(new Measurement('.6'), {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: -1,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.60'), {
+  measurementTests.assertMeasurement(new Measurement('.60'), {
       firstSigFig: '6',
       otherSigFigs: '0',
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.00006'), {
+  measurementTests.assertMeasurement(new Measurement('.00006'), {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: -5,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.000060'), {
+  measurementTests.assertMeasurement(new Measurement('.000060'), {
       firstSigFig: '6',
       otherSigFigs: '0',
       orderOfMagnitude: -5,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'standardNotationDecimalStrings');
+  }, 'construction', 'standardNotationDecimalStrings');
 
 
 
-  physicsNumberTests.addSubCategory('constructor', 'exponentStrings', 'Exponent Numerical Strings');
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('3.0e8'), {
+  measurementTests.addSubCategory('construction', 'exponentStrings', 'Exponent Numerical Strings');
+  measurementTests.assertMeasurement(new Measurement('3.0e8'), {
       firstSigFig: '3',
       otherSigFigs: '0',
       orderOfMagnitude: 8,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('12e-7'), {
+  measurementTests.assertMeasurement(new Measurement('12e-7'), {
       firstSigFig: '1',
       otherSigFigs: '2',
       orderOfMagnitude: -6,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('123e+8'), {
+  measurementTests.assertMeasurement(new Measurement('123e+8'), {
       firstSigFig: '1',
       otherSigFigs: '23',
       orderOfMagnitude: 10,
       numSigFigs: 3,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('125e9'), {
+  measurementTests.assertMeasurement(new Measurement('125e9'), {
       firstSigFig: '1',
       otherSigFigs: '25',
       orderOfMagnitude: 11,
       numSigFigs: 3,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('001e-7'), {
+  measurementTests.assertMeasurement(new Measurement('001e-7'), {
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: -7,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.34e3'), {
+  measurementTests.assertMeasurement(new Measurement('.34e3'), {
       firstSigFig: '3',
       otherSigFigs: '4',
       orderOfMagnitude: 2,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('45.3e4'), {
+  measurementTests.assertMeasurement(new Measurement('45.3e4'), {
       firstSigFig: '4',
       otherSigFigs: '53',
       orderOfMagnitude: 5,
       numSigFigs: 3,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('4e5'), {
+  measurementTests.assertMeasurement(new Measurement('4e5'), {
       firstSigFig: '4',
       otherSigFigs: '',
       orderOfMagnitude: 5,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('4.e5'), {
+  measurementTests.assertMeasurement(new Measurement('4.e5'), {
       firstSigFig: '4',
       otherSigFigs: '',
       orderOfMagnitude: 5,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('0003e4'), {
+  measurementTests.assertMeasurement(new Measurement('0003e4'), {
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 4,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('3.14e-9'), {
+  measurementTests.assertMeasurement(new Measurement('3.14e-9'), {
       firstSigFig: '3',
       otherSigFigs: '14',
       orderOfMagnitude: -9,
       numSigFigs: 3,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.42e2'), {
+  measurementTests.assertMeasurement(new Measurement('.42e2'), {
       firstSigFig: '4',
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('6E-3'), {
+  measurementTests.assertMeasurement(new Measurement('6E-3'), {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: -3,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('+4.56e3'), {
+  measurementTests.assertMeasurement(new Measurement('+4.56e3'), {
       firstSigFig: '4',
       otherSigFigs: '56',
       orderOfMagnitude: 3,
       numSigFigs: 3,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-5.78e-9'), {
+  measurementTests.assertMeasurement(new Measurement('-5.78e-9'), {
       firstSigFig: '5',
       otherSigFigs: '78',
       orderOfMagnitude: -9,
       numSigFigs: 3,
       positive: false
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('+5E3'), {
+  measurementTests.assertMeasurement(new Measurement('+5E3'), {
       firstSigFig: '5',
       otherSigFigs: '',
       orderOfMagnitude: 3,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('-6e-9'), {
+  measurementTests.assertMeasurement(new Measurement('-6e-9'), {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: -9,
       numSigFigs: 1,
       positive: false
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new Magnitude('+8.e4'), {
+  measurementTests.assertMeasurement(new Measurement('+8.e4'), {
       firstSigFig: '8',
       otherSigFigs: '',
       orderOfMagnitude: 4,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.9e7'), {
+  measurementTests.assertMeasurement(new Measurement('.9e7'), {
       firstSigFig: '9',
       otherSigFigs: '',
       orderOfMagnitude: 6,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('430e2'), {
+  measurementTests.assertMeasurement(new Measurement('430e2'), {
       firstSigFig: '4',
       otherSigFigs: '3',
       orderOfMagnitude: 4,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('5000E-9'), {
+  measurementTests.assertMeasurement(new Measurement('5000E-9'), {
       firstSigFig: '5',
       otherSigFigs: '',
       orderOfMagnitude: -6,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('60000E7'), {
+  measurementTests.assertMeasurement(new Measurement('60000E7'), {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: 11,
       numSigFigs: 1,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('60000.E7'), {
+  measurementTests.assertMeasurement(new Measurement('60000.E7'), {
       firstSigFig: '6',
       otherSigFigs: '0000',
       orderOfMagnitude: 11,
       numSigFigs: 5,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('600.00E7'), {
+  measurementTests.assertMeasurement(new Measurement('600.00E7'), {
       firstSigFig: '6',
       otherSigFigs: '0000',
       orderOfMagnitude: 9,
       numSigFigs: 5,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('30.e2'), {
+  measurementTests.assertMeasurement(new Measurement('30.e2'), {
       firstSigFig: '3',
       otherSigFigs: '0',
       orderOfMagnitude: 3,
       numSigFigs: 2,
       positive: true
-  }, 'constructor', 'exponentStrings');
+  }, 'construction', 'exponentStrings');
 
 
   /*
@@ -526,273 +526,268 @@
 // magnitudeTests.assertEqualStrict(mag102.positive, false, 'constructor', 'standardNotationDecimalStrings');
 //
 
-  physicsNumberTests.addSubCategory('constructor','zeros','Zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.0'), 2, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.0000'), 5, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000.'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000.000'), 4, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('-0000'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('+0000'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0e8'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0000e-8'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('0.000E6'), 4, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('00000.'), 1, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('.0'), 2, 'constructor', 'zeros');
-  physicsNumberTests.assertPhysicsNumberZero(new PhysicsNumber('.0000'), 5, 'constructor', 'zeros'); // this is five significant figures because it gets the first zero for free!
-  physicsNumberTests.assertPhysicsNumberZero(constructZeroMagnitude(undefined, true), Infinity, 'constructor', 'zeros'); // zero magnitude with infinite sig figs
+  measurementTests.addSubCategory('construction','zeros','Zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.0'), 2, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.0000'), 5, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000.'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000.000'), 4, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('-0000'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('+0000'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0e8'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0000e-8'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('0.000E6'), 4, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('00000.'), 1, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('.0'), 2, 'construction', 'zeros');
+  measurementTests.assertMeasurementZero(new Measurement('.0000'), 5, 'construction', 'zeros'); // this is five significant figures because it gets the first zero for free!
+  measurementTests.assertMeasurementZero(new Measurement(0), Infinity, 'construction', 'zeros'); // zero magnitude with infinite sig figs
 
 
 
-  physicsNumberTests.addSubCategory('constructor', 'nonNumericalStrings', 'Non NumericalStrings');
+  measurementTests.addSubCategory('construction', 'nonNumericalStrings', 'Non NumericalStrings');
 
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('mrkuncik'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('hello. its. me.'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('dan.dfe'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('4251215u351421'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('4251215e3514e21'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('4214124.121412.42142'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('daniel kuncik'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('1.23,e4.5'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('.e5'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('-e4'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('+e+3'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('E6'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber(undefined), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('+.'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber('-.'), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("-."), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber(".+"), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("."), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber(""), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("+"), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(new PhysicsNumber("-"), 'constructor', 'nonNumericalStrings');
-  physicsNumberTests.assertNotPhysicsNumber(constructInvalidMagnitude(), 'constructor', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('mrkuncik'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('hello. its. me.'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('dan.dfe'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('4251215u351421'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('4251215e3514e21'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('4214124.121412.42142'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('daniel kuncik'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('1.23,e4.5'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('.e5'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('-e4'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('+e+3'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('E6'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement(undefined), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('+.'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement('-.'), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("-."), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement(".+"), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("."), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement(""), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("+"), 'construction', 'nonNumericalStrings');
+  measurementTests.assertNotMeasurement(new Measurement("-"), 'construction', 'nonNumericalStrings');
 
 
   // ##############################################################
   // construct from float
-  physicsNumberTests.addCategory('constructFromFloat','Construct From Float');
+  measurementTests.addCategory('constructFromFloat','Construct From Float');
 
-  physicsNumberTests.addSubCategory('constructFromFloat','integers', 'Integers');
+  measurementTests.addSubCategory('constructFromFloat','integers', 'Integers');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(4,3), {
+  measurementTests.assertMeasurement(new Measurement(4,3), {
     firstSigFig: '4',
     otherSigFigs: '00',
     orderOfMagnitude: 0,
     numSigFigs: 3,
     positive: true,
     float: 4
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(4,1), {
+  measurementTests.assertMeasurement(new Measurement(4,1), {
     firstSigFig: '4',
     otherSigFigs: '',
     orderOfMagnitude: 0,
     numSigFigs: 1,
     positive: true,
     float: 4
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(23,1), {
+  measurementTests.assertMeasurement(new Measurement(23,1), {
     firstSigFig: '2',
     otherSigFigs: '',
     orderOfMagnitude: 1,
     numSigFigs: 1,
     positive: true,
     float: 23
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(26,1), {
+  measurementTests.assertMeasurement(new Measurement(26,1), {
     firstSigFig: '3',
     otherSigFigs: '',
     orderOfMagnitude: 1,
     numSigFigs: 1,
     positive: true,
     float: 26
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(500,7), {
+  measurementTests.assertMeasurement(new Measurement(500,7), {
     firstSigFig: '5',
     otherSigFigs: '000000',
     orderOfMagnitude: 2,
     numSigFigs: 7,
     positive: true,
     float: 500
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  let mag2006 = constructMagnitudeFromFloat(99,1);
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(99,1), {
+  measurementTests.assertMeasurement(new Measurement(99,1), {
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 2,
     numSigFigs: 1,
     positive: true,
     float: 99
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  let mag2007 = constructMagnitudeFromFloat(602,4);
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(602,4), {
+  measurementTests.assertMeasurement(new Measurement(602,4), {
     firstSigFig: '6',
     otherSigFigs: '020',
     orderOfMagnitude: 2,
     numSigFigs: 4,
     positive: true,
     float: 602
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  let mag2008 = constructMagnitudeFromFloat(602,2);
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(602,2), {
+  measurementTests.assertMeasurement(new Measurement(602,2), {
     firstSigFig: '6',
     otherSigFigs: '0',
     orderOfMagnitude: 2,
     numSigFigs: 2,
     positive: true,
     float: 602
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  let mag2009 = constructMagnitudeFromFloat(-605,2);
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-605,2), {
+  measurementTests.assertMeasurement(new Measurement(-605,2), {
     firstSigFig: '6',
     otherSigFigs: '1',
     orderOfMagnitude: 2,
     numSigFigs: 2,
     positive: false,
     float: -605
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-12,5), {
+  measurementTests.assertMeasurement(new Measurement(-12,5), {
     firstSigFig: '1',
     otherSigFigs: '2000',
     orderOfMagnitude: 1,
     numSigFigs: 5,
     positive: false,
     float: -12
-  }, 'constructFromFloat','integers')
+  }, 'constructFromFloat','integers');
 
-  physicsNumberTests.addSubCategory('constructFromFloat','integerExponents', 'Integers with Exponents');
-  physicsNumberTests.addSubCategory('constructFromFloat','decimalsExponents', 'Decimal Exponents');
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-2e8,4), {
+  measurementTests.addSubCategory('constructFromFloat','integerExponents', 'Integers with Exponents');
+  measurementTests.addSubCategory('constructFromFloat','decimalsExponents', 'Decimal Exponents');
+  measurementTests.assertMeasurement(new Measurement(-2e8,4), {
     firstSigFig: '2',
     otherSigFigs: '000',
     orderOfMagnitude: 8,
     numSigFigs: 4,
     positive: false,
     float: -2e8
-  }, 'constructFromFloat','integerExponents')
+  }, 'constructFromFloat','integerExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1e6,1), {
+  measurementTests.assertMeasurement(new Measurement(1e6,1), {
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 6,
     numSigFigs: 1,
     positive: true,
     float: 1e6
-  }, 'constructFromFloat','integerExponents')
+  }, 'constructFromFloat','integerExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1.234567e8,1), {
+  measurementTests.assertMeasurement(new Measurement(1.234567e8,1), {
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 8,
     numSigFigs: 1,
     positive: true,
     float: 1.234567e8
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1234.567e8,2), {
+  measurementTests.assertMeasurement(new Measurement(1234.567e8,2), {
     firstSigFig: '1',
     otherSigFigs: '2',
     orderOfMagnitude: 11,
     numSigFigs: 2,
     positive: true,
     float: 1234.567e8
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(1234.567e8,10), {
+  measurementTests.assertMeasurement(new Measurement(1234.567e8,10), {
     firstSigFig: '1',
     otherSigFigs: '234567000',
     orderOfMagnitude: 11,
     numSigFigs: 10,
     positive: true,
     float: 1234.567e8
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(-1e6,5), {
+  measurementTests.assertMeasurement(new Measurement(-1e6,5), {
     firstSigFig: '1',
     otherSigFigs: '0000',
     orderOfMagnitude: 6,
     numSigFigs: 5,
     positive: false,
     float: -1e6
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(0.00031235e-2,3), {
+  measurementTests.assertMeasurement(new Measurement(0.00031235e-2,3), {
     firstSigFig: '3',
     otherSigFigs: '12',
     orderOfMagnitude: -6,
     numSigFigs: 3,
     positive: true,
     float: 0.00031235e-2
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,1), {
+  measurementTests.assertMeasurement(new Measurement(9.999e5,1), {
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 6,
     numSigFigs: 1,
     positive: true,
     float: 9.999e5
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,2), {
+  measurementTests.assertMeasurement(new Measurement(9.999e5,2), {
     firstSigFig: '1',
     otherSigFigs: '0',
     orderOfMagnitude: 6,
     numSigFigs: 2,
     positive: true,
     float: 9.999e5
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,3), {
+  measurementTests.assertMeasurement(new Measurement(9.999e5,3), {
     firstSigFig: '1',
     otherSigFigs: '00',
     orderOfMagnitude: 6,
     numSigFigs: 3,
     positive: true,
     float: 9.999e5
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,4), {
+  measurementTests.assertMeasurement(new Measurement(9.999e5,4), {
     firstSigFig: '9',
     otherSigFigs: '999',
     orderOfMagnitude: 5,
     numSigFigs: 4,
     positive: true,
     float: 9.999e5
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(9.999e5,5), {
+  measurementTests.assertMeasurement(new Measurement(9.999e5,5), {
     firstSigFig: '9',
     otherSigFigs: '9990',
     orderOfMagnitude: 5,
     numSigFigs: 5,
     positive: true,
     float: 9.999e5
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.assertPhysicsNumber(constructMagnitudeFromFloat(98765e-10,1), {
+  measurementTests.assertMeasurement(new Measurement(98765e-10,1), {
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: -5,
     numSigFigs: 1,
     positive: true,
     float: 98765e-10
-  }, 'constructFromFloat','decimalsExponents')
+  }, 'constructFromFloat','decimalsExponents');
 
-  physicsNumberTests.addSubCategory('constructFromFloat','zeros','Zeros')
-  physicsNumberTests.assertPhysicsNumberZero(constructMagnitudeFromFloat(0.000,2),2,'constructFromFloat','zeros')
+  measurementTests.addSubCategory('constructFromFloat','zeros','Zeros');
+  measurementTests.assertMeasurementZero(new Measurement(0.000,2),2,'constructFromFloat','zeros');
 
 /*
 is it possible there is a time when the float is not zero, but the number is zero?
@@ -1088,22 +1083,22 @@ is it possible there is a time when the float is not zero, but the number is zer
   // ##############################################################
   // ##############################################################
   // ROUNDING TESTS
-  physicsNumberTests.addCategory('rounding','Rounding Tests');
+  measurementTests.addCategory('rounding','Rounding Tests');
 
-  physicsNumberTests.addSubCategory('rounding','standardNotationRounding', 'Standard Notation Rounding');
+  measurementTests.addSubCategory('rounding','standardNotationRounding', 'Standard Notation Rounding');
 
-  let mag1001 = new Magnitude('1245'); //1200
+  let mag1001 = new Measurement('1245'); //1200
   mag1001.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1001, {
+  measurementTests.assertMeasurement(mag1001, {
       firstSigFig: '1',
       otherSigFigs: '2',
       orderOfMagnitude: 3,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1002 = new Magnitude('1265'); // 1300
+  let mag1002 = new Measurement('1265'); // 1300
   mag1002.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1002, {
+  measurementTests.assertMeasurement(mag1002, {
       firstSigFig: '1',
       otherSigFigs: '3',
       orderOfMagnitude: 3,
@@ -1112,9 +1107,9 @@ is it possible there is a time when the float is not zero, but the number is zer
 
 
 
-  let mag1003 = new Magnitude('1245'); // 1250
+  let mag1003 = new Measurement('1245'); // 1250
   mag1003.round(3);
-  physicsNumberTests.assertPhysicsNumber(mag1003, {
+  measurementTests.assertMeasurement(mag1003, {
       firstSigFig: '1',
       otherSigFigs: '25',
       orderOfMagnitude: 3,
@@ -1122,9 +1117,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1004 = new Magnitude('1245'); // 1000
+  let mag1004 = new Measurement('1245'); // 1000
   mag1004.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1004, {
+  measurementTests.assertMeasurement(mag1004, {
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 3,
@@ -1132,9 +1127,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1005 = new Magnitude('1500'); // 2000
+  let mag1005 = new Measurement('1500'); // 2000
   mag1005.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1005, {
+  measurementTests.assertMeasurement(mag1005, {
       firstSigFig: '2',
       otherSigFigs: '',
       orderOfMagnitude: 3,
@@ -1142,9 +1137,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1006 = new Magnitude('1499'); // 1000
+  let mag1006 = new Measurement('1499'); // 1000
   mag1006.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1006, {
+  measurementTests.assertMeasurement(mag1006, {
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 3,
@@ -1152,9 +1147,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1007 = new Magnitude('1245'); // FAIL
+  let mag1007 = new Measurement('1245'); // FAIL
   mag1007.round(6);
-  physicsNumberTests.assertPhysicsNumber(mag1007, {
+  measurementTests.assertMeasurement(mag1007, {
       firstSigFig: '1',
       otherSigFigs: '245',
       orderOfMagnitude: 3,
@@ -1162,9 +1157,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1008 = new Magnitude('0.0000345'); // 0.00003
+  let mag1008 = new Measurement('0.0000345'); // 0.00003
   mag1008.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1008, {
+  measurementTests.assertMeasurement(mag1008, {
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: -5,
@@ -1172,9 +1167,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1009 = new Magnitude('0.0000345'); // 0.0000345 return this
+  let mag1009 = new Measurement('0.0000345'); // 0.0000345 return this
   mag1009.round(3);
-  physicsNumberTests.assertPhysicsNumber(mag1009, {
+  measurementTests.assertMeasurement(mag1009, {
       firstSigFig: '3',
       otherSigFigs: '45',
       orderOfMagnitude: -5,
@@ -1182,9 +1177,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1010 = new Magnitude('0.0000345'); // FAIL
+  let mag1010 = new Measurement('0.0000345'); // FAIL
   mag1010.round(8);
-  physicsNumberTests.assertPhysicsNumber(mag1010, {
+  measurementTests.assertMeasurement(mag1010, {
       firstSigFig: '3',
       otherSigFigs: '45',
       orderOfMagnitude: -5,
@@ -1192,9 +1187,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1011 = new Magnitude('1000000.3'); //1000000.
+  let mag1011 = new Measurement('1000000.3'); //1000000.
   mag1011.round(7);
-  physicsNumberTests.assertPhysicsNumber(mag1011, {
+  measurementTests.assertMeasurement(mag1011, {
       firstSigFig: '1',
       otherSigFigs: '000000',
       orderOfMagnitude: 6,
@@ -1202,9 +1197,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1012 = new Magnitude('1000000'); // fail
+  let mag1012 = new Measurement('1000000'); // fail
   mag1012.round(4);
-  physicsNumberTests.assertPhysicsNumber(mag1012, {
+  measurementTests.assertMeasurement(mag1012, {
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 6,
@@ -1212,9 +1207,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1013 = new Magnitude('1030000'); /// no change
+  let mag1013 = new Measurement('1030000'); /// no change
   mag1013.round(3);
-  physicsNumberTests.assertPhysicsNumber(mag1013, {
+  measurementTests.assertMeasurement(mag1013, {
       firstSigFig: '1',
       otherSigFigs: '03',
       orderOfMagnitude: 6,
@@ -1222,9 +1217,9 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1014 = new Magnitude('1030000'); // FAIL
+  let mag1014 = new Measurement('1030000'); // FAIL
   mag1014.round(4);
-  physicsNumberTests.assertPhysicsNumber(mag1014, { // FAIL: cannot round to more sig figs
+  measurementTests.assertMeasurement(mag1014, { // FAIL: cannot round to more sig figs
       firstSigFig: '1',
       otherSigFigs: '03',
       orderOfMagnitude: 6,
@@ -1232,45 +1227,45 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
 
-  let mag1015 = new Magnitude('1030000');
+  let mag1015 = new Measurement('1030000');
   mag1015.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1015, { // 1.0e6
+  measurementTests.assertMeasurement(mag1015, { // 1.0e6
       firstSigFig: '1',
       otherSigFigs: '0',
       orderOfMagnitude: 6,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1016 = new Magnitude('1000000');
+  let mag1016 = new Measurement('1000000');
   mag1016.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1016, { // no change
+  measurementTests.assertMeasurement(mag1016, { // no change
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 6,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1017 = new Magnitude('12.456'); //12.5
+  let mag1017 = new Measurement('12.456'); //12.5
   mag1017.round(3);
-  physicsNumberTests.assertPhysicsNumber(mag1017, {
+  measurementTests.assertMeasurement(mag1017, {
       firstSigFig: '1',
       otherSigFigs: '25',
       orderOfMagnitude: 1,
       numSigFigs: 3
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1018 = new Magnitude('56.8'); // 57
+  let mag1018 = new Measurement('56.8'); // 57
   mag1018.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1018, {
+  measurementTests.assertMeasurement(mag1018, {
       firstSigFig: '5',
       otherSigFigs: '7',
       orderOfMagnitude: 1,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1019 = new Magnitude('56.2'); //56
+  let mag1019 = new Measurement('56.2'); //56
   mag1019.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1019, {
+  measurementTests.assertMeasurement(mag1019, {
       firstSigFig: '5',
       otherSigFigs: '6',
       orderOfMagnitude: 1,
@@ -1278,7 +1273,7 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
   const mag1019a = mag1019.roundAndDuplicate(1);
-  physicsNumberTests.assertPhysicsNumber(mag1019a, {
+  measurementTests.assertMeasurement(mag1019a, {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: 1,
@@ -1286,7 +1281,7 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'standardNotationRounding');
 
   // does not change original
-  physicsNumberTests.assertPhysicsNumber(mag1019, {
+  measurementTests.assertMeasurement(mag1019, {
       firstSigFig: '5',
       otherSigFigs: '6',
       orderOfMagnitude: 1,
@@ -1295,155 +1290,155 @@ is it possible there is a time when the float is not zero, but the number is zer
 
 
 
-  let mag1020 = new Magnitude('60.2'); // 60.
+  let mag1020 = new Measurement('60.2'); // 60.
   mag1020.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1020, {
+  measurementTests.assertMeasurement(mag1020, {
       firstSigFig: '6',
       otherSigFigs: '0',
       orderOfMagnitude: 1,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1021 = new Magnitude('60.5'); //61
+  let mag1021 = new Measurement('60.5'); //61
   mag1021.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1021, {
+  measurementTests.assertMeasurement(mag1021, {
       firstSigFig: '6',
       otherSigFigs: '1',
       orderOfMagnitude: 1,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1022 = new Magnitude('60.5'); //6e1
+  let mag1022 = new Measurement('60.5'); //6e1
   mag1022.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1022, {
+  measurementTests.assertMeasurement(mag1022, {
       firstSigFig: '6',
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1023 = new Magnitude('99.5553'); // 99.555
+  let mag1023 = new Measurement('99.5553'); // 99.555
   mag1023.round(5);
-  physicsNumberTests.assertPhysicsNumber(mag1023, {
+  measurementTests.assertMeasurement(mag1023, {
       firstSigFig: '9',
       otherSigFigs: '9555',
       orderOfMagnitude: 1,
       numSigFigs: 5
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1024 = new Magnitude('00122.3456'); //00122.3
+  let mag1024 = new Measurement('00122.3456'); //00122.3
   mag1024.round(4);
-  physicsNumberTests.assertPhysicsNumber(mag1024, {
+  measurementTests.assertMeasurement(mag1024, {
       firstSigFig: '1',
       otherSigFigs: '223',
       orderOfMagnitude: 2,
       numSigFigs: 4
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1025 = new Magnitude('00122.3756'); //00122.4
+  let mag1025 = new Measurement('00122.3756'); //00122.4
   mag1025.round(4);
-  physicsNumberTests.assertPhysicsNumber(mag1025, {
+  measurementTests.assertMeasurement(mag1025, {
       firstSigFig: '1',
       otherSigFigs: '224',
       orderOfMagnitude: 2,
       numSigFigs: 4
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1026 = new Magnitude('1999'); // 2.0e3
+  let mag1026 = new Measurement('1999'); // 2.0e3
   mag1026.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1026, {
+  measurementTests.assertMeasurement(mag1026, {
       firstSigFig: '2',
       otherSigFigs: '0',
       orderOfMagnitude: 3,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1027 = new Magnitude('1999'); // 2e3
+  let mag1027 = new Measurement('1999'); // 2e3
   mag1027.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1027, {
+  measurementTests.assertMeasurement(mag1027, {
       firstSigFig: '2',
       otherSigFigs: '',
       orderOfMagnitude: 3,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1028 = new Magnitude('1999'); // 2.00e3
+  let mag1028 = new Measurement('1999'); // 2.00e3
   mag1028.round(3);
-  physicsNumberTests.assertPhysicsNumber(mag1028, {
+  measurementTests.assertMeasurement(mag1028, {
       firstSigFig: '2',
       otherSigFigs: '00',
       orderOfMagnitude: 3,
       numSigFigs: 3
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1029 = new Magnitude('1'); // return this
+  let mag1029 = new Measurement('1'); // return this
   mag1029.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1029, {
+  measurementTests.assertMeasurement(mag1029, {
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 0,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1030 = new Magnitude('80'); // FAIL
+  let mag1030 = new Measurement('80'); // FAIL
   mag1030.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1030, {
+  measurementTests.assertMeasurement(mag1030, {
       firstSigFig: '8',
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1031 = new Magnitude('80'); // return this
+  let mag1031 = new Measurement('80'); // return this
   mag1031.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1031, {
+  measurementTests.assertMeasurement(mag1031, {
       firstSigFig: '8',
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1032 = new Magnitude('000650');
+  let mag1032 = new Measurement('000650');
   mag1032.round(3);
-  physicsNumberTests.assertPhysicsNumber(mag1032, { // FAIL
+  measurementTests.assertMeasurement(mag1032, { // FAIL
       firstSigFig: '6',
       otherSigFigs: '5',
       orderOfMagnitude: 2,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1033 = new Magnitude('000650'); // 650
+  let mag1033 = new Measurement('000650'); // 650
   mag1033.round(2);
-  physicsNumberTests.assertPhysicsNumber(mag1033, {
+  measurementTests.assertMeasurement(mag1033, {
       firstSigFig: '6',
       otherSigFigs: '5',
       orderOfMagnitude: 2,
       numSigFigs: 2
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1034 = new Magnitude('000650'); // 700
+  let mag1034 = new Measurement('000650'); // 700
   mag1034.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1034, { // 700
+  measurementTests.assertMeasurement(mag1034, { // 700
       firstSigFig: '7',
       otherSigFigs: '',
       orderOfMagnitude: 2,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  let mag1035 = new Magnitude('999');
+  let mag1035 = new Measurement('999');
   mag1035.round(1);
-  physicsNumberTests.assertPhysicsNumber(mag1035, { // 1000
+  measurementTests.assertMeasurement(mag1035, { // 1000
       firstSigFig: '1',
       otherSigFigs: '',
       orderOfMagnitude: 3,
       numSigFigs: 1
   }, 'rounding', 'standardNotationRounding');
 
-  physicsNumberTests.addSubCategory('rounding', 'exactRounding', 'Rounding Exact Values to Unexact Values');
+  measurementTests.addSubCategory('rounding', 'exactRounding', 'Rounding Exact Values to Unexact Values');
 
-  let mag1036 = new Magnitude('90',undefined,undefined,true); // 90 exact rounds to 100!!!!
+  let mag1036 = new Measurement('90',undefined,undefined,true); // 90 exact rounds to 100!!!!
   mag1036.round(1);
-  physicsNumberTests.assertMagnitude(mag1036, {
+  measurementTests.assertMeasurement(mag1036, {
       firstSigFig: "9",
       otherSigFigs: "",
       numSigFigs: 1,
@@ -1452,9 +1447,9 @@ is it possible there is a time when the float is not zero, but the number is zer
       float: 90
   }, 'rounding', 'exactRounding');
 
-  let mag1037 = new Magnitude('90',undefined,undefined,false); // same issue, but not exact
+  let mag1037 = new Measurement('90',undefined,undefined,false); // same issue, but not exact
   mag1037.round(1);
-  physicsNumberTests.assertMagnitude(mag1037, {
+  measurementTests.assertMeasurement(mag1037, {
       firstSigFig: "9",
       otherSigFigs: "",
       numSigFigs: 1,
@@ -1463,9 +1458,9 @@ is it possible there is a time when the float is not zero, but the number is zer
       float: 90
   }, 'rounding', 'exactRounding');
 
-  let mag1038 = new Magnitude('90.0',undefined,undefined,false); // same issue, but not exact
+  let mag1038 = new Measurement('90.0',undefined,undefined,false); // same issue, but not exact
   mag1038.round(1);
-  physicsNumberTests.assertMagnitude(mag1038, {
+  measurementTests.assertMeasurement(mag1038, {
       firstSigFig: "9",
       otherSigFigs: "",
       numSigFigs: 1,
@@ -1474,9 +1469,9 @@ is it possible there is a time when the float is not zero, but the number is zer
       float: 90
   }, 'rounding', 'exactRounding');
 
-  let mag1039 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
+  let mag1039 = new Measurement('99',undefined,undefined,false); // same issue, but not exact
   mag1039.round(1);
-  physicsNumberTests.assertMagnitude(mag1039, {
+  measurementTests.assertMeasurement(mag1039, {
       firstSigFig: "1",
       otherSigFigs: "",
       numSigFigs: 1,
@@ -1485,9 +1480,9 @@ is it possible there is a time when the float is not zero, but the number is zer
       float: 100
   }, 'rounding', 'exactRounding');
 
-  let mag1040 = new Magnitude('99',undefined,undefined,false); // same issue, but not exact
+  let mag1040 = new Measurement('99',undefined,undefined,false); // same issue, but not exact
   mag1040.round(2);
-  physicsNumberTests.assertMagnitude(mag1040, {
+  measurementTests.assertMeasurement(mag1040, {
       firstSigFig: "9",
       otherSigFigs: "9",
       numSigFigs: 2,
@@ -1503,13 +1498,12 @@ is it possible there is a time when the float is not zero, but the number is zer
 /// operations testing
 
 
-physicsNumberTests.addCategory('operations','Operations');
-physicsNumberTests.addSubCategory('operations','addition','Addition');
+measurementTests.addCategory('operations','Operations');
+measurementTests.addSubCategory('operations','addition','Addition');
 
-let mag3001a = new Magnitude('2');
-let mag3001b = new Magnitude('2');  //4
-let mag3001 = mag3001a.addMag(mag3001b);
-physicsNumberTests.assertPhysicsNumber(mag3001a.addMag(mag3001b), { // 4
+let mag3001a = new Measurement('2');
+let mag3001b = new Measurement('2');  //4
+measurementTests.assertMeasurement(mag3001a.add(mag3001b), { // 4
     firstSigFig: '4',
     otherSigFigs: '',
     orderOfMagnitude: 0,
@@ -1517,7 +1511,7 @@ physicsNumberTests.assertPhysicsNumber(mag3001a.addMag(mag3001b), { // 4
     positive: true,
     float: 4
 }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3001b.addMag(mag3001a), { // 4
+  measurementTests.assertMeasurement(mag3001b.add(mag3001a), { // 4
       firstSigFig: '4',
       otherSigFigs: '',
       orderOfMagnitude: 0,
@@ -1526,10 +1520,9 @@ physicsNumberTests.assertPhysicsNumber(mag3001a.addMag(mag3001b), { // 4
       float: 4
   }, 'operations', 'addition');
 
-let mag3002a = new Magnitude('2.0');
-let mag3002b = new Magnitude('2'); // 4
-let mag3002 = mag3002a.addMag(mag3002b);
-  physicsNumberTests.assertPhysicsNumber(mag3002a.addMag(mag3002b), { // 4
+let mag3002a = new Measurement('2.0');
+let mag3002b = new Measurement('2'); // 4
+  measurementTests.assertMeasurement(mag3002a.add(mag3002b), { // 4
       firstSigFig: '4',
       otherSigFigs: '',
       orderOfMagnitude: 0,
@@ -1537,7 +1530,7 @@ let mag3002 = mag3002a.addMag(mag3002b);
       positive: true,
       float: 4
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3002b.addMag(mag3002a), { // 4
+  measurementTests.assertMeasurement(mag3002b.add(mag3002a), { // 4
       firstSigFig: '4',
       otherSigFigs: '',
       orderOfMagnitude: 0,
@@ -1548,10 +1541,9 @@ let mag3002 = mag3002a.addMag(mag3002b);
 
 
 
-let mag3003a = new Magnitude('2.0');
-let mag3003b = new Magnitude('2.0'); // 4.0
-let mag3003 = mag3003a.addMag(mag3003b);
-  physicsNumberTests.assertPhysicsNumber(mag3003a.addMag(mag3003b), { // 4.0
+let mag3003a = new Measurement('2.0');
+let mag3003b = new Measurement('2.0'); // 4.0
+  measurementTests.assertMeasurement(mag3003a.add(mag3003b), { // 4.0
       firstSigFig: '4',
       otherSigFigs: '0',
       orderOfMagnitude: 0,
@@ -1559,7 +1551,7 @@ let mag3003 = mag3003a.addMag(mag3003b);
       positive: true,
       float: 4
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3003b.addMag(mag3003a), { // 4.0
+  measurementTests.assertMeasurement(mag3003b.add(mag3003a), { // 4.0
       firstSigFig: '4',
       otherSigFigs: '0',
       orderOfMagnitude: 0,
@@ -1569,10 +1561,9 @@ let mag3003 = mag3003a.addMag(mag3003b);
   }, 'operations', 'addition');
 
 
-let mag3004a = new Magnitude('1000');
-let mag3004b = new Magnitude('1500');
-let mag3004 = mag3004a.addMag(mag3004b); // 3000
-  physicsNumberTests.assertPhysicsNumber(mag3004a.addMag(mag3004b), { // 3000
+let mag3004a = new Measurement('1000');
+let mag3004b = new Measurement('1500');
+  measurementTests.assertMeasurement(mag3004a.add(mag3004b), { // 3000
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 3,
@@ -1580,7 +1571,7 @@ let mag3004 = mag3004a.addMag(mag3004b); // 3000
       positive: true,
       float: 2500
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3004b.addMag(mag3004a), { // 3000
+  measurementTests.assertMeasurement(mag3004b.add(mag3004a), { // 3000
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 3,
@@ -1590,10 +1581,9 @@ let mag3004 = mag3004a.addMag(mag3004b); // 3000
   }, 'operations', 'addition');
 
 
-let mag3005a = new Magnitude('3e8');
-let mag3005b = new Magnitude('5'); /// 3e8
-let mag3005 = mag3005a.addMag(mag3005b);
-  physicsNumberTests.assertPhysicsNumber(mag3005a.addMag(mag3005b), { // 3e8
+let mag3005a = new Measurement('3e8');
+let mag3005b = new Measurement('5'); /// 3e8
+  measurementTests.assertMeasurement(mag3005a.add(mag3005b), { // 3e8
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 8,
@@ -1601,7 +1591,7 @@ let mag3005 = mag3005a.addMag(mag3005b);
       positive: true,
       float: 300000005
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3005b.addMag(mag3005a), { // 3e8
+  measurementTests.assertMeasurement(mag3005b.add(mag3005a), { // 3e8
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 8,
@@ -1611,10 +1601,9 @@ let mag3005 = mag3005a.addMag(mag3005b);
   }, 'operations', 'addition');
 
 
-let mag3006a = new Magnitude('3.00000000e8');
-let mag3006b = new Magnitude('5.00000000000'); // 3.0000005e8
-let mag3006 = mag3006a.addMag(mag3006b);
-  physicsNumberTests.assertPhysicsNumber(mag3006a.addMag(mag3006b), { // 3.0000005e8
+let mag3006a = new Measurement('3.00000000e8');
+let mag3006b = new Measurement('5.00000000000'); // 3.0000005e8
+  measurementTests.assertMeasurement(mag3006a.add(mag3006b), { // 3.0000005e8
       firstSigFig: '3',
       otherSigFigs: '00000005',
       orderOfMagnitude: 8,
@@ -1622,7 +1611,7 @@ let mag3006 = mag3006a.addMag(mag3006b);
       positive: true,
       float: 300000005
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3006b.addMag(mag3006a), { // 3.0000005e8
+  measurementTests.assertMeasurement(mag3006b.add(mag3006a), { // 3.0000005e8
       firstSigFig: '3',
       otherSigFigs: '00000005',
       orderOfMagnitude: 8,
@@ -1633,10 +1622,9 @@ let mag3006 = mag3006a.addMag(mag3006b);
 
 
 
-let mag3007a = new Magnitude('3e8');
-let mag3007b = new Magnitude('5.000000000');
-let mag3007 = mag3007a.addMag(mag3007b);
-  physicsNumberTests.assertPhysicsNumber(mag3007a.addMag(mag3007b), {
+let mag3007a = new Measurement('3e8');
+let mag3007b = new Measurement('5.000000000');
+  measurementTests.assertMeasurement(mag3007a.add(mag3007b), {
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 8,
@@ -1644,7 +1632,7 @@ let mag3007 = mag3007a.addMag(mag3007b);
       positive: true,
       float: 300000005
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3007b.addMag(mag3007a), {
+  measurementTests.assertMeasurement(mag3007b.add(mag3007a), {
       firstSigFig: '3',
       otherSigFigs: '',
       orderOfMagnitude: 8,
@@ -1653,10 +1641,9 @@ let mag3007 = mag3007a.addMag(mag3007b);
       float: 300000005
   }, 'operations', 'addition');
 
-  let mag3007xa = new Magnitude('3.0000000e8');
-  let mag3007xb = new Magnitude('5.000000000');
-  let mag3007x = mag3007xa.addMag(mag3007xb);
-  physicsNumberTests.assertPhysicsNumber(mag3007xa.addMag(mag3007xb), {
+  let mag3007xa = new Measurement('3.0000000e8');
+  let mag3007xb = new Measurement('5.000000000');
+  measurementTests.assertMeasurement(mag3007xa.add(mag3007xb), {
       firstSigFig: '3',
       otherSigFigs: '0000001',
       orderOfMagnitude: 8,
@@ -1665,7 +1652,7 @@ let mag3007 = mag3007a.addMag(mag3007b);
       float: 300000005
   }, 'operations', 'addition');
 
-  physicsNumberTests.assertPhysicsNumber(mag3007xb.addMag(mag3007xa), {
+  measurementTests.assertMeasurement(mag3007xb.add(mag3007xa), {
       firstSigFig: '3',
       otherSigFigs: '0000001',
       orderOfMagnitude: 8,
@@ -1674,10 +1661,9 @@ let mag3007 = mag3007a.addMag(mag3007b);
       float: 300000005
   }, 'operations', 'addition');
 
-  let mag3007ya = new Magnitude('3.000000e8');
-  let mag3007yb = new Magnitude('5.000000000');
-  let mag3007y = mag3007ya.addMag(mag3007yb);
-  physicsNumberTests.assertPhysicsNumber(mag3007ya.addMag(mag3007yb), {
+  let mag3007ya = new Measurement('3.000000e8');
+  let mag3007yb = new Measurement('5.000000000');
+  measurementTests.assertMeasurement(mag3007ya.add(mag3007yb), {
       firstSigFig: '3',
       otherSigFigs: '000000',
       orderOfMagnitude: 8,
@@ -1685,7 +1671,7 @@ let mag3007 = mag3007a.addMag(mag3007b);
       positive: true,
       float: 300000005
   }, 'operations', 'addition');
-  physicsNumberTests.assertPhysicsNumber(mag3007yb.addMag(mag3007ya), {
+  measurementTests.assertMeasurement(mag3007yb.add(mag3007ya), {
       firstSigFig: '3',
       otherSigFigs: '000000',
       orderOfMagnitude: 8,
@@ -1697,10 +1683,10 @@ let mag3007 = mag3007a.addMag(mag3007b);
 
 
 
-physicsNumberTests.addSubCategory('operations','reverseSign','Reverse Sign');
-let mag3008a = new Magnitude('2.00');
+measurementTests.addSubCategory('operations','reverseSign','Reverse Sign');
+let mag3008a = new Measurement('2.00');
 let mag3008 = mag3008a.reverseSign();
-physicsNumberTests.assertMagnitude(mag3008a, {
+measurementTests.assertMeasurement(mag3008a, {
     firstSigFig: '2',
     otherSigFigs: '00',
     orderOfMagnitude: 0,
@@ -1709,7 +1695,7 @@ physicsNumberTests.assertMagnitude(mag3008a, {
     positive: true
 }, 'operations', 'reverseSign');
 
-  physicsNumberTests.assertMagnitude(mag3008, {
+  measurementTests.assertMeasurement(mag3008, {
       firstSigFig: '2',
       otherSigFigs: '00',
       orderOfMagnitude: 0,
@@ -1832,50 +1818,50 @@ ADD SOME 999s
 add some zeros
 add some inifnities
 */
-physicsNumberTests.addSubCategory('operations','zeroes','Operations With Zero');
+measurementTests.addSubCategory('operations','zeroes','Operations With Zero');
 
-let mag3050a = constructZeroMagnitude(); // exactly zero
-let mag3050b = new Magnitude('5.00');
+let mag3050a = new Measurement(0); // exactly zero
+let mag3050b = new Measurement('5.00');
 
-physicsNumberTests.assertZeroMagnitude(mag3050a.multiplyMag(mag3050b), Infinity, 'operations', 'zeroes'); /// a number times exactly zero should be exactly zero; regradless of initial sig figs
-physicsNumberTests.assertZeroMagnitude(mag3050b.multiplyMag(mag3050a), Infinity, 'operations', 'zeroes');
+measurementTests.assertMeasurementZero(mag3050a.multiply(mag3050b), Infinity, 'operations', 'zeroes'); /// a number times exactly zero should be exactly zero; regradless of initial sig figs
+measurementTests.assertMeasurementZero(mag3050b.multiply(mag3050a), Infinity, 'operations', 'zeroes');
 
 
-physicsNumberTests.addSubCategory('operations','infinities','Operations With Infinity');
+measurementTests.addSubCategory('operations','infinities','Operations With Infinity');
 
-    let mag3100a = new Magnitude('4.0');
-    let mag3100b = constructInfinity();
-    physicsNumberTests.assertMagnitude(mag3100a.addMag(mag3100b), {
+    let mag3100a = new Measurement('4.0');
+    let mag3100b = new Measurement(Infinity);
+    measurementTests.assertMeasurement(mag3100a.add(mag3100b), {
         infinity: true,
         positive: true,
         float: Infinity
     }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100b.addMag(mag3100a), {
+  measurementTests.assertMeasurement(mag3100b.add(mag3100a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100a.subtractMag(mag3100b), {
+  measurementTests.assertMeasurement(mag3100a.subtract(mag3100b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100b.subtractMag(mag3100a), {
+  measurementTests.assertMeasurement(mag3100b.subtract(mag3100a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100a.multiplyMag(mag3100b), {
+  measurementTests.assertMagnitude(mag3100a.multiply(mag3100b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100b.multiplyMag(mag3100a), {
+  measurementTests.assertMeasurement(mag3100b.multiply(mag3100a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100a.divideMag(mag3100b), {
+  measurementTests.assertMeasurement(mag3100a.divide(mag3100b), {
       positive: undefined,
       zero: true,
       exact: true, // this will be tough
@@ -1883,45 +1869,45 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
       firstSigFig: '0',
       float: 0
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3100b.divideMag(mag3100a), {
+  measurementTests.assertMeasurement(mag3100b.divide(mag3100a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
 
-  let mag3101a = new Magnitude('4.0');
-  let mag3101b = constructNegativeInfinity();
-  physicsNumberTests.assertMagnitude(mag3101a.addMag(mag3101b), {
+  let mag3101a = new Measurement('4.0');
+  let mag3101b = new Measurement(-Infinity);
+  measurementTests.assertMeasurement(mag3101a.add(mag3101b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101b.addMag(mag3101a), {
+  measurementTests.assertMagnitude(mag3101b.add(mag3101a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101a.subtractMag(mag3101b), {
+  measurementTests.assertMeasurement(mag3101a.subtract(mag3101b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101b.subtractMag(mag3101a), {
+  measurementTests.assertMeasurement(mag3101b.subtract(mag3101a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101a.multiplyMag(mag3101b), {
+  measurementTests.assertMeasurement(mag3101a.multiply(mag3101b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101b.multiplyMag(mag3101a), {
+  measurementTests.assertMeasurement(mag3101b.multiply(mag3101a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101a.divideMag(mag3101b), {
+  measurementTests.assertMeasurement(mag3101a.divide(mag3101b), {
       positive: undefined,
       zero: true,
       exact: true, // this will be tough
@@ -1929,7 +1915,7 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
       firstSigFig: '0',
       float: 0
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3101b.divideMag(mag3101a), {
+  measurementTests.assertMeasurement(mag3101b.divide(mag3101a), {
       infinity: true,
       positive: false,
       float: -Infinity
@@ -1938,114 +1924,114 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   /// add tests of comparing two infinities
   // this is where i may need a 'NaN' quality
 
-  let mag3102a = constructInfinity();
-  let mag3102b = constructInfinity();
-  physicsNumberTests.assertMagnitude(mag3102a.addMag(mag3102b), {
+  let mag3102a = new Measurement(Infinity);
+  let mag3102b = new Measurement(Infinity);
+  measurementTests.assertMeasurement(mag3102a.add(mag3102b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3102b.addMag(mag3102a), {
+  measurementTests.assertMeasurement(mag3102b.add(mag3102a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3102a.subtractMag(mag3102b), 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3102b.subtractMag(mag3102a),'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3102a.multiplyMag(mag3102b), {
+  measurementTests.assertNotMagnitude(mag3102a.subtract(mag3102b), 'operations', 'infinities');
+  measurementTests.assertNotMagnitude(mag3102b.subtract(mag3102a),'operations', 'infinities');
+  measurementTests.assertMeasurement(mag3102a.multiply(mag3102b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3102b.multiplyMag(mag3102a), {
+  measurementTests.assertMeasurement(mag3102b.multiply(mag3102a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3102a.divideMag(mag3102b), 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3102b.divideMag(mag3102a), 'operations', 'infinities');
+  measurementTests.assertNotMagnitude(mag3102a.divide(mag3102b), 'operations', 'infinities');
+  measurementTests.assertNotMagnitude(mag3102b.divide(mag3102a), 'operations', 'infinities');
 
 
-  let mag3103a = constructNegativeInfinity();
-  let mag3103b = constructNegativeInfinity();
-  physicsNumberTests.assertMagnitude(mag3103a.addMag(mag3103b), {
+  let mag3103a = new Measurement(-Infinity);
+  let mag3103b = new Measurement(-Infinity);
+  measurementTests.assertMeasurement(mag3103a.add(mag3103b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3103b.addMag(mag3103a), {
+  measurementTests.assertMeasurement(mag3103b.add(mag3103a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3103a.subtractMag(mag3103b), 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3103b.subtractMag(mag3103a), 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3103a.multiplyMag(mag3103b), {
+  measurementTests.assertNotMeasurement(mag3103a.subtract(mag3103b), 'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3103b.subtract(mag3103a), 'operations', 'infinities');
+  measurementTests.assertMeasurement(mag3103a.multiply(mag3103b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3103b.multiplyMag(mag3103a), {
+  measurementTests.assertMeasurement(mag3103b.multiply(mag3103a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3103a.divideMag(mag3103b), 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3103b.divideMag(mag3103a),'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3103a.divide(mag3103b), 'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3103b.divide(mag3103a),'operations', 'infinities');
 
 
-  let mag3104a = constructInfinity();
-  let mag3104b = constructNegativeInfinity();
-  physicsNumberTests.assertNotMagnitude(mag3104a.addMag(mag3104b),'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3104b.addMag(mag3104a),'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3104a.subtractMag(mag3104b), {
+  let mag3104a = new Measurement(Infinity);
+  let mag3104b = new Measurement(-Infinity);
+  measurementTests.assertNotMeasurement(mag3104a.add(mag3104b),'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3104b.add(mag3104a),'operations', 'infinities');
+  measurementTests.assertMeasurement(mag3104a.subtract(mag3104b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3104b.subtractMag(mag3104a), {
+  measurementTests.assertMeasurement(mag3104b.subtract(mag3104a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3104a.multiplyMag(mag3104b), {
+  measurementTests.assertMeasurement(mag3104a.multiply(mag3104b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3104b.multiplyMag(mag3104a), {
+  measurementTests.assertMeasurement(mag3104b.multiply(mag3104a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3104a.divideMag(mag3104b),'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3104b.divideMag(mag3104a),'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3104a.divide(mag3104b),'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3104b.divide(mag3104a),'operations', 'infinities');
 
-  let mag3105a = constructZeroMagnitude(5);
-  let mag3105b = constructInfinity();
-  physicsNumberTests.assertMagnitude(mag3105a.addMag(mag3105b), {
+  let mag3105a = new Measurement(0, 5);
+  let mag3105b = new Measurement(Infinity);
+  measurementTests.assertMeasurement(mag3105a.add(mag3105b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3105b.addMag(mag3105a), {
+  measurementTests.assertMeasurement(mag3105b.add(mag3105a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3105a.subtractMag(mag3105b), {
+  measurementTests.assertMeasurement(mag3105a.subtract(mag3105b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3105b.subtractMag(mag3105a), {
+  measurementTests.assertMeasurement(mag3105b.subtract(mag3105a), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3105a.multiplyMag(mag3105b),'operations', 'infinities');// zero times infinity is undefined!
-  physicsNumberTests.assertNotMagnitude(mag3105b.multiplyMag(mag3105a), 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3105a.divideMag(mag3105b), {
+  measurementTests.assertNotMeasurement(mag3105a.multiply(mag3105b),'operations', 'infinities');// zero times infinity is undefined!
+  measurementTests.assertNotMeasurement(mag3105b.multiply(mag3105a), 'operations', 'infinities');
+  measurementTests.assertMeasurement(mag3105a.divide(mag3105b), {
       positive: undefined,
       zero: true,
       exact: true,
@@ -2053,38 +2039,38 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
       firstSigFig: '0',
       float: 0
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3105b.divideMag(mag3105a),{ // Infinity divided by 0 is infinity
+  measurementTests.assertMeasurement(mag3105b.divide(mag3105a),{ // Infinity divided by 0 is infinity
       infinity: true,
       positive: true,
       float: Infinity
   },'operations', 'infinities');
 
 
-  let mag3106a = constructZeroMagnitude(4);
-  let mag3106b = constructNegativeInfinity();
-  physicsNumberTests.assertMagnitude(mag3106a.addMag(mag3106b), {
+  let mag3106a = new Measurement(0, 4);
+  let mag3106b = new Measurement(-Infinity);
+  measurementTests.assertMeasurement(mag3106a.add(mag3106b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3106b.addMag(mag3106a), {
+  measurementTests.assertMeasurement(mag3106b.add(mag3106a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3106a.subtractMag(mag3106b), {
+  measurementTests.assertMeasurement(mag3106a.subtract(mag3106b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3106b.subtractMag(mag3106a), {
+  measurementTests.assertMeasurement(mag3106b.subtract(mag3106a), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3106a.multiplyMag(mag3106b), 'operations', 'infinities');
-  physicsNumberTests.assertNotMagnitude(mag3106b.multiplyMag(mag3106a), 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3106a.divideMag(mag3106b), {
+  measurementTests.assertNotMeasurement(mag3106a.multiply(mag3106b), 'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3106b.multiply(mag3106a), 'operations', 'infinities');
+  measurementTests.assertMeasurement(mag3106a.divide(mag3106b), {
       positive: undefined,
       zero: true,
       exact: true,
@@ -2092,20 +2078,20 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
       firstSigFig: '0',
       float: 0
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3106b.divideMag(mag3106a),{ // -infinity divided by 0 is -infinity
+  measurementTests.assertMeasurement(mag3106b.divide(mag3106a),{ // -infinity divided by 0 is -infinity
       infinity: true,
       positive: false,
       float: -Infinity
   },'operations', 'infinities');
 
-  let mag3107a = new Magnitude('5.00');
-  let mag3107b = new Magnitude('0.00');
-  physicsNumberTests.assertMagnitude(mag3107a.divideMag(mag3107b), {
+  let mag3107a = new Measurement('5.00');
+  let mag3107b = new Measurement('0.00');
+  measurementTests.assertMeasurement(mag3107a.divide(mag3107b), {
       infinity: true,
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3107b.divideMag(mag3107a),{ // infinity divided by 0 is infinity
+  measurementTests.assertMeasurement(mag3107b.divide(mag3107a),{ // infinity divided by 0 is infinity
       positive: undefined,
       zero: true,
       numSigFigs: 3,
@@ -2114,14 +2100,14 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
       float: 0
   },'operations', 'infinities');
 
-  let mag3108a = new Magnitude('-5.00');
-  let mag3108b = new Magnitude('0.00');
-  physicsNumberTests.assertMagnitude(mag3108a.divideMag(mag3108b), {
+  let mag3108a = new Measurement('-5.00');
+  let mag3108b = new Measurement('0.00');
+  measurementTests.assertMeasurement(mag3108a.divide(mag3108b), {
       infinity: true,
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  physicsNumberTests.assertMagnitude(mag3108b.divideMag(mag3108a),{ // infinity divided by 0 is infinity
+  measurementTests.assertMeasurement(mag3108b.divide(mag3108a),{ // infinity divided by 0 is infinity
       positive: undefined,
       zero: true,
       numSigFigs: 3,
@@ -2136,61 +2122,61 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   ///###################################################################
   /// print testing
 
-  physicsNumberTests.addCategory('printing','Printing');
-  physicsNumberTests.addSubCategory('printing','integers','Integers');
+  measurementTests.addCategory('printing','Printing');
+  measurementTests.addSubCategory('printing','integers','Integers');
 
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('3000'), {
+  measurementTests.assertMeasurement(new Measurement('3000'), {
       printStandard: '3000',
       printScientific: '3e3'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('3000.'), {
+  measurementTests.assertMeasurement(new Measurement('3000.'), {
       printStandard: '3000.',
       printScientific: '3.000e3'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('3002'), {
+  measurementTests.assertMeasurement(new Measurement('3002'), {
       printStandard: '3002',
       printScientific: '3.002e3'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('30.e2'), {
+  measurementTests.assertMeasurement(new Measurement('30.e2'), {
       printStandard: '3.0e3',
       printScientific: '3.0e3'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('5'), {
+  measurementTests.assertMeasurement(new Measurement('5'), {
       printStandard: '5',
       printScientific: '5e0'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('5.0'), {
+  measurementTests.assertMeasurement(new Measurement('5.0'), {
       printStandard: '5.0',
       printScientific: '5.0e0'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('.6'), {
+  measurementTests.assertMeasurement(new Measurement('.6'), {
       printStandard: '0.6',
       printScientific: '6e-1'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('0.0000456'), {
+  measurementTests.assertMeasurement(new Measurement('0.0000456'), {
       printStandard: '0.0000456',
       printScientific: '4.56e-5'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('123.456'), {
+  measurementTests.assertMeasurement(new Measurement('123.456'), {
       printStandard: '123.456',
       printScientific: '1.23456e2'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('1600'), {
+  measurementTests.assertMeasurement(new Measurement('1600'), {
       printStandard: '1600',
       printScientific: '1.6e3'
   },'printing','integers');
 
-  physicsNumberTests.assertPhysicsNumber(new PhysicsNumber('1600.'), {
+  measurementTests.assertMeasurement(new Measurement('1600.'), {
       printStandard: '1600.',
       printScientific: '1.600e3'
   },'printing','integers');
@@ -2199,221 +2185,221 @@ physicsNumberTests.addSubCategory('operations','infinities','Operations With Inf
   ///###################################################################
   ///###################################################################
   /// comparison testing
-  physicsNumberTests.addCategory('comparison','Comparison');
-  physicsNumberTests.addSubCategory('comparison','comparison1','Comparison1');
+  measurementTests.addCategory('comparison','Comparison');
+  measurementTests.addSubCategory('comparison','comparison1','Comparison1');
 
-  let mag5001a = new Magnitude('2');
-  let mag5001b = new Magnitude('2.0');
-  physicsNumberTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b, 2),undefined, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5001a.isGreaterThan(mag5001b),false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5001a.isLessThan(mag5001b),false, 'comparison', 'comparison1');
+  let mag5001a = new Measurement('2');
+  let mag5001b = new Measurement('2.0');
+  measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b, 2),undefined, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5001a.isGreaterThan(mag5001b),false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5001a.isLessThan(mag5001b),false, 'comparison', 'comparison1');
 
-  let mag5002a = new Magnitude('3');
-  let mag5002b = new Magnitude('4');
-  physicsNumberTests.assertEqualStrict(mag5002a.isEqualTo(mag5002b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5002a.isGreaterThan(mag5002b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5002a.isLessThan(mag5002b), true, 'comparison', 'comparison1');
+  let mag5002a = new Measurement('3');
+  let mag5002b = new Measurement('4');
+  measurementTests.assertEqualStrict(mag5002a.isEqualTo(mag5002b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5002a.isGreaterThan(mag5002b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5002a.isLessThan(mag5002b), true, 'comparison', 'comparison1');
 
-  let mag5003a = new Magnitude('6.78');
-  let mag5003b = new Magnitude('6.79');
-  physicsNumberTests.assertEqualStrict(mag5003a.isEqualTo(mag5003b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5003a.isGreaterThan(mag5003b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5003a.isLessThan(mag5003b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5003a.isEqualTo(mag5003b, 2), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5003a.isGreaterThan(mag5003b, 2), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5003a.isLessThan(mag5003b, 2), false, 'comparison', 'comparison1');
-
-
-  let mag5004a = new Magnitude('10');
-  let mag5004b = new Magnitude('9');
-  physicsNumberTests.assertEqualStrict(mag5004a.isEqualTo(mag5004b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5004a.isGreaterThan(mag5004b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5004a.isLessThan(mag5004b), false, 'comparison', 'comparison1');
-
-  let mag5005a = new Magnitude('11');
-  let mag5005b = new Magnitude('9');
-  physicsNumberTests.assertEqualStrict(mag5005a.isEqualTo(mag5005b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5005a.isGreaterThan(mag5005b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5005a.isLessThan(mag5005b), false, 'comparison', 'comparison1');
-
-  let mag5006a = new Magnitude('0.456');
-  let mag5006b = new Magnitude('0.456');
-  physicsNumberTests.assertEqualStrict(mag5006a.isEqualTo(mag5006b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5006a.isGreaterThan(mag5006b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5006a.isLessThan(mag5006b), false, 'comparison', 'comparison1');
-
-  let mag5007a = new Magnitude('0.456');
-  let mag5007b = new Magnitude('0.5');
-  physicsNumberTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5007a.isLessThan(mag5007b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b,2), undefined, 'comparison', 'comparison1'); // in this case, because you only have one sig fig of 0.5, it COULD be less than 0.456 to two significant figures, but you don't know!
-  physicsNumberTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b,2), undefined, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5007a.isLessThan(mag5007b,2), undefined, 'comparison', 'comparison1');
-
-  let mag5008a = new Magnitude('7.89');
-  let mag5008b = new Magnitude('10.4');
-  physicsNumberTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5008a.isLessThan(mag5008b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b, 1), false, 'comparison', 'comparison1'); // rounds to 8 and 10
-  physicsNumberTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b, 1), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5008a.isLessThan(mag5008b, 1), true, 'comparison', 'comparison1');
+  let mag5003a = new Measurement('6.78');
+  let mag5003b = new Measurement('6.79');
+  measurementTests.assertEqualStrict(mag5003a.isEqualTo(mag5003b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5003a.isGreaterThan(mag5003b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5003a.isLessThan(mag5003b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5003a.isEqualTo(mag5003b, 2), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5003a.isGreaterThan(mag5003b, 2), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5003a.isLessThan(mag5003b, 2), false, 'comparison', 'comparison1');
 
 
-  let mag5009a = new Magnitude('0.4e10');
-  let mag5009b = new Magnitude('1000000');
-  physicsNumberTests.assertEqualStrict(mag5009a.isEqualTo(mag5009b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5009a.isGreaterThan(mag5009b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5009a.isLessThan(mag5009b), false, 'comparison', 'comparison1');
+  let mag5004a = new Measurement('10');
+  let mag5004b = new Measurement('9');
+  measurementTests.assertEqualStrict(mag5004a.isEqualTo(mag5004b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5004a.isGreaterThan(mag5004b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5004a.isLessThan(mag5004b), false, 'comparison', 'comparison1');
 
-  let mag5010a = new Magnitude('5.34e8');
-  let mag5010b = new Magnitude('5.34e9');
-  physicsNumberTests.assertEqualStrict(mag5010a.isEqualTo(mag5010b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5010a.isGreaterThan(mag5010b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5010a.isLessThan(mag5010b), true, 'comparison', 'comparison1');
+  let mag5005a = new Measurement('11');
+  let mag5005b = new Measurement('9');
+  measurementTests.assertEqualStrict(mag5005a.isEqualTo(mag5005b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5005a.isGreaterThan(mag5005b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5005a.isLessThan(mag5005b), false, 'comparison', 'comparison1');
 
-  let mag5011a = new Magnitude('5');
-  let mag5011b = new Magnitude('50');
-  physicsNumberTests.assertEqualStrict(mag5011a.isEqualTo(mag5011b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5011a.isGreaterThan(mag5011b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5011a.isLessThan(mag5011b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5011a.isEqualTo(mag5011b,4), false, 'comparison', 'comparison1'); // these two magnitudes, even to 4 significant figures, can never be equal!
-  physicsNumberTests.assertEqualStrict(mag5011a.isGreaterThan(mag5011b,4), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5011a.isLessThan(mag5011b,4), true, 'comparison', 'comparison1');
+  let mag5006a = new Measurement('0.456');
+  let mag5006b = new Measurement('0.456');
+  measurementTests.assertEqualStrict(mag5006a.isEqualTo(mag5006b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5006a.isGreaterThan(mag5006b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5006a.isLessThan(mag5006b), false, 'comparison', 'comparison1');
 
-  let mag5012a = new Magnitude('10.');
-  let mag5012b = new Magnitude('9.9');
-  physicsNumberTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b,2), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b,2), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5012a.isLessThan(mag5012b,2), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b,1), true, 'comparison', 'comparison1'); // equal to one significant figure
-  physicsNumberTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b,1), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5012a.isLessThan(mag5012b,1), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b), false, 'comparison', 'comparison1'); // roudns to two sig figs
-  physicsNumberTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5012a.isLessThan(mag5012b), false, 'comparison', 'comparison1');
+  let mag5007a = new Measurement('0.456');
+  let mag5007b = new Measurement('0.5');
+  measurementTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5007a.isLessThan(mag5007b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5007a.isEqualTo(mag5007b,2), undefined, 'comparison', 'comparison1'); // in this case, because you only have one sig fig of 0.5, it COULD be less than 0.456 to two significant figures, but you don't know!
+  measurementTests.assertEqualStrict(mag5007a.isGreaterThan(mag5007b,2), undefined, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5007a.isLessThan(mag5007b,2), undefined, 'comparison', 'comparison1');
 
-  let mag5013a = new Magnitude('10');
-  let mag5013b = new Magnitude('9.9');
-  physicsNumberTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b,2 ), undefined, 'comparison', 'comparison1'); /// cannot determine
-  physicsNumberTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b,2), undefined, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5013a.isLessThan(mag5013b,2), undefined, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b,1), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b,1), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5013a.isLessThan(mag5013b,1), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b), true, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
-  physicsNumberTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5013a.isLessThan(mag5013b), false, 'comparison', 'comparison1');
+  let mag5008a = new Measurement('7.89');
+  let mag5008b = new Measurement('10.4');
+  measurementTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5008a.isLessThan(mag5008b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5008a.isEqualTo(mag5008b, 1), false, 'comparison', 'comparison1'); // rounds to 8 and 10
+  measurementTests.assertEqualStrict(mag5008a.isGreaterThan(mag5008b, 1), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5008a.isLessThan(mag5008b, 1), true, 'comparison', 'comparison1');
 
-  let mag5014a = new Magnitude('3', undefined, undefined, true); // exactly 3
-  let mag5014b = new Magnitude('2', undefined, undefined, true); // exactly 2
-  physicsNumberTests.assertEqualStrict(mag5014a.isEqualTo(mag5014b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
-  physicsNumberTests.assertEqualStrict(mag5014a.isGreaterThan(mag5014b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5014a.isLessThan(mag5014b), false, 'comparison', 'comparison1');
 
-  let mag5015a = new Magnitude('3', undefined, undefined, true); // exactly 3
-  let mag5015b = new Magnitude('4', undefined, undefined, true); // exactly 4
-  physicsNumberTests.assertEqualStrict(mag5015a.isEqualTo(mag5015b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
-  physicsNumberTests.assertEqualStrict(mag5015a.isGreaterThan(mag5015b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5015a.isLessThan(mag5015b), true, 'comparison', 'comparison1');
+  let mag5009a = new Measurement('0.4e10');
+  let mag5009b = new Measurement('1000000');
+  measurementTests.assertEqualStrict(mag5009a.isEqualTo(mag5009b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5009a.isGreaterThan(mag5009b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5009a.isLessThan(mag5009b), false, 'comparison', 'comparison1');
 
-  let mag5016a = new Magnitude('3', undefined, undefined, true); // exactly 3
-  let mag5016b = new Magnitude('3', undefined, undefined, true); // exactly 3
-  physicsNumberTests.assertEqualStrict(mag5016a.isEqualTo(mag5016b), true, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
-  physicsNumberTests.assertEqualStrict(mag5016a.isGreaterThan(mag5016b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5016a.isLessThan(mag5016b), false, 'comparison', 'comparison1');
+  let mag5010a = new Measurement('5.34e8');
+  let mag5010b = new Measurement('5.34e9');
+  measurementTests.assertEqualStrict(mag5010a.isEqualTo(mag5010b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5010a.isGreaterThan(mag5010b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5010a.isLessThan(mag5010b), true, 'comparison', 'comparison1');
 
-  let mag5017a = new Magnitude('8');
-  let mag5017b = new Magnitude('4');
-  physicsNumberTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5017a.isLessThan(mag5017b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b,2 ), false, 'comparison', 'comparison1'); /// you only have one sig fig each, but even if you added more sig figs, 4 would never be greater than 8!
-  physicsNumberTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b,2), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5017a.isLessThan(mag5017b,2), false, 'comparison', 'comparison1');
+  let mag5011a = new Measurement('5');
+  let mag5011b = new Measurement('50');
+  measurementTests.assertEqualStrict(mag5011a.isEqualTo(mag5011b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5011a.isGreaterThan(mag5011b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5011a.isLessThan(mag5011b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5011a.isEqualTo(mag5011b,4), false, 'comparison', 'comparison1'); // these two magnitudes, even to 4 significant figures, can never be equal!
+  measurementTests.assertEqualStrict(mag5011a.isGreaterThan(mag5011b,4), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5011a.isLessThan(mag5011b,4), true, 'comparison', 'comparison1');
 
-  let mag5018a = new Magnitude('0.00');
-  let mag5018b = new Magnitude('0.00');
-  physicsNumberTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isLessThan(mag5018b), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,2 ), true, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,2), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,2), false, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,4), undefined, 'comparison', 'comparison1'); /// do not have the fourth sig to tell if they continue to be zero
-  physicsNumberTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,4), undefined, 'comparison', 'comparison1');
-  physicsNumberTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,4), undefined, 'comparison', 'comparison1');
+  let mag5012a = new Measurement('10.');
+  let mag5012b = new Measurement('9.9');
+  measurementTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b,2), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b,2), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5012a.isLessThan(mag5012b,2), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b,1), true, 'comparison', 'comparison1'); // equal to one significant figure
+  measurementTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b,1), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5012a.isLessThan(mag5012b,1), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5012a.isEqualTo(mag5012b), false, 'comparison', 'comparison1'); // roudns to two sig figs
+  measurementTests.assertEqualStrict(mag5012a.isGreaterThan(mag5012b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5012a.isLessThan(mag5012b), false, 'comparison', 'comparison1');
 
-  physicsNumberTests.addSubCategory('comparison','comparison2', 'Infinity Comparisons');
+  let mag5013a = new Measurement('10');
+  let mag5013b = new Measurement('9.9');
+  measurementTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b,2 ), undefined, 'comparison', 'comparison1'); /// cannot determine
+  measurementTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b,2), undefined, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5013a.isLessThan(mag5013b,2), undefined, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b,1), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b,1), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5013a.isLessThan(mag5013b,1), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5013a.isEqualTo(mag5013b), true, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  measurementTests.assertEqualStrict(mag5013a.isGreaterThan(mag5013b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5013a.isLessThan(mag5013b), false, 'comparison', 'comparison1');
 
-  let mag5019a = new Magnitude('1.2');
+  let mag5014a = new Measurement('3', undefined, undefined, true); // exactly 3
+  let mag5014b = new Measurement('2', undefined, undefined, true); // exactly 2
+  measurementTests.assertEqualStrict(mag5014a.isEqualTo(mag5014b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  measurementTests.assertEqualStrict(mag5014a.isGreaterThan(mag5014b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5014a.isLessThan(mag5014b), false, 'comparison', 'comparison1');
+
+  let mag5015a = new Measurement('3', undefined, undefined, true); // exactly 3
+  let mag5015b = new Measurement('4', undefined, undefined, true); // exactly 4
+  measurementTests.assertEqualStrict(mag5015a.isEqualTo(mag5015b), false, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  measurementTests.assertEqualStrict(mag5015a.isGreaterThan(mag5015b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5015a.isLessThan(mag5015b), true, 'comparison', 'comparison1');
+
+  let mag5016a = new Measurement('3', undefined, undefined, true); // exactly 3
+  let mag5016b = new Measurement('3', undefined, undefined, true); // exactly 3
+  measurementTests.assertEqualStrict(mag5016a.isEqualTo(mag5016b), true, 'comparison', 'comparison1');  // in this case, it will round to 1 sig fig, and give the same results
+  measurementTests.assertEqualStrict(mag5016a.isGreaterThan(mag5016b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5016a.isLessThan(mag5016b), false, 'comparison', 'comparison1');
+
+  let mag5017a = new Measurement('8');
+  let mag5017b = new Measurement('4');
+  measurementTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5017a.isLessThan(mag5017b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5017a.isEqualTo(mag5017b,2 ), false, 'comparison', 'comparison1'); /// you only have one sig fig each, but even if you added more sig figs, 4 would never be greater than 8!
+  measurementTests.assertEqualStrict(mag5017a.isGreaterThan(mag5017b,2), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5017a.isLessThan(mag5017b,2), false, 'comparison', 'comparison1');
+
+  let mag5018a = new Measurement('0.00');
+  let mag5018b = new Measurement('0.00');
+  measurementTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isLessThan(mag5018b), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,2 ), true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,2), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,2), false, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isEqualTo(mag5018b,4), undefined, 'comparison', 'comparison1'); /// do not have the fourth sig to tell if they continue to be zero
+  measurementTests.assertEqualStrict(mag5018a.isGreaterThan(mag5018b,4), undefined, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5018a.isLessThan(mag5018b,4), undefined, 'comparison', 'comparison1');
+
+  measurementTests.addSubCategory('comparison','comparison2', 'Infinity Comparisons');
+
+  let mag5019a = new Measurement('1.2');
   let mag5019b = constructInfinity();
 
-  physicsNumberTests.assertEqualStrict(mag5019a.isEqualTo(mag5019b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019a.isGreaterThan(mag5019b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019a.isLessThan(mag5019b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019a.isGreaterThanOrEqualTo(mag5019b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019a.isLessThanOrEqualTo(mag5019b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019b.isEqualTo(mag5019a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019b.isGreaterThan(mag5019a),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019b.isLessThan(mag5019a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019b.isGreaterThanOrEqualTo(mag5019a),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5019b.isLessThanOrEqualTo(mag5019a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019a.isEqualTo(mag5019b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019a.isGreaterThan(mag5019b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019a.isLessThan(mag5019b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019a.isGreaterThanOrEqualTo(mag5019b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019a.isLessThanOrEqualTo(mag5019b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019b.isEqualTo(mag5019a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019b.isGreaterThan(mag5019a),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019b.isLessThan(mag5019a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019b.isGreaterThanOrEqualTo(mag5019a),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5019b.isLessThanOrEqualTo(mag5019a),false,'comparison','comparison2');
 
 
-  let mag5020a = new Magnitude('1.5');
+  let mag5020a = new Measurement('1.5');
   let mag5020b = constructNegativeInfinity();
 
-  physicsNumberTests.assertEqualStrict(mag5020a.isEqualTo(mag5020b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020a.isGreaterThan(mag5020b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020a.isLessThan(mag5020b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020a.isGreaterThanOrEqualTo(mag5020b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020a.isLessThanOrEqualTo(mag5020b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020b.isEqualTo(mag5020a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020b.isGreaterThan(mag5020a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020b.isLessThan(mag5020a),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020b.isGreaterThanOrEqualTo(mag5020a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5020b.isLessThanOrEqualTo(mag5020a),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020a.isEqualTo(mag5020b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020a.isGreaterThan(mag5020b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020a.isLessThan(mag5020b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020a.isGreaterThanOrEqualTo(mag5020b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020a.isLessThanOrEqualTo(mag5020b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020b.isEqualTo(mag5020a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020b.isGreaterThan(mag5020a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020b.isLessThan(mag5020a),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020b.isGreaterThanOrEqualTo(mag5020a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5020b.isLessThanOrEqualTo(mag5020a),true,'comparison','comparison2');
 
 
   let mag5021a = constructInfinity();
   let mag5021b = constructInfinity();
 
-  physicsNumberTests.assertEqualStrict(mag5021a.isEqualTo(mag5021b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5021a.isGreaterThan(mag5021b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5021a.isLessThan(mag5021b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5021a.isGreaterThanOrEqualTo(mag5021b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5021a.isLessThanOrEqualTo(mag5021b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5021a.isEqualTo(mag5021b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5021a.isGreaterThan(mag5021b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5021a.isLessThan(mag5021b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5021a.isGreaterThanOrEqualTo(mag5021b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5021a.isLessThanOrEqualTo(mag5021b),true,'comparison','comparison2');
 
 
   let mag5022a = constructNegativeInfinity();
   let mag5022b = constructNegativeInfinity();
 
-  physicsNumberTests.assertEqualStrict(mag5022a.isEqualTo(mag5022b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5022a.isGreaterThan(mag5022b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5022a.isLessThan(mag5022b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5022a.isGreaterThanOrEqualTo(mag5022b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5022a.isLessThanOrEqualTo(mag5022b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5022a.isEqualTo(mag5022b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5022a.isGreaterThan(mag5022b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5022a.isLessThan(mag5022b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5022a.isGreaterThanOrEqualTo(mag5022b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5022a.isLessThanOrEqualTo(mag5022b),true,'comparison','comparison2');
 
 
   let mag5023a = constructInfinity();
   let mag5023b = constructNegativeInfinity();
 
-  physicsNumberTests.assertEqualStrict(mag5023a.isEqualTo(mag5023b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023a.isGreaterThan(mag5023b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023a.isLessThan(mag5023b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023a.isGreaterThanOrEqualTo(mag5023b),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023a.isLessThanOrEqualTo(mag5023b),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023b.isEqualTo(mag5023a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023b.isGreaterThan(mag5023a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023b.isLessThan(mag5023a),true,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023b.isGreaterThanOrEqualTo(mag5023a),false,'comparison','comparison2');
-  physicsNumberTests.assertEqualStrict(mag5023b.isLessThanOrEqualTo(mag5023a),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023a.isEqualTo(mag5023b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023a.isGreaterThan(mag5023b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023a.isLessThan(mag5023b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023a.isGreaterThanOrEqualTo(mag5023b),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023a.isLessThanOrEqualTo(mag5023b),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023b.isEqualTo(mag5023a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023b.isGreaterThan(mag5023a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023b.isLessThan(mag5023a),true,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023b.isGreaterThanOrEqualTo(mag5023a),false,'comparison','comparison2');
+  measurementTests.assertEqualStrict(mag5023b.isLessThanOrEqualTo(mag5023a),true,'comparison','comparison2');
 
 
-  $("#putItHere").append(physicsNumberTests.printAllTests());
+  $("#putItHere").append(measurementTests.printAllTests());
 
 </script>
 
