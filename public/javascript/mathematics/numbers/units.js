@@ -1,4 +1,134 @@
-const dimensions = {
+/*
+how do i want unit selection to work?
+- you should be able to select a unit by name, by dimensions
+
+1. there are four kinds of units: base units, units with the same dimension as base units that are not base units, SI deri
+base units: units of a base dimension that are SI units [meters, seconds, kilograms, kelvin, amperes]
+non-base SI units: units of a derived dimension that are SI units [newtons, joules, watts, m/s, m/s^2]
+base dimension non-SI units: units of a base dimension that are not SI units [kilometers, minutes, hours, pounds]
+non-base non-SI units: units of a non-base dimension that are not SI units []
+
+do I want these all in the same json? probably YES [but all derivations should be in terms of base units, so those should probably be separate?]
+having four JSON is too difficult
+
+to 'select' a unit, you can enter its name, a derivation object, or a unit object
+
+
+TO DO:
+For all metric units:
+add a section called 'conventionally used prefixes'
+
+- it should automatically convert to 'conventionally used' other units if those produce a simpler answer, out of scientific notation?
+
+
+
+how do i select a unit???
+- should i ONLY be able to enter a name?
+[no, that is not good, i can enter a name or a completed object]
+
+the 'selector' shoudl work as follows:
+- if you enter a string, it first detects if there are any metric prefixes, and then it reads the name from the json
+- if you enter a completed unit object, it simply returns that object
+- if you enter an object that isn't a unit object, or a , it returns undefined
+
+- so the 'constructor' receives a string, or a completed object
+- if it receives a completed object, it just returns it
+- but if it receveies a string, it processes it
+
+what about a 'derivation'???
+
+constructor(nameOrObject, derivation) {
+    = if you giev a name string, it reads it from the lsit
+    - if you give a completed unit object, it returns it [this should not be an option!!! if you already have an object, why feed it to a constructor????]
+    - if you give a derivation, it creates a new unit with that derivation and gives it the name...this allows new units to be formed??
+
+    - derivation object: for each name, gives a multiplicaiton and a power
+    = but, it should be able to find a name for a derivation....if one doesn't currently exist
+    [you cannot rename units, if you input a derivation, then it seraches ofr the name, and if it finds it disregards your name]
+    [eg. february coudl be a unit consisting of 28 days]
+
+    - in the methods are multiply, divide, inverse, test if the same as another unit, test if the same dimension as another unit
+}
+
+- there isn't a unit class, should there be????
+= what goal would a unit class serve???
+[it would hold all of the unit methods]
+ */
+
+const metricPrefixes = {
+    "peta":
+    {
+        "multiplier": 1E15,
+        "abbreviation": "P"
+    },
+    "tera":
+    {
+        "multiplier": 1E12,
+        "abbreviation": "T"
+    },
+    "giga":
+    {
+        "multiplier": 1E9,
+        "abbreviation": "G"
+    },
+    "mega":
+    {
+        "multiplier": 1E6,
+        "abbreviation": "M"
+    },
+    "kilo":
+    {
+        "multiplier": 1000,
+        "abbreviation": "k"
+    },
+    "hecto":
+    {
+        "multiplier": 100,
+        "abbreviation": "h"
+    },
+    "deca":
+    {
+        "multiplier": 10,
+        "abbreviation": "da"
+    },
+    "deci":
+    {
+        "multiplier": 0.1,
+        "abbreviation": "d"
+    },
+    "centi":
+    {
+        "multiplier": 0.01,
+        "abbreviation": "c"
+    },
+    "milli":
+    {
+        "multiplier": 0.001,
+        "abbreviation": "m"
+    },
+    "micro":
+    {
+        "multiplier": 1E-6,
+        "abbreviation": "μ"
+    },
+    "nano":
+    {
+        "multiplier": 1E-9,
+        "abbreviation": "n"
+    },
+    "pico":
+    {
+        "multiplier": 1E-12,
+        "abbreviation": "p"
+    },
+    "femto":
+    {
+        "multiplier": 1E-15,
+        "abbreviation": "f"
+    }
+}
+
+const baseDimensions = {
     "length": {
         "base": true,
         "SI_unit": "meter",
@@ -33,7 +163,10 @@ const dimensions = {
     "current": {
         "base": true,
         "SI_unit": "Ampere"
-    },
+    }
+};
+
+const derivedDimensions = {
     "velocity": {
         "base": false,
         "derivation": {
@@ -96,158 +229,295 @@ const dimensions = {
     }
 };
 
+const units = {
+    "baseDimensionsSI": {
+        "meter": {
+            "dimension": "length",
+            "abbreviation": "m"
+        },
+        "second": {
+            "dimension": "time",
+            "abbreviation": "s"
+        },
+        "Ampere": {
+            "dimension": "current",
+            "abbreviation": "A"
+        },
+        "Kelvin": {
+            "dimension": "temperature",
+            "abbreviation": "K",
+            "plural": "Kelvin"
+        },
+        "kilogram": {
+            "dimension": "mass",
+            "abbreviation": "kg",
+        }
+    },
+    "baseDimensionsNonSI": {
+        "foot": {
+            "dimension": "length",
+            "abbreviation": "ft",
+            "plural": "feet",
+            "conversion_factor": 0.3048
+        },
+        "inch": {
+            "dimension": "length",
+            "abbreviation": "in",
+            "conversion_factor": 0.0254
+        },
+        "mile": {
+            "dimension": "length",
+            "abbreviation": "in",
+            "conversion_factor": 1609.34
+        },
+        "pound": {
+            "dimension": "mass",
+            "abbreviation": "lb",
+            "conversion_factor": 0.453592
+        },
+        "gram" : {
+            "dimension": "mass",
+            "abbreviation": "g",
+            "conversion_factor": 0.001
+        },
+        "minute": {
+            "dimension": "time",
+            "abbreviation": "min",
+            "conversionFactor": 1/60
+        },
+        "hour": {
+            "dimension": "time",
+            "abbreviation": "hr",
+            "conversionFactor": 1/3600
+        },
+        "day": {
+            "dimension": "time",
+            "abbreviation": "day",
+            "conversionFactor": 1/86400
+        },
+        "Rankine": {
+            "dimension": "temperature",
+            "conversion_factor": 0.555556,
+            "abbreviation": "°Ra"
+        },
+        "Celsius": {
+            "dimension": "temperature",
+            "conversion_factor": 1,
+            "zero_offset": 273.15,
+            "abbreviation": "°C"
+        },
+        "Fahrenheit": {
+            "dimension": "temperature",
+            "conversion_factor": 0.555556,
+            "zero_offset": -459.67,
+            "abbreviation": "°F"
+        }
+    },
+    "derivedSI": {
+        "Newton": {
+            "dimension": "force",
+            "abbreviation": "N",
+            "derivation":
+            {
+                "kilogram":
+                {
+                    "multiplier": 1,
+                    "power": 1
+                },
+                "meter":
+                {
+                    "multiplier": 1,
+                    "power": 1
+                },
+                "second":
+                {
+                    "multiplier": 1,
+                    "power": -2
+                }
+            }
+        },
+        "Joule": {
+            "dimension": "energy",
+            "abbreviation": "J",
+            "derivation":
+            {
+                "kilogram":
+                    {
+                        "multiplier": 1,
+                        "power": 1
+                    },
+                "meter":
+                    {
+                        "multiplier": 1,
+                        "power": 2
+                    },
+                "second":
+                    {
+                        "multiplier": 1,
+                        "power": -2
+                    }
+            }
+        },
+        "Watt": {
+            "dimension": "power",
+            "abbreviation": "W",
+            "derivation":
+                {
+                    "kilogram":
+                        {
+                            "multiplier": 1,
+                            "power": 1
+                        },
+                    "meter":
+                        {
+                            "multiplier": 1,
+                            "power": 2
+                        },
+                    "second":
+                        {
+                            "multiplier": 1,
+                            "power": -3
+                        }
+                }
+        },
+        "Coulomb": {
+            "dimension": "charge",
+            "conversion_factor": 1,
+            "abbreviation": "C",
+            "derivation":
+                {
+                    "Ampere":
+                        {
+                            "multiplier": 1,
+                            "power": 1
+                        },
+                    "second":
+                        {
+                            "multiplier": 1,
+                            "power": 1
+                        }
+                }
 
-const baseUnits = {
-    "meter": {
-        "dimension": "length",
-        "SI": true,
-        "base": true,
-        "metric": true,
-        "abbreviation": "m"
+        }
     },
-    "foot": {
-        "dimension": "length",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "ft",
-        "plural": "feet",
-        "conversion_factor": 0.3048
-    },
-    "inch": {
-        "dimension": "length",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "in",
-        "conversion_factor": 0.0254
-    },
-    "mile": {
-        "dimension": "length",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "in",
-        "conversion_factor": 1609.34
-    },
-    "kilogram": {
-        "dimension": "mass",
-        "SI": true,
-        "metric": true,
-        "abbreviation": "kg",
-        "conversion_factor": 1
-    },
-    "pound": {
-        "dimension": "mass",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "lb",
-        "conversion_factor": 0.453592
-    },
-    "second": {
-        "dimension": "time",
-        "SI": true,
-        "base": true,
-        "metric": true,
-        "abbreviation": "s"
-    },
-    "minute": {
-        "dimension": "time",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "min"
-    },
-    "hour": {
-        "dimension": "time",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "hr"
-    },
-    "day": {
-        "dimension": "time",
-        "SI": false,
-        "metric": false,
-        "abbreviation": "day"
-    },
-    "Kelvin": {
-        "dimension": "temperature",
-        "SI": true,
-        "metric": true,
-        "base": true,
-        "abbreviation": "K"
-    },
-    "Rankine": {
-        "dimension": "temperature",
-        "SI": false,
-        "metric": false,
-        "conversion_factor": 0.555556,
-        "abbreviation": "°Ra"
-    },
-    "Celsius": {
-        "dimension": "temperature",
-        "SI": false,
-        "metric": false,
-        "conversion_factor": 1,
-        "zero_offset": 273.15,
-        "abbreviation": "°C"
-    },
-    "Fahrenheit": {
-        "dimension": "temperature",
-        "SI": false,
-        "metric": false,
-        "conversion_factor": 0.555556,
-        "zero_offset": -459.67,
-        "abbreviation": "°F"
-    },
-    "Newton": {
-        "dimension": "force",
-        "SI": true,
-        "metric": true,
-        "abbreviation": "N"
-    },
-    "Dyne": {
-        "dimension": "force",
-        "SI": false,
-        "metric": false,
-        "conversion_factor": 0.00001,
-        "abbreviation": "dyn"
-    },
-    "Joule": {
-        "dimension": "energy",
-        "SI": true,
-        "metric": true,
-        "abbreviation": "J"
-    },
-    "electronVolt": {
-        "dimension": "energy",
-        "SI": false,
-        "metric": true,
-        "conversion_factor": 1.602E-19,
-        "abbreviation": "eV"
-    },
-    "Watt": {
-        "dimension": "power",
-        "SI": true,
-        "metric": true,
-        "abbreviation": "W"
-    },
-    "Ampere": {
-        "dimension": "current",
-        "SI": true,
-        "base": true,
-        "metric": true,
-    },
-    "Coulomb": {
-        "dimension": "charge",
-        "SI": true,
-        "metric": true,
-        "conversion_factor": 1,
-        "abbreviation": "C"
+    "derivedNonSI": {
+        "Dyne": {
+            "dimension": "force",
+            "conversion_factor": 0.00001,
+            "abbreviation": "dyn"
+        },
+        "electronVolt": {
+            "dimension": "energy",
+            "conversion_factor": 1.602E-19,
+            "abbreviation": "eV"
+        }
     }
 };
+
+
+
+
+
+class Unit {
+    constructor(name, derivation) {
+        if (name === 'string') { /// read unit
+            this.name = name;
+
+            /// analyze metric prefix
+            let k, metricMultiplier, processedName = name;
+            Object.keys(metricPrefixes).forEach((prefix) => {
+                if (name.indexOf(prefix) === 0) {
+                    metricMultiplier = prefix.multiplier;
+                    this.metricAbbreviation = prefix.abbreviation;
+                    processedName = name.replace(prefix, '');
+                }
+            });
+
+            if (units.baseDimensionsSI[processedName]) {
+                this.isAunit = true;
+                this.dimension = units.baseDimensionsSI[processedName].dimension;
+                this.abbreviation = units.baseDimensionsSI[processedName].abbreviation;
+                this.conversionFactor = 1;
+                this.SI = true;
+                this.baseUnit = true;
+                this.baseDimension = true;
+            } else if (units.baseDimensionsNonSI[processedName]) {
+                this.isAunit = true;
+                this.dimension = units.baseDimensionsNonSI[processedName].dimension;
+                this.abbreviation = units.baseDimensionsNonSI[processedName].abbreviation;
+                this.conversionFactor = 1;
+                this.SI = false;
+                this.baseUnit = false;
+                this.baseDimension = true;
+            } else if (units.derivedSI[processedName]) {
+                this.isAunit = true;
+                this.dimension = units.derivedSI[processedName].dimension;
+                this.abbreviation = units.derivedSI[processedName].abbreviation;
+                this.conversionFactor = units.derivedSI[processedName].conversion_factor;
+                this.SI = true;
+                this.baseUnit = false;
+                this.baseDimension = false;
+                this.derivation = units.derivedSI[processedName].derivation;
+            } else if (units.derivedNonSI[processedName]) {
+                this.isAunit = true;
+                this.dimension = units.derivedNonSI[processedName].dimension;
+                this.abbreviation = units.derivedNonSI[processedName].abbreviation;
+                this.conversionFactor = units.derivedNonSI[processedName].conversion_factor;
+                this.SI = false;
+                this.baseUnit = false;
+                this.baseDimension = false;
+                this.derivation = units.derivedNonSI[processedName].derivation;
+            } else {
+                this.isAunit = false;
+            }
+
+            if (metricMultiplier) {
+                if (this.dimension === 'mass') {
+                    metricMultiplier /= 1000; // account for the fact that kg, not grams, are the SI unit for mass
+                }
+                this.conversionFactor *= metricMultiplier;
+                this.abbreviation = this.metricAbbreviation + this.abbreviation;
+            }
+        }
+
+        if (derivation) {
+            /// in order to see a new unit
+        }
+    }
+}
 
 /*
 should i just include these above?
 
 how do i deal with derived units???
  */
+
+function readUnitName(unitName) {
+    // scan for metric prefix!!!!!!
+    if (baseUnits[input]) {
+        let unitObject = baseUnits[input];
+        unitObject[name] = input;
+        unitObject[unit] = true;
+        return baseUnits[input]
+    } else if (derivedUnits[input]) {
+        return derivedUnits[input]
+    }
+}
+
+function readUnitNameWithNoMetricPrefix(unitName) {
+
+}
+
+function selectUnit(input) {
+    if (typeof(input) === 'string') {
+    } else if (typeof(input) === 'object') {
+        if (true) { // a unit object
+
+        } else if (true) { // a derivation object?
+
+        }
+    }
+}
 
 
 function readUnitName(unitName) {
@@ -393,6 +663,8 @@ function readUnit(unitNameOrDerivation) {
         return readUnitName(unitNameOrDerivation)
     } else if (typeof(unitNameOrDerivation) === 'object') {
         return readUnitDerivation(unitNameOrDerivation)
+    } else {
+        return  undefined
     }
 }
 
@@ -428,6 +700,43 @@ function areSameUnit(unit1, unit2) {
         return areTwoDerivationObjectsTheSame(unit1.derivation, unit2.derivation)
     }
 }
+
+/// what about abbreviations??????
+function scanForMetricPrefix(unitName) {
+    let k;
+    let array = Object.keys(metricPrefixes);
+    for (k = 0; k < array.length; k++) {
+        const prefix = array[k];
+        if (name.indexOf(prefix) === 0) {
+            let metricMultiplier = metricPrefixes[prefix].multiplier;
+        }
+
+}
+
+
+function generateMetricUnit(unitName) { // this function, if given the name of a metric unit, should automatically produce that unit???
+    let k;
+    let array = Object.keys(metricPrefixes);
+    for (k = 0; k < array.length; k++) {
+        let conversionFactor = 1;
+        const prefix = array[k];
+        if (name.indexOf(prefix) === 0) {
+            let originalUnitName = name.replace(prefix, '');
+            if (selectUnit(originalUnitName)) { // gets a unit!
+                let newUnit = selectUnit(originalUnitName);
+                if (newUnit.metric) {
+                    newUnit.name = name;
+                    newUnit.conversionFactor *= metricPrefixes[prefix].conversionFactor;
+                    if (newUnit.dimension.name === 'mass') {
+                        newUnit.conversionFactor /= 1000; // because kilograms are the base unit, not grams!
+                    }
+                    return newUnit
+                }
+            }
+        }
+    }
+}
+
 
 /*
 how do i look up the dimension of a derived unit?

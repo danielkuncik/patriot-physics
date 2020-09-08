@@ -242,9 +242,6 @@ class Measurement {
 
     /// what if negative???
     getFloat(abs = false) { // argument is to get absolute value
-          if (!this.isAmeasurement) {
-            return undefined
-          }
             if (abs) {
                 return Math.abs(this.float)
             } else {

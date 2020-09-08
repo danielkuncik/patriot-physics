@@ -11,6 +11,90 @@ having a zero screws it up
 */
 
 // essentially a physics number with units
+
+class MagnitudeNew {
+    constructor(measurement, unit) {
+        if (typeof(measurement) === 'string' || typeof(measurement) === 'number') {
+            this.measurement = new Measurement(measurement);
+            this.isAmagnitude = true;
+        } else if (typeof(measurement) === 'object' && measurement.isAmeasurement) {
+            this.measurement = measurement;
+            this.isAmagnitude = true;
+        } else {
+            this.invalidate();
+            return undefined
+        }
+
+        if (this.measurement.isZero()) { // what if an object is inputted???
+            this.unit = undefined
+        } else {
+            this.unit = readUnitName(unit);
+        }
+    }
+
+    invalidate() {
+        this.isAmagnitude = false;
+    }
+
+    duplicate() {
+
+    }
+
+    // PRIVATE METHOD
+    combine(type, anotherMagnitude) {
+        let newUnit, mag1, mag2;
+        if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
+            return this.combineWithSameUnit(type, anotherMagnitude.convertToNewUnit(this.unit));
+        } else if (this.unit === undefined && anotherMagnitude.unit === undefined) {
+            return (this.measurement.combine(type, anotherMagnitude.measurement), undefined);
+        } else if (this.unit !== undefined && this.measurement.isZero()) {
+            return this
+        } else if (anotherMagnitude.unit !== undefined && this.measurement.isZero()) {
+            return anotherMagnitude
+        } else {
+            return undefined
+        }
+    }
+
+    // PRIVATE METHOD
+    combineWithSameUnit(type, anotherMagnitude) {
+        return (this.measurement.combine(type, anotherMagnitude.measurement), this.unit);
+    }
+
+    convertToSI() {
+        let newUnit = this.unit.dimension.SI_unit; // is this a thing?
+        let newMeasurement = this.measurement.multiplyExactConstant(this.unit.conversion_factor);
+        return new MagnitudeNew(newMeasurement, newUnit)
+    }
+
+
+    convertToNewUnit(newUnit) {
+        if (this.unit === undefined) {
+            return undefined
+        }
+        /// NEED SOME WAY OF SELECTING A UNIT
+        let temp = this.convertToSI();
+        let newMeasurement = temp.measurement.divideExactConstant(newUnit.conversion_factor);
+        return new MagnitudeNew(newMeasurement, newUnit)
+    }
+
+    addMag(anotherMagnitude) {
+        return this.combine('+',anotherMagnitude)
+    }
+    subtractMag(anotherMagnitude) {
+        return this.combine('-',anotherMagnitude)
+    }
+    pythagoreanAddMag(anotherMagnitude) {
+        return this.combine('pythagorean_+',anotherMagnitude)
+    }
+    pythagoreanSubtractMag(anotherMagnitude) {
+        return this.combine('pythagorean_-',anotherMagnitude)
+    }
+
+}
+
+
+
 class Magnitude extends PhysicsNumber {
   constructor(numericalString, unitObject, intermediateValue, exact = false) {
     super(numericalString, intermediateValue, exact);

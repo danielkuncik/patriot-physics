@@ -92,6 +92,17 @@ class TestPackage {
         this.addTest(new Test(name, pass, failMessage), categoryKey, subCategoryKey);
     }
 
+    assertTrue(trueVariable, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        this.assertEqualStrict(trueVariable, true, categoryKey, subCategoryKey, name);
+    }
+
+    assertFalse(falseVariable, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        this.assertEqualStrict(falseVariable, false, categoryKey, subCategoryKey, name);
+    }
+
+    assertUndefined(undefinedVariable, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        this.assertEqualStrict(undefinedVariable, undefined, categoryKey, subCategoryKey, name);
+    }
     assertNotEqualStrict(entered, notExpected, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         const pass = entered !== expected;
         let failMessage;
@@ -160,7 +171,7 @@ class TestPackage {
         this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
         return false
       }
-      this.assertEqualStrict(measurement.isAmeasurement, true, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
+      this.assertTrue(measurement.isAmeasurement, true, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
       if (equalObject.numSigFigs !== undefined) {
         this.assertEqualStrict(measurement.getNumSigFigs(), equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
       }
@@ -211,6 +222,7 @@ class TestPackage {
         let otherSigFigs, exact = undefined;
         if (numSigFigs !== Infinity) {
             otherSigFigs = makeStringOfZeros(numSigFigs - 1);
+            exact = false;
         } else {
             otherSigFigs = '';
             exact = true;
@@ -221,19 +233,21 @@ class TestPackage {
             numSigFigs: numSigFigs,
             exact: exact,
             zero: true,
-            positive: undefined,
+            positive: false,
+            negative: false,
             orderOfMagnitude: undefined,
             float: 0
         }, categoryKey, subCategoryKey, name);
     }
 
     assertNotMeasurement(notMeasurement, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
-        this.assertEqualStrict(notMeasurement.isAmeasurement, false, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
-        this.assertEqualStrict(notMeasurement.getFirstSigFig(), undefined, categoryKey, subCategoryKey, `${name}: firstSigFig`);
-        this.assertEqualStrict(notMeasurement.getOtherSigFigs(), undefined, categoryKey, subCategoryKey, `${name}: otherSigFigs`);
-        this.assertEqualStrict(notMeasurement.getOrderOfMagnitude(), undefined, categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
-        this.assertEqualStrict(notMeasurement.getNumSigFigs(), undefined, categoryKey, subCategoryKey, `${name}: numSigFigs`);
-        this.assertEqualStrict(notMeasurement.isPositive(), undefined, categoryKey, subCategoryKey, `${name}: positive`);
+        this.assertFalse(notMeasurement.isAmeasurement, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
+        this.assertTrue(isNaN(notMeasurement.getFloat()), categoryKey, subCategoryKey, `${name}: Float`);
+        this.assertUndefined(notMeasurement.getFirstSigFig(), categoryKey, subCategoryKey, `${name}: firstSigFig`);
+        this.assertUndefined(notMeasurement.getOtherSigFigs(), categoryKey, subCategoryKey, `${name}: otherSigFigs`);
+        this.assertUndefined(notMeasurement.getOrderOfMagnitude(), categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
+        this.assertUndefined(notMeasurement.getNumSigFigs(), categoryKey, subCategoryKey, `${name}: numSigFigs`);
+        this.assertUndefined(notMeasurement.isPositive(), categoryKey, subCategoryKey, `${name}: positive`);
     }
 
     assertMagnitude(magnitude, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {

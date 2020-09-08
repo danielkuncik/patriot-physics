@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests of Unit Objects</title>
+</head>
+<body>
+
+<p>
+    "Unit Tests" LOL!
+</p>
+<script src = './frontEndTesting.js'></script>
+<script src = '../mathematics/numbers/units.js'></script>
+
+<div id = 'putItHere'></div>
+
+<script>
+    let unitTestsLOL = new TestPackage("Unit Tests LOL!");
+
+    unitTestsLOL.addCategory('multiply','Multiply Units');
+    unitTestsLOL.addSubCategory('multiply','multiply 1','Multiply 1');
+
+    let unit1 =
+
+    $("#putItHere").append(unitTestsLOL.printAllTests)
+</script>
+
+</body>
+</html>
