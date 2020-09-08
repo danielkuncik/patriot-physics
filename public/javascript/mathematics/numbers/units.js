@@ -711,8 +711,8 @@ function scanForMetricPrefix(unitName) {
             let metricMultiplier = metricPrefixes[prefix].multiplier;
         }
 
+    }
 }
-
 
 function generateMetricUnit(unitName) { // this function, if given the name of a metric unit, should automatically produce that unit???
     let k;

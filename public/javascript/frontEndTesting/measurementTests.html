@@ -106,7 +106,8 @@
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1,
-      positive: true
+      positive: true,
+      float: 10
   }, 'constructFromString', 'integers');
 
   measurementTests.assertMeasurement(new Measurement('-0041'), {
@@ -179,7 +180,8 @@
       otherSigFigs: '4',
       orderOfMagnitude: -1,
       numSigFigs: 2,
-      positive: true
+      positive: true,
+      float: .54
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
   measurementTests.assertMeasurement(new Measurement('12412.31421'), {
@@ -542,7 +544,7 @@
   measurementTests.assertMeasurementZero(new Measurement('00000.'), 1, 'constructFromString', 'zeros');
   measurementTests.assertMeasurementZero(new Measurement('.0'), 2, 'constructFromString', 'zeros');
   measurementTests.assertMeasurementZero(new Measurement('.0000'), 5, 'constructFromString', 'zeros'); // this is five significant figures because it gets the first zero for free!
-  measurementTests.assertMeasurementZero(new Measurement(0), Infinity, 'constructFromString', 'zeros'); // zero magnitude with infinite sig figs
+  measurementTests.assertMeasurementZero(new Measurement('0'), 1, 'constructFromString', 'zeros'); // zero magnitude with infinite sig figs
 
 
 
@@ -574,6 +576,10 @@
   // ##############################################################
   // construct from float
   measurementTests.addCategory('constructFromFloat','Construct From Float');
+
+  measurementTests.addSubCategory('constructFromFloat','zeros', 'Zeros');
+  measurementTests.assertMeasurementZero(new Measurement(0, Infinity), Infinity, 'constructFromFloat', 'zeros'); // zero magnitude with infinite sig figs
+
 
   measurementTests.addSubCategory('constructFromFloat','integers', 'Integers');
 
@@ -629,7 +635,7 @@
     numSigFigs: 1,
     positive: true,
     float: 99
-  }, 'constructFromFloat','integers');
+  }, 'constructFromFloat','integers','nnn');
 
   measurementTests.assertMeasurement(new Measurement(602,4), {
     firstSigFig: '6',

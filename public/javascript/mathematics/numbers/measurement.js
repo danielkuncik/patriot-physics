@@ -264,18 +264,18 @@ class Measurement {
         if (!this.isAmeasurement) {
           return undefined
         }
+        const numString = this.getNumSigFigs() !== Infinity ? this.getFloat().toExponential(this.getNumSigFigs() - 1) : this.getFloat().toString();
         if (this.isNegative()) {
-            return this.getFloat().toString()[1]
+            return numString[1]
         } else {
-            return this.getFloat().toString()[0]
+            return numString[0]
         }
-        return this.firstSigFig
     }
     getOtherSigFigs() {
         if (!this.isAmeasurement) {
           return undefined
         }
-        let numString1 = this.getFloat().toString(); // is there a more efficient way using 'to exponential'???
+        const numString1 = this.getNumSigFigs() !== Infinity ? this.getFloat().toExponential(this.getNumSigFigs() - 1) : this.getFloat().toString();
         let numString2 = numString1.split('e')[0];
         let numString3 = numString2.replace('.','');
         let numString4 = numString3.replace('-','');
@@ -292,12 +292,12 @@ class Measurement {
         if (!this.isAmeasurement) {
           return undefined
         }
-        let testFloat = this.getFloat(true);
+        let testFloat = Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));
         if (testFloat === 0) {
             return undefined
         } else {
             let orderOfMagnitude = 0;
-            while (testFloat > 10) {
+            while (testFloat >= 10) {
                 orderOfMagnitude++;
                 testFloat /= 10;
             }
@@ -343,7 +343,7 @@ class Measurement {
         if (!this.isAmeasurement) {
           return undefined
         }
-        return this.infinity
+        return this.float === Infinity || this.float === -Infinity
     }
 
     invalidate() {

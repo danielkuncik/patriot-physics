@@ -40,12 +40,7 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let x = new Measurement('0');
-    console.log(x);
-    console.log(typeof(x.getFloat()));
-    console.log(x.getFloat());
-    console.log(x.getFloat === 0);
-    randomTest.assertMeasurementZero(new Measurement('0'), 1, 'constructFromString', 'zeros');
+    randomTest.assertMeasurementZero(new Measurement(0, Infinity), Infinity, 'constructFromFloat', 'zeros'); // zero magnitude with infinite sig figs
 
     $("#putItHere").append(randomTest.printAllTests());
 
