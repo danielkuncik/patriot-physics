@@ -333,11 +333,11 @@ class Measurement {
         }
         return this.numSigFigs === Infinity
     }
-    isZero() {
+    isZero() { // perhaps this should work differently
         if (!this.isAmeasurement) {
           return undefined
         }
-        return this.getFloat === 0
+        return this.getFloat() === 0
     }
     isInfinity() {
         if (!this.isAmeasurement) {
@@ -418,8 +418,6 @@ class Measurement {
         this.numSigFigs = newSigFigs;
         let numString = this.firstSigFig + this.otherSigFigs;
         let testChar = numString[newSigFigs];
-        console.log(this);
-        console.log(numString, newSigFigs);
         let numStringNew = numString.slice(0,newSigFigs);
         if (testChar === '0' || testChar === '1' || testChar === '2' || testChar === '3' || testChar === '4') {  // round down
             this.firstSigFig = numStringNew[0];
@@ -465,39 +463,44 @@ class Measurement {
     // what about signs????
     /// need to work on the 'exactly!!!!'
     printStandardNotation() { // returns false if this is impossible to the correct number of significant figures
-        if (this.zero) {
+        if (this.isZero()) {
             return this.printZero()
         }
-        const sign = !this.positive ? '-' : '';
-        if (this.orderOfMagnitude > 0 && this.orderOfMagnitude > this.numSigFigs - 1) {
-            if (this.otherSigFigs[this.numSigFigs - 2] === '0') {
+        const orderOfMag = this.getOrderOfMagnitude();
+        const firstSigFig = this.getFirstSigFig();
+        const otherSigFigs = this.getOtherSigFigs();
+        const numSigFigs = this.getNumSigFigs();
+        const sign = !this.isPositive() ? '-' : '';
+        if (orderOfMag > 0 && orderOfMag > this.getNumSigFigs() - 1) {
+            if (otherSigFigs[numSigFigs - 2] === '0') {
                 return this.printScientificNotation(); /// in this event, you cannot print a standard notation number with the correct number of significant figures
             }
-            return `${sign}${this.firstSigFig}${this.otherSigFigs}${makeStringOfZeros(this.orderOfMagnitude - this.numSigFigs + 1)}` // a special case => what about a number with SIGNIFICANT zeros on the end
-        } else if (this.orderOfMagnitude > 0 && this.orderOfMagnitude === this.numSigFigs - 1) {
-            return `${sign}${this.firstSigFig}${this.otherSigFigs}${this.otherSigFigs[this.numSigFigs - 2] === '0' ? '.' : ''}`
-        } else if (this.orderOfMagnitude > 0 && this.orderOfMagnitude < this.numSigFigs - 1) {
-            return `${sign}${this.firstSigFig}${this.otherSigFigs.slice(0,this.orderOfMagnitude)}.${this.otherSigFigs.slice(this.orderOfMagnitude, this.numSigFigs - 1)}`
-        } else if (this.orderOfMagnitude === 0) {
-            if (this.otherSigFigs.length > 0) {
-                return `${sign}${this.firstSigFig}.${this.otherSigFigs}`
+            return `${sign}${firstSigFig}${otherSigFigs}${makeStringOfZeros(orderOfMag - numSigFigs + 1)}` // a special case => what about a number with SIGNIFICANT zeros on the end
+        } else if (orderOfMag > 0 && orderOfMag === numSigFigs - 1) {
+            return `${sign}${firstSigFig}${otherSigFigs}${otherSigFigs[numSigFigs - 2] === '0' ? '.' : ''}`
+        } else if (orderOfMag > 0 && orderOfMag < numSigFigs - 1) {
+            return `${sign}${firstSigFig}${otherSigFigs.slice(0,orderOfMag)}.${otherSigFigs.slice(orderOfMag, numSigFigs - 1)}`
+        } else if (orderOfMag === 0) {
+            if (otherSigFigs.length > 0) {
+                return `${sign}${firstSigFig}.${otherSigFigs}`
             } else {
-                return `${sign}${this.firstSigFig}`
+                return `${sign}${firstSigFig}`
             }
-        } else if (this.orderOfMagnitude < 0) {
-            return `${sign}0.${makeStringOfZeros(Math.abs(this.orderOfMagnitude) - 1)}${this.firstSigFig}${this.otherSigFigs}`
+        } else if (orderOfMag < 0) {
+            return `${sign}0.${makeStringOfZeros(Math.abs(orderOfMag) - 1)}${firstSigFig}${otherSigFigs}`
         }
         /// what about zeros???
     }
 
     /// private function
     printZero() {
-        const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
-        if (this.zero) {
-            if (this.numSigFigs === Infinity || this.numSigFigs === 1) {
-                return `${exactly}0`
+        if (this.isZero()) {
+            if (this.isExact()) {
+                return 'exactly 0';
+            } else if (this.getNumSigFigs() === 1) {
+                return '0'
             } else {
-                return `0.${this.otherSigFigs}`
+                return `0.${this.getOtherSigFigs()}`
             }
         } else {
             return undefined
@@ -505,20 +508,22 @@ class Measurement {
     }
 
     printScientificNotation() {
-        if (this.zero) {
+        if (this.isZero()) {
             return this.printZero()
         }
-        const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
-        const sign = (this.positive === false) ? '-' : '';
-        if (this.numSigFigs === 1) {
-            return `${sign}${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
-        } else {
-            return `${exactly}${sign}${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
-        }
+        return this.float.toExponential(this.numSigFigs)
+        // const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
+        // const sign = (this.positive === false) ? '-' : '';
+        // if (this.numSigFigs === 1) {
+        //     return `${sign}${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
+        // } else {
+        //     return `${exactly}${sign}${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
+        // }
     }
 
     printOptimal() { // if print exactly is selected, it prints the word exatly
-        if (this.zero) {
+        if (this.isZero()) {
+            console.log('here');
             return this.printZero()
         }
         let standardNot = this.printStandardNotation();
