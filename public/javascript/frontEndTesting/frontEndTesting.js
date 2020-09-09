@@ -242,6 +242,8 @@ class TestPackage {
             lowestKnownMagnitude: undefined,
             float: 0
         }, categoryKey, subCategoryKey, name);
+        this.assertUndefined(zeroMeasurement.getOrderOfMagnitude(), categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
+        this.assertUndefined(zeroMeasurement.getLowestKnownMagnitude(), categoryKey, subCategoryKey, `${name}: lowestKnownMagnitude`);
     }
 
     assertNotMeasurement(notMeasurement, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
@@ -250,7 +252,7 @@ class TestPackage {
         this.assertUndefined(notMeasurement.getFirstSigFig(), categoryKey, subCategoryKey, `${name}: firstSigFig`);
         this.assertUndefined(notMeasurement.getOtherSigFigs(), categoryKey, subCategoryKey, `${name}: otherSigFigs`);
         this.assertUndefined(notMeasurement.getOrderOfMagnitude(), categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
-        this.assertUndefined(notMeasurement.getLowestKnownMagnitude(), categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
+        this.assertUndefined(notMeasurement.getLowestKnownMagnitude(), categoryKey, subCategoryKey, `${name}: lowestKnownMagnitude`);
         this.assertUndefined(notMeasurement.getNumSigFigs(), categoryKey, subCategoryKey, `${name}: numSigFigs`);
         this.assertUndefined(notMeasurement.isPositive(), categoryKey, subCategoryKey, `${name}: positive`);
     }

@@ -290,7 +290,7 @@ class Measurement {
         }
     }
     getOrderOfMagnitude() {
-        if (!this.isAmeasurement) {
+        if (this.isZero() || !this.isAmeasurement) {
           return undefined
         }
         let testFloat = Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));

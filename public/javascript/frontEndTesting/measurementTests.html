@@ -590,6 +590,7 @@
     firstSigFig: '4',
     otherSigFigs: '00',
     orderOfMagnitude: 0,
+    lowestKnownMagnitude: -2,
     numSigFigs: 3,
     positive: true,
     float: 4
@@ -599,6 +600,7 @@
     firstSigFig: '4',
     otherSigFigs: '',
     orderOfMagnitude: 0,
+    lowestKnownMagnitude: 0,
     numSigFigs: 1,
     positive: true,
     float: 4
@@ -608,6 +610,7 @@
     firstSigFig: '2',
     otherSigFigs: '',
     orderOfMagnitude: 1,
+    lowestKnownMagnitude: 1,
     numSigFigs: 1,
     positive: true,
     float: 23
@@ -617,6 +620,7 @@
     firstSigFig: '3',
     otherSigFigs: '',
     orderOfMagnitude: 1,
+    lowestKnownMagnitude: 1,
     numSigFigs: 1,
     positive: true,
     float: 26
@@ -626,6 +630,7 @@
     firstSigFig: '5',
     otherSigFigs: '000000',
     orderOfMagnitude: 2,
+    lowestKnownMagnitude: -4,
     numSigFigs: 7,
     positive: true,
     float: 500
@@ -635,6 +640,7 @@
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 2,
+    lowestKnownMagnitude: 2,
     numSigFigs: 1,
     positive: true,
     float: 99
@@ -644,6 +650,7 @@
     firstSigFig: '6',
     otherSigFigs: '020',
     orderOfMagnitude: 2,
+    lowestKnownMagnitude: -1,
     numSigFigs: 4,
     positive: true,
     float: 602
@@ -653,6 +660,7 @@
     firstSigFig: '6',
     otherSigFigs: '0',
     orderOfMagnitude: 2,
+    lowestKnownMagnitude: 1,
     numSigFigs: 2,
     positive: true,
     float: 602
@@ -662,6 +670,7 @@
     firstSigFig: '6',
     otherSigFigs: '1',
     orderOfMagnitude: 2,
+    lowestKnownMagnitude: 1,
     numSigFigs: 2,
     positive: false,
     float: -605
@@ -671,6 +680,7 @@
     firstSigFig: '1',
     otherSigFigs: '2000',
     orderOfMagnitude: 1,
+    lowestKnownMagnitude: -3,
     numSigFigs: 5,
     positive: false,
     float: -12
@@ -682,6 +692,7 @@
     firstSigFig: '2',
     otherSigFigs: '000',
     orderOfMagnitude: 8,
+    lowestKnownMagnitude: 5,
     numSigFigs: 4,
     positive: false,
     float: -2e8
@@ -691,6 +702,7 @@
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 6,
+    lowestKnownMagnitude: 6,
     numSigFigs: 1,
     positive: true,
     float: 1e6
@@ -700,6 +712,7 @@
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 8,
+    lowestKnownMagnitude: 8,
     numSigFigs: 1,
     positive: true,
     float: 1.234567e8
@@ -709,6 +722,7 @@
     firstSigFig: '1',
     otherSigFigs: '2',
     orderOfMagnitude: 11,
+    lowestKnownMagnitude: 10,
     numSigFigs: 2,
     positive: true,
     float: 1234.567e8
@@ -718,6 +732,7 @@
     firstSigFig: '1',
     otherSigFigs: '234567000',
     orderOfMagnitude: 11,
+    lowestKnownMagnitude: 2,
     numSigFigs: 10,
     positive: true,
     float: 1234.567e8
@@ -727,6 +742,7 @@
     firstSigFig: '1',
     otherSigFigs: '0000',
     orderOfMagnitude: 6,
+    lowestKnownMagnitude: 2,
     numSigFigs: 5,
     positive: false,
     float: -1e6
@@ -736,6 +752,7 @@
     firstSigFig: '3',
     otherSigFigs: '12',
     orderOfMagnitude: -6,
+    lowestKnownMagnitude: -8,
     numSigFigs: 3,
     positive: true,
     float: 0.00031235e-2
@@ -745,6 +762,7 @@
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 6,
+    lowestKnownMagnitude: 6,
     numSigFigs: 1,
     positive: true,
     float: 9.999e5
@@ -754,6 +772,7 @@
     firstSigFig: '1',
     otherSigFigs: '0',
     orderOfMagnitude: 6,
+    lowestKnownMagnitude: 5,
     numSigFigs: 2,
     positive: true,
     float: 9.999e5
@@ -763,6 +782,7 @@
     firstSigFig: '1',
     otherSigFigs: '00',
     orderOfMagnitude: 6,
+    lowestKnownMagnitude: 4,
     numSigFigs: 3,
     positive: true,
     float: 9.999e5
@@ -772,6 +792,7 @@
     firstSigFig: '9',
     otherSigFigs: '999',
     orderOfMagnitude: 5,
+    lowestKnownMagnitude: 2,
     numSigFigs: 4,
     positive: true,
     float: 9.999e5
@@ -781,15 +802,28 @@
     firstSigFig: '9',
     otherSigFigs: '9990',
     orderOfMagnitude: 5,
+    lowestKnownMagnitude: 1,
     numSigFigs: 5,
     positive: true,
     float: 9.999e5
   }, 'constructFromFloat','decimalsExponents');
 
+  measurementTests.assertMeasurement(new Measurement(9.999e5,6), {
+      firstSigFig: '9',
+      otherSigFigs: '99900',
+      orderOfMagnitude: 5,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 6,
+      positive: true,
+      float: 9.999e5
+  }, 'constructFromFloat','decimalsExponents');
+
+
   measurementTests.assertMeasurement(new Measurement(98765e-10,1), {
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: -5,
+    lowestKnownMagnitude: -5,
     numSigFigs: 1,
     positive: true,
     float: 98765e-10
