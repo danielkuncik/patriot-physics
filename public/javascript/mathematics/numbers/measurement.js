@@ -260,6 +260,7 @@ class Measurement {
             // }
     }
 
+    // For efficiency, should i add a variable that waves these if you run them once?
     getFirstSigFig() {
         if (!this.isAmeasurement) {
           return undefined
@@ -794,6 +795,24 @@ class Measurement {
 
     // PRIVATE METHOD
     getSigFigsForCombination(anotherMeasurement) {
+        if (this.getOrderOfMagnitude() > anotherMeasurement.getOrderOfMagnitude()) {
+            const lowestDigitThatMatters = this.getOrderOfMagnitude() - this.numSigFigs + 1;
+            if (anotherMeasurement.getOrderOfMagnitude() < lowestDigitThatMatters) { // case in which one measurement is so much lower it does not count
+                return this.getNumSigFigs()
+            } else {
+                return this.getOrderOfMagnitude() - anotherMeasurement.getOrderOfMagnitude() + 1
+            }
+            // more complex piece here
+        } else if (this.getOrderOfMagnitude() < anotherMeasurement.getOrderOfMagnitude()) {
+            const lowestDigitThatMatters = anotherMeasurement.getOrderOfMagnitude() - anotherMeasurement.numSigFigs + 1;
+            if (this.getOrderOfMagnitude() < lowestDigitThatMatters) {
+                return anotherMeasurement.getNumSigFigs()
+            } else {
+                return anotherMeasurement.getOrderOfMagnitude() - this.getOrderOfMagnitude() + 1
+            }
+        } else {
+            return Math.min(this.getNumSigFigs(), anotherMeasurement.getNumSigFigs())
+        }
         return Math.min(this.getNumSigFigs(), anotherMeasurement.getNumSigFigs())
     }
 
