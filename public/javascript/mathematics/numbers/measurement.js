@@ -311,7 +311,11 @@ class Measurement {
     }
 
     getLowestKnownMagnitude() { // lowest magnitude for which there is a significant figure
-        return this.getOrderOfMagnitude() - this.getNumSigFigs() + 1
+        if (this.isZero() || !this.isAmeasurement) {
+            return undefined
+        } else {
+            return this.getOrderOfMagnitude() - this.getNumSigFigs() + 1
+        }
     }
 
     getNumSigFigs() {

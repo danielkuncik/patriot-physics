@@ -184,6 +184,9 @@ class TestPackage {
       if (equalObject.orderOfMagnitude !== undefined) {
         this.assertEqualStrict(measurement.getOrderOfMagnitude(), equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
       }
+      if (equalObject.lowestKnownMagnitude !== undefined) {
+          this.assertEqualStrict(measurement.getLowestKnownMagnitude(), equalObject["lowestKnownMagnitude"], categoryKey, subCategoryKey, `${name}: lowest known magnitude: `);
+      }
       if (equalObject.positive !== undefined) {
         this.assertEqualStrict(measurement.isPositive(), equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
       }
@@ -236,6 +239,7 @@ class TestPackage {
             positive: false,
             negative: false,
             orderOfMagnitude: undefined,
+            lowestKnownMagnitude: undefined,
             float: 0
         }, categoryKey, subCategoryKey, name);
     }
@@ -246,6 +250,7 @@ class TestPackage {
         this.assertUndefined(notMeasurement.getFirstSigFig(), categoryKey, subCategoryKey, `${name}: firstSigFig`);
         this.assertUndefined(notMeasurement.getOtherSigFigs(), categoryKey, subCategoryKey, `${name}: otherSigFigs`);
         this.assertUndefined(notMeasurement.getOrderOfMagnitude(), categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
+        this.assertUndefined(notMeasurement.getLowestKnownMagnitude(), categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
         this.assertUndefined(notMeasurement.getNumSigFigs(), categoryKey, subCategoryKey, `${name}: numSigFigs`);
         this.assertUndefined(notMeasurement.isPositive(), categoryKey, subCategoryKey, `${name}: positive`);
     }

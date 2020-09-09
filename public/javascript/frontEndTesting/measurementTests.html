@@ -33,6 +33,7 @@
     otherSigFigs: "235124",
     orderOfMagnitude: 6,
     numSigFigs: 7,
+    lowestKnownMagnitude: 0,
     positive: true
   }, 'constructFromString', 'integers');
 
@@ -41,6 +42,7 @@
       otherSigFigs: '2412123',
       orderOfMagnitude: 7,
       numSigFigs: 8,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'integers');
 
@@ -50,6 +52,7 @@
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'integers');
 
@@ -58,6 +61,7 @@
       otherSigFigs: '9',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'integers');
 
@@ -66,6 +70,7 @@
       otherSigFigs: '06',
       orderOfMagnitude: 2,
       numSigFigs: 3,
+      lowestKnownMagnitude: 0,
       positive: false
   }, 'constructFromString', 'integers');
 
@@ -74,6 +79,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 3,
       numSigFigs: 1,
+      lowestKnownMagnitude: 3,
       positive: true
   }, 'constructFromString', 'integers');
 
@@ -82,22 +88,25 @@
       otherSigFigs: '',
       orderOfMagnitude: 1,
       numSigFigs: 1,
+      lowestKnownMagnitude: undefined,
       positive: true
-  }, 'constructFromString', 'integers');
+  }, 'constructFromString', '1');
 
   measurementTests.assertMeasurement(new Measurement('5001'), {
       firstSigFig: '5',
       otherSigFigs: '001',
       orderOfMagnitude: 3,
       numSigFigs: 4,
+      lowestKnownMagnitude: undefined,
       positive: true
-  }, 'constructFromString', 'integers');
+  }, 'constructFromString', '0');
 
   measurementTests.assertMeasurement(new Measurement('00000082'), {
       firstSigFig: '8',
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'integers');
 
@@ -107,6 +116,7 @@
       orderOfMagnitude: 1,
       numSigFigs: 1,
       positive: true,
+      lowestKnownMagnitude: 1,
       float: 10
   }, 'constructFromString', 'integers');
 
@@ -115,6 +125,7 @@
       otherSigFigs: '1',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: false
   }, 'constructFromString', 'integers');
 
@@ -123,6 +134,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 0,
       numSigFigs: 1,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'integers');
 
@@ -131,6 +143,7 @@
       otherSigFigs: '0',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: false
   }, 'constructFromString', 'integers');
 
@@ -140,6 +153,7 @@
       otherSigFigs: '234',
       orderOfMagnitude: 2,
       numSigFigs: 4,
+      lowestKnownMagnitude: -1,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -148,6 +162,7 @@
       otherSigFigs: '234000',
       orderOfMagnitude: 2,
       numSigFigs: 7,
+      lowestKnownMagnitude: -4,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -156,6 +171,7 @@
       otherSigFigs: '00000',
       orderOfMagnitude: 4,
       numSigFigs: 6,
+      lowestKnownMagnitude: -1,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -164,6 +180,7 @@
       otherSigFigs: '3112',
       orderOfMagnitude: 2,
       numSigFigs: 5,
+      lowestKnownMagnitude: -2,
       positive: false
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -172,6 +189,7 @@
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: false
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -181,6 +199,7 @@
       orderOfMagnitude: -1,
       numSigFigs: 2,
       positive: true,
+      lowestKnownMagnitude: -2,
       float: .54
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -189,6 +208,7 @@
       otherSigFigs: '241231421',
       orderOfMagnitude: 4,
       numSigFigs: 10,
+      lowestKnownMagnitude: -5,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -197,6 +217,7 @@
       otherSigFigs: '142',
       orderOfMagnitude: -1,
       numSigFigs: 4,
+      lowestKnownMagnitude: -4,
       positive: false
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -205,6 +226,7 @@
       otherSigFigs: '24210',
       orderOfMagnitude: 5,
       numSigFigs: 6,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -213,6 +235,7 @@
       otherSigFigs: '4',
       orderOfMagnitude: -1,
       numSigFigs: 2,
+      lowestKnownMagnitude: -2,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -221,6 +244,7 @@
       otherSigFigs: '40000',
       orderOfMagnitude: -1,
       numSigFigs: 6,
+      lowestKnownMagnitude: -6,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -229,6 +253,7 @@
       otherSigFigs: '0',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -237,6 +262,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -1,
       numSigFigs: 1,
+      lowestKnownMagnitude: -1,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -245,6 +271,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -1,
       numSigFigs: 1,
+      lowestKnownMagnitude: -1,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -253,6 +280,7 @@
       otherSigFigs: '0',
       orderOfMagnitude: -1,
       numSigFigs: 2,
+      lowestKnownMagnitude: -2,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -261,6 +289,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -5,
       numSigFigs: 1,
+      lowestKnownMagnitude: -5,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -269,6 +298,7 @@
       otherSigFigs: '0',
       orderOfMagnitude: -5,
       numSigFigs: 2,
+      lowestKnownMagnitude: -6,
       positive: true
   }, 'constructFromString', 'standardNotationDecimalStrings');
 
@@ -280,6 +310,7 @@
       otherSigFigs: '0',
       orderOfMagnitude: 8,
       numSigFigs: 2,
+      lowestKnownMagnitude: 7,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -288,6 +319,7 @@
       otherSigFigs: '2',
       orderOfMagnitude: -6,
       numSigFigs: 2,
+      lowestKnownMagnitude: -7,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -296,6 +328,7 @@
       otherSigFigs: '23',
       orderOfMagnitude: 10,
       numSigFigs: 3,
+      lowestKnownMagnitude: 8,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -304,6 +337,7 @@
       otherSigFigs: '25',
       orderOfMagnitude: 11,
       numSigFigs: 3,
+      lowestKnownMagnitude: 9,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -312,6 +346,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -7,
       numSigFigs: 1,
+      lowestKnownMagnitude: -7,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -320,6 +355,7 @@
       otherSigFigs: '4',
       orderOfMagnitude: 2,
       numSigFigs: 2,
+      lowestKnownMagnitude: 1,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -328,6 +364,7 @@
       otherSigFigs: '53',
       orderOfMagnitude: 5,
       numSigFigs: 3,
+      lowestKnownMagnitude: 3,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -336,6 +373,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 5,
       numSigFigs: 1,
+      lowestKnownMagnitude: 5,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -344,6 +382,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 5,
       numSigFigs: 1,
+      lowestKnownMagnitude: 5,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -352,6 +391,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 4,
       numSigFigs: 1,
+      lowestKnownMagnitude: 4,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -360,6 +400,7 @@
       otherSigFigs: '14',
       orderOfMagnitude: -9,
       numSigFigs: 3,
+      lowestKnownMagnitude: -11,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -368,6 +409,7 @@
       otherSigFigs: '2',
       orderOfMagnitude: 1,
       numSigFigs: 2,
+      lowestKnownMagnitude: 0,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -376,6 +418,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -3,
       numSigFigs: 1,
+      lowestKnownMagnitude: -3,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -384,6 +427,7 @@
       otherSigFigs: '56',
       orderOfMagnitude: 3,
       numSigFigs: 3,
+      lowestKnownMagnitude: 1,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -392,6 +436,7 @@
       otherSigFigs: '78',
       orderOfMagnitude: -9,
       numSigFigs: 3,
+      lowestKnownMagnitude: -11,
       positive: false
   }, 'constructFromString', 'exponentStrings');
 
@@ -400,6 +445,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 3,
       numSigFigs: 1,
+      lowestKnownMagnitude: 3,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -408,6 +454,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -9,
       numSigFigs: 1,
+      lowestKnownMagnitude: -9,
       positive: false
   }, 'constructFromString', 'exponentStrings');
 
@@ -416,6 +463,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 4,
       numSigFigs: 1,
+      lowestKnownMagnitude: 4,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -424,6 +472,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 6,
       numSigFigs: 1,
+      lowestKnownMagnitude: 6,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -432,6 +481,7 @@
       otherSigFigs: '3',
       orderOfMagnitude: 4,
       numSigFigs: 2,
+      lowestKnownMagnitude: 3,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -440,6 +490,7 @@
       otherSigFigs: '',
       orderOfMagnitude: -6,
       numSigFigs: 1,
+      lowestKnownMagnitude: -6,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -448,6 +499,7 @@
       otherSigFigs: '',
       orderOfMagnitude: 11,
       numSigFigs: 1,
+      lowestKnownMagnitude: 11,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -456,6 +508,7 @@
       otherSigFigs: '0000',
       orderOfMagnitude: 11,
       numSigFigs: 5,
+      lowestKnownMagnitude: 7,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -464,6 +517,7 @@
       otherSigFigs: '0000',
       orderOfMagnitude: 9,
       numSigFigs: 5,
+      lowestKnownMagnitude: 5,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
@@ -472,61 +526,10 @@
       otherSigFigs: '0',
       orderOfMagnitude: 3,
       numSigFigs: 2,
+      lowestKnownMagnitude: 2,
       positive: true
   }, 'constructFromString', 'exponentStrings');
 
-
-  /*
-    let mag226 = new Magnitude('undefined');
-    magnitudeTests.assertEqualStrict(mag226.isAmagnitude, true, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag226.firstSigFig, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag226.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag226.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag226.numSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag226.positive, undefined, 'constructor', 'exponentStrings');
-
-    let mag227 = new Magnitude('undefined');
-    magnitudeTests.assertEqualStrict(mag227.isAmagnitude, true, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag227.firstSigFig, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag227.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag227.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag227.numSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag227.positive, undefined, 'constructor', 'exponentStrings');
-
-    let mag228 = new Magnitude('undefined');
-    magnitudeTests.assertEqualStrict(mag228.isAmagnitude, true, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag228.firstSigFig, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag228.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag228.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag228.numSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag228.positive, undefined, 'constructor', 'exponentStrings');
-
-    let mag229 = new Magnitude('undefined');
-    magnitudeTests.assertEqualStrict(mag229.isAmagnitude, true, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag229.firstSigFig, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag229.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag229.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag229.numSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag229.positive, undefined, 'constructor', 'exponentStrings');
-
-    let mag230 = new Magnitude('undefined');
-    magnitudeTests.assertEqualStrict(mag230.isAmagnitude, true, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag230.firstSigFig, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag230.otherSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag230.orderOfMagnitude, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag230.numSigFigs, undefined, 'constructor', 'exponentStrings');
-    magnitudeTests.assertEqualStrict(mag230.positive, undefined, 'constructor', 'exponentStrings');
-  */
-
-  // add a category of ZEROS!
-// let mag102 = new Magnitude('0.000','meters');
-// magnitudeTests.assertEqualStrict(mag102.isAmagnitude, true, 'constructor', 'standardNotationDecimalStrings');
-// magnitudeTests.assertEqualStrict(mag102.firstSigFig, '0', 'constructor', 'standardNotationDecimalStrings');
-// magnitudeTests.assertEqualStrict(mag102.otherSigFigs, '000', 'constructor', 'standardNotationDecimalStrings');
-// magnitudeTests.assertEqualStrict(mag102.orderOfMagnitude, 0, 'constructor', 'standardNotationDecimalStrings');
-// magnitudeTests.assertEqualStrict(mag102.numSigFigs, 4, 'constructor', 'standardNotationDecimalStrings');
-// magnitudeTests.assertEqualStrict(mag102.positive, false, 'constructor', 'standardNotationDecimalStrings');
-//
 
   measurementTests.addSubCategory('constructFromString','zeros','Zeros');
   measurementTests.assertMeasurementZero(new Measurement('0'), 1, 'constructFromString', 'zeros');
