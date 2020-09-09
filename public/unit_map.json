@@ -1709,28 +1709,27 @@
         },
         "pods":
         {
-          "what_is_cosmology":
-          {
-            "title": "What is cosmology?",
-            "level": 1,
-            "horizontal": 1,
-            "letter": "A",
-            "prerequisites": [],
-            "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts",
-            "content": "Cosmology is the science of the entire universe. It deals with questions such as how was the universe created and how will it end.",
-            "uuid": "efe593d7-9025-4b11-8e67-2cc8be526955"
-          },
           "your_address_in_cosmos":
           {
             "title": "Your Address in the Cosmos",
             "level": 1,
-            "horizontal": 2,
-            "letter": "B",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": ["what_is_cosmology"],
             "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc.",
             "content": "The earth sits within a solar system, a galaxy, and a cluster of galaxies.",
-            "note": "Make sure to throw out a reference to Our Town",
             "uuid": "63741b84-5b2e-4ba1-8d23-c08f63321bbc"
+          },
+          "what_is_cosmology":
+          {
+            "title": "What is cosmology?",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": [],
+            "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts",
+            "content": "Cosmology is the science of the entire universe. It deals with questions such as how was the universe created and how will it end.",
+            "uuid": "efe593d7-9025-4b11-8e67-2cc8be526955"
           },
           "expansion_of_universe":
           {
