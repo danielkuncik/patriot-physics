@@ -1432,7 +1432,7 @@ measurementTests.assertMeasurement(mag3008a, {
   let mag3301a = new Measurement('1000000');
   let mag3301b = new Measurement('2');
 
-  measurementTests.assertMagnitude(mag3301a.add(mag3301b),{
+  measurementTests.assertMeasurement(mag3301a.add(mag3301b),{
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 6,
@@ -1441,7 +1441,7 @@ measurementTests.assertMeasurement(mag3008a, {
     positive: true
   },'operations','differentOrderOfMagnitudeAddition');
 
-  measurementTests.assertMagnitude(mag3301b.add(mag3301a),{
+  measurementTests.assertMeasurement(mag3301b.add(mag3301a),{
     firstSigFig: '1',
     otherSigFigs: '',
     orderOfMagnitude: 6,
@@ -1452,7 +1452,7 @@ measurementTests.assertMeasurement(mag3008a, {
 
   let mag3302a = new Measurement('1.00e6');
   let mag3302b = new Measurement('2');
-  measurementTests.assertMagnitude(mag3302a.add(mag3302b),{
+  measurementTests.assertMeasurement(mag3302a.add(mag3302b),{
     firstSigFig: '1',
     otherSigFigs: '00',
     orderOfMagnitude: 6,
@@ -1461,7 +1461,7 @@ measurementTests.assertMeasurement(mag3008a, {
     positive: true
   },'operations','differentOrderOfMagnitudeAddition');
 
-  measurementTests.assertMagnitude(mag3302b.add(mag3302a),{
+  measurementTests.assertMeasurement(mag3302b.add(mag3302a),{
     firstSigFig: '1',
     otherSigFigs: '00',
     orderOfMagnitude: 6,
@@ -1473,7 +1473,7 @@ measurementTests.assertMeasurement(mag3008a, {
   let mag3303a = new Measurement('1.00e6');
   let mag3303b = new Measurement('2e4');
 
-  measurementTests.assertMagnitude(mag3303a.add(mag3303b),{
+  measurementTests.assertMeasurement(mag3303a.add(mag3303b),{
     firstSigFig: '1',
     otherSigFigs: '02',
     orderOfMagnitude: 6,
@@ -1482,7 +1482,7 @@ measurementTests.assertMeasurement(mag3008a, {
     positive: true
   },'operations','differentOrderOfMagnitudeAddition');
 
-  measurementTests.assertMagnitude(mag3303b.add(mag3303a),{
+  measurementTests.assertMeasurement(mag3303b.add(mag3303a),{
     firstSigFig: '1',
     otherSigFigs: '02',
     orderOfMagnitude: 6,
@@ -1493,7 +1493,7 @@ measurementTests.assertMeasurement(mag3008a, {
 
   let mag3304a = new Measurement('1.00e6');
   let mag3304b = new Measurement('2e5');
-  measurementTests.assertMagnitude(mag3304a.add(mag3304b),{
+  measurementTests.assertMeasurement(mag3304a.add(mag3304b),{
     firstSigFig: '1',
     otherSigFigs: '2',
     orderOfMagnitude: 6,
@@ -1502,7 +1502,7 @@ measurementTests.assertMeasurement(mag3008a, {
     positive: true
   },'operations','differentOrderOfMagnitudeAddition');
 
-  measurementTests.assertMagnitude(mag3304b.add(mag3304a),{
+  measurementTests.assertMeasurement(mag3304b.add(mag3304a),{
     firstSigFig: '1',
     otherSigFigs: '2',
     orderOfMagnitude: 6,
@@ -1513,7 +1513,7 @@ measurementTests.assertMeasurement(mag3008a, {
 
   let mag3305a = new Measurement('1.00e6');
   let mag3305b = new Measurement('2.0e5');
-  measurementTests.assertMagnitude(mag3305a.add(mag3305b),{
+  measurementTests.assertMeasurement(mag3305a.add(mag3305b),{
     firstSigFig: '1',
     otherSigFigs: '20',
     orderOfMagnitude: 6,
@@ -1522,7 +1522,7 @@ measurementTests.assertMeasurement(mag3008a, {
     positive: true
   },'operations','differentOrderOfMagnitudeAddition');
 
-  measurementTests.assertMagnitude(mag3305b.add(mag3305a),{
+  measurementTests.assertMeasurement(mag3305b.add(mag3305a),{
     firstSigFig: '1',
     otherSigFigs: '20',
     orderOfMagnitude: 6,

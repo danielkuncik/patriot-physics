@@ -310,6 +310,10 @@ class Measurement {
         }
     }
 
+    getLowestKnownMagnitude() { // lowest magnitude for which there is a significant figure
+        return this.getOrderOfMagnitude() - this.getNumSigFigs() + 1
+    }
+
     getNumSigFigs() {
         if (!this.isAmeasurement) {
           return undefined
@@ -796,19 +800,20 @@ class Measurement {
     // PRIVATE METHOD
     getSigFigsForCombination(anotherMeasurement) {
         if (this.getOrderOfMagnitude() > anotherMeasurement.getOrderOfMagnitude()) {
-            const lowestDigitThatMatters = this.getOrderOfMagnitude() - this.numSigFigs + 1;
-            if (anotherMeasurement.getOrderOfMagnitude() < lowestDigitThatMatters) { // case in which one measurement is so much lower it does not count
+            if (anotherMeasurement.getOrderOfMagnitude() < this.getLowestKnownMagnitude()) { // case in which one measurement is so much lower it does not count
                 return this.getNumSigFigs()
             } else {
-                return this.getOrderOfMagnitude() - anotherMeasurement.getOrderOfMagnitude() + 1
+                const highestLowestKnownMagnitude = Math.max(this.getLowestKnownMagnitude(), anotherMeasurement.getLowestKnownMagnitude());
+                return this.getOrderOfMagnitude() - highestLowestKnownMagnitude + 1
             }
             // more complex piece here
         } else if (this.getOrderOfMagnitude() < anotherMeasurement.getOrderOfMagnitude()) {
             const lowestDigitThatMatters = anotherMeasurement.getOrderOfMagnitude() - anotherMeasurement.numSigFigs + 1;
-            if (this.getOrderOfMagnitude() < lowestDigitThatMatters) {
+            if (this.getOrderOfMagnitude() < anotherMeasurement.getLowestKnownMagnitude()) {
                 return anotherMeasurement.getNumSigFigs()
             } else {
-                return anotherMeasurement.getOrderOfMagnitude() - this.getOrderOfMagnitude() + 1
+                const highestLowestKnownMagnitude = Math.max(this.getLowestKnownMagnitude(), anotherMeasurement.getLowestKnownMagnitude());
+                return anotherMeasurement.getOrderOfMagnitude() - highestLowestKnownMagnitude + 1
             }
         } else {
             return Math.min(this.getNumSigFigs(), anotherMeasurement.getNumSigFigs())

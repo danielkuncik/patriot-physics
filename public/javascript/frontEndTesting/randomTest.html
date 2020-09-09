@@ -39,17 +39,16 @@
 
 <script>
     let randomTest = new TestPackage('Random Tests');
-
-    let mag1039 = new Measurement('99'); // same issue, but not exact
-    mag1039.round(1);
-    randomTest.assertMeasurement(mag1039, {
-        firstSigFig: "1",
-        otherSigFigs: "",
-        numSigFigs: 1,
-        orderOfMagnitude: 2,
+    let mag3006a = new Measurement('3.00000000e8');
+    let mag3006b = new Measurement('5.00000000000'); // 3.0000005e8
+    randomTest.assertMeasurement(mag3006a.add(mag3006b), { // 3.0000005e8
+        firstSigFig: '3',
+        otherSigFigs: '00000005',
+        orderOfMagnitude: 8,
+        numSigFigs: 9,
         positive: true,
-        float: 99
-    }, 'rounding', 'exactRounding');
+        float: 300000005
+    }, 'operations', 'addition');
 
     $("#putItHere").append(randomTest.printAllTests());
 
