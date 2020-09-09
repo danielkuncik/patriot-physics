@@ -40,7 +40,16 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    randomTest.assertMeasurementZero(new Measurement(0, Infinity), Infinity, 'constructFromFloat', 'zeros'); // zero magnitude with infinite sig figs
+    let mag1039 = new Measurement('99'); // same issue, but not exact
+    mag1039.round(1);
+    randomTest.assertMeasurement(mag1039, {
+        firstSigFig: "1",
+        otherSigFigs: "",
+        numSigFigs: 1,
+        orderOfMagnitude: 2,
+        positive: true,
+        float: 99
+    }, 'rounding', 'exactRounding');
 
     $("#putItHere").append(randomTest.printAllTests());
 

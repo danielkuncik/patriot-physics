@@ -414,7 +414,7 @@ class Measurement {
 
 
     /// PRIVATE FUNCTION
-    roundToFewerSigFigs(newSigFigs) {
+   /* roundToFewerSigFigs(newSigFigs) {
         this.numSigFigs = newSigFigs;
         let numString = this.firstSigFig + this.otherSigFigs;
         let testChar = numString[newSigFigs];
@@ -442,12 +442,21 @@ class Measurement {
             this.otherSigFigs = numStringNew.slice(1,numStringNew.length);
         }
     }
+    */
 
+   // the float variable does not change!
     round(newSigFigs) {
-        if (newSigFigs > this.numSigFigs) {
+        if (newSigFigs >= this.numSigFigs) {
             // console.log('unable to add significant figures to a magnitude');
-            return this
-        } else if (newSigFigs === this.numSigFigs) {
+            return undefined
+        } else {
+            this.numSigFigs = newSigFigs;
+            return  undefined
+        }
+    }
+
+      /*
+        else if (newSigFigs === this.numSigFigs) {
             return this
         } else if (this.numSigFigs === Infinity) {
             let i;
@@ -459,6 +468,8 @@ class Measurement {
             this.roundToFewerSigFigs(newSigFigs)
         }
     }
+    */
+
 
     // what about signs????
     /// need to work on the 'exactly!!!!'
@@ -744,60 +755,80 @@ class Measurement {
     }
 
 
-
     reverseSign() {
-        let newNumber = this.duplicate();
-        if (newNumber.zero) {
-            return newNumber
-        } else {
-            newNumber.positive = !newNumber.positive;
-            if (this.intermediateValue) {
-                newNumber.intermediateValue *= -1; // this was a good bug to find! 8-31-2020, 2:30 pm!
-            }
-            return newNumber
-        }
+        return new Measurement(this.getFloat() * -1, this.getNumSigFigs())
     }
+
+    // reverseSign() {
+    //     let newNumber = this.duplicate();
+    //     if (newNumber.zero) {
+    //         return newNumber
+    //     } else {
+    //         newNumber.positive = !newNumber.positive;
+    //         if (this.intermediateValue) {
+    //             newNumber.intermediateValue *= -1; // this was a good bug to find! 8-31-2020, 2:30 pm!
+    //         }
+    //         return newNumber
+    //     }
+    // }
 
 
     // PRIVATE METHOD!!!!
     // for addition, subtraction, pythagorean addition, pythagorean subtraction
-    addOrSubtract(operation, anotherMagnitude, zeroLimit = this.zeroLimit) {
+    // addOrSubtract(operation, anotherMagnitude, zeroLimit = this.zeroLimit) {
+    //
+    //     const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs); // needs to change
+    //
+    //     let newFloat;
+    //     if (operation === '+') {
+    //         newFloat = this.getFloat() + anotherMagnitude.getFloat();
+    //     } else if (operation === '-') {
+    //         newFloat = this.getFloat() - anotherMagnitude.getFloat();
+    //     } else if (operation === 'pythagorean_+') {
+    //         newFloat = Math.sqrt(this.getFloat()**2 + anotherMagnitude.getFloat()**2);
+    //     } else if (operation === 'pythagorean_-') {
+    //         newFloat = Math.sqrt(this.getFloat()**2 - anotherMagnitude.getFloat()**2);
+    //     }
+    //     return new Measurement(newFloat, newSigFigs)
+    // }
 
-        const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs); // needs to change
-
-        let newFloat;
-        if (operation === '+') {
-            newFloat = this.getFloat() + anotherMagnitude.getFloat();
-        } else if (operation === '-') {
-            newFloat = this.getFloat() - anotherMagnitude.getFloat();
-        } else if (operation === 'pythagorean_+') {
-            newFloat = Math.sqrt(this.getFloat()**2 + anotherMagnitude.getFloat()**2);
-        } else if (operation === 'pythagorean_-') {
-            newFloat = Math.sqrt(this.getFloat()**2 - anotherMagnitude.getFloat()**2);
-        }
-        return new Measurement(newFloat, newSigFigs)
+    // PRIVATE METHOD
+    getSigFigsForCombination(anotherMeasurement) {
+        return Math.min(this.getNumSigFigs(), anotherMeasurement.getNumSigFigs())
     }
 
-    add(anotherMagnitude, zeroLimit) {
-        return this.addOrSubtract('+', anotherMagnitude, zeroLimit)
+    add(anotherMeasurement, zeroLimit) {
+        let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        const newSigFigs = this.getSigFigsForCombination(otherMeasurement);
+        return new Measurement(this.getFloat() + otherMeasurement.getFloat(), newSigFigs, zeroLimit)
     }
 
-    subtract(anotherMagnitude, zeroLimit) {
-        return this.addOrSubtract('-', anotherMagnitude, zeroLimit)
+    subtract(anotherMeasurement, zeroLimit) {
+        let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        const newSigFigs = this.getSigFigsForCombination(otherMeasurement);
+        return new Measurement(this.getFloat() - otherMeasurement.getFloat(), newSigFigs, zeroLimit)
     }
 
-    pythagoreanAdd(anotherMagnitude, zeroLimit) {
-        return this.addOrSubtract('pythagorean_+', anotherMagnitude, zeroLimit)
+    pythagoreanAdd(anotherMeasurement, zeroLimit) {
+        let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        const newSigFigs = this.getSigFigsForCombination(otherMeasurement);
+        return new Measurement(math.sqrt(this.getFloat()**2 + otherMeasurement.getFloat()**2), newSigFigs, zeroLimit)
     }
 
-    pythagoreanSubtract(anotherMagnitude, zeroLimit) {
-        return this.addOrSubtract('pythagorean_-', anotherMagnitude, zeroLimit)
+    pythagoreanSubtract(anotherMeasurement, zeroLimit) {
+        let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        const newSigFigs = this.getSigFigsForCombination(otherMeasurement);
+        return new Measurement(math.sqrt(this.getFloat()**2 - otherMeasurement.getFloat()**2), newSigFigs, zeroLimit)
     }
 
 
 // can make more efficient for zeros?
-    multiply(anotherMagnitude) {
-        let newSigFigs;
+    multiply(anotherMeasurement, zeroLimit) {
+        let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        const newSigFigs = Math.min(this.getNumSigFigs(), otherMeasurement.getNumSigFigs()); // this will need to be revised
+        return new Measurement(this.getFloat() * otherMeasurement.getFloat(), newSigFigs, zeroLimit)
+
+        /*let newSigFigs;
         if (this.zero && anotherMagnitude.zero) { // rules of sig fig multiplication are a little different if one of the values is zero
             newSigFigs = Math.max(this.numSigFigs, anotherMagnitude.numSigFigs);
         } else if (this.zero) {
@@ -810,9 +841,16 @@ class Measurement {
         const exact = newSigFigs === Infinity;
         const newFloat = this.getFloat() * anotherMagnitude.getFloat();
         return new Measurement(newFloat, newSigFigs)
+        */
+
     }
 
-    divide(anotherMagnitude) {
+    divide(anotherMeasurement, zeroLimit) {
+        let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        const newSigFigs = Math.min(this.getNumSigFigs(), otherMeasurement.getNumSigFigs()); // this will need to be revised
+        return new Measurement(this.getFloat() / otherMeasurement.getFloat(), newSigFigs, zeroLimit)
+
+        /*
         if (!this.infinity && anotherMagnitude.infinity) {
             return new Measurement(0)
         } else if (this.infinity && anotherMagnitude.infinity) {
@@ -821,19 +859,25 @@ class Measurement {
         const newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
         const newFloat = this.getFloat() / anotherMagnitude.getFloat();
         return new Measurement(newFloat, newSigFigs)
+        */
+
     }
 
-    inverse() {
-        return new Magnitude('1', undefined, undefined, true).divideMag(this);
+    inverse(zeroLimit) {
+        return this.divide(1, zeroLimit)
     }
 
-    multiplyExactConstant(exactConstant) {
+/*
+  these are superfluous now
+  multiplyExactConstant(exactConstant) {
         return constructMagnitudeFromFloat(this.getFloat() * exactConstant, this.numSigFigs, this.unit, this.exact, this.zeroLimit);
     }
 
     divideExactConstant(exactConstant) {
         return constructMagnitudeFromFloat(this.getFloat() / exactConstant, this.numSigFigs, this.unit, this.exact, this.zeroLimit);
     }
+
+ */
 
 
     square() {
@@ -898,4 +942,12 @@ class Measurement {
 
 function percentDifference(inputted, expected) {
     return (Math.abs(inputted - expected) / expected) * 100
+}
+
+function processMeasurementInput(input) {
+    if (typeof(input) === 'number' || typeof(input) === 'string') {
+        return new Measurement(input)
+    } else if (typeof(input) === 'object' && input.isAmeasurement) {
+        return input
+    }
 }
