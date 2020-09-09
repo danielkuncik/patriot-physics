@@ -307,3 +307,8 @@ input.integerInput {
     height: 60px;
     font-size: 25px;
 }
+
+img.spaceImage {
+    height: 200px;
+    width: auto
+}
