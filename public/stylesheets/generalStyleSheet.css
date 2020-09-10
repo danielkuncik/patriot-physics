@@ -276,7 +276,7 @@ input.autoAnswerButton {
 
 p.introduction {
     font-family: "Verdana";
-    color: blue;
+    color: #0000FF;
 }
 
 @media print
@@ -287,7 +287,7 @@ p.introduction {
     }
 
     p.introduction {
-        color: black;
+        color: #000000;
     }
 
 }
@@ -308,4 +308,12 @@ input.integerInput {
 img.spaceImage {
     height: 200px;
     width: auto
+}
+
+nav.navbarColors {
+    background-color: #7FFFD4
+}
+
+div.homePageCard {
+    background-color: #DCDCDC
 }

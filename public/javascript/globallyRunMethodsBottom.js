@@ -178,9 +178,18 @@ function clickAnswerButton() {
 
 let currentBackground = 'light';
 
+
+
 function goDark() {
     $("body").removeClass("bg-light");
     $("body").addClass('bg-dark');
+    $("body").removeClass('text-dark');
+    $("body").addClass("text-light");
+
+    $("div.card-body").removeClass("bg-light");
+    $("div.card-body").addClass('bg-dark');
+    $("div.card-body").removeClass('text-dark');
+    $("div.card-body").addClass("text-light");
 
     $("#backgroundButton").removeClass("bg-dark text-warning");
     $("#backgroundButton").addClass("bg-light text-dark");
@@ -192,6 +201,14 @@ function goDark() {
 function goLight() {
     $("body").removeClass('bg-dark');
     $("body").addClass("bg-light");
+    $("body").removeClass("text-light");
+    $("body").addClass('text-dark');
+
+    $("div.card-body").removeClass("bg-dark");
+    $("div.card-body").addClass('bg-light');
+    $("div.card-body").removeClass('text-light');
+    $("div.card-body").addClass("text-dark");
+
 
     $("#backgroundButton").removeClass("bg-light text-dark");
     $("#backgroundButton").addClass("bg-dark text-warning");
