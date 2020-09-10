@@ -136,6 +136,11 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
     res.sendFile(filepath);
 });
 
+app.get('/quizAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
+    let filepath = __dirname + '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetName;
+    res.sendFile(filepath);
+});
+
 app.get('/labs', [db.check_if_logged_in, disp.display_lab_list_page]);
 
 app.get('/labs/:labKey', [db.check_if_logged_in, disp.display_lab_page]);
