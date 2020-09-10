@@ -175,3 +175,35 @@ function clickAnswerButton() {
         $("button.answerButton").append("<span>ANSWER</span>");
     }
 }
+
+let currentBackground = 'light';
+
+function goDark() {
+    $("body").removeClass("bg-light");
+    $("body").addClass('bg-dark');
+
+    $("#backgroundButton").removeClass("bg-dark text-warning");
+    $("#backgroundButton").addClass("bg-light text-dark");
+    $("#backgroundButton").text('Light Background');
+
+    currentBackground = 'dark';
+}
+
+function goLight() {
+    $("body").removeClass('bg-dark');
+    $("body").addClass("bg-light");
+
+    $("#backgroundButton").removeClass("bg-light text-dark");
+    $("#backgroundButton").addClass("bg-dark text-warning");
+    $("#backgroundButton").text('Dark Background');
+    currentBackground = 'light';
+}
+
+$("button#backgroundButton").click(() => {
+    if (currentBackground === 'dark') {
+        goLight();
+    } else if (currentBackground === 'light') {
+        goDark();
+    }
+});
+

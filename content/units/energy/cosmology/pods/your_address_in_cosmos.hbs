@@ -680,7 +680,7 @@
             </div>
         </li>
         <li class = 'm-3'>
-            <button class = 'btn btn-info' data-toggle = 'collapse' href = '#Kuiper' role = 'button' aria-expanded="false" aria-controls = "collapseSun">+</button>
+            <button class = 'btn btn-info' data-toggle = 'collapse' href = '#Kuiper' role = 'button' aria-expanded="false" aria-controls = "collapseKuiper">+</button>
             The Kuiper Belt
             (<a href = 'https://www.youtube.com/watch?v=Bwwkz6xFtmQ'>click for pronunciation</a>)
             (between 30 AU and 55 AU):
@@ -690,41 +690,53 @@
             <div id = 'Kuiper' class = 'collapse'>
                 <ul>
                     <li>
+                        <button class = 'btn btn-info' data-toggle = 'collapse' href = '#Pluto' role = 'button' aria-expanded="false" aria-controls = "collapsePluto">+</button>
                         Pluto System: (39 AU)
-                        <ul>
-                            <li>
-                                Pluto<br>
-                                <img src = '#' height = '200px' width = 'auto'/>
-                                <p class = 'imageCredit'>
+                        <div class = 'collapse' id = 'Pluto'>
+                            <ul>
+                                <li>
+                                    Pluto<br>
+                                    <img src = 'https://solarsystem.nasa.gov/system/resources/detail_files/855_pluto_lorri_ralph_20150713_2017.jpg' height = '200px' width = 'auto'/>
+                                    <p class = 'imageCredit'>
+                                        https://solarsystem.nasa.gov/resources/855/color-pluto/?category=planets/dwarf-planets_pluto
+                                    </p>
+                                </li>
+                                <li>
+                                    Charon, a moon:<br>
+                                    <img src = 'https://solarsystem.nasa.gov/system/content_pages/main_images/538_PIA19968.jpg' class = 'spaceImage'/>
+                                    <p class = 'imageCredit'>
+                                        https://solarsystem.nasa.gov/moons/pluto-moons/charon/in-depth/
+                                    </p>
+                                    Charon is almost as large as Pluto,
+                                    and as a result the center of mass of the
+                                    Pluto system is <em>outside of Pluto</em>.
+                                    For this reason, Pluto and Charon are called a <em>binary</em>.
+                                    (see video)
+                                    <br>
+                                    <img src = 'https://solarsystem.nasa.gov/system/resources/detail_files/853_pluto_and_charon_20150714.jpg' class = 'spaceImage'/>
+                                    <p class = 'imageCredit'>
+                                        https://solarsystem.nasa.gov/resources/853/pluto-and-charon/?category=planets/dwarf-planets_pluto
+                                    </p>
 
-                                </p>
-                            </li>
-                            <li>
-                                Charon, a moon:<br>
-                                <img src = '#' height = '200px' width = 'auto'/>
-                                <p class = 'imageCredit'>
-
-                                </p>
-                                Charon is almost as large as Pluto,
-                                and as a result the center of mass of the
-                                Pluto system is <em>outside of Pluto</em>.
-                                For this reason, Pluto and Charon are called a <em>binary</em>.
-                                (see video)
-                            </li>
-                            <li>
-                                4 other moons
-                            </li>
-                            <li>
-                                (Potentially) rings
-                            </li>
-                        </ul>
+                                </li>
+                                <li>
+                                    4 other moons
+                                </li>
+                                <li>
+                                    (Potentially) rings
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
-                        Eris (68 AU)<br>
-                        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2390" width="100%" height="200px" frameborder="0" ></iframe>
-                        <p class = 'ImageCredit'>
-                            https://solarsystem.nasa.gov/planets/dwarf-planets/eris/in-depth/
-                        </p>
+                        <button class = 'btn btn-info' data-toggle = 'collapse' href = '#Eris' role = 'button' aria-expanded="false" aria-controls = "collapseEris">+</button>
+                        Eris (68 AU)
+                        <div class = 'collapse' id = Eris>
+                            <iframe src="https://solarsystem.nasa.gov/gltf_embed/2390" width="100%" height="200px" frameborder="0" ></iframe>
+                            <p class = 'ImageCredit'>
+                                https://solarsystem.nasa.gov/planets/dwarf-planets/eris/in-depth/
+                            </p>
+                        </div>
                     </li>
                     <li>
                         Short Period Comets:
@@ -733,9 +745,9 @@
                         <ul>
                             <li>
                                 Halley's Comet:<br>
-                                <img src = '#' height = '200px' width = 'auto'/>
+                                <img src = 'https://solarsystem.nasa.gov/system/content_pages/main_images/627_Giotto_halley_br.jpg' class = 'spaceImage'/>
                                 <p class = 'imageCredit'>
-
+                                    https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/1p-halley/in-depth/
                                 </p>
                                 Was last seen from earth in 1986, and will be seen again in 2061.
                                 The astronomer Edmund Halley was the first to predict the return of this comet.
@@ -743,13 +755,23 @@
                         </ul>
                     </li>
                     <li>
+                        Kuiper Belt Object Arrokoth<br>
+                        <img src = 'https://solarsystem.nasa.gov/system/resources/detail_files/2449_mu69_med.jpg' class = 'spaceImage' />
+                        <p class = 'imageCredit'>
+                            https://solarsystem.nasa.gov/resources/2449/enhanced-color-composite-image-of-kuiper-belt-object-arrokoth-2014-mu69/?category=solar-system/kuiper-belt_arrokoth-2014-mu69
+                        </p>
+                        <p>
+                            The farthest away object for which we have a close up image, taken by the New Horizons Satellite in 2019.
+                        </p>
+                    </li>
+                    <li>
                         Millions of other Kuiper Belt Objects
                     </li>
                     <li>
                         New Horizon's Spacecraft (2015&#8212;present)<br>
-                        <img src = '#' height = '200px' width = 'auto'/>
+                        <img src = 'https://solarsystem.nasa.gov/system/content_pages/main_images/1051_nh.jpg' class = 'spaceImage'/>
                         <p class = 'imageCredit'>
-
+                            https://solarsystem.nasa.gov/missions/new-horizons/in-depth/
                         </p>
                     </li>
                 </ul>
@@ -1218,6 +1240,10 @@
 <h5>
     Further Resources:
 </h5>
+<p>
+    There isn't one answer to this question!
+    Look at some other desciptions of the cosmic address.
+</p>
 <ul>
     <li>
         COSMOS: A Spacetime Odyssey: Season 1, Episode 1 "Standing up in the Milky Way"

@@ -19,7 +19,7 @@ class Angle extends PhysicsNumber {
     }
 
     isInDegrees() {
-      retun this.degrees
+      return this.degrees
     }
 
     simplifyAngle() { // should be automatic
@@ -259,7 +259,7 @@ function constructZeroAngle(numSigFigs, exact = numSigFigs === undefined) {
 }
 
 function get360Degrees(numSigFigs, exact = numSigFigs === undefined) {
-  return constructAngleFloat(360,numSigFigs,true exact);
+  return constructAngleFloat(360,numSigFigs,true, exact);
 }
 
 
