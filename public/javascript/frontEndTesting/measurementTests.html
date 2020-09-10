@@ -1442,6 +1442,71 @@ is it possible there is a time when the float is not zero, but the number is zer
       float: -1.252e12
   },'rounding','floatRounding');
 
+  let mag4045 = new Measurement(9999,5);
+  measurementTests.assertMeasurement(mag4045, {
+      firstSigFig: '9',
+      otherSigFigs: '9990',
+      numSigFigs: 5,
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: -1,
+      positive: true,
+      float: 9999
+  },'rounding','floatRounding');
+
+  mag4045.round(4);
+  measurementTests.assertMeasurement(mag4045, {
+      firstSigFig: '9',
+      otherSigFigs: '999',
+      numSigFigs: 4,
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 0,
+      positive: true,
+      float: 9999
+  },'rounding','floatRounding');
+
+  mag4045.round(3);
+  measurementTests.assertMeasurement(mag4045, {
+      firstSigFig: '1',
+      otherSigFigs: '00',
+      numSigFigs: 3,
+      orderOfMagnitude: 4,
+      lowestKnownMagnitude: 2,
+      positive: true,
+      float: 9999
+  },'rounding','floatRounding');
+
+  mag4045.round(2);
+  measurementTests.assertMeasurement(mag4045, {
+      firstSigFig: '1',
+      otherSigFigs: '0',
+      numSigFigs: 2,
+      orderOfMagnitude: 4,
+      lowestKnownMagnitude: 3,
+      positive: true,
+      float: 9999
+  },'rounding','floatRounding');
+
+  mag4045.round(1);
+  measurementTests.assertMeasurement(mag4045, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      numSigFigs: 1,
+      orderOfMagnitude: 4,
+      lowestKnownMagnitude: 4,
+      positive: true,
+      float: 9999
+  },'rounding','floatRounding');
+
+  mag4045.round(4);
+  measurementTests.assertMeasurement(mag4045, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      numSigFigs: 1,
+      orderOfMagnitude: 4,
+      lowestKnownMagnitude: 4,
+      positive: true,
+      float: 9999
+  },'rounding','floatRounding');
 
   /*
   measurementTests.assertMeasurement(undefinedMag, {
