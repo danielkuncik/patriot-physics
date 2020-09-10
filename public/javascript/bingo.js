@@ -2,6 +2,7 @@ class BingoBoard {
     constructor(name = 'bingo') {
         this.words = [];
         this.name = name;
+        this.alreadyWon = false;
     }
 
     addWord(newWord) {
@@ -50,10 +51,10 @@ class BingoBoard {
                 return true
             }
 
-            // diagonal up righ
+            // diagonal up right
             let diag2 = true;
             for (i = 0; i < length; i++) {
-                if (!clickArray[i][length - i]) {
+                if (!clickArray[i][length - i - 1]) {
                     diag2 = false;
                 }
             }
@@ -65,9 +66,14 @@ class BingoBoard {
         }
     }
 
+    clickBox(i,j) {
+        this.clicked[i][j] = true;
+    }
+
     draw(size = 5) {
 
         let theDiv = $("<div class = 'container'></div>");
+        this.size = size;
 
 
         let wordArray = this.words;
@@ -98,22 +104,9 @@ class BingoBoard {
                 } else {
                     thisCol = $(`<div class = "col-${colSize} border border-dark p-5 bingoSpace" id = "${spaceID}">${word}</div>`);
                     this.clicked[i].push(false);
-
-                    console.log(spaceID);
-                    $(`#${spaceID}`).click( () => {
-                        console.log('here');
-                        // $(`#${spaceID}`).addClass("bg-success");
-                        // $(`#${spaceID}`).addClass("text-danger");
-                        // this.clicked[i][j] = true;
-                        // if (this.testIfWon()) {
-                        //     $("#winSpace").append("<p>YOU WON!</p>");
-                        // }
-                    });
                 }
-
                 $(thisRow).append(thisCol);
             }
-
             $(theDiv).append(thisRow);
         }
 
@@ -126,4 +119,43 @@ class BingoBoard {
 
         return theDiv
     }
+
+    showWin() {
+        let winMessage = $("<h1 class = 'display1' style = 'font-size: 200px'></h1>");
+        $(winMessage).append($("<span style = 'color:red'>B</span>"));
+        $(winMessage).append($("<span style = 'color:orange'>I</span>"));
+        $(winMessage).append($("<span style = 'color:yellow'>N</span>"));
+        $(winMessage).append($("<span style = 'color:green'>G</span>"));
+        $(winMessage).append($("<span style = 'color:blue'>O</span>"));
+        $(winMessage).append($("<span style = 'color:violet'>!</span>"));
+        $(winMessage).append($("<span style = 'color:violet'>!</span>"));
+        $(winMessage).append($("<span style = 'color:violet'>!</span>"));
+        $("#winSpace").append(winMessage);
+    }
+
+    setUpEventListeners() { // I think these needs to come AFTER everything has been added
+        if (!this.size) {
+            return undefined
+        }
+        let i, j;
+        for (i = 0; i< this.size; i++) {
+            for (j =0; j  < this.size; j++) {
+                const id = `bingo-${i}-${j}`;
+                if (!this.clicked[i][j]) {
+                    $(`#${id}`).on('click',() => {
+                        const newI = id[6]; // this is clunky
+                        const newJ = id[8];
+                        this.clickBox(newI,newJ);
+                        $(`#${id}`).addClass("bg-dark");
+                        $(`#${id}`).addClass("text-light");
+                        if (this.testIfWon(this.clicked) && !this.alreadyWon) {
+                            this.alreadyWon = true;
+                            this.showWin();
+                        }
+                    });
+                }
+            }
+        }
+    }
 }
+
