@@ -290,7 +290,7 @@ class Measurement {
         }
     }
     getOrderOfMagnitude() {
-        if (this.isZero() || !this.isAmeasurement) {
+        if (this.isZero() || this.isInfinity() || !this.isAmeasurement) {
           return undefined
         }
         let testFloat = Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));
@@ -486,11 +486,14 @@ class Measurement {
         if (this.isZero()) {
             return this.printZero()
         }
+        const sign = !this.isPositive() ? '-' : '';
+        if (this.isInfinity()) {
+            return `${sign}Infinity`
+        }
         const orderOfMag = this.getOrderOfMagnitude();
         const firstSigFig = this.getFirstSigFig();
         const otherSigFigs = this.getOtherSigFigs();
         const numSigFigs = this.getNumSigFigs();
-        const sign = !this.isPositive() ? '-' : '';
         if (orderOfMag > 0 && orderOfMag > this.getNumSigFigs() - 1) {
             if (otherSigFigs[numSigFigs - 2] === '0') {
                 return this.printScientificNotation(); /// in this event, you cannot print a standard notation number with the correct number of significant figures
@@ -530,6 +533,10 @@ class Measurement {
     printScientificNotation() {
         if (this.isZero()) {
             return this.printZero()
+        }
+        if (this.isInfinity()) {
+            const sign = !this.isPositive() ? '-' : '';
+            return `${sign}Infinity`
         }
         return this.float.toExponential(this.numSigFigs)
         // const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
@@ -853,24 +860,17 @@ class Measurement {
 // can make more efficient for zeros?
     multiply(anotherMeasurement, zeroLimit) {
         let otherMeasurement = processMeasurementInput(anotherMeasurement);
-        const newSigFigs = Math.min(this.getNumSigFigs(), otherMeasurement.getNumSigFigs()); // this will need to be revised
-        return new Measurement(this.getFloat() * otherMeasurement.getFloat(), newSigFigs, zeroLimit)
-
-        /*let newSigFigs;
-        if (this.zero && anotherMagnitude.zero) { // rules of sig fig multiplication are a little different if one of the values is zero
-            newSigFigs = Math.max(this.numSigFigs, anotherMagnitude.numSigFigs);
-        } else if (this.zero) {
-            newSigFigs = this.numSigFigs;
-        } else if (anotherMagnitude.zero) {
-            newSigFigs = anotherMagnitude.numSigFigs;
+        let newSigFigs;
+        if (this.isZero() && otherMeasurement.isZero()) { // rules of sig fig multiplication are a little different if one of the values is zero
+            newSigFigs = Math.max(this.getNumSigFigs(), otherMeasurement.getNumSigFigs());
+        } else if (this.isZero()) {
+            newSigFigs = this.getNumSigFigs();
+        } else if (otherMeasurement.isZero()) {
+            newSigFigs = otherMeasurement.getNumSigFigs();
         } else {
-            newSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs);
+            newSigFigs = Math.min(this.getNumSigFigs(), otherMeasurement.getNumSigFigs());
         }
-        const exact = newSigFigs === Infinity;
-        const newFloat = this.getFloat() * anotherMagnitude.getFloat();
-        return new Measurement(newFloat, newSigFigs)
-        */
-
+        return new Measurement(this.getFloat() * otherMeasurement.getFloat(), newSigFigs, zeroLimit)
     }
 
     divide(anotherMeasurement, zeroLimit) {

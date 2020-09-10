@@ -39,16 +39,14 @@
 
 <script>
     let randomTest = new TestPackage('Random Tests');
-    let mag3006a = new Measurement('3.00000000e8');
-    let mag3006b = new Measurement('5.00000000000'); // 3.0000005e8
-    randomTest.assertMeasurement(mag3006a.add(mag3006b), { // 3.0000005e8
-        firstSigFig: '3',
-        otherSigFigs: '00000005',
-        orderOfMagnitude: 8,
-        numSigFigs: 9,
+    let mag3100a = new Measurement('4.0');
+    let mag3100b = new Measurement(Infinity);
+
+    randomTest.assertMeasurement(mag3100a.add(mag3100b), {
+        infinity: true,
         positive: true,
-        float: 300000005
-    }, 'operations', 'addition');
+        float: Infinity
+    }, 'operations', 'infinities');
 
     $("#putItHere").append(randomTest.printAllTests());
 
