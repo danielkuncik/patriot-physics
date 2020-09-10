@@ -530,6 +530,8 @@ class Measurement {
         }
     }
 
+    // this is longer because I don't love how it looks with the built in 'to exponential'
+    // also, I should create an option to create a math jax version
     printScientificNotation() {
         if (this.isZero()) {
             return this.printZero()
@@ -538,19 +540,17 @@ class Measurement {
             const sign = !this.isPositive() ? '-' : '';
             return `${sign}Infinity`
         }
-        return this.float.toExponential(this.numSigFigs)
-        // const exactly = (this.numSigFigs === Infinity) ? 'exactly ' : '';
-        // const sign = (this.positive === false) ? '-' : '';
-        // if (this.numSigFigs === 1) {
-        //     return `${sign}${this.firstSigFig}e${String(this.orderOfMagnitude)}`;
-        // } else {
-        //     return `${exactly}${sign}${this.firstSigFig}.${this.otherSigFigs}e${String(this.orderOfMagnitude)}`;
-        // }
+        const exactly = (this.getNumSigFigs() === Infinity) ? 'exactly ' : '';
+        const sign = (this.isNegative()) ? '-' : '';
+        if (this.getNumSigFigs() === 1) {
+            return `${sign}${this.getFirstSigFig()}e${String(this.getOrderOfMagnitude())}`;
+        } else {
+            return `${exactly}${sign}${this.getFirstSigFig()}.${this.getOtherSigFigs()}e${String(this.getOrderOfMagnitude())}`;
+        }
     }
 
     printOptimal() { // if print exactly is selected, it prints the word exatly
         if (this.isZero()) {
-            console.log('here');
             return this.printZero()
         }
         let standardNot = this.printStandardNotation();
@@ -875,6 +875,13 @@ class Measurement {
 
     divide(anotherMeasurement, zeroLimit) {
         let otherMeasurement = processMeasurementInput(anotherMeasurement);
+        if (otherMeasurement.isInfinity()) {
+            if (this.isInfinity()) {
+                return new Measurement() // invalid measurement
+            } else {
+                return new Measurement(0)
+            }
+        }
         const newSigFigs = Math.min(this.getNumSigFigs(), otherMeasurement.getNumSigFigs()); // this will need to be revised
         return new Measurement(this.getFloat() / otherMeasurement.getFloat(), newSigFigs, zeroLimit)
 

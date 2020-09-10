@@ -39,14 +39,10 @@
 
 <script>
     let randomTest = new TestPackage('Random Tests');
-    let mag3100a = new Measurement('4.0');
-    let mag3100b = new Measurement(Infinity);
+    let mag3103a = new Measurement(-Infinity);
+    let mag3103b = new Measurement(-Infinity);
 
-    randomTest.assertMeasurement(mag3100a.add(mag3100b), {
-        infinity: true,
-        positive: true,
-        float: Infinity
-    }, 'operations', 'infinities');
+    measurementTests.assertNotMeasurement(mag3103a.divide(mag3103b), 'operations', 'infinities');
 
     $("#putItHere").append(randomTest.printAllTests());
 

@@ -1836,16 +1836,7 @@ measurementTests.assertMeasurement(mag3008a, {
     positive: true
   },'operations','differentOrderOfMagnitudeAddition');
 
-
-/*
-to operations:
-ADD SOME NEGATIVES
-ADD SOME 999s
-add some zeros
-add some inifnities
-*/
-
-measurementTests.addSubCategory('operations','zeroes','Operations With Zero');
+  measurementTests.addSubCategory('operations','zeroes','Operations With Zero');
 
 let mag3050a = new Measurement(0); // exactly zero
 let mag3050b = new Measurement('5.00');
@@ -1877,8 +1868,8 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
       infinity: true,
       positive: true,
       float: Infinity
-  }, 'operations', 'infinities');
-  measurementTests.assertMagnitude(mag3100a.multiply(mag3100b), {
+  }, 'operations', 'infinities',);
+  measurementTests.assertMeasurement(mag3100a.multiply(mag3100b), {
       infinity: true,
       positive: true,
       float: Infinity
@@ -1909,7 +1900,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
       positive: false,
       float: -Infinity
   }, 'operations', 'infinities');
-  measurementTests.assertMagnitude(mag3101b.add(mag3101a), {
+  measurementTests.assertMeasurement(mag3101b.add(mag3101a), {
       infinity: true,
       positive: false,
       float: -Infinity
@@ -1963,8 +1954,8 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  measurementTests.assertNotMagnitude(mag3102a.subtract(mag3102b), 'operations', 'infinities');
-  measurementTests.assertNotMagnitude(mag3102b.subtract(mag3102a),'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3102a.subtract(mag3102b), 'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3102b.subtract(mag3102a),'operations', 'infinities');
   measurementTests.assertMeasurement(mag3102a.multiply(mag3102b), {
       infinity: true,
       positive: true,
@@ -1975,8 +1966,8 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
       positive: true,
       float: Infinity
   }, 'operations', 'infinities');
-  measurementTests.assertNotMagnitude(mag3102a.divide(mag3102b), 'operations', 'infinities');
-  measurementTests.assertNotMagnitude(mag3102b.divide(mag3102a), 'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3102a.divide(mag3102b), 'operations', 'infinities');
+  measurementTests.assertNotMeasurement(mag3102b.divide(mag3102a), 'operations', 'infinities');
 
 
   let mag3103a = new Measurement(-Infinity);
@@ -2148,7 +2139,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   ///###################################################################
   ///###################################################################
   /// print testing
-/*
+
   measurementTests.addCategory('printing','Printing');
   measurementTests.addSubCategory('printing','integers','Integers');
 
@@ -2362,7 +2353,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   measurementTests.addSubCategory('comparison','comparison2', 'Infinity Comparisons');
 
   let mag5019a = new Measurement('1.2');
-  let mag5019b = constructInfinity();
+  let mag5019b = new Measurement(Infinity);
 
   measurementTests.assertEqualStrict(mag5019a.isEqualTo(mag5019b),false,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5019a.isGreaterThan(mag5019b),false,'comparison','comparison2');
@@ -2377,7 +2368,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
 
 
   let mag5020a = new Measurement('1.5');
-  let mag5020b = constructNegativeInfinity();
+  let mag5020b = new Measurement(-Infinity);
 
   measurementTests.assertEqualStrict(mag5020a.isEqualTo(mag5020b),false,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5020a.isGreaterThan(mag5020b),true,'comparison','comparison2');
@@ -2391,8 +2382,8 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   measurementTests.assertEqualStrict(mag5020b.isLessThanOrEqualTo(mag5020a),true,'comparison','comparison2');
 
 
-  let mag5021a = constructInfinity();
-  let mag5021b = constructInfinity();
+  let mag5021a = new Measurement(Infinity);
+  let mag5021b = new Measurement(Infinity);
 
   measurementTests.assertEqualStrict(mag5021a.isEqualTo(mag5021b),true,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5021a.isGreaterThan(mag5021b),false,'comparison','comparison2');
@@ -2401,8 +2392,8 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   measurementTests.assertEqualStrict(mag5021a.isLessThanOrEqualTo(mag5021b),true,'comparison','comparison2');
 
 
-  let mag5022a = constructNegativeInfinity();
-  let mag5022b = constructNegativeInfinity();
+  let mag5022a = new Measurement(-Infinity);
+  let mag5022b = new Measurement(-Infinity);
 
   measurementTests.assertEqualStrict(mag5022a.isEqualTo(mag5022b),true,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5022a.isGreaterThan(mag5022b),false,'comparison','comparison2');
@@ -2411,8 +2402,8 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   measurementTests.assertEqualStrict(mag5022a.isLessThanOrEqualTo(mag5022b),true,'comparison','comparison2');
 
 
-  let mag5023a = constructInfinity();
-  let mag5023b = constructNegativeInfinity();
+  let mag5023a = new Measurement(Infinity);
+  let mag5023b = new Measurement(-Infinity);
 
   measurementTests.assertEqualStrict(mag5023a.isEqualTo(mag5023b),false,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5023a.isGreaterThan(mag5023b),true,'comparison','comparison2');
@@ -2425,7 +2416,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
   measurementTests.assertEqualStrict(mag5023b.isGreaterThanOrEqualTo(mag5023a),false,'comparison','comparison2');
   measurementTests.assertEqualStrict(mag5023b.isLessThanOrEqualTo(mag5023a),true,'comparison','comparison2');
 
-*/
+
   $("#putItHere").append(measurementTests.printAllTests());
 
 </script>
