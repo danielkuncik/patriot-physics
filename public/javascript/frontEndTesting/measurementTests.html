@@ -1251,8 +1251,133 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'exactRounding');
 
 
+  measurementTests.addSubCategory('rounding','floatRounding');
 
-///###################################################################
+  let mag1041 = new Measurement(500, 4);
+  measurementTests.assertMeasurement(mag1041, {
+      firstSigFig: '4',
+      otherSigFigs: '000',
+      numSigFigs: 4,
+      orderOfMagnitude: 2,
+      lowestKnownMagnitude: -1,
+      positive: true,
+      float: 500
+  },'rounding','floatRounding');
+
+  mag1041.round(2);
+  measurementTests.assertMeasurement(mag1041, {
+      firstSigFig: '5',
+      otherSigFigs: '0',
+      numSigFigs: 1,
+      orderOfMagnitude: 2,
+      lowestKnownMagnitude: 1,
+      positive: true,
+      float: 500
+  },'rounding','floatRounding');
+
+
+  mag1041.round(1);
+  measurementTests.assertMeasurement(mag1041, {
+      firstSigFig: '5',
+      otherSigFigs: '',
+      numSigFigs: 1,
+      orderOfMagnitude: 2,
+      lowestKnownMagnitude: 2,
+      positive: true,
+      float: 500
+  },'rounding','floatRounding');
+
+  let mag1042 = new Measurement(7056, 2);
+  measurementTests.assertMeasurement(mag1041, {
+      firstSigFig: '7',
+      otherSigFigs: '1',
+      numSigFigs: 2,
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 2,
+      positive: true,
+      float: 7056
+  },'rounding','floatRounding');
+
+  mag1042.round(1);
+  measurementTests.assertMeasurement(mag1041, {
+      firstSigFig: '7',
+      otherSigFigs: '',
+      numSigFigs: 1,
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 3,
+      positive: true,
+      float: 7056
+  },'rounding','floatRounding');
+
+  let mag1043 = new Measurement(0.000678,4);
+  measurementTests.assertMeasurement(mag1043, {
+      firstSigFig: '6',
+      otherSigFigs: '780',
+      numSigFigs: 4,
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -7,
+      positive: true,
+      float: 0.000678
+  },'rounding','floatRounding');
+
+  mag1043.round(5); // no change, you cannot add significant figures
+  measurementTests.assertMeasurement(mag1043, {
+      firstSigFig: '6',
+      otherSigFigs: '780',
+      numSigFigs: 4,
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -7,
+      positive: true,
+      float: 0.000678
+  },'rounding','floatRounding');
+
+  mag1043.round(3);
+  measurementTests.assertMeasurement(mag1043, {
+      firstSigFig: '6',
+      otherSigFigs: '78',
+      numSigFigs: 3,
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -6,
+      positive: true,
+      float: 0.000678
+  },'rounding','floatRounding');
+
+  mag1043.round(2);
+  measurementTests.assertMeasurement(mag1043, {
+      firstSigFig: '6',
+      otherSigFigs: '8',
+      numSigFigs: 2,
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -5,
+      positive: true,
+      float: 0.000678
+  },'rounding','floatRounding');
+
+
+  mag1043.round(1);
+  measurementTests.assertMeasurement(mag1043, {
+      firstSigFig: '6',
+      otherSigFigs: '',
+      numSigFigs: 1,
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -4,
+      positive: true,
+      float: 0.000678
+  },'rounding','floatRounding');
+
+  /*
+  measurementTests.assertMeasurement(undefinedMag, {
+      firstSigFig: undefined,
+      otherSigFigs: undefined,
+      numSigFigs: undefined,
+      orderOfMagnitude: undefined,
+      lowestKnownMagnitude: undefined,
+      positive: undefined,
+      float: undefined
+  },'rounding','floatRounding');
+
+*/
+  ///###################################################################
 ///###################################################################
 /// operations testing
 
