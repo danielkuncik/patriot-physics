@@ -1251,11 +1251,11 @@ is it possible there is a time when the float is not zero, but the number is zer
   }, 'rounding', 'exactRounding');
 
 
-  measurementTests.addSubCategory('rounding','floatRounding');
+  measurementTests.addSubCategory('rounding','floatRounding','Float Rounding');
 
   let mag1041 = new Measurement(500, 4);
   measurementTests.assertMeasurement(mag1041, {
-      firstSigFig: '4',
+      firstSigFig: '5',
       otherSigFigs: '000',
       numSigFigs: 4,
       orderOfMagnitude: 2,
@@ -1268,7 +1268,7 @@ is it possible there is a time when the float is not zero, but the number is zer
   measurementTests.assertMeasurement(mag1041, {
       firstSigFig: '5',
       otherSigFigs: '0',
-      numSigFigs: 1,
+      numSigFigs: 2,
       orderOfMagnitude: 2,
       lowestKnownMagnitude: 1,
       positive: true,
@@ -1288,7 +1288,7 @@ is it possible there is a time when the float is not zero, but the number is zer
   },'rounding','floatRounding');
 
   let mag1042 = new Measurement(7056, 2);
-  measurementTests.assertMeasurement(mag1041, {
+  measurementTests.assertMeasurement(mag1042, {
       firstSigFig: '7',
       otherSigFigs: '1',
       numSigFigs: 2,
@@ -1299,7 +1299,7 @@ is it possible there is a time when the float is not zero, but the number is zer
   },'rounding','floatRounding');
 
   mag1042.round(1);
-  measurementTests.assertMeasurement(mag1041, {
+  measurementTests.assertMeasurement(mag1042, {
       firstSigFig: '7',
       otherSigFigs: '',
       numSigFigs: 1,
@@ -1356,7 +1356,7 @@ is it possible there is a time when the float is not zero, but the number is zer
 
   mag1043.round(1);
   measurementTests.assertMeasurement(mag1043, {
-      firstSigFig: '6',
+      firstSigFig: '7',
       otherSigFigs: '',
       numSigFigs: 1,
       orderOfMagnitude: -4,
@@ -1364,6 +1364,84 @@ is it possible there is a time when the float is not zero, but the number is zer
       positive: true,
       float: 0.000678
   },'rounding','floatRounding');
+
+  let mag4044 = new Measurement(-125.2e10,6);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '25200',
+      numSigFigs: 6,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 7,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
+  mag4044.round(5);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '2520',
+      numSigFigs: 5,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 8,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
+  mag4044.round(4);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '252',
+      numSigFigs: 4,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 9,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
+  mag4044.round(3);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '25',
+      numSigFigs: 3,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 10,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
+  mag4044.round(4);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '25',
+      numSigFigs: 3,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 10,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
+  mag4044.round(2);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '3',
+      numSigFigs: 2,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 11,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
+  mag4044.round(1);
+  measurementTests.assertMeasurement(mag4044, {
+      firstSigFig: '1',
+      otherSigFigs: '',
+      numSigFigs: 1,
+      orderOfMagnitude: 12,
+      lowestKnownMagnitude: 12,
+      positive: false,
+      float: -1.252e12
+  },'rounding','floatRounding');
+
 
   /*
   measurementTests.assertMeasurement(undefinedMag, {
