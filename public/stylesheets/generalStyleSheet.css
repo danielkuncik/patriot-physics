@@ -317,3 +317,11 @@ nav.navbarColors {
 div.homePageCard {
     background-color: #DCDCDC
 }
+
+div.bingoSpace {
+    border-width: 3px
+}
+
+div.bingoClickedSpace {
+    border-width: 1px
+}

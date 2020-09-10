@@ -99,10 +99,10 @@ class BingoBoard {
                 const spaceID = `${this.name}-${i}-${j}`;
 
                 if (word === 'free') {
-                    thisCol = $(`<div class = "col-${colSize} border border-dark p-5 bingoFreeSpace" id = "${spaceID}">FREE</div>`);
+                    thisCol = $(`<div class = "bingoClickedSpace col-${colSize} border border-light p-5  bg-dark text-light" id = "${spaceID}">FREE</div>`);
                     this.clicked[i].push(true);
                 } else {
-                    thisCol = $(`<div class = "col-${colSize} border border-dark p-5 bingoSpace" id = "${spaceID}">${word}</div>`);
+                    thisCol = $(`<div class = "bingoSpace col-${colSize} border border-dark p-5 bg-light text-dark" id = "${spaceID}">${word}</div>`);
                     this.clicked[i].push(false);
                 }
                 $(thisRow).append(thisCol);
@@ -146,8 +146,24 @@ class BingoBoard {
                         const newI = id[6]; // this is clunky
                         const newJ = id[8];
                         this.clickBox(newI,newJ);
-                        $(`#${id}`).addClass("bg-dark");
-                        $(`#${id}`).addClass("text-light");
+                        const selector = `#${id}`;
+                        $(selector).removeClass("bingoSpace");
+                        $(selector).addClass("bingoClickedSpace");
+                        if (currentBackground === 'light') {
+                            $(selector).removeClass("bg-light");
+                            $(selector).removeClass("text-dark");
+                            $(selector).removeClass("border border-dark");
+                            $(selector).addClass("bg-dark");
+                            $(selector).addClass("text-light");
+                            $(selector).addClass("border border-light");
+                        } else if (currentBackground === 'dark') {
+                            $(selector).removeClass("bg-dark");
+                            $(selector).removeClass("text-light");
+                            $(selector).removeClass("border border-light");
+                            $(selector).addClass("bg-light");
+                            $(selector).addClass("text-dark");
+                            $(selector).addClass("border border-dark");
+                        }
                         if (this.testIfWon(this.clicked) && !this.alreadyWon) {
                             this.alreadyWon = true;
                             this.showWin();
@@ -159,3 +175,7 @@ class BingoBoard {
     }
 }
 
+
+/*
+The only continued problem is the 'sunken' look, which I think might be tough to get rid of...
+ */

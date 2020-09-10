@@ -181,6 +181,8 @@ let currentBackground = 'light';
 
 
 function goDark() {
+    // $(".bg-light").addClass("bg-dark");
+    // $(".bg-light").removeClass("bg-light");
     $("body").removeClass("bg-light");
     $("body").addClass('bg-dark');
     $("body").removeClass('text-dark');
@@ -191,6 +193,17 @@ function goDark() {
     $("div.card-body").removeClass('text-dark');
     $("div.card-body").addClass("text-light");
 
+    $("div.bingoSpace").removeClass("bg-light text-dark");
+    $("div.bingoSpace").removeClass("border border-dark");
+    $("div.bingoSpace").addClass("bg-dark text-light");
+    $("div.bingoSpace").addClass("border border-light");
+
+    $("div.bingoClickedSpace").removeClass("bg-dark text-light");
+    $("div.bingoClickedSpace").removeClass("border border-light");
+    $("div.bingoClickedSpace").addClass("bg-light text-dark");
+    $("div.bingoClickedSpace").addClass("border border-dark");
+
+
     $("#backgroundButton").removeClass("bg-dark text-warning");
     $("#backgroundButton").addClass("bg-light text-dark");
     $("#backgroundButton").text('Light Background');
@@ -199,6 +212,9 @@ function goDark() {
 }
 
 function goLight() {
+    // $(".bg-dark").addClass("bg-light");
+    // $(".bg-dark").removeClass("bg-dark");
+
     $("body").removeClass('bg-dark');
     $("body").addClass("bg-light");
     $("body").removeClass("text-light");
@@ -208,6 +224,17 @@ function goLight() {
     $("div.card-body").addClass('bg-light');
     $("div.card-body").removeClass('text-light');
     $("div.card-body").addClass("text-dark");
+
+    $("div.bingoSpace").removeClass("bg-dark text-light");
+    $("div.bingoSpace").addClass("bg-light text-dark");
+    $("div.bingoSpace").removeClass("border border-light");
+    $("div.bingoSpace").addClass("border border-dark");
+
+
+    $("div.bingoClickedSpace").removeClass("bg-light text-dark border-light");
+    $("div.bingoClickedSpace").addClass("bg-dark text-light border-dark");
+    $("div.bingoClickedSpace").removeClass("border border-dark");
+    $("div.bingoClickedSpace").addClass("border border-light");
 
 
     $("#backgroundButton").removeClass("bg-light text-dark");
