@@ -1508,6 +1508,32 @@ is it possible there is a time when the float is not zero, but the number is zer
       float: 9999
   },'rounding','floatRounding');
 
+  let mag4046 = new Measurement(5);
+  measurementTests.assertMeasurement(mag4046, {
+      firstSigFig: '5',
+      otherSigFigs: '',
+      numSigFigs: Infinity,
+      exact: true,
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: undefined, // i am wondering if this should be undefined or negative infinity
+      positive: true,
+      float: 5
+  },'rounding','floatRounding');
+
+  mag4046.round(3);
+  measurementTests.assertMeasurement(mag4046, {
+      firstSigFig: '5',
+      otherSigFigs: '00',
+      numSigFigs: 3,
+      exact: false,
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -2,
+      positive: true,
+      float: 5
+  },'rounding','floatRounding');
+
+
+
   /*
   measurementTests.assertMeasurement(undefinedMag, {
       firstSigFig: undefined,
