@@ -267,51 +267,14 @@ class TestPackage {
         this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
         return false
       }
-      this.assertMeasurement(magnitude, equalObject, categoryKey, subCategoryKey, name);
-      this.assertEqualStrict(magnitude.isAmagnitude, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
-      // if (equalObject.firstSigFig !== undefined) {
-      //   this.assertEqualStrict(magnitude.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
-      // }
-      // if (equalObject.otherSigFigs !== undefined) {
-      //   this.assertEqualStrict(magnitude.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
-      // }
-      // if (equalObject.orderOfMagnitude !== undefined) {
-      //   this.assertEqualStrict(magnitude.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
-      // }
-      // if (equalObject.numSigFigs !== undefined) {
-      //   this.assertEqualStrict(magnitude.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
-      // }
-      // if (equalObject.positive !== undefined) {
-      //   this.assertEqualStrict(magnitude.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
-      // }
-      //   if (equalObject.infinity !== undefined) {
-      //       this.assertEqualStrict(magnitude.infinity, equalObject["infinity"], categoryKey, subCategoryKey, `${name}: Infinity `);
-      //   }
-      //   if (equalObject.exact !== undefined) {
-      //       this.assertEqualStrict(magnitude.exact, equalObject["exact"], categoryKey, subCategoryKey, `${name}: Exact `);
-      //   }
-      //   if (equalObject.float !== undefined) {
-      //     if (magnitude.zero) {
-      //         this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
-      //     } else if (magnitude.infinity) {
-      //         this.assertEqualStrict(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`);
-      //     } else {
-      //         this.assertEqualFloat(magnitude.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(magnitude.orderOfMagnitude - 15));
-      //     }
-      // }
-      //
-      // if (equalObject.printOptimal !== undefined) {
-      //   this.assertEqualStrict(magnitude.printOptimal(), equalObject.printOptimal, categoryKey, subCategoryKey, `${name}: Print Optimal `)
-      // }
-      // if (equalObject.printStandard !== undefined) {
-      //   this.assertEqualStrict(magnitude.printStandardNotation(), equalObject.printStandard, categoryKey, subCategoryKey, `${name}: Print Standard `)
-      //
-      // }
-      // if (equalObject.printScientific !== undefined) {
-      //   this.assertEqualStrict(magnitude.printScientificNotation(), equalObject.printScientific, categoryKey, subCategoryKey, `${name}: Print Scientific `)
-      // }
-      // add printing
-      // add unit
+        this.assertTrue(magnitude.isAmagnitude, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
+        this.assertMeasurement(magnitude.measurement, equalObject, categoryKey, subCategoryKey, name);
+        if (equalObject.unitName) {
+            this.assertEqualStrict(magnitude.unit.name, equalObject.unitName, categoryKey, subCategoryKey, `${name}: Unit Name`);
+        }
+        if (equalObject.SIfloat) { // float value of SI unit
+            this.assertEqualFloat(magnitude.getSIfloat(), equalObject.SIfloat, categoryKey, subCategoryKey, `${name}: SI Float`); // NEED TO DEAL WITH LIMIT OR IT WIL FAIL
+        }
     }
 
     assertZeroMagnitude(magnitude, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {

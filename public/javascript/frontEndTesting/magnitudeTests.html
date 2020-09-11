@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magnitude Object Tests</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+<body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src = './frontEndTesting.js'></script>
+<script src = '../mathematics/numbers/measurement.js'></script>
+<script src = '../mathematics/numbers/units.js'></script>
+<script src = '../mathematics/numbers/magnitude.js'></script>
+
+
+<div id = 'putItHere'></div>
+
+<script>
+    let magnitudeTests = new TestPackage('Magnitude Tests');
+
+    magnitudeTests.addCategory('construction', 'Construction');
+    magnitudeTests.addCategory('construction', 'constructString', 'Construct From Strings');
+
+    magnitudeTests.assertMagnitude(new Magnitude('5.0','meter'), {
+        firstSigFig: '5',
+        otherSigFigs: '0',
+        numSigFigs: 2,
+        orderOfMagnitude: 0,
+        lowestKnownMagnitude: -1,
+        positive: true,
+        unitName: 'meter',
+        float: 5,
+        SIfloat: 5
+    }, 'construction', 'constructString')
+
+
+    /*
+        magnitudeTests.assertMagnitude(new Magnitude(undefined, undefined), {
+        firstSigFig: undefined,
+        otherSigFigs: undefined,
+        numSigFigs: undefined,
+        orderOfMagnitude: undefined,
+        lowestKnownMagnitude: undefined,
+        positive: undefined,
+        unitName: undefined,
+        float: undefined,
+        SIfloat: undefined
+    }, 'construction', 'constructString')
+
+     */
+
+    $("#putItHere").append(magnitudeTests.printAllTests());
+</script>
+
+</body>
+</html>

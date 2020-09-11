@@ -126,7 +126,7 @@ const metricPrefixes = {
         "multiplier": 1E-15,
         "abbreviation": "f"
     }
-}
+};
 
 const baseDimensions = {
     "length": {
@@ -736,6 +736,12 @@ function generateMetricUnit(unitName) { // this function, if given the name of a
         }
     }
 }
+
+// can enter a string OR a unit object
+function processUnitInput(unitInput) {
+    return unitInput
+}
+
 
 
 /*

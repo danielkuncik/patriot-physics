@@ -979,6 +979,12 @@ function percentDifference(inputted, expected) {
     return (Math.abs(inputted - expected) / expected) * 100
 }
 
+/*
+shorthand way to process a measurement:
+- if a number is entered, it returns an exact measurement of that number
+- if a string is entered, it returns an inexact measurement based on that string
+- if a measurement is entered, it returns that
+ */
 function processMeasurementInput(input) {
     if (typeof(input) === 'number' || typeof(input) === 'string') {
         return new Measurement(input)
