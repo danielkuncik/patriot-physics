@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Tests of Unit Objects</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 <body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
 <p>
     "Unit Tests" LOL!
@@ -15,14 +24,18 @@
 <div id = 'putItHere'></div>
 
 <script>
-    let unitTestsLOL = new TestPackage("Unit Tests LOL!");
+    let unitTests = new TestPackage("Unit Tests LOL!");
+    unitTests.addCategory('construction','Construction');
+    unitTests.addCategory('construction','baseSIUnits','Constructing Base SI Units');
 
-    unitTestsLOL.addCategory('multiply','Multiply Units');
-    unitTestsLOL.addSubCategory('multiply','multiply 1','Multiply 1');
+    unitTests.addCategory('multiply','Multiply Units');
+    unitTests.addSubCategory('multiply','multiply 1','Multiply 1');
 
-    let unit1 =
+    unitTests.assertUnit(new Unit('meter'), {
+        "name": "meter"
+    }, 'construction', 'baseSIUnits');
 
-    $("#putItHere").append(unitTestsLOL.printAllTests)
+    $("#putItHere").append(unitTests.printAllTests())
 </script>
 
 </body>

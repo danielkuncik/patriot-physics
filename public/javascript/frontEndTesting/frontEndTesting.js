@@ -257,6 +257,21 @@ class TestPackage {
         this.assertUndefined(notMeasurement.isPositive(), categoryKey, subCategoryKey, `${name}: positive`);
     }
 
+    assertUnit(unit, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        if (typeof(unit) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Unit");
+            return false
+        }
+        if (typeof(equalObject) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
+            return false
+        }
+        this.assertTrue(unit.isAunit, categoryKey, subCategoryKey, `${name}: is a unit`);
+        if (equalObject.name) {
+            this.assertEqualStrict(unit.name, equalObject.name, categoryKey, subCategoryKey, `${name}: name`);
+        }
+    }
+
     assertMagnitude(magnitude, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
       // add check that it is an object
       if (typeof(magnitude) !== 'object') {
