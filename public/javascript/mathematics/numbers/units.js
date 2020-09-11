@@ -166,66 +166,93 @@ const baseDimensions = {
     }
 };
 
-const derivedDimensions = {
-    "velocity": {
-        "base": false,
-        "derivation": {
-            "length": 1,
-            "time": -1
+const dimensions = {
+    "base": {
+        "length": {
+            "SI_unit": "meter",
+            "other_units": [
+                "foot", "inch", "mile"
+            ]
+        },
+        "mass": {
+            "SI_unit": "kilogram",
+            "other_units": [
+                "pound"
+            ]
+        },
+        "time": {
+            "SI_unit": "second",
+            "other_units": [
+                "minute", "hour", "day"
+            ]
+        },
+        "temperature": {
+            "SI_unit": "Kelvin",
+            "other_unit": [
+                "Rankine"
+            ],
+            "other_scale": [
+                "Celsius", "Fahrenheit"
+            ]
+        },
+        "current": {
+            "SI_unit": "Ampere"
         }
     },
-    "acceleration": {
-        "base": false,
-        "derivation": {
-            "length": 1,
-            "time": -2
+    "derived":  {
+        "velocity": {
+            "derivation": {
+                "length": 1,
+                "time": -1
+            }
+        },
+        "acceleration": {
+            "derivation": {
+                "length": 1,
+                "time": -2
+            }
+        },
+        "force": {
+            "derivation": {
+                "mass": 1,
+                "length": 1,
+                "time": -2
+            },
+            "SI_unit_special_name": "Newton",
+            "other_unit_names": [
+                "Dyne"
+            ]
+        },
+        "momentum": {
+            "derivation": {
+                "mass": 1,
+                "length": 1,
+                "time": -1
+            }
+        },
+        "energy": {
+            "derivation": {
+                "mass": 1,
+                "length": 2,
+                "time": -2
+            },
+            "SI_unit_special_name": "Joule"
+        },
+        "power": {
+            "derivation": {
+                "mass": 1,
+                "length": 2,
+                "time": -3
+            },
+            "SI_unit_special_name": "Watt"
+        },
+        "charge": {
+            "derivation": {
+                "current": 1,
+                "time": 1
+            },
+            "SI_unit_special_name": "Coulomb"
         }
-    },
-    "force": {
-        "base": false,
-        "derivation": {
-            "mass": 1,
-            "length": 1,
-            "time": -2
-        },
-        "SI_unit_special_name": "Newton",
-        "other_unit_names": [
-            "Dyne"
-        ]
-    },
-    "momentum": {
-        "base": false,
-        "derivation": {
-            "mass": 1,
-            "length": 1,
-            "time": -1
-        }
-    },
-    "energy": {
-        "base": false,
-        "derivation": {
-            "mass": 1,
-            "length": 2,
-            "time": -2
-        },
-        "SI_unit_special_name": "Joule"
-    },
-    "power": {
-        "base": false,
-        "derivation": {
-            "mass": 1,
-            "length": 2,
-            "time": -3
-        },
-        "SI_unit_special_name": "Watt"
-    },
-    "charge": {
-        "base": false,
-        "derivation": {
-            "current": 1,
-            "time": 1
-        },
-        "SI_unit_special_name": "Coulomb"
     }
 };
 
@@ -258,28 +285,28 @@ const units = {
             "dimension": "length",
             "abbreviation": "ft",
             "plural": "feet",
-            "conversion_factor": 0.3048
+            "conversion_factor": '0.3048'
         },
         "inch": {
             "dimension": "length",
             "abbreviation": "in",
-            "conversion_factor": 0.0254
+            "conversion_factor": '0.0254'
         },
         "mile": {
             "dimension": "length",
             "abbreviation": "in",
-            "conversion_factor": 1609.34
+            "conversion_factor": '1609.34'
         },
         "pound": {
             "dimension": "mass",
             "abbreviation": "lb",
-            "conversion_factor": 0.453592
+            "conversion_factor": '0.453592'
         },
-        "gram" : {
-            "dimension": "mass",
-            "abbreviation": "g",
-            "conversion_factor": 0.001
-        },
+        // "gram" : {
+        //     "dimension": "mass",
+        //     "abbreviation": "g",
+        //     "conversion_factor": 0.001
+        // },
         "minute": {
             "dimension": "time",
             "abbreviation": "min",
@@ -297,7 +324,7 @@ const units = {
         },
         "Rankine": {
             "dimension": "temperature",
-            "conversion_factor": 0.555556,
+            "conversion_factor": '0.55555555556',
             "abbreviation": "°Ra"
         },
         "Celsius": {
@@ -308,7 +335,7 @@ const units = {
         },
         "Fahrenheit": {
             "dimension": "temperature",
-            "conversion_factor": 0.555556,
+            "conversion_factor": '0.55555555556',
             "zero_offset": -459.67,
             "abbreviation": "°F"
         }
@@ -414,13 +441,19 @@ const units = {
     }
 };
 
-
+class Dimension {
+    constructor(name, derivation) {
+        if (typeof(name) === 'string') { // read name
+            this.name = name;
+        }
+    }
+}
 
 
 
 class Unit {
     constructor(name, derivation) {
-        if (name === 'string') { /// read unit
+        if (typeof(name) === 'string') { /// read unit
             this.name = name;
 
             /// analyze metric prefix
@@ -433,43 +466,45 @@ class Unit {
                 }
             });
 
+            let unitInfo;
             if (units.baseDimensionsSI[processedName]) {
+                unitInfo = units.baseDimensionsSI[processedName];
                 this.isAunit = true;
-                this.dimension = units.baseDimensionsSI[processedName].dimension;
-                this.abbreviation = units.baseDimensionsSI[processedName].abbreviation;
                 this.conversionFactor = 1;
                 this.SI = true;
                 this.baseUnit = true;
                 this.baseDimension = true;
             } else if (units.baseDimensionsNonSI[processedName]) {
                 this.isAunit = true;
-                this.dimension = units.baseDimensionsNonSI[processedName].dimension;
-                this.abbreviation = units.baseDimensionsNonSI[processedName].abbreviation;
+                unitInfo = units.baseDimensionsNonSI[processedName];
                 this.conversionFactor = 1;
                 this.SI = false;
                 this.baseUnit = false;
                 this.baseDimension = true;
             } else if (units.derivedSI[processedName]) {
                 this.isAunit = true;
-                this.dimension = units.derivedSI[processedName].dimension;
-                this.abbreviation = units.derivedSI[processedName].abbreviation;
-                this.conversionFactor = units.derivedSI[processedName].conversion_factor;
+                unitInfo = units.derivedSI[processedName];
+                this.conversionFactor = new Measurement(unitInfo.conversion_factor);
                 this.SI = true;
                 this.baseUnit = false;
                 this.baseDimension = false;
-                this.derivation = units.derivedSI[processedName].derivation;
+                this.derivation = unitInfo.derivation;
             } else if (units.derivedNonSI[processedName]) {
                 this.isAunit = true;
-                this.dimension = units.derivedNonSI[processedName].dimension;
-                this.abbreviation = units.derivedNonSI[processedName].abbreviation;
-                this.conversionFactor = units.derivedNonSI[processedName].conversion_factor;
+                unitInfo = units.derivedNonSI[processedName];
+                this.conversionFactor = new Measurement(unitInfo.conversion_factor);
                 this.SI = false;
                 this.baseUnit = false;
                 this.baseDimension = false;
-                this.derivation = units.derivedNonSI[processedName].derivation;
-            } else {
-                this.isAunit = false;
+                this.derivation = unitInfo.derivation;
             }
+            this.dimension = new Dimension(unitInfo.dimension);
+            this.abbreviation = unitInfo.abbreviation;
+            this.plural = unitInfo.plural ? unitInfo.plural : `${this.name}s`;
+            // } else {
+            //     this.isAunit = false;
+            // }
+
 
             if (metricMultiplier) {
                 if (this.dimension === 'mass') {

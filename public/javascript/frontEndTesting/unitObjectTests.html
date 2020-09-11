@@ -32,7 +32,8 @@
     unitTests.addSubCategory('multiply','multiply 1','Multiply 1');
 
     unitTests.assertUnit(new Unit('meter'), {
-        "name": "meter"
+        "name": "meter",
+        "SI": true
     }, 'construction', 'baseSIUnits');
 
     $("#putItHere").append(unitTests.printAllTests())

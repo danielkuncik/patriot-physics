@@ -267,8 +267,12 @@ class TestPackage {
             return false
         }
         this.assertTrue(unit.isAunit, categoryKey, subCategoryKey, `${name}: is a unit`);
+
         if (equalObject.name) {
             this.assertEqualStrict(unit.name, equalObject.name, categoryKey, subCategoryKey, `${name}: name`);
+        }
+        if (equalObject.SI) {
+            this.assertEqualStrict(unit.SI, equalObject.SI, categoryKey, subCategoryKey, `${name}: SI`);
         }
     }
 
