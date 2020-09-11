@@ -1553,6 +1553,10 @@ is it possible there is a time when the float is not zero, but the number is zer
 
 measurementTests.addCategory('operations','Operations');
 measurementTests.addSubCategory('operations','addition','Addition');
+measurementTests.addSubCategory('operations','subtraction','Subtraction');
+measurementTests.addSubCategory('operations','multiplication','Multiplication');
+measurementTests.addSubCategory('operations','division','Division');
+
 
 let mag3001a = new Measurement('2');
 let mag3001b = new Measurement('2');  //4
@@ -1735,8 +1739,93 @@ let mag3007b = new Measurement('5.000000000');
 
 
 
+  let mag3601a = new Measurement('5.00');
+  let mag3601b = new Measurement('2.00');
+  measurementTests.assertMeasurement(mag3601a.subtract(mag3601b), { // 3.00
+      firstSigFig: '5',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -2,
+      numSigFigs: 3,
+      positive: true,
+      negative: false,
+      float: 3,
+      printStandard: '3.00',
+      printScientific: '3.00e0'
+  },'operations','subtraction');
 
-measurementTests.addSubCategory('operations','reverseSign','Reverse Sign');
+  measurementTests.assertMeasurement(mag3601b.subtract(mag3601a), { //-3.00
+      firstSigFig: '5',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -2,
+      numSigFigs: 3,
+      positive: false,
+      negative: true,
+      float: -3,
+      printStandard: '-3.00',
+      printScientific: '-3.00e0'
+  },'operations','subtraction');
+
+  let mag3602a = new Measurement('5');
+  let mag3602b = new Measurement('2.00');
+  measurementTests.assertMeasurement(mag3602a.subtract(mag3602b), { // 3
+      firstSigFig: '3',
+      otherSigFigs: '',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 1,
+      positive: true,
+      negative: false,
+      float: 3,
+      printStandard: '3',
+      printScientific: '3e0'
+  },'operations','subtraction');
+
+  measurementTests.assertMeasurement(mag3602b.subtract(mag3602a), { //-3
+      firstSigFig: '3',
+      otherSigFigs: '',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 1,
+      positive: true,
+      negative: false,
+      float: -3,
+      printStandard: '-3',
+      printScientific: '-3e0'
+  },'operations','subtraction');
+
+  let mag3603a = new Measurement('5.00000000');
+  let mag3603b = new Measurement('2.000');
+  measurementTests.assertMeasurement(mag3603a.subtract(mag3603b), { // 3.000
+      firstSigFig: '3',
+      otherSigFigs: '000',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -3,
+      numSigFigs: 4,
+      positive: true,
+      negative: false,
+      float: 3,
+      printStandard: '3.000',
+      printScientific: '3.000e0'
+  },'operations','subtraction');
+
+  measurementTests.assertMeasurement(mag3603b.subtract(mag3603a), { //-3.000
+      firstSigFig: '3',
+      otherSigFigs: '000',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -3,
+      numSigFigs: 4,
+      positive: false,
+      negative: true,
+      float: -3,
+      printStandard: '-3.000',
+      printScientific: '-3.000e4'
+  },'operations','subtraction');
+
+
+
+  measurementTests.addSubCategory('operations','reverseSign','Reverse Sign');
 let mag3008a = new Measurement('2.00');
 let mag3008 = mag3008a.reverseSign();
 measurementTests.assertMeasurement(mag3008a, {
