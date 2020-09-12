@@ -268,7 +268,7 @@ class Measurement {
         if (numSigFigs === Infinity) {
             return this.getFloat(abs)
         } else {
-            return Number(this.getFloat(abs).toExponential(numSigFigs))
+            return Number(this.getFloat(abs).toExponential(numSigFigs - 1))
         }
     }
 
@@ -572,24 +572,24 @@ class Measurement {
 
     // PRIVATE METHOD!!!
     compareInfinities(anotherMeasurement) {
-        if (this.infinity && anotherMeasurement.infinity) {
-            if (this.positive && anotherMeasurement.positive) {
+        if (this.isInfinity() && anotherMeasurement.isInfinity()) {
+            if (this.isPositive() && anotherMeasurement.isPositive()) {
                 return '='
-            } else if (!this.positive && !anotherMeasurement.positive) {
+            } else if (!this.isPositive() && !anotherMeasurement.isPositive()) {
                 return '='
-            } else if (this.positive && !anotherMeasurement.positive) {
+            } else if (this.isPositive() && !anotherMeasurement.isPositive()) {
                 return '>'
-            } else if (!this.positive && anotherMeasurement.positive) {
+            } else if (!this.isPositive() && anotherMeasurement.isPositive()) {
                 return '<'
             }
-        } else if (this.infinity) {
-            if (this.positive) {
+        } else if (this.isInfinity()) {
+            if (this.isPositive()) {
                 return '>'
             } else {
                 return '<'
             }
-        } else if (anotherMeasurement.infinity) {
-            if (anotherMeasurement.positive) {
+        } else if (anotherMeasurement.isInfinity()) {
+            if (anotherMeasurement.isPositive()) {
                 return '<'
             } else {
                 return '>'

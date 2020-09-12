@@ -2319,7 +2319,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
 
   let mag5001a = new Measurement('2');
   let mag5001b = new Measurement('2.0');
-  measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1','xxx');
+  measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1');
   measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b, 2),undefined, 'comparison', 'comparison1');
   measurementTests.assertEqualStrict(mag5001a.isGreaterThan(mag5001b),false, 'comparison', 'comparison1');
   measurementTests.assertEqualStrict(mag5001a.isLessThan(mag5001b),false, 'comparison', 'comparison1');
