@@ -570,9 +570,9 @@ class Measurement {
         return standardNot.length <= sciNot.length ? standardNot : sciNot
     }
 
-    // PRIVATE METHOD!!!
-    compareInfinities(anotherMeasurement) {
-        if (this.isInfinity() && anotherMeasurement.isInfinity()) {
+    // PRIVATE METHOD
+    comparisonTest(anotherMeasurement, numSigFigs = Math.min(this.numSigFigs, anotherMeasurement.numSigFigs)) {
+        if (this.isInfinity() && anotherMeasurement.isInfinity()) { // comparing two infinities
             if (this.isPositive() && anotherMeasurement.isPositive()) {
                 return '='
             } else if (!this.isPositive() && !anotherMeasurement.isPositive()) {
@@ -582,27 +582,6 @@ class Measurement {
             } else if (!this.isPositive() && anotherMeasurement.isPositive()) {
                 return '<'
             }
-        } else if (this.isInfinity()) {
-            if (this.isPositive()) {
-                return '>'
-            } else {
-                return '<'
-            }
-        } else if (anotherMeasurement.isInfinity()) {
-            if (anotherMeasurement.isPositive()) {
-                return '<'
-            } else {
-                return '>'
-            }
-        } else {
-            return undefined
-        }
-    }
-
-    // PRIVATE METHOD
-    comparisonTest(anotherMeasurement, numSigFigs = Math.min(this.numSigFigs, anotherMeasurement.numSigFigs)) {
-        if (this.compareInfinities(anotherMeasurement)) { // inefficient??
-            return this.compareInfinities(anotherMeasurement)
         }
         if (numSigFigs > Math.min(this.numSigFigs, anotherMeasurement.numSigFigs)) { // asking for more sig figs than you actually have
             /*

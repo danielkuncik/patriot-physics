@@ -24,7 +24,7 @@ class Magnitude {
     }
 
     duplicate() {
-        return new MagnitudeNew(this.measurement, this.unit)
+        return new Magnitude(this.measurement, this.unit)
     }
 
     isZero() {

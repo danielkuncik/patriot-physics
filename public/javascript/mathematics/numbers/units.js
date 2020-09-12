@@ -453,66 +453,76 @@ class Dimension {
 
 class Unit {
     constructor(name, derivation) {
-        if (typeof(name) === 'string') { /// read unit
-            this.name = name;
+        this.name = name;
 
-            /// analyze metric prefix
-            let k, metricMultiplier, processedName = name;
-            Object.keys(metricPrefixes).forEach((prefix) => {
-                if (name.indexOf(prefix) === 0) {
-                    metricMultiplier = prefix.multiplier;
-                    this.metricAbbreviation = prefix.abbreviation;
-                    processedName = name.replace(prefix, '');
-                }
-            });
-
-            let unitInfo;
-            if (units.baseDimensionsSI[processedName]) {
-                unitInfo = units.baseDimensionsSI[processedName];
-                this.isAunit = true;
-                this.conversionFactor = 1;
-                this.SI = true;
-                this.baseUnit = true;
-                this.baseDimension = true;
-            } else if (units.baseDimensionsNonSI[processedName]) {
-                this.isAunit = true;
-                unitInfo = units.baseDimensionsNonSI[processedName];
-                this.conversionFactor = 1;
-                this.SI = false;
-                this.baseUnit = false;
-                this.baseDimension = true;
-            } else if (units.derivedSI[processedName]) {
-                this.isAunit = true;
-                unitInfo = units.derivedSI[processedName];
-                this.conversionFactor = new Measurement(unitInfo.conversion_factor);
-                this.SI = true;
-                this.baseUnit = false;
-                this.baseDimension = false;
-                this.derivation = unitInfo.derivation;
-            } else if (units.derivedNonSI[processedName]) {
-                this.isAunit = true;
-                unitInfo = units.derivedNonSI[processedName];
-                this.conversionFactor = new Measurement(unitInfo.conversion_factor);
-                this.SI = false;
-                this.baseUnit = false;
-                this.baseDimension = false;
-                this.derivation = unitInfo.derivation;
+        /// analyze metric prefix
+        let metricMultiplier, processedName = name;
+        Object.keys(metricPrefixes).forEach((prefix) => { // inefficient because there is no break?
+            if (name.indexOf(prefix) === 0) {
+                metricMultiplier = prefix.multiplier;
+                this.metricAbbreviation = prefix.abbreviation;
+                processedName = name.replace(prefix, '');
             }
-            this.dimension = new Dimension(unitInfo.dimension);
-            this.abbreviation = unitInfo.abbreviation;
-            this.plural = unitInfo.plural ? unitInfo.plural : `${this.name}s`;
-            // } else {
-            //     this.isAunit = false;
-            // }
+        });
+
+        let referenceInfo;
+        if (units.baseDimensionsSI[processedName]) {
+            referenceInfo = units.baseDimensionsSI[processedName];
+            this.isAunit = true;
+            this.conversionFactor = 1;
+            this.SI = true;
+            this.baseUnit = true;
+            this.baseDimension = true;
+            this.dimension = new Dimension(referenceInfo.dimension);
+            this.abbreviation = referenceInfo.abbreviation;
+            this.plural = referenceInfo.plural ? referenceInfo.plural : `${this.name}s`;
+        } else if (units.baseDimensionsNonSI[processedName]) {
+            this.isAunit = true;
+            referenceInfo = units.baseDimensionsNonSI[processedName];
+            this.conversionFactor = 1;
+            this.SI = false;
+            this.baseUnit = false;
+            this.baseDimension = true;
+            this.dimension = new Dimension(referenceInfo.dimension);
+            this.abbreviation = referenceInfo.abbreviation;
+            this.plural = referenceInfo.plural ? referenceInfo.plural : `${this.name}s`;
+        } else if (units.derivedSI[processedName]) {
+            this.isAunit = true;
+            referenceInfo = units.derivedSI[processedName];
+            this.conversionFactor = new Measurement(referenceInfo.conversion_factor);
+            this.SI = true;
+            this.baseUnit = false;
+            this.baseDimension = false;
+            this.derivation = referenceInfo.derivation;
+            this.dimension = new Dimension(referenceInfo.dimension);
+            this.abbreviation = referenceInfo.abbreviation;
+            this.plural = referenceInfo.plural ? referenceInfo.plural : `${this.name}s`;
+        } else if (units.derivedNonSI[processedName]) {
+            this.isAunit = true;
+            referenceInfo = units.derivedNonSI[processedName];
+            this.conversionFactor = new Measurement(referenceInfo.conversion_factor);
+            this.SI = false;
+            this.baseUnit = false;
+            this.baseDimension = false;
+            this.derivation = referenceInfo.derivation;
+            this.dimension = new Dimension(referenceInfo.dimension);
+            this.abbreviation = referenceInfo.abbreviation;
+            this.plural = referenceInfo.plural ? referenceInfo.plural : `${this.name}s`;
+        } else if (derivation && typeof(derivation) === 'object') {
+            /// looking up a unit by its derivation
+
+        }
+        // } else {
+        //     this.isAunit = false;
+        // }
 
 
-            if (metricMultiplier) {
-                if (this.dimension === 'mass') {
-                    metricMultiplier /= 1000; // account for the fact that kg, not grams, are the SI unit for mass
-                }
-                this.conversionFactor *= metricMultiplier;
-                this.abbreviation = this.metricAbbreviation + this.abbreviation;
+        if (metricMultiplier) {
+            if (this.dimension === 'mass') {
+                metricMultiplier /= 1000; // account for the fact that kg, not grams, are the SI unit for mass
             }
+            this.conversionFactor *= metricMultiplier;
+            this.abbreviation = this.metricAbbreviation + this.abbreviation;
         }
 
         if (derivation) {
@@ -693,15 +703,6 @@ conversion factor => a magnitude?, derived mathematically from all of the other 
 abbreviation => a string created
  */
 
-function readUnit(unitNameOrDerivation) {
-    if (typeof(unitNameOrDerivation) === 'string') {
-        return readUnitName(unitNameOrDerivation)
-    } else if (typeof(unitNameOrDerivation) === 'object') {
-        return readUnitDerivation(unitNameOrDerivation)
-    } else {
-        return  undefined
-    }
-}
 
 // check this
 function areTwoUnitsTheSameDimension(unit1, unit2) {
@@ -749,32 +750,36 @@ function scanForMetricPrefix(unitName) {
     }
 }
 
-function generateMetricUnit(unitName) { // this function, if given the name of a metric unit, should automatically produce that unit???
-    let k;
-    let array = Object.keys(metricPrefixes);
-    for (k = 0; k < array.length; k++) {
-        let conversionFactor = 1;
-        const prefix = array[k];
-        if (name.indexOf(prefix) === 0) {
-            let originalUnitName = name.replace(prefix, '');
-            if (selectUnit(originalUnitName)) { // gets a unit!
-                let newUnit = selectUnit(originalUnitName);
-                if (newUnit.metric) {
-                    newUnit.name = name;
-                    newUnit.conversionFactor *= metricPrefixes[prefix].conversionFactor;
-                    if (newUnit.dimension.name === 'mass') {
-                        newUnit.conversionFactor /= 1000; // because kilograms are the base unit, not grams!
-                    }
-                    return newUnit
-                }
-            }
-        }
-    }
-}
+// function generateMetricUnit(unitName) { // this function, if given the name of a metric unit, should automatically produce that unit???
+//     let k;
+//     let array = Object.keys(metricPrefixes);
+//     for (k = 0; k < array.length; k++) {
+//         let conversionFactor = 1;
+//         const prefix = array[k];
+//         if (name.indexOf(prefix) === 0) {
+//             let originalUnitName = name.replace(prefix, '');
+//             if (selectUnit(originalUnitName)) { // gets a unit!
+//                 let newUnit = selectUnit(originalUnitName);
+//                 if (newUnit.metric) {
+//                     newUnit.name = name;
+//                     newUnit.conversionFactor *= metricPrefixes[prefix].conversionFactor;
+//                     if (newUnit.dimension.name === 'mass') {
+//                         newUnit.conversionFactor /= 1000; // because kilograms are the base unit, not grams!
+//                     }
+//                     return newUnit
+//                 }
+//             }
+//         }
+//     }
+// }
 
 // can enter a string OR a unit object
 function processUnitInput(unitInput) {
-    return unitInput
+    if (typeof(unitInput) === 'string') {
+        return new Unit(unitInput)
+    } else if (typeof(unitInput) === 'object' && unitInput.isAunit) {
+        return unitInput
+    }
 }
 
 
