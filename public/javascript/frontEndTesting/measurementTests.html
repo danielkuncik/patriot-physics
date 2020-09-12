@@ -1848,6 +1848,92 @@ let mag3007b = new Measurement('5.000000000');
     printScientific: '8.00e0'
   }, 'operations', 'subtraction');
 
+let mag3604a = new Measurement('500');
+let mag3604b = new Measurement('3.0');
+
+measurementTests.assertMeasurement(mag3604a.subtract(mag3604b), {
+  firstSigFig: '5',
+  otherSigFigs: '',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 2,
+  numSigFigs: 1,
+  positive: true,
+  negative; false,
+  float: 497,
+  printStandard: '500',
+  printScientific: '5e2'
+}, 'operations', 'subtraction');
+
+measurementTests.assertMeasurement(mag3604b.subtract(mag3604a), {
+  firstSigFig: '5',
+  otherSigFigs: '',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 2,
+  numSigFigs: 1,
+  positive: false,
+  negative; true,
+  float: -497,
+  printStandard: '-500',
+  printScientific: '-5e2'
+}, 'operations', 'subtraction');
+
+let mag3605a = new Measurement('500');
+let mag3605b = new Measurement(3); // same as above, but the lower one is now exact, it should make no difference
+
+measurementTests.assertMeasurement(mag3605a.subtract(mag3605b), {
+  firstSigFig: '5',
+  otherSigFigs: '',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 2,
+  numSigFigs: 1,
+  positive: true,
+  negative; false,
+  float: 497,
+  printStandard: '500',
+  printScientific: '5e2'
+}, 'operations', 'subtraction');
+
+measurementTests.assertMeasurement(mag3605b.subtract(mag3605a), {
+  firstSigFig: '5',
+  otherSigFigs: '',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 2,
+  numSigFigs: 1,
+  positive: false,
+  negative; true,
+  float: -497,
+  printStandard: '-500',
+  printScientific: '-5e2'
+}, 'operations', 'subtraction');
+
+let mag3606a = new Measurement('500.');
+let mag3606b = new Measurement('3.0');
+
+measurementTests.assertMeasurement(mag3603a.subtract(mag3606b),{ //497
+  firstSigFig: '4',
+  otherSigFigs: '97',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 0,
+  numSigFigs: 3,
+  positive: true,
+  negative; false,
+  float: 497,
+  printStandard: '497',
+  printScientific: '4.97e2'
+},'operations','subtraction');
+
+measurementTests.assertMeasurement(mag3603b.subtract(mag3606a),{ //497
+  firstSigFig: '4',
+  otherSigFigs: '97',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 0,
+  numSigFigs: 3,
+  positive: false,
+  negative; true,
+  float: -497,
+  printStandard: '-497',
+  printScientific: '-4.97e2'
+},'operations','subtraction');
 
 /*
 firstSigFig: undefined,
