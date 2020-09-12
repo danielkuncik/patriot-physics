@@ -1819,6 +1819,49 @@ let mag3007b = new Measurement('5.000000000');
       printScientific: '-3.000e0'
   },'operations','subtraction');
 
+  let mag3603a = new Measurement('-6.00');
+  let mag3603b = new Measurement('+2.00');
+
+  measurementTests.assertMeasurement(mag3603a.subtract(mag3603b){ // -8.00
+    firstSigFig: '8',
+    otherSigFigs: '00',
+    orderOfMagnitude: 0,
+    lowestKnownMagnitude: -2,
+    numSigFigs: 3,
+    positive: false,
+    negative; true,
+    float: -8,
+    printStandard: '-8.00',
+    printScientific: '-8.00e0'
+  }, 'operations', 'subtraction');
+
+  measurementTests.assertMeasurement(mag3603b.subtract(mag3603a){ // +8.00
+    firstSigFig: '8',
+    otherSigFigs: '00',
+    orderOfMagnitude: 0,
+    lowestKnownMagnitude: -2,
+    numSigFigs: 3,
+    positive: true,
+    negative; false,
+    float: 8,
+    printStandard: '8.00',
+    printScientific: '8.00e0'
+  }, 'operations', 'subtraction');
+
+
+/*
+firstSigFig: undefined,
+otherSigFigs: undefined,
+orderOfMagnitude: undefined,
+lowestKnownMagnitude: undefined,
+numSigFigs: undefined,
+positive: undefined,
+negative; undefined,
+float: undefined,
+printStandard: undefined,
+printScientific: undefined
+
+*/
 
 
   measurementTests.addSubCategory('operations','reverseSign','Reverse Sign');
