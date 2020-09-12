@@ -39,10 +39,18 @@
 
 <script>
     let randomTest = new TestPackage('Random Tests');
-    let mag3103a = new Measurement(-Infinity);
-    let mag3103b = new Measurement(-Infinity);
 
-    measurementTests.assertNotMeasurement(mag3103a.divide(mag3103b), 'operations', 'infinities');
+    let mag4046 = new Measurement(5);
+    randomTest.assertMeasurement(mag4046, {
+        firstSigFig: '5',
+        otherSigFigs: '',
+        numSigFigs: Infinity,
+        exact: true,
+        orderOfMagnitude: 0,
+        lowestKnownMagnitude: undefined, // i am wondering if this should be undefined or negative infinity
+        positive: true,
+        float: 5
+    },'rounding','floatRounding');
 
     $("#putItHere").append(randomTest.printAllTests());
 

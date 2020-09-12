@@ -260,6 +260,18 @@ class Measurement {
             // }
     }
 
+    getFloatRounded(numSigFigs = this.numSigFigs, abs = false) {
+        if (numSigFigs > this.numSigFigs) { // cannot add sig figs
+            console.log('unable to add sig figs');
+            return undefined
+        }
+        if (numSigFigs === Infinity) {
+            return this.getFloat(abs)
+        } else {
+            return Number(this.getFloat(abs).toExponential(numSigFigs))
+        }
+    }
+
     // For efficiency, should i add a variable that waves these if you run them once?
     getFirstSigFig() {
         if (!this.isAmeasurement) {
@@ -293,7 +305,7 @@ class Measurement {
         if (this.isZero() || this.isInfinity() || !this.isAmeasurement) {
           return undefined
         }
-        let testFloat = Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));
+        let testFloat = this.isExact() ? this.getFloat() : Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));
         if (testFloat === 0) {
             return undefined
         } else {
@@ -558,10 +570,41 @@ class Measurement {
         return standardNot.length <= sciNot.length ? standardNot : sciNot
     }
 
+    // PRIVATE METHOD!!!
+    compareInfinities(anotherMeasurement) {
+        if (this.infinity && anotherMeasurement.infinity) {
+            if (this.positive && anotherMeasurement.positive) {
+                return '='
+            } else if (!this.positive && !anotherMeasurement.positive) {
+                return '='
+            } else if (this.positive && !anotherMeasurement.positive) {
+                return '>'
+            } else if (!this.positive && anotherMeasurement.positive) {
+                return '<'
+            }
+        } else if (this.infinity) {
+            if (this.positive) {
+                return '>'
+            } else {
+                return '<'
+            }
+        } else if (anotherMeasurement.infinity) {
+            if (anotherMeasurement.positive) {
+                return '<'
+            } else {
+                return '>'
+            }
+        } else {
+            return undefined
+        }
+    }
 
-    // what about signs?????
-    comparisonTest(type, anotherMagnitude, numSigFigs = Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) {
-        if (numSigFigs > Math.min(this.numSigFigs, anotherMagnitude.numSigFigs)) { // asking for more sig figs than you actually have
+    // PRIVATE METHOD
+    comparisonTest(anotherMeasurement, numSigFigs = Math.min(this.numSigFigs, anotherMeasurement.numSigFigs)) {
+        if (this.compareInfinities(anotherMeasurement)) { // inefficient??
+            return this.compareInfinities(anotherMeasurement)
+        }
+        if (numSigFigs > Math.min(this.numSigFigs, anotherMeasurement.numSigFigs)) { // asking for more sig figs than you actually have
             /*
             In this case, i need to figure out if they COULD possibly be equal, or not, to a greater number of sig figs
             example:
@@ -572,141 +615,85 @@ class Measurement {
             but, 8.0 and 4
             no matter how many sig figs you have, will never be equal!
              */
-            let tempMag1, tempMag2;
-            if (this.numSigFigs < anotherMagnitude.numSigFigs) {
-                tempMag1 = this.duplicate();
-                tempMag2 = anotherMagnitude.roundAndDuplicate(this.numSigFigs);
-            } else if (this.numSigFigs === anotherMagnitude.numSigFigs) {
-                tempMag1 = this.duplicate();
-                tempMag2 = anotherMagnitude.duplicate();
-            } else if (this.numSigFigs > anotherMagnitude.numSigFigs) {
-                tempMag1 = this.roundAndDuplicate(anotherMagnitude.numSigFigs);
-                tempMag2 = anotherMagnitude.duplicate();
+            let num1, num2;
+            if (this.numSigFigs < anotherMeasurement.numSigFigs) {
+                num1 = this.getFloatRounded();
+                num2 = anotherMeasurement.getFloatRounded(this.numSigFigs)
+            } else if (this.numSigFigs === anotherMeasurement.numSigFigs) {
+                num1 = this.getFloatRounded();
+                num2 = anotherMeasurement.getFloatRounded();
+            } else if (this.numSigFigs > anotherMeasurement.numSigFigs) {
+                num1 = this.getFloatRounded(anotherMeasurement.numSigFigs);
+                num2 = anotherMeasurement.getFloatRounded();
             }
-            if (this.comparePhysicsNumbersWithEqualNumbersOfSigFigs('=', tempMag1, tempMag2)) {
-                return undefined // if equal when rounded to the same number of significant figures, then you cannot conduct a comparison test
-            } else { ///
-                return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) // otherwise, you can compare them once they are the same number of sig figs
+            if (num1 === num2) {
+                return undefined
+            } else {
+                if (num1 > num2) {
+                    return '>'
+                } else if (num1 < num2) {
+                    return '<'
+                }
             }
-        } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs < Infinity) { // asking for fewer sig figs than you have (what about exact????)
-            const tempMag1 = this.roundAndDuplicate(numSigFigs);
-            const tempMag2 = anotherMagnitude.roundAndDuplicate(numSigFigs); // now they have the same number of sig figs
-            return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2)
-        } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMagnitude.numSigFigs) && numSigFigs === Infinity) {
-            // two exact numbers
-            return this.comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, this, anotherMagnitude);
-            return undefined
+        } else if (numSigFigs <= Math.min(this.numSigFigs, anotherMeasurement.numSigFigs) && numSigFigs < Infinity) { // asking for fewer sig figs than you have (what about exact????)
+            let num1, num2;
+            num1 = this.getFloatRounded(numSigFigs);
+            num2 = anotherMeasurement.getFloatRounded(numSigFigs);
+            if (num1 === num2) {
+                return '='
+            } else if (num1 > num2) {
+                return '>'
+            } else if (num1 < num2) {
+                return '<'
+            }
         }
     }
 
-    // private function!!!
-    compareInfinities(anotherMagnitude) {
-        if (this.infinity && anotherMagnitude.infinity) {
-            if (this.positive && anotherMagnitude.positive) {
-                return '='
-            } else if (!this.positive && !anotherMagnitude.positive) {
-                return '='
-            } else if (this.positive && !anotherMagnitude.positive) {
-                return '>'
-            } else if (!this.positive && anotherMagnitude.positive) {
-                return '<'
-            }
-        } else if (this.infinity) {
-            if (this.positive) {
-                return '>'
-            } else {
-                return '<'
-            }
-        } else if (anotherMagnitude.infinity) {
-            if (anotherMagnitude.positive) {
-                return '<'
-            } else {
-                return '>'
-            }
-        } else {
-            return undefined
-        }
-    }
 
     // testes if equal up to a certain number of sig figs
-    isEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            if (this.compareInfinities(anotherMagnitude) === '=') {
-                return true
-            } else {
-                return false
-            }
+    isEqualTo(anotherMeasurement, numSigFigs) {
+        const result = this.comparisonTest(anotherMeasurement, numSigFigs);
+        if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
+            return undefined
         } else {
-            return this.comparisonTest('=', anotherMagnitude, numSigFigs)
+            return result === '='
         }
     }
 
-    isGreaterThan(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            if (this.compareInfinities(anotherMagnitude) === '>') {
-                return true
-            } else {
-                return false
-            }
+    isGreaterThan(anotherMeasurement, numSigFigs) {
+        const result = this.comparisonTest(anotherMeasurement, numSigFigs);
+        if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
+            return undefined
         } else {
-            return this.comparisonTest('>', anotherMagnitude, numSigFigs)
+            return result === '>'
         }
     }
-    isLessThan(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            if (this.compareInfinities(anotherMagnitude) === '<') {
-                return true
-            } else {
-                return false
-            }
+    isLessThan(anotherMeasurement, numSigFigs) {
+        const result = this.comparisonTest(anotherMeasurement, numSigFigs);
+        if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
+            return undefined
         } else {
-            return this.comparisonTest('<', anotherMagnitude, numSigFigs)
+            return result === '<'
         }
     }
-    isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            let test = this.compareInfinities(anotherMagnitude);
-            if (test === '>' || test ==='=') {
-                return true
-            } else {
-                return false
-            }
+    isGreaterThanOrEqualTo(anotherMeasurement, numSigFigs) {
+        const result = this.comparisonTest(anotherMeasurement, numSigFigs);
+        if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
+            return undefined
         } else {
-            return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
+            return result === '=' || result === '>'
         }
     }
 
-    isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            let test = this.compareInfinities(anotherMagnitude);
-            if (test === '<' || test ==='=') {
-                return true
-            } else {
-                return false
-            }
+    isLessThanOrEqualTo(anotherMeasurement, numSigFigs) {
+        const result = this.comparisonTest(anotherMeasurement, numSigFigs);
+        if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
+            return undefined
         } else {
-            return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
+            return result === '=' || result === '<'
         }
     }
 
-    //// PRIVATE FUNCTION!
-    comparePhysicsNumbersWithEqualNumbersOfSigFigs(type, tempMag1, tempMag2) {
-        const string1 = !tempMag1.zero ? `${tempMag1.positive === false ? '-' : ''}${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}e${tempMag1.orderOfMagnitude}` : `${tempMag1.firstSigFig}.${tempMag1.otherSigFigs}`;
-        const string2 = !tempMag2.zero ? `${tempMag1.positive === false ? '-' : ''}${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}e${tempMag2.orderOfMagnitude}` : `${tempMag2.firstSigFig}.${tempMag2.otherSigFigs}`;
-        const num1 = Number(string1); // do not use getFloat(), because intermediate values should not be used for comparison testing
-        const num2 = Number(string2);
-        if (type === '=') {
-            return num1 === num2
-        } else if (type === '>') {
-            return num1 > num2
-        } else if (type === '<') {
-            return num1 < num2
-        } else if (type === '>=') {
-            return num1 >= num2
-        } else if (type === '<=') {
-            return num1 <= num2
-        }
-    }
 
     /// correct inputted answer
     // this function assumes that this object is the correct answer

@@ -1738,7 +1738,7 @@ let mag3007b = new Measurement('5.000000000');
   let mag3601a = new Measurement('5.00');
   let mag3601b = new Measurement('2.00');
   measurementTests.assertMeasurement(mag3601a.subtract(mag3601b), { // 3.00
-      firstSigFig: '5',
+      firstSigFig: '3',
       otherSigFigs: '00',
       orderOfMagnitude: 0,
       lowestKnownMagnitude: -2,
@@ -1751,7 +1751,7 @@ let mag3007b = new Measurement('5.000000000');
   },'operations','subtraction');
 
   measurementTests.assertMeasurement(mag3601b.subtract(mag3601a), { //-3.00
-      firstSigFig: '5',
+      firstSigFig: '3',
       otherSigFigs: '00',
       orderOfMagnitude: 0,
       lowestKnownMagnitude: -2,
@@ -1784,8 +1784,8 @@ let mag3007b = new Measurement('5.000000000');
       orderOfMagnitude: 0,
       lowestKnownMagnitude: 0,
       numSigFigs: 1,
-      positive: true,
-      negative: false,
+      positive: false,
+      negative: true,
       float: -3,
       printStandard: '-3',
       printScientific: '-3e0'
@@ -1816,7 +1816,7 @@ let mag3007b = new Measurement('5.000000000');
       negative: true,
       float: -3,
       printStandard: '-3.000',
-      printScientific: '-3.000e4'
+      printScientific: '-3.000e0'
   },'operations','subtraction');
 
 
@@ -2319,7 +2319,7 @@ measurementTests.addSubCategory('operations','infinities','Operations With Infin
 
   let mag5001a = new Measurement('2');
   let mag5001b = new Measurement('2.0');
-  measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1');
+  measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b),true, 'comparison', 'comparison1','xxx');
   measurementTests.assertEqualStrict(mag5001a.isEqualTo(mag5001b, 2),undefined, 'comparison', 'comparison1');
   measurementTests.assertEqualStrict(mag5001a.isGreaterThan(mag5001b),false, 'comparison', 'comparison1');
   measurementTests.assertEqualStrict(mag5001a.isLessThan(mag5001b),false, 'comparison', 'comparison1');
