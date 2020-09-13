@@ -1819,66 +1819,37 @@ let mag3007b = new Measurement('5.000000000');
       printScientific: '-3.000e0'
   },'operations','subtraction');
 
-  let mag3603a = new Measurement('-6.00');
-  let mag3603b = new Measurement('+2.00');
+  let mag3604a = new Measurement('-6.00');
+  let mag3604b = new Measurement('+2.00');
 
-  measurementTests.assertMeasurement(mag3603a.subtract(mag3603b){ // -8.00
+  measurementTests.assertMeasurement(mag3604a.subtract(mag3604b),{ // -8.00
     firstSigFig: '8',
     otherSigFigs: '00',
     orderOfMagnitude: 0,
     lowestKnownMagnitude: -2,
     numSigFigs: 3,
     positive: false,
-    negative; true,
+    negative: true,
     float: -8,
     printStandard: '-8.00',
     printScientific: '-8.00e0'
   }, 'operations', 'subtraction');
 
-  measurementTests.assertMeasurement(mag3603b.subtract(mag3603a){ // +8.00
+  measurementTests.assertMeasurement(mag3604b.subtract(mag3604a),{ // +8.00
     firstSigFig: '8',
     otherSigFigs: '00',
     orderOfMagnitude: 0,
     lowestKnownMagnitude: -2,
     numSigFigs: 3,
     positive: true,
-    negative; false,
+    negative: false,
     float: 8,
     printStandard: '8.00',
     printScientific: '8.00e0'
   }, 'operations', 'subtraction');
 
-let mag3604a = new Measurement('500');
-let mag3604b = new Measurement('3.0');
-
-measurementTests.assertMeasurement(mag3604a.subtract(mag3604b), {
-  firstSigFig: '5',
-  otherSigFigs: '',
-  orderOfMagnitude: 2,
-  lowestKnownMagnitude: 2,
-  numSigFigs: 1,
-  positive: true,
-  negative; false,
-  float: 497,
-  printStandard: '500',
-  printScientific: '5e2'
-}, 'operations', 'subtraction');
-
-measurementTests.assertMeasurement(mag3604b.subtract(mag3604a), {
-  firstSigFig: '5',
-  otherSigFigs: '',
-  orderOfMagnitude: 2,
-  lowestKnownMagnitude: 2,
-  numSigFigs: 1,
-  positive: false,
-  negative; true,
-  float: -497,
-  printStandard: '-500',
-  printScientific: '-5e2'
-}, 'operations', 'subtraction');
-
 let mag3605a = new Measurement('500');
-let mag3605b = new Measurement(3); // same as above, but the lower one is now exact, it should make no difference
+let mag3605b = new Measurement('3.0');
 
 measurementTests.assertMeasurement(mag3605a.subtract(mag3605b), {
   firstSigFig: '5',
@@ -1887,7 +1858,7 @@ measurementTests.assertMeasurement(mag3605a.subtract(mag3605b), {
   lowestKnownMagnitude: 2,
   numSigFigs: 1,
   positive: true,
-  negative; false,
+  negative: false,
   float: 497,
   printStandard: '500',
   printScientific: '5e2'
@@ -1900,36 +1871,65 @@ measurementTests.assertMeasurement(mag3605b.subtract(mag3605a), {
   lowestKnownMagnitude: 2,
   numSigFigs: 1,
   positive: false,
-  negative; true,
+  negative: true,
   float: -497,
   printStandard: '-500',
   printScientific: '-5e2'
 }, 'operations', 'subtraction');
 
-let mag3606a = new Measurement('500.');
-let mag3606b = new Measurement('3.0');
+let mag3606a = new Measurement('500');
+let mag3606b = new Measurement(3); // same as above, but the lower one is now exact, it should make no difference
 
-measurementTests.assertMeasurement(mag3603a.subtract(mag3606b),{ //497
+measurementTests.assertMeasurement(mag3606a.subtract(mag3606b), {
+  firstSigFig: '5',
+  otherSigFigs: '',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 2,
+  numSigFigs: 1,
+  positive: true,
+  negative: false,
+  float: 497,
+  printStandard: '500',
+  printScientific: '5e2'
+}, 'operations', 'subtraction');
+
+measurementTests.assertMeasurement(mag3606b.subtract(mag3606a), {
+  firstSigFig: '5',
+  otherSigFigs: '',
+  orderOfMagnitude: 2,
+  lowestKnownMagnitude: 2,
+  numSigFigs: 1,
+  positive: false,
+  negative: true,
+  float: -497,
+  printStandard: '-500',
+  printScientific: '-5e2'
+}, 'operations', 'subtraction');
+
+let mag3607a = new Measurement('500.');
+let mag3607b = new Measurement('3.0');
+
+measurementTests.assertMeasurement(mag3607a.subtract(mag3607b),{ //497
   firstSigFig: '4',
   otherSigFigs: '97',
   orderOfMagnitude: 2,
   lowestKnownMagnitude: 0,
   numSigFigs: 3,
   positive: true,
-  negative; false,
+  negative: false,
   float: 497,
   printStandard: '497',
   printScientific: '4.97e2'
 },'operations','subtraction');
 
-measurementTests.assertMeasurement(mag3603b.subtract(mag3606a),{ //497
+measurementTests.assertMeasurement(mag3607b.subtract(mag3607a),{ //497
   firstSigFig: '4',
   otherSigFigs: '97',
   orderOfMagnitude: 2,
   lowestKnownMagnitude: 0,
   numSigFigs: 3,
   positive: false,
-  negative; true,
+  negative: true,
   float: -497,
   printStandard: '-497',
   printScientific: '-4.97e2'
@@ -1948,7 +1948,7 @@ measurementTests.assertMeasurement(mag3701a.multiply(mag3701b),{
   lowestKnownMagnitude: -1,
   numSigFigs: 3,
   positive: true,
-  negative; false,
+  negative: false,
   float: 16,
   printStandard: '16.0',
   printScientific: '1.60e1'
@@ -1961,7 +1961,7 @@ measurementTests.assertMeasurement(mag3701b.multiply(mag3701a),{
   lowestKnownMagnitude: -1,
   numSigFigs: 3,
   positive: true,
-  negative; false,
+  negative: false,
   float: 16,
   printStandard: '16.0',
   printScientific: '1.60e1'
@@ -1977,7 +1977,7 @@ measurementTests.assertMeasurement(mag3702a.multiply(mag3702b),{
   lowestKnownMagnitude: 0,
   numSigFigs: 2,
   positive: true,
-  negative; false,
+  negative: false,
   float: 16,
   printStandard: '16',
   printScientific: '1.6e1'
@@ -1990,7 +1990,7 @@ measurementTests.assertMeasurement(mag3702b.multiply(mag3702a),{
   lowestKnownMagnitude: 0,
   numSigFigs: 2,
   positive: true,
-  negative; false,
+  negative: false,
   float: 16,
   printStandard: '16',
   printScientific: '1.6e1'
@@ -1999,59 +1999,59 @@ measurementTests.assertMeasurement(mag3702b.multiply(mag3702a),{
 let mag3703a = new Measurement('8.0');
 let mag3703b = new Measurement('-9.0');
 
-measurementTests.assertMagnitude(mag3703a.multiply(mag3703b),{
+measurementTests.assertMeasurement(mag3703a.multiply(mag3703b),{
   firstSigFig: '7',
   otherSigFigs: '2',
   orderOfMagnitude: 1,
   lowestKnownMagnitude: 0,
   numSigFigs: 2,
   positive: false,
-  negative; true,
+  negative: true,
   float: -72,
-  printStandard: '72',
-  printScientific: '7.2e1'
+  printStandard: '-72',
+  printScientific: '-7.2e1'
 }, 'operations','multiplication');
 
-measurementTests.assertMagnitude(mag3703b.multiply(mag3703a),{
+measurementTests.assertMeasurement(mag3703b.multiply(mag3703a),{
   firstSigFig: '7',
   otherSigFigs: '2',
   orderOfMagnitude: 1,
   lowestKnownMagnitude: 0,
   numSigFigs: 2,
   positive: false,
-  negative; true,
+  negative: true,
   float: -72,
-  printStandard: '72',
-  printScientific: '7.2e1'
+  printStandard: '-72',
+  printScientific: '-7.2e1'
 }, 'operations','multiplication');
 
-let mag3704a = new Magnitude('8.000');
-let mag3704b = new Magnitude('-9');
+let mag3704a = new Measurement('8.000');
+let mag3704b = new Measurement('-9');
 
-measurementTests.assertMagnitude(mag3704a.multiply(mag3704b),{
+measurementTests.assertMeasurement(mag3704a.multiply(mag3704b),{
   firstSigFig: '7',
   otherSigFigs: '',
   orderOfMagnitude: 1,
   lowestKnownMagnitude: 1,
   numSigFigs: 1,
   positive: false,
-  negative; true,
+  negative: true,
   float: -72,
-  printStandard: '70',
-  printScientific: '7e1'
+  printStandard: '-70',
+  printScientific: '-7e1'
 }, 'operations','multiplication');
 
-measurementTests.assertMagnitude(mag3704b.multiply(mag3704a),{
+measurementTests.assertMeasurement(mag3704b.multiply(mag3704a),{
   firstSigFig: '7',
   otherSigFigs: '',
   orderOfMagnitude: 1,
   lowestKnownMagnitude: 1,
   numSigFigs: 1,
   positive: false,
-  negative; true,
+  negative: true,
   float: -72,
-  printStandard: '70',
-  printScientific: '7e1'
+  printStandard: '-70',
+  printScientific: '-7e1'
 }, 'operations','multiplication');
 
 /*
@@ -2061,7 +2061,7 @@ orderOfMagnitude: undefined,
 lowestKnownMagnitude: undefined,
 numSigFigs: undefined,
 positive: undefined,
-negative; undefined,
+negative: undefined,
 float: undefined,
 printStandard: undefined,
 printScientific: undefined
