@@ -1935,6 +1935,125 @@ measurementTests.assertMeasurement(mag3603b.subtract(mag3606a),{ //497
   printScientific: '-4.97e2'
 },'operations','subtraction');
 
+
+measurementTests.addSubCategory('operations','multiplication','Multiplication');
+
+let mag3701a = new Measurement('4.00');
+let mag3701b = new Measurement('4.00');
+
+measurementTests.assertMeasurement(mag3701a.multiply(mag3701b),{
+  firstSigFig: '1',
+  otherSigFigs: '60',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: -1,
+  numSigFigs: 3,
+  positive: true,
+  negative; false,
+  float: 16,
+  printStandard: '16.0',
+  printScientific: '1.60e1'
+},'operations','multiplication');
+
+measurementTests.assertMeasurement(mag3701b.multiply(mag3701a),{
+  firstSigFig: '1',
+  otherSigFigs: '60',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: -1,
+  numSigFigs: 3,
+  positive: true,
+  negative; false,
+  float: 16,
+  printStandard: '16.0',
+  printScientific: '1.60e1'
+},'operations','multiplication');
+
+let mag3702a = new Measurement('4.00');
+let mag3702b = new Measurement('4.0');
+
+measurementTests.assertMeasurement(mag3702a.multiply(mag3702b),{
+  firstSigFig: '1',
+  otherSigFigs: '6',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: 0,
+  numSigFigs: 2,
+  positive: true,
+  negative; false,
+  float: 16,
+  printStandard: '16',
+  printScientific: '1.6e1'
+},'operations','multiplication');
+
+measurementTests.assertMeasurement(mag3702b.multiply(mag3702a),{
+  firstSigFig: '1',
+  otherSigFigs: '6',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: 0,
+  numSigFigs: 2,
+  positive: true,
+  negative; false,
+  float: 16,
+  printStandard: '16',
+  printScientific: '1.6e1'
+},'operations','multiplication');
+
+let mag3703a = new Measurement('8.0');
+let mag3703b = new Measurement('-9.0');
+
+measurementTests.assertMagnitude(mag3703a.multiply(mag3703b),{
+  firstSigFig: '7',
+  otherSigFigs: '2',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: 0,
+  numSigFigs: 2,
+  positive: false,
+  negative; true,
+  float: -72,
+  printStandard: '72',
+  printScientific: '7.2e1'
+}, 'operations','multiplication');
+
+measurementTests.assertMagnitude(mag3703b.multiply(mag3703a),{
+  firstSigFig: '7',
+  otherSigFigs: '2',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: 0,
+  numSigFigs: 2,
+  positive: false,
+  negative; true,
+  float: -72,
+  printStandard: '72',
+  printScientific: '7.2e1'
+}, 'operations','multiplication');
+
+let mag3704a = new Magnitude('8.000');
+let mag3704b = new Magnitude('-9');
+
+measurementTests.assertMagnitude(mag3704a.multiply(mag3704b),{
+  firstSigFig: '7',
+  otherSigFigs: '',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: 1,
+  numSigFigs: 1,
+  positive: false,
+  negative; true,
+  float: -72,
+  printStandard: '70',
+  printScientific: '7e1'
+}, 'operations','multiplication');
+
+measurementTests.assertMagnitude(mag3704b.multiply(mag3704a),{
+  firstSigFig: '7',
+  otherSigFigs: '',
+  orderOfMagnitude: 1,
+  lowestKnownMagnitude: 1,
+  numSigFigs: 1,
+  positive: false,
+  negative; true,
+  float: -72,
+  printStandard: '70',
+  printScientific: '7e1'
+}, 'operations','multiplication');
+
 /*
 firstSigFig: undefined,
 otherSigFigs: undefined,
