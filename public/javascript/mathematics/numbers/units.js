@@ -128,6 +128,7 @@ const metricPrefixes = {
     }
 };
 
+
 const baseDimensions = {
     "length": {
         "base": true,
@@ -166,95 +167,6 @@ const baseDimensions = {
     }
 };
 
-const dimensions = {
-    "base": {
-        "length": {
-            "SI_unit": "meter",
-            "other_units": [
-                "foot", "inch", "mile"
-            ]
-        },
-        "mass": {
-            "SI_unit": "kilogram",
-            "other_units": [
-                "pound"
-            ]
-        },
-        "time": {
-            "SI_unit": "second",
-            "other_units": [
-                "minute", "hour", "day"
-            ]
-        },
-        "temperature": {
-            "SI_unit": "Kelvin",
-            "other_unit": [
-                "Rankine"
-            ],
-            "other_scale": [
-                "Celsius", "Fahrenheit"
-            ]
-        },
-        "current": {
-            "SI_unit": "Ampere"
-        }
-    },
-    "derived":  {
-        "velocity": {
-            "derivation": {
-                "length": 1,
-                "time": -1
-            }
-        },
-        "acceleration": {
-            "derivation": {
-                "length": 1,
-                "time": -2
-            }
-        },
-        "force": {
-            "derivation": {
-                "mass": 1,
-                "length": 1,
-                "time": -2
-            },
-            "SI_unit_special_name": "Newton",
-            "other_unit_names": [
-                "Dyne"
-            ]
-        },
-        "momentum": {
-            "derivation": {
-                "mass": 1,
-                "length": 1,
-                "time": -1
-            }
-        },
-        "energy": {
-            "derivation": {
-                "mass": 1,
-                "length": 2,
-                "time": -2
-            },
-            "SI_unit_special_name": "Joule"
-        },
-        "power": {
-            "derivation": {
-                "mass": 1,
-                "length": 2,
-                "time": -3
-            },
-            "SI_unit_special_name": "Watt"
-        },
-        "charge": {
-            "derivation": {
-                "current": 1,
-                "time": 1
-            },
-            "SI_unit_special_name": "Coulomb"
-        }
-    }
-};
 
 const units = {
     "baseDimensionsSI": {
@@ -278,66 +190,68 @@ const units = {
         "kilogram": {
             "dimension": "mass",
             "abbreviation": "kg",
+        },
+        "mole": {
+            "dimension": "amount",
+            "abbreviation": "mol"
+        },
+        "candela": {
+            "dimension": "intensity",
+            "abbreviation": "cd"
         }
     },
     "baseDimensionsNonSI": {
-        "foot": {
-            "dimension": "length",
-            "abbreviation": "ft",
-            "plural": "feet",
-            "conversion_factor": '0.3048'
+        "length": {
+            "foot": {
+                "conversion_factor": '0.3048',
+                "abbreviation": "ft",
+                "plural": "feet"
+            },
+            "inch": {
+                "abbreviation": "in",
+                "conversion_factor": '0.0254',
+                "plural": "inches"
+            },
+            "mile": {
+                "abbreviation": "mi",
+                "conversion_factor": '1609.34',
+            }
         },
-        "inch": {
-            "dimension": "length",
-            "abbreviation": "in",
-            "conversion_factor": '0.0254'
+        "time": {
+            "minute": {
+                "abbreviation": "min",
+                "conversionFactor": 1/60
+            },
+            "hour": {
+                "abbreviation": "hr",
+                "conversionFactor": 1/3600
+            },
+            "day": {
+                "abbreviation": "day",
+                "conversionFactor": 1/86400
+            }
         },
-        "mile": {
-            "dimension": "length",
-            "abbreviation": "in",
-            "conversion_factor": '1609.34'
+        "mass": {
+            "pound": {
+                "dimension": "mass",
+                "abbreviation": "lb",
+                "conversion_factor": '0.453592'
+            }
         },
-        "pound": {
-            "dimension": "mass",
-            "abbreviation": "lb",
-            "conversion_factor": '0.453592'
+        "current": {
+
         },
-        // "gram" : {
-        //     "dimension": "mass",
-        //     "abbreviation": "g",
-        //     "conversion_factor": 0.001
-        // },
-        "minute": {
-            "dimension": "time",
-            "abbreviation": "min",
-            "conversionFactor": 1/60
+        "temperature": {
+            "Rankine": {
+                "conversion_factor": '0.55555555556',
+                "abbreviation": "°Ra"
+            }
         },
-        "hour": {
-            "dimension": "time",
-            "abbreviation": "hr",
-            "conversionFactor": 1/3600
+        "amount": {
+
         },
-        "day": {
-            "dimension": "time",
-            "abbreviation": "day",
-            "conversionFactor": 1/86400
-        },
-        "Rankine": {
-            "dimension": "temperature",
-            "conversion_factor": '0.55555555556',
-            "abbreviation": "°Ra"
-        },
-        "Celsius": {
-            "dimension": "temperature",
-            "conversion_factor": 1,
-            "zero_offset": 273.15,
-            "abbreviation": "°C"
-        },
-        "Fahrenheit": {
-            "dimension": "temperature",
-            "conversion_factor": '0.55555555556',
-            "zero_offset": -459.67,
-            "abbreviation": "°F"
+        "intensity": {
+
         }
     },
     "derivedSI": {
@@ -451,6 +365,7 @@ class Dimension {
 
 
 
+// start by coding it without the derivation
 class Unit {
     constructor(name, derivation) {
         this.name = name;
@@ -473,7 +388,10 @@ class Unit {
             this.SI = true;
             this.baseUnit = true;
             this.baseDimension = true;
-            this.dimension = new Dimension(referenceInfo.dimension);
+            this.dimension = {};
+            this.dimension[referenceInfo.dimension] = 1;
+            this.derivation = {};
+            this.derivation[this.name] = 1;
             this.abbreviation = referenceInfo.abbreviation;
             this.plural = referenceInfo.plural ? referenceInfo.plural : `${this.name}s`;
         } else if (units.baseDimensionsNonSI[processedName]) {
@@ -508,14 +426,9 @@ class Unit {
             this.dimension = new Dimension(referenceInfo.dimension);
             this.abbreviation = referenceInfo.abbreviation;
             this.plural = referenceInfo.plural ? referenceInfo.plural : `${this.name}s`;
-        } else if (derivation && typeof(derivation) === 'object') {
-            /// looking up a unit by its derivation
-
+        } else {
+            this.isAunit = false;
         }
-        // } else {
-        //     this.isAunit = false;
-        // }
-
 
         if (metricMultiplier) {
             if (this.dimension === 'mass') {
@@ -525,9 +438,93 @@ class Unit {
             this.abbreviation = this.metricAbbreviation + this.abbreviation;
         }
 
-        if (derivation) {
-            /// in order to see a new unit
+    }
+
+    getConversionFactor() {
+        return this.conversionFactor
+    }
+
+    isSI() {
+        return this.SI
+    }
+
+    isBaseUnit() {
+        return this.baseUnit
+    }
+
+    getDimension() {
+        return this.dimension
+    }
+
+    getName() {
+        return this.name
+    }
+
+    getPluralName() {
+        return this.plural
+    }
+
+    getAbbreviation() {
+        return this.abbreviation
+    }
+
+    isSameDimension(anotherUnit) {
+        const dim1 = this.dimension;
+        const dim2 = anotherUnit.dimension;
+        if (dim1["length"] && (!dim2["length"] || (dim1["length"] !== dim2["length"]))) {
+            return false
         }
+        if (dim1["mass"] && (!dim2["mass"] || (dim1["mass"] !== dim2["mass"]))) {
+            return false
+        }
+        if (dim1["time"] && (!dim2["time"] || (dim1["time"] !== dim2["time"]))) {
+            return false
+        }
+        if (dim1["current"] && (!dim2["current"] || (dim1["current"] !== dim2["current"]))) {
+            return false
+        }
+        if (dim1["temperature"] && (!dim2["temperature"] || (dim1["temperature"] !== dim2["temperature"]))) {
+            return false
+        }
+        if (dim1["intensity"] && (!dim2["intensity"] || (dim1["intensity"] !== dim2["intensity"]))) {
+            return false
+        }
+        if (dim1["amount"] && (!dim2["amount"] || (dim1["amount"] !== dim2["amount"]))) {
+            return false
+        }
+        return true
+    }
+
+    deriveConversionFactor(anotherUnit) {
+        if (!this.isSameDimension(anotherUnit)) {
+            return undefined
+        } else {
+            return this.conversionFactor.divide(anotherUnit.conversionFactor) // is this right???
+        }
+    }
+
+    isSameUnit(anotherUnit) {
+        if (!this.isSameDimension(anotherUnit)) {
+            return false
+        } else {
+            return ((this.getConversionFactor()).divide(anotherUnit.getConversionFactor())).isEqualTo(new Measurement(1))
+        }
+    }
+
+    multiply(anotherUnit, newName) { // returns a derivation
+
+    }
+
+    divide(anotherUnit, newName) {
+
+    }
+
+    power(anotherUnit) {
+
+    }
+
+    inverse(newName) {
+
     }
 }
 

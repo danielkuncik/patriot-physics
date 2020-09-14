@@ -247,6 +247,10 @@ class TestPackage {
     }
 
     assertNotMeasurement(notMeasurement, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        if (typeof(notMeasurement) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Measurement");
+            return false
+        }
         this.assertFalse(notMeasurement.isAmeasurement, categoryKey, subCategoryKey, `${name}: isAmeasurement`);
         this.assertTrue(isNaN(notMeasurement.getFloat()), categoryKey, subCategoryKey, `${name}: Float`);
         this.assertUndefined(notMeasurement.getFirstSigFig(), categoryKey, subCategoryKey, `${name}: firstSigFig`);
@@ -255,6 +259,49 @@ class TestPackage {
         this.assertUndefined(notMeasurement.getLowestKnownMagnitude(), categoryKey, subCategoryKey, `${name}: lowestKnownMagnitude`);
         this.assertUndefined(notMeasurement.getNumSigFigs(), categoryKey, subCategoryKey, `${name}: numSigFigs`);
         this.assertUndefined(notMeasurement.isPositive(), categoryKey, subCategoryKey, `${name}: positive`);
+    }
+
+    assertDimension(dimension, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        if (typeof(dimension) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Dimension");
+            return false
+        }
+        if (typeof(equalObject) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
+            return false
+        }
+        this.assertTrue(dimension.isAdimension, categoryKey, subCategoryKey, `${name}: isAdimension`);
+        if (equalObject.length) {
+            this.assertEqualStrict(dimension.getLengthPower(), equalObject.length, categoryKey, subCategoryKey, `${name}: length: `);
+        }
+        if (equalObject.time) {
+            this.assertEqualStrict(dimension.getTimePower(), equalObject.length, categoryKey, subCategoryKey, `${name}: time: `);
+        }
+        if (equalObject.mass) {
+            this.assertEqualStrict(dimension.getMassPower(), equalObject.mass, categoryKey, subCategoryKey, `${name}: mass: `);
+        }
+        if (equalObject.current) {
+            this.assertEqualStrict(dimension.getCurrentPower(), equalObject.current, categoryKey, subCategoryKey, `${name}: current: `);
+        }
+        if (equalObject.temperature) {
+            this.assertEqualStrict(dimension.getTemperaturePower(), equalObject.temperature, categoryKey, subCategoryKey, `${name}: temperature: `);
+        }
+        if (equalObject.intensity) {
+            this.assertEqualStrict(dimension.getIntensityPower(), equalObject.intensity, categoryKey, subCategoryKey, `${name}: intensity: `);
+        }
+        if (equalObject.amount) {
+            this.assertEqualStrict(dimension.getAmountPower(), equalObject.amount, categoryKey, subCategoryKey, `${name}: amount: `);
+        }
+    }
+
+    assertNotDimension(notDimension, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        if (typeof(notDimension) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Dimension");
+            return false
+        }
+        this.assertFalse(notDimension.isAdimension, categoryKey, subCategoryKey, `${name}: isAdimension`);
+        this.assertUndefined(notDimension.getName(), categoryKey, subCategoryKey, `${name}: name: `);
+        this.assertUndefined(notDimension.getDerivation(), categoryKey, subCategoryKey, `${name}: derivation`)
     }
 
     assertUnit(unit, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
