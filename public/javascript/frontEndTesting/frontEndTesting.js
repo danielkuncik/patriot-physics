@@ -164,7 +164,7 @@ class TestPackage {
     assertMeasurement(measurement, equalObject, categoryKey, subCategoryKey, name = `${measurement.printOptimal()}: `) {
       // add check that it is an object
       if (typeof(measurement) !== 'object') {
-        this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Physics Number");
+        this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Measurement");
         return false
       }
       if (typeof(equalObject) !== 'object') {

@@ -2054,12 +2054,38 @@ measurementTests.assertMeasurement(mag3704b.multiply(mag3704a),{
   printScientific: '-7e1'
 }, 'operations','multiplication');
 
+let mag3705a = new Measurement('5.00');
+let mag3705b = new Measurement('0');
+
+measurementTests.assertZeroMagnitude(mag3705a.multiply(mag3705b),1,'operations','multiplication');
+measurementTests.assertZeroMagnitude(mag3705b.multiply(mag3705a),1,'operations','multiplication');
+
+let mag3706a = new Measurement('5.00');
+let mag3706b = new Measurement('0.0000');
+
+measurementTests.assertZeroMagnitude(mag3706a.multiply(mag3706b),5,'operations','multiplication');
+measurementTests.assertZeroMagnitude(mag3706b.multiply(mag3706a),5,'operations','multiplication');
+
+
+let mag3707a = new Measurement('5.00');
+let mag3707b = new Measurement(0);
+
+measurementTests.assertZeroMagnitude(mag3707a.multiply(mag3707b),Infinity,'operations','multiplication');
+measurementTests.assertZeroMagnitude(mag3707b.multiply(mag3707a),Infinity,'operations','multiplication');
+
+  let mag3708a = new Measurement('5.00');
+  let mag3708b = new Measurement('.0');
+
+measurementTests.assertZeroMagnitude(mag3708a.multiply(mag3708b),2,'operations','multiplication');
+measurementTests.assertZeroMagnitude(mag3708b.multiply(mag3708a),2,'operations','multiplication');
+
 /*
 firstSigFig: undefined,
 otherSigFigs: undefined,
 orderOfMagnitude: undefined,
 lowestKnownMagnitude: undefined,
 numSigFigs: undefined,
+exact: undefined,
 positive: undefined,
 negative: undefined,
 float: undefined,
