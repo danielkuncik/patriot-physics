@@ -110,7 +110,11 @@ function createUnitList(superUnitKey, gradeMap) {
     let unitList = "<ul class = 'unitList'>";
     Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
         let unitListItem = createUnitListItem(superUnitKey, unitKey, gradeMap);
-        unitList = unitList + unitListItem;
+        if (unitMap[superUnitKey].units[unitKey].display === false) {
+            // pass
+        } else {
+            unitList = unitList + unitListItem;
+        }
     });
     unitList = unitList + "</ul>";
     return unitList
@@ -142,10 +146,14 @@ function createSuperUnitListItem(superUnitKey, isItImportant) {
 hbs.registerHelper('listAllUnits',(gradeMap) => {
     let fullList = "<ul class = 'listOfAllUnits'>";
     Object.keys(unitMap).forEach((superUnitKey) => {
-        let superUnitListItem = createSuperUnitListItem(superUnitKey, true);
-        fullList = fullList + superUnitListItem;
-        let unitList = createUnitList(superUnitKey, gradeMap);
-        fullList = fullList + unitList;
+        if (unitMap[superUnitKey].display === false) {
+            // pass
+        } else {
+            let superUnitListItem = createSuperUnitListItem(superUnitKey, true);
+            fullList = fullList + superUnitListItem;
+            let unitList = createUnitList(superUnitKey, gradeMap);
+            fullList = fullList + unitList;
+        }
     });
     fullList = fullList + "</ul>";
     return new hbs.SafeString(fullList)
@@ -161,7 +169,7 @@ hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMa
     let unitList = createUnitList(selectedSuperUnitKey, gradeMap);
     let otherSuperUnitsList = "<ul>";
     Object.keys(unitMap).forEach((superUnitKey) => {
-        if (superUnitKey !== selectedSuperUnitKey) { // don't include this unit!
+        if (superUnitKey !== selectedSuperUnitKey && unitMap[superUnitKey].display !== false) { // don't include this unit!
             let superUnitListItem = createSuperUnitListItem(superUnitKey, false);
             otherSuperUnitsList = otherSuperUnitsList + superUnitListItem;
         }

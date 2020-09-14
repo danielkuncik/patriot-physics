@@ -743,6 +743,7 @@
         },
         "uuid": "a9b28ea1-8f07-4a5c-af88-0e0582189dd6",
         "note": "All functions in this section will be represented by f(x) = ___, not by y = _____",
+        "display": false,
         "pods":
         {
           "what_is_function":
@@ -898,6 +899,7 @@
           "physics_A": null
         },
         "uuid": "c395ca34-95de-451c-871d-9bf4cd2b18a6",
+        "display": false,
         "pods":
         {
           "finding_slope_1":
@@ -1067,6 +1069,8 @@
           "physics_A": null
         },
         "uuid": "3c69af31-35f8-4f37-af92-cffbcf972a3c",
+        "false": true,
+        "display": false,
         "pods":
         {
           "differentiation_1":
@@ -1496,6 +1500,7 @@
           "physics_A": "mantle"
         },
         "uuid": "f04c40cb-e526-4f4f-9aeb-cd5cb099e84d",
+        "display": false,
         "enduring_understandings":
         [
           "When presented with some novel sitaution or problem,",
@@ -1551,6 +1556,7 @@
           "physics_A": null
         },
         "uuid": "7eb1e95d-0164-48cc-a054-64921ca42763",
+        "display": false,
         "pods":
         {}
       },
@@ -1565,6 +1571,7 @@
           "physics_A": null
         },
         "uuid": "8ee79b90-28f4-4c60-a39f-9e39a48efdbe",
+        "display": false,
         "pods":
         {}
       }
@@ -2290,6 +2297,7 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "display": false,
         "pods": {}
       },
       "potential_energy_functions":
@@ -2304,6 +2312,7 @@
         },
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics.",
         "uuid": "8cd92d50-ffbe-4f99-9cc4-c86762acde53",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -5375,6 +5384,7 @@
         },
         "uuid": "f8c896ee-3f78-453f-96b7-7d78be6d7112",
         "vision": "Will contain information on conic sections, different types of orbits, quantitative analyses of Kepler's Laws, historical information on the importance of keplers laws and orbits in the development of science, and energy in orbits; For the AP curriculum, the universal gravitational potentail energy formual will be here",
+        "display": false,
         "standards":
         {
           "mass_2016": "HS-PS2-4",
@@ -5526,6 +5536,7 @@
           "physics_A": null
         },
         "uuid": "50378a88-caa5-455d-9e67-77e038b32a62",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -5545,6 +5556,7 @@
           "physics_A": null
         },
         "uuid": "b7dfa155-b6d2-4f1e-a232-5e0f14d096c3",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -6174,6 +6186,7 @@
         },
         "notes": "Solving differential equations for simple harmonic motion and analyzing the result.",
         "uuid": "bf35493c-a199-40f4-a5ee-937cba427097",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -9310,6 +9323,7 @@
         },
         "uuid": "0c45ad33-758a-42f7-9e1d-57313bcf1abb",
         "idea": "This unit will deal with heat processes on P-V graphs.",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -9328,6 +9342,7 @@
           "physics_A": null
         },
         "uuid": "ec3a9078-3b52-43e1-8883-e8cf2e663642",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -9343,6 +9358,7 @@
     "title": "Fluid Dynamics",
     "number": 12,
     "uuid": "dca0df21-7f2d-48b7-b013-8a5fd0a1b56c",
+    "display": false,
     "units":
     {}
   },
@@ -9770,6 +9786,7 @@
         },
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
         "uuid": "45760652-3931-4e35-9997-a5ab2052be64",
+        "display": false,
         "standards":
         {
           "mass_2016": "",
@@ -9785,12 +9802,14 @@
     "title": "Relativity",
     "number": 14,
     "uuid": "8f64f0f0-aba3-4e17-84b4-78875c422cf3",
+    "display": false,
     "units":
     {
       "special_relativity":
       {
         "title": "Special Relativity",
         "number": 1,
+        "display": false,
         "value":
         {
           "AP_physics_1": null,
@@ -9810,6 +9829,7 @@
       {
         "title": "General Relativity",
         "number": 2,
+        "display": false,
         "value":
         {
           "AP_physics_1": null,
