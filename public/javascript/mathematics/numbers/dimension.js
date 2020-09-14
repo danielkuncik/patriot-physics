@@ -141,26 +141,19 @@ class Dimension {
         return dimensions.base.includes(this.getName())
     }
     getLengthPower() {
-        return this.derivation.length
-    }
+        return this.derivation.length ? this.derivation.length : 0    }
     getTimePower() {
-        return this.derivation.time
-    }
+        return this.derivation.time ? this.derivation.time : 0    }
     getMassPower() {
-        return this.derivation.mass
-    }
+        return this.derivation.mass ? this.derivation.mass : 0    }
     getCurrentPower() {
-        return this.derivation.current
-    }
+        return this.derivation.current ? this.derivation.current : 0    }
     getTemperaturePower() {
-        return this.derivation.temperature
-    }
+        return this.derivation.temperature ? this.derivation.temperature : 0    }
     getIntensityPower() {
-        return this.derivation.intensity
-    }
+        return this.derivation.intensity ? this.derivation.intensity : 0    }
     getAmountPower() {
-        return this.derivation.amount
-    }
+        return this.derivation.amount ? this.derivation.amount : 0    }
 
     multiply(anotherDimension, newName) {
         const baseDimensions = dimensions.base;

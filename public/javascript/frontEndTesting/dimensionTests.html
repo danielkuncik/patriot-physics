@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Measurement Object Tests</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+<body>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src = './frontEndTesting.js'></script>
+<script src = '../mathematics/numbers/dimension.js'></script>
+
+<div id = 'putItHere'></div>
+
+<script>
+    let dimensionTests = new TestPackage('Dimension Tests');
+
+    dimensionTests.addCategory('construction','Construction');
+    dimensionTests.addSubCategory('construction','baseDimensionNames','Constructing Base Dimensions by Name');
+    dimensionTests.addSubCategory('construction','baseDimensionDerivation','Constructing Base Dimensions by Derivation');
+    dimensionTests.addSubCategory('construction','derivedDimensionNames','Constructing Derived Dimensions by Name');
+    dimensionTests.addSubCategory('construction','derivedDimensionDerivation','Constructing Derived Dimensions by Derivation');
+    dimensionTests.addSubCategory('construction','failedConstructions','Failed Constructions');
+
+
+    const dim1 = new Dimension('length');
+    dimensionTests.assertDimension(dim1, {
+        'name': length,
+        'base': true,
+        'length': 1,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    });
+
+
+    $("#putItHere").append(dimensionTests.printAllTests());
+</script>
+
+</body>
+</html>

@@ -40,10 +40,10 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let mag5021a = new Measurement(Infinity);
-    let mag5021b = new Measurement(Infinity);
+    let mag3705a = new Measurement('5.00');
+    let mag3705b = new Measurement('0');
 
-    randomTest.assertEqualStrict(mag5021a.isEqualTo(mag5021b),true,'comparison','comparison2');
+    randomTest.assertZeroMagnitude(mag3705a.multiply(mag3705b),1,'operations','multiplication');
 
     $("#putItHere").append(randomTest.printAllTests());
 

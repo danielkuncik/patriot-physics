@@ -271,26 +271,32 @@ class TestPackage {
             return false
         }
         this.assertTrue(dimension.isAdimension, categoryKey, subCategoryKey, `${name}: isAdimension`);
-        if (equalObject.length) {
+        if (equalObject.name !== undefined) {
+            this.assertEqualStrict(dimension.getName(), equalObject.name, categoryKey, subCategoryKey, `${name}: name: `);
+        }
+        if (equalObject.length !== undefined) {
             this.assertEqualStrict(dimension.getLengthPower(), equalObject.length, categoryKey, subCategoryKey, `${name}: length: `);
         }
-        if (equalObject.time) {
+        if (equalObject.time !== undefined) {
             this.assertEqualStrict(dimension.getTimePower(), equalObject.length, categoryKey, subCategoryKey, `${name}: time: `);
         }
-        if (equalObject.mass) {
+        if (equalObject.mass !== undefined) {
             this.assertEqualStrict(dimension.getMassPower(), equalObject.mass, categoryKey, subCategoryKey, `${name}: mass: `);
         }
-        if (equalObject.current) {
+        if (equalObject.current !== undefined) {
             this.assertEqualStrict(dimension.getCurrentPower(), equalObject.current, categoryKey, subCategoryKey, `${name}: current: `);
         }
-        if (equalObject.temperature) {
+        if (equalObject.temperature !== undefined) {
             this.assertEqualStrict(dimension.getTemperaturePower(), equalObject.temperature, categoryKey, subCategoryKey, `${name}: temperature: `);
         }
-        if (equalObject.intensity) {
+        if (equalObject.intensity !== undefined) {
             this.assertEqualStrict(dimension.getIntensityPower(), equalObject.intensity, categoryKey, subCategoryKey, `${name}: intensity: `);
         }
-        if (equalObject.amount) {
+        if (equalObject.amount !== undefined) {
             this.assertEqualStrict(dimension.getAmountPower(), equalObject.amount, categoryKey, subCategoryKey, `${name}: amount: `);
+        }
+        if (equalObject.base !== undefined) {
+            this.assertEqualStrict(dimension.isBase(), equalObject.base, categoryKey, subCategoryKey, `${name}: is base: `)
         }
     }
 
