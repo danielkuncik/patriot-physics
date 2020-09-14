@@ -117,6 +117,8 @@ class Dimension {
                     }
                 }
             } else {
+                /// WILL I ALLOW DIMENSIONS WITH NO NAME????????
+                /// THOSE WILL PROBABLY MATTER!!!!!!
                 this.invalidate();
             }
         }
@@ -134,6 +136,9 @@ class Dimension {
     }
     getDerivation() {
         return this.derivation
+    }
+    isBase() {
+        return dimensions.base.includes(this.getName())
     }
     getLengthPower() {
         return this.derivation.length
@@ -207,6 +212,21 @@ class Dimension {
         });
         return new Dimension(newName, newDerivation);
     }
+
+    power(exponent, newName) {
+        const baseDimensions = dimensions.base;
+        let newDerivation = {};
+        baseDimensions.forEach((dimension) => {
+            let power = 0;
+            if (this.derivation[dimension]) {
+                power += this.derivation[dimension] * exponent;
+            }
+            if (power) {
+                newDerivation[dimension] = power;
+            }
+        });
+        return new Dimension(newName, newDerivation);
+    }
 }
 
 function validateDimensionDerivation(derivation) {
@@ -247,4 +267,16 @@ function areSameDimensionDerivation(derivation1, derivation2) {
         }
     }
     return true
+}
+
+function processDimensionInput(input) {
+    if (typeof(input) === 'string') {
+        return new Dimension(input);
+    } else if (typeof(input) === 'object') {
+        if (input.isAdimension) {
+            return input
+        } else {
+            return new Dimension(undefined, input)
+        }
+    }
 }
