@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assigned Seats</title>
+    <!-- Bootstrap CSS --->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <style>
+        h1 {
+            page-break-before: always;
+        }
+
+        td {
+            border-style: solid;
+            border-color: #000000;
+            border-width: 1px;
+            width: 100px;
+            height: 50px;
+        }
+
+        td.topBottom {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class = 'm-3'>
+<!-- jQuery -->
+<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
+<!-- popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap js-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<h1>
+    Honors Physics Tuesday 1
+</h1>
+<div id = 'tuesday_1'></div>
+
+<h1>
+    AP Physics Tuesday 3
+</h1>
+<div id = 'tuesday_3'></div>
+
+<h1>
+    Directed Study Tuesday 4
+</h1>
+<div id = 'tuesday_4'></div>
+
+
+<h1>
+    AP Physics Wednesday 1
+</h1>
+<div id = 'wednesday_1'></div>
+
+<h1>
+    Honors Physics Wednesday 3
+</h1>
+<div id = 'wednesday_3'></div>
+
+<h1>
+    Directed Study Wednesday 4
+</h1>
+<div id = 'wednesday_4'></div>
+
+
+
+<h1>
+    AP Physics Thursday 1
+</h1>
+<div id = 'thursday_1'></div>
+
+
+<h1>
+    Honors Physics Thursday 2
+</h1>
+<div id = 'thursday_2'></div>
+
+
+<h1>
+    Honors Physics Thursday 3
+</h1>
+<div id = 'thursday_3'></div>
+
+<h1>
+    AP Physics Friday 1
+</h1>
+<div id = 'friday_1'></div>
+
+
+<h1>
+    Honors Physics Friday 2
+</h1>
+<div id = 'friday_2'></div>
+
+
+<h1>
+    Honors Physics Friday 3
+</h1>
+<div id = 'friday_3'></div>
+
+
+
+
+<script>
+    function randInt(m,n) {
+        return Math.round(Math.random() * (n - m)) + m;
+    }
+
+    class SeatingChart {
+        constructor(numRows = 4, numSeats = 4) { // i should make this not assigned by row
+            this.seats = [];
+            let i, j;
+            for (i = 0; i < numRows; i++) {
+                let thisRow = [];
+                for (j = 0; j < numRows; j++) {
+                    thisRow.push(undefined);
+                }
+                this.seats.push(thisRow);
+            }
+        }
+
+        getNumRows() {
+            return this.seats.length;
+        }
+
+        getNumCols() {
+            return this.seats[0].length;
+        }
+
+        pickRandomSeat() {
+            let emptySeats = [];
+            let i, j;
+            for (i = 0; i < this.getNumRows(); i++) {
+                for (j = 0; j < this.getNumCols(); j++) {
+                    if (this.seats[i][j] === undefined) {
+                        emptySeats.push({
+                            row: this.getNumRows() - i - 1,
+                            seat: j + 1
+                        });
+                    }
+                }
+            }
+            return emptySeats[randInt(0,emptySeats.length - 1)]
+        }
+
+        addStudent(name, row, seat) {
+            if (row === undefined && seat === undefined) {
+                let random = this.pickRandomSeat();
+                row = random.row;
+                seat = random.seat;
+            }
+            this.seats[this.getNumRows() - row - 1][seat - 1] = name;
+        }
+
+        draw() {
+            let table = $("<table></table>");
+            $(table).append($(`<tr><td colspan = '${this.getNumCols()}' class = 'topBottom'>BACK</td></tr>`));
+            let i, j;
+            for (i = 0; i < this.getNumRows(); i++) {
+                let thisRow = $("<tr></tr>");
+                const rowIndex = this.getNumRows() - i - 1;
+                for (j = 0; j < this.getNumCols(); j++) {
+                    let name = this.seats[rowIndex][j];
+                    let thisSeat = name ? $(`<td>${name}</td>`) : $("<td></td>");
+                    $(thisRow).append(thisSeat);
+                }
+                $(table).append(thisRow);
+            }
+            $(table).append($(`<tr><td colspan = '${this.getNumCols()}' class = 'topBottom'>FRONT</td></tr>`));
+            return table
+        }
+    }
+</script>
+
+<script>
+    let tuesday1 = new SeatingChart();
+    tuesday1.addStudent('Stephen Arne');
+    tuesday1.addStudent('Nathaniel Bangs');
+    tuesday1.addStudent('Shelby Carmichael');
+    tuesday1.addStudent('Palmer Clingman');
+    tuesday1.addStudent('Hannah Davis');
+    tuesday1.addStudent('Emily DellaCioppa');
+    tuesday1.addStudent('Reign Fernandes');
+    tuesday1.addStudent('Davis Fox');
+    tuesday1.addStudent('Isabella Hedges');
+    tuesday1.addStudent('Faith Humphrey');
+    tuesday1.addStudent('Molly Janicki');
+
+    let tuesday3 = new SeatingChart();
+    tuesday3.addStudent('Isabella Carrillo');
+    tuesday3.addStudent('Steven Carvalho');
+    tuesday3.addStudent('Quinn Davignon');
+    tuesday3.addStudent('Tiago Duarte');
+    tuesday3.addStudent('Maeve Geraghty');
+    tuesday3.addStudent('Samuel Harris');
+    tuesday3.addStudent('Stefan Hulsebosch');
+
+    let tuesday4 = new SeatingChart();
+    tuesday4.addStudent('Ryan Arruda');
+    tuesday4.addStudent('Sylvie Benson');
+    tuesday4.addStudent('Theodore Cecil');
+    tuesday4.addStudent('Rylie Coughlin');
+    tuesday4.addStudent('Sabrina Cunningham');
+    tuesday4.addStudent('Jayce Elliott');
+    tuesday4.addStudent('Chris Guavin');
+    tuesday4.addStudent('Maeve Geraghty');
+    tuesday4.addStudent('Jacob Hadley');
+    tuesday4.addStudent('John Higgins');
+    tuesday4.addStudent('Theo Jacobsen');
+    tuesday4.addStudent('Brady Kidney');
+
+    let wednesday1 = new SeatingChart();
+    wednesday1.addStudent('Jill Langlais');
+    wednesday1.addStudent('Keane MacGregor');
+    wednesday1.addStudent('Rebecca Milde');
+    wednesday1.addStudent('Drew Miranda');
+    wednesday1.addStudent("Serena O'Connell");
+    wednesday1.addStudent('Bessie Pierre');
+    wednesday1.addStudent('Apollo Prefontaine');
+    wednesday1.addStudent('Isabella Romig');
+    wednesday1.addStudent('Leah Scott');
+    wednesday1.addStudent('Teagan Shay');
+    wednesday1.addStudent('Desmond Sinnott');
+    wednesday1.addStudent('Brett Smith');
+    wednesday1.addStudent('Paige Sommers');
+    wednesday1.addStudent('Gabrielle Theodore');
+    wednesday1.addStudent('Kinsley Trout');
+    wednesday1.addStudent('Alex Wright');
+
+    let wednesday3 = new SeatingChart();
+    wednesday3.addStudent('Sean Lund');
+    wednesday3.addStudent('Katelyn Luong');
+    wednesday3.addStudent('Bethany Morgan');
+    wednesday3.addStudent('Cooper Newton');
+    wednesday3.addStudent('Christian Noble Shriver');
+    wednesday3.addStudent('Quintin Palmer');
+    wednesday3.addStudent('Spencer Perez-Dormitzer');
+    wednesday3.addStudent('Ethan Scully');
+    wednesday3.addStudent('Evan Smith');
+    wednesday3.addStudent('Tyler Trudeau');
+    wednesday3.addStudent('Kayli Viera');
+    wednesday3.addStudent('Josephy Ziino');
+
+    let wednesday4 = new SeatingChart();
+    wednesday4.addStudent('Jhett Labonte');
+    wednesday4.addStudent('David Magee');
+    wednesday4.addStudent('Aleeya McCarthy');
+    wednesday4.addStudent('Brendan McIntire');
+    wednesday4.addStudent('Cattarinha Nunes');
+    wednesday4.addStudent('Ryan Quinlan');
+    wednesday4.addStudent('Gabriella Romig');
+    wednesday4.addStudent('Allison Root');
+    wednesday4.addStudent('Tess Roznoy');
+    wednesday4.addStudent('Kennedy Serpa');
+    wednesday4.addStudent('Payton Tripp');
+    wednesday4.addStudent('Emma Whittaker');
+    wednesday4.addStudent('Liam Yurof');
+    wednesday4.addStudent('Zachary Zutaut');
+
+    let thursday1 = new SeatingChart();
+    thursday1.addStudent('William Baltz',2,1);
+    thursday1.addStudent('Brendan Burke',3,1);
+    // thursday1.addStudent('Isabel Friedrichs',2,2);
+    // thursday1.addStudent('Brody Garber',3,3);
+    // thursday1.addStudent('Colby Gross',4,3);
+    // thursday1.addStudent('Aiden Harrington',4,2);
+
+    let thursday2 = new SeatingChart();
+    thursday2.addStudent('Tristan Borges');
+    thursday2.addStudent('Skylar Cardwell');
+    thursday2.addStudent('Emma Carroll');
+    thursday2.addStudent('Evan Correia');
+    thursday2.addStudent('Marian Ditata');
+    thursday2.addStudent('Jenna Gamache');
+    thursday2.addStudent('Isabella Hunter');
+    thursday2.addStudent('Jacob Jensen');
+
+    let thursday3 = new SeatingChart();
+    thursday3.addStudent('Owen Bates');
+    thursday3.addStudent('Claudie Bellanger');
+    thursday3.addStudent('Elizabeth Bungert');
+    thursday3.addStudent('Mia Costa');
+    thursday3.addStudent('Andrew Coucci');
+    thursday3.addStudent('Katherine Dwyer');
+    thursday3.addStudent('Abigail Forcier');
+    thursday3.addStudent('Rachel Foye');
+    thursday3.addStudent('John Kassabian');
+
+    let friday1 = new SeatingChart();
+    friday1.addStudent('William Lecuyer');
+    friday1.addStudent('Colin Mackin');
+    friday1.addStudent('Drew Mastovsky');
+    friday1.addStudent('Lukas Michaelis');
+    friday1.addStudent('Savannah Teixeira');
+    friday1.addStudent('William Tirrell');
+
+    let friday2 = new SeatingChart();
+    friday2.addStudent('Brianna Machado');
+    friday2.addStudent('Raegan Rapoza');
+    friday2.addStudent('Charlie Richards');
+    friday2.addStudent('Hannah Teixeira');
+    friday2.addStudent('Kathleen Tenerowicz');
+    friday2.addStudent('Jessica Vance');
+    friday2.addStudent('Sophie Vigeant');
+    friday2.addStudent('Elizabeth Wiggin');
+    friday2.addStudent('Emma Williamson');
+    friday2.addStudent('Samantha Winter');
+    friday2.addStudent('Paige Zutaut');
+
+    let friday3 = new SeatingChart();
+    friday3.addStudent('Lauryn Lent');
+    friday3.addStudent('Elijah Motta');
+    friday3.addStudent('Samuel Noblet');
+    friday3.addStudent('Faith Oliver');
+    friday3.addStudent('Emilia Pinhancos');
+    friday3.addStudent('Zachary Proffit');
+    friday3.addStudent('Tess Roznoy');
+    friday3.addStudent('Stephen Sauerbrey');
+    friday3.addStudent('Emma Schwabe');
+    friday3.addStudent('Kennedy Serpa');
+    friday3.addStudent('William Stark');
+    friday3.addStudent('Reily Veilleux');
+    friday3.addStudent('Emma Vivino');
+    friday3.addStudent('Rachel Zutaut');
+
+    $("#tuesday_1").append(tuesday1.draw());
+    $("#tuesday_3").append(tuesday3.draw());
+    $("#tuesday_4").append(tuesday4.draw());
+
+    $("#wednesday_1").append(wednesday1.draw());
+    $("#wednesday_3").append(wednesday3.draw());
+    $("#wednesday_4").append(wednesday4.draw());
+
+    $("#thursday_1").append(thursday1.draw());
+    $("#thursday_2").append(thursday2.draw());
+    $("#thursday_3").append(thursday3.draw());
+
+    $("#friday_1").append(friday1.draw());
+    $("#friday_2").append(friday2.draw());
+    $("#friday_3").append(friday3.draw());
+
+
+</script>
+
+</body>
+</html>
