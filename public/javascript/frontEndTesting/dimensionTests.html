@@ -29,6 +29,9 @@
     dimensionTests.addSubCategory('construction','derivedDimensionDerivation','Constructing Derived Dimensions by Derivation');
     dimensionTests.addSubCategory('construction','failedConstructions','Failed Constructions');
 
+    // ######################################################################################################
+    // ######################################################################################################
+    // Construction Base Dimensions From Names
 
     const dim1 = new Dimension('length');
     dimensionTests.assertDimension(dim1, {
@@ -42,6 +45,181 @@
         'intensity': 0,
         'amount': 0
     }, 'construction','baseDimensionNames');
+
+    const dim2 = new Dimension('time');
+    dimensionTests.assertDimension(dim2, {
+        'name': "time",
+        'base': true,
+        'length': 0,
+        'time': 1,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionNames');
+
+    const dim3 = new Dimension('mass');
+    dimensionTests.assertDimension(dim3, {
+        'name': "mass",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 1,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionNames');
+
+    const dim4 = new Dimension('temperature');
+    dimensionTests.assertDimension(dim4, {
+        'name': "temperature",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 1,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionNames');
+
+
+    const dim5 = new Dimension('current');
+    dimensionTests.assertDimension(dim5, {
+        'name': "current",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 1,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionNames');
+
+
+    const dim6 = new Dimension('intensity');
+    dimensionTests.assertDimension(dim6, {
+        'name': "intensity",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 1,
+        'amount': 0
+    }, 'construction','baseDimensionNames');
+
+    const dim7 = new Dimension('amount');
+    dimensionTests.assertDimension(dim7, {
+        'name': "amount",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 1
+    }, 'construction','baseDimensionNames');
+
+    // ######################################################################################################
+    // ######################################################################################################
+    // Construction Base Dimensions From Derivation Objects
+
+    const dim11 = new Dimension(undefined,{'length': 1});
+    dimensionTests.assertDimension(dim11, {
+        'name': "length",
+        'base': true,
+        'length': 1,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
+
+    const dim12 = new Dimension(undefined,{'time': 1});
+    dimensionTests.assertDimension(dim12, {
+        'name': "time",
+        'base': true,
+        'length': 0,
+        'time': 1,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
+
+    const dim13 = new Dimension(undefined,{'mass': 1});
+    dimensionTests.assertDimension(dim13, {
+        'name': "mass",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 1,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
+
+    const dim14 = new Dimension(undefined,{'temperature': 1});
+    dimensionTests.assertDimension(dim14, {
+        'name': "temperature",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 1,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
+
+    const dim15 = new Dimension(undefined,{'current': 1});
+    dimensionTests.assertDimension(dim15, {
+        'name': "current",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 1,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
+
+    const dim16 = new Dimension(undefined,{'intensity': 1});
+    dimensionTests.assertDimension(dim16, {
+        'name': "intensity",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 1,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
+
+    const dim17 = new Dimension(undefined,{'amount': 1});
+    dimensionTests.assertDimension(dim17, {
+        'name': "amount",
+        'base': true,
+        'length': 0,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 1
+    }, 'construction','baseDimensionDerivation');
 
 
     $("#putItHere").append(dimensionTests.printAllTests());

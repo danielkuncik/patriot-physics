@@ -1,6 +1,6 @@
 
 const dimensions = {
-    "base": ["length", "mass", "time", "temperature", "amount", "intensity"],
+    "base": ["length", "mass", "time", "current", "temperature", "amount", "intensity"],
     "derived": {
         "area": {
             "length": 2
@@ -87,12 +87,13 @@ class Dimension {
             this.base = true;
             this.derivation = {};
             this.derivation[this.name] = 1;
-        } else if (dimensions.derived.includes(name)) {
+        } else if (Object.keys(dimensions.derived).includes(name)) {
             this.isAdimension = true;
             this.name = name;
             this.base = false;
             this.derivation = dimensions.derived[derivation];
         } else if (derivation) {
+            console.log('here');
             if (validateDimensionDerivation(derivation)) {
                 this.derivation = derivation;
                 this.isAdimension = true;
@@ -232,10 +233,10 @@ function validateDimensionDerivation(derivation) {
         if (!baseDimensions.includes(key)) {
             return false
         }
-        if (power % 1 === 0 || power % 1 === -0) {
+        if (power % 1 !== 0 || power % 1 !== -0) {
             return false
         }
-        if (test.includes(key, j + 1)) { // ensuring there are no diplicates
+        if (test.includes(key, j + 1)) { // ensuring there are no duplicates
             return false
         }
     }

@@ -17,7 +17,9 @@
   <script src = './frontEndTesting.js'></script>
 <!--  <script src = '../mathematics/numbers/units.js'></script>-->
   <script src = '../mathematics/numbers/measurement.js'></script>
-<!--  <script src = '../mathematics/numbers/physicsNumber.js'></script>-->
+  <script src = '../mathematics/numbers/dimension.js'></script>
+
+  <!--  <script src = '../mathematics/numbers/physicsNumber.js'></script>-->
 <!--  <script src = '../mathematics/numbers/magnitude.js'></script>-->
 <!--  <script src = '../mathematics/numbers/angle.js'></script>-->
 <!--  <script src = '../mathematics/geometricObjects/basics/point.js'></script>-->
@@ -40,11 +42,19 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let mag3705a = new Measurement('5.00');
-    let mag3705b = new Measurement('0');
-    console.log(mag3705a.multiply(mag3705b));
-
-    randomTest.assertMeasurementZero(mag3705a.multiply(mag3705b),1,'operations','multiplication');
+    const dim11 = new Dimension(undefined,{'length': 1});
+    console.log(dim11);
+    randomTest.assertDimension(dim11, {
+        'name': "length",
+        'base': true,
+        'length': 1,
+        'time': 0,
+        'mass': 0,
+        'temperature': 0,
+        'current': 0,
+        'intensity': 0,
+        'amount': 0
+    }, 'construction','baseDimensionDerivation');
 
     $("#putItHere").append(randomTest.printAllTests());
 
