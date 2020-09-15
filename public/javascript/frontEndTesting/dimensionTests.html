@@ -32,7 +32,7 @@
 
     const dim1 = new Dimension('length');
     dimensionTests.assertDimension(dim1, {
-        'name': length,
+        'name': "length",
         'base': true,
         'length': 1,
         'time': 0,
@@ -41,7 +41,7 @@
         'current': 0,
         'intensity': 0,
         'amount': 0
-    });
+    }, 'construction','baseDimensionNames');
 
 
     $("#putItHere").append(dimensionTests.printAllTests());

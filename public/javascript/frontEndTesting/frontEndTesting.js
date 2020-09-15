@@ -278,7 +278,7 @@ class TestPackage {
             this.assertEqualStrict(dimension.getLengthPower(), equalObject.length, categoryKey, subCategoryKey, `${name}: length: `);
         }
         if (equalObject.time !== undefined) {
-            this.assertEqualStrict(dimension.getTimePower(), equalObject.length, categoryKey, subCategoryKey, `${name}: time: `);
+            this.assertEqualStrict(dimension.getTimePower(), equalObject.time, categoryKey, subCategoryKey, `${name}: time: `);
         }
         if (equalObject.mass !== undefined) {
             this.assertEqualStrict(dimension.getMassPower(), equalObject.mass, categoryKey, subCategoryKey, `${name}: mass: `);

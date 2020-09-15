@@ -42,8 +42,9 @@
 
     let mag3705a = new Measurement('5.00');
     let mag3705b = new Measurement('0');
+    console.log(mag3705a.multiply(mag3705b));
 
-    randomTest.assertZeroMagnitude(mag3705a.multiply(mag3705b),1,'operations','multiplication');
+    randomTest.assertMeasurementZero(mag3705a.multiply(mag3705b),1,'operations','multiplication');
 
     $("#putItHere").append(randomTest.printAllTests());
 
