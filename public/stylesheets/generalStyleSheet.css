@@ -279,6 +279,11 @@ p.introduction {
     color: #0000FF;
 }
 
+p.introductionDark {
+    font-family: "Verdana";
+    color: #FFFF00;
+}
+
 @media print
 {
     .no-print

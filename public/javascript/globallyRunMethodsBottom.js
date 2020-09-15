@@ -188,6 +188,9 @@ function goDark() {
     $("body").removeClass('text-dark');
     $("body").addClass("text-light");
 
+    $("p.introduction").addClass("introductionDark");
+    $("p.introductionDark").removeClass("introduction");
+
     $("div.card-body").removeClass("bg-light");
     $("div.card-body").addClass('bg-dark');
     $("div.card-body").removeClass('text-dark');
@@ -220,6 +223,9 @@ function goLight() {
     $("body").removeClass("text-light");
     $("body").addClass('text-dark');
 
+    $("p.introductionDark").addClass("introduction");
+    $("p.introduction").removeClass("introductionDark");
+
     $("div.card-body").removeClass("bg-dark");
     $("div.card-body").addClass('bg-light');
     $("div.card-body").removeClass('text-light');
@@ -230,12 +236,10 @@ function goLight() {
     $("div.bingoSpace").removeClass("border border-light");
     $("div.bingoSpace").addClass("border border-dark");
 
-
     $("div.bingoClickedSpace").removeClass("bg-light text-dark border-light");
     $("div.bingoClickedSpace").addClass("bg-dark text-light border-dark");
     $("div.bingoClickedSpace").removeClass("border border-dark");
     $("div.bingoClickedSpace").addClass("border border-light");
-
 
     $("#backgroundButton").removeClass("bg-light text-dark");
     $("#backgroundButton").addClass("bg-dark text-warning");

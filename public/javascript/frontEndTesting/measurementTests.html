@@ -2079,6 +2079,71 @@ measurementTests.assertMeasurementZero(mag3707b.multiply(mag3707a),Infinity,'ope
 measurementTests.assertMeasurementZero(mag3708a.multiply(mag3708b),2,'operations','multiplication');
 measurementTests.assertMeasurementZero(mag3708b.multiply(mag3708a),2,'operations','multiplication');
 
+measurementTests.addSubCategory('operations','division','Division');
+
+let mag3801a = new Measurement('10.0');
+let mag3801b = new Measurement('5.00');
+
+measurementTests.assertMeasurement(mag3801a.divide(mag3801b),{ // 2.00
+    firstSigFig: '2',
+    otherSigFigs: '00',
+    orderOfMagnitude: 0,
+    lowestKnownMagnitude: -2,
+    numSigFigs: 3,
+    exact: false,
+    positive: true,
+    negative: false,
+    float: 2,
+    printStandard: '2.00',
+    printScientific: '2.00e0'
+},'operations','division');
+
+  measurementTests.assertMeasurement(mag3801b.divide(mag3801a),{ // 0.500
+      firstSigFig: '5',
+      otherSigFigs: '00',
+      orderOfMagnitude: -1,
+      lowestKnownMagnitude: -3,
+      numSigFigs: 3,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 0.5,
+      printStandard: '0.500',
+      printScientific: '5.00e-1'
+  },'operations','division');
+
+
+  let mag3802a = new Measurement('10');
+  let mag3802b = new Measurement('5.00');
+
+  measurementTests.assertMeasurement(mag3802a.divide(mag3802b),{ // 2
+      firstSigFig: '2',
+      otherSigFigs: '',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 2,
+      printStandard: '2',
+      printScientific: '2e0'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3801b.divide(mag3801a),{ // 0.5
+      firstSigFig: '5',
+      otherSigFigs: '',
+      orderOfMagnitude: -1,
+      lowestKnownMagnitude: -1,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 0.5,
+      printStandard: '0.5',
+      printScientific: '5e-1'
+  },'operations','division');
+
 /*
 firstSigFig: undefined,
 otherSigFigs: undefined,
