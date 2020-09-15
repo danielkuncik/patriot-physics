@@ -42,19 +42,18 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    const dim11 = new Dimension(undefined,{'length': 1});
-    console.log(dim11);
-    randomTest.assertDimension(dim11, {
-        'name': "length",
-        'base': true,
-        'length': 1,
-        'time': 0,
-        'mass': 0,
-        'temperature': 0,
-        'current': 0,
-        'intensity': 0,
-        'amount': 0
-    }, 'construction','baseDimensionDerivation');
+    const dim21 = new Dimension('area');
+    randomTest.assertDimension(dim21, {
+        "name": "area",
+        "base": false,
+        "length": 2,
+        "time": 0,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionNames');
 
     $("#putItHere").append(randomTest.printAllTests());
 

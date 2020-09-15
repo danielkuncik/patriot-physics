@@ -55,7 +55,7 @@ const dimensions = {
             "current": -2
         },
         "specific_heat": {
-            "mass": 2,
+            "length": 2,
             "time": -2,
             "temperature": -1
         },
@@ -79,6 +79,7 @@ const dimensions = {
     }
 };
 
+// question => do i need to store the derivation in the object?????
 class Dimension {
     constructor(name, derivation) {
         if (dimensions.base.includes(name)) {
@@ -91,9 +92,8 @@ class Dimension {
             this.isAdimension = true;
             this.name = name;
             this.base = false;
-            this.derivation = dimensions.derived[derivation];
+            this.derivation = dimensions.derived[name];
         } else if (derivation) {
-            console.log('here');
             if (validateDimensionDerivation(derivation)) {
                 this.derivation = derivation;
                 this.isAdimension = true;

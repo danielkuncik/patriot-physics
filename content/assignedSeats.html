@@ -102,6 +102,7 @@
 
 
 <script>
+    let counter = 0;
     function randInt(m,n) {
         return Math.round(Math.random() * (n - m)) + m;
     }
@@ -347,8 +348,7 @@
     $("#friday_1").append(friday1.draw());
     $("#friday_2").append(friday2.draw());
     $("#friday_3").append(friday3.draw());
-
-
+    console.log(counter);
 </script>
 
 </body>
