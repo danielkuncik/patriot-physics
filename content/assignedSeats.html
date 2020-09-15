@@ -134,7 +134,7 @@
                 for (j = 0; j < this.getNumCols(); j++) {
                     if (this.seats[i][j] === undefined) {
                         emptySeats.push({
-                            row: this.getNumRows() - i - 1,
+                            row: i + 1,
                             seat: j + 1
                         });
                     }
@@ -149,7 +149,7 @@
                 row = random.row;
                 seat = random.seat;
             }
-            this.seats[this.getNumRows() - row - 1][seat - 1] = name;
+            this.seats[row - 1][seat - 1] = name;
         }
 
         draw() {
@@ -173,6 +173,15 @@
 </script>
 
 <script>
+    // let thursday1 = new SeatingChart();
+    // thursday1.addStudent('William Baltz',2,1);
+    // thursday1.addStudent('Brendan Burke',3,1);
+    // $("#thursday_1").append(thursday1.draw());
+
+</script>
+
+<script>
+
     let tuesday1 = new SeatingChart();
     tuesday1.addStudent('Stephen Arne');
     tuesday1.addStudent('Nathaniel Bangs');
@@ -260,10 +269,10 @@
     let thursday1 = new SeatingChart();
     thursday1.addStudent('William Baltz',2,1);
     thursday1.addStudent('Brendan Burke',3,1);
-    // thursday1.addStudent('Isabel Friedrichs',2,2);
-    // thursday1.addStudent('Brody Garber',3,3);
-    // thursday1.addStudent('Colby Gross',4,3);
-    // thursday1.addStudent('Aiden Harrington',4,2);
+    thursday1.addStudent('Isabel Friedrichs',2,2);
+    thursday1.addStudent('Brody Garber',3,3);
+    thursday1.addStudent('Colby Gross',3,4);
+    thursday1.addStudent('Aiden Harrington',2,4);
 
     let thursday2 = new SeatingChart();
     thursday2.addStudent('Tristan Borges');
