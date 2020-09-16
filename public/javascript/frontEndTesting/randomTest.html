@@ -42,18 +42,22 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    const dim21 = new Dimension('area');
-    randomTest.assertDimension(dim21, {
-        "name": "area",
+    const derivation1 =  {"time": -2, "mass": 1};
+    const derivation2 = {"time": -2, "mass": 1, "length": 1};
+    console.log(areSameDimensionDerivation(derivation1, derivation2));
+
+    const dim30a = new Dimension(undefined, {"time": -2, "mass": 1});
+    randomTest.assertDimension(dim30a, {
+        "name": "spring_constant",
         "base": false,
-        "length": 2,
-        "time": 0,
-        "mass": 0,
+        "length": 0,
+        "time": -2,
+        "mass": 1,
         "temperature": 0,
         "current": 0,
         "intensity": 0,
         "amount": 0
-    },'construction','derivedDimensionNames');
+    },'construction','derivedDimensionDerivation');
 
     $("#putItHere").append(randomTest.printAllTests());
 

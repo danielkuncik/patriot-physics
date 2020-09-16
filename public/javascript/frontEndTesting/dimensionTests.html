@@ -234,6 +234,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim21a = new Dimension(undefined, {"length": 2});
+    dimensionTests.assertDimension(dim21a, {
+        "name": "area",
+        "base": false,
+        "length": 2,
+        "time": 0,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim22 = new Dimension('volume');
     dimensionTests.assertDimension(dim22, {
         "name": "volume",
@@ -246,6 +259,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim22a = new Dimension(undefined, {"length": 3});
+    dimensionTests.assertDimension(dim22a, {
+        "name": "volume",
+        "base": false,
+        "length": 3,
+        "time": 0,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim23 = new Dimension('frequency');
     dimensionTests.assertDimension(dim23, {
@@ -260,6 +286,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim23a = new Dimension(undefined, {"time": -1});
+    dimensionTests.assertDimension(dim23a, {
+        "name": "frequency",
+        "base": false,
+        "length": 0,
+        "time": -1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim24 = new Dimension('velocity');
     dimensionTests.assertDimension(dim24, {
         "name": "velocity",
@@ -272,6 +311,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim24a = new Dimension(undefined, {"length": 1, "time": -1});
+    dimensionTests.assertDimension(dim24a, {
+        "name": "velocity",
+        "base": false,
+        "length": 1,
+        "time": -1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim25 = new Dimension('acceleration');
     dimensionTests.assertDimension(dim25, {
@@ -286,6 +338,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim25a = new Dimension(undefined, {"length": 1, "time": -2});
+    dimensionTests.assertDimension(dim25a, {
+        "name": "acceleration",
+        "base": false,
+        "length": 1,
+        "time": -2,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim26 = new Dimension('force');
     dimensionTests.assertDimension(dim26, {
         "name": "force",
@@ -298,6 +363,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim26a = new Dimension(undefined, {"length": 1, "time": -2, "mass": 1});
+    dimensionTests.assertDimension(dim26a, {
+        "name": "force",
+        "base": false,
+        "length": 1,
+        "time": -2,
+        "mass": 1,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim27 = new Dimension('energy');
     dimensionTests.assertDimension(dim27, {
@@ -312,6 +390,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim27a = new Dimension(undefined, {"length": 2, "time": -2, "mass": 1});
+    dimensionTests.assertDimension(dim27a, {
+        "name": "energy",
+        "base": false,
+        "length": 2,
+        "time": -2,
+        "mass": 1,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim28 = new Dimension('power');
     dimensionTests.assertDimension(dim28, {
         "name": "power",
@@ -324,6 +415,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim28a = new Dimension(undefined, {"length": 2, "time": -3, "mass": 1});
+    dimensionTests.assertDimension(dim28a, {
+        "name": "power",
+        "base": false,
+        "length": 2,
+        "time": -3,
+        "mass": 1,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim29 = new Dimension('charge');
     dimensionTests.assertDimension(dim29, {
@@ -338,6 +442,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim29a = new Dimension(undefined, {"time": 1, "current": 1});
+    dimensionTests.assertDimension(dim29a, {
+        "name": "charge",
+        "base": false,
+        "length": 0,
+        "time": 1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 1,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim30 = new Dimension('spring_constant');
     dimensionTests.assertDimension(dim30, {
         "name": "spring_constant",
@@ -350,6 +467,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim30a = new Dimension(undefined, {"time": -2, "mass": 1});
+    dimensionTests.assertDimension(dim30a, {
+        "name": "spring_constant",
+        "base": false,
+        "length": 0,
+        "time": -2,
+        "mass": 1,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim31 = new Dimension('potential_difference');
     dimensionTests.assertDimension(dim31, {
@@ -364,6 +494,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim31a = new Dimension(undefined, {"length": 2, "time": -3, "mass": 1, "current": -1});
+    dimensionTests.assertDimension(dim31a, {
+        "name": "potential_difference",
+        "base": false,
+        "length": 2,
+        "time": -3,
+        "mass": 1,
+        "temperature": 0,
+        "current": -1,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim32 = new Dimension('resistance');
     dimensionTests.assertDimension(dim32, {
         "name": "resistance",
@@ -376,6 +519,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim32a = new Dimension(undefined, {"length": 2, "time": -3, "mass": 1, "current": -2});
+    dimensionTests.assertDimension(dim32a, {
+        "name": "resistance",
+        "base": false,
+        "length": 2,
+        "time": -3,
+        "mass": 1,
+        "temperature": 0,
+        "current": -2,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim33 = new Dimension('specific_heat');
     dimensionTests.assertDimension(dim33, {
@@ -390,6 +546,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim33a = new Dimension(undefined, {"length": 2, "time": -2, "temperature": -1});
+    dimensionTests.assertDimension(dim33a, {
+        "name": "specific_heat",
+        "base": false,
+        "length": 2,
+        "time": -2,
+        "mass": 0,
+        "temperature": -1,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim34 = new Dimension('gravitational_constant');
     dimensionTests.assertDimension(dim34, {
         "name": "gravitational_constant",
@@ -402,6 +571,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim34a = new Dimension(undefined, {"length": 3, "time": -2, "mass": -1});
+    dimensionTests.assertDimension(dim34a, {
+        "name": "gravitational_constant",
+        "base": false,
+        "length": 3,
+        "time": -2,
+        "mass": -1,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
     const dim35 = new Dimension('electrostatic_constant');
     dimensionTests.assertDimension(dim35, {
@@ -416,6 +598,19 @@
         "amount": 0
     },'construction','derivedDimensionNames');
 
+    const dim35a = new Dimension(undefined, {"length": 3, "time": -4, "mass": 1, "current": -2});
+    dimensionTests.assertDimension(dim35a, {
+        "name": "electrostatic_constant",
+        "base": false,
+        "length": 3,
+        "time": -4,
+        "mass": 1,
+        "temperature": 0,
+        "current": -2,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
+
     const dim36 = new Dimension('permittivity');
     dimensionTests.assertDimension(dim36, {
         "name": "permittivity",
@@ -428,6 +623,19 @@
         "intensity": 0,
         "amount": 0
     },'construction','derivedDimensionNames');
+
+    const dim36a = new Dimension(undefined, {"length": -3, "time": 4, "mass": -1, "current": 2});
+    dimensionTests.assertDimension(dim36a, {
+        "name": "permittivity",
+        "base": false,
+        "length": -3,
+        "time": 4,
+        "mass": -1,
+        "temperature": 0,
+        "current": 2,
+        "intensity": 0,
+        "amount": 0
+    },'construction','derivedDimensionDerivation');
 
 
     $("#putItHere").append(dimensionTests.printAllTests());

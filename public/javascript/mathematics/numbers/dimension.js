@@ -85,13 +85,11 @@ class Dimension {
         if (dimensions.base.includes(name)) {
             this.isAdimension = true;
             this.name = name;
-            this.base = true;
             this.derivation = {};
             this.derivation[this.name] = 1;
         } else if (Object.keys(dimensions.derived).includes(name)) {
             this.isAdimension = true;
             this.name = name;
-            this.base = false;
             this.derivation = dimensions.derived[name];
         } else if (derivation) {
             if (validateDimensionDerivation(derivation)) {
@@ -100,13 +98,11 @@ class Dimension {
                 if (isBaseDerivation(derivation)) {
                     this.isAdimension = true;
                     this.name = Object.keys(derivation)[0];
-                    this.base = true;
                 } else {
-                    this.base = false;
                     const array = Object.keys(dimensions.derived);
                     let k;
                     for (k = 0; k < array.length; k++) {
-                        const key = Object.keys(dimensions.derived);
+                        const key = array[k];
                         const testDerivation = dimensions.derived[key];
                         if (areSameDimensionDerivation(this.derivation, testDerivation)) {
                             this.name = key;
@@ -254,6 +250,9 @@ function isBaseDerivation(derivation) {
 function areSameDimensionDerivation(derivation1, derivation2) {
     const baseDimensions = dimensions.base;
     let q;
+    if (Object.keys(derivation1).length !== Object.keys(derivation2).length) {
+        return false
+    }
     for (q = 0; q < baseDimensions.length; q++) {
         const dimension = baseDimensions[q];
         if (derivation1[dimension] && (!derivation2[dimension] || (derivation1[dimension] !== derivation2[dimension]))) {
