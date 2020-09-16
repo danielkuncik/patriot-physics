@@ -2144,20 +2144,145 @@ measurementTests.assertMeasurement(mag3801a.divide(mag3801b),{ // 2.00
       printScientific: '5e-1'
   },'operations','division');
 
-/*
-firstSigFig: undefined,
-otherSigFigs: undefined,
-orderOfMagnitude: undefined,
-lowestKnownMagnitude: undefined,
-numSigFigs: undefined,
-exact: undefined,
-positive: undefined,
-negative: undefined,
-float: undefined,
-printStandard: undefined,
-printScientific: undefined
 
-*/
+  let mag3803a = new Measurement('4000');
+  let mag3803b = new Measurement('0.5');
+
+  measurementTests.assertMeasurement(mag3803a.divide(mag3803b),{ /// 8000
+      firstSigFig: '8',
+      otherSigFigs: '',
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 3,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 8000,
+      printStandard: '8000',
+      printScientific: '8e3'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3803b.divide(mag3803a),{ // .5 / 4000 = 0.000125 => 0.0001
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -4,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 0.000125,
+      printStandard: '0.0001',
+      printScientific: '1e-4'
+  },'operations','division');
+
+  let mag3804a = new Measurement('4.0e3');
+  let mag3804b = new Measurement('0.50');
+
+  measurementTests.assertMeasurement(mag3804a.divide(mag3804b),{ /// 8000 => 8.0e3
+      firstSigFig: '8',
+      otherSigFigs: '0',
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 2,
+      numSigFigs: 2,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 8000,
+      printStandard: '8.0e3',
+      printScientific: '8.0e3'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3804b.divide(mag3804a),{ // .5 / 4000 = 0.000125 => 0.00013
+      firstSigFig: '1',
+      otherSigFigs: '3',
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -5,
+      numSigFigs: 2,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 0.000125,
+      printStandard: '0.00013',
+      printScientific: '1.3e-4'
+  },'operations','division');
+
+  let mag3805a = new Measurement('4000.');
+  let mag3805b = new Measurement('0.500');
+
+  measurementTests.assertMeasurement(mag3805a.divide(mag3805b),{ /// 8000 => 8.00e3
+      firstSigFig: '8',
+      otherSigFigs: '00',
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 1,
+      numSigFigs: 3,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 8000,
+      printStandard: '8.00e3',
+      printScientific: '8.00e3'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3805b.divide(mag3805a),{ // .5 / 4000 = 0.000125
+      firstSigFig: '1',
+      otherSigFigs: '25',
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -6,
+      numSigFigs: 3,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 0.000125,
+      printStandard: '0.000125',
+      printScientific: '1.25e-4'
+  },'operations','division');
+
+  let mag3806a = new Measurement('4000.');
+  let mag3806b = new Measurement('0.5000');
+
+  measurementTests.assertMeasurement(mag3806a.divide(mag3806b),{ /// 8000 => 8000.
+      firstSigFig: '8',
+      otherSigFigs: '000',
+      orderOfMagnitude: 3,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 8000,
+      printStandard: '8000.',
+      printScientific: '8.000e3'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3806b.divide(mag3806a),{ // .5 / 4000 = 0.00125 => 0.001250
+      firstSigFig: '1',
+      otherSigFigs: '250',
+      orderOfMagnitude: -4,
+      lowestKnownMagnitude: -7,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 0.000125,
+      printStandard: '0.0001250',
+      printScientific: '1.250e-4'
+  },'operations','division');
+
+  /*
+  firstSigFig: undefined,
+  otherSigFigs: undefined,
+  orderOfMagnitude: undefined,
+  lowestKnownMagnitude: undefined,
+  numSigFigs: undefined,
+  exact: undefined,
+  positive: undefined,
+  negative: undefined,
+  float: undefined,
+  printStandard: undefined,
+  printScientific: undefined
+
+  */
 
 
   measurementTests.addSubCategory('operations','reverseSign','Reverse Sign');
