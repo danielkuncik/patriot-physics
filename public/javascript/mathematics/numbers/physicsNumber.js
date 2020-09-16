@@ -20,7 +20,7 @@ function amIaDigit(char) {
     return char === '0' || char === '1' || char === '2' || char === '3' || char === '4' || char === '5' || char === '6' || char === '7' || char === '8' || char === '9';
 }
 
-const maxSigFigs = 15; /// beyond this value, javscript number cannot be confied to be accurate
+//const maxSigFigs = 15; /// beyond this value, javscript number cannot be confied to be accurate
 
 // returns TRUE if the string contains only digits 0 - 9
 function digitsOnly(str) {

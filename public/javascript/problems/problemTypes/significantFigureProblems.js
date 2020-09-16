@@ -2,10 +2,10 @@
 
 function countingSigFigs(string, unitName) {
     let problem = new Problem();
-    let newMagnitude = new Magnitude(string);
+    let newMeasurement = new Measurement(string);
 
     let questionString = `${string}${unitName ? ` ${unitName}` : ''}`;
-    let answer = newMagnitude.numSigFigs;
+    let answer = newMeasurement.getNumSigFigs();
 
     problem.addQuestionString(questionString);
     problem.addAnswer('Num Sig Figs', answer, true);
