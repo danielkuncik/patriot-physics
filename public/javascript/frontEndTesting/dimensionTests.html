@@ -27,7 +27,14 @@
     dimensionTests.addSubCategory('construction','baseDimensionDerivation','Constructing Base Dimensions by Derivation');
     dimensionTests.addSubCategory('construction','derivedDimensionNames','Constructing Derived Dimensions by Name');
     dimensionTests.addSubCategory('construction','derivedDimensionDerivation','Constructing Derived Dimensions by Derivation');
-    dimensionTests.addSubCategory('construction','failedConstructions','Failed Constructions');
+    dimensionTests.addSubCategory('construction','failedConstructions','Failed Constructions'); /// still need to make!
+
+    dimensionTests.addCategory('operations','Operations');
+    dimensionTests.addSubCategory('operations','multiplication', 'Multiplication');
+    dimensionTests.addSubCategory('operations','division', 'Division');
+    dimensionTests.addSubCategory('operations','inverse', 'Inverse');
+    dimensionTests.addSubCategory('operations','exponent', 'Exponent');
+
 
     // ######################################################################################################
     // ######################################################################################################
@@ -637,8 +644,98 @@
         "amount": 0
     },'construction','derivedDimensionDerivation');
 
+    // ######################################################################################################
+    // ######################################################################################################
+    // Operations
+    //
+    // ######################################################################################################
+    // ######################################################################################################
+    // Multiplication
+    //
+
+    const dim101a = new Dimension('length');
+    const dim101b = new Dimension('time');
+
+    dimensionTests.assertDimension(dim101a.multiply(dim101b, 'temp'), {
+        "name": "temp",
+        "base": false,
+        "length": 1,
+        "time": 1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension(dim101b.multiply(dim101a, 'temp'), {
+        "name": "temp",
+        "base": false,
+        "length": 1,
+        "time": 1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'operations','multiplication');
+
+    const dim102a = new Dimension('velocity');
+    const dim102b = new Dimension('time');
+
+    dimensionTests.assertDimension(dim102a.multiply(dim102b),{
+        "name": "length",
+        "base": true,
+        "length": 1,
+        "time": 0,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension(dim102b.multiply(dim102a),{
+        "name": "length",
+        "base": true,
+        "length": 1,
+        "time": 0,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'operations','multiplication');
+
+    const dim103a = new Dimension('acceleration');
+    const dim103b = new Dimension('time');
+
+    dimensionTests.assertDimension(dim103a.multiply(dim103b),{
+        "name": 'velocity',
+        "base": false,
+        "length": 1,
+        "time": -1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'operations','multiplication');
+
 
     $("#putItHere").append(dimensionTests.printAllTests());
+
+/*
+    "name": undefined,
+        "base": false,
+        "length": 0,
+        "time": 0,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+*/
 </script>
 
 </body>

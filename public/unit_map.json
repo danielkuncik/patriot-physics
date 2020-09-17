@@ -1608,42 +1608,42 @@
           {
             "title": "Recognize Energy Types",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
+            "horizontal": 1,
+            "letter": "A",
             "prerequisites": [],
             "objective": "Recognize (multiple choice) single examples of different types of energy",
             "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
             "uuid": "921c3035-4962-4622-b422-ccb58710b976"
           },
+          "state_law_conservation_of_energy":
+          {
+            "title": "State the Law of Conservation of Energy",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["recognize_energy_types"],
+            "objective": "State, from memory, the law of conservation of energy.",
+            "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
+            "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69"
+          },
           "write_energy_types":
           {
             "title": "Write Energy Types",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["state_law_conservation_of_energy"],
             "objective": "Write the names of different types of energy.",
             "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
             "uuid": "bc66b87e-6ae3-4acd-a722-e9c9d5b282ae"
-          },
-          "state_law_conservation_of_energy":
-          {
-            "title": "State the Law of Conservation of Energy",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "State, from memory, the law of conservation of energy.",
-            "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
-            "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69"
           },
           "recognize_energy_transfer":
           {
             "title": "Recognize Energy Transfer",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["write_energy_types"],
             "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes",
             "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
             "uuid": "6a207b48-29ac-4a96-9e0a-184884dd16d6"
@@ -1652,9 +1652,9 @@
           {
             "title": "Describe Energy Transfer 1",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "E",
+            "prerequisites": ["recognize_energy_transfer"],
             "objective": "Write, using tables as guidance, processes of 2 - 3 steps in which energy changes from one type to another; name these processes.",
             "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
             "uuid": "0c891a7e-9af9-4ff4-af8a-436615ebb5bb"
@@ -1663,9 +1663,9 @@
           {
             "title": "Describe Energy Transfer 2",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "F",
+            "prerequisites": ["describe_energy_transfer_1"],
             "objective": "Write without guidance energy transfer in four or more steps; name processes involved.",
             "content": "If you trace the energy in your life backwards, it goes through many different transitions and many different types of energy.",
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
@@ -1675,9 +1675,9 @@
           {
             "title": "Connect Energy to Sun",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "G",
+            "prerequisites": ["describe_energy_transfer_2"],
             "objective": "Connect (nearly) all forms of energy on earth back to light from the sun.",
             "content": "All of the energy on earth, save geothermal and nuclear energy, can be traced back to light from the sun.",
             "notes": "The exceptions, which should be noted, are geothermal and nuclear energy.",
@@ -1687,9 +1687,9 @@
           {
             "title": "Connect Energy to Big Bang",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "H",
+            "prerequisites": ["connect_energy_to_sun"],
             "objective": "Connect energy of the earth through the gravitational potential energy of space dust (which would eventually form the sun) back to the creation of energy during the big bang",
             "content": "Under current cosmological models, all of the energy in the universe can be traced back to some moment in time in which is suddenly appeared, which is named the 'Big Bang.'",
             "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology",
