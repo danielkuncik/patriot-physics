@@ -722,6 +722,180 @@
         "amount": 0
     },'operations','multiplication');
 
+    dimensionTests.assertDimension(dim103b.multiply(dim103a),{
+        "name": 'velocity',
+        "base": false,
+        "length": 1,
+        "time": -1,
+        "mass": 0,
+        "temperature": 0,
+        "current": 0,
+        "intensity": 0,
+        "amount": 0
+    },'operations','multiplication');
+
+
+    const dim104a = new Dimension('acceleration');
+    const dim104b = new Dimension('mass');
+    const dim104c = new Dimension('length');
+    const dim104d = new Dimension('time');
+
+    dimensionTests.assertDimension(dim104a.multiply(dim104b),{
+          "name": "force",
+          "base": false,
+          "length": 1,
+          "time": -2,
+          "mass": 1,
+          "temperature": 0,
+          "current": 0,
+          "intensity": 0,
+          "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension(dim104b.multiply(dim104a),{
+          "name": "force",
+          "base": false,
+          "length": 1,
+          "time": -2,
+          "mass": 1,
+          "temperature": 0,
+          "current": 0,
+          "intensity": 0,
+          "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension((dim104a.multiply(dim104c)).multiply(dim104b),{
+      "name": "energy",
+      "base": false,
+      "length": 2,
+      "time": -2,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','multiplication')
+
+    dimensionTests.assertDimension((dim104b.multiply(dim104a)).multiply(dim104c),{
+      "name": "energy",
+      "base": false,
+      "length": 2,
+      "time": -2,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension((dim104b.multiply(dim104c)).multiply(dim104a),{
+      "name": "energy",
+      "base": false,
+      "length": 2,
+      "time": -2,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension((dim104c.multiply(dim104a)).multiply(dim104b),{
+      "name": "energy",
+      "base": false,
+      "length": 2,
+      "time": -2,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension((dim104c.multiply(dim104b)).multiply(dim104a),{
+      "name": "energy",
+      "base": false,
+      "length": 2,
+      "time": -2,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','multiplication');
+
+    dimensionTests.assertDimension(((dim104a.multiply(dim104b)).multiply(dim104c)).divide(dim104d),{
+      "name": "power",
+      "base": false,
+      "length": 2,
+      "time": -3,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','division');
+
+    dimensionTests.assertDimension(((dim104a.multiply(dim104c)).multiply(dim104b)).divide(dim104d),{
+      "name": "power",
+      "base": false,
+      "length": 2,
+      "time": -3,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','division');
+
+    dimensionTests.assertDimension(((dim104b.multiply(dim104a)).multiply(dim104c)).divide(dim104d),{
+      "name": "power",
+      "base": false,
+      "length": 2,
+      "time": -3,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','division');
+
+    dimensionTests.assertDimension(((dim104b.multiply(dim104c)).multiply(dim104a)).divide(dim104d),{
+      "name": "power",
+      "base": false,
+      "length": 2,
+      "time": -3,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','division');
+
+    dimensionTests.assertDimension(((dim104c.multiply(dim104a)).multiply(dim104b)).divide(dim104d),{
+      "name": "power",
+      "base": false,
+      "length": 2,
+      "time": -3,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','division');
+
+    dimensionTests.assertDimension(((dim104c.multiply(dim104b)).multiply(dim104a)).divide(dim104d),{
+      "name": "power",
+      "base": false,
+      "length": 2,
+      "time": -3,
+      "mass": 1,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','division');
+
 
     $("#putItHere").append(dimensionTests.printAllTests());
 
