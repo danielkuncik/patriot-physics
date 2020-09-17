@@ -2269,6 +2269,38 @@ measurementTests.assertMeasurement(mag3801a.divide(mag3801b),{ // 2.00
       printScientific: '1.250e-4'
   },'operations','division');
 
+  let mag3807a = new Measurement('8.00e8');
+  let mag3807b = new Measurement('4.00e9');
+
+  measurementTests.assertMeasurement(mag3807a.divide(mag3807b),{ // 2.00e-1
+      firstSigFig: '2',
+      otherSigFigs: '00',
+      orderOfMagnitude: -1,
+      lowestKnownMagnitude: -3,
+      numSigFigs: 3,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: .2,
+      printStandard: '0.200',
+      printScientific: '2.00e-1'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3807b.divide(mag3807a),{ //.5e1=> 5.00
+      firstSigFig: '5',
+      otherSigFigs: '00',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -2,
+      numSigFigs: 3,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 5,
+      printStandard: '5.00',
+      printScientific: '5.00e0'
+  },'operations','division');
+
+
   /*
   firstSigFig: undefined,
   otherSigFigs: undefined,
