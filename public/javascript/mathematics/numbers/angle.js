@@ -3,6 +3,93 @@
 would it all work if i saved only a float and a number of sig figs???
 */
 
+class AngleNew {
+  constructor(measurementInput, degrees = true) {
+    let newMeasurement = processMeasurementInput(measurementInput);
+    this.degrees = degrees; // if false, it is radians
+
+    const fullCircle = this.degrees ? new Measurement(360) : new Measurement(Math.PI * 2); // need to account for sig figs in pi
+    while (newMeasurement.isNegative()) {
+      newMeasurement = newMeasurement.add(fullCircle);
+    }
+    while (newMeasurement.isGreaterThanOrEqualTo(fullCircle)) {
+      newMeasurement = newMeasurement.subtract(fullCircle);
+    }
+
+    this.measurement = newMeasurement;
+  }
+
+  isInDegrees() {
+    return this.degrees
+  }
+  isInRadians() {
+    return !this.degrees
+  }
+  reverseSign() {
+
+  }
+  convertToDegrees() {
+
+  }
+  convertToRadians() {
+
+  }
+
+  add() {
+
+  }
+  subtract() {
+
+  }
+
+
+  sinAngle() {
+
+  }
+  cosAngle() {
+
+  }
+  tanAngle() {
+
+  }
+  secAngle() {
+
+  }
+  cscAngle() {
+
+  }
+  cotAngle() {
+
+  }
+
+  isEqualTo() {
+
+  }
+  isGreaterThan() {
+
+  }
+  isGreaterThanOrEqualTo() {
+
+  }
+  isLessThan() {
+
+  }
+  isLessThanOrEqualTo() {
+
+  }
+  isExactlyZero() {
+
+  }
+  isRight() {
+
+  }
+
+  print(inTermsOfPi = false) {
+
+  }
+}
+
+
 class Angle extends PhysicsNumber {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
         super(numString, intermediateValue, exact);
