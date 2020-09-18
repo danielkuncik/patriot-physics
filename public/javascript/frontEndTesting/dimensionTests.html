@@ -33,7 +33,7 @@
     dimensionTests.addSubCategory('operations','multiplication', 'Multiplication');
     dimensionTests.addSubCategory('operations','division', 'Division');
     dimensionTests.addSubCategory('operations','inverse', 'Inverse');
-    dimensionTests.addSubCategory('operations','exponent', 'Exponent');
+    dimensionTests.addSubCategory('operations','power', 'Power');
 
 
     // ######################################################################################################
@@ -895,6 +895,31 @@
       "intensity": 0,
       "amount": 0
     },'operations','division');
+
+    let dim105 = new Dimension("length");
+    dimensionTests.assertDimension(dim105.power(2),{
+      "name": "area",
+      "base": false,
+      "length": 2,
+      "time": 0,
+      "mass": 0,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','power');
+
+    dimensionTests.assertDimension(dim105.power(3),{
+      "name": "volume",
+      "base": false,
+      "length": 3,
+      "time": 0,
+      "mass": 0,
+      "temperature": 0,
+      "current": 0,
+      "intensity": 0,
+      "amount": 0
+    },'operations','power');
 
 
     $("#putItHere").append(dimensionTests.printAllTests());

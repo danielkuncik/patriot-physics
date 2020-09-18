@@ -23,32 +23,43 @@ class Magnitude {
         this.unit = undefined; // make it an invalid unit?
     }
 
+    getMeasurement() {
+      return this.measurement()
+    }
+
+    getUnit() {
+      return this.unit()
+    }
+
     duplicate() {
-        return new Magnitude(this.measurement, this.unit)
+        return new Magnitude(this.getMeasurement(), this.getUnit())
     }
 
     isZero() {
-        return this.measurement.isZero()
+        return this.getMeasurement().isZero()
     }
 
-    isExactlyZero() {
-        return this.measurement.isZero() && this.measurement.isExact()
+    isExactlyZero() {// can be simplified?
+        return this.getMeasurement().isZero() && this.getMeasurement().isExact()
     }
 
     isUnitless() {
-        return this.unit === undefined
+        return this.getUnit() === undefined
     }
 
     getSIfloat(abs = false) {
         if (this.isUnitless()) {
-            return this.measurement.getFloat()
+            return this.getMeasurement().getFloat()
         } else {
-            return this.measurement.getFloat(abs) * this.unit.conversionFactor
+            return this.getMeasurement().getFloat(abs) * this.unit.conversionFactor
         }
     }
 
     // PRIVATE METHOD
+    /*
     combine(type, anotherMagnitude) {
+        if (this.isUnitless() && anotherMagnitude.isUnitless())
+
         let newUnit, mag1, mag2;
         if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
             return this.combineWithSameUnit(type, anotherMagnitude.convertToNewUnit(this.unit));
@@ -62,6 +73,7 @@ class Magnitude {
             return undefined
         }
     }
+    */
 
     // PRIVATE METHOD
     combineWithSameUnit(type, anotherMagnitude) {
@@ -137,5 +149,22 @@ class Magnitude {
             return undefined
         }
     }
+
+    multiplyMag(anotherMagnitude) {
+      if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+        return new Magnitude((this.getMeasurement()).multiply(anotherMagnitude.getMeasurement()))
+      }
+      // other options
+    }
+
+    divideMag(anotherMagnitude) {
+      if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+        return new Magnitude((this.getMeasurement()).divide(anotherMagnitude.getMeasurement()))
+      }
+    }
+
+    /// inverse sine
+    // inverse cosine
+    /// inverse tangent
 
 }

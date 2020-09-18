@@ -1,87 +1,240 @@
 
 const dimensions = {
-    "base": ["length", "mass", "time", "current", "temperature", "amount", "intensity"],
-    "derived": {
-        "area": {
-            "length": 2
-        },
-        "volume": {
-            "length": 3
-        },
-        "frequency": {
-            "time": -1
-        },
-        "velocity": {
-            "length": 1,
-            "time": -1
-        },
-        "acceleration": { // gravitational field is here
-            "length": 1,
-            "time": -2
-        },
-        "force": {
-            "mass": 1,
-            "length": 1,
-            "time": -2
-        },
-        "energy": {
-            "mass": 1,
-            "length": 2,
-            "time": -2
-        },
-        "power": {
-            "mass": 1,
-            "length": 2,
-            "time": -3
-        },
-        "charge": {
-            "current": 1,
-            "time": 1
-        },
-        "spring_constant": {
-            "mass": 1,
-            "time": -2
-        },
-        "potential_difference": {
-            "mass": 1,
-            "length": 2,
-            "time": -3,
-            "current": -1
-        },
-        "resistance": {
-            "mass": 1,
-            "length": 2,
-            "time": -3,
-            "current": -2
-        },
-        "specific_heat": {
-            "length": 2,
-            "time": -2,
-            "temperature": -1
-        },
-        "gravitational_constant": {
-            "mass": -1,
-            "length": 3,
-            "time": -2
-        },
-        "electrostatic_constant": {
-            "mass": 1,
-            "length": 3,
-            "current": -2,
-            "time": -4
-        },
-        "permittivity": {
-            "mass": -1,
-            "length": -3,
-            "current": 2,
-            "time": 4
-        }
-    }
-};
+  "length": {
+    "length": 1
+  },
+  "mass": {
+    "mass": 1
+  },
+  "time": {
+    "time": 1
+  },
+  "current": {
+    "current": 1
+  },
+  "temperature": {
+    "temperature": 1
+  },
+  "amount": {
+    "amount": 1
+  },
+  "intensity": {
+    "intensity": 1
+  },
+  "area": {
+      "length": 2
+  },
+  "volume": {
+      "length": 3
+  },
+  "frequency": {
+      "time": -1
+  },
+  "velocity": {
+      "length": 1,
+      "time": -1
+  },
+  "acceleration": { // gravitational field is here
+      "length": 1,
+      "time": -2
+  },
+  "force": {
+      "mass": 1,
+      "length": 1,
+      "time": -2
+  },
+  "energy": {
+      "mass": 1,
+      "length": 2,
+      "time": -2
+  },
+  "power": {
+      "mass": 1,
+      "length": 2,
+      "time": -3
+  },
+  "charge": {
+      "current": 1,
+      "time": 1
+  },
+  "spring_constant": {
+      "mass": 1,
+      "time": -2
+  },
+  "potential_difference": {
+      "mass": 1,
+      "length": 2,
+      "time": -3,
+      "current": -1
+  },
+  "resistance": {
+      "mass": 1,
+      "length": 2,
+      "time": -3,
+      "current": -2
+  },
+  "specific_heat": {
+      "length": 2,
+      "time": -2,
+      "temperature": -1
+  },
+  "gravitational_constant": {
+      "mass": -1,
+      "length": 3,
+      "time": -2
+  },
+  "electrostatic_constant": {
+      "mass": 1,
+      "length": 3,
+      "current": -2,
+      "time": -4
+  },
+  "permittivity": {
+      "mass": -1,
+      "length": -3,
+      "current": 2,
+      "time": 4
+  }
+}
 
-// question => do i need to store the derivation in the object?????
+const baseDimensions = ["length", "mass", "time", "current", "temperature", "amount", "intensity"];
+//
+//
+// const dimensions = {
+//     "base": ["length", "mass", "time", "current", "temperature", "amount", "intensity"],
+//     "derived": {
+//         "area": {
+//             "length": 2
+//         },
+//         "volume": {
+//             "length": 3
+//         },
+//         "frequency": {
+//             "time": -1
+//         },
+//         "velocity": {
+//             "length": 1,
+//             "time": -1
+//         },
+//         "acceleration": { // gravitational field is here
+//             "length": 1,
+//             "time": -2
+//         },
+//         "force": {
+//             "mass": 1,
+//             "length": 1,
+//             "time": -2
+//         },
+//         "energy": {
+//             "mass": 1,
+//             "length": 2,
+//             "time": -2
+//         },
+//         "power": {
+//             "mass": 1,
+//             "length": 2,
+//             "time": -3
+//         },
+//         "charge": {
+//             "current": 1,
+//             "time": 1
+//         },
+//         "spring_constant": {
+//             "mass": 1,
+//             "time": -2
+//         },
+//         "potential_difference": {
+//             "mass": 1,
+//             "length": 2,
+//             "time": -3,
+//             "current": -1
+//         },
+//         "resistance": {
+//             "mass": 1,
+//             "length": 2,
+//             "time": -3,
+//             "current": -2
+//         },
+//         "specific_heat": {
+//             "length": 2,
+//             "time": -2,
+//             "temperature": -1
+//         },
+//         "gravitational_constant": {
+//             "mass": -1,
+//             "length": 3,
+//             "time": -2
+//         },
+//         "electrostatic_constant": {
+//             "mass": 1,
+//             "length": 3,
+//             "current": -2,
+//             "time": -4
+//         },
+//         "permittivity": {
+//             "mass": -1,
+//             "length": -3,
+//             "current": 2,
+//             "time": 4
+//         }
+//     }
+// };
+
+/*
+each dimension object has EITHER a name or a derivation
+
+if it is one of the cannonical dimensions, in the dimension object above,
+then it has a name, and if the derivation is necessary, the name is used to retrieve it
+
+if it is not a cannonical dimesion, it has a derivation, which is an object
+that gives the power of each of the seven base dimensions
+
+dimensions can be constructed by entering either a name or a derivation object
+if a name is entered, then if it is a cannonical name, it is saved
+otherwise, the dimension is invalid
+
+if a derivation object is entered, then the construcotr tests if that derivation object is
+one of the cannonical dimensions,
+if it is , then the name of that dimension is saved,
+otherwise, the derivaiton is saved and no name is saved
+*/
+
 class Dimension {
-    constructor(name, derivation) {
+    constructor(nameOrDerivation) {
+      if (typeof(nameOrDerivation) === 'string') { // name entered
+        if (dimensions[nameOrDerivation]) {
+          this.name = nameOrDerivation;
+        } else {
+          this.invalidate();
+        }
+      } else if (typeof(nameOrDerivation) === 'object') { // derivation entered
+        let derivation = nameOrDerivation;
+        if (validateDimensionDerivation(derivation)) {
+            let possibleDerivation = derivation;
+            this.isAdimension = true;
+            const array = Object.keys(dimensions);
+            let k;
+            for (k = 0; k < array.length; k++) {
+                const key = array[k];
+                const testDerivation = dimensions[key];
+                if (areSameDimensionDerivation(this.derivation, testDerivation)) {
+                    this.name = key;
+                    break;
+                }
+            }
+            if (this.name === undefined) {
+              this.derivation = derivation;
+            }
+        } else {
+          this.invalidate();
+        }
+      } else {
+        this.invalidate();
+      }
+    }
+
+/*
+    oldConstructor(name, derivation) {
         if (dimensions.base.includes(name)) {
             this.isAdimension = true;
             this.name = name;
@@ -121,6 +274,7 @@ class Dimension {
         }
 
     }
+    */
 
     invalidate() {
         this.isAdimension = false;
@@ -132,27 +286,38 @@ class Dimension {
         return this.name
     }
     getDerivation() {
-        return this.derivation
+      return this.derivation
+    }
+    getDerivation() {
+        if (this.getName()) {
+          return dimensions[this.getName()]
+        } else if (this.getDerivation()) {
+          return this.getDerivation()
+        } else {
+          return undefined
+        }
     }
     isBase() {
-        return dimensions.base.includes(this.getName())
+        const derivation = this.getDerivation();
+        return Object.keys(derivation).length === 1 && derivation[Object.keys(derivation)[0]] === 1
     }
     getLengthPower() {
-        return this.derivation.length ? this.derivation.length : 0    }
+        return this.getDerivation().length ? this.getDerivation().length : 0    }
     getTimePower() {
-        return this.derivation.time ? this.derivation.time : 0    }
+        return this.getDerivation().time ? this.getDerivation().time : 0    }
     getMassPower() {
-        return this.derivation.mass ? this.derivation.mass : 0    }
+        return this.getDerivation().mass ? this.getDerivation().mass : 0    }
     getCurrentPower() {
-        return this.derivation.current ? this.derivation.current : 0    }
+        return this.getDerivation().current ? this.getDerivation().current : 0    }
     getTemperaturePower() {
-        return this.derivation.temperature ? this.derivation.temperature : 0    }
+        return this.getDerivation().temperature ? this.getDerivation().temperature : 0    }
     getIntensityPower() {
-        return this.derivation.intensity ? this.derivation.intensity : 0    }
+        return this.getDerivation().intensity ? this.getDerivation().intensity : 0    }
     getAmountPower() {
-        return this.derivation.amount ? this.derivation.amount : 0    }
+        return this.getDerivation().amount ? this.getDerivation().amount : 0    }
 
-    multiply(anotherDimension, newName) {
+        // I don't need to go through all base dimensions...i can go through all of those that are there
+    multiply(anotherDimension) {
         const baseDimensions = dimensions.base;
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
@@ -170,7 +335,7 @@ class Dimension {
         return new Dimension(newName, newDerivation);
     }
 
-    divide(anotherDimension, newName) {
+    divide(anotherDimension) {
         const baseDimensions = dimensions.base;
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
@@ -188,7 +353,7 @@ class Dimension {
         return new Dimension(newName, newDerivation);
     }
 
-    inverse(newName) {
+    inverse() {
         const baseDimensions = dimensions.base;
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
@@ -203,7 +368,7 @@ class Dimension {
         return new Dimension(newName, newDerivation);
     }
 
-    power(exponent, newName) {
+    power(exponent) {
         const baseDimensions = dimensions.base;
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
