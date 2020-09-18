@@ -95,90 +95,9 @@ const dimensions = {
       "current": 2,
       "time": 4
   }
-}
+};
 
 const baseDimensions = ["length", "mass", "time", "current", "temperature", "amount", "intensity"];
-//
-//
-// const dimensions = {
-//     "base": ["length", "mass", "time", "current", "temperature", "amount", "intensity"],
-//     "derived": {
-//         "area": {
-//             "length": 2
-//         },
-//         "volume": {
-//             "length": 3
-//         },
-//         "frequency": {
-//             "time": -1
-//         },
-//         "velocity": {
-//             "length": 1,
-//             "time": -1
-//         },
-//         "acceleration": { // gravitational field is here
-//             "length": 1,
-//             "time": -2
-//         },
-//         "force": {
-//             "mass": 1,
-//             "length": 1,
-//             "time": -2
-//         },
-//         "energy": {
-//             "mass": 1,
-//             "length": 2,
-//             "time": -2
-//         },
-//         "power": {
-//             "mass": 1,
-//             "length": 2,
-//             "time": -3
-//         },
-//         "charge": {
-//             "current": 1,
-//             "time": 1
-//         },
-//         "spring_constant": {
-//             "mass": 1,
-//             "time": -2
-//         },
-//         "potential_difference": {
-//             "mass": 1,
-//             "length": 2,
-//             "time": -3,
-//             "current": -1
-//         },
-//         "resistance": {
-//             "mass": 1,
-//             "length": 2,
-//             "time": -3,
-//             "current": -2
-//         },
-//         "specific_heat": {
-//             "length": 2,
-//             "time": -2,
-//             "temperature": -1
-//         },
-//         "gravitational_constant": {
-//             "mass": -1,
-//             "length": 3,
-//             "time": -2
-//         },
-//         "electrostatic_constant": {
-//             "mass": 1,
-//             "length": 3,
-//             "current": -2,
-//             "time": -4
-//         },
-//         "permittivity": {
-//             "mass": -1,
-//             "length": -3,
-//             "current": 2,
-//             "time": 4
-//         }
-//     }
-// };
 
 /*
 each dimension object has EITHER a name or a derivation
@@ -203,6 +122,7 @@ class Dimension {
     constructor(nameOrDerivation) {
       if (typeof(nameOrDerivation) === 'string') { // name entered
         if (dimensions[nameOrDerivation]) {
+            this.isAdimension = true;
           this.name = nameOrDerivation;
         } else {
           this.invalidate();
@@ -210,14 +130,13 @@ class Dimension {
       } else if (typeof(nameOrDerivation) === 'object') { // derivation entered
         let derivation = nameOrDerivation;
         if (validateDimensionDerivation(derivation)) {
-            let possibleDerivation = derivation;
             this.isAdimension = true;
             const array = Object.keys(dimensions);
             let k;
             for (k = 0; k < array.length; k++) {
                 const key = array[k];
                 const testDerivation = dimensions[key];
-                if (areSameDimensionDerivation(this.derivation, testDerivation)) {
+                if (areSameDimensionDerivation(derivation, testDerivation)) {
                     this.name = key;
                     break;
                 }
@@ -233,49 +152,6 @@ class Dimension {
       }
     }
 
-/*
-    oldConstructor(name, derivation) {
-        if (dimensions.base.includes(name)) {
-            this.isAdimension = true;
-            this.name = name;
-            this.derivation = {};
-            this.derivation[this.name] = 1;
-        } else if (Object.keys(dimensions.derived).includes(name)) {
-            this.isAdimension = true;
-            this.name = name;
-            this.derivation = dimensions.derived[name];
-        } else if (derivation) {
-            if (validateDimensionDerivation(derivation)) {
-                this.derivation = derivation;
-                this.isAdimension = true;
-                if (isBaseDerivation(derivation)) {
-                    this.isAdimension = true;
-                    this.name = Object.keys(derivation)[0];
-                } else {
-                    const array = Object.keys(dimensions.derived);
-                    let k;
-                    for (k = 0; k < array.length; k++) {
-                        const key = array[k];
-                        const testDerivation = dimensions.derived[key];
-                        if (areSameDimensionDerivation(this.derivation, testDerivation)) {
-                            this.name = key;
-                            break;
-                        }
-                    }
-                    if (this.name === undefined) {
-                        this.name = name;
-                    }
-                }
-            } else {
-                /// WILL I ALLOW DIMENSIONS WITH NO NAME????????
-                /// THOSE WILL PROBABLY MATTER!!!!!!
-                this.invalidate();
-            }
-        }
-
-    }
-    */
-
     invalidate() {
         this.isAdimension = false;
         this.name = undefined;
@@ -285,14 +161,12 @@ class Dimension {
     getName() {
         return this.name
     }
+
     getDerivation() {
-      return this.derivation
-    }
-    getDerivation() {
-        if (this.getName()) {
-          return dimensions[this.getName()]
-        } else if (this.getDerivation()) {
-          return this.getDerivation()
+        if (this.name) {
+          return dimensions[this.name]
+        } else if (this.derivation) {
+          return this.derivation
         } else {
           return undefined
         }
@@ -318,74 +192,75 @@ class Dimension {
 
         // I don't need to go through all base dimensions...i can go through all of those that are there
     multiply(anotherDimension) {
-        const baseDimensions = dimensions.base;
+        const derivation1 = this.getDerivation();
+        const derivation2 = anotherDimension.getDerivation();
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
             let power = 0;
-            if (this.derivation[dimension]) {
-                power += this.derivation[dimension];
+            if (derivation1[dimension]) {
+                power += derivation1[dimension];
             }
-            if (anotherDimension.derivation[dimension]) {
-                power += anotherDimension.derivation[dimension];
+            if (derivation2[dimension]) {
+                power += derivation2[dimension];
             }
             if (power) {
                 newDerivation[dimension] = power;
             }
         });
-        return new Dimension(newName, newDerivation);
+        return new Dimension(newDerivation);
     }
 
     divide(anotherDimension) {
-        const baseDimensions = dimensions.base;
+        const derivation1 = this.getDerivation();
+        const derivation2 = anotherDimension.getDerivation();
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
             let power = 0;
-            if (this.derivation[dimension]) {
-                power += this.derivation[dimension];
+            if (derivation1[dimension]) {
+                power += derivation1[dimension];
             }
-            if (anotherDimension.derivation[dimension]) {
-                power -= anotherDimension.derivation[dimension];
+            if (derivation2[dimension]) {
+                power -= derivation2[dimension];
             }
             if (power) {
                 newDerivation[dimension] = power;
             }
         });
-        return new Dimension(newName, newDerivation);
+        return new Dimension(newDerivation);
     }
 
     inverse() {
-        const baseDimensions = dimensions.base;
+        const thisDerivation = this.getDerivation();
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
             let power = 0;
-            if (this.derivation[dimension]) {
-                power -= this.derivation[dimension];
+            if (thisDerivation[dimension]) {
+                power -= thisDerivation[dimension];
             }
             if (power) {
                 newDerivation[dimension] = power;
             }
         });
-        return new Dimension(newName, newDerivation);
+        return new Dimension(newDerivation);
     }
 
     power(exponent) {
-        const baseDimensions = dimensions.base;
+        const thisDerivation = this.getDerivation();
         let newDerivation = {};
         baseDimensions.forEach((dimension) => {
             let power = 0;
-            if (this.derivation[dimension]) {
-                power += this.derivation[dimension] * exponent;
+            if (thisDerivation[dimension]) {
+                power += thisDerivation[dimension] * exponent;
             }
             if (power) {
                 newDerivation[dimension] = power;
             }
         });
-        return new Dimension(newName, newDerivation);
+        return new Dimension(newDerivation);
     }
 }
 
 function validateDimensionDerivation(derivation) {
-    const baseDimensions = dimensions.base;
     const test = Object.keys(derivation);
     let j;
     for (j = 0; j < test.length; j++) {
@@ -413,7 +288,6 @@ function isBaseDerivation(derivation) {
 }
 
 function areSameDimensionDerivation(derivation1, derivation2) {
-    const baseDimensions = dimensions.base;
     let q;
     if (Object.keys(derivation1).length !== Object.keys(derivation2).length) {
         return false
@@ -427,14 +301,3 @@ function areSameDimensionDerivation(derivation1, derivation2) {
     return true
 }
 
-function processDimensionInput(input) {
-    if (typeof(input) === 'string') {
-        return new Dimension(input);
-    } else if (typeof(input) === 'object') {
-        if (input.isAdimension) {
-            return input
-        } else {
-            return new Dimension(undefined, input)
-        }
-    }
-}
