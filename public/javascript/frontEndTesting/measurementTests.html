@@ -2301,6 +2301,110 @@ measurementTests.assertMeasurement(mag3801a.divide(mag3801b),{ // 2.00
   },'operations','division');
 
 
+  let mag3808a = new Measurement('5e-10');
+  let mag3808b = new Measurement('5e-10');
+
+  measurementTests.assertMeasurement(mag3808a.multiply(mag3808b),{
+      firstSigFig: '3',
+      otherSigFigs: '',
+      orderOfMagnitude: -19,
+      lowestKnownMagnitude: -19,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: true,
+      float: 2.5e-19,
+      printStandard: '0.0000000000000000003',
+      printScientific: '3e-10'
+  }, 'operations','multiplication');
+
+  measurementTests.assertMeasurement(mag3808b.multiply(mag3808a),{
+      firstSigFig: '3',
+      otherSigFigs: '',
+      orderOfMagnitude: -19,
+      lowestKnownMagnitude: -19,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: true,
+      float: 2.5e-19,
+      printStandard: '0.0000000000000000003',
+      printScientific: '3e-10'
+  }, 'operations','multiplication');
+
+  measurementTests.assertMeasurement(mag3808a.divide(mag3808b),{
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 1,
+      printStandard: '1',
+      printScientific: '1e0'
+  },'operations','division');
+
+  measurementTests.assertMeasurement(mag3808b.divide(mag3808a),{
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: 0,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 1,
+      printStandard: '1',
+      printScientific: '1e0'
+  },'operations','division');
+
+  let mag3809a = new Measurement('5.0e-10');
+  let mag3809b = new Measurement('5.0e-10');
+
+  measurementTests.assertMeasurement(mag3809a.multiply(mag3809b),{
+      firstSigFig: '2',
+      otherSigFigs: '5',
+      orderOfMagnitude: -19,
+      lowestKnownMagnitude: -20,
+      numSigFigs: 2,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 2.5e-19,
+      printStandard: '0.00000000000000000025',
+      printScientific: '2.5e-19'
+  },'operations','multiplication');
+
+  measurementTests.assertMeasurement(mag3809b.multiply(mag3809a),{
+      firstSigFig: '2',
+      otherSigFigs: '5',
+      orderOfMagnitude: -19,
+      lowestKnownMagnitude: -20,
+      numSigFigs: 2,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 2.5e-19,
+      printStandard: '0.00000000000000000025',
+      printScientific: '2.5e-19'
+  },'operations','multiplication');
+
+  measurementTests.assertMeasurement(mag3809a.divide(mag3809b),{
+      firstSigFig: '1',
+      otherSigFigs: '0',
+      orderOfMagnitude: 0,
+      lowestKnownMagnitude: -1,
+      numSigFigs: 2,
+      exact: false,
+      positive: true,
+      negative: false,
+      float: 1,
+      printStandard: '1.0',
+      printScientific: '1.0e0'
+  },'operations','division');
+
   /*
   firstSigFig: undefined,
   otherSigFigs: undefined,
