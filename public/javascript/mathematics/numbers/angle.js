@@ -4,7 +4,7 @@ would it all work if i saved only a float and a number of sig figs???
 */
 
 class Angle {
-  constructor(measurementInput, measuredInDegrees = true) {
+  constructor(measurementInput, measuredInDegrees = true, inTermsOfPi = !measuredInDegrees ? true : undefined, noRedundancy = true) {
     let newMeasurement = processMeasurementInput(measurementInput);
     if (typeof(newMeasurement) !== 'object' || !newMeasurement.isAmeasurement) {
       this.invalidate();
@@ -14,12 +14,14 @@ class Angle {
     }
     this.measuredInDegrees = measuredInDegrees; // if false, it is radians
 
-    const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2, maxSigFigs);
-    while (newMeasurement.isNegative()) {
-      newMeasurement = newMeasurement.add(fullCircle);
-    }
-    while (newMeasurement.isGreaterThanOrEqualTo(fullCircle)) {
-      newMeasurement = newMeasurement.subtract(fullCircle);
+    if (noRedundancy) {
+      const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2, maxSigFigs);
+      while (newMeasurement.isNegative()) {
+        newMeasurement = newMeasurement.add(fullCircle);
+      }
+      while (newMeasurement.isGreaterThanOrEqualTo(fullCircle)) {
+        newMeasurement = newMeasurement.subtract(fullCircle);
+      }
     }
 
     this.measurement = newMeasurement;
@@ -100,28 +102,149 @@ class Angle {
 
 
   sin() {
-    const radAngle = this.convertToRadians();
-    return radAngle.measurement.sin();
+    // add special cases, when an exactl answer is known!!! no point in losing sig figs
+    if (this.isExactlyZero()) {
+      return new Measurement(0)
+    } else if (this.isExactly30()) {
+      return new Measurement(0.5)
+    } else if (this.isExactly90()) {
+      return new Measurement(1)
+    } else if (this.isExactly150()) {
+      return new Measurement(0.5)
+    } else if (this.isExactly180()) {
+      return new Measurement(0)
+    } else if (this.isExactly210()) {
+      return new Measurement(-0.5)
+    } else if (this.isExactly270()) {
+      return new Measurement(-1)
+    } else if (this.isExactly330()) {
+      return new Measurement(-0.5)
+    } else if (this.isExactly360()) {
+      return new Measurement(0)
+    } else {
+      const radAngle = this.convertToRadians();
+      return radAngle.measurement.sin();
+    }
   }
   cos() {
-    const radAngle = this.convertToRadians();
-    return radAngle.measurement.cos();
+    if (this.isExactlyZero()) {
+      return new Measurement(1)
+    } else if (this.isExactly60()) {
+      return new Measurement(0.5)
+    } else if (this.isExactly90()) {
+      return new Measurement(0)
+    } else if (this.isExactly120()) {
+      return new Measurement(-0.5)
+    } else if (this.isExactly180()) {
+      return new Measurement(-1)
+    } else if (this.isExactly240()) {
+      return new Measurement(-0.5)
+    } else if (this.isExactly270()) {
+      return new Measurement(0)
+    } else if (this.isExactly300()) {
+      return new Measurement(0.5)
+    } else if (this.isExactly360()) {
+      return new Measurement(1)
+    } else {
+      const radAngle = this.convertToRadians();
+      return radAngle.measurement.cos();
+    }
   }
-  tan() {
-    const radAngle = this.convertToRadians();
-    return radAngle.measurement.tan();
+  tan() { // simplify??? use sin/ cos
+    if (this.isExactlyZero()) {
+      return new Measurement(0)
+    } else if (this.isExactly45()) {
+      return new Measurement(1)
+    } else if (this.isExactly90()) {
+      return new Measurement(Infinity)
+    } else if (this.isExactly135()) {
+      return new Measurement(-1)
+    } else if (this.isExactly180()) {
+      return new Measurement(0)
+    } else if (this.isExactly225()) {
+      return new Measurement(1)
+    } else if (this.isExactly270()) {
+      return new Measurement(-Infinity)
+    } else if (this.isExactly315()) {
+      return new Measurement(-1)
+    } else if (this.isExactly360()) {
+      return new Measurement(0)
+    } else {
+      const radAngle = this.convertToRadians();
+      return radAngle.measurement.tan();
+    }
   }
   sec() {
-    const radAngle = this.convertToRadians();
-    return radAngle.measurement.sec();
+    if (this.isExactlyZero()) {
+      return new Measurement(1)
+    } else if (this.isExactly60()) {
+      return new Measurement(2)
+    } else if (this.isExactly90()) {
+      return new Measurement(Infinity) // undefined?
+    } else if (this.isExactly120()) {
+      return new Measurement(-2)
+    } else if (this.isExactly180()) {
+      return new Measurement(-1)
+    } else if (this.isExactly240()) {
+      return new Measurement(-2)
+    } else if (this.isExactly270()) {
+      return new Measurement(Infinity)
+    } else if (this.isExactly300()) {
+      return new Measurement(2)
+    } else if (this.isExactly360()) {
+      return new Measurement(1)
+    else {
+      const radAngle = this.convertToRadians();
+      return radAngle.measurement.sec();
+    }
   }
   csc() {
-    const radAngle = this.convertToRadians();
-    return radAngle.measurement.csc();
+    if (this.isExactlyZero()) {
+      return new Measurement(Infinity) // undefined?
+    } else if (this.isExactly30()) {
+      return new Measurement(2)
+    } else if (this.isExactly90()) {
+      return new Measurement(1)
+    } else if (this.isExactly150()) {
+      return new Measurement(2)
+    } else if (this.isExactly180()) {
+      return new Measurement(Infinity)
+    } else if (this.isExactly210()) {
+      return new Measurement(-2)
+    } else if (this.isExactly270()) {
+      return new Measurement(-1)
+    } else if (this.isExactly330()) {
+      return new Measurement(-2)
+    } else if (this.isExactly360()) {
+      return new Measurement(Infinity)
+    } else {
+      const radAngle = this.convertToRadians();
+      return radAngle.measurement.csc();
+    }
   }
   cot() {
-    const radAngle = this.convertToRadians();
-    return radAngle.measurement.cot();
+    if (this.isExactlyZero()) {
+      return new Measurement(Infinity)
+    } else if (this.isExactly45()) {
+      return new Measurement(1)
+    } else if (this.isExactly90()) {
+      return new Measurement(0)
+    } else if (this.isExactly135()) {
+      return new Measurement(-1)
+    } else if (this.isExactly180()) {
+      return new Measurement(0)
+    } else if (this.isExactly225()) {
+      return new Measurement(1)
+    } else if (this.isExactly270()) {
+      return new Measurement(0)
+    } else if (this.isExactly315()) {
+      return new Measurement(-1)
+    } else if (this.isExactly360()) {
+      return new Measurement(Infinity)
+    } else {
+      const radAngle = this.convertToRadians();
+      return radAngle.measurement.cot();
+    }
   }
 
 
@@ -150,6 +273,54 @@ class Angle {
   }
   isRight(numSigFigs) {
     return this.isEqualTo(new Angle(90), numSigFigs)
+  }
+  isExactly30() { /// add cases for radians in terms of pi
+    return this.isEqualTo(new Angle(30)) && this.isExact()
+  }
+  isExactly45() {
+    return this.isEqualTo(new Angle(45)) && this.isExact()
+  }
+  isExactly60() {
+    return this.isEqualTo(new Angle(60)) && this.isExact()
+  }
+  isExactly90() {
+    return this.isEqualTo(new Angle(90)) && this.isExact()
+  }
+  isExactly120() {
+    return this.isEqualTo(new Angle(120)) && this.isExact()
+  }
+  isExactly135() {
+    return this.isEqualTo(new Angle(135)) && this.isExact()
+  }
+  isExactly150() {
+    return this.isEqualTo(new Angle(150)) && this.isExact()
+  }
+  isExactly180() {
+    return this.isEqualTo(new Angle(180)) && this.isExact()
+  }
+  isExactly210() {
+    return this.isEqualTo(new Angle(210)) && this.isExact()
+  }
+  isExactly225() {
+    return this.isEqualTo(new Angle(225)) && this.isExact()
+  }
+  isExactly240() {
+    return this.isEqualTo(new Angle(240)) && this.isExact()
+  }
+  isExactly270() {
+    return this.isEqualTo(new Angle(270)) && this.isExact()
+  }
+  isExactly300() {
+    return this.isEqualTo(new Angle(300)) && this.isExact()
+  }
+  isExactly315() {
+    return this.isEqualTo(new Angle(315)) && this.isExact()
+  }
+  isExactly330() {
+    return this.isEqualTo(new Angle(300)) && this.isExact()
+  }
+  isExactly360() {
+    return this.isEqualTo(new Angle(360)) && this.isExact()
   }
 
   print(inTermsOfPi = false) {

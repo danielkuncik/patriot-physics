@@ -360,6 +360,17 @@ class Measurement {
         }
         return this.getFloat() === 0
     }
+    isExactlyZero() {
+      return this.isEqualTo(new Measurement(0)) && this.isExact()
+    }
+    isExactlyOne() {
+      return this.isEqualTo(new Measurement(1)) && this.isExact()
+    }
+    isExactlyNegativeOne() {
+      return this.isEqualTo(new Measurement(-1)) && this.isExact()
+    }
+
+
     isInfinity() {
         if (!this.isAmeasurement) {
           return undefined
@@ -910,6 +921,8 @@ class Measurement {
         return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
     }
 
+///// ADD SPECIAL CASES
+/// WHEN AN EXACT ANSEWR IS KNOWN!!!!
     sin() {
       const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // all trigonometric functions reduce the number of sig figs to the maximum value
       // should there be an exception for special cases, like zero???
@@ -948,7 +961,10 @@ class Measurement {
     }
 
 
-    // inverse trif functions
+    ///// ADD SPECIAL CASES
+    /// WHEN AN EXACT ANSEWR IS KNOWN!!!!
+
+    // inverse trig functions
     inverseSin() {
         const newFloat = Math.asin(this.getFloat());
         const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // this operation always reduces to the maximum number of significant figures
