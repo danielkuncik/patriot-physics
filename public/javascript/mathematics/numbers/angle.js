@@ -14,7 +14,7 @@ class Angle {
     }
     this.measuredInDegrees = measuredInDegrees; // if false, it is radians
 
-    const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2, 12);
+    const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2, maxSigFigs);
     while (newMeasurement.isNegative()) {
       newMeasurement = newMeasurement.add(fullCircle);
     }
@@ -46,7 +46,7 @@ class Angle {
   }
 
   reverseSign() {
-    const fullCircle = this.isInDegrees() ? new Angle(360) : new Angle(new Measurement(Math.PI * 2, 12), false);
+    const fullCircle = this.isInDegrees() ? new Angle(360) : new Angle(new Measurement(Math.PI * 2, maxSigFigs), false);
     return fullCircle.subtract(this)
   }
 
@@ -54,64 +54,114 @@ class Angle {
     if (this.isInDegrees()) {
       return this
     } else {
-      const newMeasurement = this.measurement.divide(Math.PI * 2)
+      const newMeasurement = this.measurement.divide(New Measurement(180 / Math.PI, maxSigFigs));
+      return new Angle(newMeasurement)
     }
   }
   convertToRadians() {
-
+    if (this.isInRadians()) {
+      return this
+    } else {
+      const newMeasurement = this.measurement.divide(New Measurement(Math.PI / 180, maxSigFigs));
+      return new Angle(newMeasurement, false)
+    }
   }
 
-  add() {
-
+  // private method
+  makeAnotherAngleCompatible(anotherAngle) {
+    if (this.isInDegrees()) {
+      return anotherAngle.convertToDegrees()
+    } else if (this.isInRadians()) {
+      return anotherAngle.convertToRadians()
+    }
   }
+
+  add(anotherAngleInput) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    if (this.isInDegrees()) {
+      const newMeasurement = this.measurement.add((anotherAngle.convertToDegrees()).measurement);
+      return new Angle(newMeasurement)
+    } else {
+      const newMeasurement = this.measurement.add((anotherAngle.convertToRadians()).measurement);
+      return new Angle(newMeasurement, false)
+    }
+  }
+
   subtract() {
-
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    if (this.isInDegrees()) {
+      const newMeasurement = this.measurement.subtract((anotherAngle.convertToDegrees()).measurement);
+      return new Angle(newMeasurement)
+    } else {
+      const newMeasurement = this.measurement.subtract((anotherAngle.convertToRadians()).measurement);
+      return new Angle(newMeasurement, false)
+    }
   }
 
 
-  sinAngle() {
-
+  sin() {
+    const radAngle = this.convertToRadians();
+    return radAngle.measurement.sin();
   }
-  cosAngle() {
-
+  cos() {
+    const radAngle = this.convertToRadians();
+    return radAngle.measurement.cos();
   }
-  tanAngle() {
-
+  tan() {
+    const radAngle = this.convertToRadians();
+    return radAngle.measurement.tan();
   }
-  secAngle() {
-
+  sec() {
+    const radAngle = this.convertToRadians();
+    return radAngle.measurement.sec();
   }
-  cscAngle() {
-
+  csc() {
+    const radAngle = this.convertToRadians();
+    return radAngle.measurement.csc();
   }
-  cotAngle() {
-
+  cot() {
+    const radAngle = this.convertToRadians();
+    return radAngle.measurement.cot();
   }
 
-  isEqualTo() {
 
+  isEqualTo(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement(isEqualTo(anotherAngle.measurement, numSigFigs))
   }
-  isGreaterThan() {
-
+  isGreaterThan(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement(isGreaterThan(anotherAngle.measurement, numSigFigs))
   }
-  isGreaterThanOrEqualTo() {
-
+  isGreaterThanOrEqualTo(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement(isGreaterThanOrEqualTo(anotherAngle.measurement, numSigFigs))
   }
-  isLessThan() {
-
+  isLessThan(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement(isLessThan(anotherAngle.measurement, numSigFigs))
   }
-  isLessThanOrEqualTo() {
-
+  isLessThanOrEqualTo(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement(isLessThanOrEqualTo(anotherAngle.measurement, numSigFigs))
   }
   isExactlyZero() {
-
+    return this.measurement.isExactlyZero()
   }
-  isRight() {
-
+  isRight(numSigFigs) {
+    return this.isEqualTo(new Angle(90), numSigFigs)
   }
 
   print(inTermsOfPi = false) {
     return `${this.measurement.printStandardNotation()}°`
+  }
+}
+
+function processAngleInput(angleInput) {
+  if (typeOf(angleInput) === 'object' && angleInput.isAnAngle) {
+    return angleInput
+  } else {
+    return new Angle(processMeasurementInput(angleInput)) // defaults to degrees
   }
 }
 

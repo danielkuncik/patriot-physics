@@ -910,38 +910,62 @@ class Measurement {
         return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
     }
 
+    sin() {
+      const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // all trigonometric functions reduce the number of sig figs to the maximum value
+      // should there be an exception for special cases, like zero???
+      const newFloat = Math.sin(this.getFloat());
+      return new Measurement(newFloat, newSigFigs)
+    }
+
+    cos() {
+      const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+      const newFloat = Math.cos(this.getFloat());
+      return new Measurement(newFloat, newSigFigs)
+    }
+
+    tan() {
+      const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+      const newFloat = Math.tan(this.getFloat());
+      return new Measurement(newFloat, newSigFigs)
+    }
+
+    sec() {
+      const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+      const newFloat = 1 / Math.cos(this.getFloat());
+      return new Measurement(newFloat, newSigFigs)
+    }
+
+    csc() {
+      const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+      const newFloat = 1 / Math.sin(this.getFloat());
+      return new Measurement(newFloat, newSigFigs)
+    }
+
+    cot() {
+      const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+      const newFloat = 1 / Math.sin(this.getFloat());
+      return new Measurement(newFloat, newSigFigs)
+    }
+
+
+    // inverse trif functions
     inverseSin() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
         const newFloat = Math.asin(this.getFloat());
-        const newSigFigs = Math.min(this.numSigFigs, 15);
-        const exact = false; // // this operation always reduces the number of sig figs to 15
-        return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
+        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // this operation always reduces to the maximum number of significant figures
+        const newMeasurement = new Measurement(newFloat, newSigFigs);
+        return new Angle(newMeasurement, false)
     }
     inverseCos() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
         const newFloat = Math.acos(this.getFloat());
-        const newSigFigs = Math.min(this.numSigFigs, 15);
-        const exact = false; // this operation always reduces the number of sig figs to 15
-        const newUnit = undefined;
-        return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
-
+        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+        const newMeasurement = new Measurement(newFloat, newSigFigs);
+        return new Angle(newMeasurement, false)
     }
     inverseTan() {
-        if (this.unit !== undefined) {
-            console.log('can only complete trig functions on a unitless quantity');
-            return false
-        }
         const newFloat = Math.atan(this.getFloat());
-        const newSigFigs = Math.min(this.numSigFigs, 15);
-        const exact = false; // this operation always reduces the number of sig figs to 15
-        const newUnit = undefined;
-        return constructAngleFloat(newFloat, newSigFigs, false, exact, this.zeroLimit)
+        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+        const newMeasurement = new Measurement(newFloat, newSigFigs);
+        return new Angle(newMeasurement, false)
     }
 
 }
