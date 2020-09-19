@@ -3,12 +3,16 @@
 would it all work if i saved only a float and a number of sig figs???
 */
 
-class AngleNew {
-  constructor(measurementInput, degrees = true) {
+class Angle {
+  constructor(measurementInput, measuredInDegrees = true) {
     let newMeasurement = processMeasurementInput(measurementInput);
-    this.degrees = degrees; // if false, it is radians
+    if (typeof(newMeasurement) !== 'object' || !newMeasurement.isAmeasurement) {
+      this.invalidate();
+      return false
+    }
+    this.measuredInDegrees = measuredInDegrees; // if false, it is radians
 
-    const fullCircle = this.degrees ? new Measurement(360) : new Measurement(Math.PI * 2); // need to account for sig figs in pi
+    const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2); // need to account for sig figs in pi
     while (newMeasurement.isNegative()) {
       newMeasurement = newMeasurement.add(fullCircle);
     }
@@ -19,12 +23,25 @@ class AngleNew {
     this.measurement = newMeasurement;
   }
 
+  invalidate() {
+    this.measurement = undefined;
+    this.degrees = undefined;
+  }
+
   isInDegrees() {
-    return this.degrees
+    return this.measuredInDegrees
   }
   isInRadians() {
-    return !this.degrees
+    return !this.measuredInDegrees
   }
+  getUnit() {
+    if (this.measuredInDegrees) {
+      return 'degrees'
+    } else {
+      return 'radians'
+    }
+  }
+
   reverseSign() {
 
   }
@@ -89,7 +106,23 @@ class AngleNew {
   }
 }
 
+function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSide2Mag) {
+    let temp1 = (adjacentSide1Mag.squareMag().addMag(adjacentSide2Mag.squareMag())).subtractMag(oppositeSideMag.squareMag());
+    let temp2 = (adjacentSide1Mag.multiplyMag(adjacentSide2Mag)).multiplyMagExactConstant(2);
+    let cosine = temp1.divideMag(temp2);
+    // while (cosine > 1) {
+    //     cosine -= 1;
+    // }
+    // while (cosine < -1) {
+    //     cosine += 1;
+    // }
+    const angleInRadians = cosine.inverseCosMag();
+    return angleInRadians.convertToDegrees();
+}
 
+
+/*
+OLD ANGLE
 class Angle extends PhysicsNumber {
     constructor(numString, degrees = true, intermediateValue, exact = false) {
         super(numString, intermediateValue, exact);
@@ -320,6 +353,8 @@ class Angle extends PhysicsNumber {
 
 
 }
+*/
+/*
 function get90Degrees(numSigFigs, exact = numSigFigs === undefined) {
     return constructAngleFloat(90,numSigFigs,true, exact);
 }
@@ -361,7 +396,7 @@ function simplifyAngle(angleInRadians) {
     }
     return angleInRadians
 }
-
+*/
 // figure this out!
 // convert this to physicsNumbers
 function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSide2Mag) {

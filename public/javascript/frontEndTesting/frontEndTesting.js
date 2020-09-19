@@ -261,6 +261,39 @@ class TestPackage {
         this.assertUndefined(notMeasurement.isPositive(), categoryKey, subCategoryKey, `${name}: positive`);
     }
 
+    assertAngle(angle, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        // add check that it is an object
+        if (typeof(angle) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Magnitude");
+            return false
+        }
+        if (typeof(equalObject) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
+            return false
+        }
+        this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAnAngle`);
+
+        this.assertMeasurement(angle.measurement, equalObject,categoryKey, subCategoryKey, name);
+
+        if (equalObject.unit !== undefined) {
+            this.assertEqualStrict(angle.isInDegrees(), equalObject["unit"], categoryKey, subCategoryKey, `${name}: unit:`);
+        }
+        if (equalObject.print !== undefined) {
+            this.assertEqualStrict(angle.print(), equalObject["print"], categoryKey, subCategoryKey, `${name}: print:`);
+        }
+    }
+
+    assertNotAngle(notAngle, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+      if (typeof(notAngle) !== 'object') {
+          this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Angle");
+          return false
+      }
+      this.assertFalse(notAngle.isAmeasurement, categoryKey, subCategoryKey, `${name}: isAnAngle`);
+      this.assertUndefined(notAngle.measurement, categoryKey, subCategoryKey, `${name}: measurement`);
+      this.assertUndefined(notAngle.measuredInDegrees, categoryKey, subCategoryKey, `${name}: measuredInDegrees`);
+    }
+
+
     assertDimension(dimension, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         if (typeof(dimension) !== 'object') {
             this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Dimension");
@@ -379,46 +412,6 @@ class TestPackage {
         this.assertEqualStrict(notMagnitude.positive, undefined, categoryKey, subCategoryKey, `${name}: positive`);
     }
 
-    assertAngle(angle, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
-        // add check that it is an object
-        if (typeof(angle) !== 'object') {
-            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Magnitude");
-            return false
-        }
-        if (typeof(equalObject) !== 'object') {
-            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
-            return false
-        }
-        this.assertMeasurement(angle, equalObject,categoryKey, subCategoryKey, name);
-        this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAmagnitude`);
-        // if (equalObject.firstSigFig !== undefined) {
-        //     this.assertEqualStrict(angle.firstSigFig, equalObject["firstSigFig"], categoryKey, subCategoryKey, `${name}: first sig fig:`);
-        // }
-        // if (equalObject.otherSigFigs !== undefined) {
-        //     this.assertEqualStrict(angle.otherSigFigs, equalObject["otherSigFigs"], categoryKey, subCategoryKey, `${name}: other sig figs:`);
-        // }
-        if (equalObject.degrees !== undefined) {
-            this.assertEqualStrict(angle.isInDegrees(), equalObject["degrees"], categoryKey, subCategoryKey, `${name}: unit:`);
-        }
-        // if (equalObject.orderOfMagnitude !== undefined) {
-        //     this.assertEqualStrict(angle.orderOfMagnitude, equalObject["orderOfMagnitude"], categoryKey, subCategoryKey, `${name}: order of magnitude: `);
-        // }
-        // if (equalObject.numSigFigs !== undefined) {
-        //     this.assertEqualStrict(angle.numSigFigs, equalObject["numSigFigs"], categoryKey, subCategoryKey, `${name}: Number of Sig Figs: `);
-        // }
-        // if (equalObject.positive !== undefined) {
-        //     this.assertEqualStrict(angle.positive, equalObject["positive"], categoryKey, subCategoryKey, `${name}: Positive `);
-        // }
-        // if (equalObject.float !== undefined) {
-        //     if (angle.zero) {
-        //         this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 1e-15);
-        //     } else {
-        //         this.assertEqualFloat(angle.getFloat(), equalObject["float"], categoryKey, subCategoryKey, `${name}: Float`, 10**(angle.orderOfMagnitude - 15));
-        //     }
-        // }
-        // add printing
-        // add unit
-    }
 
 
     // privateMethod!
