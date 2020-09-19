@@ -29,7 +29,7 @@
     angleTests.addSubCategory('construction', 'lawOfCosines', 'Construct from Law of Cosines');
 
     angleTests.addCategory('comparison', 'Comparison Tests');
-    angleTests.addSubCategory('comparison', 'comparison1', 'Comparison Tests 1');
+    angleTests.addSubCategory('comparison', 'right', 'Right Angle Comparison Tests');
 
     const angle1 = new Angle('45');
     angleTests.assertAngle(angle1, {
@@ -61,38 +61,39 @@ angleTests.assertAngle(angle1, {
 */
 
     const angle501 = new Angle('90.0');
-    angleTests.assertEqualStrict(angle501.isRight(), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle501.isRight(1), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle501.isRight(2), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle501.isRight(3), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle501.isRight(4), undefined, 'comparison', 'comparison1'); // undefined here means that we cannot confirm it is or is not equal to 90
-    angleTests.assertEqualStrict(angle501.isRight(5), undefined, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle501.isRight(6), undefined, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle501.isRight(), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle501.isRight(1), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle501.isRight(2), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle501.isRight(3), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle501.isRight(4), undefined, 'comparison', 'right'); // undefined here means that we cannot confirm it is or is not equal to 90
+    angleTests.assertEqualStrict(angle501.isRight(5), undefined, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle501.isRight(6), undefined, 'comparison', 'right');
     const angle502 = new Angle('90');
-    angleTests.assertEqualStrict(angle502.isRight(), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle502.isRight(1), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle502.isRight(2), undefined, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle502.isRight(3), undefined, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle502.isRight(4), undefined, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle502.isRight(5), undefined, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle502.isRight(6), undefined, 'comparison', 'comparison1');
-    const angle503 = new Angle('90',true, undefined, true);//exactly 90
-    angleTests.assertEqualStrict(angle503.isRight(), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle503.isRight(1), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle503.isRight(2), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle503.isRight(3), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle503.isRight(4), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle503.isRight(5), true, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle503.isRight(6), true, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle502.isRight(), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle502.isRight(1), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle502.isRight(2), undefined, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle502.isRight(3), undefined, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle502.isRight(4), undefined, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle502.isRight(5), undefined, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle502.isRight(6), undefined, 'comparison', 'right');
+
+    const angle503 = new Angle(90);//exactly 90
+    angleTests.assertEqualStrict(angle503.isRight(), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle503.isRight(1), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle503.isRight(2), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle503.isRight(3), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle503.isRight(4), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle503.isRight(5), true, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle503.isRight(6), true, 'comparison', 'right');
 
     const angle504 = new Angle('85');
-    angleTests.assertEqualStrict(angle504.isRight(), false, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle504.isRight(1), true, 'comparison', 'comparison1'); // to one significant figure, 85 rounds up to 90
-    angleTests.assertEqualStrict(angle504.isRight(2), false, 'comparison', 'comparison1'); // to 2 significant figures, 85 is clearly not equal to 90
-    angleTests.assertEqualStrict(angle504.isRight(3), false, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle504.isRight(4), false, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle504.isRight(5), false, 'comparison', 'comparison1');
-    angleTests.assertEqualStrict(angle504.isRight(6), false, 'comparison', 'comparison1');
+    angleTests.assertEqualStrict(angle504.isRight(), false, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle504.isRight(1), true, 'comparison', 'right'); // to one significant figure, 85 rounds up to 90
+    angleTests.assertEqualStrict(angle504.isRight(2), false, 'comparison', 'right'); // to 2 significant figures, 85 is clearly not equal to 90
+    angleTests.assertEqualStrict(angle504.isRight(3), false, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle504.isRight(4), false, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle504.isRight(5), false, 'comparison', 'right');
+    angleTests.assertEqualStrict(angle504.isRight(6), false, 'comparison', 'right');
 
     /// ####################
     /*

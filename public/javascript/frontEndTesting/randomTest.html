@@ -17,11 +17,11 @@
   <script src = './frontEndTesting.js'></script>
 <!--  <script src = '../mathematics/numbers/units.js'></script>-->
   <script src = '../mathematics/numbers/measurement.js'></script>
+    <script src = '../mathematics/numbers/angle.js'></script>
   <script src = '../mathematics/numbers/dimension.js'></script>
 
   <!--  <script src = '../mathematics/numbers/physicsNumber.js'></script>-->
 <!--  <script src = '../mathematics/numbers/magnitude.js'></script>-->
-<!--  <script src = '../mathematics/numbers/angle.js'></script>-->
 <!--  <script src = '../mathematics/geometricObjects/basics/point.js'></script>-->
 <!--  <script src = '../mathematics/geometricObjects/basics/line.js'></script>-->
 <!--  <script src = '../mathematics/geometricObjects/basics/segment.js'></script>-->
@@ -42,20 +42,8 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    const dim101a = new Dimension('length');
-    const dim101b = new Dimension('time');
-
-    randomTest.assertDimension(dim101a.multiply(dim101b), { // unnamed dimension
-        "name": undefined,
-        "base": false,
-        "length": 1,
-        "time": 1,
-        "mass": 0,
-        "temperature": 0,
-        "current": 0,
-        "intensity": 0,
-        "amount": 0
-    },'operations','multiplication');
+    const angle503 = new Angle(90);//exactly 90
+    randomTest.assertEqualStrict(angle503.isRight(), true, 'comparison', 'comparison1');
 
     $("#putItHere").append(randomTest.printAllTests());
 

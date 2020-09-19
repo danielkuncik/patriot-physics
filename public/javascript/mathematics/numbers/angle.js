@@ -1,8 +1,3 @@
-
-/*
-would it all work if i saved only a float and a number of sig figs???
-*/
-
 class Angle {
   constructor(measurementInput, measuredInDegrees = true, inTermsOfPi = !measuredInDegrees ? true : undefined, noRedundancy = true) {
     let newMeasurement = processMeasurementInput(measurementInput);
@@ -39,6 +34,9 @@ class Angle {
   isInRadians() {
     return !this.measuredInDegrees
   }
+  isExact() {
+    return this.measurement.isExact()
+  }
   getUnit() {
     if (this.measuredInDegrees) {
       return 'degrees'
@@ -70,30 +68,30 @@ class Angle {
   }
 
 
-  isEqualTo(anotherAngleInput, numSigFigs) {
+  isEqualTo(anotherAngleInput, numSigFigs = this.measurement.getNumSigFigs()) {
     const anotherAngle = processAngleInput(anotherAngleInput);
     return this.measurement.isEqualTo(anotherAngle.measurement, numSigFigs)
   }
-  isGreaterThan(anotherAngleInput, numSigFigs) {
+  isGreaterThan(anotherAngleInput, numSigFigs = this.measurement.getNumSigFigs()) {
     const anotherAngle = processAngleInput(anotherAngleInput);
     return this.measurement.isGreaterThan(anotherAngle.measurement, numSigFigs)
   }
-  isGreaterThanOrEqualTo(anotherAngleInput, numSigFigs) {
+  isGreaterThanOrEqualTo(anotherAngleInput, numSigFigs = this.measurement.getNumSigFigs()) {
     const anotherAngle = processAngleInput(anotherAngleInput);
     return this.measurement.isGreaterThanOrEqualTo(anotherAngle.measurement, numSigFigs)
   }
-  isLessThan(anotherAngleInput, numSigFigs) {
+  isLessThan(anotherAngleInput, numSigFigs = this.measurement.getNumSigFigs()) {
     const anotherAngle = processAngleInput(anotherAngleInput);
     return this.measurement.isLessThan(anotherAngle.measurement, numSigFigs)
   }
-  isLessThanOrEqualTo(anotherAngleInput, numSigFigs) {
+  isLessThanOrEqualTo(anotherAngleInput, numSigFigs = this.measurement.getNumSigFigs()) {
     const anotherAngle = processAngleInput(anotherAngleInput);
     return this.measurement.isLessThanOrEqualTo(anotherAngle.measurement, numSigFigs)
   }
   isExactlyZero() {
     return this.measurement.isExactlyZero()
   }
-  isRight(numSigFigs) {
+  isRight(numSigFigs = this.measurement.getNumSigFigs()) {
     return this.isEqualTo(new Angle(90), numSigFigs)
   }
   isExactly30() { /// add cases for radians in terms of pi
@@ -316,7 +314,6 @@ class Angle {
   }
 
 
-
   print(inTermsOfPi = false) {
     return `${this.measurement.printStandardNotation()}°`
   }
@@ -344,19 +341,6 @@ function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSid
     return angleInRadians.convertToDegrees();
 }
 
-  function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSide2Mag) {
-  let temp1 = (adjacentSide1Mag.squareMag().addMag(adjacentSide2Mag.squareMag())).subtractMag(oppositeSideMag.squareMag());
-  let temp2 = (adjacentSide1Mag.multiplyMag(adjacentSide2Mag)).multiplyMagExactConstant(2);
-  let cosine = temp1.divideMag(temp2);
-  // while (cosine > 1) {
-  //     cosine -= 1;
-  // }
-  // while (cosine < -1) {
-  //     cosine += 1;
-  // }
-  const angleInRadians = cosine.inverseCosMag();
-  return angleInRadians.convertToDegrees();
-}
 
 /*
 OLD ANGLE

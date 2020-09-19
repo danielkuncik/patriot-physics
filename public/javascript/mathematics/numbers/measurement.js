@@ -636,6 +636,17 @@ class Measurement {
             } else if (num1 < num2) {
                 return '<'
             }
+        } else if (numSigFigs === Infinity) {
+            let num1, num2;
+            num1 = this.getFloat();
+            num2 = anotherMeasurement.getFloat();
+            if (num1 === num2) {
+                return '='
+            } else if (num1 > num2) {
+                return '>'
+            } else if (num1 < num2) {
+                return '<'
+            }
         }
     }
 
@@ -961,27 +972,48 @@ class Measurement {
     }
 
 
-    ///// ADD SPECIAL CASES
-    /// WHEN AN EXACT ANSEWR IS KNOWN!!!!
-
     // inverse trig functions
     inverseSin() {
-        const newFloat = Math.asin(this.getFloat());
-        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // this operation always reduces to the maximum number of significant figures
-        const newMeasurement = new Measurement(newFloat, newSigFigs);
-        return new Angle(newMeasurement, false)
+        if (this.isExactlyZero()) {
+            return new Angle(0)
+        } else if (this.isExactlyOne()) {
+            return new Angle(90)
+        } else if (this.isExactlyNegativeOne()) {
+            return new Angle(270)
+        } else {
+            const newFloat = Math.asin(this.getFloat());
+            const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // this operation always reduces to the maximum number of significant figures
+            const newMeasurement = new Measurement(newFloat, newSigFigs);
+            return new Angle(newMeasurement, false)
+        }
     }
     inverseCos() {
-        const newFloat = Math.acos(this.getFloat());
-        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
-        const newMeasurement = new Measurement(newFloat, newSigFigs);
-        return new Angle(newMeasurement, false)
+        if (this.isExactlyZero()) {
+            return new Angle(90)
+        } else if (this.isExactlyOne()) {
+            return new Angle(0)
+        } else if (this.isExactlyNegativeOne()) {
+            return new Angle(180)
+        } else {
+            const newFloat = Math.acos(this.getFloat());
+            const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // this operation always reduces to the maximum number of significant figures
+            const newMeasurement = new Measurement(newFloat, newSigFigs);
+            return new Angle(newMeasurement, false)
+        }
     }
     inverseTan() {
-        const newFloat = Math.atan(this.getFloat());
-        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
-        const newMeasurement = new Measurement(newFloat, newSigFigs);
-        return new Angle(newMeasurement, false)
+        if (this.isExactlyZero()) {
+            return new Angle(0)
+        } else if (this.isExactlyOne()) {
+            return new Angle(45)
+        } else if (this.isExactlyNegativeOne()) {
+            return new Angle(135)
+        } else {
+            const newFloat = Math.atan(this.getFloat());
+            const newSigFigs = Math.min(this.numSigFigs, maxSigFigs); // this operation always reduces to the maximum number of significant figures
+            const newMeasurement = new Measurement(newFloat, newSigFigs);
+            return new Angle(newMeasurement, false)
+        }
     }
 
 }
