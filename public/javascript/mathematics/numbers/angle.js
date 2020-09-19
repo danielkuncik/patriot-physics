@@ -56,7 +56,7 @@ class Angle {
     if (this.isInDegrees()) {
       return this
     } else {
-      const newMeasurement = this.measurement.divide(New Measurement(180 / Math.PI, maxSigFigs));
+      const newMeasurement = this.measurement.divide(new Measurement(180 / Math.PI, maxSigFigs));
       return new Angle(newMeasurement)
     }
   }
@@ -64,19 +64,87 @@ class Angle {
     if (this.isInRadians()) {
       return this
     } else {
-      const newMeasurement = this.measurement.divide(New Measurement(Math.PI / 180, maxSigFigs));
+      const newMeasurement = this.measurement.divide(new Measurement(Math.PI / 180, maxSigFigs));
       return new Angle(newMeasurement, false)
     }
   }
 
-  // private method
-  makeAnotherAngleCompatible(anotherAngle) {
-    if (this.isInDegrees()) {
-      return anotherAngle.convertToDegrees()
-    } else if (this.isInRadians()) {
-      return anotherAngle.convertToRadians()
-    }
+
+  isEqualTo(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement.isEqualTo(anotherAngle.measurement, numSigFigs)
   }
+  isGreaterThan(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement.isGreaterThan(anotherAngle.measurement, numSigFigs)
+  }
+  isGreaterThanOrEqualTo(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement.isGreaterThanOrEqualTo(anotherAngle.measurement, numSigFigs)
+  }
+  isLessThan(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement.isLessThan(anotherAngle.measurement, numSigFigs)
+  }
+  isLessThanOrEqualTo(anotherAngleInput, numSigFigs) {
+    const anotherAngle = processAngleInput(anotherAngleInput);
+    return this.measurement.isLessThanOrEqualTo(anotherAngle.measurement, numSigFigs)
+  }
+  isExactlyZero() {
+    return this.measurement.isExactlyZero()
+  }
+  isRight(numSigFigs) {
+    return this.isEqualTo(new Angle(90), numSigFigs)
+  }
+  isExactly30() { /// add cases for radians in terms of pi
+    return this.isEqualTo(new Angle(30)) && this.isExact()
+  }
+  isExactly45() {
+    return this.isEqualTo(new Angle(45)) && this.isExact()
+  }
+  isExactly60() {
+    return this.isEqualTo(new Angle(60)) && this.isExact()
+  }
+  isExactly90() {
+    return this.isEqualTo(new Angle(90)) && this.isExact()
+  }
+  isExactly120() {
+    return this.isEqualTo(new Angle(120)) && this.isExact()
+  }
+  isExactly135() {
+    return this.isEqualTo(new Angle(135)) && this.isExact()
+  }
+  isExactly150() {
+    return this.isEqualTo(new Angle(150)) && this.isExact()
+  }
+  isExactly180() {
+    return this.isEqualTo(new Angle(180)) && this.isExact()
+  }
+  isExactly210() {
+    return this.isEqualTo(new Angle(210)) && this.isExact()
+  }
+  isExactly225() {
+    return this.isEqualTo(new Angle(225)) && this.isExact()
+  }
+  isExactly240() {
+    return this.isEqualTo(new Angle(240)) && this.isExact()
+  }
+  isExactly270() {
+    return this.isEqualTo(new Angle(270)) && this.isExact()
+  }
+  isExactly300() {
+    return this.isEqualTo(new Angle(300)) && this.isExact()
+  }
+  isExactly315() {
+    return this.isEqualTo(new Angle(315)) && this.isExact()
+  }
+  isExactly330() {
+    return this.isEqualTo(new Angle(300)) && this.isExact()
+  }
+  isExactly360() {
+    return this.isEqualTo(new Angle(360)) && this.isExact()
+  }
+
 
   add(anotherAngleInput) {
     const anotherAngle = processAngleInput(anotherAngleInput);
@@ -193,7 +261,7 @@ class Angle {
       return new Measurement(2)
     } else if (this.isExactly360()) {
       return new Measurement(1)
-    else {
+    } else {
       const radAngle = this.convertToRadians();
       return radAngle.measurement.sec();
     }
@@ -248,80 +316,6 @@ class Angle {
   }
 
 
-  isEqualTo(anotherAngleInput, numSigFigs) {
-    const anotherAngle = processAngleInput(anotherAngleInput);
-    return this.measurement(isEqualTo(anotherAngle.measurement, numSigFigs))
-  }
-  isGreaterThan(anotherAngleInput, numSigFigs) {
-    const anotherAngle = processAngleInput(anotherAngleInput);
-    return this.measurement(isGreaterThan(anotherAngle.measurement, numSigFigs))
-  }
-  isGreaterThanOrEqualTo(anotherAngleInput, numSigFigs) {
-    const anotherAngle = processAngleInput(anotherAngleInput);
-    return this.measurement(isGreaterThanOrEqualTo(anotherAngle.measurement, numSigFigs))
-  }
-  isLessThan(anotherAngleInput, numSigFigs) {
-    const anotherAngle = processAngleInput(anotherAngleInput);
-    return this.measurement(isLessThan(anotherAngle.measurement, numSigFigs))
-  }
-  isLessThanOrEqualTo(anotherAngleInput, numSigFigs) {
-    const anotherAngle = processAngleInput(anotherAngleInput);
-    return this.measurement(isLessThanOrEqualTo(anotherAngle.measurement, numSigFigs))
-  }
-  isExactlyZero() {
-    return this.measurement.isExactlyZero()
-  }
-  isRight(numSigFigs) {
-    return this.isEqualTo(new Angle(90), numSigFigs)
-  }
-  isExactly30() { /// add cases for radians in terms of pi
-    return this.isEqualTo(new Angle(30)) && this.isExact()
-  }
-  isExactly45() {
-    return this.isEqualTo(new Angle(45)) && this.isExact()
-  }
-  isExactly60() {
-    return this.isEqualTo(new Angle(60)) && this.isExact()
-  }
-  isExactly90() {
-    return this.isEqualTo(new Angle(90)) && this.isExact()
-  }
-  isExactly120() {
-    return this.isEqualTo(new Angle(120)) && this.isExact()
-  }
-  isExactly135() {
-    return this.isEqualTo(new Angle(135)) && this.isExact()
-  }
-  isExactly150() {
-    return this.isEqualTo(new Angle(150)) && this.isExact()
-  }
-  isExactly180() {
-    return this.isEqualTo(new Angle(180)) && this.isExact()
-  }
-  isExactly210() {
-    return this.isEqualTo(new Angle(210)) && this.isExact()
-  }
-  isExactly225() {
-    return this.isEqualTo(new Angle(225)) && this.isExact()
-  }
-  isExactly240() {
-    return this.isEqualTo(new Angle(240)) && this.isExact()
-  }
-  isExactly270() {
-    return this.isEqualTo(new Angle(270)) && this.isExact()
-  }
-  isExactly300() {
-    return this.isEqualTo(new Angle(300)) && this.isExact()
-  }
-  isExactly315() {
-    return this.isEqualTo(new Angle(315)) && this.isExact()
-  }
-  isExactly330() {
-    return this.isEqualTo(new Angle(300)) && this.isExact()
-  }
-  isExactly360() {
-    return this.isEqualTo(new Angle(360)) && this.isExact()
-  }
 
   print(inTermsOfPi = false) {
     return `${this.measurement.printStandardNotation()}°`
@@ -329,7 +323,7 @@ class Angle {
 }
 
 function processAngleInput(angleInput) {
-  if (typeOf(angleInput) === 'object' && angleInput.isAnAngle) {
+  if (typeof(angleInput) === 'object' && angleInput.isAnAngle) {
     return angleInput
   } else {
     return new Angle(processMeasurementInput(angleInput)) // defaults to degrees
@@ -350,6 +344,19 @@ function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSid
     return angleInRadians.convertToDegrees();
 }
 
+  function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSide2Mag) {
+  let temp1 = (adjacentSide1Mag.squareMag().addMag(adjacentSide2Mag.squareMag())).subtractMag(oppositeSideMag.squareMag());
+  let temp2 = (adjacentSide1Mag.multiplyMag(adjacentSide2Mag)).multiplyMagExactConstant(2);
+  let cosine = temp1.divideMag(temp2);
+  // while (cosine > 1) {
+  //     cosine -= 1;
+  // }
+  // while (cosine < -1) {
+  //     cosine += 1;
+  // }
+  const angleInRadians = cosine.inverseCosMag();
+  return angleInRadians.convertToDegrees();
+}
 
 /*
 OLD ANGLE
@@ -629,16 +636,3 @@ function simplifyAngle(angleInRadians) {
 */
 // figure this out!
 // convert this to physicsNumbers
-function getAngleFromLawOfCosines(oppositeSideMag, adjacentSide1Mag, adjacentSide2Mag) {
-    let temp1 = (adjacentSide1Mag.squareMag().addMag(adjacentSide2Mag.squareMag())).subtractMag(oppositeSideMag.squareMag());
-    let temp2 = (adjacentSide1Mag.multiplyMag(adjacentSide2Mag)).multiplyMagExactConstant(2);
-    let cosine = temp1.divideMag(temp2);
-    // while (cosine > 1) {
-    //     cosine -= 1;
-    // }
-    // while (cosine < -1) {
-    //     cosine += 1;
-    // }
-    const angleInRadians = cosine.inverseCosMag();
-    return angleInRadians.convertToDegrees();
-}
