@@ -192,7 +192,7 @@ function countSigFigs(numericalString) {
             numericalString = numericalString.slice(0,numericalString.length - 1);
         }
         let otherSigFigs = numericalString.slice(1,numericalString.length);
-        return numSigFigs = 1 + otherSigFigs.length;
+        return 1 + otherSigFigs.length;
     } else {
         return undefined
     }
@@ -305,7 +305,7 @@ class Measurement {
         if (this.isZero() || this.isInfinity() || !this.isAmeasurement) {
           return undefined
         }
-        let testFloat = this.isExact() ? this.getFloat() : Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));
+        let testFloat = this.isExact() ? this.getFloat(true) : Number(this.getFloat(true).toExponential(this.getNumSigFigs() - 1));
         if (testFloat === 0) {
             return undefined
         } else {
@@ -1029,3 +1029,4 @@ function processMeasurementInput(input) {
         return input
     }
 }
+

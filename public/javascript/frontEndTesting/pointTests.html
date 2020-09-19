@@ -36,6 +36,8 @@
     pointTests.addCategory('pointObject','Point Object Tests');
 
     pointTests.addSubCategory('pointObject','pointRotation','Point Rotation Tests');
+    pointTests.addSubCategory('pointObject','pointAngle','Point Angle Tests');
+
 
     let x1 = new Magnitude('2.000');
     let y1 = new Magnitude('0.00000000');
@@ -70,291 +72,444 @@
         }
     },'pointObject','pointRotation');
 
-    pointTests.assertEqualStrict(point1.getQuadrant(), '+Y', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.zero, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.firstSigFig, '0', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.orderOfMagnitude, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.positive, undefined, 'pointObject', 'pointRotation');
 
-    pointTests.assertMagnitude(point1.y, {
-        "firstSigFig": '2',
-        "otherSigFigs": '000',
-        'orderOfMagnitude': 0,
-        "numSigFigs": 4,
-        'positive': true
-    }, 'pointObject', 'pointRotation');
+    point1.rotate('90.00');
+    pointTests.assertPoint(point1, {
+        quadrant: "-X",
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '000',
+            orderOfMagnitude: 0,
+            numSigFigs: 4,
+            positive: false
+        },
+        yIsZero: 4
+    },'pointObject','pointRotation');
 
-    point1.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point1.getQuadrant(), '-X', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.zero, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.positive, false, 'pointObject', 'pointRotation');
+    point1.rotate('90.00');
+    pointTests.assertPoint(point1, {
+        quadrant: "-Y",
+        xIsZero: 4,
+        y: {
+            zero: false,
+            firstSigFig: '2',
+            otherSigFigs: '000',
+            orderOfMagnitude: 0,
+            numSigFigs: 4,
+            positive: false,
+            negative: true
+        }
+    },'pointObject','pointRotation');
 
-    pointTests.assertEqualStrict(point1.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.zero, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.firstSigFig, '0', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.orderOfMagnitude, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.positive, undefined, 'pointObject', 'pointRotation');
-
-    point1.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point1.getQuadrant(), '-Y', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.zero, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.firstSigFig, '0', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.orderOfMagnitude, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.positive, undefined, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point1.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.zero, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.positive, false, 'pointObject', 'pointRotation');
-
-    point1.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point1.getQuadrant(), '+X', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.zero, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.positive, true, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point1.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.zero, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.firstSigFig, '0', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.orderOfMagnitude, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.positive, undefined, 'pointObject', 'pointRotation');
-
+    point1.rotate('90.00');
+    pointTests.assertPoint(point1, {
+        quadrant: "+X",
+        x: {
+            zero: false,
+            firstSigFig: '2',
+            otherSigFigs: '000',
+            orderOfMagnitude: 0,
+            numSigFigs: 4,
+            positive: true,
+            negative: false
+        },
+        yIsZero: 4
+    },'pointObjects','pointRotation');
 
 
     let x2 = new Magnitude('2.00');
     let y2 = new Magnitude('2.00');
-    //let rotationAngle = new Angle('90.0');
     let point2 = new Point(x2,y2);
 
+    pointTests.assertPoint(point2,{
+        quadrant: "1",
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        }
+    },'pointObjects','pointRotation');
 
-    pointTests.assertEqualStrict(point2.getQuadrant(), '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.positive, true, 'pointObject', 'pointRotation');
 
-    pointTests.assertEqualStrict(point2.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.positive, true, 'pointObject', 'pointRotation');
 
-    point2.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point2.getQuadrant(), '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.positive, false, 'pointObject', 'pointRotation');
+    point2.rotate('90.00');
+    pointTests.assertPoint(point2,{
+        quadrant: "2",
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: false,
+            negative: true
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        }
+    },'pointObjects','pointRotation');
 
-    pointTests.assertEqualStrict(point2.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.positive, true, 'pointObject', 'pointRotation');
 
-    point2.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point2.getQuadrant(), '3', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.positive, false, 'pointObject', 'pointRotation');
+    point2.rotate('90.00');
+    pointTests.assertPoint(point2,{
+        quadrant: "3",
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: false,
+            negative: true
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: false,
+            negative: true
+        }
+    },'pointObjects','pointRotation');
 
-    pointTests.assertEqualStrict(point2.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.positive, false, 'pointObject', 'pointRotation');
+    point2.rotate('90.00');
+    pointTests.assertPoint(point2,{
+        quadrant: "4",
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: false,
+            negative: true
+        }
+    },'pointObjects','pointRotation');
 
-    point2.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point2.getQuadrant(), '4', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.positive, true, 'pointObject', 'pointRotation');
 
-    pointTests.assertEqualStrict(point2.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.positive, false, 'pointObject', 'pointRotation');
+    point2.rotate('90.00');
+    pointTests.assertPoint(point2,{
+        quadrant: "1",
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        }
+    },'pointObjects','pointRotation');
 
-    point2.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point2.getQuadrant(), '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.x.positive, true, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point2.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point2.y.positive, true, 'pointObject', 'pointRotation');
 
     let x3 = new Magnitude('10');
     let y3 = new Magnitude('2.00');
-    //let rotationAngle = new Angle('90.0');
     let point3 = new Point(x3,y3);
 
-
-    pointTests.assertEqualStrict(point3.getQuadrant(), '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.firstSigFig, '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.orderOfMagnitude, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.positive, true, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point3.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.otherSigFigs, '00', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.numSigFigs, 3, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.positive, true, 'pointObject', 'pointRotation');
-
-    point3.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point3.getQuadrant(), '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.positive, false, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point3.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.firstSigFig, '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.orderOfMagnitude, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.positive, true, 'pointObject', 'pointRotation');
-
-    point3.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point3.getQuadrant(), '3', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.firstSigFig, '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.orderOfMagnitude, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.positive, false, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point3.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.positive, false, 'pointObject', 'pointRotation');
-
-    point3.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point3.getQuadrant(), '4', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.positive, true, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point3.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.firstSigFig, '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.orderOfMagnitude, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.positive, false, 'pointObject', 'pointRotation');
-
-    point3.rotate(rotationAngle);
-    pointTests.assertEqualStrict(point3.getQuadrant(), '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.firstSigFig, '1', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.orderOfMagnitude, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.x.positive, true, 'pointObject', 'pointRotation');
-
-    pointTests.assertEqualStrict(point3.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.otherSigFigs, '', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.numSigFigs, 1, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point3.y.positive, true, 'pointObject', 'pointRotation');
+    pointTests.assertPoint(point3,{
+        quadrant: '1',
+        x: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        }
+    },'pointObject','pointRotation');
 
 
+    point3.rotate('90.00');
+    pointTests.assertPoint(point3,{
+        quadrant: '2',
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        },
+        y: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        }
+    },'pointObject','pointRotation');
 
-    /*
-        let point3 = new Point(-4,6);
-        mathTests.assertEqualFloat(point3.x, -4, 'pointObject', 'pointRotation');
-        mathTests.assertEqualFloat(point3.y, 6, 'pointObject', 'pointRotation');
-        point3.rotate(Math.PI / 2);
-        mathTests.assertEqualFloat(point3.x, -6, 'pointObject', 'pointRotation');
-        mathTests.assertEqualFloat(point3.y, -4, 'pointObject', 'pointRotation');
-        point3.rotate(Math.PI / 2);
-        mathTests.assertEqualFloat(point3.x, 4, 'pointObject', 'pointRotation');
-        mathTests.assertEqualFloat(point3.y, -6, 'pointObject', 'pointRotation');
-        point3.rotate(Math.PI / 2);
-        mathTests.assertEqualFloat(point3.x, 6, 'pointObject', 'pointRotation');
-        mathTests.assertEqualFloat(point3.y, 4, 'pointObject', 'pointRotation');
-        point3.rotate(Math.PI / 2);
-        mathTests.assertEqualFloat(point3.x, -4, 'pointObject', 'pointRotation');
-        mathTests.assertEqualFloat(point3.y, 6, 'pointObject', 'pointRotation');
+
+    point3.rotate('90.00');
+    pointTests.assertPoint(point3,{
+        quadrant: '3',
+        x: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        }
+    },'pointObject','pointRotation');
+
+    point3.rotate('90.00');
+    pointTests.assertPoint(point3,{
+        quadrant: '4',
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        }
+    },'pointObject','pointRotation');
+
+
+    point3.rotate('90.00');
+    pointTests.assertPoint(point3,{
+        quadrant: undefined,
+        x: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        }
+    },'pointObject','pointRotation');
+
+
+    let point4 = new Point(-4,6);
+    pointTests.assertPoint(point4,{
+        quadrant: '2',
+        x: {
+            firstSigFig: '4',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: false,
+            negative: true,
+            float: -4
+        },
+        y: {
+            firstSigFig: '6',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: true,
+            negative: false,
+            float: 6
+        }
+    },'pointObject','pointRotation');
+
+    point4.rotate(90); // -6, -4
+    pointTests.assertPoint(point4,{
+        quadrant: '3',
+        x: {
+            firstSigFig: '6',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: false,
+            negative: true,
+            float: -6
+        },
+        y: {
+            firstSigFig: '4',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: false,
+            negative: true,
+            float: -6
+        }
+    },'pointObject','pointRotation');
+
+    point4.rotate(90); // 4, -6
+    pointTests.assertPoint(point4,{
+        quadrant: '4',
+        x: {
+            firstSigFig: '4',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: true,
+            negative: false,
+            float: 4
+        },
+        y: {
+            firstSigFig: '6',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: false,
+            negative: true,
+            float: -6
+        }
+    },'pointObject','pointRotation');
+
+
+    point4.rotate(90); // 6, 4
+    pointTests.assertPoint(point4,{
+        quadrant: '1',
+        x: {
+            firstSigFig: '6',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: true,
+            negative: false,
+            float: 6
+        },
+        y: {
+            firstSigFig: '4',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: true,
+            negative: false,
+            float: 4
+        }
+    },'pointObject','pointRotation');
+
+
+    point4.rotate(90); // -4, 6
+    pointTests.assertPoint(point4,{
+        quadrant: '2',
+        x: {
+            firstSigFig: '4',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: false,
+            negative: true,
+            float: -4
+        },
+        y: {
+            firstSigFig: '6',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: Infinity,
+            exact: true,
+            positive: true,
+            negative: false,
+            float: 6
+        }
+    },'pointObject','pointRotation');
+
+
 
         // add some more where it begins on an axis and rotates 30, 45, or 60 degrees
-        let point4 = new Point(10,0);
-        point4.rotate(convertDegreesToRadians(60));
-        mathTests.assertEqualFloat(point4.x, 5, 'pointObject', 'pointRotation');
-        mathTests.assertEqualFloat(point4.y, 5 * Math.sqrt(3), 'pointObject', 'pointRotation');
+        let point5 = new Point(10,0);
+        point5.rotate(60);
+
+        pointTests.assertPoint(point5,{
+            quadrant: "1",
+            x: {
+                firstSigFig: '5',
+                otherSigFigs: '',
+                orderOfMagnitude: 0,
+                numSigFigs: Infinity,
+                exact: true,
+                positive: true,
+                negative: false,
+                float: 5
+            },
+            y: {
+                numSigFigs: maxSigFigs,
+                float: 5 * Math.sqrt(3)
+            }
+        },'pointObject','pointRotation');
 
         // add some where it rotates about a point besides the origin
 
-        mathTests.addSubCategory('pointObject','pointAngle','Point Angle Tests');
 
-        let point10 = new Point(3,5);
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,6)),'1','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,6)),'2','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(makeOrigin()),'3','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(10,0)),'4','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,5)),'+X','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,5)),'-X','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,6)),'+Y','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,4)),'-Y','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,-1000)),'-Y','pointObject','pointAngle');
-        mathTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,5)),'0','pointObject','pointAngle');
 
-    */
+    let point10 = new Point(3,5);
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,6)),'1','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,6)),'2','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(makeOrigin()),'3','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(10,0)),'4','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(4,5)),'+X','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(2,5)),'-X','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,6)),'+Y','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,4)),'-Y','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,-1000)),'-Y','pointObject','pointAngle');
+    pointTests.assertEqualStrict(point10.getQuadrantOfAnotherPoint(new Point(3,5)),'0','pointObject','pointAngle');
+
+
 
     /// ##########################################################################################
     /// ##########################################################################################

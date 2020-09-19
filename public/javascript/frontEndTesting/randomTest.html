@@ -40,10 +40,34 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    const point501a = new Point(new Magnitude('1.00'),new Magnitude('0.00'));
-    const point501b = makeOrigin(3);
-    const point501c = new Point(new Magnitude('0.00'),new Magnitude('1.00'));
-    const angle501 = getAngleOfTwoRays(point501a, point501b, point501c); // should be a 90 degree angle
+    let point4 = new Point(-4,6);
+    /// THIS CREATES AN INFINITE LOOP
+    console.log(point4);
+
+    randomTest.assertPoint(point4,{
+        quadrant: '2',
+        x: {
+            firstSigFig: '4',
+            otherSigFigs: '',
+            // orderOfMagnitude: 0,
+        //     numSigFigs: Infinity,
+        //     exact: true,
+        //     positive: false,
+        //     negative: true,
+        //     float: -4
+        },
+        // y: {
+        //     firstSigFig: '6',
+        //     otherSigFigs: '',
+        //     orderOfMagnitude: 0,
+        //     //numSigFigs: Infinity,
+        //     exact: true,
+        //     positive: true,
+        //     negative: false,
+        //     float: 6
+        // }
+    },'pointObject','pointRotation');
+    console.log(point4.x.measurement);
 
 
     $("#putItHere").append(randomTest.printAllTests());
