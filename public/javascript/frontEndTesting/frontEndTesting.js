@@ -271,12 +271,12 @@ class TestPackage {
             this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
             return false
         }
-        this.assertEqualStrict(angle.isAnAngle, true, categoryKey, subCategoryKey, `${name}: isAnAngle`);
+        this.assertTrue(angle.isAnAngle, categoryKey, subCategoryKey, `${name}: isAnAngle`);
 
         this.assertMeasurement(angle.measurement, equalObject,categoryKey, subCategoryKey, name);
 
         if (equalObject.unit !== undefined) {
-            this.assertEqualStrict(angle.isInDegrees(), equalObject["unit"], categoryKey, subCategoryKey, `${name}: unit:`);
+            this.assertEqualStrict(angle.getUnit(), equalObject["unit"], categoryKey, subCategoryKey, `${name}: unit:`);
         }
         if (equalObject.print !== undefined) {
             this.assertEqualStrict(angle.print(), equalObject["print"], categoryKey, subCategoryKey, `${name}: print:`);

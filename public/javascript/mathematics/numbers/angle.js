@@ -9,10 +9,12 @@ class Angle {
     if (typeof(newMeasurement) !== 'object' || !newMeasurement.isAmeasurement) {
       this.invalidate();
       return false
+    } else {
+      this.isAnAngle = true;
     }
     this.measuredInDegrees = measuredInDegrees; // if false, it is radians
 
-    const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2); // need to account for sig figs in pi
+    const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2, 12);
     while (newMeasurement.isNegative()) {
       newMeasurement = newMeasurement.add(fullCircle);
     }
@@ -24,6 +26,7 @@ class Angle {
   }
 
   invalidate() {
+    this.isAnAngle = false;
     this.measurement = undefined;
     this.degrees = undefined;
   }
@@ -43,10 +46,16 @@ class Angle {
   }
 
   reverseSign() {
-
+    const fullCircle = this.isInDegrees() ? new Angle(360) : new Angle(new Measurement(Math.PI * 2, 12), false);
+    return fullCircle.subtract(this)
   }
-  convertToDegrees() {
 
+  convertToDegrees() {
+    if (this.isInDegrees()) {
+      return this
+    } else {
+      const newMeasurement = this.measurement.divide(Math.PI * 2)
+    }
   }
   convertToRadians() {
 
@@ -102,7 +111,7 @@ class Angle {
   }
 
   print(inTermsOfPi = false) {
-
+    return `${this.measurement.printStandardNotation()}°`
   }
 }
 

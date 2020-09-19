@@ -630,7 +630,8 @@ class Measurement {
 
 
     // testes if equal up to a certain number of sig figs
-    isEqualTo(anotherMeasurement, numSigFigs) {
+    isEqualTo(anotherMeasurementInput, numSigFigs) {
+        const anotherMeasurement = processMeasurementInput(anotherMeasurementInput);
         const result = this.comparisonTest(anotherMeasurement, numSigFigs);
         if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
             return undefined
@@ -639,7 +640,8 @@ class Measurement {
         }
     }
 
-    isGreaterThan(anotherMeasurement, numSigFigs) {
+    isGreaterThan(anotherMeasurementInput, numSigFigs) {
+        const anotherMeasurement = processMeasurementInput(anotherMeasurementInput);
         const result = this.comparisonTest(anotherMeasurement, numSigFigs);
         if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
             return undefined
@@ -647,7 +649,8 @@ class Measurement {
             return result === '>'
         }
     }
-    isLessThan(anotherMeasurement, numSigFigs) {
+    isLessThan(anotherMeasurementInput, numSigFigs) {
+        const anotherMeasurement = processMeasurementInput(anotherMeasurementInput);
         const result = this.comparisonTest(anotherMeasurement, numSigFigs);
         if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
             return undefined
@@ -655,7 +658,8 @@ class Measurement {
             return result === '<'
         }
     }
-    isGreaterThanOrEqualTo(anotherMeasurement, numSigFigs) {
+    isGreaterThanOrEqualTo(anotherMeasurementInput, numSigFigs) {
+        const anotherMeasurement = processMeasurementInput(anotherMeasurementInput);
         const result = this.comparisonTest(anotherMeasurement, numSigFigs);
         if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
             return undefined
@@ -664,7 +668,8 @@ class Measurement {
         }
     }
 
-    isLessThanOrEqualTo(anotherMeasurement, numSigFigs) {
+    isLessThanOrEqualTo(anotherMeasurementInput, numSigFigs) {
+        const anotherMeasurement = processMeasurementInput(anotherMeasurementInput);
         const result = this.comparisonTest(anotherMeasurement, numSigFigs);
         if (result === undefined) { // unlike a typical comparison, undefined is an option when comparing non-equal measurements, indicating that two numbers cannot be compared due to their uncertainties
             return undefined
