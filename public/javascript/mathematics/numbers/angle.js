@@ -1,25 +1,33 @@
 class Angle {
   constructor(measurementInput, measuredInDegrees = true, inTermsOfPi = !measuredInDegrees ? true : undefined, noRedundancy = true) {
-    let newMeasurement = processMeasurementInput(measurementInput);
+    this.measurement = processMeasurementInput(measurementInput);
     if (typeof(newMeasurement) !== 'object' || !newMeasurement.isAmeasurement) {
       this.invalidate();
       return false
     } else {
       this.isAnAngle = true;
     }
-    this.measuredInDegrees = measuredInDegrees; // if false, it is radians
-
-    if (noRedundancy) {
-      const fullCircle = this.measuredInDegrees ? new Measurement(360) : new Measurement(Math.PI * 2, maxSigFigs);
-      while (newMeasurement.isNegative()) {
-        newMeasurement = newMeasurement.add(fullCircle);
-      }
-      while (newMeasurement.isGreaterThanOrEqualTo(fullCircle)) {
-        newMeasurement = newMeasurement.subtract(fullCircle);
-      }
+    if (measuredInDegrees) { // three possibilities for units: degrees, radians, and radians in terms of pi
+      this.unit = 'deg';
+    } else if (inTermsOfPi) {
+      this.unit = 'rad_pi';
+    } else {
+      this.unit = 'rad';
     }
 
-    this.measurement = newMeasurement;
+    if (noRedundancy) {
+      this.simplify();
+    }
+  }
+
+  simplify() {
+    const fullCircle = this.isInDegrees() ? new Measurement(360) : new Measurement(Math.PI * 2, maxSigFigs);
+    while (this.measurement.isNegative()) {
+      this.measurement = this.measurement.add(fullCircle);
+    }
+    while (this.measurement.isGreaterThanOrEqualTo(fullCircle)) {
+      this.measurement = this.measurement.subtract(fullCircle);
+    }
   }
 
   invalidate() {
@@ -28,21 +36,24 @@ class Angle {
     this.degrees = undefined;
   }
 
-  isInDegrees() {
-    return this.measuredInDegrees
+  duplicate() {
+    return new Angle(this.measurement, this.measuredInDegrees);
   }
-  isInRadians() {
-    return !this.measuredInDegrees
+
+  isInDegrees() {
+    return this.unit === 'deg'
+  }
+  isInRadiansOfPi() { /// NEED TO INCORPORATE THIS
+    return this.unit === 'rad_pi'
+  }
+  isInRadiansStraight() {
+    return this.unit === 'rad'
   }
   isExact() {
     return this.measurement.isExact()
   }
   getUnit() {
-    if (this.measuredInDegrees) {
-      return 'degrees'
-    } else {
-      return 'radians'
-    }
+    return this.unit
   }
 
   reverseSign() {
@@ -59,11 +70,36 @@ class Angle {
     }
   }
   convertToRadians() {
-    if (this.isInRadians()) {
+    if (this.isInRadiansStraight()) {
       return this
     } else {
       const newMeasurement = this.measurement.divide(new Measurement(Math.PI / 180, maxSigFigs));
       return new Angle(newMeasurement, false)
+    }
+  }
+
+  getQuadrant() {
+    if (!this.isAnAngle) { // if invalid => may be necessary for points at the origin
+      return undefined
+    }
+    let temp = (this.duplicate()).convertToDegrees();
+    temp.simplify();
+    if (temp.isExactlyZero() || temp.isExactly360()) {
+      return '+X'
+    } else if (temp.isExactly90()) {
+      return '+Y'
+    } else if (temp.isExactly180()) {
+      return '-X'
+    } else if (temp.isExactly270()) {
+      return '-Y'
+    } else if (this.isGreaterThan(0) && this.isLessThan(90)) {
+      return '1'
+    } else if (this.isGreaterThan(90) && this.isLessThan(180)) {
+      return '2'
+    } else if (this.isGreaterThan(180) && this.isLessThan(270)) {
+      return '3'
+    } else if (this.isGreaterThan(270) && this.isLessThan(360)) {
+      return '4'
     }
   }
 
