@@ -149,7 +149,7 @@ function checkAnswer(uuid, input) {
         correct: percentDifference(Number(input), answerObject.float) < 1
       }
   } else if (answerObject.type === 'magnitude') {
-      let newMagnitude = new Magnitude(input); // consider units
+      let newMagnitude = new Magnitude(input); // consider unit
       return answerObject.magnitude.correctInputtedAnswer(input)
   } else if (answerObject.type === 'diagram') {
       return undefined // not sure how to handle this

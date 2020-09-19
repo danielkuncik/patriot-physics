@@ -171,7 +171,7 @@ class MathematicalFunction {
                 let x2 = x1 + step;
                 totalArea += (x1 + x2) / 2 * step;
             }
-            return constructMagnitudeFromFloat(totalArea, finalSigFigs); // consider units?????
+            return constructMagnitudeFromFloat(totalArea, finalSigFigs); // consider unit?????
         }
     }
 

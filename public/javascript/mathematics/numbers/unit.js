@@ -2,23 +2,23 @@
 how do i want unit selection to work?
 - you should be able to select a unit by name, by dimensions
 
-1. there are four kinds of units: base units, units with the same dimension as base units that are not base units, SI deri
-base units: units of a base dimension that are SI units [meters, seconds, kilograms, kelvin, amperes]
-non-base SI units: units of a derived dimension that are SI units [newtons, joules, watts, m/s, m/s^2]
-base dimension non-SI units: units of a base dimension that are not SI units [kilometers, minutes, hours, pounds]
-non-base non-SI units: units of a non-base dimension that are not SI units []
+1. there are four kinds of unit: base unit, unit with the same dimension as base unit that are not base unit, SI deri
+base unit: unit of a base dimension that are SI unit [meters, seconds, kilograms, kelvin, amperes]
+non-base SI unit: unit of a derived dimension that are SI unit [newtons, joules, watts, m/s, m/s^2]
+base dimension non-SI unit: unit of a base dimension that are not SI unit [kilometers, minutes, hours, pounds]
+non-base non-SI unit: unit of a non-base dimension that are not SI unit []
 
-do I want these all in the same json? probably YES [but all derivations should be in terms of base units, so those should probably be separate?]
+do I want these all in the same json? probably YES [but all derivations should be in terms of base unit, so those should probably be separate?]
 having four JSON is too difficult
 
 to 'select' a unit, you can enter its name, a derivation object, or a unit object
 
 
 TO DO:
-For all metric units:
+For all metric unit:
 add a section called 'conventionally used prefixes'
 
-- it should automatically convert to 'conventionally used' other units if those produce a simpler answer, out of scientific notation?
+- it should automatically convert to 'conventionally used' other unit if those produce a simpler answer, out of scientific notation?
 
 
 
@@ -40,11 +40,11 @@ what about a 'derivation'???
 constructor(nameOrObject, derivation) {
     = if you giev a name string, it reads it from the lsit
     - if you give a completed unit object, it returns it [this should not be an option!!! if you already have an object, why feed it to a constructor????]
-    - if you give a derivation, it creates a new unit with that derivation and gives it the name...this allows new units to be formed??
+    - if you give a derivation, it creates a new unit with that derivation and gives it the name...this allows new unit to be formed??
 
     - derivation object: for each name, gives a multiplicaiton and a power
     = but, it should be able to find a name for a derivation....if one doesn't currently exist
-    [you cannot rename units, if you input a derivation, then it seraches ofr the name, and if it finds it disregards your name]
+    [you cannot rename unit, if you input a derivation, then it seraches ofr the name, and if it finds it disregards your name]
     [eg. february coudl be a unit consisting of 28 days]
 
     - in the methods are multiply, divide, inverse, test if the same as another unit, test if the same dimension as another unit
@@ -128,7 +128,7 @@ const metricPrefixes = {
     }
 };
 
-const units = {
+const unit = {
     "length": {
         "meter":
             {
@@ -296,6 +296,8 @@ class Unit {
     constructor(name, dimensionObject, conversionFactor,derivation) { // derivation is optional and is used to print the name of a unit in the event there is no official name, such as m/s or m/s^2
         this.name = name;
 
+        this.isAunit = undefined;// work on this
+
         /// analyze metric prefix
         let metricMultiplier, processedName = name;
         if (processedName) {
@@ -310,10 +312,10 @@ class Unit {
 
         /// LOOK UP NAME
         let u, done = false;
-        const dimensionList = Object.keys(units);
+        const dimensionList = Object.keys(unit);
         for (u = 0; u < dimensionList.length; u++) {
             const dimensionName = dimensionList[u];
-            const dimensionUnits = units[dimensionName];
+            const dimensionUnits = unit[dimensionName];
             Object.keys(dimensionUnits).forEach((unitName) => {
                 if (processedName === unitName) {
                     const referenceInfo = dimensionUnits[unitName];
@@ -527,5 +529,9 @@ function inverseUnit(unitObject) {
         newDerivation[key] = -1 * oldDerivation[key];
     });
     return newDerivation
+}
+
+function processUnitInput(input) { // need to write this!
+    return undefined
 }
 

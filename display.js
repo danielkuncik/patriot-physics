@@ -72,7 +72,7 @@ display_units_entry_page = (req,res) => {
 
 display_super_unit_page = (req,res) => {
     let superUnit = unitMap[req.params.superUnitKey];
-    res.render('units/' + req.params.superUnitKey + '/' + req.params.superUnitKey + '_super_unit_page.hbs', {
+    res.render('unit/' + req.params.superUnitKey + '/' + req.params.superUnitKey + '_super_unit_page.hbs', {
         layout: 'superUnitPageLayout.hbs',
         selectedSuperUnitKey: req.params.superUnitKey,
         title: superUnit.title,
@@ -87,7 +87,7 @@ display_super_unit_page = (req,res) => {
 display_unit_page = (req, res) => {
     unitCluster = unitMap[req.params.unitClusterKey];
     unit = unitCluster.units[req.params.unitKey];
-    res.render('units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
+    res.render('unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
         layout: 'unitPageLayout.hbs',
         title: unit.title,
         selectedUnitClusterKey: req.params.unitClusterKey,
@@ -118,7 +118,7 @@ display_pod_page = (req, res) => {
         title = title + `: ${pod.subtitle}`;
     }
     if (format === 'hbs') {
-        res.render('units/' + req.params.superUnitKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.hbs', {
+        res.render('unit/' + req.params.superUnitKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.hbs', {
             layout: "podPageLayout.hbs",
             unitName: unitMap[req.params.superUnitKey].units[req.params.unitKey].title,
             title: title,
@@ -143,7 +143,7 @@ display_pod_page = (req, res) => {
             totalAttempts: req.totalAttemps
         });
     } else if (format === 'pdf') {
-        let filePath = '/content/units/' + req.params.superUnitKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
+        let filePath = '/content/unit/' + req.params.superUnitKey + '/' + req.params.unitKey + '/pods/' + req.params.podKey + '.pdf';
         fs.readFile(__dirname + filePath , function (err,data){
             res.contentType("application/pdf");
             res.send(data);
@@ -291,19 +291,19 @@ display_quiz = (req, res) => {
     //             gradeMap: req.gradeMap
     //         })
     //     } else {
-    //         let versionNumber = availableContent[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].numberOfVersions;
+    //         let versionNumber = availableContent[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].numberOfVersions;
     //         let versionType = 'hbs'; // all quizzes will be hbs from now on
     //         if (versionType === 'hbs') {
     //             res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.hbs', {
     //                 layout: 'quizPageLayout.hbs',
     //                 selectedUnitClusterKey: req.params.unitClusterKey,
     //                 selectedUnitKey: req.params.unitKey,
-    //                 letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
-    //                 title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
-    //                 unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
-    //                 unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
+    //                 letter: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].letter,
+    //                 title: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].title,
+    //                 unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].unit[req.params.unitKey].number,
+    //                 unitTitle: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].title,
     //                 unitClusterTitle: unitMap[req.params.unitClusterKey].title,
-    //                 level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level,
+    //                 level: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].level,
     //                 version: versionNumber,
     //                 user: req.user,
     //                 section: req.section,

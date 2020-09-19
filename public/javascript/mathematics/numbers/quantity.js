@@ -37,7 +37,7 @@ class ScalarQuantity extends Quantity {
     }
     this.magnitude = magnitudeObject;
 
-    /// I need to incldue a check that the magnitude object has the correct units!!!
+    /// I need to incldue a check that the magnitude object has the correct unit!!!
   }
 
   printAsEquation(prtintFullName) {

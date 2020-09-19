@@ -105,7 +105,7 @@ function createUnitListItem(superUnitKey, unitKey, gradeMap) {
     return unitListItem
 }
 
-// creates a list of all units within a super Unit
+// creates a list of all unit within a super Unit
 function createUnitList(superUnitKey, gradeMap) {
     let unitList = "<ul class = 'unitList'>";
     Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
@@ -162,7 +162,7 @@ hbs.registerHelper('listAllUnits',(gradeMap) => {
 
 
 
-// change it so that the super Unit as at the top...and all other units are at the bottom
+// change it so that the super Unit as at the top...and all other unit are at the bottom
 /// MUST BE REDONE
 hbs.registerHelper('listAllUnitsWithinSuperUnit', (selectedSuperUnitKey, gradeMap) => {
     let header = `<h2>${unitMap[selectedSuperUnitKey].number}: ${unitMap[selectedSuperUnitKey].title}</h2>`;

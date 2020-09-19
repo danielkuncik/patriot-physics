@@ -15,8 +15,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script src = './frontEndTesting.js'></script>
-<script src = '../mathematics/numbers/units.js'></script>
-<script src = '../mathematics/numbers/physicsNumber.js'></script>
+<script src = '../mathematics/numbers/measurement.js'></script>
+<script src = '../mathematics/numbers/unit.js'></script>
 <script src = '../mathematics/numbers/magnitude.js'></script>
 <script src = '../mathematics/numbers/angle.js'></script>
 <script src = '../mathematics/geometricObjects/basics/point.js'></script>
@@ -42,24 +42,34 @@
     let rotationAngle = new Angle('90.00');
     let point1 = new Point(x1, y1);
 
-    pointTests.assertEqualStrict(point1.getQuadrant(), '+X', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.zero, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.firstSigFig, '2', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.otherSigFigs, '000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.orderOfMagnitude, 0, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.numSigFigs, 4, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.x.positive, true, 'pointObject', 'pointRotation');
+    pointTests.assertPoint(point1, {
+        quadrant: '+X',
+        x: {
+            zero: false,
+            firstSigFig: '2',
+            otherSigFigs: '000',
+            orderOfMagnitude: 0,
+            numSigFigs: 4,
+            positive: true
+        },
+        yIsZero: 9
+    },'pointObject', 'pointRotation');
 
-    pointTests.assertEqualStrict(point1.y.isAmagnitude, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.zero, true, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.firstSigFig, '0', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.otherSigFigs, '00000000', 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.orderOfMagnitude, undefined, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.numSigFigs, 9, 'pointObject', 'pointRotation');
-    pointTests.assertEqualStrict(point1.y.positive, undefined, 'pointObject', 'pointRotation');
 
     point1.rotate(rotationAngle);
+
+    pointTests.assertPoint(point1, {
+        quadrant: '+Y',
+        xIsZero: 4,
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '000',
+            orderOfMagnitude: 0,
+            numSigFigs: 4,
+            positive: true
+        }
+    },'pointObject','pointRotation');
+
     pointTests.assertEqualStrict(point1.getQuadrant(), '+Y', 'pointObject', 'pointRotation');
     pointTests.assertEqualStrict(point1.x.zero, true, 'pointObject', 'pointRotation');
     pointTests.assertEqualStrict(point1.x.isAmagnitude, true, 'pointObject', 'pointRotation');
@@ -684,19 +694,19 @@
     pointTests.assertEqualStrict(distance305.positive, true, 'pointObject', 'distanceToAnotherPoint');
 
     // mimicing process of 'construct line from slope intercept'
-    const slope101 = new Magnitude('-4.00');
-    const yIntercept101 = new Magnitude('8.0');
-    const point306a = new Point(constructZeroMagnitude(undefined, true), yIntercept101);
-    const delta_x = new Magnitude(`1e${slope101.orderOfMagnitude}`,undefined,undefined, true);
-    const delta_y = delta_x.multiplyMag(slope101);
-    const point306b = new Point(delta_x, yIntercept101.addMag(delta_y));
-    const distance306 = point306a.getDistanceToAnotherPoint(point306b); // square root of 17 => 4.12310562562 => 4.1
-    pointTests.assertEqualStrict(distance306.isAmagnitude, true, 'pointObject', 'distanceToAnotherPoint');
-    pointTests.assertEqualStrict(distance306.firstSigFig, '4', 'pointObject', 'distanceToAnotherPoint');
-    pointTests.assertEqualStrict(distance306.otherSigFigs, '1', 'pointObject', 'distanceToAnotherPoint');
-    pointTests.assertEqualStrict(distance306.orderOfMagnitude, 0, 'pointObject', 'distanceToAnotherPoint');
-    pointTests.assertEqualStrict(distance306.numSigFigs, 2, 'pointObject', 'distanceToAnotherPoint');
-    pointTests.assertEqualStrict(distance306.positive, true, 'pointObject', 'distanceToAnotherPoint');
+    // const slope101 = new Magnitude('-4.00');
+    // const yIntercept101 = new Magnitude('8.0');
+    // const point306a = new Point(0, yIntercept101);
+    // const delta_x = new Magnitude(`1e${slope101.orderOfMagnitude}`);
+    // const delta_y = delta_x.multiplyMag(slope101);
+    // const point306b = new Point(delta_x, yIntercept101.addMag(delta_y));
+    // const distance306 = point306a.getDistanceToAnotherPoint(point306b); // square root of 17 => 4.12310562562 => 4.1
+    // pointTests.assertEqualStrict(distance306.isAmagnitude, true, 'pointObject', 'distanceToAnotherPoint');
+    // pointTests.assertEqualStrict(distance306.firstSigFig, '4', 'pointObject', 'distanceToAnotherPoint');
+    // pointTests.assertEqualStrict(distance306.otherSigFigs, '1', 'pointObject', 'distanceToAnotherPoint');
+    // pointTests.assertEqualStrict(distance306.orderOfMagnitude, 0, 'pointObject', 'distanceToAnotherPoint');
+    // pointTests.assertEqualStrict(distance306.numSigFigs, 2, 'pointObject', 'distanceToAnotherPoint');
+    // pointTests.assertEqualStrict(distance306.positive, true, 'pointObject', 'distanceToAnotherPoint');
 
 
     //#############################################################################

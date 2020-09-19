@@ -1,7 +1,7 @@
 class MagnitudeOld extends PhysicsNumber {
     constructor(numericalString, unitObject, intermediateValue, exact = false) {
         super(numericalString, intermediateValue, exact);
-        this.isAmagnitude = this.isAphysicsNumber; // will need to consider units here!!
+        this.isAmagnitude = this.isAphysicsNumber; // will need to consider unit here!!
         this.unit = unitObject;
 
     }
@@ -56,7 +56,7 @@ class MagnitudeOld extends PhysicsNumber {
         } else if (this.unit === undefined || anotherMagnitude.unit === undefined) {
             return false
         } else {
-            return this.unit.name === anotherMagnitude.unit.name // how do i deal with derived units??
+            return this.unit.name === anotherMagnitude.unit.name // how do i deal with derived unit??
         }
     }
 
@@ -74,31 +74,31 @@ class MagnitudeOld extends PhysicsNumber {
 
     // testes if equal up to a certain number of sig figs
     isEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different unit that are the same dimension, eg. metesr and feet can be compared
             return super.isEqualTo(anotherMagnitude, numSigFigs)
         }
     }
 
     isGreaterThan(anotherMagnitude, numSigFigs) {
-        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different unit that are the same dimension, eg. metesr and feet can be compared
             return super.isGreaterThan(anotherMagnitude, numSigFigs)
         }
     }
 
     isLessThan(anotherMagnitude, numSigFigs) {
-        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different unit that are the same dimension, eg. metesr and feet can be compared
             return super.isLessThan(anotherMagnitude, numSigFigs)
         }
     }
 
     isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different unit that are the same dimension, eg. metesr and feet can be compared
             return super.isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs)
         }
     }
 
     isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different units that are the same dimension, eg. metesr and feet can be compared
+        if (this.testSameUnit(anotherMagnitude)) { // it should really compare different unit that are the same dimension, eg. metesr and feet can be compared
             return super.isLessThanOrEqualTo(anotherMagnitude, numSigFigs)
         }
     }
@@ -281,7 +281,7 @@ class MagnitudeOld extends PhysicsNumber {
     }
 
     correctInputtedAnswer(inputtedAnswer, type = 'exact', acceptedPercentDifference) {
-        // deal with units here!
+        // deal with unit here!
         return super.correctInputtedAnswer(inputtedAnswer, type, acceptedPercentDifference)
     }
 

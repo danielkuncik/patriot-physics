@@ -1,12 +1,12 @@
 /*
 UNITS UNITS UNITS
-- deal with the units of the line, pointA and pointB
+- deal with the unit of the line, pointA and pointB
 
 */
 
 class Line {
     constructor(pointA, pointB, name = 'unnamed') {
-        if (pointA.getDistanceToAnotherPoint(pointB).zero) { /// need to have a different 'same point' test, not this one, which requires identical units!!!
+        if (pointA.getDistanceToAnotherPoint(pointB).zero) { /// need to have a different 'same point' test, not this one, which requires identical unit!!!
             console.log('cannot make a line of two of the same point');
             return false
         } else if (!areSameUnit(pointA.x.unit, pointB.x.unit) || !areSameUnit(pointA.y.unit, pointB.y.unit)) {
@@ -83,7 +83,7 @@ class Line {
         } else {
             // does not work if x is zero
             const delta_x = new Magnitude(`1e${outsidePoint.x.orderOfMagnitude}`,this.xUnit,undefined, true );
-            const delta_y = delta_x.multiplyMag(this.slope); /// should have same unit as y, based on how units combine
+            const delta_y = delta_x.multiplyMag(this.slope); /// should have same unit as y, based on how unit combine
             pointB = new Point(outsidePoint.x.addMag(delta_x), outsidePoint.y.addMag(delta_y));
         }
         return new Line(outsidePoint, pointB)
@@ -144,7 +144,7 @@ class Line {
 }
 
 /// issue: siginificant figures can be lost!
-/// how will this handle units if yIntercept is zero????
+/// how will this handle unit if yIntercept is zero????
 /// redo these with magnitudes
 function constructLineSlopeIntercept(slope, yIntercept, name) {
     if (slope.numSigFigs !== yIntercept.numSigFigs) {
@@ -170,7 +170,7 @@ function constructHorizontalLine(yValue, xUnit) {
 
 /// still need to make this work!!!!
 // i can;'t see a way to guarantee this works in this system
-// note this: if your point is the origin, it can have no units!
+// note this: if your point is the origin, it can have no unit!
 // function constructLineFromPointAndAngle(point = makeOrigin(), angle, xUnit, yUnit) {
 //
 //     let pointB = new Point(point.x + Math.cos(angleInRadians), point.y + Math.sin(angleInRadians));

@@ -20,7 +20,7 @@ function processNumbers(numbers) {
 
 // number1 and unit1 go on top, and number2 and unit2 go on bottom
 // if flipped = true, that is reversed
-class fractionWithUnits { // not necessarily conversion factors...really a fraction with units
+class fractionWithUnits { // not necessarily conversion factors...really a fraction with unit
     constructor(number1, unit1, number2, unit2, flipped) {
         if (flipped === undefined) {flipped = false;}
         this.number1 = processNumbers(number1);

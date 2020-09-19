@@ -31,9 +31,10 @@
     angleTests.addCategory('comparison', 'Comparison Tests');
     angleTests.addSubCategory('comparison', 'right', 'Right Angle Comparison Tests');
 
-    const angle1 = new Angle('45');
-    angleTests.assertAngle(angle1, {
-      unit: 'degrees',
+
+
+    angleTests.assertAngle(new Angle('45'), {
+      unit: 'deg',
       firstSigFig: '4',
       otherSigFigs: '5',
       orderOfMagnitude: 1,
@@ -43,6 +44,21 @@
       negative: false,
       float: 45,
       print: '45°',
+      quadrant: '1'
+    },'construction','string');
+
+    angleTests.assertAngle(new Angle('90.0'),{
+        unit: 'deg',
+        firstSigFig: '9',
+        otherSigFigs: '00',
+        orderOfMagnitude: 1,
+        lowestKnownMagnitude: -1,
+        numSigFigs: 3,
+        positive: true,
+        negative: false,
+        float: 90,
+        print: '90.0°',
+        quadrant: '+Y'
     },'construction','string');
 
 /*
@@ -94,6 +110,8 @@ angleTests.assertAngle(angle1, {
     angleTests.assertEqualStrict(angle504.isRight(4), false, 'comparison', 'right');
     angleTests.assertEqualStrict(angle504.isRight(5), false, 'comparison', 'right');
     angleTests.assertEqualStrict(angle504.isRight(6), false, 'comparison', 'right');
+
+
 
     /// ####################
     /*

@@ -1,13 +1,20 @@
 
 class Point {
     constructor(xMagnitude, yMagnitude, name = 'unnamed') {
-        if (!xMagnitude.isAmagnitude || !yMagnitude.isAmagnitude) {
-            return false
-        }
-        this.x = xMagnitude;
-        this.y = yMagnitude;
+        this.x = processMagnitudeInput(xMagnitude);
+        this.y = processMagnitudeInput(yMagnitude);
         this.name = name;
-        //    this.uuid = create_UUID();
+        if (this.x.isAmagnitude && this.y.isAmagnitude) {
+            this.isApoint = true
+        } else {
+            this.invalidate();
+        }
+    }
+
+    invalidate() {
+        this.x = new Magnitude();
+        this.y = new Magnitude();
+        this.isApoint = false;
     }
 
     print() {
@@ -52,8 +59,8 @@ class Point {
         if (!radius.isAmagnitude || !angleObject.isAnAngle) {
             return false
         }
-        let xTranslation = radius.multiplyMag(angleObject.cosAngle());
-        let yTranslation = radius.multiplyMag(angleObject.sinAngle());
+        let xTranslation = radius.multiplyMag(angleObject.cos());
+        let yTranslation = radius.multiplyMag(angleObject.sin());
         return this.translateAndReproduce(xTranslation, yTranslation)
     }
 
@@ -72,10 +79,11 @@ class Point {
 
     // rotates a Point around the center Point by a certain angle
     // default center Point is origin
-    rotate(angleObject, centerPoint = makeOrigin()) {
+    rotate(angleInput, centerPoint = makeOrigin()) {
+        const angleObject = processAngleInput(angleInput);
         this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
-        const xPrime = (this.x.multiplyMag(angleObject.cosAngle())).subtractMag(this.y.multiplyMag(angleObject.sinAngle()));
-        const yPrime = (this.x.multiplyMag(angleObject.sinAngle())).addMag(this.y.multiplyMag(angleObject.cosAngle()));
+        const xPrime = (this.x.multiplyMag(angleObject.cos())).subtractMag(this.y.multiplyMag(angleObject.sin()));
+        const yPrime = (this.x.multiplyMag(angleObject.sin())).addMag(this.y.multiplyMag(angleObject.cos()));
         this.x = xPrime;
         this.y = yPrime;
         this.translate(centerPoint.x, centerPoint.y);
@@ -100,15 +108,15 @@ class Point {
     }
 
     getQuadrant() {
-        if (this.x.zero && this.y.zero) {return '0';} // change this name?
-        else if (this.x.positive && this.y.zero) {return '+X';}
-        else if (!this.x.positive && this.y.zero) {return '-X';}
-        else if (this.x.zero && this.y.positive) {return '+Y';}
-        else if (this.x.zero && !this.y.positive) {return '-Y';}
-        else if (this.x.positive && this.y.positive) {return '1';}
-        else if (!this.x.positive && this.y.positive) {return '2';}
-        else if (!this.x.positive && !this.y.positive) {return '3';}
-        else if (this.x.positive && !this.y.positive) {return '4';}
+        if (this.x.isZero() && this.y.isZero()) {return '0';} // change this name?
+        else if (this.x.isPositive() && this.y.isZero()) {return '+X';}
+        else if (this.x.isNegative() && this.y.isZero()) {return '-X';}
+        else if (this.x.isZero() && this.y.isPositive()) {return '+Y';}
+        else if (this.x.isZero() && this.y.isNegative()) {return '-Y';}
+        else if (this.x.isPositive() && this.y.isPositive()) {return '1';}
+        else if (this.x.isNegative() && this.y.isPositive()) {return '2';}
+        else if (this.x.isNegative() && this.y.isNegative()) {return '3';}
+        else if (this.x.isPositive() && this.y.isNegative()) {return '4';}
         else {return false;}
     }
 
@@ -116,15 +124,15 @@ class Point {
     getAngleToHorizontal() {
         let theta;
         const quadrant = this.getQuadrant();
-        const numSigFigs = Math.min(this.x.numSigFigs, this.y.numSigFigs, 15); // if it is exact, it will go down to 15
-        if (quadrant === '1') {return constructAngleFloat(Math.atan(this.y.getFloat() / this.x.getFloat()), numSigFigs, false) }
-        else if (quadrant === '2'){return constructAngleFloat(Math.PI / 2 + Math.atan(-1 * this.x.getFloat()/this.y.getFloat()), numSigFigs, false) } //{theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
-        else if (quadrant === '3') {return constructAngleFloat(Math.PI + Math.atan(this.y.getFloat()/this.x.getFloat()), numSigFigs, false)  }//{theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}
-        else if (quadrant === '4') {return constructAngleFloat(Math.PI * 3 / 2 + Math.atan(-1 * this.x.getFloat() / this.y.getFloat() ), numSigFigs, false) } //{theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
-        else if (quadrant === '+X') {return constructAngleFloat(0, numSigFigs, false)}//{theta = 0;}
-        else if (quadrant === '-X') {return constructAngleFloat(Math.PI, numSigFigs)}//{theta = Math.PI;}
-        else if (quadrant === '+Y') {return constructAngleFloat(Math.PI / 2, numSigFigs)}//{theta = Math.PI / 2;}
-        else if (quadrant === '-Y') {return constructAngleFloat(Math.PI * 3 / 2, numSigFigs)}//{theta = 3 * Math.PI / 2;}
+        const numSigFigs = Math.min(this.x.numSigFigs, this.y.numSigFigs, maxSigFigs); // if it is exact, it will go down to 15
+        if (quadrant === '1') {return new Angle(Math.atan(this.y.getFloat() / this.x.getFloat()), numSigFigs, false) }
+        else if (quadrant === '2'){return new Angle(Math.PI / 2 + Math.atan(-1 * this.x.getFloat()/this.y.getFloat()), numSigFigs, false) } //{theta = Math.PI / 2 + Math.atan(-1 * this.x / this.y);}
+        else if (quadrant === '3') {return new Angle(Math.PI + Math.atan(this.y.getFloat()/this.x.getFloat()), numSigFigs, false)  }//{theta = Math.PI + Math.atan((-1 * this.y) / (-1 * this.x));}
+        else if (quadrant === '4') {return new Angle(Math.PI * 3 / 2 + Math.atan(-1 * this.x.getFloat() / this.y.getFloat() ), numSigFigs, false) } //{theta = Math.PI * 3 / 2 + Math.atan(this.x / (-1 *  this.y));}
+        else if (quadrant === '+X') {return new Angle(0, numSigFigs, false)}//{theta = 0;}
+        else if (quadrant === '-X') {return new Angle(Math.PI, numSigFigs)}//{theta = Math.PI;}
+        else if (quadrant === '+Y') {return new Angle(Math.PI / 2, numSigFigs)}//{theta = Math.PI / 2;}
+        else if (quadrant === '-Y') {return new Angle(Math.PI * 3 / 2, numSigFigs)}//{theta = 3 * Math.PI / 2;}
         else return undefined;
     }
 
@@ -146,7 +154,7 @@ class Point {
     }
 
     isEqualToAnotherPoint(anotherPoint, numSigFigs_x, numSigFigs_y = numSigFigs_x) {
-        if (this.x.isEqual(anotherPoint.x, numSigFigs_x) && (this.y.isEqual(anotherPoint.y, numSigFigs_y))) {
+        if (this.x.isEqualTo(anotherPoint.x, numSigFigs_x) && (this.y.isEqualTo(anotherPoint.y, numSigFigs_y))) {
             return true
         } else {
             return false
@@ -217,15 +225,15 @@ class Point {
     // }
 }
 
-function makeOrigin(numSigFigs, exact) { // exact is true if numSigFigs is not enetered
-    let x = constructZeroMagnitude(numSigFigs, exact);
-    let y = constructZeroMagnitude(numSigFigs, exact);
+function makeOrigin(numSigFigs = Infinity) { // exact is true if numSigFigs is not entered
+    let x = new Magnitude(new Measurement(0, numSigFigs));
+    let y = new Magnitude(new Measurement(0, numSigFigs));
     return new Point(x,y)
 }
 
 function constructPointPolar(radiusMagnitude, angle) {
-    const x = radiusMagnitude.multiplyMag(angle.cosAngle());
-    const y = radiusMagnitude.multiplyMag(angle.sinAngle());
+    const x = radiusMagnitude.multiplyMag(angle.cos());
+    const y = radiusMagnitude.multiplyMag(angle.sin());
     return new Point(x,y)
 }
 

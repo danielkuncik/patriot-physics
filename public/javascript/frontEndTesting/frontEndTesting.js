@@ -278,6 +278,9 @@ class TestPackage {
         if (equalObject.unit !== undefined) {
             this.assertEqualStrict(angle.getUnit(), equalObject["unit"], categoryKey, subCategoryKey, `${name}: unit:`);
         }
+        if (equalObject.quadrant !== undefined) {
+            this.assertEqualStrict(angle.getQuadrant(), equalObject["quadrant"], categoryKey, subCategoryKey, `${name}: quadrant:`);
+        }
         if (equalObject.print !== undefined) {
             this.assertEqualStrict(angle.print(), equalObject["print"], categoryKey, subCategoryKey, `${name}: print:`);
         }
@@ -380,9 +383,12 @@ class TestPackage {
         if (equalObject.SIfloat) { // float value of SI unit
             this.assertEqualFloat(magnitude.getSIfloat(), equalObject.SIfloat, categoryKey, subCategoryKey, `${name}: SI Float`); // NEED TO DEAL WITH LIMIT OR IT WIL FAIL
         }
+        if (equalObject.unitless) {
+            this.assertTrue(magnitude.isUnitless(), categoryKey, subCategoryKey, `${name}: unitless: `)
+        }
     }
 
-    assertZeroMagnitude(magnitude, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+    assertMagnitudeZero(magnitude, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
         let otherSigFigs, exact = undefined;
         if (numSigFigs !== Infinity) {
             otherSigFigs = makeStringOfZeros(numSigFigs - 1);
@@ -410,6 +416,37 @@ class TestPackage {
         this.assertEqualStrict(notMagnitude.orderOfMagnitude, undefined, categoryKey, subCategoryKey, `${name}: orderOfMagnitude`);
         this.assertEqualStrict(notMagnitude.numSigFigs, undefined, categoryKey, subCategoryKey, `${name}: numSigFigs`);
         this.assertEqualStrict(notMagnitude.positive, undefined, categoryKey, subCategoryKey, `${name}: positive`);
+    }
+
+    assertPoint(point, equalObject, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        if (typeof(point) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Point");
+            return false
+        }
+        if (typeof(equalObject) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object Entered For Equal Object");
+            return false
+        }
+        this.assertTrue(point.isApoint, categoryKey, subCategoryKey, `${name}: isApoint `);
+        if (equalObject.name !== undefined) {
+            this.assertEqualStrict(point.name, equalObject.name, categoryKey, subCategoryKey, `${name}: name: `);
+        }
+        if (equalObject.x !== undefined) {
+            this.assertMagnitude(point.x, equalObject.x, categoryKey, subCategoryKey, `${name}: point X magnitude: `);
+        }
+        if (equalObject.y !== undefined) {
+            this.assertMagnitude(point.y, equalObject.y, categoryKey, subCategoryKey, `${name}: point Y magnitude: `);
+        }
+        if (equalObject.xIsZero !== undefined) {
+            this.assertMagnitudeZero(point.x,equalObject.xIsZero, categoryKey, subCategoryKey, `${name}: point X magnitude zero: `);
+        }
+        if (equalObject.yIsZero !== undefined) {
+            this.assertMagnitudeZero(point.y,equalObject.yIsZero, categoryKey, subCategoryKey, `${name}: point X magnitude zero: `);
+        }
+
+        if (equalObject.quadrant !== undefined) {
+            this.assertEqualStrict(point.getQuadrant(), equalObject.quadrant, categoryKey, subCategoryKey, `${name}: quadrant: `);
+        }
     }
 
 

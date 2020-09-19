@@ -829,7 +829,7 @@ class Diagram {
 
     /// transformations
     translate(xTranslationFloat, yTranslationFloat) {
-        let xTranslation = constructMagnitudeFromFloat(xTranslationFloat, undefined, undefined, true); // will this work with units????
+        let xTranslation = constructMagnitudeFromFloat(xTranslationFloat, undefined, undefined, true); // will this work with unit????
         let yTranslation = constructMagnitudeFromFloat(yTranslationFloat, undefined, undefined, true);
         this.points.forEach((point) => {point.translate(xTranslation, yTranslation)});
     }

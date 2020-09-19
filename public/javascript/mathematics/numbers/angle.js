@@ -1,13 +1,14 @@
 class Angle {
   constructor(measurementInput, measuredInDegrees = true, inTermsOfPi = !measuredInDegrees ? true : undefined, noRedundancy = true) {
-    this.measurement = processMeasurementInput(measurementInput);
+    let newMeasurement = processMeasurementInput(measurementInput);
     if (typeof(newMeasurement) !== 'object' || !newMeasurement.isAmeasurement) {
       this.invalidate();
       return false
     } else {
       this.isAnAngle = true;
+      this.measurement = newMeasurement
     }
-    if (measuredInDegrees) { // three possibilities for units: degrees, radians, and radians in terms of pi
+    if (measuredInDegrees) { // three possibilities for unit: degrees, radians, and radians in terms of pi
       this.unit = 'deg';
     } else if (inTermsOfPi) {
       this.unit = 'rad_pi';
@@ -32,7 +33,7 @@ class Angle {
 
   invalidate() {
     this.isAnAngle = false;
-    this.measurement = undefined;
+    this.measurement = new Measurement();
     this.degrees = undefined;
   }
 
@@ -84,13 +85,14 @@ class Angle {
     }
     let temp = (this.duplicate()).convertToDegrees();
     temp.simplify();
-    if (temp.isExactlyZero() || temp.isExactly360()) {
+    console.log(temp.print());
+    if (temp.isEqualTo(0) || temp.isEqualTo(360)) {
       return '+X'
-    } else if (temp.isExactly90()) {
+    } else if (temp.isEqualTo(90)) {
       return '+Y'
-    } else if (temp.isExactly180()) {
+    } else if (temp.isEqualTo(180)) {
       return '-X'
-    } else if (temp.isExactly270()) {
+    } else if (temp.isEqualTo(270)) {
       return '-Y'
     } else if (this.isGreaterThan(0) && this.isLessThan(90)) {
       return '1'
@@ -504,7 +506,7 @@ class Angle extends PhysicsNumber {
         return this.addAngle(get270Degrees(undefined,true));
     }
 
-    // make same units
+    // make same unit
     makeSameUnits(anotherAngle) {
         if (this.degrees) {
             return anotherAngle.convertToDegrees()

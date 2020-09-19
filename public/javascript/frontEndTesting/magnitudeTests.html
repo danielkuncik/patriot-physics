@@ -16,7 +16,7 @@
 
 <script src = './frontEndTesting.js'></script>
 <script src = '../mathematics/numbers/measurement.js'></script>
-<script src = '../mathematics/numbers/units.js'></script>
+<script src = '../mathematics/numbers/unit.js'></script>
 <script src = '../mathematics/numbers/magnitude.js'></script>
 
 
@@ -28,17 +28,6 @@
     magnitudeTests.addCategory('construction', 'Construction');
     magnitudeTests.addCategory('construction', 'constructString', 'Construct From Strings');
 
-    magnitudeTests.assertMagnitude(new Magnitude('5.0','meter'), {
-        firstSigFig: '5',
-        otherSigFigs: '0',
-        numSigFigs: 2,
-        orderOfMagnitude: 0,
-        lowestKnownMagnitude: -1,
-        positive: true,
-        unitName: 'meter',
-        float: 5,
-        SIfloat: 5
-    }, 'construction', 'constructString')
 
 
     /*

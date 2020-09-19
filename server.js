@@ -132,7 +132,7 @@ app.get('/pod/:superUnitKey/:unitKey/:podKey', [db.check_if_logged_in, db.look_u
 
 /// accessing pod assets
 app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
-    let filepath = __dirname + '/content/units/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/assets/' + req.params.assetName;
+    let filepath = __dirname + '/content/unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/assets/' + req.params.assetName;
     res.sendFile(filepath);
 });
 

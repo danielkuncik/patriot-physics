@@ -840,13 +840,13 @@ class Measurement {
     pythagoreanAdd(anotherMeasurement, zeroLimit) {
         let otherMeasurement = processMeasurementInput(anotherMeasurement);
         const newSigFigs = this.getSigFigsForCombination(otherMeasurement);
-        return new Measurement(math.sqrt(this.getFloat()**2 + otherMeasurement.getFloat()**2), newSigFigs, zeroLimit)
+        return new Measurement(Math.sqrt(this.getFloat()**2 + otherMeasurement.getFloat()**2), newSigFigs, zeroLimit)
     }
 
     pythagoreanSubtract(anotherMeasurement, zeroLimit) {
         let otherMeasurement = processMeasurementInput(anotherMeasurement);
         const newSigFigs = this.getSigFigsForCombination(otherMeasurement);
-        return new Measurement(math.sqrt(this.getFloat()**2 - otherMeasurement.getFloat()**2), newSigFigs, zeroLimit)
+        return new Measurement(Math.sqrt(this.getFloat()**2 - otherMeasurement.getFloat()**2), newSigFigs, zeroLimit)
     }
 
 

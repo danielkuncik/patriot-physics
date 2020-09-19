@@ -24,11 +24,11 @@ class Magnitude {
     }
 
     getMeasurement() {
-      return this.measurement()
+      return this.measurement
     }
 
     getUnit() {
-      return this.unit()
+      return this.unit
     }
 
     duplicate() {
@@ -43,8 +43,19 @@ class Magnitude {
         return this.getMeasurement().isZero() && this.getMeasurement().isExact()
     }
 
+    isPositive() {
+        return this.getMeasurement().isPositive()
+    }
+    isNegative() {
+        return this.getMeasurement().isNegative()
+    }
+
     isUnitless() {
         return this.getUnit() === undefined
+    }
+
+    getFloat() {
+        return this.measurement.getFloat()
     }
 
     getSIfloat(abs = false) {
@@ -101,7 +112,8 @@ class Magnitude {
         }
     }
 
-    addMag(anotherMagnitude) {
+    addMag(anotherMagnitudeInput) {
+        const anotherMagnitude = processMagnitudeInput(anotherMagnitudeInput);
         if (this.isExactlyZero() && anotherMagnitude.isExactlyZero()) {
             return new Magnitude(0)
         }else if (this.isExactlyZero()) {
@@ -110,55 +122,89 @@ class Magnitude {
             return this
         } else if (this.isUnitless() && anotherMagnitude.isUnitless()) {
             return new Magnitude(this.measurement.add(anotherMagnitude.measurement))
-        } else if (areSameUnit(this.unit, anotherMagnitude.unit)) {
-            return new MagnitudeNew(this.measurement.add(anotherMagnitude.measurement), this.unit)
-        } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
-            let temp = anotherMagnitude.convertToNewUnit(this.unit);
-            return new MagnitudeNew(this.measurement.add(temp.measurement), this.unit)
-        } else {
-            return undefined
         }
+        // // } else if (areSameUnit(this.unit, anotherMagnitude.unit)) {
+        // //     return new MagnitudeNew(this.measurement.add(anotherMagnitude.measurement), this.unit)
+        // // } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
+        // //     let temp = anotherMagnitude.convertToNewUnit(this.unit);
+        // //     return new MagnitudeNew(this.measurement.add(temp.measurement), this.unit)
+        // // } else {
+        //     return undefined
+        // }
     }
-    subtractMag(anotherMagnitude) {
-        if (areSameUnit(this.unit, anotherMagnitude.unit)) {
-            return new MagnitudeNew(this.measurement.subtract(anotherMagnitude.measurement), this.unit)
-        } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
-            let temp = anotherMagnitude.convertToNewUnit(this.unit);
-            return new MagnitudeNew(this.measurement.subtract(temp.measurement), this.unit)
-        } else {
-            return undefined
-        }
+    subtractMag(anotherMagnitudeInput) {
+        const anotherMagnitude = processMagnitudeInput(anotherMagnitudeInput);
+            if (this.isExactlyZero() && anotherMagnitude.isExactlyZero()) {
+                return new Magnitude(0)
+            }else if (this.isExactlyZero()) {
+                return anotherMagnitude
+            } else if (anotherMagnitude.isExactlyZero()) {
+                return this
+            } else if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+                return new Magnitude(this.measurement.subtract(anotherMagnitude.measurement))
+            }
+                // if (areSameUnit(this.unit, anotherMagnitude.unit)) {
+        //     return new MagnitudeNew(this.measurement.subtract(anotherMagnitude.measurement), this.unit)
+        // } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
+        //     let temp = anotherMagnitude.convertToNewUnit(this.unit);
+        //     return new MagnitudeNew(this.measurement.subtract(temp.measurement), this.unit)
+        // } else {
+        //     return undefined
+        // }
     }
-    pythagoreanAddMag(anotherMagnitude) {
-        if (areSameUnit(this.unit, anotherMagnitude.unit)) {
-            return new MagnitudeNew(this.measurement.pythagoreanAdd(anotherMagnitude.measurement), this.unit)
-        } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
-            let temp = anotherMagnitude.convertToNewUnit(this.unit);
-            return new MagnitudeNew(this.measurement.pythagoreanAdd(temp.measurement), this.unit)
-        } else {
-            return undefined
+    pythagoreanAddMag(anotherMagnitudeInput) {
+        const anotherMagnitude = processMagnitudeInput(anotherMagnitudeInput);
+        if (this.isExactlyZero() && anotherMagnitude.isExactlyZero()) {
+            return new Magnitude(0)
+        }else if (this.isExactlyZero()) {
+            return anotherMagnitude
+        } else if (anotherMagnitude.isExactlyZero()) {
+            return this
+        } else if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+            return new Magnitude(this.measurement.pythagoreanAdd(anotherMagnitude.measurement))
         }
+        // if (areSameUnit(this.unit, anotherMagnitude.unit)) {
+        //     return new MagnitudeNew(this.measurement.pythagoreanAdd(anotherMagnitude.measurement), this.unit)
+        // } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
+        //     let temp = anotherMagnitude.convertToNewUnit(this.unit);
+        //     return new MagnitudeNew(this.measurement.pythagoreanAdd(temp.measurement), this.unit)
+        // } else {
+        //     return undefined
+        // }
     }
-    pythagoreanSubtractMag(anotherMagnitude) {
-        if (areSameUnit(this.unit, anotherMagnitude.unit)) {
-            return new MagnitudeNew(this.measurement.pythagoreanSubtract(anotherMagnitude.measurement), this.unit)
-        } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
-            let temp = anotherMagnitude.convertToNewUnit(this.unit);
-            return new MagnitudeNew(this.measurement.pythagoreanSubtract(temp.measurement), this.unit)
-        } else {
-            return undefined
+    pythagoreanSubtractMag(anotherMagnitudeInput) {
+        const anotherMagnitude = processMagnitudeInput(anotherMagnitudeInput);
+        if (this.isExactlyZero() && anotherMagnitude.isExactlyZero()) {
+            return new Magnitude(0)
+        }else if (this.isExactlyZero()) {
+            return anotherMagnitude
+        } else if (anotherMagnitude.isExactlyZero()) {
+            return this
+        } else if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+            return new Magnitude(this.measurement.pythagoreanSubtract(anotherMagnitude.measurement))
         }
+
+        // if (areSameUnit(this.unit, anotherMagnitude.unit)) {
+        //     return new MagnitudeNew(this.measurement.pythagoreanSubtract(anotherMagnitude.measurement), this.unit)
+        // } else if (areTwoUnitsTheSameDimension(this.unit, anotherMagnitude.unit)) {
+        //     let temp = anotherMagnitude.convertToNewUnit(this.unit);
+        //     return new MagnitudeNew(this.measurement.pythagoreanSubtract(temp.measurement), this.unit)
+        // } else {
+        //     return undefined
+        // }
     }
 
-    multiplyMag(anotherMagnitude) {
-      if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+    multiplyMag(anotherMagnitudeInput) {
+        const anotherMagnitude = processMagnitudeInput(anotherMagnitudeInput);
+        if (this.isUnitless() && anotherMagnitude.isUnitless()) {
         return new Magnitude((this.getMeasurement()).multiply(anotherMagnitude.getMeasurement()))
       }
       // other options
     }
 
-    divideMag(anotherMagnitude) {
-      if (this.isUnitless() && anotherMagnitude.isUnitless()) {
+    divideMag(anotherMagnitudeInput) {
+        const anotherMagnitude = processMagnitudeInput(anotherMagnitudeInput);
+        if (this.isUnitless() && anotherMagnitude.isUnitless()) {
         return new Magnitude((this.getMeasurement()).divide(anotherMagnitude.getMeasurement()))
       }
     }
@@ -167,4 +213,18 @@ class Magnitude {
     // inverse cosine
     /// inverse tangent
 
+    reverseSign() {
+        return new Magnitude(this.measurement.reverseSign(), this.unit)
+    }
+
+}
+
+function processMagnitudeInput(input1, input2 = undefined) {
+    if (typeof(input1) === 'object' && input1.isAmagnitude) {
+        return input1
+    } else {
+        let measurement = processMeasurementInput(input1);
+        let unit = processUnitInput(input2);
+        return new Magnitude(measurement, unit)
+    }
 }
