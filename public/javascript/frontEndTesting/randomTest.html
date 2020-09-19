@@ -40,25 +40,10 @@
 <script>
     let randomTest = new TestPackage('Random Tests');
 
-    let x1 = new Magnitude('2.000');
-    let y1 = new Magnitude('0.00000000');
-    let rotationAngle = new Angle('90.00');
-    let point1 = new Point(x1, y1);
-
-    randomTest.assertPoint(point1, {
-        quadrant: '+X',
-        x: {
-            zero: false,
-            firstSigFig: '2',
-            otherSigFigs: '000',
-            orderOfMagnitude: 0,
-            numSigFigs: 4,
-            positive: true
-        },
-        yIsZero: 9
-    },'pointObject', 'pointRotation');
-
-    point1.rotate(rotationAngle);
+    const point501a = new Point(new Magnitude('1.00'),new Magnitude('0.00'));
+    const point501b = makeOrigin(3);
+    const point501c = new Point(new Magnitude('0.00'),new Magnitude('1.00'));
+    const angle501 = getAngleOfTwoRays(point501a, point501b, point501c); // should be a 90 degree angle
 
 
     $("#putItHere").append(randomTest.printAllTests());

@@ -910,26 +910,20 @@ class Measurement {
 
     square() {
         const newSigFigs = this.numSigFigs;
-        const newUnit = multiplyUnits(this.unit, this.unit);
-        const exact = this.numSigFigs === Infinity;
         const newFloat = this.getFloat()**2;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+        return new Measurement(newFloat, newSigFigs)
     }
 
     squareRootMag() {
-        const newSigFigs = this.numSigFigs;
-        const newUnit = multiplyUnits(this.unit, this.unit);
-        const exact = this.numSigFigs === Infinity;
-        const newFloat = Math.sqrt(this.getFloat()**2);
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+        const newSigFigs = Math.min(this.numSigFigs, maxSigFigs);
+        const newFloat = Math.sqrt(this.getFloat());
+        return new Measurement(newFloat, newSigFigs)
     }
 
     power(exponent) {
         const newSigFigs = this.numSigFigs;
-        const newUnit = multiplyUnits(this.unit, this.unit);
-        const exact = this.numSigFigs === Infinity;
         const newFloat = this.getFloat()**exponent;
-        return constructMagnitudeFromFloat(newFloat, newSigFigs, newUnit, exact, this.zeroLimit)
+        return new Measurement(newFloat, newSigFigs)
     }
 
 ///// ADD SPECIAL CASES

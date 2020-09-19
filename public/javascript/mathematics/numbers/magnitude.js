@@ -209,12 +209,46 @@ class Magnitude {
       }
     }
 
+    squareMag() {
+        if (this.isUnitless()) {
+            return new Magnitude(this.measurement.square())
+        }
+    }
+
+    powerMag(exponent) {
+        if (this.isUnitless()) {
+            return new Magnitude(this.measurement.power(exponent))
+        }
+    }
+
     /// inverse sine
     // inverse cosine
     /// inverse tangent
 
     reverseSign() {
         return new Magnitude(this.measurement.reverseSign(), this.unit)
+    }
+
+    inverseSinMag() {
+        if (this.isUnitless()) {
+            return this.measurement.inverseSin()
+        } else {
+            return undefined // cannot take inverse sine of a quantity with a unit
+        }
+    }
+    inverseCosMag() {
+        if (this.isUnitless()) {
+            return this.measurement.inverseSin()
+        } else {
+            return undefined // cannot take inverse sine of a quantity with a unit
+        }
+    }
+    inverseTanMag() {
+        if (this.isUnitless()) {
+            return this.measurement.inverseCos()
+        } else {
+            return undefined // cannot take inverse sine of a quantity with a unit
+        }
     }
 
 }

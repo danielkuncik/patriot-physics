@@ -828,8 +828,8 @@
     let point601a = new Point(x601, y601);
     let width = new Magnitude('2.0000');
     let height = new Magnitude('2.0000');
-    let xTranslation = width.divideMagExactConstant(2).reverseSign();
-    let yTranslation = height.divideMagExactConstant(2).reverseSign();
+    let xTranslation = width.divideMag(2).reverseSign();
+    let yTranslation = height.divideMag(2).reverseSign();
     pointTests.assertMagnitude(xTranslation, {
         "firstSigFig": '1',
         "otherSigFigs": '0000',

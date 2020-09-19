@@ -243,7 +243,6 @@ function getAngleOfTwoRays(outsidePointA, vertex, outsidePointB, degrees) {
     const c = outsidePointA.getDistanceToAnotherPoint(outsidePointB);
     const a = vertex.getDistanceToAnotherPoint(outsidePointA);
     const b = vertex.getDistanceToAnotherPoint(outsidePointB);
-
-    const cosTheta = (a.squareMag().addMag(b.squareMag())).subtractMag((c.squareMag())).divideMag((a.multiplyMag(b).multiplyMagExactConstant(2)));
+    const cosTheta = (a.squareMag().addMag(b.squareMag())).subtractMag((c.squareMag())).divideMag((a.multiplyMag(b).multiplyMag(2)));
     return cosTheta.inverseCosMag()
 }
