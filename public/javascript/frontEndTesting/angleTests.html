@@ -34,8 +34,9 @@
     angleTests.addCategory('comparison', 'Comparison Tests');
     angleTests.addSubCategory('comparison', 'right', 'Right Angle Comparison Tests');
 
-    angleTests.addCategory('operations','conversions','Conversions');
-    angleTests.addCategory('operations','trig','Trigonometric Functions');
+    angleTests.addCategory('operations','Operations');
+    angleTests.addSubCategory('operations','conversions','Conversions');
+    angleTests.addSubCategory('operations','trig','Trigonometric Functions');
 
 
 
@@ -172,13 +173,13 @@ angleTests.assertAngle(angle1, {
     angleTests.assertMagnitude(angle601.sin(),{ // exactly 1
       firstSigFig: '1',
       otherSigFigs: '',
-      orderOfMagnitude: 1,
+      orderOfMagnitude: 0,
       numSigFigs: Infinity,
       exact: true,
       positive: true,
       negative: false,
       zero: false,
-      float: 90
+      float: 1
     },'operations','trig');
 
 
@@ -186,31 +187,31 @@ angleTests.assertAngle(angle1, {
     const angle602 = new Angle('90');
     angleTests.assertMagnitudeZero(angle602.cos(),1,'operations','trig');
     angleTests.assertMagnitude(angle602.sin(),{
-      firstSigFig: '9',
+      firstSigFig: '1',
       otherSigFigs: '',
-      orderOfMagnitude: 2,
+      orderOfMagnitude: 0,
       numSigFigs: 1,
       exact: false,
       positive: true,
       negative: false,
       zero: false,
-      float: 90
+      float: 1
     },'operations','trig');
 
 
 
-    const angle603 = new Angle('90.00')
+    const angle603 = new Angle('90.00');
     angleTests.assertMagnitudeZero(angle603.cos(),4,'operations','trig');
     angleTests.assertMagnitude(angle603.sin(),{
-      firstSigFig: '9',
+      firstSigFig: '1',
       otherSigFigs: '000',
-      orderOfMagnitude: 1,
+      orderOfMagnitude: 0,
       numSigFigs: 4,
       exact: false,
       positive: true,
       negative: false,
       zero: false,
-      float: 90
+      float: 1
     },'operations','trig');
 
 
