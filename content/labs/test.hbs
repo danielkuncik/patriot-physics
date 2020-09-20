@@ -15,15 +15,26 @@
 
 <ol class = 'answerList'></ol>
 
-
+<div class = 'addAnswerButton'></div>
 <div id = 'putItHere' class = 'm-5'></div>
+
+<div class = 'addAnswerButton'></div>
+
 <div id = 'finalGraphHere' class = 'm-5'></div>
 
 <div id = 'impulseGraphHere' class = 'm-5'></div>
 
 <div id = 'putTheOtherOneHere' class = 'm-5'></div>
 
+
 <script>
+    const energy_choices_1 = ['ke','gpe','epe','cpe'];
+    let myProb = writtenEnergySelectionProblem('something', energy_choices_1,'ke');
+    myProb.displayProblemAsInputOneAnswer('putItHere');
+
+
+    /*
+    DIAGRAM TEST
 let myDiagram = new Diagram();
 let point1 = makeOrigin(undefined, true);
 let point2 = new Point(new Magnitude('3.000'), new Magnitude('3.0000'));
@@ -42,10 +53,9 @@ myDiagram.addText(myText);
 let text2 = mySegment.labelAbove('qqq');
 text2.drawBorder();
 
-
 myDiagram.addText(text2);
 
 $("#putItHere").append(myDiagram.drawCanvas());
-
+*/
 
 </script>

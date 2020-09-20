@@ -147,18 +147,21 @@ function clickAnswerButton() {
     let allRight = true;
     Object.keys(pageAnswers).forEach((uuid) => {
         let inputSpace = $(`#${uuid}`);
-        const input = $(inputSpace).val();
+        const input = $(inputSpace).val().length > 0 ? $(inputSpace).val() : $(inputSpace).text();
         if (input === '') {
             $(inputSpace).removeClass('border border-danger'); // delete class first?
             $(inputSpace).removeClass('border border-success'); // delete class first?
+            $(inputSpace).addClass('border border-dark'); // delete class first?
             allRight = false;
             return undefined
         }
         const result = checkAnswer(uuid, input);
         if (result.correct) {
+            $(inputSpace).removeClass('border border-dark'); // delete class first?
             $(inputSpace).removeClass('border border-danger'); // delete class first?
             $(inputSpace).addClass('border border-success'); // delete class first?
         } else {
+            $(inputSpace).removeClass('border border-dark'); // delete class first?
             $(inputSpace).removeClass('border border-success'); // delete class first?
             $(inputSpace).addClass('border border-danger');
             allRight = false;
@@ -247,7 +250,7 @@ function goLight() {
     currentBackground = 'light';
 }
 
-$("button#backgroundButton").click(() => {
+$("button#backgroundButton").on('click',() => {
     if (currentBackground === 'dark') {
         goLight();
     } else if (currentBackground === 'light') {

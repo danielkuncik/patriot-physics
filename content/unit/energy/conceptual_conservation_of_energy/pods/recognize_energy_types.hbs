@@ -46,7 +46,7 @@
     <div class = 'col-6 border border-dark'>
       <em>Elastic Potential Energy</em>
       <br>
-      Energy stored in something that has been strected on compressed.
+      Energy stored in something that has been stretched or compressed.
     </div>
     <div class = 'col-6 border border-dark'>
       <ul>
@@ -96,38 +96,29 @@
   </div>
 </div>
 
+<div class = 'addAnswerButton'></div>
+
 <p class = 'directions'>
   For each item, state what type of energy it has.
   (If it has more than one, pick the best option!)
 </p>
 
-<ol class = 'questionList'>
-  <li class = 'question'>
-    A very fast moving car
-  </li>
-  <li class = 'question'>
-    A bookshelf on the roof of a building
-  </li>
-  <li class = 'question'>
-    Your lunch
-  </li>
-  <li class = 'question'>
-    Anything with moving molecules
-  </li>
-  <li class = 'question'>
-    A matchbox car that is wound up;
-    Matchbox cars have springs inside them.
-  </li>
-  <li class = 'question'>
-    A gallon of gasoline
-  </li>
-  <li class = 'question'>
-    Mr. Kuncik running in the hallway
-  </li>
-  <li class = 'question'>
-    A book that is on the edge of a table.
-  </li>
+<ol class = 'questionList' id = 'list1'>
 </ol>
+<div class = 'addAnswerButton'></div>
+
+
+<script>
+    const firstEnergyArray = ['ke','gpe','epe','te','cpe'];
+    writtenEnergySelectionProblem('A very fast moving car',firstEnergyArray,'ke').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('A bookshelf on the roof of a building',firstEnergyArray,'gpe').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('Your lunch',firstEnergyArray,'cpe').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('Anything with moving molecules',firstEnergyArray,'te').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('A matchbox car that is wound up; matchbox cars have springs inside them.',firstEnergyArray,'epe').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('A gallon of gasoline',firstEnergyArray,'cpe').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('Mr. Kuncik running in the hallway',firstEnergyArray,'ke').displayProblemAsInputOneAnswer('list1');
+    writtenEnergySelectionProblem('A book that is on the edge of a table.',firstEnergyArray,'gpe').displayProblemAsInputOneAnswer('list1');
+</script>
 
 <p class = 'directions'>
   For each type of energy,
@@ -271,42 +262,23 @@
   For each item, state what type of energy it has.
   (If it has more than one, pick the best option!)
 </p>
+<div class = 'addAnswerButton'></div>
+<ol class = 'questionList' id = 'list2'></ol>
+<div class = 'addAnswerButton'></div>
 
-
-<ol class = 'questionList'>
-  <li class = 'question'>
-    Current in an electrical transmission wire
-  </li>
-  <li class = 'question'>
-    The smallest part of an atom, when it is moving
-  </li>
-  <li class = 'question'>
-    The center of an atom
-  </li>
-  <li class = 'question'>
-    Light
-  </li>
-  <li class = 'question'>
-    AAA battery
-  </li>
-  <li class = 'question'>
-    Someone is banging on the door.
-    What is the energy of the BANG?
-  </li>
-  <li class = 'question'>
-    Water waves you see at the beach
-  </li>
-  <li class = 'question'>
-    All matter has this type of energy,
-    because all matter has mass.
-  </li>
-  <li class = 'question'>
-    An X-Ray machine makes this type of energy.
-  </li>
-  <li class = 'question'>
-    The type of energy used by a cellphone to send signals
-  </li>
-</ol>
+<script>
+    const secondEnergyArray = ['ee','mwe','emwe','ne','ecpe'];
+    writtenEnergySelectionProblem('Current in an electrical transmission wire',secondEnergyArray,'ee').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('The smallest part of an atom, when it is moving',secondEnergyArray,'ee').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('The center of an atom has this type of energy',secondEnergyArray,'ne').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('Light',secondEnergyArray,'emwe').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('AAA battery',secondEnergyArray,'ecpe').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('Someone is banging on the door. What is the energy of the BANG?',secondEnergyArray,'mwe').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('Water waves you see at the beach',secondEnergyArray,'mwe').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('All matter has this type of energy, because all matter has mass.',secondEnergyArray,'ne').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('An X-Ray machine makes this type of energy.',secondEnergyArray,'emwe').displayProblemAsInputOneAnswer('list2');
+    writtenEnergySelectionProblem('The type of energy used by a cellphone to send signals',secondEnergyArray,'emwe').displayProblemAsInputOneAnswer('list2');
+</script>
 
 <p class = 'directions'>
   For each type of energy,
@@ -332,23 +304,3 @@
 </ol>
 
 
-<ol class = 'answerList'></ol>
-
-<!--
-ADD PICTURE QUESTIONS!
--->
-
-<!--
-very basic atoms need to be added!
-
--->
-
-
-
-<!--
-how do i want to deal with the distinction between translational and rotational kinemic energy?
-probably in a different pod than this one!
-
-how about kinetic vs. potential energy? that is a good one
-
--->

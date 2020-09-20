@@ -255,7 +255,7 @@ class Magnitude {
         }
     }
 
-/// add units to these!!!!
+/// add unit to these!!!!
     printStandard() {
       return this.measurement.printStandard()
     }

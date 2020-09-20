@@ -330,3 +330,9 @@ div.bingoSpace {
 div.bingoClickedSpace {
     border-width: 1px
 }
+
+p.multipleChoiceInput {
+    height: 80px;
+    width: 400px;
+    font-size: 30px;
+}

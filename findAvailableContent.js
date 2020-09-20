@@ -11,7 +11,7 @@ function filesInDirectory(directoryName) {
 
 
 const contentDirectory = `${__dirname}/content`;
-const unitsDirectory = `${contentDirectory}/units`;
+const unitsDirectory = `${contentDirectory}/unit`;
 
 
 /// check which super unit, unit and pod pages are available
