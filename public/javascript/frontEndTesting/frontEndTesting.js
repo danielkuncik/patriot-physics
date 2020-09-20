@@ -443,14 +443,14 @@ class TestPackage {
         if (equalObject.x !== undefined) {
             this.assertMagnitude(point.x, equalObject.x, categoryKey, subCategoryKey, `${name}: point X magnitude: `);
         }
-        if (equalObject.y !== undefined) {
-            this.assertMagnitude(point.y, equalObject.y, categoryKey, subCategoryKey, `${name}: point Y magnitude: `);
-        }
         if (equalObject.xIsZero !== undefined) {
             this.assertMagnitudeZero(point.x,equalObject.xIsZero, categoryKey, subCategoryKey, `${name}: point X magnitude zero: `);
         }
+        if (equalObject.y !== undefined) {
+            this.assertMagnitude(point.y, equalObject.y, categoryKey, subCategoryKey, `${name}: point Y magnitude: `);
+        }
         if (equalObject.yIsZero !== undefined) {
-            this.assertMagnitudeZero(point.y,equalObject.yIsZero, categoryKey, subCategoryKey, `${name}: point X magnitude zero: `);
+            this.assertMagnitudeZero(point.y,equalObject.yIsZero, categoryKey, subCategoryKey, `${name}: point Y magnitude zero: `);
         }
 
         if (equalObject.quadrant !== undefined) {

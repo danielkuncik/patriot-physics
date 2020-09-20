@@ -255,6 +255,17 @@ class Magnitude {
         }
     }
 
+/// add units to these!!!!
+    printStandard() {
+      return this.measurement.printStandard()
+    }
+    printScientific() {
+      return this.measurement.printScientific()
+    }
+    printOptimal() {
+      return this.measurement.printOptimal()
+    }
+
 }
 
 function processMagnitudeInput(input1, input2 = undefined) {

@@ -17,6 +17,9 @@
 
 <script src = './frontEndTesting.js'></script>
 <script src = '../mathematics/numbers/measurement.js'></script>
+<script src = '../mathematics/numbers/dimension.js'></script>
+<script src = '../mathematics/numbers/unit.js'></script>
+<script src = '../mathematics/numbers/magnitude.js'></script>
 <script src = '../mathematics/numbers/angle.js'></script>
 
 <div id = 'putItHere'></div>
@@ -30,6 +33,9 @@
 
     angleTests.addCategory('comparison', 'Comparison Tests');
     angleTests.addSubCategory('comparison', 'right', 'Right Angle Comparison Tests');
+
+    angleTests.addCategory('operations','conversions','Conversions');
+    angleTests.addCategory('operations','trig','Trigonometric Functions');
 
 
 
@@ -110,6 +116,102 @@ angleTests.assertAngle(angle1, {
     angleTests.assertEqualStrict(angle504.isRight(4), false, 'comparison', 'right');
     angleTests.assertEqualStrict(angle504.isRight(5), false, 'comparison', 'right');
     angleTests.assertEqualStrict(angle504.isRight(6), false, 'comparison', 'right');
+
+
+    /// ####################################################################################
+    /// ####################################################################################
+    // CONVERSIONS
+
+    const angle701 = new Angle('90.00');
+    angleTests.assertAngle(angle701.convertToDegrees(), {
+      unit: 'deg',
+      firstSigFig: '9',
+      otherSigFigs: '000',
+      orderOfMagnitude: 1,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 90
+    },'operations','conversions');
+
+    angleTests.assertAngle(angle701.convertToRadians(), {
+      unit: 'rad',
+      firstSigFig: '1',
+      otherSigFigs: '571',
+      orderOfMagnitude: 0,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 1.5707963267948966
+    },'operations','conversions');
+
+    angleTests.assertAngle(angle701.convertToRadiansOfPi(),{
+      unit: 'rad_pi',
+      firstSigFig: '5',
+      otherSigFigs: '000',
+      orderOfMagnitude: -1,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 0.5
+    },'operations','conversions');
+
+
+    /// ####################################################################################
+    /// ####################################################################################
+    // Trigonometric Funtions
+
+    const angle601 = new Angle(90);
+    angleTests.assertMagnitudeZero(angle601.cos(),Infinity,'operations','trig');
+    angleTests.assertMagnitude(angle601.sin(),{ // exactly 1
+      firstSigFig: '1',
+      otherSigFigs: '',
+      orderOfMagnitude: 1,
+      numSigFigs: Infinity,
+      exact: true,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 90
+    },'operations','trig');
+
+
+
+    const angle602 = new Angle('90');
+    angleTests.assertMagnitudeZero(angle602.cos(),1,'operations','trig');
+    angleTests.assertMagnitude(angle602.sin(),{
+      firstSigFig: '9',
+      otherSigFigs: '',
+      orderOfMagnitude: 2,
+      numSigFigs: 1,
+      exact: false,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 90
+    },'operations','trig');
+
+
+
+    const angle603 = new Angle('90.00')
+    angleTests.assertMagnitudeZero(angle603.cos(),4,'operations','trig');
+    angleTests.assertMagnitude(angle603.sin(),{
+      firstSigFig: '9',
+      otherSigFigs: '000',
+      orderOfMagnitude: 1,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 90
+    },'operations','trig');
 
 
 

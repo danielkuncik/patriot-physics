@@ -44,7 +44,7 @@
 
     let x1 = new Magnitude('2.000');
     let y1 = new Magnitude('0.00000000');
-    let rotationAngle = new Angle('90.00');
+    //let rotationAngle = new Angle('90.00');
     let point1 = new Point(x1, y1);
 
     pointTests.assertPoint(point1, {
@@ -61,7 +61,7 @@
     },'pointObject', 'pointRotation');
 
 
-    point1.rotate(rotationAngle);
+    point1.rotate('90.00');
 
     pointTests.assertPoint(point1, {
         quadrant: '+Y',
@@ -73,7 +73,7 @@
             numSigFigs: 4,
             positive: true
         }
-    },'pointObject','pointRotation');
+    },'pointObject','pointRotation','xxx');
 
 
     point1.rotate('90.00');

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Random Tests</title>
+    <title>Random Test</title>
     <!-- Bootstrap CSS --->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
@@ -38,36 +38,23 @@
 <div id = 'putItHere'></div>
 
 <script>
+
     let randomTest = new TestPackage('Random Tests');
 
-    let point4 = new Point(-4,6);
-    /// THIS CREATES AN INFINITE LOOP
-    console.log(point4);
+    const angle701 = new Angle('90.00');
 
-    randomTest.assertPoint(point4,{
-        quadrant: '2',
-        x: {
-            firstSigFig: '4',
-            otherSigFigs: '',
-            // orderOfMagnitude: 0,
-        //     numSigFigs: Infinity,
-        //     exact: true,
-        //     positive: false,
-        //     negative: true,
-        //     float: -4
-        },
-        // y: {
-        //     firstSigFig: '6',
-        //     otherSigFigs: '',
-        //     orderOfMagnitude: 0,
-        //     //numSigFigs: Infinity,
-        //     exact: true,
-        //     positive: true,
-        //     negative: false,
-        //     float: 6
-        // }
-    },'pointObject','pointRotation');
-    console.log(point4.x.measurement);
+    randomTest.assertAngle(angle701.convertToRadians(), {
+      unit: 'rad',
+      firstSigFig: '1',
+      otherSigFigs: '571',
+      orderOfMagnitude: 0,
+      numSigFigs: 4,
+      exact: false,
+      positive: true,
+      negative: false,
+      zero: false,
+      float: 1.5707963267948966
+    },'operations','conversions');
 
 
     $("#putItHere").append(randomTest.printAllTests());
