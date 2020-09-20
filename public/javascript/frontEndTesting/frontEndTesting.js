@@ -293,7 +293,16 @@ class TestPackage {
       }
       this.assertFalse(notAngle.isAmeasurement, categoryKey, subCategoryKey, `${name}: isAnAngle`);
       this.assertUndefined(notAngle.measurement, categoryKey, subCategoryKey, `${name}: measurement`);
-      this.assertUndefined(notAngle.measuredInDegrees, categoryKey, subCategoryKey, `${name}: measuredInDegrees`);
+      this.assertUndefined(notAngle.unit, categoryKey, subCategoryKey, `${name}: measuredInDegrees`);
+    }
+
+    assertAngleZero(angleZero, numSigFigs, categoryKey, subCategoryKey, name = this.testDefaultName(categoryKey, subCategoryKey)) {
+        if (typeof(angleZero) !== 'object') {
+            this.addFailedTest(categoryKey, subCategoryKey, name, "Non-Object entered for Angle");
+            return false
+        }
+        this.assertTrue(angleZero.isAnAngle, categoryKey, subCategoryKey, `${name}: isAnAngle: `);
+        this.assertMeasurementZero(angleZero.measurement, numSigFigs, categoryKey, subCategoryKey, name);
     }
 
 
