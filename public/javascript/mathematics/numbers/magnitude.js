@@ -54,6 +54,10 @@ class Magnitude {
         return this.getUnit() === undefined
     }
 
+    getOrderOfMagnitude() {
+      return this.getMeasurement().getOrderOfMagnitude()
+    }
+
     getFloat() {
         return this.measurement.getFloat()
     }

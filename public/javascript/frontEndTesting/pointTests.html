@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Point Object Tests</title>
     <!-- Bootstrap CSS --->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
@@ -862,20 +862,20 @@
 
 
     // mimicing process of 'construct line from slope intercept'
-    // const slope101 = new Magnitude('-4.00');
-    // const yIntercept101 = new Magnitude('8.0');
-    // const point306a = new Point(0, yIntercept101);
-    // const delta_x = new Magnitude(`1e${slope101.orderOfMagnitude}`);
-    // const delta_y = delta_x.multiplyMag(slope101);
-    // const point306b = new Point(delta_x, yIntercept101.addMag(delta_y));
-    // const distance306 = point306a.getDistanceToAnotherPoint(point306b); // square root of 17 => 4.12310562562 => 4.1
-    // pointTests.assertEqualStrict(distance306.isAmagnitude, true, 'pointObject', 'distanceToAnotherPoint');
-    // pointTests.assertEqualStrict(distance306.firstSigFig, '4', 'pointObject', 'distanceToAnotherPoint');
-    // pointTests.assertEqualStrict(distance306.otherSigFigs, '1', 'pointObject', 'distanceToAnotherPoint');
-    // pointTests.assertEqualStrict(distance306.orderOfMagnitude, 0, 'pointObject', 'distanceToAnotherPoint');
-    // pointTests.assertEqualStrict(distance306.numSigFigs, 2, 'pointObject', 'distanceToAnotherPoint');
-    // pointTests.assertEqualStrict(distance306.positive, true, 'pointObject', 'distanceToAnotherPoint');
-
+    const slope101 = new Magnitude('-4.00');
+    const yIntercept101 = new Magnitude('8.0');
+    const point306a = new Point(0, yIntercept101);
+    const delta_x = new Magnitude(`1e${slope101.getOrderOfMagnitude()}`);
+    const delta_y = delta_x.multiplyMag(slope101);
+    const point306b = new Point(delta_x, yIntercept101.addMag(delta_y));
+    const distance306 = point306a.getDistanceToAnotherPoint(point306b); // square root of 17 => 4.12310562562 => 4.1
+    pointTests.assertMagnitude(distance306,{
+      firstSigFig: '4',
+      otherSigFigs: '1',
+      orderOfMagnitude: 0,
+      numSigFigs: 2,
+      positive: true
+    },'pointObject','distanceToAnotherPoint');
 
     //#############################################################################
     //#############################################################################
