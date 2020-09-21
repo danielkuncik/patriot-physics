@@ -1626,15 +1626,15 @@
             "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
             "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69"
           },
-          "write_energy_types":
+          "categorize_energy":
           {
-            "title": "Write Energy Types",
+            "title": "Categorize Energy",
             "level": 2,
             "horizontal": 2,
             "letter": "C",
             "prerequisites": ["state_law_conservation_of_energy"],
-            "objective": "Write the names of different types of energy.",
-            "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
+            "objective": "Write the names of different types of energy; categorize each form of energy as kinetic energy or potential energy.",
+            "content": "There are several different types of energy into which we can classify most of the energy in our lives; each type of energy can be categorized as kinetic or potential energy",
             "uuid": "bc66b87e-6ae3-4acd-a722-e9c9d5b282ae"
           },
           "recognize_energy_transfer":
@@ -1643,7 +1643,7 @@
             "level": 2,
             "horizontal": 1,
             "letter": "D",
-            "prerequisites": ["write_energy_types"],
+            "prerequisites": ["categorize_energy"],
             "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes",
             "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
             "uuid": "6a207b48-29ac-4a96-9e0a-184884dd16d6"
@@ -1671,9 +1671,9 @@
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
             "uuid": "67b012e0-eefc-479f-9bec-eea3eb753a9b"
           },
-          "connect_energy_to_sun":
+          "trace_energy_to_sun":
           {
-            "title": "Connect Energy to Sun",
+            "title": "Trace Energy to Sun",
             "level": 5,
             "horizontal": 1,
             "letter": "G",
@@ -1689,7 +1689,7 @@
             "level": 6,
             "horizontal": 1,
             "letter": "H",
-            "prerequisites": ["connect_energy_to_sun"],
+            "prerequisites": ["trace_energy_to_sun"],
             "objective": "Connect energy of the earth through the gravitational potential energy of space dust (which would eventually form the sun) back to the creation of energy during the big bang",
             "content": "Under current cosmological models, all of the energy in the universe can be traced back to some moment in time in which is suddenly appeared, which is named the 'Big Bang.'",
             "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology",

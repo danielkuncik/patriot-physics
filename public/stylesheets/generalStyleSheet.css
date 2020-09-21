@@ -336,3 +336,9 @@ p.multipleChoiceInput {
     width: 400px;
     font-size: 30px;
 }
+
+div.energySlides {
+    background-color: #d3d3d3;
+    height: 500px;
+    width: 1000px;
+}
