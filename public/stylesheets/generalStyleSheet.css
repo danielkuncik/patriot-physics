@@ -339,6 +339,15 @@ p.multipleChoiceInput {
 
 div.energySlides {
     background-color: #d3d3d3;
-    height: 500px;
-    width: 1000px;
+    height: 600px;
+}
+
+p.storyBook {
+    font-family: Bookman;
+    font-size: 30px;
+}
+
+h3.bookTitle {
+    font-family: Euclid Fraktur;
+    font-size: 60px;
 }
