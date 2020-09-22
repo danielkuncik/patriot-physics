@@ -48,12 +48,12 @@
 
 
 <h1>
-    AP Physics Wednesday 1
+    Honors Physics Wednesday 1
 </h1>
 <div id = 'wednesday_1'></div>
 
 <h1>
-    Honors Physics Wednesday 3
+    AP Physics Wednesday 3
 </h1>
 <div id = 'wednesday_3'></div>
 
@@ -154,6 +154,7 @@
         }
 
         draw() {
+            let seatNumber = 1;
             let table = $("<table></table>");
             $(table).append($(`<tr><td colspan = '${this.getNumCols()}' class = 'topBottom'>BACK</td></tr>`));
             let i, j;
@@ -162,7 +163,8 @@
                 const rowIndex = this.getNumRows() - i - 1;
                 for (j = 0; j < this.getNumCols(); j++) {
                     let name = this.seats[rowIndex][j];
-                    let thisSeat = name ? $(`<td>${name}</td>`) : $("<td></td>");
+                    let thisSeat = name ? $(`<td>${seatNumber}: ${name}</td>`) : $(`<td>${seatNumber}:</td>`);
+                    seatNumber++;
                     $(thisRow).append(thisSeat);
                 }
                 $(table).append(thisRow);
@@ -184,88 +186,90 @@
 <script>
 
     let tuesday1 = new SeatingChart();
-    tuesday1.addStudent('Stephen Arne');
-    tuesday1.addStudent('Nathaniel Bangs');
-    tuesday1.addStudent('Shelby Carmichael');
-    tuesday1.addStudent('Palmer Clingman');
-    tuesday1.addStudent('Hannah Davis');
-    tuesday1.addStudent('Emily DellaCioppa');
-    tuesday1.addStudent('Reign Fernandes');
-    tuesday1.addStudent('Davis Fox');
-    tuesday1.addStudent('Isabella Hedges');
-    tuesday1.addStudent('Faith Humphrey');
-    tuesday1.addStudent('Molly Janicki');
+    tuesday1.addStudent('Stephen Arne',3,1);
+    tuesday1.addStudent('Nathaniel Bangs',3,2);
+    tuesday1.addStudent('Shelby Carmichael',3,3);
+    tuesday1.addStudent('Palmer Clingman',3,4);
+    tuesday1.addStudent('Hannah Davis',2,1);
+    tuesday1.addStudent('Emily DellaCioppa',2,2);
+    tuesday1.addStudent('Reign Fernandes',2,3);
+    tuesday1.addStudent('Davis Fox',2,4);
+    tuesday1.addStudent('Isabella Hedges',1,1);
+    tuesday1.addStudent('Faith Humphrey',1,2);
+    tuesday1.addStudent('Molly Janicki',1,3);
+    tuesday1.addStudent('Alex Wright',1,4);
 
     let tuesday3 = new SeatingChart();
-    tuesday3.addStudent('Isabella Carrillo');
-    tuesday3.addStudent('Steven Carvalho');
-    tuesday3.addStudent('Quinn Davignon');
-    tuesday3.addStudent('Tiago Duarte');
-    tuesday3.addStudent('Maeve Geraghty');
-    tuesday3.addStudent('Samuel Harris');
-    tuesday3.addStudent('Stefan Hulsebosch');
+    tuesday3.addStudent('Isabella Carrillo',3,1);
+    tuesday3.addStudent('Steven Carvalho',3,2);
+    tuesday3.addStudent('Quinn Davignon',2,2);
+    tuesday3.addStudent('Tiago Duarte',2,3);
+    tuesday3.addStudent('Maeve Geraghty',1,2);
+    tuesday3.addStudent('Samuel Harris',1,3);
+    tuesday3.addStudent('Stefan Hulsebosch',1,4);
 
     let tuesday4 = new SeatingChart();
-    tuesday4.addStudent('Ryan Arruda');
-    tuesday4.addStudent('Sylvie Benson');
-    tuesday4.addStudent('Theodore Cecil');
-    tuesday4.addStudent('Rylie Coughlin');
-    tuesday4.addStudent('Sabrina Cunningham');
-    tuesday4.addStudent('Jayce Elliott');
-    tuesday4.addStudent('Chris Guavin');
-    tuesday4.addStudent('Maeve Geraghty');
-    tuesday4.addStudent('Jacob Hadley');
-    tuesday4.addStudent('John Higgins');
-    tuesday4.addStudent('Theo Jacobsen');
-    tuesday4.addStudent('Brady Kidney');
+    tuesday4.addStudent('Ryan Arruda',4,1);
+    tuesday4.addStudent('Sylvie Benson',4,2);
+    tuesday4.addStudent('Theodore Cecil',4,3);
+    tuesday4.addStudent('Rylie Coughlin',3,1);
+    tuesday4.addStudent('Sabrina Cunningham',3,3);
+    tuesday4.addStudent('Jayce Elliott',3,4);
+    tuesday4.addStudent('Chris Guavin',2,1);
+    tuesday4.addStudent('Matthew Carvalho',1,1);
+    tuesday4.addStudent('Maeve Geraghty',1,2);
+    tuesday4.addStudent('Jacob Hadley',2,4);
+    tuesday4.addStudent('John Higgins',2,2);
+    tuesday4.addStudent('Theo Jacobsen',1,3);
+    tuesday4.addStudent('Brady Kidney',1,4);
+    tuesday4.addStudent('Zachary Zutaut',4,4);
 
     let wednesday1 = new SeatingChart();
-    wednesday1.addStudent('Jill Langlais');
-    wednesday1.addStudent('Keane MacGregor');
-    wednesday1.addStudent('Rebecca Milde');
-    wednesday1.addStudent('Drew Miranda');
-    wednesday1.addStudent("Serena O'Connell");
-    wednesday1.addStudent('Bessie Pierre');
-    wednesday1.addStudent('Apollo Prefontaine');
-    wednesday1.addStudent('Isabella Romig');
-    wednesday1.addStudent('Leah Scott');
-    wednesday1.addStudent('Teagan Shay');
-    wednesday1.addStudent('Desmond Sinnott');
-    wednesday1.addStudent('Brett Smith');
-    wednesday1.addStudent('Paige Sommers');
-    wednesday1.addStudent('Gabrielle Theodore');
-    wednesday1.addStudent('Kinsley Trout');
-    wednesday1.addStudent('Alex Wright');
+    wednesday1.addStudent('Jill Langlais',4,2);
+    wednesday1.addStudent('Keane MacGregor',4,3);
+    wednesday1.addStudent('Rebecca Milde',4,4);
+    wednesday1.addStudent('Drew Miranda',3,1);
+    wednesday1.addStudent("Serena O'Connell",3,2);
+    wednesday1.addStudent('Bessie Pierre',3,3);
+    wednesday1.addStudent('Apollo Prefontaine',3,4);
+    wednesday1.addStudent('Isabella Romig',2,1);
+    wednesday1.addStudent('Leah Scott',2,2);
+    wednesday1.addStudent('Teagan Shay',2,3);
+    wednesday1.addStudent('Desmond Sinnott',2,4);
+    wednesday1.addStudent('Brett Smith',1,1);
+    wednesday1.addStudent('Paige Sommers',1,2);
+    wednesday1.addStudent('Gabrielle Theodore',1,3);
+    wednesday1.addStudent('Kinsley Trout',1,4);
 
     let wednesday3 = new SeatingChart();
-    wednesday3.addStudent('Sean Lund');
-    wednesday3.addStudent('Katelyn Luong');
-    wednesday3.addStudent('Bethany Morgan');
-    wednesday3.addStudent('Cooper Newton');
-    wednesday3.addStudent('Christian Noble Shriver');
-    wednesday3.addStudent('Quintin Palmer');
-    wednesday3.addStudent('Spencer Perez-Dormitzer');
-    wednesday3.addStudent('Ethan Scully');
-    wednesday3.addStudent('Evan Smith');
-    wednesday3.addStudent('Tyler Trudeau');
-    wednesday3.addStudent('Kayli Viera');
-    wednesday3.addStudent('Josephy Ziino');
+    wednesday3.addStudent('Sean Lund',4,2);
+    wednesday3.addStudent('Katelyn Luong',4,3);
+    wednesday3.addStudent('Bethany Morgan',4,4);
+    wednesday3.addStudent('Cooper Newton',3,1);
+    wednesday3.addStudent('Christian Noble Shriver',3,2);
+    wednesday3.addStudent('Quintin Palmer',3,4);
+    wednesday3.addStudent('Spencer Perez-Dormitzer',1,1);
+    wednesday3.addStudent('Ethan Scully',2,3);
+    wednesday3.addStudent('Evan Smith',2,4);
+    wednesday3.addStudent('Tyler Trudeau',1,2);
+    wednesday3.addStudent('Kayli Viera',1,3);
+    wednesday3.addStudent('Josephy Ziino',1,4);
 
     let wednesday4 = new SeatingChart();
-    wednesday4.addStudent('Jhett Labonte');
-    wednesday4.addStudent('David Magee');
-    wednesday4.addStudent('Aleeya McCarthy');
-    wednesday4.addStudent('Brendan McIntire');
-    wednesday4.addStudent('Cattarinha Nunes');
-    wednesday4.addStudent('Ryan Quinlan');
-    wednesday4.addStudent('Gabriella Romig');
-    wednesday4.addStudent('Allison Root');
-    wednesday4.addStudent('Tess Roznoy');
-    wednesday4.addStudent('Kennedy Serpa');
-    wednesday4.addStudent('Payton Tripp');
-    wednesday4.addStudent('Emma Whittaker');
-    wednesday4.addStudent('Liam Yurof');
-    wednesday4.addStudent('Zachary Zutaut');
+    wednesday4.addStudent('Jhett Labonte',4,2);
+    wednesday4.addStudent('David Magee',4,3);
+    wednesday4.addStudent('Aleeya McCarthy',3,1);
+    wednesday4.addStudent('Brendan McIntire',3,2);
+    wednesday4.addStudent('Cattarinha Nunes',3,3);
+    wednesday4.addStudent('Ryan Quinlan',3,4);
+    wednesday4.addStudent('Gabriella Romig',2,1);
+    wednesday4.addStudent('Allison Root',2,2);
+    wednesday4.addStudent('Tess Roznoy',2,3);
+    wednesday4.addStudent('Kennedy Serpa',2,4);
+    wednesday4.addStudent('Payton Tripp',1,1);
+    wednesday4.addStudent('Emma Whittaker',1,2);
+    wednesday4.addStudent('Liam Yurof',1,3);
+    wednesday4.addStudent('Zachary Zutaut',1,4);
 
     let thursday1 = new SeatingChart();
     thursday1.addStudent('William Baltz',2,1);

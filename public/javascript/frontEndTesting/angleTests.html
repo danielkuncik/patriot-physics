@@ -198,8 +198,6 @@ angleTests.assertAngle(angle1, {
       float: 1
     },'operations','trig');
 
-
-
     const angle603 = new Angle('90.00');
     angleTests.assertMagnitudeZero(angle603.cos(),4,'operations','trig');
     angleTests.assertMagnitude(angle603.sin(),{
@@ -214,7 +212,60 @@ angleTests.assertAngle(angle1, {
       float: 1
     },'operations','trig');
 
+    const angle604 = new Angle(0); // exactly 0
+    angleTests.assertMagnitudeZero(angle604.sin(),Infinity,'operations','trig');
+    angleTests.assertMagnitudeZero(angle604.tan(),Infinity,'operations','trig');
+    angleTests.assertMagnitude(angle604.cos(),{
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 0,
+        numSigFigs: Infinity,
+        exact: true,
+        positive: true,
+        negative: false,
+        zero: false,
+        float: 1
+    },'operations','trig');
 
+    const angle605 = new Angle(45); // exactly 45 degrees
+    angleTests.assertMagnitude(angle605.tan(),{
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 0,
+        numSigFigs: Infinity,
+        exact: true,
+        positive: true,
+        negative: false,
+        zero: false,
+        float: 1
+    },'operations','trig');
+
+    const angle605a = new Angle('45');
+    angleTests.assertMagnitude(angle605a.tan(),{
+        firstSigFig: '1',
+        otherSigFigs: '0',
+        orderOfMagnitude: 0,
+        numSigFigs: 2,
+        exact: false,
+        positive: true,
+        negative: false,
+        zero: false,
+        float: 1
+    },'operations','trig');
+
+    const angle606 = new Angle(90); // exactly 90 degrees
+    angleTests.assertMagnitudeZero(angle606.cos(),Infinity,'operations','trig');
+    angleTests.assertMagnitude(angle606.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 0,
+        numSigFigs: Infinity,
+        exact: true,
+        positive: true,
+        negative: false,
+        zero: false,
+        float: 1
+    },'operations','trig');
 
     /// ####################
     /*
