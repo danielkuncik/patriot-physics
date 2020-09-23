@@ -701,67 +701,6 @@ class Measurement {
     }
 
 
-    /// correct inputted answer
-    // this function assumes that this object is the correct answer
-    correctInputtedAnswer(inputtedAnswer, type = 'exact', acceptedPercentDifference) {
-        if (type === 'exact') {
-            return this.correctInputtedAnswerExact(inputtedAnswer)
-        } else if (type === 'float') {
-            return this.correctInputtedAnswerFloat(inputtedAnswer, acceptedPercentDifference)
-        }
-    }
-
-    /// private method!
-    correctInputtedAnswerExact(inputtedAnswer) {
-        let correct = true, comment = '';
-        if (inputtedAnswer.numSigFigs === this.numSigFigs) {
-            if (inputtedAnswer.orderOfMagnitude !== this.orderOfMagnitude) {
-                correct = false;
-                if (inputtedAnswer.divideMag(this).orderOfMagnitude !== 0) {
-                    comment = comment + `Your answer is the incorrect order of magnitude! That means you made a big error :(`;
-                }
-            }
-            if (!(inputtedAnswer.firstSigFig === this.firstSigFig)) {
-                correct = false;
-                comment = comment + `the First Sig Fig ${inputtedAnswer.firstSigFig} is not correct`;
-            }
-            if (!(inputtedAnswer.otherSigFigs === this.otherSigFigs)) {
-                correct = false;
-                comment = comment + `The Sig Figs beyond the first are not correct`;
-            }
-
-            if (!correct && (percentDifference(inputtedAnswer.getFloat(), this.getFloat()) < 1)) {
-                comment = comment + 'You are off by less than 1%! So close! Maybe you rounded incorrectly at some point in the process?';
-            }
-        } else if (inputtedAnswer.numSigFigs < this.numSigFigs) {
-            correct = false;
-            comment = comment + 'You have too few significant figures';
-            if (!correct && (percentDifference(inputtedAnswer.getFloat(), this.getFloat()) < 1)) {
-                comment = comment + 'But, you are off by less than 1%! So if you add the extra significant figures you should be good!';
-            }
-        } else if (inputtedAnswer.numSigFigs > this.numSigFigs) {
-            correct = false;
-            comment = comment + 'You have too many significant figures';
-            if (!correct && (percentDifference(inputtedAnswer.getFloat(), this.getFloat()) < 1)) {
-                comment = comment + 'But, you are off by less than 1%! So round correctly and see if you are right!';
-            }
-        }
-        return {
-            correct: correct,
-            comment: comment
-        }
-    }
-
-    // private method
-    correctInputtedAnswerFloat(inputtedAnswer, acceptedPercentDifference = 1) {
-        let correct = percentDifference(inputtedAnswer.getFloat(), this.getFloat()) < acceptedPercentDifference;
-        let comment = '';
-        return {
-            correct: correct,
-            comment: comment
-        }
-
-    }
 
 
     reverseSign() {
