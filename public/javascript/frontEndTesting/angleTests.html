@@ -267,6 +267,67 @@ angleTests.assertAngle(angle1, {
         float: 1
     },'operations','trig');
 
+    const angle607 = new Angle('180'); // two sig figs
+    angleTests.assertMagnitude(angle607.cos(), {
+        firstSigFig: '1',
+        otherSigFigs: '0',
+        orderOfMagnitude: 0,
+        numSigFigs: 2,
+        exact: false,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    }, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607.sin(), 2, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607.tan(), 2, 'operations','trig');
+
+    const angle607a = new Angle('180.'); // three sig figs
+    angleTests.assertMagnitude(angle607a.cos(), {
+        firstSigFig: '1',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 3,
+        exact: false,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    }, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607a.sin(), 3, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607a.tan(), 3, 'operations','trig');
+
+    const angle607b = new Angle('180.000'); // six sig figs
+    angleTests.assertMagnitude(angle607b.cos(), {
+        firstSigFig: '1',
+        otherSigFigs: '00000',
+        orderOfMagnitude: 0,
+        numSigFigs: 6,
+        exact: false,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    }, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607b.sin(), 6, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607b.tan(), 6, 'operations','trig');
+
+    const angle607c = new Angle(180); // exact
+    angleTests.assertMagnitude(angle607c.cos(), {
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 0,
+        numSigFigs: Infinity,
+        exact: true,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    }, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607c.sin(), Infinity, 'operations','trig');
+    angleTests.assertMagnitudeZero(angle607c.tan(), Infinity, 'operations','trig');
+
+
     /// ####################
     /*
     CONSTRUCT FROM LAW OF COSINES: rebuild once I have more of the parts
