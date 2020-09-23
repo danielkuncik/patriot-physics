@@ -19,7 +19,8 @@ display_home = (req,res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         courseLevel: req.courseLevel,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        flashMessage: req.body.flashMessage
        // flash: req.flash
     });
 };

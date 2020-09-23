@@ -1,12 +1,16 @@
 <div>
     {{>navbar}}
 </div>
+
+{{#if flashMessage}}
+    <h1 class = "display-1 text-danger">
+        {{flashMessage}}
+    </h1>
+{{/if}}
+
 <div class = 'no-print'>
     {{userInfo user section overallLevel totalAttempts}}
 </div>
 
-{{#if flash}}
-<div class = "{{flash.type}}">
-    {{flash.message}}
-</div>
-{{/if}}
+
+

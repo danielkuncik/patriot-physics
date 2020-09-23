@@ -53,9 +53,11 @@ const check_login = (req, res, next) => {
                     }
                 });
             } else {
+                req.body.flashMessage = 'Incorrect password';
                 next();
             }
         } else {
+            req.body.flashMessage = 'Username does not exist';
             next();
         }
     });
