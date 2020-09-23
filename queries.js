@@ -16,9 +16,9 @@ const pool = new Pool({
 
 function getCourseLevel(section) {
     let courseLevel;
-    if (section === 'Violet') {
+    if (section === 'Violet' || section === 'Thursday1' || section === 'Friday1' || section === 'Tuesday3' || section === 'Wednesday3') {
         courseLevel = 'AP';
-    } else if (section === 'Red' || section === 'Blue' || section === 'Green') {
+    } else if (section === 'Red' || section === 'Blue' || section === 'Green' || section === 'Tuesday1' || section === 'Wednesday1' || section === 'Thursday2' || section === 'Friday2' || section === 'Thursday3' || section === 'Friday3') {
         courseLevel = 'Honors';
     } else if (section === 'Orange') {
         courseLevel = 'A_Level';
