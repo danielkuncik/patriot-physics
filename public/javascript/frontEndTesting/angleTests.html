@@ -327,6 +327,92 @@ angleTests.assertAngle(angle1, {
     angleTests.assertMagnitudeZero(angle607c.sin(), Infinity, 'operations','trig');
     angleTests.assertMagnitudeZero(angle607c.tan(), Infinity, 'operations','trig');
 
+    const angle608 = new Angle('270');
+    const angle608a = new Angle('270.');
+    const angle608b = new Angle('270.000');
+    const angle608c = new Angle(270);
+
+    angleTests.assertMagnitudeZero(angle608.cos(), 2, 'operations','trig');
+    angleTests.assertMagnitude(angle608.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '0',
+        orderOfMagnitude: 0,
+        numSigFigs: 2,
+        exact: false,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    },'operations','trig');
+
+    angleTests.assertMagnitudeZero(angle608a.cos(), 3, 'operations','trig');
+    angleTests.assertMagnitude(angle608a.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '00',
+        orderOfMagnitude: 0,
+        numSigFigs: 2,
+        exact: false,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    },'operations','trig');
+
+    angleTests.assertMagnitudeZero(angle608b.cos(), 6, 'operations','trig');
+    angleTests.assertMagnitude(angle608b.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '00000',
+        orderOfMagnitude: 0,
+        numSigFigs: 6,
+        exact: false,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    },'operations','trig');
+
+    angleTests.assertMagnitudeZero(angle608c.cos(), Infinity, 'operations','trig');
+    angleTests.assertMagnitude(angle608c.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 0,
+        numSigFigs: Infinity,
+        exact: true,
+        positive: false,
+        negative: true,
+        zero: false,
+        float: -1
+    },'operations','trig');
+
+    const angle609 = new Angle('450');
+    const angle609a = new Angle(450);
+
+    angleTests.assertMagnitudeZero(angle609.cos(), 2, 'operations','trig');
+    angleTests.assertMagnitude(angle609.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '0',
+        orderOfMagnitude: 0,
+        numSigFigs: 2,
+        exact: false,
+        positive: true,
+        negative: false,
+        zero: false,
+        float: 1
+    },'operations','trig');
+
+    angleTests.assertMagnitudeZero(angle609a.cos(), Infinity, 'operations','trig');
+    angleTests.assertMagnitude(angle609a.sin(),{
+        firstSigFig: '1',
+        otherSigFigs: '',
+        orderOfMagnitude: 0,
+        numSigFigs: Infinity,
+        exact: true,
+        positive: true,
+        negative: false,
+        zero: false,
+        float: 1
+    },'operations','trig');
+
 
     /// ####################
     /*
