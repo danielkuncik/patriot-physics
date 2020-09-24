@@ -84,7 +84,7 @@ app.set('views', [__dirname + '/views',__dirname + '/content']);
 app.engine('hbs', hbs.express4({
    // extname: 'hbs',
     defaultView: 'default.hbs',
-    partialsDir: [__dirname + '/views/partials',__dirname + '/content/information/styleGuide'],
+    partialsDir: [__dirname + '/views/partials',__dirname + '/content/information/styleGuide',__dirname + '/content/unit/energy/conceptual_conservation_of_energy/pods/energyBooks'],
     layoutsDir: __dirname + '/views/layouts'
 }));
 app.use(express.static(__dirname + '/public'));
