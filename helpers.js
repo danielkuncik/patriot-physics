@@ -198,7 +198,7 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
 });
 
 function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
-    let listItem = "<li class = 'podListItem'>";
+    let listItem = "<li class = 'podListItem mb-3'>";
     let letter = unitMap[superUnitKey].units[unitKey].pods[podKey].letter;
     let title = unitMap[superUnitKey].units[unitKey].pods[podKey].title;
     if (unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle) {
@@ -246,7 +246,7 @@ hbs.registerHelper('listOfPods', (superUnitKey, unitKey, gradeMap) => {
         // list = list + makePodListItem(superUnitKey, unitKey, podKey, gradeMap);
     });
     Object.keys(levelList).forEach((level) => {
-      list = list + "<li>";
+      list = list + "<li class = 'mb-3'>";
       list = list + `<h5>Level ${level}</h5>`;
       list = list + "<ul>";
       levelList[level].forEach((podKey) => {
