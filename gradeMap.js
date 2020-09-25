@@ -155,5 +155,6 @@ class GradeMap {
 }
 
 module.exports = {
+    getPodKeysByUUID,
     GradeMap
 };

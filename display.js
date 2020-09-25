@@ -152,6 +152,51 @@ display_pod_page = (req, res) => {
     }
 };
 
+display_pod_page_2 = (req, res) => {
+    const superUnit = unitMap[req.superUnitKey];
+    const unit = superUnit.units[req.unitKey];
+    const pod = unit.pods[req.podKey];
+    let title = pod.title;
+    const loggedIn = !!req.user;
+    let format = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].format;
+    if (pod.subtitle) {
+        title = title + `: ${pod.subtitle}`;
+    }
+    if (format === 'hbs') {
+        res.render('unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs', {
+            layout: "podPageLayout.hbs",
+            unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
+            title: title,
+            level: pod.level,
+            superUnitKey: req.superUnitKey,
+            unitKey: req.unitKey,
+            podKey: req.podKey,
+            objective: pod.objective,
+            content: pod.content,
+            backLink: `/unit/${req.superUnitKey}/${req.unitKey}`,
+            //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
+            letter: pod.letter,
+            unitNumber: unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number,
+            unitClusterName: unitMap[req.superUnitKey].title,
+            user: req.user,
+            loggedIn: loggedIn,
+            section: req.section,
+            overallLevel: req.overallLevel,
+            gradeMap: req.gradeMap,
+            previousAttempts: req.previousAttempts,
+            ungradedQuizzes: req.ungradedQuizzes,
+            totalAttempts: req.totalAttemps
+        });
+    } else if (format === 'pdf') {
+        let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
+        fs.readFile(__dirname + filePath , function (err,data){
+            res.contentType("application/pdf");
+            res.send(data);
+        });
+    }
+
+};
+
 display_lab_list_page = (req, res) => {
     res.render('labsEntryPage.hbs', {
         layout:'default',
@@ -343,6 +388,7 @@ module.exports = {
     display_super_unit_page,
     display_unit_page,
     display_pod_page,
+    display_pod_page_2,
     display_lab_list_page,
     display_lab_page,
     display_problemSet_list_page,

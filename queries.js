@@ -193,6 +193,33 @@ const look_up_quiz_attempts = function(req, res, next) {
 };
 
 
+const look_up_quiz_attempts_2 = function(req, res, next) {
+    if (req.user) {
+        const pod_uuid = req.params.pod_uuid;
+        const student_id = req.user.id;
+        pool.query('SELECT comment,score,image_url_1,tstz FROM quiz_attempts WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.previousAttempts = results.rows;
+            if (results.rows.length > 0) {
+                let lastAttempt = results.rows[results.rows.length - 1];
+                if (lastAttempt.score === null) {
+                    req.ungradedQuizzes = true;
+                } else {
+                    req.ungradedQuizzes = false;
+                }
+            } else {
+                req.ungradedQuizzes = false;
+            }
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
+
 find_pending_quizzes = function(req, res, next) {
     if (req.session.student) {
         const id = req.session.student.id;
@@ -219,6 +246,7 @@ module.exports = {
     kick_out_if_not_logged_in,
     submit_quiz,
     look_up_quiz_attempts,
+    look_up_quiz_attempts_2,
     count_all_attempts,
     find_pending_quizzes
 };

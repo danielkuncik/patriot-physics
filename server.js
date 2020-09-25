@@ -127,6 +127,15 @@ app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_u
 // pod home page
 app.get('/pod/:superUnitKey/:unitKey/:podKey', [db.check_if_logged_in, db.look_up_quiz_attempts, disp.display_pod_page]);
 
+const gm = require('./gradeMap');
+
+app.get('/pod/:pod_uuid', [(req, res, next) => {
+    const selectionObject = gm.getPodKeysByUUID(req.params.pod_uuid);
+    req.superUnitKey = selectionObject.superUnitKey;
+    req.unitKey = selectionObject.unitKey;
+    req.podKey = selectionObject.podKey;
+    next();
+}, db.check_if_logged_in, db.look_up_quiz_attempts2, disp.display_pod_page]);
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
 
