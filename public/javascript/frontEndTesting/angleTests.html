@@ -37,6 +37,8 @@
     angleTests.addCategory('operations','Operations');
     angleTests.addSubCategory('operations','conversions','Conversions');
     angleTests.addSubCategory('operations','trig','Trigonometric Functions');
+    angleTests.addSubCategory('operations','addition','Angle Addition');
+    angleTests.addSubCategory('operations','subtraction','Angle Subtraction');
 
 
 
@@ -412,6 +414,39 @@ angleTests.assertAngle(angle1, {
         zero: false,
         float: 1
     },'operations','trig');
+
+
+    const angle701a = new Angle('45');
+    const angle701b = new Angle('45');
+    angleTests.assertAngle(angle701a.add(angle701b),{
+        unit: "degrees",
+        firstSigFig: '9',
+        otherSigFigs: '0',
+        orderOfMagnitude: 1,
+        numSigFigs: 2,
+        positive: true,
+        float: 90
+    },'operations','addition');
+
+    angleTests.assertAngle(angle701b.add(angle701a),{
+        unit: "degrees",
+        firstSigFig: '9',
+        otherSigFigs: '0',
+        orderOfMagnitude: 1,
+        numSigFigs: 2,
+        positive: true,
+        float: 90
+    },'operations','addition');
+
+    angleTests.assertAngle(angle701a.add('45'),{ // using a string as angle input
+        unit: "degrees",
+        firstSigFig: '9',
+        otherSigFigs: '0',
+        orderOfMagnitude: 1,
+        numSigFigs: 2,
+        positive: true,
+        float: 90
+    },'operations','addition');
 
 
     /// ####################
