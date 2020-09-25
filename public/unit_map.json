@@ -1604,14 +1604,15 @@
         },
         "pods":
         {
-          "recognize_energy_types":
+          "energy_transfer_1":
           {
-            "title": "Recognize Energy Types",
+            "title": "Energy Transfer 1",
+            "subtitle": "Recognize Energy Types",
             "level": 1,
             "horizontal": 1,
             "letter": "A",
             "prerequisites": [],
-            "objective": "Recognize (multiple choice) single examples of different types of energy",
+            "objective": "Recognize single examples of different types of energy",
             "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
             "uuid": "921c3035-4962-4622-b422-ccb58710b976"
           },
@@ -1621,79 +1622,93 @@
             "level": 1,
             "horizontal": 2,
             "letter": "B",
-            "prerequisites": ["recognize_energy_types"],
+            "prerequisites": ["energy_transfer_1"],
             "objective": "State, from memory, the law of conservation of energy.",
             "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
             "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69"
+          },
+          "energy_transfer_2":
+          {
+            "title": "Energy Transfer 2",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "C",
+            "prerequisites": ["state_law_conservation_of_energy"],
+            "objective": "Recognize processes of 2-3 steps in which energy changes from one type to another; name these processes; draw diagrams depicting the processes",
+            "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
+            "uuid": "6a207b48-29ac-4a96-9e0a-184884dd16d6"
           },
           "categorize_energy":
           {
             "title": "Categorize Energy",
             "level": 2,
-            "horizontal": 2,
-            "letter": "C",
-            "prerequisites": ["state_law_conservation_of_energy"],
+            "horizontal": 1,
+            "letter": "D",
+            "prerequisites": ["energy_transfer_2"],
             "objective": "Write the names of different types of energy; categorize each form of energy as kinetic energy or potential energy.",
             "content": "There are several different types of energy into which we can classify most of the energy in our lives; each type of energy can be categorized as kinetic or potential energy",
             "uuid": "bc66b87e-6ae3-4acd-a722-e9c9d5b282ae"
           },
-          "recognize_energy_transfer":
+          "energy_transfer_3":
           {
-            "title": "Recognize Energy Transfer",
-            "level": 2,
-            "horizontal": 1,
-            "letter": "D",
-            "prerequisites": ["categorize_energy"],
-            "objective": "Recognize (multiple choice) processes of 2-3 steps in which energy changes from one type to another; name these processes",
-            "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
-            "uuid": "6a207b48-29ac-4a96-9e0a-184884dd16d6"
-          },
-          "describe_energy_transfer_1":
-          {
-            "title": "Describe Energy Transfer 1",
+            "title": "Energy Transfer 3",
+            "subtitle": "Energy From the Sun",
             "level": 3,
             "horizontal": 1,
             "letter": "E",
-            "prerequisites": ["recognize_energy_transfer"],
-            "objective": "Write, using tables as guidance, processes of 2 - 3 steps in which energy changes from one type to another; name these processes.",
-            "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
+            "prerequisites": ["categorize_energy"],
+            "objective": "Using energy transfer diagrams, connect energy used in your life back to sunlight.",
+            "content": "The sun is the major source of energy for our food, heat, and light.",
             "uuid": "0c891a7e-9af9-4ff4-af8a-436615ebb5bb"
           },
-          "describe_energy_transfer_2":
+          "energy_transfer_4":
           {
-            "title": "Describe Energy Transfer 2",
-            "level": 4,
-            "horizontal": 1,
+            "title": "Energy Transfer 4",
+            "subtitle": "Electricity",
+            "level": 3,
+            "horizontal": 2,
             "letter": "F",
-            "prerequisites": ["describe_energy_transfer_1"],
-            "objective": "Write without guidance energy transfer in four or more steps; name processes involved.",
-            "content": "If you trace the energy in your life backwards, it goes through many different transitions and many different types of energy.",
+            "prerequisites": ["energy_transfer_3"],
+            "objective": "Using energy transfer diagrams, connect energy from an electrical outlet back to sunlight.",
+            "content": "All of the electrical energy from outlets on earth, save geothermal and nuclear energy, can be traced back to light from the sun.",
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
             "uuid": "67b012e0-eefc-479f-9bec-eea3eb753a9b"
           },
-          "trace_energy_to_sun":
+          "energy_transfer_5":
           {
-            "title": "Trace Energy to Sun",
-            "level": 5,
-            "horizontal": 1,
+            "title": "Energy Transfer 5",
+            "subtitle": "Efficiency",
+            "level": 4,
+            "horizontal": 2,
             "letter": "G",
-            "prerequisites": ["describe_energy_transfer_2"],
-            "objective": "Connect (nearly) all forms of energy on earth back to light from the sun.",
-            "content": "All of the energy on earth, save geothermal and nuclear energy, can be traced back to light from the sun.",
+            "prerequisites": ["energy_transfer_4"],
+            "objective": "Draw energy transfer diagrams that a single one source of energy becomes many different types.",
+            "content": "Energy transfer is never perfectly clean and neat but always accounts for some energy going to different types, particularly thermal energy (heat loss).",
             "notes": "The exceptions, which should be noted, are geothermal and nuclear energy.",
             "uuid": "2b8861c2-cee7-4667-a247-31f8535cad6a"
           },
-          "connect_energy_to_big_bang":
+          "solar_physics":
           {
-            "title": "Connect Energy to Big Bang",
-            "level": 6,
+            "title": "Solar Physics",
+            "level": 4,
             "horizontal": 1,
             "letter": "H",
-            "prerequisites": ["trace_energy_to_sun"],
+            "prerequisites": ["energy_transfer_5"],
+            "objective": "Describe how the gravitational potential energy of gas and dust in space eventually becomes the light emitted by the sun.",
+            "content": "Stars are formed by gas and dust in space attracting so strongly that it forms thermonuclear fusion and begins emitting electromagnetic energy.",
+            "uuid": "d559c9d8-97f6-4419-b473-bba084396131"
+          },
+          "birth_of_energy":
+          {
+            "title": "The Birth of Energy",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["solar_physics"],
             "objective": "Connect energy of the earth through the gravitational potential energy of space dust (which would eventually form the sun) back to the creation of energy during the big bang",
             "content": "Under current cosmological models, all of the energy in the universe can be traced back to some moment in time in which is suddenly appeared, which is named the 'Big Bang.'",
             "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology",
-            "uuid": "d559c9d8-97f6-4419-b473-bba084396131"
+            "uuid": "e85505ab-1a58-4a6b-8589-5caa6034e31f"
           }
         }
       },

@@ -34,9 +34,9 @@ colby gross => cyanGorilla
 Aiden Harrington => avocadoHorse
 
 Friday Block 1
-Colin Mackin => cyanCow
+Colin Mackin => cyanMouse
 Drew Mastovsky => danubeMonkey
-Lukas Michaelis => lavenderLion
+Lukas Michaelis => lavenderMonkey
 Savannah Teixiera => seaGreenTasmanianDevil
 william tirrell => whiteTurtle
 Will Lecuyer => whiteLizard
