@@ -201,6 +201,7 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
     let listItem = "<li class = 'podListItem mb-3'>";
     let letter = unitMap[superUnitKey].units[unitKey].pods[podKey].letter;
     let title = unitMap[superUnitKey].units[unitKey].pods[podKey].title;
+    const pod_uuid = unitMap[superUnitKey].units[unitKey].pods[podKey].uuid;
     if (unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle) {
         title = title + `: ${unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle}`;
     }
@@ -224,7 +225,7 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
         scoreMessage = scoreMessage + '=> New Score Pending';
     }
     let available = availableContent[superUnitKey].units[unitKey].pods[podKey].available;
-    let link = `/pod/${superUnitKey}/${unitKey}/${podKey}`;
+    let link = `/pod/${pod_uuid}`;
     if (available) {
         listItem = listItem + `<a href = '${link}'>`;
     }
