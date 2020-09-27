@@ -33,7 +33,6 @@ class GradeMap {
         this.map = this.makeBlankMap();
         this.setAllPodValues();
         this.overallLevel = 0;
-
     }
 
     makeBlankMap() {
@@ -152,6 +151,7 @@ class GradeMap {
         this.overallLevel = Math.floor(level);
         return this.overallLevel
     }
+
 
     print() {
         Object.keys(this.map).forEach((superUnitKey) => {

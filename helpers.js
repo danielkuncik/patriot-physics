@@ -276,13 +276,10 @@ hbs.registerHelper('addAllPodsToMap', (unitClusterKey, unitKey, gradeMap) => {
         if (gradeMap && gradeMap[unitClusterKey] && gradeMap[unitClusterKey].units && gradeMap[unitClusterKey].units[unitKey] && gradeMap[unitClusterKey].units[unitKey].pods) {
             if (gradeMap[unitClusterKey].units[unitKey].pods[key]) {
                 thisScore = gradeMap[unitClusterKey].units[unitKey].pods[key].score;
-                console.log(thisScore);
             } else {
-                console.log('fail 1');
                 thisScore = 0;
             }
         } else {
-            console.log('fail 2');
             thisScore = 0;
         }
         if (prerequisiteString[prerequisiteString.length - 1] === ",") {prerequisiteString = prerequisiteString.slice(0,-1)}

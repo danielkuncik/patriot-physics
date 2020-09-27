@@ -125,7 +125,7 @@ const check_if_logged_in = function(req, res, next) {
     } else {
         req.totalAttemps = 0;
     }
-    if (req.session.gradeMap && req.session.overallLevel) {
+    if (req.session.gradeMap && req.session.overallLevel !== undefined) {
         req.gradeMap = req.session.gradeMap.map;
         req.overallLevel = req.session.overallLevel;
     } else {
