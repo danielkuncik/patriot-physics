@@ -153,6 +153,13 @@ display_pod_page_X = (req, res) => {
 };
 
 display_pod_page = (req, res) => {
+    if (req.gradeMap) {
+        console.log(req.gradeMap);
+        console.log(req.gradeMap[req.superUnitKey]);
+        console.log(req.gradeMap[req.superUnitKey].units);
+        console.log(req.gradeMap[req.superUnitKey].units[req.unitKey]);
+        console.log(req.gradeMap[req.superUnitKey].units[req.unitKey].pods);
+    }
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
