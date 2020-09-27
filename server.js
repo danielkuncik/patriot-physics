@@ -137,8 +137,8 @@ function loadPodFrom_uuid(req, res, next) {
   next();
 }
 
-app.get('/pod/:uuid',[ (req, res, next) => {
-      const selectionObject = gm.getPodKeysByUUID(req.params.uuid);
+app.get('/pod/:pod_uuid',[ (req, res, next) => {
+      const selectionObject = gm.getPodKeysByUUID(req.params.pod_uuid);
       if (!selectionObject) {
         res.redirect('/');
       } else {
