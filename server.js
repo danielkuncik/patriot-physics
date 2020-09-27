@@ -125,7 +125,7 @@ app.get('/superUnit/:superUnitKey', [db.check_if_logged_in, disp.display_super_u
 app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_unit_page]);
 
 // pod home page
-app.get('/podX/:superUnitKey/:unitKey/:podKey', [db.check_if_logged_in, db.look_up_quiz_attempts, disp.display_pod_page]);
+app.get('/podX/:superUnitKey/:unitKey/:podKey', [db.check_if_logged_in, db.look_up_quiz_attempts, disp.display_pod_page_X]);
 
 const gm = require('./gradeMap');
 
@@ -138,30 +138,20 @@ function loadPodFrom_uuid(req, res, next) {
 }
 
 app.get('/pod/:uuid',[ (req, res, next) => {
-  const selectionObject = gm.getPodKeysByUUID(req.params.uuid);
-  if (!selectionObject) {
-    res.redirect('/');
-  } else {
-    req.superUnitKey = selectionObject.superUnitKey;
-    req.unitKey = selectionObject.unitKey;
-    req.podKey = selectionObject.podKey;
-    next();
-  }
+      const selectionObject = gm.getPodKeysByUUID(req.params.uuid);
+      if (!selectionObject) {
+        res.redirect('/');
+      } else {
+        req.superUnitKey = selectionObject.superUnitKey;
+        req.unitKey = selectionObject.unitKey;
+        req.podKey = selectionObject.podKey;
+        next();
+      }
   },
   db.check_if_logged_in,
   db.look_up_quiz_attempts,
-  disp.display_pod_page_2
-//   (req,res) => {
-//   res.json({
-//     "messsage":"hello",
-//     "superUnitKey":req.superUnitKey,
-//     "unitKey": req.unitKey,
-//     "podKey": req.podKey,
-//     "uuid": req.params.uuid
-// });
-// }
+  disp.display_pod_page
 ]);
-//app.get('/podX/:pod_uuid', [loadPodFrom_uuid, db.check_if_logged_in, db.look_up_quiz_attempts2, disp.display_pod_page_2]);
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
 

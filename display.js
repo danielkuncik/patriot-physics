@@ -103,7 +103,7 @@ display_unit_page = (req, res) => {
     });
 };
 
-display_pod_page = (req, res) => {
+display_pod_page_X = (req, res) => {
     let superUnit = unitMap[req.params.superUnitKey];
     let unit = superUnit.units[req.params.unitKey];
     let pod = unit.pods[req.params.podKey];
@@ -152,7 +152,7 @@ display_pod_page = (req, res) => {
     }
 };
 
-display_pod_page_2 = (req, res) => {
+display_pod_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
@@ -388,7 +388,7 @@ module.exports = {
     display_super_unit_page,
     display_unit_page,
     display_pod_page,
-    display_pod_page_2,
+    display_pod_page_X,
     display_lab_list_page,
     display_lab_page,
     display_problemSet_list_page,

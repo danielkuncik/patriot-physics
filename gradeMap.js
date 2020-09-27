@@ -152,6 +152,26 @@ class GradeMap {
         this.overallLevel = Math.floor(level);
         return this.overallLevel
     }
+
+    print() {
+        Object.keys(this.map).forEach((superUnitKey) => {
+            console.log('#####################');
+            console.log('#####################');
+            console.log(unitMap[superUnitKey].title);
+            Object.keys(this.map[superUnitKey].units).forEach((unitKey) => {
+                console.log('-------------');
+                console.log(unitMap[superUnitKey].units[unitKey].title);
+                console.log('-------------');
+                Object.keys(this.map[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+                    const mainTitle = unitMap[superUnitKey].units[unitKey].pods[podKey].title;
+                    const subTitle = unitMap[superUnitKey].units[unitKey].pods[podKey].subTitle;
+                    const title = !!subTitle ? `${mainTitle}: ${subTitle}` : mainTitle;
+                    const score = this.map[superUnitKey].units[unitKey].pods[podKey].score;
+                    console.log(`${title}: ${score}`);
+                });
+            });
+        });
+    }
 }
 
 module.exports = {

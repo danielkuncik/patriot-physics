@@ -85,7 +85,7 @@ const load_grades = function(req, res, next) {
             req.session.gradeMap = newGradeMap;
             req.session.overallLevel = newGradeMap.calculateOverallLevel();
 
-            console.log(req.session.gradeMap);
+            console.log(req.session.gradeMap.print());
             next();
         });
     } else {
@@ -170,7 +170,7 @@ const submit_quiz = function(req, res, next) {
 
 const look_up_quiz_attempts = function(req, res, next) {
     if (req.user) {
-        const pod_uuid = unitMap[req.params.superUnitKey].units[req.params.unitKey].pods[req.params.podKey].uuid;
+        const pod_uuid = req.params.pod_uuid;
         const student_id = req.user.id;
         pool.query('SELECT comment,score,image_url_1,tstz FROM quiz_attempts WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
             if (err) {
