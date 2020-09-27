@@ -129,13 +129,39 @@ app.get('/pod/:superUnitKey/:unitKey/:podKey', [db.check_if_logged_in, db.look_u
 
 const gm = require('./gradeMap');
 
-app.get('/pod/:pod_uuid', [(req, res, next) => {
-    const selectionObject = gm.getPodKeysByUUID(req.params.pod_uuid);
+function loadPodFrom_uuid(req, res, next) {
+  const selectionObject = gm.getPodKeysByUUID(req.params.pod_uuid);
+  req.superUnitKey = selectionObject.superUnitKey;
+  req.unitKey = selectionObject.unitKey;
+  req.podKey = selectionObject.podKey;
+  next();
+}
+
+app.get('/podX/:uuid',[ (req, res, next) => {
+  const selectionObject = gm.getPodKeysByUUID(req.params.uuid);
+  if (!selectionObject) {
+    res.redirect('/');
+  } else {
     req.superUnitKey = selectionObject.superUnitKey;
     req.unitKey = selectionObject.unitKey;
     req.podKey = selectionObject.podKey;
     next();
-}, db.check_if_logged_in, db.look_up_quiz_attempts2, disp.display_pod_page]);
+  }
+  },
+  db.check_if_logged_in,
+  db.look_up_quiz_attempts,
+  disp.display_pod_page_2
+//   (req,res) => {
+//   res.json({
+//     "messsage":"hello",
+//     "superUnitKey":req.superUnitKey,
+//     "unitKey": req.unitKey,
+//     "podKey": req.podKey,
+//     "uuid": req.params.uuid
+// });
+// }
+]);
+//app.get('/podX/:pod_uuid', [loadPodFrom_uuid, db.check_if_logged_in, db.look_up_quiz_attempts2, disp.display_pod_page_2]);
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
 
