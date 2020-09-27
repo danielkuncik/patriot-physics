@@ -85,7 +85,6 @@ const load_grades = function(req, res, next) {
             req.session.gradeMap = newGradeMap;
             req.session.overallLevel = newGradeMap.calculateOverallLevel();
 
-            console.log(req.session.gradeMap.print());
             next();
         });
     } else {
