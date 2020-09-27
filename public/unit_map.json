@@ -2671,6 +2671,7 @@
             "level": 4,
             "horizontal": 6,
             "letter": "X",
+            "prerequisites": ["kinematic_equations_4"],
             "objectives": "Write the kinematic equations as functions; explain this transition"
           },
           "quantitative_kinematic_graphs_4A":
