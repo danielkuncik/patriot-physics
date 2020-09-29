@@ -4951,9 +4951,9 @@
             "content": "Gravitational attraction of dust particles causes stars to form; earth's atmosphere exists due to gravitational attraction.",
             "uuid": "0040954c-c257-49ed-8dda-3848ae4f1946"
           },
-          "energy_of_comet":
+          "comet_orbits":
           {
-            "title": "Energy of a comet",
+            "title": "Comet Orbits",
             "level": 2,
             "horizontal": 1,
             "letter": "F",
@@ -4968,7 +4968,7 @@
             "level": 3,
             "horizontal": 1,
             "letter": "G",
-            "prerequisites": ["energy_of_comet"],
+            "prerequisites": ["comet_orbits"],
             "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple.",
             "content": "Because the earth is round, the direction we called 'down' is actually 'inward'; an apple and the moon are both falling inward towards earth.",
             "uuid": "ed5f91c8-e1c7-408b-b1ae-0fac57661bbc"
