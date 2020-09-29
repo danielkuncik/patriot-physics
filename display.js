@@ -86,8 +86,8 @@ display_super_unit_page = (req,res) => {
 };
 
 display_unit_page = (req, res) => {
-    unitCluster = unitMap[req.params.unitClusterKey];
-    unit = unitCluster.units[req.params.unitKey];
+    let unitCluster = unitMap[req.params.unitClusterKey];
+    let unit = unitCluster.units[req.params.unitKey];
     res.render('unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
         layout: 'unitPageLayout.hbs',
         title: unit.title,
@@ -104,13 +104,6 @@ display_unit_page = (req, res) => {
 };
 
 display_pod_page = (req, res) => {
-    if (req.gradeMap) {
-        console.log(req.gradeMap);
-        console.log(req.gradeMap[req.superUnitKey]);
-        console.log(req.gradeMap[req.superUnitKey].units);
-        console.log(req.gradeMap[req.superUnitKey].units[req.unitKey]);
-        console.log(req.gradeMap[req.superUnitKey].units[req.unitKey].pods);
-    }
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
