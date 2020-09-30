@@ -82,12 +82,7 @@ class Point {
     rotate(angleInput, centerPoint = makeOrigin()) {
         const angleObject = processAngleInput(angleInput);
         this.translate(centerPoint.x.reverseSign(), centerPoint.y.reverseSign());
-        console.log(this.print());
-        console.log(angleObject.print());
-        console.log(angleObject.cos());
-        console.log(angleObject.sin());
         const xPrime = (this.x.multiplyMag(angleObject.cos())).subtractMag(this.y.multiplyMag(angleObject.sin()));
-        console.log(xPrime.printOptimal());
         const yPrime = (this.x.multiplyMag(angleObject.sin())).addMag(this.y.multiplyMag(angleObject.cos()));
         this.x = xPrime;
         this.y = yPrime;

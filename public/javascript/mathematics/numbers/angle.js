@@ -270,7 +270,6 @@ class Angle {
       return new Magnitude(1)
     } else {
       const radAngle = this.convertToRadians();
-      console.log(radAngle);
       return new Magnitude(radAngle.measurement.cos());
     }
   }

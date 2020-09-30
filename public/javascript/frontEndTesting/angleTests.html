@@ -352,7 +352,7 @@ angleTests.assertAngle(angle1, {
         firstSigFig: '1',
         otherSigFigs: '00',
         orderOfMagnitude: 0,
-        numSigFigs: 2,
+        numSigFigs: 3,
         exact: false,
         positive: false,
         negative: true,
@@ -419,7 +419,7 @@ angleTests.assertAngle(angle1, {
     const angle701a = new Angle('45');
     const angle701b = new Angle('45');
     angleTests.assertAngle(angle701a.add(angle701b),{
-        unit: "degrees",
+        unit: "deg",
         firstSigFig: '9',
         otherSigFigs: '0',
         orderOfMagnitude: 1,
@@ -429,7 +429,7 @@ angleTests.assertAngle(angle1, {
     },'operations','addition');
 
     angleTests.assertAngle(angle701b.add(angle701a),{
-        unit: "degrees",
+        unit: "deg",
         firstSigFig: '9',
         otherSigFigs: '0',
         orderOfMagnitude: 1,
@@ -439,7 +439,7 @@ angleTests.assertAngle(angle1, {
     },'operations','addition');
 
     angleTests.assertAngle(angle701a.add('45'),{ // using a string as angle input
-        unit: "degrees",
+        unit: "deg",
         firstSigFig: '9',
         otherSigFigs: '0',
         orderOfMagnitude: 1,

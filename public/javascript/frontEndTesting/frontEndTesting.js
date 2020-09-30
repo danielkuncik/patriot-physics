@@ -9,6 +9,15 @@ class Test {
         this.name = name;
         this.pass = pass;
         this.failMessage = failMessage;
+
+        try {
+            if (!this.pass) {
+                throw new Error(`failed test: ${this.name}`);
+
+            }
+        } catch (err) {
+            console.log(err);
+        }
     }
 
 }

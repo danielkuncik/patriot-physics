@@ -117,7 +117,7 @@
             negative: false
         },
         yIsZero: 4
-    },'pointObjects','pointRotation');
+    },'pointObject','pointRotation');
 
 
     let x2 = new Magnitude('2.00');
@@ -142,7 +142,7 @@
             positive: true,
             negative: false
         }
-    },'pointObjects','pointRotation');
+    },'pointObject','pointRotation');
 
 
 
@@ -165,7 +165,7 @@
             positive: true,
             negative: false
         }
-    },'pointObjects','pointRotation');
+    },'pointObject','pointRotation');
 
 
     point2.rotate('90.00');
@@ -187,7 +187,7 @@
             positive: false,
             negative: true
         }
-    },'pointObjects','pointRotation');
+    },'pointObject','pointRotation');
 
     point2.rotate('90.00');
     pointTests.assertPoint(point2,{
@@ -208,7 +208,7 @@
             positive: false,
             negative: true
         }
-    },'pointObjects','pointRotation');
+    },'pointObject','pointRotation');
 
 
     point2.rotate('90.00');
@@ -230,7 +230,7 @@
             positive: true,
             negative: false
         }
-    },'pointObjects','pointRotation');
+    },'pointObject','pointRotation');
 
 
     let x3 = new Magnitude('10');
@@ -258,14 +258,14 @@
     },'pointObject','pointRotation');
 
 
-    point3.rotate('90.00');
+    point3.rotate('90.00'); // in the dimension that is 2.00, significant figures are preserved
     pointTests.assertPoint(point3,{
         quadrant: '2',
         x: {
             firstSigFig: '2',
-            otherSigFigs: '',
+            otherSigFigs: '00',
             orderOfMagnitude: 0,
-            numSigFigs: 1,
+            numSigFigs: 3,
             positive: false,
             negative: true
         },
@@ -293,6 +293,116 @@
         },
         y: {
             firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: false,
+            negative: true
+        }
+    },'pointObject','pointRotation');
+
+    point3.rotate('90.00');
+    pointTests.assertPoint(point3,{
+        quadrant: '4',
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        }
+    },'pointObject','pointRotation');
+
+
+    point3.rotate('90.00');
+    pointTests.assertPoint(point3,{
+        quadrant: undefined,
+        x: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        }
+    },'pointObject','pointRotation');
+
+
+    let point3a = new Point(x3,y3);
+
+    pointTests.assertPoint(point3a,{
+        quadrant: '1',
+        x: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        },
+        y: {
+            firstSigFig: '2',
+            otherSigFigs: '00',
+            orderOfMagnitude: 0,
+            numSigFigs: 3,
+            positive: true,
+            negative: false
+        }
+    },'pointObject','pointRotation');
+
+
+    point3a.rotate('90'); // should reduce all to one sig fig
+    pointTests.assertPoint(point3,{
+        quadrant: '2',
+        x: {
+            firstSigFig: '2',
+            otherSigFigs: '',
+            orderOfMagnitude: 0,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        },
+        y: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: true,
+            negative: false
+        }
+    },'pointObject','pointRotation','xxx');
+
+
+    point3.rotate('90');
+    pointTests.assertPoint(point3,{
+        quadrant: '3',
+        x: {
+            firstSigFig: '1',
+            otherSigFigs: '',
+            orderOfMagnitude: 1,
+            numSigFigs: 1,
+            positive: false,
+            negative: true
+        },
+        y: {
+            firstSigFig: '2',
             otherSigFigs: '',
             orderOfMagnitude: 0,
             numSigFigs: 1,
@@ -301,7 +411,7 @@
         }
     },'pointObject','pointRotation');
 
-    point3.rotate('90.00');
+    point3.rotate('90');
     pointTests.assertPoint(point3,{
         quadrant: '4',
         x: {
@@ -323,7 +433,7 @@
     },'pointObject','pointRotation');
 
 
-    point3.rotate('90.00');
+    point3.rotate('90');
     pointTests.assertPoint(point3,{
         quadrant: undefined,
         x: {
