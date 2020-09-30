@@ -17,17 +17,17 @@
             </div>
         </div>
     </li>
-    <li class = 'smallQuestion'><br> <!--- Big problem with this question !--->
-        <div class = 'container'>
-            <div class = 'row'>
-                <div class = 'col-6-md' id = 'I2'></div>
-                <div class = 'col-6-md'>
-                    Determine the acceleration of the object.
-                    Note that the graph is flat at t = 0.8 s.
-                </div>
-            </div>
-        </div>
-    </li>
+<!--    <li class = 'smallQuestion'><br> &lt;!&ndash;- Big problem with this question !-&ndash;&gt;-->
+<!--        <div class = 'container'>-->
+<!--            <div class = 'row'>-->
+<!--                <div class = 'col-6-md' id = 'I2'></div>-->
+<!--                <div class = 'col-6-md'>-->
+<!--                    Determine the acceleration of the object.-->
+<!--                    Note that the graph is flat at t = 0.8 s.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </li>-->
     <div class = 'pageBreak'></div>
     <li class = 'smallQuestion'> <br>
         <div class = 'container'>
@@ -64,8 +64,8 @@
     let I1 = makeParabolicPTgraph(20,undefined,3,0,0);
     $("#I1").append(I1.drawCanvas(300,300));
 
-    let I2 = makeParabolicPTgraph(0.8, undefined, -0.02, 0.016, 0); <!-- ???? this graph is a line! -->
-    $("#I2").append(I2.drawCanvas(300,300));
+    // let I2 = makeParabolicPTgraph(0.8, undefined, -0.02, 0.016, 0); <!-- ???? this graph is a line! -->
+    // $("#I2").append(I2.drawCanvas(300,300));
 
     let I3 = new QuantitativeGraph(0,20,0,3);
     I3.labelAxes('time (s)', 'velocity (m/s)');
