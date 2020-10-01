@@ -1235,7 +1235,8 @@
             "letter": "A",
             "prerequisites": [],
             "objective": "Define and give examples of qualitative and quantitative reasoning.",
-            "content": "A quantitative study is based on numerical measurements; a qualitative study is based on categories, patterns, or non-numerical observations"
+            "content": "A quantitative study is based on numerical measurements; a qualitative study is based on categories, patterns, or non-numerical observations",
+            "uuid":  "92fa82e3-71c1-44af-9f87-7317a83b15cb"
           },
           "identify_variables_1":
           {
@@ -1245,7 +1246,8 @@
             "letter": "B",
             "prerequisites": ["qualitative_vs_quantitative"],
             "objective": "Given a description of an experiment, identify the independent, dependent, and controlled variable of the experiment.",
-            "content": "In an experiment, an independent variable is systematically changed; a dependent variable is systematically measured; and a controlled variable is kept constant."
+            "content": "In an experiment, an independent variable is systematically changed; a dependent variable is systematically measured; and a controlled variable is kept constant.",
+            "uuid":  "81cace0c-1f2e-4e05-8a98-e950ebacafa8"
           },
           "what_is_theory":
           {
@@ -1255,7 +1257,8 @@
             "letter": "C",
             "prerequisites": ["identify_variables_1"],
             "objective": "Define the term 'theory'; discuss how theories are shown to be consistent and inconsistent with data; differentiate between theoretical physics and experimental physics; define the terms theory and law",
-            "content": "A theory is a simple explanation of how the universe works; theories are used to derive predicted observations; by making real observations, theories are shown to be consistent or inconsistent with data; a law is a theory that has been consistently validated; theoretical physicists develop new theories while experimental physicists test those theories."
+            "content": "A theory is a simple explanation of how the universe works; theories are used to derive predicted observations; by making real observations, theories are shown to be consistent or inconsistent with data; a law is a theory that has been consistently validated; theoretical physicists develop new theories while experimental physicists test those theories.",
+            "uuid":  "9f454004-9df4-430f-97af-1478b6b1c8db"
           },
           "identify_variables_2":
           {
@@ -1266,7 +1269,8 @@
             "prerequisites": ["what_is_theory"],
             "objective": "Given a description of an experiment, identify the independent, dependent, and controlled variables of the experiment; identify more than one controlled variable; define the term 'experiment' in terms of independent, dependent, and controlled variables; identify whether each variable is qualitative or quantitative.",
             "content": "In an experiment, an independent variable is systematically changed; a dependent variable is systematically measured; and a controlled variable is kept constant.",
-            "notes": "More challenging examples than identify variables 1"
+            "notes": "More challenging examples than identify variables 1",
+            "uuid":  ""
           },
           "good_theories":
           {
@@ -1276,7 +1280,9 @@
             "letter": "E",
             "prerequisites": ["identify_variables_2"],
             "objective": "Define elements of a good theory: universality, parsimony, and clear limitations",
-            "content": "A universal theory applies to the entire universe; a parsimonious theory uses only a small number of simple rules; a theory with clear limitations has clearly defined conditions under which a different theory is used."
+            "content": "A universal theory applies to the entire universe; a parsimonious theory uses only a small number of simple rules; a theory with clear limitations has clearly defined conditions under which a different theory is used.",
+            "uuid":  "e4e1be47-974f-4880-af50-3eb20d77ac93"
+
           },
           "inductive_vs_deductive":
           {
@@ -1286,7 +1292,8 @@
             "letter": "F",
             "prerequisites": ["good_theories"],
             "objective": "Define and give examples of inductive and deductive reasoning",
-            "content": "In a deductive study, a specific theory is used to make a prediction and then data is evaluated as either consistent or inconsistent with the theory; in an inductive study many different possibilities are tested to look for patterns and potential new theories."
+            "content": "In a deductive study, a specific theory is used to make a prediction and then data is evaluated as either consistent or inconsistent with the theory; in an inductive study many different possibilities are tested to look for patterns and potential new theories.",
+            "uuid":  "4b48ec0a-cb85-4b7c-afd3-c6501d97e7e0"
           },
           "identify_variables_3":
           {
@@ -1296,7 +1303,8 @@
             "horizontal": 3,
             "letter": "G",
             "prerequisites": ["inductive_vs_deductive"],
-            "objective": "Use the concept of dependent, independent, and controlled variables to describe a procedure that includes more than one experiment."
+            "objective": "Use the concept of dependent, independent, and controlled variables to describe a procedure that includes more than one experiment.",
+            "uuid":  "577ba340-60fb-430f-aaaf-96377939fd60"
           },
           "design_experiment_1":
           {
@@ -1305,7 +1313,8 @@
             "horizontal": 4,
             "letter": "H",
             "prerequisites": ["identify_variables_3"],
-            "objective": "Design an experiment that requires one procedure using the terms independent variable, dependent variable, and controlled variable"
+            "objective": "Design an experiment that requires one procedure using the terms independent variable, dependent variable, and controlled variable",
+            "uuid":  "e7f41273-3893-4e39-810f-9fdea97d3dba"
           },
           "limits_of_theories":
           {
@@ -1314,7 +1323,8 @@
             "horizontal": 3,
             "letter": "I",
             "prerequisites": ["design_experiment_1"],
-            "objective": "Give examples of how theories work within particular ranges; in particular, define the ranges of Newton's Laws."
+            "objective": "Give examples of how theories work within particular ranges; in particular, define the ranges of Newton's Laws.",
+            "uuid":  "e5307c73-2d82-4c2e-a594-d60ee17a243f"
           },
           "qualitative_vs_quantitative_difference":
           {
@@ -1324,7 +1334,8 @@
             "letter": "J",
             "prerequisites": ["limits_of_theories"],
             "objective": "Give examples of situations in which items (or people) are either quantitatively or qualitative different.",
-            "notes": "Could have some connection to psychology, or to sports, eg: was michael jordan quantitatively or qualitative different."
+            "notes": "Could have some connection to psychology, or to sports, eg: was michael jordan quantitatively or qualitative different.",
+            "uuid":  "12e22f26-59c5-4b31-b605-104052dab76b"
           },
           "design_experiment_2":
           {
@@ -1333,7 +1344,8 @@
             "horizontal": 1,
             "letter": "K",
             "prerequisites": ["qualitative_vs_quantitative_difference"],
-            "objective": "Design a complex investigation involving more than one experiment using the terms independent variable, dependent variable, and controlled variable."
+            "objective": "Design a complex investigation involving more than one experiment using the terms independent variable, dependent variable, and controlled variable.",
+            "uuid":  "62c58f77-255a-4f2b-a1c3-2bb64273a412"
           },
           "peer_review_1":
           {
@@ -1343,7 +1355,8 @@
             "letter": "L",
             "prerequisites": ["design_experiment_2"],
             "objective": "Complete a mock 'peer review' of a famous historical or hypothetical experiment.",
-            "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor."
+            "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor.",
+            "uuid":  "cf288bb3-56fd-40d0-8fa7-fac381f4275d"
           },
           "peer_review_2":
           {
@@ -1353,7 +1366,8 @@
             "letter": "M",
             "prerequisites": ["peer_review_1"],
             "objective": "Complete a mock 'peer review' of a famous historical or hypothetical experiment.",
-            "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor."
+            "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor.",
+            "uuid":  "5ddb084f-d2d9-49c5-b319-c90ade826d7b"
           },
           "journal_research":
           {
@@ -1362,8 +1376,9 @@
             "horizontal": 4,
             "letter": "N",
             "prerequisites": ["peer_review_2"],
-            "objective": "Read a review articles from current scientific journals.",
-            "content": "New scientific studies are published in scientific journals."
+            "objective": "Read and review articles from current scientific journals.",
+            "content": "New scientific studies are published in scientific journals.",
+            "uuid":  "173b9673-6246-47db-8929-81a740ca95b4"
           }
         }
       },
