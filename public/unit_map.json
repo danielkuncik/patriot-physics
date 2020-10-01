@@ -1270,7 +1270,7 @@
             "objective": "Given a description of an experiment, identify the independent, dependent, and controlled variables of the experiment; identify more than one controlled variable; define the term 'experiment' in terms of independent, dependent, and controlled variables; identify whether each variable is qualitative or quantitative.",
             "content": "In an experiment, an independent variable is systematically changed; a dependent variable is systematically measured; and a controlled variable is kept constant.",
             "notes": "More challenging examples than identify variables 1",
-            "uuid":  ""
+            "uuid":  "3d818e90-9115-4eb4-a71d-984d1a47e302"
           },
           "good_theories":
           {

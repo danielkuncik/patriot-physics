@@ -1,0 +1,74 @@
+<p>
+  The game below is extremely simple:
+  You click a button that gives you a blue point,
+  a red point, or a green point.
+  Whenever you get a new point, your score goes up!
+  Blue points, red poitns, and green points each count
+  for a different amount, but they all account for some points.
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-6 border border-dark'>
+      Your Score:<br>
+      <div id = 'score'>0</div>
+    </div>
+    <div class = 'col-6'>
+      <button id = 'reset'>Reset</button>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-4 m-3'>
+      <button id = 'blueButton'>Add Blue Point</button>
+    </div>
+    <div class = 'col-4 m-3'>
+      <button id = 'redButton'>Add Red Point</button>
+    </div>
+    <div class = 'col-4 m-3'>
+      <button id = 'greenButton'>Add Green Point</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const redVal = 2;
+  const blueVal = 3;
+  const greenVal = 4;
+
+  function addPoints(valAdd) {
+    const currentScore = Number($("#score").text());
+    const newScore = currentScore + valAdd;
+    $("#score").text(String(newScore));
+  }
+
+  $("#redButton").on('click',() => {
+    addPoints(redVal);
+  });
+  $("#blueButton").on('click',() => {
+    addPoints(blueVal);
+  });
+  $("#greenButton").on('click',() => {
+    addPoints(greenVal);
+  });
+  $("#reset").on('click', () => {
+    $("#score").text('0');
+  });
+</script>
+
+<ol>
+  <li>
+    Figure out how much your score increases
+    for a red point, a blue point, and a green point.
+  </li>
+  <li>
+    Describe how you solved #1 using proper scientific language.
+    That is: write about THREE differnet <emph>experiments</emph>,
+    each containing a single independent variable,
+    a single dependent variable, and multiple controlled variables.
+  </li>
+</ol>
+
+<p>
+  (Note: I realize #1 is pretty easy. This miniquiz is
+  really about being able to correctly do #2.)
+</p>
