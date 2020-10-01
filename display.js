@@ -246,6 +246,7 @@ display_quiz = (req, res) => {
     if (!req.user) {
         res.redirect('/login');
     }
+    const pod_uuid = unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].uuid;
     let versionNumber = availableContent[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].numberOfVersions;
     res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.hbs', {
         layout: 'quizPageLayout.hbs',
@@ -254,9 +255,9 @@ display_quiz = (req, res) => {
         selectedPodKey: req.params.podKey,
         letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
         title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
-        pod_uuid: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].uuid,
+        pod_uuid: pod_uuid,
         unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
-        backLink: `/pod/${req.params.unitClusterKey}/${req.params.unitKey}/${req.params.podKey}`,
+        backLink: `/pod/${pod_uuid}`,
         unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
         unitClusterTitle: unitMap[req.params.unitClusterKey].title,
         level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level,
