@@ -29,6 +29,50 @@
 
 <div id = 'bigTable'></div>
 
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramA'>
+            Diagram A<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramB'>
+            Diagram B<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramC'>
+            Diagram C<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramD'>
+            Diagram D<br>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramE'>
+            Diagram E<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramF'>
+            Diagram F<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramG'>
+            Diagram G<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramH'>
+            Diagram H<br>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramI'>
+            Diagram I<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramJ'>
+            Diagram J<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramK'>
+            Diagram K<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark'>
+        </div>
+    </div>
+</div>
+
 <script>
     let positionGraph1 = makePositionGraphConstantVelocity();
     let positionGraph2 = makePositionGraphNotMoving();
@@ -50,12 +94,23 @@
     let motionMap4 = makeMotionMapNegativeAcceleration();
 
 
-    let bigTable = new TableOfCanvasses(3,4, 'Diagram','diagram');
-    bigTable.addDiagramsToCells([
-        accelerationGraph2, positionGraph3, velocityGraph4, accelerationGraph1,
-            positionGraph2, velocityGraph1, velocityGraph3, positionGraph1,
-            accelerationGraph3, positionGraph4, velocityGraph2
-    ]);
-    bigTable.eraseTextInCell(2,3);
-    $("#bigTable").append(bigTable.draw(1400,1400));
+    $("#diagramA").append(accelerationGraph2.drawCanvas());
+    $("#diagramB").append(positionGraph3.drawCanvas());
+    $("#diagramC").append(velocityGraph4.drawCanvas());
+    $("#diagramD").append(accelerationGraph1.drawCanvas());
+    $("#diagramE").append(positionGraph2.drawCanvas());
+    $("#diagramF").append(velocityGraph1.drawCanvas());
+    $("#diagramG").append(velocityGraph3.drawCanvas());
+    $("#diagramH").append(positionGraph1.drawCanvas());
+    $("#diagramI").append(accelerationGraph3.drawCanvas());
+    $("#diagramJ").append(positionGraph4.drawCanvas());
+    $("#diagramK").append(velocityGraph2.drawCanvas());
+    // let bigTable = new TableOfCanvasses(3,4, 'Diagram','diagram');
+    // bigTable.addDiagramsToCells([
+    //     accelerationGraph2, positionGraph3, velocityGraph4, accelerationGraph1,
+    //         positionGraph2, velocityGraph1, velocityGraph3, positionGraph1,
+    //         accelerationGraph3, positionGraph4, velocityGraph2
+    // ]);
+    // bigTable.eraseTextInCell(2,3);
+    // $("#bigTable").append(bigTable.draw(1400,1400));
 </script>
