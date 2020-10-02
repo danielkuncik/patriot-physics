@@ -3,72 +3,138 @@
   You click a button that gives you a blue point,
   a red point, or a green point.
   Whenever you get a new point, your score goes up!
-  Blue points, red poitns, and green points each count
-  for a different amount, but they all account for some points.
+  Each time you add a blue point, your score increases by some amount constant amount,
+    called the <code>blueVal</code>, plus or minus a small random value.
+  The same is true for red or green points.
 </p>
+
 
 <div class = 'container'>
   <div class = 'row'>
-    <div class = 'col-6 border border-dark'>
+    <div class = 'col-4 border border-dark'>
       Your Score:<br>
       <div id = 'score'>0</div>
     </div>
-    <div class = 'col-6'>
+    <div class = 'col-4'>
       <button id = 'reset'>Reset</button>
     </div>
   </div>
   <div class = 'row'>
-    <div class = 'col-4 m-3'>
-      <button id = 'blueButton'>Add Blue Point</button>
+    <div class = 'col-2 m-3'>
+      <button id = '620d3924-c53e-4a18-8a31-3c9a442cd080'>Add Blue Point</button>
     </div>
-    <div class = 'col-4 m-3'>
-      <button id = 'redButton'>Add Red Point</button>
+    <div class = 'col-2 m-3'>
+      <button id = '67b6b2ca-f33a-43b2-80d8-ef7efd80d586'>Add Red Point</button>
     </div>
-    <div class = 'col-4 m-3'>
-      <button id = 'greenButton'>Add Green Point</button>
+    <div class = 'col-2 m-3'>
+      <button id = 'f2244599-a13b-4ea2-8242-cd73eb6827e2'>Add Green Point</button>
     </div>
   </div>
+    <div class = 'row'>
+        <div class = 'col-2 m-3'>
+            Total Blue Points:<br>
+            <div id = '1826686c-37c2-4445-85a7-c4de51065759'></div>
+        </div>
+        <div class = 'col-2 m-3'>
+            Total Red Points:<br>
+            <div id = 'c1f74a7d-19e7-4899-912d-7470ec3450ac'></div>
+        </div>
+        <div class = 'col-2 m-3'>
+            Total Green Points:<br>
+            <div id = '26acb421-683c-47b4-9761-42f2fbc52cc4'></div>
+        </div>
+    </div>
+
 </div>
 
 <script>
-  const redVal = 2;
-  const blueVal = 3;
-  const greenVal = 4;
+  const e77fe0ca = 2.2;
+  const ab41f957daf0 = 3.1;
+  const c5ce662598ff = 3.9;
 
   function addPoints(valAdd) {
     const currentScore = Number($("#score").text());
-    const newScore = currentScore + valAdd;
-    $("#score").text(String(newScore));
+    const newScore = getNewScore(currentScore, valAdd);
+    $("#score").text(printValueToOneDecimalPlace(newScore));
   }
 
-  $("#redButton").on('click',() => {
-    addPoints(redVal);
+  function printValueToOneDecimalPlace(value) {
+      let roundedValue = Math.round(value * 10) / 10;
+      let string = roundedValue.toString();
+      let array = (`${string}.0`).split('.'); // if there is no decimal to begin with, the extra .0 will add it, otherwise it won't end up mattering
+      return array[0] + '.' + array[1][0]
+  }
+
+  function getRandValue() {
+      let randDigit = Math.round(Math.random() * 10) / 10;
+      return randDigit - 0.5
+  }
+
+  // can i use my measurement function here????
+  /// floating points are the worst :(
+  function getNewScore(currentScore, valAdd) {
+      return currentScore + valAdd + getRandValue()
+  }
+
+
+  function reset() {
+      let value = 0;
+      let c37c300 = randInt(3,100);
+      let d3c11f09ac25 = randInt(3,100);
+      let e35db = randInt(3,100);
+      let ff1dd25a641e = 0;
+      let ae3e3ae5cb = 0;
+      let ff9be6993016 = 0;
+
+      let i, j, k;
+      for (i = 0; i < c37c300; i++) {
+          value = getNewScore(value, e77fe0ca);
+          ff1dd25a641e++;
+      }
+      for (j = 0; j < d3c11f09ac25; j++) {
+          value = getNewScore(value, ab41f957daf0);
+          ae3e3ae5cb++;
+      }
+      for (k = 0; k < e35db; k++) {
+          value = getNewScore(value, c5ce662598ff);
+          ff9be6993016++;
+      }
+      $("#score").text(printValueToOneDecimalPlace(value));
+      $("#c1f74a7d-19e7-4899-912d-7470ec3450ac").text(String(ff1dd25a641e));
+      $("#1826686c-37c2-4445-85a7-c4de51065759").text(String(ae3e3ae5cb));
+      $("#26acb421-683c-47b4-9761-42f2fbc52cc4").text(String(ff9be6993016));
+  }
+
+  $("#67b6b2ca-f33a-43b2-80d8-ef7efd80d586").on('click',() => {
+    addPoints(e77fe0ca);
+    let numPoints = Number($("#c1f74a7d-19e7-4899-912d-7470ec3450ac").text()) + 1;
+    $("#c1f74a7d-19e7-4899-912d-7470ec3450ac").text(String(numPoints))
   });
-  $("#blueButton").on('click',() => {
-    addPoints(blueVal);
+  $("#620d3924-c53e-4a18-8a31-3c9a442cd080").on('click',() => {
+    addPoints(ab41f957daf0);
+      let numPoints = Number($("#1826686c-37c2-4445-85a7-c4de51065759").text()) + 1;
+      $("#1826686c-37c2-4445-85a7-c4de51065759").text(String(numPoints))
   });
-  $("#greenButton").on('click',() => {
-    addPoints(greenVal);
+  $("#f2244599-a13b-4ea2-8242-cd73eb6827e2").on('click',() => {
+    addPoints(c5ce662598ff);
+      let numPoints = Number($("#26acb421-683c-47b4-9761-42f2fbc52cc4").text()) + 1;
+      $("#26acb421-683c-47b4-9761-42f2fbc52cc4").text(String(numPoints))
   });
   $("#reset").on('click', () => {
-    $("#score").text('0');
+    reset();
   });
+
+  reset();
 </script>
 
 <ol>
   <li>
-    Figure out how much your score increases
-    for a red point, a blue point, and a green point.
+    Determine the average value of a blue point, a red point, and a green point.
   </li>
   <li>
     Describe how you solved #1 using proper scientific language.
-    That is: write about THREE differnet <emph>experiments</emph>,
+    That is: write about THREE different <emph>experiments</emph>,
     each containing a single independent variable,
     a single dependent variable, and multiple controlled variables.
   </li>
 </ol>
-
-<p>
-  (Note: I realize #1 is pretty easy. This miniquiz is
-  really about being able to correctly do #2.)
-</p>
