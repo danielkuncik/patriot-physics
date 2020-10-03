@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('express-flash');
 const f = require('./flashMessages.js');
+const gradeMap = require('./gradeMap.js');
 
 const db = require('./queries.js');
 const disp = require('./display.js');
@@ -189,7 +190,11 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 
 
 // app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
-app.post('/submitMiniquiz', [uploadFile, db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+app.post('/submitMiniquiz', [uploadFile, db.check_if_logged_in,db.kick_out_if_not_logged_in,(req, res, next) => {
+    const keys = gradeMap.getPodKeysByUUID(req.query.uuid);
+    req.version = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].numberOfVersions;
+    next();
+},db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
 
 

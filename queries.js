@@ -155,7 +155,7 @@ const submit_quiz = function(req, res, next) {
         const imagePUBLIC_ID = req.file.public_id;
 
 
-        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,tstz) VALUES ($1, $2, $3,current_timestamp)',[student_id, pod_uuid, imageURL],(error, results) => {
+        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,tstz,version) VALUES ($1, $2, $3,current_timestamp,$4)',[student_id, pod_uuid, imageURL,req.version],(error, results) => {
             if (error) {
                 throw error
             }
