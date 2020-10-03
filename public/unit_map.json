@@ -328,7 +328,8 @@
             "letter": "E",
             "prerequisites": ["scientific_notation_3"],
             "objective": "Memorize all metric prefixes from femto through tera",
-            "uuid": "72607f7a-ceef-4380-9939-b7a20fa3b1e6"
+            "uuid": "72607f7a-ceef-4380-9939-b7a20fa3b1e6",
+            "inClass": true
           },
           "scientific_notation_calculator_1":
           {
@@ -1304,7 +1305,8 @@
             "letter": "G",
             "prerequisites": ["inductive_vs_deductive"],
             "objective": "Use the concept of dependent, independent, and controlled variables to describe a procedure that includes more than one experiment.",
-            "uuid":  "577ba340-60fb-430f-aaaf-96377939fd60"
+            "uuid":  "577ba340-60fb-430f-aaaf-96377939fd60",
+            "inClass_honors": true
           },
           "design_experiment_1":
           {
@@ -1314,7 +1316,8 @@
             "letter": "H",
             "prerequisites": ["identify_variables_3"],
             "objective": "Design an experiment that requires one procedure using the terms independent variable, dependent variable, and controlled variable",
-            "uuid":  "e7f41273-3893-4e39-810f-9fdea97d3dba"
+            "uuid":  "e7f41273-3893-4e39-810f-9fdea97d3dba",
+            "inClass_AP": true
           },
           "limits_of_theories":
           {
@@ -1640,7 +1643,8 @@
             "prerequisites": ["energy_transfer_1"],
             "objective": "State, from memory, the law of conservation of energy.",
             "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
-            "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69"
+            "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69",
+            "inClass": true
           },
           "energy_transfer_2":
           {
@@ -1687,7 +1691,8 @@
             "objective": "Using energy transfer diagrams, connect energy from an electrical outlet back to sunlight.",
             "content": "All of the electrical energy from outlets on earth, save geothermal and nuclear energy, can be traced back to light from the sun.",
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
-            "uuid": "67b012e0-eefc-479f-9bec-eea3eb753a9b"
+            "uuid": "67b012e0-eefc-479f-9bec-eea3eb753a9b",
+            "inClass_honors": true
           },
           "energy_transfer_5":
           {
@@ -1920,7 +1925,8 @@
             "prerequisites": ["energy_formulas_1"],
             "objective": "Recite the conservation of energy word for word.",
             "content": "The total amount of energy in the universe stays the same. Energy cannot be created or destroyed. It only changes from one type to another.",
-            "uuid": "d5263be7-a8f7-4431-9558-ae81d447165c"
+            "uuid": "d5263be7-a8f7-4431-9558-ae81d447165c",
+            "inClass": true
           },
           "energy_table_2":
           {
@@ -1975,7 +1981,8 @@
             "prerequisites": ["zero_point_height"],
             "objective": "Describe the KE and GPE of a roller coaster moving both up and down without a table, solve numerical questions based upon the result",
             "content": "A physicist can gain useful information from considering the exchange of potential and kinetic energy.",
-            "uuid": "f9fc717f-d560-4411-b20d-61271bed70ff"
+            "uuid": "f9fc717f-d560-4411-b20d-61271bed70ff",
+            "inClass_honors": true
           },
           "energy_table_4":
           {
@@ -1987,7 +1994,8 @@
             "prerequisites": ["roller_coaster_problems"],
             "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical questions based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring",
             "content": "As a spring moves back and forth, kinetic energy is exchanged for elastic potential energy and vice-versa; a physicist can use this knowledge to gain useful information about the spring system.",
-            "uuid": "7a849287-0607-4594-b618-378e93c9706b"
+            "uuid": "7a849287-0607-4594-b618-378e93c9706b",
+            "inClass_AP": true
           },
           "energy_table_5":
           {
@@ -2031,7 +2039,8 @@
             "prerequisites": ["semi_qualitative_conservation_of_energy"],
             "objective": "Determine the work done on a system by considering changes in energy.",
             "content": "Work done on a system is the change in the total energy of that system.",
-            "uuid": "1dbc4d92-14df-489d-9f67-fda2127c17c7"
+            "uuid": "1dbc4d92-14df-489d-9f67-fda2127c17c7",
+            "inClass_AP": true
           },
           "symbolic_energy":
           {
@@ -2176,7 +2185,8 @@
             "prerequisites": ["is_work_done"],
             "objective": "Analyze how work and power are different for weightlifters lifting weights at different speeds.",
             "content": "A weightlifter lifting more weight ot a taller height is doing more work; a weightlifter lifting the same weight to the same height but in less time does the same work but has more power.",
-            "uuid": "9826ee0b-20b7-4026-bb3e-1b443003b059"
+            "uuid": "9826ee0b-20b7-4026-bb3e-1b443003b059",
+            "inClass_honors": true
           },
           "conservative_vs_nonconservative_forces":
           {
@@ -2240,7 +2250,8 @@
               "block-earth system",
               "block-alone system"
             ],
-            "uuid": "045860bd-5080-415f-9e0e-debe502dac1f"
+            "uuid": "045860bd-5080-415f-9e0e-debe502dac1f",
+            "inClass_AP": true
           },
           "force_position_graphs_2":
           {
@@ -2412,7 +2423,8 @@
             "prerequisites": ["velocity_acceleration_graphs"],
             "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion.",
             "content": "Position-time graphs, velocity-time graphs, and acceleration-time graphs can represent the same example of motion.",
-            "uuid": "bc4f995f-0330-4fcb-921e-4413ae30e716"
+            "uuid": "bc4f995f-0330-4fcb-921e-4413ae30e716",
+            "inClass_honors": true
           },
           "kinematic_graph_comparisons_1":
           {
@@ -2467,7 +2479,8 @@
             "prerequisites": ["kinematic_graph_comparisons_2"],
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
             "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story.",
-            "uuid": "0b5cc5e1-8a8d-4172-a52d-e6664401a668"
+            "uuid": "0b5cc5e1-8a8d-4172-a52d-e6664401a668",
+            "inClass_honors": true
           },
           "position_graph_connection":
           {
@@ -2500,7 +2513,8 @@
             "prerequisites": ["velocity_graph_connection"],
             "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs.",
             "content": "The information in an acceleration-time graph can be represented in words or in other kinematic graphs.",
-            "uuid": "5612bde2-e832-4ba5-8920-947c5bb495ee"
+            "uuid": "5612bde2-e832-4ba5-8920-947c5bb495ee",
+            "inClass_AP": true
           },
           "acceleration_graph_connection_2":
           {
@@ -2642,7 +2656,8 @@
             "prerequisites": ["quantitative_kinematic_graphs_2"],
             "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred",
             "content": "The four kinematic equations can be used to real-world problems if a physicist can break real-world information down to the kinematic variables.",
-            "uuid": "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6"
+            "uuid": "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6",
+            "inClass_honors": true
           },
           "memorize_kinematic_equations":
           {
@@ -2654,7 +2669,8 @@
             "objective": "Memorize the kinematic equations.",
             "inClassOnly": true,
             "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems.",
-            "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086"
+            "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086",
+            "inClass": true
           },
           "quantitative_kinematic_graphs_3":
           {
@@ -2666,7 +2682,8 @@
             "prerequisites": ["memorize_kinematic_equations"],
             "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity.",
             "content": "A physicist can learn kinematic quantities from a quantitative kinematic graph, and then relate them using the kinematic equations.",
-            "uuid": "a6330e39-0a80-4928-bb85-d93db8e7263d"
+            "uuid": "a6330e39-0a80-4928-bb85-d93db8e7263d",
+            "inClass_honors": true
           },
           "kinematic_equations_4":
           {
@@ -2709,7 +2726,8 @@
             "prerequisites": ["quantitative_kinematic_graphs_4A"],
             "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs.",
             "content": "The kinematic equations and geometric relationships can gain information about displacement and acceleration from a velocity-time graph.",
-            "uuid": "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85"
+            "uuid": "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85",
+            "inClass_AP": true
           },
           "quantitative_kinematic_graphs_4C":
           {
@@ -2756,7 +2774,8 @@
             "letter": "P",
             "prerequisites": ["quantitative_kinematic_graphs_5"],
             "objective": "Use the core mathematical principles of kinematics to prove each of the four kinematic equations is true under the special case of constant acceleration.",
-            "uuid": "995d9306-bcbf-40ef-a520-50aeb1c02c4f"
+            "uuid": "995d9306-bcbf-40ef-a520-50aeb1c02c4f",
+            "inClass_AP": true
           },
           "fundamental_theorem_calculus":
           {
