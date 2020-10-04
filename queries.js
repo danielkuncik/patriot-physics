@@ -193,7 +193,7 @@ const look_up_quiz_attempts = function(req, res, next) {
     if (req.user) {
         const pod_uuid = req.params.pod_uuid;
         const student_id = req.user.id;
-        pool.query('SELECT comment,score,image_url_1,tstz FROM quiz_attempts WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
+        pool.query('SELECT comment,score,image_url_1,image_url_2,image_url_3,tstz FROM quiz_attempts WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
             if (err) {
                 throw err
             }

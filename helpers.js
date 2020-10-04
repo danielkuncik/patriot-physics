@@ -410,15 +410,68 @@ function getDateFromSQL_timestamp(SQL_timestamp) {
     return `${month} ${day}, ${year}`;
 }
 
+function getTypeForUrl(url) {
+    if (url === undefined || url === null || url === "") {
+        return undefined
+    } else if (url.slice(-4) === 'heic') {
+        return 'link';
+    }else if (url.slice(-3) === 'pdf') {
+        return 'link';
+    } else {
+        return 'image';
+    }
+
+}
+
+function processQuizAttempt(attempt) {
+    let type1, type2, type3, url1, url2, url3;
+    url1 = attempt.image_url_1;
+    url2 = attempt.image_url_2;
+    url3 = attempt.image_url_3;
+
+    type1 = getTypeForUrl(url1);
+    type2 = getTypeForUrl(url2);
+    type3 = getTypeForUrl(url3);
+
+    attempt.url1 = url1;
+    attempt.type1 = type1;
+    attempt.url2 = url2;
+    attempt.type2 = type2;
+    attempt.url3 = url3;
+    attempt.type3 = type3;
+
+    return attempt
+}
+
 function getPreviousAttemptListItem(previousAttemptObject) {
     let string = "<li>";
-    let date = getDateFromSQL_timestamp(previousAttemptObject.tstz);
-    if (previousAttemptObject.score) {
-        string = string + `You took this quiz on ${date} and scored ${previousAttemptObject.score} out of 20`;
+    let thisAttempt = processQuizAttempt(previousAttemptObject);
+    let date = getDateFromSQL_timestamp(thisAttempt.tstz);
+    if (thisAttempt.score) {
+        string = string + `You took this quiz on ${date} and scored ${thisAttempt.score} out of 20`;
         string = string + "<ul>";
-        string = string + `<li><img src = '${previousAttemptObject.image_url_1}' /></li>`;
-        string = string + `<li><a href = '${previousAttemptObject.image_url_1}' >DOWNLOAD</a></li>`;
-        string = string + `<li>Comment: ${previousAttemptObject.comment}</li>`;
+        if (thisAttempt.url1) {
+            if (thisAttempt.type1 === 'image') {
+                string = string + `<li><img src = '${thisAttempt.url1}' /></li>`;
+            } else if (thisAttempt.type1 === 'link') {
+                string = string + `<li><a href = '${thisAttempt.url1}' >Access Page 1</a></li>`;
+            }
+        }
+        if (thisAttempt.url2) {
+            if (thisAttempt.type2 === 'image') {
+                string = string + `<li><img src = '${thisAttempt.url2}' /></li>`;
+            } else if (thisAttempt.type2 === 'link') {
+                string = string + `<li><a href = '${thisAttempt.url2}' >Access Page 1</a></li>`;
+            }
+        }
+        if (thisAttempt.url3) {
+            if (thisAttempt.type3 === 'image') {
+                string = string + `<li><img src = '${thisAttempt.url3}' /></li>`;
+            } else if (thisAttempt.type3 === 'link') {
+                string = string + `<li><a href = '${thisAttempt.url3}' >Access Page 1</a></li>`;
+            }
+        }
+        string = string + `<li>Comment: ${thisAttempt.comment}</li>`;
         string = string + "</ul>";
     } else {
         string = string + `You took this quiz on ${date}, and the quiz has not been scored yet.`;
