@@ -30,7 +30,7 @@ function getCourseLevel(section) {
 
 
 const check_login = (req, res, next) => {
-    let inputtedName = req.body.name;
+    let inputtedName = (req.body.name).trim();
     let inputtedPasscode = Number(req.body.passcode);
 
     pool.query('SELECT * FROM students WHERE name = $1', [inputtedName], (error, result) => {
