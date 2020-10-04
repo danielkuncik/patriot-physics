@@ -147,15 +147,37 @@ const submit_quiz = function(req, res, next) {
     const pod_uuid = req.query.uuid;
     const student_id = req.user.id;
 
-    if (req.file === undefined) {
+    if (req.files === undefined) {
         res.redirect('/');
         // need a flash!
     } else {
-        const imageURL = req.file.url;
-        const imagePUBLIC_ID = req.file.public_id;
+        let imageURL_1, imagePUBLIC_ID_1, imageURL_2, imagePUBLIC_ID_2, imageURL_3, imagePUBLIC_ID_3;
+        if (req.files[0]) {
+            imageURL_1 = req.files[0].url;
+            imagePUBLIC_ID_1 = req.files[0].public_id;
+        } else {
+            imageURL_1 = "";
+            imagePUBLIC_ID_1 = "";
+        }
+        if (req.files[1]) {
+            imageURL_2 = req.files[1].url;
+            imagePUBLIC_ID_2 = req.files[1].public_id;
+        } else {
+            imageURL_2 = "";
+            imagePUBLIC_ID_2 = "";
+        }
+        if (req.files[2]) {
+            imageURL_3 = req.files[2].url;
+            imagePUBLIC_ID_3 = req.files[2].public_id;
+        } else {
+            imageURL_3 = "";
+            imagePUBLIC_ID_3 = "";
+        }
+        // const imageURL = req.file.url;
+        // const imagePUBLIC_ID = req.file.public_id;
 
 
-        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,tstz,version) VALUES ($1, $2, $3,current_timestamp,$4)',[student_id, pod_uuid, imageURL,req.version],(error, results) => {
+        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,image_url_2, image_url_3,tstz,version) VALUES ($1, $2, $3,$4,$5,current_timestamp,$6)',[student_id, pod_uuid, imageURL_1,imageURL_2,imageURL_3,req.version],(error, results) => {
             if (error) {
                 throw error
             }

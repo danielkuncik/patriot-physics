@@ -43,10 +43,18 @@
 {{#if (isQuizNotPassed selectedUnitClusterKey selectedUnitKey selectedPodKey gradeMap)}}
     <form action = '/submitMiniquiz?uuid={{pod_uuid}}' method="post" enctype="multipart/form-data">
     <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
-    <br>
-    <p>
-        Please submit a <code>.jpg</code> or <code>.png</code> file.
-    </p>
+        <p>
+            Please submit <code>.jpg</code> or <code>.png</code> files.
+        </p>
+    <br><br>
+        <a class = 'btn btn-primary' data-toggle = 'collapse' href = '#moreFiles' role = 'button' aria-expanded = 'false' aria-controls="moreFiles">Click to add more files</a>
+        <div class = 'collapse' id = 'moreFiles'>
+            File 2:
+            <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+            <br><br>
+            File 3:
+            <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+        </div>
     <br>
     <br>
     <input type = 'submit' value = 'Submit Quiz' class = 'quizSubmitButton' />

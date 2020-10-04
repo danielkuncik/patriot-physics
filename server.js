@@ -58,6 +58,8 @@ const parser = multer({ storage: storage });
 
 function uploadFile(req, res, next) {
     const upload = parser.single('image');
+    // const upload2 = parser.single('image2');
+    // const upload3 = parser.single('image3');
 
     upload(req, res, function (err) {
         if (err instanceof multer.MulterError) {
@@ -69,6 +71,38 @@ function uploadFile(req, res, next) {
         next();
     });
 }
+
+function uploadFileNew(req, res, next) {
+    const upload = parser.array('image',3);
+    // const upload2 = parser.single('image2');
+    // const upload3 = parser.single('image3');
+
+    upload(req, res, function (err) {
+        if (err instanceof multer.MulterError) {
+            console.log('multerError');
+        } else if (err) {
+            console.log('unknown error');
+            console.log(err);
+        }
+        next();
+    });
+}
+
+
+function uploadFile2(req, res, next) {
+    const upload2 = parser.single('image2');
+
+    upload2(req, res, function (err) {
+        if (err instanceof multer.MulterError) {
+            console.log('multerError');
+        } else if (err) {
+            console.log('unknown error');
+            console.log(err);
+        }
+        next();
+    });
+}
+
 
 
 app.use(
@@ -190,7 +224,7 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 
 
 // app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
-app.post('/submitMiniquiz', [uploadFile, db.check_if_logged_in,db.kick_out_if_not_logged_in,(req, res, next) => {
+app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in,(req, res, next) => {
     const keys = gradeMap.getPodKeysByUUID(req.query.uuid);
     req.version = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].numberOfVersions;
     next();
