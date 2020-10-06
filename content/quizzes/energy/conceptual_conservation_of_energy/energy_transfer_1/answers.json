@@ -1,0 +1,18 @@
+{
+  "v1": {
+    "1": "Elastic Potential Energy",
+    "2": "Thermal Energy",
+    "3": "(Translational) Kinetic Energy",
+    "4": "Chemical Potential Energy",
+    "5": "Electromagnetic Wave Energy",
+    "6": "Nuclear Energy"
+  },
+  "v2": {
+    "1": "Chemical Potential Energy",
+    "2": "Electrical Energy",
+    "3": "Thermal Energy",
+    "4": "Mechanical Wave Energy",
+    "5": "Gravitational Potential Energy",
+    "6": "Nuclear Energy"
+  }
+}
