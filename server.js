@@ -223,12 +223,33 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 
 
 
-// app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
-app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in,(req, res, next) => {
+// make these a single function??????
+// function look_up_quiz_version(req, res, next) {
+//     const keys = gradeMap.getPodKeysByUUID(req.query.uuid);
+//     req.version = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].numberOfVersions;
+//     req.keys = keys;
+//     next();
+// }
+
+function look_up_quiz_answers(req, res, next) {
     const keys = gradeMap.getPodKeysByUUID(req.query.uuid);
     req.version = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].numberOfVersions;
     next();
-},db.submit_quiz,(req, res) => {res.redirect('/');}]);
+
+    // draft, see if this works later
+    const answersAvailable = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].answersAvailable;
+    if (answersAvailable) {
+        const answerFile = require(__dirname + `/content/quizzes/${keys.superUnitKey}/${keys.unitKey}/${keys.podKey}/answers.json`);
+        req.answerText = JSON.stringify(answerFile[`v${req.version}`]);
+        next();
+    } else {
+        next();
+    }
+}
+
+
+// app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, look_up_quiz_answers,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
 
 

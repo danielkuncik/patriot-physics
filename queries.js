@@ -143,6 +143,7 @@ const kick_out_if_not_logged_in = function(req, res, next) {
     next();
 };
 
+
 const submit_quiz = function(req, res, next) {
     const pod_uuid = req.query.uuid;
     const student_id = req.user.id;

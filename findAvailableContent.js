@@ -103,6 +103,7 @@ Object.keys(availableContent).forEach((superUnitKey) => {
                 // count versions!
                 let availableVersions = filesInDirectory(`${quizzesDirectory}/${superUnitKey}/${unitKey}/${podKey}`);
                 let count = 1;
+                let answersAvailable = availableVersions.includes('answers.json');
                 while (availableVersions.includes(`v${count}.hbs`)) {
                     count++;
                 }
@@ -110,6 +111,7 @@ Object.keys(availableContent).forEach((superUnitKey) => {
                 if (count > 0) {
                     availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes = true;
                     availableContent[superUnitKey].units[unitKey].pods[podKey].numberOfVersions = count;
+                    availableContent[superUnitKey].units[unitKey].pods[podKey].answersAvailable = answersAvailable;
                 } else {
                     availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes = false;
                 }
