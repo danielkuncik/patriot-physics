@@ -178,7 +178,7 @@ const submit_quiz = function(req, res, next) {
         // const imagePUBLIC_ID = req.file.public_id;
 
 
-        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,image_url_2, image_url_3,tstz,version) VALUES ($1, $2, $3,$4,$5,current_timestamp,$6)',[student_id, pod_uuid, imageURL_1,imageURL_2,imageURL_3,req.version],(error, results) => {
+        pool.query('INSERT INTO quiz_attempts (student_id,pod_uuid,image_url_1,image_url_2, image_url_3,tstz,version,answers) VALUES ($1, $2, $3,$4,$5,current_timestamp,$6,$7)',[student_id, pod_uuid, imageURL_1,imageURL_2,imageURL_3,req.version,req.answerText],(error, results) => {
             if (error) {
                 throw error
             }

@@ -234,7 +234,6 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 function look_up_quiz_answers(req, res, next) {
     const keys = gradeMap.getPodKeysByUUID(req.query.uuid);
     req.version = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].numberOfVersions;
-    next();
 
     // draft, see if this works later
     const answersAvailable = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].answersAvailable;
