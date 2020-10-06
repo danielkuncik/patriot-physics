@@ -1,0 +1,8 @@
+{
+  "v1": {
+    "step-1": "constant velocity motion",
+    "step-2": "slows to zero velocity; momentary stop",
+    "step-3": "accelerates to faster velocity than initial",
+    "step-4": "Slows to zero velocity"
+  }
+}
