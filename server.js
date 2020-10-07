@@ -133,8 +133,20 @@ app.get('/', [db.check_if_logged_in, f.niceFlash, disp.display_home]);
 
 
 // login and logout
-app.get('/login', [db.check_if_logged_in, disp.display_login_page]);
-app.post('/login',[db.check_login, db.load_grades, db.find_pending_quizzes, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
+app.get('/login', [(request, response, next) => {
+    const host = request.headers.host;
+    const referer = request.headers.referer;
+    let path = referer.replace(`http://${host}`,'');
+    if (path === '/login') {
+        path = '/';
+    }
+    request.newPath = path;
+    next();
+},db.check_if_logged_in, disp.display_login_page]);
+app.post('/login',[db.check_login, db.load_grades, db.find_pending_quizzes, db.count_all_attempts, (req,res) => {
+    const path = req.query.path;
+    res.redirect(path);
+}]);//db.check_if_logged_in, disp.display_home]);
 app.get('/logout',[db.check_if_logged_in, disp.display_logout_page]);
 app.post('/logout',(req, res) => {
     req.session.student = undefined;

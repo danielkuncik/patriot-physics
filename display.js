@@ -34,7 +34,8 @@ display_login_page = (req, res) => {
             section: req.section,
             overallLevel: req.overallLevel,
             gradeMap: req.gradeMap,
-            totalAttempts: req.totalAttemps
+            totalAttempts: req.totalAttemps,
+            newPath: req.newPath
         });
     } else {
         res.redirect('/');
