@@ -143,10 +143,12 @@ app.get('/login', [(request, response, next) => {
     request.newPath = path;
     next();
 },db.check_if_logged_in, disp.display_login_page]);
-app.post('/login',[db.check_login, db.load_grades, db.find_pending_quizzes, db.count_all_attempts, (req,res) => {
-    const path = req.query.path;
-    res.redirect(path);
-}]);//db.check_if_logged_in, disp.display_home]);
+app.post('/login',[db.check_login, db.load_grades, db.find_pending_quizzes, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
+// when I'm ready, add this!
+//     (req,res) => {
+//     const path = req.query.path;
+//     res.redirect(path);
+// }]);
 app.get('/logout',[db.check_if_logged_in, disp.display_logout_page]);
 app.post('/logout',(req, res) => {
     req.session.student = undefined;
