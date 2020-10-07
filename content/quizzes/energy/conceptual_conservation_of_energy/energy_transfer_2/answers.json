@@ -3,5 +3,10 @@
     "1": "Chemical Potential Energy => Kinetic Energy",
     "2": "Chemical Potential Energy => Thermal Energy and Electromagnetic Energy",
     "3": "Electrical Energy => KE of the motor => KE of the ball => GPE"
+  },
+  "v2": {
+    "1": "Thermal energy => Kinetic energy",
+    "2": "Electrical energy => Thermal energy and Electromagnetic energy",
+    "3": "Chemical potential energy => Kinetic energy => Gravitational potential energy => Kinetic energy"
   }
 }

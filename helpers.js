@@ -337,6 +337,8 @@ hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap, goal) => {
         string = string + '<ul>';
         if (level) {
             string = string + `<li>Current Level: ${level}</li>`;
+        } else if (!level && goal && gradeMap) {
+            string = string + "<li>Current Level: 0</li>";
         }
         if (grade) {
             string = string + `<li>Current Grade: ${grade}</li>`;

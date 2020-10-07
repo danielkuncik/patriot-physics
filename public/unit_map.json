@@ -2774,7 +2774,7 @@
             "prerequisites": ["quantitative_kinematic_graphs_5"],
             "objective": "Use the core mathematical principles of kinematics to prove each of the four kinematic equations is true under the special case of constant acceleration.",
             "uuid": "995d9306-bcbf-40ef-a520-50aeb1c02c4f",
-            "inClass_AP": true
+            "memorization": true
           },
           "fundamental_theorem_calculus":
           {
@@ -5877,7 +5877,8 @@
             "prerequisites": ["dynamic_graphs_1"],
             "objective": "Prove the impulse formula is equivalent to Newton's Second Law.",
             "content": "The impulse formula is mathematically equivalent to Newton's Second Law",
-            "uuid": "dc6e33c6-c412-4ecb-ac78-5a58b2b63672"
+            "uuid": "dc6e33c6-c412-4ecb-ac78-5a58b2b63672",
+            "memorization": true
           },
           "dynamic_graphs_2":
           {
