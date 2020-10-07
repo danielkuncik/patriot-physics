@@ -120,7 +120,7 @@
             "letter": "C",
             "prerequisites": [],
             "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle.",
-            "inClassOnly": true,
+            "memorization": true,
             "uuid": "3c023e8a-97b9-4f35-9007-f0e2f0bd01c5"
           },
           "circle_math_1":
@@ -329,7 +329,7 @@
             "prerequisites": ["scientific_notation_3"],
             "objective": "Memorize all metric prefixes from femto through tera",
             "uuid": "72607f7a-ceef-4380-9939-b7a20fa3b1e6",
-            "inClass": true
+            "memorization": true
           },
           "scientific_notation_calculator_1":
           {
@@ -1644,7 +1644,7 @@
             "objective": "State, from memory, the law of conservation of energy.",
             "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
             "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69",
-            "inClass": true
+            "memorization": true
           },
           "energy_transfer_2":
           {
@@ -1926,7 +1926,7 @@
             "objective": "Recite the conservation of energy word for word.",
             "content": "The total amount of energy in the universe stays the same. Energy cannot be created or destroyed. It only changes from one type to another.",
             "uuid": "d5263be7-a8f7-4431-9558-ae81d447165c",
-            "inClass": true
+            "memorization": true
           },
           "energy_table_2":
           {
@@ -2667,10 +2667,9 @@
             "letter": "H",
             "prerequisites": ["kinematic_equations_3"],
             "objective": "Memorize the kinematic equations.",
-            "inClassOnly": true,
             "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems.",
             "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086",
-            "inClass": true
+            "memorization": true
           },
           "quantitative_kinematic_graphs_3":
           {

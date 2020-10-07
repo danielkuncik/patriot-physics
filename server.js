@@ -175,6 +175,7 @@ app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_u
 
 
 const gm = require('./gradeMap');
+/// redundant!!! find usages
 
 
 // load pod page
@@ -230,6 +231,16 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 //     req.quiz_password = req.body.password;
 //     next();
 // };
+
+const checkQuizAccess = (req, res, next) => {
+    req.keys = gradeMap.getPodKeysByUUID(req.query.uuid);
+    const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
+    req.passwordAccessRequired = (podObject.memorization || (req.session.section === 'AP' && podObject.inClass_AP) || (req.session.section === 'Honors' && podObject.inClass_honors) || (req.session.section === 'A_level' && podObject.inClass_Alevel));
+    next();
+};
+
+app.get('miniquizAccess/:uuid', [db.check_if_logged_in, checkQuizAccess]);
+
 
 // individual quiz page
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
