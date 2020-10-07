@@ -1,4 +1,45 @@
+<h4>
+    Goals for the end of Q1
+</h4>
+
+<!--
+hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap, goal) => {
+-->
+
 <p>
-    Work for AP Physics Will Go Here.
-    For now, look at the summer work and step up day videos.
+    Your goal is to achieve each of these levels by the end of quarter 1!
 </p>
+
+<!--
+101 => level 3
+203 => level 3
+204 => level 3
+301 => level 4
+302 => level 4
+401 => level 4
+402 => level 4
+403 => level 4
+601 => level 4
+602 => level 3
+901 => level 3
+1003 => level 3
+-->
+
+<ul>
+    {{{printUnitLink "science_practice" "scientific_reasoning" gradeMap '3'}}}
+    {{{printUnitLink "energy" "conservation_of_energy_quantitative" gradeMap '3'}}}
+    {{{printUnitLink "energy" "work_and_power" gradeMap '3'}}}
+    {{{printUnitLink "kinematics" "forward_kinematics_qualitative" gradeMap '4'}}}
+    {{{printUnitLink "kinematics" "forward_kinematics_quantitative" gradeMap '4'}}}
+    {{{printUnitLink "dynamics" "identifying_forces" gradeMap '4'}}}
+    {{{printUnitLink "dynamics" "quantitative_dynamics" gradeMap '4'}}}
+    {{{printUnitLink "dynamics" "vector_force_analysis" gradeMap '4'}}}
+    {{{printUnitLink "momentum" "collisions_and_explosions" gradeMap '4'}}}
+    {{{printUnitLink "momentum" "impulse" gradeMap '3'}}}
+    {{{printUnitLink "waves" "wave_structure" gradeMap '3'}}}
+    {{{printUnitLink "electric_circuits" "dc_circuit_math_1" gradeMap '3'}}}
+</ul>
+
+<h4>
+    Overall Level Goal: 42
+</h4>

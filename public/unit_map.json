@@ -8473,7 +8473,8 @@
             "prerequisites": ["electric_potential_diagrams_1"],
             "objective": "Solve circuits with series components inside of parallel components or parallel sections in series.",
             "content": "Combinations of series and parallel resistor elements can be combined and taken apart to make a circuit.",
-            "uuid": "1db03943-b301-48f3-85e4-5b22c257aa23"
+            "uuid": "1db03943-b301-48f3-85e4-5b22c257aa23",
+            "inClass_AP":  true
           },
           "electric_potential_diagrams_2":
           {
@@ -8484,7 +8485,8 @@
             "prerequisites": ["analyze_circuits_3"],
             "objective": "Given an electric potential diagram of a circuit, draw a circuit that could potentially be the correct circuit.",
             "content": "The elements within a circuit can be determined from an electric potential diagram of that circuit.",
-            "uuid": "2535cab6-6aa2-431d-ad16-fd996e6ec602"
+            "uuid": "2535cab6-6aa2-431d-ad16-fd996e6ec602",
+            "inClass_AP": true
           },
           "algebraic_circuits_2":
           {
@@ -8495,7 +8497,8 @@
             "letter": "I",
             "prerequisites": ["electric_potential_diagrams_2"],
             "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit.",
-            "uuid": "aeb8f097-8f62-4bd0-936d-57187ae61ef5"
+            "uuid": "aeb8f097-8f62-4bd0-936d-57187ae61ef5",
+            "inClass_AP": true
           },
           "analyze_circuits_4":
           {
@@ -8506,7 +8509,8 @@
             "letter": "J",
             "prerequisites": ["algebraic_circuits_2"],
             "objective": "For circuits with multiple layers of series and parallel elements within each other, determine the voltage, current, resistance, and power of each element and draw a diagram illustrating the electric potential of the circuit, and describe how the circuit diagram drawn illustrates Kirchoff's Laws.",
-            "uuid": "9fc2d88a-9543-4483-81ba-dc034245f93f"
+            "uuid": "9fc2d88a-9543-4483-81ba-dc034245f93f",
+            "inClass_AP": true
           },
           "dc_circuit_dimensional_analysis":
           {

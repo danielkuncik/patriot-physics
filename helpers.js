@@ -313,7 +313,7 @@ hbs.registerHelper('printUnitLevel',(superUnitKey, unitKey, gradeMap) => {
     return new hbs.SafeString(string);
 });
 
-hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap) => {
+hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap, goal) => {
     let string = '<li>';
     let level = undefined;
     let grade = undefined;
@@ -333,11 +333,16 @@ hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap) => {
 
     string = string + `<a href = '/unit/${superUnitKey}/${unitKey}'>${unitNumber}-${unitTitle}</a>`;
 
-    if (level) {
+    if (level || goal) {
         string = string + '<ul>';
-        string = string + `<li>${level}</li>`;
+        if (level) {
+            string = string + `<li>Current Level: ${level}</li>`;
+        }
         if (grade) {
-            string = string + `<li>${grade}</li>`;
+            string = string + `<li>Current Grade: ${grade}</li>`;
+        }
+        if (goal) {
+            string = string + `<li>Goal: Level ${goal}</li>`;
         }
         string = string + '</ul>';
     }
