@@ -258,3 +258,24 @@ $("button#backgroundButton").on('click',() => {
     }
 });
 
+
+// buttons to turn photos
+$(".turnRightButton").on('click',(event) =>{
+    let target = $(event.currentTarget).data('target');
+    let photo = $(`#${target}`);
+    if ($(photo).hasClass('photoNorth')) {
+        $(photo).removeClass('photoNorth');
+        $(photo).addClass('photoEast');
+    } else if ($(photo).hasClass('photoEast')) {
+        $(photo).removeClass('photoEast');
+        $(photo).addClass('photoSouth');
+    } else if ($(photo).hasClass('photoSouth')) {
+        $(photo).removeClass('photoSouth');
+        $(photo).addClass('photoWest');
+    } else if ($(photo).hasClass('photoWest')) {
+        $(photo).removeClass('photoWest');
+        $(photo).addClass('photoNorth');
+    }
+});
+
+
