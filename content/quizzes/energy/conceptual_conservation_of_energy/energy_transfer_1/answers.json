@@ -22,5 +22,13 @@
     "4": "Nuclear Energy",
     "5": "Chemical Potential Energy",
     "6": "Elastic Potential Energy"
+  },
+  "v4": {
+    "1": "Gravitational Potential Energy",
+    "2": "Chemical Potential Energy",
+    "3": "Electrical Energy",
+    "4": "Thermal Energy",
+    "5": "Nuclear Energy",
+    "6": "Mechanical Wave Energy"
   }
 }
