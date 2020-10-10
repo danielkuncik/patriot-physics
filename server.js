@@ -22,6 +22,8 @@ const multer = require("multer");
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
+const redis = require("redis");
+
 
 let app = express();
 
@@ -41,6 +43,11 @@ app.use(session({
 }));
 app.use(flash());
 
+
+const redisClient =redis.createClient(process.env.REDIS_URL);
+redisClient.on("error",(error) => {
+    console.log(error);
+});
 
 /// configuration for cloudinary
 cloudinary.config({
