@@ -23,11 +23,15 @@ const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
 const redis = require("redis");
-
+const redisStore = require('connect-redis')(session);
+const redisClient =redis.createClient(process.env.REDIS_URL);
+redisClient.on("error",(error) => {
+    console.log(error);
+});
 
 let app = express();
 
-let sessionStore = new session.MemoryStore();
+let sessionStore = new redisStore({ host: 'localhost', port: 6379, client: redisClient, ttl: 86400 });
 
 const helpers = require('./helpers.js');
 
@@ -39,15 +43,12 @@ app.use(session({
     store: sessionStore,
     proxy: true,
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
 }));
 app.use(flash());
 
 
-const redisClient =redis.createClient(process.env.REDIS_URL);
-redisClient.on("error",(error) => {
-    console.log(error);
-});
+
 
 /// configuration for cloudinary
 cloudinary.config({
