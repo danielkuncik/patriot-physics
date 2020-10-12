@@ -1,0 +1,32 @@
+{
+  "v1": {
+    "1": {
+      "a": null,
+      "b": "Draw a new free-body diagram including the missing force."
+    },
+    "2": {
+      "a": null,
+      "b": "Draw a new free-body diagram including the missing force."
+    }
+  },
+  "v2": {
+    "1": {
+      "a": null,
+      "b": "Draw a new free-body diagram including the missing force."
+    },
+    "2": {
+      "a": null,
+      "b": "Draw a new free-body diagram including the missing force."
+    }
+  },
+  "v3": {
+    "1": {
+      "a": "80 N right",
+      "b": "Draw a new free-body diagram including the missing force."
+    },
+    "2": {
+      "a": "55 N up",
+      "b": "Draw a new free-body diagram including the missing force."
+    }
+  }
+}
