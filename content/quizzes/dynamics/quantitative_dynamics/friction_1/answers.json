@@ -1,0 +1,12 @@
+{
+  "v1": {
+
+  },
+  "v2": {
+    "1": "static friction",
+    "2": "kinetic friction",
+    "3": "kinetic friction",
+    "4": "static friction",
+    "5": "maximum static friction is stronger than kinetic friction"
+  }
+}
