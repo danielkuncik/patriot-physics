@@ -264,8 +264,18 @@ find_pending_quizzes = function(req, res, next) {
     }
 };
 
+
+
+
 check_quiz_password = (req, res, next) => {
-    next();
+    pool.query('SELECT passwords FROM quiz_passwords',[],(error, result) => {
+        if (error) {
+            throw error
+        }
+        const currentPassword = result.rows[result.rows.length - 1].passwords;
+        console.log(currentPassword);
+        next();
+    });
 };
 
 module.exports = {
