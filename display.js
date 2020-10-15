@@ -108,7 +108,7 @@ display_pod_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
-    let title = pod.title;
+    let title = `${pod.title} Study Page`;
     const loggedIn = !!req.user;
     let format = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].format;
     if (pod.subtitle) {
@@ -198,14 +198,34 @@ display_problemSet_page = (req, res) => {
 };
 
 display_quiz_entry_page = (req, res) => {
+    const superUnit = unitMap[req.superUnitKey];
+    const unit = superUnit.units[req.unitKey];
+    const pod = unit.pods[req.podKey];
+    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    const letter = pod.letter;
+    const title = `${unitNumber}-${letter}: ${pod.title}`;
+    // add info on the pod to this page!!
     res.render('quizEntryPage.hbs', {
         layout: 'default',
-        title: 'Quizzes',
+        title: title,
+        podTitle: title,
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        unitKey: req.unitKey,
+        podKey: req.podKey,
+        objective: pod.objective,
+        content: pod.content,
+        level: pod.level,
+        topicTitle: unit.title,
+        topicClusterTitle: superUnit.title,
+        backLink: `/pod/${req.params.uuid}`,
+        letter: pod.letter,
+        unitNumber: unitNumber,
+        unitClusterName: unitMap[req.superUnitKey].title,
+        previousAttempts: req.previousAttempts
     });
 };
 

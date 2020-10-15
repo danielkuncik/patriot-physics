@@ -1,14 +1,30 @@
 
+<h4>
+    You are about to take a miniquiz on {{podTitle}}!
+</h4>
 
-<div class = 'container'>
-    <div class = 'row'>
-        <div class = 'col-sm-9'>
+<ul>
+    <li>
+        Topic Cluster: {{topicClusterTitle}}
+    </li>
+    <li>
+        Topic: {{topicTitle}}
+    </li>
+    <li>
+        Objective {{objective}}
+    </li>
+    <li>
+        Content: {{content}}
+    </li>
+    <li>
+        Level: {{level}}
+    </li>
+</ul>
 
-            <p>
-                Here you can take your quizzes!
-            </p>
 
-            {{listAllUnitsWithQuizzes gradeMap}}
-        </div>
-    </div>
-</div>
+<form action = '/quiz/uuid' method = 'POST'>
+    <button type = 'submit' class = 'btn btn-secondary'>TAKE QUIZ</button>
+</form>
+
+
+<a href = '{{backLink}}'>BACK</a>

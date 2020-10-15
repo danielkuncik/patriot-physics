@@ -107,8 +107,10 @@ const count_all_attempts = function(req, res, next) {
 const check_if_logged_in = function(req, res, next) {
     if (req.session.student) {
         req.user = req.session.student;
+        req.loggedIn = true;
     } else {
         req.user = undefined;
+        req.loggedIn = false;
     }
     if (req.session.section) {
         req.section = req.session.section;
