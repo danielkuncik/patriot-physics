@@ -264,6 +264,9 @@ find_pending_quizzes = function(req, res, next) {
     }
 };
 
+check_quiz_password = (req, res, next) => {
+    next();
+};
 
 module.exports = {
     check_login,
@@ -274,5 +277,6 @@ module.exports = {
     look_up_quiz_attempts,
     look_up_quiz_attempts_2,
     count_all_attempts,
-    find_pending_quizzes
+    find_pending_quizzes,
+    check_quiz_password
 };

@@ -198,10 +198,11 @@ display_problemSet_page = (req, res) => {
 };
 
 display_quiz_entry_page = (req, res) => {
-    const superUnit = unitMap[req.superUnitKey];
-    const unit = superUnit.units[req.unitKey];
-    const pod = unit.pods[req.podKey];
-    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    const superUnit = unitMap[req.keys.superUnitKey];
+    const unit = superUnit.units[req.keys.unitKey];
+    const pod = unit.pods[req.keys.podKey];
+    console.log(pod);
+    const unitNumber = superUnit.number * 100 + unit.number;
     const letter = pod.letter;
     const title = `${unitNumber}-${letter}: ${pod.title}`;
     // add info on the pod to this page!!
@@ -224,8 +225,11 @@ display_quiz_entry_page = (req, res) => {
         backLink: `/pod/${req.params.uuid}`,
         letter: pod.letter,
         unitNumber: unitNumber,
-        unitClusterName: unitMap[req.superUnitKey].title,
-        previousAttempts: req.previousAttempts
+        unitClusterName: superUnit.title,
+        previousAttempts: req.previousAttempts,
+        uuid: req.params.uuid,
+        passwordAccessRequired: req.passwordAccessRequired,
+        memorizationQuiz: req.memorizationQuiz
     });
 };
 
@@ -260,28 +264,27 @@ function quizAccess(section, level, enteredPassword) {
 }
 
 display_quiz = (req, res) => {
-    let available = availableContent[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].quizzes;
+    let available = availableContent[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].quizzes;
     if (!available) {
         res.redirect('/');
     }
     if (!req.user) {
         res.redirect('/login');
     }
-    const pod_uuid = unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].uuid;
-    let versionNumber = availableContent[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].numberOfVersions;
-    res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.hbs', {
+    let versionNumber = availableContent[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].numberOfVersions;
+    res.render('quizzes/' + req.keys.superUnitKey + '/' + req.keys.unitKey + '/' + req.keys.podKey + '/v' + String(versionNumber) +'.hbs', {
         layout: 'quizPageLayout.hbs',
-        selectedUnitClusterKey: req.params.unitClusterKey,
-        selectedUnitKey: req.params.unitKey,
-        selectedPodKey: req.params.podKey,
-        letter: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].letter,
-        title: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].title,
-        pod_uuid: pod_uuid,
-        unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
-        backLink: `/pod/${pod_uuid}`,
-        unitTitle: unitMap[req.params.unitClusterKey].units[req.params.unitKey].title,
-        unitClusterTitle: unitMap[req.params.unitClusterKey].title,
-        level: unitMap[req.params.unitClusterKey].units[req.params.unitKey].pods[req.params.podKey].level,
+        selectedUnitClusterKey: req.keys.superUnitKey,
+        selectedUnitKey: req.keys.unitKey,
+        selectedPodKey: req.keys.podKey,
+        letter: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].letter,
+        title: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].title,
+        pod_uuid: req.params.uuid,
+        unitNumber: unitMap[req.keys.superUnitKey].number * 100 + unitMap[req.keys.superUnitKey].units[req.keys.unitKey].number,
+        backLink: `/pod/${req.params.uuid}`,
+        unitTitle: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].title,
+        unitClusterTitle: unitMap[req.keys.superUnitKey].title,
+        level: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].level,
         version: versionNumber,
         user: req.user,
         section: req.section,

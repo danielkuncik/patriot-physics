@@ -241,13 +241,19 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 // };
 
 const checkQuizAccess = (req, res, next) => {
-    req.keys = gradeMap.getPodKeysByUUID(req.query.uuid);
+    req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
+    console.log(req.keys);
     const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
-    req.passwordAccessRequired = (podObject.memorization || (req.session.section === 'AP' && podObject.inClass_AP) || (req.session.section === 'Honors' && podObject.inClass_honors) || (req.session.section === 'A_level' && podObject.inClass_Alevel));
+    req.memorizationQuiz = podObject.memorization;
+    req.ApInClass = req.session.section === 'AP' && podObject.inClass_AP;
+    req.HonorsInClass = req.session.section === 'Honors' && podObject.inClass_honors;
+    req.A_level_InClass = req.session.section === 'A_level' && podObject.inClass_Alevel;
+    req.passwordAccessRequired = req.memorizationQuiz || req.ApInClass || req.HonorsInClass || req.A_level_InClass;
     next();
 };
 
 app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
+    console.log(req.loggedIn);
     if (!req.loggedIn) {
         // flash => you must be logged in to take a quiz
         res.redirect(`/pod/${req.params.uuid}`);
@@ -256,9 +262,14 @@ app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
     }
 }, checkQuizAccess, disp.display_quiz_entry_page]);
 
-app.post('/miniquizAccess/:uuid',(res,req) => {
-    res.redirect('/');
-});
+app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
+    if (!req.loggedIn) {
+        // flash => you must be logged in to take a quiz
+        res.redirect(`/pod/${req.params.uuid}`);
+    } else {
+        next();
+    }
+},checkQuizAccess, db.check_quiz_password, disp.display_quiz]);
 
 // individual quiz page
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
