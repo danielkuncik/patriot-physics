@@ -201,7 +201,6 @@ display_quiz_entry_page = (req, res) => {
     const superUnit = unitMap[req.keys.superUnitKey];
     const unit = superUnit.units[req.keys.unitKey];
     const pod = unit.pods[req.keys.podKey];
-    console.log(pod);
     const unitNumber = superUnit.number * 100 + unit.number;
     const letter = pod.letter;
     const title = `${unitNumber}-${letter}: ${pod.title}`;

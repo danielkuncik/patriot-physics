@@ -242,7 +242,6 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 
 const checkQuizAccess = (req, res, next) => {
     req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
-    console.log(req.keys);
     const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
     req.memorizationQuiz = podObject.memorization;
     req.ApInClass = req.session.section === 'AP' && podObject.inClass_AP;
