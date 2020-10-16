@@ -1,0 +1,14 @@
+{
+  "v1": {
+    "Table": {
+      "A": "0, 80, 80",
+      "B": "30, 50, 80",
+      "C": "60, 20, 80",
+      "D": "80, 0, 80"
+    },
+    "1": "At point D, because that is where kinetic energy is greatest",
+    "2": "Increase",
+    "3": "Decrease",
+    "4": "Stay the same"
+  }
+}
