@@ -67,7 +67,6 @@ const unitMap = require(__dirname + '/public/unit_map');
 
 
 
-
 const load_grades = function(req, res, next) {
     let newGradeMap = new gm.GradeMap();
 

@@ -28,6 +28,29 @@ function getPodKeysByUUID(uuid) {
     return selectionObject
 }
 
+// creates an array that gives grade for each level
+function createGoalArray(goalLevel) {
+    let array = [100];
+    let i;
+    for (i = 0; i < goalLevel; i++) {
+        array.unshift(95 - i * 10);
+    }
+    array.unshift(0);
+    return array;
+}
+
+function calculateGradeFromLevel(currentLevel, goalLevel) {
+    const goalArray = createGoalArray(goalLevel);
+    if (currentLevel >= goalLevel + 1) {
+        return 100
+    } else {
+        const baseLevel = Math.floor(currentLevel);
+        const extraLevel = currentLevel % 1;
+        const grade = goalArray[baseLevel] + (goalArray[baseLevel + 1] - goalArray[baseLevel]) * extraLevel;
+        return Math.floor(grade)
+    }
+}
+
 class GradeMap {
     constructor() {
         this.map = this.makeBlankMap();
@@ -131,6 +154,11 @@ class GradeMap {
         let roundedLevel = Math.floor(level * 10) / 10;
         this.map[superUnitKey].units[unitKey].level = roundedLevel;
         return roundedLevel
+    }
+
+    calculateGrade(superUnitKey, unitKey, goalLevel) {
+        const currentLevel = this.calculateUnitLevel(superUnitKey, unitKey);
+        return calculateGradeFromLevel(currentLevel, goalLevel)
     }
 
     calculateAllUnitLevels() {
