@@ -268,7 +268,7 @@ app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
     } else {
         next();
     }
-},checkQuizAccess, db.check_quiz_password, disp.display_quiz]);
+},checkQuizAccess, db.look_up_password, db.check_quiz_password, disp.display_quiz]);
 
 // individual quiz page
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);

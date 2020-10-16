@@ -228,7 +228,8 @@ display_quiz_entry_page = (req, res) => {
         previousAttempts: req.previousAttempts,
         uuid: req.params.uuid,
         passwordAccessRequired: req.passwordAccessRequired,
-        memorizationQuiz: req.memorizationQuiz
+        memorizationQuiz: req.memorizationQuiz,
+        nonMemorizationMessage: req.passwordAccessRequired & !req.memorizationQuiz
     });
 };
 

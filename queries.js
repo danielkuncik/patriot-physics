@@ -245,7 +245,7 @@ const look_up_quiz_attempts_2 = function(req, res, next) {
 };
 
 
-find_pending_quizzes = function(req, res, next) {
+const find_pending_quizzes = function(req, res, next) {
     if (req.session.student) {
         const id = req.session.student.id;
         pool.query('SELECT pod_uuid FROM quiz_attempts WHERE student_id = $1 AND score IS NULL', [req.session.student.id], (err, results) => {
@@ -263,18 +263,31 @@ find_pending_quizzes = function(req, res, next) {
     }
 };
 
-
-
-
-check_quiz_password = (req, res, next) => {
+const look_up_password = (req, res, next) => {
     pool.query('SELECT passwords FROM quiz_passwords',[],(error, result) => {
         if (error) {
             throw error
         }
-        const currentPassword = result.rows[result.rows.length - 1].passwords;
-        console.log(currentPassword);
+        req.correctPassword = result.rows[result.rows.length - 1].passwords;
         next();
     });
+
+};
+
+
+const check_quiz_password = (req, res, next) => {
+    if (req.passwordAccessRequired) {
+        const correctPassword = req.correctPassword;
+        const enteredPassword = req.body.password;
+        if (correctPassword === enteredPassword) {
+            next();
+        } else {
+            // add flash
+            res.redirect(`/pod/${req.params.uuid}`);
+        }
+    } else {
+        next();
+    }
 };
 
 module.exports = {
@@ -287,5 +300,6 @@ module.exports = {
     look_up_quiz_attempts_2,
     count_all_attempts,
     find_pending_quizzes,
+    look_up_password,
     check_quiz_password
 };

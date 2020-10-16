@@ -21,8 +21,23 @@
     </li>
 </ul>
 
+{{#if memorizationQuiz}}
+<h5>
+    This is a memorization quiz.
+    All memorization quizzes must be taken in class.
+</h5>
+{{/if}}
+
+{{#if nonMemorizationMessage}}
+<h5>
+    This quiz must be taken in class.
+</h5>
+{{/if}}
 
 <form action = '/quiz/{{uuid}}' method = 'POST'>
+    {{#if passwordAccessRequired}}
+    <input type = 'password' name = 'password' />
+    {{/if}}
     <button type = 'submit' class = 'btn btn-secondary'>TAKE QUIZ</button>
 </form>
 
