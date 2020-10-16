@@ -1306,7 +1306,8 @@
             "prerequisites": ["inductive_vs_deductive"],
             "objective": "Use the concept of dependent, independent, and controlled variables to describe a procedure that includes more than one experiment.",
             "uuid":  "577ba340-60fb-430f-aaaf-96377939fd60",
-            "inClass_honors": true
+            "inClass_honors": true,
+            "inClass_AP": true
           },
           "design_experiment_1":
           {
@@ -2210,7 +2211,8 @@
             "objective": "Create Formulas based on the work-energy theorem and use them to solve dynamics and kinematics problems.",
             "content": "The Work-Energy Theorem states that the work done a system equals to the change in mechanical energy of a system; physicists can use the work formula to calculate work done and then use this value to calculate quantities of kinetic and/or potential energy.",
             "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet.",
-            "uuid": "f4cd9614-c811-4fa0-99fb-c24afc013cf6"
+            "uuid": "f4cd9614-c811-4fa0-99fb-c24afc013cf6",
+            "inClass_AP": true
           },
           "force_position_graphs_1":
           {
@@ -2480,7 +2482,8 @@
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
             "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story.",
             "uuid": "0b5cc5e1-8a8d-4172-a52d-e6664401a668",
-            "inClass_honors": true
+            "inClass_honors": true,
+            "inClass_AP": true
           },
           "position_graph_connection":
           {
@@ -2694,7 +2697,8 @@
             "prerequisites": ["quantitative_kinematic_graphs_3"],
             "objective": "Numerically solve the kinematic equations for step-wise motion.",
             "content": "The kinematic equations can be when some object changes acceleration but its motion can be broken to several unique steps of independent motion.",
-            "uuid": "be3e1545-b796-4a4a-bd4f-54078b8afe1b"
+            "uuid": "be3e1545-b796-4a4a-bd4f-54078b8afe1b",
+            "inClass_AP": true
           },
           "kinematic_equations_as_functions":
           {
@@ -2752,7 +2756,8 @@
             [
               "Equations not given."
             ],
-            "uuid": "fd893155-1664-4e4f-9233-1f2cc2548012"
+            "uuid": "fd893155-1664-4e4f-9233-1f2cc2548012",
+            "inClass_AP": true
           },
           "quantitative_kinematic_graphs_5":
           {
@@ -3666,7 +3671,8 @@
             "prerequisites": ["earth_is_round"],
             "objective": "Draw free-body diagrams that contain multiple interacting items; identify the name and agent of each force; identify action reaction pairs and balanced force pairs; differentiate between action-reaction force pairs and balanced force pairs",
             "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite",
-            "uuid": "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f"
+            "uuid": "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f",
+            "inClass_AP": true
           },
           "free_body_diagrams_4":
           {
@@ -3701,7 +3707,8 @@
             "prerequisites": ["subatomic_contact_forces"],
             "objective": "Defend how Newton's Third Law still applies when an object is broken by a force.",
             "content": "Newton's Third Law seems to imply that no object may ever move because two forces always cancel each other out (a paradox), but it does not because the action and reaction forces act on two different objects.",
-            "uuid": "e01f1ca4-6218-458e-b587-c6168cfa9cae"
+            "uuid": "e01f1ca4-6218-458e-b587-c6168cfa9cae",
+            "inClass_AP": true
           },
           "system_free_body_diagrams":
           {
@@ -3739,7 +3746,7 @@
             "horizontal": 4,
             "letter": "M",
             "prerequisites": ["newtons_third_law_3"],
-            "objective": "Explain common misconceptions related to teh free-body diagram of a stationary object.",
+            "objective": "Explain common misconceptions related to the free-body diagram of a stationary object.",
             "content": "The free-body diagram of a block on a table shows normal force upwards and gravity downwards; the normal force exerted by the table cannot be observed but can be inferred; these two forces are not an action-reaction pair because they act on the same object.",
             "uuid": "65a6c4eb-b36c-46ff-9527-4c1e823dde79"
           },
@@ -3891,7 +3898,8 @@
             "prerequisites": ["block_dragging_2"],
             "objective": "Given a block experiencing an applied force on a floor with both static and kinetic friction, draw a correct free-body diagram of the block, determine the motion of the block, and defend your answers using principles of friction.",
             "content": "If a block is not moving, a physicist determines if it will move by comparing applied force to maximum static friction; static friction is a constraint force.",
-            "uuid": "f9807bd7-6fed-4420-93fe-a071cc577e91"
+            "uuid": "f9807bd7-6fed-4420-93fe-a071cc577e91",
+            "inClass_AP": true
           },
           "vertical_friction":
           {
@@ -3914,7 +3922,8 @@
             "prerequisites": ["elevators_1"],
             "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel.",
             "content": "Normal force changes in an elevator, leading to counterintuitive feelings; a physicist can make sense of these feelings by analyzing the forces and acceleration of a person in an elevator.",
-            "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758"
+            "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758",
+            "inClass_AP": true
           },
           "block_dragging_4":
           {
@@ -4095,7 +4104,8 @@
               "Use Newton's Laws to explain how a person walks."
             ],
             "limits": "Will not include very difficult elevator problems.",
-            "uuid": "fbfc3fff-0a15-4e8e-9473-9f450adecd9a"
+            "uuid": "fbfc3fff-0a15-4e8e-9473-9f450adecd9a",
+            "inClass_AP": true
           },
           "newtons_model_4A":
           {
@@ -4106,7 +4116,8 @@
             "prerequisites": ["forces_on_you"],
             "objective": "Draw and defend free-body diagrams of situations that are particularly counterintuitive, those in which no force or a negative force exists in the direction of motion: kicking a box and shooting an arrow.",
             "content": "At times, an object can move when the a net force is not acting in the direction the object is moving, counter to human intuition, but a careful connection between motion and Newton's Laws can create a logically sound model explaining how this motion occurs.",
-            "uuid": "e492fc90-2688-43f3-8f44-4a62f601f939"
+            "uuid": "e492fc90-2688-43f3-8f44-4a62f601f939",
+            "inClass_AP": true
           },
           "newtons_model_4B":
           {
@@ -4150,7 +4161,8 @@
             "prerequisites": ["examine_newtons_laws_mathematically"],
             "objective": "Using Newton's First and Second Laws, describe why falling objects reach terminal velocity and discuss what factors determine terminal velocity; describe how it is possible to fall several miles through the air and live.",
             "content": "If a person falls for a long time, air resistance acting on that person increases until a net force of zero acts on that person; after this point falling from higher heights does not increase the impact velocity.",
-            "uuid": "d48b48a0-caed-4b81-97fc-df0667f43412"
+            "uuid": "d48b48a0-caed-4b81-97fc-df0667f43412",
+            "inClass_AP": true
           },
           "space_motion_3":
           {
@@ -4971,7 +4983,8 @@
             "prerequisites": ["mass_vs_weight_1"],
             "objective": "Memorize the definition of gravity as a universal attraction between masses; explain how people experience attraction to all masses, but little of it is felt.",
             "content": "All masses are attracted by gravity, most of these attractions are too weak for you to feel.",
-            "uuid": "8b38d889-0b11-42e8-8755-4bef8688ed44"
+            "uuid": "8b38d889-0b11-42e8-8755-4bef8688ed44",
+            "inClass_honors": true
           },
           "astronomical_examples_gravitation":
           {
@@ -5004,7 +5017,8 @@
             "prerequisites": ["comet_orbits"],
             "objective": "Examine counterintuitive consequences of the fact that the earth is round; explain Newton's revelation about the moon and the apple.",
             "content": "Because the earth is round, the direction we called 'down' is actually 'inward'; an apple and the moon are both falling inward towards earth.",
-            "uuid": "ed5f91c8-e1c7-408b-b1ae-0fac57661bbc"
+            "uuid": "ed5f91c8-e1c7-408b-b1ae-0fac57661bbc",
+            "inClass_honors": true
           },
           "keplers_first_law":
           {
@@ -5721,7 +5735,8 @@
             "prerequisites": ["conservation_of_momentum_4"],
             "objective": "Represent each situation involving conservation of momentum with an algebraic formula and explain what each term of that formula represents.",
             "content": "Physicists use the conservation of momentum to create a formula specific to individual situations.",
-            "uuid": "6691dd31-b47c-4ed0-b6f7-faea02502cd1"
+            "uuid": "6691dd31-b47c-4ed0-b6f7-faea02502cd1",
+            "inClass_AP": true
           },
           "conservation_of_momentum_5":
           {
@@ -5732,7 +5747,8 @@
             "prerequisites": ["collision_formula_derivation"],
             "objective": "Use an algebraic formula to solve problems involving the conservation of momentum with information and method is not clearly given.",
             "content": "Physicists invent and solve formulas using the conservation of momentum to find useful information regarding a collision.",
-            "uuid": "8b57e6c0-2602-4a6e-8c5a-66e6cfc8289b"
+            "uuid": "8b57e6c0-2602-4a6e-8c5a-66e6cfc8289b",
+            "inClass_AP": true
           },
           "collision_energy":
           {
@@ -5912,7 +5928,8 @@
             "objective": "Relate the five 'time' graphs of kinematic and dynamic quantities: position, velocity, acceleration, momentum, force.",
             "content": " All of the five kinematic and dynamic graphs are related by mathematical operations and physical formulas.",
             "note": "I still need to determine what exactly makes kinematic and dynamic graphs 1, 2, and 3 different",
-            "uuid": "dc7ed949-aa43-4e16-8aa0-18476a0a6956"
+            "uuid": "dc7ed949-aa43-4e16-8aa0-18476a0a6956",
+            "inClass_AP": true
           },
           "impulse_formula_4":
           {
@@ -7041,7 +7058,8 @@
             "objective": "Draw waves with a particular wavelength, amplitude, and phase, with all crests, troughs, and center points drawn correctly.",
             "content": "The phase of a wave indicates at what point in a cycle that wave begins.",
             "notes": "The wave must begin on a particular phase for full credit. Phases presented are 0, pi/2, pi, and 3pi/2",
-            "uuid": "c381f8b4-ac3f-4d1a-bd8a-a721c49f6442"
+            "uuid": "c381f8b4-ac3f-4d1a-bd8a-a721c49f6442",
+            "inClass_AP": true
           },
           "trigonometric_waves_2":
           {
@@ -8440,7 +8458,8 @@
             "prerequisites": ["analyze_circuits_1"],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information.",
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit, and you can logically deduce the information you need from different sets of initial information.",
-            "uuid": "3950df90-a5f0-45f6-bbc0-760a7865445c"
+            "uuid": "3950df90-a5f0-45f6-bbc0-760a7865445c",
+            "inClass_honors": true
           },
           "algebraic_circuits_1":
           {
@@ -8452,7 +8471,8 @@
             "prerequisites": ["analyze_circuits_2"],
             "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together",
             "content": "Ohm's Law and the Power Formula can be manipulated to create new formulas.",
-            "uuid": "063a8922-ee36-4a0a-81b7-511136db2f3d"
+            "uuid": "063a8922-ee36-4a0a-81b7-511136db2f3d",
+            "inClass_honors": true
           },
           "electric_potential_diagrams_1":
           {
