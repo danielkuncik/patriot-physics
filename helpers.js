@@ -1,7 +1,7 @@
 const hbs = require('express-hbs');
 const unitMap = require(__dirname + '/public/unit_map');
 const { availableContent } = require('./findAvailableContent.js');
-
+const goals = require(__dirname + '/public/goals');
 
 hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
     let output;
@@ -524,6 +524,24 @@ hbs.registerHelper('isQuizNotPassed',(superUnitKey, unitKey, podKey, gradeMap) =
     } else {
         return true
     }
+});
+
+hbs.registerHelper('getGoalsObject', (courseLevel, gradeMap) => {
+    const goalsObject = goals[courseLevel];
+    Object.keys(goalsObject).forEach((superUnitKey) => {
+        if (unitMap[superUnitKey]) {
+            goalsObject[superUnitKey].uuid = unitMap[superUnitKey].uuid;
+            Object.keys(goalsObject[superUnitKey]).forEach((unitKey) => {
+                if (unitMap[superUnitKey].units[unitKey]) {
+                    goalsObject[superUnitKey][unitKey].uuid = unitMap[superUnitKey].units[unitKey].uuid;
+                }
+                if (gradeMap && gradeMap[superUnitKey] && gradeMap[superUnitKey].units[unitKey] && gradeMap[superUnitKey].units[unitKey].level) {
+                    goalsObject[superUnitKey][unitKey].currentLevel = gradeMap[superUnitKey].units[unitKey].level;
+                }
+            });
+        }
+    });
+    return JSON.stringify(goalsObject)
 });
 
 module.exports = {

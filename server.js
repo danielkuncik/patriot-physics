@@ -175,6 +175,9 @@ app.post('/logout',(req, res) => {
 
 app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page]);
 
+
+// change these to uuid based !
+
 // unit cluster home page
 app.get('/superUnit/:superUnitKey', [db.check_if_logged_in, disp.display_super_unit_page]);
 
