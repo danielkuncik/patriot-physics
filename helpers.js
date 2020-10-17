@@ -131,8 +131,9 @@ function createSuperUnitListItem(superUnitKey, isItImportant) {
     let superUnitTitle = unitMap[superUnitKey].title;
     let superUnitNumber = unitMap[superUnitKey].number;
     let superUnitMessage = `${superUnitNumber}: ${superUnitTitle}`;
+    let superUnitUuid = unitMap[superUnitKey].uuid;
     if (availableContent[superUnitKey].available) {
-        let link = `/superUnit/${superUnitKey}`;
+        let link = `/superUnit/${superUnitUuid}`;
         superUnitListItem = superUnitListItem + `<a href = '${link}'>${superUnitMessage}</a>`;
     } else {
         superUnitListItem = superUnitListItem + superUnitMessage;

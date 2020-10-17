@@ -73,10 +73,10 @@ display_units_entry_page = (req,res) => {
 
 
 display_super_unit_page = (req,res) => {
-    let superUnit = unitMap[req.params.superUnitKey];
-    res.render('unit/' + req.params.superUnitKey + '/' + req.params.superUnitKey + '_super_unit_page.hbs', {
+    let superUnit = unitMap[req.superUnitKey];
+    res.render('unit/' + req.superUnitKey + '/' + req.superUnitKey + '_super_unit_page.hbs', {
         layout: 'superUnitPageLayout.hbs',
-        selectedSuperUnitKey: req.params.superUnitKey,
+        selectedSuperUnitKey: req.superUnitKey,
         title: superUnit.title,
         user: req.user,
         section: req.section,
@@ -100,7 +100,8 @@ display_unit_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        backLink: `/superUnit/${unitCluster.uuid}`
     });
 };
 

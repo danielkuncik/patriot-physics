@@ -179,7 +179,14 @@ app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page
 // change these to uuid based !
 
 // unit cluster home page
-app.get('/superUnit/:superUnitKey', [db.check_if_logged_in, disp.display_super_unit_page]);
+app.get('/superUnit/:uuid', [db.check_if_logged_in,(req, res, next) => {
+    Object.keys(unitMap).forEach((superUnitKey) => {
+        if (unitMap[superUnitKey].uuid === req.params.uuid) {
+            req.superUnitKey = superUnitKey
+        }
+    });
+    next();
+}, disp.display_super_unit_page]);
 
 // unit home page
 app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_unit_page]);
