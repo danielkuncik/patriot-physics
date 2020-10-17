@@ -186,6 +186,8 @@ app.get('/superUnit/:uuid', [db.check_if_logged_in,(req, res, next) => {
             next();
         }
     });
+    // flash: topic cluster not found
+    res.redirect('/');
 }, disp.display_super_unit_page]);
 
 // unit home page
@@ -199,6 +201,8 @@ app.get('/unit/:uuid', [db.check_if_logged_in,(req, res, next) => {
             }
         });
     });
+    // flash unit not found
+    res.redirect('/');
 }, disp.display_unit_page]);
 
 
