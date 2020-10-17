@@ -95,8 +95,9 @@ function createUnitListItem(superUnitKey, unitKey, gradeMap) {
     let unitTitle = unitMap[superUnitKey].units[unitKey].title;
     let unitNumber = 100 * superUnitNumber + unitMap[superUnitKey].units[unitKey].number;
     let unitMessage = `${unitNumber}: ${unitTitle}${levelMessage}`;
+    let uuid = unitMap[superUnitKey].units[unitKey].uuid;
     if (availableContent[superUnitKey].units[unitKey].available) {
-        let unitLink = `/unit/${superUnitKey}/${unitKey}`;
+        let unitLink = `/unit/${uuid}`;
         unitListItem = unitListItem + `<a href = '${unitLink}'>${unitMessage}</a>`;
     } else {
         unitListItem = unitListItem + unitMessage;
@@ -332,8 +333,9 @@ hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap, goal) => {
 
     const unitNumber = superUnit.number * 100 + unit.number;
     const unitTitle = unit.title;
+    const uuid = unit.uuid;
 
-    string = string + `<a href = '/unit/${superUnitKey}/${unitKey}'>${unitNumber}-${unitTitle}</a>`;
+    string = string + `<a href = '/unit/${uuid}'>${unitNumber}-${unitTitle}</a>`;
 
     if (level || goal) {
         string = string + '<ul>';

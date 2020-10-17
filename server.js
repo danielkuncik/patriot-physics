@@ -182,14 +182,24 @@ app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page
 app.get('/superUnit/:uuid', [db.check_if_logged_in,(req, res, next) => {
     Object.keys(unitMap).forEach((superUnitKey) => {
         if (unitMap[superUnitKey].uuid === req.params.uuid) {
-            req.superUnitKey = superUnitKey
+            req.superUnitKey = superUnitKey;
+            next();
         }
     });
-    next();
 }, disp.display_super_unit_page]);
 
 // unit home page
-app.get('/unit/:unitClusterKey/:unitKey', [db.check_if_logged_in, disp.display_unit_page]);
+app.get('/unit/:uuid', [db.check_if_logged_in,(req, res, next) => {
+    Object.keys(unitMap).forEach((superUnitKey) => {
+        Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+            if (unitMap[superUnitKey].units[unitKey].uuid === req.params.uuid) {
+                req.unitKey = unitKey;
+                req.superUnitKey = superUnitKey;
+                next();
+            }
+        });
+    });
+}, disp.display_unit_page]);
 
 
 const gm = require('./gradeMap');

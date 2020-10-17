@@ -87,15 +87,15 @@ display_super_unit_page = (req,res) => {
 };
 
 display_unit_page = (req, res) => {
-    let unitCluster = unitMap[req.params.unitClusterKey];
-    let unit = unitCluster.units[req.params.unitKey];
-    res.render('unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.unitKey + '_unit_page.hbs', {
+    let unitCluster = unitMap[req.superUnitKey];
+    let unit = unitCluster.units[req.unitKey];
+    res.render('unit/' + req.superUnitKey + '/' + req.unitKey + '/' + req.unitKey + '_unit_page.hbs', {
         layout: 'unitPageLayout.hbs',
         title: unit.title,
-        selectedUnitClusterKey: req.params.unitClusterKey,
-        selectedUnitKey: req.params.unitKey,
+        selectedUnitClusterKey: req.superUnitKey,
+        selectedUnitKey: req.unitKey,
         unitClusterName: unitCluster.title,
-        unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].units[req.params.unitKey].number,
+        unitNumber: unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number,
         user: req.user,
         section: req.section,
         overallLevel: req.overallLevel,
@@ -138,7 +138,8 @@ display_pod_page = (req, res) => {
             gradeMap: req.gradeMap,
             previousAttempts: req.previousAttempts,
             ungradedQuizzes: req.ungradedQuizzes,
-            totalAttempts: req.totalAttemps
+            totalAttempts: req.totalAttemps,
+            backLink: `/unit/${unit.uuid}`
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
