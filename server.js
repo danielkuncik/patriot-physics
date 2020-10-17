@@ -243,16 +243,15 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 const checkQuizAccess = (req, res, next) => {
     req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
     const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
-    req.memorizationQuiz = podObject.memorization;
-    req.ApInClass = req.session.section === 'AP' && podObject.inClass_AP;
-    req.HonorsInClass = req.session.section === 'Honors' && podObject.inClass_honors;
-    req.A_level_InClass = req.session.section === 'A_level' && podObject.inClass_Alevel;
+    req.memorizationQuiz = podObject["memorization"];
+    req.ApInClass = req.session.courseLevel === 'AP' && podObject["inClass_AP"];
+    req.HonorsInClass = req.session.courseLevel === 'Honors' && podObject["inClass_honors"];
+    req.A_level_InClass = req.session.courseLevel === 'A_level' && podObject["inClass_Alevel"];
     req.passwordAccessRequired = req.memorizationQuiz || req.ApInClass || req.HonorsInClass || req.A_level_InClass;
     next();
 };
 
 app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
-    console.log(req.loggedIn);
     if (!req.loggedIn) {
         // flash => you must be logged in to take a quiz
         res.redirect(`/pod/${req.params.uuid}`);
