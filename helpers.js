@@ -533,10 +533,13 @@ hbs.registerHelper('getGoalsObject', (courseLevel, gradeMap) => {
     const goalsObject = goals[courseLevel];
     Object.keys(goalsObject).forEach((superUnitKey) => {
         if (unitMap[superUnitKey]) {
-            goalsObject[superUnitKey].uuid = unitMap[superUnitKey].uuid;
+            goalsObject[superUnitKey].link = `/superUnit/${unitMap[superUnitKey].uuid}`;
+            goalsObject[superUnitKey].title = `${unitMap[superUnitKey].number}: ${unitMap[superUnitKey].title}`;
             Object.keys(goalsObject[superUnitKey]).forEach((unitKey) => {
                 if (unitMap[superUnitKey].units[unitKey]) {
-                    goalsObject[superUnitKey][unitKey].uuid = unitMap[superUnitKey].units[unitKey].uuid;
+                    goalsObject[superUnitKey][unitKey].link = `/unit/${unitMap[superUnitKey].units[unitKey].uuid}`;
+                    const number = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
+                    goalsObject[superUnitKey][unitKey].title = `${number}-${unitMap[superUnitKey].units[unitKey].title}`;
                 }
                 if (gradeMap && gradeMap[superUnitKey] && gradeMap[superUnitKey].units[unitKey] && gradeMap[superUnitKey].units[unitKey].level) {
                     goalsObject[superUnitKey][unitKey].currentLevel = gradeMap[superUnitKey].units[unitKey].level;
@@ -544,7 +547,15 @@ hbs.registerHelper('getGoalsObject', (courseLevel, gradeMap) => {
             });
         }
     });
-    return JSON.stringify(goalsObject)
+    let string = JSON.stringify(goalsObject);
+    let correctString = string.replace(/'/g,"\\'"); // replaces quotes with backslash quotes
+    return correctString
+});
+
+hbs.registerHelper('bringUnitMapToFrontEnd', () => {
+    let string = JSON.stringify(unitMap);
+    let correctString = string.replace(/'/g,"\\'"); // replaces quotes with backslash quotes
+    return correctString
 });
 
 module.exports = {

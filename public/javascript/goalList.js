@@ -65,5 +65,15 @@ class DueDate { // date string must be formatated as 7-4-1776
         const dayOfWeek = dayDictionary[this.date.getDay()];
         const string = `${dayOfWeek} ${month} ${day}, ${year} (11:59 pm)`;
         return string
-    };
+    }
+}
+
+
+// should i bring the unit map to the front end
+function listGoalsByTopic(goalsObject) {
+    let bigList = $("<ul></ul>");
+    Object.keys(goalsObject).forEach((superUnitKey) => {
+
+    });
+    return bigList
 }
