@@ -183,31 +183,32 @@ app.get('/superUnit/:uuid', [db.check_if_logged_in,(req, res, next) => {
     Object.keys(unitMap).forEach((superUnitKey) => {
         if (unitMap[superUnitKey].uuid === req.params.uuid) {
             req.superUnitKey = superUnitKey;
-            next();
         }
     });
-    // flash: topic cluster not found
-    res.redirect('/');
+    if (req.unitKey) {
+        next();
+    } else {
+        // flash 'topic cluster not found'
+        req.redirect('/');
+    }
 }, disp.display_super_unit_page]);
-
-console.log(unitMap['science_practice'].units['scientific_reasoning'].uuid);
 
 // unit home page
 app.get('/unit/:uuid', [db.check_if_logged_in,(req, res, next) => {
     Object.keys(unitMap).forEach((superUnitKey) => {
         Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
-          console.log(unitMap[superUnitKey].units[unitKey].uuid);
-          console.log(req.params.uuid);
             if (unitMap[superUnitKey].units[unitKey].uuid === req.params.uuid) {
-              console.log('here!!!!!!!!!!!XXXXXXXXXXXXXXXXXX')
                 req.unitKey = unitKey;
                 req.superUnitKey = superUnitKey;
-                next();
             }
         });
     });
-    // flash unit not found
-    res.redirect('/');
+    if (req.unitKey && req.superUnitKey) {
+        next();
+    } else {
+        // flash 'topic not found'
+        res.redirect('/');
+    }
 }, disp.display_unit_page]);
 
 
