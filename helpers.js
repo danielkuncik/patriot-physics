@@ -531,25 +531,35 @@ hbs.registerHelper('isQuizNotPassed',(superUnitKey, unitKey, podKey, gradeMap) =
 
 hbs.registerHelper('getGoalsObject', (courseLevel, gradeMap) => {
     const goalsObject = goals[courseLevel];
+    let refinedGoalsObject = {
+        superUnits: {}
+    };
     Object.keys(goalsObject).forEach((superUnitKey) => {
         if (unitMap[superUnitKey]) {
-            goalsObject[superUnitKey].information = {};
-            goalsObject[superUnitKey].information.link = `/superUnit/${unitMap[superUnitKey].uuid}`;
-            goalsObject[superUnitKey].information.title = `${unitMap[superUnitKey].number}: ${unitMap[superUnitKey].title}`;
+            refinedGoalsObject.superUnits[superUnitKey] = {};
+            refinedGoalsObject.superUnits[superUnitKey].link = `/superUnit/${unitMap[superUnitKey].uuid}`;
+            refinedGoalsObject.superUnits[superUnitKey].title = `${unitMap[superUnitKey].number}: ${unitMap[superUnitKey].title}`;
+            refinedGoalsObject.superUnits[superUnitKey].units = {};
             Object.keys(goalsObject[superUnitKey]).forEach((unitKey) => {
-                goalsObject[superUnitKey][unitKey].information = {};
+                refinedGoalsObject.superUnits[superUnitKey].units[unitKey] = {};
                 if (unitMap[superUnitKey].units[unitKey]) {
-                    goalsObject[superUnitKey][unitKey].information.link = `/unit/${unitMap[superUnitKey].units[unitKey].uuid}`;
+                    refinedGoalsObject.superUnits[superUnitKey].units[unitKey].link = `/unit/${unitMap[superUnitKey].units[unitKey].uuid}`;
                     const number = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
-                    goalsObject[superUnitKey][unitKey].information.title = `${number}-${unitMap[superUnitKey].units[unitKey].title}`;
+                    refinedGoalsObject.superUnits[superUnitKey].units[unitKey].title = `${number}-${unitMap[superUnitKey].units[unitKey].title}`;
                 }
                 if (gradeMap && gradeMap[superUnitKey] && gradeMap[superUnitKey].units[unitKey] && gradeMap[superUnitKey].units[unitKey].level) {
-                    goalsObject[superUnitKey][unitKey].information.currentLevel = gradeMap[superUnitKey].units[unitKey].level;
+                    refinedGoalsObject.superUnits[superUnitKey].units[unitKey].currentLevel = gradeMap[superUnitKey].units[unitKey].level;
                 }
+                refinedGoalsObject.superUnits[superUnitKey].units[unitKey].levelGoals = {};
+                Object.keys(goalsObject[superUnitKey][unitKey]).forEach((levelGoal) => {
+                    refinedGoalsObject.superUnits[superUnitKey].units[unitKey].levelGoals[levelGoal] = {
+                        'dueDateString': goalsObject[superUnitKey][unitKey][levelGoal]
+                    }
+                });
             });
         }
     });
-    let string = JSON.stringify(goalsObject);
+    let string = JSON.stringify(refinedGoalsObject);
     let correctString = string.replace(/'/g,"\\'"); // replaces quotes with backslash quotes
     return correctString
 });

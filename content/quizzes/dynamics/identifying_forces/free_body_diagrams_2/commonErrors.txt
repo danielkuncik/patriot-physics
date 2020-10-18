@@ -1,0 +1,2 @@
+- Adding normal force to diagrams where it does not go, thinking normal force is applied in each case
+- identifying 'earths gravity' as the agent of gravity, rather than the earth itself
