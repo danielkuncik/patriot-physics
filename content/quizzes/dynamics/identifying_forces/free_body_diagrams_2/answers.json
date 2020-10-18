@@ -1,0 +1,15 @@
+{
+  "v1": {
+    "1": {
+      "a": "Gravity; down; earth on box",
+      "b": "Normal Force; up; floor on box",
+      "c": "Applied Force; left; Paul on box",
+      "d": "Kinetic Friction; right; floor on box"
+    },
+    "2": {
+      "a": "Gravity; down; earth on Dasha",
+      "b": "Tension; up; rope on Dasha",
+      "c": "Applied force: down; friends on Dasha"
+    }
+  }
+}
