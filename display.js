@@ -273,14 +273,23 @@ display_quiz = (req, res) => {
     if (!req.user) {
         res.redirect('/login');
     }
+    let alreadyPassed;
+    if (req.gradeMap) {
+        alreadyPassed = req.gradeMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].score === 20;
+    }
+    const inClass = req.passwordAccessRequired;
     let versionNumber = availableContent[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].numberOfVersions;
+    const unitNumber = unitMap[req.keys.superUnitKey].number * 100 + unitMap[req.keys.superUnitKey].units[req.keys.unitKey].number;
+    const letter = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].letter;
+    const podTitle = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].title;
+    const title = `Miniquiz: ${unitNumber}-${letter}: ${podTitle}`;
     res.render('quizzes/' + req.keys.superUnitKey + '/' + req.keys.unitKey + '/' + req.keys.podKey + '/v' + String(versionNumber) +'.hbs', {
         layout: 'quizPageLayout.hbs',
         selectedUnitClusterKey: req.keys.superUnitKey,
         selectedUnitKey: req.keys.unitKey,
         selectedPodKey: req.keys.podKey,
         letter: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].letter,
-        title: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].title,
+        title: title,
         pod_uuid: req.params.uuid,
         unitNumber: unitMap[req.keys.superUnitKey].number * 100 + unitMap[req.keys.superUnitKey].units[req.keys.unitKey].number,
         backLink: `/pod/${req.params.uuid}`,
@@ -289,10 +298,17 @@ display_quiz = (req, res) => {
         level: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].level,
         version: versionNumber,
         user: req.user,
+        userName: req.user.name,
         section: req.section,
+        sectionName: req.section.name,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        inClass: inClass,
+        alreadyPassed: alreadyPassed,
+        submitOnline: !inClass && !alreadyPassed,
+        submitPaper: inClass && !alreadyPassed,
+        noSubmission: alreadyPassed
     });
 
     // all quizzes open

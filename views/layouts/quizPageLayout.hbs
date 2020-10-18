@@ -48,13 +48,16 @@
     {{{body}}}
 </div>
 
-{{#if (isQuizNotPassed selectedUnitClusterKey selectedUnitKey selectedPodKey gradeMap)}}
+{{#if submitOnline}}
+    <h4>
+        Please upload a submission for this miniquiz.
+    </h4>
     <form action = '/submitMiniquiz?uuid={{pod_uuid}}' method="post" enctype="multipart/form-data">
-    <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+        <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
         <p>
             Please submit <code>.jpg</code> or <code>.png</code> files.
         </p>
-    <br><br>
+        <br><br>
         <a class = 'btn btn-primary' data-toggle = 'collapse' href = '#moreFiles' role = 'button' aria-expanded = 'false' aria-controls="moreFiles">Click to add more files</a>
         <div class = 'collapse' id = 'moreFiles'>
             File 2:
@@ -63,14 +66,44 @@
             File 3:
             <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
         </div>
-    <br>
-    <br>
-    <input type = 'submit' value = 'Submit Quiz' class = 'quizSubmitButton' />
-</form>
-{{else}}
-<h4>
-    You already aced this quiz! Yay!
-</h4>
+        <br>
+        <br>
+        <input type = 'submit' value = 'Submit Quiz' class = 'quizSubmitButton' />
+    </form>
+{{/if}}
+
+{{#if submitPaper}}
+    <div class = 'border border-danger'>
+        <h4>
+            Please Turn in a Paper Submission
+        </h4>
+        <h5>
+            Submit each quiz on an individual piece of paper!
+        </h5>
+        <h5>
+            At the top of the page, write the following:
+        </h5>
+        <ul>
+            <li>
+                Name: {{userName}}
+            </li>
+            <li>
+                Section: {{sectionName}}
+            </li>
+            <li>
+                Quiz: {{unitNumber}}-{{letter}}
+            </li>
+            <li>
+                Version: {{version}}
+            </li>
+        </ul>
+    </div>
+{{/if}}
+
+{{#if noSubmission}}
+    <h4>
+        You already aced this quiz! Yay!
+    </h4>
 {{/if}}
 
 <div class = 'no-print'>
