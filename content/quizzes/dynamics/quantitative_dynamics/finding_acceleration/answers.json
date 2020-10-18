@@ -10,7 +10,7 @@
     "2": {
       "a": {
         "type": "free-body Diagram",
-        "forces": ["60 N RIGHT", "20 N LEFT", "6 N LEFT"]
+        "forces": "['60 N RIGHT', '20 N LEFT', '6 N LEFT']"
       },
       "b": "34 N",
       "c": "8.5 m/s/s"

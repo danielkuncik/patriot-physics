@@ -1,0 +1,12 @@
+{
+  "v1": {
+    "1": "[DOWN-gravity; UP-normal;]",
+    "2": "[DOWN-gravity; UP-normal; RIGHT-push; LEFT-Friction]",
+    "3": "[DOWN-gravity]",
+    "4": "[DOWN-gravity; UP-normal; RIGHT-tension]: 'a box pulled on a frictionless surface'",
+    "5": "[DOWN-gravity; UP-elastic force]",
+    "6": "[DOWN-gravity; UP-lift; RIGHT-thrust; LEFT-drag;]",
+    "7": "[DOWN-gravity; UP-buoyancy]",
+    "8": "[DOWN-gravity; UP-normal; LEFT-contact]"
+  }
+}

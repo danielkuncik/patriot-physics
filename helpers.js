@@ -533,16 +533,18 @@ hbs.registerHelper('getGoalsObject', (courseLevel, gradeMap) => {
     const goalsObject = goals[courseLevel];
     Object.keys(goalsObject).forEach((superUnitKey) => {
         if (unitMap[superUnitKey]) {
-            goalsObject[superUnitKey].link = `/superUnit/${unitMap[superUnitKey].uuid}`;
-            goalsObject[superUnitKey].title = `${unitMap[superUnitKey].number}: ${unitMap[superUnitKey].title}`;
+            goalsObject[superUnitKey].information = {};
+            goalsObject[superUnitKey].information.link = `/superUnit/${unitMap[superUnitKey].uuid}`;
+            goalsObject[superUnitKey].information.title = `${unitMap[superUnitKey].number}: ${unitMap[superUnitKey].title}`;
             Object.keys(goalsObject[superUnitKey]).forEach((unitKey) => {
+                goalsObject[superUnitKey][unitKey].information = {};
                 if (unitMap[superUnitKey].units[unitKey]) {
-                    goalsObject[superUnitKey][unitKey].link = `/unit/${unitMap[superUnitKey].units[unitKey].uuid}`;
+                    goalsObject[superUnitKey][unitKey].information.link = `/unit/${unitMap[superUnitKey].units[unitKey].uuid}`;
                     const number = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
-                    goalsObject[superUnitKey][unitKey].title = `${number}-${unitMap[superUnitKey].units[unitKey].title}`;
+                    goalsObject[superUnitKey][unitKey].information.title = `${number}-${unitMap[superUnitKey].units[unitKey].title}`;
                 }
                 if (gradeMap && gradeMap[superUnitKey] && gradeMap[superUnitKey].units[unitKey] && gradeMap[superUnitKey].units[unitKey].level) {
-                    goalsObject[superUnitKey][unitKey].currentLevel = gradeMap[superUnitKey].units[unitKey].level;
+                    goalsObject[superUnitKey][unitKey].information.currentLevel = gradeMap[superUnitKey].units[unitKey].level;
                 }
             });
         }
