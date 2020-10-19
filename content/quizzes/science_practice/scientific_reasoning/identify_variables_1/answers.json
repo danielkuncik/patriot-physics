@@ -1,0 +1,14 @@
+{
+  "v1": {
+    "1": {
+      "a": "The number of cups of coffe drank",
+      "b": "Quality of sleep, as measured by a smartwatch",
+      "c": "What type of coffee was drank"
+    },
+    "2": {
+      "a": "The angle of incline of the ramp",
+      "b": "The acceleration of the car",
+      "c": "The mass of the car AND the length of the ramp"
+    }
+  }
+}
