@@ -9921,5 +9921,55 @@
         "pods": {}
       }
     }
+  },
+  "the_system": {
+    "title": "The System",
+    "number": "20",
+    "uuid": "bdc26622-80fb-4b62-816b-108be31dc0c3",
+    "display": true,
+    "units": {
+      "title": "Understanding the System",
+      "number": 1,
+      "display": true,
+      "uuid": "05a61f0b-562c-4927-83ce-ea3ac96865c8",
+      "value":
+      {
+        "AP_physics_1": null,
+        "honors_physics": null,
+        "physics_A": null
+      },
+      "standards":
+      {
+        "mass_2016": "",
+        "NGSS": "",
+        "AP_Physics_1": ""
+      },
+      "pods": {
+        "taking_quiz":
+        {
+          "title": "Taking a Miniquiz",
+          "level": 1,
+          "objective": "Log into 508physics and take a miniquiz."
+        },
+        "studying_quiz":
+        {
+          "title": "Studying for a Quiz",
+          "level": 1,
+          "objective": "Recognize the difference between the study page and the miniquiz page; study for a miniquiz before taking it."
+        },
+        "retaking_quiz":
+        {
+          "title": "Retaking a Quiz",
+          "level": 2,
+          "objective": "Retake a physics quiz after taking it the first time to improve your score"
+        },
+        "structure":
+        {
+          "title": "Curriculum Structure",
+          "level": 2,
+          "objective": "Us the terms Topic Cluster, Topic, and Pod to understand how the curriculum fits together"
+        }
+      }
+    }
   }
 }
