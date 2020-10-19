@@ -1,0 +1,99 @@
+
+<p class = 'directions'>
+    For each graph below, chose the option which <strong>best</strong> describes the motion shown.
+</p>
+<div class = 'container'>
+    <ol class = 'graphicalQuestionList'>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'velocityGraph1' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'velocityGraph2' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'velocityGraph3' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'velocityGraph4' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
+
+<div class = 'pageBreak'></div>
+<p class = 'directions'>
+    For each graph below, chose the option which <strong>best</strong> describes the motion shown.
+    In one question, you must chose two options.
+    Note that all objects depicted, if moving, are moving in the positive direction.
+</p>
+
+<div class = 'container'>
+    <ol class = 'graphicalQuestionList' start = '5'>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'accelerationGraph1' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    <strong>Pick two answer choices for this question.</strong>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'accelerationGraph2' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'accelerationGraph3' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
+
+
+<script>
+
+    $("#velocityGraph2").append(makeVelocityGraphConstantVelocity().drawCanvas(300,300));
+    $("#velocityGraph3").append(makeVelocityGraphNotMoving().drawCanvas(300,300));
+    $("#velocityGraph4").append(makeVelocityGraphPositiveAcceleration().drawCanvas(300,300));
+    $("#velocityGraph1").append(makeVelocityGraphNegativeAcceleration().drawCanvas(300,300));
+
+    $("#accelerationGraph2").append(makeAccelerationGraphNegative().drawCanvas(400,200));
+    $("#accelerationGraph1").append(makeAccelerationGraphZero().drawCanvas(400,200));
+    $("#accelerationGraph3").append(makeAccelerationGraphPositive().drawCanvas(400,200));
+
+</script>
+
