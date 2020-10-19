@@ -1,22 +1,50 @@
 
-
-<script>
-    const Honors_goalsObject = JSON.parse('{{{getGoalsObject "Honors" gradeMap}}}');
-</script>
-
 <h3>
     Current Goals
 </h3>
 
-<ul>
-    {{{printUnitLink "science_practice" "scientific_reasoning" gradeMap '3'}}}
-    {{{printUnitLink "energy" "conceptual_conservation_of_energy" gradeMap '3'}}}
-    {{{printUnitLink "energy" "conservation_of_energy_quantitative" gradeMap '2'}}}
-    {{{printUnitLink "kinematics" "forward_kinematics_qualitative" gradeMap '3'}}}
-    {{{printUnitLink "kinematics" "forward_kinematics_quantitative" gradeMap '3'}}}
-    {{{printUnitLink "fundamental_forces" "conceptual_gravitation" gradeMap '2'}}}
-</ul>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-2'></div>
+        <div class = 'col-3 btn' id = 'Honors_goals_topic'>Arrange By Topic</div>
+        <div class = 'col-1'></div>
+        <div class = 'col-3 btn' id = 'Honors_goals_dueDate'>Arrange By Due Date</div>
+        <div class = 'col-2'></div>
+    </div>
+</div>
 
-<h3>
-    Overall Level Goal: 16
-</h3>
+<div id = 'Honors_goals'></div>
+
+<script>
+    const Honors_goalsObject = JSON.parse('{{{getGoalsObject "Honors" gradeMap}}}');
+
+    function writeHonorsGoalsByDueDate() {
+        let list = listGoalsByDueDate(Honors_goalsObject);
+        $("#Honors_goals").empty();
+        $("#Honors_goals").append(list);
+
+        $("#Honors_goals_dueDate").removeClass('btn-secondary');
+        $("#Honors_goals_dueDate").addClass('btn-primary');
+
+        $("#Honors_goals_topic").removeClass('btn-primary');
+        $("#Honors_goals_topic").addClass('btn-secondary');
+    }
+
+    function writeHonorsGoalsByTopic() {
+        let list = listGoalsByTopic(Honors_goalsObject);
+        $("#Honors_goals").empty();
+        $("#Honors_goals").append(list);
+
+        $("#Honors_goals_topic").removeClass('btn-secondary');
+        $("#Honors_goals_topic").addClass('btn-primary');
+
+        $("#Honors_goals_dueDate").removeClass('btn-primary');
+        $("#Honors_goals_dueDate").addClass('btn-secondary');
+
+    }
+
+    writeHonorsGoalsByDueDate();
+    $("#Honors_goals_dueDate").on("click",writeHonorsGoalsByDueDate);
+    $("#Honors_goals_topic").on("click",writeHonorsGoalsByTopic);
+</script>
+

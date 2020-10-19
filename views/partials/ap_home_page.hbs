@@ -2,10 +2,51 @@
     Current Goals
 </h4>
 
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-2'></div>
+        <div class = 'col-3 btn' id = 'AP_goals_topic'>Arrange By Topic</div>
+        <div class = 'col-1'></div>
+        <div class = 'col-3 btn' id = 'AP_goals_dueDate'>Arrange By Due Date</div>
+        <div class = 'col-2'></div>
+    </div>
+</div>
+
+<div id = 'AP_goals'></div>
 
 <script>
     const AP_goalsObject = JSON.parse('{{{getGoalsObject "AP" gradeMap}}}');
+
+    function writeAPGoalsByDueDate() {
+        let list = listGoalsByDueDate(AP_goalsObject);
+        $("#AP_goals").empty();
+        $("#AP_goals").append(list);
+
+        $("#AP_goals_dueDate").removeClass('btn-secondary');
+        $("#AP_goals_dueDate").addClass('btn-primary');
+
+        $("#AP_goals_topic").removeClass('btn-primary');
+        $("#AP_goals_topic").addClass('btn-secondary');
+    }
+
+    function writeAPGoalsByTopic() {
+        let list = listGoalsByTopic(AP_goalsObject);
+        $("#AP_goals").empty();
+        $("#AP_goals").append(list);
+
+        $("#AP_goals_topic").removeClass('btn-secondary');
+        $("#AP_goals_topic").addClass('btn-primary');
+
+        $("#AP_goals_dueDate").removeClass('btn-primary');
+        $("#AP_goals_dueDate").addClass('btn-secondary');
+
+    }
+
+    writeAPGoalsByDueDate();
+    $("#AP_goals_dueDate").on("click",writeAPGoalsByDueDate);
+    $("#AP_goals_topic").on("click",writeAPGoalsByTopic);
 </script>
+
 
 <!--
 101 => level 3
@@ -21,25 +62,6 @@
 901 => level 3
 1003 => level 3
 -->
-
-<ul>
-    {{{printUnitLink "science_practice" "scientific_reasoning" gradeMap '3'}}}
-    {{{printUnitLink "energy" "conservation_of_energy_quantitative" gradeMap '3'}}}
-    {{{printUnitLink "energy" "work_and_power" gradeMap '3'}}}
-    {{{printUnitLink "kinematics" "forward_kinematics_qualitative" gradeMap '4'}}}
-    {{{printUnitLink "kinematics" "forward_kinematics_quantitative" gradeMap '4'}}}
-    {{{printUnitLink "dynamics" "identifying_forces" gradeMap '4'}}}
-    {{{printUnitLink "dynamics" "quantitative_dynamics" gradeMap '4'}}}
-    {{{printUnitLink "dynamics" "vector_force_analysis" gradeMap '4'}}}
-    {{{printUnitLink "momentum" "collisions_and_explosions" gradeMap '4'}}}
-    {{{printUnitLink "momentum" "impulse" gradeMap '3'}}}
-    {{{printUnitLink "waves" "wave_structure" gradeMap '3'}}}
-    {{{printUnitLink "electric_circuits" "dc_circuit_math_1" gradeMap '3'}}}
-</ul>
-
-<h4>
-    Overall Level Goal: 42
-</h4>
 
 
 
