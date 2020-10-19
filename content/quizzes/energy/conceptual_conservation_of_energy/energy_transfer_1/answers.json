@@ -30,5 +30,13 @@
     "4": "Thermal Energy",
     "5": "Nuclear Energy",
     "6": "Mechanical Wave Energy"
+  },
+  "v5": {
+    "1": "Elastic Potential Energy",
+    "2": "Nuclear Energy",
+    "3": "Electrochemical Potential Energy",
+    "4": "Chemical Potential Energy",
+    "5": "Electrical Energy",
+    "6": "Thermal Energy"
   }
 }

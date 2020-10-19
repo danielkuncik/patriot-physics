@@ -3637,7 +3637,8 @@
             "prerequisites": ["free_body_diagrams_2"],
             "objective": "State Newton's Third Law and write examples of how it applies; in particular describe how Newton's Laws apply to walking.",
             "content": "Newtons Third Law allows humans to move by pushing off a surface, and allows a rocket to move by pushing material downward.",
-            "uuid": "c3654d28-90a4-4d13-af2b-03a6a7404efc"
+            "uuid": "c3654d28-90a4-4d13-af2b-03a6a7404efc",
+            "memorization":  true
           },
           "interaction_diagrams":
           {
