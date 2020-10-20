@@ -201,7 +201,6 @@
     tuesday1.addStudent('William Tirrell',3,3); // A
 
 
-
     let tuesday3 = new SeatingChart();
     tuesday3.addStudent('Sean Lund',3,2); //G
     tuesday3.addStudent('Isabella Carrillo',1,2); //A
@@ -245,17 +244,17 @@
     wednesday1.addStudent('Kinsley Trout',1,1); // A
 
     let wednesday3 = new SeatingChart();
-    wednesday3.addStudent('Katelyn Luong',1,4); // A
-    wednesday3.addStudent('Bethany Morgan',1,2); // A
-    wednesday3.addStudent('Cooper Newton',3,3); // L
-    wednesday3.addStudent('Christian Noble Shriver',4,3); /// A
-    wednesday3.addStudent('Quintin Palmer',3,4); // L
-    wednesday3.addStudent('Spencer Perez-Dormitzer',1,1); // A
-    wednesday3.addStudent('Ethan Scully',1,3);  // L
-    wednesday3.addStudent('Evan Smith',2,2); // L
-    wednesday3.addStudent('Tyler Trudeau',4,1); // G
-    wednesday3.addStudent('Kayli Viera',2,1); // A
-    wednesday3.addStudent('Joseph Ziino',4,2); // G
+    wednesday3.addStudent('Katelyn Luong',undefined,undefined); // A
+    wednesday3.addStudent('Bethany Morgan',undefined,undefined); // A
+    wednesday3.addStudent('Cooper Newton',undefined,undefined); // L
+    wednesday3.addStudent('Christian Noble Shriver',undefined,undefined); /// A
+    wednesday3.addStudent('Quintin Palmer',undefined,undefined); // L
+    wednesday3.addStudent('Spencer Perez-Dormitzer',undefined,undefined); // A
+    wednesday3.addStudent('Ethan Scully',undefined,undefined);  // L
+    wednesday3.addStudent('Evan Smith',undefined,undefined); // L
+    wednesday3.addStudent('Tyler Trudeau',undefined,undefined); // G
+    wednesday3.addStudent('Kayli Viera',undefined,undefined); // A
+    wednesday3.addStudent('Joseph Ziino',undefined,undefined); // G
 
     let wednesday4 = new SeatingChart();
     wednesday4.addStudent('Jhett Labonte',4,2);
@@ -362,6 +361,165 @@
 
 
 <script>
+
+    // week of october 13
+    //    let tuesday1 = new SeatingChart();
+    // tuesday1.addStudent('Stephen Arne',1,2); // L
+    // tuesday1.addStudent('Nathaniel Bangs',2,4); // G
+    // tuesday1.addStudent('Shelby Carmichael',2,1); // L
+    // tuesday1.addStudent('Palmer Clingman',3,2); // L
+    // tuesday1.addStudent('Hannah Davis',3,4); // A
+    // tuesday1.addStudent('Emily DellaCioppa',1,4); // G
+    // tuesday1.addStudent('Reign Fernandes',4,4); // L
+    // tuesday1.addStudent('Davis Fox',2,3); // L
+    // tuesday1.addStudent('Isabella Hedges',3,1); // L
+    // tuesday1.addStudent('Faith Humphrey',4,3); // A
+    // tuesday1.addStudent('Molly Janicki',2,2); // L
+    // tuesday1.addStudent('Alex Wright',1,3);
+    // tuesday1.addStudent('William Tirrell',3,3); // A
+    //
+    //
+    //
+    // let tuesday3 = new SeatingChart();
+    // tuesday3.addStudent('Sean Lund',3,2); //G
+    // tuesday3.addStudent('Isabella Carrillo',1,2); //A
+    // tuesday3.addStudent('Steven Carvalho',3,3); // L
+    // tuesday3.addStudent('Quinn Davignon',2,4); //L
+    // tuesday3.addStudent('Tiago Duarte',2,3); // G
+    // tuesday3.addStudent('Samuel Harris',3,1); // G
+    // tuesday3.addStudent('Stefan Hulsebosch',1,3); // G
+    //
+    // let tuesday4 = new SeatingChart();
+    // tuesday4.addStudent('Ryan Arruda',4,1);
+    // tuesday4.addStudent('Sylvie Benson',4,2);
+    // tuesday4.addStudent('Theodore Cecil',4,3);
+    // tuesday4.addStudent('Rylie Coughlin',3,1);
+    // tuesday4.addStudent('Sabrina Cunningham',3,3);
+    // tuesday4.addStudent('Jayce Elliott',3,4);
+    // tuesday4.addStudent('Chris Guavin',2,1);
+    // tuesday4.addStudent('Matthew Carvalho',1,1);
+    // tuesday4.addStudent('Jacob Hadley',2,4);
+    // tuesday4.addStudent('John Higgins',2,2);
+    // tuesday4.addStudent('Brady Kidney',1,4);
+    // tuesday4.addStudent('Zachary Zutaut',4,4);
+    // tuesday4.addStudent('William Tirell',2,3);
+    // tuesday4.addStudent('Jacob Oulette',1,2);
+    //
+    // let wednesday1 = new SeatingChart();
+    // wednesday1.addStudent('Jill Langlais',3,2); // A
+    // wednesday1.addStudent('Keane MacGregor',1,2); // L
+    // wednesday1.addStudent('Rebecca Milde',3,1); //A
+    // wednesday1.addStudent('Drew Miranda',2,1); // A
+    // wednesday1.addStudent("Serena O'Connell (A)",4,1); // A
+    // wednesday1.addStudent('Bessie Pierre',2,4); /// G
+    // wednesday1.addStudent('Apollo Prefontaine',1,3); // L
+    // wednesday1.addStudent('Isabella Romig',1,3); // L
+    // wednesday1.addStudent('Leah Scott',3,4); // G
+    // wednesday1.addStudent('Teagan Shay',4,3); /// A
+    // wednesday1.addStudent('Desmond Sinnott',2,3); // L
+    // wednesday1.addStudent('Brett Smith',4,4); // A
+    // wednesday1.addStudent('Paige Sommers',3,3); // A
+    // wednesday1.addStudent('Gabrielle Theodore',2,2); // L
+    // wednesday1.addStudent('Kinsley Trout',1,1); // A
+    //
+    // let wednesday3 = new SeatingChart();
+    // wednesday3.addStudent('Katelyn Luong',1,4); // A
+    // wednesday3.addStudent('Bethany Morgan',1,2); // A
+    // wednesday3.addStudent('Cooper Newton',3,3); // L
+    // wednesday3.addStudent('Christian Noble Shriver',4,3); /// A
+    // wednesday3.addStudent('Quintin Palmer',3,4); // L
+    // wednesday3.addStudent('Spencer Perez-Dormitzer',1,1); // A
+    // wednesday3.addStudent('Ethan Scully',1,3);  // L
+    // wednesday3.addStudent('Evan Smith',2,2); // L
+    // wednesday3.addStudent('Tyler Trudeau',4,1); // G
+    // wednesday3.addStudent('Kayli Viera',2,1); // A
+    // wednesday3.addStudent('Joseph Ziino',4,2); // G
+    //
+    // let wednesday4 = new SeatingChart();
+    // wednesday4.addStudent('Jhett Labonte',4,2);
+    // wednesday4.addStudent('David Magee',4,3);
+    // wednesday4.addStudent('Aleeya McCarthy',3,1);
+    // wednesday4.addStudent('Brendan McIntire',3,2);
+    // wednesday4.addStudent('Cattarinha Nunes',3,3);
+    // wednesday4.addStudent('Ryan Quinlan',3,4);
+    // wednesday4.addStudent('Gabriella Romig',2,1);
+    // wednesday4.addStudent('Kennedy Serpa',2,4);
+    // wednesday4.addStudent('Emma Whittaker',1,2);
+    // wednesday4.addStudent('Liam Yurof',1,3);
+    // wednesday4.addStudent('Desmond Sinnott',4,1);
+    //
+    // let thursday1 = new SeatingChart();
+    // thursday1.addStudent('William Baltz',2,1); // L
+    // thursday1.addStudent('Brendan Burke',3,1); // L
+    // thursday1.addStudent('Isabel Friedrichs',2,4);  // A
+    // thursday1.addStudent('Brody Garber',2,3); // G
+    // thursday1.addStudent('Colby Gross',2,2); // G
+    // thursday1.addStudent('Aiden Harrington',3,2); //  A
+    //
+    // let thursday2 = new SeatingChart();
+    // thursday2.addStudent('Tristan Borges',2,1); // L
+    // thursday2.addStudent('Skylar Cardwell',1,2); // S
+    // thursday2.addStudent('Emma Carroll',2,4); // L
+    // thursday2.addStudent('Evan Correia',4,1); // G
+    // thursday2.addStudent('Mariana Ditata',2,3); /// S
+    // thursday2.addStudent('Jenna Gamache',4,3); // L (needs reminder)
+    // thursday2.addStudent('Isabella Hunter',1,1); // A
+    // thursday2.addStudent('Jacob Jensen',4,2); // A
+    // thursday2.addStudent('Amanda Armanetti',1,3); // A
+    // thursday2.addStudent('Brianna Machado',3,4); // A
+    // thursday2.addStudent('Paige Zutaut',4,4); // A
+    // thursday2.addStudent('Jake Cronin',3,3); // S
+    //
+    //
+    // let thursday3 = new SeatingChart();
+    // thursday3.addStudent('Owen Bates',1,3);
+    // thursday3.addStudent('Claudie Bellanger',1,2);
+    // thursday3.addStudent('Elizabeth Bungert',2,4); /// L
+    // thursday3.addStudent('Mia Costa',2,2); // L
+    // thursday3.addStudent('Andrew Coucci',3,3);
+    // thursday3.addStudent('Katherine Dwyer',2,3);
+    // thursday3.addStudent('Abigail Forcier',2,1);
+    // thursday3.addStudent('Rachel Foye',1,1);
+    // thursday3.addStudent('John Kassabian',3,1);
+    // thursday3.addStudent('Maeve Geraghty',1,4);
+    // thursday3.addStudent('Raegan Rapoza',3,2);
+    //
+    //
+    //
+    // let friday1 = new SeatingChart();
+    // friday1.addStudent('William Lecuyer',2,4); // A
+    // friday1.addStudent('Colin Mackin',1,3); // L
+    // friday1.addStudent('Drew Mastovsky',2,3); // A
+    // friday1.addStudent('Lukas Michaelis',1,2); // G
+    // friday1.addStudent('Savannah Teixeira',1,4); // L
+    //
+    // let friday2 = new SeatingChart();
+    // friday2.addStudent('Marc Pothier',1,3); // L
+    // friday2.addStudent('Charlie Richards',1,2); // A
+    // friday2.addStudent('Hannah Teixeira',3,3); // L
+    // friday2.addStudent('Kathleen Tenerowicz',1,1); // L
+    // friday2.addStudent('Jessica Vance',2,3); // L
+    // friday2.addStudent('Sophie Vigeant',2,2); // S
+    // friday2.addStudent('Elizabeth Wiggin',2,4); // A
+    // friday2.addStudent('Emma Williamson',1,4); // G
+    // friday2.addStudent('Samantha Winter',2,1); // S
+    //
+    // let friday3 = new SeatingChart();
+    // friday3.addStudent('Lauryn Lent',4,4); // A
+    // friday3.addStudent('Elijah Motta',3,2); // G
+    // friday3.addStudent('Samuel Noblet',4,3); // G
+    // friday3.addStudent('Faith Oliver',1,3); /// L front always
+    // friday3.addStudent('Emilia Pinhancos',1,2); // A
+    // friday3.addStudent('Zachary Proffit',3,4); // G
+    // friday3.addStudent('Tess Roznoy',1,4); // G
+    // friday3.addStudent('Stephen Sauerbrey (A)',3,1); // L
+    // friday3.addStudent('Emma Schwabe',2,4); // L
+    // friday3.addStudent('Kennedy Serpa',2,2); // G
+    // friday3.addStudent('William Stark',3,3); // G
+    // friday3.addStudent('Reily Veilleux',1,1); // G
+    // friday3.addStudent('Emma Vivino',2,3); // L
+    // friday3.addStudent('Rachel Zutaut',2,1); // G
+
     // week of october 5
     // let tuesday1 = new SeatingChart();
     // tuesday1.addStudent('Stephen Arne',3,1);
