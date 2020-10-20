@@ -169,7 +169,7 @@
 </p>
 
 <ol class = 'questionList'>
-    <li data-answer = 'X' class = 'question'>
+    <li data-answer = 'A' class = 'question'>
         <table>
             <tr>
                 <td id = 'FBD_B4'></td>
@@ -183,10 +183,10 @@
             </tr>
         </table>
     </li>
-    <li data-answer = 'X' class = 'question'>
+    <li data-answer = 'B' class = 'question'>
         <table>
             <tr>
-                <td id = 'FBD_B4'></td>
+                <td id = 'FBD_B5'></td>
                 <td>
                     <ol type = 'A'>
                         <li>The object moves at a constant velocity.</li>
@@ -197,10 +197,10 @@
             </tr>
         </table>
     </li>
-    <li data-answer = 'X' class = 'question'>
+    <li data-answer = 'B' class = 'question'>
         <table>
             <tr>
-                <td id = 'FBD_B4'></td>
+                <td id = 'FBD_B6'></td>
                 <td>
                     <ol type = 'A'>
                         <li>The object moves at a constant velocity.</li>
@@ -211,10 +211,10 @@
             </tr>
         </table>
     </li>
-    <li data-answer = 'X' class = 'question'>
+    <li data-answer = 'B' class = 'question'>
         <table>
             <tr>
-                <td id = 'FBD_B4'></td>
+                <td id = 'FBD_B7'></td>
                 <td>
                     <ol type = 'A'>
                         <li>The object moves at a constant velocity.</li>
@@ -232,9 +232,12 @@
     let FBD_B2 = fastFBD([['left', 'Force']], 'right');
     let FBD_B3 = fastFBD([],'right');
     let FBD_B4 = fastFBD([['left',60],['right',34],['right',54]],'right');
+    let FBD_B5 = fastFBD([['left',20],['right',12],['right',16]],'left');
+    let FBD_B6 = fastFBD([['left',60],['left',12],['right',24],['right',48]],'right');
+    let FBD_B7 = fastFBD([['left',88],['right',37],['right',40]],'left');
 
     appendListOfDiagramsByID([
-        [FBD_B1, 'FBD_B1'],[FBD_B2, 'FBD_B2'],[FBD_B3, 'FBD_B3'],[FBD_B4, 'FBD_B4']
+        [FBD_B1, 'FBD_B1'],[FBD_B2, 'FBD_B2'],[FBD_B3, 'FBD_B3'],[FBD_B4, 'FBD_B4'],[FBD_B5, 'FBD_B5'],[FBD_B6, 'FBD_B6'],[FBD_B7, 'FBD_B7']
     ]);
 
     // can't finish because the free-body diagrams don't displace multiple forces correctly :(
