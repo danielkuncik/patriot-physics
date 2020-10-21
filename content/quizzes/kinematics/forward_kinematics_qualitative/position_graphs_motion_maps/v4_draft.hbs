@@ -1,0 +1,104 @@
+<div class = 'container'>
+    <ol class = 'graphicalQuestionList'>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'positionGraph1' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'positionGraph2' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'positionGraph3' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = 'mb-3'>
+            <div class = 'row'>
+                <br>
+                <div id = 'positionGraph4' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
+
+<div class = 'pageBreak'></div>
+
+<p>
+    The following graphs are created by
+    drawing a dot at an object's position
+    each second.
+</p>
+<div class = 'container'>
+    <ol class = 'graphicalQuestionList' start = '5'>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'motionMap1' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'motionMap2' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'motionMap3' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+        <li class = ''>
+            <div class = 'row'>
+                <br>
+                <div id = 'motionMap4' class = 'col-6-md mr-4'></div>
+                <div class = 'col-6-md ml-4'>
+                    {{>fourMotionMultipleChoice}}
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
+
+
+<script>
+
+    $("#positionGraph2").append(makePositionGraphConstantVelocity().drawCanvas(300,300));
+    $("#positionGraph4").append(makePositionGraphNegativeAcceleration().drawCanvas(300,300));
+    $("#positionGraph3").append(makePositionGraphNotMoving().drawCanvas(300,300));
+    $("#positionGraph1").append(makePositionGraphPositiveAcceleration().drawCanvas(300,300));
+
+    $("#motionMap2").append(makeMotionMapConstantVelocity().drawCanvas(400,200));
+    $("#motionMap1").append(makeMotionMapPositiveAcceleration().drawCanvas(400,200));
+    $("#motionMap3").append(makeMotionMapNotMoving().drawCanvas(400,200));
+    $("#motionMap4").append(makeMotionMapNegativeAcceleration().drawCanvas(400,200));
+
+</script>
+
