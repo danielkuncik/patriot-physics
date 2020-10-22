@@ -6,18 +6,39 @@
 </h3>
 
 
+<p>
+  Examples of energy transitions
+</p>
+
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-5'>
+      <img src = 'https://projectcamping.com/wp-content/uploads/2019/06/assorted-fire-wood-types-649x420.png' height = '200px' width = 'auto' />
+      <p class = 'imageCredit'>
+          https://projectcamping.com/learn/how-to-build-a-campfire/
+      </p>
+    </div>
+    <div class = 'col-2' id = 'right_arrow'>
+    </div>
+    <div class = 'col-5'>
+      <img src ='https://projectcamping.com/wp-content/uploads/2019/06/campfire-burning-630x420.png' height = '200px' width = 'auto' />
+      <p class = 'imageCredit'>
+          https://projectcamping.com/learn/how-to-build-a-campfire/
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let c = new DiagramF();
+  c.addArrow(new PointF(0,0),new PointF(1,0));
+  $("#right_arrow").append(c.drawCanvas(100,50));
+</script>
 
 <!-- LOGS -->
-<img src = 'https://projectcamping.com/wp-content/uploads/2019/06/assorted-fire-wood-types-649x420.png' height = '200px' width = 'auto' />
-<p class = 'imageCredit'>
-    https://projectcamping.com/learn/how-to-build-a-campfire/
-</p>
 
 <!-- CAMPFIRE -->
-<img src ='https://projectcamping.com/wp-content/uploads/2019/06/campfire-burning-630x420.png' height = '200px' width = 'auto' />
-<p class = 'imageCredit'>
-    https://projectcamping.com/learn/how-to-build-a-campfire/
-</p>
+
 
 <!--Putting gas in a car -->
 <img src = 'https://imgcdnblog.carmudi.com.ph/wp-content/uploads/2017/07/21111802/How_to_fix_putting_diesel_in_a_gas_engine-1.jpg' height = '200px' width = 'auto'/>

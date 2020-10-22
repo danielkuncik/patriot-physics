@@ -478,6 +478,13 @@ function constructRangeBoxFromExtremePointsF(minX, minY, maxX, maxY) {
     return new RangeBoxF(minX, minY, width, height);
 }
 
+/// how do i want to handle this??? 
+class DiagramImage {
+  constructor(source, lowerLeftPoint = makeOrigin()) {
+
+  }
+}
+
 
 class TextF {
     constructor(letters, referencePoint, relativeFontSize, rotationAngleInRadians, positioning) {
