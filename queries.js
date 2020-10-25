@@ -68,7 +68,8 @@ const unitMap = require(__dirname + '/public/unit_map');
 
 
 const load_grades = function(req, res, next) {
-    let newGradeMap = new gm.GradeMap();
+    const courseLevel = !!req.session.courseLevel ? req.session.courseLevel : undefined;
+    let newGradeMap = new gm.GradeMap(courseLevel);
 
     if (req.session.student) {
         //    pool.query('SELECT * FROM students WHERE name = $1', [inputtedName], (error, result) => {
