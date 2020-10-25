@@ -151,7 +151,7 @@ class GradeMap {
             let value = podsObject[podKey].value;
             level += score / 20 * value;
         });
-        let roundedLevel = Math.floor(level * 10) / 10;
+        let roundedLevel = Math.floor((level  + 0.001) * 10) / 10;
         this.map[superUnitKey].units[unitKey].level = roundedLevel;
         return roundedLevel
     }
