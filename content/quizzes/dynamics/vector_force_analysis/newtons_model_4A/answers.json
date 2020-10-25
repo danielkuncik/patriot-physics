@@ -1,0 +1,17 @@
+{
+  "v1": {
+    "1": {
+      "a": "If a were correct, according to Newton's Second Law the shell would speed up.",
+      "b": "If b were correct, according to Newton's First Law, the shell would move at a constant velocity.",
+      "correct": "The shell actually moves at a constant velocity, so b) must be correct",
+      "incorrect_forces": "The \"Kick\" force on answer a) does not exist"
+    },
+    "2": {
+      "a": "If a) were correct, according to Newton's Second Law, the shell would speed up.",
+      "b": "If b) were correct, according to Newton's First Law, the shell would move upwards at a constant velocity",
+      "c": "If c) were correct, according to Newton's Third Law, the shell would slow down as it moved upward.",
+      "correct": "The shell slows down the way up, so c) must be correct",
+      "incorrect_forces": "The \"Kick\" forces on answers b) and c) do not exist."
+    }
+  }
+}

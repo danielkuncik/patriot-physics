@@ -1,0 +1,19 @@
+{
+  "v1": {
+
+  },
+  "v2": {
+    "1": {
+      "initial_velocity": "0",
+      "final_velocity":"36 m/s",
+      "acceleration": "4 m/s/s",
+      "time": "9 s"
+    },
+    "2": {
+      "initial_velocity": "36 m/s",
+      "final_velocity": "0",
+      "acceleration": "-3 m/s/s",
+      "time": "12 s"
+    }
+  }
+}
