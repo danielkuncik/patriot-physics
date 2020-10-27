@@ -3924,8 +3924,7 @@
             "prerequisites": ["elevators_1"],
             "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel.",
             "content": "Normal force changes in an elevator, leading to counterintuitive feelings; a physicist can make sense of these feelings by analyzing the forces and acceleration of a person in an elevator.",
-            "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758",
-            "inClass_AP": true
+            "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758"
           },
           "block_dragging_4":
           {
