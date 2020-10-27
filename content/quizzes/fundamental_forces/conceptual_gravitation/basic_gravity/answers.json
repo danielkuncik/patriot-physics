@@ -2,7 +2,11 @@
   "v1": {
     "1": "C",
     "2": "true",
+<<<<<<< HEAD
     "3": "yes (give example of gravity in space)",
+=======
+    "3": "yes; one example of gravity in space",
+>>>>>>> ab7a5d208b6f8a1f54f9cd113d5a93c352d7ff47
     "4": "C"
   }
 }

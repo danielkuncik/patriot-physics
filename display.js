@@ -109,9 +109,10 @@ display_pod_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
-    let title = `${pod.title} Study Page`;
     const loggedIn = !!req.user;
     let format = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].format;
+    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    let title = `${unitNumber}-${pod.letter}: ${pod.title}`;
     if (pod.subtitle) {
         title = title + `: ${pod.subtitle}`;
     }
@@ -129,7 +130,7 @@ display_pod_page = (req, res) => {
             backLink: `/unit/${req.superUnitKey}/${req.unitKey}`,
             //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
             letter: pod.letter,
-            unitNumber: unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number,
+            unitNumber: unitNumber,
             unitClusterName: unitMap[req.superUnitKey].title,
             user: req.user,
             loggedIn: loggedIn,

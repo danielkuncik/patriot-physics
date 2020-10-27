@@ -52,10 +52,12 @@ function calculateGradeFromLevel(currentLevel, goalLevel) {
 }
 
 class GradeMap {
-    constructor() {
+    constructor(courseLevel) {
+        this.overallLevel = 0;
+        this.courseLevel = courseLevel;
+        this.inClassWeight = 2;
         this.map = this.makeBlankMap();
         this.setAllPodValues();
-        this.overallLevel = 0;
     }
 
     makeBlankMap() {
@@ -74,8 +76,19 @@ class GradeMap {
                     if (level === undefined) {
                         level = 0;
                     }
+                    let valueWeight;
+                    if (this.courseLevel === 'AP' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_AP"]) {
+                        valueWeight = this.inClassWeight;
+                    } else if (this.courseLevel === 'Honors' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_honors"]) {
+                        valueWeight = this.inClassWeight;
+                    } else if (this.courseLevel === 'A_level' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_Alevel"]) {
+                        valueWeight = this.inClassWeight;
+                    } else {
+                        valueWeight = 1;
+                    }
                     blankMap[superUnitKey].units[unitKey].pods[podKey] = {
                         score: 0,
+                        valueWeight: valueWeight,
                         level: level,
                         pending: false
                     }
@@ -90,13 +103,16 @@ class GradeMap {
         let podsObject = this.map[superUnitKey].units[unitKey].pods;
         for (currentLevel = 1; currentLevel <= 5; currentLevel++) {
             let podsKeysForThisLevel = [];
+            let totalValueThisLevel = 0;
             Object.keys(podsObject).forEach((podKey) => {
                 if (podsObject[podKey].level === currentLevel) {
                     podsKeysForThisLevel.push(podKey);
+                    totalValueThisLevel += podsObject[podKey].valueWeight;
                 }
             });
-            let value = 1 / podsKeysForThisLevel.length;
+            //let value = 1 / podsKeysForThisLevel.length;
             podsKeysForThisLevel.forEach((podKey) => {
+                let value = this.map[superUnitKey].units[unitKey].pods[podKey].valueWeight / totalValueThisLevel;
                 this.map[superUnitKey].units[unitKey].pods[podKey].value = value;
             });
         }
@@ -109,7 +125,7 @@ class GradeMap {
             }
         });
         level6PodKeys.forEach((podKey) => {
-            this.map[superUnitKey].units[unitKey].pods[podKey].value = 1;
+            this.map[superUnitKey].units[unitKey].pods[podKey].value = 1; // all level 6 have value 1
         });
     }
 
@@ -151,7 +167,7 @@ class GradeMap {
             let value = podsObject[podKey].value;
             level += score / 20 * value;
         });
-        let roundedLevel = Math.floor(level * 10) / 10;
+        let roundedLevel = Math.floor((level  + 0.001) * 10) / 10;
         this.map[superUnitKey].units[unitKey].level = roundedLevel;
         return roundedLevel
     }
@@ -195,7 +211,9 @@ class GradeMap {
                     const subTitle = unitMap[superUnitKey].units[unitKey].pods[podKey].subTitle;
                     const title = !!subTitle ? `${mainTitle}: ${subTitle}` : mainTitle;
                     const score = this.map[superUnitKey].units[unitKey].pods[podKey].score;
-                    console.log(`${title}: ${score}`);
+                    const value = this.map[superUnitKey].units[unitKey].pods[podKey].value;
+                    const weight = this.map[superUnitKey].units[unitKey].pods[podKey].valueWeight;
+                    console.log(`${title}: ${score}         [val: ${value}]  [weight: ${weight}]`);
                 });
             });
         });

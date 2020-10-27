@@ -2842,7 +2842,8 @@
             "horizontal": 2,
             "prerequisites": ["position_graphs_2"],
             "objective": "Using qualitative velocity and acceleration graphs, identify when an object is speeding up and slowing down and what direction an object is moving",
-            "uuid": "7cd8f759-15d0-4fbe-8a82-ed8f778fe59a"
+            "uuid": "7cd8f759-15d0-4fbe-8a82-ed8f778fe59a",
+            "inClass_Alevel": true
           },
           "kinematic_graph_connections_2":
           {

@@ -1,0 +1,17 @@
+{
+  "v1": {
+    "1": {
+      "nodes": "Person, building earth",
+      "numConnections": "4",
+      "connection": "[Person to earth: gravity, person to building: normal, building to earth: gravity, building to earth: normal]"
+    },
+    "2": {
+      "nodes": "person, box, floor/building, earth",
+      "numConnections": "9",
+      "connections to person": "[Person to earth: gravity; person to box: applied; person to floor: friction; person to floor: normal]",
+      "connections to box": "[box to person: applied; box to floor: friction; box to floor: normal; box to earth: gravity",
+      "connections to building/floor": "[to person: normal, to person: friction, to box: friction, to earth: normal, to earth: gravity",
+      "connections to earth": "To floor: normal, to person: gravity, to box: gravity, to floor: gravity"
+    }
+  }
+}

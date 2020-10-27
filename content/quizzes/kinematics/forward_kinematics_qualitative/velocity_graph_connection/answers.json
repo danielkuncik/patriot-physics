@@ -3,6 +3,9 @@
     "step-1": "constant velocity motion",
     "step-2": "slows to zero velocity; momentary stop",
     "step-3": "accelerates to faster velocity than initial",
-    "step-4": "Slows to zero velocity"
+    "step-4": "Slows to zero velocity",
+    "1": "Write a story",
+    "2": "Draw a position-time graph",
+    "3": "Draw an acceleration time graph => zero, negative, positive, negative"
   }
 }
