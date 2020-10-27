@@ -1,0 +1,116 @@
+<p>
+    On the next page are 11 kinematic graphs.
+    Please categorize them based on what type of motion they describe.
+</p>
+
+<p>
+    There are 4 groups.
+    Each group should have three graphs.
+    One of the graphs is used twice.
+</p>
+
+<ol>
+    <li class = 'mb-5'>
+        Category 1: Moving at a constant speed
+    </li>
+    <li class = 'mb-5'>
+        Category 2: Not Moving
+    </li>
+    <li class = 'mb-5'>
+        Category 3: Speeding Up
+    </li>
+    <li class = 'mb-5'>
+        Category 4: Slowing Down
+    </li>
+</ol>
+
+<div class = 'pageBreak'>
+</div>
+
+<div id = 'bigTable'></div>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramA'>
+            Diagram A<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramB'>
+            Diagram B<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramC'>
+            Diagram C<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramD'>
+            Diagram D<br>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramE'>
+            Diagram E<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramF'>
+            Diagram F<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramG'>
+            Diagram G<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramH'>
+            Diagram H<br>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramI'>
+            Diagram I<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramJ'>
+            Diagram J<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark' id = 'diagramK'>
+            Diagram K<br>
+        </div>
+        <div class = 'col-lg-3 col-md-4 col-sm-6 p-3 border borderDark'>
+        </div>
+    </div>
+</div>
+
+<script>
+    let positionGraph1 = makePositionGraphConstantVelocity();
+    let positionGraph2 = makePositionGraphNotMoving();
+    let positionGraph3 = makePositionGraphPositiveAcceleration();
+    let positionGraph4 = makePositionGraphNegativeAcceleration();
+
+    let velocityGraph1 = makeVelocityGraphConstantVelocity();
+    let velocityGraph2 = makeVelocityGraphNotMoving();
+    let velocityGraph3 = makeVelocityGraphPositiveAcceleration();
+    let velocityGraph4 = makeVelocityGraphNegativeAcceleration();
+
+    let accelerationGraph1 = makeAccelerationGraphZero();
+    let accelerationGraph2 = makeAccelerationGraphPositive();
+    let accelerationGraph3 = makeAccelerationGraphNegative();
+
+    let motionMap1 = makeMotionMapConstantVelocity();
+    let motionMap2 = makeMotionMapNotMoving();
+    let motionMap3 = makeMotionMapPositiveAcceleration();
+    let motionMap4 = makeMotionMapNegativeAcceleration();
+
+
+    $("#diagramA").append(accelerationGraph1.drawCanvas(200));
+    $("#diagramB").append(accelerationGraph2.drawCanvas(200));
+    $("#diagramC").append(positionGraph2.drawCanvas(200));
+    $("#diagramD").append(velocityGraph1.drawCanvas(200));
+    $("#diagramE").append(positionGraph1.drawCanvas(200));
+    $("#diagramF").append(positionGraph3.drawCanvas(200));
+    $("#diagramG").append(positionGraph4.drawCanvas(200));
+    $("#diagramH").append(velocityGraph2.drawCanvas(200));
+    $("#diagramI").append(velocityGraph3.drawCanvas(200));
+    $("#diagramJ").append(accelerationGraph3.drawCanvas(200));
+    $("#diagramK").append(velocityGraph4.drawCanvas(200));
+    // let bigTable = new TableOfCanvasses(3,4, 'Diagram','diagram');
+    // bigTable.addDiagramsToCells([
+    //     accelerationGraph2, positionGraph3, velocityGraph4, accelerationGraph1,
+    //         positionGraph2, velocityGraph1, velocityGraph3, positionGraph1,
+    //         accelerationGraph3, positionGraph4, velocityGraph2
+    // ]);
+    // bigTable.eraseTextInCell(2,3);
+    // $("#bigTable").append(bigTable.draw(1400,1400));
+</script>
