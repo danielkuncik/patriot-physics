@@ -1,0 +1,16 @@
+{
+  "v1": {
+    "1": {
+      "a": "gravity- down; normal force - up; applied force -right; friction-left",
+      "b": "The block moves because maximum static friction is 53.6 and applied force is 60 N; applied force is greater than static friction",
+      "c": "down - 76.5 N; up - 76.5 N; right - 60.0 N; left - 34.4 N; explain that friction is kinetic friction",
+      "d": "3.28 m/s/s"
+    },
+    "2": {
+      "a": "gravity- down; normal force - up; applied force -right; friction-left",
+      "b": "maximum static friction = 46.7 N; applied force = 40 N; the box does not move",
+      "c": "down - 68.7 N; up - 68.7 N; right - 40.0 N; left - 40.0 N; explain that friction is static friction and will equal the applied force to prevent motion",
+      "d": "a = 0"
+    }
+  }
+}
