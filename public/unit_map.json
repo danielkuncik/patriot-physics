@@ -3865,7 +3865,8 @@
             "prerequisites": ["block_dragging_1"],
             "objective": "For a block moving on a surface with kinetic friction; draw a free-body diagram of the block, determine the acceleration of coefficient of kinetic friction; apply Newton's first and second laws to analyzing the block.",
             "content": "Gravity, normal force, and applied force, and kinetic friction act on a block being dragged; by understanding these forces a physicist can understand the motion of the block.",
-            "uuid": "169d20af-4f7b-417e-b6c8-1a772ff24d05"
+            "uuid": "169d20af-4f7b-417e-b6c8-1a772ff24d05",
+            "inClass_honors": true
           },
           "friction_2":
           {
@@ -3888,7 +3889,8 @@
             "prerequisites": ["find_missing_force"],
             "objective": "Given a person in an elevator with a particular mass and acceleration, draw a correct free-body diagram of that person.",
             "content": "Inside an elevator, gravity and normal force act on the rider; normal force is a constraint force that adjusts to match a particular acceleration",
-            "uuid": "cbf3cbac-c273-4d95-b8c0-ce7cb4e8eee4"
+            "uuid": "cbf3cbac-c273-4d95-b8c0-ce7cb4e8eee4",
+            "inClass_honors": true
           },
           "block_dragging_3":
           {
@@ -3924,7 +3926,8 @@
             "prerequisites": ["elevators_1"],
             "objective": "Given the description of motion of an elevator that is NOT moving at a constant velocity, draw a correct free-body diagram of a person in that elevator, defend that free-body diagram, and use it to describe what the person will feel.",
             "content": "Normal force changes in an elevator, leading to counterintuitive feelings; a physicist can make sense of these feelings by analyzing the forces and acceleration of a person in an elevator.",
-            "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758"
+            "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758",
+            "inClass_AP": true
           },
           "block_dragging_4":
           {
