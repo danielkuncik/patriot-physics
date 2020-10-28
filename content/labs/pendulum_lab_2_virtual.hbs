@@ -138,6 +138,10 @@
     <li>
         Do not pick values of amplitude greater than 45 degrees.
     </li>
+    <li>
+        Do not change the gravity (keep it set to "Earth") or friction (keep it set to "None").
+        Those variables are important, they just aren't a part of this particular lab.
+    </li>
 </ul>
 
 <h5>
@@ -157,17 +161,18 @@
 
 
 <h4>
-    LAB REPORT
+    LAB REPORT FORMAT
 </h4>
 
 <p>
-    After completing this lab, complete the lab report.
-    The following is the format.
+    Formatting of assignments is crucial because the format should reflect the goal of the assignment.
+    In this assignment, the goal was to design experiments.
+    Therefore, the formatting needs to reflect proper experimental design
 </p>
 
 
 <h5>
-    Most important Piece: 3 sections
+    3 Sections, Each Describing an Experiment
 </h5>
 
 <p>
@@ -184,48 +189,55 @@
 </h5>
 <ul>
     <li>
-        Identify the independent and dependent variables of each experiment.
-        For full credit, you must use the terms "independent variable" and
-        "dependent variable" correctly.
-    </li>
-    <li>
-        Identify the controlled variables, and indicate to what values they were set.
-        For full credit, you must use the term "controlled variable" correctly.
-    </li>
-    <li>
-        Create a table indicated
-    </li>
-    <li>
-        Create a handwritten graph**.
+        <strong>Definitions of Variables:</strong>
+        In this section, you define the variables for your experiment.
         <ul>
             <li>
-                Each graph should have the independent variable on the x-axis
-                and the dependent variable on the y-axis.
+                Define the independent variable: (mass, length, or amplitude)
             </li>
             <li>
-                Each graph should be a scatter plot.
-                This means it consists only of points that are not connected.
-                Do not connect the points as in a line graph.
-                Do not add a best fit line.
+                Define the dependent variable: (period)
             </li>
             <li>
-                A scatter plot is preferable here because it is not opinionated:
-                if you connect the points are draw a best fit line,
-                you are putting into your graph a relationship between the points
-                rather than letting them speak for themselves.
+                Define the two controlled variables (mass, length, or amplitude),
+                and write the constant value of each of those controlled variables.
             </li>
         </ul>
+        "Definitions of variables" does not mean that you are writing the
+        dictionary definition of independent, dependent, and controlled variables,
+        but that you are showing what variables <emph>you defined</emph> as independent, dependent and controlled.
+        This section does not need to be longer than a short list.
     </li>
     <li>
-        Create a very brief analysis
-        answering these questions
-        <ul>
+        <strong>Data Table:</strong>
+        In this section, you will write each value chosen for the independent variable (on the left),
+        and a corresponding measurement for the dependent variable (on the right).
+        Make sure to properly label your table and include units in the headers.
+        The rows of the table should be ordered in increasing values of the independent variable.
+    </li>
+    <li>
+        <strong>Scatter Plot:</strong>
+        In this section, you draw a handwritten** scatter plot.
+        The independent variable should be on the horizontal axis
+        and the dependent variable should be on the vertical axis.
+        In the scatter plot, do not connect points or add a best fit line,
+        only  show each point. (You are not adding your own analysis, only relevant data).
+    </li>
+    <li>
+        <strong>Analysis:</strong>
+        In this section, you answer a few questions about the relationship
+        between the independent and dependent variables.
+        For full credit, you must use the terms
+        "independent variable" and "dependent variable"
+        correctly in this analysis section.
+        However, the analysis does not need to be more than a few sentences long!
+        <ol>
             <li>
                 Do the data suggest there is a relationship
                 between the independent and dependent variable?
             </li>
             <li>
-                If yes, does this relationship appear to be positive or negative?
+                If #1 is yes, does this relationship appear to be positive or negative? (if #1 is no, your analysis is complete)
                 <ul>
                     <li>
                         In a positive relationship, an increase in the independent variable
@@ -238,7 +250,7 @@
                 </ul>
             </li>
             <li>
-                If yes, does this relationship appear to be linear or non-linear?
+                If #1 is yes, does this relationship appear to be linear or non-linear?
                 <ul>
                     <li>
                         In a linear relationship, any change of one unit
@@ -252,17 +264,12 @@
                     </li>
                     <li>
                         Linear relationships can be identified on a scatter plot:
-                        if the points are arranged in a straight line, then the relationship
+                        if the points are not in a straight line, then the relationship
                         is probably probably non-linear.
                     </li>
                 </ul>
             </li>
-            <li>
-                For full credit, you must use the terms
-                "independent variable" and "dependent variable"
-                correctly in this analysis section.
-            </li>
-        </ul>
+        </ol>
     </li>
 </ul>
 
@@ -272,3 +279,242 @@
     This manual process is lost when a computer creates your graph in an instant.
 </p>
 
+<h4>
+    Example:
+</h4>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-md-4'>
+            <h5>
+                Experiment 1
+            </h5>
+            <ul>
+                <li class = 'mb-3'>
+                    <strong>Definitions of variables:</strong>
+                    <ul>
+                        <li>
+                            Independent Variable: ____________________
+                        </li>
+                        <li>
+                            Dependent Variable: ____________________
+                        </li>
+                        <li>
+                            Controlled Variables and Values: ____________________
+                        </li>
+                    </ul>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Data Table:</strong>
+                    <div id = 'table1'></div>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Scatter Plot:</strong>
+                    <div id = 'scatterPlot1'></div>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Analysis:</strong>
+                    <div id = 'text1'></div>
+                </li>
+            </ul>
+        </div>
+        <div class = 'col-md-4'>
+            <h5>
+                Experiment 2
+            </h5>
+            <ul>
+                <li class = 'mb-3'>
+                    <strong>Definitions of variables:</strong>
+                    <ul>
+                        <li>
+                            Independent Variable: ____________________
+                        </li>
+                        <li>
+                            Dependent Variable: ____________________
+                        </li>
+                        <li>
+                            Controlled Variables and Values: ____________________
+                        </li>
+                    </ul>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Data Table:</strong>
+                    <div id = 'table2'></div>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Scatter Plot:</strong>
+                    <div id = 'scatterPlot2'></div>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Analysis:</strong>
+                    <div id = 'text2'></div>
+                </li>
+            </ul>
+        </div>
+        <div class = 'col-md-4'>
+            <h5>
+                Experiment 3
+            </h5>
+            <ul>
+                <li class = 'mb-3'>
+                    <strong>Definitions of variables:</strong>
+                    <ul>
+                        <li>
+                            Independent Variable: ____________________
+                        </li>
+                        <li>
+                            Dependent Variable: ____________________
+                        </li>
+                        <li>
+                            Controlled Variables and Values: ____________________
+                        </li>
+                    </ul>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Data Table:</strong>
+                    <div id = 'table3'></div>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Scatter Plot:</strong>
+                    <div id = 'scatterPlot3'></div>
+                </li>
+                <li class = 'mb-3'>
+                    <strong>Analysis:</strong>
+                    <div id = 'text3'></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<p class = 'text-danger'>
+    Remember that the key to having a good science report is not a long report,
+    but a concise report that clearly organizes information!
+</p>
+
+<script>
+    function makeRandomScatterPlot(numPoints = 6) {
+        let plot = new DiagramF();
+        plot.addSegment(new PointF(0,0),new PointF(10,0));
+        plot.addSegment(new PointF(0,0),new PointF(0,10));
+        let i;
+        for (i = 0; i < numPoints; i++) {
+            let newCirc = plot.addCircle(new PointF(1 + 9 * Math.random(), 1 + 9 * Math.random()), 0.2);
+            newCirc.fill();
+        }
+        plot.addText('Indp. Var. (unit)',new PointF(5,-1));
+        plot.addText('Dp. Var. (unit)',new PointF(-1,5),undefined,3 * Math.PI /2);
+        return plot;
+    }
+
+    function generateThreeSigFigPoint() {
+        return Math.floor(Math.random() * 1000) / 100
+    }
+
+    function generateRandomTable(numPoints = 6) {
+        let table = $("<table></table>");
+        let headerRow = $("<tr><th>Independent Variable (unit)</th><th>Dependent Variable (unit)</th></tr>");
+        $(table).append(headerRow);
+        let j;
+        for (j = 0; j < numPoints; j++) {
+            let cell1 = $(`<td>${generateThreeSigFigPoint()}</td>`);
+            let cell2 = $(`<td>${generateThreeSigFigPoint()}</td>`);
+            let nextRow = $("<tr></tr>");
+            $(nextRow).append(cell1);
+            $(nextRow).append(cell2);
+            $(table).append(nextRow);
+        }
+        return table;
+    }
+
+    const loremIpsum = [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar.",
+        "Habitant morbi tristique senectus et netus et malesuada fames ac.",
+        "Sed viverra tellus in hac habitasse platea dictumst vestibulum.",
+        "Ac placerat vestibulum lectus mauris ultrices eros in.",
+        "Urna nunc id cursus metus.",
+        "Id volutpat lacus laoreet non curabitur gravida.",
+        "Non sodales neque sodales ut etiam sit amet.",
+        "At urna condimentum mattis pellentesque id nibh tortor id aliquet.",
+        "Neque laoreet suspendisse interdum consectetur libero id faucibus.",
+        "Non nisi est sit amet facilisis magna etiam.",
+        "Cursus vitae congue mauris rhoncus aenean vel elit scelerisque.",
+        "Amet porttitor eget dolor morbi non arcu.",
+        "Eu facilisis sed odio morbi quis commodo odio aenean.",
+        "Morbi tristique senectus et netus.",
+        "Ultrices tincidunt arcu non sodales neque sodales ut.",
+        "Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et.",
+        "Pellentesque sit amet porttitor eget dolor morbi non.",
+        "Nec ultrices dui sapien eget.",
+        "Ac tortor vitae purus faucibus ornare suspendisse.",
+        "Amet purus gravida quis blandit turpis.",
+        "Aliquam vestibulum morbi blandit cursus risus at.",
+        "Sed cras ornare arcu dui vivamus arcu felis.",
+        "Volutpat blandit aliquam etiam erat velit scelerisque in dictum non.",
+        "Ac felis donec et odio.",
+        "Faucibus interdum posuere lorem ipsum dolor sit amet consectetur.",
+        "Ultrices sagittis orci a scelerisque purus semper eget duis at.",
+        "Amet volutpat consequat mauris nunc.",
+        "Cursus eget nunc scelerisque viverra mauris in aliquam sem.",
+        "Et ligula ullamcorper malesuada proin libero nunc.",
+        "Pellentesque id nibh tortor id aliquet lectus.",
+        "Vitae nunc sed velit dignissim sodales ut.",
+        "Nec dui nunc mattis enim ut.",
+        "Scelerisque eleifend donec pretium vulputate sapien.",
+        "Aliquet nec ullamcorper sit amet risus nullam eget.",
+        "Tortor aliquam nulla facilisi cras fermentum odio eu feugiat.",
+        "Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem.",
+        "Ut ornare lectus sit amet est placerat in.",
+        "Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse.",
+        "Facilisis magna etiam tempor orci eu lobortis.",
+        "Tempus quam pellentesque nec nam aliquam sem et.",
+        "Tincidunt id aliquet risus feugiat in ante metus.",
+        "Eu tincidunt tortor aliquam nulla facilisi.",
+        "Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod.",
+        "Volutpat commodo sed egestas egestas.",
+        "Aliquet nibh praesent tristique magna sit amet purus gravida.",
+        "Scelerisque eleifend donec pretium vulputate sapien.",
+        "Diam phasellus vestibulum lorem sed.",
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et.",
+        "Faucibus turpis in eu mi bibendum.",
+        "Sed libero enim sed faucibus turpis in eu mi. Volutpat diam ut venenatis tellus in.",
+        "Nam aliquam sem et tortor consequat id porta.",
+        "Ut sem viverra aliquet eget sit amet tellus cras adipiscing.",
+        "Eget egestas purus viverra accumsan in nisl nisi scelerisque.",
+        "Morbi tincidunt augue interdum velit euismod in pellentesque.",
+        "Vel eros donec ac odio tempor orci dapibus ultrices in.",
+        "Pharetra convallis posuere morbi leo urna molestie.",
+        "Aliquet risus feugiat in ante.",
+        "Cras sed felis eget velit aliquet sagittis id consectetur purus.",
+        "Aliquam etiam erat velit scelerisque in dictum.",
+        "Condimentum id venenatis a condimentum vitae sapien pellentesque.",
+        "Facilisis magna etiam tempor orci eu lobortis.",
+        "Sollicitudin tempor id eu nisl nunc mi ipsum faucibus.",
+        "Nam aliquam sem et tortor consequat id.",
+        "Turpis egestas integer eget aliquet nibh praesent tristique.",
+        "Mi tempus imperdiet nulla malesuada.",
+        "Sit amet nulla facilisi morbi tempus."
+    ];
+
+    function generateRandomText(numSentences = 3, start = randInt(0,loremIpsum.length - 1 - numSentences)) {
+        let string = "";
+        let k;
+        for (k = 0; k < numSentences; k++) {
+            string = string + loremIpsum[start + k];
+        }
+        return $(`<p>${string}</p>`);
+    }
+
+    $("#table1").append(generateRandomTable());
+    $("#scatterPlot1").append(makeRandomScatterPlot().drawCanvas(150));
+    $("#text1").append(generateRandomText());
+
+    $("#table2").append(generateRandomTable());
+    $("#scatterPlot2").append(makeRandomScatterPlot().drawCanvas(150));
+    $("#text2").append(generateRandomText());
+
+    $("#table3").append(generateRandomTable());
+    $("#scatterPlot3").append(makeRandomScatterPlot().drawCanvas(150));
+    $("#text3").append(generateRandomText());
+
+</script>
