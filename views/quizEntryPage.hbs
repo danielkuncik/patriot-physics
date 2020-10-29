@@ -40,24 +40,41 @@
 </ul>
 
 {{#if memorizationQuiz}}
-<h5>
-    This is a memorization quiz.
-    All memorization quizzes must be taken in class.
-</h5>
+    <div class = 'container'>
+        <div class = 'row text-center'>
+            <h3>
+                This is a memorization quiz.
+                All memorization quizzes must be taken in class.
+                Enter password below.
+            </h3>
+        </div>
+    </div>
 {{/if}}
 
 {{#if nonMemorizationMessage}}
-<h5>
-    This quiz must be taken in class.
-</h5>
+    <div class = 'container'>
+        <div class = 'row text-center'>
+            <h3>
+                This quiz must be taken in class.
+                Enter password below.
+            </h3>
+        </div>
+    </div>
 {{/if}}
 
-<form action = '/quiz/{{uuid}}' method = 'POST'>
-    {{#if passwordAccessRequired}}
-    <input type = 'password' name = 'password' />
-    {{/if}}
-    <button type = 'submit' class = 'btn btn-secondary'>TAKE QUIZ</button>
-</form>
+<div class = 'container'>
+        <form action = '/quiz/{{uuid}}' method = 'POST'>
+            {{#if passwordAccessRequired}}
+                <div class = 'row text-center'>
+                    <input class = 'h-100' type = 'password' name = 'password' />
+                </div>
+            {{/if}}
+            <div class = 'row text-center'>
+                <button type = 'submit' class = 'btn btn-secondary btn-xl'>TAKE QUIZ</button>
+            </div>
+        </form>
+</div>
+
 
 
 <a href = '{{backLink}}'>BACK</a>

@@ -44,6 +44,35 @@
         <span class = 'display-4'>quiz </span>
     </h2>
 </div>
+
+{{#if submitPaper}}
+    <div class = 'border border-primary'>
+        <h4>
+            Please Turn in a Paper Submission
+        </h4>
+        <h5>
+            Submit each quiz on an individual piece of paper!
+        </h5>
+        <h5>
+            At the top of the page, write the red text exactly as below:
+        </h5>
+        <ul class = 'text-danger'>
+            <li>
+                Name: {{userName}}
+            </li>
+            <li>
+                Section: {{sectionName}}
+            </li>
+            <li>
+                Quiz: {{unitNumber}}-{{letter}}
+            </li>
+            <li>
+                Version: {{version}}
+            </li>
+        </ul>
+    </div>
+{{/if}}
+
 <div>
     {{{body}}}
 </div>
@@ -72,33 +101,6 @@
     </form>
 {{/if}}
 
-{{#if submitPaper}}
-    <div class = 'border border-danger'>
-        <h4>
-            Please Turn in a Paper Submission
-        </h4>
-        <h5>
-            Submit each quiz on an individual piece of paper!
-        </h5>
-        <h5>
-            At the top of the page, write the following:
-        </h5>
-        <ul>
-            <li>
-                Name: {{userName}}
-            </li>
-            <li>
-                Section: {{sectionName}}
-            </li>
-            <li>
-                Quiz: {{unitNumber}}-{{letter}}
-            </li>
-            <li>
-                Version: {{version}}
-            </li>
-        </ul>
-    </div>
-{{/if}}
 
 {{#if noSubmission}}
     <h4>
