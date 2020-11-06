@@ -2,31 +2,31 @@
   "v1": {
     "1": {
       "a": null,
-      "b": "Draw a new free-body diagram including the missing force."
+      "b": "Draw a new free-body diagram and demonstrate the net force is 200 N left"
     },
     "2": {
       "a": null,
-      "b": "Draw a new free-body diagram including the missing force."
+      "b": "Draw a new free-body diagram and demonstrate the net force is 125 N down."
     }
   },
   "v2": {
     "1": {
       "a": null,
-      "b": "Draw a new free-body diagram including the missing force."
+      "b": "Draw a new free-body diagram and demonstrate the net force is 100 N left."
     },
     "2": {
       "a": null,
-      "b": "Draw a new free-body diagram including the missing force."
+      "b": "Draw a new free-body diagram and demonstrate the net force is 175 N down."
     }
   },
   "v3": {
     "1": {
       "a": "80 N left",
-      "b": "Draw a new free-body diagram including the missing force."
+      "b": "Draw a new free-body diagram and demonstrate the net force is 50 N left."
     },
     "2": {
       "a": "55 N up",
-      "b": "Draw a new free-body diagram including the missing force."
+      "b": "Draw a new free-body diagram and demonstrate the net force is 175 N down."
     }
   }
 }
