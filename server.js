@@ -281,14 +281,18 @@ const checkQuizAccess = (req, res, next) => {
     next();
 };
 
-app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
-    if (!req.loggedIn) {
-        // flash => you must be logged in to take a quiz
-        res.redirect(`/pod/${req.params.uuid}`);
-    } else {
-        next();
-    }
-}, checkQuizAccess, disp.display_quiz_entry_page]);
+app.get('/miniquizAccess/:uuid', (req, res) => {
+    res.redirect('/');
+});
+
+// app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
+//     if (!req.loggedIn) {
+//         // flash => you must be logged in to take a quiz
+//         res.redirect(`/pod/${req.params.uuid}`);
+//     } else {
+//         next();
+//     }
+// }, checkQuizAccess, disp.display_quiz_entry_page]);
 
 app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
     if (!req.loggedIn) {
