@@ -241,6 +241,11 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap) {
     return listItem
 }
 
+hbs.registerHelper('individualPodLink',(superUnitKey, unitKey, podKey, gradeMap) => {
+    let item = makePodListItem(superUnitKey, unitKey, podKey, gradeMap);
+    return new hbs.SafeString(item)
+});
+
 hbs.registerHelper('listOfPods', (superUnitKey, unitKey, gradeMap) => {
     let list = "<ul class = 'podList'>";
     levelList = {1:[],2:[],3:[],4:[],5:[],6:[]};

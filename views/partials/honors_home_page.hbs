@@ -1,19 +1,40 @@
 
-<h3>
-    Current Goals
-</h3>
 
-<div class = 'container'>
-    <div class = 'row'>
-        <div class = 'col-2'></div>
-        <div class = 'col-3 btn' id = 'Honors_goals_topic'>Arrange By Topic</div>
-        <div class = 'col-1'></div>
-        <div class = 'col-3 btn' id = 'Honors_goals_dueDate'>Arrange By Date</div>
-        <div class = 'col-2'></div>
-    </div>
-</div>
+<h4>
+    Homework and Memorization Quizzes (low weighting)
+</h4>
 
-<div id = 'Honors_goals'></div>
+<ul>
+    <li>
+        {{individualPodLink 'energy' 'conceptual_conservation_of_energy' 'energy_transfer_1' gradeMap}}
+    </li>
+</ul>
+
+<h4>
+    In Class Quiz (high weighting)
+</h4>
+
+<ul>
+    <li>
+        {{individualPodLink 'kinematics' 'forward_kinematics_qualitative' 'kinematic_graph_connections' gradeMap}}
+    </li>
+</ul>
+
+<!--<h3>-->
+<!--    Current Goals-->
+<!--</h3>-->
+
+<!--<div class = 'container'>-->
+<!--    <div class = 'row'>-->
+<!--        <div class = 'col-2'></div>-->
+<!--        <div class = 'col-3 btn' id = 'Honors_goals_topic'>Arrange By Topic</div>-->
+<!--        <div class = 'col-1'></div>-->
+<!--        <div class = 'col-3 btn' id = 'Honors_goals_dueDate'>Arrange By Date</div>-->
+<!--        <div class = 'col-2'></div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div id = 'Honors_goals'></div>-->
 
 <script>
     const Honors_goalsObject = JSON.parse('{{{getGoalsObject "Honors" gradeMap}}}');
