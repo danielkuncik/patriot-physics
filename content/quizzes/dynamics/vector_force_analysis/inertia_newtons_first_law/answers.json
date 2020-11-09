@@ -1,8 +1,18 @@
 {
-  "1":"true",
-  "2":"true",
-  "3": "inertia",
-  "4": "A: matter",
-  "5": "B: inertia",
-  "6": "C: gravitational mass"
+  "v1": {
+    "1":"true",
+    "2":"true",
+    "3": "inertia",
+    "4": "A: matter",
+    "5": "B: inertia",
+    "6": "C: gravitational mass"
+  },
+  "v2": {
+    "1": "true",
+    "2": "true",
+    "3": "inertia",
+    "4": "A",
+    "5": "B",
+    "6": "C"
+  }
 }

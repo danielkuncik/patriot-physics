@@ -1,0 +1,23 @@
+{
+  "v1": {
+
+  },
+  "v2": {
+
+  },
+  "v3": {
+
+  },
+  "v4": {
+    "1": "qualitative free-body diagram: gravity down; normal force up; applied force right",
+    "2": "quantitative free-body diagram: => 117.6 N down; 117.6 N up; 18 N right; equations used must be written",
+    "3": "117.6 N",
+    "4": "down",
+    "5": "117.6 N",
+    "6": "up",
+    "7": "18 N",
+    "8": "right",
+    "9": "net force = 18 N right",
+    "10": "acceleration = 1.5 m/s/s right"
+  }
+}

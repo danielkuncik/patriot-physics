@@ -1,0 +1,19 @@
+{
+  "v1": {
+    "Kinetic Energy": {
+      "a": "Mechanical wave energy",
+      "b": "Rotational kinetic energy",
+      "c": "Translational Kinetic energy",
+      "d": "Thermal Energy",
+      "e": "Electromagnetic Energy",
+      "f": "Electrical Energy"
+    },
+    "Potential Energy": {
+      "a": "Elastic Potential Energy",
+      "b": "Electrochemical potential energy",
+      "c": "Nuclear Energy",
+      "d": "Gravitational Potential Energy",
+      "e": "Chemical Potential Energy"
+    }
+  }
+}

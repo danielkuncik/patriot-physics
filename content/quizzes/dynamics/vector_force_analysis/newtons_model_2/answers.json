@@ -1,0 +1,16 @@
+{
+  "v1": {
+    "1": {
+      "free-body diagram": "200 N down, 200 N up",
+      "explanation": "the net force acting on the box is zero, according ot Newton's First Law, the box moves upward at a constant velocity"
+    },
+    "2": {
+      "free-body diagram": "500 N down, >500 N up",
+      "explanation": "the box is accelerating upwards, according to Newton's Second law, net force acting on the box is up"
+    },
+    "3": {
+      "free-body diagram": "800 N down, <800 N up",
+      "explanation": "the box is accelerating downwards, according to Newton's Second law, net force acting on the box"
+    }
+  }
+}
