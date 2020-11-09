@@ -200,7 +200,7 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
     return new hbs.SafeString(link);
 });
 
-function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter = false) {
+function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter = false, extraMessage) {
     let listItem = "<li class = 'podListItem mb-3'>";
     let letter = unitMap[superUnitKey].units[unitKey].pods[podKey].letter;
     let title = unitMap[superUnitKey].units[unitKey].pods[podKey].title;
@@ -229,6 +229,9 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter =
     }
     let available = availableContent[superUnitKey].units[unitKey].pods[podKey].available;
     let link = `/pod/${pod_uuid}`;
+    if (extraMessage) {
+        listItem = listItem + extraMessage;
+    }
     if (available) {
         listItem = listItem + `<a href = '${link}'>`;
     }
@@ -245,8 +248,8 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter =
     return listItem
 }
 
-hbs.registerHelper('individualPodLink',(superUnitKey, unitKey, podKey, gradeMap) => {
-    let item = makePodListItem(superUnitKey, unitKey, podKey, gradeMap, true);
+hbs.registerHelper('individualPodLink',(superUnitKey, unitKey, podKey, gradeMap, extraMessage) => {
+    let item = makePodListItem(superUnitKey, unitKey, podKey, gradeMap, true, extraMessage);
     return new hbs.SafeString(item)
 });
 
