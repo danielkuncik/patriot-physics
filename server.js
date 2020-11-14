@@ -270,6 +270,10 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 //     next();
 // };
 
+
+const quizLock = false;
+
+
 const checkQuizAccess = (req, res, next) => {
     req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
     const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
@@ -277,7 +281,8 @@ const checkQuizAccess = (req, res, next) => {
     req.ApInClass = req.session.courseLevel === 'AP' && podObject["inClass_AP"];
     req.HonorsInClass = req.session.courseLevel === 'Honors' && podObject["inClass_honors"];
     req.A_level_InClass = req.session.courseLevel === 'A_level' && podObject["inClass_Alevel"];
-    req.passwordAccessRequired = req.memorizationQuiz || req.ApInClass || req.HonorsInClass || req.A_level_InClass;
+    req.quizLock = quizLock;
+    req.passwordAccessRequired = req.memorizationQuiz || req.ApInClass || req.HonorsInClass || req.A_level_InClass || req.quizLock;
     next();
 };
 

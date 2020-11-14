@@ -62,6 +62,15 @@
     </div>
 {{/if}}
 
+{{# if quizLock}}
+    <h2 class = 'text-danger'>
+        All quizzes are currently locked.
+    </h2>
+    <h4>
+        Only students with special permission may take quizzes.
+    </h4>
+{{/if}}
+
 <div class = 'container'>
         <form action = '/quiz/{{uuid}}' method = 'POST'>
             {{#if passwordAccessRequired}}
