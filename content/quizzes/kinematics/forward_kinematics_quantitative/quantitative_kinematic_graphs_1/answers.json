@@ -3,12 +3,28 @@
     "1": {
       "a": "15 m/s",
       "b": "1.8 m/s",
-      "c": "4 m/s"
+      "c": "4 m/s",
+      "d": "1-2 sentence explanation"
     },
     "2": {
       "a": "240 m",
       "b": "40 m",
-      "c": "280 m"
+      "c": "280 m",
+      "d": "1-2 sentence explanation"
+    }
+  },
+  "v2": {
+    "1": {
+      "a": "10 m/s",
+      "b": "2 m/s",
+      "c": "3.33 m/s",
+      "d": "1-2 sentence explanation"
+    },
+    "2": {
+      "a": "120 m",
+      "b": "60 m",
+      "c": "180 m",
+      "d": "1-2 sentence explanation"
     }
   }
 }

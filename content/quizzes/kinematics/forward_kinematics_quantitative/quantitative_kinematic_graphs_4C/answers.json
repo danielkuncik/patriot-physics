@@ -1,0 +1,15 @@
+{
+  "v1": {
+
+  },
+  "v2": {
+    "1": {
+      "position-time graph": "upward parabola with vertex at origin, at 10 seconds position is 300 m",
+      "velocity-time graph": "line from origin to (10,60)"
+    },
+    "2": {
+      "position-time graph": "downward parabola, flat at t = 0.6 s, moves from origin to (0.6, 3.6)",
+      "velocity-time graph": "line from (0,12) to (0.6,0)"
+    }
+  }
+}
