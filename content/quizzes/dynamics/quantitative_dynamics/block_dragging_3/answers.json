@@ -12,5 +12,19 @@
       "c": "down - 68.7 N; up - 68.7 N; right - 40.0 N; left - 40.0 N; explain that friction is static friction and will equal the applied force to prevent motion",
       "d": "a = 0"
     }
+  },
+  "v2": {
+    "1": {
+      "a": "gravity- down; normal force - up; applied force -right; friction-left",
+      "b": "maximum static friction = 57.84 N; applied force = 54.0 N; the box does not move",
+      "c": "down - 86.3 N; up - 86.3 N; right - 54.0 N; left 54.0 N; explain that friction is static friction and will equal the applied force",
+      "d": "a = 0"
+    },
+    "2": {
+      "a": "gravity- down; normal force - up; applied force -right; friction-left",
+      "b": "max static friction = 42 N; applied force = 44 N; the box does move",
+      "c": "down - 63.8 N; up - 63.8 N; right - 44 N; left 29.9 K; explain that friction is kinetic friction and use the formula for kinetic friction",
+      "d": "a = 2.17 m/s/s"
+    }
   }
 }
