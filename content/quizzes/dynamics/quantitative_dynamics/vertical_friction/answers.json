@@ -1,0 +1,17 @@
+{
+  "v1": {
+    "1": {
+      "a": "down - gravity, earth; up - static friction, wall; right - applied force, person; left - normal force, wall",
+      "b": "24.5 N",
+      "c": "61.25 N (61.3 N with correct sig figs)",
+      "d": "down - 24.5 N; up - 24.5 N; right - 61.25 N; left - 61.25 N"
+    },
+    "2": {
+      "a": "down - gravity, earth; up - kinetic friction, pole; outwards - normal force, pole",
+      "b": "down - 784.8 N; outwards 90 N; upwards - 235.44; write a sentence explaining how friction is determined",
+      "c": "a = 6.862 m/s^2 downward; it would have been 9.81 m/s^2; grabbing the pole created an upward force of kinetic friction that reduced his downward net force",
+      "d": "he will strike the ground with a speed of 19.35 m/s",
+      "e": "he would have struck the ground at 22.19 m/s"
+    }
+  }
+}
