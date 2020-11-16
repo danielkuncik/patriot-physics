@@ -201,6 +201,7 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
 });
 
 function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter = false, extraMessage) {
+    console.log(superUnitKey, unitKey, podKey);
     let listItem = "<li class = 'podListItem mb-3'>";
     let letter = unitMap[superUnitKey].units[unitKey].pods[podKey].letter;
     let title = unitMap[superUnitKey].units[unitKey].pods[podKey].title;

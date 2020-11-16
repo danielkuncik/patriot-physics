@@ -3831,6 +3831,16 @@
             "content": "Kinetic friction acts on objects that are moving; static friction acts on objects that are not moving.",
             "uuid": "bdd2d8bd-3725-409c-bf56-6aca566409cd"
           },
+          "doing_nothing": {
+            "title": "The Dynamics of Doing Nothing",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "Y",
+            "prerequisites": ["finding_acceleration"],
+            "objective": "Carefully analyze the free-body diagram of a stationary object",
+            "content": "In a stationary object, gravity is downward and normal force is upward and their magnitudes are equal because normal force is constraint force.",
+            "uuid": "03ae84d8-4eba-48db-8d95-780f4e47106f"
+          },
           "block_dragging_1":
           {
             "title": "Block Dragging 1",
@@ -3838,7 +3848,7 @@
             "level": 2,
             "horizontal": 2,
             "letter": "E",
-            "prerequisites": ["finding_acceleration"],
+            "prerequisites": ["doing_nothing"],
             "objective": "Given a block of a certain mass, draw a free-body diagram of the block when it is not moving or being pushed on a surfaced without friction; determine the net force and acceleration of the block.",
             "content": "Gravity, normal force, and applied force act on a block being dragged; by understanding these forces a physicist can understand the motion of the block.",
             "uuid": "28a149bd-78b0-4872-b90c-b0ab53d960c5"
