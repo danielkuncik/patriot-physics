@@ -1,5 +1,9 @@
 const unitMap = require(__dirname + '/public/unit_map');
+const AP_goals = require(__dirname + '/apTestGoals.json');
 
+function createAPGauge() {
+    // uses the json file to create a gauge of AP progress 
+}
 
 function getPodKeysByUUID(uuid) {
     let selectionObject;
@@ -196,6 +200,9 @@ class GradeMap {
         return this.overallLevel
     }
 
+    createAPGauge() {
+
+    }
 
     print() {
         Object.keys(this.map).forEach((superUnitKey) => {
