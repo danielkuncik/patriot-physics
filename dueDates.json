@@ -1,0 +1,145 @@
+{
+  "AP": {
+    "12-11-2020": {
+      "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85": {
+        "name": "Quantitative Graphs 4B (from velocity graph)",
+        "practice": true,
+        "inClass": true
+      },
+      "b9e05631-d323-4455-8c97-c8d733f7ee86": {
+        "name": "Quantitative Graphs 4C (from acceleration graph)",
+        "practice": true,
+        "inClass": false
+      },
+      "fd893155-1664-4e4f-9233-1f2cc2548012": {
+        "name": "Kinematic Equations Symbolic",
+        "practice": true,
+        "inClass": true
+      },
+      "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f": {
+        "name": "Reaction Force of Weight",
+        "practice": true,
+        "inClass": false
+      },
+      "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f": {
+        "name": "Free-Body Diagrams 3",
+        "practice": true,
+        "inClass": false
+      },
+      "e492fc90-2688-43f3-8f44-4a62f601f939": {
+        "name": "Newton's Model 4A",
+        "practice": true,
+        "inClass": true
+      },
+      "2c9250e1-6ed1-4324-a718-4ce387b1d758": {
+        "name": "Elevators 2",
+        "practice": false,
+        "inClass": true
+      },
+      "65b8b752-7ee6-421f-aede-b40ec100bfe7": {
+        "name": "Ohm's Law",
+        "practice": false,
+        "inClass": false
+      },
+      "8e7ca231-51f9-4990-9849-c8b6472ec77a": {
+        "name": "Power Formula",
+        "practice": false,
+        "inClass": false
+      },
+      "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
+        "name": "Analyze Circuits 1",
+        "practice": false,
+        "inClass": false
+      },
+      "3950df90-a5f0-45f6-bbc0-760a7865445c": {
+        "name": "Analyze Circuits 2",
+        "practice": false,
+        "inClass": false
+      },
+      "79415b06-1b6b-4ab2-aab8-b4785d998ded": {
+        "name": "Electromagnetic vs Mechanical Waves 1",
+        "practice": false,
+        "inClass": false
+      },
+      "4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
+        "name": "Transverse vs. Longitudinal Waves 1",
+        "practice": false,
+        "inClass": false
+      },
+      "38654374-f04e-4154-a1b6-f2db64fc3946": {
+        "name": "Momentum Formula",
+        "practice": false,
+        "inClass": false
+      },
+      "8766aaae-7552-4bed-8365-95fcd4bda409": {
+        "name": "Energy Table 1",
+        "practice": false,
+        "inClass": false
+      },
+      "cd905e4c-d92e-4b6a-be60-b2f3cda0c68a": {
+        "name": "Energy Formulas 1",
+        "practice": false,
+        "inClass": false
+      },
+      "16867305-88ad-4901-b2cf-cd20fcee13e6": {
+        "name": "Energy Table 2",
+        "practice": false,
+        "inClass": false
+      },
+      "462ef780-e519-41b7-baae-8303b2948064": {
+        "name": "Kinetic and Potential Energy Graphs",
+        "practice": false,
+        "inClass": false
+      }
+    }
+  },
+  "Honors": {
+    "12-11-2020": {
+      "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6": {
+        "name": "Kinematic Equations 3",
+        "practice": true,
+        "inClass": true
+      },
+      "c3212e62-6634-43d5-9fe3-133f53064454": {
+        "name": "Quant Graphs 2",
+        "practice": true,
+        "inClass": false
+      },
+      "5b081810-95c4-4ea0-bcf6-625c67cf6e29": {
+        "name": "Kinematic Graph Comparisons",
+        "practice": false,
+        "inClass": false
+      },
+      "beb2106c-410e-44c1-8179-32a01059963d": {
+        "name": "Kinematics Definitions",
+        "practice": true,
+        "inClass": false
+      },
+      "4e97c334-316b-4800-a566-a1f2e1be89a0": {
+        "name": "Story to Graph Selection 1",
+        "practice": false,
+        "inClass": true
+      },
+      "65b8b752-7ee6-421f-aede-b40ec100bfe7": {
+        "name": "Ohms Law",
+        "practice": true,
+        "inClass": false
+      },
+      "8e7ca231-51f9-4990-9849-c8b6472ec77a": {
+        "name": "Power Formula",
+        "practice": true,
+        "inClass": false
+      },
+      "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
+        "name": "Analyze Circuits 1",
+        "practice": true,
+        "inClass": false
+      },
+      "3950df90-a5f0-45f6-bbc0-760a7865445c": {
+        "name": "Analyze Circuits 2",
+        "practice": true,
+        "inClass": true
+      }
+    }
+  }
+}

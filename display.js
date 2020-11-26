@@ -152,6 +152,12 @@ display_pod_page = (req, res) => {
 
 };
 
+const display_practice_submission_page = (req, res) => {
+    res.render('practiceSubmission.hbs', {
+        layout: "default.hbs"
+    })
+};
+
 display_lab_list_page = (req, res) => {
     res.render('labsEntryPage.hbs', {
         layout:'default',
@@ -389,5 +395,6 @@ module.exports = {
     display_problemSet_list_page,
     display_problemSet_page,
     display_quiz_entry_page,
-    display_quiz
+    display_quiz,
+    display_practice_submission_page
 };

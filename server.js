@@ -308,6 +308,10 @@ app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
 //app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
 
+app.get('/practiceSubmission/:pod_uuid', [db.check_if_logged_in, (req, res, next) => {
+    // space to check if this is the correct practice to be submitted
+    next()
+}, disp.display_practice_submission_page]);
 
 
 // make these a single function??????

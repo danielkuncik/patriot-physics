@@ -2670,7 +2670,8 @@
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
             "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story.",
             "uuid": "4e97c334-316b-4800-a566-a1f2e1be89a0",
-            "id": ""
+            "id": "",
+            "inClass_honors": true
           },
           "kinematic_graph_comparisons_2":
           {
