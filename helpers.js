@@ -2,6 +2,9 @@ const hbs = require('express-hbs');
 const unitMap = require(__dirname + '/public/unit_map');
 const { availableContent } = require('./findAvailableContent.js');
 const goals = require(__dirname + '/public/goals');
+const dueDatesJSON = require(__dirname + '/dueDates.json');
+const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
+
 
 hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
     let output;
@@ -410,7 +413,7 @@ hbs.registerHelper('isNoSection', (courseLevel) => {
     return result
 });
 
-const Months_Dictionary ={
+const Months_Dictionary = {
     "01": "January",
     "02": "February",
     "03": "March",
@@ -424,6 +427,14 @@ const Months_Dictionary ={
     "11": "November",
     "12": "December"
 };
+
+function displayDateFromString(dateString) {
+    let dateArray = dateString.split('-');
+    const month = Months_Dictionary[dateArray[0]];
+    const year = dateArray[2];
+    const day = dateArray[1];
+    return `${month} ${day}, ${year}`;
+}
 
 function getDateFromSQL_timestamp(SQL_timestamp) {
     let string = JSON.stringify(SQL_timestamp);
@@ -466,6 +477,88 @@ function processQuizAttempt(attempt) {
     return attempt
 }
 
+hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
+    const dueDates = dueDatesJSON[courseLevel];
+    let string = "";
+    if (dueDates) {
+        let obj = {
+            "homework": [],
+            "inClass": []
+        };
+        Object.keys(dueDates).forEach((dueDateKey) => {
+            const dateDisplay = displayDateFromString(dueDateKey);
+            string = string + `<h2>Due on ${dateDisplay}</h2>`;
+            string = string + "<div class = 'ml-4'>";
+            Object.keys(dueDates[dueDateKey]).forEach((pod_uuid) => {
+                const practicePageRequired = dueDates[dueDateKey][pod_uuid].practice;
+                const inClassQuiz = dueDates[dueDateKey][pod_uuid].inClass;
+                let displayObject;
+                if (unitMapBy_uuid[pod_uuid].type === "pod") {
+                    let superUnitKey = unitMapBy_uuid[pod_uuid].superUnitKey;
+                    let unitKey = unitMapBy_uuid[pod_uuid].unitKey;
+                    let podKey = unitMapBy_uuid[pod_uuid].podKey;
+                    let podObject = unitMap[superUnitKey].units[unitKey].pods[podKey];
+                    let letter = podObject.letter;
+                    let title = podObject.title;
+                    if (podObject.subtitle) {
+                        title = title + `: ${podObject.subTitle}`;
+                    }
+                    let podNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
+                    let displayTitle = `${podNumber}-${letter}: ${title}`;
+
+                    let score;
+                    if (gradeMap && gradeMap.map && gradeMap.map[superUnitKey] && gradeMap.map[superUnitKey].units[unitKey] && gradeMap.map[superUnitKey].units[unitKey].pods[podKey] && gradeMap.map[superUnitKey].units[unitKey].pods[podKey].score) {
+                        score  = gradeMap.map[superUnitKey].units[unitKey].pods[podKey].score;
+                    }
+                    let link = `/pod/${pod_uuid}`;
+                    displayObject = {
+                        "displayTitle": displayTitle,
+                        "score": score,
+                        "link": link
+                    }
+                } else {
+                    // error
+                }
+                if (inClassQuiz) {
+                    obj.inClass.push(displayObject);
+                } else {
+                    obj.homework.push(displayObject);
+                }
+            });
+        });
+
+        string = string + '<h3>Homework Quizzes</h3>';
+        string = string + "<ol>";
+        obj.homework.forEach((displayObject) => {
+            string = string + "<li>";
+            string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
+            if (displayObject.score) {
+                string = string + displayObject.score;
+            }
+            string = string + "</li>";
+        });
+        string = string + "</ol>";
+
+
+        string = string + '<h3>In Class Quizzes</h3>';
+        string = string + `<ol start = '${obj.homework.length + 1}'>`;
+        obj.inClass.forEach((displayObject) => {
+            string = string + "<li>";
+            string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
+            if (displayObject.score) {
+                string = string + displayObject.score;
+            }
+            string = string + "</li>";
+        });
+        string = string + "</ol>";
+        string = string + "</div>";
+
+    } else {
+        string = '<p>error</p>';
+    }
+    return new hbs.SafeString(string)
+});
+
 function getPreviousAttemptListItem(previousAttemptObject) {
     let string = "<li>";
     let thisAttempt = processQuizAttempt(previousAttemptObject);
@@ -500,7 +593,7 @@ function getPreviousAttemptListItem(previousAttemptObject) {
         string = string + `You took this quiz on ${date}, and the quiz has not been scored yet.`;
     }
     string = string + "</li>";
-    return string
+    return new hbs.SafeString(string)
 }
 
 hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {

@@ -29,6 +29,8 @@ redisClient.on("error",(error) => {
     console.log(error);
 });
 
+const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
+
 let app = express();
 
 let sessionStore = new redisStore({ host: 'localhost', port: 6379, client: redisClient, ttl: 86400 });
