@@ -218,7 +218,8 @@ const gm = require('./gradeMap');
 
 // load pod page
 app.get('/pod/:pod_uuid',[ (req, res, next) => {
-      const selectionObject = gm.getPodKeysByUUID(req.params.pod_uuid);
+      req.pod_uuid = req.params.pod_uuid;
+      const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
       if (!selectionObject) {
         res.redirect('/');
       } else {
@@ -236,6 +237,34 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
     let filepath = __dirname + '/content/unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/assets/' + req.params.assetName;
     res.sendFile(filepath);
 });
+
+
+app.get('/practiceSubmission/:pod_uuid', [db.check_if_logged_in, (req, res, next) => {
+    req.pod_uuid = req.params.pod_uuid;
+    const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
+    if (!selectionObject) {
+        res.redirect('/');
+    } else {
+        req.superUnitKey = selectionObject.superUnitKey;
+        req.unitKey = selectionObject.unitKey;
+        req.podKey = selectionObject.podKey;
+        next();
+    }
+}, (req, res, next) => {
+
+    // space to check if this is the correct practice to be submitted
+    next()
+}, disp.display_practice_submission_page]);
+
+
+app.post('/submitPractice/:pod_uuid', [db.check_if_logged_in, (req, res, next) => {
+    req.pod_uuid = req.params.pod_uuid;
+    // space for more
+    next()
+}, (req, res) => {
+    res.redirect(`/pod/${req.pod_uuid}`)}
+]);
+
 
 app.get('/quizAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
     let filepath = __dirname + '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetName;
@@ -307,11 +336,6 @@ app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
 // individual quiz page
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
 //app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
-
-app.get('/practiceSubmission/:pod_uuid', [db.check_if_logged_in, (req, res, next) => {
-    // space to check if this is the correct practice to be submitted
-    next()
-}, disp.display_practice_submission_page]);
 
 
 // make these a single function??????

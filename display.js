@@ -140,7 +140,7 @@ display_pod_page = (req, res) => {
             previousAttempts: req.previousAttempts,
             ungradedQuizzes: req.ungradedQuizzes,
             totalAttempts: req.totalAttemps,
-            backLink: `/unit/${unit.uuid}`
+            practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
@@ -153,8 +153,37 @@ display_pod_page = (req, res) => {
 };
 
 const display_practice_submission_page = (req, res) => {
+    const superUnit = unitMap[req.superUnitKey];
+    const unit = superUnit.units[req.unitKey];
+    const pod = unit.pods[req.podKey];
+    const loggedIn = !!req.user;
+    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    let title = `${unitNumber}-${pod.letter}: ${pod.title}`;
+    if (pod.subtitle) {
+        title = title + `: ${pod.subtitle}`;
+    }
+
     res.render('practiceSubmission.hbs', {
-        layout: "default.hbs"
+        layout: "default.hbs",
+        unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
+        title: title,
+        level: pod.level,
+        superUnitKey: req.superUnitKey,
+        unitKey: req.unitKey,
+        podKey: req.podKey,
+        objective: pod.objective,
+        content: pod.content,
+        backLink: `/pod/${req.pod_uuid}`,
+        //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
+        letter: pod.letter,
+        unitNumber: unitNumber,
+        unitClusterName: unitMap[req.superUnitKey].title,
+        user: req.user,
+        loggedIn: loggedIn,
+        section: req.section,
+        overallLevel: req.overallLevel,
+        totalAttempts: req.totalAttemps,
+        submissionLink: `/submitPractice/${req.pod_uuid}`
     })
 };
 

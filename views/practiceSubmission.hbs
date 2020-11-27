@@ -1,3 +1,114 @@
+<h2>
+    Practice Page Submission
+</h2>
+
+<h3>
+    {{unitNumber}}-{{letter}}: {{title}}
+</h3>
+<ul>
+    <li>
+        Topic Cluster: {{unitClusterName}}
+    </li>
+    <li>
+        Topic: {{unitName}}
+    </li>
+    <li>
+        Objective: {{objective}}
+    </li>
+    <li>
+        Content: {{content}}
+    </li>
+    <li>
+        Level: {{level}}
+    </li>
+</ul>
+
+<h3>
+    <a href = '{{backLink}}'>BACK</a>
+</h3>
+
+<h2>
+    Practice page submission
+</h2>
+
 <p>
-    This will be a page to submit practice work!!!
+    This page is a place to submit your work on a practice page.
+    The purpose is to show that you are studying and learning the material
+    before taking the quiz.
 </p>
+
+<h4>
+    Guidelines
+</h4>
+
+<ul>
+    <li>
+        Submit your work in a photograph of the assignment.
+    </li>
+    <li>
+        There is space to submit 6 pages.
+        You do not need to submit six pages, only as many pages as it takes to
+        complete the assignment.
+        If it takes more than six pages, only submit the first six.
+    </li>
+    <li>
+        You need to show <strong>SOME WORK</strong> in your solutions,
+        especially on math-based pods.
+        If you show no work, you will not receive full credit.
+        Unlike the quizzes and portfolio entries, you do not need to show specific work, unless otherwise indicated,
+        but you need to show some work.
+    </li>
+    <li>
+        Grading is from 0 - 2:
+        <ul>
+            <li>
+                0: no submission
+            </li>
+            <li>
+                1: submission, but not all problems solved or no work shown
+            </li>
+            <li>
+                2: submission with sufficient information shown.
+            </li>
+        </ul>
+    </li>
+</ul>
+<p>
+    Remember that the point is to <emph>show you are studying</emph> before taking the quiz.
+    Ideally, I wouldn't even need to collect practice pages.
+    But if I didn't, people would take the quiz after barely skimming the practice page,
+    and they'd usually fail the quiz!
+</p>
+
+
+<h3>
+    Submission
+</h3>
+<form action = '{{submissionLink}}' method="post" enctype="multipart/form-data">
+    Page 1:
+    <input type = 'file' name = 'image' value = 'Upload Page 1' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+    <br><br>
+    Page 2:
+    <input type = 'file' name = 'image' value = 'Upload Page 2' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+    (all pages after page 1 are only required if needed)
+    <br><br>
+    Page 3:
+    <input type = 'file' name = 'image' value = 'Upload Page 3' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+    <br><br>
+    Page 4:
+    <input type = 'file' name = 'image' value = 'Upload Page 4' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+    <br><br>
+    Page 5:
+    <input type = 'file' name = 'image' value = 'Upload Page 5' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+    <br><br>
+    Page 6:
+    <input type = 'file' name = 'image' value = 'Upload Page 6' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
+    (if it takes you more than six pages, only submit the first six pages)
+    <br><br>
+    <input type = 'submit' value = 'Submit Practice Page' class = 'practiceSubmitButton' />
+</form>
+
+
+<h3>
+    <a href = '{{backLink}}'>BACK</a>
+</h3>
