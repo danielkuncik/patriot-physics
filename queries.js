@@ -211,7 +211,7 @@ const submit_quiz = function(req, res, next) {
 };
 
 const submit_practice = (req, res, next) => {
-    const pod_uuid = req.params.uuid;
+    const pod_uuid = req.pod_uuid;
     const student_id = req.user.id;
 
     if (req.files === undefined) {
@@ -276,7 +276,7 @@ const submit_practice = (req, res, next) => {
     }
 
     next();
-}
+};
 
 const look_up_quiz_attempts = function(req, res, next) {
     if (req.user) {

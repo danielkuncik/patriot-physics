@@ -360,7 +360,10 @@ function look_up_quiz_answers(req, res, next) {
 // app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, look_up_quiz_answers,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
-app.post('/submitPractice/:pod_uuid', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
+app.post('/submitPractice/:pod_uuid', [(req, res, next) => {
+    req.pod_uuid = req.params.pod_uuid;
+    next();
+    },uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
     req.pod_uuid = req.params.pod_uuid;
     // space for more
     next()
