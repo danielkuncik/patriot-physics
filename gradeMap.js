@@ -92,9 +92,11 @@ class GradeMap {
                     }
                     blankMap[superUnitKey].units[unitKey].pods[podKey] = {
                         score: 0,
+                        practiceScore: 0,
                         valueWeight: valueWeight,
                         level: level,
-                        pending: false
+                        pending: false,
+                        practicePending: false
                     }
                 });
             });
@@ -156,10 +158,33 @@ class GradeMap {
         }
     }
 
+    addPracticeScore(pod_uuid, score) {
+        if (score === undefined) {
+            score = 0;
+        }
+        if (score < 0) {
+            score = 0
+        } else if (score > 2) {
+            score = 2;
+        }
+        let selectionObject = getPodKeysByUUID(pod_uuid);
+        if (selectionObject) {
+            this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].practiceScore = score;
+        }
+
+    }
+
     setQuizPending(pod_uuid) {
         const selectionObject = getPodKeysByUUID(pod_uuid);
         if (selectionObject) {
             this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].pending = true;
+        }
+    }
+
+    setPracticePending(pod_uuid) {
+        const selectionObject = getPodKeysByUUID(pod_uuid);
+        if (selectionObject) {
+            this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].practicePending = true;
         }
     }
 
@@ -218,9 +243,10 @@ class GradeMap {
                     const subTitle = unitMap[superUnitKey].units[unitKey].pods[podKey].subTitle;
                     const title = !!subTitle ? `${mainTitle}: ${subTitle}` : mainTitle;
                     const score = this.map[superUnitKey].units[unitKey].pods[podKey].score;
+                    const practiceScore = this.map[superUnitKey].units[unitKey].pods[podKey].practiceScore;
                     const value = this.map[superUnitKey].units[unitKey].pods[podKey].value;
                     const weight = this.map[superUnitKey].units[unitKey].pods[podKey].valueWeight;
-                    console.log(`${title}: ${score}         [val: ${value}]  [weight: ${weight}]`);
+                    console.log(`${title}: ${score}         [val: ${value}]  [weight: ${weight}] ${practiceScore ? practiceScore : ""}`);
                 });
             });
         });

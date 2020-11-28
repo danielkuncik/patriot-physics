@@ -83,7 +83,7 @@ function uploadFile(req, res, next) {
 }
 
 function uploadFileNew(req, res, next) {
-    const upload = parser.array('image',3);
+    const upload = parser.array('image',6);
     // const upload2 = parser.single('image2');
     // const upload3 = parser.single('image3');
 
@@ -153,7 +153,7 @@ app.get('/login', [(request, response, next) => {
     request.newPath = path;
     next();
 },db.check_if_logged_in, disp.display_login_page]);
-app.post('/login',[db.check_login, db.load_grades, db.find_pending_quizzes, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
+app.post('/login',[db.check_login, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
 // when I'm ready, add this!
 //     (req,res) => {
 //     const path = req.query.path;
@@ -259,13 +259,6 @@ app.get('/practiceSubmission/:pod_uuid', [db.check_if_logged_in, (req, res, next
 }, disp.display_practice_submission_page]);
 
 
-app.post('/submitPractice/:pod_uuid', [db.check_if_logged_in, (req, res, next) => {
-    req.pod_uuid = req.params.pod_uuid;
-    // space for more
-    next()
-}, (req, res) => {
-    res.redirect(`/pod/${req.pod_uuid}`)}
-]);
 
 
 app.get('/quizAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
@@ -366,6 +359,14 @@ function look_up_quiz_answers(req, res, next) {
 
 // app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, look_up_quiz_answers,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+
+app.post('/submitPractice/:pod_uuid', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
+    req.pod_uuid = req.params.pod_uuid;
+    // space for more
+    next()
+}, (req, res) => {
+    res.redirect(`/pod/${req.pod_uuid}`)}
+]);
 
 
 

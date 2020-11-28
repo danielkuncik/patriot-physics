@@ -19,8 +19,7 @@ hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
         output = output + `<li>Total Number of MiniQuiz Attempts: ${totalAttempts}</li>`;
         output = output + "</ul>";
     } else {
-        output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>" +
-            "<p>You do NOT need to log in for Step up Day or Summer Work!</p>";
+        output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>";
     }
     return new hbs.SafeString(output)
 });
@@ -190,7 +189,7 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
     if (availableContent[superUnitKey].units[unitKey].pods[podKey].quizzes) {
         let href = `/miniquizAccess/${uuid}`;
         if (!loggedIn) {
-            link = link + "You must be logged in to take the miniquiz. Click <a href = '/login'>here</a> to login. You do not need to take the miniquiz for the summer work.";
+            link = link + "You must be logged in to take the miniquiz. Click <a href = '/login'>here</a> to login.";
         } else if (ungradedQuizzes) {
             link = link + "You are still waiting for your last attempt to be graded, so wait a little before taking this quiz again.";
         } else {
@@ -483,14 +482,14 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
     if (dueDates) {
         let obj = {
             "homework": [],
-            "inClass": []
+            "inClass": [],
+            "practicePages": []
         };
         Object.keys(dueDates).forEach((dueDateKey) => {
             const dateDisplay = displayDateFromString(dueDateKey);
             string = string + `<h2>Due on ${dateDisplay}</h2>`;
             string = string + "<div class = 'ml-4'>";
             Object.keys(dueDates[dueDateKey]).forEach((pod_uuid) => {
-                const practicePageRequired = dueDates[dueDateKey][pod_uuid].practice;
                 const inClassQuiz = dueDates[dueDateKey][pod_uuid].inClass;
                 let displayObject;
                 if (unitMapBy_uuid[pod_uuid].type === "pod") {
@@ -506,15 +505,38 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                     let podNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
                     let displayTitle = `${podNumber}-${letter}: ${title}`;
 
-                    let score;
-                    if (gradeMap && gradeMap.map && gradeMap.map[superUnitKey] && gradeMap.map[superUnitKey].units[unitKey] && gradeMap.map[superUnitKey].units[unitKey].pods[podKey] && gradeMap.map[superUnitKey].units[unitKey].pods[podKey].score) {
-                        score  = gradeMap.map[superUnitKey].units[unitKey].pods[podKey].score;
+                    let score, practiceScore, pending, practicePending;
+                    if (gradeMap) {
+                        score  = gradeMap[superUnitKey].units[unitKey].pods[podKey].score;
+                        practiceScore = gradeMap[superUnitKey].units[unitKey].pods[podKey].practiceScore;
+                        pending = gradeMap[superUnitKey].units[unitKey].pods[podKey].pending;
+                        practicePending = gradeMap[superUnitKey].units[unitKey].pods[podKey].practicePending;
+                    }
+                    let scoreDisplay;
+                    if (score === 20) {
+                        scoreDisplay = 'ACE';
+                    } else if (score > 0) {
+                        scoreDisplay = `${score} out of 20`;
+                    } else {
+                        scoreDisplay = undefined;
+                    }
+
+                    let practiceDisplay;
+                    if (practiceScore === 1) {
+                        practiceDisplay = 'half done';
+                    } else if (practiceScore === 2) {
+                        practiceDisplay = 'DONE';
+                    } else {
+                        practiceDisplay = undefined;
                     }
                     let link = `/pod/${pod_uuid}`;
                     displayObject = {
                         "displayTitle": displayTitle,
-                        "score": score,
-                        "link": link
+                        "scoreDisplay": scoreDisplay,
+                        "practiceDisplay": practiceDisplay,// this will be where the practice score is entered
+                        "link": link,
+                        "newScorePending": pending,
+                        "newPracticeScorePending": practicePending
                     }
                 } else {
                     // error
@@ -524,16 +546,37 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                 } else {
                     obj.homework.push(displayObject);
                 }
+                if (dueDates[dueDateKey][pod_uuid].practice) {
+                    obj.practicePages.push(displayObject);
+                }
             });
         });
 
-        string = string + '<h3>Homework Quizzes</h3>';
+        string = string + '<h3>Practice Pages</h3>';
         string = string + "<ol>";
+        obj.practicePages.forEach((displayObject) => {
+            string = string + "<li>";
+            string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
+            if (displayObject.practiceDisplay) {
+                string = string + `: ${displayObject.practiceDisplay}`;
+            }
+            if (displayObject.newPracticeScorePending) {
+                string = string + '=> New Practice Score Pending';
+            }
+            string = string + "</li>";
+        });
+        string = string + "</ol>";
+
+        string = string + '<h3>Homework Quizzes</h3>';
+        string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
         obj.homework.forEach((displayObject) => {
             string = string + "<li>";
             string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
-            if (displayObject.score) {
-                string = string + displayObject.score;
+            if (displayObject.scoreDisplay) {
+                string = string + `: ${displayObject.scoreDisplay}`;
+            }
+            if (displayObject.newScorePending) {
+                string = string + '=> New Score Pending';
             }
             string = string + "</li>";
         });
@@ -541,7 +584,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
 
 
         string = string + '<h3>In Class Quizzes</h3>';
-        string = string + `<ol start = '${obj.homework.length + 1}'>`;
+        string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
         obj.inClass.forEach((displayObject) => {
             string = string + "<li>";
             string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;

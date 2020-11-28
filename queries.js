@@ -92,6 +92,24 @@ const load_grades = function(req, res, next) {
     }
 };
 
+const loadPracticeGrades = function(req, res, next) {
+    if (req.session.student) {
+        pool.query('SELECT * FROM practice_grades WHERE student_id = $1', [req.session.student.id], (error, result) => {
+            if (error) {
+                throw error
+            }
+            result.rows.forEach((score) => {
+                req.session.gradeMap.addPracticeScore(score.pod_uuid, score.score);
+            });
+
+            next();
+
+        });
+    } else {
+        next();
+    }
+};
+
 const count_all_attempts = function(req, res, next) {
     if (req.session.student) {
         pool.query('SELECT * FROM quiz_attempts WHERE student_id = $1',[req.session.student.id], (error, result) => {
@@ -191,6 +209,74 @@ const submit_quiz = function(req, res, next) {
         });
     }
 };
+
+const submit_practice = (req, res, next) => {
+    const pod_uuid = req.params.uuid;
+    const student_id = req.user.id;
+
+    if (req.files === undefined) {
+        res.redirect('/');
+        // need a flash!
+    } else {
+        let imageURL_1, imagePUBLIC_ID_1, imageURL_2, imagePUBLIC_ID_2, imageURL_3, imagePUBLIC_ID_3, imageURL_4, imagePUBLIC_ID_4, imageURL_5, imagePUBLIC_ID_5, imageURL_6, imagePUBLIC_ID_6;
+        if (req.files[0]) {
+            imageURL_1 = req.files[0].url;
+            imagePUBLIC_ID_1 = req.files[0].public_id;
+        } else {
+            imageURL_1 = "";
+            imagePUBLIC_ID_1 = "";
+        }
+        if (req.files[1]) {
+            imageURL_2 = req.files[1].url;
+            imagePUBLIC_ID_2 = req.files[1].public_id;
+        } else {
+            imageURL_2 = "";
+            imagePUBLIC_ID_2 = "";
+        }
+        if (req.files[2]) {
+            imageURL_3 = req.files[2].url;
+            imagePUBLIC_ID_3 = req.files[2].public_id;
+        } else {
+            imageURL_3 = "";
+            imagePUBLIC_ID_3 = "";
+        }
+        if (req.files[3]) {
+            imageURL_4 = req.files[3].url;
+            imagePUBLIC_ID_4 = req.files[3].public_id;
+        } else {
+            imageURL_4 = "";
+            imagePUBLIC_ID_4 = "";
+        }
+        if (req.files[4]) {
+            imageURL_5 = req.files[4].url;
+            imagePUBLIC_ID_5 = req.files[4].public_id;
+        } else {
+            imageURL_5 = "";
+            imagePUBLIC_ID_5 = "";
+        }
+        if (req.files[5]) {
+            imageURL_6 = req.files[5].url;
+            imagePUBLIC_ID_6 = req.files[5].public_id;
+        } else {
+            imageURL_6 = "";
+            imagePUBLIC_ID_6 = "";
+        }
+        // const imageURL = req.file.url;
+        // const imagePUBLIC_ID = req.file.public_id;
+
+
+        pool.query('INSERT INTO practice_submissions (student_id,pod_uuid,image_url_1,image_url_2, image_url_3,image_url_4, image_url_5, image_url_6,tstz) VALUES ($1, $2, $3,$4,$5,$6,$7,$8,current_timestamp)',[student_id, pod_uuid, imageURL_1,imageURL_2,imageURL_3,imageURL_4, imageURL_5, imageURL_6],(error, results) => {
+            if (error) {
+                throw error
+            }
+            //req.session.gradeMap.setQuizPending(pod_uuid); this line is not working
+            // the functions not stored in the session object, need to think of a different way
+            next();
+        });
+    }
+
+    next();
+}
 
 const look_up_quiz_attempts = function(req, res, next) {
     if (req.user) {
@@ -297,10 +383,12 @@ module.exports = {
     load_grades,
     kick_out_if_not_logged_in,
     submit_quiz,
+    submit_practice,
     look_up_quiz_attempts,
     look_up_quiz_attempts_2,
     count_all_attempts,
     find_pending_quizzes,
     look_up_password,
+    loadPracticeGrades,
     check_quiz_password
 };
