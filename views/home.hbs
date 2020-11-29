@@ -1,10 +1,4 @@
 
-
-<!--<video width = '400px' height = 'auto' controls>-->
-<!--    <source src = 'https://physicsvideos12128724.s3.us-east-2.amazonaws.com/ketchup_movie+2.mp4' type = 'video/mp4'>-->
-<!--</video>-->
-
-
 {{#if (isAP courseLevel)}}
     <h3>
         AP Physics
@@ -32,9 +26,63 @@
         {{>a_level_home_page}}
     </div>{{/if}}
 
-
 {{#if (isNoSection courseLevel)}}
     <div class="accordion" id = 'homePageAccordion'>
+        <div class="card">
+            <div class = 'card-header homePageCard' id = 'AP_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_AP" aria-expanded="false" aria-controls="collapse_AP">
+                        AP Physics Home Page
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_AP' class = 'collapse' aria-labelledby="AP_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>ap_home_page}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header homePageCard' id = 'honors_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_honors" aria-expanded="false" aria-controls="collapse_honors">
+                        Honors Physics Home Page
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_honors' class = 'collapse' aria-labelledby="honors_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    {{>honors_home_page}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header homePageCard' id = 'nonsense_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_nonsense" aria-expanded="false" aria-controls="collapse_nonsense">
+                        Nonsense?
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_nonsense' class = 'collapse' aria-labelledby="nonsense_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    <h5>
+                        What's This?
+                    </h5>
+                    <video width = '400px' height = 'auto' controls>
+                        <source src = 'https://physicsvideos12128724.s3.us-east-2.amazonaws.com/carrot.mp4' type = 'video/mp4'>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
 
 <!--        <div class="card">-->
 <!--            <div class = 'card-header homePageCard' id = 'AP_step_up_heading'>-->
@@ -84,78 +132,24 @@
 <!--            </div>-->
 <!--        </div>-->
 
-
-        <div class="card">
-            <div class = 'card-header homePageCard' id = 'AP_heading'>
-                <h3 class = 'mb-0'>
-                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_AP" aria-expanded="false" aria-controls="collapse_AP">
-                        AP Physics Home Page
-                    </button>
-                </h3>
-            </div>
-
-            <div id = 'collapse_AP' class = 'collapse' aria-labelledby="AP_heading" data-parent = '#homePageAccordion'>
-                <div class = 'card-body'>
-                    {{>ap_home_page}}
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class = 'card-header homePageCard' id = 'honors_heading'>
-                <h3 class = 'mb-0'>
-                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_honors" aria-expanded="false" aria-controls="collapse_honors">
-                        Honors Physics Home Page
-                    </button>
-                </h3>
-            </div>
-
-            <div id = 'collapse_honors' class = 'collapse' aria-labelledby="honors_heading" data-parent = '#homePageAccordion'>
-                <div class = 'card-body'>
-                    {{>honors_home_page}}
-                </div>
-            </div>
-        </div>
-
-        <!--
-        <div class="card">
-            <div class = 'card-header homePageCard' id = 'a_level_heading'>
-                <h3 class = 'mb-0'>
-                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_A" aria-expanded="false" aria-controls="collapse_A">
-                        Physics A Remote Learning Assignments
-                    </button>
-                </h3>
-            </div>
-
-            <div id = 'collapse_A' class = 'collapse' aria-labelledby="A_heading" data-parent = '#homePageAccordion'>
-                <div class = 'card-body'>
-                    {{>a_level_home_page}}
-                </div>
-            </div>
-        </div>
-        -->
-
-        <div class="card">
-            <div class = 'card-header homePageCard' id = 'nonsense_heading'>
-                <h3 class = 'mb-0'>
-                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_nonsense" aria-expanded="false" aria-controls="collapse_nonsense">
-                        Nonsense?
-                    </button>
-                </h3>
-            </div>
-
-            <div id = 'collapse_nonsense' class = 'collapse' aria-labelledby="nonsense_heading" data-parent = '#homePageAccordion'>
-                <div class = 'card-body'>
-                    <h5>
-                        What's This?
-                    </h5>
-                    <video width = '400px' height = 'auto' controls>
-                        <source src = 'https://physicsvideos12128724.s3.us-east-2.amazonaws.com/carrot.mp4' type = 'video/mp4'>
-                    </video>
-                </div>
-            </div>
-        </div>
-
+<!--
+<div class="card">
+    <div class = 'card-header homePageCard' id = 'a_level_heading'>
+        <h3 class = 'mb-0'>
+            <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_A" aria-expanded="false" aria-controls="collapse_A">
+                Physics A Remote Learning Assignments
+            </button>
+        </h3>
     </div>
-{{/if}}
 
+    <div id = 'collapse_A' class = 'collapse' aria-labelledby="A_heading" data-parent = '#homePageAccordion'>
+        <div class = 'card-body'>
+            {{>a_level_home_page}}
+        </div>
+    </div>
+</div>
+-->
+
+<!--<video width = '400px' height = 'auto' controls>-->
+<!--    <source src = 'https://physicsvideos12128724.s3.us-east-2.amazonaws.com/ketchup_movie+2.mp4' type = 'video/mp4'>-->
+<!--</video>-->
