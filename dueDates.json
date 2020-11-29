@@ -98,17 +98,7 @@
     }
   },
   "Honors": {
-    "12-11-2020": {
-      "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6": {
-        "name": "Kinematic Equations 3",
-        "practice": true,
-        "inClass": true
-      },
-      "c3212e62-6634-43d5-9fe3-133f53064454": {
-        "name": "Quant Graphs 2",
-        "practice": true,
-        "inClass": false
-      },
+    "12-7-2020": {
       "5b081810-95c4-4ea0-bcf6-625c67cf6e29": {
         "name": "Kinematic Graph Comparisons",
         "practice": false,
@@ -118,6 +108,18 @@
         "name": "Kinematics Definitions",
         "practice": true,
         "inClass": false
+      }
+    },
+    "12-14-2020": {
+      "c3212e62-6634-43d5-9fe3-133f53064454": {
+        "name": "Quant Graphs 2",
+        "practice": true,
+        "inClass": false
+      },
+      "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6": {
+        "name": "Kinematic Equations 3",
+        "practice": true,
+        "inClass": true
       },
       "4e97c334-316b-4800-a566-a1f2e1be89a0": {
         "name": "Story to Graph Selection 1",
@@ -133,7 +135,9 @@
         "name": "Power Formula",
         "practice": true,
         "inClass": false
-      },
+      }
+    },
+    "12-21-2020": {
       "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
         "name": "Analyze Circuits 1",
         "practice": true,
