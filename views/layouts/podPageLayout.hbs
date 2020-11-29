@@ -45,6 +45,8 @@
         <span class = 'display-3'>quiz</span>
     </h2>
 </div>
+
+{{displayRequirements dueDateObject gradeObject}}
 {{displayQuizLink superUnitKey unitKey podKey loggedIn ungradedQuizzes}}
 <script>
     const letter = '{{letter}}';
@@ -64,6 +66,8 @@
         <a href = '{{backLink}}'>BACK to Topic {{unitName}}</a>
     </h4>
 </div>
+{{displayRequirements dueDateObject gradeObject}}
+
 <footer>
     {{>footer}}
 </footer>

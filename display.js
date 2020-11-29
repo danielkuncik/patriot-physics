@@ -140,7 +140,9 @@ display_pod_page = (req, res) => {
             previousAttempts: req.previousAttempts,
             ungradedQuizzes: req.ungradedQuizzes,
             totalAttempts: req.totalAttemps,
-            practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`
+            practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`,
+            dueDateObject: req.dueObject,
+            gradeObject: req.gradeObject
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';

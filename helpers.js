@@ -500,7 +500,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                     let letter = podObject.letter;
                     let title = podObject.title;
                     if (podObject.subtitle) {
-                        title = title + `: ${podObject.subTitle}`;
+                        title = title + `: ${podObject.subtitle}`;
                     }
                     let podNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
                     let displayTitle = `${podNumber}-${letter}: ${title}`;
@@ -716,6 +716,13 @@ hbs.registerHelper('bringUnitMapToFrontEnd', () => {
     let string = JSON.stringify(unitMap);
     let correctString = string.replace(/'/g,"\\'"); // replaces quotes with backslash quotes
     return correctString
+});
+
+hbs.registerHelper('displayRequirements', (dueObject, gradeObject) => {
+    // THIS IS THE NEXT STEP!!!
+    console.log(dueObject, gradeObject);
+    let string = "<h1>Here is where the requirements will go!</h1>";
+    return new hbs.SafeString(string);
 });
 
 module.exports = {

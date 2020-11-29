@@ -29,6 +29,8 @@ redisClient.on("error",(error) => {
     console.log(error);
 });
 
+const dueDates = require(__dirname + '/dueDates.json');
+
 const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
 
 let app = express();
@@ -139,7 +141,7 @@ app.use(express.static(__dirname + '/public'));
 // ROUTES
 
 // home
-app.get('/', [db.check_if_logged_in, f.niceFlash, disp.display_home]);
+app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.count_all_attempts,f.niceFlash, disp.display_home]);
 
 
 // login and logout
@@ -218,6 +220,62 @@ const gm = require('./gradeMap');
 /// redundant!!! find usages
 
 
+
+
+const Months_Dictionary = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+};
+
+function displayDateFromString(dateString) {
+    let dateArray = dateString.split('-');
+    const month = Months_Dictionary[dateArray[0]];
+    const year = dateArray[2];
+    const day = dateArray[1];
+    return `${month} ${day}, ${year}`;
+}
+
+const look_up_requirements = function(req, res, next) {
+    if (req.courseLevel && Object.keys(dueDates).includes(req.courseLevel)) {
+        let dueObject;
+        Object.keys(dueDates[req.courseLevel]).forEach((date) => {
+            // check here if it is overdue
+            if (Object.keys(dueDates[req.courseLevel][date]).includes(req.pod_uuid)) {
+                let dueObject = dueDates[req.courseLevel][date][req.pod_uuid];
+                dueObject["displayDate"] = displayDateFromString(date);
+
+                let dueDateObject = new Date(date);
+                let now = new Date();
+                dueObject.overdue = dueDateObject - now < 0;
+                req.dueObject = dueObject;
+            }
+        });
+        next();
+    } else {
+
+        next();
+    }
+};
+
+const look_up_current_scores = function(req, res, next) {
+    if (req.gradeMap) {
+        req.gradeObject = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey];
+        next();
+    } else {
+        next();
+    }
+};
+
 // load pod page
 app.get('/pod/:pod_uuid',[ (req, res, next) => {
       req.pod_uuid = req.params.pod_uuid;
@@ -230,7 +288,8 @@ app.get('/pod/:pod_uuid',[ (req, res, next) => {
         req.podKey = selectionObject.podKey;
         next();
       }
-  }, db.check_if_logged_in, db.look_up_quiz_attempts, disp.display_pod_page]);
+}, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, disp.display_pod_page]);
+
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
 
