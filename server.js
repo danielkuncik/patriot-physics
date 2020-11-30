@@ -141,7 +141,7 @@ app.use(express.static(__dirname + '/public'));
 // ROUTES
 
 // home
-app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.count_all_attempts,f.niceFlash, disp.display_home]);
+app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice, db.count_all_attempts,f.niceFlash, disp.display_home]);
 
 
 // login and logout
@@ -155,7 +155,7 @@ app.get('/login', [(request, response, next) => {
     request.newPath = path;
     next();
 },db.check_if_logged_in, disp.display_login_page]);
-app.post('/login',[db.check_login, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
+app.post('/login',[db.check_login, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
 // when I'm ready, add this!
 //     (req,res) => {
 //     const path = req.query.path;

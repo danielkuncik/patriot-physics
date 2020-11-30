@@ -350,6 +350,24 @@ const find_pending_quizzes = function(req, res, next) {
     }
 };
 
+const find_pending_practice = function(req, res, next) {
+    if (req.session.student) {
+        const id = req.session.student.id;
+        pool.query('SELECT pod_uuid FROM practice_submissions WHERE student_id = $1 AND score IS NULL', [req.session.student.id], (err, results) => {
+            if (err) {
+                throw  err
+            }
+            results.rows.forEach((result) => {
+                const pod_uuid = result.pod_uuid;
+                req.session.gradeMap.setPracticePending(pod_uuid);
+            });
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
 const look_up_password = (req, res, next) => {
     pool.query('SELECT passwords FROM quiz_passwords',[],(error, result) => {
         if (error) {
@@ -391,5 +409,6 @@ module.exports = {
     find_pending_quizzes,
     look_up_password,
     loadPracticeGrades,
-    check_quiz_password
+    check_quiz_password,
+    find_pending_practice
 };
