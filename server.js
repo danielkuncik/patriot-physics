@@ -260,7 +260,7 @@ const look_up_requirements = function(req, res, next) {
                 req.dueObject = dueObject;
 
                 if (req.gradeMap) {
-                    req.specificGradeMap = req.gradeMap[req.superUnitKey].units[req.unitKey].pod[req.podKey];
+                    req.specificGradeMap = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey];
                 }
             }
         });
