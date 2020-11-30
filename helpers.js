@@ -727,7 +727,7 @@ hbs.registerHelper('bringUnitMapToFrontEnd', () => {
 
 hbs.registerHelper('displayRequirements', (loggedIn, dueObject, gradeObject) => {
     // THIS IS THE NEXT STEP!!!
-    console.log(loggedIn, dueObject, gradeObject);
+    //console.log(loggedIn, dueObject, gradeObject);
     let string = "<h1>Here is where the requirements will go!</h1>";
     return new hbs.SafeString(string);
 });
