@@ -487,7 +487,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               "practicePages": []
           };
             const dateDisplay = displayDateFromString(dueDateKey);
-            string = string + `<h2>Due on ${dateDisplay}</h2>`;
+            string = string + `<h2>Can retake until ${dateDisplay}</h2>`;
             string = string + "<div class = 'ml-4'>";
             Object.keys(dueDates[dueDateKey]).forEach((pod_uuid) => {
                 const inClassQuiz = dueDates[dueDateKey][pod_uuid].inClass;
@@ -728,6 +728,22 @@ hbs.registerHelper('bringUnitMapToFrontEnd', () => {
 hbs.registerHelper('displayRequirements', (loggedIn, dueObject, gradeObject) => {
     // THIS IS THE NEXT STEP!!!
     //console.log(loggedIn, dueObject, gradeObject);
+    if (dueObject && dueObject.practice && !dueObject.overdue) {
+        // practice and quiz are both due
+
+    } else if (dueObject && dueObject.practice && dueObject.overdue) {
+        // practice and quiz overdue
+
+    } else if (dueObject && !dueObject.overdue) {
+        // quiz is due, practice is not, not overdue
+
+    } else if (dueObject && dueObject.overdue) {
+        // quiz is due, practice is not,  overdue
+
+    } else {
+        // quiz is not due (practice isn't either)
+
+    }
     let string = "<h1>Here is where the requirements will go!</h1>";
     return new hbs.SafeString(string);
 });

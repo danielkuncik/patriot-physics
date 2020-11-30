@@ -258,6 +258,10 @@ const look_up_requirements = function(req, res, next) {
                 let now = new Date();
                 dueObject.overdue = dueDateObject - now < 0;
                 req.dueObject = dueObject;
+
+                if (req.gradeMap) {
+                    req.specificGradeMap = req.gradeMap[req.superUnitKey].units[req.unitKey].pod[req.podKey];
+                }
             }
         });
         next();
