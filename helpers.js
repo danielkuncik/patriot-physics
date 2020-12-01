@@ -728,23 +728,42 @@ hbs.registerHelper('bringUnitMapToFrontEnd', () => {
 hbs.registerHelper('displayRequirements', (loggedIn, dueObject, gradeObject) => {
     // THIS IS THE NEXT STEP!!!
     //console.log(loggedIn, dueObject, gradeObject);
+    let string = "<div class = 'jumbotron'><div class = 'container'><div class = 'row'>";
     if (dueObject && dueObject.practice && !dueObject.overdue) {
-        // practice and quiz are both due
+        string = string + "<div class = 'col-6'>" +
+            "<p>The practice page is required for your class. Complete the problems on this page and submit them.</p>" +
+            "</div>"
+
+        string = string + "<div class = 'col-6'>" +
+            "<p>The quiz is required for your class.</p>" +
+            "</div>"
 
     } else if (dueObject && dueObject.practice && dueObject.overdue) {
-        // practice and quiz overdue
+        string = string + "<div class = 'col-6'>" +
+            "<p>The practice page is required for your class, but it is overdue.</p>" +
+            "</div>"
 
+        string = string + "<div class = 'col-6'>" +
+            "<p>The quiz is required for your class, but it is overdue. You need a password to access it.</p>" +
+            "</div>"
     } else if (dueObject && !dueObject.overdue) {
-        // quiz is due, practice is not, not overdue
+        string = string + "<div class = 'col-3'>" +
+            "<p>The practice page is <strong>not</strong> required for your class. However, study it well to do well on the quiz.</p>" +
+            "</div>"
 
+        string = string + "<div class = 'col-9'>" +
+            "<p>The quiz is required for your class.</p>" +
+            "</div>"
     } else if (dueObject && dueObject.overdue) {
-        // quiz is due, practice is not,  overdue
-
+        string = string + "<div class = 'col-12'>" +
+            "<p>This pod is not a current assignment for your class.</p>" +
+            "</div>"
     } else {
-        // quiz is not due (practice isn't either)
-
+        string = string + "<div class = 'col-12'>" +
+            "<p>This quiz is not required for your class.</p>" +
+            "</div>"
     }
-    let string = "<h1>Here is where the requirements will go!</h1>";
+    string = string + "</div></div></div>";
     return new hbs.SafeString(string);
 });
 
