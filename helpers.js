@@ -16,7 +16,7 @@ hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
         output = output + `<li>Name: ${user.name}</li>`;
         output = output + `<li>Section: ${section.name}</li>`;
         output = output + `<li>Level: ${overallLevel}</li>`;
-        output = output + `<li>Total Number of MiniQuiz Attempts: ${totalAttempts}</li>`;
+        // output = output + `<li>Total Number of MiniQuiz Attempts: ${totalAttempts}</li>`;
         output = output + "</ul>";
     } else {
         output = "<p>Not logged in. Click <a style = 'font-size: 20px' href = '/login'>HERE</a> to login.</p>";
@@ -196,7 +196,7 @@ hbs.registerHelper('displayQuizLink', (superUnitKey, unitKey, podKey, loggedIn, 
             link = link + ` <a href = '${href}'>GO TO MINIQUIZ</a>`;
         }
     } else {
-        link = link + 'Sorry, no miniquiz is available yet for this pod. You do not need to take the miniquiz for the summer work.';
+        link = link + 'Sorry, no miniquiz is available yet for this pod.';
     }
     link = link + '</h4>';
     return new hbs.SafeString(link);
