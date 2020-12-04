@@ -141,26 +141,33 @@ app.use(express.static(__dirname + '/public'));
 // ROUTES
 
 // home
-app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice, db.count_all_attempts,f.niceFlash, disp.display_home]);
+app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice,f.niceFlash, disp.display_home]);
 
 
 // login and logout
 app.get('/login', [(request, response, next) => {
     const host = request.headers.host;
     const referer = request.headers.referer;
-    let path = referer.replace(`http://${host}`,'');
-    if (path === '/login') {
-        path = '/';
+    let path ;
+    if (referer === undefined) {
+        path = '/'
+    } else {
+        path = referer.replace(`http://${host}`,'');
+        if (path === '/login') {
+            path = '/';
+        }
     }
     request.newPath = path;
     next();
 },db.check_if_logged_in, disp.display_login_page]);
-app.post('/login',[db.check_login, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice, db.count_all_attempts, db.check_if_logged_in, disp.display_home]);
-// when I'm ready, add this!
-//     (req,res) => {
-//     const path = req.query.path;
-//     res.redirect(path);
-// }]);
+app.post('/login',[(req, res, next) => {
+    req.newPath = req.query.path;
+    next();
+    },
+    db.check_login, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice, (req, res) => {
+    res.redirect(req.newPath); // inefficient, may result in loading grades twice
+    }]);
+//db.check_if_logged_in, disp.display_home
 app.get('/logout',[db.check_if_logged_in, disp.display_logout_page]);
 app.post('/logout',(req, res) => {
     req.session.student = undefined;
