@@ -726,8 +726,7 @@ hbs.registerHelper('bringUnitMapToFrontEnd', () => {
 });
 
 
-/// INPROGRESS!!! => => => fix the bottom
-hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject) => {
+hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
     let message, link, lateCode = false;
     if (!loggedIn) {
         message = 'You must be logged in to take the quiz.';
@@ -740,18 +739,18 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject) => {
         message = 'You already ACED this quiz! Great job!';
         link = false;
 
-    } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0) {
+    } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && !quizRequirementObject.pending) {
         message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}. It is passed the date to retake the quiz.`;
         link = 'Access quiz with late code';
         lateCode = true;
-    } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0) {
+    } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && !quizRequirementObject.pending) {
         message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
         link = 'Go to quiz.';
-    } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0) {
+    } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0 && !quizRequirementObject.pending) {
         message = `You have not yet taken this quiz. It is passed the date to take it.`;
         link = 'Access quiz with late code';
         lateCode = true;
-    } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0) {
+    } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0 && !quizRequirementObject.pending) {
         message = `You have not yet take this quiz. You can take this quiz until ${quizRequirementObject.dueDate}.`;
         link = 'Go to quiz.';
 
@@ -787,18 +786,57 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject) => {
         link = 'Access quiz with in class code.';
     }
     // how do i handle it if another code is required???
-    let finalMessage = `<p>${message}</p>`;
-    let finalLink;
+    let string = `<p>${message}</p>`;
     if (link) {
-        finalLink = `<a href = '#'>${link}</a>`
+        string = string + `<a href = '/quizAccess/${uuid}'>GO TO QUIZ</a>`
     }
-    return new hbs.SafeString(finalMessage + finalLink)
+    return new hbs.SafeString(string)
 });
 
 
-hbs.registerHelper('practiceLink', (loggedIn, practiceObject) => {
+hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
+    // required, practicePending, currentTopScore, overdue, dueDate
     console.log(practiceObject);
-    return new hbs.SafeString('<p>practice</p>');
+    let message, link;
+    if (!loggedIn) {
+        message = 'You must log in to submit the practice page.';
+        link = false;
+    } else if (!practiceObject.required) {
+        message = 'This practice page is not required for your class at this time.'
+    } else if (practiceObject.currentTopScore === 2) {
+        message = 'You have already completed this practice page.';
+        link = false;
+    } else if (practiceObject.overdue && practiceObject.currentTopScore === 1 && !practiceObject.practicePending) {
+        message = 'The practice page was already due. You received half credit.';
+        link = false;
+    } else if (practiceObject.overdue && practiceObject.currentTopScore === 1 && practiceObject.practicePending) {
+        message = 'The practice page was already due. You received half credit so far, but your resubmission is pending';
+        link = false;
+    } else if (practiceObject.overdue && practiceObject.currentTopScore === 0 && practiceObject.practicePending) {
+        message = 'The practice page was already due. You did not receive credit.';
+        link = false;
+    } else if (practiceObject.overdue && practiceObject.currentTopScore === 0 && !practiceObject.practicePending) {
+        message = 'The practice page was already due. You have not received credit so far, but your submission is pending.';
+        link = false;
+    } else if (!practiceObject.overdue && practiceObject.currentTopScore === 1 && practiceObject.practicePending) {
+        message = `This practice page is due on ${practiceObject.dueDate}. So far, you have received half credit, and your resubmission is pending.`;
+        link = true;
+    } else if (!practiceObject.overdue && practiceObject.currentTopScore === 1 && !practiceObject.practicePending) {
+        message = `This practice page is due on ${practiceObject.dueDate}. So far, you have received half credit. You may resubmit new work to potentially receive full credit.`;
+        link = true;
+    } else if (!practiceObject.overdue && practiceObject.currentTopScore === 0 && practiceObject.practicePending) {
+        message = `This practice page is due on ${practiceObject.dueDate}. You have not submitted anything so far.`;
+        link = true;
+    } else if (!practiceObject.overdue && practiceObject.currentTopScore === 0 && !practiceObject.practicePending) {
+        message = `This practice page is due on ${practiceObject.dueDate}. Your submission is pending.`;
+        link = false;
+    }
+
+    let string = `<p>${message}</p>`;
+    if (link) {
+        string = string + `<a href = '/practiceSubmission/${uuid}'>SUBMIT PRACTICE PAGE</a>`;
+    }
+    return new hbs.SafeString(string);
 });
 
 hbs.registerHelper('displayRequirements', (loggedIn, dueObject, quizRequirementObject) => {

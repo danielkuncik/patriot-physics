@@ -425,7 +425,9 @@ const checkQuizAccess = (req, res, next) => {
 
 const lateCode = 'hdu7g2d';
 
-app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
+/// THIS NEEDS TO BE EDITTED TO a) get info from the due dates page, not the unit map, and b) check if it is overdue
+// fortunately, the function for that already exists, it shouldn't be a big change
+app.get('/quizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
     if (!req.loggedIn) {
         // flash => you must be logged in to take a quiz
         res.redirect(`/pod/${req.params.uuid}`);
