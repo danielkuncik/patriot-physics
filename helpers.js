@@ -796,9 +796,10 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject) => {
 });
 
 
-function practiceLink(currentTopScore, overdue) {
-
-}
+hbs.registerHelper('practiceLink', (loggedIn, practiceObject) => {
+    console.log(practiceObject);
+    return new hbs.SafeString('<p>practice</p>');
+});
 
 hbs.registerHelper('displayRequirements', (loggedIn, dueObject, quizRequirementObject) => {
     // THIS IS THE NEXT STEP!!!

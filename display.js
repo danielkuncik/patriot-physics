@@ -144,7 +144,8 @@ display_pod_page = (req, res) => {
             dueDateObject: req.dueObject,
             gradeObject: req.gradeObject,
             specificGradeMap: req.specificGradeMap,
-            quizRequirementObject: req.quizRequirements
+            quizRequirementObject: req.quizRequirements,
+            practiceRequirementObject: req.practiceObject
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';

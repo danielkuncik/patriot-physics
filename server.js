@@ -308,8 +308,21 @@ const checkQuizAccess2 = (req, res, next) => {
                 if (req.gradeMap) {
                     req.quizRequirements["pending"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].pending;
                     req.quizRequirements["currentTopScore"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score;
+                    if (requirements.practice) {
+                        req.practiceObject = {
+                            required: true
+                        };
+                        /// CURRENTLY hardwired that practice and
+                        req.practiceObject["practicePending"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].practicePending;
+                        req.practiceObject["currentTopScore"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].practiceScore;
+                        let practiceDueDate = requirements.practiceDueDate ? requirements.practiceDueDate : thisDueDate;
+                        let practiceDueDateObject = new Date(practiceDueDate);
+                        req.practiceObject.overdue = practiceDueDate - now < 0;
+                        req.practiceObject.dueDate = practiceDueDate;
+                    } else {
+                        req.practiceObject = {required: false}
+                    }
                 }
-
             }
         }
     }
