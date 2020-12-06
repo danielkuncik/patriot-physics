@@ -143,7 +143,8 @@ display_pod_page = (req, res) => {
             practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`,
             dueDateObject: req.dueObject,
             gradeObject: req.gradeObject,
-            specificGradeMap: req.specificGradeMap
+            specificGradeMap: req.specificGradeMap,
+            quizRequirementObject: req.quizRequirements
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';

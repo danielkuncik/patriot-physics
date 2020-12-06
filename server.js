@@ -286,6 +286,35 @@ const look_up_current_scores = function(req, res, next) {
         next();
     }
 };
+const checkQuizAccess2 = (req, res, next) => {
+    let courseLevel;
+    if (req.user && req.courseLevel) {
+        const uuid = req.params.pod_uuid;
+        let dueDateObject = dueDates[req.courseLevel];
+        let dueDateArray = Object.keys(dueDateObject);
+        let i;
+        for (i = 0; i < dueDateArray.length; i++) {
+            let dueDate = dueDateArray[i];
+            if ((Object.keys(dueDateObject[dueDate])).includes(uuid)) {
+                let thisDueDate = dueDate;
+                let requirements = dueDateObject[dueDate][uuid];
+
+                req.quizRequirements = {};
+                req.quizRequirements["dueDate"] = thisDueDate;
+                let now = new Date();
+                let quizDueDate = new Date(thisDueDate);
+                req.quizRequirements.overdue = quizDueDate - now < 0;
+                req.quizRequirements.inClass = requirements["inClass"];
+                if (req.gradeMap) {
+                    req.quizRequirements["pending"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].pending;
+                    req.quizRequirements["currentTopScore"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score;
+                }
+
+            }
+        }
+    }
+    next();
+};
 
 // load pod page
 app.get('/pod/:pod_uuid',[ (req, res, next) => {
@@ -299,7 +328,7 @@ app.get('/pod/:pod_uuid',[ (req, res, next) => {
         req.podKey = selectionObject.podKey;
         next();
       }
-}, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, disp.display_pod_page]);
+}, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, checkQuizAccess2,disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
@@ -368,6 +397,7 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 const quizLock = false;
 
 
+
 const checkQuizAccess = (req, res, next) => {
     req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
     const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
@@ -379,6 +409,8 @@ const checkQuizAccess = (req, res, next) => {
     req.passwordAccessRequired = req.memorizationQuiz || req.ApInClass || req.HonorsInClass || req.A_level_InClass || req.quizLock;
     next();
 };
+
+const lateCode = 'hdu7g2d';
 
 app.get('/miniquizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
     if (!req.loggedIn) {
