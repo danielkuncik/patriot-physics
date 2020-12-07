@@ -488,7 +488,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
           };
             const dateDisplay = displayDateFromString(dueDateKey);
             string = string + `<h2>Can retake until ${dateDisplay}</h2>`;
-            string = string + "<div class = 'ml-4'>";
+            string = string + "<div class = 'ml-4 mb-4'>";
             Object.keys(dueDates[dueDateKey]).forEach((pod_uuid) => {
                 const inClassQuiz = dueDates[dueDateKey][pod_uuid].inClass;
                 let displayObject;
@@ -836,49 +836,6 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
     return new hbs.SafeString(string);
 });
 
-hbs.registerHelper('displayRequirements', (loggedIn, dueObject, quizRequirementObject) => {
-    // THIS IS THE NEXT STEP!!!
-    //console.log(loggedIn, dueObject, gradeObject);
-    let string = "<div class = 'jumbotron'><div class = 'container'><div class = 'row'>";
-
-
-    if (dueObject && dueObject.practice && !dueObject.overdue) {
-        string = string + "<div class = 'col-6'>" +
-            "<p>The practice page is required for your class. Complete the problems on this page and submit them.</p>" +
-            "</div>"
-
-        string = string + "<div class = 'col-6'>" +
-            "<p>The quiz is required for your class.</p>" +
-            "</div>"
-
-    } else if (dueObject && dueObject.practice && dueObject.overdue) {
-        string = string + "<div class = 'col-6'>" +
-            "<p>The practice page is required for your class, but it is overdue.</p>" +
-            "</div>"
-
-        string = string + "<div class = 'col-6'>" +
-            "<p>The quiz is required for your class, but it is overdue. You need a password to access it.</p>" +
-            "</div>"
-    } else if (dueObject && !dueObject.overdue) {
-        string = string + "<div class = 'col-3'>" +
-            "<p>The practice page is <strong>not</strong> required for your class. However, study it well to do well on the quiz.</p>" +
-            "</div>"
-
-        string = string + "<div class = 'col-9'>" +
-            "<p>The quiz is required for your class.</p>" +
-            "</div>"
-    } else if (dueObject && dueObject.overdue) {
-        string = string + "<div class = 'col-12'>" +
-            "<p>This pod is not a current assignment for your class.</p>" +
-            "</div>"
-    } else {
-        string = string + "<div class = 'col-12'>" +
-            "<p>This quiz is not required for your class.</p>" +
-            "</div>"
-    }
-    string = string + "</div></div></div>";
-    return new hbs.SafeString(string);
-});
 
 module.exports = {
 
