@@ -1,6 +1,6 @@
 {
   "AP": {
-    "12-7-2020": {
+    "12-11-2020": {
       "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f": {
         "name": "Reaction Force of Weight",
         "practice": true,
@@ -17,7 +17,7 @@
         "inClass": false
       }
     },
-    "12-14-2020": {
+    "12-16-2020": {
       "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85": {
         "name": "Quantitative Graphs 4B (from velocity graph)",
         "practice": true,
@@ -98,19 +98,21 @@
     }
   },
   "Honors": {
-    "12-10-2020": {
+    "12-11-2020": {
       "5b081810-95c4-4ea0-bcf6-625c67cf6e29": {
         "name": "Kinematic Graph Comparisons",
         "practice": false,
         "inClass": false
-      },
+      }
+    },
+    "12-14-2020": {
       "beb2106c-410e-44c1-8179-32a01059963d": {
         "name": "Kinematics Definitions",
         "practice": true,
         "inClass": false
       }
     },
-    "12-14-2020": {
+    "12-18-2020": {
       "c3212e62-6634-43d5-9fe3-133f53064454": {
         "name": "Quant Graphs 2",
         "practice": true,
@@ -127,7 +129,7 @@
         "inClass": true
       }
     },
-    "12-18-2020": {
+    "12-21-2020": {
       "65b8b752-7ee6-421f-aede-b40ec100bfe7": {
         "name": "Ohms Law",
         "practice": true,
@@ -139,7 +141,7 @@
         "inClass": false
       }
     },
-    "12-21-2020": {
+    "12-23-2020": {
       "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
         "name": "Analyze Circuits 1",
         "practice": true,
