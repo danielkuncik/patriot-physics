@@ -293,13 +293,14 @@ const checkQuizAccess2 = (req, res, next) => {
         let dueDateObject = dueDates[req.courseLevel];
         let dueDateArray = Object.keys(dueDateObject);
         let i;
+        req.quizRequirements = {"required": false};
+        req.practiceObject = {"required": false};
         for (i = 0; i < dueDateArray.length; i++) {
             let dueDate = dueDateArray[i];
             if ((Object.keys(dueDateObject[dueDate])).includes(uuid)) {
                 let thisDueDate = dueDate;
                 let requirements = dueDateObject[dueDate][uuid];
-
-                req.quizRequirements = {};
+                req.quizRequirements["required"] = true;
                 req.quizRequirements["dueDate"] = thisDueDate;
                 let now = new Date();
                 let quizDueDate = new Date(thisDueDate);
@@ -309,18 +310,13 @@ const checkQuizAccess2 = (req, res, next) => {
                     req.quizRequirements["pending"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].pending;
                     req.quizRequirements["currentTopScore"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score;
                     if (requirements.practice) {
-                        req.practiceObject = {
-                            required: true
-                        };
-                        /// CURRENTLY hardwired that practice and
+                        req.practiceObject["required"] = true;
                         req.practiceObject["practicePending"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].practicePending;
                         req.practiceObject["currentTopScore"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].practiceScore;
                         let practiceDueDate = requirements.practiceDueDate ? requirements.practiceDueDate : thisDueDate;
                         let practiceDueDateObject = new Date(practiceDueDate);
                         req.practiceObject.overdue = practiceDueDate - now < 0;
                         req.practiceObject.dueDate = practiceDueDate;
-                    } else {
-                        req.practiceObject = {required: false}
                     }
                 }
             }

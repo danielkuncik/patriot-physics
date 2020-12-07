@@ -127,7 +127,7 @@ display_pod_page = (req, res) => {
             podKey: req.podKey,
             objective: pod.objective,
             content: pod.content,
-            backLink: `/unit/${req.superUnitKey}/${req.unitKey}`,
+            backLink: `/unit/${unit.uuid}`,
             //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
             letter: pod.letter,
             unitNumber: unitNumber,

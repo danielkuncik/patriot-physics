@@ -732,19 +732,18 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
         message = 'You must be logged in to take the quiz.';
         link = false;
         // add log in link
-    } else if (quizRequirementObject === undefined) {
+    } else if (!quizRequirementObject.required) {
         message = 'This quiz is not required for your class at this time.';
         link = false;
     } else if (quizRequirementObject.currentTopScore === 20) {
         message = 'You already ACED this quiz! Great job!';
         link = false;
-
     } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && !quizRequirementObject.pending) {
-        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}. It is passed the date to retake the quiz.`;
+        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20. It is passed the date to retake the quiz.`;
         link = 'Access quiz with late code';
         lateCode = true;
     } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && !quizRequirementObject.pending) {
-        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
+        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
         link = 'Go to quiz.';
     } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0 && !quizRequirementObject.pending) {
         message = `You have not yet taken this quiz. It is passed the date to take it.`;
@@ -756,10 +755,10 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
 
         // pending homework quizzes
     } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && quizRequirementObject.pending) {
-        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}, but you are waiting for a new score. It is passed the date to retake the quiz.`;
+        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20, and you are waiting for a new score. It is passed the date to retake the quiz.`;
         link = false;
     } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && quizRequirementObject.pending) {
-        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}, and you are waiting for a new score. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
+        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20, and you are waiting for a new score. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
         link = false;
     } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0 && quizRequirementObject.pending) {
         message = `You took this quiz once, and you are waiting for your score. It is passed the date to take it.`;
@@ -768,14 +767,13 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
         message = `You took this quiz once, and you are waiting for your score. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
         link = false;
 
-
         // in class quizzes
     } else if (quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0) {
-        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}. This was an in-class quiz, but it is passed the date to retake the quiz.`;
+        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20. This was an in-class quiz, but it is passed the date to retake the quiz.`;
         link = 'Access quiz with late code AND in class code.';
         lateCode = true;
     } else if (quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0) {
-        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore}. You can retake this quiz in class until ${quizRequirementObject.dueDate}.`;
+        message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20. You can retake this quiz in class or during extra time until ${quizRequirementObject.dueDate}.`;
         link = 'Access quiz with in class code.';
     } else if (quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore === 0) {
         message = `You have not yet taken this quiz. This was an in class quiz, but it is passed the date to take it.`;
@@ -796,7 +794,6 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
 
 hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
     // required, practicePending, currentTopScore, overdue, dueDate
-    console.log(practiceObject);
     let message, link;
     if (!loggedIn) {
         message = 'You must log in to submit the practice page.';
