@@ -45,6 +45,13 @@
                 {{quizLinkNew loggedIn quizRequirementObject uuid}}
             </div>
         </div>
+        {{#if not loggedIn}}
+            <div class = 'row'>
+                <div class = 'col-6'>
+                    <h5><a href = '/login'>Login Here</a></h5>
+                </div>
+            </div>
+        {{/if}}
     </div>
 </div>
 
@@ -84,6 +91,13 @@
                 {{quizLinkNew loggedIn quizRequirementObject uuid}}
             </div>
         </div>
+        {{#if not loggedIn}}
+            <div class = 'row'>
+                <div class = 'col-6'>
+                    <h5><a href = '/login'>Login Here</a></h5>
+                </div>
+            </div>
+        {{/if}}
     </div>
 </div>
 
