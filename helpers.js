@@ -822,11 +822,11 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
         message = `This practice page is due on ${practiceObject.dueDate}. So far, you have received half credit. You may resubmit new work to potentially receive full credit.`;
         link = true;
     } else if (!practiceObject.overdue && practiceObject.currentTopScore === 0 && practiceObject.practicePending) {
-        message = `This practice page is due on ${practiceObject.dueDate}. You have not submitted anything so far.`;
-        link = true;
-    } else if (!practiceObject.overdue && practiceObject.currentTopScore === 0 && !practiceObject.practicePending) {
         message = `This practice page is due on ${practiceObject.dueDate}. Your submission is pending.`;
         link = false;
+    } else if (!practiceObject.overdue && practiceObject.currentTopScore === 0 && !practiceObject.practicePending) {
+        message = `This practice page is due on ${practiceObject.dueDate}. You have not submitted anything so far.`;
+        link = true;
     }
 
     let string = `<p>${message}</p>`;
