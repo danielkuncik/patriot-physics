@@ -15,12 +15,12 @@ function makeCircuitProblem(type, voltage, resistorArray, powerRowBoolean, note)
         powerRowBoolean = true;
     }
     //function CircuitTable(numResistors, powerRowBoolean, width, height, unit) {
-    let myTable = new CircuitTable(resistorArray.length, powerRowBoolean);
+    let myTable = new ElectricCircuitTable(resistorArray.length, powerRowBoolean);
     let containerDiv = $("<div class = 'container'></div>");
     let rowDiv = $("<div class = 'row'></div>");
     let circuitDiv = $("<div class = 'col-md-6'></div>");
     let tableDiv = $("<div class = 'col-md-6'></div>");
-    $(tableDiv).append(myTable.table);
+    $(tableDiv).append(myTable.draw());
     $(circuitDiv).append(circuit.drawCanvas(400,300));
     if (note) {
         $(circuitDiv.append($(`<p>${note}</p>`)));

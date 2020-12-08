@@ -168,6 +168,7 @@ const submit_quiz = function(req, res, next) {
     const pod_uuid = req.query.uuid;
     const student_id = req.user.id;
 
+    req.session.gradeMap.map[req.superUnitKey].units[req.unitKey].pods[req.podKey].pending = true;
     if (req.files === undefined) {
         res.redirect('/');
         // need a flash!
@@ -213,6 +214,9 @@ const submit_quiz = function(req, res, next) {
 const submit_practice = (req, res, next) => {
     const pod_uuid = req.pod_uuid;
     const student_id = req.user.id;
+    console.log(req.superUnitKey, req.unitKey, req.podKey);
+    req.session.gradeMap.map[req.superUnitKey].units[req.unitKey].pods[req.podKey].practicePending = true;
+    //// NOT WORKING
 
     if (req.files === undefined) {
         res.redirect('/');

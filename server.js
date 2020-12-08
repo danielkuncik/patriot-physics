@@ -445,6 +445,11 @@ app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
     }
 },checkQuizAccess, db.look_up_password, db.check_quiz_password, disp.display_quiz]);
 
+app.get('/quiz/:uuid',(req,res) => {
+    const uuid = req.params.uuid;
+    res.redirect(`/pod/${uuid}`);
+});
+
 // individual quiz page
 app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, disp.display_quiz]);
 //app.post('/quizzes/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, check_quiz_password, disp.display_quiz]);
@@ -475,10 +480,30 @@ function look_up_quiz_answers(req, res, next) {
 
 
 // app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
-app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, look_up_quiz_answers,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in,
+    (req, res, next) => {
+    const selectionObject = gm.getPodKeysByUUID(req.query.uuid);
+    if (!selectionObject) {
+        res.redirect('/');
+    } else {
+        req.superUnitKey = selectionObject.superUnitKey;
+        req.unitKey = selectionObject.unitKey;
+        req.podKey = selectionObject.podKey;
+        next();
+    }
+    }, look_up_quiz_answers,db.submit_quiz,(req, res) => {res.redirect('/');}]);
 
 app.post('/submitPractice/:pod_uuid', [(req, res, next) => {
     req.pod_uuid = req.params.pod_uuid;
+    const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
+    if (!selectionObject) {
+        res.redirect('/');
+    } else {
+        req.superUnitKey = selectionObject.superUnitKey;
+        req.unitKey = selectionObject.unitKey;
+        req.podKey = selectionObject.podKey;
+        next();
+    }
     next();
     },uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
     req.pod_uuid = req.params.pod_uuid;
