@@ -786,7 +786,7 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
     // how do i handle it if another code is required???
     let string = `<p>${message}</p>`;
     if (link) {
-        string = string + `<a href = '/quizAccess/${uuid}'>GO TO QUIZ</a>`
+        string = string + `<a href = '/quizAccess/${uuid}'>GO TO QUIZ</a>`;
     }
     return new hbs.SafeString(string)
 });
@@ -832,6 +832,9 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
     let string = `<p>${message}</p>`;
     if (link) {
         string = string + `<a href = '/practiceSubmission/${uuid}'>SUBMIT PRACTICE PAGE</a>`;
+        if (practiceObject.practiceComment) {
+            string = string + `<p>Comment on Previous Submission: ${quizRequirementObject.practiceComment}</p>`;
+        }
     }
     return new hbs.SafeString(string);
 });

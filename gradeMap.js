@@ -96,7 +96,8 @@ class GradeMap {
                         valueWeight: valueWeight,
                         level: level,
                         pending: false,
-                        practicePending: false
+                        practicePending: false,
+                        practiceComment: undefined
                     }
                 });
             });
@@ -158,7 +159,8 @@ class GradeMap {
         }
     }
 
-    addPracticeScore(pod_uuid, score) {
+    addPracticeScore(pod_uuid, score, comment) {
+        console.log(comment);
         if (score === undefined) {
             score = 0;
         }
@@ -170,6 +172,9 @@ class GradeMap {
         let selectionObject = getPodKeysByUUID(pod_uuid);
         if (selectionObject) {
             this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].practiceScore = score;
+            if (comment) {
+                this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].practiceComment = comment;
+            }
         }
 
     }

@@ -134,6 +134,7 @@ display_pod_page = (req, res) => {
             unitClusterName: unitMap[req.superUnitKey].title,
             user: req.user,
             loggedIn: loggedIn,
+            notLoggedIn: !loggedIn,
             section: req.section,
             overallLevel: req.overallLevel,
             gradeMap: req.gradeMap,

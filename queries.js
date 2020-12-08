@@ -99,7 +99,7 @@ const loadPracticeGrades = function(req, res, next) {
                 throw error
             }
             result.rows.forEach((score) => {
-                req.session.gradeMap.addPracticeScore(score.pod_uuid, score.score);
+                req.session.gradeMap.addPracticeScore(score.pod_uuid, score.score, score.comment);
             });
 
             next();
