@@ -1,11 +1,6 @@
 {
   "AP": {
     "12-11-2020": {
-      "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f": {
-        "name": "Reaction Force of Weight",
-        "practice": true,
-        "inClass": false
-      },
       "65b8b752-7ee6-421f-aede-b40ec100bfe7": {
         "name": "Ohm's Law",
         "practice": false,
@@ -65,6 +60,11 @@
       }
     },
     "12-21-2020": {
+      "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f": {
+        "name": "Reaction Force of Weight",
+        "practice": true,
+        "inClass": false
+      },
       "b9e05631-d323-4455-8c97-c8d733f7ee86": {
         "name": "Quantitative Graphs 4C (from acceleration graph)",
         "practice": true,
