@@ -329,6 +329,9 @@ const checkQuizAccess2 = (req, res, next) => {
 // load pod page
 app.get('/pod/:pod_uuid',[ (req, res, next) => {
       req.pod_uuid = req.params.pod_uuid;
+      if (req.query.flashMessage) {
+          req.flashMessage = req.query.flashMessage;
+      }
       const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
       if (!selectionObject) {
         res.redirect('/');

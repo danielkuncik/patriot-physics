@@ -387,8 +387,7 @@ const check_quiz_password = (req, res, next) => {
         if (correctPassword === enteredPassword) {
             next();
         } else {
-            // add flash
-            res.redirect(`/pod/${req.params.uuid}`);
+            res.redirect(`/pod/${req.params.uuid}?flashMessage=incorrect password`);
         }
     } else {
         next();

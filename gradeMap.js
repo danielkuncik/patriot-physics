@@ -160,7 +160,6 @@ class GradeMap {
     }
 
     addPracticeScore(pod_uuid, score, comment) {
-        console.log(comment);
         if (score === undefined) {
             score = 0;
         }
