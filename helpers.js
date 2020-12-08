@@ -592,8 +592,8 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               obj.inClass.forEach((displayObject) => {
                   string = string + "<li>";
                   string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
-                  if (displayObject.score) {
-                      string = string + displayObject.score;
+                  if (displayObject.scoreDisplay) {
+                      string = string + displayObject.scoreDisplay;
                   }
                   string = string + "</li>";
               });
