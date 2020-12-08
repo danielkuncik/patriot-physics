@@ -33,11 +33,6 @@
         "practice": true,
         "inClass": true
       },
-      "2c9250e1-6ed1-4324-a718-4ce387b1d758": {
-        "name": "Elevators 2",
-        "practice": false,
-        "inClass": true
-      },
       "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
         "name": "Analyze Circuits 1",
         "practice": false,
@@ -94,6 +89,11 @@
         "name": "Kinetic and Potential Energy Graphs",
         "practice": false,
         "inClass": false
+      },
+      "2c9250e1-6ed1-4324-a718-4ce387b1d758": {
+        "name": "Elevators 2",
+        "practice": false,
+        "inClass": true
       }
     }
   },

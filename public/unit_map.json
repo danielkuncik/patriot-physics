@@ -3989,7 +3989,7 @@
             "content": "When drawing a free-body diagram, always identify the name, direction, object and agent of any force; forces always come in pairs called action-reaction pairs; in an action reaction-pair, the object of one force is the agent of the paired force, and the direction of the paired forces are opposite",
             "uuid": "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f",
             "id": "",
-            "inClass_AP": true
+            "inClass_AP": false
           },
           "free_body_diagrams_4":
           {
