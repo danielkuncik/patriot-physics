@@ -216,7 +216,6 @@ const submit_practice = (req, res, next) => {
     const student_id = req.user.id;
     console.log(req.superUnitKey, req.unitKey, req.podKey);
     req.session.gradeMap.map[req.superUnitKey].units[req.unitKey].pods[req.podKey].practicePending = true;
-    //// NOT WORKING
 
     if (req.files === undefined) {
         res.redirect('/');
@@ -279,7 +278,6 @@ const submit_practice = (req, res, next) => {
         });
     }
 
-    next();
 };
 
 const look_up_quiz_attempts = function(req, res, next) {
@@ -372,6 +370,30 @@ const find_pending_practice = function(req, res, next) {
     }
 };
 
+const find_practice_comment = function(req, res, next) {
+    if (req.session.student) {
+        const id = req.session.student.id;
+        pool.query('SELECT comment FROM practice_submissions WHERE student_id = $1 AND score < 2 AND pod_uuid = $2', [req.session.student.id, req.pod_uuid], (err, results) => {
+            if (err) {
+                throw err
+            }
+            let comments = undefined;
+            if (results.rows.length === 1) {
+                comments = `Comment: ${results.rows[0].comment}`;
+            } else if (results.rows.length > 1) {
+                let i;
+                comments = 'Comments: ';
+                comments = comments + results.rows[0].comment;
+                for (i = 1; i < results.rows.length; i++) {
+                    comments = comments + '; ' + results.rows[i].comment;
+                }
+            }
+            req.practiceComments = comments;
+            next();
+        });
+    }
+};
+
 const look_up_password = (req, res, next) => {
     pool.query('SELECT passwords FROM quiz_passwords',[],(error, result) => {
         if (error) {
@@ -413,5 +435,6 @@ module.exports = {
     look_up_password,
     loadPracticeGrades,
     check_quiz_password,
-    find_pending_practice
+    find_pending_practice,
+    find_practice_comment
 };

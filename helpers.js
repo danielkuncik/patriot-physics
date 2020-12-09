@@ -792,7 +792,7 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
 });
 
 
-hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
+hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid, practiceComments) => {
     // required, practicePending, currentTopScore, overdue, dueDate
     let message, link;
     if (!loggedIn) {
@@ -832,8 +832,8 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid) => {
     let string = `<p>${message}</p>`;
     if (link) {
         string = string + `<a href = '/practiceSubmission/${uuid}'>SUBMIT PRACTICE PAGE</a>`;
-        if (practiceObject.practiceComment) {
-            string = string + `<p>Comment on Previous Submission: ${quizRequirementObject.practiceComment}</p>`;
+        if (practiceComments) {
+            string = string + `<p>${practiceComments}</p>`;
         }
     }
     return new hbs.SafeString(string);

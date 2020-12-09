@@ -148,7 +148,8 @@ display_pod_page = (req, res) => {
             quizRequirementObject: req.quizRequirements,
             practiceRequirementObject: req.practiceObject,
             uuid: req.pod_uuid,
-            flash: req.flashMessage ? req.flashMessage : ''
+            flash: req.flashMessage ? req.flashMessage : '',
+            practiceComments: req.practiceComments
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';

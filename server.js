@@ -341,7 +341,7 @@ app.get('/pod/:pod_uuid',[ (req, res, next) => {
         req.podKey = selectionObject.podKey;
         next();
       }
-}, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, checkQuizAccess2,disp.display_pod_page]);
+}, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
