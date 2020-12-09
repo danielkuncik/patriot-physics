@@ -390,6 +390,8 @@ const find_practice_comment = function(req, res, next) {
             req.practiceComments = comments;
             next();
         });
+    } else {
+        next();
     }
 };
 
