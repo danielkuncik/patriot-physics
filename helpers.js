@@ -518,16 +518,16 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                     } else if (score > 0) {
                         scoreDisplay = `${score} out of 20`;
                     } else {
-                        scoreDisplay = undefined;
+                        scoreDisplay = '0 out of 20 (not yet taken)';
                     }
 
                     let practiceDisplay;
                     if (practiceScore === 1) {
-                        practiceDisplay = 'half done';
+                        practiceDisplay = 'half credit';
                     } else if (practiceScore === 2) {
                         practiceDisplay = 'DONE';
                     } else {
-                        practiceDisplay = undefined;
+                        practiceDisplay = 'no credit (not yet done)';
                     }
                     let link = `/pod/${pod_uuid}`;
                     displayObject = {
