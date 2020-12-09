@@ -214,13 +214,13 @@ const submit_quiz = function(req, res, next) {
 const submit_practice = (req, res, next) => {
     const pod_uuid = req.pod_uuid;
     const student_id = req.user.id;
-    console.log(req.superUnitKey, req.unitKey, req.podKey);
     req.session.gradeMap.map[req.superUnitKey].units[req.unitKey].pods[req.podKey].practicePending = true;
 
     if (req.files === undefined) {
         res.redirect('/');
         // need a flash!
     } else {
+        console.log('here');
         let imageURL_1, imagePUBLIC_ID_1, imageURL_2, imagePUBLIC_ID_2, imageURL_3, imagePUBLIC_ID_3, imageURL_4, imagePUBLIC_ID_4, imageURL_5, imagePUBLIC_ID_5, imageURL_6, imagePUBLIC_ID_6;
         if (req.files[0]) {
             imageURL_1 = req.files[0].url;
@@ -267,8 +267,7 @@ const submit_practice = (req, res, next) => {
         // const imageURL = req.file.url;
         // const imagePUBLIC_ID = req.file.public_id;
 
-
-        pool.query('INSERT INTO practice_submissions (student_id,pod_uuid,image_url_1,image_url_2, image_url_3,image_url_4, image_url_5, image_url_6,tstz) VALUES ($1, $2, $3,$4,$5,$6,$7,$8,current_timestamp)',[student_id, pod_uuid, imageURL_1,imageURL_2,imageURL_3,imageURL_4, imageURL_5, imageURL_6],(error, results) => {
+        pool.query('INSERT INTO practice_submissions (student_id,pod_uuid,image_url_1,image_url_2, image_url_3,image_url_4, image_url_5, image_url_6,tstz,comment) VALUES ($1, $2, $3,$4,$5,$6,$7,$8,current_timestamp,$9)',[student_id, pod_uuid, imageURL_1,imageURL_2,imageURL_3,imageURL_4, imageURL_5, imageURL_6,'null'],(error, results) => {
             if (error) {
                 throw error
             }

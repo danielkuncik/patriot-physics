@@ -504,7 +504,6 @@ app.post('/submitPractice/:pod_uuid', [(req, res, next) => {
         req.podKey = selectionObject.podKey;
         next();
     }
-    next();
     },uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
     req.pod_uuid = req.params.pod_uuid;
     // space for more

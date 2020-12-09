@@ -817,7 +817,7 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid, practiceComm
         link = false;
     } else if (!practiceObject.overdue && practiceObject.currentTopScore === 1 && practiceObject.practicePending) {
         message = `This practice page is due on ${practiceObject.dueDate}. So far, you have received half credit, and your resubmission is pending.`;
-        link = true;
+        link = false;
     } else if (!practiceObject.overdue && practiceObject.currentTopScore === 1 && !practiceObject.practicePending) {
         message = `This practice page is due on ${practiceObject.dueDate}. So far, you have received half credit. You may resubmit new work to potentially receive full credit.`;
         link = true;
