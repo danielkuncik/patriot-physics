@@ -745,7 +745,8 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
         link = false;
     } else if (!quizRequirementObject.inClass && quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && !quizRequirementObject.pending) {
         message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20. It is passed the date to retake the quiz.`;
-        link = 'Access quiz with late code';
+        link = false;
+        //link = 'Access quiz with late code';
         lateCode = true;
     } else if (!quizRequirementObject.inClass && !quizRequirementObject.overdue && quizRequirementObject.currentTopScore > 0 && !quizRequirementObject.pending) {
         message = `Your top score on this quiz is ${quizRequirementObject.currentTopScore} out of 20. You can retake this quiz until ${quizRequirementObject.dueDate}.`;
