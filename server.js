@@ -304,7 +304,7 @@ const checkQuizAccess2 = (req, res, next) => {
                 req.quizRequirements["dueDate"] = thisDueDate;
                 let now = new Date();
                 let quizDueDate = new Date(thisDueDate);
-                req.quizRequirements.overdue = quizDueDate - now < 0;
+                req.quizRequirements.overdue = quizDueDate - now < -86400000;
                 req.quizRequirements.inClass = requirements["inClass"];
                 if (req.gradeMap) {
                     req.quizRequirements["pending"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].pending;
