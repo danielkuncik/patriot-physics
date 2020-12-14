@@ -18,20 +18,10 @@
         "practice": true,
         "inClass": true
       },
-      "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f": {
-        "name": "Free-Body Diagrams 3",
-        "practice": true,
-        "inClass": false
-      },
       "e492fc90-2688-43f3-8f44-4a62f601f939": {
         "name": "Newton's Model 4A",
         "practice": true,
         "inClass": true
-      },
-      "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
-        "name": "Analyze Circuits 1",
-        "practice": false,
-        "inClass": false
       },
       "79415b06-1b6b-4ab2-aab8-b4785d998ded": {
         "name": "Electromagnetic vs Mechanical Waves 1",
@@ -59,21 +49,23 @@
         "inClass": false
       }
     },
-    "12-21-2020": {
-      "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f": {
-        "name": "Reaction Force of Weight",
+    "12-18-2020": {
+      "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f": {
+        "name": "Free-Body Diagrams 3",
         "practice": true,
         "inClass": false
       },
+      "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
+        "name": "Analyze Circuits 1",
+        "practice": false,
+        "inClass": false
+      }
+    },
+    "12-21-2020": {
       "b9e05631-d323-4455-8c97-c8d733f7ee86": {
         "name": "Quantitative Graphs 4C (from acceleration graph)",
         "practice": true,
         "inClass": false
-      },
-      "fd893155-1664-4e4f-9233-1f2cc2548012": {
-        "name": "Kinematic Equations Symbolic",
-        "practice": true,
-        "inClass": true
       },
       "3950df90-a5f0-45f6-bbc0-760a7865445c": {
         "name": "Analyze Circuits 2",
@@ -89,11 +81,25 @@
         "name": "Kinetic and Potential Energy Graphs",
         "practice": false,
         "inClass": false
+      }
+    },
+    "12-23-2020": {
+      "fd893155-1664-4e4f-9233-1f2cc2548012": {
+        "name": "Kinematic Equations Symbolic",
+        "practice": true,
+        "inClass": false
       },
+      "4e9b25d3-52b2-4306-b7a0-f19e383a1b8f": {
+        "name": "Reaction Force of Weight",
+        "practice": true,
+        "inClass": false
+      }
+    },
+    "1-5-2021": {
       "2c9250e1-6ed1-4324-a718-4ce387b1d758": {
         "name": "Elevators 2",
         "practice": false,
-        "inClass": true
+        "inClass": false
       }
     }
   },
@@ -105,7 +111,7 @@
         "inClass": false
       }
     },
-    "12-14-2020": {
+    "12-15-2020": {
       "beb2106c-410e-44c1-8179-32a01059963d": {
         "name": "Kinematics Definitions",
         "practice": true,
@@ -117,16 +123,6 @@
         "name": "Quant Graphs 2",
         "practice": true,
         "inClass": false
-      },
-      "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6": {
-        "name": "Kinematic Equations 3",
-        "practice": true,
-        "inClass": true
-      },
-      "4e97c334-316b-4800-a566-a1f2e1be89a0": {
-        "name": "Story to Graph Selection 1",
-        "practice": false,
-        "inClass": true
       }
     },
     "12-21-2020": {
@@ -142,14 +138,14 @@
       }
     },
     "12-23-2020": {
-      "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
-        "name": "Analyze Circuits 1",
+      "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6": {
+        "name": "Kinematic Equations 3",
         "practice": true,
-        "inClass": false
+        "inClass": true
       },
-      "3950df90-a5f0-45f6-bbc0-760a7865445c": {
-        "name": "Analyze Circuits 2",
-        "practice": true,
+      "4e97c334-316b-4800-a566-a1f2e1be89a0": {
+        "name": "Story to Graph Selection 1",
+        "practice": false,
         "inClass": true
       }
     }
