@@ -33,18 +33,20 @@
   },
   "v3": {
     "1": {
-      "delta x": 0,
-      "v_i": 0,
-      "v_f": 0,
-      "a": 0,
-      "delta t": 0
+      "delta x": 48,
+      "v_i": 5,
+      "v_f": 7,
+      "a": 0.25,
+      "delta t": 8,
+      "shape": "speeds up, does not begin or end at rest"
     },
     "2": {
-      "delta x": 0,
-      "v_i": 0,
-      "v_f": 0,
-      "a": 0,
-      "delta t": 0
+      "delta x": 225,
+      "v_i": 50,
+      "v_f": 40,
+      "a": -2,
+      "delta t": 5,
+      "shape": "slows down, does not begin or end at rest"
     }
   }
 }
