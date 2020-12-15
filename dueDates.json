@@ -13,23 +13,8 @@
       }
     },
     "12-16-2020": {
-      "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85": {
-        "name": "Quantitative Graphs 4B (from velocity graph)",
-        "practice": true,
-        "inClass": true
-      },
-      "e492fc90-2688-43f3-8f44-4a62f601f939": {
-        "name": "Newton's Model 4A",
-        "practice": true,
-        "inClass": true
-      },
       "79415b06-1b6b-4ab2-aab8-b4785d998ded": {
         "name": "Electromagnetic vs Mechanical Waves 1",
-        "practice": false,
-        "inClass": false
-      },
-      "4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
-        "name": "Transverse vs. Longitudinal Waves 1",
         "practice": false,
         "inClass": false
       },
@@ -45,6 +30,13 @@
       },
       "cd905e4c-d92e-4b6a-be60-b2f3cda0c68a": {
         "name": "Energy Formulas 1",
+        "practice": false,
+        "inClass": false
+      }
+    },
+    "12-17-2020": {
+      "4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
+        "name": "Transverse vs. Longitudinal Waves 1",
         "practice": false,
         "inClass": false
       }
@@ -93,6 +85,16 @@
         "name": "Reaction Force of Weight",
         "practice": true,
         "inClass": false
+      },
+      "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85": {
+        "name": "Quantitative Graphs 4B (from velocity graph)",
+        "practice": true,
+        "inClass": true
+      },
+      "e492fc90-2688-43f3-8f44-4a62f601f939": {
+        "name": "Newton's Model 4A",
+        "practice": true,
+        "inClass": true
       }
     },
     "1-5-2021": {
