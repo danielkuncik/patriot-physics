@@ -818,10 +818,10 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid, practiceComm
         message = 'The practice page was already due. You received half credit so far, but your resubmission is pending';
         link = false;
     } else if (practiceObject.overdue && practiceObject.currentTopScore === 0 && practiceObject.practicePending) {
-        message = 'The practice page was already due. You did not receive credit.';
+        message = 'The practice page was already due. You did not receive credit. You have not received credit so far, but your submission is pending.';
         link = false;
     } else if (practiceObject.overdue && practiceObject.currentTopScore === 0 && !practiceObject.practicePending) {
-        message = 'The practice page was already due. You have not received credit so far, but your submission is pending.';
+        message = 'The practice page was already due. You did not receive credit.';
         link = false;
     } else if (!practiceObject.overdue && practiceObject.currentTopScore === 1 && practiceObject.practicePending) {
         message = `This practice page is due on ${practiceObject.dueDate}. So far, you have received half credit, and your resubmission is pending.`;
