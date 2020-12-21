@@ -8878,7 +8878,307 @@
     "id": "",
     "units":
     {
-
+      "circuit_construction_1":
+      {
+        "title": "Circuit Construction 1",
+        "number": 1,
+        "value":
+        {
+          "AP_physics_1": "mantle",
+          "honors_physics": "innerCore",
+          "physics_A": "innerCore"
+        },
+        "subtitle": "Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
+        "uuid": "573b386d-2eb3-448f-82a1-3ffb8a248a4a",
+        "id": "",
+        "standards":
+        {
+          "mass_2016": "",
+          "NGSS": "",
+          "AP_Physics_1": ""
+        },
+        "pods":
+        {
+          "simplest_circuit":
+          {
+            "title": "The Simplest Circuit",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Light a bulb with one battery, one light bulb, and one wire.",
+            "content": "A single bulb and battery are sufficient to a light a bulb; both ends of the battery must be connected and the light bulb must be within the circuit.",
+            "uuid": "708240cf-4dd0-4e59-a687-3955e46df2e2",
+            "id": ""
+          },
+          "circuit_diagrams_1":
+          {
+            "title": "Circuit Diagrams 1",
+            "subtitle": "Identifying Circuit Components",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["simplest_circuit"],
+            "objective": "Identify the circuit diagram symbols of batteries, light bulbs, wires, switches, resistors, and fuses",
+            "content": "Circuit diagrams are a standardized way of representing circuits; each element of a circuit is represented by a standardized symbol.",
+            "uuid": "d76ce11e-4419-401e-8341-e917d2ba9bb1",
+            "id": ""
+          },
+          "circuit_diagrams_2":
+          {
+            "title": "Circuit Diagrams 2",
+            "subtitle": "Drawing Basic Circuits",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["circuit_diagrams_1"],
+            "objective": "Draw simple series and parallel circuits correctly; understand different symbols for a battery.",
+            "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack.",
+            "uuid": "8f39c5cf-bd20-488b-9ad9-d70f634bc48a",
+            "id": ""
+          },
+          "switches_1":
+          {
+            "title": "Switches 1",
+            "subtitle": "Connecting a Switch",
+            "level": 1,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["circuit_diagrams_2"],
+            "objective": "Connect a switch that works correctly and does not produce a short circuit.",
+            "content": "A switch must be connected in series with an element to properly control that element.",
+            "uuid": "36d08c9b-5cdc-4f85-a2b0-b14597abea41",
+            "id": ""
+          },
+          "short_circuits":
+          {
+            "title": "Short Circuits",
+            "level": 2,
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["switches_1"],
+            "objective": "Identify and avoid building short circuits",
+            "content": "A short circuit provides a path with no resistance; short circuits will overheat due to high current and will properly work resistors such as light bulbs.",
+            "uuid": "87757744-3366-4fdc-a97f-af98e51ee9a7",
+            "id": ""
+          },
+          "dimness_brightness_challenges":
+          {
+            "title": "Dimness and Brightness Challenges",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["short_circuits"],
+            "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in parallel.",
+            "content": "Adding light bulbs in series dims all bulbs; light bulbs added in parallel are all bright.",
+            "uuid": "899c86ec-437b-4ecb-baf4-25bb14441c8b",
+            "id": ""
+          },
+          "switch_challenges":
+          {
+            "title": "Switch Challenges",
+            "level": 2,
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["dimness_brightness_challenges"],
+            "objective": "Create complex circuits with multiple switches and light bulbs and predict accurately what each switch will control.",
+            "content": "Switches control only circuit elements with which they are in series",
+            "example": "Connect three light bulbs and three switches; switch A controls one light bulb; switch B controls two light bulbs; switch C controls all three light bulbs.",
+            "uuid": "3655d76a-8fa7-4c5c-b6d5-b7a221bba6fb",
+            "id": ""
+          },
+          "fuses":
+          {
+            "title": "Fuses",
+            "level": 2,
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["switch_challenges"],
+            "objective": "Add a fuse to a circuit; explain the value of a fuse; identify the proper location to add a fuse to a circuit.",
+            "content": "A fuse burns out if current is too high, breaking a circuit and protecting other elements; fuses should be added where they protect the entire circuit.",
+            "uuid": "716b1e22-333e-4f6b-b9ae-f1a2c3584502",
+            "id": ""
+          },
+          "breadboards_1":
+          {
+            "title": "Breadboards 1",
+            "subtitle": "Understanding a Breadboard",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["fuses"],
+            "objective": "Understand how a breadboard is connected, make a single bulb light on a breadboard.",
+            "content": "A breadboard is a device made of holes connected by wires in a pattern; a breadboard allows physicists to quickly build complex circuits",
+            "uuid": "56404cbb-c573-4f4c-b7e7-d401198ae1c4",
+            "id": ""
+          },
+          "reading_resistors_1":
+          {
+            "title": "Reading Resistors",
+            "level": 2,
+            "horizontal": 0,
+            "letter": "J",
+            "prerequisites": ["breadboards_1"],
+            "objective": "Identify the resistance of a resistor from the color bands on the resistor",
+            "content": "The resistance of a resistor is indicated by the bands of color on that resistor.",
+            "limits": "Includes only the first 3 bands",
+            "uuid": "c3f650b8-0c68-4fd8-b8e8-21edcf1036a2",
+            "id": ""
+          },
+          "combined_challenges":
+          {
+            "title": "Combined Challenges",
+            "level": 3,
+            "horizontal": 0,
+            "letter": "K",
+            "prerequisites": ["reading_resistors_1"],
+            "objective": "Create circuits of switches, fuses, and light bulbs of varying brightness in which each switch controls specified light bulbs.",
+            "content": "Combining the positioning of bulbs, fuses, and switches can make complex circuits out of simple parts",
+            "note": "Based on the circuit that veronica asked me about in taunton.",
+            "uuid": "379c6cb5-71ea-4dce-81dc-a15ee14f7efb",
+            "id": ""
+          },
+          "voltmeters_ammeters_1":
+          {
+            "title": "Voltmeters and Ammeters 1",
+            "subtitle": "Connecting Analog Voltmeters and Ammeters",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "L",
+            "prerequisites": ["combined_challenges"],
+            "objective": "Properly connect voltmeters in parallel and ammeters in series",
+            "content": "Voltmeters are always connected in parallel with the item they measure; ammeters are always connected in series with the item they measure.",
+            "uuid": "06b52cbf-5ba3-4c6c-b2ce-c7806468fae6",
+            "id": ""
+          },
+          "voltmeters_ammeters_2":
+          {
+            "title": "Voltmeters and Ammeters 2",
+            "subtitle": "Identify Correct Analog Voltmeters and Ammeters by Range",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "M",
+            "prerequisites": ["voltmeters_ammeters_1"],
+            "objective": "From a selection, identify which analog voltmeter or ammeter has the correct range for a particular circuit.",
+            "content": "Each meter measures a particular order of magnitude of voltage or current, and a physicists must properly predict which would be used based on understanding the battery and resistor in a circuit.",
+            "uuid": "7488df73-398e-4127-9cd7-4eca840d8cd1",
+            "id": ""
+          },
+          "voltmeters_ammeters_3":
+          {
+            "title": "Voltmeters and Ammeters 3",
+            "subtitle": "Using a Multimeter",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "N",
+            "prerequisites": ["voltmeters_ammeters_2"],
+            "objective": "Properly use a multimeter as a voltmeter and/or an ammeter.",
+            "content": "A multimeter is a device that can be used as a voltmeter or ammeter by turning a knob; the multimeter must still be connected differently when it is connected in different ways.",
+            "uuid": "56c436a5-e262-4cb9-8fdf-a4b9d6c0ff7a",
+            "id": ""
+          },
+          "breadboards_2":
+          {
+            "title": "Breadboards 2",
+            "subtitle": "Series and Parallel Circuits on a Breadboard",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "O",
+            "prerequisites": ["voltmeters_ammeters_3"],
+            "objective": "Properly create series and parallel circuits on a breadboard",
+            "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits.",
+            "uuid": "392819ef-8717-4320-a6a6-8bf33fa6f028",
+            "id": ""
+          },
+          "different_switches":
+          {
+            "title": "Different Switches",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "P",
+            "prerequisites": ["breadboards_2"],
+            "objective": "Identifying and use switches that are single or double pull and single or double throw.",
+            "content": "Switches of single or double pull and single or double pull have different effects on a circuit",
+            "uuid": "85e02f1e-c873-4497-8d2e-c0c1694dbd08",
+            "id": ""
+          },
+          "reading_resistors_2":
+          {
+            "title": "Reading Resistors 2",
+            "subtitle": "The Fourth Band",
+            "level": 4,
+            "horizontal": 3,
+            "letter": "Q",
+            "prerequisites": ["different_switches"],
+            "objective": "Explain and use the fourth color band on a resistor",
+            "content": "The fourth band of a resistor shows how accurate the other three bands are.",
+            "uuid": "8d91a676-df71-49ab-8c41-2d0ca6cc71d7",
+            "id": ""
+          },
+          "breadboards_3":
+          {
+            "title": "Breadboards 3",
+            "subtitle": "Combined Circuits",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "R",
+            "prerequisites": ["reading_resistors_2"],
+            "objective": "Create combined series and parallel circuits off light bulbs and fuses on a breadboard",
+            "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits",
+            "uuid": "00566ef3-2c57-457d-82bc-3d6d40e1271c",
+            "id": ""
+          },
+          "breadboards_4":
+          {
+            "title": "Breadboards 4",
+            "subtitle": "Switches on a Breadboard",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "S",
+            "prerequisites": ["breadboards_3"],
+            "objective": "Incorporating different types of switches on a breadboard.",
+            "content": "Breadboards allow different types of switches to be incorporated into a circuit.",
+            "uuid": "e2f61701-47fa-4d1e-b806-3abac32fa5b4",
+            "id": ""
+          },
+          "breadboards_5":
+          {
+            "title": "Breadboards 5",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "T",
+            "prerequisites": ["breadboards_4"],
+            "objective": "Creating combined series/parallel circuits on a breadboard of resistors of different magnitude in order to achieve and measure particular current and voltage goals.",
+            "content": "Combining series and parallel resistors allows a physicist to control the current in different areas of a circuit.",
+            "uuid": "ef418b86-5b5a-4d1e-9f87-45eb05b9ce57",
+            "id": ""
+          },
+          "breadboards_6":
+          {
+            "title": "Breadboards 6",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "U",
+            "prerequisites": ["breadboards_5"],
+            "objective": "Incorporating different types of switches into the circuits from breadboards 5",
+            "content": "Breadboards allow different types of switches to be incorporated into a circuit, adding to its complexity.",
+            "uuid": "2796d344-fc55-4f99-898a-7cc2dbf9005a",
+            "id": ""
+          },
+          "advanced_circuit_design":
+          {
+            "title": "Advanced Circuit Design",
+            "level": 6,
+            "horizontal": 2,
+            "letter": "V",
+            "prerequisites": ["breadboards_6"],
+            "objective": "Given vague parameters and goals for a particular circuit, build a circuit that accomplishes the goals within the parameters.",
+            "content": "An intimate knowledge of the mathematical rules of circuits allows a physicist to build a circuit with particular specifications.",
+            "uuid": "684666b5-9ce5-44bf-a1d2-c3f857eb01da",
+            "id": ""
+          }
+        }
+      },
       "voltage_and_current_concepts":
       {
         "title": "Voltage and Current Concepts",
@@ -9329,307 +9629,6 @@
             "prerequisites": ["mathematically_rigorous_circuit_model"],
             "objective": "Given a particular design goal, combine a set of resistors to accomplish this goal.",
             "uuid": "be0f2fd2-999d-490c-a3d8-6123746fc72e",
-            "id": ""
-          }
-        }
-      },
-      "circuit_construction_1":
-      {
-        "title": "Circuit Construction 1",
-        "number": 1,
-        "value":
-        {
-          "AP_physics_1": "mantle",
-          "honors_physics": "innerCore",
-          "physics_A": "innerCore"
-        },
-        "subtitle": "Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
-        "uuid": "573b386d-2eb3-448f-82a1-3ffb8a248a4a",
-        "id": "",
-        "standards":
-        {
-          "mass_2016": "",
-          "NGSS": "",
-          "AP_Physics_1": ""
-        },
-        "pods":
-        {
-          "simplest_circuit":
-          {
-            "title": "The Simplest Circuit",
-            "level": 1,
-            "horizontal": 1,
-            "letter": "A",
-            "prerequisites": [],
-            "objective": "Light a bulb with one battery, one light bulb, and one wire.",
-            "content": "A single bulb and battery are sufficient to a light a bulb; both ends of the battery must be connected and the light bulb must be within the circuit.",
-            "uuid": "708240cf-4dd0-4e59-a687-3955e46df2e2",
-            "id": ""
-          },
-          "circuit_diagrams_1":
-          {
-            "title": "Circuit Diagrams 1",
-            "subtitle": "Identifying Circuit Components",
-            "level": 1,
-            "horizontal": 2,
-            "letter": "B",
-            "prerequisites": ["simplest_circuit"],
-            "objective": "Identify the circuit diagram symbols of batteries, light bulbs, wires, switches, resistors, and fuses",
-            "content": "Circuit diagrams are a standardized way of representing circuits; each element of a circuit is represented by a standardized symbol.",
-            "uuid": "d76ce11e-4419-401e-8341-e917d2ba9bb1",
-            "id": ""
-          },
-          "circuit_diagrams_2":
-          {
-            "title": "Circuit Diagrams 2",
-            "subtitle": "Drawing Basic Circuits",
-            "level": 1,
-            "horizontal": 3,
-            "letter": "C",
-            "prerequisites": ["circuit_diagrams_1"],
-            "objective": "Draw simple series and parallel circuits correctly; understand different symbols for a battery.",
-            "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack.",
-            "uuid": "8f39c5cf-bd20-488b-9ad9-d70f634bc48a",
-            "id": ""
-          },
-          "switches_1":
-          {
-            "title": "Switches 1",
-            "subtitle": "Connecting a Switch",
-            "level": 1,
-            "horizontal": 4,
-            "letter": "D",
-            "prerequisites": ["circuit_diagrams_2"],
-            "objective": "Connect a switch that works correctly and does not produce a short circuit.",
-            "content": "A switch must be connected in series with an element to properly control that element.",
-            "uuid": "36d08c9b-5cdc-4f85-a2b0-b14597abea41",
-            "id": ""
-          },
-          "short_circuits":
-          {
-            "title": "Short Circuits",
-            "level": 2,
-            "horizontal": 5,
-            "letter": "E",
-            "prerequisites": ["switches_1"],
-            "objective": "Identify and avoid building short circuits",
-            "content": "A short circuit provides a path with no resistance; short circuits will overheat due to high current and will properly work resistors such as light bulbs.",
-            "uuid": "87757744-3366-4fdc-a97f-af98e51ee9a7",
-            "id": ""
-          },
-          "dimness_brightness_challenges":
-          {
-            "title": "Dimness and Brightness Challenges",
-            "level": 2,
-            "horizontal": 4,
-            "letter": "F",
-            "prerequisites": ["short_circuits"],
-            "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in parallel.",
-            "content": "Adding light bulbs in series dims all bulbs; light bulbs added in parallel are all bright.",
-            "uuid": "899c86ec-437b-4ecb-baf4-25bb14441c8b",
-            "id": ""
-          },
-          "switch_challenges":
-          {
-            "title": "Switch Challenges",
-            "level": 2,
-            "horizontal": 3,
-            "letter": "G",
-            "prerequisites": ["dimness_brightness_challenges"],
-            "objective": "Create complex circuits with multiple switches and light bulbs and predict accurately what each switch will control.",
-            "content": "Switches control only circuit elements with which they are in series",
-            "example": "Connect three light bulbs and three switches; switch A controls one light bulb; switch B controls two light bulbs; switch C controls all three light bulbs.",
-            "uuid": "3655d76a-8fa7-4c5c-b6d5-b7a221bba6fb",
-            "id": ""
-          },
-          "fuses":
-          {
-            "title": "Fuses",
-            "level": 2,
-            "horizontal": 2,
-            "letter": "H",
-            "prerequisites": ["switch_challenges"],
-            "objective": "Add a fuse to a circuit; explain the value of a fuse; identify the proper location to add a fuse to a circuit.",
-            "content": "A fuse burns out if current is too high, breaking a circuit and protecting other elements; fuses should be added where they protect the entire circuit.",
-            "uuid": "716b1e22-333e-4f6b-b9ae-f1a2c3584502",
-            "id": ""
-          },
-          "breadboards_1":
-          {
-            "title": "Breadboards 1",
-            "subtitle": "Understanding a Breadboard",
-            "level": 2,
-            "horizontal": 1,
-            "letter": "I",
-            "prerequisites": ["fuses"],
-            "objective": "Understand how a breadboard is connected, make a single bulb light on a breadboard.",
-            "content": "A breadboard is a device made of holes connected by wires in a pattern; a breadboard allows physicists to quickly build complex circuits",
-            "uuid": "56404cbb-c573-4f4c-b7e7-d401198ae1c4",
-            "id": ""
-          },
-          "reading_resistors_1":
-          {
-            "title": "Reading Resistors",
-            "level": 2,
-            "horizontal": 0,
-            "letter": "J",
-            "prerequisites": ["breadboards_1"],
-            "objective": "Identify the resistance of a resistor from the color bands on the resistor",
-            "content": "The resistance of a resistor is indicated by the bands of color on that resistor.",
-            "limits": "Includes only the first 3 bands",
-            "uuid": "c3f650b8-0c68-4fd8-b8e8-21edcf1036a2",
-            "id": ""
-          },
-          "combined_challenges":
-          {
-            "title": "Combined Challenges",
-            "level": 3,
-            "horizontal": 0,
-            "letter": "K",
-            "prerequisites": ["reading_resistors_1"],
-            "objective": "Create circuits of switches, fuses, and light bulbs of varying brightness in which each switch controls specified light bulbs.",
-            "content": "Combining the positioning of bulbs, fuses, and switches can make complex circuits out of simple parts",
-            "note": "Based on the circuit that veronica asked me about in taunton.",
-            "uuid": "379c6cb5-71ea-4dce-81dc-a15ee14f7efb",
-            "id": ""
-          },
-          "voltmeters_ammeters_1":
-          {
-            "title": "Voltmeters and Ammeters 1",
-            "subtitle": "Connecting Analog Voltmeters and Ammeters",
-            "level": 3,
-            "horizontal": 1,
-            "letter": "L",
-            "prerequisites": ["combined_challenges"],
-            "objective": "Properly connect voltmeters in parallel and ammeters in series",
-            "content": "Voltmeters are always connected in parallel with the item they measure; ammeters are always connected in series with the item they measure.",
-            "uuid": "06b52cbf-5ba3-4c6c-b2ce-c7806468fae6",
-            "id": ""
-          },
-          "voltmeters_ammeters_2":
-          {
-            "title": "Voltmeters and Ammeters 2",
-            "subtitle": "Identify Correct Analog Voltmeters and Ammeters by Range",
-            "level": 3,
-            "horizontal": 2,
-            "letter": "M",
-            "prerequisites": ["voltmeters_ammeters_1"],
-            "objective": "From a selection, identify which analog voltmeter or ammeter has the correct range for a particular circuit.",
-            "content": "Each meter measures a particular order of magnitude of voltage or current, and a physicists must properly predict which would be used based on understanding the battery and resistor in a circuit.",
-            "uuid": "7488df73-398e-4127-9cd7-4eca840d8cd1",
-            "id": ""
-          },
-          "voltmeters_ammeters_3":
-          {
-            "title": "Voltmeters and Ammeters 3",
-            "subtitle": "Using a Multimeter",
-            "level": 3,
-            "horizontal": 3,
-            "letter": "N",
-            "prerequisites": ["voltmeters_ammeters_2"],
-            "objective": "Properly use a multimeter as a voltmeter and/or an ammeter.",
-            "content": "A multimeter is a device that can be used as a voltmeter or ammeter by turning a knob; the multimeter must still be connected differently when it is connected in different ways.",
-            "uuid": "56c436a5-e262-4cb9-8fdf-a4b9d6c0ff7a",
-            "id": ""
-          },
-          "breadboards_2":
-          {
-            "title": "Breadboards 2",
-            "subtitle": "Series and Parallel Circuits on a Breadboard",
-            "level": 3,
-            "horizontal": 4,
-            "letter": "O",
-            "prerequisites": ["voltmeters_ammeters_3"],
-            "objective": "Properly create series and parallel circuits on a breadboard",
-            "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits.",
-            "uuid": "392819ef-8717-4320-a6a6-8bf33fa6f028",
-            "id": ""
-          },
-          "different_switches":
-          {
-            "title": "Different Switches",
-            "level": 4,
-            "horizontal": 4,
-            "letter": "P",
-            "prerequisites": ["breadboards_2"],
-            "objective": "Identifying and use switches that are single or double pull and single or double throw.",
-            "content": "Switches of single or double pull and single or double pull have different effects on a circuit",
-            "uuid": "85e02f1e-c873-4497-8d2e-c0c1694dbd08",
-            "id": ""
-          },
-          "reading_resistors_2":
-          {
-            "title": "Reading Resistors 2",
-            "subtitle": "The Fourth Band",
-            "level": 4,
-            "horizontal": 3,
-            "letter": "Q",
-            "prerequisites": ["different_switches"],
-            "objective": "Explain and use the fourth color band on a resistor",
-            "content": "The fourth band of a resistor shows how accurate the other three bands are.",
-            "uuid": "8d91a676-df71-49ab-8c41-2d0ca6cc71d7",
-            "id": ""
-          },
-          "breadboards_3":
-          {
-            "title": "Breadboards 3",
-            "subtitle": "Combined Circuits",
-            "level": 4,
-            "horizontal": 2,
-            "letter": "R",
-            "prerequisites": ["reading_resistors_2"],
-            "objective": "Create combined series and parallel circuits off light bulbs and fuses on a breadboard",
-            "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits",
-            "uuid": "00566ef3-2c57-457d-82bc-3d6d40e1271c",
-            "id": ""
-          },
-          "breadboards_4":
-          {
-            "title": "Breadboards 4",
-            "subtitle": "Switches on a Breadboard",
-            "level": 4,
-            "horizontal": 1,
-            "letter": "S",
-            "prerequisites": ["breadboards_3"],
-            "objective": "Incorporating different types of switches on a breadboard.",
-            "content": "Breadboards allow different types of switches to be incorporated into a circuit.",
-            "uuid": "e2f61701-47fa-4d1e-b806-3abac32fa5b4",
-            "id": ""
-          },
-          "breadboards_5":
-          {
-            "title": "Breadboards 5",
-            "level": 5,
-            "horizontal": 1,
-            "letter": "T",
-            "prerequisites": ["breadboards_4"],
-            "objective": "Creating combined series/parallel circuits on a breadboard of resistors of different magnitude in order to achieve and measure particular current and voltage goals.",
-            "content": "Combining series and parallel resistors allows a physicist to control the current in different areas of a circuit.",
-            "uuid": "ef418b86-5b5a-4d1e-9f87-45eb05b9ce57",
-            "id": ""
-          },
-          "breadboards_6":
-          {
-            "title": "Breadboards 6",
-            "level": 5,
-            "horizontal": 2,
-            "letter": "U",
-            "prerequisites": ["breadboards_5"],
-            "objective": "Incorporating different types of switches into the circuits from breadboards 5",
-            "content": "Breadboards allow different types of switches to be incorporated into a circuit, adding to its complexity.",
-            "uuid": "2796d344-fc55-4f99-898a-7cc2dbf9005a",
-            "id": ""
-          },
-          "advanced_circuit_design":
-          {
-            "title": "Advanced Circuit Design",
-            "level": 6,
-            "horizontal": 2,
-            "letter": "V",
-            "prerequisites": ["breadboards_6"],
-            "objective": "Given vague parameters and goals for a particular circuit, build a circuit that accomplishes the goals within the parameters.",
-            "content": "An intimate knowledge of the mathematical rules of circuits allows a physicist to build a circuit with particular specifications.",
-            "uuid": "684666b5-9ce5-44bf-a1d2-c3f857eb01da",
             "id": ""
           }
         }
