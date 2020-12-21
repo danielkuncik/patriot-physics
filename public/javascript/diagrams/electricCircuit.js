@@ -161,13 +161,15 @@ class CircuitDiagram extends DiagramF {
             numZigZags = 3;
         }
         let thetaInRadians = processDirectionInput(directionInput);
-        let endPoint1 = this.cursor;
-        let endPoint2 = (this.cursor).getAnotherPointWithTrig(length, thetaInRadians);
+        const endPoint1 = this.cursor;
+        const endPoint2 = (this.cursor).getAnotherPointWithTrig(length, thetaInRadians);
+        console.log(length, thetaInRadians);
+        console.log(endPoint1, endPoint2);
         if (width === undefined) {
-            width = length * 0.25;
+            width = length * 0.25;``
         }
         let j;
-        let beginningOfZigZag = this.cursor;
+        let beginningOfZigZag = endPoint1;
         let endOfZigZag;
         for (j = 0; j < numZigZags; j++) {
             endOfZigZag = endPoint1.interpolate(endPoint2, (j + 1) / numZigZags);
