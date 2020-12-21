@@ -316,7 +316,7 @@ const checkQuizAccess2 = (req, res, next) => {
                         req.practiceObject["comment"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].practiceComment;
                         let practiceDueDate = requirements.practiceDueDate ? requirements.practiceDueDate : quizDueDate;
                         let practiceDueDateObject = new Date(practiceDueDate);
-                        req.practiceObject.overdue = practiceDueDate - now < 0;
+                        req.practiceObject.overdue = practiceDueDate - now < -86400000 - 18000000;
                         req.practiceObject.dueDate = practiceDueDate;
                     }
                 }
