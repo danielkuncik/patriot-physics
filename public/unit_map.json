@@ -1568,7 +1568,7 @@
             "horizontal": 4,
             "letter": "D",
             "prerequisites": ["error_calculation_1"],
-            "objective": "Given a value in standard or scientific notation, round toa  certain number of significant figures.",
+            "objective": "Given a value in standard or scientific notation, round to a certain number of significant figures.",
             "uuid": "4563a828-9757-4cd2-93af-84e3f42fed4c",
             "id": ""
           },
