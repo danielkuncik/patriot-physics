@@ -1,0 +1,31 @@
+{
+  "v1": {
+    "1": {
+      "free-body diagram of Mr. A": true,
+      "gravity": "up-left, earth, Mr. A",
+      "normal": "down-right, ground, Mr. A"
+    },
+    "2": {
+      "free-body diagram of Ms. E": true,
+      "gravity": "right, earth, Ms. E",
+      "normal": "left, ground, Ms. E"
+    },
+    "3": {
+      "free-body diagram of ground beneath Ms. A": true,
+      "free-body diagram of ground beneath Ms. E": true,
+      "free-body diagram of earth": "true",
+      "gravity": "down-right, Mr. A, earth",
+      "gravity_": "left, Ms. E, earth",
+      "normal": "up-left, Mr. A, ground beneath Mr. A",
+      "normal_": "right, Ms. E, ground beneath Ms. E"
+    },
+    "4": "gravity acting on mr. A and ms. e are both weight",
+    "5": [
+      "gravity earth on Mr. A, gravity Mr. A on earth",
+      "gravity earth on Ms. E, gravity Ms. E on earth",
+      "normal force ground on Mr. A, normal force Mr. A on ground",
+      "normal force ground on Ms. E, normal force Ms. E on ground"
+    ],
+    "6": "pick one action-reaction pair, and then describe it by referring to newton's third law"
+  }
+}
