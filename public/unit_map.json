@@ -8924,17 +8924,28 @@
             "uuid": "d76ce11e-4419-401e-8341-e917d2ba9bb1",
             "id": ""
           },
-          "circuit_diagrams_2":
+          "series_vs_parallel":
           {
-            "title": "Circuit Diagrams 2",
-            "subtitle": "Drawing Basic Circuits",
+            "title": "Series and Parallel Circuits ",
             "level": 1,
             "horizontal": 3,
             "letter": "C",
             "prerequisites": ["circuit_diagrams_1"],
-            "objective": "Draw simple series and parallel circuits correctly; understand different symbols for a battery.",
+            "objective": "Build and draw simple series and parallel circuits correctly; understand advantages and disadvantages of each.",
             "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack.",
             "uuid": "8f39c5cf-bd20-488b-9ad9-d70f634bc48a",
+            "id": ""
+          },
+          "short_circuits":
+          {
+            "title": "Short Circuits",
+            "level": 2,
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["series_vs_parallel"],
+            "objective": "Identify and avoid building short circuits",
+            "content": "A short circuit provides a path with no resistance; short circuits will overheat due to high current and will properly work resistors such as light bulbs.",
+            "uuid": "87757744-3366-4fdc-a97f-af98e51ee9a7",
             "id": ""
           },
           "switches_1":
@@ -8948,18 +8959,6 @@
             "objective": "Connect a switch that works correctly and does not produce a short circuit.",
             "content": "A switch must be connected in series with an element to properly control that element.",
             "uuid": "36d08c9b-5cdc-4f85-a2b0-b14597abea41",
-            "id": ""
-          },
-          "short_circuits":
-          {
-            "title": "Short Circuits",
-            "level": 2,
-            "horizontal": 5,
-            "letter": "E",
-            "prerequisites": ["switches_1"],
-            "objective": "Identify and avoid building short circuits",
-            "content": "A short circuit provides a path with no resistance; short circuits will overheat due to high current and will properly work resistors such as light bulbs.",
-            "uuid": "87757744-3366-4fdc-a97f-af98e51ee9a7",
             "id": ""
           },
           "dimness_brightness_challenges":

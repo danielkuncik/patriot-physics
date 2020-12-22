@@ -1,0 +1,61 @@
+<div class = "accordion" id = "labAccordion">
+    <div class = "card">
+        <div class = "card-header" id = 'alligator_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_alligator" aria-expanded = "false" aria-controls = 'collapse_alligator'>
+                    Alligator Clip Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_alligator' class = 'collapse' aria-labelledby="alligator_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+                <p>
+                    ALLIGATOR LAB HERE
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class = "card">
+        <div class = "card-header" id = 'snap_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_snap" aria-expanded = "false" aria-controls = 'collapse_snap'>
+                    Snap Circuit Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_snap' class = 'collapse' aria-labelledby="snap_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+                <p>
+                    SNAP CIRCUIT LAB HERE
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class = 'card'>
+        <div class = "card-header" id = 'virtual_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_virtual" aria-expanded = "false" aria-controls = 'collapse_virtual'>
+                    Virtual Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_virtual' class = 'collapse' aria-labelledby="virtual_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+                <p>
+                    VIRTUAL LAB HERE
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

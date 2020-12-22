@@ -1,0 +1,278 @@
+<p class = 'introduction'>
+    When you have only one light bulb,
+    there is only one way to connect it:
+    connect oen side of the bulb to one side of the battery,
+    and the other side of the bulb to the other side of the battery.
+    But when you have two light bulbs, there are two different ways to connect
+    the two light bulbs
+    called <strong>series</strong> and <strong>parallel</strong>.
+    In this pod, we will explore the advantages and disadvantages of each.
+</p>
+
+
+<p>
+    There are three options for completing this lab:
+    with alligator clips,
+    snap circuits, or virtually.
+    If you are completing it in school, use snap circuits or alligator clips.
+    If you are completing it at home, do so virtually, unless you your own
+    snap circuit set or other electrical connections.
+</p>
+
+<div class = "accordion" id = "labAccordion">
+    <div class = "card">
+        <div class = "card-header" id = 'alligator_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_alligator" aria-expanded = "false" aria-controls = 'collapse_alligator'>
+                    Alligator Clip Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_alligator' class = 'collapse' aria-labelledby="alligator_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+                <p>
+                <h5>
+                    Materials
+                </h5>
+                <ul>
+                    <li>
+                        One or two batteries in a holder.
+                    </li>
+                    <li>
+                        Two identical light bulbs. They must be in screw-in holders.
+                    </li>
+                    <li>
+                        Four wires with alligator clips
+                    </li>
+                </ul>
+
+
+                <h5>
+                    Steps and Questions
+                </h5>
+
+                <ol>
+                    <li>
+                        Connect a single light bulb to a battery,
+                        so that the light bulb lights.
+                        For this lab, use two two wires with alligators clips and a light bulb.
+                        <br>
+                        <div id = 'simpleCircuit'></div>
+                    </li>
+                    <li>
+                        Now, connect two light bulbs in a row.
+                        This is called a <strong>series circuit</strong>.
+                        <br>
+                        <div id = 'seriesCircuit'></div>
+                    </li>
+                    <li>
+                        Try unscrewing one of the light bulbs from the series circuit.
+                        What happens to the other light bulb?
+                    </li>
+                    <li>
+                        Now, connect the two different bulbs on two different branches.
+                        This is called a <strong>parallel circuit</strong>.
+                        <br>
+                        <div id = 'parallelCircuit'></div>
+                    </li>
+                    <li>
+                        Try unscrewing one of the light bulbs from the parallel circuit.
+                        What happens to the other light bulb?
+                    </li>
+                    <li>
+                        In which circuit were the light bulbs brighter, series or parallel?
+                    </li>
+                    <li>
+                        To wire the lights in your house, which type of circuit would
+                        you prefer, series or parallel? Explain two reasons why.
+                    </li>
+                </ol>
+
+                <script>
+                    $("#simpleCircuit").append(makeSimpleCircuit().drawCanvas(300));
+                    $("#seriesCircuit").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+                    $("#parallelCircuit").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(300));
+                </script>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class = "card">
+        <div class = "card-header" id = 'snap_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_snap" aria-expanded = "false" aria-controls = 'collapse_snap'>
+                    Snap Circuit Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_snap' class = 'collapse' aria-labelledby="snap_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+                <p>
+                <h5>
+                    Materials
+                </h5>
+                <ul>
+                    <li>
+                        Two batteries in a holder.
+                    </li>
+                    <li>
+                        Two identical light bulbs.
+                    </li>
+                    <li>
+                        Several Clip Wires
+                    </li>
+                </ul>
+
+
+                <h5>
+                    Steps and Questions
+                </h5>
+
+                <ol>
+                    <li>
+                        Connect a single light bulb to a battery,
+                        so that the light bulb lights.
+                        For this lab, use two two wires with alligators clips and a light bulb.
+                        <br>
+                        <div id = 'simpleCircuit_1'></div>
+                    </li>
+                    <li>
+                        Now, connect two light bulbs in a row.
+                        This is called a <strong>series circuit</strong>.
+                        <br>
+                        <div id = 'seriesCircuit_1'></div>
+                    </li>
+                    <li>
+                        Pull one of the light bulbs out of the series circuit,
+                        but leave everything else intact.
+                        What happens to the other light bulb?
+                    </li>
+                    <li>
+                        Now, connect the two different bulbs on two different branches.
+                        This is called a <strong>parallel circuit</strong>.
+                        <br>
+                        <div id = 'parallelCircuit_1'></div>
+                    </li>
+                    <li>
+                        Pull one of the light bulbs out of the parallel circuit,
+                        but leave everything else intact.
+                        What happens to the other light bulb?
+                    </li>
+                    <li>
+                        In which circuit were the light bulbs brighter, series or parallel?
+                    </li>
+                    <li>
+                        To wire the lights in your house, which type of circuit would
+                        you prefer, series or parallel? Explain two reasons why.
+                    </li>
+                </ol>
+
+                <script>
+                    $("#simpleCircuit_1").append(makeSimpleCircuit().drawCanvas(300));
+                    $("#seriesCircuit_1").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+                    $("#parallelCircuit_1").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(300));
+                </script>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class = 'card'>
+        <div class = "card-header" id = 'virtual_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_virtual" aria-expanded = "false" aria-controls = 'collapse_virtual'>
+                    Virtual Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_virtual' class = 'collapse' aria-labelledby="virtual_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+                <p>
+                <p>
+                    I recommend you select "intro" mode,
+                    although you can use either "intro" mode or "lab" mode.
+                </p>
+
+
+                <iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+                <p>
+                    Simulation provided by <a href = 'https://phet.colorado.edu'>PHET interactive simulations</a> at the University of Colorado at Boulder
+                </p>
+
+                <h5>
+                    Virtual Materials
+                </h5>
+                <ul>
+                    <li>
+                        One or two batteries.
+                    </li>
+                    <li>
+                        Two identical light bulbs. Don't adjust the resistance of the light bulbs, so they are identical.
+                    </li>
+                    <li>
+                        A bunch of wires.
+                    </li>
+                </ul>
+
+
+                <h5>
+                    Steps and Questions
+                </h5>
+
+                <ol>
+                    <li>
+                        Connect a single light bulb to a battery,
+                        so that the light bulb lights.
+                        For this lab, use two two wires with alligators clips and a light bulb.
+                        <br>
+                        <div id = 'simpleCircuit_2'></div>
+                    </li>
+                    <li>
+                        Now, connect two light bulbs in a row.
+                        This is called a <strong>series circuit</strong>.
+                        <br>
+                        <div id = 'seriesCircuit_2'></div>
+                    </li>
+                    <li>
+                        Try unscrewing one of the light bulbs from the series circuit.
+                        What happens to the other light bulb?
+                    </li>
+                    <li>
+                        Now, connect the two different bulbs on two different branches.
+                        This is called a <strong>parallel circuit</strong>.
+                        <br>
+                        <div id = 'parallelCircuit_2'></div>
+                    </li>
+                    <li>
+                        Try unscrewing one of the light bulbs from the parallel circuit.
+                        What happens to the other light bulb?
+                    </li>
+                    <li>
+                        In which circuit were the light bulbs brighter, series or parallel?
+                    </li>
+                    <li>
+                        To wire the lights in your house, which type of circuit would
+                        you prefer, series or parallel? Explain two reasons why.
+                    </li>
+                </ol>
+
+                <script>
+                    $("#simpleCircuit_2").append(makeSimpleCircuit().drawCanvas(300));
+                    $("#seriesCircuit_2").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+                    $("#parallelCircuit_2").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(300));
+                </script>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
