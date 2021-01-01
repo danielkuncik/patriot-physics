@@ -1,0 +1,14 @@
+{
+  "v1": {
+
+  },
+  "v2": {
+
+  },
+  "v3": {
+    "question":"A person is at rest on top of a building. They fall down and hit a trampoline positioned about halfway down. When they hit the trampoline, they bounce back up and reach the top of the building again, but then they fall all the way down to the ground.",
+    "KE":"0 => halway => 0 => max",
+    "GPE":"max => halfway => max => 0",
+    "Total E":"Straight line across top"
+  }
+}

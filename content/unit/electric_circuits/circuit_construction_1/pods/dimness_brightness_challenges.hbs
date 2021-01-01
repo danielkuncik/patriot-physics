@@ -1,0 +1,388 @@
+
+<h3>
+  Part 1: Adding Light Bulbs
+</h3>
+
+
+<p>
+    The goal of this lab is to figure out what happens when we add more light bulbs to a series or a parallel
+    circuit.
+    Do they become dimmer? Do they become brighter? What happens tot he battery?
+    If we can understand this, then later on we can use light bulbs and/or resistors to control what happens in our circuits.
+</p>
+
+<p>
+  Both a hands-on and virtual version are available.
+  However, because this activity involves building
+  a very large circuit with many light bulbs,
+  the virtual version is more pratical.
+</p>
+
+<div class = "accordion" id = "labAccordion">
+    <div class = "card">
+        <div class = "card-header" id = 'alligator_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_alligator" aria-expanded = "false" aria-controls = 'collapse_alligator'>
+                    Hands-On Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_alligator' class = 'collapse' aria-labelledby="alligator_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+              <h3>
+                  Materials
+              </h3>
+              <ul>
+                  <li>
+                      Two Batteries
+                  </li>
+                  <li>
+                      Four <emph>identical</emph> light bulbs
+                  </li>
+                  <li>
+                      Lots of wires
+                  </li>
+                  <li>
+                      It works best if you turn the lights off!
+                  </li>
+              </ul>
+
+
+              <h3>
+                  Part 1: Adding Light Bulbs in Series
+              </h3>
+
+              <ol>
+                  <li>
+                      Begin by connecting the two batteries to a single light bulb.
+                      <br>
+                      <div id = 'seriesCircuit1Bulb'></div>
+                  </li>
+                  <li>
+                      Add a another light bulb in series.
+                      What happens to the first bulb?
+                      <br>
+                      <div id = 'seriesCircuit2Bulbs'></div>
+                  </li>
+                  <li>
+                      Make a prediction: What do you think will happen if you continue to add light bulbs in series?
+                  </li>
+                  <li>
+                      Add three, and then four light bulbs in series.
+                      <br>
+                      <div id = 'seriesCircuit3Bulbs'></div>
+                      <div id = 'seriesCircuit4Bulbs'></div>
+                      <br>
+                      To understand this lab correctly, they must be <emph>identical</emph>,
+                      otherwise you will see effects that are more difficult to understand.
+                      <br>
+                      What happened? Did it match your prediction?
+                  </li>
+                  <li>
+                      Think of a way that you can make light bulbs shut off just by
+                      adding more light bulbs.
+                      Explain your reasoning.
+                      Then, because you have as many light bulbs as you want at the click of a button, try it.
+                  </li>
+              </ol>
+
+
+              <h3>
+                  Part 2: Adding Light Bulbs in Parallel
+              </h3>
+
+              <ol start = '6'>
+                  <li>
+                      Begin by connecting the two batteries to a single light bulb.
+                      <br>
+                      <div id = 'parallelCircuit1Bulb'></div>
+                  </li>
+                  <li>
+                      Add another light bulb in parallel. What happens to the first bulb?
+                      <br>
+                      <div id = 'parallelCircuit2Bulbs'></div>
+                  </li>
+                  <li>
+                      Make a prediction: What do you think will happen if you continue to add light bulbs in parallel?
+                  </li>
+                  <li>
+                      Add three, and then four light bulbs in parallel.
+                      <br>
+                      <div id = 'parallelCircuit3Bulbs'></div>
+                      <div id = 'parallelCircuit4Bulbs'></div>
+                      <br>
+                      To understand this lab correctly, they must be <emph>identical</emph>,
+                      otherwise you will see effects that are more difficult to understand.
+                      What happened? Did it match your prediction?
+                  </li>
+                  <li>
+                      Unlike in series,
+                      adding more light bulbs in parallel does not make them dimmer.
+                      However, there is a cost to everything!
+                      What do you think the "price" is of adding more light bulbs in parallel?
+                  </li>
+              </ol>
+
+
+
+
+              <script>
+
+                  $("#seriesCircuit1Bulb").append(makeSimpleCircuit().drawCanvas(300));
+                  $("#seriesCircuit2Bulbs").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+                  $("#seriesCircuit3Bulbs").append(makeSeriesCircuitOfLightBulbs(3).drawCanvas(350));
+                  $("#seriesCircuit4Bulbs").append(makeSeriesCircuitOfLightBulbs(4).drawCanvas(400));
+
+                  $("#parallelCircuit1Bulb").append(makeSimpleCircuit().drawCanvas(200,200));
+                  $("#parallelCircuit2Bulbs").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(400,200));
+                  $("#parallelCircuit3Bulbs").append(makeParallelCircuitOfLightBulbs(3).drawCanvas(600,200));
+                  $("#parallelCircuit4Bulbs").append(makeParallelCircuitOfLightBulbs(4).drawCanvas(800,200));
+
+              </script>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class = 'card'>
+        <div class = "card-header" id = 'virtual_heading'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_virtual" aria-expanded = "false" aria-controls = 'collapse_virtual'>
+                    Virtual Version
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_virtual' class = 'collapse' aria-labelledby="virtual_heading" data-parent = '#labAccordion'>
+            <div class = 'card-body'>
+              <h3>
+                  Adding Light Bulbs In Series and Parallel: Virtual Version
+              </h3>
+
+              <p>
+                  I recommend you select "intro" mode,
+                  although you can use either "intro" mode or "lab" mode.
+              </p>
+
+
+              <iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+              <p>
+                  Simulation provided by <a href = 'https://phet.colorado.edu'>PHET interactive simulations</a> at the University of Colorado at Boulder
+              </p>
+
+              <p>
+                  The goal of this lab is to figure out what happens when we add more light bulbs to a series or a parallel
+                  circuit.
+                  Do they become dimmer? Do they become brighter? What happens tot he battery?
+                  If we can understand this, then later on we can use light bulbs and/or resistors to control what happens in our circuits.
+              </p>
+
+              <h4>
+                  Virtual Materials
+              </h4>
+              <ul>
+                  <li>
+                      Two Batteries
+                  </li>
+                  <li>
+                      Four <emph>identical</emph> light bulbs
+                  </li>
+                  <li>
+                      Lots of wires
+                  </li>
+              </ul>
+
+
+              <h3>
+                  Part 1: Adding Light Bulbs in Series
+              </h3>
+
+              <ol>
+                  <li>
+                      Begin by connecting the two batteries to a single light bulb.
+                      <br>
+                      <div id = 'seriesCircuit1Bulb_1'></div>
+                  </li>
+                  <li>
+                      Add a another light bulb in series.
+                      What happens to the first bulb?
+                      <br>
+                      <div id = 'seriesCircuit2Bulbs_1'></div>
+                  </li>
+                  <li>
+                      Make a prediction: What do you think will happen if you continue to add light bulbs in series?
+                  </li>
+                  <li>
+                      Add three, and then four light bulbs in series.
+                      <br>
+                      <div id = 'seriesCircuit3Bulbs_1'></div>
+                      <div id = 'seriesCircuit4Bulbs_1'></div>
+                      <br>
+                      To understand this lab correctly, they must be <emph>identical</emph>,
+                      otherwise you will see effects that are more difficult to understand.
+                      However, if you simply don't change anything about the light bulbs on the virtual circuit builder, they will be identical.
+                      What happened? Did it match your prediction?
+                  </li>
+                  <li>
+                      What happens to the electrons moving through the wires as you add more light bulbs
+                      in series? Why do you think this happens?
+                  </li>
+                  <li>
+                      You can add up to 10 light bulbs in the simulator.
+                      Predict what will happen if you have 10 light bulbs in series.
+                      Then, try it out.
+                      (You can do this very quickly if you just connect one light bulb to the next without a wire in between)
+                      <br>
+                      <div id = 'seriesCircuit10Bulbs_1'></div>
+                  </li>
+              </ol>
+
+
+              <h3>
+                  Part 2: Adding Light Bulbs in Parallel
+              </h3>
+
+              <ol start = '7'>
+                  <li>
+                      Begin by connecting the two batteries to a single light bulb.
+                      <br>
+                      <div id = 'parallelCircuit1Bulb_1'></div>
+                  </li>
+                  <li>
+                      Add another light bulb in parallel. What happens to the first bulb?
+                      <br>
+                      <div id = 'parallelCircuit2Bulbs_1'></div>
+                  </li>
+                  <li>
+                      Make a prediction: What do you think will happen if you continue to add light bulbs in parallel?
+                  </li>
+                  <li>
+                      Add three, and then four light bulbs in parallel.
+                      <br>
+                      <div id = 'parallelCircuit3Bulbs_1'></div>
+                      <div id = 'parallelCircuit4Bulbs_1'></div>
+                      <br>
+                      To understand this lab correctly, they must be <emph>identical</emph>,
+                      otherwise you will see effects that are more difficult to understand.
+                      What happened? Did it match your prediction?
+                  </li>
+                  <li>
+                      There are some very interesting effects your se in the electrons inside the circuit
+                      whenever you add a new light bulb in parallel:
+                      <ul>
+                          <li>
+                              What happens to the electrons moving through the batteries?
+                          </li>
+                          <li>
+                              What happens to the electrons moving through the light bulbs?
+                          </li>
+                          <li>
+                              What happens to the electrons in the wires that connect each branch to the next branch?
+                          </li>
+                      </ul>
+                      What do you think could be going on here?
+                      We will be able to understand this effect better as we move into the third and fourth levels of the
+                      unit of <a href = '/unit/electric_circuits/dc_circuit_math_1'>quantitative electric circuits</a>.
+                  </li>
+                  <li>
+                      Unlike in series,
+                      adding more light bulbs in parallel does not make them dimmer.
+                      However, there is a cost to everything!
+                      What do you think the "price" is of adding more light bulbs in parallel?
+                      [You won't experience this in the simulation, but you would in the real world!]
+                  </li>
+              </ol>
+
+
+
+              <script>
+
+                  $("#seriesCircuit1Bulb_1").append(makeSimpleCircuit().drawCanvas(300));
+                  $("#seriesCircuit2Bulbs_1").append(makeSeriesCircuitOfLightBulbs(2).drawCanvas(300));
+                  $("#seriesCircuit3Bulbs_1").append(makeSeriesCircuitOfLightBulbs(3).drawCanvas(350));
+                  $("#seriesCircuit4Bulbs_1").append(makeSeriesCircuitOfLightBulbs(4).drawCanvas(400));
+                  $("#seriesCircuit10Bulbs_1").append(makeSeriesCircuitOfLightBulbs(10).drawCanvas(400));
+
+
+                  $("#parallelCircuit1Bulb_1").append(makeSimpleCircuit().drawCanvas(200,200));
+                  $("#parallelCircuit2Bulbs_1").append(makeParallelCircuitOfLightBulbs(2).drawCanvas(400,200));
+                  $("#parallelCircuit3Bulbs_1").append(makeParallelCircuitOfLightBulbs(3).drawCanvas(600,200));
+                  $("#parallelCircuit4Bulbs_1").append(makeParallelCircuitOfLightBulbs(4).drawCanvas(800,200));
+
+              </script>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<h3>
+Part 2: Dimness and Brightness Challenges
+</h3>
+
+<p>
+  These challenges can be completed with materials or virtually.
+</p>
+
+<div class = "accordion" id = "labAccordion_2">
+    <div class = 'card'>
+        <div class = "card-header" id = 'virtual_heading_2'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target = "#collapse_virtual_2" aria-expanded = "false" aria-controls = 'collapse_virtual_2'>
+                    Virtual Circuit Builder
+                </button>
+            </h3>
+        </div>
+        <div id = 'collapse_virtual_2' class = 'collapse' aria-labelledby="virtual_heading_2" data-parent = '#labAccordion_2'>
+            <div class = 'card-body'>
+                            <p>
+                                I recommend you select "intro" mode,
+                                although you can use either "intro" mode or "lab" mode.
+                            </p>
+
+
+                            <iframe src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html" width="800" height="600" scrolling="no" allowfullscreen></iframe>
+                            <p>
+                                Simulation provided by <a href = 'https://phet.colorado.edu'>PHET interactive simulations</a> at the University of Colorado at Boulder
+                            </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ol>
+  <li>
+    Create a circuit with three identical light bulbs that fits the following requirements:
+    <ul>
+      <li>
+        Light bulb C and B have the same brightness.
+      </li>
+      <li>
+        Light bulb A is brighter than light bulb C and B.
+      </li>
+    </ul>
+  </li>
+  <li>
+    Create a circuit with four identical light bulbs that have exactly the same brightness.
+    However, all four light bulbs may NOT be in series.
+  </li>
+  <li>
+    Create a circuit with five identical light bulbs that fits the following requirements:
+    <ul>
+      <li>
+        Light bulbs A and B have the same brightness.
+      </li>
+      <li>
+        Light bulbs C, D, and E have the same bightness.
+      </li>
+      <li>
+        Light bulbs A and B are brighter than bulbs C, D, and E.
+      </li>
+    </ul>
+  </li>
+</ol>
