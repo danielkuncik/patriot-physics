@@ -65,12 +65,7 @@
         "inClass": true
       }
     },
-    "1-5-2021": {
-      "2c9250e1-6ed1-4324-a718-4ce387b1d758": {
-        "name": "Elevators 2",
-        "practice": false,
-        "inClass": false
-      },
+    "1-7-2021": {
       "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f": {
         "name": "Free-Body Diagrams 3",
         "practice": true,
@@ -90,7 +85,9 @@
         "name": "Energy Table 2",
         "practice": false,
         "inClass": false
-      },
+      }
+    },
+    "1-12-2020": {
       "462ef780-e519-41b7-baae-8303b2948064": {
         "name": "Kinetic and Potential Energy Graphs",
         "practice": false,
@@ -99,6 +96,11 @@
       "fd893155-1664-4e4f-9233-1f2cc2548012": {
         "name": "Kinematic Equations Symbolic",
         "practice": true,
+        "inClass": false
+      },
+      "2c9250e1-6ed1-4324-a718-4ce387b1d758": {
+        "name": "Elevators 2",
+        "practice": false,
         "inClass": false
       }
     }
