@@ -2734,7 +2734,7 @@
             "content": "The information in an acceleration-time graph can be represented in words or in other kinematic graphs.",
             "uuid": "5612bde2-e832-4ba5-8920-947c5bb495ee",
             "id": "",
-            "inClass_AP": true
+            "inClass_AP": false
           },
           "acceleration_graph_connection_2":
           {
