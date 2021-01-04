@@ -4273,7 +4273,7 @@
             "content": "Normal force changes in an elevator, leading to counterintuitive feelings; a physicist can make sense of these feelings by analyzing the forces and acceleration of a person in an elevator.",
             "uuid": "2c9250e1-6ed1-4324-a718-4ce387b1d758",
             "id": "",
-            "inClass_AP": true
+            "inClass_AP": false
           },
           "block_dragging_4":
           {
@@ -9211,7 +9211,7 @@
           "physics_A": "outerCore"
         },
         "uuid": "1683b193-3c12-46a6-9e24-ba51c5c74a7a",
-        "id": "",
+        "id": "1683b1",
         "note": "8-21-19 i feel like parallel circuit concepts and short circuit concepts belong in a different quiz ladder, and there need to be more quiz ladders on circuits certainly",
         "standards":
         {
@@ -9231,7 +9231,7 @@
             "objective": "Draw and explain atomic structure; recognize AC and DC current; explain why specific electrons move",
             "content": "Atoms consist of protons, neutrons, and electrons; valence electrons move between atoms in an electric circuit; in a DC current electrons move on one direction while in AC curren they switch directions.",
             "uuid": "4dd93e3d-4d21-447f-ad73-c921b8084cc1",
-            "id": ""
+            "id": "4dd93e"
           },
           "circuit_definitions_1":
           {
@@ -9243,7 +9243,7 @@
             "objective": "Recognize the definitions and properties of voltage, current, resistance, and power.",
             "content": "Voltage is the force that pushes charge around an electric circuit; current is the motion of charge around a circuit; resistance is how difficult it is for charge to move around the circuit; power is the rate at which energy changes form.",
             "uuid": "df740723-6c09-4089-b31f-d5ec76dac494",
-            "id": ""
+            "id": "df7407"
           },
           "insulators_conductors":
           {
@@ -9255,7 +9255,7 @@
             "objective": "Recognize different insulators and conductors",
             "content": "Conductors are made of metal and allow electric current to flow; insulators are made of nonmetals and do not allow electric current to flow.",
             "uuid": "32cb18ef-4f14-43ce-b456-8bef572323ca",
-            "id": ""
+            "id": "32cb18"
           },
           "energy_change_in_circuit":
           {
@@ -9267,7 +9267,7 @@
             "objective": "Describe how energy changes in an electric circuit consisting of only a battery, a light bulb, and a wire.",
             "content": "In an electric circuit, the electrochemical potential energy of a battery becomes electrical energy moving through wires, which then becomes other forms of energy when it reaches a light bulb or resistor.",
             "uuid": "c3d2b9a4-e293-4b22-85f5-b2cfc29066f2",
-            "id": ""
+            "id": "c3d2b9"
           },
           "circuit_definitions_2":
           {
@@ -9279,7 +9279,7 @@
             "objective": "Memorize the definitions and properties of voltage, current, resistance, and power.",
             "content": "Voltage is the force that pushes charge around an electric circuit; current is the motion of charge around a circuit; resistance is how difficult it is for charge to move around the circuit; power is the rate at which energy changes form.",
             "uuid": "84327931-2346-4c9d-b844-e3828f333fd6",
-            "id": ""
+            "id": "843279"
           },
           "organization_atoms":
           {
@@ -9291,7 +9291,7 @@
             "objective": "Draw how atoms are organized in insulators and conductors; relate this organization to how circuits operate within an electric circuit; explain why electrons and not protons and neutrons move in an electric circuit.",
             "content": "In a conductor, valence electrons are shared among a grid of nuclei, allowing charge to flow; in an insulator, valence electrons are held in particular places, making it impossible for charge to flow.",
             "uuid": "4653ff1c-b3bd-41d6-98c9-e7486b10ae57",
-            "id": ""
+            "id": "4653ff"
           },
           "advanced_current_1":
           {
@@ -9304,7 +9304,7 @@
             "objective": "Differentiate between two theories of electron motion, one in which electrons all come from the battery and one in which they remain in the wire, select the theory, argue that electrons move slowly through a circuit",
             "content": "Electrons do not move the whole way around the circuit, but electrons already in a circuit are pushed by the battery.",
             "uuid": "fc56da19-2632-411e-9f81-f68db75f504d",
-            "id": ""
+            "id": "fc56da"
           },
           "advanced_voltage_1":
           {
@@ -9317,7 +9317,7 @@
             "objective": "Explain by referring to chemical principles why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery.",
             "content": "A battery consists of an anode and a cathode connected by a wire and an electrolyte; the anode loses electrons and is oxidized while the cathode gains electrons and is reduced.",
             "uuid": "f7c85c91-82d5-487e-81cb-818f1aa6330e",
-            "id": ""
+            "id": "f7c85c"
           },
           "advanced_current_2":
           {
@@ -9331,7 +9331,7 @@
             "content": "A switch immiedately stops and starts all current in a circuit.",
             "note": "Address misconception that closer light bulbs will be brighter.",
             "uuid": "9f3e1de7-19a0-4c45-8785-604f51cf9411",
-            "id": ""
+            "id": "9f3e1d"
           },
           "advanced_current_3":
           {
@@ -9344,7 +9344,7 @@
             "objective": "Untangle the conundrum that, mathematically, current flows the opposite way that electrons actually move.",
             "content": "Current represents positive charge motion in the direction opposite that which negative charges move.",
             "uuid": "150d8b6c-0306-40df-81b1-c51acfdcd45d",
-            "id": ""
+            "id": "150d8b"
           },
           "advanced_current_4":
           {
@@ -9357,7 +9357,7 @@
             "objective": "Describe how electrons combine fast random motion with slow drift under and electric field; describe how an electric wire has a neutral charge.",
             "content": "Electrons do not flow through a circuit but drift very slowly while also moving randomly; electric wires are not charged when current flows through them.",
             "uuid": "214790e5-0994-4f8c-a142-466bafbb3e9f",
-            "id": ""
+            "id": "214790"
           },
           "advanced_current_5":
           {
@@ -9370,7 +9370,7 @@
             "objective": "Describe current and the summation of motion of many charges, relate current to the total number of free-charges in a wire; differentaite between free and not-free electrons in a wire.",
             "content": "slow motion of countless electrons produces an electric current",
             "uuid": "17934d7e-a57e-49b8-a59d-c687d5b780ae",
-            "id": ""
+            "id": "17934d"
           },
           "advanced_voltage_2":
           {
@@ -9383,7 +9383,7 @@
             "objective": "Relate specific batteries to half-reactions and explain how electric current flows through the electrolyte",
             "content": "A battery consists of a chemical reaction that involves electron exchange; half of this reaction occurs at the anode and the other half at the cathode; while negative charges move through the wire positive charges move through the electrolyte, creating a complete circuit of positive charge flow.",
             "uuid": "578da189-8e46-4041-8dd8-e20e815baf20",
-            "id": ""
+            "id": "578da1"
           },
           "advanced_current_6":
           {
@@ -9395,7 +9395,7 @@
             "objective": "Describe how current can flow in bodies with charged particles other than water, such as a solution of ions.",
             "content": "Any charged particle can be responsible for electric current, not only electrons.",
             "uuid": "9d4d0c34-e3c5-49b4-b9c0-662ee436c88b",
-            "id": ""
+            "id": "9d4d0c"
           },
           "rigorous_definition_current":
           {
@@ -9407,7 +9407,7 @@
             "objective": "Describe current at a point as charge per time through that point; explain an equation that relates electron drift velocity to current.",
             "content": "Current is defined at a given point and is equal to the magnitude of (positive) charge passing that point divided by the time intrval.",
             "uuid": "512c0b83-9cbd-4a34-b6a7-f7fc6c889993",
-            "id": ""
+            "id": "512c0b"
           },
           "rigorous_definition_voltage":
           {
@@ -9419,7 +9419,7 @@
             "objective": "Describe Potential Difference between two points across a resistor as energy per charge.",
             "content": "Voltage (potential difference) is defined as the energy gained or dissipated by a (positive) unit charge between two points.",
             "uuid": "419bdf9b-70a3-471b-ab83-c35545b270a4",
-            "id": ""
+            "id": "419bdf"
           },
           "rigorous_batteries":
           {
@@ -9431,7 +9431,7 @@
             "objective": "Apply rigorous definitions of current and voltage to a battery",
             "content": "A battery provides electrons on one end, absorbs electrons on the other, and adds a positive potential difference between cathode and anode.",
             "uuid": "b5eae1f2-0d39-4ea3-89a0-375ee327cac9",
-            "id": ""
+            "id": "b5eae1"
           },
           "rigorous_definition_power":
           {
@@ -9443,7 +9443,7 @@
             "objective": "Describe power as energy inputted or outputted into a circuit per unit time and explain how the power formula is consistent with definitions of current and potential difference.",
             "content": "Power of a circuit represents the energy inputted or outputted per unit time; power is equal to current times voltage.",
             "uuid": "a8120217-37e1-4639-8ff5-0d5cad12b691",
-            "id": ""
+            "id": "a81202"
           },
           "advanced_current_x":
           {
@@ -9455,7 +9455,7 @@
             "objective": "Design a physical model, such as a diagram, a video, or a skit, that accurately describes the motion of electrons on a complex circuit with mulitple resistors and switches in series and parallel.",
             "content": "A circuit consists of exchange of electrons and positive charges through pushing randomly moving charged particles in a wire, while simultaneously outputting energy for some useful task.",
             "uuid": "3b95fead-b8e9-4aec-b861-b0239e10676e",
-            "id": ""
+            "id": "3b95fe"
           }
         }
       },
@@ -9471,7 +9471,7 @@
         },
         "limits": "Only contains circuits including batteries and resistors",
         "uuid": "e0d6f429-2f42-4e44-b0d8-6231da3c5f7c",
-        "id": "",
+        "id": "e0d6f4",
         "standards":
         {
           "mass_2016": "",
@@ -9490,7 +9490,7 @@
             "objective": "Solve Ohm's law for either resistance, current, or voltage.",
             "content": "Voltage is equal to current times resistance.",
             "uuid": "65b8b752-7ee6-421f-aede-b40ec100bfe7",
-            "id": ""
+            "id": "65b8b7"
           },
           "power_formula":
           {
@@ -9502,7 +9502,7 @@
             "objective": "Use both the power formula and Ohm's Law to solve for power or other quantities.",
             "content": "Power is equal to current times voltage; this formula can be combined with Ohm's Law.",
             "uuid": "8e7ca231-51f9-4990-9849-c8b6472ec77a",
-            "id": ""
+            "id": "8e7ca2"
           },
           "analyze_circuits_1":
           {
@@ -9514,7 +9514,7 @@
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor.",
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit.",
             "uuid": "875ae026-5f4b-4fa0-8d76-61e2b5420bbf",
-            "id": ""
+            "id": "875ae0"
           },
           "analyze_circuits_2":
           {
@@ -9526,7 +9526,7 @@
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information.",
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit, and you can logically deduce the information you need from different sets of initial information.",
             "uuid": "3950df90-a5f0-45f6-bbc0-760a7865445c",
-            "id": "",
+            "id": "3950df",
             "inClass_honors": true
           },
           "algebraic_circuits_1":
@@ -9540,7 +9540,7 @@
             "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together",
             "content": "Ohm's Law and the Power Formula can be manipulated to create new formulas.",
             "uuid": "063a8922-ee36-4a0a-81b7-511136db2f3d",
-            "id": "",
+            "id": "063a89",
             "inClass_honors": true
           },
           "electric_potential_diagrams_1":
@@ -9553,7 +9553,7 @@
             "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits.",
             "content": "Voltage can be depicted as changes in electric potential across a circuit; magnitude of current can also be depicted on an electric potential graph.",
             "uuid": "12ce06a8-26a6-4090-ad1d-301c26b9facb",
-            "id": ""
+            "id": "12ce06"
           },
           "analyze_circuits_3":
           {
@@ -9565,7 +9565,7 @@
             "objective": "Solve circuits with series components inside of parallel components or parallel sections in series.",
             "content": "Combinations of series and parallel resistor elements can be combined and taken apart to make a circuit.",
             "uuid": "1db03943-b301-48f3-85e4-5b22c257aa23",
-            "id": "",
+            "id": "1db039",
             "inClass_AP":  true
           },
           "electric_potential_diagrams_2":
@@ -9578,7 +9578,7 @@
             "objective": "Given an electric potential diagram of a circuit, draw a circuit that could potentially be the correct circuit.",
             "content": "The elements within a circuit can be determined from an electric potential diagram of that circuit.",
             "uuid": "2535cab6-6aa2-431d-ad16-fd996e6ec602",
-            "id": "",
+            "id": "2535ca",
             "inClass_AP": true
           },
           "algebraic_circuits_2":
@@ -9591,7 +9591,7 @@
             "prerequisites": ["electric_potential_diagrams_2"],
             "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit.",
             "uuid": "aeb8f097-8f62-4bd0-936d-57187ae61ef5",
-            "id": "",
+            "id": "aeb8f0",
             "inClass_AP": true
           },
           "analyze_circuits_4":
@@ -9604,8 +9604,18 @@
             "prerequisites": ["algebraic_circuits_2"],
             "objective": "For circuits with multiple layers of series and parallel elements within each other, determine the voltage, current, resistance, and power of each element and draw a diagram illustrating the electric potential of the circuit, and describe how the circuit diagram drawn illustrates Kirchoff's Laws.",
             "uuid": "9fc2d88a-9543-4483-81ba-dc034245f93f",
-            "id": "",
-            "inClass_AP": true
+            "id": "9fc2d8",
+            "inClass_AP": false
+          },
+          "short_circuit_math": {
+            "title": "Short Circuit Math",
+            "level": 4,
+            "horizontal": 6,
+            "letter": "Y",
+            "prerequisites": [],
+            "objective": "Using a mathematical model that includes the internal resistance of a battery, explain why, when there is a path around a light bulb, the light bulb will not light and the battery will get hot.",
+            "uuid": "ce65de11-ce62-4eed-95ab-c08dd33b2648",
+            "id": "ce65de"
           },
           "dc_circuit_dimensional_analysis":
           {
@@ -9616,7 +9626,7 @@
             "prerequisites": ["analyze_circuits_4"],
             "objective": "Determine and explain the units of all DC circuit quantities; prove various formulas are dimensionally correct.",
             "uuid": "e7244ff6-c4a0-4ab4-a2aa-8e5c82980360",
-            "id": ""
+            "id": "e7244f"
           },
           "algebraic_circuits_3":
           {
@@ -9628,7 +9638,7 @@
             "prerequisites": ["dc_circuit_dimensional_analysis"],
             "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct.",
             "uuid": "58b3ed44-b195-4957-bfa5-e5d15d950986",
-            "id": ""
+            "id": "58b3ed"
           },
           "mathematically_rigorous_circuit_model":
           {
@@ -9639,7 +9649,7 @@
             "prerequisites": ["algebraic_circuits_3"],
             "objective": "Define and use mathematically rigorous definitions of potential difference, current, resistance, and power; use Kirchoff's Laws to demonstrate basic circuit rules.",
             "uuid": "bb23956f-ab8e-41fc-97ff-0468ec948926",
-            "id": ""
+            "id": "bb2395"
           },
           "resistor_only_design":
           {
@@ -9650,7 +9660,7 @@
             "prerequisites": ["mathematically_rigorous_circuit_model"],
             "objective": "Given a particular design goal, combine a set of resistors to accomplish this goal.",
             "uuid": "be0f2fd2-999d-490c-a3d8-6123746fc72e",
-            "id": ""
+            "id": "be0f2f"
           }
         }
       }
