@@ -8942,20 +8942,9 @@
             "horizontal": 10,
             "letter": "X",
             "prerequisites": [],
-            "objective": "Recognize materials that are insulators and conductors, build circuits using non-traditional materials as wires.",
-            "content": "Metal materials conduct electric current while non-metal materials do not; almost all metal materials can be subsituted for tradiational wires in an electric circuit.",
+            "objective": "Recognize materials that are insulators and conductors, build circuits using non-traditional materials as wires; Block a circuit with an insulator that can be removed (the mouse detector).",
+            "content": "Metal materials conduct electric current while non-metal materials do not; almost all metal materials can be substituted for traditional wires in an electric circuit.",
             "uuid": "53134309-8e56-4855-adad-7858398d8c33",
-            "id": ""
-          },
-          "mouse_detector": {
-            "title": "The Mouse Detector",
-            "level": 1,
-            "horizontal": 11,
-            "letter": "Y",
-            "prerequisites": [],
-            "objective": "Block a circuit with an insulator that can be removed.",
-            "content": "Non-metal materials will block electrical circuit; almost any non-metal material can be inserted into a circuit to block current.",
-            "uuid": "f6f31d4c-e165-458c-b35e-75a2fa5a4a62",
             "id": ""
           },
           "short_circuits":
