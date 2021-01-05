@@ -1,0 +1,18 @@
+{
+  "v1": {
+    "1": {
+      "a": "0.4 m/s/s UP",
+      "b": "27.2 N UP",
+      "c": "The object is moving down and slowing down, according to Newton's Second Law its net force must be upward",
+      "d": "667 N down, gravity; 694 N up, normal; include brief explanation",
+      "e": "Because the magnitude of normal force is greater than the person's weight, the will feel heavy"
+    },
+    "2": {
+      "a": "1.1 m/s/s DOWN",
+      "b": "82.5 N DOWN",
+      "c": "The person is moving upwards and slowing down, according to Newton's Second Law the net force acting on the person is downward",
+      "d": "736 N down, gravity; 653 N up, normal force; include brief explanation",
+      "e": "Because the magnitude of normal force is less than the person's weight, they will feel light"
+    }
+  }
+}
