@@ -1,7 +1,34 @@
 {
   "v1": {
     "1": {
-
+      "name": "free-body diagram of the box",
+      "force A": "",
+      "force B": "",
+      "force C": "",
+      "force D": ""
+    },
+    "2": {
+      "name": "Balanced Force Pairs on Box"
+    },
+    "3": {
+      "name": "free-body diagram of the person",
+      "force E": "",
+      "force F": "",
+      "force G": "",
+      "force H": ""
+    },
+    "4": {
+      "name": "Balanced Force Pairs on Person"
+    },
+    "5": {
+      "name": "free-body diagram of the floor",
+      "force I": "",
+      "force J": ""
+    },
+    "6": {
+      "name": "free-body diagram of the earth",
+      "force K": "",
+      "force L": ""
     }
   }
 }
