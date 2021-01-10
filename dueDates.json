@@ -65,17 +65,7 @@
         "inClass": true
       }
     },
-    "1-7-2021": {
-      "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f": {
-        "name": "Free-Body Diagrams 3",
-        "practice": true,
-        "inClass": false
-      },
-      "b9e05631-d323-4455-8c97-c8d733f7ee86": {
-        "name": "Quantitative Graphs 4C (from acceleration graph)",
-        "practice": true,
-        "inClass": false
-      },
+    "1-9-2021": {
       "3950df90-a5f0-45f6-bbc0-760a7865445c": {
         "name": "Analyze Circuits 2",
         "practice": false,
@@ -87,7 +77,19 @@
         "inClass": false
       }
     },
-    "1-12-2021": {
+    "1-11-2021": {
+      "78d2e6e1-8df3-457b-ba8a-c97cf766ef8f": {
+        "name": "Free-Body Diagrams 3",
+        "practice": true,
+        "inClass": false
+      },
+      "b9e05631-d323-4455-8c97-c8d733f7ee86": {
+        "name": "Quantitative Graphs 4C (from acceleration graph)",
+        "practice": true,
+        "inClass": false
+      }
+    },
+    "1-13-2021": {
       "462ef780-e519-41b7-baae-8303b2948064": {
         "name": "Kinetic and Potential Energy Graphs",
         "practice": false,
