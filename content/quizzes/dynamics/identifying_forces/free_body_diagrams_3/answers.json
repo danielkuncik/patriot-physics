@@ -2,33 +2,52 @@
   "v1": {
     "1": {
       "name": "free-body diagram of the box",
-      "force A": "",
-      "force B": "",
-      "force C": "",
-      "force D": ""
+      "force A": "gravity, down (inward), earth, box",
+      "force B": "normal force, up (outward), floor, box",
+      "force C": "applied force, left, person, box",
+      "force D": "kinetic friction, right, floor, box"
     },
     "2": {
-      "name": "Balanced Force Pairs on Box"
+      "name": "Balanced Force Pairs on Box",
+      "answer 1": "A and B",
+      "answer 2": "C and D"
     },
     "3": {
       "name": "free-body diagram of the person",
-      "force E": "",
-      "force F": "",
-      "force G": "",
-      "force H": ""
+      "force E": "gravity, down (inward), earth, person",
+      "force F": "normal force, up (outward), floor, person",
+      "force G": "applied force, right, box, person",
+      "force H": "static friction, left, floor, person"
     },
     "4": {
-      "name": "Balanced Force Pairs on Person"
+      "name": "Balanced Force Pairs on Person",
+      "answer 1": "E and F",
+      "answer 2": "G and H"
     },
     "5": {
       "name": "free-body diagram of the floor",
-      "force I": "",
-      "force J": ""
+      "force I": "normal force, down (inward), box, floor",
+      "force J": "normal force, down (inward), person, floor",
+      "force K": "kinetic friction, left, box, floor",
+      "force L": "static friction, right, person, floor"
     },
     "6": {
       "name": "free-body diagram of the earth",
-      "force K": "",
-      "force L": ""
+      "force M": "gravity, up (outward), box, earth",
+      "force N ": "gravity, up (outward), person, earth"
+    },
+    "7": {
+      "name": "identify action-reaction pairs",
+      "answer 1": "A and M",
+      "answer 2": "B and I",
+      "answer 3": "C and G",
+      "answer 4": "D and K",
+      "answer 5": "E and N",
+      "answer 6": "F and J",
+      "answer 7": "H and L"
+    },
+    "8": {
+      "name": "Identify any one pair and explicitly state how it relates to Newton's Third Law"
     }
   }
 }
