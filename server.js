@@ -302,7 +302,8 @@ const checkQuizAccess2 = (req, res, next) => {
                 let requirements = dueDateObject[dueDate][uuid];
                 req.quizRequirements["required"] = true;
                 req.quizRequirements["dueDate"] = thisDueDate;
-                if (dueDateObject.noQuiz) {
+                if (requirements.noQuiz) {
+                    console.log('xxx');
                     req.quizRequirements["required"] = false;
                 }
                 let now = new Date();
@@ -319,7 +320,7 @@ const checkQuizAccess2 = (req, res, next) => {
                         req.practiceObject["comment"] = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].practiceComment;
                         let practiceDueDate = requirements.practiceDueDate ? requirements.practiceDueDate : thisDueDate;
                         let practiceDueDateObject = new Date(practiceDueDate);
-                        req.practiceObject.overdue = practiceDueDate - now < -86400000 - 18000000 - 18000000;
+                        req.practiceObject.overdue = practiceDueDateObject - now < -86400000 - 18000000 - 18000000;
                         req.practiceObject.dueDate = practiceDueDate;
                     }
                 }

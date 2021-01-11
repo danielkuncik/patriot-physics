@@ -9503,7 +9503,8 @@
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor.",
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit.",
             "uuid": "875ae026-5f4b-4fa0-8d76-61e2b5420bbf",
-            "id": "875ae0"
+            "id": "875ae0",
+            "inClass_honors": true
           },
           "analyze_circuits_2":
           {
@@ -9516,7 +9517,7 @@
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit, and you can logically deduce the information you need from different sets of initial information.",
             "uuid": "3950df90-a5f0-45f6-bbc0-760a7865445c",
             "id": "3950df",
-            "inClass_honors": true
+            "inClass_honors": false
           },
           "algebraic_circuits_1":
           {
