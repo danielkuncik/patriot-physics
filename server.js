@@ -302,6 +302,9 @@ const checkQuizAccess2 = (req, res, next) => {
                 let requirements = dueDateObject[dueDate][uuid];
                 req.quizRequirements["required"] = true;
                 req.quizRequirements["dueDate"] = thisDueDate;
+                if (dueDateObject.noQuiz) {
+                    req.quizRequirements["required"] = false;
+                }
                 let now = new Date();
                 let quizDueDate = new Date(thisDueDate);
                 req.quizRequirements.overdue = quizDueDate - now < -86400000 - 18000000 - 18000000;

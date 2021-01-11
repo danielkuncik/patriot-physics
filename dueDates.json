@@ -150,6 +150,51 @@
         "practice": false,
         "inClass": true
       }
+    },
+    "1-15-2020": {
+      "8f39c5cf-bd20-488b-9ad9-d70f634bc48a": {
+        "name": "Series and Parallel Circuits",
+        "noQuiz": true,
+        "practice": true
+      },
+      "d76ce11e-4419-401e-8341-e917d2ba9bb1": {
+        "name": "Circuit Diagram Symbols"
+      },
+      "53134309-8e56-4855-adad-7858398d8c33": {
+        "name": "Insulators and Conductors",
+        "practice": true,
+        "noQuiz": true
+      },
+      "87757744-3366-4fdc-a97f-af98e51ee9a7": {
+        "name": "Short Circuit",
+        "practice": true,
+        "noQuiz": true
+      },
+      "36d08c9b-5cdc-4f85-a2b0-b14597abea41": {
+        "name": "Switches 1",
+        "practice": true,
+        "noQuiz": true
+      }
+    },
+    "1-21-2020": {
+      "875ae026-5f4b-4fa0-8d76-61e2b5420bbf": {
+        "name": "Analyze Circuits 1",
+        "practice": true,
+        "inClass": true
+      },
+      "3950df90-a5f0-45f6-bbc0-760a7865445c": {
+        "name": "Analyze Circuits 2",
+        "practice": true,
+        "inClass": false
+      },
+      "df740723-6c09-4089-b31f-d5ec76dac494": {
+        "name": "Circuit Definitions 1",
+        "practice": true
+      },
+      "c3d2b9a4-e293-4b22-85f5-b2cfc29066f2": {
+        "name": "Energy Change",
+        "practice": true
+      }
     }
   }
 }

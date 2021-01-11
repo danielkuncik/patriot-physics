@@ -491,6 +491,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
             string = string + "<div class = 'ml-4 mb-4'>";
             Object.keys(dueDates[dueDateKey]).forEach((pod_uuid) => {
                 const inClassQuiz = dueDates[dueDateKey][pod_uuid].inClass;
+                const noQuiz = dueDates[dueDateKey][pod_uuid].noQuiz;
                 let displayObject;
                 if (unitMapBy_uuid[pod_uuid].type === "pod") {
                     let superUnitKey = unitMapBy_uuid[pod_uuid].superUnitKey;
@@ -546,7 +547,9 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                 } else {
                     // error
                 }
-                if (inClassQuiz) {
+                if (noQuiz) {
+                    // pass
+                } else if (inClassQuiz) {
                     obj.inClass.push(displayObject);
                 } else {
                     obj.homework.push(displayObject);
