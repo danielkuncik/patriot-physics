@@ -12,7 +12,7 @@ sum = 0
 
 step = base
 
-ten_steps = 0;
+ten_steps = 0
 
 print('Score','Step','Sum')
 print(50,'N/A',0)
@@ -21,7 +21,7 @@ for i in range(1,52):
 	step_rounded = round(step)
 	sum += step_rounded
 	ten_steps += step_rounded
-	if ((i - 1) % 10 == 0 and i != 1):
+	if ((i - 1) % 10 == 0 and i != 1): ## there is an error here, make sure it is calculating this correctly!
 		print('               ' + str(i - 11 + 50) + ' to ' + str(i-1 + 50), int(ten_steps - step_rounded))
 		ten_steps = 0
 	print(i + 50, '+' + str(int(step_rounded)),int(sum))
