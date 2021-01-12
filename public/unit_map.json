@@ -9234,18 +9234,6 @@
             "uuid": "df740723-6c09-4089-b31f-d5ec76dac494",
             "id": "df7407"
           },
-          "insulators_conductors":
-          {
-            "title": "Insulators and Conductors",
-            "level": 1,
-            "horizontal": 4,
-            "letter": "C",
-            "prerequisites": ["circuit_definitions_1"],
-            "objective": "Recognize different insulators and conductors",
-            "content": "Conductors are made of metal and allow electric current to flow; insulators are made of nonmetals and do not allow electric current to flow.",
-            "uuid": "32cb18ef-4f14-43ce-b456-8bef572323ca",
-            "id": "32cb18"
-          },
           "energy_change_in_circuit":
           {
             "title": "Energy Change in a Circuit",

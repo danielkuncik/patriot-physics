@@ -5,9 +5,6 @@
     for each portion of an electric circuit.
 </p>
 
-
-<img src = 'https://circuitdigest.com/sites/default/files/inlineimages/u/Fuse-circuit-diagram.png' height = '200px' width = 'auto'/>
-
 <div class = 'container'>
     <div class = 'row'>
         <div class = 'col-2 border border-dark'>
@@ -25,7 +22,7 @@
             Battery
         </div>
         <div class = 'col-6 border border-dark' id = 'battery_symbol'>
-
+            <img src = '/podAssets/electric_circuits/circuit_construction_1/battery.png' height = '150px' width = 'auto' />
         </div>
         <div class = 'col-4 border border-dark'>
             Provides voltage; pushes electrons around the circuit
@@ -59,7 +56,7 @@
             Switch
         </div>
         <div class = 'col-6 border border-dark' id = 'switch_symbol'>
-
+            <img src = '/podAssets/electric_circuits/circuit_construction_1/switches.png' height = '150px' width = 'auto' />
         </div>
         <div class = 'col-4 border border-dark'>
             Easily completes or breaks a circuit, shutting electric current on and off.
@@ -70,7 +67,7 @@
             Resistor
         </div>
         <div class = 'col-6 border border-dark' id = 'resistor_symbol'>
-
+            <img src = '/podAssets/electric_circuits/circuit_construction_1/resistor.png' height = '150px' width = 'auto' />
         </div>
         <div class = 'col-4 border border-dark'>
             Slows down current in an electric circuit.
@@ -81,13 +78,31 @@
             Fuse
         </div>
         <div class = 'col-6 border border-dark' id = 'fuse_symbol'>
-
+            <img src = '/podAssets/electric_circuits/circuit_construction_1/fuse.png' height = '150px' width = 'auto' />
         </div>
         <div class = 'col-4 border border-dark'>
             Breaks circuit if current is dangerously high.
         </div>
     </div>
 </div>
+
+
+<h5>
+    Images of electric circuit diagrams:
+</h5>
+
+<p>
+    In this circuit, the term "load" is used for a resistor.
+</p>
+<img src = 'https://circuitdigest.com/sites/default/files/inlineimages/u/Fuse-circuit-diagram.png' height = '200px' width = 'auto'/>
+<p class="imageCredit">
+    https://circuitdigest.com/sites/default/files/inlineimages/u/Fuse-circuit-diagram.png
+</p>
+
+<img src = 'http://img.brainkart.com/extra3/2w28W56.jpg' height ='200px' width = 'auto'>
+<p class = 'imageCredit'>
+    http://www.brainkart.com/article/Electric-circuit-diagram_39865/
+</p>
 
 <script>
     /*
@@ -112,10 +127,10 @@
 
     // figure out how to draw a fuse
 
-    $("#battery_symbol").append(battery.drawCanvas(150));
-    $("#resistor_symbol").append(resistor.drawCanvas(150));
+    //$("#battery_symbol").append(battery.drawCanvas(150));
+    //$("#resistor_symbol").append(resistor.drawCanvas(150));
     $("#wire_symbol").append(wire.drawCanvas(150));
-    $("#switch_symbol").append(switch_diagram.drawCanvas(150));
+    //$("#switch_symbol").append(switch_diagram.drawCanvas(150));
     $("#light_bulb_symbol").append(light_bulb.drawCanvas(150));
 </script>
 
