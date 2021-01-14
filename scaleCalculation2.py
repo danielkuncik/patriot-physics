@@ -2,7 +2,7 @@
 
 theScale = [143,154,165,177,189,203,218,234,249,268]
 
-multiplier = 1.5
+multiplier = 2
 
 def nextStep(i):
     return theScale[(i - 50) % 10 - 1] * ((i - 51) / 10 + 1) * multiplier
