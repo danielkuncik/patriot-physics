@@ -108,6 +108,20 @@
     <li class = 'question' data-answer_id = 'problem16Answer' id = 'problem16'></li>
 </ol>
 
+<h3>
+    EXTRA PRACTICE
+</h3>
+<h5>
+    You do NOT need to complete these problems to receive full credit for the practice page!
+</h5>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer_id = 'problem17Answer' id = 'problem17'></li>
+    <li class = 'question' data-answer_id = 'problem18Answer' id = 'problem18'></li>
+    <li class = 'question' data-answer_id = 'problem19Answer' id = 'problem19'></li>
+    <li class = 'question' data-answer_id = 'problem20Answer' id = 'problem20'></li>
+</ol>
+
 <ol class = 'answerList'></ol>
 
 <script>
@@ -146,5 +160,17 @@
     insertCircuitProblem(15, problem15);
     let problem16 = createCircuitProblem('parallel', 30, [15, 25], true, [15, 25, 9.375], [2, 1.2, 3.2], [30, 30, 30], [60, 36, 96]);
     insertCircuitProblem(16, problem16);
+
+    let problem17 = createCircuitProblem('series',12,[2,2,4],true,[3,3,6,12],[1.5,1.5,1.5,1.5],[2,2,4,8],[4.5,4.5,9,18]);
+    insertCircuitProblem(17,problem17);
+
+    let problem18 = createCircuitProblem('series',8,[10,4,2],true,[5,2,1,8],[.5,.5,.5,.5],[10,4,2,16],[2.5,1,.5,4]);
+    insertCircuitProblem(18,problem18);
+
+    let problem19 = createCircuitProblem('parallel',9,[9,3,9],true,[9,9,9,9],[1,3,1,5],[9,5,9,1.8],[9,27,9,45]);
+    insertCircuitProblem(19,problem19);
+
+    let problem20 = createCircuitProblem('parallel',20,[4,5,10],true,[20,20,20,20],[5,4,2,11],[4,5,10,1.81],[100,80,40,220]);
+    insertCircuitProblem(20,problem20);
 
 </script>
