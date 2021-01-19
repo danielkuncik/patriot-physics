@@ -10,8 +10,21 @@
 <header>
     {{>header}}
 </header>
+
+<div class = 'jumbotron text-center'>
+    <h1 class = 'display-1'>
+        Miniquiz
+    </h1>
+    <h2>
+        <span class = 'display-1'>This </span>
+        <span class = 'display-2'>is </span>
+        <span class = 'display-3'>the </span>
+        <span class = 'display-4'>quiz </span>
+    </h2>
+</div>
+
 <h3 class="podTitle">
-    {{unitNumber}}-{{letter}}: {{title}}
+    {{title}}
     <br>
     Version {{version}}
     <br>
@@ -33,17 +46,6 @@
         Level: {{level}}
     </li>
 </ul>
-<div class = 'jumbotron text-center'>
-    <h1 class = 'display-1'>
-        Miniquiz
-    </h1>
-    <h2>
-        <span class = 'display-1'>This </span>
-        <span class = 'display-2'>is </span>
-        <span class = 'display-3'>the </span>
-        <span class = 'display-4'>quiz </span>
-    </h2>
-</div>
 
 {{#if submitPaper}}
     <div class = 'border border-primary'>

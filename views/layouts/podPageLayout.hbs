@@ -10,8 +10,41 @@
 <header>
     {{>header}}
 </header>
+
+<div class = 'jumbotron text-center'>
+    <h1 class = 'display-1'>
+        Practice Page
+    </h1>
+    <h2>
+        <span class = 'display-1'>Not </span>
+        <span class = 'display-2'>the </span>
+        <span class = 'display-3'>quiz</span>
+    </h2>
+</div>
+
+<div class = 'jumbotron no-print'>
+    <div class = 'container'>
+        <div class = 'row'>
+            <div class = 'col-md-6 border border-dark' style = 'font-size: 30px'>
+                {{{practiceLink loggedIn practiceRequirementObject uuid practiceComments}}}
+            </div>
+            <div class = 'col-md-6 border border-dark' style = 'font-size: 30px'>
+                {{{quizLinkNew loggedIn quizRequirementObject uuid}}}
+            </div>
+        </div>
+        {{#if notLoggedIn}}
+            <div class = 'row'>
+                <div class = 'col-6'>
+                    <h5><a href = '/login'>Login Here</a></h5>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>
+
+
 <h3>
-    {{unitNumber}}-{{letter}}: {{title}}
+    {{title}}
 </h3>
 <ul>
     <li>
@@ -36,43 +69,16 @@
     </h4>
 </div>
 <div class = 'display-2 text-danger'>{{flash}}</div>
-<div class = 'jumbotron'>
-    <div class = 'container'>
-        <div class = 'row'>
-            <div class = 'col-md-6 border border-dark' style = 'font-size: 30px'>
-                {{{practiceLink loggedIn practiceRequirementObject uuid practiceComments}}}
-            </div>
-            <div class = 'col-md-6 border border-dark' style = 'font-size: 30px'>
-                {{{quizLinkNew loggedIn quizRequirementObject uuid}}}
-            </div>
-        </div>
-        {{#if notLoggedIn}}
-            <div class = 'row'>
-                <div class = 'col-6'>
-                    <h5><a href = '/login'>Login Here</a></h5>
-                </div>
-            </div>
-        {{/if}}
-    </div>
-</div>
 
 <script>
     const letter = '{{letter}}';
 </script>
-<div>
+<div class = 'no-print'>
     {{showPreviousQuizAttempts previousAttempts}}
 </div>
 
-<div class = 'jumbotron text-center'>
-    <h1 class = 'display-1'>
-        Practice Page
-    </h1>
-    <h2>
-        <span class = 'display-1'>Not </span>
-        <span class = 'display-2'>the </span>
-        <span class = 'display-3'>quiz</span>
-    </h2>
-</div>
+<div class = 'pageBreak'></div>
+
 <div>
     {{{body}}}
 </div>
@@ -82,7 +88,7 @@
     </h4>
 </div>
 
-<div class = 'jumbotron'>
+<div class = 'jumbotron no-print'>
     <div class = 'container'>
         <div class = 'row'>
             <div class = 'col-md-6 border border-dark' style = 'font-size: 30px'>
