@@ -29,7 +29,6 @@ redisClient.on("error",(error) => {
     console.log(error);
 });
 
-const gradeScale = require(__dirname + '/gradingScale.json');
 
 const dueDates = require(__dirname + '/dueDates.json');
 
@@ -388,13 +387,8 @@ app.get('/labs', [db.check_if_logged_in, disp.display_lab_list_page]);
 
 app.get('/labs/:labKey', [db.check_if_logged_in, disp.display_lab_page]);
 app.get('/info/:infoKey', [db.check_if_logged_in, disp.display_info_page]);
+app.get('/gradeScale', [db.check_if_logged_in, disp.display_scale_page]);
 
-app.get('/gradeScale',(req,res,next) => {
-    console.log(gradeScale);
-    next();
-}, (req, res) => {
-    res.redirect('/');
-});
 
 app.get('/joke/:jokeName', (req, res) => {
     let filePath = __dirname + '/content/jokes/memedPictures/' + req.params.jokeName + '.jpg';

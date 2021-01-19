@@ -6,6 +6,7 @@ const hbs = require('express-hbs');
 
 
 const quizPassword = 'antarctica';
+const gradeScale = require(__dirname + '/gradingScale.json');
 
 
 
@@ -244,6 +245,19 @@ display_info_page = (req, res) => {
     });
 };
 
+display_scale_page = (req, res) => {
+  res.render('scalePage.hbs', {
+    layout: 'default',
+    title: 'Scale Page',
+    user: req.user,
+    section: req.section,
+    overallLevel: req.overallLevel,
+    gradeMap: req.gradeMap,
+    totalAttempts: req.totalAttemps,
+    gradeScale: gradeScale
+  })
+}
+
 
 display_problemSet_page = (req, res) => {
     res.render(__dirname + '/content/problemSets/' + req.params.problemSetKey + '.hbs', {
@@ -448,5 +462,6 @@ module.exports = {
     display_quiz_entry_page,
     display_quiz,
     display_practice_submission_page,
-    display_info_page
+    display_info_page,
+    display_scale_page
 };

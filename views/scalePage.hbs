@@ -1,0 +1,33 @@
+
+
+<h1>
+  Grade Scale: AP Physics - Hybrid School Model
+</h1>
+
+<div id = 'putItHere'></div>
+
+<script>
+
+  const scaleObject = JSON.parse('{{{getGradeScale gradeScale}}}');
+
+  let scale = (scaleObject.baseScale).map(x => Math.floor(x * scaleObject.AP_multiplier * scaleObject.hybrid_multiplier));
+  console.log(scale);
+
+  let table = $("<table></table>");
+  $(table).append($("<tr><th>Final Grade</th><th>Points Required</th></tr>"));
+  let i;
+  for (i = 0; i < scale.length; i++) {
+    let thisRow = $("<tr></tr>");
+    if (i % 10 === 0 && i > 50) {
+      $(thisRow).append($(`<th>${i} %</th>`));
+      $(thisRow).append(`<th>${scale[i]}</th>`);
+    } else {
+      $(thisRow).append($(`<td>${i} %</td>`));
+      $(thisRow).append(`<td>${scale[i]}</td>`);
+    }
+    $(table).append(thisRow);
+  }
+
+  $("#putItHere").append(table);
+
+</script>

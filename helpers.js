@@ -850,6 +850,10 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid, practiceComm
     return new hbs.SafeString(string);
 });
 
+hbs.registerHelper('getGradeScale', (scaleJSON) => {
+  return new hbs.SafeString(JSON.stringify(scaleJSON));
+});
+
 
 module.exports = {
 
