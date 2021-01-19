@@ -232,6 +232,19 @@ display_lab_page = (req, res) => {
     });
 };
 
+display_info_page = (req, res) => {
+    res.render(__dirname + '/content/information/' + req.params.infoKey + '.hbs', {
+        layout: 'default',
+        title: 'Lab',
+        user: req.user,
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps
+    });
+};
+
+
 display_problemSet_page = (req, res) => {
     res.render(__dirname + '/content/problemSets/' + req.params.problemSetKey + '.hbs', {
         layout: 'default',
@@ -434,5 +447,6 @@ module.exports = {
     display_problemSet_page,
     display_quiz_entry_page,
     display_quiz,
-    display_practice_submission_page
+    display_practice_submission_page,
+    display_info_page
 };
