@@ -103,6 +103,7 @@ class GradeMap {
             Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
                 blankMap[superUnitKey].units[unitKey] = {
                     level: 0,
+                    unitPoints: 0,
                     pods: {}
                 };
                 let pointsForPods = (this.courseLevel === 'AP' && AP_units.includes(unitKey));
@@ -223,11 +224,14 @@ class GradeMap {
         let totalScore = 0;
         Object.keys(unitMap).forEach((superUnitKey) => {
             Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+                let unitScore = 0;
                 Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
                     let info = this.map[superUnitKey].units[unitKey].pods[podKey];
-                    totalScore += info.practicePointsAvailable * info.practiceScore / 2;
-                    totalScore += info.quizPointsAvailable * info.score / 20;
+                    unitScore += info.practicePointsAvailable * info.practiceScore / 2;
+                    unitScore += info.quizPointsAvailable * info.score / 20;
                 });
+                this.map[superUnitKey].units[unitKey].unitPoints = unitScore;
+                totalScore += unitScore;
             });
         });
         return totalScore;
