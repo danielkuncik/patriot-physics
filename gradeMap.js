@@ -1,9 +1,37 @@
 const unitMap = require(__dirname + '/public/unit_map');
 const AP_goals = require(__dirname + '/apTestGoals.json');
+const gradeScale = require(__dirname + '/gradingScale.json');
+
 
 function createAPGauge() {
     // uses the json file to create a gauge of AP progress 
 }
+
+function createGradeScale(level, hybird) {
+    const scale = gradeScale.baseScale;
+    let leveled_scale;
+    if (level === 'A_level') {
+        leveled_scale = scale.map(x => x * gradeScale.A_level_multiplier);
+    } else if (level === 'honors') {
+        leveled_scale = scale.map(x => x * gradeScale.honors_multiplier);
+    } else if (level === 'AP') {
+        leveled_scale = scale.map(x => x * gradeScale.AP_multiplier);
+    } else {
+        leveled_scale = scale;
+    }
+
+    let hybrid_adjusted_scale;
+    if (hybird) {
+        hybrid_adjusted_scale = leveled_scale.map(x => x * gradeScale.hybrid_multiplier);
+    } else {
+        hybrid_adjusted_scale = leveled_scale;
+    }
+
+    let integer_scale = hybrid_adjusted_scale.map(x => Math.ceil(x));
+
+    return integer_scale
+}
+
 
 function getPodKeysByUUID(uuid) {
     let selectionObject;
@@ -55,6 +83,8 @@ function calculateGradeFromLevel(currentLevel, goalLevel) {
     }
 }
 
+const AP_units = ["forward_kinematics_qualitative"];
+
 class GradeMap {
     constructor(courseLevel) {
         this.overallLevel = 0;
@@ -75,6 +105,7 @@ class GradeMap {
                     level: 0,
                     pods: {}
                 };
+                let pointsForPods = (this.courseLevel === 'AP' && AP_units.includes(unitKey));
                 Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
                     let level = unitMap[superUnitKey].units[unitKey].pods[podKey].level;
                     if (level === undefined) {
@@ -90,6 +121,14 @@ class GradeMap {
                     } else {
                         valueWeight = 1;
                     }
+                    let practicePointsAvailable, quizPointsAvailable;
+                    if (pointsForPods) {
+                        practicePointsAvailable = level * 100; // can map this back to th eunit
+                        quizPointsAvailable = level * 200;
+                    } else {
+                        practicePointsAvailable = 0;
+                        quizPointsAvailable = 0;
+                    }
                     blankMap[superUnitKey].units[unitKey].pods[podKey] = {
                         score: 0,
                         practiceScore: 0,
@@ -97,7 +136,9 @@ class GradeMap {
                         level: level,
                         pending: false,
                         practicePending: false,
-                        practiceComment: undefined
+                        practiceComment: undefined,
+                        quizPointsAvailable: quizPointsAvailable,
+                        practicePointsAvailable: practicePointsAvailable
                     }
                 });
             });
@@ -176,6 +217,20 @@ class GradeMap {
             }
         }
 
+    }
+
+    calculateTotalPoints() {
+        let totalScore = 0;
+        Object.keys(unitMap).forEach((superUnitKey) => {
+            Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
+                Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
+                    let info = this.map[superUnitKey].units[unitKey].pods[podKey];
+                    totalScore += info.practicePointsAvailable * info.practiceScore / 2;
+                    totalScore += info.quizPointsAvailable * info.score / 20;
+                });
+            });
+        });
+        return totalScore;
     }
 
     setQuizPending(pod_uuid) {

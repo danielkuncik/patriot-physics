@@ -10,7 +10,7 @@
 
   const scaleObject = JSON.parse('{{{getGradeScale gradeScale}}}');
 
-  let scale = (scaleObject.baseScale).map(x => Math.floor(x * scaleObject.AP_multiplier * scaleObject.hybrid_multiplier));
+  let scale = (scaleObject.baseScale).map(x => Math.ceil(x * scaleObject.AP_multiplier * scaleObject.hybrid_multiplier));
   console.log(scale);
 
   let table = $("<table></table>");
