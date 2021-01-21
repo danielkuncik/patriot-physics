@@ -165,6 +165,31 @@
 <div class = 'randomProblemDiv'></div>
 
 
+<h3>
+    New Circuit Problems
+</h3>
+
+<p class="directions">
+    Use one of the new formulas yuo have derived to solve for each element of the circuit below.
+</p>
+<ol class = 'questionList'>
+    <li class = 'question' data-answer_id = 'problem9Answer'>
+        <div id = 'problem9Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+</ol>
+
+<script>
+    let problem9Circuit = makeParallelCircuit('196 W', ['14 W    56 Ohms',undefined,'4 A']);
+
+    $("#problem9Circuit").append(problem9Circuit.drawCanvas(400));
+    let answer9 = filledElectricCircuitTable([28,28,28,28],[2,1,4,7],[14,18,7,4],[56,28,112,196]);
+    answerObjects['problem9Answer'] = answer9.draw(200);
+
+</script>
+
+
 <script>
 
   function generateIntegerCircuit(series) {
