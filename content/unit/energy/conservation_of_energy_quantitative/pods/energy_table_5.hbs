@@ -38,21 +38,45 @@
     Problem 1:
 </h5>
 <p>
-    A ball with a mass of 4.00 kg is dropped off a short cliff that is 12.0 m tall.
-    At the bottom, the ball has a speed of 13.2 m/s.
+    A ball with a mass of 4.000 kg is dropped off a short cliff that is 12.00 m tall.
+    At the bottom, the ball has a speed of 13.20 m/s.
     Your goal is to determine how much energy is lost to heat?
+    (Use g = 9.810 m/s/s.)
 </p>
 
 <div id = 'energyTable1'></div>
 
 
+<div class="pageBreak"></div>
+<h3>
+    Answers:
+</h3>
+<h5>
+    Problem 1:
+</h5>
+<div id = 'energyTable1_answer'></div>
+
 <script>
     let energyTable1 = new EnergyTable(5,['speed','height','ke','gpe','thermal','total_e']);
     energyTable1.setMaxFontProportion(0.05);
 
-    energyTable1.addInfoToColumn('speed',['0','6.60','9.35','11.4','13.2']);
-    energyTable1.addInfoToColumn('height',['12.0','9.00','6.00','3.00','0']);
-    energyTable1.addInfoToColumn('thermal',['0']);
+    energyTable1.addInfoToColumn('speed',['0.000','6.600','9.350','11.40','13.20']);
+    energyTable1.addInfoToColumn('height',['12.00','9.000','6.000','3.000','0.000']);
+    energyTable1.addInfoToColumn('thermal',['0.000']);
+
+    let energyTable1_answer = new EnergyTable(5,['speed','height','ke','gpe','thermal','total_e']);
+    energyTable1_answer.setMaxFontProportion(0.05);
+
+    energyTable1_answer.addInfoToColumn('speed',['0.000','6.600','9.350','11.40','13.20']);
+    energyTable1_answer.addInfoToColumn('height',['12.00','9.000','6.000','3.000','0.000']);
+
+    energyTable1_answer.addInfoToColumn('ke',['0.000','87.12','174.8','259.9','348.5']);
+    energyTable1_answer.addInfoToColumn('gpe',['470.9','353.1','235.4','117.7','0.000']);
+    energyTable1_answer.addInfoToColumn('thermal',['0.000','36.68','60.70','93.30','112.4']);
+    energyTable1_answer.addInfoToColumn('total_e',['470.9','470.9','470.9','470.9','470.9']);
+
 
     $("#energyTable1").append(energyTable1.draw(500));
+    $("#energyTable1_answer").append(energyTable1_answer.draw(500));
+
 </script>
