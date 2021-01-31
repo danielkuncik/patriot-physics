@@ -7,7 +7,7 @@ function createAPGauge() {
     // uses the json file to create a gauge of AP progress 
 }
 
-function createGradeScale(level, hybird) {
+function createGradeScale(level, hybrid) {
     const scale = gradeScale.baseScale;
     let leveled_scale;
     if (level === 'A_level') {
@@ -21,7 +21,7 @@ function createGradeScale(level, hybird) {
     }
 
     let hybrid_adjusted_scale;
-    if (hybird) {
+    if (hybrid) {
         hybrid_adjusted_scale = leveled_scale.map(x => x * gradeScale.hybrid_multiplier);
     } else {
         hybrid_adjusted_scale = leveled_scale;
@@ -85,11 +85,21 @@ function calculateGradeFromLevel(currentLevel, goalLevel) {
 
 const AP_units = ["forward_kinematics_qualitative"];
 
+// issue => when you log in, this is loaded 3 times !!!
 class GradeMap {
-    constructor(courseLevel) {
+    constructor(courseLevel, hybrid = true) {
         this.overallLevel = 0;
         this.courseLevel = courseLevel;
         this.inClassWeight = 2;
+        this.gradeScale = createGradeScale(courseLevel, hybrid);
+        this.relevantUnits = undefined;
+        if (courseLevel === 'AP') {
+            this.relevantUnits = gradeScale["AP_units"];
+        } else if (courseLevel === 'Honors') {
+            this.relevantUnits = gradeScale["Honors_units"];
+        } else if (courseLevel === 'A_level') {
+            this.relevantUnits = gradeScale["A_level_units"]
+        }
         this.map = this.makeBlankMap();
         this.setAllPodValues();
     }
@@ -106,7 +116,12 @@ class GradeMap {
                     unitPoints: 0,
                     pods: {}
                 };
-                let pointsForPods = (this.courseLevel === 'AP' && AP_units.includes(unitKey));
+                let pointsForPods;
+                if (this.relevantUnits) {
+                    pointsForPods = (this.relevantUnits).includes(unitKey);
+                } else {
+                    pointsForPods = false
+                }
                 Object.keys(unitMap[superUnitKey].units[unitKey].pods).forEach((podKey) => {
                     let level = unitMap[superUnitKey].units[unitKey].pods[podKey].level;
                     if (level === undefined) {
@@ -234,7 +249,23 @@ class GradeMap {
                 totalScore += unitScore;
             });
         });
+        this.totalPoints = totalScore;
         return totalScore;
+    }
+
+    calculateGrade() {
+        const totalPoints = this.calculateTotalPoints();
+        let grade = 0, counter = 0;
+        while (totalPoints > this.gradeScale[grade] && counter < 105) {
+            grade++;
+            counter++;
+        }
+        grade--;
+        if (grade > 100) {
+            grade = 100;
+        }
+        this.grade = grade;
+        return grade
     }
 
     setQuizPending(pod_uuid) {
@@ -264,10 +295,10 @@ class GradeMap {
         return roundedLevel
     }
 
-    calculateGrade(superUnitKey, unitKey, goalLevel) {
-        const currentLevel = this.calculateUnitLevel(superUnitKey, unitKey);
-        return calculateGradeFromLevel(currentLevel, goalLevel)
-    }
+    // calculateGrade(superUnitKey, unitKey, goalLevel) {
+    //     const currentLevel = this.calculateUnitLevel(superUnitKey, unitKey);
+    //     return calculateGradeFromLevel(currentLevel, goalLevel)
+    // }
 
     calculateAllUnitLevels() {
         Object.keys(unitMap).forEach((superUnitKey) => {
@@ -292,7 +323,16 @@ class GradeMap {
 
     }
 
+
+    print_lite() {
+        console.log("GRADE MAP");
+        console.log(`Course Level: ${this.courseLevel}`);
+        console.log(`Total Points: ${this.totalPoints}`);
+        console.log(`Grade: ${this.grade}%`);
+    }
+
     print() {
+        this.print_lite();
         Object.keys(this.map).forEach((superUnitKey) => {
             console.log('#####################');
             console.log('#####################');
@@ -313,6 +353,8 @@ class GradeMap {
                 });
             });
         });
+        console.log('Relevant Units:');
+        console.log(this.relevantUnits);
     }
 }
 
