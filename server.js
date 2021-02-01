@@ -415,7 +415,7 @@ app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_prob
 // };
 
 
-const quizLock = false;
+const quizLock = true;
 
 
 
