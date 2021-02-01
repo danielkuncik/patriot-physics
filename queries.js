@@ -81,11 +81,11 @@ const load_grades = function(req, res, next) {
                 newGradeMap.addScore(score.pod_uuid, score.score);
             });
             newGradeMap.calculateAllUnitLevels();
+            newGradeMap.calculateGrade();
             // newGradeMap.calculateGrades(req.session.courseLevel);
             req.session.gradeMap = newGradeMap;
             req.session.overallLevel = newGradeMap.calculateOverallLevel();
 
-            const totalPoints = newGradeMap.calculateTotalPoints();
             next();
         });
     } else {

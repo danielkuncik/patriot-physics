@@ -1,7 +1,7 @@
 {
   "A_level_multiplier": 1,
-  "honors_multiplier": 3,
-  "AP_multiplier": 8,
+  "honors_multiplier": 1,
+  "AP_multiplier": 2,
   "hybrid_multiplier": 0.5,
   "point_unit": 100,
   "baseScale": [
@@ -106,5 +106,37 @@
     54830,
     57320,
     60000
+  ],
+  "AP_units":
+  [
+    "conservation_of_energy_quantitative",
+    "work_and_power",
+    "forward_and_backward_kinematics_quantitative",
+    "projectile_motion",
+    "quantitative_dynamics",
+    "system_dynamics",
+    "two_dimensional_dynamics",
+    "inverse_square_laws",
+    "collisions_and_explosions",
+    "impulse",
+    "harmonics",
+    "dc_circuit_math_1",
+    "circular_motion",
+    "rotational_dynamics"
+  ],
+  "Honors_units":
+  [
+    "wave_structure",
+    "harmonics",
+    "the_electromagnetic_spectrum_quantitative",
+    "the_electromagnetic_spectrum_conceptual",
+    "wave_phenomena",
+    "dc_circuit_math_1",
+    "identifying_forces",
+    "quantitative_dynamics"
+  ],
+  "A_level_units":
+  [
+
   ]
 }
