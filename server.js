@@ -304,7 +304,6 @@ const checkQuizAccess2 = (req, res, next) => {
                 req.quizRequirements["required"] = true;
                 req.quizRequirements["dueDate"] = thisDueDate;
                 if (requirements.noQuiz) {
-                    console.log('xxx');
                     req.quizRequirements["required"] = false;
                 }
                 let now = new Date();
