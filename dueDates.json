@@ -183,18 +183,18 @@
         "name": "Energy Change",
         "practice": true
       }
-    }
-  },
-  "2-14-2021": {
-    "https://508physics.com/pod/79415b06-1b6b-4ab2-aab8-b4785d998ded":{
-      "name": "Waves 1",
-      "practice": true,
-      "noQuiz": true
     },
-    "https://508physics.com/pod/4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
-      "name": "transverse vs longitudinal",
-      "practice": true,
-      "noQuiz": true
+    "2-14-2021": {
+      "https://508physics.com/pod/79415b06-1b6b-4ab2-aab8-b4785d998ded":{
+        "name": "Waves 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "https://508physics.com/pod/4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
+        "name": "transverse vs longitudinal",
+        "practice": true,
+        "noQuiz": true
+      }
     }
   }
 }
