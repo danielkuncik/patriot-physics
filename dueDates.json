@@ -103,6 +103,44 @@
       "93e3cee4-55a1-4d9d-90e7-e5d9ad12f83d": {
         "name": "momentum 4"
       }
+    },
+    "2-14-2021": {
+      "caaa33b5-0946-4fc2-b89f-87928de3ff80":
+      {
+        "name": "traveling vs standing waves",
+        "practice": true,
+        "noQuiz": true
+      },
+      "6a947738-1711-45b6-b134-ad22ee4c4a08":
+      {
+        "name": "find wavelength from diagrams",
+        "practice": true,
+        "noQuiz": true
+      },
+      "22f2ad9b-47ec-42f2-9cfe-20e7d9f4d559":
+      {
+        "name": "wave formula 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "c7fc1a43-a671-4baa-a2a0-0b23b7fd74e7":
+      {
+        "name": "harmonics 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "28e67710-ef81-4d7c-b0f5-3080a6a81378":
+      {
+        "name": "harmonics 3",
+        "practice": true,
+        "noQuiz": true
+      },
+      "1d2d49b1-3b76-47e6-9677-397d1fb8ef55":
+      {
+        "name": "harmonics 4",
+        "practice": true,
+        "noQuiz": true
+      }
     }
   },
   "Honors": {
