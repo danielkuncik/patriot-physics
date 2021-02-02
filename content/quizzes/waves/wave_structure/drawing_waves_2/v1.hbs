@@ -1,0 +1,50 @@
+<h2 class = 'text-danger'>
+    This quiz must be taken on graph paper!
+    If you don't have any, use a ruler to turn lined paper into graph paper
+    or print some out <a href = 'https://www.waterproofpaper.com/graph-paper/graph-paper-half-inch.pdf'>here</a>.
+</h2>
+
+<p class="directions">
+    Draw each of the waves below with the specified wavelength.
+    They can have any amplitude.
+    For full credit, your wave must be the general shape of a wave,
+    and it must include at least 3 crests and 3 troughs.
+</p>
+
+<ol>
+    <li>
+        Draw a transverse wave with:
+        <ol>
+            <li>
+                Wavelength = 3 boxes
+            </li>
+            <li>
+                Amplitude = 1 box
+            </li>
+        </ol>
+        <br>
+        <div id = 'grid1'></div>
+    </li>
+    <li>
+    <li>
+        Draw a transverse wave with:
+        <ol>
+            <li>
+                Wavelength = 2 boxes
+            </li>
+            <li>
+                Amplitude = 3 boxes
+            </li>
+        </ol>
+        <br>
+        <div id = 'grid2'></div>
+    </li>
+</ol>
+
+<script>
+    let grid1 = new Grid(20,8);
+    let grid2 = new Grid(20,8);
+
+    $("#grid1").append(grid1.drawCanvas(600,300));
+    $("#grid2").append(grid2.drawCanvas(600,300));
+</script>
