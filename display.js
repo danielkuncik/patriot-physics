@@ -447,6 +447,7 @@ display_quiz = (req, res) => {
     // }
 };
 
+
 module.exports = {
     display_home,
     display_login_page,
