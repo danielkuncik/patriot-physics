@@ -13,8 +13,22 @@
 </ol>
 
 <script>
-    let wave1 = new Wave();
+    let wave1 = new Wave(6);
     wave1.circleAllKeyPoints(true,.05);
-    wave1.labelTop(0,3,'30 m');
+    wave1.labelTop(1,2,'16 m');
+    $("#wave1").append(wave1.drawCanvas(600,300));
+
+    let wave2 = new Wave(3);
+    wave2.circleAllKeyPoints(true,.05);
+    wave2.labelTop(2,.25,'0.70 m');
+    $("#wave2").append(wave2.drawCanvas(600,300));
+
+
+    let wave3 = new Wave(3);
+    wave3.circleAllKeyPoints(true,.05);
+    wave3.labelTop(2,0.5,'0.40 m');
+
+    $("#wave3").append(wave3.drawCanvas(600,300));
+
 
 </script>
