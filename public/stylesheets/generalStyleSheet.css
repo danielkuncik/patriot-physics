@@ -296,6 +296,10 @@ p.introductionDark {
     color: #FFFF00;
 }
 
+.print-only {
+    display: none
+}
+
 @media print
 {
     .no-print
@@ -305,6 +309,10 @@ p.introductionDark {
 
     p.introduction {
         color: #000000;
+    }
+
+    .print-only {
+        display: block
     }
 
 }
