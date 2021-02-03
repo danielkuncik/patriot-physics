@@ -225,13 +225,28 @@
     "2-14-2021": {
       "79415b06-1b6b-4ab2-aab8-b4785d998ded":{
         "name": "Waves 1",
-        "practice": true,
-        "noQuiz": true
+        "practice": true
       },
       "4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
         "name": "transverse vs longitudinal",
+        "practice": true
+      },
+      "83111da4-d05f-4054-a6a2-fc6a2e6ebd4b": {
+        "name": "Drawing waves with wavelength",
+        "practice": true
+      },
+      "0ffd1c2d-632b-429c-9a75-fcf188da1366": {
+        "name": "Drawing waves with amplitude",
+        "practice": true
+      },
+      "d1847d4a-f084-49fc-80c9-84fa4f810314": {
+        "name": "Wave Equation",
+        "practice": true
+      },
+      "0d5708b2-2d11-4a36-bd09-13d26c8eb66f": {
+        "name": "Drawing Waves 2",
         "practice": true,
-        "noQuiz": true
+        "inClass": true
       }
     }
   }

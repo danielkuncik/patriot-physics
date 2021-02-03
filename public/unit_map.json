@@ -7634,7 +7634,8 @@
             "limits": "Grading is generous if the troughs of a wave are not perfectly drawn.",
             "content": "Wavelength and amplitude can be depicted on an image of a wave.",
             "uuid": "0d5708b2-2d11-4a36-bd09-13d26c8eb66f",
-            "id": ""
+            "id": "",
+            "inClass_honors": true
           },
           "making_transverse_longitudinal_waves":
           {
