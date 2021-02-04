@@ -589,14 +589,16 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               string = string + '<h3>Practice Pages</h3>';
               string = string + "<ol>";
               obj.practicePages.forEach((displayObject) => {
-                  string = string + `<li class = 'text-${displayObject.practiceColor}'>`;
-                  string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
+                  string = string + `<li class = 'text-${displayObject.practiceColor} mb-2'>`;
+                  let text = displayObject.displayTitle;
                   if (displayObject.practiceDisplay) {
-                      string = string + `: ${displayObject.practiceDisplay}`;
+                      text = text + `: ${displayObject.practiceDisplay}`;
                   }
                   if (displayObject.newPracticeScorePending) {
-                      string = string + '=> New Practice Score Pending';
+                      text = text + '=> New Practice Score Pending';
                   }
+
+                  string = string + `<a class = 'text-${displayObject.practiceColor}' href = '${displayObject.link}'>${text}</a>`;
                   string = string + "</li>";
               });
               string = string + "</ol>";
@@ -606,14 +608,15 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               string = string + '<h3>Homework Quizzes</h3>';
               string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
               obj.homework.forEach((displayObject) => {
-                  string = string + `<li class = 'text-${displayObject.scoreColor}'>`;
-                  string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
+                  string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
+                  let text = displayObject.displayTitle;
                   if (displayObject.scoreDisplay) {
-                      string = string + `: ${displayObject.scoreDisplay}`;
+                      text = text + `: ${displayObject.scoreDisplay}`;
                   }
                   if (displayObject.newScorePending) {
-                      string = string + '=> New Score Pending';
+                      text = text + '=> New Score Pending';
                   }
+                  string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
                   string = string + "</li>";
               });
               string = string + "</ol>";
@@ -624,11 +627,13 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               string = string + '<h3>In Class Quizzes</h3>';
               string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
               obj.inClass.forEach((displayObject) => {
-                  string = string + `<li class = 'text-${displayObject.scoreColor}'>`;
-                  string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
+                  string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
+                  let text = displayObject.displayTitle;
                   if (displayObject.scoreDisplay) {
-                      string = string + `: ${displayObject.scoreDisplay}`;
+                      text = text + `: ${displayObject.scoreDisplay}`;
                   }
+
+                  string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
                   string = string + "</li>";
               });
               string = string + "</ol>";
