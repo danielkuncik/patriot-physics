@@ -218,16 +218,23 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter =
         score = 0;
         pending = false;
     }
-    let scoreMessage;
+    let scoreMessage, color;
     if (score === 0) {
         scoreMessage = '';
+        color = 'danger';
     } else if (score >= 18) {
         scoreMessage = '-- ACE';
+        color = 'success';
+    } else if (score >= 14) {
+        scoreMessage = `--${score} out of 20`;
+        color = 'warning';
     } else {
         scoreMessage = `--${score} out of 20`;
+        color = 'danger';
     }
     if (pending) {
         scoreMessage = scoreMessage + '=> New Score Pending';
+        color = 'muted';
     }
     let available = availableContent[superUnitKey].units[unitKey].pods[podKey].available;
     let link = `/pod/${pod_uuid}`;
@@ -235,7 +242,7 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter =
         listItem = listItem + extraMessage;
     }
     if (available) {
-        listItem = listItem + `<a href = '${link}'>`;
+        listItem = listItem + `<a href = '${link}' class = 'text-${color}'>`;
     }
     if (cutOutLetter) {
         listItem = listItem + title;
@@ -513,33 +520,52 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                         pending = gradeMap[superUnitKey].units[unitKey].pods[podKey].pending;
                         practicePending = gradeMap[superUnitKey].units[unitKey].pods[podKey].practicePending;
                     }
-                    let scoreDisplay;
+                    let scoreDisplay, scoreColor;
                     if (score === 20) {
                         scoreDisplay = 'ACE';
+                        scoreColor = 'success'
+                    } else if (score >= 13) {
+                        scoreDisplay = `${score} out of 20`;
+                        scoreColor = 'warning';
                     } else if (score > 0) {
                         scoreDisplay = `${score} out of 20`;
+                        scoreColor = 'danger';
                     } else if (score === 0) {
                         scoreDisplay = '0 out of 20 (not yet taken)';
+                        scoreColor = 'danger'
                     } else {
                         scoreDisplay = undefined;
+                        scoreColor = undefined;
+                    }
+                    if (pending) {
+                        scoreColor = 'muted';
                     }
                     /// what to do if not logged in
 
-                    let practiceDisplay;
+                    let practiceDisplay, practiceColor;
                     if (practiceScore === 1) {
                         practiceDisplay = 'half credit';
+                        practiceColor = 'danger';
                     } else if (practiceScore === 2) {
                         practiceDisplay = 'DONE';
+                        practiceColor = 'success';
                     } else if (practiceScore === 0) {
                         practiceDisplay = 'no credit (not yet done)';
+                        practiceColor = 'danger';
                     } else {
                         practiceDisplay = undefined;
+                        practiceColor = undefined;
+                    }
+                    if (practicePending) {
+                        practiceColor = 'muted';
                     }
                     let link = `/pod/${pod_uuid}`;
                     displayObject = {
                         "displayTitle": displayTitle,
                         "scoreDisplay": scoreDisplay,
+                        "scoreColor": scoreColor,
                         "practiceDisplay": practiceDisplay,// this will be where the practice score is entered
+                        "practiceColor": practiceColor,
                         "link": link,
                         "newScorePending": pending,
                         "newPracticeScorePending": practicePending
@@ -563,7 +589,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               string = string + '<h3>Practice Pages</h3>';
               string = string + "<ol>";
               obj.practicePages.forEach((displayObject) => {
-                  string = string + "<li>";
+                  string = string + `<li class = 'text-${displayObject.practiceColor}'>`;
                   string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
                   if (displayObject.practiceDisplay) {
                       string = string + `: ${displayObject.practiceDisplay}`;
@@ -580,7 +606,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               string = string + '<h3>Homework Quizzes</h3>';
               string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
               obj.homework.forEach((displayObject) => {
-                  string = string + "<li>";
+                  string = string + `<li class = 'text-${displayObject.scoreColor}'>`;
                   string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
                   if (displayObject.scoreDisplay) {
                       string = string + `: ${displayObject.scoreDisplay}`;
@@ -598,7 +624,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               string = string + '<h3>In Class Quizzes</h3>';
               string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
               obj.inClass.forEach((displayObject) => {
-                  string = string + "<li>";
+                  string = string + `<li class = 'text-${displayObject.scoreColor}'>`;
                   string = string + `<a href = '${displayObject.link}'>${displayObject.displayTitle}</a>`;
                   if (displayObject.scoreDisplay) {
                       string = string + `: ${displayObject.scoreDisplay}`;
