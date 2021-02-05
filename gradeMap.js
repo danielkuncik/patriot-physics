@@ -83,7 +83,8 @@ function calculateGradeFromLevel(currentLevel, goalLevel) {
     }
 }
 
-const AP_units = ["forward_kinematics_qualitative"];
+const pointUnit = gradeScale.point_unit;
+console.log(pointUnit);
 
 // issue => when you log in, this is loaded 3 times !!!
 class GradeMap {
@@ -127,23 +128,26 @@ class GradeMap {
                     if (level === undefined) {
                         level = 0;
                     }
-                    let valueWeight;
-                    if (this.courseLevel === 'AP' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_AP"]) {
-                        valueWeight = this.inClassWeight;
-                    } else if (this.courseLevel === 'Honors' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_honors"]) {
-                        valueWeight = this.inClassWeight;
-                    } else if (this.courseLevel === 'A_level' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_Alevel"]) {
-                        valueWeight = this.inClassWeight;
-                    } else {
-                        valueWeight = 1;
-                    }
                     let practicePointsAvailable, quizPointsAvailable;
                     if (pointsForPods) {
-                        practicePointsAvailable = level * 100; // can map this back to th eunit
-                        quizPointsAvailable = level * 200;
+                        practicePointsAvailable = level * pointUnit; // can map this back to th eunit
+                        quizPointsAvailable = level * 2 * pointUnit;
                     } else {
                         practicePointsAvailable = 0;
                         quizPointsAvailable = 0;
+                    }
+                    let valueWeight;
+                    if (this.courseLevel === 'AP' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_AP"]) {
+                        valueWeight = this.inClassWeight;
+                        quizPointsAvailable *= 2;
+                    } else if (this.courseLevel === 'Honors' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_honors"]) {
+                        valueWeight = this.inClassWeight;
+                        quizPointsAvailable *= 2;
+                    } else if (this.courseLevel === 'A_level' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_Alevel"]) {
+                        valueWeight = this.inClassWeight;
+                        quizPointsAvailable *= 2;
+                    } else {
+                        valueWeight = 1;
                     }
                     blankMap[superUnitKey].units[unitKey].pods[podKey] = {
                         score: 0,

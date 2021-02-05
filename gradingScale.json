@@ -1,8 +1,8 @@
 {
   "A_level_multiplier": 1,
-  "Honors_multiplier": 1,
-  "AP_multiplier": 2,
-  "hybrid_multiplier": 0.5,
+  "Honors_multiplier": 4,
+  "AP_multiplier": 8,
+  "hybrid_multiplier": 0.25,
   "point_unit": 100,
   "baseScale": [
     0,
