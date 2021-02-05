@@ -254,7 +254,10 @@ class GradeMap {
     }
 
     calculateGrade() {
-        const totalPoints = this.calculateTotalPoints();
+        return this.calculateGradeFromTotalPoints(this.calculateTotalPoints());
+    }
+
+    calculateGradeFromTotalPoints(totalPoints) {
         let grade = 0, counter = 0;
         while (totalPoints > this.gradeScale[grade] && counter < 105) {
             grade++;
@@ -321,6 +324,23 @@ class GradeMap {
 
     createAPGauge() {
 
+    }
+
+    calculateAnticipatedGrade(quarterEndDate) {
+        /// add function here to calculate end dates!
+        return this.calculateGrade();
+    }
+
+    // describes how many 1s and 0s should be entered into powerschool
+    // to ensure powerschool grade is anticipated grade
+    // (hand determined algorithm)
+    determinePowerSchoolEntry(quarterEndDate) {
+        const currentGrade = this.calculateGrade();
+        const anticipatedGrade = this.calculateAnticipatedGrade(quarterEndDate);
+        return {
+            "1s up to": currentGrade,
+            "0s up to": Math.round(100 * currentGrade / anticipatedGrade)
+        }
     }
 
 
