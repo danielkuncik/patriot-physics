@@ -1,5 +1,5 @@
 const unitMap = require(__dirname + '/public/unit_map');
-const AP_goals = require(__dirname + '/apTestGoals.json');
+//const AP_goals = require(__dirname + '/apTestGoals.json');
 const gradeScale = require(__dirname + '/gradingScale.json');
 
 
@@ -84,7 +84,12 @@ function calculateGradeFromLevel(currentLevel, goalLevel) {
 }
 
 const pointUnit = gradeScale.point_unit;
-console.log(pointUnit);
+
+const q3_first_day = '2-1-2021';
+const q3_last_day = '4-8-2021';
+const q4_first_day = '4-9-2021';
+const q4_last_day_senior = '5-21-2021';
+const q4_last_day = '6-12-2021';
 
 // issue => when you log in, this is loaded 3 times !!!
 class GradeMap {
@@ -136,7 +141,8 @@ class GradeMap {
                         practicePointsAvailable = 0;
                         quizPointsAvailable = 0;
                     }
-                    let valueWeight;
+                    let valueWeight; // don't know if i still want this?
+                    // this is short term, until i think of a better way to do in class quizzes!
                     if (this.courseLevel === 'AP' && unitMap[superUnitKey].units[unitKey].pods[podKey]["inClass_AP"]) {
                         valueWeight = this.inClassWeight;
                         quizPointsAvailable *= 2;
@@ -330,9 +336,30 @@ class GradeMap {
 
     }
 
-    calculateAnticipatedGrade(quarterEndDate) {
-        /// add function here to calculate end dates!
-        return this.calculateGrade();
+    calculateAnticipatedTotalPoints(quarter = 3, senior = false) {
+        let quarterFirstDay, quarterLastDay;
+        if (quarter === 3) {
+            quarterFirstDay = new Date(q3_first_day);
+            quarterLastDay = new Date(q3_last_day);
+        } else if (quarter === 4 && senior) {
+            quarterFirstDay = new Date(q4_first_day);
+            quarterLastDay = new Date(q4_last_day_senior);
+        } else if (quarter === 4 && !senior) {
+            quarterFirstDay = new Date(q4_first_day);
+            quarterLastDay = new Date(q4_last_day);
+        }
+        let today = new Date();
+        const fullQuarterLength = quarterLastDay - quarterFirstDay;
+        const timePassed = today - quarterFirstDay;
+        //const timeRemaining = quarterLastDay - today;
+        const totalPointsNow = this.calculateTotalPoints();
+        /// use proportion for anticipated points =>
+        return totalPointsNow * fullQuarterLength / timePassed
+    }
+
+    calculateAnticipatedGrade(quarter, senior) {
+        const anticipatedTotalPoints = this.calculateAnticipatedTotalPoints(quarter, senior);
+        return this.calculateGradeFromTotalPoints(anticipatedTotalPoints);
     }
 
     // describes how many 1s and 0s should be entered into powerschool
@@ -381,6 +408,9 @@ class GradeMap {
         console.log(this.relevantUnits);
     }
 }
+
+let newGradeMap = new GradeMap();
+newGradeMap.calculateAnticipatedGrade();
 
 
 module.exports = {
