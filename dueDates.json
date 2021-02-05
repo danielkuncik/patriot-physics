@@ -250,6 +250,33 @@
         "practice": true,
         "inClass": true
       }
+    },
+    "2-26-2021": {
+      "a9540897-b578-471b-b7e6-6ef82ab8b034": {
+        "name": "electromagnetic wave basics",
+        "practice": true,
+        "noQuiz": true
+      },
+      "ddf3042b-77f1-4563-85ae-8f305f062a84": {
+        "name": "electromagnetic spectrum 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "b645cf14-82dd-4abd-a54a-5192edfd2afa": {
+        "name": "Choosing color by wavelength",
+        "practice": true,
+        "noQuiz": true
+      },
+      "cf1f0144-0682-4e15-a3e1-00d119f0171a": {
+        "name": "electromagnetic spectrum 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "6267c7c8-0b48-46da-940a-5dff739561c6": {
+        "name": "Choosing electromagnetic wave by wavelength",
+        "practice": true,
+        "noQuiz": true
+      }
     }
   }
 }
