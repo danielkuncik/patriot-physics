@@ -1,6 +1,6 @@
 {
   "A_level_multiplier": 1,
-  "honors_multiplier": 1,
+  "Honors_multiplier": 1,
   "AP_multiplier": 2,
   "hybrid_multiplier": 0.5,
   "point_unit": 100,

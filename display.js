@@ -252,6 +252,7 @@ display_scale_page = (req, res) => {
     user: req.user,
     section: req.section,
     overallLevel: req.overallLevel,
+    courseLevel: req.courseLevel,
     gradeMap: req.gradeMap,
     totalAttempts: req.totalAttemps,
     gradeScale: gradeScale

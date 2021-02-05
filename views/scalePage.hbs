@@ -1,33 +1,103 @@
 
+{{#if (isAP courseLevel)}}
+    <h3>
+        Grade Scale: AP Physics - Hybrid School Model
+    </h3>
+    <div class = 'ml-5'>
+        <div id = 'AP_hybrid_table'></div>
+    </div>
+{{/if}}
 
-<h1>
-  Grade Scale: AP Physics - Hybrid School Model
-</h1>
+{{#if (isHonors courseLevel)}}
+    <h3>
+        Honors Physics
+    </h3>
+    <div class = 'ml-5'>
+        <div id = 'Honors_hybrid_table'></div>
+    </div>
+{{/if}}
 
-<div id = 'putItHere'></div>
+
+{{#if (isNoSection courseLevel)}}
+    <div class="accordion" id = 'homePageAccordion'>
+        <div class="card">
+            <div class = 'card-header homePageCard' id = 'AP_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_AP" aria-expanded="false" aria-controls="collapse_AP">
+                        AP Physics Grade Scale
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_AP' class = 'collapse' aria-labelledby="AP_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    <div id = 'AP_hybrid_table'></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class = 'card-header homePageCard' id = 'honors_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_honors" aria-expanded="false" aria-controls="collapse_honors">
+                        Honors Physics Grade Scale
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_honors' class = 'collapse' aria-labelledby="honors_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    <div id = 'Honors_hybrid_table'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+
+
 
 <script>
 
   const scaleObject = JSON.parse('{{{getGradeScale gradeScale}}}');
 
-  let scale = (scaleObject.baseScale).map(x => Math.ceil(x * scaleObject.AP_multiplier * scaleObject.hybrid_multiplier));
-  console.log(scale);
+  let AP_hybrid_scale = (scaleObject.baseScale).map(x => Math.ceil(x * scaleObject.AP_multiplier * scaleObject.hybrid_multiplier));
+  let Honors_hybrid_scale = (scaleObject.baseScale).map(x => Math.ceil(x * scaleObject.Honors_multiplier * scaleObject.hybrid_multiplier));
 
-  let table = $("<table></table>");
-  $(table).append($("<tr><th>Final Grade</th><th>Points Required</th></tr>"));
+
+  let table_AP_hybrid = $("<table></table>");
+  $(table_AP_hybrid).append($("<tr><th>Grade</th><th>Points Required</th></tr>"));
   let i;
-  for (i = 0; i < scale.length; i++) {
+  for (i = 0; i < AP_hybrid_scale.length; i++) {
     let thisRow = $("<tr></tr>");
     if (i % 10 === 0 && i > 50) {
       $(thisRow).append($(`<th>${i} %</th>`));
-      $(thisRow).append(`<th>${scale[i]}</th>`);
+      $(thisRow).append(`<th>${AP_hybrid_scale[i]}</th>`);
     } else {
       $(thisRow).append($(`<td>${i} %</td>`));
-      $(thisRow).append(`<td>${scale[i]}</td>`);
+      $(thisRow).append(`<td>${AP_hybrid_scale[i]}</td>`);
     }
-    $(table).append(thisRow);
+    $(table_AP_hybrid).append(thisRow);
   }
 
-  $("#putItHere").append(table);
+  $("#AP_hybrid_table").append(table_AP_hybrid);
+
+  let table_Honors_hybrid = $("<table></table>");
+  $(table_Honors_hybrid).append($("<tr><th>Grade</th><th>Points Required</th></tr>"));
+  let j;
+  for (j = 0; j < Honors_hybrid_scale.length; j++) {
+      let thisRow = $("<tr></tr>");
+      if (j % 10 === 0 && j > 50) {
+          $(thisRow).append($(`<th>${j} %</th>`));
+          $(thisRow).append(`<th>${Honors_hybrid_scale[j]}</th>`);
+      } else {
+          $(thisRow).append($(`<td>${j} %</td>`));
+          $(thisRow).append(`<td>${Honors_hybrid_scale[j]}</td>`);
+      }
+      $(table_Honors_hybrid).append(thisRow);
+  }
+
+  $("#Honors_hybrid_table").append(table_Honors_hybrid);
+
 
 </script>
