@@ -1,0 +1,22 @@
+{
+  "v1": {
+    "1": "Radio, micro, infrared, visible light, ultraviolet, X-Ray, gamma ray",
+    "2": "Red, orange, yellow, green blue violet",
+    "3": "Frequency becomes higher.",
+    "4": "Frequency becomes lower.",
+    "5": "B, C",
+    "6": "A, D",
+    "7": "A, D",
+    "8": "Gamma Rays"
+  },
+  "v2": {
+    "1": "Radio, micro, infrared, visible light, ultraviolet, X-Ray, gamma ray",
+    "2": "Red, orange, yellow, green blue violet",
+    "3": "Frequency becomes higher.",
+    "4": "Frequency becomes lower.",
+    "5": "B, C",
+    "6": "B, C",
+    "7": "B, C",
+    "8": "Gamma Rays"
+  }
+}
