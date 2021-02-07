@@ -7,5 +7,14 @@
     "5": "longitudinal",
     "6": "transverse",
     "7": "transverse"
+  },
+  "v2": {
+    "1": "longitudinal",
+    "2": "transverse",
+    "3": "transverse",
+    "4": "transverse",
+    "5": "longitudinal",
+    "6": "longitudinal",
+    "7": "longitudinal"
   }
 }
