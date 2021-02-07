@@ -2,5 +2,9 @@
   "v1": {
     "1": "Wavelength = 4 boxes",
     "2": "Wavelength = 2 boxes"
+  },
+  "v2": {
+    "1": "Wavelength = 5 boxes",
+    "2": "Wavelength = 3 boxes"
   }
 }

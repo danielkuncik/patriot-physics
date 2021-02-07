@@ -2,5 +2,9 @@
   "v1": {
     "1": "Amplitude = 3 boxes",
     "2": "Amplitude = 1 box"
+  },
+  "v2": {
+    "1": "Amplitude = 4 boxes",
+    "2": "Amplitude = 2 boxes"
   }
 }
