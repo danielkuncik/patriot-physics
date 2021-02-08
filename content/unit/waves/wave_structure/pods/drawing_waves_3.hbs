@@ -1,0 +1,143 @@
+<p class = 'introduction'>
+  In <a href = '/pod/0d5708b2-2d11-4a36-bd09-13d26c8eb66f'>drawing waves 2</a>,
+  you learned to draw a wave with a specified wavelength and amplitude.
+  However, the questions in that pod did not require you to make the shape of the wave perfectly.
+  (If you did anyways, that's awesome!)
+  In this pod, that's exactly what you'll do.
+</p>
+
+
+<h4>
+  Requirements for a perfect wave:
+</h4>
+<ul>
+  <li>
+    The horizontal distance from crest to crest is the wavelength.
+  </li>
+  <li>
+    The horizontal distance from trough to trough is the wavelength.
+  </li>
+  <li>
+    The horizontal distance between each crest and each trough is half the wavelength.
+  </li>
+  <li>
+    The horizontal distance between middle points is half of the wavelength.
+  </li>
+  <li>
+    The vertical distance between each crest and each middle point is the amplitude.
+  </li>
+  <li>
+    The vertical distance between each crest and each middle point is the amplitude.
+  </li>
+</ul>
+
+<h5>
+  From each crest, horizontally:
+</h5>
+<ul>
+  <li>
+    One quarter wavelength to a middle point.
+  </li>
+  <li>
+    One half wavelength to the trough.
+  </li>
+  <li>
+    Three quaters wavelength to the next middle point.
+  </li>
+  <li>
+    One full wavelength to the next crest.
+  </li>
+</ul>
+
+
+<p class = 'directions'>
+  Draw waves with the specified wavelength and anplitude.
+  For full credit, all crests, middle points, and troughs
+  must be located in the correct locations.
+  To make it clear you are accomplishing this goal,
+  please indicate each crest, trough, and middle point with a solid point.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    Draw a wave with the following specifications:
+    <ul>
+      <li>
+        Wavelength = 4 squares
+      </li>
+      <li>
+        Amplitude = 2 squares
+      </li>
+    </ul>
+    <div id="grid1"></div>
+  </li>
+  <li class = 'question'>
+    Draw a wave with the following specifications:
+    <ul>
+      <li>
+        Wavelength = 4 squares
+      </li>
+      <li>
+        Amplitude = 3 squares
+      </li>
+    </ul>
+    <div id="grid2"></div>
+  </li>
+  <li class = 'question'>
+    Draw a wave with the following specifications:
+    <ul>
+      <li>
+        Wavelength = 2 squares
+      </li>
+      <li>
+        Amplitude = 2 squares
+      </li>
+    </ul>
+    <div id="grid3"></div>
+  </li>
+  <li class = 'question'>
+    Draw a wave with the following specifications:
+    <ul>
+      <li>
+        Wavelength = 6 squares
+      </li>
+      <li>
+        Amplitude = 4 squares
+      </li>
+    </ul>
+    <div id="grid4"></div>
+  </li>
+  <li class = 'question'>
+    Draw a wave with the following specifications:
+    <ul>
+      <li>
+        Wavelength = 2 squares
+      </li>
+      <li>
+        Amplitude = 5 square
+      </li>
+    </ul>
+    <div id="grid6"></div>
+  </li>
+</ol>
+
+
+
+<script>
+let grid1 = new Grid(20,8);
+let grid2 = new Grid(20,8);
+let grid3 = new Grid(20,8);
+let grid4 = new Grid(20,8);
+let grid5 = new Grid(20,8);
+let grid6 = new Grid(20,10);
+
+
+$("#grid1").append(grid1.drawCanvas(600,300));
+$("#grid2").append(grid2.drawCanvas(600,300));
+$("#grid3").append(grid3.drawCanvas(600,300));
+$("#grid4").append(grid4.drawCanvas(600,300));
+$("#grid5").append(grid5.drawCanvas(600,300));
+$("#grid6").append(grid6.drawCanvas(600,300));
+
+
+</script>
