@@ -398,3 +398,7 @@ ol.subQuestionList {
 li.subQuestion {
 
 }
+
+p.sidewaysText {
+    transform: rotate(-90deg);
+}
