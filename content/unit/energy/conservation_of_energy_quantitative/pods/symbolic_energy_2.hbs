@@ -1,0 +1,121 @@
+<h3>
+    Problem 3: Horizontal Spring
+</h3>
+<p>
+    A spring with spring constant \( k \) and equilibrium length \( x_0 \)
+    is attached to a mass of \( m \).
+    Somebody pulls the spring back to a length \( x_{\text{max}} \) and lets go.
+    Initially, the mass is not moving.
+    Assume the spring is frictionless and massless.
+</p>
+<ol>
+    <li>
+        Write expressions representing the total energy of the block-spring system
+        at several different points in the motion of the block:
+        <ol type = 'A'>
+            <li>
+                Initially, when it is not moving and the length of the spring is \( x_{\text{max}} \).
+                <br>
+                <img src = '/podAssets/energy/conservation_of_energy_quantitative/horizontal_spring_a_e.jpg' width = '400px' height = 'auto'/>
+            </li>
+            <li>
+                When the block, after having being let go, passes through the equilibrium position
+                of the spring. At this point, the speed of the block is \( v_{\text{max}} \)
+                and the length of the spring is \( x_0 \).
+                <br>
+                <img src = '/podAssets/energy/conservation_of_energy_quantitative/horizontal_spring_b.jpg' width = '300px' height = 'auto'/>
+            </li>
+            <li>
+                When the sping is at its maximum compressions.
+                At this point, the block is momentarily stationary and the length of the spring is \( x_{\text{min}} \).
+                <br>
+                <img src = '/podAssets/energy/conservation_of_energy_quantitative/horizontal_spring_c.jpg' width = '200px' height = 'auto'/>
+            </li>
+            <li>
+                When the block, having reversed direction, passes back through the equilibrium point.
+                <br>
+                <img src = '/podAssets/energy/conservation_of_energy_quantitative/horizontal_spring_d.jpg' width = '300px' height = 'auto'/>
+            </li>
+            <li>
+                When the block returns to its the initial position.
+                <br>
+                <img src = '/podAssets/energy/conservation_of_energy_quantitative/horizontal_spring_a_e.jpg' width = '400px' height = 'auto'/>
+            </li>
+        </ol>
+    </li>
+    <li>
+        Set the expressions above equal to create a large equation explaining the motion of the spring-block system.
+        Write a sentence explaining why such an equation is valid.
+        Eliminate any redundancies in the equation
+    </li>
+    <li>
+        Use the equation to derive new formulas for key variables.
+        <ol type = 'a'>
+            <li>
+                Derive a formula for \( v_{\text{max}} \) in terms of \( m \), \( k \), \( x_0 \), and \( x_{\text{max}}  \).
+                Prove your formula is dimensionally correct.
+            </li>
+            <li>
+                Derive a formula for \( x_{\text{min}} \) in terms of \( x_{\text{max}} \) and \( x_0 \).
+                The minimum length should be the same distance from equilibrium as the maximum length.
+                Show that your formula reflects this.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<h5>
+    Problem 3: Horizontal Spring
+</h5>
+<ol>
+    <li>
+        <ol type = 'A'>
+            <li>
+                \( \text{Energy} =  \frac{1}{2} k \left( x_{\text{max}} - x_0 \right)^2  \)
+            </li>
+            <li>
+                \( \text{Energy} =  \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} =   \frac{1}{2} k \left( x_{\text{min}} - x_0 \right)^2  \)
+            </li>
+            <li>
+                \( \text{Energy} =   \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} =  \frac{1}{2} k \left( x_{\text{max}} - x_0 \right)^2 \)
+            </li>
+        </ol>
+    </li>
+    <li>
+        \( \frac{1}{2} k \left( x_{\text{max}} - x_0 \right)^2 = \frac{1}{2} k \left( x_{\text{min}} - x_0 \right)^2 = \frac{1}{2} m v_{\text{max}}^2 \)
+        <br>
+        This equation is valid because no work is done on the mass-spring system.
+        Thus, according to the Law of Conservation of Energy, the quantities of total energy at each point in time
+        must be equal.
+    </li>
+    <li>
+        <ol \type = 'a'>
+            <li>
+                \( v_{\text{max}} = \sqrt{\frac{k}{m}} \left( x_{\text{max}} - x_0 \right) \)
+            </li>
+            <li>
+                \( x_{\text{min}} = 2 x_0 - x_{\text{max}} \)
+            </li>
+        </ol>
+    </li>
+    <li>
+        \( \text{Energy} = \frac{1}{2} k \left( x - x_0 \right)^2 + \frac{1}{2} m v^2 \)
+    </li>
+    <li>
+        \( \frac{1}{2} k \left( x - x_0 \right)^2 + \frac{1}{2} m v^2 = \frac{1}{2} k \left( x_{\text{max}} - x_0 \right)^2 \)
+    </li>
+    <li>
+        \( v(x) = \sqrt{\frac{k}{m} \left[ \left( x_{\text{max}} - x_0 \right)^2 - \left( x - x_0 \right)^2 \right] } \)
+        <br>
+        I would recommend not trying to turn this function into a simpler form by evaluating the squares.
+        It is easier to understand conceptually and see the special cases in this form.
+    </li>
+</ol>
+

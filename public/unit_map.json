@@ -2203,84 +2203,122 @@
           {
             "title": "Semi-Qualitative Conservation of Energy",
             "level": 4,
-            "horizontal": 4,
-            "letter": "Y",
+            "horizontal": 6,
+            "letter": "L",
             "prerequisites": ["energy_formulas_3"],
             "objective": "Answer quantitative questions using the conservation of energy by concept alone without resorting to plugging in numbers.",
             "uuid": "b24f0eab-45d1-47f9-bae1-8420fe3c50f2",
+            "id": ""
+          },
+          "symbolic_energy_1":
+          {
+            "title": "Symbolic Energy 1",
+            "subtitle": "Falling and Rising",
+            "level": 4,
+            "horizontal": 5,
+            "letter": "M",
+            "prerequisites": ["semi_qualitative_conservation_of_energy"],
+            "objective": "Use the conservation of energy to derive new equations that describe objects vertically rising and falling.",
+            "content": "A physicist can derive useful new equations by using the conservation of energy symbolically.",
+            "uuid": "a75cc5d3-68af-4c11-aa55-f85490bcc5a5",
+            "id": ""
+          },
+          "symbolic_energy_2": {
+            "title": "Symbolic Energy 2",
+            "subtitle": "Horizontal Springs",
+            "level": 4,
+            "horizontal": 4,
+            "letter": "N",
+            "prerequisites": ["symbolic_energy_1"],
+            "objective": "Use the conservation of energy to derive new equations that describe a moving horizontal spring.",
+            "content": "A physicist can derive useful new equations by using the conservation of energy symbolically.",
+            "uuid": "814a0c20-4d66-401a-82d7-586b111bba60",
             "id": ""
           },
           "work_done_on_system":
           {
             "title": "Work Done on a System",
             "level": 4,
-            "horizontal": 2,
-            "letter": "L",
-            "prerequisites": ["semi_qualitative_conservation_of_energy"],
+            "horizontal": 3,
+            "letter": "O",
+            "prerequisites": ["symbolic_energy_2"],
             "objective": "Determine the work done on a system by considering changes in energy.",
             "content": "Work done on a system is the change in the total energy of that system.",
             "uuid": "1dbc4d92-14df-489d-9f67-fda2127c17c7",
             "id": "",
             "inClass_AP": true
           },
-          "symbolic_energy":
-          {
-            "title": "Symbolic Energy",
-            "level": 4,
-            "horizontal": 0,
-            "letter": "M",
-            "prerequisites": ["work_done_on_system"],
-            "objective": "Describe the transfer of the energy within a system symbolically; explain equations derived; use equations derived to find useful equations and functions",
-            "content": "A physicist can derive useful new equations by using the conservation of energy symbolically",
-            "uuid": "a75cc5d3-68af-4c11-aa55-f85490bcc5a5",
-            "id": ""
-          },
           "vertical_spring_system":
           {
             "title": "Vertical Spring System",
-            "level": 5,
-            "horizontal": 0,
-            "letter": "N",
-            "prerequisites": ["symbolic_energy"],
+            "level": 4,
+            "horizontal": 2,
+            "letter": "P",
+            "prerequisites": ["work_done_on_system"],
             "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by friction.",
             "content": "A vertical spring system consists of an exchange between kinetic, gravitational potential, and elastic potential energy",
             "uuid": "baf26601-4f4d-4291-b6a1-58628787d3c5",
             "id": ""
           },
-          "algebraic_energy_analysis_1":
+          "functional_energy_analysis_1":
           {
-            "title": "Algebraic Energy Analysis 1",
-            "subtitle": "Pendulums",
-            "level": 5,
+            "title": "Functional Energy Analysis 1",
+            "subtitle": "Falling and Rising",
+            "level": 4,
             "horizontal": 1,
-            "letter": "O",
+            "letter": "Q",
             "prerequisites": ["vertical_spring_system"],
-            "objective": "Symbolically analyze the energy of a pendulum system as it swings; write statements regarding the energy of the pendulum-earth system; symbolically determine crucial values regarding the pendulum using the Conservation of Energy.",
-            "content": "A pendulum system can be modeled by algebraic functions for position, speed, and energy.",
+            "objective": "Use the conservation of energy to create functions taht relate the speed and vertical position of a rising and falling object.",
+            "content": "A rising and falling object can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "bd8d4ccc-c286-43d5-b8c3-33cd260abf53",
             "id": ""
           },
-          "algebraic_energy_analysis_2":
+          "functional_energy_analysis_2":
           {
-            "title": "Algebraic Energy Analysis 2",
+            "title": "Functional Energy Analysis 2",
             "subtitle": "Horizontal Springs",
-            "level": 5,
-            "horizontal": 2,
-            "letter": "P",
-            "prerequisites": ["algebraic_energy_analysis_1"],
+            "level": 4,
+            "horizontal": 0,
+            "letter": "R",
+            "prerequisites": ["functional_energy_analysis_1"],
             "objective": "Symbolically analyze the energy of a horizontal spring system as it moves; write statements regarding the energy of the mass-spring system; symbolically determine crucial values regarding the spring using the Conservation of Energy.",
             "content": "A horizontal spring system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "52bb2f62-2004-4e77-9b7c-fee4670ea80a",
             "id": ""
           },
-          "algebraic_energy_analysis_3":
+          "symbolic_energy_3": {
+            "title": "Symbolic Energy 3",
+            "subtitle": "Vertical Springs",
+            "level": 5,
+            "horizontal": 1,
+            "letter": "S",
+            "prerequisites": ["functional_energy_analysis_2"],
+            "objective": "Use the conservation of energy to derive new equations that describe a moving horizontal spring.",
+            "content": "A physicist can derive useful new equations by using the conservation of energy symbolically.",
+            "uuid": "a56cb19f-9ef1-4707-87e4-279a2a063047",
+            "id": ""
+          },
+          "functional_energy_analysis_3":
           {
-            "title": "Algebraic Energy Analysis 3",
+            "title": "Functional Energy Analysis 3",
+            "subtitle": "Pendulums",
+            "level": 5,
+            "horizontal": 2,
+            "letter": "T",
+            "prerequisites": ["symbolic_energy_3"],
+            "objective": "Symbolically analyze the energy of a pendulum system as it swings; write statements regarding the energy of the pendulum-earth system; symbolically determine crucial values regarding the pendulum using the Conservation of Energy.",
+            "content": "A pendulum system can be modeled by algebraic functions for position, speed, and energy.",
+            "uuid": "bd8d4ccc-c286-43d5-b8c3-33cd260abf53",
+            "id": ""
+          },
+          "functional_energy_analysis_4":
+          {
+            "title": "Functional Energy Analysis 4",
             "subtitle": "Vertical Springs",
             "level": 6,
-            "horizontal": 2,
-            "letter": "Q",
-            "prerequisites": ["algebraic_energy_analysis_2"],
+            "horizontal": 3,
+            "letter": "U",
+            "prerequisites": ["functional_energy_analysis_3"],
             "objective": "Symbolically analyze the energy of a vertical spring system as it moves; write statements regarding the energy of the mass-spring-earth system; symbolically determine crucial values regarding the spring using the Conservation of Energy.",
             "content": "A vertical spring system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "f0598cca-316c-401c-a58f-fa261ac4be64",
@@ -2290,9 +2328,9 @@
           {
             "title": "Spiderman's Energy",
             "level": 6,
-            "horizontal": 3,
-            "letter": "R",
-            "prerequisites": ["algebraic_energy_analysis_2"],
+            "horizontal": 4,
+            "letter": "V",
+            "prerequisites": ["functional_energy_analysis_4"],
             "objective": "Analyze the potential energy of a fast moving spring that stretches as it falls.",
             "content": "A physicist can invent a new model for a novel situation, such as a person (Spiderman) swinging from a stretching string.",
             "uuid": "d8c1eeef-f031-4afa-aa00-f1939205ba57",
