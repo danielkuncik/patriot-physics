@@ -44,11 +44,11 @@
         Write a symbolic formula for the <strong>Total Energy</strong>
         of the object-earth system in terms of the variables stated at several different points:
         <ol type = 'a' class = 'subQuestionList'>
-            <li class="subQuestion" data-answer = '\( \text{Energy} = m g y_0 \)'>
+            <li class="subQuestion" data-answer = '\( \text{Energy} = m g y_i \)'>
                 Immediately after the mass is dropped,
-                when its height is \( y_0 \) and it has no speed.
+                when its height is \( y_i \) and it has no speed.
             </li>
-            <li class = 'subQuestion' data-answer = '\( \text{Energy} = \frac{1}{2}m g y_0 + \frac{1}{2} m v_{\text{half}}^2 \)'>
+            <li class = 'subQuestion' data-answer = '\( \text{Energy} = \frac{1}{2}m g y_i + \frac{1}{2} m v_{\text{half}}^2 \)'>
                 When the mass is halfway down its fall.
                 Its height is half the original height and its speed is
                 defined as
@@ -60,7 +60,7 @@
             </li>
         </ol>
     </li>
-    <li class = 'question' data-answer = '\( mg y_0 = \frac{1}{2}m g y_0 + \frac{1}{2} m v_{\text{half}}^2 = \frac{1}{2} m v_{\text{max}}^2 \); This equation is true because no work is done on the object-earth system,
+    <li class = 'question' data-answer = '\( mg y_i = \frac{1}{2}m g y_i + \frac{1}{2} m v_{\text{half}}^2 = \frac{1}{2} m v_{\text{max}}^2 \); This equation is true because no work is done on the object-earth system,
         and so the total energy of the system is equal at all points.'>
         All of the values for total energy of the object-earth system determined above are equal
         because no work is done on the system.
@@ -73,12 +73,12 @@
     <li class = 'question'>
         Use the equality determined above to identify new formulas for key quantities in this situation:
         <ol type = 'a' class = 'subQuestionList'>
-            <li class = 'subQuestion' data-answer = '\( v_{\text{max}} = \sqrt{2 g y_0} \)'>
-                Derive a formula for \( v_{\text{max}} \) in terms of \( y_0 \) and \( g \), the free-fall acceleration on the planet.
+            <li class = 'subQuestion' data-answer = '\( v_{\text{max}} = \sqrt{2 g y_i} \)'>
+                Derive a formula for \( v_{\text{max}} \) in terms of \( y_i \) and \( g \), the free-fall acceleration on the planet.
                 Prove that your formula is dimensionally correct.
             </li>
-            <li class="subQuestion" data-answer = '\( v_{\text{half}} = \sqrt{g y_0} \)'>
-                Derive a formula for \( v_{\text{half}} \) in terms of \( y_0 \) and \( g \).
+            <li class="subQuestion" data-answer = '\( v_{\text{half}} = \sqrt{g y_i} \)'>
+                Derive a formula for \( v_{\text{half}} \) in terms of \( y_i \) and \( g \).
                 Prove that your formula is dimensionally correct.
             </li>
             <li class="subQuestion" data-answer = ' \( v_{\text{half}} = \frac{v_{\text{max}}}{\sqrt{2}} \)'>
@@ -110,7 +110,7 @@
         Note that the kinetic energy formula includes speed, not velocity,
         because it does not depend upon the direction the ball is moving.
         Thus, an ball moving up and an object moving down at the same speed have the same kinetic energy.
-        <ol type = 'A' class="subQuestionList">
+        <ol type = 'a' class="subQuestionList">
             <li class="subQuestion" data-answer = '\( \text{Energy} = \frac{1}{2} m v_i^2 + m g y_i \)'>
                 When the ball is first let go.
             </li>
@@ -139,13 +139,13 @@
     </li>
     <li class="question">
         Use the equation above to derive new formulas for key quantities:
-        <ol type = 'A' class="subQuestionList">
+        <ol type = 'a' class="subQuestionList">
             <li class="subQuestion" data-answer = '\( y_{\text{max}} = \frac{v_i^2}{2g} + y_i \)'>
                 Determine a formula for \( y_{\text{max}} \) in terms of \( y_i \), \( v_i \),
                 and \( g \).
                 Prove your formula is dimensionally correct.
             </li>
-            <li class="subQuestion" data-answer = '\( v_c = v_i; The speed is identical when it reaches the initial point. \)'>
+            <li class="subQuestion" data-answer = '\( v_c = v_i \); The speed is identical when it reaches the initial point.'>
                 Determine a formula for \( v_c \) in terms of \( v_i \).
                 Remember that these variables are both <emph>speed</emph> and not <emph>velocity</emph>.
                 Argue your formula is intuitive.
@@ -158,26 +158,23 @@
     </li>
     <li class="question">
         Consider a special case in which \( v_i = 0 \).
-        This would represent a situation in which the person did not throw the ball at all,
-        but simply dropped it. This case is actually identical to the first problem.
-        <ol class="subQuestionList">
-            <li class="subQuestion">
+        This would represent a situation in which the person did not throw the ball upward at all,
+        but simply dropped it. This case is actually identical to the previous situation,
+        so if you plug in the value \( v_i = 0 \), you should receive the same values as before.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = 'You find \( y_{\text{max}} = y_i \), meaning that the ball, if dropped, does not rise higher than its initial height.'>
                 Using the formula you derived above, determine the value of \( y_{\text{max}} \)
                 in the special case that \( v_i = 0 \).
                 Argue that this value makes sense.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer = 'You find \( v_{\text{max}} = \sqrt{2 g y_i } \), identically to above.'>
                 Using the formula derived above, determine the value of \( v_{\text{max}} \)
                 in the special case that \( v_i = 0 \).
                 Show that this is equal to the same value you determined in a previous problem
-                for a ball that is dropped from a height.
-                <!-- link number of the problem -->
+                for a ball that is dropped from a height \( y_i \).
             </li>
         </ol>
     </li>
-    <!---
-    ADD ONE STEP HERE => set v_i = 0 and show that you get the same result as in the previous problem
-    -->
 </ol>
 
 <ol class="answerList"></ol>
