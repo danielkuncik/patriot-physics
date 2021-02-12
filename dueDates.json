@@ -97,6 +97,10 @@
       },
       "64f606c7-cfd3-4a2a-866f-10f8f17a8edd": {
         "name":"Metric to scientific notation"
+      },
+      "c748898f-b11b-41b9-b50c-92654252232c": {
+        "name": "Choosing electromagnetic wave by wavelength 2",
+        "practice": true
       }
     }
   }
