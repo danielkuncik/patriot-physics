@@ -291,6 +291,10 @@ p.introduction {
     color: #0000FF;
 }
 
+p.introduction > a {
+    color: #FFA500;
+}
+
 p.introductionDark {
     font-family: "Verdana";
     color: #FFFF00;
