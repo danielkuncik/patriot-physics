@@ -16,6 +16,7 @@
   "author": "Daniel Kuncik",
   "license": "ISC",
   "dependencies": {
+    "all": "0.0.0",
     "cloudinary": "^1.21.0",
     "connect-flash": "^0.1.1",
     "connect-redis": "^5.0.0",
