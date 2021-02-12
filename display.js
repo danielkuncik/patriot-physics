@@ -21,8 +21,9 @@ display_home = (req,res) => {
         gradeMap: req.gradeMap,
         courseLevel: req.courseLevel,
         totalAttempts: req.totalAttemps,
-        flashMessage: req.body.flashMessage
-       // flash: req.flash
+        flashMessage: req.body.flashMessage,
+       // flash: req.flash,
+        message: req.flash('welcome_message')
     });
 };
 

@@ -7,7 +7,7 @@ const shell = require('shelljs');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const flash = require('express-flash');
+const flash = require('connect-flash');
 const f = require('./flashMessages.js');
 const gradeMap = require('./gradeMap.js');
 
@@ -140,6 +140,12 @@ app.use(express.static(__dirname + '/public'));
 
 
 // ROUTES
+
+// shows how the 'req.flash' function works with redirect!!!
+app.get('/flashTest',(req, res) => {
+    req.flash('welcome_message','hello world!');
+    res.redirect('/');
+});
 
 // home
 app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice,f.niceFlash, disp.display_home]);
