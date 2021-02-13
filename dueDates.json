@@ -1,35 +1,35 @@
 {
   "AP": {
     "2-13-2021": {
-      "caaa33b5-0946-4fc2-b89f-87928de3ff80":
+      "caaa33":
       {
         "name": "traveling vs standing waves",
         "practice": true
       },
-      "6a947738-1711-45b6-b134-ad22ee4c4a08":
+      "6a9477":
       {
         "name": "find wavelength from diagrams",
         "practice": true,
         "noQuiz": true
       },
-      "22f2ad9b-47ec-42f2-9cfe-20e7d9f4d559":
+      "22f2ad":
       {
         "name": "wave formula 2",
         "practice": true
       },
-      "c7fc1a43-a671-4baa-a2a0-0b23b7fd74e7":
+      "c7fc1a":
       {
         "name": "harmonics 2",
         "practice": true,
         "noQuiz": true
       },
-      "28e67710-ef81-4d7c-b0f5-3080a6a81378":
+      "28e677":
       {
         "name": "harmonics 3",
         "practice": true,
         "noQuiz": true
       },
-      "1d2d49b1-3b76-47e6-9677-397d1fb8ef55":
+      "1d2d49":
       {
         "name": "harmonics 4",
         "practice": true,
@@ -37,12 +37,12 @@
       }
     },
     "2-26-2021": {
-      "a75cc5d3-68af-4c11-aa55-f85490bcc5a5": {
+      "a75cc5": {
         "name": "symbolic energy 1",
         "practice": true,
         "noQuiz": true
       },
-      "814a0c20-4d66-401a-82d7-586b111bba60": {
+      "814a0c": {
         "name": "symbolic energy 2",
         "practice": true,
         "noQuiz": true
@@ -51,66 +51,66 @@
   },
   "Honors": {
     "2-13-2021": {
-      "79415b06-1b6b-4ab2-aab8-b4785d998ded":{
+      "79415b":{
         "name": "Waves 1",
         "practice": true
       },
-      "4a6e6970-b582-4430-a0f2-e1a2e61200fa": {
+      "4a6e69": {
         "name": "transverse vs longitudinal",
         "practice": true
       },
-      "9ac8689a-3a1d-43d6-b109-1e31c623477b": {
+      "9ac868": {
         "name": "Parts of a wave",
         "practice": true
       },
-      "83111da4-d05f-4054-a6a2-fc6a2e6ebd4b": {
+      "83111d": {
         "name": "Drawing waves with wavelength",
         "practice": true
       },
-      "0ffd1c2d-632b-429c-9a75-fcf188da1366": {
+      "0ffd1c": {
         "name": "Drawing waves with amplitude",
         "practice": true
       },
-      "d1847d4a-f084-49fc-80c9-84fa4f810314": {
+      "d1847d": {
         "name": "Wave Equation",
         "practice": true
       },
-      "0d5708b2-2d11-4a36-bd09-13d26c8eb66f": {
+      "0d5708": {
         "name": "Drawing Waves 2",
         "practice": true,
         "inClass": true
       }
     },
     "2-26-2021": {
-      "a9540897-b578-471b-b7e6-6ef82ab8b034": {
+      "a95408": {
         "name": "electromagnetic wave basics",
         "practice": true
       },
-      "ddf3042b-77f1-4563-85ae-8f305f062a84": {
+      "ddf304": {
         "name": "electromagnetic spectrum 1",
         "practice": true
       },
-      "b645cf14-82dd-4abd-a54a-5192edfd2afa": {
+      "b645cf": {
         "name": "Choosing color by wavelength",
         "practice": true
       },
-      "cf1f0144-0682-4e15-a3e1-00d119f0171a": {
+      "cf1f01": {
         "name": "electromagnetic spectrum 2",
         "practice": true,
         "noQuiz": true
       },
-      "6267c7c8-0b48-46da-940a-5dff739561c6": {
+      "6267c7": {
         "name": "Choosing electromagnetic wave by wavelength 1",
         "practice": true
       },
-      "72607f7a-ceef-4380-9939-b7a20fa3b1e6": {
+      "72607f": {
         "name": "Memorize metric prefixes",
         "inClass": true
       },
-      "64f606c7-cfd3-4a2a-866f-10f8f17a8edd": {
+      "64f606": {
         "name":"Metric to scientific notation"
       },
-      "c748898f-b11b-41b9-b50c-92654252232c": {
+      "c74889": {
         "name": "Choosing electromagnetic wave by wavelength 2",
         "practice": true
       }

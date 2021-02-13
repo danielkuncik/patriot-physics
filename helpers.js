@@ -3,8 +3,8 @@ const unitMap = require(__dirname + '/public/unit_map');
 const { availableContent } = require('./findAvailableContent.js');
 const goals = require(__dirname + '/public/goals');
 const dueDatesJSON = require(__dirname + '/dueDates.json');
-const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
-
+const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js'); // try to get rid of this
+const { idLibrary } = require(__dirname + '/idLibrary.js');
 
 hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {
     let output;
@@ -496,14 +496,14 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
             const dateDisplay = displayDateFromString(dueDateKey);
             string = string + `<h2>Can retake until ${dateDisplay}</h2>`;
             string = string + "<div class = 'ml-4 mb-4'>";
-            Object.keys(dueDates[dueDateKey]).forEach((pod_uuid) => {
-                const inClassQuiz = dueDates[dueDateKey][pod_uuid].inClass;
-                const noQuiz = dueDates[dueDateKey][pod_uuid].noQuiz;
+            Object.keys(dueDates[dueDateKey]).forEach((pod_id) => {
+                const inClassQuiz = dueDates[dueDateKey][pod_id].inClass;
+                const noQuiz = dueDates[dueDateKey][pod_id].noQuiz;
                 let displayObject;
-                if (unitMapBy_uuid[pod_uuid].type === "pod") {
-                    let superUnitKey = unitMapBy_uuid[pod_uuid].superUnitKey;
-                    let unitKey = unitMapBy_uuid[pod_uuid].unitKey;
-                    let podKey = unitMapBy_uuid[pod_uuid].podKey;
+                if (idLibrary[pod_id].type === "pod") {
+                    let superUnitKey = idLibrary[pod_id].superUnitKey;
+                    let unitKey = idLibrary[pod_id].unitKey;
+                    let podKey = idLibrary[pod_id].podKey;
                     let podObject = unitMap[superUnitKey].units[unitKey].pods[podKey];
                     let letter = podObject.letter;
                     let title = podObject.title;
@@ -559,7 +559,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                     if (practicePending) {
                         practiceColor = 'muted';
                     }
-                    let link = `/pod/${pod_uuid}`;
+                    let link = `/pod/${pod_id}`;
                     displayObject = {
                         "displayTitle": displayTitle,
                         "scoreDisplay": scoreDisplay,
@@ -580,7 +580,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                 } else {
                     obj.homework.push(displayObject);
                 }
-                if (dueDates[dueDateKey][pod_uuid].practice) {
+                if (dueDates[dueDateKey][pod_id].practice) {
                     obj.practicePages.push(displayObject);
                 }
             });
