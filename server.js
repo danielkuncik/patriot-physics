@@ -29,10 +29,12 @@ redisClient.on("error",(error) => {
     console.log(error);
 });
 
+const { idLibrary } = require(__dirname + '/idLibrary.js');
 
 const dueDates = require(__dirname + '/dueDates.json');
 
 const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
+
 
 let app = express();
 
@@ -137,8 +139,6 @@ app.engine('hbs', hbs.express4({
 }));
 app.use(express.static(__dirname + '/public'));
 
-
-
 // ROUTES
 
 // shows how the 'req.flash' function works with redirect!!!
@@ -201,36 +201,29 @@ app.get('/unitsEntryPage', [db.check_if_logged_in, disp.display_units_entry_page
 // change these to uuid based !
 
 // unit cluster home page
-app.get('/superUnit/:uuid', [db.check_if_logged_in,(req, res, next) => {
-    Object.keys(unitMap).forEach((superUnitKey) => {
-        if (unitMap[superUnitKey].uuid === req.params.uuid) {
-            req.superUnitKey = superUnitKey;
-        }
-    });
-    if (req.unitKey) {
-        next();
+app.get('/superUnit/:id', [db.check_if_logged_in,(req, res, next) => {
+    const idLibraryObject = idLibrary[req.params.id];
+    if (!idLibraryObject || idLibraryObject.type !== 'superUnit') {
+      req.flash('dangerFlash','ERROR: Topic Not Found');
+      res.redirect('/');
     } else {
-        // flash 'topic cluster not found'
-        req.redirect('/');
+      req.superUnitKey = idLibraryObject.superUnitKey;
+      next();
     }
 }, disp.display_super_unit_page]);
 
 // unit home page
-app.get('/unit/:uuid', [db.check_if_logged_in,(req, res, next) => {
-    Object.keys(unitMap).forEach((superUnitKey) => {
-        Object.keys(unitMap[superUnitKey].units).forEach((unitKey) => {
-            if (unitMap[superUnitKey].units[unitKey].uuid === req.params.uuid) {
-                req.unitKey = unitKey;
-                req.superUnitKey = superUnitKey;
-            }
-        });
-    });
-    if (req.unitKey && req.superUnitKey) {
-        next();
-    } else {
-        // flash 'topic not found'
-        res.redirect('/');
-    }
+app.get('/unit/:id', [db.check_if_logged_in,(req, res, next) => {
+
+  const idLibraryObject = idLibrary[req.params.id];
+  if (!idLibraryObject || idLibraryObject.type !== 'unit') {
+    req.flash('dangerFlash','ERROR: Ladder Not Found');
+    res.redirect('/');
+  } else {
+    req.superUnitKey = idLibraryObject.superUnitKey;
+    req.unitKey = idLibraryObject.unitKey;
+    next();
+  }
 }, disp.display_unit_page]);
 
 
@@ -341,20 +334,17 @@ const checkQuizAccess2 = (req, res, next) => {
 };
 
 // load pod page
-app.get('/pod/:pod_uuid',[ (req, res, next) => {
-      req.pod_uuid = req.params.pod_uuid;
-      if (req.query.flashMessage) {
-          req.flashMessage = req.query.flashMessage;
-      }
-      const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
-      if (!selectionObject) {
-        res.redirect('/');
-      } else {
-        req.superUnitKey = selectionObject.superUnitKey;
-        req.unitKey = selectionObject.unitKey;
-        req.podKey = selectionObject.podKey;
-        next();
-      }
+app.get('/pod/:id',[ (req, res, next) => {
+  const idLibraryObject = idLibrary[req.params.id];
+  if (!idLibraryObject || idLibraryObject.type !== 'pod') {
+    req.flash('dangerFlash','ERROR: Pod Not Found');
+    res.redirect('/');
+  } else {
+    req.superUnitKey = idLibraryObject.superUnitKey;
+    req.unitKey = idLibraryObject.unitKey;
+    req.podKey = idLibraryObject.podKey;
+    next();
+  }
 }, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
 
 
@@ -367,17 +357,17 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
 });
 
 
-app.get('/practiceSubmission/:pod_uuid', [db.check_if_logged_in, (req, res, next) => {
-    req.pod_uuid = req.params.pod_uuid;
-    const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
-    if (!selectionObject) {
-        res.redirect('/');
-    } else {
-        req.superUnitKey = selectionObject.superUnitKey;
-        req.unitKey = selectionObject.unitKey;
-        req.podKey = selectionObject.podKey;
-        next();
-    }
+app.get('/practiceSubmission/:pod_id', [db.check_if_logged_in, (req, res, next) => {
+  const idLibraryObject = idLibrary[req.params.pod_id];
+  if (!idLibraryObject || idLibraryObject.type !== 'pod') {
+    req.flash('dangerFlash','ERROR: Pod Not Found');
+    res.redirect('/');
+  } else {
+    req.superUnitKey = idLibraryObject.superUnitKey;
+    req.unitKey = idLibraryObject.unitKey;
+    req.podKey = idLibraryObject.podKey;
+    next();
+  }
 }, (req, res, next) => {
 
     // space to check if this is the correct practice to be submitted

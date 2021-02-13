@@ -112,7 +112,7 @@ display_unit_page = (req, res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         totalAttempts: req.totalAttemps,
-        backLink: `/superUnit/${unitCluster.uuid}`,
+        backLink: `/superUnit/${unitCluster.id}`,
         successFlash: req.flash('successFlash'),
         dangerFlash: req.flash('dangerFlash')
     });
@@ -140,7 +140,7 @@ display_pod_page = (req, res) => {
             podKey: req.podKey,
             objective: pod.objective,
             content: pod.content,
-            backLink: `/unit/${unit.uuid}`,
+            backLink: `/unit/${unit.id}`,
             //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
             letter: pod.letter,
             unitNumber: unitNumber,
@@ -197,7 +197,7 @@ const display_practice_submission_page = (req, res) => {
         podKey: req.podKey,
         objective: pod.objective,
         content: pod.content,
-        backLink: `/pod/${req.pod_uuid}`,
+        backLink: `/pod/${req.params.id}`,
         //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
         letter: pod.letter,
         unitNumber: unitNumber,

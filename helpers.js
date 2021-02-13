@@ -97,9 +97,9 @@ function createUnitListItem(superUnitKey, unitKey, gradeMap) {
     let unitTitle = unitMap[superUnitKey].units[unitKey].title;
     let unitNumber = 100 * superUnitNumber + unitMap[superUnitKey].units[unitKey].number;
     let unitMessage = `${unitNumber}: ${unitTitle}${levelMessage}`;
-    let uuid = unitMap[superUnitKey].units[unitKey].uuid;
+    let id = unitMap[superUnitKey].units[unitKey].id;
     if (availableContent[superUnitKey].units[unitKey].available) {
-        let unitLink = `/unit/${uuid}`;
+        let unitLink = `/unit/${id}`;
         unitListItem = unitListItem + `<a href = '${unitLink}'>${unitMessage}</a>`;
     } else {
         unitListItem = unitListItem + unitMessage;
@@ -134,9 +134,9 @@ function createSuperUnitListItem(superUnitKey, isItImportant) {
     let superUnitTitle = unitMap[superUnitKey].title;
     let superUnitNumber = unitMap[superUnitKey].number;
     let superUnitMessage = `${superUnitNumber}: ${superUnitTitle}`;
-    let superUnitUuid = unitMap[superUnitKey].uuid;
-    if (availableContent[superUnitKey].available) {
-        let link = `/superUnit/${superUnitUuid}`;
+    let id = unitMap[superUnitKey].id;
+    if (availableContent[superUnitKey]) {
+        let link = `/superUnit/${id}`;
         superUnitListItem = superUnitListItem + `<a href = '${link}'>${superUnitMessage}</a>`;
     } else {
         superUnitListItem = superUnitListItem + superUnitMessage;
@@ -206,7 +206,7 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter =
     let listItem = "<li class = 'podListItem mb-3'>";
     let letter = unitMap[superUnitKey].units[unitKey].pods[podKey].letter;
     let title = unitMap[superUnitKey].units[unitKey].pods[podKey].title;
-    const pod_uuid = unitMap[superUnitKey].units[unitKey].pods[podKey].uuid;
+    const pod_id = unitMap[superUnitKey].units[unitKey].pods[podKey].id;
     if (unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle) {
         title = title + `: ${unitMap[superUnitKey].units[unitKey].pods[podKey].subtitle}`;
     }
@@ -237,7 +237,7 @@ function makePodListItem(superUnitKey, unitKey, podKey, gradeMap, cutOutLetter =
         color = 'muted';
     }
     let available = availableContent[superUnitKey].units[unitKey].pods[podKey].available;
-    let link = `/pod/${pod_uuid}`;
+    let link = `/pod/${pod_id}`;
     if (extraMessage) {
         listItem = listItem + extraMessage;
     }
@@ -834,7 +834,7 @@ hbs.registerHelper('quizLinkNew', (loggedIn, quizRequirementObject, uuid) => {
 });
 
 
-hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid, practiceComments) => {
+hbs.registerHelper('practiceLink', (loggedIn, practiceObject, id, practiceComments) => {
     // required, practicePending, currentTopScore, overdue, dueDate
     let message, link;
     if (!loggedIn) {
@@ -873,7 +873,7 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, uuid, practiceComm
 
     let string = `<p>${message}</p>`;
     if (link) {
-        string = string + `<a href = '/practiceSubmission/${uuid}'>SUBMIT PRACTICE PAGE</a>`;
+        string = string + `<a href = '/practiceSubmission/${id}'>SUBMIT PRACTICE PAGE</a>`;
         if (practiceComments) {
             string = string + `<p>${practiceComments}</p>`;
         }
