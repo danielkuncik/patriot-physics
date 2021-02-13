@@ -47,18 +47,19 @@ const check_login = (req, res, next) => {
                     if (result2.rows.length > 0) {
                         req.session.section = result2.rows[0];
                         req.session.courseLevel = getCourseLevel(result2.rows[0].name);
+                        req.flash('successFlash','Login Successful');
                         next();
                     } else {
                         next();
                     }
                 });
             } else {
-                req.body.flashMessage = 'Incorrect password';
-                next();
+                req.flash('dangerFlash','Incorrect password');
+                res.redirect(`/login?newPath=${req.newPath}`);
             }
         } else {
-            req.body.flashMessage = 'Username does not exist';
-            next();
+            req.flash('dangerFlash','Username does not exist');
+            res.redirect(`/login?newPath=${req.newPath}`);
         }
     });
 };

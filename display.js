@@ -23,7 +23,8 @@ display_home = (req,res) => {
         totalAttempts: req.totalAttemps,
         flashMessage: req.body.flashMessage,
        // flash: req.flash,
-        message: req.flash('welcome_message')
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -37,7 +38,9 @@ display_login_page = (req, res) => {
             overallLevel: req.overallLevel,
             gradeMap: req.gradeMap,
             totalAttempts: req.totalAttemps,
-            newPath: req.newPath
+            newPath: req.newPath,
+            successFlash: req.flash('successFlash'),
+            dangerFlash: req.flash('dangerFlash')
         });
     } else {
         res.redirect('/');
@@ -55,7 +58,9 @@ display_logout_page = (req, res) => {
             section: req.section,
             overallLevel: req.overallLevel,
             gradeMap: req.gradeMap,
-            totalAttempts: req.totalAttemps
+            totalAttempts: req.totalAttemps,
+            successFlash: req.flash('successFlash'),
+            dangerFlash: req.flash('dangerFlash')
         });
     }
 };
@@ -69,7 +74,9 @@ display_units_entry_page = (req,res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -84,7 +91,9 @@ display_super_unit_page = (req,res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     })
 };
 
@@ -103,7 +112,9 @@ display_unit_page = (req, res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         totalAttempts: req.totalAttemps,
-        backLink: `/superUnit/${unitCluster.uuid}`
+        backLink: `/superUnit/${unitCluster.uuid}`,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -151,7 +162,9 @@ display_pod_page = (req, res) => {
             practiceRequirementObject: req.practiceObject,
             uuid: req.pod_uuid,
             flash: req.flashMessage ? req.flashMessage : '',
-            practiceComments: req.practiceComments
+            practiceComments: req.practiceComments,
+            successFlash: req.flash('successFlash'),
+            dangerFlash: req.flash('dangerFlash')
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
@@ -194,7 +207,9 @@ const display_practice_submission_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         totalAttempts: req.totalAttemps,
-        submissionLink: `/submitPractice/${req.pod_uuid}`
+        submissionLink: `/submitPractice/${req.pod_uuid}`,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     })
 };
 
@@ -206,7 +221,9 @@ display_lab_list_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -218,7 +235,9 @@ display_problemSet_list_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -230,7 +249,9 @@ display_lab_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -242,7 +263,9 @@ display_info_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -256,9 +279,11 @@ display_scale_page = (req, res) => {
     courseLevel: req.courseLevel,
     gradeMap: req.gradeMap,
     totalAttempts: req.totalAttemps,
-    gradeScale: gradeScale
+    gradeScale: gradeScale,
+    successFlash: req.flash('successFlash'),
+    dangerFlash: req.flash('dangerFlash')
   })
-}
+};
 
 
 display_problemSet_page = (req, res) => {
@@ -269,7 +294,9 @@ display_problemSet_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps
+        totalAttempts: req.totalAttemps,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -306,7 +333,9 @@ display_quiz_entry_page = (req, res) => {
         passwordAccessRequired: req.passwordAccessRequired,
         memorizationQuiz: req.memorizationQuiz,
         nonMemorizationMessage: req.passwordAccessRequired & !req.memorizationQuiz & !req.quizLock,
-        quizLock: req.quizLock
+        quizLock: req.quizLock,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 };
 
@@ -383,7 +412,9 @@ display_quiz = (req, res) => {
         alreadyPassed: alreadyPassed,
         submitOnline: !inClass && !alreadyPassed,
         submitPaper: inClass && !alreadyPassed,
-        noSubmission: alreadyPassed
+        noSubmission: alreadyPassed,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash')
     });
 
     // all quizzes open

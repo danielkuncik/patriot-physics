@@ -153,15 +153,19 @@ app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.f
 
 // login and logout
 app.get('/login', [(request, response, next) => {
-    const host = request.headers.host;
-    const referer = request.headers.referer;
-    let path ;
-    if (referer === undefined) {
-        path = '/'
+    let path;
+    if (request.query.newPath) {
+        path = request.query.newPath;
     } else {
-        path = referer.replace(`http://${host}`,'');
-        if (path === '/login') {
-            path = '/';
+        const host = request.headers.host;
+        const referer = request.headers.referer;
+        if (referer === undefined) {
+            path = '/'
+        } else {
+            path = referer.replace(`http://${host}`,'');
+            if (path === '/login') {
+                path = '/';
+            }
         }
     }
     request.newPath = path;
