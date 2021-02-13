@@ -18,7 +18,7 @@
           "physics_A": "mantle"
         },
         "uuid": "11d40c9a-642b-4f3c-8c51-36d8cec33049",
-        "id": "",
+        "id": "11d40c",
         "pods":
         {
           "numeric_algebra_1":
@@ -30,7 +30,7 @@
             "prerequisites": [],
             "objective": "Solve algebraic equations with one or two steps to find a numeric answer.",
             "uuid": "71bc06fd-ecdb-455a-9821-994d36a5850a",
-            "id": ""
+            "id": "71bc06"
           },
           "numeric_algebra_2": {
             "title": "Numeric Algebra 2",
@@ -40,7 +40,7 @@
             "prerequisites": ["numeric_algebra_1"],
             "objective": "Solve algebraic equations with three or four steps to find a numeric answer.",
             "uuid": "bd4cf23c-fb64-4eab-95c0-2409680ba9f6",
-            "id": ""
+            "id": "bd4cf2"
           },
           "symbolic_algebra_1": {
             "title": "Symbolic Algebra 1",
@@ -50,7 +50,7 @@
             "prerequisites": ["numeric_algebra_1"],
             "objective": "Solve algebraic equations with one or two steps to find a symbolic answer.",
             "uuid": "5432544e-b0e9-490f-9d88-3064ddf83d66",
-            "id": ""
+            "id": "543254"
           },
           "system_of_equations_1": {
             "title": "System of Equations 1",
@@ -61,7 +61,7 @@
             "prerequisites": ["numeric_algebra_2"],
             "objective": "Solve a system of 2-3 equations and an equal number of variables numerically.",
             "uuid": "87a2f7e1-0c12-42fc-985d-2d64e581b4f0",
-            "id": ""
+            "id": "87a2f7"
           },
           "symbolic_algebra_2": {
             "title": "Symbolic Algebra 2",
@@ -71,7 +71,7 @@
             "prerequisites": ["symbolic_algebra_1"],
             "objective": "Solve algebraic equations with three or four steps to find a symbolic answer.",
             "uuid": "6a3a312b-1578-4acb-bac3-ac93765446a1",
-            "id": ""
+            "id": "6a3a31"
           },
           "system_of_equations_2": {
             "title": "System of Equations 2",
@@ -82,7 +82,7 @@
             "prerequisites": ["system_of_equations_1", "symbolic_algebra_2"],
             "objective": "Solve a system of 2-3 equations with an equal number of variables symbolically.",
             "uuid": "28199923-94bc-443f-a099-cf991a903322",
-            "id": ""
+            "id": "281999"
           }
         }
       },
@@ -97,7 +97,7 @@
           "physics_A": "mantle"
         },
         "uuid": "c8d43915-52f0-4865-b1bd-3ba8459ce954",
-        "id": "",
+        "id": "c8d439",
         "pods":
         {
           "trigonometry_1":
@@ -110,7 +110,7 @@
             "prerequisites": [],
             "objective": "Solve numerical problems using the Pythagorean Theorem",
             "uuid": "54c21b9a-31e8-459d-9e02-95329d57456a",
-            "id": ""
+            "id": "54c21b"
           },
           "area_1":
           {
@@ -121,7 +121,7 @@
             "prerequisites": [],
             "objective": "Memorize and use the formula for the area of rectangles, squares, right triangles, and trapezoids",
             "uuid": "4da5981b-8a41-47d4-ae3d-4da194b442f8",
-            "id": ""
+            "id": "4da598"
           },
           "pi":
           {
@@ -133,7 +133,7 @@
             "objective": "Memorize pi to at least 15 decimal places; explain the definition of pi; memorize relationships between radius, diameter, area, and circumference of a circle.",
             "memorization": true,
             "uuid": "3c023e8a-97b9-4f35-9007-f0e2f0bd01c5",
-            "id": ""
+            "id": "3c023e"
           },
           "circle_math_1":
           {
@@ -144,7 +144,7 @@
             "prerequisites": [],
             "objective": "Solve numeric problems with one step relating elements of a circle, such as radius, diameter, area, and circumference",
             "uuid": "d6137d64-bcef-4a8e-bf1b-36002b19cbf1",
-            "id": ""
+            "id": "d6137d"
           },
           "trigonometry_2":
           {
@@ -156,7 +156,7 @@
             "prerequisites": ["trigonometry_1"],
             "objective": "Solve for unknown sides of a triangle using sine, cosine, and tangent, including problems in which the unknown side is in the denominator",
             "uuid": "9ab51df3-4d94-4db6-b3b5-b5ff2b9badf8",
-            "id": ""
+            "id": "9ab51d"
           },
           "trigonometry_3": {
             "title": "Trigonometry 3",
@@ -167,7 +167,7 @@
             "prerequisites": [],
             "objective": "Use inverse trig functions to solve for missing angles of a triangle",
             "uuid": "cc841e57-06b7-45ee-9058-0cf259e0470d",
-            "id": ""
+            "id": "cc841e"
           },
           "circle_math_2":
           {
@@ -178,7 +178,7 @@
             "prerequisites": ["pi", "circle_math_1"],
             "objective": "Solve numeric problems relating elements of a circle with multiple algebraic steps; explain in words the significance of pi.",
             "uuid": "85bf6171-46cd-445d-86a4-beaa8d4b41f4",
-            "id": ""
+            "id": "85bf61"
           },
           "trigonometry_4":
           {
@@ -190,7 +190,7 @@
             "prerequisites": ["trigonometry_2"],
             "objective": "Given the minimum necessary pieces of information determine all other information regarding a triangle.",
             "uuid": "a5b60619-bb7e-497c-b47a-d8d05eda261d",
-            "id": ""
+            "id": "a5b606"
           },
           "laser_pointer_1":
           {
@@ -202,7 +202,7 @@
             "prerequisites": ["trigonometry_3"],
             "objective": "Use a laser pointer, a protractor, and a known distance to find any position in 1-dimensional space; estimate the height of a building using a laser pointer.",
             "uuid": "248f1fe0-831a-4420-9916-c373a7eed79a",
-            "id": ""
+            "id": "248f1f"
           },
           "algebraic_geometry_1":
           {
@@ -214,7 +214,7 @@
             "prerequisites": ["laser_pointer_1", "area_1", "circle_math_2"],
             "objective": "Derive algebraic formulas from basic area and trigonometric formulas.",
             "uuid": "c2be422c-b790-43d6-913a-8fe3b79916a7",
-            "id": ""
+            "id": "c2be42"
           },
           "algebraic_geometry_2":
           {
@@ -226,7 +226,7 @@
             "prerequisites": ["algebraic_geometry_1"],
             "objective": "Drive algebraic formulas to relate elements of a circle, such as radius, circumference, diameter, and area.",
             "uuid": "0273e9a4-4ef0-44ea-beea-fd448ab41638",
-            "id": ""
+            "id": "0273e9"
           },
           "algebraic_geometry_3":
           {
@@ -239,7 +239,7 @@
             "objective": "Figure out the area of a triangle or trapezoid in which given information requires sevearl steps of analysis.",
             "example": "Determine the area of a trapezoid if the base and a single angle are known.",
             "uuid": "00461af5-3553-4c39-9ac8-d723ccb79d5d",
-            "id": ""
+            "id": "00461a"
           },
           "laser_pointer_2":
           {
@@ -251,7 +251,7 @@
             "prerequisites": ["algebraic_geometry_3"],
             "objective": "Using a laser pointer, a known height, and two protractors, locate any point in a 2-dimensional space.",
             "uuid": "c577d862-f784-4ec2-a15a-d4508679db39",
-            "id": ""
+            "id": "c577d8"
           },
           "trigonometric_identities":
           {
@@ -263,7 +263,7 @@
             "objective": "Derive trigonometric identities, such as the sum and difference angle formulas.",
             "notes": "Should this be moved to level 4???",
             "uuid": "44b33536-5d82-42be-b193-6db5363f5d7a",
-            "id": ""
+            "id": "44b335"
           },
           "laser_pointer_3":
           {
@@ -274,7 +274,7 @@
             "prerequisites": ["trigonometric_identities"],
             "objective": "Use two laser pointers and four protractors to locate any point in 3 dimensional space without needing any heights.",
             "uuid": "96c56cb1-b21b-45c1-b1ed-d3743d4fc0b0",
-            "id": ""
+            "id": "96c56c"
           }
         }
       },
@@ -289,7 +289,7 @@
           "physics_A": "outerCore"
         },
         "uuid": "d7d911e5-d316-419f-a4a0-5e0c2b80c7b4",
-        "id": "",
+        "id": "d7d911",
         "pods":
         {
           "powers_of_ten":
@@ -301,7 +301,7 @@
             "prerequisites": [],
             "objective": "Evaluate positive and negative powers of ten and ten raised to the zeroth power.",
             "uuid": "232a8df4-bee0-4e8c-9dea-81de848cb14b",
-            "id": ""
+            "id": "232a8d"
           },
           "scientific_notation_1":
           {
@@ -313,7 +313,7 @@
             "prerequisites": ["powers_of_ten"],
             "objective": "Convert numbers from scientific notation to standard notation.",
             "uuid": "86f07ce9-dd34-4bfa-a5e6-382119049bd2",
-            "id": ""
+            "id": "86f07c"
           },
           "scientific_notation_2":
           {
@@ -325,7 +325,7 @@
             "prerequisites": ["scientific_notation_1"],
             "objective": "Convert numbers from standard notation to scientific notation.",
             "uuid": "f7055b6d-6b55-4c63-8a0b-af994105b5b6",
-            "id": ""
+            "id": "f7055b"
           },
           "scientific_notation_3":
           {
@@ -337,7 +337,7 @@
             "prerequisites": ["scientific_notation_2"],
             "objective": "Given numbers written as digits multiplied by a power of ten but not in proper scientific notation, put the number into proper scientific notation.",
             "uuid": "f6715d58-1714-4bf3-a776-de17630bfdd1",
-            "id": ""
+            "id": "f6715d"
           },
           "very_fast_conversions":
           {
@@ -348,7 +348,7 @@
             "prerequisites": [],
             "objective": "Solve the most common conversion problems in a few seconds: grams and kilograms, meters and centimeters, seconds and milliseconds.",
             "uuid": "263ad05b-9fc8-4b5f-9269-c9649e95cea8",
-            "id": ""
+            "id": "263ad0"
           },
           "memorize_metric_prefixes":
           {
@@ -359,7 +359,7 @@
             "prerequisites": ["scientific_notation_3"],
             "objective": "Memorize all metric prefixes from femto through tera",
             "uuid": "72607f7a-ceef-4380-9939-b7a20fa3b1e6",
-            "id": "",
+            "id": "72607f",
             "memorization": true
           },
           "scientific_notation_calculator_1":
@@ -375,7 +375,7 @@
               "Includes single step problems like multiplying, dividing, and squaring."
             ],
             "uuid": "d320542c-9265-4100-8941-0e1e0df7a435",
-            "id": ""
+            "id": "d32054"
           },
           "scientific_notation_inequalities":
           {
@@ -386,7 +386,7 @@
             "prerequisites": ["scientific_notation_calculator_1"],
             "objective": "Given two values written in scientific notation, determine which is greater and defend your answer",
             "uuid": "d3ceefc8-352f-43c4-b877-63e5ad3af10a",
-            "id": ""
+            "id": "d3ceef"
           },
           "scientific_notation_4":
           {
@@ -399,7 +399,7 @@
             "objective": "Given a metric unit, convert it to an SI unit in scientific notation",
             "limits": "Excludes calculations in mass to kilograms",
             "uuid": "64f606c7-cfd3-4a2a-866f-10f8f17a8edd",
-            "id": ""
+            "id": "64f606"
           },
           "scientific_notation_5":
           {
@@ -411,7 +411,7 @@
             "prerequisites": ["scientific_notation_4"],
             "objective": "Convert from numbers written in scientific notation with SI units to more elegant metric units",
             "uuid": "7d1b7ecb-93a2-481e-8f97-258ae385abd2",
-            "id": ""
+            "id": "7d1b7e"
           },
           "scientific_notation_calculator_2":
           {
@@ -427,7 +427,7 @@
               "More complex operations with multiple steps."
             ],
             "uuid": "42ab10bd-a2c0-4127-b29b-e61b399c7aaf",
-            "id": ""
+            "id": "42ab10"
           },
           "convert_between_metric_units":
           {
@@ -438,7 +438,7 @@
             "prerequisites": ["scientific_notation_calculator_2"],
             "objective": "Convert from one metric unit to a different metric unit; in particular, convert from other masses to kilograms.",
             "uuid": "0e3fabba-8d26-4c47-8f7b-b6a8d9c4b97c",
-            "id": ""
+            "id": "0e3fab"
           },
           "scientific_notation_6":
           {
@@ -1107,7 +1107,7 @@
             "prerequisites": [],
             "objective": "Given a non-linear function and a ruler, find the definite integral of the function for a specified range (Riemann Sum).",
             "uuid": "dcce8c11-fdef-4c08-ba08-2649f752ceac",
-            "id": ""
+            "id": "dcce8c"
           },
           "indefinite_integral_2":
           {
@@ -1447,7 +1447,7 @@
             "prerequisites": ["design_experiment_1"],
             "objective": "Give examples of how theories work within particular ranges; in particular, define the ranges of Newton's Laws.",
             "uuid":  "e5307c73-2d82-4c2e-a594-d60ee17a243f",
-            "id": ""
+            "id": "e5307c"
           },
           "qualitative_vs_quantitative_difference":
           {
@@ -1494,7 +1494,7 @@
             "objective": "Complete a mock 'peer review' of a famous historical or hypothetical experiment.",
             "content": "Peer Review is a process by which papers are accepted or denied from scientific journals; a peer review team evaluates a study for mathematical and scientific rigor.",
             "uuid":  "5ddb084f-d2d9-49c5-b319-c90ade826d7b",
-            "id": ""
+            "id": "5ddb08"
           },
           "journal_research":
           {
@@ -1521,7 +1521,7 @@
           "physics_A": "mantle"
         },
         "uuid": "9439763f-f7ec-467d-ad2f-22314af0d955",
-        "id": "",
+        "id": "943976",
         "pods":
         {
           "rounding":
@@ -1546,7 +1546,7 @@
             "prerequisites": ["rounding"],
             "objective": "Given a value in standard or scientific notation, count the number of significant figures in that value.",
             "uuid": "c5958795-4dbc-45e7-a23e-2549bb5eeba7",
-            "id": ""
+            "id": "c59587"
           },
           "error_calculation_1":
           {
@@ -1582,7 +1582,7 @@
             "prerequisites": ["significant_figures_2"],
             "objective": "Given two numbers, calculate the percent different between those numbers; given a theoretical and determined value, calculate the percent error of a theory.",
             "uuid": "85e1bd34-a940-4791-b6dd-495ef88dbaa9",
-            "id": ""
+            "id": "85e1bd"
           },
           "significant_figures_3":
           {
@@ -1628,7 +1628,7 @@
             "prerequisites": ["purpose_significant_figures"],
             "objective": "",
             "uuid": "c9e0751b-a526-4da1-a9f0-0e7892b117ee",
-            "id": ""
+            "id": "c9e075"
           },
           "error_propagation_2":
           {
@@ -1654,7 +1654,7 @@
           "physics_A": "mantle"
         },
         "uuid": "f04c40cb-e526-4f4f-9aeb-cd5cb099e84d",
-        "id": "",
+        "id": "f04c40",
         "display": false,
         "enduring_understandings":
         [
@@ -1669,7 +1669,7 @@
             "title": "How hard do you need to slap a chicken to cook it?",
             "level": 2,
             "uuid": "5067bf43-c2f9-4df8-a4b0-d8bf1ce6b8d2",
-            "id": ""
+            "id": "5067bf"
           },
           "memorz_length_scales":
           {
@@ -1677,7 +1677,7 @@
             "level": 4,
             "objective": "Recall, whenever necessary, various objects with a given order of magnitude in length.",
             "uuid": "123fb3e4-380c-47dc-8820-0be5e76807d2",
-            "id": ""
+            "id": "123fb3"
           },
           "memorz_mass_scales":
           {
@@ -1685,7 +1685,7 @@
             "level": 4,
             "objective": "Recall, whenever necessary, various objects with a given order of magnitude in mass.",
             "uuid": "04321eb0-99fb-462e-86a9-2b28a20cf5ef",
-            "id": ""
+            "id": "04321e"
           },
           "memorz_other_scales":
           {
@@ -1693,7 +1693,7 @@
             "level": 5,
             "objective": "Recall, whenever necessary, various instances in the universe with particular orders of magnitude in speed, acceleration, energy, temperature, or time.",
             "uuid": "0e60634b-03ed-4f21-b97e-f8ece104a434",
-            "id": ""
+            "id": "0e6063"
           },
           "burn_kings_landing":
           {
@@ -1701,7 +1701,7 @@
             "level": 6,
             "objective": "How many sheep must a dragon eat to conduct a single fire breath? During the final two episodes of Game of Thrones, how many sheep would Drogon need to eat to burn the city of King's Landing?",
             "uuid": "38a72307-4441-4201-ac60-ec6dfbf90cfb",
-            "id": ""
+            "id": "38a723"
           }
         }
       },
@@ -1716,7 +1716,7 @@
           "physics_A": null
         },
         "uuid": "fc4442b1-ad7a-4c50-9b49-0f1ca63055f6",
-        "id": "",
+        "id": "fc4442",
         "display": false,
         "pods":
         {}
@@ -1732,7 +1732,7 @@
           "physics_A": null
         },
         "uuid": "8ee79b90-28f4-4c60-a39f-9e39a48efdbe",
-        "id": "",
+        "id": "8ee79b",
         "display": false,
         "pods":
         {}
@@ -1744,7 +1744,7 @@
     "title": "Energy",
     "number": 2,
     "uuid": "027d9554-bad5-45ec-bdf2-f0469fd30bd5",
-    "id": "",
+    "id": "027d95",
     "units":
     {
       "conceptual_conservation_of_energy":
@@ -1758,7 +1758,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "629defac-c440-4ab3-8092-0d4402fccf76",
-        "id": "",
+        "id": "629def",
         "note": "Eliminate repetitive pods, don't have multiple choice and open response in separate pods.",
         "standards":
         {
@@ -1779,7 +1779,7 @@
             "objective": "Recognize single examples of different types of energy",
             "content": "There are approximate 10 different types of energy into which we can classify most of the energy in our lives.",
             "uuid": "921c3035-4962-4622-b422-ccb58710b976",
-            "id": ""
+            "id": "921c30"
           },
           "state_law_conservation_of_energy":
           {
@@ -1791,7 +1791,7 @@
             "objective": "State, from memory, the law of conservation of energy.",
             "content": "The Law of Conservation of Energy states that the total energy of the universe remains constant, energy cannot be created or destroyed, it only changes from one type to another.",
             "uuid": "bcfe27b9-7c18-44b6-892b-af5d4242af69",
-            "id": "",
+            "id": "bcfe27",
             "memorization": true
           },
           "energy_transfer_2":
@@ -1804,7 +1804,7 @@
             "objective": "Recognize processes of 2-3 steps in which energy changes from one type to another; name these processes; draw diagrams depicting the processes",
             "content": "Most of the events in our life, such as turning on a light bulb, or eating food and then running, involve energy changing from one type to another",
             "uuid": "6a207b48-29ac-4a96-9e0a-184884dd16d6",
-            "id": ""
+            "id": "6a207b"
           },
           "categorize_energy":
           {
@@ -1816,7 +1816,7 @@
             "objective": "Write the names of different types of energy; categorize each form of energy as kinetic energy or potential energy.",
             "content": "There are several different types of energy into which we can classify most of the energy in our lives; each type of energy can be categorized as kinetic or potential energy",
             "uuid": "bc66b87e-6ae3-4acd-a722-e9c9d5b282ae",
-            "id": ""
+            "id": "bc66b8"
           },
           "energy_transfer_3":
           {
@@ -1829,7 +1829,7 @@
             "objective": "Using energy transfer diagrams, connect energy used in your life back to sunlight.",
             "content": "The sun is the major source of energy for our food, heat, and light.",
             "uuid": "0c891a7e-9af9-4ff4-af8a-436615ebb5bb",
-            "id": ""
+            "id": "0c891a"
           },
           "energy_transfer_4":
           {
@@ -1843,7 +1843,7 @@
             "content": "All of the electrical energy from outlets on earth, save geothermal and nuclear energy, can be traced back to light from the sun.",
             "example": "Describe how the energy contained in natural gas is converted to light energy from a light bulb.",
             "uuid": "67b012e0-eefc-479f-9bec-eea3eb753a9b",
-            "id": "",
+            "id": "67b012",
             "inClass_honors": true
           },
           "energy_transfer_5":
@@ -1858,7 +1858,7 @@
             "content": "Energy transfer is never perfectly clean and neat but always accounts for some energy going to different types, particularly thermal energy (heat loss).",
             "notes": "The exceptions, which should be noted, are geothermal and nuclear energy.",
             "uuid": "2b8861c2-cee7-4667-a247-31f8535cad6a",
-            "id": ""
+            "id": "2b8861"
           },
           "solar_physics":
           {
@@ -1870,7 +1870,7 @@
             "objective": "Describe how the gravitational potential energy of gas and dust in space eventually becomes the light emitted by the sun.",
             "content": "Stars are formed by gas and dust in space attracting so strongly that it forms thermonuclear fusion and begins emitting electromagnetic energy.",
             "uuid": "d559c9d8-97f6-4419-b473-bba084396131",
-            "id": ""
+            "id": "d559c9"
           },
           "birth_of_energy":
           {
@@ -1883,7 +1883,7 @@
             "content": "Under current cosmological models, all of the energy in the universe can be traced back to some moment in time in which is suddenly appeared, which is named the 'Big Bang.'",
             "connections": "Requires knowledge of gravitation, nuclear physics, and cosmology",
             "uuid": "e85505ab-1a58-4a6b-8589-5caa6034e31f",
-            "id": ""
+            "id": "e85505"
           }
         }
       },
@@ -1898,7 +1898,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "3b6fd1e6-a5c2-4059-8c73-1c376a85581c",
-        "id": "",
+        "id": "3b6fd1",
         "standards":
         {
           "mass_2016": "",
@@ -1917,7 +1917,7 @@
             "objective": "Define planets within solar systems, solar systems within galaxies, galaxies within clusters, etc.",
             "content": "The earth sits within a solar system, a galaxy, and a cluster of galaxies.",
             "uuid": "63741b84-5b2e-4ba1-8d23-c08f63321bbc",
-            "id": ""
+            "id": "63741b"
           },
           "what_is_cosmology":
           {
@@ -1929,7 +1929,7 @@
             "objective": "Define cosmology, differentiate between cosmology and astronomy; give examples of cosmological questions and cosmological texts",
             "content": "Cosmology is the science of the entire universe. It deals with questions such as how was the universe created and how will it end.",
             "uuid": "efe593d7-9025-4b11-8e67-2cc8be526955",
-            "id": ""
+            "id": "efe593"
           },
           "expansion_of_universe":
           {
@@ -1941,7 +1941,7 @@
             "objective": "Explain evidence that the universe is expanding from the red-shift of far away galaxies.",
             "content": "All far away objects are moving farther away. The farther away an objects is, the faster it is moving away. This occurs because space itself is stretching.",
             "uuid": "8785ed8a-f96f-47d9-b450-694f43140450",
-            "id": ""
+            "id": "8785ed"
           },
           "cosmological_principle":
           {
@@ -1953,7 +1953,7 @@
             "objective": "Describe evidence the universe is infinite; define the cosmological principle; give arguments in favor of the cosmological principle; ",
             "content": "The cosmological principle states that the laws of physics are identical at all places in the universe, and the universe is infinite and without a center. No observer has a different view of the universe than any other, and earth cannot be the center of the universe.",
             "uuid": "6fb42fd0-b43d-4e19-ba11-f70a158768eb",
-            "id": ""
+            "id": "6fb42f"
           },
           "infinite_and_expanding":
           {
@@ -1965,7 +1965,7 @@
             "objective": "Explain how the universe can be both infinite and expanding.",
             "content": "The universe is infinite and is expanding because the space between galaxies is itself stretching.",
             "uuid": "ef9ce403-e0fe-40f6-ae1f-416758f539a7",
-            "id": ""
+            "id": "ef9ce4"
           },
           "big_bang":
           {
@@ -1977,7 +1977,7 @@
             "objective": "Explain how scientists created the big bang theory; properly define the big bang.",
             "content": "If you follow the progress of the universe backwards, all matter and energy would eventually compress to one point. The moment at which all matter and energy emerged suddenly is referred to as the big bang. The big bang does not represent an explosion.",
             "uuid": "a6628647-2f30-4808-b0fc-349db2adeab7",
-            "id": ""
+            "id": "a66286"
           },
           "stages_of_universe":
           {
@@ -1989,7 +1989,7 @@
             "objective": "Explain the stages of the development of the universe according to the big bang theory.",
             "content": "As the universe expanded, matter took on different forms, from different forms of plasma into our current structure of atoms.",
             "uuid": "ed0be738-b4c5-4b60-86ec-b7930a782f23",
-            "id": ""
+            "id": "ed0be7"
           },
           "comic_microwave_background":
           {
@@ -2001,7 +2001,7 @@
             "objective": "Explain the existence and discovery of the cosmic microwave background; examine how it gives evidence for the big bang theory",
             "content": "In all directions, a very faint microwave signals exists as a remnant of the transition of matter from plasma to atoms.",
             "uuid": "7f8c3571-b1b0-4dc4-bb4a-d8002017c904",
-            "id": ""
+            "id": "7f8c35"
           },
           "big_bang_limitations":
           {
@@ -2013,7 +2013,7 @@
             "objective": "Explain limitations of the big bang theory and open questions within cosmology",
             "content": "The big bang theory alone does not completely match observed data and must be modified with theories such as inflationary theory.",
             "uuid": "5026c22a-1133-4265-963d-276e19739f3e",
-            "id": ""
+            "id": "5026c2"
           },
           "your_own_brief_history_of_time":
           {
@@ -2026,7 +2026,7 @@
             "content": "We can trace our own lives within the history of the universe to the big bang.",
             "note": "Must incorporate information from physics, chemistry, biology, history, and any other relevant field",
             "uuid": "70123330-3d33-4181-81f7-221a339edffe",
-            "id": ""
+            "id": "701233"
           },
           "alternative_universes":
           {
@@ -2038,7 +2038,7 @@
             "objective": "Within the big bang theory, imagine how if some variables were different our own experience in the universe would be different.",
             "content": "We do not know why variables, such as the charge to mass ratio of an electron or the speed of light, have the precise values they do. If they were different, the progression of the universe may have been markedly different.",
             "uuid": "6ea078ce-b9f9-42e1-bc27-2a6d6d1c8b63",
-            "id": ""
+            "id": "6ea078"
           }
         }
       },
@@ -2053,7 +2053,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "302cfa26-138e-4545-a10e-cec109f637b6",
-        "id": "",
+        "id": "302cfa",
         "standards":
         {
           "mass_2016": "",
@@ -2072,7 +2072,7 @@
             "objective": "Answer qualitative questions about how KE and GPE change as a ball rolls down a ramp; fill out a box that numerically describes KE and GPE at each time.",
             "content": "As a ball rolls down a ramp, gravitational potential energy converts into kinetic energy.",
             "uuid": "8766aaae-7552-4bed-8365-95fcd4bda409",
-            "id": ""
+            "id": "8766aa"
           },
           "energy_formulas_1":
           {
@@ -2084,7 +2084,7 @@
             "objective": "Solve problems involving the KE and GPE formulas.",
             "content": "Formulas for kinetic energy and gravitational potential energy relate these quantities to speed and height, respectively.",
             "uuid": "cd905e4c-d92e-4b6a-be60-b2f3cda0c68a",
-            "id": ""
+            "id": "cd905e"
           },
           "memorize_conservation_of_energy":
           {
@@ -2096,7 +2096,7 @@
             "objective": "Recite the conservation of energy word for word.",
             "content": "The total amount of energy in the universe stays the same. Energy cannot be created or destroyed. It only changes from one type to another.",
             "uuid": "d5263be7-a8f7-4431-9558-ae81d447165c",
-            "id": "",
+            "id": "d5263b",
             "memorization": true
           },
           "energy_table_2":
@@ -2109,7 +2109,7 @@
             "objective": "Fill out a box numerically describing KE and GPE at each time; box requires some inferences as well as mathematical equations; infer information about motion from the table.",
             "content": "Physicists can use the conservation of energy and formulas for kinetic and potential energy together to learn information about an object in motion.",
             "uuid": "16867305-88ad-4901-b2cf-cd20fcee13e6",
-            "id": ""
+            "id": "168673"
           },
           "kinetic_potential_energy_graphs_1":
           {
@@ -2121,7 +2121,7 @@
             "objective": "Make a graph showing kinetic and gravitational potential energy as an object falls or rises.",
             "content": "Kinetic, potential, and total energy can be represented qualitatively as an objcet moves.",
             "uuid": "462ef780-e519-41b7-baae-8303b2948064",
-            "id": ""
+            "id": "462ef7"
           },
           "system_language":
           {
@@ -2133,7 +2133,7 @@
             "objective": "Describe changes in energy using the language of systems and work done on a system; Properly describe gravitational potential energy as being part of an object-earth system; properly describe elastic potential energy as being part of an object-spring system",
             "content": "Gravitational potential energy is shared by an object and the planet it is attracted to, which is described as the 'planet-earth system.'",
             "uuid": "bf8c2f0e-1461-4eb0-b499-0ec73f4ddc56",
-            "id": ""
+            "id": "bf8c2f"
           },
           "zero_point_height":
           {
@@ -2145,7 +2145,7 @@
             "objective": "Consider zero point height as a part of the GPE formula",
             "content": "The variable h in the formula for gravitational potential energy is dependent on a physicists choice of a particular zero-point.",
             "uuid": "64ddeae8-d2cd-4062-8dbf-a1ac7c8d0531",
-            "id": ""
+            "id": "64ddea"
           },
           "roller_coaster_problems":
           {
@@ -2157,7 +2157,7 @@
             "objective": "Describe the KE and GPE of a roller coaster moving both up and down without a table, solve numerical questions based upon the result",
             "content": "A physicist can gain useful information from considering the exchange of potential and kinetic energy.",
             "uuid": "f9fc717f-d560-4411-b20d-61271bed70ff",
-            "id": "",
+            "id": "f9fc71",
             "inClass_honors": true
           },
           "energy_table_4":
@@ -2171,7 +2171,7 @@
             "objective": "Use a table describing KE and EPE to analyze a horizontal spring, make inferences and solve numerical questions based upon the result; define the equilibrium length of a spring; make a table showing how KE and EPE change in a frictionless spring",
             "content": "As a spring moves back and forth, kinetic energy is exchanged for elastic potential energy and vice-versa; a physicist can use this knowledge to gain useful information about the spring system.",
             "uuid": "7a849287-0607-4594-b618-378e93c9706b",
-            "id": "",
+            "id": "7a8492",
             "inClass_AP": true
           },
           "energy_table_5":
@@ -2184,7 +2184,7 @@
             "objective": "Fill out a table describing KE and GPE of an object moving down a slope including heat loss",
             "content": "As an object moves, air resistance and friction turn kinetic energy into thermal energy (called heat loss); A physicist can quantitatively model how much thermal energy is produced.",
             "uuid": "db30f34e-73e5-4a70-ae75-4b0e0d7beb5f",
-            "id": ""
+            "id": "db30f3"
           },
           "energy_formulas_3":
           {
@@ -2197,7 +2197,7 @@
             "objective": "Deduce units of formulas for energy; Symbolically solve the formulas for KE, GPE, and EPE; use proportionality to determine changes in energy as other quantities change.",
             "content": "All forms of energy have the same units in terms of kilograms, meters, and seconds; proportionality can be used to easily find quantities of energy.",
             "uuid": "e634df95-0d04-4a50-91bc-4391344dea01",
-            "id": ""
+            "id": "e634df"
           },
           "semi_qualitative_conservation_of_energy":
           {
@@ -2208,7 +2208,7 @@
             "prerequisites": ["energy_formulas_3"],
             "objective": "Answer quantitative questions using the conservation of energy by concept alone without resorting to plugging in numbers.",
             "uuid": "b24f0eab-45d1-47f9-bae1-8420fe3c50f2",
-            "id": ""
+            "id": "b24f0e"
           },
           "symbolic_energy_1":
           {
@@ -2221,7 +2221,7 @@
             "objective": "Use the conservation of energy to derive new equations that describe objects vertically rising and falling.",
             "content": "A physicist can derive useful new equations by using the conservation of energy symbolically.",
             "uuid": "a75cc5d3-68af-4c11-aa55-f85490bcc5a5",
-            "id": ""
+            "id": "a75cc5"
           },
           "symbolic_energy_2": {
             "title": "Symbolic Energy 2",
@@ -2233,7 +2233,7 @@
             "objective": "Use the conservation of energy to derive new equations that describe a moving horizontal spring.",
             "content": "A physicist can derive useful new equations by using the conservation of energy symbolically.",
             "uuid": "814a0c20-4d66-401a-82d7-586b111bba60",
-            "id": ""
+            "id": "814a0c"
           },
           "work_done_on_system":
           {
@@ -2245,7 +2245,7 @@
             "objective": "Determine the work done on a system by considering changes in energy.",
             "content": "Work done on a system is the change in the total energy of that system.",
             "uuid": "1dbc4d92-14df-489d-9f67-fda2127c17c7",
-            "id": "",
+            "id": "1dbc4d",
             "inClass_AP": true
           },
           "vertical_spring_system":
@@ -2258,7 +2258,7 @@
             "objective": "Numerically analyze change in energy on a system including a mass on a vertical spring in which work is done on the system by an outside force and by friction.",
             "content": "A vertical spring system consists of an exchange between kinetic, gravitational potential, and elastic potential energy",
             "uuid": "baf26601-4f4d-4291-b6a1-58628787d3c5",
-            "id": ""
+            "id": "baf266"
           },
           "functional_energy_analysis_1":
           {
@@ -2271,7 +2271,7 @@
             "objective": "Use the conservation of energy to create functions taht relate the speed and vertical position of a rising and falling object.",
             "content": "A rising and falling object can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "bd8d4ccc-c286-43d5-b8c3-33cd260abf53",
-            "id": ""
+            "id": "bd8d4c"
           },
           "functional_energy_analysis_2":
           {
@@ -2284,7 +2284,7 @@
             "objective": "Symbolically analyze the energy of a horizontal spring system as it moves; write statements regarding the energy of the mass-spring system; symbolically determine crucial values regarding the spring using the Conservation of Energy.",
             "content": "A horizontal spring system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "52bb2f62-2004-4e77-9b7c-fee4670ea80a",
-            "id": ""
+            "id": "52bb2f"
           },
           "symbolic_energy_3": {
             "title": "Symbolic Energy 3",
@@ -2296,7 +2296,7 @@
             "objective": "Use the conservation of energy to derive new equations that describe a moving horizontal spring.",
             "content": "A physicist can derive useful new equations by using the conservation of energy symbolically.",
             "uuid": "a56cb19f-9ef1-4707-87e4-279a2a063047",
-            "id": ""
+            "id": "a56cb1"
           },
           "functional_energy_analysis_3":
           {
@@ -2309,7 +2309,7 @@
             "objective": "Symbolically analyze the energy of a pendulum system as it swings; write statements regarding the energy of the pendulum-earth system; symbolically determine crucial values regarding the pendulum using the Conservation of Energy.",
             "content": "A pendulum system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "bd8d4ccc-c286-43d5-b8c3-33cd260abf53",
-            "id": ""
+            "id": "bd8d4c"
           },
           "functional_energy_analysis_4":
           {
@@ -2322,7 +2322,7 @@
             "objective": "Symbolically analyze the energy of a vertical spring system as it moves; write statements regarding the energy of the mass-spring-earth system; symbolically determine crucial values regarding the spring using the Conservation of Energy.",
             "content": "A vertical spring system can be modeled by algebraic functions for position, speed, and energy.",
             "uuid": "f0598cca-316c-401c-a58f-fa261ac4be64",
-            "id": ""
+            "id": "f0598c"
           },
           "spidermans_energy":
           {
@@ -2334,7 +2334,7 @@
             "objective": "Analyze the potential energy of a fast moving spring that stretches as it falls.",
             "content": "A physicist can invent a new model for a novel situation, such as a person (Spiderman) swinging from a stretching string.",
             "uuid": "d8c1eeef-f031-4afa-aa00-f1939205ba57",
-            "id": ""
+            "id": "d8c1ee"
           }
         }
       },
@@ -2349,7 +2349,7 @@
           "physics_A": "outerCore"
         },
         "uuid": "45382793-f6b8-4f91-ba03-ceca0a60fb9a",
-        "id": "",
+        "id": "453827",
         "standards":
         {
           "mass_2016": "",
@@ -2368,7 +2368,7 @@
             "objective": "Solve for the work done by a force, including in cases where an object does not move.",
             "content": "Work is equal to force times distance; if an object does not move, no work is done; power is equal to work divided by time elapsed while down that work.",
             "uuid": "b1e3aad9-0270-4add-aa82-f689d0d2aa15",
-            "id": ""
+            "id": "b1e3aa"
           },
           "power_formulas":
           {
@@ -2380,7 +2380,7 @@
             "objective": "Solve multiple different formulas for the power of an object",
             "content": "Power is equal to work divided by time AND equal to energy transferred divided by tiem",
             "uuid": "35d3826f-70a0-4ef8-890a-7a61e97a2af9",
-            "id": ""
+            "id": "35d382"
           },
           "defining_mechanical_energy":
           {
@@ -2392,7 +2392,7 @@
             "objective": "Write the definition of mechanical energy, recognize examples of mechanical and non-mechanical energies, sum mechanical energy of objects with several different types of energy.",
             "content": "Kinetic energy and the forms of potential energy that can be gained by doing work are called mechanical energy; gravitational and elastic potential energy are a component of mechanical energy; chemical, electrochemical, and nuclear potential energies are not a part of mechanical energy.",
             "uuid": "940c7ae4-841e-4d79-93bb-f1255bc17e75",
-            "id": ""
+            "id": "940c7a"
           },
           "is_work_done":
           {
@@ -2404,7 +2404,7 @@
             "objective": "Identify situations in which positive work, negative work, and zero work is done.",
             "content": "If an object moves in the direction of the force on an object, positive work is done; if an object moves in the opposite direction as a force on an object, negative work is done; if an object moves in a direction perpendicular to the force on an object, no work is done; if an object does not move no work is done.",
             "uuid": "de238a2a-3cd7-4511-88e4-2852e13086c6",
-            "id": ""
+            "id": "de238a"
           },
           "weightlifter_problem":
           {
@@ -2416,7 +2416,7 @@
             "objective": "Analyze how work and power are different for weightlifters lifting weights at different speeds.",
             "content": "A weightlifter lifting more weight ot a taller height is doing more work; a weightlifter lifting the same weight to the same height but in less time does the same work but has more power.",
             "uuid": "9826ee0b-20b7-4026-bb3e-1b443003b059",
-            "id": "",
+            "id": "9826ee",
             "inClass_honors": true
           },
           "conservative_vs_nonconservative_forces":
@@ -2430,7 +2430,7 @@
             "content": "A conservative force does not cause a system to lose mechanical energy; gravity and the elastic force are conservative forces; friction and air resistance are non-conservative forces",
             "notes": "Content statement must improve.",
             "uuid": "dfe2d760-7b31-4fae-9597-b7edf17ef210",
-            "id": ""
+            "id": "dfe2d7"
           },
           "work_energy_theorem_1":
           {
@@ -2443,7 +2443,7 @@
             "content": "The Work-Energy Theorem states that the work done a system equals to the change in mechanical energy of a system; physicists can use the work formula to calculate work done and then use this value to calculate quantities of kinetic and/or potential energy.",
             "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet.",
             "uuid": "f4cd9614-c811-4fa0-99fb-c24afc013cf6",
-            "id": "",
+            "id": "f4cd96",
             "inClass_AP": true
           },
           "force_position_graphs_1":
@@ -2456,7 +2456,7 @@
             "objective": "Calculate Work using a force-position graph.",
             "content": "The work done on an object is equal to the area under the curve of a force-position graph of that object.",
             "uuid": "c5d5bcbd-372e-47db-b372-717009deb9f4",
-            "id": ""
+            "id": "c5d5bc"
           },
           "work_energy_theorem_2":
           {
@@ -2469,7 +2469,7 @@
             "content": "The Work-Energy Theorem states that the work done a system equals to the change in mechanical energy of a system; physicists can use the work formula to calculate work done and then use this value to calculate quantities of kinetic and/or potential energy.",
             "limits": "In this quiz, each type of potential energy is considered and the system is not rigorously defined yet.",
             "uuid": "1ac2e7fc-7ac8-45a6-b790-3c9e7c31b94f",
-            "id": ""
+            "id": "1ac2e7"
           },
           "multiple_viewpoints_1":
           {
@@ -2487,7 +2487,7 @@
               "block-alone system"
             ],
             "uuid": "045860bd-5080-415f-9e0e-debe502dac1f",
-            "id": "",
+            "id": "045860",
             "inClass_AP": true
           },
           "force_position_graphs_2":
@@ -2500,7 +2500,7 @@
             "objective": "Use a force-position graph together with the work-energy theorem to find dynamic and kinematic quantities.",
             "content": "A physicist, by understanding the definition of work and the work-energy theorem, can learn useful quantities from a force-position graph of an object.",
             "uuid": "9da496e8-449c-4787-a8d2-1556c41f2411",
-            "id": ""
+            "id": "9da496"
           },
           "multiple_viewpoints_2":
           {
@@ -2517,7 +2517,7 @@
               "comet-alone system"
             ],
             "uuid": "8f6bdf2e-6b02-427a-9781-f3602ed56480",
-            "id": ""
+            "id": "8f6bdf"
           },
           "prove_work_energy_theorem":
           {
@@ -2529,7 +2529,7 @@
             "objective": "Algebraically prove the work-energy theorem when acceleration is constant.",
             "content": "For an object moving with a constant acceleration, the work-energy theorem can be demonstrated by combining Newton's Laws of motion with the kinematic equations.",
             "uuid": "695736f7-0f52-47a0-a5e0-3d0e005114fd",
-            "id": ""
+            "id": "69573"
           },
           "define_potential_energy":
           {
@@ -2541,7 +2541,7 @@
             "objective": "Define potential energy using the concept of work, conservative and non-conservative forces.",
             "content": "The formulas we use for potential energy can be derived from the formula for work and the conservation of energy.",
             "uuid": "bb128014-0d0d-4202-9ee6-efb79d043612",
-            "id": ""
+            "id": "bb1280"
           },
           "multiple_viewpoints_3":
           {
@@ -2559,7 +2559,7 @@
               "spiderman spidey-string"
             ],
             "uuid": "8e251c41-b778-491b-95b6-de2c3c7c21e3",
-            "id": ""
+            "id": "8e251c"
           }
         }
       },
@@ -2574,7 +2574,7 @@
           "physics_A": null
         },
         "uuid": "0aacddec-c4c4-4ec5-bbe9-3a48b84cd92e",
-        "id": "",
+        "id": "0aacdd",
         "standards":
         {
           "mass_2016": "",
@@ -2596,7 +2596,7 @@
         },
         "notes": "This is actually a step towards the field of Lagrangian and Hamiltonian mechanics.",
         "uuid": "8cd92d50-ffbe-4f99-9cc4-c86762acde53",
-        "id": "",
+        "id": "8cd92d",
         "display": false,
         "standards":
         {
@@ -2614,7 +2614,7 @@
     "title": "Kinematics",
     "number": 3,
     "uuid": "8ff69a8b-8352-45eb-8d1b-948c0a70192d",
-    "id": "",
+    "id": "8ff69a",
     "units":
     {
       "forward_kinematics_qualitative":
@@ -2628,7 +2628,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "2fb4c9a5-1966-4731-a9b5-9ff2ac63e99d",
-        "id": "",
+        "id": "2fb4c9",
         "standards":
         {
           "mass_2016": "HS-PS2-1",
@@ -2647,7 +2647,7 @@
             "objective": "Identify position-time graphs and motion maps for single-step descriptions of motion.",
             "content": "Position-time graphs and motion maps are two ways to represent how something is moving.",
             "uuid": "8d7e1901-7b54-49ed-885d-73e33521ab42",
-            "id": ""
+            "id": "8d7e19"
           },
           "velocity_acceleration_graphs":
           {
@@ -2659,7 +2659,7 @@
             "objective": "Identify velocity-time and acceleration-time graphs for single-step descriptions of motion",
             "content": "Velocity-time and acceleration-time graphs are two other ways to represent how something is moving.",
             "uuid": "a58d595d-e56e-4755-97ef-77874604f140",
-            "id": ""
+            "id": "a58d59"
           },
           "kinematic_graph_connections":
           {
@@ -2671,7 +2671,7 @@
             "objective": "For single-step descriptions of motion, identify position, velocity, and acceleration graphs that describe that motion; for a given position, velocity, or acceleration graph, identify two other graphs that describe the same motion.",
             "content": "Position-time graphs, velocity-time graphs, and acceleration-time graphs can represent the same example of motion.",
             "uuid": "bc4f995f-0330-4fcb-921e-4413ae30e716",
-            "id": "",
+            "id": "bc4f99",
             "inClass_honors": true
           },
           "kinematic_graph_comparisons_1":
@@ -2684,7 +2684,7 @@
             "objective": "Qualitatively compare different curves and lines on kinematic graphs.",
             "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves.",
             "uuid": "5b081810-95c4-4ea0-bcf6-625c67cf6e29",
-            "id": ""
+            "id": "5b0818"
           },
           "kinematics_definitions":
           {
@@ -2696,7 +2696,7 @@
             "objective": "Define the terms kinematics, qualitative, quantitative, position, velocity, and acceleration.",
             "content": "The goal of qualitative kinematics is to determine how an object moves without determining why.",
             "uuid": "beb2106c-410e-44c1-8179-32a01059963d",
-            "id": ""
+            "id": "beb210"
           },
           "story_to_graph_selection_1":
           {
@@ -2708,7 +2708,7 @@
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
             "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story.",
             "uuid": "4e97c334-316b-4800-a566-a1f2e1be89a0",
-            "id": "",
+            "id": "4e97c3",
             "inClass_honors": true
           },
           "kinematic_graph_comparisons_2":
@@ -2721,7 +2721,7 @@
             "objective": "Qualitatively Compare different curves and lines on kinematic graphs.",
             "content": "Characteristics of a kinematic graph, such as its slope or shape, can show differences in how an object moves.",
             "uuid": "8ae812b1-7da0-448a-91a0-f7ccb057ef1f",
-            "id": ""
+            "id": "8ae812"
           },
           "story_to_graph_selection_2":
           {
@@ -2733,7 +2733,7 @@
             "objective": "Given a story describing motion with several unique steps of accelerated, decelerated, constant velocity, and zero motion; identify position, velocity, acceleration, and time graphs that describe that motion.",
             "content": "Kinematic graphs can represent not just motion in one step but motion in several steps, even demonstrating a story.",
             "uuid": "0b5cc5e1-8a8d-4172-a52d-e6664401a668",
-            "id": "",
+            "id": "0b5cc5",
             "inClass_honors": true,
             "inClass_AP": true
           },
@@ -2747,7 +2747,7 @@
             "objective": "Given a qualitative position-time graph showing several unique steps of motion, write a story that could be described by this position time graph and draw corresponding velocity-time and acceleration-time graphs.",
             "content": "The information in a position-time graph can be represented in words or in other kinematic graphs.",
             "uuid": "ba74c44b-b496-49f2-b942-0f1684096abd",
-            "id": ""
+            "id": "ba74c4"
           },
           "velocity_graph_connection":
           {
@@ -2759,7 +2759,7 @@
             "objective": "Given a qualitative velocity-time graph showing several unique steps of motion, write a story that could be described by the velocity-time graph and draw corresponding position-time and acceleration-time graphs.",
             "content": "The information in a velocity-time graph can be represented in words or in other kinematic graphs.",
             "uuid": "1287ebaf-446f-45b3-8ece-331641f9c1ea",
-            "id": ""
+            "id": "1287eb"
           },
           "acceleration_graph_connection":
           {
@@ -2771,7 +2771,7 @@
             "objective": "Given a qualitative acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs.",
             "content": "The information in an acceleration-time graph can be represented in words or in other kinematic graphs.",
             "uuid": "5612bde2-e832-4ba5-8920-947c5bb495ee",
-            "id": "",
+            "id": "5612bd",
             "inClass_AP": false
           },
           "acceleration_graph_connection_2":
@@ -2784,7 +2784,7 @@
             "objective": "Given a qualitative and more complex acceleration-time graph showing several unique steps of motion, write a story that could be described by the acceleration-time graph and draw corresponding position-time and velocity-time graphs; develop different stories by changing the initial conditions of the graph.",
             "content": "The information in a highly complex acceleration-time graph can be represented in words or in other kinematic graphs; acceleration graphs contain no information regarding initial velocity.",
             "uuid": "c9757f3f-32ba-4057-a89d-7902e794eeef",
-            "id": ""
+            "id": "c9757f"
           },
           "qualitative_kinematics_advanced":
           {
@@ -2796,7 +2796,7 @@
             "objective": "Invent a highly complex description of motion, and then create kinematic graphs that match the description.",
             "content": "Kinematic graphs can represent extremely complex descriptions of motion.",
             "uuid": "f1414abe-aeb3-427e-bfef-7061437b539d",
-            "id": ""
+            "id": "f1414a"
           }
         }
       },
@@ -2811,7 +2811,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "24d4cf0c-eb66-4ec4-93e0-be8ccc175e34",
-        "id": "",
+        "id": "24d4cf",
         "enduring_understandings":
         [
           "Quantitative modeling of motion is at the core of physics.",
@@ -2835,7 +2835,7 @@
             "objective": "Solve problems using the formula relating distance, speed, and time; always write the appropriate units for distance, speed, and time.",
             "content": "Distance is equal to speed times time.",
             "uuid": "cc7830c3-5511-4c8a-8ec0-eacd8627a2ed",
-            "id": ""
+            "id": "cc7830"
           },
           "acceleration_formula":
           {
@@ -2847,7 +2847,7 @@
             "objective": "Solve for acceleration using its definition.",
             "content": "Acceleration is equal to change in velocity divided by change in time.",
             "uuid": "a08be5d5-2392-4ae7-a340-78350eb5497d",
-            "id": ""
+            "id": "a08be5"
           },
           "kinematic_equations_1":
           {
@@ -2866,7 +2866,7 @@
               "Problems involve 1 or 2 algebraic steps to solve."
             ],
             "uuid": "a3b36daf-1055-4e4e-a26b-00f1c6103e9b",
-            "id": ""
+            "id": "a3b36d"
           },
           "quantitative_kinematic_graphs_1":
           {
@@ -2879,7 +2879,7 @@
             "objective": "From a quantitative kinematic graph, gain information such as velocity and displacement.",
             "content": "The slope of a position-time graph is the velocity; the area under the curve of a velocity-time graph is the displacement",
             "uuid": "c64e403e-1b8b-44b5-871f-8e4dd6b3935b",
-            "id": ""
+            "id": "c64e40"
           },
           "kinematic_equations_2":
           {
@@ -2898,7 +2898,7 @@
               "Problems involve no more than 3 algebraic steps to solve"
             ],
             "uuid": "eda5bafa-2b9a-46b8-a528-75528f8de985",
-            "id": ""
+            "id": "eda5ba"
           },
           "quantitative_kinematic_graphs_2":
           {
@@ -2911,7 +2911,7 @@
             "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process.",
             "content": "Physicists use the relationship amongst velocity and displacement in quantitative kinematic graphs to draw velocity-time graphs for a corresponding position-time graphs and vice versa.",
             "uuid": "c3212e62-6634-43d5-9fe3-133f53064454",
-            "id": ""
+            "id": "c3212e"
           },
           "kinematic_equations_3":
           {
@@ -2924,7 +2924,7 @@
             "objective": "Solve numerical algebraic problems in which information is not explicitly given but must be inferred",
             "content": "The four kinematic equations can be used to real-world problems if a physicist can break real-world information down to the kinematic variables.",
             "uuid": "e9cb0af2-7bfc-4b47-ab32-e3bb837df9f6",
-            "id": "",
+            "id": "e9cb0a",
             "inClass_honors": true
           },
           "memorize_kinematic_equations":
@@ -2937,7 +2937,7 @@
             "objective": "Memorize the kinematic equations.",
             "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems.",
             "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086",
-            "id": "",
+            "id": "6949c4",
             "memorization": true
           },
           "quantitative_kinematic_graphs_3":
@@ -2951,7 +2951,7 @@
             "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity.",
             "content": "A physicist can learn kinematic quantities from a quantitative kinematic graph, and then relate them using the kinematic equations.",
             "uuid": "a6330e39-0a80-4928-bb85-d93db8e7263d",
-            "id": "",
+            "id": "a6330e",
             "inClass_honors": true
           },
           "kinematic_equations_4":
@@ -2965,7 +2965,7 @@
             "objective": "Numerically solve the kinematic equations for step-wise motion.",
             "content": "The kinematic equations can be when some object changes acceleration but its motion can be broken to several unique steps of independent motion.",
             "uuid": "be3e1545-b796-4a4a-bd4f-54078b8afe1b",
-            "id": "",
+            "id": "be3e15",
             "inClass_AP": true
           },
           "kinematic_equations_as_functions":
@@ -2977,7 +2977,7 @@
             "prerequisites": ["kinematic_equations_4"],
             "objectives": "Write the kinematic equations as functions; explain this transition",
             "uuid": "00344340-ce36-4461-bccd-d3e9042fe69a",
-            "id": ""
+            "id": "003443"
           },
           "quantitative_kinematic_graphs_4A":
           {
@@ -2989,7 +2989,7 @@
             "objective": "Given a quantitative position-time graph for single-step motion, draw correct quantitative velocity-time and acceleration-time graphs.",
             "content": "The kinematic equations and geometric relationships can gain information about velocity and acceleration from a position-time graph.",
             "uuid": "02659fff-3620-415c-b9fd-b1790d8b95b0",
-            "id": ""
+            "id": "02659f"
           },
           "quantitative_kinematic_graphs_4B":
           {
@@ -3001,7 +3001,7 @@
             "objective": "Given a quantitative velocity-time graph for single-step motion, draw correct quantitative position-time and acceleration-time graphs.",
             "content": "The kinematic equations and geometric relationships can gain information about displacement and acceleration from a velocity-time graph.",
             "uuid": "a65ba3d1-58f9-47cf-820a-bc52b5e3fe85",
-            "id": "",
+            "id": "a65ba3",
             "inClass_AP": true
           },
           "quantitative_kinematic_graphs_4C":
@@ -3014,7 +3014,7 @@
             "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs.",
             "content": "The kinematic equations and geometric relationships can gain information about displacement and change in velocity from an acceleration-time graph.",
             "uuid": "b9e05631-d323-4455-8c97-c8d733f7ee86",
-            "id": ""
+            "id": "b9e056"
           },
           "kinematic_equations_symbolic":
           {
@@ -3030,7 +3030,7 @@
               "Equations not given."
             ],
             "uuid": "fd893155-1664-4e4f-9233-1f2cc2548012",
-            "id": "",
+            "id": "fd8931",
             "inClass_AP": false
           },
           "quantitative_kinematic_graphs_5":
@@ -3043,7 +3043,7 @@
             "prerequisites": ["kinematic_equations_symbolic"],
             "objective": "For a quantitative description of step-wise motion, create three quantitative kinematic graphs.",
             "uuid": "9623e6f8-58e1-4351-9259-00334761c137",
-            "id": ""
+            "id": "9623e6"
           },
           "derive_kinematic_equations":
           {
@@ -3054,7 +3054,7 @@
             "prerequisites": ["quantitative_kinematic_graphs_5"],
             "objective": "Use the core mathematical principles of kinematics to prove each of the four kinematic equations is true under the special case of constant acceleration.",
             "uuid": "995d9306-bcbf-40ef-a520-50aeb1c02c4f",
-            "id": "",
+            "id": "995d93",
             "memorization": true
           },
           "fundamental_theorem_calculus":
@@ -3066,7 +3066,7 @@
             "prerequisites": ["derive_kinematic_equations"],
             "objective": "Using only algebra and a conceptual understanding of calculus, demonstrate the fundamental theorem of calculus for the special case of motion with a constant acceleration by using graphs, defining derivatives and integrals, and relating the graphs to the kinematic equations.",
             "uuid": "56cc26c9-fdeb-4b09-be1a-5d15d2d69259",
-            "id": ""
+            "id": "56cc26"
           },
           "flying_to_mars":
           {
@@ -3077,7 +3077,7 @@
             "prerequisites": ["fundamental_theorem_calculus"],
             "objective": "Demonstrate using kinematic equations and graphs how a spaceship can get to Mars faster through constant acceleration and deceleration.",
             "uuid": "cd6281f5-046a-4638-a5e6-47f651e83e7a",
-            "id": ""
+            "id": "cd6281"
           }
         }
       },
@@ -3092,7 +3092,7 @@
           "physics_A": "mantle"
         },
         "uuid": "149a4d0b-2417-4be1-a9fd-4130bf75322c",
-        "id": "",
+        "id": "149a4d",
         "standards":
         {
           "mass_2016": "HS-PS2-1",
@@ -3111,7 +3111,7 @@
             "prerequisites": [],
             "objective": "Create qualitative position graphs for objects moving in two different directions around an origin; define an origin and a positive and negative direction",
             "uuid": "12cacfa2-0fd9-4241-b703-d91ffa383dfd",
-            "id": ""
+            "id": "12cacf"
           },
           "velocity_acceleration_graphs_2":
           {
@@ -3123,7 +3123,7 @@
             "prerequisites": ["position_graphs_2"],
             "objective": "Using qualitative velocity and acceleration graphs, identify when an object is speeding up and slowing down and what direction an object is moving",
             "uuid": "7cd8f759-15d0-4fbe-8a82-ed8f778fe59a",
-            "id": "",
+            "id": "7cd8f7",
             "inClass_Alevel": true
           },
           "kinematic_graph_connections_2":
@@ -3136,7 +3136,7 @@
             "prerequisites": ["velocity_acceleration_graphs_2"],
             "objective": "Relate three different types of kinematic graphs for objects moving with a constant acceleration in either direction.",
             "uuid": "2230d4e9-9997-432b-8239-978badc86cda",
-            "id": ""
+            "id": "2230d4"
           },
           "kinematic_graph_comparison_3":
           {
@@ -3147,7 +3147,7 @@
             "prerequisites": ["kinematic_graph_connections_2"],
             "objective": "Compare different kinematic graphs for objects moving in different directions; answer questions such as which one is moving faster etc.",
             "uuid": "34539a35-c4cd-42f5-aaba-3f1d32e9491d",
-            "id": ""
+            "id": "34539a"
           },
           "direction_reversal_origin_relocation":
           {
@@ -3158,7 +3158,7 @@
             "prerequisites": ["kinematic_graph_comparison_3"],
             "objective": "Given all types of kinematic graphs, show how the graphs must change if a physicist decides to reverse the positive and negative direction and/or change the location of the origin.",
             "uuid": "bf8a9c9c-5bc1-4aab-a394-1cfe7b2ba423",
-            "id": ""
+            "id": "bf8a9c"
           },
           "story_to_graph_selection_3":
           {
@@ -3170,7 +3170,7 @@
             "prerequisites": ["direction_reversal_origin_relocation"],
             "objective": "Given a story, select the position-time, acceleration-time, and velocity-time graphs that reflect the story.",
             "uuid": "c50747bf-6e60-4c98-922b-10ce415c89ce",
-            "id": ""
+            "id": "c50747"
           },
           "kinematic_graph_comparison_4":
           {
@@ -3181,7 +3181,7 @@
             "prerequisites": ["story_to_graph_selection_3"],
             "objective": "Compare different kinematic graphs for objects moving in different directions; answer questions such as which one is accelerating faster etc.",
             "uuid": "27c81caf-ecb0-4080-a69c-911de31d13a2",
-            "id": ""
+            "id": "27c81c"
           },
           "story_to_graph_selection_4":
           {
@@ -3192,7 +3192,7 @@
             "prerequisites": ["kinematic_graph_comparison_4"],
             "objective": "Given a story, select the position-time, acceleration-time, and velocity-time graphs that reflect the story.",
             "uuid": "f48c2b05-f40a-44f9-959a-b8e7ec5bcfbd",
-            "id": ""
+            "id": "f48c2b"
           },
           "position_graph_connection_2":
           {
@@ -3204,7 +3204,7 @@
             "prerequisites": ["story_to_graph_selection_4"],
             "objective": "Given a qualitative position-time graph of an object moving in two directions, write a relevant story for that position-time graph and draw corresponding velocity-time and acceleration-time graphs",
             "uuid": "cb6123f0-ca81-44d5-8a3e-dad91ceefea5",
-            "id": ""
+            "id": "cb6123"
           },
           "velocity_graph_connection_2":
           {
@@ -3216,7 +3216,7 @@
             "prerequisites": ["position_graph_connection_2"],
             "objective": "Given a qualitative velocity-time graph of an object moving in two directions, write a relevant story for that velocity-time graph and draw corresponding position-time and acceleration-time graphs",
             "uuid": "05f4559a-f351-4c50-b7ac-9f39efecf888",
-            "id": ""
+            "id": "05f455"
           },
           "acceleration_graph_connection_3":
           {
@@ -3228,7 +3228,7 @@
             "prerequisites": ["velocity_graph_connection_2"],
             "objective": "Given a qualitative acceleration-time graph of an object moving in two directions with initial velocity of zero, write a relevant story for that acceleration-time graph and draw corresponding position-time and velocity-time graphs.",
             "uuid": "a4d2e6cc-4211-478e-8239-a76d44528892",
-            "id": ""
+            "id": "a4d2e6"
           },
           "velocity_graph_connection_3":
           {
@@ -3240,7 +3240,7 @@
             "prerequisites": ["acceleration_graph_connection_3"],
             "objective": "Given a qualitative velocity-time graph of an object moving in two directions, write a relevant story for that velocity-time graph and draw corresponding position-time and acceleration-time graphs; complete this task for several different initial positions",
             "uuid": "8d7f117d-98ba-4498-9235-1ea0364b64ec",
-            "id": ""
+            "id": "8d7f11"
           },
           "acceleration_graph_connection_4":
           {
@@ -3252,7 +3252,7 @@
             "prerequisites": ["velocity_graph_connection_3"],
             "objective": "Given a qualitative acceleration-time graph of an object moving in two directions, write a relevant story for that graph and draw corresponding velocity-time and position-time graphs; complete this task for initial velocity zero, positive initial velocity, and negative initial velocity",
             "uuid": "be11db60-edda-416f-9a2a-e5d0c3f4ee42",
-            "id": ""
+            "id": "be11db"
           },
           "qualitative_kinematics_advanced_2":
           {
@@ -3263,7 +3263,7 @@
             "prerequisites": ["acceleration_graph_connection_4"],
             "objective": "Given a complex description of motion, write a story that comprises this motion, and draw relevant position-time, velocity-time, and acceleration-time graphs; define an origin and a positive and negative direction within the story",
             "uuid": "5531c494-d919-496f-8516-565a76f99a0d",
-            "id": ""
+            "id": "5531c4"
           }
         }
       },
@@ -3278,7 +3278,7 @@
           "physics_A": "mantle"
         },
         "uuid": "88e0caed-d0db-451c-be13-d70fbb908d15",
-        "id": "",
+        "id": "88e0ca",
         "standards":
         {
           "mass_2016": null,
@@ -3296,7 +3296,7 @@
             "prerequisites": [],
             "objective": "Define vectors and scalars; identify basic vectors and scalars.",
             "uuid": "86459b3d-ab1d-46c6-bb79-e67b8fb7db82",
-            "id": ""
+            "id": "86459b"
           },
           "distance_vs_displacement":
           {
@@ -3307,7 +3307,7 @@
             "prerequisites": ["very_basic_vectors_scalars"],
             "objective": "Calculate distance and displacement for one-dimensional motion.",
             "uuid": "7531ee26-81cd-4310-a084-05c87da3cb49",
-            "id": ""
+            "id": "7531ee"
           },
           "quantitative_kinematic_graphs_6":
           {
@@ -3319,7 +3319,7 @@
             "prerequisites": ["distance_vs_displacement"],
             "objective": "Find speed and/or displacement from position and velocity graphs for objects moving in two-directions.",
             "uuid": "539f1f1c-63ac-42c1-bcb7-940f5760b07a",
-            "id": ""
+            "id": "539f1f"
           },
           "average_speed_vs_average_velocity":
           {
@@ -3330,7 +3330,7 @@
             "prerequisites": ["quantitative_kinematic_graphs_6"],
             "objective": "Calculate average speed and average velocity in simple situations; know that average speed does not include direction and average velocity does; identify situations when average velocity is zero.",
             "uuid": "75612673-cf88-4828-94b7-05a4f5e2e920",
-            "id": ""
+            "id": "756126"
           },
           "distance_displacement_position":
           {
@@ -3341,7 +3341,7 @@
             "prerequisites": ["average_speed_vs_average_velocity"],
             "objective": "Define an origin, positive direction, and negative direction; calculate distance, displacement, and position in multi-step motion",
             "uuid": "862f9e3c-8568-4eed-8163-c0a4f8313e4f",
-            "id": ""
+            "id": "862f9e"
           },
           "kinematic_equations_5":
           {
@@ -3353,7 +3353,7 @@
             "prerequisites": ["distance_displacement_position"],
             "objective": "Solve the first kinematic equation in two-directions; use relevant quantities to identify what direction an object is moving and whether is is speeding up or slowing down.",
             "uuid": "bb3229e9-afbd-4e2a-9132-77948c497437",
-            "id": ""
+            "id": "bb3229"
           },
           "kinematic_graphs_7":
           {
@@ -3366,7 +3366,7 @@
             "objective": "Given a velocity-time graph of an object moving in a constant velocity in multiple directions, draw a corresponding position-time graph; given a position-time graph of an object moving in a constatn velocity in two directions, draw a relevant velocity time graph; interpret the graphs for relevant information such as which direction an object is moving",
             "notes": "Level 2 is crowded, beef this up and make it truly level 3",
             "uuid": "93bed7bd-1a97-44af-870b-9400ebfb6692",
-            "id": ""
+            "id": "93bed7"
           },
           "kinematic_equations_6":
           {
@@ -3378,7 +3378,7 @@
             "prerequisites": ["kinematic_graphs_7"],
             "objective": "Solve all kinematic equations in two-directions; use relevant quantities to identify what direction an object is moving and whether is is speeding up or slowing down.",
             "uuid": "b8b98dd2-2b8b-44b2-8b90-043df7dc3b6f",
-            "id": ""
+            "id": "b8b98d"
           },
           "kinematic_equations_7":
           {
@@ -3390,7 +3390,7 @@
             "prerequisites": ["kinematic_equations_6"],
             "objective": "Solve real world problems with an object moving at a constant acceleration in two directions, including pop-up problems; interpret results for relevant information",
             "uuid": "3f88e29b-9cc8-4233-9b7f-0ccbdbe5070a",
-            "id": ""
+            "id": "3f88e2"
           },
           "kinematic_graphs_8":
           {
@@ -3402,7 +3402,7 @@
             "prerequisites": ["kinematic_equations_7"],
             "objective": "Find kinematic quantities from a kinematic graph of an object moving in two directions.",
             "uuid": "db03bcd2-8536-422a-9f15-2492e789805a",
-            "id": ""
+            "id": "db03bc"
           },
           "kinematic_equations_8":
           {
@@ -3414,7 +3414,7 @@
             "prerequisites": ["kinematic_graphs_8"],
             "objective": "Use the kinematic equations to analyze stepwise motion in two different directions; solve for average speed and average velocity in more complex situations.",
             "uuid": "121903fa-2016-42b8-bf79-08adcf2eca20",
-            "id": ""
+            "id": "121903"
           },
           "kinematic_graphs_9A":
           {
@@ -3426,7 +3426,7 @@
             "prerequisites": ["kinematic_equations_8"],
             "objective": "Given a position-time graph of an object moving in two different directions, draw a corresponding velocity-time graph and acceleration-time graph; includes only constant acceleration motion",
             "uuid": "b6ee0135-b023-4dce-b2bb-8248945506de",
-            "id": ""
+            "id": "b6ee01"
           },
           "kinematic_graphs_9B":
           {
@@ -3438,7 +3438,7 @@
             "prerequisites": ["kinematic_graphs_9A"],
             "objective": "Given a velocity-time graph of an object moving in two different directions, draw a corresponding position-time graph and acceleration-time graph; includes only constant acceleration motion",
             "uuid": "1f87b22d-0d03-480d-827b-036091b604b1",
-            "id": ""
+            "id": "1f87b2"
           },
           "kinematic_graphs_9C":
           {
@@ -3450,7 +3450,7 @@
             "prerequisites": ["kinematic_graphs_9B"],
             "objective": "Given an acceleration-time graph of an object moving in two different directions, draw a corresponding position-time graph and velocity-time graph; includes only constant acceleration motion",
             "uuid": "08ea0b0b-554f-4b2b-a29f-49ef40551400",
-            "id": ""
+            "id": "08ea0b"
           },
           "kinematic_graphs_10":
           {
@@ -8244,7 +8244,7 @@
             "objective": "Draw and recognize diagrams that show examples of normally-shaped waves passing through each other.",
             "content": "When two waves intersect, they pass through each other without affecting each other, and as they do they sum together to make a different shaped wave.",
             "uuid": "d6a11ea3-9f6e-4011-a5a9-643039a4f74f",
-            "id": ""
+            "id": "d6a11e"
           },
           "interference_diagrams_2":
           {
@@ -8253,7 +8253,7 @@
             "objective": "Draw and recognize diagrams that show non-regular examples of waves passing through each other.",
             "content": "When two waves interfere, they sum together; if the two waves are irregularly shaped they make new shapes that are often unpredictable.",
             "uuid": "eccbce93-2269-46db-ba86-321b48df873a",
-            "id": ""
+            "id": "eccbce"
           },
           "wave_diagrams_3":
           {
@@ -8262,7 +8262,7 @@
             "objective": "Draw and label diagrams that include multiple instances of reflection and refraction.",
             "content": "A ray of light can reflect off one surface and then refract through another, creating a pattern that is less obvious, but that can be tracked.",
             "uuid": "a5d2f18f-970f-4f73-b342-42a1519eb3a0",
-            "id": ""
+            "id": "a5d2f1"
           },
           "snells_law_basic":
           {
@@ -8271,7 +8271,7 @@
             "objective": "Draw and label quantitative diagrams of refraction using Snell's Law.",
             "content": "Snell's Law is a formula that allows a physicist to predict at what angle a light way will refract from the index of refraction of the materials the light crosses through.",
             "uuid": "15047c5f-da45-4514-a3e5-91d95127cd2c",
-            "id": ""
+            "id": "15047c"
           },
           "huygens_principle":
           {
@@ -8280,7 +8280,7 @@
             "objective": "Use and diagram Huygen's Principle to explain why refraction occurs.",
             "content": "Huygen's Principle states that every point on a wavefront  can be considered a new source of wavefronts; Huygen's principle can illustrate why a wave curves around a barrier.",
             "uuid": "93a88819-fd25-4d81-9b03-0d6a277645d9",
-            "id": ""
+            "id": "93a888"
           },
           "diffraction_grating_diagram":
           {
@@ -8289,7 +8289,7 @@
             "objective": "Draw diagrams that illustrate interference patterns as light travels through a diffraction grating.",
             "content": "When light travels through a pattern of small holes, it first diffracts, then diffracted wavefronts interfere to create a pattern of dots or bands.",
             "uuid": "91848338-15d1-478f-85a4-019143ca42ac",
-            "id": ""
+            "id": "918483"
           },
           "snells_law_prism":
           {
@@ -8298,7 +8298,7 @@
             "objective": "Use Snell's law to explain how a prism splits light into colors.",
             "content": "Each wavelength of light has a slightly different index of refraction in glass and water, causing each wavelength to bend at a different angle and spread out all colors.",
             "uuid": "e976da72-2027-4ef3-b010-fa6ad4743459",
-            "id": ""
+            "id": "e976da"
           },
           "finding_speed_of_light":
           {
@@ -8308,7 +8308,7 @@
             "content": "The speed of light can be determined by having two beams travel different distances and interfere, causing a difference in phase that can be measured.",
             "notes": "Should be moved to lab unit?",
             "uuid": "aedf2b91-a3b6-4f49-9a11-d57e95049216",
-            "id": ""
+            "id": "aedf2b"
           },
           "diffraction_grating_formula":
           {
@@ -8317,7 +8317,7 @@
             "objective": "Use the diffraction grating formula to derive the wavelength of light.",
             "content": "By studying the patterns of dots and bands produced when light travels through a diffraction grating, a physicist can derive a formula for the wavelength of specific colors of light.",
             "uuid": "34296eff-cea6-4f8f-8414-9ff78264d32b",
-            "id": ""
+            "id": "34296e"
           },
           "discovery_of_dna_structure":
           {
@@ -8326,7 +8326,7 @@
             "objective": "Using a diagram of X-Ray diffraction, describe the structure of DNA and defend your answer.",
             "content": "The pattern of a DNA molecules was determined by seeing the interference pattern made by X-Rays diffracting as they crossed through the bands of DNA.",
             "uuid": "1cf009f9-35d8-4f28-beb2-8881814b9bf0",
-            "id": ""
+            "id": "1cf009"
           },
           "rainbows_quantitative":
           {
@@ -8335,7 +8335,7 @@
             "objective": "Use Snell's Law and diagrams of refraction and reflection to quantitatively and qualitatively explain how a rainbow is made from raindrops.",
             "content": "A physicist can use Snell's law and the laws of reflection to create a quantitative model of how a rainbow exists.",
             "uuid": "b237b9ba-d6fd-48fe-9e29-8b6db9f5cd73",
-            "id": ""
+            "id": "b237b9"
           }
         }
       },
@@ -8350,7 +8350,7 @@
           "physics_A": "outerCore"
         },
         "uuid": "cfa4b5af-bb9d-48f5-9fbe-92367afab5e5",
-        "id": "",
+        "id": "cfa4b5",
         "enduring_understandings":
         [
           "The electromagnetic spectrum contains seven types of electromagnetic waves, including visible light.",
@@ -8377,7 +8377,7 @@
             "objective": "Remember basic facts about electromagnetic waves.",
             "content": "Electromagnetic waves are oscillations of electric and magnetic energy; all electromagnetic waves move at 300,000,000 m/s; electromagnetic waves can move through vacuums; electromagnetic waves are transverse.",
             "uuid": "a9540897-b578-471b-b7e6-6ef82ab8b034",
-            "id": ""
+            "id": "a95408"
           },
           "electromagnetic_spectrum_1":
           {
@@ -8389,7 +8389,7 @@
             "objective": "Memorize the Electromagnetic Spectrum and the colors separately in order from longest to shortest wavelength; relate different waves using the terms wavelength and frequency",
             "content": "Each color has a specific wavelength and frequency that defines that color; each type of electromagnetic wave has a specific wavelength and frequency that define that wave; wavelength and frequency are inversely proportional",
             "uuid": "ddf3042b-77f1-4563-85ae-8f305f062a84",
-            "id": ""
+            "id": "ddf304"
           },
           "choosing_color_by_wavelength":
           {
@@ -8401,7 +8401,7 @@
             "objective": "For visible electromagnetic waves of specific wavelengths, determine the color of that wave.",
             "content": "The wavelength of each electromagnetic wave determines what color that wave is; visible light spans from 400 nm to 700 nm",
             "uuid": "b645cf14-82dd-4abd-a54a-5192edfd2afa",
-            "id": ""
+            "id": "b645cf"
           },
           "electromagnetic_spectrum_2":
           {
@@ -8413,7 +8413,7 @@
             "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer).",
             "content": "The electromagnetic spectrum can be broken into six invisible waves and six visible colors; these categories have different wavelength, frequency, and energy; all electromagnetic waves have the same speed.",
             "uuid": "cf1f0144-0682-4e15-a3e1-00d119f0171a",
-            "id": ""
+            "id": "cf1f01"
           },
           "classify_electromagnetic_wave_by_wavelength_1":
           {
@@ -8427,7 +8427,7 @@
             "limits": "All values are given in SI scientific notation and not in metric units",
             "content": "Any electromagnetic wave is categorized into a particular type by its wavelength; wavelength can span from over one meter to 10^-12 m, so a through knowledge of scientific notation is necessary to properly categorize waves.",
             "uuid": "6267c7c8-0b48-46da-940a-5dff739561c6",
-            "id": ""
+            "id": "6267c7"
           },
           "classify_electromagnetic_wave_by_wavelength_2":
           {
@@ -8441,7 +8441,7 @@
             "limits": "Includes values in metric units.",
             "content": "The wavelength of an electromagnetic wave can is frequently expressed in metric units; by understanding these metric units a physicist can better classify electromagnetic waves.",
             "uuid": "c748898f-b11b-41b9-b50c-92654252232c",
-            "id": ""
+            "id": "c74889"
           },
           "photon_formulas_1":
           {
@@ -8453,7 +8453,7 @@
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step",
             "content": "Physicists use two key formulas to relate the wavelength, frequency, and energy of an electromagnetic photon.",
             "uuid": "4c74b097-4a1b-4073-a61c-9431e4604d18",
-            "id": ""
+            "id": "4c74b0"
           },
           "electromagnetic_wave_proportionality":
           {
@@ -8465,7 +8465,7 @@
             "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules.",
             "content": "The energy of an electromagnetic photon is directly proportional to its frequency and inversely proportional to its wavelength; a physicist can use these relationships to better comprehend electromagnetic waves.",
             "uuid": "356741c9-6b87-4d47-9122-556fe1a6224f",
-            "id": ""
+            "id": "356741"
           },
           "photon_formulas_2":
           {
@@ -8477,7 +8477,7 @@
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems are asked in all directions in tabular form",
             "content": "Because the wavelength, frequency, and energy electromagnetic photons comprise such as wide range of magnitudes, rarely used metric units are frequently used to express them; these units must be properly converted before and after using any formula",
             "uuid": "3928e505-a30c-4a50-8246-854f9ad2f77c",
-            "id": ""
+            "id": "3928e5"
           },
           "logarithmic_graph_electromagnetic_spectrum_1":
           {
@@ -8489,7 +8489,7 @@
             "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ONE of the following: wavelength, energy, and frequency; express the logarithmic value on the axis",
             "content": "Due to the wide range of wavelengths in the electromagnetic spectrum, the electromagnetic spectrum can only be properly visualized on a logarithmic scale",
             "uuid": "5d11cf11-765f-4341-99af-e4ca062e14d6",
-            "id": ""
+            "id": "5d11cf"
           },
           "logarithmic_graph_electromagnetic_spectrum_2":
           {
@@ -8501,7 +8501,7 @@
             "objective": "Create a logarithmic axis which shows the range of each type of electromagnetic wave with scales in terms of ALL THREE of the following: wavelength, energy, and frequency; express graph using a logarithmic scale but numbers written in linear",
             "content": "A logarithmic scale can be used to describe the electromagnetic spectrum using either wavelength, frequency, or photon energy as a categorizing quantity.",
             "uuid": "d8016665-3351-4afc-993c-1ef2112c38d8",
-            "id": ""
+            "id": "d80166"
           },
           "space_photos":
           {
@@ -8513,7 +8513,7 @@
             "objective": "Explain, and do some examples, how photos are made of non-visible light objects in space.",
             "content": "NASA and similar organizations collect vast amounts of numerical data from telescopes; beautiful photos that are publicized as space are often constructed by correlating invisible electromagnetic wavelengths to visible ones.",
             "uuid": "a8c56f2c-c341-4b0e-93ee-7a8234c490b9",
-            "id": ""
+            "id": "a8c56f"
           },
           "visible_light_human_experience":
           {
@@ -8525,7 +8525,7 @@
             "objective": "From your knowledge of the electromagnetic spectrum, surmise philosophical conclusions on the human experience and the role of humans in the universe.",
             "content": "The human eye reacts to an almost immeasurably  tiny portion of the electromagnetic spectrum; philosophers seeking to understand humanity's place int he universe must contend with this fact.",
             "uuid": "487c10ea-34d9-4ca3-89e4-c276aa25a214",
-            "id": ""
+            "id": "487c10"
           }
         }
       },
@@ -8540,7 +8540,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "b81577f0-2a1f-43f0-b2b4-60a8174053ed",
-        "id": "",
+        "id": "b81577",
         "notes":
         [
           "I still need to add goals related to additive and subtractive processes"
@@ -8568,7 +8568,7 @@
               "Why does ice appear black on an infrared camera?"
             ],
             "uuid": "91f9401e-7f04-49bf-8ea1-df2b8b2130f0",
-            "id": ""
+            "id": "91f940"
           },
           "reflection_color":
           {
@@ -8580,7 +8580,7 @@
             "objective": "Predict how objects of different color will reflect different photons of light.",
             "content": "Objects with a color reflect the color of light they are and absorb other colors; white objects reflect all photons and black objects absorb all photons.",
             "uuid": "8afc5fb6-142b-498b-aed6-544ee9095eba",
-            "id": ""
+            "id": "8afc5f"
           },
           "additive_color":
           {
@@ -8592,7 +8592,7 @@
             "objective": "Explain how colors of light combine to make different colors; relate this fact to light from the sun and flourescent lights",
             "content": "All colors of light combined create white light; humans see red, blue, and green photons with their photoreceptors; red and green light appear yellow; red and blue light appear fuscia; green and blue light appaer cyan.",
             "uuid": "947c4549-ec68-4ef3-b752-674908de50c0",
-            "id": ""
+            "id": "947c45"
           },
           "long_vs_short_wavelength":
           {
@@ -8604,7 +8604,7 @@
             "objective": "Identify long and short wavelength electromagnetic waves and explain difference in how they would interact.",
             "content": "As a rule of thumb, electromagnetic waves of long wavelength are 'tougher' and more able to move through materials unhindered; electromagnetic waves of short wavelength are 'weaker' and are more likely to be absorbed or scattered.",
             "uuid": "4a5bfac4-bb5f-4ac4-8ed6-241690d021ce",
-            "id": ""
+            "id": "4a5bfa"
           },
           "infrared_camera_advanced":
           {
@@ -8622,7 +8622,7 @@
               "How do objects of different human color appear on an infrared camera?"
             ],
             "uuid": "6a83aa43-d5cb-4b9d-b964-c0099c92327a",
-            "id": ""
+            "id": "6a83aa"
           },
           "safe_dangerous_radiation":
           {
@@ -8634,7 +8634,7 @@
             "objective": "Define the terms 'radiation' and 'electromagnetic radiations,' differentiate between ionizing radiation and non-ionizing radiation; identify the health risks associated with ionizing radiation.",
             "content": "All photons with an energy greater than 13.6 eV (in the ultraviolet range) are capable of turning an neutral atom into an ion, whick creates health risks in human bodies; the term 'radiation' in physics means all electromagnetic waves, many of which are not dangerous.",
             "uuid": "a4fc85bc-dafb-488d-8792-70bb99a54dfb",
-            "id": ""
+            "id": "a4fc85"
           },
           "subtractive_color":
           {
@@ -8646,7 +8646,7 @@
             "objective": "Explain how colors of paint combine and relate this to knowledge about how light combines and how reflection produces color.",
             "content": "Paint works by absorbing and reflecting different colors; rules of mixing paint are thus different (and somewhat opposite) as the rules of mixing light.",
             "uuid": "65eb5789-d67f-48e8-b3c0-e22843641982",
-            "id": ""
+            "id": "65eb57"
           },
           "identify_applications_electromagnetic_waves":
           {
@@ -8666,7 +8666,7 @@
               "Can dangerous waves be useful, and how."
             ],
             "uuid": "36147cec-5c74-44e6-8165-cd74d11a11c4",
-            "id": ""
+            "id": "36147c"
           },
           "long_wavelength_astronomy":
           {
@@ -8678,7 +8678,7 @@
             "objective": "Explain how astronomers conduct astronomy in the radio, microwave and infrared ranges and what objects they see in these ranges.",
             "content": "Radio and microwave astronomy are very crucial to cosmology and can be conducted easily from earth; infrared astronomy is crucial to studying the interstellar medium and is conducted via satellite",
             "uuid": "33abbcef-43c5-4b57-85e9-c2073c856302",
-            "id": ""
+            "id": "33abbc"
           },
           "short_wavelength_astronomy":
           {
@@ -8690,7 +8690,7 @@
             "objective": "Explain how astronomers conduct astronomy in the visible, ultraviolet, X-Ray and gamma ray ranges and what objects they see in these ranges.",
             "content": "Space telescopes that see visible, ultraviolet, and X-Rays are able to collect far more information about the makeup for astronomical bodies; gamma ray observations can learn about gamma ray burts or cosmic gamma rays",
             "uuid": "c52b412f-d294-4d54-a4a4-3ae198a1c287",
-            "id": ""
+            "id": "c52b41"
           },
           "why_is_the_sky_blue":
           {
@@ -8702,7 +8702,7 @@
             "objective": "Use basic principles of electromagnetic waves, especially long and short wavelengths, and human vision to explain why the sky is blue; explain why oceans are blue and sunsets are orange.",
             "content": "The sky is blue because blue photons are scattered by the atmosphere; our eyes are more sensitive to blue photons than violet photons; oceans are blue because light reflects off the water; sunsets are orange because longer wavelength photons are scattered if light must travel through more of the atmosphere.",
             "uuid": "10cb00f4-f4c9-485e-84be-96026c185694",
-            "id": ""
+            "id": "10cb00"
           },
           "climate_change":
           {
@@ -8714,7 +8714,7 @@
             "objective": "Explain why the greenhouse effect occurs and explain positive and negative results of the greenhouse effect.",
             "content": "The atmosphere absorbs and re-emits infrared radiation given off by earth, raising earth's temperature; without this effect, earth would be too cold for humans to live; more CO2 an CH4 in the atomspehre will cause more radiation to be absobred and re-emitted, raising earth's average temperature.",
             "uuid": "8ab2a6fc-8f82-4e9a-9091-d9d97ea66d76",
-            "id": ""
+            "id": "8ab2a6"
           },
           "galaxy_in_all_wavelengths":
           {
@@ -8726,7 +8726,7 @@
             "objective": "Examine photos of astronomical bodies in each region of the electromagnetic spectrum.",
             "content": "To study a single galaxy in all wavelengths gives significant knowledge about the makeup of each galaxy.",
             "uuid": "b2b44856-a579-49b1-abe9-e1086785e8f8",
-            "id": ""
+            "id": "b2b448"
           },
           "electromagnetic_rube_goldberg_device":
           {
@@ -8738,7 +8738,7 @@
             "objective": "Design a hypothetical device that uses each different type of electromagnetic wave to accomplish a small household task.",
             "content": "Electromagnetic waves of different wavelengths can trigger different sensors.",
             "uuid": "73a4a640-ec23-4f63-afa4-d3c3b432d36c",
-            "id": ""
+            "id": "73a4a6"
           }
         }
       },
@@ -8753,7 +8753,7 @@
           "physics_A": null
         },
         "uuid": "9d9df16b-75e5-4f67-ac30-df1d27874fed",
-        "id": "",
+        "id": "9d9df1",
         "standards":
         {
           "mass_2016": "",
@@ -8772,7 +8772,7 @@
             "objective": "Draw a ray diagram for a convex lens with an object outside the focal length.",
             "content": "A ray diagram shows an object and a lens; all rays that are parallel to the lens go through the focal point on the other side; where multiple rays converge an image is seen.",
             "uuid": "f262f6da-fb5b-41bf-a550-bc25816b6dfc",
-            "id": ""
+            "id": "f262f6"
           },
           "mirror_1":
           {
@@ -8784,7 +8784,7 @@
             "objective": "Draw a ray diagram for a concave mirror with an object inside the focal range",
             "content": "A ray diagram shows an object an a mirror; all rays that are parallel to the mirror reflect through the focal point; where multiple rays intersect an image is seen.",
             "uuid": "a0f0b26d-2770-4bd6-81e3-4b6479a9cc50",
-            "id": ""
+            "id": "a0f0b2"
           },
           "lens_mirror_equations_1":
           {
@@ -8796,7 +8796,7 @@
             "objective": "Predict the location of an image from the position of an object and the focal length of a lens or mirror.",
             "content": "The lens and mirror equations relate the position of an object and the focal length of a lens or mirror to the position of an image.",
             "uuid": "ac83781b-b141-415c-8be6-5ad8c0d1e5dd",
-            "id": ""
+            "id": "ac8378"
           },
           "lens_mirror_equations_2":
           {
@@ -8808,7 +8808,7 @@
             "objective": "Given the location and height of an object and the focal length of a lens or mirror, predict the location of the image, the height of the image, if the image is real or virtual, if the image is upright or inverted",
             "content": "The lens and mirror equations relate the position of an object and the focal length of a lens or mirror to the position and magnification of an image.",
             "uuid": "b49b5b9d-24eb-4060-a44d-c48465d6f551",
-            "id": ""
+            "id": "b49b5b"
           },
           "lens_2":
           {
@@ -8820,7 +8820,7 @@
             "objective": "Draw a ray diagram for a convex lens with an object inside the focal range",
             "content": "If two rays do not intersect in a ray diagram, then they can be traced back to a point where they virtually intersect and create a virtual image.",
             "uuid": "4ebc4ced-39c5-4aae-a8c3-dea60d403de4",
-            "id": ""
+            "id": "4ebc4c"
           },
           "mirror_2":
           {
@@ -8832,7 +8832,7 @@
             "objective": "Draw a ray diagram for a concave mirror with an object inside the focal range",
             "content": "Virtual images can appear in mirrors as well as lenses.",
             "uuid": "0581c2f2-a02d-489c-aa0f-a271626a4b4a",
-            "id": ""
+            "id": "0581c2"
           },
           "lens_3":
           {
@@ -8844,7 +8844,7 @@
             "objective": "Draw a ray diagram for a concave lens with an object inside or outside of the focal range",
             "content": "A concave lens follows similar rules to a convex lens, but is more likely to produce an enlarged and virtual image.",
             "uuid": "a4a26d51-070e-4ca9-acbc-c4bc87b8998b",
-            "id": ""
+            "id": "a4a26d"
           },
           "mirror_3":
           {
@@ -8856,7 +8856,7 @@
             "objective": "Draw a ray diagram for a convex mirror with an object inside or outside of the focal range",
             "content": "A convex mirror follows similar rules to a concave mirror, but is more likely to produce an enlarged and virtual image.",
             "uuid": "284f48ab-6f63-44cf-9f25-c1234801c6ba",
-            "id": ""
+            "id": "284f48"
           },
           "lens_4":
           {
@@ -8868,7 +8868,7 @@
             "objective": "For a convex or concave lenses with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the lens equations.",
             "content": "A ray diagram can be used to manually measure the location and magnification of an image made by a lens, and should return the same result as the lens equation.",
             "uuid": "bdab09f4-8722-424f-88c8-dd8f219cfc32",
-            "id": ""
+            "id": "bdab09"
           },
           "mirror_4":
           {
@@ -8880,7 +8880,7 @@
             "objective": "For a convex or concave mirror with the object in all positions, draw a ray diagram and confirm the result of the ray diagrams using the mirror equations.",
             "content": "A ray diagram can be used to manually measure the location and magnification of an image made by a mirror, and should return the same result as the mirror equation.",
             "uuid": "2733811f-552d-4995-8eaf-a7d5a04c9ad3",
-            "id": ""
+            "id": "273381"
           },
           "plane_mirrors":
           {
@@ -8892,7 +8892,7 @@
             "objective": "Draw Ray Diagrams for plane mirrors; describe the double speed phenomenon",
             "content": "A plane mirror create a virtual image that can be measured using the law of reflection; an image of a person walking towards a mirror appears to move at twice the speed the person walks.",
             "uuid": "dd44c8d3-585a-415f-ae3d-f4490cebf045",
-            "id": ""
+            "id": "dd44c8"
           },
           "multiple_lens_and_mirrors_A":
           {
@@ -8904,7 +8904,7 @@
             "objective": "Draw a ray diagram for a setup involving multiple lenses and mirrors linked together. Confirm this diagram mathces the results given from the equations.",
             "content": "A series of ray diagrams can be used to determine an image made by a sequence of multiple lenses and mirrors.",
             "uuid": "93462785-3d68-41cb-9bdf-ad4df8e87dc0",
-            "id": ""
+            "id": "934627"
           },
           "multiple_lens_and_mirrors_B":
           {
@@ -8916,7 +8916,7 @@
             "objective": "Draw a ray diagram for a setup involving multiple lenses and mirrors linked together. Confirm this diagram mathces the results given from the equations.",
             "content": "A series of ray diagrams can be used to determine an image made by a sequence of multiple lenses and mirrors.",
             "uuid": "0cc6e510-8029-4be6-ae62-0118183e8875",
-            "id": ""
+            "id": "0cc6e5"
           }
         }
       }
@@ -8927,7 +8927,7 @@
     "title": "Electric Circuits",
     "number": 10,
     "uuid": "5d1a8af0-389d-401a-aedd-812a951709d4",
-    "id": "",
+    "id": "5d1a8a",
     "units":
     {
       "circuit_construction_1":
@@ -8942,7 +8942,7 @@
         },
         "subtitle": "Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
         "uuid": "573b386d-2eb3-448f-82a1-3ffb8a248a4a",
-        "id": "",
+        "id": "573b38",
         "standards":
         {
           "mass_2016": "",
@@ -8961,7 +8961,7 @@
             "objective": "Light a bulb with one battery, one light bulb, and one wire.",
             "content": "A single bulb and battery are sufficient to a light a bulb; both ends of the battery must be connected and the light bulb must be within the circuit.",
             "uuid": "708240cf-4dd0-4e59-a687-3955e46df2e2",
-            "id": ""
+            "id": "708240"
           },
           "circuit_diagrams_1":
           {
@@ -8974,7 +8974,7 @@
             "objective": "Identify the circuit diagram symbols of batteries, light bulbs, wires, switches, resistors, and fuses",
             "content": "Circuit diagrams are a standardized way of representing circuits; each element of a circuit is represented by a standardized symbol.",
             "uuid": "d76ce11e-4419-401e-8341-e917d2ba9bb1",
-            "id": ""
+            "id": "d76ce1"
           },
           "series_vs_parallel":
           {
@@ -8986,7 +8986,7 @@
             "objective": "Build and draw simple series and parallel circuits correctly; understand advantages and disadvantages of each.",
             "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack.",
             "uuid": "8f39c5cf-bd20-488b-9ad9-d70f634bc48a",
-            "id": ""
+            "id": "8f39c5"
           },
           "insulators_vs_conductors": {
             "title": "Insulators vs Conductors",
@@ -8997,7 +8997,7 @@
             "objective": "Recognize materials that are insulators and conductors, build circuits using non-traditional materials as wires; Block a circuit with an insulator that can be removed (the mouse detector).",
             "content": "Metal materials conduct electric current while non-metal materials do not; almost all metal materials can be substituted for traditional wires in an electric circuit.",
             "uuid": "53134309-8e56-4855-adad-7858398d8c33",
-            "id": ""
+            "id": "531343"
           },
           "short_circuits":
           {
@@ -9009,7 +9009,7 @@
             "objective": "Identify and avoid building short circuits",
             "content": "A short circuit provides a path with no resistance; short circuits will overheat due to high current and will properly work resistors such as light bulbs.",
             "uuid": "87757744-3366-4fdc-a97f-af98e51ee9a7",
-            "id": ""
+            "id": "877577"
           },
           "switches_1":
           {
@@ -9022,7 +9022,7 @@
             "objective": "Connect a switch that works correctly and does not produce a short circuit.",
             "content": "A switch must be connected in series with an element to properly control that element.",
             "uuid": "36d08c9b-5cdc-4f85-a2b0-b14597abea41",
-            "id": ""
+            "id": "36d08c"
           },
           "dimness_brightness_challenges":
           {
@@ -9034,7 +9034,7 @@
             "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in parallel.",
             "content": "Adding light bulbs in series dims all bulbs; light bulbs added in parallel are all bright.",
             "uuid": "899c86ec-437b-4ecb-baf4-25bb14441c8b",
-            "id": ""
+            "id": "899c86"
           },
           "switch_challenges":
           {
@@ -9047,7 +9047,7 @@
             "content": "Switches control only circuit elements with which they are in series",
             "example": "Connect three light bulbs and three switches; switch A controls one light bulb; switch B controls two light bulbs; switch C controls all three light bulbs.",
             "uuid": "3655d76a-8fa7-4c5c-b6d5-b7a221bba6fb",
-            "id": ""
+            "id": "3655d7"
           },
           "fuses":
           {
@@ -9059,7 +9059,7 @@
             "objective": "Add a fuse to a circuit; explain the value of a fuse; identify the proper location to add a fuse to a circuit.",
             "content": "A fuse burns out if current is too high, breaking a circuit and protecting other elements; fuses should be added where they protect the entire circuit.",
             "uuid": "716b1e22-333e-4f6b-b9ae-f1a2c3584502",
-            "id": ""
+            "id": "716b1e"
           },
           "breadboards_1":
           {
@@ -9072,7 +9072,7 @@
             "objective": "Understand how a breadboard is connected, make a single bulb light on a breadboard.",
             "content": "A breadboard is a device made of holes connected by wires in a pattern; a breadboard allows physicists to quickly build complex circuits",
             "uuid": "56404cbb-c573-4f4c-b7e7-d401198ae1c4",
-            "id": ""
+            "id": "56404c"
           },
           "reading_resistors_1":
           {
@@ -9085,7 +9085,7 @@
             "content": "The resistance of a resistor is indicated by the bands of color on that resistor.",
             "limits": "Includes only the first 3 bands",
             "uuid": "c3f650b8-0c68-4fd8-b8e8-21edcf1036a2",
-            "id": ""
+            "id": "c3f650"
           },
           "combined_challenges":
           {
@@ -9098,7 +9098,7 @@
             "content": "Combining the positioning of bulbs, fuses, and switches can make complex circuits out of simple parts",
             "note": "Based on the circuit that veronica asked me about in taunton.",
             "uuid": "379c6cb5-71ea-4dce-81dc-a15ee14f7efb",
-            "id": ""
+            "id": "379c6c"
           },
           "voltmeters_ammeters_1":
           {
@@ -9111,7 +9111,7 @@
             "objective": "Properly connect voltmeters in parallel and ammeters in series",
             "content": "Voltmeters are always connected in parallel with the item they measure; ammeters are always connected in series with the item they measure.",
             "uuid": "06b52cbf-5ba3-4c6c-b2ce-c7806468fae6",
-            "id": ""
+            "id": "06b52c"
           },
           "voltmeters_ammeters_2":
           {
@@ -9124,7 +9124,7 @@
             "objective": "From a selection, identify which analog voltmeter or ammeter has the correct range for a particular circuit.",
             "content": "Each meter measures a particular order of magnitude of voltage or current, and a physicists must properly predict which would be used based on understanding the battery and resistor in a circuit.",
             "uuid": "7488df73-398e-4127-9cd7-4eca840d8cd1",
-            "id": ""
+            "id": "7488df"
           },
           "voltmeters_ammeters_3":
           {
@@ -9137,7 +9137,7 @@
             "objective": "Properly use a multimeter as a voltmeter and/or an ammeter.",
             "content": "A multimeter is a device that can be used as a voltmeter or ammeter by turning a knob; the multimeter must still be connected differently when it is connected in different ways.",
             "uuid": "56c436a5-e262-4cb9-8fdf-a4b9d6c0ff7a",
-            "id": ""
+            "id": "56c436"
           },
           "breadboards_2":
           {
@@ -9150,7 +9150,7 @@
             "objective": "Properly create series and parallel circuits on a breadboard",
             "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits.",
             "uuid": "392819ef-8717-4320-a6a6-8bf33fa6f028",
-            "id": ""
+            "id": "392819"
           },
           "different_switches":
           {
@@ -9162,7 +9162,7 @@
             "objective": "Identifying and use switches that are single or double pull and single or double throw.",
             "content": "Switches of single or double pull and single or double pull have different effects on a circuit",
             "uuid": "85e02f1e-c873-4497-8d2e-c0c1694dbd08",
-            "id": ""
+            "id": "85e02f"
           },
           "reading_resistors_2":
           {
@@ -9175,7 +9175,7 @@
             "objective": "Explain and use the fourth color band on a resistor",
             "content": "The fourth band of a resistor shows how accurate the other three bands are.",
             "uuid": "8d91a676-df71-49ab-8c41-2d0ca6cc71d7",
-            "id": ""
+            "id": "8d91a6"
           },
           "breadboards_3":
           {
@@ -9188,7 +9188,7 @@
             "objective": "Create combined series and parallel circuits off light bulbs and fuses on a breadboard",
             "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits",
             "uuid": "00566ef3-2c57-457d-82bc-3d6d40e1271c",
-            "id": ""
+            "id": "00566e"
           },
           "breadboards_4":
           {
@@ -9201,7 +9201,7 @@
             "objective": "Incorporating different types of switches on a breadboard.",
             "content": "Breadboards allow different types of switches to be incorporated into a circuit.",
             "uuid": "e2f61701-47fa-4d1e-b806-3abac32fa5b4",
-            "id": ""
+            "id": "e2f617"
           },
           "breadboards_5":
           {
@@ -9213,7 +9213,7 @@
             "objective": "Creating combined series/parallel circuits on a breadboard of resistors of different magnitude in order to achieve and measure particular current and voltage goals.",
             "content": "Combining series and parallel resistors allows a physicist to control the current in different areas of a circuit.",
             "uuid": "ef418b86-5b5a-4d1e-9f87-45eb05b9ce57",
-            "id": ""
+            "id": "ef418b"
           },
           "breadboards_6":
           {
@@ -9225,7 +9225,7 @@
             "objective": "Incorporating different types of switches into the circuits from breadboards 5",
             "content": "Breadboards allow different types of switches to be incorporated into a circuit, adding to its complexity.",
             "uuid": "2796d344-fc55-4f99-898a-7cc2dbf9005a",
-            "id": ""
+            "id": "2796d3"
           },
           "advanced_circuit_design":
           {
@@ -9237,7 +9237,7 @@
             "objective": "Given vague parameters and goals for a particular circuit, build a circuit that accomplishes the goals within the parameters.",
             "content": "An intimate knowledge of the mathematical rules of circuits allows a physicist to build a circuit with particular specifications.",
             "uuid": "684666b5-9ce5-44bf-a1d2-c3f857eb01da",
-            "id": ""
+            "id": "684666"
           }
         }
       },
@@ -9701,7 +9701,7 @@
     "title": "Thermodynamics",
     "number": 11,
     "uuid": "c224cff8-712b-42eb-b5fc-a63effc528ba",
-    "id": "",
+    "id": "c224cf",
     "notes": "These units need to be done together to be understood...for example, pods on definitions of temperature and pressure I wasn't sure where to include",
     "units":
     {
@@ -9716,7 +9716,7 @@
           "physics_A": "innerCore"
         },
         "uuid": "83ee015e-d450-4a49-a462-67dfc1d28395",
-        "id": "",
+        "id": "83ee01",
         "notes": [
           "Many of these quizzes and examples need to be combined!",
           "Does not include conduction, convection, and radiation, which must be added!"
@@ -9739,7 +9739,7 @@
             "objective": "Recognize where molecules move faster between different options.",
             "content": "When an object is warmer, the molecules that make up that object move faster.",
             "uuid": "4c4dcf72-f938-4796-a19f-7f5bebf6c3c9",
-            "id": ""
+            "id": "4c4dcf"
           },
           "states_of_matter_1":
           {
@@ -9751,7 +9751,7 @@
             "objective": "Recognize how molecules move differently within different states of matter.",
             "content": "All matter is made of moving molecules; molecules only vibrate in solids; molecules slip and slide in liquids; molecules move freely in a gas.",
             "uuid": "7369b3cb-3f5f-4e0c-8d48-83298f36c1d0",
-            "id": ""
+            "id": "7369b3"
           },
           "conduction_convection_radiation_1":
           {
@@ -9763,7 +9763,7 @@
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation",
             "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
             "uuid": "df4b4438-84dd-4839-8cca-7eff718fa286",
-            "id": ""
+            "id": "df4b44"
           },
           "air_composition":
           {
@@ -9775,7 +9775,7 @@
             "objective": "Define what chemicals compose the air",
             "content": "The air is composed of nitrogen, oxygen, carbon dioxide, water vapor, and argon",
             "uuid": "a73a7827-1b5d-4f88-bfa7-0e7c84cd5b0a",
-            "id": ""
+            "id": "a73a78"
           },
           "moving_molecules_2":
           {
@@ -9796,7 +9796,7 @@
               "trash smells worse in the summer than the winter"
             ],
             "uuid": "5980e1fd-920c-4388-9511-1864f7edc000",
-            "id": ""
+            "id": "5980e1"
           },
           "states_of_matter_2":
           {
@@ -9808,7 +9808,7 @@
             "objective": "Describe and draw diagrams showing how molecules move within each state of matter; and use the terms microscopic and macroscopic",
             "content": "The macroscopic behavior of solids, liquids, and gasses can be correlated to the microscopic behavior of their atoms.",
             "uuid": "bb51aaf8-4019-4b30-b451-0f323235e47e",
-            "id": ""
+            "id": "bb51aa"
           },
           "define_temperature":
           {
@@ -9820,7 +9820,7 @@
             "objective": "Define temperature as the average kinetic energy of molecules; define the kinetic theory of matter",
             "content": "Temperature is defined as the average kinetic energy of the molecules an an object (and/or a quantity that is equal when two objects are in thermal equilibrium); the kinetic theory of matter states that all matter is composed of moving molcules",
             "uuid": "b23ac452-c171-4413-9374-d8679c9afaf1",
-            "id": ""
+            "id": "b23ac4"
           },
           "conduction_convection_radiation_2":
           {
@@ -9832,7 +9832,7 @@
             "objective": "Recognize simple examples of heat transfer by conduction, convection, and radiation (but harder)",
             "content": "Heat transfers by conduction when two objects touch; heat transfers by convection with fluids move; heat transfers by radiation through electromagnetic waves.",
             "uuid": "097db657-4581-4d11-8309-aededcbf011c",
-            "id": ""
+            "id": "097db6"
           },
           "thermal_expansion":
           {
@@ -9844,7 +9844,7 @@
             "objective": "Describe, on both a microscopic and macroscopic level, why and how thermal expansion and contraction occur in solids, liquids, and gasses.",
             "content": "When temperature increases, molecules move faster and solids and liquids expand; when temperature decreases, molecuels move slower and solids and liquids contract.",
             "uuid": "3eab6b4c-52d5-472d-bf69-e534a741d32c",
-            "id": ""
+            "id": "3eab6b"
           },
           "air_pressure":
           {
@@ -9856,7 +9856,7 @@
             "objective": "Define air pressure, give examples of how air pressure applies, explain why humans do not feel air pressure, define atmospheric pressure.",
             "content": "Humans and all other objects are constantly bombarded by air molecules surrounding them, but do not feel it becuas it strikes every side of them equally.",
             "uuid": "40b0fa11-3dfa-4d59-ad89-c93fc72a9d35",
-            "id": ""
+            "id": "40b0fa"
           },
           "entropy_1":
           {
@@ -9868,7 +9868,7 @@
             "objective": "Define entropy, give examples of high and low entropy, and state the second law of thermodynamics.",
             "content": "Entropy is the degree of randomness in a system; the second law of thermodynamics states that the entropy of the universe is always increasing.",
             "uuid": "51fca915-5ca8-4738-bb6b-4e80c000d31b",
-            "id": ""
+            "id": "51fca9"
           },
           "entropy_2":
           {
@@ -9884,7 +9884,7 @@
               "kinetic energy turns to thermal energy when an object that was moving stops due to friction"
             ],
             "uuid": "4ca233a9-7920-49ae-90b8-68bef20e16ae",
-            "id": ""
+            "id": "4ca233"
           },
           "changes_of_state":
           {
@@ -9896,7 +9896,7 @@
             "objective": "Explain what occurs on a molecular level during a change of state; explain why temperature does not change during a change of state",
             "content": "When an object changes state, loose bonds between molecules either form or break; the molecules do not speed up or slow down.",
             "uuid": "ca94dbd5-29e4-4f67-a362-aabf45c3ed05",
-            "id": ""
+            "id": "ca94db"
           },
           "conduction_thermal_equilibrium":
           {
@@ -9908,7 +9908,7 @@
             "objective": "Relate heat transfer by conduction to the rules of heat transfer, kinetic theory, and the mechanics of collisions",
             "content": "Heat energy transfers from a warmer object to a cooler one until they have the same temperature; during heat conduction energy kinetic transfers through collisions until temperatures are equal.",
             "uuid": "7128ff9b-e846-4e89-8777-0f9d83f75710",
-            "id": ""
+            "id": "7128ff"
           },
           "evaporation":
           {
@@ -9920,7 +9920,7 @@
             "objective": "Contrast evaporation and boiling; explain how water cools due to evaporation; explain evaporation in open and closed containers.",
             "content": "Evaporation cools water because faster moving water molecules leave the water due to evaporation; liquids are frequently cooler than their environments and do not reach thermal equilibrium; liquids in sealed containers can reach thermal equilibrium.",
             "uuid": "8f6fc533-ccf8-40d9-91ed-f38294e85746",
-            "id": ""
+            "id": "8f6fc5"
           },
           "advanced_convection_and_radiation":
           {
@@ -9932,7 +9932,7 @@
             "objective": "Relate heat radiation to our knowledge of electromagnetic waves",
             "content": "All electromagnetic waves, but particularly infrared waves, transfer heat from one object to another.",
             "uuid": "1238fc80-6a2d-4320-ab0b-dc861ca83062",
-            "id": ""
+            "id": "1238fc"
           },
           "entropy_3":
           {
@@ -9944,7 +9944,7 @@
             "objective": "Compare random and non-random motion of molecules; (describe entropy change in common examples of energy transfer) -> already in entropy 2",
             "content": "When an object moves its molecules move, but not randomly; but the random motion represents the heat energy.",
             "uuid": "4f41acd6-6487-453c-ad30-94fa99c4ff1b",
-            "id": ""
+            "id": "4f41ac"
           },
           "brownian_motion":
           {
@@ -9956,7 +9956,7 @@
             "objective": "Describe how molecules appear to be moving by not traveling in a random walk model.",
             "content": "Brownian motion is a more precise, mathematical way of analyzing molecules random motion.",
             "uuid": "2180e67a-bae2-4812-9492-90187900fb29",
-            "id": ""
+            "id": "2180e6"
           },
           "entropy_probability":
           {
@@ -9974,7 +9974,7 @@
             ],
             "enrichment": "Students should read/see the play 'Arcadia' by Tom Stoppard as a part of this lesson.",
             "uuid": "6363b1ff-b343-437a-8c6f-07d9556890e0",
-            "id": ""
+            "id": "6363b1"
           }
         }
       },
@@ -9989,7 +9989,7 @@
           "physics_A": "outerCore"
         },
         "uuid": "15d623cb-79bf-4e73-87f0-2e67cf52e73d",
-        "id": "",
+        "id": "15d623",
         "standards":
         {
           "mass_2016": "",
@@ -10008,7 +10008,7 @@
             "objective": "Determine the heat energy necessary to cause a temperature change.",
             "content": "The heat energy necessary to cause a change in temperature is equal to the mass of the object time sits specific heat times the change in temperature.",
             "uuid": "80cac9cc-ada7-458f-b3dd-afcca857179f",
-            "id": ""
+            "id": "80cac9"
           },
           "thermal_contact_1":
           {
@@ -10020,7 +10020,7 @@
             "objective": "Recognize (multiple choice) how heat will move when two objects are in thermal contact; determine when such a process ends.",
             "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature.",
             "uuid": "2c3d6700-a54a-4f01-b7d1-a318a3d3758d",
-            "id": ""
+            "id": "2c3d67"
           },
           "temperature_scales":
           {
@@ -10038,7 +10038,7 @@
               "Why do we say 'degrees Celsius' and 'degrees Fahrenheit' but never 'degrees Kelvin', just 'Kelvin'"
             ],
             "uuid": "46876bb7-21ae-4046-aefc-b019150471f7",
-            "id": ""
+            "id": "46876b"
           },
           "temperature_conversions":
           {
@@ -10050,7 +10050,7 @@
             "objective": "Use formulas to convert temperatures between the three temperature scales.",
             "content": "Converting between different temperature scales involves both multiplying by a conversion factor and translating to a different zero point.",
             "uuid": "211b828e-d52a-4be8-be22-f1d6267330ef",
-            "id": ""
+            "id": "211b82"
           },
           "heat_formula_2":
           {
@@ -10062,7 +10062,7 @@
             "objective": "Solve the heat formula for mass or specific heat; determine what a material is based on specific heat.",
             "content": "The formula for heat energy can be solved for other quantities as well.",
             "uuid": "38952d55-8fd2-42ef-a427-e4b1f0182435",
-            "id": ""
+            "id": "38952d"
           },
           "heat_graphs":
           {
@@ -10075,7 +10075,7 @@
             "example": "Can you ever have water with a temperature of -10 degrees celsius",
             "content": "A heat graph shows how an object's temperature changes heat energy is added or removed; as an object changes state, heat energy is added or removed but the temperature of the object does not change",
             "uuid": "e831467c-d953-433d-b744-2c0a5fc340cc",
-            "id": ""
+            "id": "e83146"
           },
           "thermal_contact_2":
           {
@@ -10087,7 +10087,7 @@
             "objective": "Determine how heat will move when two objects are in thermal contact; determine when such a process ends.",
             "content": "Heat energy moves from an object with higher temperature to an object with lower temperature until the two objects have the same temperature.",
             "uuid": "aa3a0e6b-130d-4dba-b4c3-bf0f9ba542dc",
-            "id": ""
+            "id": "aa3a0e"
           },
           "heat_formula_3":
           {
@@ -10099,7 +10099,7 @@
             "objective": "Solve heat formula problems asking for final or initial temperature.",
             "content": "Given the amount of heat added to an object, its mass, and its specific heat, a physicist can determine the intital or final temperature of the object.",
             "uuid": "82f47751-852b-4d7c-8a1c-684cfef4d710",
-            "id": ""
+            "id": "82f477"
           },
           "heat_formula_4":
           {
@@ -10111,7 +10111,7 @@
             "objective": "Determine the amount of heat necessary to both head an object and change the state of matter of that object.",
             "content": "By combining the formula to heat needed to change temperature with the formula for heat needed to change state, a physicist can analyze the amount of heat energy necessary to progress through a multi-step process on a heat graph.",
             "uuid": "8b26b3f0-126f-45ac-8ad9-335d7ed0e0fe",
-            "id": ""
+            "id": "8b26b3"
           },
           "newtons_law_of_cooling":
           {
@@ -10123,7 +10123,7 @@
             "objective": "Model the temperature of a cooling object as an exponential decay and connect this to the zeroeth law of thermodynamics.",
             "content": "An object that is placed in a cooler environment loses heat energy due to an exponential decay.",
             "uuid": "5fee9480-0585-4bbb-8765-f766eed92f56",
-            "id": ""
+            "id": "5fee94"
           },
           "heat_formula_5":
           {
@@ -10136,7 +10136,7 @@
             "objective": "Solve a problem using the heat formula in which an object changes state of matter and you must determine final or initial temperature.",
             "content": "Through a more difficult mathematical process, physicists can determine the final or initial temperature of an object that has been through a multi-step process including changing temperature and changing state of matter.",
             "uuid": "a702e59e-ff1f-44d6-98c9-928b1b3f6448",
-            "id": ""
+            "id": "a702e5"
           },
           "heat_formula_mixture":
           {
@@ -10149,7 +10149,7 @@
             "objective": "Determine the final temperature of a mixture; determine the heat capacity of an unknown substance by placing it in water.",
             "content": "When two items are mixed in a closed system, the heat energy added to one item is equal to the heat energy subtracted from the other; physicists can use this to create a new formula and find the final temperature of the mixture or other useful information.",
             "uuid": "c34542d0-d10e-4732-b209-068807d327c1",
-            "id": ""
+            "id": "c34542"
           },
           "determine_specific_heat":
           {
@@ -10162,7 +10162,7 @@
             "objective": "Determine the specific heat of some metal using a calorimeter and water.",
             "content": "Physicists can use a mixture of a substance and water in order to find the specific heat of the metal.",
             "uuid": "6859d9f9-1bc6-4edd-9ede-185f8bd0afaa",
-            "id": ""
+            "id": "6859d9"
           }
         }
       },
@@ -10177,7 +10177,7 @@
           "physics_A": "mantle"
         },
         "uuid": "8bc5d4fb-42c6-4c70-b27c-c921f47e7b5b",
-        "id": "",
+        "id": "8bc5d4",
         "notes": "I need more on proving the ideal gas law and connecting it to the combined gas law.",
         "standards":
         {
@@ -10196,7 +10196,7 @@
             "prerequisites": [],
             "objective": "Use the formulas for thermal expansion of a solid or liquid.",
             "uuid": "fc10ec92-fbfa-490a-93d6-b3b52e8fc1d3",
-            "id": ""
+            "id": "fc10ec"
           },
           "gas_laws_1":
           {
@@ -10208,7 +10208,7 @@
             "objective": "Use gas laws built only on proportionality.",
             "limits": "Very straightforward mathematical problems; no solving for a denominator",
             "uuid": "b430189c-2826-4e8b-975b-d4757dd7ef17",
-            "id": ""
+            "id": "b43018"
           },
           "gas_laws_2":
           {
@@ -10220,7 +10220,7 @@
             "objective": "Use gas laws built only on proportionality",
             "limits": "Includes more inconvenient numbers and mathematical situations, such as solving for the denominator",
             "uuid": "ee1906c7-2e1c-48e6-9747-e4bada62f5bb",
-            "id": ""
+            "id": "ee1906"
           },
           "ideal_gas_law":
           {
@@ -10231,7 +10231,7 @@
             "prerequisites": [],
             "objective": "Solve the ideal gas law.",
             "uuid": "00e37a84-ab18-4a43-9649-415ab11e6afe",
-            "id": ""
+            "id": "00e37a"
           },
           "combined_gas_law":
           {
@@ -10242,7 +10242,7 @@
             "prerequisites": [],
             "objective": "Defend and solve the combined gas law; differentiate between the combined gas law and the ideal gas law; explain why gas laws are ueful and necessary",
             "uuid": "5bcbe834-7c6f-4724-9301-04b27c3f7556",
-            "id": ""
+            "id": "5bcbe8"
           },
           "thermal_expansion_advanced":
           {
@@ -10253,7 +10253,7 @@
             "prerequisites": [],
             "objective": "Solve complex real world thermal expansion problems, such as the thermal expansion of the oceans.",
             "uuid": "5caab42d-2ff4-4033-8870-701d4a8c7472",
-            "id": ""
+            "id": "5caab4"
           },
           "prove_ideal_gas_law":
           {
@@ -10264,7 +10264,7 @@
             "prerequisites": [],
             "objective": "Through both mathematical and conceptual arguments, prove the ideal gas law from the combined gas law.",
             "uuid": "2bba710f-77ce-40d5-a37a-284a921da459",
-            "id": ""
+            "id": "2bba71"
           }
         }
       },
@@ -10279,7 +10279,7 @@
           "physics_A": null
         },
         "uuid": "0c45ad33-758a-42f7-9e1d-57313bcf1abb",
-        "id": "",
+        "id": "0c45ad",
         "idea": "This unit will deal with heat processes on P-V graphs.",
         "display": false,
         "standards":
@@ -10300,7 +10300,7 @@
           "physics_A": null
         },
         "uuid": "ec3a9078-3b52-43e1-8883-e8cf2e663642",
-        "id": "",
+        "id": "ec3a90",
         "display": false,
         "standards":
         {
@@ -10317,7 +10317,7 @@
     "title": "Fluid Dynamics",
     "number": 12,
     "uuid": "dca0df21-7f2d-48b7-b013-8a5fd0a1b56c",
-    "id": "",
+    "id": "dca0df",
     "display": false,
     "units":
     {}
@@ -10328,7 +10328,7 @@
     "title": "Atomic Physics",
     "number": 13,
     "uuid": "4e33dbd6-6c90-4419-900f-fb3dea1e1aa5",
-    "id": "",
+    "id": "4e33db",
     "units":
     {
       "nuclear_reaction_formulas":
@@ -10342,7 +10342,7 @@
           "physics_A": "mantle"
         },
         "uuid": "4ce04daf-dadd-437e-9e37-e33710931f8c",
-        "id": "",
+        "id": "4ce04d",
         "standards":
         {
           "mass_2016": "",
@@ -10361,7 +10361,7 @@
             "objective": "Identify the parts of an atom, with a particular focus on the nucleus; identify that most of the mass but very little space is contained in the nucleus of an atom.",
             "content": "An atom is composed of neutrons and protons in a nucleus and electrons surrounding the nucleus; the nucleus comprises only a tiny portion of the space in an atom but almost all of the mass of an atom; nuclear physics deals with changes to the nucleus of an atom.",
             "uuid": "aa2a4192-bcfd-47dc-a2f4-5cb37ae96811",
-            "id": ""
+            "id": "aa2a41"
           },
           "counting_parts_nucleus":
           {
@@ -10373,7 +10373,7 @@
             "objective": "Count the protons and neutrons in a nucleus; represent a nucleus in nuclide notation",
             "content": "The atomic number of a nucleus gives the number of protons and the charge; the mass number gives the total number of protons and neutrons; nuclide notation represents a nucleus by its atoic symbol, charge, and mass.",
             "uuid": "54c0944e-1136-4764-83f6-c8eb4c4bf11f",
-            "id": ""
+            "id": "54c094"
           },
           "atomic_mass_vs_mass_number":
           {
@@ -10385,7 +10385,7 @@
             "objective": "Differentiate between atomic mass and mass number; explain when each is useful",
             "content": "The mass number is the mass of an individual nucleus and the atomic mass is the average mass of all nuclei of that element.",
             "uuid": "a12dfb4d-bfa5-4cf8-b1e8-69ec537e2df7",
-            "id": ""
+            "id": "a12dfb"
           },
           "alpha_beta_decay":
           {
@@ -10397,7 +10397,7 @@
             "objective": "Draw reactions involving alpha or beta decay of an isotope.",
             "content": "In alpha decay, a nucleus gives off a Helium-4 nucleus; in beta decay a nucleus gives off an electron.",
             "uuid": "d92bcb89-ca28-4d8a-9b8a-f454592b958c",
-            "id": ""
+            "id": "d92bcb"
           },
           "complete_nuclear_reaction":
           {
@@ -10409,7 +10409,7 @@
             "objective": "Complete a nuclear reaction formula that has missing information; identify the reaction as fission, fusion, or decay.",
             "content": "A nuclear reaction is balanced by following the conservations of charge and mass; in a fission reaction a large nucleus breaks into many parts; in a fusion reaction multiple small nuclei combine to make a large nucleus",
             "uuid": "92c2aa0e-f0ae-4118-af4a-52019cb2b93a",
-            "id": ""
+            "id": "92c2aa"
           },
           "identify_crucial_particles":
           {
@@ -10421,7 +10421,7 @@
             "objective": "Identify the particles most crucial to understanding nuclear reactions.",
             "content": "The most important particles in nuclear reactions include alpha and beta particles, positrons, neutrinos, and different isotopes of hydrogen.",
             "uuid": "98ab58a0-8c9c-4bbe-9ff6-110e9b847586",
-            "id": ""
+            "id": "98ab58"
           },
           "simple_half_life":
           {
@@ -10435,7 +10435,7 @@
             "limits": "Problems in this pod do not require the half-life to be represented as a function.",
             "example": "If an isotope has a half-life of 3 years and you have 32 grams of the isotope, how much mass will you have after 9 years?",
             "uuid": "f546aaa6-7dc2-49f7-828f-452a75ae25a5",
-            "id": ""
+            "id": "f546aa"
           },
           "written_reactions_1":
           {
@@ -10448,7 +10448,7 @@
             "content": "A physicist can translate between nuclear reactions written in words and formulas of those reactions",
             "example": "uranium-238 undergoes alpha decay, write the reaction; a hydrogen atom and an alpha particle fuse, write the reaction",
             "uuid": "7f6844f7-66bd-41ea-88bf-32bfabc0ea13",
-            "id": ""
+            "id": "7f6844"
           },
           "written_reactions_2":
           {
@@ -10461,7 +10461,7 @@
             "content": "A physicist can translate between nuclear reactions written in words and formulas of those reactions",
             "notes": "This crucial topic should be broken into two sections",
             "uuid": "2ea95fd2-a83b-4050-b868-9ceba1f0f38a",
-            "id": ""
+            "id": "2ea95f"
           },
           "half_life_formulas":
           {
@@ -10473,7 +10473,7 @@
             "objective": "Represent half-life through an exponential decay function; use these formulas properly",
             "content": "The half-life can be represented mathematically through an exponential decay function.",
             "uuid": "1f299cfe-c4d6-4bd1-bf3f-0590c38ab3f3",
-            "id": ""
+            "id": "1f299c"
           },
           "calculate_atomic_mass":
           {
@@ -10485,7 +10485,7 @@
             "objective": "Calculate the atomic mass of an element from a weighted average of isotopes and explain the purpose of this calculation.",
             "content": "Atomic mass is calculated through a weighted average of all isotopes of an element.",
             "uuid": "7142ed0c-8ed4-40d7-b4f2-1e615ae24fd1",
-            "id": ""
+            "id": "7142ed"
           },
           "decay_chain":
           {
@@ -10497,7 +10497,7 @@
             "objective": "Use a table of isotopes to draft a decay chain for a particular isotope.",
             "content": "A table of isotopes shows the decay patterns of each isotope; a physicist can use this information to show the process by which a nucleus decays until it becomes a stable nucleus.",
             "uuid": "2708d867-e664-4e1d-b783-40aac856e09a",
-            "id": ""
+            "id": "2708d8"
           },
           "nuclear_reactions_sun":
           {
@@ -10509,7 +10509,7 @@
             "objective": "Write and analyze the nuclear reactions occurring inside the sun; explain how they produce energy.",
             "content": "Nuclear fusion reactions in the sun release enormous amounts of energy.",
             "uuid": "a3df6ae8-f120-4a9a-b7d0-7f0d0481465e",
-            "id": ""
+            "id": "a3df6a"
           },
           "remnants_isotope":
           {
@@ -10522,7 +10522,7 @@
             "content": "By combining information about a decay chain with the half life of each step, a physicist can determine what amounts of different elements will be present after a certain time spend decaying.",
             "notes": "Good lead-in to a computation problem; should include some discussion of Technetium",
             "uuid": "940d640b-cddb-4e60-94da-85dae1d35b9c",
-            "id": ""
+            "id": "940d64"
           }
         }
       },
@@ -10537,7 +10537,7 @@
           "physics_A": "mantle"
         },
         "uuid": "1a60b911-3099-41b0-a84b-cf657a76fa64",
-        "id": "",
+        "id": "1a60b9",
         "standards":
         {
           "mass_2016": "",
@@ -10555,7 +10555,7 @@
             "prerequisites": [],
             "objective": "Identify parts of an atom; know that nuclear reactions occur only in the nucleus of the atom; define terms 'radioactive' and 'radioactivity",
             "uuid": "23ac3059-f89e-4d2b-9a5c-b8e6607fc492",
-            "id": ""
+            "id": "23ac30"
           },
           "fission_fusion_decay":
           {
@@ -10566,7 +10566,7 @@
             "prerequisites": [],
             "objective": "Differentiate between three types of nuclear reactions: fission, fusion, and decay",
             "uuid": "9ffd7d0c-abf7-402f-b173-51f4f8f27036",
-            "id": ""
+            "id": "9ffd7d"
           },
           "why_nucleus_decays":
           {
@@ -10577,7 +10577,7 @@
             "prerequisites": [],
             "objective": "Explain why a nucleus decays",
             "uuid": "79ec4cbc-422d-4153-94c9-bbc2a315d890",
-            "id": ""
+            "id": "79ec4c"
           },
           "nuclear_vs_chemical_reactions":
           {
@@ -10588,7 +10588,7 @@
             "prerequisites": [],
             "objective": "Differentiate between nuclear and chemical reactions; identify whether a formula depicts a nuclear reaction or a chemical reaction.",
             "uuid": "f40a2f31-e728-425f-ad8a-7eb4d9bbb5f2",
-            "id": ""
+            "id": "f40a2f"
           },
           "nuclear_reaction_danger":
           {
@@ -10600,7 +10600,7 @@
             "objective": "Assess the danger of different types of nuclear reactions",
             "notes": "Requires previous knowledge of the electromagnetic spectrum.",
             "uuid": "757007e3-4167-4c1c-952d-dccf99832c4d",
-            "id": ""
+            "id": "757007"
           },
           "nuclear_reactions_stars":
           {
@@ -10612,7 +10612,7 @@
             "objective": "Explain the processes of stars by using the concept of nuclear reaction.",
             "notes": "Requires previous knowledge of gravity.",
             "uuid": "c6c7f29a-cddb-4f04-a8b2-c24309ace45d",
-            "id": ""
+            "id": "c6c7f2"
           },
           "artificially_created_elements_1":
           {
@@ -10623,7 +10623,7 @@
             "prerequisites": [],
             "objective": "Explain how new elements can be artificially created; draw reactions that go with those examples.",
             "uuid": "a24daa0b-7784-4a75-8774-1d8ec2d4b81c",
-            "id": ""
+            "id": "a24daa"
           },
           "artificially_created_elements_2":
           {
@@ -10634,7 +10634,7 @@
             "prerequisites": [],
             "objective": "Explain more complex examples of how new elements can be artificially created; draw reactions that go with those examples.",
             "uuid": "91a68401-eb53-4b95-b830-c1ef29bc52b1",
-            "id": ""
+            "id": "91a684"
           },
           "isotopes_uranium":
           {
@@ -10645,7 +10645,7 @@
             "prerequisites": [],
             "objective": "Explain the importance of different isotopes of uranium for the creation of a nuclear reactor or a nuclear bomb; examine how different isotopes are isolated.",
             "uuid": "46986af2-27bd-430c-a6cf-7b3c87ad7501",
-            "id": ""
+            "id": "46986a"
           },
           "periodic_table_cosmology":
           {
@@ -10656,7 +10656,7 @@
             "prerequisites": [],
             "objective": "Explain, using descriptions of reactions, how heavier elements within the universe can be created.",
             "uuid": "50320b12-03ab-4ae2-a766-bc0019e937eb",
-            "id": ""
+            "id": "50320b"
           }
         }
       },
@@ -10671,7 +10671,7 @@
           "physics_A": "mantle"
         },
         "uuid": "1df6f12d-d10a-4d45-b52a-cea8af9cd089",
-        "id": "",
+        "id": "1df6f1",
         "standards":
         {
           "mass_2016": "",
@@ -10689,7 +10689,7 @@
             "prerequisites": [],
             "objective": "Determine the difference between different energy levels of an atom.",
             "uuid": "80e08245-6970-4273-987e-aa27c946d0b1",
-            "id": ""
+            "id": "80e082"
           },
           "photons_atoms":
           {
@@ -10700,7 +10700,7 @@
             "prerequisites": [],
             "objective": "Explain how and why photons of a precise energy can be emitted or absorbed by an atom, refer to electrons and energy levels in your answer",
             "uuid": "69073677-7d1e-43fd-b54a-fc299a33db88",
-            "id": ""
+            "id": "690736"
           },
           "energy_levels_photons":
           {
@@ -10711,7 +10711,7 @@
             "prerequisites": [],
             "objective": "Given an atom of various energy levels, determine the wavelength, frequency, and color or type of wave that can be emitted by that atom.",
             "uuid": "151dc4d4-ea26-4ce8-9e1f-b73da92eaeac",
-            "id": ""
+            "id": "151dc4"
           },
           "ionizing_radiation":
           {
@@ -10722,7 +10722,7 @@
             "prerequisites": [],
             "objective": "Differentiate between ionizing and non-ionizing radiation",
             "uuid": "c2554a92-dc34-4e8a-9542-d713a2fa2b35",
-            "id": ""
+            "id": "c2554a"
           },
           "cell_phone_controversy":
           {
@@ -10733,7 +10733,7 @@
             "prerequisites": [],
             "objective": "Evaluate the danger of devices that emit electromagnetic waves such as cellphones; defend choices using knowledge of atomic structure and electromagnetic waves.",
             "uuid": "c1926521-1027-425c-a756-cc50c0dfc6d1",
-            "id": ""
+            "id": "c19265"
           },
           "bands_spectrum":
           {
@@ -10744,7 +10744,7 @@
             "prerequisites": [],
             "objective": "Given a spectrum showing bands of particular wavelengths, recognize the bands by consulting a table of energy levels.",
             "uuid": "c4b34772-32c5-40f5-86b4-10f278d4f3bb",
-            "id": ""
+            "id": "c4b347"
           },
           "neon_lights":
           {
@@ -10755,7 +10755,7 @@
             "prerequisites": [],
             "objective": "Use the chemical composition of a neon tube to determine what color a neon light will shine.",
             "uuid": "244c5d9b-defe-4d09-bd70-fb4411f87d95",
-            "id": ""
+            "id": "244c5d"
           },
           "astrochemistry":
           {
@@ -10766,7 +10766,7 @@
             "prerequisites": [],
             "objective": "Determine the chemical composition of an astronomical body using a spectrum of that body and a table of energy levels between atoms; defend choices.",
             "uuid": "d7c89687-2e91-42b7-9a74-3f4f23ab7551",
-            "id": ""
+            "id": "d7c896"
           }
         }
       },
@@ -10782,7 +10782,7 @@
         },
         "notes": "A brief introduction to some concepts that would be covered in a college quantum mechanics course, but not including solutions to the Schrodinger equation.",
         "uuid": "45760652-3931-4e35-9997-a5ab2052be64",
-        "id": "",
+        "id": "457606",
         "display": false,
         "standards":
         {
@@ -10799,7 +10799,7 @@
     "title": "Relativity",
     "number": 14,
     "uuid": "8f64f0f0-aba3-4e17-84b4-78875c422cf3",
-    "id": "",
+    "id": "8f64f0",
     "display": false,
     "units":
     {
@@ -10815,7 +10815,7 @@
           "physics_A": null
         },
         "uuid": "47254750-bdd9-4796-a766-2aeec453c3d1",
-        "id": "",
+        "id": "472547",
         "standards":
         {
           "mass_2016": "",
@@ -10836,7 +10836,7 @@
           "physics_A": null
         },
         "uuid": "2f705f14-0d19-44f7-a029-ce9ea8c645a0",
-        "id": "",
+        "id": "2f705f",
         "standards":
         {
           "mass_2016": "",
