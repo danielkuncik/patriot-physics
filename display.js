@@ -208,7 +208,7 @@ const display_practice_submission_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         totalAttempts: req.totalAttemps,
-        submissionLink: `/submitPractice/${req.params.pod_id}`,
+        submissionLink: `/submitPractice/${req.params.id}`,
         successFlash: req.flash('successFlash'),
         dangerFlash: req.flash('dangerFlash')
     })

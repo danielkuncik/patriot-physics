@@ -222,7 +222,6 @@ const submit_practice = (req, res, next) => {
         res.redirect('/');
         // need a flash!
     } else {
-        console.log('here');
         let imageURL_1, imagePUBLIC_ID_1, imageURL_2, imagePUBLIC_ID_2, imageURL_3, imagePUBLIC_ID_3, imageURL_4, imagePUBLIC_ID_4, imageURL_5, imagePUBLIC_ID_5, imageURL_6, imagePUBLIC_ID_6;
         if (req.files[0]) {
             imageURL_1 = req.files[0].url;

@@ -872,7 +872,7 @@ hbs.registerHelper('practiceLink', (loggedIn, practiceObject, id, practiceCommen
 
     let string = `<p>${message}</p>`;
     if (link) {
-        string = string + `<a href = '/practiceSubmission/${id}'>SUBMIT PRACTICE PAGE</a>`;
+        string = string + `<a href = '/submitPractice/${id}'>SUBMIT PRACTICE PAGE</a>`;
         if (practiceComments) {
             string = string + `<p>${practiceComments}</p>`;
         }

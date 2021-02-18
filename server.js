@@ -369,22 +369,6 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
 });
 
 
-app.get('/practiceSubmission/:pod_id', [db.check_if_logged_in, (req, res, next) => {
-  const idLibraryObject = idLibrary[req.params.pod_id];
-  if (!idLibraryObject || idLibraryObject.type !== 'pod') {
-    req.flash('dangerFlash','ERROR: Pod Not Found');
-    res.redirect('/');
-  } else {
-    req.superUnitKey = idLibraryObject.superUnitKey;
-    req.unitKey = idLibraryObject.unitKey;
-    req.podKey = idLibraryObject.podKey;
-    next();
-  }
-}, (req, res, next) => {
-
-    // space to check if this is the correct practice to be submitted
-    next()
-}, disp.display_practice_submission_page]);
 
 
 
@@ -537,22 +521,43 @@ app.post('/quiz/:id', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_l
     res.redirect('/');}]);
 
 
+app.get('/submitPractice/:id', [db.check_if_logged_in, (req, res, next) => {
+    const idLibraryObject = idLibrary[req.params.id];
+    if (!idLibraryObject || idLibraryObject.type !== 'pod') {
+        console.log('here');
+        req.flash('dangerFlash','ERROR: Pod Not Found');
+        res.redirect('/');
+    } else {
+        req.superUnitKey = idLibraryObject.superUnitKey;
+        req.unitKey = idLibraryObject.unitKey;
+        req.podKey = idLibraryObject.podKey;
+        next();
+    }
+}, (req, res, next) => {
 
-app.post('/submitPractice/:pod_id', [(req, res, next) => {
-    const selectionObject = idLibrary[req.params.pod_id];
+    // space to check if this is the correct practice to be submitted
+    next()
+}, disp.display_practice_submission_page]);
+
+
+app.post('/submitPractice/:id', [(req, res, next) => {
+    const selectionObject = idLibrary[req.params.id];
     if (!selectionObject) {
+        req.flash('dangerFlash','Error: Pod not found');
         res.redirect('/');
     } else {
         req.superUnitKey = selectionObject.superUnitKey;
         req.unitKey = selectionObject.unitKey;
         req.podKey = selectionObject.podKey;
+        req.pod_uuid = getPodUUID(req.params.id);
         next();
     }
     },uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
     // space for more
-    next()
+    next();
 }, (req, res) => {
-    res.redirect(`/pod/${req.pod_uuid}`)}
+    req.flash('successFlash','Practice Page successfully submitted');
+    res.redirect(`/pod/${req.params.id}`)}
 ]);
 
 
