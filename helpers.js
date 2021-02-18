@@ -3,7 +3,6 @@ const unitMap = require(__dirname + '/public/unit_map');
 const { availableContent } = require('./findAvailableContent.js');
 const goals = require(__dirname + '/public/goals');
 const dueDatesJSON = require(__dirname + '/dueDates.json');
-const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js'); // try to get rid of this
 const { idLibrary } = require(__dirname + '/idLibrary.js');
 
 hbs.registerHelper('userInfo', (user, section, overallLevel, totalAttempts) => {

@@ -161,6 +161,7 @@ display_pod_page = (req, res) => {
             quizRequirementObject: req.quizRequirements,
             practiceRequirementObject: req.practiceObject,
             uuid: req.pod_uuid,
+            id: req.params.id,
             flash: req.flashMessage ? req.flashMessage : '',
             practiceComments: req.practiceComments,
             successFlash: req.flash('successFlash'),
@@ -207,7 +208,7 @@ const display_practice_submission_page = (req, res) => {
         section: req.section,
         overallLevel: req.overallLevel,
         totalAttempts: req.totalAttemps,
-        submissionLink: `/submitPractice/${req.pod_uuid}`,
+        submissionLink: `/submitPractice/${req.params.pod_id}`,
         successFlash: req.flash('successFlash'),
         dangerFlash: req.flash('dangerFlash')
     })
@@ -301,9 +302,9 @@ display_problemSet_page = (req, res) => {
 };
 
 display_quiz_entry_page = (req, res) => {
-    const superUnit = unitMap[req.keys.superUnitKey];
-    const unit = superUnit.units[req.keys.unitKey];
-    const pod = unit.pods[req.keys.podKey];
+    const superUnit = unitMap[req.superUnitKey];
+    const unit = superUnit.units[req.unitKey];
+    const pod = unit.pods[req.podKey];
     const unitNumber = superUnit.number * 100 + unit.number;
     const letter = pod.letter;
     const title = `${unitNumber}-${letter}: ${pod.title}`;
@@ -329,7 +330,7 @@ display_quiz_entry_page = (req, res) => {
         unitNumber: unitNumber,
         unitClusterName: superUnit.title,
         previousAttempts: req.previousAttempts,
-        uuid: req.params.uuid,
+        id: req.params.id,
         passwordAccessRequired: req.passwordAccessRequired,
         memorizationQuiz: req.memorizationQuiz,
         nonMemorizationMessage: req.passwordAccessRequired & !req.memorizationQuiz & !req.quizLock,
@@ -370,7 +371,8 @@ function quizAccess(section, level, enteredPassword) {
 }
 
 display_quiz = (req, res) => {
-    let available = availableContent[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].quizzes;
+    // all this should be worked out in advance!!
+    let available = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
     if (!available) {
         res.redirect('/');
     }
@@ -379,27 +381,27 @@ display_quiz = (req, res) => {
     }
     let alreadyPassed;
     if (req.gradeMap) {
-        alreadyPassed = req.gradeMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].score === 20;
+        alreadyPassed = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score === 20;
     }
     const inClass = req.passwordAccessRequired;
-    let versionNumber = availableContent[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].numberOfVersions;
-    const unitNumber = unitMap[req.keys.superUnitKey].number * 100 + unitMap[req.keys.superUnitKey].units[req.keys.unitKey].number;
-    const letter = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].letter;
-    const podTitle = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].title;
+    let versionNumber = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
+    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    const letter = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter;
+    const podTitle = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].title;
     const title = `Miniquiz: ${unitNumber}-${letter}: ${podTitle}`;
-    res.render('quizzes/' + req.keys.superUnitKey + '/' + req.keys.unitKey + '/' + req.keys.podKey + '/v' + String(versionNumber) +'.hbs', {
+    res.render('quizzes/' + req.superUnitKey + '/' + req.unitKey + '/' + req.podKey + '/v' + String(versionNumber) +'.hbs', {
         layout: 'quizPageLayout.hbs',
-        selectedUnitClusterKey: req.keys.superUnitKey,
-        selectedUnitKey: req.keys.unitKey,
-        selectedPodKey: req.keys.podKey,
-        letter: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].letter,
+        selectedUnitClusterKey: req.superUnitKey,
+        selectedUnitKey: req.unitKey,
+        selectedPodKey: req.podKey,
+        letter: unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter,
         title: title,
         pod_uuid: req.params.uuid,
-        unitNumber: unitMap[req.keys.superUnitKey].number * 100 + unitMap[req.keys.superUnitKey].units[req.keys.unitKey].number,
-        backLink: `/pod/${req.params.uuid}`,
-        unitTitle: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].title,
-        unitClusterTitle: unitMap[req.keys.superUnitKey].title,
-        level: unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey].level,
+        unitNumber: unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number,
+        backLink: `/pod/${req.params.id}`,
+        unitTitle: unitMap[req.superUnitKey].units[req.unitKey].title,
+        unitClusterTitle: unitMap[req.superUnitKey].title,
+        level: unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].level,
         version: versionNumber,
         user: req.user,
         userName: req.user.name,
@@ -414,7 +416,8 @@ display_quiz = (req, res) => {
         submitPaper: inClass && !alreadyPassed,
         noSubmission: alreadyPassed,
         successFlash: req.flash('successFlash'),
-        dangerFlash: req.flash('dangerFlash')
+        dangerFlash: req.flash('dangerFlash'),
+        id: req.params.id
     });
 
     // all quizzes open

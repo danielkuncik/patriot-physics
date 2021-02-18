@@ -83,7 +83,7 @@
     <h4>
         Please upload a submission for this miniquiz.
     </h4>
-    <form action = '/submitMiniquiz?uuid={{pod_uuid}}' method="post" enctype="multipart/form-data">
+    <form action = '/quiz/{{id}}' method="post" enctype="multipart/form-data">
         <input type = 'file' name = 'image' value = 'Upload File' class = 'quizFileUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
         <p>
             Please submit <code>.jpg</code> or <code>.png</code> files.

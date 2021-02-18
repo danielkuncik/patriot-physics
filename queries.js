@@ -167,7 +167,7 @@ const kick_out_if_not_logged_in = function(req, res, next) {
 
 
 const submit_quiz = function(req, res, next) {
-    const pod_uuid = req.query.uuid;
+    const pod_uuid = req.uuid;
     const student_id = req.user.id;
 
     req.session.gradeMap.map[req.superUnitKey].units[req.unitKey].pods[req.podKey].pending = true;
@@ -283,7 +283,7 @@ const submit_practice = (req, res, next) => {
 
 const look_up_quiz_attempts = function(req, res, next) {
     if (req.user) {
-        const pod_uuid = req.params.pod_uuid;
+        const pod_uuid = req.pod_uuid;
         const student_id = req.user.id;
         pool.query('SELECT comment,score,image_url_1,image_url_2,image_url_3,tstz FROM quiz_attempts WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
             if (err) {
@@ -416,7 +416,8 @@ const check_quiz_password = (req, res, next) => {
         if (correctPassword === enteredPassword) {
             next();
         } else {
-            res.redirect(`/pod/${req.params.uuid}?flashMessage=incorrect password`);
+            req.flash('dangerFlash','Incorrect Password');
+            res.redirect(`/quizAccess/${req.params.id}`);
         }
     } else {
         next();

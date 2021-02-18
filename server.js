@@ -290,10 +290,21 @@ const look_up_current_scores = function(req, res, next) {
         next();
     }
 };
+
+function getPodUUID(podId) {
+    const podKeys = idLibrary[podId];
+    const podObject = unitMap[podKeys.superUnitKey].units[podKeys.unitKey].pods[podKeys.podKey];
+    return podObject.uuid
+}
+
 const checkQuizAccess2 = (req, res, next) => {
     let courseLevel;
+    const keys = idLibrary[req.params.id];
+    req.superUnitKey = keys.superUnitKey;
+    req.unitKey = keys.unitKey;
+    req.podKey = keys.podKey;
     if (req.user && req.courseLevel) {
-        const uuid = req.params.pod_uuid;
+        const id = req.params.id;
         let dueDateObject = dueDates[req.courseLevel];
         let dueDateArray = Object.keys(dueDateObject);
         let i;
@@ -301,9 +312,9 @@ const checkQuizAccess2 = (req, res, next) => {
         req.practiceObject = {"required": false};
         for (i = 0; i < dueDateArray.length; i++) {
             let dueDate = dueDateArray[i];
-            if ((Object.keys(dueDateObject[dueDate])).includes(uuid)) {
+            if ((Object.keys(dueDateObject[dueDate])).includes(id)) {
                 let thisDueDate = dueDate;
-                let requirements = dueDateObject[dueDate][uuid];
+                let requirements = dueDateObject[dueDate][id];
                 req.quizRequirements["required"] = true;
                 req.quizRequirements["dueDate"] = thisDueDate;
                 if (requirements.noQuiz) {
@@ -343,6 +354,7 @@ app.get('/pod/:id',[ (req, res, next) => {
     req.superUnitKey = idLibraryObject.superUnitKey;
     req.unitKey = idLibraryObject.unitKey;
     req.podKey = idLibraryObject.podKey;
+    req.pod_uuid = getPodUUID(req.params.id);
     next();
   }
 }, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
@@ -424,6 +436,7 @@ const quizLock = false;
 
 
 
+// a redundant function!
 const checkQuizAccess = (req, res, next) => {
     req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
     const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
@@ -440,24 +453,38 @@ const lateCode = 'hdu7g2d';
 
 /// THIS NEEDS TO BE EDITTED TO a) get info from the due dates page, not the unit map, and b) check if it is overdue
 // fortunately, the function for that already exists, it shouldn't be a big change
-app.get('/quizAccess/:uuid', [db.check_if_logged_in, (req, res, next) => {
+app.get('/quizAccess/:id', [db.check_if_logged_in, (req, res, next) => {
     if (!req.loggedIn) {
-        // flash => you must be logged in to take a quiz
-        res.redirect(`/pod/${req.params.uuid}`);
+        req.flash('warningFlash','You must be logged in to take the quiz');
+        res.redirect(`/pod/${req.params.id}`);
     } else {
         next();
     }
-}, checkQuizAccess, disp.display_quiz_entry_page]);
+}, checkQuizAccess2, (req, res, next) => {
+    if (!req.quizRequirements.required) {
+        req.flash('warningFlash','Quiz not currently required for your class.');
+        res.redirect(`/pod/${req.params.id}`)
+    }
+    // consider more options...such as overdue etc.
+    next();
+}, disp.display_quiz_entry_page]);
 
-app.post('/quiz/:uuid',[db.check_if_logged_in, (req, res, next) => {
+// rework this
+app.post('/quizAccess/:id',[db.check_if_logged_in, (req, res, next) => {
     if (!req.loggedIn) {
-        // flash => you must be logged in to take a quiz
-        res.redirect(`/pod/${req.params.uuid}`);
+        req.flash('warningFlash','You must be logged in to take the quiz');
+        res.redirect(`/pod/${req.params.id}`);
     } else {
         next();
     }
-},checkQuizAccess, db.look_up_password, db.check_quiz_password, disp.display_quiz]);
+},checkQuizAccess2, (req, res, next) => {
+    // here, check quiz access!
+    // redirect if necessary
+    next();
+},db.look_up_password, db.check_quiz_password, disp.display_quiz]);
 
+
+// ami even using this??? should i delete this
 app.get('/quiz/:uuid',(req,res) => {
     const uuid = req.params.uuid;
     res.redirect(`/pod/${uuid}`);
@@ -477,13 +504,12 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 // }
 
 function look_up_quiz_answers(req, res, next) {
-    const keys = gradeMap.getPodKeysByUUID(req.query.uuid);
-    req.version = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].numberOfVersions;
+    req.version = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
 
     // draft, see if this works later
-    const answersAvailable = availableContent[keys.superUnitKey].units[keys.unitKey].pods[keys.podKey].answersAvailable;
+    const answersAvailable = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].answersAvailable;
     if (answersAvailable) {
-        const answerFile = require(__dirname + `/content/quizzes/${keys.superUnitKey}/${keys.unitKey}/${keys.podKey}/answers.json`);
+        const answerFile = require(__dirname + `/content/quizzes/${req.superUnitKey}/${req.unitKey}/${req.podKey}/answers.json`);
         req.answerText = JSON.stringify(answerFile[`v${req.version}`]);
         next();
     } else {
@@ -493,22 +519,27 @@ function look_up_quiz_answers(req, res, next) {
 
 
 // app.post('/submitMiniquiz', parser.single("image"),[db.check_if_logged_in,db.kick_out_if_not_logged_in,db.submit_quiz,(req, res) => {res.redirect('/');}]);
-app.post('/submitMiniquiz', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in,
+app.post('/quiz/:id', [uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in,
     (req, res, next) => {
-    const selectionObject = gm.getPodKeysByUUID(req.query.uuid);
+    const selectionObject = idLibrary[req.params.id];
     if (!selectionObject) {
+        req.flash('dangerFlash','Error');
         res.redirect('/');
     } else {
         req.superUnitKey = selectionObject.superUnitKey;
         req.unitKey = selectionObject.unitKey;
         req.podKey = selectionObject.podKey;
+        req.uuid = getPodUUID(req.params.id);
         next();
     }
-    }, look_up_quiz_answers,db.submit_quiz,(req, res) => {res.redirect('/');}]);
+    }, look_up_quiz_answers,db.submit_quiz,(req, res) => {
+    req.flash('successFlash','Quiz Submitted Successfully');
+    res.redirect('/');}]);
 
-app.post('/submitPractice/:pod_uuid', [(req, res, next) => {
-    req.pod_uuid = req.params.pod_uuid;
-    const selectionObject = gm.getPodKeysByUUID(req.pod_uuid);
+
+
+app.post('/submitPractice/:pod_id', [(req, res, next) => {
+    const selectionObject = idLibrary[req.params.pod_id];
     if (!selectionObject) {
         res.redirect('/');
     } else {
@@ -518,7 +549,6 @@ app.post('/submitPractice/:pod_uuid', [(req, res, next) => {
         next();
     }
     },uploadFileNew, db.check_if_logged_in,db.kick_out_if_not_logged_in, db.submit_practice, (req, res, next) => {
-    req.pod_uuid = req.params.pod_uuid;
     // space for more
     next()
 }, (req, res) => {
