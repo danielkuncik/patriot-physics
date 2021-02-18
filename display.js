@@ -24,7 +24,8 @@ display_home = (req,res) => {
         flashMessage: req.body.flashMessage,
        // flash: req.flash,
         successFlash: req.flash('successFlash'),
-        dangerFlash: req.flash('dangerFlash')
+        dangerFlash: req.flash('dangerFlash'),
+        scoreObject: req.scoreObject
     });
 };
 
@@ -165,7 +166,8 @@ display_pod_page = (req, res) => {
             flash: req.flashMessage ? req.flashMessage : '',
             practiceComments: req.practiceComments,
             successFlash: req.flash('successFlash'),
-            dangerFlash: req.flash('dangerFlash')
+            dangerFlash: req.flash('dangerFlash'),
+            scoreObject: req.scoreObject
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';

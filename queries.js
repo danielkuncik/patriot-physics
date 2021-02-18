@@ -423,6 +423,154 @@ const check_quiz_password = (req, res, next) => {
     }
 };
 
+function convert_list_to_SQL(javascriptList) {
+    let sql_string = '(';
+    let i;
+    for (i = 0; i < javascriptList.length - 1; i++) {
+        sql_string = sql_string + "'"  + javascriptList[i] + "'";
+        sql_string = sql_string + " , ";
+    }
+    sql_string = sql_string + "'"  + javascriptList[javascriptList.length - 1] + "')";
+    return sql_string
+}
+
+const load_quiz_grades_on_list = (req, res, next) => {
+    const pod_uuid_list = req.pod_uuid_list ? req.pod_uuid_list : [];
+    if (!req.loggedIn || pod_uuid_list.length === 0) {
+        next();
+    } else {
+        const student_id = req.user.id;
+        let query_string = `SELECT pod_uuid, score FROM grades WHERE student_id = ${student_id} AND pod_uuid IN ${convert_list_to_SQL(pod_uuid_list)}`;
+        pool.query(query_string, (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.quizScoreList = results.rows;
+            next();
+        });
+    }
+};
+
+const load_practice_grades_on_list = (req, res, next) => {
+    const pod_uuid_list = req.pod_uuid_list ? req.pod_uuid_list : [];
+    if (!req.loggedIn || pod_uuid_list.length === 0) {
+        next();
+    } else {
+        const student_id = req.user.id;
+        let query_string = `SELECT pod_uuid, score FROM practice_grades WHERE student_id = ${student_id} AND pod_uuid IN ${convert_list_to_SQL(pod_uuid_list)}`;
+        pool.query(query_string, (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.practiceScoreList = results.rows;
+            next();
+        });
+    }
+};
+
+const find_pending_quizzes_list = (req, res, next) => {
+    const pod_uuid_list = req.pod_uuid_list ? req.pod_uuid_list : [];
+    if (!req.loggedIn || pod_uuid_list.length === 0) {
+        next();
+    } else {
+        const student_id = req.user.id;
+        let query_string = `SELECT pod_uuid FROM quiz_attempts WHERE student_id = ${student_id} AND pod_uuid IN ${convert_list_to_SQL(pod_uuid_list)} AND score IS NULL`;
+        pool.query(query_string, (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.pending_quiz_list = results.rows;
+            next();
+        });
+    }
+};
+
+const find_pending_practice_list = (req, res, next) => {
+    const pod_uuid_list = req.pod_uuid_list ? req.pod_uuid_list : [];
+    if (!req.loggedIn || pod_uuid_list.length === 0) {
+        next();
+    } else {
+        const student_id = req.user.id;
+        let query_string = `SELECT pod_uuid FROM practice_submissions WHERE student_id = ${student_id} AND pod_uuid IN ${convert_list_to_SQL(pod_uuid_list)} AND score IS NULL`;
+        pool.query(query_string, (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.pending_practice_list = results.rows;
+            next();
+        });
+    }
+};
+
+
+// next step => use these score lists in place of the old 'grade map'
+
+// i need to also search for pending scores and practice !!!
+
+
+// this would be much much simpler if quiz scores and practice scores were jsut on the same table!!!
+// i should move in that direction !
+
+const refineLists = (req, res, next) => {
+    const quizScoreList = req.quizScoreList ? req.quizScoreList : [];
+    const practiceScoreList = req.practiceScoreList ? req.practiceScoreList : [];
+    const pendingQuizList = req.pending_quiz_list ? req.pending_quiz_list : [];
+    const pendingPracticeList = req.pending_practice_list ? req.pending_practice_list : [];
+    if (!req.loggedIn) {
+        next();
+    } else {
+        let scoreObject = {}, quizScoreObject = {}, practiceScoreObject = {}, quizPendingList = [], practicePendingList = [];
+        quizScoreList.forEach((quiz_score) => {
+            quizScoreObject[quiz_score.pod_uuid.slice(0,6)] = quiz_score.score;
+        });
+        practiceScoreList.forEach((practiceScore) => {
+            practiceScoreObject[practiceScore.pod_uuid.slice(0,6)] = practiceScore.score;
+        });
+        Object.keys(quizScoreObject).forEach((pod_id) => {
+            scoreObject[pod_id] = {
+                quizScore: quizScoreObject[pod_id],
+                practiceScore: 0
+            };
+        });
+        Object.keys(practiceScoreObject).forEach((pod_id) => {
+            if (scoreObject[pod_id]) {
+                scoreObject[pod_id].practiceScore = practiceScoreObject[pod_id];
+            } else {
+                scoreObject[pod_id] = {
+                    quizScore: 0,
+                    practiceScore: practiceScoreObject[pod_id]
+                };
+            }
+        });
+        pendingQuizList.forEach((pendingResult) => {
+            let this_pod_id = pendingResult.pod_uuid.slice(0,6);
+            if (scoreObject[this_pod_id]) {
+                scoreObject[this_pod_id].quizPending = true;
+            } else {
+                scoreObject[this_pod_id] = {
+                    quizScore: 0,
+                    practiceScore: 0,
+                    quizPending: true
+                }
+            }
+        });
+        pendingPracticeList.forEach((pendingResult) => {
+            let this_pod_id = pendingResult.pod_uuid.slice(0,6);
+            if (scoreObject[this_pod_id]) {
+                scoreObject[this_pod_id].practicePending = true;
+            } else {
+                scoreObject[this_pod_id] = {
+                    quizScore: 0,
+                    practiceScore: 0,
+                    practicePending: true
+                }
+            }
+        });
+        req.scoreObject = scoreObject;
+        next();
+    }
+
+};
 
 module.exports = {
     check_login,
@@ -439,5 +587,10 @@ module.exports = {
     loadPracticeGrades,
     check_quiz_password,
     find_pending_practice,
-    find_practice_comment
+    find_practice_comment,
+    load_quiz_grades_on_list,
+    load_practice_grades_on_list,
+    find_pending_quizzes_list,
+    find_pending_practice_list,
+    refineLists
 };

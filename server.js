@@ -148,7 +148,26 @@ app.get('/flashTest',(req, res) => {
 });
 
 // home
-app.get('/', [db.check_if_logged_in, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice,f.niceFlash, disp.display_home]);
+app.get('/', [db.check_if_logged_in, (req, res, next) => {
+    if (req.courseLevel) {
+        const dueDateObject = dueDates[req.courseLevel];
+        let podIds = [];
+        Object.keys(dueDateObject).forEach((dueDate) => {
+            let thisSelection = dueDateObject[dueDate];
+            Object.keys(thisSelection).forEach((podId) => {
+                podIds.push(podId);
+            });
+        });
+        let pod_uuid_list = [];
+        podIds.forEach((id) => {
+            pod_uuid_list.push(getPodUUID(id));
+        });
+        req.pod_uuid_list = pod_uuid_list;
+        next();
+    } else {
+        next();
+    }
+}, db.load_quiz_grades_on_list, db.load_practice_grades_on_list, db.find_pending_quizzes_list, db.find_pending_practice_list, db.refineLists, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice,f.niceFlash, disp.display_home]);
 
 
 // login and logout
@@ -355,9 +374,10 @@ app.get('/pod/:id',[ (req, res, next) => {
     req.unitKey = idLibraryObject.unitKey;
     req.podKey = idLibraryObject.podKey;
     req.pod_uuid = getPodUUID(req.params.id);
+    req.pod_uuid_list = [req.pod_uuid];
     next();
   }
-}, db.check_if_logged_in, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
+}, db.check_if_logged_in, db.load_quiz_grades_on_list, db.load_practice_grades_on_list, db.find_pending_quizzes_list, db.find_pending_practice_list, db.refineLists, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
