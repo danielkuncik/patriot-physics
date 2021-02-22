@@ -1,6 +1,6 @@
 {
   "AP": {
-    "2-13-2021": {
+    "2-24-2021": {
       "caaa33":
       {
         "name": "traveling vs standing waves",
@@ -48,34 +48,42 @@
     },
     "3-5-2021": {
       "228ab3": {
-        "name": "rotational position and displacement"
+        "name": "rotational position and displacement",
+        "noQuiz": true
       },
       "d67638": {
-        "name": "rotational velocity calculations"
+        "name": "rotational velocity calculations",
+        "noQuiz": true
       },
       "10780e": {
-        "name": "rotational and linear velocity"
+        "name": "rotational and linear velocity",
+        "noQuiz": true
       },
       "30f93f": {
-        "name": "rotational acceleration"
+        "name": "rotational acceleration",
+        "noQuiz": true
       },
       "6ab710": {
-        "name": "angular velocity of real things"
+        "name": "angular velocity of real things",
+        "noQuiz": true
       },
       "d6448a": {
-        "name": "the torque formula"
+        "name": "the torque formula",
+        "noQuiz": true
       },
       "02b787": {
         "name": "rotational inertia conceptual examples",
-        "practice": true
+        "practice": true,
+        "noQuiz": true
       },
       "3a52bf": {
-        "name": "determining net torque"
+        "name": "determining net torque",
+        "noQuiz": true
       }
     }
   },
   "Honors": {
-    "2-13-2021": {
+    "2-24-2021": {
       "79415b":{
         "name": "Waves 1",
         "practice": true
@@ -137,6 +145,12 @@
       },
       "c74889": {
         "name": "Choosing electromagnetic wave by wavelength 2",
+        "practice": true
+      }
+    },
+    "3-12-2021": {
+      "4c74b0": {
+        "name": "photon formulas",
         "practice": true
       }
     }
