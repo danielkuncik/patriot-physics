@@ -306,6 +306,34 @@ const look_up_quiz_attempts = function(req, res, next) {
     }
 };
 
+// draft of look up practice attempts
+const look_up_practice_attempts = function(req, res, next) {
+    if (req.user) {
+        const pod_uuid = req.pod_uuid;
+        const student_id = req.user.id;
+        pool.query('SELECT comment,score,image_url_1,image_url_2,image_url_3,image_url_4,image_url_5,image_url_6,tstz FROM practice_submissions WHERE student_id = $1 AND pod_uuid = $2',[student_id, pod_uuid], (err, results) => {
+            if (err) {
+                throw err
+            }
+            req.previousPracticeAttempts = results.rows;
+            if (results.rows.length > 0) {
+                let lastAttempt = results.rows[results.rows.length - 1];
+                if (lastAttempt.score === null) {
+                    req.ungradedPractice = true;
+                } else {
+                    req.ungradedPractice = false;
+                }
+            } else {
+                req.ungradedPractice = false;
+            }
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
+
 
 const look_up_quiz_attempts_2 = function(req, res, next) {
     if (req.user) {
