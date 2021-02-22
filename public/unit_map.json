@@ -7098,46 +7098,57 @@
         },
         "pods":
         {
+          "rigid_bodies":
+          {
+            "title": "Rigid Bodies",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "objective":  "Define rigid and identify rigid bodies and non-rigid bodies; explain the significance of rigid bodies",
+            "uuid": "8189e080-ee5e-493a-a1d1-cac710ac725d",
+            "id": "8189e0"
+          },
           "inertia_conceptual_review":
           {
             "title": "Inertia Conceptual Review",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["rigid_bodies"],
             "objectives": "Give conceptual examples of inertia in linear situations.",
             "uuid": "f4bb3b95-c3b3-4190-9e80-e8218d3f9d65",
             "id": "f4bb3b"
-          },
-          "rotational_dynamics_analogies":
-          {
-            "title": "Rotational Dynamics Analogies",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia",
-            "uuid": "be1fb1ca-bf6a-4189-b4c8-5a79676c668f",
-            "id": "be1fb1"
           },
           "rotational_inertia_formula":
           {
             "title": "Rotational Inertia Formula",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": ["inertia_conceptual_review"],
             "objective": "Use the formula for rotational inertia to find rotational inertia of a point masses.",
             "uuid": "1406524c-0bd9-4f54-9bd2-2636d37abbda",
             "id": "140652"
+          },
+          "rotational_dynamics_analogies":
+          {
+            "title": "Rotational Dynamics Analogies",
+            "level": 1,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": ["rotational_inertia_formula"],
+            "objective": "Draw analogies between linear dynamic quantities and formulas and rotational dynamic quantities and formulas; define torque and rotational inertia",
+            "uuid": "be1fb1ca-bf6a-4189-b4c8-5a79676c668f",
+            "id": "be1fb1"
           },
           "cross_product":
           {
             "title": "Cross Products",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": ["rotational_dynamics_analogies"],
             "objective": "Determine the vector cross product of two vectors; practice using right hand rules.",
             "uuid": "e6db8685-62f9-4434-846a-c72ce823c5f9",
             "id": "e6db86"
@@ -7146,42 +7157,20 @@
           {
             "title": "The Torque Formula",
             "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 6,
+            "letter": "F",
+            "prerequisites": ["cross_product"],
             "objective": "Use the formula for torque to find the torque in situations with forces acting on a stick.",
             "uuid": "d6448a9e-c3e9-4658-8bff-6d94754fab33",
             "id": "d6448a"
-          },
-          "rigid_bodies":
-          {
-            "title": "Rigid Bodies",
-            "level": 1,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective":  "Define rigid and identify rigid bodies and non-rigid bodies; explain the significance of rigid bodies",
-            "uuid": "8189e080-ee5e-493a-a1d1-cac710ac725d",
-            "id": "8189e0"
-          },
-          "rotational_dynamic_dimensional_analysis":
-          {
-            "title": "Rotational Dynamic Dimensional Analysis",
-            "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Determine the dimensions of all rotational dynamic quantities, particularly torque and rotational inertia",
-            "uuid": "58add9b9-ce20-4335-8997-b9fd212ced0e",
-            "id": "58add9"
           },
           "rotational_inertia_conceptual_examples":
           {
             "title": "Rotational Inertia Conceptual Examples",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 5,
+            "letter": "G",
+            "prerequisites": ["torque_formula"],
             "objective": "Explain several conceptual examples of items with different rotational inertia",
             "examples":
             [
@@ -7192,24 +7181,24 @@
             "uuid": "02b787ee-b75c-4983-af43-47994ef28f4b",
             "id": "02b787"
           },
-          "torque_concepts":
+          "torque_with_cross_product":
           {
-            "title": "Torque Concepts",
+            "title": "Torque with Cross Product",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the concept of torque to analyze real world situations",
-            "uuid": "b0046257-ec09-4671-9c3a-b65847896eb2",
-            "id": "b00462"
+            "horizontal": 4,
+            "letter": "H",
+            "prerequisites": ["rotational_inertia_conceptual_examples"],
+            "objective": "Use the torque formula in situations requiring a single cross product; determine angular acceleration.",
+            "uuid": "e7a7417e-c0f7-48eb-b29a-19643be19af8",
+            "id": "e7a741"
           },
           "same_force_different_torque":
           {
             "title": "Same Force Different Torque",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "I",
+            "prerequisites": ["torque_with_cross_product"],
             "objective": "Identify and explain times when the same force acting in different directions and locations results in different torques on a rotating object; describe why a lineman must hit low to make a good block.",
             "uuid": "69051a9c-fe8e-4119-9bf2-f1adc45275f0",
             "id": "69051a"
@@ -7218,31 +7207,31 @@
           {
             "title": "Torque Conceptual Examples",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["same_force_different_torque"],
             "objective": "Give real world examples of when torque is a crucial concept.",
             "uuid": "f2de1036-8c04-43a1-93a9-e1560e180ffb",
             "id": "f2de10"
           },
-          "torque_with_cross_product":
+          "rotational_dynamic_dimensional_analysis":
           {
-            "title": "Torque with Cross Product",
+            "title": "Rotational Dynamic Dimensional Analysis",
             "level": 2,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
-            "objective": "Use the torque formula in situations requiring a single cross product; determine angular acceleration.",
-            "uuid": "e7a7417e-c0f7-48eb-b29a-19643be19af8",
-            "id": "e7a741"
+            "horizontal": 1,
+            "letter": "K",
+            "prerequisites": ["torque_conceptual_examples"],
+            "objective": "Determine the dimensions of all rotational dynamic quantities, particularly torque and rotational inertia",
+            "uuid": "58add9b9-ce20-4335-8997-b9fd212ced0e",
+            "id": "58add9"
           },
           "determine_net_torque":
           {
             "title": "Determine Net Torque",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": ["rotational_dynamic_dimensional_analysis"],
             "objective": "For a rotating object experiencing multiple torques, some forces applied at a non-perpendicular angle, determine the net torque acting on the object.",
             "uuid": "3a52bf59-e897-44a1-99e2-b2136267e19f",
             "id": "3a52bf"
@@ -7251,9 +7240,9 @@
           {
             "title": "Determine Angular Acceleration",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": ["determine_net_torque"],
             "objective": "For a rotating object experiencing multiple torques, some requiring cross products, determine the net torque acting on the object and the angular acceleration of the object.",
             "uuid": "a1516886-f072-45ce-b54f-ca995de3112a",
             "id": "a15168"
@@ -7262,9 +7251,9 @@
           {
             "title": "Basic Rolling",
             "level": 3,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "N",
+            "prerequisites": ["determine_angular_acceleration"],
             "objective": "Draw free-body diagrams and analyze the torque of a rolling object; identify the type of friction that causes rolling; differentiate between rolling with and without slipping.",
             "uuid": "4b6dfc00-6dd8-45ff-bbdb-4f8c209d24cf",
             "id": "4b6dfc"
@@ -7273,9 +7262,9 @@
           {
             "title": "Rolling down a Hill",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "O",
+            "prerequisites": ["basic_rolling"],
             "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a ball rolling down a hill.",
             "uuid": "8fab3db8-80d9-4570-a05d-28901aecec78",
             "id": "8fab3d"
@@ -7284,9 +7273,9 @@
           {
             "title": "Numerical Car Tire",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "P",
+            "prerequisites": ["rolling_down_a_hill"],
             "objective": "Numerically determine the free-body diagram, torque, angular acceleration and linear acceleration of a spinning car tire.",
             "uuid": "8002dc8f-a15b-4715-9dae-38f03290a074",
             "id": "8002dc"
@@ -7295,9 +7284,9 @@
           {
             "title": "Numerical Weight Hanging",
             "level": 4,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 1,
+            "letter": "Q",
+            "prerequisites": ["numerical_car_tire"],
             "objective": "Numerically determine the free-body diagram, torque, angular acceleration and [where necessary] linear acceleration of a wheel with a weight hanging from it.",
             "uuid": "173d7b0d-9c14-40dd-8f7a-8799c94dec14",
             "id": "173d7b"
@@ -7306,9 +7295,9 @@
           {
             "title": "Raiders of the Lost Arc",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 2,
+            "letter": "R",
+            "prerequisites": ["weight_hanging_numerical"],
             "objective": "Analyze why the giant ball designed to roll and kill Indiana Jones failed to do so, and redesign the setup to accomplish this task.",
             "notes": "Extra credit will be awarded if quiz is accomplished while wearing a fedora and humming Indiana Jones theme.",
             "uuid": "81425403-65fe-42df-9cdb-2e7129b557f3",
@@ -7318,9 +7307,9 @@
           {
             "title": "Derivation of Newton's Second Law for Rotation",
             "level": 5,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 3,
+            "letter": "S",
+            "prerequisites": ["raiders_of_the_lost_arc"],
             "objective": "Derive Newton's Second Law for Rotational Motion, including in cases when the forces are applied at non-perpendicular angles.",
             "uuid": "100d29e7-84df-4892-8063-8328c317c9b8",
             "id": "100d29"
@@ -7329,9 +7318,9 @@
           {
             "title": "Wheel of Fortune",
             "level": 6,
-            "horizontal": null,
-            "letter": "",
-            "prerequisites": [],
+            "horizontal": 4,
+            "letter": "T",
+            "prerequisites": ["derivation_newtons_second_law_rotation"],
             "objective": "Design a mathematical model to predict where the wheel of fortune will land after having been spun.",
             "notes": "Includes making some basic assumption about torques acting on the wheel; will probably need to use the concept of rotational impulse",
             "uuid": "f1075841-a58d-446c-ab43-f22a56a966e3",

@@ -45,6 +45,33 @@
         "name": "symbolic energy 2",
         "practice": true
       }
+    },
+    "3-5-2021": {
+      "228ab3": {
+        "name": "rotational position and displacement"
+      },
+      "d67638": {
+        "name": "rotational velocity calculations"
+      },
+      "10780e": {
+        "name": "rotational and linear velocity"
+      },
+      "30f93f": {
+        "name": "rotational acceleration"
+      },
+      "6ab710": {
+        "name": "angular velocity of real things"
+      },
+      "d6448a": {
+        "name": "the torque formula"
+      },
+      "02b787": {
+        "name": "rotational inertia conceptual examples",
+        "practice": true
+      },
+      "3a52bf": {
+        "name": "determining net torque"
+      }
     }
   },
   "Honors": {
