@@ -147,7 +147,6 @@ app.get('/flashTest',(req, res) => {
     res.redirect('/');
 });
 
-const load_relevant_grades = []
 
 // home
 app.get('/', [db.check_if_logged_in, (req, res, next) => {
@@ -318,8 +317,7 @@ function getPodUUID(podId) {
     return podObject.uuid
 }
 
-const checkQuizAccess2 = (req, res, next) => {
-    let courseLevel;
+const checkQuizAccess = (req, res, next) => {
     const keys = idLibrary[req.params.id];
     req.superUnitKey = keys.superUnitKey;
     req.unitKey = keys.unitKey;
@@ -379,7 +377,7 @@ app.get('/pod/:id',[ (req, res, next) => {
     req.pod_uuid_list = [req.pod_uuid];
     next();
   }
-}, db.check_if_logged_in, db.load_relevant_grades, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
+}, db.check_if_logged_in, db.load_relevant_grades, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess,disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash
@@ -440,21 +438,6 @@ app.get('/playground',(request, response) => {
 
 const quizLock = false;
 
-
-
-// a redundant function!
-const checkQuizAccess = (req, res, next) => {
-    req.keys = gradeMap.getPodKeysByUUID(req.params.uuid);
-    const podObject = unitMap[req.keys.superUnitKey].units[req.keys.unitKey].pods[req.keys.podKey];
-    req.memorizationQuiz = podObject["memorization"];
-    req.ApInClass = req.session.courseLevel === 'AP' && podObject["inClass_AP"];
-    req.HonorsInClass = req.session.courseLevel === 'Honors' && podObject["inClass_honors"];
-    req.A_level_InClass = req.session.courseLevel === 'A_level' && podObject["inClass_Alevel"];
-    req.quizLock = quizLock;
-    req.passwordAccessRequired = req.memorizationQuiz || req.ApInClass || req.HonorsInClass || req.A_level_InClass || req.quizLock;
-    next();
-};
-
 const lateCode = 'hdu7g2d';
 
 /// THIS NEEDS TO BE EDITTED TO a) get info from the due dates page, not the unit map, and b) check if it is overdue
@@ -466,10 +449,13 @@ app.get('/quizAccess/:id', [db.check_if_logged_in, (req, res, next) => {
     } else {
         next();
     }
-}, checkQuizAccess2, (req, res, next) => {
+}, checkQuizAccess, (req, res, next) => {
     if (!req.quizRequirements.required) {
         req.flash('warningFlash','Quiz not currently required for your class.');
         res.redirect(`/pod/${req.params.id}`)
+    }
+    if (req.quizRequirements.inClass || req.quizRequirements.overdue) {
+        req.passwordAccessRequired = true;
     }
     // consider more options...such as overdue etc.
     next();
@@ -483,7 +469,7 @@ app.post('/quizAccess/:id',[db.check_if_logged_in, (req, res, next) => {
     } else {
         next();
     }
-},checkQuizAccess2, (req, res, next) => {
+},checkQuizAccess, (req, res, next) => {
     // here, check quiz access!
     // redirect if necessary
     next();
