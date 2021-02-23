@@ -6,5 +6,13 @@
     "4": "red light",
     "5": "Gamma ray",
     "6": "green light"
+  },
+  "v2": {
+    "1": "infrared",
+    "2": "orange visible light",
+    "3": "radio wave",
+    "4": "blue visible light",
+    "5": "ultraviolet",
+    "6": "X-ray"
   }
 }
