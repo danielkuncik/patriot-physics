@@ -472,6 +472,10 @@ app.post('/quizAccess/:id',[db.check_if_logged_in, (req, res, next) => {
 },checkQuizAccess, (req, res, next) => {
     // here, check quiz access!
     // redirect if necessary
+    if (req.quizRequirements.inClass || req.quizRequirements.overdue) {
+        req.passwordAccessRequired = true;
+    }
+
     next();
 },db.look_up_password, db.check_quiz_password, disp.display_quiz]);
 

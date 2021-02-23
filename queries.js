@@ -441,6 +441,7 @@ const check_quiz_password = (req, res, next) => {
         const correctPassword = req.correctPassword;
         const enteredPassword = req.body.password;
         if (correctPassword === enteredPassword) {
+            req.flash('successFlash','Correct Password');
             next();
         } else {
             req.flash('dangerFlash','Incorrect Password');
