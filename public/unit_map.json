@@ -7032,7 +7032,7 @@
             "uuid": "54c09495-0f6c-4cc5-9695-5ac239c63208",
             "id": "54c094"
           },
-          "advanced_angular_acceleration":
+          "advanced_angular_acceleration_1":
           {
             "title": "Advanced Angular Acceleration",
             "level": 4,
@@ -7043,13 +7043,25 @@
             "uuid": "0217d5d5-bdb6-491c-9e41-b4dbab7b5b52",
             "id": "0217d5"
           },
+          "advanced_angular_acceleration_2":
+          {
+            "title": "Advanced Angular Acceleration",
+            "level": 4,
+            "horizontal": 1,
+            "letter": "M",
+            "prerequisites": ["advanced_angular_acceleration_1"],
+            "objective": "Determine angular acceleration if a planet were to speed up or slow down.",
+            "uuid": "6b0e0419-7504-4880-abbb-d6f2fdce7ce3",
+            "id": "6b0e04",
+            "problem_set": true
+          },
           "rotational_kinematics_advanced":
           {
             "title": "Rotational Kinematics Advanced",
             "level": 5,
             "horizontal": 2,
             "letter": "N",
-            "prerequisites": ["advanced_angular_acceleration"],
+            "prerequisites": ["advanced_angular_acceleration_2"],
             "objective": "Make inferences using algebraic and proportionality analysis regarding the rotational and linear speeds of a person located at different points on the earth",
             "uuid": "938f738f-5e02-462a-8ac6-f601b435142e",
             "id": "938f73"

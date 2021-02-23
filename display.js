@@ -119,13 +119,27 @@ display_unit_page = (req, res) => {
     });
 };
 
+// repeated, also in helpers
+function getUnitNumberString(superUnitNumber, unitNumber) {
+    const unitNumberNum = unitNumber + superUnitNumber * 100;
+    let unitNumberString;
+    if (unitNumberNum < 10) {
+        unitNumberString = `00${unitNumberNum}`;
+    } else if (unitNumberNum < 100) {
+        unitNumberString = `0${unitNumberNum}`;
+    } else {
+        unitNumberString = unitNumberNum;
+    }
+    return unitNumberString
+}
+
 display_pod_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
     const loggedIn = !!req.user;
     let format = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].format;
-    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
     let title = `${unitNumber}-${pod.letter}: ${pod.title}`;
     if (pod.subtitle) {
         title = title + `: ${pod.subtitle}`;
@@ -184,7 +198,7 @@ const display_practice_submission_page = (req, res) => {
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
     const loggedIn = !!req.user;
-    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
     let title = `${unitNumber}-${pod.letter}: ${pod.title}`;
     if (pod.subtitle) {
         title = title + `: ${pod.subtitle}`;
@@ -307,7 +321,7 @@ display_quiz_entry_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
     const pod = unit.pods[req.podKey];
-    const unitNumber = superUnit.number * 100 + unit.number;
+    const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
     const letter = pod.letter;
     const title = `${unitNumber}-${letter}: ${pod.title}`;
     // add info on the pod to this page!!
@@ -387,7 +401,7 @@ display_quiz = (req, res) => {
     }
     const inClass = req.passwordAccessRequired;
     let versionNumber = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
-    const unitNumber = unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number;
+    const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
     const letter = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter;
     const podTitle = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].title;
     const title = `Miniquiz: ${unitNumber}-${letter}: ${podTitle}`;

@@ -86,15 +86,29 @@ function getLevelMessages(gradeMap) {
     return messages
 }
 
+// repeated, also in display
+function getUnitNumberString(superUnitNumber, unitNumber) {
+    const unitNumberNum = unitNumber + superUnitNumber * 100;
+    let unitNumberString;
+    if (unitNumberNum < 10) {
+        unitNumberString = `00${unitNumberNum}`;
+    } else if (unitNumberNum < 100) {
+        unitNumberString = `0${unitNumberNum}`;
+    } else {
+        unitNumberString = unitNumberNum;
+    }
+    return unitNumberString
+}
+
+
 function createUnitListItem(superUnitKey, unitKey, gradeMap) {
     let levelMessage = '';
-    let superUnitNumber = unitMap[superUnitKey].number;
     if (gradeMap && gradeMap[superUnitKey].units[unitKey].level > 0) {
         levelMessage = `--Level: ${gradeMap[superUnitKey].units[unitKey].level}`;
     }
     let unitListItem = "<li class = 'unitListItem'>";
     let unitTitle = unitMap[superUnitKey].units[unitKey].title;
-    let unitNumber = 100 * superUnitNumber + unitMap[superUnitKey].units[unitKey].number;
+    let unitNumber = getUnitNumberString(unitMap[superUnitKey].number, unitMap[superUnitKey].units[unitKey].number);
     let unitMessage = `${unitNumber}: ${unitTitle}${levelMessage}`;
     let id = unitMap[superUnitKey].units[unitKey].id;
     if (availableContent[superUnitKey].units[unitKey].available) {
@@ -509,7 +523,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
                     if (podObject.subtitle) {
                         title = title + `: ${podObject.subtitle}`;
                     }
-                    let podNumber = unitMap[superUnitKey].number * 100 + unitMap[superUnitKey].units[unitKey].number;
+                    let podNumber = getUnitNumberString(unitMap[superUnitKey].number, unitMap[superUnitKey].units[unitKey].number);
                     let displayTitle = `${podNumber}-${letter}: ${title}`;
 
                     let score, practiceScore, pending, practicePending;
