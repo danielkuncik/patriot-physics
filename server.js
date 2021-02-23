@@ -147,6 +147,8 @@ app.get('/flashTest',(req, res) => {
     res.redirect('/');
 });
 
+const load_relevant_grades = []
+
 // home
 app.get('/', [db.check_if_logged_in, (req, res, next) => {
     if (req.courseLevel) {
@@ -167,7 +169,7 @@ app.get('/', [db.check_if_logged_in, (req, res, next) => {
     } else {
         next();
     }
-}, db.load_quiz_grades_on_list, db.load_practice_grades_on_list, db.find_pending_quizzes_list, db.find_pending_practice_list, db.refineLists, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice,f.niceFlash, disp.display_home]);
+}, db.load_relevant_grades, db.load_grades, db.loadPracticeGrades, db.find_pending_quizzes, db.find_pending_practice,f.niceFlash, disp.display_home]);
 
 
 // login and logout
@@ -377,7 +379,7 @@ app.get('/pod/:id',[ (req, res, next) => {
     req.pod_uuid_list = [req.pod_uuid];
     next();
   }
-}, db.check_if_logged_in, db.load_quiz_grades_on_list, db.load_practice_grades_on_list, db.find_pending_quizzes_list, db.find_pending_practice_list, db.refineLists, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
+}, db.check_if_logged_in, db.load_relevant_grades, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess2,disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash

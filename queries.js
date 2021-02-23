@@ -597,8 +597,9 @@ const refineLists = (req, res, next) => {
         req.scoreObject = scoreObject;
         next();
     }
-
 };
+
+const load_relevant_grades = [load_quiz_grades_on_list, load_practice_grades_on_list, find_pending_quizzes_list, find_pending_practice_list, refineLists];
 
 module.exports = {
     check_login,
@@ -616,9 +617,5 @@ module.exports = {
     check_quiz_password,
     find_pending_practice,
     find_practice_comment,
-    load_quiz_grades_on_list,
-    load_practice_grades_on_list,
-    find_pending_quizzes_list,
-    find_pending_practice_list,
-    refineLists
+    load_relevant_grades
 };
