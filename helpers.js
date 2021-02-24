@@ -899,6 +899,10 @@ hbs.registerHelper('getGradeScale', (scaleJSON) => {
 });
 
 
+hbs.registerHelper('isLoggedIn', (loggedIn) => {
+    return loggedIn
+});
+
 module.exports = {
 
 };

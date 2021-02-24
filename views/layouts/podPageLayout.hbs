@@ -78,11 +78,53 @@
     const letter = '{{letter}}';
 </script>
 
-<div class = 'no-print'>
-    {{showPreviousQuizAttempts previousAttempts}}
-</div>
-
 <div class = 'pageBreak'></div>
+
+{{showPreviousQuizAttempts previousAttempts}}
+
+
+{{#if (isLoggedIn testVariable)}}
+<div class = 'noPrint'>
+<h4>
+    Previous Submissions
+</h4>
+<div class="accordion" id = 'submissionAccordion'>
+    <div class="card">
+        <div class = 'card-header practiceSubmissionCard' id = 'practice_submission_header'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_practice" aria-expanded="false" aria-controls="collapse_practice">
+                    Previous Practice Page Submissions
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_practice' class = 'collapse' aria-labelledby="practice_submission_header" data-parent = '#submissionAccordion'>
+            <div class = 'card-body'>
+                COMING SOON
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class = 'card-header quizAttemptCard' id = 'quiz_attempt_header'>
+            <h3 class = 'mb-0'>
+                <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_quiz" aria-expanded="false" aria-controls="collapse_quiz">
+                    Previous Quiz Attempts
+                </button>
+            </h3>
+        </div>
+
+        <div id = 'collapse_quiz' class = 'collapse' aria-labelledby="quiz_attempt_header" data-parent = '#submissionAccordion'>
+            <div class = 'card-body'>
+                <div class = 'no-print'>
+                    COMING SOON!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{{/if}}
 
 <div>
     {{{body}}}
