@@ -80,10 +80,7 @@
 
 <div class = 'pageBreak'></div>
 
-{{showPreviousQuizAttempts previousAttempts}}
-
-
-{{#if (isLoggedIn testVariable)}}
+{{#if (isLoggedIn loggedIn)}}
 <div class = 'noPrint'>
 <h4>
     Previous Submissions
@@ -117,7 +114,7 @@
         <div id = 'collapse_quiz' class = 'collapse' aria-labelledby="quiz_attempt_header" data-parent = '#submissionAccordion'>
             <div class = 'card-body'>
                 <div class = 'no-print'>
-                    COMING SOON!
+                    {{showPreviousQuizAttempts previousAttempts}}
                 </div>
             </div>
         </div>

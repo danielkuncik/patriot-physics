@@ -181,8 +181,7 @@ display_pod_page = (req, res) => {
             practiceComments: req.practiceComments,
             successFlash: req.flash('successFlash'),
             dangerFlash: req.flash('dangerFlash'),
-            scoreObject: req.scoreObject,
-            testVariable: true
+            scoreObject: req.scoreObject
         });
     } else if (format === 'pdf') {
         let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
