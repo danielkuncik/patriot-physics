@@ -1,0 +1,507 @@
+
+
+<p class = 'introduction'>
+    All electromagnetic waves, including both visible light and invisible light,
+    come in tiny pieces called photons.
+    Each photon has three quantities that determine its physical behavior:
+    wavelength, frequency, and energy.
+    Wavelength, frequency, and energy determine if light is visible or invisible.
+    For visible light, they determine what color it is.
+    They determine whether a wave is dangerous, and how dangerous.
+    They determine if a wave can travel through walls or water.
+    Wavelength, frequency, and energy determine the properties of an electromagnetic photon.
+    In this pod, we will learn the formulas that relate these three crucial quantities.
+</p>
+
+<p class="introduction">
+    There is one quantity, however, that is identical for all waves:
+    speed. All electromagnetic photons, whether red or violet,
+    radio waves or gamma rays, move at exactly the same speed:
+    300,000,000 m/s, or 3 x 10<sup>8</sup> m/s.
+</p>
+
+<p class="introduction">
+    The formulas involved are not long and complicated, but there
+    are some mathematical challenges.
+    Whenever we use formulas, we must always use the SI units:
+    Joules for Energy, Hertz for frequency, and meters for wavelength.
+    But these quantities are frequently posted in units different than the SI unit!
+    Visible light photons are typically reported in electronVolts for energy,
+    teraHertz for frequency, and nanometers for wavelength.
+    As a result, many unit conversions are necessary to use the photon formulas.
+    To understand these problems, you must first be adept at using
+    <a href = 'https://508physics.com'>conversion factors</a>, completing <a href = '/pod/64f606'>metric conversions</a>,
+    and <a href = '#'>using scientific notation on a calculator</a>.
+</p>
+
+<p class="introduction">
+    In this pod you will focus exclusively on photons of visible light.
+    In the <a href = '/pod/4c74b0'>next pod</a> you will
+    apply the formulas to all wavelengths of light, visible and invisible.
+</p>
+
+<h2>
+    Pre-Problem Information
+</h2>
+
+<h4>
+    Reference: Table of Wavelengths
+</h4>
+
+<div class = 'container'>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'><strong>Type of Wave</strong></div>
+        <div class = 'col-8 border border-dark p-1'><strong>Wavelength</strong></div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Radio Wave</div>
+        <div class = 'col-8 border border-dark p-1'>greater than 1 meter</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Microwave</div>
+        <div class = 'col-8 border border-dark p-1'>between 1 millimeter and 1 meter</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Infrared Light</div>
+        <div class = 'col-8 border border-dark p-1'>between 700 nanometers and 1 millimeter</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-1 border border-dark p1'>
+            <p class = 'sidewaysText'>Visible Light</p> <!-- still working on this!!!! --->
+        </div>
+        <div class = 'col-10 border border-dark'>
+            <div class = 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:red'>Red</div>
+                <div class = 'col-10 border border-dark p-1'>between 635 nanometers and 700 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:orange'>Orange</div>
+                <div class = 'col-10 border border-dark p-1'>between 590 nanometers and 635 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:yellow'>Yellow</div>
+                <div class = 'col-10 border border-dark p-1'>between 560 nanometers and 590 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:green'>Green</div>
+                <div class = 'col-10 border border-dark p-1'>between 520 nanometers and 560 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:blue'>Blue</div>
+                <div class = 'col-10 border border-dark p-1'>between 450 nanometers and 520 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:violet'>Violet</div>
+                <div class = 'col-10 border border-dark p-1'>between 400 nanometers and 450 nanometers</div>
+            </div>
+        </div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Ultraviolet Light</div>
+        <div class = 'col-8 border border-dark p-1'>between 10 nanometers and 400 nanometers</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>X-ray</div>
+        <div class = 'col-8 border border-dark p-1'>between 1 picometer and 10 nanometers</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Gamma Ray</div>
+        <div class = 'col-8 border border-dark p-1'>less than 1 picometer</div>
+    </div>
+</div>
+
+
+<h4>
+    Definitions
+</h4>
+<p class = 'definition' data-word = 'photon'>
+    All light (electromagnetic waves) comes in tiny packets of energy called photons.
+</p>
+<p class="definition" data-word = 'photon speed'>
+    All photons, no matter the color, have the same speed:
+    3 x 10<sup>8</sup> m/s.
+</p>
+<p class="definition" data-word = 'photon frequency'>
+    All photons consist of oscillating electric and magnetic energy.
+    The frequency tells how many times per second
+    these energies oscillations.
+    Frequencies of visible light are huge numbers
+    (on the order of 10<sup>14</sup> oscillations per second.)
+</p>
+<p class="definition" data-word = 'photon wavelength'>
+    The wavelength of a photon determines how far it moves
+    while undergoing a single oscillation.
+
+</p>
+<p class="definition" data-word = 'photon energy'>
+    The energy of a photon will determine how it interacts with your eye,
+    giving it color.
+    The energies of photons are on the orders of 1 - 10 electronVolts.
+</p>
+
+<h4>
+    Formulas
+</h4>
+
+<p class="equation">
+    $$
+    c = \lambda f
+    $$
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Symbol</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Quantity</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>SI Unit</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( c \)</div>
+        <div class= 'col-4 border border-dark p-2'>Speed of Light (3e8)</div>
+        <div class= 'col-4 border border-dark p-2'>m/s</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( \lambda \)</div>
+        <div class= 'col-4 border border-dark p-2'>wavelength</div>
+        <div class= 'col-4 border border-dark p-2'>meters</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( f \)</div>
+        <div class= 'col-4 border border-dark p-2'>frequency</div>
+        <div class= 'col-4 border border-dark p-2'>Hertz (1/s)</div>
+    </div>
+</div>
+
+<p>
+    Note that frequency is also sometimes denoted by the
+    Greek letter nu: \( \nu \).
+</p>
+
+<p class="equation">
+    $$
+    E = h f
+    $$
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Symbol</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Quantity</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>SI Unit</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( E \)</div>
+        <div class= 'col-4 border border-dark p-2'>Energy of Photon</div>
+        <div class= 'col-4 border border-dark p-2'>Joules (J)</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( h \)</div>
+        <div class= 'col-4 border border-dark p-2'>Planck's Constant (6.626e-34)</div>
+        <div class= 'col-4 border border-dark p-2'>Joule-seconds</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( f \)</div>
+        <div class= 'col-4 border border-dark p-2'>frequency</div>
+        <div class= 'col-4 border border-dark p-2'>Hertz (1/s)</div>
+    </div>
+</div>
+
+
+<h4>
+    Fundamental Constants
+</h4>
+
+<p>
+    Both of the equations above involve a <strong>fundamental constant</strong>.
+    This is a number with a known value that never changes.
+</p>
+
+<ul>
+    <li>
+        The speed of light:
+        <ul>
+            <li>
+                The speed of light is a fundamental constant represented by \( c \).
+            </li>
+            <li>
+                It is equal to \( 3.00 \cdot 10^8 \text{ m/s} \).
+            </li>
+        </ul>
+    </li>
+    <li>
+        Planck's Constant:
+        <ul>
+            <li>
+                Plan's constant is a fundamental constant that represents
+                the relationship between the frequency and energy of a photon.
+            </li>
+            <li>
+                It is represented by \( h \).
+            </li>
+            <li>
+                It is equal to \( 6.626 \cdot 10^{-34} \text{ J} \cdot \text{s} \)
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h4>
+    Conversions and Other Units
+</h4>
+
+<ul>
+    <li>
+        Wavelength:
+        <ul>
+            <li>
+                The SI unit for wavelength is <strong>meters</strong>.
+            </li>
+            <li>
+                Whenever using a formula, wavelength must
+                <emph>always</emph> be in units of meters.
+            </li>
+            <li>
+                However, wavelength is frequently expressed in <emph>nanometers</emph>
+                as well.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Frequency:
+        <ul>
+            <li>
+                The SI unit for frequency is <strong>Hertz</strong>.
+            </li>
+            <li>
+                Whenever using a formula, frequency must
+                <emph>always</emph> be in units of Hertz.
+            </li>
+            <li>
+                However, frequency is frequently expressed in <emph>teraHertz</emph>
+                as well.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Energy:
+        <ul>
+            <li>
+                The SI unit for energy is <strong>Joules</strong>.
+            </li>
+            <li>
+                Whenever using a formula, energy must
+                <emph>always</emph> be in units of Joules.
+            </li>
+            <li>
+                However, energy is frequently expressed in electron Volts (eV)
+                as well.
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<p class = 'equation'>
+    $$
+    1 \text{ Joules} = 6.242 \cdot 10^{18} \text{ electronVolts}
+    $$
+</p>
+
+
+<h2>
+    Problems
+</h2>
+
+<p class="directions">
+    For full credit on the practice page, you must show your work in solving these problems.
+    You must also use the conversion factor method for all non-metric conversions;
+    you do not need to use it for metric conversions.
+    Please write all answers to three significant figures of accuracy.
+</p>
+
+<div class="pageBreak"></div>
+<ol class = 'questionList'>
+    <li class = 'question'>
+        A photon of visible light has a wavelength of XXX nanometers.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = 'XXX'>
+                Determine what color this photon will be.
+            </li>
+            <li class="subQuestion" data-answer = '\( X.XX \cdot 10^{-7} \text{ meters} \)'>
+                Convert the the wavelength to meters in scientific notation.
+                Because this is a metric conversion, you do not need to use conversion factors.
+            </li>
+            <div class="smallSpace"></div>
+            <li class="subQuestion" data-answer = '\( X.XX \cdot 10^{14} \text{ Hertz}\)'>
+                Determine the frequency of the photon in Hertz.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XXX teraHertz'>
+                Convert the frequency of the photon into teraHertz.
+                Because this is a metric conversion, you do not need to use conversion factors.
+            </li>
+            <div class="smallSpace"></div>
+            <li class="subQuestion" data-answer = '\( X.XX \cdot 10^{-19} \text{ Joules} \)'>
+                Determine the energy of the photon in Joules.
+                You must use the frequency in Hertz to complete this calculation.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX eV'>
+                Convert the energy of the photon into electronVolts.
+                For full credit, you must use the conversion factor method correctly.
+            </li>
+            <div class="smallSpace"></div>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+
+
+    <li class = 'question'>
+        A photon of visible light has a wavelength of 550. nanometers.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = 'XXX'>
+                Determine what color this photon will be.
+            </li>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{XX} \text{ meters}\)'>
+                Convert the the wavelength to meters in scientific notation.
+            </li>
+            <div class="smallSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{XX} \text{ Hertz}\)'>
+                Determine the frequency of the photon in Hertz.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XXX teraHertz'>
+                Convert the frequency of the photon into teraHertz.
+            </li>
+            <div class="smallSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ Joules} \)'>
+                Determine the energy of the photon in Joules.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX eV'>
+                Convert the energy of the photon into electronVolts.
+                For full credit, you must use the conversion factor method correctly.
+            </li>
+            <div class="mediumSpace"></div>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+
+    <li class = 'question'>
+        A photon of visible light has an energy of XX electronVolts.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ Joules} \)'>
+                Convert the energy of the photon into Joules.
+                For full credit, you must use the conversion factor method correctly.
+            </li>
+            <div class="mediumSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{XX} \text{ Hertz}\)'>
+                Determine the frequency of the photon in Hertz.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XXX teraHertz'>
+                Convert the frequency of the photon into teraHertz.
+            </li>
+            <div class="smallSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ meters} \)'>
+                Determine the wavelength of the photon in meters.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XXX nanometers'>
+                Convert the wavelength of the photon into nanometers.
+            </li>
+            <li class="subQuestion" data-answer = 'XX'>
+                Determine what color this photon will be.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+
+    <li class = 'question'>
+        A photon of visible light has an energy of XX electronVolts.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ Joules} \)'>
+                Convert the energy of the photon into Joules.
+                For full credit, you must use the conversion factor method correctly.
+            </li>
+            <div class="mediumSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{XX} \text{ Hertz}\)'>
+                Determine the frequency of the photon in Hertz.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XXX teraHertz'>
+                Convert the frequency of the photon into teraHertz.
+            </li>
+            <div class="smallSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ meters} \)'>
+                Determine the wavelength of the photon in meters.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX nanometers'>
+                Convert the wavelength of the photon into nanometers.
+            </li>
+            <li class="subQuestion" data-answer = 'XX'>
+                Determine what color this photon will be.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+
+    <li class = 'question'>
+        A photon of visible light has a frequency of XX teraHertz.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{XX} \text{ Hertz}\)'>
+                Convert the frequency of the photon into Hertz.
+            </li>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ Joules} \)'>
+                Determine the energy of the photon into Joules.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX eV'>
+                Convert the energy of the photon into electronVolts.
+                For full credit, you must use the conversion factor method correctly.
+            </li>
+            <div class="mediumSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ meters} \)'>
+                Determine the wavelength of the photon in meters.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX nanometers'>
+                Convert the wavelength of the photon into nanometers.
+            </li>
+            <li class="subQuestion" data-answer = 'XX'>
+                Determine what color this photon will be.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+
+    <li class = 'question'>
+        A photon of visible light has a frequency of XX teraHertz.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{XX} \text{ Hertz}\)'>
+                Convert the frequency of the photon into Hertz.
+            </li>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ Joules} \)'>
+                Determine the energy of the photon into Joules.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX eV'>
+                Convert the energy of the photon into electronVolts.
+                For full credit, you must use the conversion factor method correctly.
+            </li>
+            <div class="mediumSpace"></div>
+            <li class="subQuestion" data-answer = '\( XX \cdot 10^{-XX} \text{ meters} \)'>
+                Determine the wavelength of the photon in meters.
+            </li>
+            {{>formulaSolvingTable}}
+            <li class="subQuestion" data-answer = 'XX nanometers'>
+                Convert the wavelength of the photon into nanometers.
+            </li>
+            <li class="subQuestion" data-answer = 'XX'>
+                Determine what color this photon will be.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<ol class="answerList"></ol>
