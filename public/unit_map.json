@@ -8693,6 +8693,17 @@
             "uuid": "c52b412f-d294-4d54-a4a4-3ae198a1c287",
             "id": "c52b41"
           },
+          "space_telescope_research": {
+            "title": "Space Telescope Research",
+            "horizontal": 6,
+            "level": 4,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "Identify images from different regions of the electromagnetic spectrum",
+            "content": "NASA and the European Space Agency (ESA) operate telescopes on earth and in orbit that observe different regions of the electromagnetic spectrum in order to study different objects in space.",
+            "uuid": "f13c61e8-3dd3-402d-bbdb-f41ad96f3b77",
+            "id": "f13c61"
+          },
           "why_is_the_sky_blue":
           {
             "title": "Why is the sky blue?",
