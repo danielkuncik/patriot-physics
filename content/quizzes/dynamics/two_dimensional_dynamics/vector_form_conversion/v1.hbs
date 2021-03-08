@@ -1,6 +1,7 @@
 <p class="directions">
     Convert each of the following vectors into component form.
     Please show your work and represent your answer in an appropriate notation.
+    Write all answers with three significant figures of accuracy.
     Use the conventional definitions of the X and Y axis.
 </p>
 
@@ -34,14 +35,14 @@
 
 
 <script>
-    let vectorProblem1 = drawVector(50,130,'N');
-    let vectorProblem2 = drawVector(40,295,'N');
+    let vectorProblem1 = drawVector(50,130,'');
+    let vectorProblem2 = drawVector(40,325,'');
 
-    let vectorProblem3 = drawVector(20,0,'N');
-    vectorProblem3.merge(drawVector(15,90,'N'),'right');
+    let vectorProblem3 = drawVector(20,0,'');
+    vectorProblem3.merge(drawVector(23,90,''),'right');
 
-    let vectorProblem4 = drawVector(60,180,'N');
-    vectorProblem4.merge(drawVector(35,270,'N'),'left');
+    let vectorProblem4 = drawVector(60,180,'');
+    vectorProblem4.merge(drawVector(50,270,''),'left');
 
     $("#vectorProblem1").append(vectorProblem1.drawCanvas(200));
     $("#vectorProblem2").append(vectorProblem2.drawCanvas(200));
