@@ -118,10 +118,6 @@
       }
     },
     "2-26-2021": {
-      "a95408": {
-        "name": "electromagnetic wave basics",
-        "practice": true
-      },
       "ddf304": {
         "name": "electromagnetic spectrum 1",
         "practice": true
@@ -138,9 +134,6 @@
       "6267c7": {
         "name": "Choosing electromagnetic wave by wavelength 1",
         "practice": true
-      },
-      "64f606": {
-        "name":"Metric to scientific notation"
       },
       "c74889": {
         "name": "Choosing electromagnetic wave by wavelength 2",
@@ -163,10 +156,17 @@
         "noQuiz": true
       }
     },
-    "3-8-2021": {
+    "3-10-2021": {
       "f9822f": {
         "name": "Conversion Factors",
         "practice": false
+      },
+      "64f606": {
+        "name":"Metric to scientific notation"
+      },
+      "a95408": {
+        "name": "electromagnetic wave basics",
+        "practice": true
       }
     },
     "3-12-2021": {
