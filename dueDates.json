@@ -173,6 +173,16 @@
       "4c74b0": {
         "name": "photon formulas",
         "practice": true
+      },
+      "33abbc": {
+        "name": "long wavelength astronomy",
+        "practice": true,
+        "noQuiz": true
+      },
+      "c52b41": {
+        "name": "short wavelength astronomy",
+        "practice": true,
+        "noQuiz": true
       }
     }
   },
