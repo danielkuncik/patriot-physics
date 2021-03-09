@@ -496,6 +496,118 @@ function processQuizAttempt(attempt) {
     return attempt
 }
 
+function processAttemptObject(attemptObject, maxImages = 6) {
+    let urlList = [];
+    let i;
+    for (i = 0; maxImages; i++) {
+        let url = attemptObject[`image_url_${i+1}`];
+        if (url) {
+            urlList.push(url);
+        }
+    }
+    return {
+        urlList: urlList,
+        score: attemptObject.score,
+        comment: attemptObject.comment,
+        timeStamp: attemptObject.tstz
+    }
+}
+
+function displayImageUrl(url, number) {
+    let type = getTypeForUrl(url);
+    string = "";
+    if (type === 'image') {
+        string = string + `<li><img src = '${url}' /></li>`;
+    } else if (type === 'link') {
+        string = string + `<li><a href = '${url}' >Access Image ${number}</a></li>`;
+    }
+    return string
+}
+
+// draft!
+function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
+    let processedObject = processAttemptObject(attemptObject);
+    let numCols = processAttemptObject.urlList.length + 1;
+    let numRows = Math.ceil(numCols / 2);
+    let date = getDateFromSQL_timestamp(processedObject.timeStamp);
+    let message;
+    if (practiceOrQuiz === 'quiz') {
+        message = `You took this quiz on ${date} and scored ${processedObject.score} out of 20`;
+    } else if (practiceOrQuiz === 'practice') {
+        let scoreMessage;
+        if (processedObject.score === 2) {
+            scoreMessage = 'you received full credit';
+        } else if (processAttemptObject.score === 1) {
+            scoreMessage = 'you received half credit';
+        } else {
+            scoreMessage = 'you received no credit';
+        }
+        message = `You submitted this practice page on ${date}, and ${scoreMessage}`;
+    }
+    let string = "";
+
+    let imageNumber = 0;
+
+    string = string + "<div class = 'row'>";
+
+    string = string + "<div class = 'col-md-6'>";
+    string = string + `<p>${message}</p>`;
+    string = string + "</div>";
+
+    string = string + "<div class = 'col-md-6'>";
+    string = string + displayImageUrl(processedObject.urlList[0], 1);
+    imageNumber++;
+    string = string + "</div>";
+
+    string = string + "</div>";
+
+    for (j = 1; j < numRows; j++) {
+        string = string + "<div class = 'row'>";
+
+
+        string = string + "<div class = 'col-md-6'>";
+        if (imageNumber < processedObject.urlList.length) {
+            string = string + displayImageUrl(processedObject.urlList[imageNumber], imageNumber + 1);
+            imageNumber++;
+        }
+        string = string + "</div>";
+
+        string = string + "<div class = 'col-md-6'>";
+        if (imageNumber < processedObject.urlList.length) {
+            string = string + displayImageUrl(processedObject.urlList[imageNumber], imageNumber + 1);
+            imageNumber++;
+        }
+        string = string + "</div>";
+
+        string = string + "</div>";
+    }
+    return string
+}
+
+function processPracticeAttempt(attempt) {
+    let type1, type2, type3, type4, type5, type6, url1, url2, url3, url4, url5, ulr6;
+    url1 = attempt.image_url_1;
+    url2 = attempt.image_url_2;
+    url3 = attempt.image_url_3;
+    url4 = attempt.image_url_4;
+    url5 = attempt.image_url_5;
+
+
+    type1 = getTypeForUrl(url1);
+    type2 = getTypeForUrl(url2);
+    type3 = getTypeForUrl(url3);
+
+    attempt.url1 = url1;
+    attempt.type1 = type1;
+    attempt.url2 = url2;
+    attempt.type2 = type2;
+    attempt.url3 = url3;
+    attempt.type3 = type3;
+
+    return attempt
+
+}
+
 hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
     const dueDates = dueDatesJSON[courseLevel];
     let string = "";
@@ -696,6 +808,44 @@ function getPreviousAttemptListItem(previousAttemptObject) {
     }
     string = string + "</li>";
     return new hbs.SafeString(string)
+}
+
+function getPreviousPracticeSubmission(previousSubmission) {
+    let string = "<li>";
+    let thisAttempt = processQuizAttempt(previousAttemptObject);
+    let date = getDateFromSQL_timestamp(thisAttempt.tstz);
+    if (thisAttempt.score) {
+        string = string + `You took this quiz on ${date} and scored ${thisAttempt.score} out of 20`;
+        string = string + "<ul>";
+        if (thisAttempt.url1) {
+            if (thisAttempt.type1 === 'image') {
+                string = string + `<li><img src = '${thisAttempt.url1}' /></li>`;
+            } else if (thisAttempt.type1 === 'link') {
+                string = string + `<li><a href = '${thisAttempt.url1}' >Access Page 1</a></li>`;
+            }
+        }
+        if (thisAttempt.url2) {
+            if (thisAttempt.type2 === 'image') {
+                string = string + `<li><img src = '${thisAttempt.url2}' /></li>`;
+            } else if (thisAttempt.type2 === 'link') {
+                string = string + `<li><a href = '${thisAttempt.url2}' >Access Page 1</a></li>`;
+            }
+        }
+        if (thisAttempt.url3) {
+            if (thisAttempt.type3 === 'image') {
+                string = string + `<li><img src = '${thisAttempt.url3}' /></li>`;
+            } else if (thisAttempt.type3 === 'link') {
+                string = string + `<li><a href = '${thisAttempt.url3}' >Access Page 1</a></li>`;
+            }
+        }
+        string = string + `<li>Comment: ${thisAttempt.comment}</li>`;
+        string = string + "</ul>";
+    } else {
+        string = string + `You took this quiz on ${date}, and the quiz has not been scored yet.`;
+    }
+    string = string + "</li>";
+    return new hbs.SafeString(string)
+
 }
 
 hbs.registerHelper('showPreviousPracticeSubmissions',(previousPracticeArray) => {
