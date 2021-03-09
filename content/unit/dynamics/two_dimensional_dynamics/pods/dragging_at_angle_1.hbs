@@ -1,4 +1,4 @@
-<p>
+<p class="introduction">
     In this section, we will begin to use the idea of vector components
     to analyze dynamics problems.
     Previous units on dynamics have considered forces that are only
@@ -6,51 +6,26 @@
     In this unit, we will analyze forces that occur at angles,
     and we will do so using the idea of <emph>vector components</emph>.
 </p>
+<!--
+add more links to introduction
+-->
 
-<h4>
-    Forces
-</h4>
-<ol>
-    <li>
-        Gravity:
-        Gravity always has a direction downward
-        and always has a magnitude given by
-        $$
-        F_g = mg
-        $$
-    </li>
-    <li>
-        Applied Force:
-        The applied force in these problems
-        is at an angle.
-        It is typically given
-        and needs to be broken into components
-        to complete the problem.
-    </li>
-    <li>
-        Normal Force:
-        The normal force is an <emph>constraint force</emph>.
-        For an object on the floor,
-        the direction of the normal force is always
-        <strong>upward</strong>.
-        The magnitude of the normal force will be whatever
-        value is necessary for the total vertical net force to equal
-        zero:
-        $$
-        \Sigma F_y = 0
-        $$
-        $$
-        F_N + \text{other vertical forces} = \Sigma F_y = 0
-        $$
-    </li>
-    <li>
-        Kinetic Friction:
-        Kinetic friction is given by
-        $$
-        F_{frk} = \mu_k F_N
-        $$
-    </li>
-</ol>
+<p class="definition" data-word = 'Normal Force'>
+    The normal force is an <emph>constraint force</emph>.
+    For an object on the floor,
+    the direction of the normal force is always
+    <strong>upward</strong>.
+    The magnitude of the normal force will be whatever
+    value is necessary for the total vertical net force to equal
+    zero:
+    $$
+    \Sigma F_y = 0
+    $$
+    $$
+    F_N + \text{other vertical forces} = \Sigma F_y = 0
+    $$
+</p>
+
 
 <h4>
     Problems
@@ -59,99 +34,179 @@
     Write every formula you use before you use it!
 </p>
 
-<ol>
-    <li class = 'mb-5'>
-        A person pulls a block of mass 5 kg
-        on a frictionless surface
-        upward at an angle of \(30^{\circ} \)
-        with a force of 6 N.
-        <div id = 'problem1'></div>
-        <ol type = 'a'>
+<div class="pageBreak"></div>
+<h3>
+    Part 1: Review => A Horizontal Force on a Frictionless Surface:
+</h3>
+
+<h4>
+    Forces Involved
+</h4>
+
+<ul>
+    <li>
+        Gravitational Force:
+        <ul>
             <li>
+                Magnitude: Given by \( F_g = mg \)
+            </li>
+            <li>
+                Direction: Always Downwards
+            </li>
+        </ul>
+    </li>
+    <li>
+        Normal Force:
+        <ul>
+            <li>
+                Magnitude: balances other vertical forces
+            </li>
+            <li>
+                Direction: Always perpendicular to the surface (in this case, upwards)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Applied Force:
+        <ul>
+            <li>
+                Magnitude: Given
+            </li>
+            <li>
+                Direction: Given (<emph>right</emph> in these problems)
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="pageBreak"></div>
+
+<ol class="questionList">
+    <li class="question mb-5">
+        A person pulls a block of mass 7.00 kg on a frictionless surface
+        with an applied force of 28.0 Newtons.
+        <div id = 'problemA'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Fill out the table below to analyze all of the forces acting on the block.
+                <div id = 'tableA'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li class="question mb-5">
+        A person pulls a block of mass 9.00 kg on a frictionless surface
+        with an applied force of 3.00 Newtons.
+        <div id = 'problemB'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Fill out the table below to analyze all of the forces acting on the block.
+                <div id = 'tableB'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<div class="pageBreak"></div>
+<h3>
+    Part 2: Pulling a Block at an Angle on a Frictionless Surface
+</h3>
+
+<h4>
+    Forces Involved
+</h4>
+
+<ul>
+    <li>
+        Gravitational Force:
+        <ul>
+            <li>
+                Magnitude: Given by \( F_g = mg \)
+            </li>
+            <li>
+                Direction: Always Downwards
+            </li>
+        </ul>
+    </li>
+    <li>
+        Normal Force:
+        <ul>
+            <li>
+                Magnitude: balances other vertical forces
+                <strong>
+                    In these problems, normal force will NOT be equal to the magnitude of gravity!
+                </strong>
+            </li>
+            <li>
+                Direction: Always perpendicular to the surface (in this case, upwards)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Applied Force:
+        <ul>
+            <li>
+                Magnitude: Given
+            </li>
+            <li>
+                Direction: Given (at an angle in these problems)
+            </li>
+            <li>
+                Must be broken into two components.
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<div class="pageBreak"></div>
+<ol class = 'questionList'>
+    <li class = 'question mb-5'>
+        A person pulls a block of mass 5.00 kg
+        on a frictionless surface
+        upward at an angle of \(30.0^{\circ} \)
+        with a force of 6.00 N.
+        <div id = 'problem1'></div>
+        <ol type = 'a' class="subQuestionList">
+            <li class="subQuestion">
                 Only one force, the applied force,
                 has both horizontal and vertical components.
                 Break it into these two components.
             </li>
-            <li>
+            <li class="subQuestion">
                 Fill out the table below to analyze all of the
                 forces acting on the surface:
                 <div id = 'table1'></div>
             </li>
-            <li>
+            <li class="subQuestion">
                 Determine the net force and the acceleration of
                 the block.
             </li>
         </ol>
     </li>
     <div class = 'pageBreak'></div>
-    <li class = 'mb-5'>
-        A person pulls a block of mass 8 kg
+    <li class = 'question mb-5'>
+        A person pulls a block of mass 8.00 kg
         on a frictionless surface upward
-        at an angle of \( 80^{\circ} \)
-        with a force of 12 N/.
+        at an angle of \( 80.0^{\circ} \)
+        with a force of 12.00 N.
         <div id = 'problem2'></div>
-        <ol type = 'a'>
-            <li>
+        <ol type = 'a' class="subQuestionList">
+            <li class="subQuestion">
                 Only one force, the applied force,
                 has both horizontal and vertical components.
                 Break it into these two components.
             </li>
-            <li>
+            <li class="subQuestion">
                 Fill out the table below to analyze all of the
                 forces acting on the surface:
                 <div id = 'table2'></div>
             </li>
-            <li>
-                Determine the net force and the acceleration of
-                the block.
-            </li>
-        </ol>
-    </li>
-    <div class = 'pageBreak'></div>
-    <li class = 'mb-5'>
-        A person pulls a block of mass 12 kg
-        on at an angle of \( 20^{\circ} \) upward from the horizontal
-        with a strength of 8 N.
-        The surface and block have a coefficient of kinetic friction
-        of 0.15.
-        <div id = 'problem3'></div>
-        <ol type = 'a'>
-            <li>
-                Only one force, the applied force,
-                has both horizontal and vertical components.
-                Break it into these two components.
-            </li>
-            <li>
-                Fill out the table below to analyze all of the
-                forces acting on the surface:
-                <div id = 'table3'></div>
-            </li>
-            <li>
-                Determine the net force and the acceleration of
-                the block.
-            </li>
-        </ol>
-    </li>
-    <div class = 'pageBreak'></div>
-    <li class = 'mb-5'>
-        A person pulls a block of mass 4 kg
-        on at an angle of \( 50^{\circ} \) upward from the horizontal
-        with a strength of 9 N.
-        The surface and block have a coefficient of kinetic friction
-        of 0.35.
-        <div id = 'problem4'></div>
-        <ol type = 'a'>
-            <li>
-                Only one force, the applied force,
-                has both horizontal and vertical components.
-                Break it into these two components.
-            </li>
-            <li>
-                Fill out the table below to analyze all of the
-                forces acting on the surface:
-                <div id = 'table4'></div>
-            </li>
-            <li>
+            <li class="subQuestion">
                 Determine the net force and the acceleration of
                 the block.
             </li>
@@ -159,9 +214,220 @@
     </li>
 </ol>
 
+<div class="pageBreak"></div>
+<h3>
+    Part 3: Review => Pulling a Block Horizontally on a Surface with Kinetic Friction
+</h3>
+
+<h4>
+    Forces Involved
+</h4>
+
+<ul>
+    <li>
+        Gravitational Force:
+        <ul>
+            <li>
+                Magnitude: Given by \( F_g = mg \)
+            </li>
+            <li>
+                Direction: Always Downwards
+            </li>
+        </ul>
+    </li>
+    <li>
+        Normal Force:
+        <ul>
+            <li>
+                Magnitude: balances other vertical forces
+            </li>
+            <li>
+                Direction: Always perpendicular to the surface (in this case, upwards)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Applied Force:
+        <ul>
+            <li>
+                Magnitude: Given
+            </li>
+            <li>
+                Direction: Given (<emph>right</emph> in these problems)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Kinetic Friction:
+        <ul>
+            <li>
+                Magnitude: \( F_{fr} = F_N \mu_k \)
+            </li>
+            <li>
+                Direction: Opposite the direction the block is moving.
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="pageBreak"></div>
+
+<ol class="questionList">
+    <li class="question">
+        A person pulls a block with mass of 3.00 kg
+        horizontally with a force of 12.5 Newtons
+        while the block is moving to the right.
+        The coefficient of kinetic friction between the block and the ground is
+        0.100.
+        <div id = 'problemC'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Fill out the table below to analyze all of the forces acting on the block.
+                <div id = 'tableC'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li class="question">
+        A person pulls a block with mass of 8.00 kg
+        horizontally with a force of 24.5 Newtons
+        while the block is moving to the right.
+        The coefficient of kinetic friction between the block and the ground is
+        0.030.
+        <div id = 'problemD'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Fill out the table below to analyze all of the forces acting on the block.
+                <div id = 'tableD'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+
+    </li>
+
+</ol>
+<div class="pageBreak"></div>
+<h3>
+    Part 4: Pulling a Block at an Angle on a Surface with Kinetic Friction
+</h3>
+
+<h4>
+    Forces Involved
+</h4>
+
+<ul>
+    <li>
+        Gravitational Force:
+        <ul>
+            <li>
+                Magnitude: Given by \( F_g = mg \)
+            </li>
+            <li>
+                Direction: Always Downwards
+            </li>
+        </ul>
+    </li>
+    <li>
+        Normal Force:
+        <ul>
+            <li>
+                Magnitude: balances other vertical forces
+                <strong>The Normal force will NOT be equal to gravity in these problems.</strong>
+            </li>
+            <li>
+                Direction: Always perpendicular to the surface (in this case, upwards)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Applied Force:
+        <ul>
+            <li>
+                Magnitude: Given
+            </li>
+            <li>
+                Direction: Given (At an angle in these problems)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Kinetic Friction:
+        <ul>
+            <li>
+                Magnitude: \( F_{fr} = F_N \mu_k \)
+            </li>
+            <li>
+                Direction: Opposite the direction the block is moving.
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="pageBreak"></div>
+
+<ol class="questionList">
+    <li class = 'question mb-5'>
+        A person pulls a block of mass 12.0 kg
+        on at an angle of \( 20.0^{\circ} \) upward from the horizontal
+        with a strength of 8.00 N
+        while the block is moving to the right.
+        The surface and block have a coefficient of kinetic friction
+        of 0.150.
+        <div id = 'problem3'></div>
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Only one force, the applied force,
+                has both horizontal and vertical components.
+                Break it into these two components.
+            </li>
+            <li class = 'subQuestion'>
+                Fill out the table below to analyze all of the
+                forces acting on the surface:
+                <div id = 'table3'></div>
+            </li>
+            <li class = 'subQuestion'>
+                Determine the net force and the acceleration of
+                the block.
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'mb-5'>
+        A person pulls a block of mass 4.00 kg
+        on at an angle of \( 50.0^{\circ} \) upward from the horizontal
+        with a strength of 9.00 N.
+        The surface and block have a coefficient of kinetic friction
+        of 0.350.
+        <div id = 'problem4'></div>
+        <ol type = 'a' class="subQuestionList">
+            <li class="subQuestion">
+                Only one force, the applied force,
+                has both horizontal and vertical components.
+                Break it into these two components.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to analyze all of the
+                forces acting on the surface:
+                <div id = 'table4'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force and the acceleration of
+                the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+<div class="pageBreak"></div>
+
 <h4>
     Conceptual Questions
 </h4>
+<p>
+    more coming soon
+</p>
 
 <p>
     In previous problems, blocks were pulled horizontally
@@ -175,7 +441,7 @@
 </p>
 
 <h4>
-    More Problems!!!
+    More Problems""!
 </h4>
 
 <a href = '/contentFiles/dragging_at_angle_1_extra_problems.pdf'>
@@ -186,6 +452,17 @@
 
 
 <script>
+    let problemA = new BlockProblem();
+    problemA.addBlock();
+    problemA.addHorizontalAppliedForce();
+    let problemB = new BlockProblem();
+    problemB.addBlock();
+    problemB.addHorizontalAppliedForce();
+
+    $("#problemA").append(problemA.drawCanvas(500));
+    $("#problemB").append(problemB.drawCanvas(500));
+
+
     let problem1 = new BlockProblem();
     problem1.addBlock();
     let myForce1 = problem1.addAngledAppliedForce(undefined, undefined, undefined, 30, 'right');
@@ -197,6 +474,18 @@
     let myForce2 = problem2.addAngledAppliedForce(undefined, undefined, undefined, 80, 'right');
     myForce2.addComponents();
     $("#problem2").append(problem2.drawCanvas(500));
+
+    let problemC = new BlockProblem();
+    problemC.addBlock();
+    problemC.addHorizontalAppliedForce();
+
+    let problemD = new BlockProblem();
+    problemD.addBlock();
+    problemD.addHorizontalAppliedForce();
+
+    $("#problemC").append(problemC.drawCanvas(500));
+    $("#problemD").append(problemD.drawCanvas(500));
+
 
     let problem3 = new BlockProblem();
     problem3.addBlock();
@@ -210,8 +499,16 @@
     myForce4.addComponents();
     $("#problem4").append(problem4.drawCanvas(500));
 
+    let horizontalFrictionlessTable = new forceTableQuantitative2D(1,2);
+    let horizontalFrictionTable = new forceTableQuantitative2D(2,2);
     let frictionlessTable = new forceTableQuantitative2D(1,3);
     let frictionTable = new forceTableQuantitative2D(2,3);
+
+    $("#tableA").append(horizontalFrictionlessTable.draw());
+    $("#tableB").append(horizontalFrictionlessTable.draw());
+    $("#tableC").append(horizontalFrictionTable.draw());
+    $("#tableD").append(horizontalFrictionTable.draw());
+
     $("#table1").append(frictionlessTable.draw());
     $("#table2").append(frictionlessTable.draw());
     $("#table3").append(frictionTable.draw());
