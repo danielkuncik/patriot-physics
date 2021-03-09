@@ -90,6 +90,11 @@
       },
       "5ef188": {
         "name": "vector component addition"
+      },
+      "23b54c": {
+        "name": "dragging at angle 1",
+        "noQuiz": true,
+        "practice": true
       }
     }
   },
