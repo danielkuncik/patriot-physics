@@ -377,7 +377,7 @@ app.get('/pod/:id',[ (req, res, next) => {
     req.pod_uuid_list = [req.pod_uuid];
     next();
   }
-}, db.check_if_logged_in, db.load_relevant_grades, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.find_practice_comment, checkQuizAccess,disp.display_pod_page]);
+}, db.check_if_logged_in, db.load_relevant_grades, look_up_requirements, look_up_current_scores, db.look_up_quiz_attempts, db.look_up_practice_attempts, db.find_practice_comment, checkQuizAccess,disp.display_pod_page]);
 
 
 // on the asset path, for some reason it does not work if i do not beign with a slash

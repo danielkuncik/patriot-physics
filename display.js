@@ -167,6 +167,7 @@ display_pod_page = (req, res) => {
             overallLevel: req.overallLevel,
             gradeMap: req.gradeMap,
             previousAttempts: req.previousAttempts,
+            previousPracticeSubmissions: req.previousPracticeSubmissions,
             ungradedQuizzes: req.ungradedQuizzes,
             totalAttempts: req.totalAttemps,
             practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`,

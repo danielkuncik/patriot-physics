@@ -698,6 +698,12 @@ function getPreviousAttemptListItem(previousAttemptObject) {
     return new hbs.SafeString(string)
 }
 
+hbs.registerHelper('showPreviousPracticeSubmissions',(previousPracticeArray) => {
+    //console.log(previousPracticeArray);
+    let string = "<p>Coming Soon</p>";
+    return new hbs.SafeString(string);
+});
+
 hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {
     let string;
     if (previousAttemptsArray === undefined) {

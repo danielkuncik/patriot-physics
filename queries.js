@@ -315,7 +315,7 @@ const look_up_practice_attempts = function(req, res, next) {
             if (err) {
                 throw err
             }
-            req.previousPracticeAttempts = results.rows;
+            req.previousPracticeSubmissions = results.rows;
             if (results.rows.length > 0) {
                 let lastAttempt = results.rows[results.rows.length - 1];
                 if (lastAttempt.score === null) {
@@ -611,6 +611,7 @@ module.exports = {
     submit_practice,
     look_up_quiz_attempts,
     look_up_quiz_attempts_2,
+    look_up_practice_attempts,
     count_all_attempts,
     find_pending_quizzes,
     look_up_password,
