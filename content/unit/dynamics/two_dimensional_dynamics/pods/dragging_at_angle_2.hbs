@@ -1,4 +1,4 @@
-<p>
+<p class="introduction">
     In a previous pod, we looked at dragging a block
     at an angle on a frictionless surface or a surface
     with kinetic friction.
@@ -9,8 +9,9 @@
     and other factors will change based on that result.
 </p>
 
+
 <h3>
-    Review: Pulling a box horizontally with static friction
+    Part 1: Review: Pulling a box horizontally with static friction
 </h3>
 
 <h5>
@@ -97,6 +98,8 @@
     </li>
 </ol>
 
+<div class="pageBreak"></div>
+
 <ol class="questionList">
     <li class="question">
         A block with a mass of 5.00 kg is pulled horizontally with an applied force of 13.0 Newtons.
@@ -118,6 +121,7 @@
             </li>
         </ol>
     </li>
+    <div class="pageBreak"></div>
     <li class="question">
         A blocks with a mass of 4.50 kg is pulled horizontally with an applied force of 16.0 Newtons.
         The coefficient of kinetic friction between the box and the ground is 0.200;
@@ -158,6 +162,8 @@
 
 </script>
 
+<div class="pageBreak"></div>
+
 <h3>
     New Problems: Pulling an Object at an Angle with Static Friction
 </h3>
@@ -194,6 +200,7 @@
     </ul>
 </p>
 
+<div class="pageBreak"></div>
 
 <ol class="questionList">
     <li class="question">
@@ -228,10 +235,17 @@
                 Explain how you determined your answer in 2 - 3 sentences.
             </li>
             <li class="subQuestion">
-                If you selected A or B, determine the acceleration of the block.
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table1'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
             </li>
         </ol>
     </li>
+    <div class="pageBreak"></div>
     <li class="question">
         <p>
             A box is dragged at an angle along a flat surface,
@@ -264,10 +278,17 @@
                 Explain how you determined your answer in 2 - 3 sentences.
             </li>
             <li class="subQuestion">
-                If you selected A or B, determine the acceleration of the block.
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table2'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
             </li>
         </ol>
     </li>
+    <div class="pageBreak"></div>
     <li class="question">
         <p>
             A box is dragged at an angle along a flat surface,
@@ -300,10 +321,17 @@
                 Explain how you determined your answer in 2 - 3 sentences.
             </li>
             <li class="subQuestion">
-                If you selected A or B, determine the acceleration of the block.
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table3'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
             </li>
         </ol>
     </li>
+    <div class="pageBreak"></div>
     <li class="question">
         <p>
             A box is dragged at an angle along a flat surface,
@@ -336,12 +364,27 @@
                 Explain how you determined your answer in 2 - 3 sentences.
             </li>
             <li class="subQuestion">
-                If you selected A or B, determine the acceleration of the block.
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table4'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
             </li>
         </ol>
     </li>
 </ol>
 
-<h2>
+<script>
+    let frictionTable = new forceTableQuantitative2D(3,2);
+
+    $("#table1").append(frictionTable.draw());
+    $("#table2").append(frictionTable.draw());
+    $("#table3").append(frictionTable.draw());
+    $("#table4").append(frictionTable.draw());
+</script>
+
+<h2 class="no-print">
     <a href = '/extraFiles/dragging_2_answers.pdf'>ANSWERS</a>
 </h2>
