@@ -458,7 +458,8 @@ function displayDateFromString(dateString) {
 function getDateFromSQL_timestamp(SQL_timestamp) {
     let string = JSON.stringify(SQL_timestamp);
     let year = string.slice(1,5);
-    let month = Months_Dictionary[string.slice(6,8)];
+    let monthNumber = String(Number(string.slice(6,8)));
+    let month = Months_Dictionary[monthNumber];
     let day = string.slice(9,11);
     return `${month} ${day}, ${year}`;
 }
@@ -499,7 +500,7 @@ function processQuizAttempt(attempt) {
 function processAttemptObject(attemptObject, maxImages = 6) {
     let urlList = [];
     let i;
-    for (i = 0; maxImages; i++) {
+    for (i = 0; i < maxImages; i++) {
         let url = attemptObject[`image_url_${i+1}`];
         if (url) {
             urlList.push(url);
@@ -527,12 +528,16 @@ function displayImageUrl(url, number) {
 // draft!
 function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
     let processedObject = processAttemptObject(attemptObject);
-    let numCols = processAttemptObject.urlList.length + 1;
+    let numCols = processedObject.urlList.length + 1;
     let numRows = Math.ceil(numCols / 2);
     let date = getDateFromSQL_timestamp(processedObject.timeStamp);
     let message;
     if (practiceOrQuiz === 'quiz') {
-        message = `You took this quiz on ${date} and scored ${processedObject.score} out of 20`;
+        if (!processedObject.score) {
+            message = `You took this quiz on ${date} and your score is still pending`;
+        } else {
+            message = `You took this quiz on ${date} and scored ${processedObject.score} out of 20`;
+        }
     } else if (practiceOrQuiz === 'practice') {
         let scoreMessage;
         if (processedObject.score === 2) {
@@ -561,9 +566,9 @@ function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
 
     string = string + "</div>";
 
+    let j;
     for (j = 1; j < numRows; j++) {
         string = string + "<div class = 'row'>";
-
 
         string = string + "<div class = 'col-md-6'>";
         if (imageNumber < processedObject.urlList.length) {
@@ -810,43 +815,6 @@ function getPreviousAttemptListItem(previousAttemptObject) {
     return new hbs.SafeString(string)
 }
 
-function getPreviousPracticeSubmission(previousSubmission) {
-    let string = "<li>";
-    let thisAttempt = processQuizAttempt(previousAttemptObject);
-    let date = getDateFromSQL_timestamp(thisAttempt.tstz);
-    if (thisAttempt.score) {
-        string = string + `You took this quiz on ${date} and scored ${thisAttempt.score} out of 20`;
-        string = string + "<ul>";
-        if (thisAttempt.url1) {
-            if (thisAttempt.type1 === 'image') {
-                string = string + `<li><img src = '${thisAttempt.url1}' /></li>`;
-            } else if (thisAttempt.type1 === 'link') {
-                string = string + `<li><a href = '${thisAttempt.url1}' >Access Page 1</a></li>`;
-            }
-        }
-        if (thisAttempt.url2) {
-            if (thisAttempt.type2 === 'image') {
-                string = string + `<li><img src = '${thisAttempt.url2}' /></li>`;
-            } else if (thisAttempt.type2 === 'link') {
-                string = string + `<li><a href = '${thisAttempt.url2}' >Access Page 1</a></li>`;
-            }
-        }
-        if (thisAttempt.url3) {
-            if (thisAttempt.type3 === 'image') {
-                string = string + `<li><img src = '${thisAttempt.url3}' /></li>`;
-            } else if (thisAttempt.type3 === 'link') {
-                string = string + `<li><a href = '${thisAttempt.url3}' >Access Page 1</a></li>`;
-            }
-        }
-        string = string + `<li>Comment: ${thisAttempt.comment}</li>`;
-        string = string + "</ul>";
-    } else {
-        string = string + `You took this quiz on ${date}, and the quiz has not been scored yet.`;
-    }
-    string = string + "</li>";
-    return new hbs.SafeString(string)
-
-}
 
 hbs.registerHelper('showPreviousPracticeSubmissions',(previousPracticeArray) => {
     //console.log(previousPracticeArray);
@@ -867,15 +835,20 @@ hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {
         } else {
             countMessage = `${previousAttemptsArray.length} times`;
         }
-        string = `<p>You have taken this quiz ${countMessage}.</p>`;
 
-        string = string + "<ul>";
+        string = "<div class = 'container'>";
+        string = string + "<div class = 'row'>";
+        string = string + "<div class = 'col-12'>";
+        string = `<h5>You have taken this quiz ${countMessage}.</h5>`;
+        string = string + "</div>";
+        string = string + "</div>";
+
 
         previousAttemptsArray.forEach((previousAttempt) => {
-            string = string + getPreviousAttemptListItem(previousAttempt);
+            string = string + displayAttempt(previousAttempt);
         });
 
-        string = string + "</ul>";
+        string = string + "</div>";
     }
     return new hbs.SafeString(string);
 });
