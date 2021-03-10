@@ -95,6 +95,11 @@
         "name": "dragging at angle 1",
         "noQuiz": true,
         "practice": true
+      },
+      "441097": {
+        "name": "dragging at angle 2",
+        "noQuiz": true,
+        "practice": true
       }
     }
   },

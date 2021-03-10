@@ -9,8 +9,161 @@
     and other factors will change based on that result.
 </p>
 
+<h3>
+    Review: Pulling a box horizontally with static friction
+</h3>
+
+<h5>
+    Forces
+</h5>
+<ul>
+    <li>
+        Gravity:
+        <ul>
+            <li>
+                Magnitude: \( F_g = m g \)
+            </li>
+            <li>
+                Direction: Downwards
+            </li>
+        </ul>
+    </li>
+    <li>
+        Normal Force:
+        <ul>
+            <li>
+                Magnitude: Whatever is necessary to balance other forces
+            </li>
+            <li>
+                Direction: Perpendicular to the surface (upwards in this case)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Applied Force:
+        <ul>
+            <li>
+                Magnitude: Given
+            </li>
+            <li>
+                Direction: Given
+            </li>
+        </ul>
+    </li>
+    <ul>
+        Static Friction: applied if box moves
+        <li>
+            Magnitude: Whatever is necessary to balance other horizontal forces.
+        </li>
+        <li>
+            Direction: Whatever is necessary to balance other horizontal forces.
+        </li>
+    </ul>
+    <li>
+        Kinetic Friction:
+        (Applied if box moves)
+        <ul>
+            <li>
+                Magnitude: \( F_{fr} = \mu_k F_N \)
+            </li>
+            <li>
+                Direction: Opposite direction of motion of the block
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h5>
+    Determining if a block moves:
+</h5>
+
+<ol>
+    <li>
+        Determine the magnitude of gravitational forces and normal force.
+    </li>
+    <li>
+        Determine the <emph>maximum value of static friction</emph> which is given by
+        \( F_{fr} \leq \mu_s F_N \)
+    </li>
+    <li>
+        If the applied force exceeds the maximum static friction, the block begins moving.
+        Otherwise, it does not.
+    </li>
+    <li>
+        If the box moves, kinetic friction acts on the block.
+        If the box does not move, static friction acts on the block.
+        Make sure to know that \( \mu_s F_N \) is NOT the magnitude of static friction,
+        it is the maximum magnitude. The magnitude of static friction is what is necessary to prevent motion.
+    </li>
+</ol>
+
+<ol class="questionList">
+    <li class="question">
+        A block with a mass of 5.00 kg is pulled horizontally with an applied force of 13.0 Newtons.
+        The coefficient of kinetic friction between the box and the ground is 0.200;
+        The coefficient of static friction between the box and the ground is 0.300.
+        <div id = 'problemA'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Determine whether the block moves.
+                Write all formulas used and defend your choice in 1-2 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe all the forces acting on the block.
+                Make sure to indicate whether friction is static or kinetic in the table.
+                <div id = 'tableA'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        A blocks with a mass of 4.50 kg is pulled horizontally with an applied force of 16.0 Newtons.
+        The coefficient of kinetic friction between the box and the ground is 0.200;
+        The coefficient of static friction between the box and the ground is 0.350.
+        <div id = 'problemB'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Determine whether the block moves.
+                Write all formulas used and defend your choice in 1-2 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe all the forces acting on the block.
+                Make sure to indicate whether friction is static or kinetic in the table.
+                <div id = 'tableB'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<script>
+    let problemA = new BlockProblem();
+    problemA.addBlock();
+    problemA.addHorizontalAppliedForce();
+    let problemB = new BlockProblem();
+    problemB.addBlock();
+    problemB.addHorizontalAppliedForce();
+
+    $("#problemA").append(problemA.drawCanvas(300));
+    $("#problemB").append(problemB.drawCanvas(300));
+
+
+    let horizontalTable = new forceTableQuantitative2D(2,2);
+    $("#tableA").append(horizontalTable.draw());
+    $("#tableB").append(horizontalTable.draw());
+
+</script>
+
+<h3>
+    New Problems: Pulling an Object at an Angle with Static Friction
+</h3>
+
 <p>
-    However, when a box is pulled at an angle, there are three conditions:
+    When a box is pulled at an angle, there are three conditions:
     the box could not move, the box could move horizontally,
     or the box could be pulled upward off the ground!
     See the flowchart below:
@@ -189,4 +342,6 @@
     </li>
 </ol>
 
-<a href = '/extraFiles/dragging_2_answers.pdf'>ANSWERS</a>
+<h2>
+    <a href = '/extraFiles/dragging_2_answers.pdf'>ANSWERS</a>
+</h2>
