@@ -518,14 +518,14 @@ function displayImageUrl(url, number) {
     let type = getTypeForUrl(url);
     string = "";
     if (type === 'image') {
-        string = string + `<li><img src = '${url}' /></li>`;
+        string = string + `<img src = '${url}' />`;
     } else if (type === 'link') {
-        string = string + `<li><a href = '${url}' >Access Image ${number}</a></li>`;
+        string = string + `<a href = '${url}' >Access Image ${number}</a>`;
     }
     return string
 }
 
-// draft!
+// tested 3-9-2021!
 function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
     let processedObject = processAttemptObject(attemptObject);
     let numCols = processedObject.urlList.length + 1;
@@ -553,7 +553,7 @@ function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
 
     let imageNumber = 0;
 
-    string = string + "<div class = 'row'>";
+    string = string + "<div class = 'row m-2'>";
 
     string = string + "<div class = 'col-md-6'>";
     string = string + `<p>${message}</p>`;
@@ -568,7 +568,7 @@ function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
 
     let j;
     for (j = 1; j < numRows; j++) {
-        string = string + "<div class = 'row'>";
+        string = string + "<div class = 'row m-2'>";
 
         string = string + "<div class = 'col-md-6'>";
         if (imageNumber < processedObject.urlList.length) {
