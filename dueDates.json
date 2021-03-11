@@ -208,6 +208,11 @@
         "name": "space telescope research",
         "practice": true,
         "noQuiz": true
+      },
+      "3928e5": {
+        "name": "photon formulas 2",
+        "practice": true,
+        "noQuiz": true
       }
     }
   },
