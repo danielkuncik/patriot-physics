@@ -526,7 +526,7 @@ function displayImageUrl(url, number) {
 }
 
 // tested 3-9-2021!
-function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
+function displayAttempt(attemptObject, practiceOrQuiz) {
     let processedObject = processAttemptObject(attemptObject);
     let numCols = processedObject.urlList.length + 1;
     let numRows = Math.ceil(numCols / 2);
@@ -556,9 +556,9 @@ function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
     string = string + "<div class = 'row m-2'>";
 
     string = string + "<div class = 'col-md-6'>";
-    string = string + `<p>${message}</p>`;
+    string = string + `<h5>${message}</h5>`;
     if (processedObject.comment) {
-        string = string + `<p>Comment: ${processedObject.comment}</p>`;
+        string = string + `<h5>Comment: ${processedObject.comment}</h5>`;
     }
     string = string + "</div>";
 
@@ -847,9 +847,9 @@ function showPreviousAttempts(previousAttemptsArray, quizOrPractice) {
         string = string + "<div class = 'row'>";
         string = string + "<div class = 'col-12'>";
         if (quizOrPractice === 'quiz') {
-            string = `<h5>You have taken this quiz ${countMessage}.</h5>`;
-        } else {
-            string = `<h5>You have submitted this practice page ${countMessage}.</h5>`;
+            string = `<h4>You have taken this quiz ${countMessage}.</h4>`;
+        } else if (quizOrPractice === 'practice') {
+            string = `<h4>You have submitted this practice page ${countMessage}.</h4>`;
         }
         string = string + "</div>";
         string = string + "</div>";
