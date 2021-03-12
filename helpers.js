@@ -557,6 +557,9 @@ function displayAttempt(attemptObject, practiceOrQuiz = 'quiz') {
 
     string = string + "<div class = 'col-md-6'>";
     string = string + `<p>${message}</p>`;
+    if (processedObject.comment) {
+        string = string + `<p>Comment: ${processedObject.comment}</p>`;
+    }
     string = string + "</div>";
 
     string = string + "<div class = 'col-md-6'>";
@@ -815,14 +818,18 @@ function getPreviousAttemptListItem(previousAttemptObject) {
     return new hbs.SafeString(string)
 }
 
+hbs.registerHelper('showPreviousQuizAttempts', (previousQuizArray) => {
+    const string = showPreviousAttempts(previousQuizArray, 'quiz');
+    return new hbs.SafeString(string)
+});
+
 
 hbs.registerHelper('showPreviousPracticeSubmissions',(previousPracticeArray) => {
-    //console.log(previousPracticeArray);
-    let string = "<p>Coming Soon</p>";
+    const string = showPreviousAttempts(previousPracticeArray, 'practice');
     return new hbs.SafeString(string);
 });
 
-hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {
+function showPreviousAttempts(previousAttemptsArray, quizOrPractice) {
     let string;
     if (previousAttemptsArray === undefined) {
         string = '';
@@ -839,19 +846,23 @@ hbs.registerHelper('showPreviousQuizAttempts',(previousAttemptsArray) => {
         string = "<div class = 'container'>";
         string = string + "<div class = 'row'>";
         string = string + "<div class = 'col-12'>";
-        string = `<h5>You have taken this quiz ${countMessage}.</h5>`;
+        if (quizOrPractice === 'quiz') {
+            string = `<h5>You have taken this quiz ${countMessage}.</h5>`;
+        } else {
+            string = `<h5>You have submitted this practice page ${countMessage}.</h5>`;
+        }
         string = string + "</div>";
         string = string + "</div>";
 
 
         previousAttemptsArray.forEach((previousAttempt) => {
-            string = string + displayAttempt(previousAttempt);
+            string = string + displayAttempt(previousAttempt, quizOrPractice);
         });
 
         string = string + "</div>";
     }
-    return new hbs.SafeString(string);
-});
+    return string
+}
 
 hbs.registerHelper('isQuizNotPassed',(superUnitKey, unitKey, podKey, gradeMap) => {
     if (gradeMap) {
