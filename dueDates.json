@@ -99,7 +99,7 @@
   },
   "Honors": {
     "3-17-2021": {
-      "79415b":{
+      "79415b": {
         "name": "Waves 1",
         "practice": true
       },
@@ -168,7 +168,7 @@
         "practice": false
       },
       "64f606": {
-        "name":"Metric to scientific notation"
+        "name": "Metric to scientific notation"
       },
       "a95408": {
         "name": "electromagnetic wave basics",
@@ -187,7 +187,9 @@
         "name": "short wavelength astronomy",
         "practice": true,
         "noQuiz": true
-      },
+      }
+    },
+    "3-24-2021": {
       "f13c61": {
         "name": "space telescope research",
         "practice": true,
