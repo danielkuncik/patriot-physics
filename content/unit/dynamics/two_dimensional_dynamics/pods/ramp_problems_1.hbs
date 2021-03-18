@@ -145,8 +145,12 @@
             <li class="subQuestion">
                 Set up a coordinate axis based on the direction of the ramp.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'fbd1'>
                 Draw a free-body diagram including only two forces.
+                <script>
+                    let fbd1 = fastFBD([['down','gravity'],[110,'normal']]);
+                    addAnswerObject('fbd1',fbd1.drawCanvas(150));
+                </script>
             </li>
             <li class="subQuestion">
                 Break gravity into components,
@@ -215,8 +219,12 @@
             <li class="subQuestion">
                 Set up a coordinate axis based on the direction of the ramp.
             </li>
-            <li class="subQuestion">
+            <li class="subQuestion" data-answer_id = 'fbd2'>
                 Draw a free-body diagram including only two forces.
+                <script>
+                    let fbd2 = fastFBD([['down','gravity'],[140,'normal']]);
+                    addAnswerObject('fbd2',fbd2.drawCanvas(150));
+                </script>
             </li>
             <li class="subQuestion">
                 Break gravity into components,
