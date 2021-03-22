@@ -4806,6 +4806,17 @@
             "uuid": "5cb32eb0-9b23-4169-8dce-b031e8d60a8c",
             "id": "5cb32e"
           },
+          "moving_parts_system": {
+            "title": "Moving Parts System",
+            "level": 4,
+            "horizontal": null,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "see video",
+            "content": "",
+            "uuid": "ba3e8d67-2bed-4d9f-bb8c-ae2c49498995",
+            "id": "ba3e8"
+          },
           "system_collision_explosion":
           {
             "title": "System Collision and Explosions",
