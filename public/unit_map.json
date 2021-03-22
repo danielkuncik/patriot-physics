@@ -2979,6 +2979,17 @@
             "uuid": "00344340-ce36-4461-bccd-d3e9042fe69a",
             "id": "003443"
           },
+          "kinematic_equation_proportionality": {
+            "title": "Kinematic Equation Proportionality",
+            "level": 4,
+            "horizontal": 7,
+            "letter": "XX",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "fa04d546-7cec-433a-81cb-8a32af0a9806",
+            "id": "fa04d5"
+          },
           "quantitative_kinematic_graphs_4A":
           {
             "title": "Quantitative Kinematic Graphs 4A",
@@ -3163,7 +3174,7 @@
           "story_to_graph_selection_3":
           {
             "title": "Story to Graph Selection 3",
-            "subtitle": "(The Traffic Light Problem)",
+            "subtitle": "The Traffic Light Problem",
             "level": 3,
             "letter": "F",
             "horizontal": 4,
@@ -3846,6 +3857,30 @@
             "content": "Physicists can solve equations algebraically to write functions that describe the kinematic, dynamic, and energy-based quantities of an object fired horizontally.",
             "uuid": "94859a1d-950a-4725-9f97-d617b08f4437",
             "id": "94859a"
+          },
+          "cannon_lab_1": {
+            "title": "Cannon Lab 1",
+            "subtitle": "Determine the Initial Velocity of a Cannon",
+            "level": 4,
+            "horizontal": 6,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "a5be78f3-52db-4df6-9a5b-282fe606a4ee",
+            "id": "a5be78"
+          },
+          "cannon_lab_2": {
+            "title": "Cannon Lab 2",
+            "subtitle": "Aiming a Cannon",
+            "level": 4,
+            "horizontal": 7,
+            "letter": "Y",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "43df59aa-6b13-4f09-8e6b-811f1f7adc67",
+            "id": "43df59"
           },
           "cannon_problems_3":
           {
