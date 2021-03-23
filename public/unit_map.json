@@ -5045,6 +5045,18 @@
             "uuid": "ab23c4b7-1417-4c9a-81cf-4fb110acbcc9",
             "id": "ab23c4"
           },
+          "ramp_lab": {
+            "title": "Ramp Lab",
+            "subtitle": "Determining g from a Ramp",
+            "level": 4,
+            "horizontal": 6,
+            "letter": "Z",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "912f9b5b-f098-4946-9daa-d7185e0cf0b7",
+            "id": "912f9b"
+          },
           "dragging_at_angle_3":
           {
             "title": "Dragging at an Angle 3: Algebraic Solutions",
