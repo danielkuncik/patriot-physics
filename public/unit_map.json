@@ -4949,6 +4949,17 @@
             "uuid": "49763a0d-5e91-40d3-aad0-53b11f62d471",
             "id": "49763a"
           },
+          "ramp_problems_0": {
+            "title": "Ramp Problems 0",
+            "level": 2,
+            "horizontal": 5,
+            "letter": "Y",
+            "prerequisites": [],
+            "objective": "Describe how to set up a optimal coordinate system for analyzing motion on a ramp and solve geometric problems necessary to use such a system.",
+            "content": "coming soon",
+            "uuid": "bcc0ba71-0e00-45b2-8e6b-c2a2507c98cc",
+            "id": "bcc0ba"
+          },
           "ramp_problems_1":
           {
             "title": "Ramp Problems 1: No Friction",
