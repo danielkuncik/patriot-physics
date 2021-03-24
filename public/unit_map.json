@@ -11019,5 +11019,24 @@
         "pods": {}
       }
     }
+  },
+  "syllabus": {
+    "title": "Syllabus",
+    "number": "20",
+    "uuid": "d0052d67-4fc8-402d-afb6-067cd28d4c21",
+    "id": "d0052d",
+    "display": false,
+    "units": {
+      "quiz_system": {
+        "title": "Quiz System",
+        "number": 1,
+        "display": true,
+        "uuid": "f1d9c4cc-d7ca-472e-a19b-6a285499e03a",
+        "id": "f1d9c4",
+        "pods": {
+
+        }
+      }
+    }
   }
 }
