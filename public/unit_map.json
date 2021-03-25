@@ -1650,6 +1650,18 @@
             "uuid": "2b2b55c0-0e53-4f79-b5c9-07883225cfcd",
             "id": "2b2b55"
           },
+          "significant_figures_4":
+          {
+            "title": "Significant Figures 4",
+            "subtitle": "Solving Multistep Problems with the Correct Number of Significant Figures",
+            "level": 2,
+            "horizontal": 1,
+            "letter": "X",
+            "prerequisites": ["significant_figures_3"],
+            "objective": "Given a simple physics problem whose inputs have different degrees of accuracy, solve the problem and state the answer with the correct number of significant figures. Problems will include intermediate values that must be reported correctly, but then used for another calculation.",
+            "uuid": "b67f7d8e-a652-4887-b647-fce2e6730eb7",
+            "id": "b67f7d"
+          },
           "estimating_error":
           {
             "title": "Estimating Error",
