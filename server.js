@@ -415,8 +415,8 @@ app.get('/problemSets', [db.check_if_logged_in, disp.display_problemSet_list_pag
 
 app.get('/problemSets/:problemSetKey', [db.check_if_logged_in, disp.display_problemSet_page]);
 
-app.get('/playground',(request, response) => {
-    response.render('playgroundPage.hbs', {
+app.get('/sandbox',(request, response) => {
+    response.render('sandbox.hbs', {
         layout: 'default'
     });
 });
