@@ -43,7 +43,6 @@
     For each distance, the member of the team takes exactly ten shots, and it is recorded how many they scored.
 </p>
 
-
 <h5>
     Group 1:
     Template
@@ -188,6 +187,50 @@
 <script>
     const template = $("#dataTable");
 
+    function createTemplate(numDatum = 18) {
+        let container = $("<div class = 'container'></div>");
+        let firstRow = $("<div class = 'row'></div>");
+
+        const colClass = 'col-md-2 col-3 p-2 border border-dark';
+
+        let col_1_1 = $(`<div class = "${colClass}">Datum</div>`);
+        let col_1_2 = $(`<div class = "${colClass}">Distance from Center of Hoop (feet)</div>`);
+        let col_1_3 = $(`<div class = "${colClass}">Number of Shots Made of 10</div>`);
+
+        $(firstRow).append(col_1_1);
+        $(firstRow).append(col_1_2);
+        $(firstRow).append(col_1_3);
+
+        $(container).append(firstRow);
+
+        let n;
+        for (n = 0; n < numDatum; n++) {
+            let thisRow = $("<div class = 'row'></div>");
+            let col_n_1 = $(`<div class = "${colClass}">${n + 1}</div>`);
+            let col_n_2 = $(`<div class = "${colClass}"></div>`);
+            let col_n_3 = $(`<div class = "${colClass}"></div>`);
+
+            $(thisRow).append(col_n_1);
+            $(thisRow).append(col_n_2);
+            $(thisRow).append(col_n_3);
+
+            $(container).append(thisRow);
+        }
+
+        return container
+    }
+
+    <div class="col-md-2 col-3 p-2 border border-dark">
+            Datum
+            </div>
+            <div class="col-md-2 col-3 p-2 border border-dark">
+            Distance From Center of Hoop (feet)
+    </div>
+    <div class="col-md-2 col-3 p-2 border border-dark">
+            Number of Shots made of Ten
+    </div>
+
+
     let data1 = template.clone();
     let data2 = template.clone();
     let data3 = template.clone();
@@ -206,10 +249,72 @@
         row[2].append(String(numShots));
     }
 
-    addDatum(data1,1,1,2);
-    addDatum(data1,2,3,4);
-    addDatum(data1,3,4,5);
-    addDatum(data1,4,5,6);
+    /*
+    1 - correct
+    2 - inappropriately small values
+    3 - inappropriately large values
+    4 - insufficient variability
+    5 - too few values of the independent variable
+    5 - not enough data
+     */
+
+    addDatum(data1,1,5,9);
+    addDatum(data1,2,8,9);
+    addDatum(data1,3,10,8);
+    addDatum(data1,4,12,9);
+    addDatum(data1,5,14,8);
+    addDatum(data1,6,15,8);
+    addDatum(data1,7,16,8);
+    addDatum(data1,8,18,7);
+    addDatum(data1,9,20,6);
+    addDatum(data1,10,23,4);
+    addDatum(data1,11,26,3);
+    addDatum(data1,12,29,3);
+    addDatum(data1,13,32,2);
+    addDatum(data1,14,35,3);
+    addDatum(data1,15,38,3);
+    addDatum(data1,16,40,0);
+    addDatum(data1,17,42,0);
+    addDatum(data1,18,42,1);
+
+    addDatum(data2,1,0,0);
+    addDatum(data2,2,0,0);
+    addDatum(data2,3,0.5,0);
+    addDatum(data2,4,0.5,0);
+    addDatum(data2,5,1,3);
+    addDatum(data2,6,1,4);
+    addDatum(data2,7,3,10);
+    addDatum(data2,8,5,9);
+    addDatum(data2,9,10,8);
+    addDatum(data2,10,10,9);
+    addDatum(data2,11,12,8);
+    addDatum(data2,12,14,8);
+    addDatum(data2,13,16,6);
+    addDatum(data2,14,18,5);
+    addDatum(data2,15,20,4);
+    addDatum(data2,16,30,2);
+    addDatum(data2,17,40,1);
+    addDatum(data2,18,42,1);
+
+    addDatum(data3,1,5,9);
+    addDatum(data3,2,10,8);
+    addDatum(data3,3,15,8);
+    addDatum(data3,4,17,8);
+    addDatum(data3,5,19,6);
+    addDatum(data3,6,21,6);
+    addDatum(data3,7,23,4);
+    addDatum(data3,8,25,4);
+    addDatum(data3,9,27,3);
+    addDatum(data3,10,30,2);
+    addDatum(data3,11,35,2);
+    addDatum(data3,12,40,1);
+    addDatum(data3,13,45,0);
+    addDatum(data3,14,50,0);
+    addDatum(data3,15,60,0);
+    addDatum(data3,16,70,0);
+    addDatum(data3,17,80,0);
+    addDatum(data3,18,90,0);
+
 
     $("#question1").append(data1);
     $("#question2").append(data2);
