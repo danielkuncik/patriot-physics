@@ -1,0 +1,16 @@
+{
+  "v1": {
+    "1": {
+      "a": "mgh = 1/2 m v_f^2",
+      "b": "describe what each term represents",
+      "c": "v_f = sqrt[2 g h]",
+      "d": "prove dimensionally correct"
+    },
+    "2": {
+      "a": "mgh + 1/2 m v_i^2 = 1/2 m v_f^2",
+      "b": "v_f = sqrt[2gh + v_i^2]",
+      "c": "prove dimensioanlly correct ",
+      "d": "prove it becomes the previous equation of v_i = 0"
+    }
+  }
+}
