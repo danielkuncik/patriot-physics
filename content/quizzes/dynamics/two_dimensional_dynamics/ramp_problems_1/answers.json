@@ -1,0 +1,12 @@
+{
+  "v1": {
+    "1": "Free-Body Diagram with gravity and normal force only, all forces labeled (no friction)",
+    "2": "Diagram with Explanation of the rotated coordinate axis",
+    "3": {
+      "1": "forces broken into components, separate from free-body diagram",
+      "x-froces": "F_gx = 1.2 N",
+      "y-forces": "F_gy = 3.7 N; F_N = 3.7 N"
+    },
+    "4": "a = 3.0 m/s/s down the ramp"
+  }
+}
