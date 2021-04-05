@@ -135,18 +135,18 @@
     <div class = 'pageBreak'></div>
     <li class = 'question mb-5'>
         A 8.00 kg block is being dragged on a surface <emph>with friction</emph>
-        by an applied force of 48.0 Newtons to the LEFT.
+        by an applied force of 48.0 Newtons to the RIGHT.
         It is accelerating because of the pull!
         The coefficient of kinetic friction between the block and the surface is 0.380.
         <br>
         <div id = 'diagram2'></div>
         <ol class = 'subQuestionList' type = 'a'>
-            <li class = 'subQuestion' data-answer = 'gravity = 78.48 N down; normal force = 78.48 N up; applied force = 48.9 N left; kinetic frictional force = 29.822 N right'>
+            <li class = 'subQuestion' data-answer = 'gravity = 78.48 N down; normal force = 78.48 N up; applied force = 48.9 N right; kinetic frictional force = 29.822 N left'>
                 Use the information to fill out the table below:
                 <br>
                 <div id = 'table2'></div>
             </li>
-            <li class = 'subQuestion' data-answer = '18.178 N left'>
+            <li class = 'subQuestion' data-answer = '18.178 N right'>
                 The two vertical forces cancel out in this problem,
                 but there are two different horizontal forces.
                 Determine the net force (magnitude and direction) acting on the block.
@@ -228,6 +228,60 @@
     </li>
 </ol>
 
+<h3>
+    Extra Problems
+</h3>
+<p>
+    (It is not necessary to complete these problems when turning in the practice page.)
+</p>
+
+<ol class="questionList">
+    <li class = 'question mb-5'>
+        A 6.00 kg block is being dragged on a surface <emph>with friction</emph>
+        by an applied force of 18.0 Newtons to the RIGHT.
+        It is accelerating because of the pull!
+        The coefficient of kinetic friction between the block and the surface is 0.220.
+        <br>
+        <div id = 'diagram5'></div>
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion' data-answer = 'gravity = 58.9 N down; normal force = 58.9 N up; applied force = 18.0 N right; kinetic frictional force = 13.0 N left'>
+                Use the information to fill out the table below:
+                <br>
+                <div id = 'table5'></div>
+            </li>
+            <li class = 'subQuestion' data-answer = '5.00 N right'>
+                The two vertical forces cancel out in this problem,
+                but there are two different horizontal forces.
+                Determine the net force (magnitude and direction) acting on the block.
+            </li>
+            <li class = 'subQuestion' data-answer = '0.333 m/s/s'>
+                Determine the magnitude of acceleration \( a \) of the block.
+            </li>
+        </ol>
+    </li>
+    <li class = 'question mb-5'>
+        A 0.500 kg block is being dragged to the right on a surface at a <strong>constant velocity</strong>
+        by a force of 1.20 Newtons.
+        <br>
+        <div id = 'diagram6'></div>
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion' data-answer = "The net force is zero. Newton's First Law states that any object moving at a constant velocity has net force zero.">
+                What is the <emph>net force</emph> acting on this block?
+                How do you know? Refer explicitly to one of the laws of physics in your answer.
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 4.91 N down; normal force = 4.91 N up; applied force = 1.20 N right; kinetic friction = 1.20 N left'>
+                Fill out the table below to analyze the forces acting on the box.
+                <div id = 'table6'></div>
+            </li>
+            <li class = 'subQuestion' data-answer = '0.244'>
+                Determine the coefficient of kinetic friction \( \mu_k \)
+                between the block and the surface.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
 <ol class = 'answerList'></ol>
 
 <script>
@@ -259,14 +313,29 @@
     block4.addBlock();
     block4.addHorizontalAppliedForce('A',2,'44.0 N');
 
+
+    let block5 = new BlockProblem();
+    block5.addBlock();
+    block5.addHorizontalAppliedForce('A',2,'18.0 N');
+
+    let block6 = new BlockProblem();
+    block6.addBlock();
+    block6.addHorizontalAppliedForce('A',2,'1.20 N');
+
     $("#diagram1").append(block1.drawCanvas(500));
     $("#diagram2").append(block2.drawCanvas(500));
     $("#diagram3").append(block3.drawCanvas(500));
     $("#diagram4").append(block4.drawCanvas(500));
+    $("#diagram5").append(block5.drawCanvas(500));
+    $("#diagram6").append(block6.drawCanvas(500));
+
 
     let fourForceTable = new ForceTableQuantitative1D(4);
     $("#table1").append(fourForceTable.draw(500));
     $("#table2").append(fourForceTable.draw(500));
     $("#table3").append(fourForceTable.draw(500));
     $("#table4").append(fourForceTable.draw(500));
+    $("#table5").append(fourForceTable.draw(500));
+    $("#table6").append(fourForceTable.draw(500));
+
 </script>
