@@ -1,13 +1,13 @@
 {
   "v1": {
     "1": "qualtative FBD with gravity, normal force, and friction",
-    "3": "Explicity define a coordinate system",
-    "2": {
+    "2": "Explicity define a coordinate system",
+    "3": {
       "X-forces": "F_gx = -2.30 N; F_frk +0.867 N",
       "Y-forces": "F_gy = -5.42 N; F_N = +5.42 N"
     },
-    "3": "How determined magnitude of normal force",
-    "4": "How determined magnitude of frictional force",
-    "5": "2.39 m/s/s down the ramp"
+    "4": "How determined magnitude of normal force",
+    "5": "How determined magnitude of frictional force",
+    "6": "2.39 m/s/s down the ramp"
   }
 }
