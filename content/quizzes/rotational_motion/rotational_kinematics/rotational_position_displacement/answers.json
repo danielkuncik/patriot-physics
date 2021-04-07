@@ -4,27 +4,24 @@
     "2": "Quadrant 1",
     "3": "Quadrant 2",
     "4": {
-
+      "theta_i": "pi / 2",
+      "theta_f": "pi / 2",
+      "delta_theta": "10 pi"
     },
     "5": {
-      "omega_i": "pi / 2",
-      "omega_f": "pi / 2",
-      "delta_omega": "10 pi"
+      "theta_i": "3 pi / 2",
+      "theta_f": "pi / 2",
+      "delta_theta": "pi"
     },
     "6": {
-      "omega_i": "3 pi / 2",
-      "omega_f": "pi / 2",
-      "delta_omega": "pi"
+      "theta_i": "pi",
+      "theta_f": "pi / 2",
+      "delta_theta": "- pi / 2"
     },
     "7": {
-      "omega_i": "pi",
-      "omega_f": "pi / 2",
-      "delta_omega": "- pi / 2"
-    },
-    "8": {
-      "omega_i": "pi",
-      "omega_f": "3 pi / 2",
-      "delta_omega": "-27 pi / 2"
+      "theta_i": "pi",
+      "theta_f": "3 pi / 2",
+      "delta_theta": "-27 pi / 2"
     }
   }
 }
