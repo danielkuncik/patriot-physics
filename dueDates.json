@@ -233,6 +233,18 @@
       }
     },
     "4-16-2021": {
+      "a131a7": {
+        "name": "finding acceleration",
+        "practice": true,
+        "noQuiz": true
+      },
+      "28a149": {
+        "name": "block dragging 1: no friction",
+        "practice": true,
+        "noQuiz": true
+      }
+    },
+    "4-28-2021": {
       "4e9b25": {
         "name": "reaction force to weight",
         "practice": true,
