@@ -1,0 +1,45 @@
+This discussion is a first-day discussion on circular motion,
+the goal is to create a logically consistent theory that explains why the moon is orbiting the earth.
+Law of universal gravitation is a prequisite; so is Newton's Model for 1-D motion
+
+Students receive in information sheet with mass objects in the solar system,
+mass of other objects, distances
+
+Newton's Laws written out clearly (including implications of the third law),
+law of universal gravitation (maybe)
+
+We assume the earth is moving in a circle at a constatn velocity with radisu (average of perigee and apogee).
+
+Students answer a series of qualitative and quantitative discussion questions to this end.
+
+Question 1: By referring to Newton's Laws of Motion, determine if the net force acting on the moon is zero or not zero.
+(not zero)
+
+Question 2: If the nt force is not zero, some force must acto n the mooon, determine what this force is:
+type of force - magnitude - direction - agent - object
+
+Question 3: If there is one force, according to Newton's Third Law, there must be a pair.
+Determine the pair:
+type of force- magnitude - direciton -agent - object
+
+Quesiton 4: Draw a Free-body diagram of the earht and moon (ignore forces outside the earth-moon system)
+
+Question 5: Is the second force on the list important ?
+(yes, it causes the tides)
+
+Question 6: Draw diagram of the moon at some point in its orbit
+Take origin to be the center of the earth
+Determine QUALitative vectors for the position, velocity, acceleraiton, and net force of the moon
+Demonstrate these vectors are consistent with Newton's Second Law.
+
+Question 7: Determine qualitative values for position, velocity, acceleration, and net force
+
+Question 8: New Rule Presented:
+the magnitude of acceleration of an object moving in a circle at a constant speed is speed^2 / radius of the circle
+- demonstrate this formula is dimensionally correct
+- demonstrate that the quantitative kinematic values you determiend for position, velocity, and acceleartion of the moon
+are consistent with this new rule
+
+
+Next Lesson would eb vertical circles and centripetal force
+Lesson after that would be to determine the mass of the sun
