@@ -43,3 +43,5 @@ are consistent with this new rule
 
 Next Lesson would eb vertical circles and centripetal force
 Lesson after that would be to determine the mass of the sun
+
+SELECT * FROM practice_submissions WHERE pod_uuid = '912f9b5b-f098-4946-9daa-d7185e0cf0b7' AND score IS null;
