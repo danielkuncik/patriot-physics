@@ -107,14 +107,16 @@
         "name": "law of gravitation 1",
         "practice": true
       },
-      "d6eede": {
-        "name": "Coulomb's Law 1",
-        "practice": true
-      },
       "912f9b": {
         "name": "ramp lab",
         "practice": true,
         "noQuiz": true
+      }
+    },
+    "4-28-2021": {
+      "d6eede": {
+        "name": "Coulomb's Law 1",
+        "practice": true
       }
     }
   },

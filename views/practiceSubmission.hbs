@@ -84,7 +84,7 @@
 <h3>
     Submission
 </h3>
-<form action = '{{submissionLink}}' method="post" enctype="multipart/form-data">
+<form action = '{{submissionLink}}' method="post" enctype="multipart/form-data" id = 'practicePageForm'>
     Page 1:
     <input type = 'file' name = 'image' value = 'Upload Page 1' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
     <br><br>
@@ -105,8 +105,19 @@
     <input type = 'file' name = 'image' value = 'Upload Page 6' class = 'practiceUploadButton' accept ='.jpg, .jpeg, .png, .pdf, .heic'/>
     (if it takes you more than six pages, only submit the first six pages)
     <br><br>
-    <input type = 'submit' value = 'Submit Practice Page' class = 'practiceSubmitButton' />
+    <input type = 'submit' value = 'Submit Practice Page' class = 'practiceSubmitButton' id = 'submitButton' />
 </form>
+<div id = 'waitInfoDiv'>
+</div>
+
+
+<script>
+    let waitMessage = $("<h4 class = 'text-info'>Please Wait</h4>");
+    $("#practicePageForm").on("submit", () => {
+        $("#submitButton").remove();
+        $("#waitInfoDiv").append(waitMessage);
+    });
+</script>
 
 
 <h3>
