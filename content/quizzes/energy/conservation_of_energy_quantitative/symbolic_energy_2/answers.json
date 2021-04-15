@@ -1,0 +1,19 @@
+{
+  "v1": {
+    "1": "1/2 m v_i^2 = 1/2 k (x_min - x_0)^2  = 1/2 k (x_max - x_0)^2",
+    "2": {
+      "goal": "identify and explain each term",
+      "1/2 m v_i^2": "KE when the mass is first struck",
+      "1/2 k (x_min - x_0)^2": "EPE when the spring is most compressed",
+      "1/2 k (x_max - x_0)^2": "EPE when the string is maximall compressed"
+    },
+    "3": {
+      "x_min": "x_min = x_0 - sqrt[m v_i^2 / k]",
+      "x_max": "x_max = x_0 - sqrt[m v_i^2 / k]"
+    },
+    "4": "Because the derivation involved a square root, you resulted with two solutions, one which represents x_min and one which represents x_max",
+    "5": "demonstrate dimensionally correct",
+    "6": "demonstrate that delta_x is identical for x_min and x_max",
+    "7": "Analyze case when the person does not strike the block"
+  }
+}
