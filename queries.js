@@ -158,6 +158,48 @@ const check_if_logged_in = function(req, res, next) {
     next();
 };
 
+const check_if_quiz_in_progress = (req, res, next) => {
+    if (req.user) {
+        const userId = req.user.id;
+        pool.query('SELECT id FROM quiz_attempts WHERE student_id = $1 AND image_url_1 IS NULL', (results, error) => {
+            if (error) {
+                throw error
+            }
+            if (results.rows.length > 1) {
+                req.flash('warningFlash','Finish this quiz before completing anything else.');
+                res.redirect('/takeQuiz');
+            }
+            next();
+        });
+    } else {
+        next();
+    }
+};
+
+const load_quiz_in_progress = (req, res, next) => {
+    if (req.user) {
+        const userId = req.user.id;
+        pool.query('SELECT pod_uuid, version FROM quiz_attempts WHERE student_id = $1 AND image_url_1 IS NULL', (results, error) => {
+            if (error) {
+                throw error
+            }
+            if (results.rows.length === 0) {
+                req.flash('dangerFlash','ERROR: Attempting to take quiz, but not quiz has been started');
+                res.redirect('/');
+            } else {
+                const quizInfo = results.rows[0];
+                req.quiz_uuid = quizInfo['pod_uuid'];
+                req.quiz_version = quizInfo['version'];
+                next();
+                // here there should be a restriction if the quiz is more than 2 hours old
+            }
+        });
+    } else {
+        res.flash('dangerFlash','ERROR: Attempting to take quiz when not logged in.');
+        res.redirect('/');
+    }
+};
+
 const kick_out_if_not_logged_in = function(req, res, next) {
     if (req.user === undefined) {
         res.redirect('/login');
@@ -619,5 +661,7 @@ module.exports = {
     check_quiz_password,
     find_pending_practice,
     find_practice_comment,
-    load_relevant_grades
+    load_relevant_grades,
+    check_if_quiz_in_progress,
+    load_quiz_in_progress
 };

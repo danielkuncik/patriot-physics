@@ -436,9 +436,20 @@ app.get('/sandbox',(request, response) => {
 // };
 
 
+
 const quizLock = false;
 
 const lateCode = 'hdu7g2d';
+
+app.get('/takeQuiz', [db.check_if_logged_in, db.load_quiz_in_progress, (req, res, next) => {
+    // in this step, i need to check quiz access???
+    // add later
+    next();
+}, (req, res,next) => {
+    // next step is to display the quiz
+    req.flash('successFlash','testComplete');
+    next()
+}, disp.display_quiz_new]);
 
 /// THIS NEEDS TO BE EDITTED TO a) get info from the due dates page, not the unit map, and b) check if it is overdue
 // fortunately, the function for that already exists, it shouldn't be a big change

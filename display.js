@@ -387,7 +387,11 @@ function quizAccess(section, level, enteredPassword) {
     // return result
 }
 
-display_quiz = (req, res) => {
+const display_quiz_new = (req, res) => {
+
+};
+
+const display_quiz = (req, res) => {
     // all this should be worked out in advance!!
     let available = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
     if (!available) {
@@ -401,6 +405,7 @@ display_quiz = (req, res) => {
         alreadyPassed = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score === 20;
     }
     const inClass = req.passwordAccessRequired;
+    // version and uuid should be looked up already now
     let versionNumber = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
     const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
     const letter = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter;
@@ -515,6 +520,7 @@ module.exports = {
     display_problemSet_page,
     display_quiz_entry_page,
     display_quiz,
+    display_quiz_new,
     display_practice_submission_page,
     display_info_page,
     display_scale_page
