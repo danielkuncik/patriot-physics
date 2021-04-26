@@ -7,7 +7,7 @@
 <h5>
     Principle of Two Dimensional Motion
 </h5>
-<p class = 'definition'>
+<p class = 'definition' data-word = 'Two-Dimensional Motion Principle'>
     When an object is moving in two dimensions,
     the motion in one dimension does not affect the motion
     in the other dimension.
@@ -21,6 +21,103 @@
 <h5>
   Standard Horizontal Launch Problems:
 </h5>
+
+<h4>
+    Table for Organizing Horizontal Launch Problems
+</h4>
+
+<div class="container">
+    <div class="row">
+        <div class = 'col-md-2 bg-secondary border border-dark'>
+        </div>
+        <div class = 'col-md-5 border border-dark'>
+            Horizontal Motion
+        </div>
+        <div class = 'col-md-5 border border-dark'>
+            Vertical Motion
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-md-2 border border-dark'>
+            Description of Motion
+        </div>
+        <div class = 'col-md-5 border border-dark'>
+            Moving forwards at a constant velocity
+        </div>
+        <div class = 'col-md-5 border border-dark'>
+            Accelerating downwards at a rate or 9.8 m/s/s
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-md-2 border border-dark'>
+            Formulas
+        </div>
+        <div class = 'col-md-5 border border-dark'>
+            <ul>
+                <li class = 'm-3'>
+                    \( \Delta x = v_x \cdot \Delta t \)
+                </li>
+            </ul>
+        </div>
+        <div class = 'col-md-5 border border-dark'>
+            <ul>
+                <li class = 'm-3'>
+                    \( v_{fy} = v_{iy} + a_y \cdot \Delta t \)
+                </li>
+                <li class = 'm-3'>
+                    \( \Delta t = v_{iy} \cdot \Delta t + \frac{1}{2} a_y \)
+                </li>
+                <li class = 'm-3'>
+                    \( \Delta y = \left( \frac{v_{iy} + v_{fy}}{2} \right) \Delta t \)
+                </li>
+                <li class = 'm-3'>
+                    \( v^2_{fy} = v^2_{iy} + 2 a \cdot \Delta x \)
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 border border-dark">
+            Quantities
+        </div>
+        <div class="col-md-5 col-xs-9 border border-dark">
+            <ul>
+                <li class = 'm-3'>
+                    \( \Delta x = \)
+                </li>
+                <li class = 'm-3'>
+                    \( v_x =  \)
+                </li>
+                <li class = 'm-3'>
+                    \( \Delta t = \)
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-2 col-xs-3 d-md-none border border-dark">
+            Quantities
+        </div>
+        <div class="col-md-5 col-xs-9 border border-dark">
+            <ul>
+                <li class = 'm-3'>
+                    \( \Delta y = \)
+                </li>
+                <li class = 'm-3'>
+                    \( v_{yi} =  \)
+                </li>
+                <li class = 'm-3'>
+                    \( v_{yf} =  \)
+                </li>
+                <li class = 'm-3'>
+                    \( a_y =  \)
+                </li>
+                <li class = 'm-3'>
+                    \( \Delta t = \)
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 <ol class = 'questionList'>
   <li class = 'question' data-answer = '37.1 m'>
@@ -44,8 +141,7 @@
       </li>
     </ul>
     <br>
-    Use the table below to find all of the unknown quantities.
-    <div class = 'horizontalLaunchTable'></div>
+    Use the table above to find all of the unknown quantities.
     <br>
     Write the final answer (the horizontal displacement) here:
   </li>
@@ -71,11 +167,49 @@
       </li>
     </ul>
     <br>
-    Use the table below to find all of the unknown quantities.
-    <div class = 'horizontalLaunchTable'></div>
+    Use the table above to find all of the unknown quantities.
     <br>
     Write the final answer (the horizontal displacement) here:
   </li>
+</ol>
+
+<h5>
+    Less Guidance
+</h5>
+
+<ol class="questionList">
+    <li class="question">
+        A car drives horizontally off a cliff with a speed of 24.0 m/s.
+        The cliff has a height of 30.0 meters.
+        Determine:
+        <ol class="subQuestionList">
+            <li class="subQuestion">
+                The time before the car strikes the ground.
+            </li>
+            <li class="subQuestion">
+                The <emph>vertical</emph> speed at which the car strikes the ground.
+            </li>
+            <li class="subQuestion">
+                The distance that the car travels before striking the ground.
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        A car drives horizontally off a cliff with a speed of 18.5 m/s.
+        The cliff has a height of 6.8 meters.
+        Determine:
+        <ol class="subQuestionList">
+            <li class="subQuestion">
+                The time before the car strikes the ground.
+            </li>
+            <li class="subQuestion">
+                The <emph>vertical</emph> speed at which the car strikes the ground.
+            </li>
+            <li class="subQuestion">
+                The distance that the car travels before striking the ground.
+            </li>
+        </ol>
+    </li>
 </ol>
 
 <h5>
@@ -170,5 +304,4 @@ Have a problem asking for the magnitude of final velocity!
   horizontalLaunchTable.writeTextInCell(4,0,'Complete Problem Here:');
 
 
-  $(".horizontalLaunchTable").append(horizontalLaunchTable.draw(600,800));
 </script>
