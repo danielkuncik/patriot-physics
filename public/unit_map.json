@@ -3820,6 +3820,30 @@
             "uuid": "3fafd4a1-c059-471c-b4d6-f03743337658",
             "id": "3fafd4"
           },
+          "definition_of_free_fall": {
+            "title": "The Definition of Free-Fall",
+            "level": 2,
+            "horizontal": 6,
+            "objective": "Define free-fall in physics; identify when objects are in free-fall and when they are not",
+            "uuid": "c0ba8223-80bf-498f-9ec9-ee0885577038",
+            "id": "c0ba82"
+          },
+          "vector_scalar_representation_proj_motion": {
+            "title": "Vector and Scalar Representation in Projectile Motion",
+            "level": 2,
+            "horizontal": 7,
+            "objective": "Translate vector and scalar quantities from projectile motion between words and numbers with positive and negative signs; write answers in appropriate format",
+            "uuid": "404691be-dcf4-4e44-b731-e601fa3e4940",
+            "id": "404691"
+          },
+          "two_solutions_proj_motion": {
+            "title": "Two Solutions in Projectile Motion",
+            "level": 3,
+            "horizontal": 6,
+            "objective": "Recognize situations in projectile motion problems when you will get two solutions; identify which of two solutions is most relevant; explain what the less relevant solution represents",
+            "uuid": "1aba3628-3d9a-4a0b-9859-1bc24bc489c8",
+            "id": "1aba36"
+          },
           "pop_up_1":
           {
             "title": "Pop-Up 1",
@@ -3832,6 +3856,15 @@
             "content": "Objects thrown upwards have an acceleration of 9/8 m/s^2 downwards, have an initial velocity that is upwards, and follow the four kinematic equations",
             "uuid": "dcf39c95-3191-4dcf-af29-42615434823d",
             "id": "dcf39c"
+          },
+          "pop_up_symmetry": {
+            "title": "Symmetry in Projectile motion 1",
+            "subtitle": "Pop-up symmetry",
+            "level": 2,
+            "horizontal": 8,
+            "objective": "Demonstrate and use the symmetry of an object in projectile motion to solve pop-up problems",
+            "uuid": "67760555-ea93-421d-af85-e1f84db23d7f",
+            "id": "677605"
           },
           "falling_3":
           {
@@ -3985,6 +4018,14 @@
             "content": "",
             "uuid": "43df59aa-6b13-4f09-8e6b-811f1f7adc67",
             "id": "43df59"
+          },
+          "imaginary_solution_proj_motion": {
+            "title": "Imaginary Solutions to Projectile Motion Problems",
+            "level": 4,
+            "horizontal": 9,
+            "objective": "Solve problems to projectile motion problems that have imaginary solutions; interpret what these mean physically",
+            "uuid": "5d36418f-b7ec-464a-b40f-c9132b351e3d",
+            "id": "5d3641"
           },
           "cannon_problems_3":
           {

@@ -121,132 +121,7 @@
     }
   },
   "Honors": {
-    "4-9-2021": {
-      "79415b": {
-        "name": "Waves 1",
-        "practice": true
-      },
-      "4a6e69": {
-        "name": "transverse vs longitudinal",
-        "practice": true
-      },
-      "9ac868": {
-        "name": "Parts of a wave",
-        "practice": true
-      },
-      "83111d": {
-        "name": "Drawing waves with wavelength",
-        "practice": true
-      },
-      "0ffd1c": {
-        "name": "Drawing waves with amplitude",
-        "practice": true
-      },
-      "d1847d": {
-        "name": "Wave Equation",
-        "practice": true
-      },
-      "0d5708": {
-        "name": "Drawing Waves 2",
-        "practice": true,
-        "inClass": true
-      },
-      "ddf304": {
-        "name": "electromagnetic spectrum 1",
-        "practice": true
-      },
-      "b645cf": {
-        "name": "Choosing color by wavelength",
-        "practice": true
-      },
-      "cf1f01": {
-        "name": "electromagnetic spectrum 2",
-        "practice": true,
-        "noQuiz": true
-      },
-      "6267c7": {
-        "name": "Choosing electromagnetic wave by wavelength 1",
-        "practice": true
-      },
-      "c74889": {
-        "name": "Choosing electromagnetic wave by wavelength 2",
-        "practice": true
-      },
-      "72607f": {
-        "name": "Memorize Metric Prefixes",
-        "inClass": true
-      },
-      "91f940": {
-        "name": "basic infrared",
-        "practice": true,
-        "noQuiz": true
-      },
-      "a4fc85": {
-        "name": "safe and dangerous radiation",
-        "practice": true,
-        "noQuiz": true
-      },
-      "f9822f": {
-        "name": "Conversion Factors",
-        "practice": false
-      },
-      "64f606": {
-        "name": "Metric to scientific notation"
-      },
-      "a95408": {
-        "name": "electromagnetic wave basics",
-        "practice": true
-      },
-      "4c74b0": {
-        "name": "photon formulas",
-        "practice": true
-      },
-      "33abbc": {
-        "name": "long wavelength astronomy",
-        "practice": true,
-        "noQuiz": true
-      },
-      "c52b41": {
-        "name": "short wavelength astronomy",
-        "practice": true,
-        "noQuiz": true
-      },
-      "f13c61": {
-        "name": "space telescope research",
-        "practice": true,
-        "noQuiz": true
-      },
-      "3928e5": {
-        "name": "photon formulas 2",
-        "practice": true,
-        "noQuiz": true
-      },
-      "193942": {
-        "name": "finding net force"
-      },
-      "8778d7": {
-        "name": "newtons second law"
-      },
-      "1a4b0b": {
-        "name": "Free=Body diagrams 1"
-      },
-      "ba7882": {
-        "name": "newtons Third law 1"
-      }
-    },
-    "4-16-2021": {
-      "a131a7": {
-        "name": "finding acceleration",
-        "practice": true,
-        "noQuiz": true
-      },
-      "28a149": {
-        "name": "block dragging 1: no friction",
-        "practice": true,
-        "noQuiz": true
-      }
-    },
-    "4-28-2021": {
+    "5-5-2021": {
       "4e9b25": {
         "name": "reaction force to weight",
         "practice": true,
@@ -254,6 +129,21 @@
       },
       "169d20": {
         "name": "block dragging 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "5630a3": {
+        "name": "Newtons Model 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "c9f4ad": {
+        "name": "Newtons Model 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "e492fc": {
+        "name": "Newtons Model 4A",
         "practice": true,
         "noQuiz": true
       }
