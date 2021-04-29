@@ -69,6 +69,24 @@
         </div>
 
         <div class="card">
+            <div class = 'card-header homePageCard' id = 'song_lyric_heading'>
+                <h3 class = 'mb-0'>
+                    <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_song_lyric" aria-expanded="false" aria-controls="collapse_song_lyric">
+                        Science Song Lyric Challenge
+                    </button>
+                </h3>
+            </div>
+
+            <div id = 'collapse_song_lyric' class = 'collapse' aria-labelledby="song_lyric_heading" data-parent = '#homePageAccordion'>
+                <div class = 'card-body'>
+                    <p>
+                    {{>science_song_lyrics}}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
             <div class = 'card-header homePageCard' id = 'nonsense_heading'>
                 <h3 class = 'mb-0'>
                     <button class = 'btn btn-link' type = 'button' data-toggle = 'collapse' data-target="#collapse_nonsense" aria-expanded="false" aria-controls="collapse_nonsense">

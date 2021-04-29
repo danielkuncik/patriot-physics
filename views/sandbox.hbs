@@ -1,0 +1,94 @@
+
+<h5>
+    Problem 1
+</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-12 border border-dark">
+            Someone fires a bow and arrow across the room to the right
+            and into a wall.
+            The arrow travels fast enough that it barely falls during its motion.
+            Consider the motion from the moment that the arrow is no
+            longer in contract with the bow until the moment
+            immediately before it touches the wall.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 border border-dark">
+            Direction of Velocity:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Choice A
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark" id = 'choice_A'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Direction of net force:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        If this choice A were true, the arrow would __________________.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Choice B
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark" id = 'choice_B'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Direction of net force:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        If this choice B were true, the arrow would __________________.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-12 border border-dark'>
+            When observing the motion of the arrow,
+            we see that it is _____________________.
+            Therefore, the correct answer must be ___________.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 border border-dark">
+            Of the forces in the answer choices above,
+            which one does not exist?
+            <br><br><br>
+            Explain briefly why this force cannot exist:
+        </div>
+    </div>
+</div>
+
+<script>
+    let problem1Table = new Table(1,2);
+    problem1Table.setColumnProportions([2,2]);
+
+    let choice_A = fastFBD([['down','gravity'],['right','bow force']]);
+    let choice_B = fastFBD([['down','gravity']]);
+    $("#choice_A").append(choice_A.drawCanvas(150));
+    $("#choice_B").append(choice_B.drawCanvas(150));
+</script>
