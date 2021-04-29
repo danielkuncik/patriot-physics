@@ -84,11 +84,115 @@
 </div>
 
 <script>
-    let problem1Table = new Table(1,2);
-    problem1Table.setColumnProportions([2,2]);
-
     let choice_A = fastFBD([['down','gravity'],['right','bow force']]);
     let choice_B = fastFBD([['down','gravity']]);
     $("#choice_A").append(choice_A.drawCanvas(150));
     $("#choice_B").append(choice_B.drawCanvas(150));
+</script>
+
+
+<h5>
+    Problem 2
+</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-12 border border-box">
+            Somebody is lifting up a heavy tool box.
+            Consider the motion of the tool box for
+            <emph>most of the way up</emph>,
+            not at the top of the end of the motion.
+            During this period, the person is lifting the box
+            at a constant velocity.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 border border-dark">
+            Direction of Velocity:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Choice C
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark" id = 'choice_C'></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Direction of Net Force:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        If choice C was true, the tool box would _________________.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Choice D
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark" id = 'choice_D'></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Direction of Net Force:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        If choice D was true, the tool box would _________________.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Choice E
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark" id = 'choice_E'></div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        Direction of Net Force:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border border-dark">
+                        If choice E was true, the tool box would _________________.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 border border-dark">
+            When observing the motion of the tool box, we observe that it
+            is _________________.
+            Therefore, the correct answer must be _____________.
+        </div>
+    </div>
+</div>
+
+<script>
+    let choice_C = fastFBD([['up','applied',1],['down','gravity',2]]);
+    let choice_D = fastFBD([['up','applied',2],['down','gravity',2]]);
+    let choice_E = fastFBD([['up','applied',3],['down','gravity',2]]);
+
+    $("#choice_C").append(choice_C.drawCanvas(150));
+    $("#choice_D").append(choice_D.drawCanvas(150));
+    $("#choice_E").append(choice_E.drawCanvas(150));
 </script>
