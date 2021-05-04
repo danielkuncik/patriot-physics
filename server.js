@@ -421,6 +421,12 @@ app.get('/sandbox',(request, response) => {
     });
 });
 
+app.get('/sandbox2',(request, response) => {
+    response.render('sandbox2.hbs', {
+        layout: 'default'
+    });
+});
+
 // quiz entry page
 //app.get('/quizzes', [db.check_if_logged_in, disp.display_quiz_entry_page]);
 
