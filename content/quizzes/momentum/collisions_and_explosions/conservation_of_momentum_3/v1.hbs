@@ -1,7 +1,7 @@
 
 <p class="directions">
     Solve the momentum problems below using the table provided.
-    If you prefer to solve the problems by deriving a formula than the tables,
+    If you prefer to solve the problems by deriving a formula rather than by using tables,
     you must <strong>explicitly</strong> write the formula you derived
     and show how you used it for full credit.
     No credit will be awarded for answers without explicitly shown work.
@@ -28,6 +28,7 @@
     After filling out the table, please explicitly write the magnitude and direction of car B's velocity after the collision.
 </p>
 
+<div class="pageBreak"></div>
 
 <h5>
     Problem 2:
@@ -58,6 +59,6 @@
     $("#table1").append(table1.draw(500,500));
 
     let table2 = new MomentumTable();
-    table2.makeTotallyInelasticCollision();
+    table2.makeTotallyInelasticCollision('Car','Truck');
     $("#table2").append(table2.draw(500,500));
 </script>

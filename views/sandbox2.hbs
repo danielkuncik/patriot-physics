@@ -1,7 +1,7 @@
 
 <p class="directions">
-    Solve the momentum problem below using the table provided.
-    If you prefer to solve the problem by deriving a formula than the tables,
+    Solve the momentum problems below using the table provided.
+    If you prefer to solve the problems by deriving a formula than the tables,
     you must <strong>explicitly</strong> write the formula you derived
     and show how you used it for full credit.
     No credit will be awarded for answers without explicitly shown work.
@@ -11,43 +11,55 @@
     Also, please write the final answer after filling out each table.
 </p>
 
+<h5>
+    Problem 1:
+</h5>
 <p>
-    Two cars collide into each other.
-    They were moving in the same direction
+    Car A has a mass of 200 kg and is moving at a speed of 5 m/s to the right.
+    Car B has a mass of 150 kg and is moving at a speed of 8 m/s to the left.
+    They crash into each other head-on.
+    After they collide, Car A bounces off with a speed of 1 m/s to the left.
+    Fill out the following table to figure out what car B does:
 </p>
 
-<ul>
-    <li>
-        Before the collision:
-        <ul>
-            <li>
-                Car A has a mass of 2200. kg and a velocity of 11 m/s.
-            </li>
-            <li>
-                Car B has a mass of 2000. kg and a velocity of 8.0 m/s in the same direction.
-            </li>
-        </ul>
-    </li>
-    <li>
-        After the collision, the two cars stick together.
-    </li>
-</ul>
+<div id = 'table1'></div>
 
 <p>
-    Fill out the table below to determine the speed of the
-    cars after the collision.
+    After filling out the table, please explicitly write the magnitude and direction of car B's velocity after the collision.
+</p>
+
+<div class="pageBreak"></div>
+
+<h5>
+    Problem 2:
+</h5>
+
+<p>
+    A truck with a mass of 500. kg is moving at a speed of 10.0 m/s
+    to the right.
+    It smashes into a small car with a mass of 200. kg moving
+    at a speed of 15.0 m/s to the left.
+    After the collision, the car crumbles and sticks to the truck.
+    Fill out the table below in order to determine the
+    final velocity (magnitude and direction) of the car and truck stuck together.
+</p>
+
+<div id = 'table2'></div>
+
+<div class="bigSpace"></div>
+
+<p>
+    After filling out the table, please write and circle the magnitude and direction of their velocity after the collision.
 </p>
 
 <div class="bigSpace"></div>
-<div id = 'momentumTable'></div>
-<div class="bigSpace"></div>
-
-<p>
-    After filling out the table, please write and circle the final answer.
-</p>
 
 <script>
-    let momentumTable = new MomentumTable();
-    momentumTable.makeTotallyInelasticCollision();
-    $("#momentumTable").append(momentumTable.draw(500,500));
+    let table1 = new MomentumTable();
+    $("#table1").append(table1.draw(500,500));
+
+    /// ERROR: make table 2 'car and truck' instead of 'carA and car B'
+    let table2 = new MomentumTable();
+    table2.makeTotallyInelasticCollision();
+    $("#table2").append(table2.draw(500,500));
 </script>
