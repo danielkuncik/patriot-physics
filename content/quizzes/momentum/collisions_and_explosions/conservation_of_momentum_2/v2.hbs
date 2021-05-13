@@ -1,0 +1,53 @@
+
+<p class="directions">
+    Solve the momentum problems below using the table provided.
+    If you prefer to solve the problems by deriving a formula rather than by using tables,
+    you must <strong>explicitly</strong> write the formula you derived
+    and show how you used it for full credit.
+    No credit will be awarded for answers without explicitly shown work.
+</p>
+
+<p class="directions">
+    Also, please write the final answer after filling out each table.
+</p>
+
+<p>
+    Two cars collide into each other.
+    They were moving in the same direction
+</p>
+
+<ul>
+    <li>
+        Before the collision:
+        <ul>
+            <li>
+                Car A has a mass of 2800. kg and a velocity of 3.0 m/s.
+            </li>
+            <li>
+                Car B has a mass of 2400. kg and a velocity of 4.5 m/s in the same direction.
+            </li>
+        </ul>
+    </li>
+    <li>
+        After the collision, the two cars stick together.
+    </li>
+</ul>
+
+<p>
+    Fill out the table below to determine the magnitude of velocity (speed) of the
+    cars after the collision.
+</p>
+
+<div class="bigSpace"></div>
+<div id = 'momentumTable'></div>
+<div class="bigSpace"></div>
+
+<p>
+    After filling out the table, please write and circle the final answer.
+</p>
+
+<script>
+    let momentumTable = new MomentumTable();
+    momentumTable.makeTotallyInelasticCollision();
+    $("#momentumTable").append(momentumTable.draw(500,500));
+</script>
