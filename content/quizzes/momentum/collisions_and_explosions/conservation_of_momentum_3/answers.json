@@ -2,5 +2,9 @@
   "v1": {
     "1": "Zero velocity",
     "2": "2.86 m/s right"
+  },
+  "v2": {
+    "1": "0.25 m/s to the left",
+    "2": "6.00 m/s to the right"
   }
 }
