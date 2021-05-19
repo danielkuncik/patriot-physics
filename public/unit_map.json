@@ -10096,6 +10096,17 @@
             "uuid": "51fca915-5ca8-4738-bb6b-4e80c000d31b",
             "id": "51fca9"
           },
+          "kinetic_theory_virtual_lab": {
+            "title": "Kinetic Theory Virtual Lab",
+            "level": 2,
+            "horizontal": 6,
+            "letter": "X",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "6ee4b13d-7da5-4991-8ade-761fbf6eee57",
+            "id": "6ee4b1"
+          },
           "entropy_2":
           {
             "title": "Entropy 2",
