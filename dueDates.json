@@ -1,12 +1,10 @@
 {
   "AP": {
-    "4-28-2021": {
+    "5-26-2021": {
       "d6eede": {
         "name": "Coulomb's Law 1",
         "practice": true
-      }
-    },
-    "5-21-2021": {
+      },
       "a95408": {
         "name": "EM wave basics",
         "practice": true,
@@ -40,7 +38,7 @@
     }
   },
   "Honors": {
-    "5-5-2021": {
+    "5-26-2021": {
       "4e9b25": {
         "name": "reaction force to weight",
         "practice": true,
@@ -65,9 +63,7 @@
         "name": "Newtons Model 4A",
         "practice": true,
         "noQuiz": true
-      }
-    },
-    "5-14-2021": {
+      },
       "1d1e60": {
         "name": "momentum 1",
         "inClass": true
@@ -83,10 +79,8 @@
       "93e3ce": {
         "name": "momentum 4",
         "inClass": true
-      }
-    },
-    "5-21-2021": {
-      "df4b44": {
+      },
+    "df4b44": {
         "name": "conduction, convection, radiation",
         "noQuiz": true,
         "practice": true
@@ -100,9 +94,7 @@
         "name": "thermal contact 1",
         "noQuiz": true,
         "practice": true
-      }
-    },
-    "5-24-2021": {
+      },
       "6ee4b1": {
          "name": "virtual lab",
          "noQuiz": true,
