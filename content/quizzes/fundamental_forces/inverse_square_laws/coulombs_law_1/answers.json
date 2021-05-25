@@ -2,11 +2,11 @@
   "v1": {
     "1": {
       "a": "The force is repulsive because both charges are positive.",
-      "b": "8.44E5 Newtons"
+      "b": "8.44E5 Newtons (asking for magnitude)"
     },
     "2": {
       "a": "The force is attractive because the charges are opposite",
-      "b": "1.35E6 Newtons"
+      "b": "1.35E6 Newtons (asking for magnitude)"
     }
   }
 }
