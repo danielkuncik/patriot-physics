@@ -1,8 +1,50 @@
 {
+  "course_structure": {
+    "title": "Course Structure",
+    "number": 0,
+    "uuid": "d0052d67-4fc8-402d-afb6-067cd28d4c21",
+    "id": "d0052d",
+    "display": true,
+    "units": {
+      "quiz_system": {
+        "title": "Quiz System",
+        "number": 1,
+        "display": true,
+        "uuid": "f1d9c4cc-d7ca-472e-a19b-6a285499e03a",
+        "id": "f1d9c4",
+        "pods": {
+          "taking_a_quiz": {
+            "title": "Your First Physics Quiz!",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "mainTrack": true,
+            "objective": "Take and submit a physics quiz online.",
+            "content": "In this class, you will submit a series of very small physics quizzes online to track your progress.",
+            "uuid": "f6b8d933-3b49-4343-ae3e-8c484e59540b",
+            "id": "f6b8d9"
+          },
+          "studying_for_a_quiz": {
+            "title": "How to Study for a Physics Quiz",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": ["taking_a_quiz"],
+            "mainTrack": true,
+            "objective": "Use the practice page to study for a quiz.",
+            "content": "Each physics quiz is accompanied by a 'Practice Page' that contains the content on that quiz.",
+            "uuid": "c9228a32-6d74-4af2-9b13-5be80de1b32b",
+            "id": "c9228a"
+          }
+        }
+      }
+    }
+  },
   "pure_mathematics":
   {
     "title": "Pure Mathematics",
-    "number": 0,
+    "number": 20,
     "uuid": "7bc128cb-02fd-4169-8373-8c5f98b9953b",
     "id": "7bc128",
     "units":
@@ -11081,25 +11123,6 @@
           "AP_Physics_1": ""
         },
         "pods": {}
-      }
-    }
-  },
-  "syllabus": {
-    "title": "Syllabus",
-    "number": "20",
-    "uuid": "d0052d67-4fc8-402d-afb6-067cd28d4c21",
-    "id": "d0052d",
-    "display": false,
-    "units": {
-      "quiz_system": {
-        "title": "Quiz System",
-        "number": 1,
-        "display": true,
-        "uuid": "f1d9c4cc-d7ca-472e-a19b-6a285499e03a",
-        "id": "f1d9c4",
-        "pods": {
-
-        }
       }
     }
   }

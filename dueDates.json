@@ -115,6 +115,237 @@
     }
   },
   "A_level": {
+  },
+  "summer": {
+    "6-18-2021": {
+      "C": {
+        "f6b8d9": {
+          "name": "First Physics Quiz",
+          "practice": false
+        },
+        "c9228a": {
+          "name": "Second Physics Quiz",
+          "practice": false
+        }
+      },
+      "B": {
 
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-1-2021": {
+      "C": {
+        "bd4cf2": {
+          "name": "numeric algebra 2"
+        },
+        "543254": {
+          "name": "symbolic algebra 1"
+        },
+        "54c21b": {
+          "name": "pythagorean theorem"
+        },
+        "9ab51d": {
+          "name": "trig functions 1"
+        },
+        "cc841e": {
+          "name": "inverse trig functions"
+        },
+        "92fa82": {
+          "name": "Qualitative vs. Quantitative Reasoning"
+        },
+        "81cace": {
+          "name": "Identify Variables 1"
+        },
+        "921c30": {
+          "name": "Recognize Energy Types"
+        },
+        "8d7e19": {
+          "name": "Position Graphs and Motion Maps"
+        },
+        "a58d59": {
+          "name": "Velocity and Acceleration Graphs"
+        },
+        "bc4f99": {
+          "name": "Kinematic Graph Connections"
+        },
+        "a08be5": {
+          "name": "Acceleration Formula"
+        },
+        "a3b36d": {
+          "name": "Kinematic Equations 1"
+        },
+        "eda5ba": {
+          "name": "Kinematic Equations 2"
+        },
+        "c64e40": {
+          "name": "Quant Kine Graphs 1"
+        },
+        "1a4b0b": {
+          "name": "free-body diagrams 1"
+        },
+        "ba7882": {
+          "name": "Newton's Third Law 1"
+        }
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-3-2021": {
+      "C": {
+        "4da598": {
+          "name": "area 1"
+        },
+        "d6137d": {
+          "name": "circle math 1"
+        }
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-8-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-10-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-14-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-16-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-20-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-22-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-24-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-28-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    },
+    "9-30-2021": {
+      "C": {
+
+      },
+      "B": {
+
+      },
+      "A": {
+
+      },
+      "100": {
+
+      }
+    }
   }
 }

@@ -619,6 +619,8 @@ function processPracticeAttempt(attempt) {
 hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
     const dueDates = dueDatesJSON[courseLevel];
     let string = "";
+    const summerMessage = "Attempt By";
+    const normalMessage = "Can retake until";
     if (dueDates) {
         Object.keys(dueDates).forEach((dueDateKey) => {
           let obj = {
@@ -627,7 +629,13 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
               "practicePages": []
           };
             const dateDisplay = displayDateFromString(dueDateKey);
-            string = string + `<h2>Can retake until ${dateDisplay}</h2>`;
+            let message;
+            if (courseLevel === 'summer' && (dueDateKey === '9-1-2021' || dueDateKey === '6-18-2021')) {
+                message = summerMessage;
+            } else {
+                message = normalMessage;
+            }
+            string = string + `<h2>${message} ${dateDisplay}</h2>`;
             string = string + "<div class = 'ml-4 mb-4'>";
             Object.keys(dueDates[dueDateKey]).forEach((pod_id) => {
                 const inClassQuiz = dueDates[dueDateKey][pod_id].inClass;
@@ -780,6 +788,182 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
     }
     return new hbs.SafeString(string)
 });
+
+hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
+    const dueDates = dueDatesJSON[courseLevel];
+    let string = "";
+    const summerMessage = "Attempt By";
+    const normalMessage = "Can retake until";
+    if (dueDates) {
+        Object.keys(dueDates).forEach((dueDateKey) => {
+            const dateDisplay = displayDateFromString(dueDateKey);
+            let message;
+            if (courseLevel === 'summer' && (dueDateKey === '9-1-2021' || dueDateKey === '6-18-2021')) {
+                message = summerMessage;
+            } else {
+                message = normalMessage;
+            }
+            string = string + `<h2>${message} ${dateDisplay}</h2>`;
+            string = string + "<div class = 'ml-4 mb-4'>";
+            Object.keys(dueDates[dueDateKey]).forEach((gradeExpectation) => {
+                string = string + "<div class = 'ml-4 mb-4'>";
+                let obj = {
+                    "homework": [],
+                    "inClass": [],
+                    "practicePages": []
+                };
+                Object.keys(dueDates[dueDateKey][gradeExpectation]).forEach((pod_id) => {
+                    const inClassQuiz = dueDates[dueDateKey][gradeExpectation][pod_id].inClass;
+                    const noQuiz = dueDates[dueDateKey][gradeExpectation][pod_id].noQuiz;
+                    let displayObject;
+                    if (idLibrary[pod_id].type === "pod") {
+                        let superUnitKey = idLibrary[pod_id].superUnitKey;
+                        let unitKey = idLibrary[pod_id].unitKey;
+                        let podKey = idLibrary[pod_id].podKey;
+                        let podObject = unitMap[superUnitKey].units[unitKey].pods[podKey];
+                        let letter = podObject.letter;
+                        let title = podObject.title;
+                        if (podObject.subtitle) {
+                            title = title + `: ${podObject.subtitle}`;
+                        }
+                        let podNumber = getUnitNumberString(unitMap[superUnitKey].number, unitMap[superUnitKey].units[unitKey].number);
+                        let displayTitle = `${podNumber}-${letter}: ${title}`;
+
+                        let score, practiceScore, pending, practicePending;
+                        if (gradeMap) {
+                            score  = gradeMap[superUnitKey].units[unitKey].pods[podKey].score;
+                            practiceScore = gradeMap[superUnitKey].units[unitKey].pods[podKey].practiceScore;
+                            pending = gradeMap[superUnitKey].units[unitKey].pods[podKey].pending;
+                            practicePending = gradeMap[superUnitKey].units[unitKey].pods[podKey].practicePending;
+                        }
+                        let scoreDisplay, scoreColor;
+                        if (score === 20) {
+                            scoreDisplay = 'ACE';
+                            scoreColor = 'success'
+                        } else if (score >= 13) {
+                            scoreDisplay = `${score} out of 20`;
+                            scoreColor = 'warning';
+                        } else if (score > 0) {
+                            scoreDisplay = `${score} out of 20`;
+                            scoreColor = 'danger';
+                        } else if (score === 0) {
+                            scoreDisplay = '0 out of 20 (not yet taken)';
+                            scoreColor = 'danger'
+                        } else {
+                            scoreDisplay = undefined;
+                            scoreColor = undefined;
+                        }
+                        if (pending) {
+                            scoreColor = 'muted';
+                        }
+                        /// what to do if not logged in
+
+                        let practiceDisplay, practiceColor;
+                        if (practiceScore === 1) {
+                            practiceDisplay = 'half credit';
+                            practiceColor = 'danger';
+                        } else if (practiceScore === 2) {
+                            practiceDisplay = 'DONE';
+                            practiceColor = 'success';
+                        } else if (practiceScore === 0) {
+                            practiceDisplay = 'no credit (not yet done)';
+                            practiceColor = 'danger';
+                        } else {
+                            practiceDisplay = undefined;
+                            practiceColor = undefined;
+                        }
+                        if (practicePending) {
+                            practiceColor = 'muted';
+                        }
+                        let link = `/pod/${pod_id}`;
+                        displayObject = {
+                            "displayTitle": displayTitle,
+                            "scoreDisplay": scoreDisplay,
+                            "scoreColor": scoreColor,
+                            "practiceDisplay": practiceDisplay,// this will be where the practice score is entered
+                            "practiceColor": practiceColor,
+                            "link": link,
+                            "newScorePending": pending,
+                            "newPracticeScorePending": practicePending
+                        }
+                    } else {
+                        // error
+                    }
+                    if (noQuiz) {
+                        // pass
+                    } else if (inClassQuiz) {
+                        obj.inClass.push(displayObject);
+                    } else {
+                        obj.homework.push(displayObject);
+                    }
+                    if (dueDates[dueDateKey][gradeExpectation][pod_id].practice) {
+                        obj.practicePages.push(displayObject);
+                    }
+                });
+
+                if (obj.practicePages.length > 0) {
+                    string = string + '<h3>Practice Pages</h3>';
+                    string = string + "<ol>";
+                    obj.practicePages.forEach((displayObject) => {
+                        string = string + `<li class = 'text-${displayObject.practiceColor} mb-2'>`;
+                        let text = displayObject.displayTitle;
+                        if (displayObject.practiceDisplay) {
+                            text = text + `: ${displayObject.practiceDisplay}`;
+                        }
+                        if (displayObject.newPracticeScorePending) {
+                            text = text + '=> New Practice Score Pending';
+                        }
+
+                        string = string + `<a class = 'text-${displayObject.practiceColor}' href = '${displayObject.link}'>${text}</a>`;
+                        string = string + "</li>";
+                    });
+                    string = string + "</ol>";
+                }
+
+                if (obj.homework.length > 0) {
+                    string = string + '<h3>Homework Quizzes</h3>';
+                    string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
+                    obj.homework.forEach((displayObject) => {
+                        string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
+                        let text = displayObject.displayTitle;
+                        if (displayObject.scoreDisplay) {
+                            text = text + `: ${displayObject.scoreDisplay}`;
+                        }
+                        if (displayObject.newScorePending) {
+                            text = text + '=> New Score Pending';
+                        }
+                        string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
+                        string = string + "</li>";
+                    });
+                    string = string + "</ol>";
+                }
+
+
+                if (obj.inClass.length > 0) {
+                    string = string + '<h3>In Class Quizzes</h3>';
+                    string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
+                    obj.inClass.forEach((displayObject) => {
+                        string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
+                        let text = displayObject.displayTitle;
+                        if (displayObject.scoreDisplay) {
+                            text = text + `: ${displayObject.scoreDisplay}`;
+                        }
+
+                        string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
+                        string = string + "</li>";
+                    });
+                    string = string + "</ol>";
+                }
+
+            });
+        });
+    } else {
+        string = '<p>error</p>';
+    }
+    string = string + "</div>";
+    return new hbs.SafeString(string)
+});
+
 
 function getPreviousAttemptListItem(previousAttemptObject) {
     let string = "<li>";

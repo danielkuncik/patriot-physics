@@ -1,6 +1,7 @@
 const unitMap = require(__dirname + '/public/unit_map');
 //const AP_goals = require(__dirname + '/apTestGoals.json');
 const gradeScale = require(__dirname + '/gradingScale.json');
+const dueDates = require(__dirname + '/dueDates.json');
 
 
 function createAPGauge() {
@@ -32,6 +33,25 @@ function createGradeScale(level, hybrid) {
     return integer_scale
 }
 
+function printGradeScale(level, hybrid) {
+    const scaleArray = createGradeScale(level, hybrid);
+    let i;
+    const level3QuizValue = gradeScale.point_unit * 2 * 3;
+    for (i = 0; i < scaleArray.length; i++) {
+        const pointsRequired = scaleArray[i];
+        const level3QuizCount = pointsRequired / level3QuizValue;
+        console.log(`${i}% : ${pointsRequired} : ${level3QuizCount}`);
+    }
+}
+
+// adds up the points that can be earned from completing all assigned assignments
+function pointsForAllAssignments(level, gradeExpected = '100') {
+    const dueDateObject = dueDates[level];
+    console.log(dueDateObject);
+}
+
+// there needs to be a checker that makes sure that the assignments add up to the
+// total number of points required for an A
 
 function getPodKeysByUUID(uuid) {
     let selectionObject;
