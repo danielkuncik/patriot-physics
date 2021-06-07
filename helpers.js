@@ -805,8 +805,8 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
             }
             string = string + `<h2>${message} ${dateDisplay}</h2>`;
             string = string + "<div class = 'ml-4 mb-4'>";
+            // revise this to give more information
             Object.keys(dueDates[dueDateKey]).forEach((gradeExpectation) => {
-                string = string + "<div class = 'ml-4 mb-4'>";
                 let obj = {
                     "homework": [],
                     "inClass": [],
@@ -901,8 +901,10 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                     }
                 });
 
+                string = string + `<h3>To Receive a ${gradeExpectation}</h3>`;
+                string = string + "<div class = 'ml-4 mb-4'>";
                 if (obj.practicePages.length > 0) {
-                    string = string + '<h3>Practice Pages</h3>';
+                    string = string + '<h4>Practice Pages</h4>';
                     string = string + "<ol>";
                     obj.practicePages.forEach((displayObject) => {
                         string = string + `<li class = 'text-${displayObject.practiceColor} mb-2'>`;
@@ -921,7 +923,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                 }
 
                 if (obj.homework.length > 0) {
-                    string = string + '<h3>Homework Quizzes</h3>';
+                    string = string + '<h4>Homework Quizzes</h4>';
                     string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
                     obj.homework.forEach((displayObject) => {
                         string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
@@ -940,7 +942,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
 
 
                 if (obj.inClass.length > 0) {
-                    string = string + '<h3>In Class Quizzes</h3>';
+                    string = string + '<h4>In Class Quizzes</h4>';
                     string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
                     obj.inClass.forEach((displayObject) => {
                         string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
@@ -955,7 +957,10 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                     string = string + "</ol>";
                 }
 
+                string = string + "</div>";
+
             });
+            string = string + "</div>";
         });
     } else {
         string = '<p>error</p>';

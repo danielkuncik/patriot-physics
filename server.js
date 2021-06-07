@@ -33,6 +33,17 @@ const { idLibrary } = require(__dirname + '/idLibrary.js');
 
 const dueDates = require(__dirname + '/dueDates.json');
 
+// i should create a new version that eliminates the "A", "B", "C" information
+let dueDatesWithoutGradeMarkers = {};
+
+function stripGradeInfo(dueDateObject) {
+    let newObject = {};
+    Object.keys(dueDateObject).forEach((dueDate) => {
+        // do this later
+    });
+}
+
+
 const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
 
 
@@ -276,6 +287,7 @@ function displayDateFromString(dateString) {
     return `${month} ${day}, ${year}`;
 }
 
+// 6-2021: must be revised to reflect different grade goals
 const look_up_requirements = function(req, res, next) {
     if (req.courseLevel && Object.keys(dueDates).includes(req.courseLevel)) {
         let dueObject;
@@ -317,6 +329,7 @@ function getPodUUID(podId) {
     return podObject.uuid
 }
 
+// 6-2021: must be revised to reflect different grade goals
 const checkQuizAccess = (req, res, next) => {
     const keys = idLibrary[req.params.id];
     req.superUnitKey = keys.superUnitKey;
