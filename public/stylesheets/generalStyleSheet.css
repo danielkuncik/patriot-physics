@@ -407,3 +407,13 @@ li.subQuestion {
 p.sidewaysText {
     transform: rotate(-90deg);
 }
+
+
+ul.inlineList > li {
+    display: inline
+
+}
+
+ul.list-middot > li:not(:last-child)::after {
+    content: "\00b7";
+}
