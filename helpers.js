@@ -901,64 +901,73 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                     }
                 });
 
-                string = string + `<h3>To Receive a ${gradeExpectation}</h3>`;
-                string = string + "<div class = 'ml-4 mb-4'>";
-                if (obj.practicePages.length > 0) {
-                    string = string + '<h4>Practice Pages</h4>';
-                    string = string + "<ol>";
-                    obj.practicePages.forEach((displayObject) => {
-                        string = string + `<li class = 'text-${displayObject.practiceColor} mb-2'>`;
-                        let text = displayObject.displayTitle;
-                        if (displayObject.practiceDisplay) {
-                            text = text + `: ${displayObject.practiceDisplay}`;
-                        }
-                        if (displayObject.newPracticeScorePending) {
-                            text = text + '=> New Practice Score Pending';
-                        }
-
-                        string = string + `<a class = 'text-${displayObject.practiceColor}' href = '${displayObject.link}'>${text}</a>`;
-                        string = string + "</li>";
-                    });
-                    string = string + "</ol>";
+                let numberGradeExpectation;
+                if (gradeExpectation === 'C') {
+                    numberGradeExpectation = '70 %';
+                } else if (gradeExpectation === 'B') {
+                    numberGradeExpectation = '80 %';
+                } else if (gradeExpectation === 'A') {
+                    numberGradeExpectation = '90 %';
                 }
+                if (obj.practicePages.length > 0 || obj.homework.length > 0 || obj.inClass.length > 0) {
+                    string = string + `<h3>Required to receive a ${numberGradeExpectation} or higher</h3>`;
+                    string = string + "<div class = 'ml-4 mb-4'>";
+                    if (obj.practicePages.length > 0) {
+                        string = string + '<h4>Practice Pages</h4>';
+                        string = string + "<ol>";
+                        obj.practicePages.forEach((displayObject) => {
+                            string = string + `<li class = 'text-${displayObject.practiceColor} mb-2'>`;
+                            let text = displayObject.displayTitle;
+                            if (displayObject.practiceDisplay) {
+                                text = text + `: ${displayObject.practiceDisplay}`;
+                            }
+                            if (displayObject.newPracticeScorePending) {
+                                text = text + '=> New Practice Score Pending';
+                            }
 
-                if (obj.homework.length > 0) {
-                    string = string + '<h4>Homework Quizzes</h4>';
-                    string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
-                    obj.homework.forEach((displayObject) => {
-                        string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
-                        let text = displayObject.displayTitle;
-                        if (displayObject.scoreDisplay) {
-                            text = text + `: ${displayObject.scoreDisplay}`;
-                        }
-                        if (displayObject.newScorePending) {
-                            text = text + '=> New Score Pending';
-                        }
-                        string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
-                        string = string + "</li>";
-                    });
-                    string = string + "</ol>";
+                            string = string + `<a class = 'text-${displayObject.practiceColor}' href = '${displayObject.link}'>${text}</a>`;
+                            string = string + "</li>";
+                        });
+                        string = string + "</ol>";
+                    }
+
+                    if (obj.homework.length > 0) {
+                        string = string + '<h4>Homework Quizzes</h4>';
+                        string = string + `<ol start = '${obj.practicePages.length + 1}'>`;
+                        obj.homework.forEach((displayObject) => {
+                            string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
+                            let text = displayObject.displayTitle;
+                            if (displayObject.scoreDisplay) {
+                                text = text + `: ${displayObject.scoreDisplay}`;
+                            }
+                            if (displayObject.newScorePending) {
+                                text = text + '=> New Score Pending';
+                            }
+                            string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
+                            string = string + "</li>";
+                        });
+                        string = string + "</ol>";
+                    }
+
+
+                    if (obj.inClass.length > 0) {
+                        string = string + '<h4>In Class Quizzes</h4>';
+                        string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
+                        obj.inClass.forEach((displayObject) => {
+                            string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
+                            let text = displayObject.displayTitle;
+                            if (displayObject.scoreDisplay) {
+                                text = text + `: ${displayObject.scoreDisplay}`;
+                            }
+
+                            string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
+                            string = string + "</li>";
+                        });
+                        string = string + "</ol>";
+                    }
+
+                    string = string + "</div>";
                 }
-
-
-                if (obj.inClass.length > 0) {
-                    string = string + '<h4>In Class Quizzes</h4>';
-                    string = string + `<ol start = '${obj.practicePages.length + obj.homework.length + 1}'>`;
-                    obj.inClass.forEach((displayObject) => {
-                        string = string + `<li class = 'text-${displayObject.scoreColor} mb-2'>`;
-                        let text = displayObject.displayTitle;
-                        if (displayObject.scoreDisplay) {
-                            text = text + `: ${displayObject.scoreDisplay}`;
-                        }
-
-                        string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
-                        string = string + "</li>";
-                    });
-                    string = string + "</ol>";
-                }
-
-                string = string + "</div>";
-
             });
             string = string + "</div>";
         });
