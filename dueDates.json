@@ -133,9 +133,6 @@
       },
       "A": {
 
-      },
-      "100": {
-
       }
     },
     "9-1-2021": {
@@ -146,15 +143,6 @@
         "543254": {
           "name": "symbolic algebra 1"
         },
-        "54c21b": {
-          "name": "pythagorean theorem"
-        },
-        "9ab51d": {
-          "name": "trig functions 1"
-        },
-        "cc841e": {
-          "name": "inverse trig functions"
-        },
         "92fa82": {
           "name": "Qualitative vs. Quantitative Reasoning"
         },
@@ -163,6 +151,15 @@
         },
         "921c30": {
           "name": "Recognize Energy Types"
+        },
+        "c59587": {
+          "name": "sig figs 1"
+        },
+        "4563a8": {
+          "name": "sig figs 2"
+        },
+        "2b2b55": {
+          "name": "sig figs 3"
         },
         "8d7e19": {
           "name": "Position Graphs and Motion Maps"
@@ -184,21 +181,12 @@
         },
         "c64e40": {
           "name": "Quant Kine Graphs 1"
-        },
-        "1a4b0b": {
-          "name": "free-body diagrams 1"
-        },
-        "ba7882": {
-          "name": "Newton's Third Law 1"
         }
       },
       "B": {
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
@@ -209,6 +197,27 @@
         },
         "d6137d": {
           "name": "circle math 1"
+        },
+        "1a4b0b": {
+          "name": "free-body diagrams 1"
+        },
+        "ba7882": {
+          "name": "Newton's Third Law 1"
+        },
+        "193942": {
+          "name": "Finding Net Force"
+        },
+        "8778d7": {
+          "name": "newtons second law"
+        },
+        "a131a7": {
+          "name": "a131a7"
+        },
+        "0882f6": {
+          "name": "basic gravity"
+        },
+        "6035a7": {
+          "name": "mass vs weight"
         }
       },
       "B": {
@@ -216,92 +225,204 @@
       },
       "A": {
 
-      },
-      "100": {
-
       }
     },
     "9-8-2021": {
       "C": {
-
+        "54c21b": {
+          "name": "pythagorean theorem"
+        },
+        "9ab51d": {
+          "name": "trig functions 1"
+        },
+        "cc841e": {
+          "name": "inverse trig functions"
+        },
+        "386543": {
+          "name": "momentum formula"
+        },
+        "1d1e60": {
+          "name": "collisions 1"
+        },
+        "38e07e": {
+          "name": "collisions 2"
+        },
+        "b656a7": {
+          "name": "collisions 3"
+        },
+        "93e3ce": {
+          "name": "collisions 4"
+        }
       },
       "B": {
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
     "9-10-2021": {
       "C": {
-
+        "232a8d": {
+          "name": "Powers of Ten"
+        },
+        "86f07c": {
+          "name": "scientific notation 1"
+        },
+        "f7055b": {
+          "name": "scientific notation 2"
+        },
+        "f6715d": {
+          "name": "scientific notation 3"
+        },
+        "d3ceef": {
+          "name": "scientific notation inequalities"
+        },
+        "79415b": {
+          "name": "electromagnetic vs mechanical waves"
+        },
+        "4a6e69": {
+          "name": "transverse vs longitudinal waves"
+        },
+        "9ac868": {
+          "name": "parts of a wave 1"
+        },
+        "83111d": {
+          "name": "drawing waves: wavelength"
+        },
+        "0ffd1c": {
+          "name": "drawing waves amplitude"
+        },
+        "d1847d": {
+          "name": "wave equation"
+        }
       },
       "B": {
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
     "9-14-2021": {
       "C": {
-
+        "263ad0": {
+          "name": "very fast conversions",
+          "inClass": true
+        },
+        "72607f": {
+          "name": "memorize metric prefixes",
+          "inClass": true
+        },
+        "64f606": {
+          "name": "metric to scientific notation"
+        },
+        "7d1b7e": {
+          "name": "scientific notation to metric"
+        },
+        "599c70": {
+          "name": "em vs mechanical waves 2"
+        },
+        "1d4dd1": {
+          "name": "oscillation during a wave"
+        },
+        "8a4fc7": {
+          "name": "wave categorization"
+        },
+        "5762f5": {
+          "name": "parts of a longitudinal wave"
+        },
+        "0d5708": {
+          "name": "Drawing waves 2"
+        }
       },
       "B": {
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
     "9-16-2021": {
       "C": {
-
+        "d76ce1": {
+          "name": "identify circuit components"
+        },
+        "8f39c5": {
+          "name": "Series and Parallel Circuits"
+        },
+        "4dd93e": {
+          "name": "Very basic atoms"
+        },
+        "df7407": {
+          "name": "Circuit Definitions 1"
+        },
+        "c3d2b9": {
+          "name": "Energy Change in a Circuit"
+        }
       },
       "B": {
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
     "9-20-2021": {
       "C": {
-
+        "f9822f": {
+          "name": "Conversion Factors 1"
+        },
+        "ee8486": {
+          "name": "Divide two numbers on a calc"
+        },
+        "f22165": {
+          "name": "Conversion Factors 2"
+        },
+        "6103f0": {
+          "name": "Dimensional Analysis 1"
+        },
+        "65b8b7": {
+          "name": "ohms law"
+        },
+        "8e7ca2": {
+          "name": "power formula"
+        },
+        "875ae0": {
+          "name": "analyze circuits 1"
+        },
+        "3950df": {
+          "name": "analyze circuits 2"
+        }
       },
       "B": {
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
     "9-22-2021": {
       "C": {
-
+        "1aa185": {
+          "name": "speed and acceleration conversions"
+        },
+        "33ead4": {
+          "name": "numeric proportionality 1"
+        },
+        "2af5a4": {
+          "name": "graphical proportionality 1"
+        }
       },
       "B": {
-
+        "3bb84e": {
+          "name": "Four step conversions"
+        },
+        "20b47c": {
+          "name": "simplifying dimensions of quantities"
+        }
       },
       "A": {
-
-      },
-      "100": {
 
       }
     },
@@ -314,9 +435,6 @@
       },
       "A": {
 
-      },
-      "100": {
-
       }
     },
     "9-28-2021": {
@@ -328,9 +446,6 @@
       },
       "A": {
 
-      },
-      "100": {
-
       }
     },
     "9-30-2021": {
@@ -341,9 +456,6 @@
 
       },
       "A": {
-
-      },
-      "100": {
 
       }
     }
