@@ -39,10 +39,21 @@ let dueDatesWithoutGradeMarkers = {};
 function stripGradeInfo(dueDateObject) {
     let newObject = {};
     Object.keys(dueDateObject).forEach((dueDate) => {
-        // do this later
+        let newDueDateObject = {};
+        Object.keys(dueDateObject[dueDate]).forEach((gradeExpectation) => {
+            Object.keys(dueDateObject[dueDate][gradeExpectation]).forEach((pod_id) => {
+                newDueDateObject[pod_id] = dueDateObject[dueDate][gradeExpectation][pod_id];
+            });
+        });
+        newObject[dueDate] = newDueDateObject;
     });
+    return newObject
 }
 
+dueDatesWithoutGradeMarkers["AP"] = dueDates["AP"];
+dueDatesWithoutGradeMarkers["Honors"] = dueDates["Honors"];
+dueDatesWithoutGradeMarkers["A_level"] = dueDates["A_level"];
+dueDatesWithoutGradeMarkers["summer"] = stripGradeInfo(dueDates["summer"]);
 
 const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
 

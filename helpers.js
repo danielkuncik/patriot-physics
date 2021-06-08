@@ -903,14 +903,14 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
 
                 let numberGradeExpectation;
                 if (gradeExpectation === 'C') {
-                    numberGradeExpectation = '70 %';
+                    numberGradeExpectation = 'a 70 %';
                 } else if (gradeExpectation === 'B') {
-                    numberGradeExpectation = '80 %';
+                    numberGradeExpectation = 'an 80 %';
                 } else if (gradeExpectation === 'A') {
-                    numberGradeExpectation = '90 %';
+                    numberGradeExpectation = 'a 90 %';
                 }
                 if (obj.practicePages.length > 0 || obj.homework.length > 0 || obj.inClass.length > 0) {
-                    string = string + `<h3>Required to receive a ${numberGradeExpectation} or higher</h3>`;
+                    string = string + `<h3>Required to receive ${numberGradeExpectation} or higher</h3>`;
                     string = string + "<div class = 'ml-4 mb-4'>";
                     if (obj.practicePages.length > 0) {
                         string = string + '<h4>Practice Pages</h4>';
