@@ -346,7 +346,8 @@ const checkQuizAccess = (req, res, next) => {
     req.superUnitKey = keys.superUnitKey;
     req.unitKey = keys.unitKey;
     req.podKey = keys.podKey;
-    if (req.user && req.courseLevel) {
+    req.quizAvailable = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
+    if (req.user && req.courseLevel && req.year) {
         const id = req.params.id;
         let dueDateObject = dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`];
         let dueDateArray = Object.keys(dueDateObject);

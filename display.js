@@ -148,6 +148,7 @@ display_pod_page = (req, res) => {
     if (format === 'hbs') {
         res.render('unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs', {
             layout: "podPageLayout.hbs",
+            quizAvailable: req.quizAvailable,
             unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
             title: title,
             level: pod.level,

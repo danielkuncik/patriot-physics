@@ -109,8 +109,6 @@ function checkPointScales(level, year = 2022, firstDay = "6-20-2021", lastDay = 
     console.log(`90 % => ${A_required_points} required      ${A_assigned_points} assigned      ${A_difference} difference`)
 }
 
-checkPointScales('AP');
-
 // there needs to be a checker that makes sure that the assignments add up to the
 // total number of points required for an A
 
