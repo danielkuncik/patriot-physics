@@ -391,9 +391,19 @@ hbs.registerHelper('printUnitLink', (superUnitKey, unitKey, gradeMap, goal) => {
 });
 
 
-hbs.registerHelper('isAP', (courseLevel) => {
+hbs.registerHelper('isAP2021', (courseLevel, year) => {
     let result;
-    if (courseLevel === 'AP') {
+    if (courseLevel === 'AP' && year === 2021) {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result
+});
+
+hbs.registerHelper('isAP2022', (courseLevel, year) => {
+    let result;
+    if (courseLevel === 'AP' && year === 2022) {
         result = true;
     } else {
         result = false;
@@ -631,8 +641,8 @@ function stripGradeInfo(dueDateObject) {
     return newObject
 }
 
-hbs.registerHelper('displayDueDatesForJune2021', (courseLevel, gradeMap) => {
-    const dueDates = stripGradeInfo(dueDatesJSON[courseLevel]);
+hbs.registerHelper('displayDueDatesForJune2021', (courseLevel, year, gradeMap) => {
+    const dueDates = stripGradeInfo(dueDatesJSON[`${courseLevel}-${year}`]);
     let string = "";
     const summerMessage = "Attempt By";
     const normalMessage = "Can retake until";
@@ -804,8 +814,8 @@ hbs.registerHelper('displayDueDatesForJune2021', (courseLevel, gradeMap) => {
     return new hbs.SafeString(string)
 });
 
-hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
-    const dueDates = dueDatesJSON[courseLevel];
+hbs.registerHelper('displayDueDates', (courseLevel, year, gradeMap) => {
+    const dueDates = dueDatesJSON[`${courseLevel}-${year}`];
     let string = "";
     const summerMessage = "Attempt By";
     const normalMessage = "Can retake until";
@@ -978,7 +988,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, gradeMap) => {
 });
 
 hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
-    const dueDates = dueDatesJSON[courseLevel];
+    const dueDates = dueDatesJSON[`${courseLevel}-${year}`];
     let string = "";
     const summerMessage = "Attempt By";
     const normalMessage = "Can retake until";

@@ -20,6 +20,7 @@ display_home = (req,res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         courseLevel: req.courseLevel,
+        year: req.year,
         totalAttempts: req.totalAttemps,
         flashMessage: req.body.flashMessage,
        // flash: req.flash,

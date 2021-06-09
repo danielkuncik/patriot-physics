@@ -50,10 +50,10 @@ function stripGradeInfo(dueDateObject) {
     return newObject
 }
 
-dueDatesWithoutGradeMarkers["AP"] = dueDates["AP"];
-dueDatesWithoutGradeMarkers["Honors"] = dueDates["Honors"];
-dueDatesWithoutGradeMarkers["A_level"] = dueDates["A_level"];
-dueDatesWithoutGradeMarkers["summer"] = stripGradeInfo(dueDates["summer"]);
+dueDatesWithoutGradeMarkers["AP-2021"] = dueDates["AP-2021"];
+dueDatesWithoutGradeMarkers["Honors-2021"] = dueDates["Honors-2021"];
+dueDatesWithoutGradeMarkers["A_level-2021"] = dueDates["A_level-2021"];
+dueDatesWithoutGradeMarkers["AP-2022"] = stripGradeInfo(dueDates["AP-2022"]);
 
 const { unitMapBy_uuid } = require(__dirname + '/unitMapBy_uuid.js');
 
@@ -173,7 +173,7 @@ app.get('/flashTest',(req, res) => {
 // home
 app.get('/', [db.check_if_logged_in, (req, res, next) => {
     if (req.courseLevel) {
-        const dueDateObject = dueDatesWithoutGradeMarkers[req.courseLevel];
+        const dueDateObject = dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`];
         let podIds = [];
         Object.keys(dueDateObject).forEach((dueDate) => {
             let thisSelection = dueDateObject[dueDate];
@@ -300,12 +300,12 @@ function displayDateFromString(dateString) {
 
 // 6-2021: must be revised to reflect different grade goals
 const look_up_requirements = function(req, res, next) {
-    if (req.courseLevel && Object.keys(dueDatesWithoutGradeMarkers).includes(req.courseLevel)) {
+    if (req.courseLevel && Object.keys(dueDatesWithoutGradeMarkers).includes(`${req.courseLevel}-${req.year}`)) {
         let dueObject;
-        Object.keys(dueDatesWithoutGradeMarkers[req.courseLevel]).forEach((date) => {
+        Object.keys(dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`]).forEach((date) => {
             // check here if it is overdue
-            if (Object.keys(dueDatesWithoutGradeMarkers[req.courseLevel][date]).includes(req.pod_uuid)) {
-                let dueObject = dueDatesWithoutGradeMarkers[req.courseLevel][date][req.pod_uuid];
+            if (Object.keys(dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`][date]).includes(req.pod_uuid)) {
+                let dueObject = dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`][date][req.pod_uuid];
                 dueObject["displayDate"] = displayDateFromString(date);
 
                 let dueDateObject = new Date(date);
@@ -348,7 +348,7 @@ const checkQuizAccess = (req, res, next) => {
     req.podKey = keys.podKey;
     if (req.user && req.courseLevel) {
         const id = req.params.id;
-        let dueDateObject = dueDatesWithoutGradeMarkers[req.courseLevel];
+        let dueDateObject = dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`];
         let dueDateArray = Object.keys(dueDateObject);
         let i;
         req.quizRequirements = {"required": false};
