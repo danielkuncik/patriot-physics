@@ -173,7 +173,7 @@ app.get('/flashTest',(req, res) => {
 // home
 app.get('/', [db.check_if_logged_in, (req, res, next) => {
     if (req.courseLevel) {
-        const dueDateObject = dueDates[req.courseLevel];
+        const dueDateObject = dueDatesWithoutGradeMarkers[req.courseLevel];
         let podIds = [];
         Object.keys(dueDateObject).forEach((dueDate) => {
             let thisSelection = dueDateObject[dueDate];
@@ -300,12 +300,12 @@ function displayDateFromString(dateString) {
 
 // 6-2021: must be revised to reflect different grade goals
 const look_up_requirements = function(req, res, next) {
-    if (req.courseLevel && Object.keys(dueDates).includes(req.courseLevel)) {
+    if (req.courseLevel && Object.keys(dueDatesWithoutGradeMarkers).includes(req.courseLevel)) {
         let dueObject;
-        Object.keys(dueDates[req.courseLevel]).forEach((date) => {
+        Object.keys(dueDatesWithoutGradeMarkers[req.courseLevel]).forEach((date) => {
             // check here if it is overdue
-            if (Object.keys(dueDates[req.courseLevel][date]).includes(req.pod_uuid)) {
-                let dueObject = dueDates[req.courseLevel][date][req.pod_uuid];
+            if (Object.keys(dueDatesWithoutGradeMarkers[req.courseLevel][date]).includes(req.pod_uuid)) {
+                let dueObject = dueDatesWithoutGradeMarkers[req.courseLevel][date][req.pod_uuid];
                 dueObject["displayDate"] = displayDateFromString(date);
 
                 let dueDateObject = new Date(date);
@@ -348,7 +348,7 @@ const checkQuizAccess = (req, res, next) => {
     req.podKey = keys.podKey;
     if (req.user && req.courseLevel) {
         const id = req.params.id;
-        let dueDateObject = dueDates[req.courseLevel];
+        let dueDateObject = dueDatesWithoutGradeMarkers[req.courseLevel];
         let dueDateArray = Object.keys(dueDateObject);
         let i;
         req.quizRequirements = {"required": false};
