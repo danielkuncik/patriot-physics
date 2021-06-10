@@ -104,9 +104,9 @@ function checkPointScales(level, firstDay = "6-20-2021", lastDay = "11-1-2021") 
     const B_difference = B_required_points - B_assigned_points;
     const A_difference = A_required_points - A_assigned_points;
 
-    console.log(`70 % => ${C_required_points} required      ${C_assigned_points} assigned      ${C_difference} difference`)
-    console.log(`80 % => ${B_required_points} required      ${B_assigned_points} assigned      ${B_difference} difference`)
-    console.log(`90 % => ${A_required_points} required      ${A_assigned_points} assigned      ${A_difference} difference`)
+    console.log(`70 % => ${C_required_points} required      ${C_assigned_points} assigned      ${C_difference} difference`);
+    console.log(`80 % => ${B_required_points} required      ${B_assigned_points} assigned      ${B_difference} difference`);
+    console.log(`90 % => ${A_required_points} required      ${A_assigned_points} assigned      ${A_difference} difference`);
 }
 
 checkPointScales('summer');
