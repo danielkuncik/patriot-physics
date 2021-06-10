@@ -20,6 +20,7 @@ display_home = (req,res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         courseLevel: req.courseLevel,
+        year: req.year,
         totalAttempts: req.totalAttemps,
         flashMessage: req.body.flashMessage,
        // flash: req.flash,
@@ -147,6 +148,7 @@ display_pod_page = (req, res) => {
     if (format === 'hbs') {
         res.render('unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs', {
             layout: "podPageLayout.hbs",
+            quizAvailable: req.quizAvailable,
             unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
             title: title,
             level: pod.level,

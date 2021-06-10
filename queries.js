@@ -15,17 +15,24 @@ const pool = new Pool({
 
 
 function getCourseLevel(section) {
-    let courseLevel;
-    if (section === 'Violet' || section === 'Thursday1' || section === 'Friday1' || section === 'Tuesday3' || section === 'Wednesday3' || section === 'AP Physics') {
+    let courseLevel, year;
+    if (section === 'Violet' || section === 'Thursday1' || section === 'Friday1' || section === 'Tuesday3' || section === 'Wednesday3') {
         courseLevel = 'AP';
+        year = 2021;
     } else if (section === 'Red' || section === 'Blue' || section === 'Green' || section === 'Tuesday1' || section === 'Wednesday1' || section === 'Thursday2' || section === 'Friday2' || section === 'Thursday3' || section === 'Friday3') {
         courseLevel = 'Honors';
+        year = 2021;
     } else if (section === 'Orange') {
         courseLevel = 'A_Level';
-    } else {
+        year = 2021;
+    } else if (section === 'AP Physics') {
+        courseLevel = 'AP';
+        year = 2022;
+    }
+    else {
         courseLevel = undefined;
     }
-    return courseLevel
+    return [courseLevel, year]
 }
 
 
@@ -46,7 +53,9 @@ const check_login = (req, res, next) => {
                     }
                     if (result2.rows.length > 0) {
                         req.session.section = result2.rows[0];
-                        req.session.courseLevel = getCourseLevel(result2.rows[0].name);
+                        let array = getCourseLevel(result2.rows[0].name);
+                        req.session.courseLevel = array[0];
+                        req.session.year = array[1];
                         req.flash('successFlash','Login Successful');
                         next();
                     } else {
@@ -137,8 +146,9 @@ const check_if_logged_in = function(req, res, next) {
     } else {
         req.section = undefined;
     }
-    if (req.session.courseLevel) {
+    if (req.session.courseLevel && req.session.year) {
         req.courseLevel = req.session.courseLevel;
+        req.year = req.session.year;
     } else {
         req.courseLevel = undefined;
     }

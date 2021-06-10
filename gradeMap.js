@@ -54,8 +54,8 @@ function printGradeScale(level, hybrid) {
 
 // adds up the points that can be earned from completing all assigned assignments
 // does not include distinction btw prac pages, hw quizzes, and in class quizzes!
-function collectAllQuizzes(level, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021") {
-    const dueDateObject = dueDates[level];
+function collectAllQuizzes(level, year = 2022, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021") {
+    const dueDateObject = dueDates[`${level}-${year}`];
     let quiz_ids = [];
     const firstDayDate = new Date(firstDay);
     const lastDayDate = new Date(lastDay);
@@ -74,13 +74,13 @@ function collectAllQuizzes(level, gradeExpected = 'C', firstDay = "6-20-2021", l
     return quiz_ids
 }
 
-function countQuizzes(level, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021") {
-    return collectAllQuizzes(level, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021").length
+function countQuizzes(level, year = 2022, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021") {
+    return collectAllQuizzes(level, year, gradeExpected, firstDay, lastDay).length
 }
 
 
-function countTotalPoints(level, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021") {
-    const quiz_ids = collectAllQuizzes(level, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021");
+function countTotalPoints(level, year = 2022, gradeExpected = 'C', firstDay = "6-20-2021", lastDay = "11-1-2021") {
+    const quiz_ids = collectAllQuizzes(level, year,gradeExpected, firstDay, lastDay);
     const unitPointValue = gradeScale["point_unit"];
     let totalPoints = 0;
     quiz_ids.forEach((quiz_id) => {
@@ -90,15 +90,15 @@ function countTotalPoints(level, gradeExpected = 'C', firstDay = "6-20-2021", la
     return totalPoints
 }
 
-function checkPointScales(level, firstDay = "6-20-2021", lastDay = "11-1-2021") {
+function checkPointScales(level, year = 2022, firstDay = "6-20-2021", lastDay = "11-1-2021") {
     let gradeScale = createGradeScale(level);
     const C_required_points = gradeScale[70];
     const B_required_points = gradeScale[80];
     const A_required_points = gradeScale[90];
 
-    const C_assigned_points = countTotalPoints(level, 'C', firstDay, lastDay);
-    const B_assigned_points = countTotalPoints(level, 'B', firstDay, lastDay);
-    const A_assigned_points = countTotalPoints(level, 'A', firstDay, lastDay);
+    const C_assigned_points = countTotalPoints(level, year, 'C', firstDay, lastDay);
+    const B_assigned_points = countTotalPoints(level, year,'B', firstDay, lastDay);
+    const A_assigned_points = countTotalPoints(level, year,'A', firstDay, lastDay);
 
     const C_difference = C_required_points - C_assigned_points;
     const B_difference = B_required_points - B_assigned_points;
@@ -108,8 +108,6 @@ function checkPointScales(level, firstDay = "6-20-2021", lastDay = "11-1-2021") 
     console.log(`80 % => ${B_required_points} required      ${B_assigned_points} assigned      ${B_difference} difference`);
     console.log(`90 % => ${A_required_points} required      ${A_assigned_points} assigned      ${A_difference} difference`);
 }
-
-checkPointScales('summer');
 
 // there needs to be a checker that makes sure that the assignments add up to the
 // total number of points required for an A
