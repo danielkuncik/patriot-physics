@@ -1,6 +1,6 @@
 {
   "AP-2021": {
-    "6-9-2021": {
+    "6-14-2021": {
       "d6eede": {
         "name": "Coulomb's Law 1",
         "practice": true
@@ -32,6 +32,26 @@
       },
       "c52b41": {
         "name": "short wavelength astronomy",
+        "practice": true,
+        "noQuiz": true
+      },
+      "80cac9": {
+        "name": "heat formula 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "2c3d67": {
+        "name": "thermal contact 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "38952d": {
+        "name": "heat formula 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "82f477": {
+        "name": "heat formula 3",
         "practice": true,
         "noQuiz": true
       }
