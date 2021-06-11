@@ -14,7 +14,8 @@ Autumn Tilley => apricotToad
 Mason Hanks => maroonHawk
 Spencer Merolla => salmonMule
 Teddy Carroll => tuscanyCaterpillar
-Katherine Nilson => khakiNarwhal
+
+(Katherine Nilson => khakiNarwhal)
 
 
 
