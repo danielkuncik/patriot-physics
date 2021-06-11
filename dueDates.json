@@ -38,7 +38,7 @@
     }
   },
   "Honors-2021": {
-    "5-26-2021": {
+    "6-14-2021": {
       "4e9b25": {
         "name": "reaction force to weight",
         "practice": true,
@@ -99,9 +99,7 @@
          "name": "virtual lab",
          "noQuiz": true,
          "practice": true
-      }
-    },
-    "6-4-2021": {
+      },
       "38952d": {
         "name": "Heat Equation 2",
         "noQuiz": true,
