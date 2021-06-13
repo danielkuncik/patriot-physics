@@ -1,6 +1,6 @@
 {
   "AP-2021": {
-    "6-9-2021": {
+    "6-14-2021": {
       "d6eede": {
         "name": "Coulomb's Law 1",
         "practice": true
@@ -34,11 +34,31 @@
         "name": "short wavelength astronomy",
         "practice": true,
         "noQuiz": true
+      },
+      "80cac9": {
+        "name": "heat formula 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "2c3d67": {
+        "name": "thermal contact 1",
+        "practice": true,
+        "noQuiz": true
+      },
+      "38952d": {
+        "name": "heat formula 2",
+        "practice": true,
+        "noQuiz": true
+      },
+      "82f477": {
+        "name": "heat formula 3",
+        "practice": true,
+        "noQuiz": true
       }
     }
   },
   "Honors-2021": {
-    "5-26-2021": {
+    "6-14-2021": {
       "4e9b25": {
         "name": "reaction force to weight",
         "practice": true,
@@ -99,9 +119,7 @@
          "name": "virtual lab",
          "noQuiz": true,
          "practice": true
-      }
-    },
-    "6-4-2021": {
+      },
       "38952d": {
         "name": "Heat Equation 2",
         "noQuiz": true,
