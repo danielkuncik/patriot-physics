@@ -122,10 +122,6 @@
         "f6b8d9": {
           "name": "First Physics Quiz",
           "practice": false
-        },
-        "c9228a": {
-          "name": "Second Physics Quiz",
-          "practice": false
         }
       },
       "B": {
@@ -137,6 +133,10 @@
     },
     "9-1-2021": {
       "C": {
+      "c9228a": {
+        "name": "Second Physics Quiz",
+        "practice": false
+      },
         "bd4cf2": {
           "name": "numeric algebra 2"
         },

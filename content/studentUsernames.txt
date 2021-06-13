@@ -5,13 +5,14 @@ Amaya McLeod => amberManatee
 Allison Ward => aquaWalrus
 Torsten Brickley => tangerineBaboon
 Madeline Dugas => maroonDeer
-
 Emma Thorell => emeraldTiger
 Ethan Perez-Dormitzer => emeraldPanda
 Sakurako Huynh-Aoyama => scarletHedgehog
 Klara Whalley => keppelWoodpecker
 Autumn Tilley => apricotToad
 Mason Hanks => maroonHawk
+
+Spencer Merolla => salmonMule
 
 
 
