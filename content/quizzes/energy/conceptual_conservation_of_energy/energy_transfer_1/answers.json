@@ -1,42 +1,42 @@
 {
   "v1": {
-    "1": "Elastic Potential Energy",
-    "2": "Thermal Energy",
-    "3": "(Translational) Kinetic Energy",
-    "4": "Chemical Potential Energy",
-    "5": "Electromagnetic Wave Energy",
-    "6": "Nuclear Energy"
+    "1": "C",
+    "2": "D",
+    "3": "C",
+    "4": "A",
+    "5": "C",
+    "6": "B"
   },
   "v2": {
-    "1": "Chemical Potential Energy",
-    "2": "Electrical Energy",
-    "3": "Thermal Energy",
-    "4": "Mechanical Wave Energy",
-    "5": "Gravitational Potential Energy",
-    "6": "Nuclear Energy"
+    "1": "A",
+    "2": "A",
+    "3": "D",
+    "4": "A",
+    "5": "B",
+    "6": "B"
   },
   "v3": {
-    "1": "Thermal Energy",
-    "2": "Kinetic Energy",
-    "3": "Electrical Energy",
-    "4": "Nuclear Energy",
-    "5": "Chemical Potential Energy",
-    "6": "Elastic Potential Energy"
+    "1": "D",
+    "2": "B",
+    "3": "C",
+    "4": "A",
+    "5": "D",
+    "6": "A"
   },
   "v4": {
-    "1": "Gravitational Potential Energy",
-    "2": "Chemical Potential Energy",
-    "3": "Electrical Energy",
-    "4": "Thermal Energy",
-    "5": "Nuclear Energy",
-    "6": "Mechanical Wave Energy"
+    "1": "B",
+    "2": "D",
+    "3": "A",
+    "4": "D",
+    "5": "D",
+    "6": "C"
   },
   "v5": {
-    "1": "Elastic Potential Energy",
-    "2": "Nuclear Energy",
-    "3": "Electrochemical Potential Energy",
-    "4": "Chemical Potential Energy",
-    "5": "Electrical Energy",
-    "6": "Thermal Energy"
+    "1": "C",
+    "2": "B",
+    "3": "D",
+    "4": "C",
+    "5": "B",
+    "6": "D"
   }
 }
