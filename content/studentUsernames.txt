@@ -1,22 +1,29 @@
-Ethan McElroy => evergreenMonkey
-David Costa => denimCamel
-Conner Garcia => charcoalGilaMonster
-Amaya McLeod => amberManatee
-Allison Ward => aquaWalrus
 Torsten Brickley => tangerineBaboon
-Madeline Dugas => maroonDeer
-Emma Thorell => emeraldTiger
-Ethan Perez-Dormitzer => emeraldPanda
-Sakurako Huynh-Aoyama => scarletHedgehog
-Klara Whalley => keppelWoodpecker
-Autumn Tilley => apricotToad
-Mason Hanks => maroonHawk
-Spencer Merolla => salmonMule
 Teddy Carroll => tuscanyCaterpillar
+Murray Copps => _____
+David Costa => denimCamel
+Madeline Dugas => maroonDeer
+Conner Garcia => charcoalGilaMonster
+Eddie Gonet => eggplantGoat
+Mason Hanks => maroonHawk
+Isabella Hunt => indigoHedgehog
+Sakurako Huynh-Aoyama => scarletHedgehog
+Ethan McElroy => evergreenMonkey
+Amaya McLeod => amberManatee
+Spencer Merolla => salmonMule
+Stephen Old => silverOwl
+Ethan Perez-Dormitzer => emeraldPanda
+Maria Psichopaidas => magnoliaPenguin
+Emma Thorell => emeraldTiger
+Autumn Tilley => apricotToad
+Allison Ward => aquaWalrus
+Cameran Weaver => charcoalWhale
+Klara Whalley => keppelWoodpecker
+Mackenzie Wilson => maroonWolf
+
 
 (Katherine Nilson => khakiNarwhal)
 
-Spencer Merolla => salmonMule
 
 
 
