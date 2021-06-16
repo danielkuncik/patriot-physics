@@ -1,26 +1,26 @@
 {
   "v1": {
-    "1": "7.89 x 10^{-7} meters",
-    "2": "3.5 x 10^{11} meters",
-    "3": "6.6 x 10^{-2} meters",
-    "4": "6.8 x 10^{-14} meters",
-    "5": "4.5 x 10^{6} meters",
-    "6": "1.92 x 10^{-4} meters"
+    "A": "7.89 x 10^{-7} meters",
+    "B": "3.5 x 10^{11} meters",
+    "C": "6.6 x 10^{-2} meters",
+    "D": "6.8 x 10^{-14} meters",
+    "E": "4.5 x 10^{6} meters",
+    "F": "1.92 x 10^{-4} meters"
   },
   "v2": {
-    "1": "5.48E-13 meters",
-    "2": "5.6E8 meters",
-    "3": "8.9E-2 meters",
-    "4": "2.34E-7 meters",
-    "5": "4.5E5 meters",
-    "6": "1.32E-4 meters"
+    "A": "5.48E-13 meters",
+    "B": "5.6E8 meters",
+    "C": "8.9E-2 meters",
+    "D": "2.34E-7 meters",
+    "E": "4.5E5 meters",
+    "F": "1.32E-4 meters"
   },
   "v3": {
-    "1": "2.9E4 meters",
-    "2": "1.42E-4 meters",
-    "3": "5.39E-10 meters",
-    "4": "2.34E-8 meters",
-    "5": "6.5E5 meters",
-    "6": "4.4E-4 meters"
+    "A": "2.9E4 meters",
+    "B": "1.42E-4 meters",
+    "C": "5.39E-10 meters",
+    "D": "2.34E-8 meters",
+    "E": "6.5E5 meters",
+    "F": "4.4E-4 meters"
   }
 }
