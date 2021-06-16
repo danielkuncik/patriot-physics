@@ -227,6 +227,14 @@
     },
     "9-3-2021": {
       "C": {
+        "263ad0": {
+          "name": "very fast conversions",
+          "inClass": true
+        },
+        "72607f": {
+          "name": "memorize metric prefixes",
+          "inClass": true
+        },
         "4da598": {
           "name": "area 1"
         },
@@ -290,7 +298,9 @@
         }
       },
       "B": {
-
+        "64f606": {
+          "name": "metric to scientific"
+        }
       },
       "A": {
 
@@ -326,14 +336,6 @@
     },
     "9-14-2021": {
       "C": {
-        "263ad0": {
-          "name": "very fast conversions",
-          "inClass": true
-        },
-        "72607f": {
-          "name": "memorize metric prefixes",
-          "inClass": true
-        },
         "64f606": {
           "name": "metric to scientific notation"
         },
