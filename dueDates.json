@@ -135,22 +135,12 @@
   "A_level-2021": {
   },
   "AP-2022": {
-    "6-21-2021": {
+    "9-1-2021": {
       "C": {
         "f6b8d9": {
           "name": "First Physics Quiz",
           "practice": false
-        }
-      },
-      "B": {
-
-      },
-      "A": {
-
-      }
-    },
-    "9-1-2021": {
-      "C": {
+        },
       "c9228a": {
         "name": "Second Physics Quiz"
       },
