@@ -272,9 +272,11 @@
       }
     },
     "9-9-2021": {
-      "72607f": {
-        "name": "memorize metric prefixes",
-        "inClass": true
+      "C": {
+        "72607f": {
+          "name": "memorize metric prefixes",
+          "inClass": true
+        }
       }
     },
     "9-10-2021": {
@@ -306,9 +308,11 @@
       }
     },
     "9-13-2021": {
-      "263ad0": {
-        "name": "very fast conversions",
-        "inClass": true
+      "C": {
+        "263ad0": {
+          "name": "very fast conversions",
+          "inClass": true
+        }
       }
     },
     "9-14-2021": {
