@@ -6,8 +6,11 @@ $$
   Reference Information
 </h3>
 
-{{>kinematicEquationsWithNames}}
+<div id = kinematicEquationsTable></div>
 
+<script>
+    $("#kinematicEquationsTable").append(makeKinematicEquationsTable().draw(300));
+</script>
 <h3>
   Dimensional Analysis
 </h3>
