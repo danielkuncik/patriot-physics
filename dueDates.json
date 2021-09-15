@@ -18,23 +18,14 @@
         "232a8d": {
           "name": "Powers of Ten"
         },
-        "86f07c": {
-          "name": "scientific notation 1"
-        },
         "f7055b": {
           "name": "scientific notation 2"
-        },
-        "f6715d": {
-          "name": "scientific notation 3"
         },
         "d3ceef": {
           "name": "scientific notation inequalities"
         },
         "d32054": {
           "nane": "scientific notation on a calculator"
-        },
-        "bd4cf2": {
-          "name": "numeric algebra 2"
         },
         "543254": {
           "name": "symbolic algebra 1"
@@ -210,6 +201,15 @@
     },
     "9-16-2021": {
       "C": {
+        "86f07c": {
+          "name": "scientific notation 1"
+        },
+        "f6715d": {
+          "name": "scientific notation 3"
+        },
+        "bd4cf2": {
+          "name": "numeric algebra 2"
+        },
         "d76ce1": {
           "name": "identify circuit components"
         },
