@@ -415,6 +415,40 @@ class GradeMap {
 
     }
 
+    /// in process!!!
+    calculateQuizAverages(dueDateObject) {
+        let all_C_quizzes = {};
+        let all_B_quizzes = {};
+        let all_A_quizzes = {};
+        let all_100_quizzes = {};
+        Object.keys(dueDateObject).forEach(dueDate => {
+            if (dueDate.C) {
+                Object.keys(dueDate.C).forEach((quiz_id) => {
+                    all_C_quizzes[quiz_id] = dueDate.C[quiz_id];
+                });
+            }
+            if (dueDate.B) {
+                Object.keys(dueDate.B).forEach((quiz_id) => {
+                    all_B_quizzes[quiz_id] = dueDate.B[quiz_id];
+                });
+            }
+            if (dueDate.A) {
+                Object.keys(dueDate.A).forEach((quiz_id) => {
+                    all_A_quizzes[quiz_id] = dueDate.A[quiz_id];
+                });
+            }
+            if (dueDate["Hundred"]) {
+                Object.keys(dueDate["Hundred"]).forEach((quiz_id) => {
+                    all_100_quizzes[quiz_id] = dueDate["Hundred"][quiz_id];
+                });
+            }
+        });
+        console.log(all_C_quizzes);
+        console.log(all_B_quizzes);
+        console.log(all_A_quizzes);
+        console.log(all_100_quizzes);
+    }
+
     calculateAnticipatedTotalPoints(quarter = 3, senior = false) {
         let quarterFirstDay, quarterLastDay;
         if (quarter === 3) {

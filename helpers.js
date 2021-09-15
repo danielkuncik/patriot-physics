@@ -818,7 +818,7 @@ hbs.registerHelper('displayDueDates', (courseLevel, year, gradeMap) => {
     const dueDates = dueDatesJSON[`${courseLevel}-${year}`];
     let string = "";
     const summerMessage = "Attempt By";
-    const normalMessage = "Can retake until";
+    const normalMessage = "Attempt By";
     if (dueDates) {
         Object.keys(dueDates).forEach((dueDateKey) => {
           let obj = {
