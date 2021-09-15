@@ -305,6 +305,14 @@ class GradeMap {
         }
     }
 
+
+    getScore(pod_uuid) {
+        let selectionObject = getPodKeysByUUID(pod_uuid);
+        if (selectionObject) {
+            return this.map[selectionObject.superUnitKey].units[selectionObject.unitKey].pods[selectionObject.podKey].score;
+        }
+    }
+
     addPracticeScore(pod_uuid, score, comment) {
         if (score === undefined) {
             score = 0;
@@ -442,6 +450,18 @@ class GradeMap {
                     all_100_quizzes[quiz_id] = dueDate["Hundred"][quiz_id];
                 });
             }
+        });
+        Object.keys(all_C_quizzes).forEach((quiz_id) => {
+            all_C_quizzes[quiz_id].score = getPodKeysByUUID(quiz_id);
+        });
+        Object.keys(all_B_quizzes).forEach((quiz_id) => {
+            all_B_quizzes[quiz_id].score = getPodKeysByUUID(quiz_id);
+        });
+        Object.keys(all_A_quizzes).forEach((quiz_id) => {
+            all_A_quizzes[quiz_id].score = getPodKeysByUUID(quiz_id);
+        });
+        Object.keys(all_100_quizzes).forEach((quiz_id) => {
+            all_100_quizzes[quiz_id].score = getPodKeysByUUID(quiz_id);
         });
         console.log(all_C_quizzes);
         console.log(all_B_quizzes);
