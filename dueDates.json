@@ -27,12 +27,6 @@
         "d32054": {
           "nane": "scientific notation on a calculator"
         },
-        "543254": {
-          "name": "symbolic algebra 1"
-        },
-        "92fa82": {
-          "name": "Qualitative vs. Quantitative Reasoning"
-        },
         "81cace": {
           "name": "Identify Variables 1"
         },
@@ -209,6 +203,12 @@
         },
         "bd4cf2": {
           "name": "numeric algebra 2"
+        },
+        "543254": {
+          "name": "symbolic algebra 1"
+        },
+        "92fa82": {
+          "name": "Qualitative vs. Quantitative Reasoning"
         },
         "d76ce1": {
           "name": "identify circuit components"
