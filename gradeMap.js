@@ -451,9 +451,19 @@ class GradeMap {
                 });
             }
         });
+        let C_num_quizzes = 0, B_num_quizzes = 0 , A_num_quizzes = 0, hundred_num_quizzes = 0;
+        let C_total_points = 0, B_total_points = 0, A_total_points = 0, hundred_total_points = 0;
+        let C_average, B_average, A_average, hundred_average;
         Object.keys(all_C_quizzes).forEach((quiz_id) => {
-            all_C_quizzes[quiz_id].score = getPodKeysByUUID(quiz_id);
+            let score = getPodKeysByUUID(quiz_id);
+            all_C_quizzes[quiz_id].score = score;
+            if (score) {
+                C_total_points += score;
+            }
+            C_num_quizzes++
         });
+        C_average = C_total_points / C_num_quizzes;
+
         Object.keys(all_B_quizzes).forEach((quiz_id) => {
             all_B_quizzes[quiz_id].score = getPodKeysByUUID(quiz_id);
         });
