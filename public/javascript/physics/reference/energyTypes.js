@@ -2,6 +2,9 @@ const energyTypes = {
     "ke": {
         "name": "Kinetic Energy"
     },
+    "pe": {
+        "name": "Potential Energy"
+    },
     "tke": {
         "name": "Translational Kinetic Energy"
     },
@@ -9,7 +12,7 @@ const energyTypes = {
         "name": "Rotational Kinetic Energy"
     },
     "te": {
-        "name": "Thermal Energy"
+        "name": "Thermal Kinetic Energy"
     },
     "cpe": {
         "name": "Chemical Potential Energy"
@@ -27,19 +30,19 @@ const energyTypes = {
         "name": "Light Energy"
     },
     "emwe": {
-        "name": "Electromagnetic Wave Energy"
+        "name": "Electromagnetic Wave Kinetic Energy"
     },
     "mwe": {
-        "name": "Mechanical Wave Energy"
+        "name": "Mechanical Wave Kinetic Energy"
     },
     "ne": {
-        "name": "Nuclear Potential Energy"
+        "name": "Nuclear Potential Potential Energy"
     },
     "se": {
         "name": "Sound Energy"
     },
     "ee": {
-        "name": "Electrical Energy"
+        "name": "Electrical Kinetic Energy"
     }
 };
 
