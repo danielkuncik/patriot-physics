@@ -248,18 +248,6 @@
 
       }
     },
-    "9-21-2021": {
-      "B": {
-        "e9cb0a": {
-          "name": "Kinematic Equations 3",
-          "inClass": true
-        },
-        "a6330e": {
-          "name": "Quant Graphs 3",
-          "inClass": true
-        }
-      }
-    },
     "9-22-2021": {
       "C": {
         "1aa185": {
@@ -284,23 +272,28 @@
 
       }
     },
-    "9-24-2021": {
-      "C": {
-
-      },
+    "9-23-2021": {
       "B": {
-
-      },
-      "A": {
-
+        "e9cb0a": {
+          "name": "Kinematic Equations 3",
+          "inClass": true
+        },
+        "a6330e": {
+          "name": "Quant Graphs 3",
+          "inClass": true
+        }
       }
     },
-    "9-28-2021": {
+    "9-27-2021": {
       "C": {
 
       },
       "B": {
-
+        "6949c4":
+        {
+          "name": "Memorize the Kinematic Equations",
+          "inClass": true
+        }
       },
       "A": {
 
