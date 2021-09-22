@@ -3219,10 +3219,36 @@
           }
         }
       },
+      "kinematics_labs": {
+        "title": "Kinematics Labs",
+        "number": 3,
+        "value": {
+          "AP_physics_1": "innerCore",
+          "honors_physics": "outerCore",
+          "physics_A": "mantle"
+        },
+        "uuid": "3c5e1db6-3c39-48d4-b26c-50091474e631",
+        "id": "3c5e1d",
+        "pods": {
+          "accelerating_car_2": {
+            "title": "Accelerating Car 2",
+            "subtitle": "Statistic Techniques to Demonstrate Acceleration",
+            "level": 3,
+            "letter": "Q",
+            "horizontal": 1,
+            "prerequisites": [],
+            "mainTrack": true,
+            "objective": "Use a linearized graph to show an object moving with a constant acceleration follows the kinematic equations, and use ths slope of this line to accurately determine the acceleration of the car",
+            "content": "When an object is accelerating at a constant rate, it follows each kinematic equation; this can be demonstrated using a linearized graph of position to time-squared",
+            "uuid": "121809d9-ed59-49a1-9002-36bef7cecbdd",
+            "id": "121809"
+          }
+        }
+      },
       "forward_and_backward_kinematics_qualitative":
       {
         "title": "Forward and Backwards Kinematics Qualitative",
-        "number": 3,
+        "number": 4,
         "value":
         {
           "AP_physics_1": "outerCore",
@@ -3669,7 +3695,7 @@
         },
         "uuid": "73dfac86-91a4-4d68-8edc-ff5c04da3690",
         "id": "73dfac",
-        "number": 5,
+        "number": 6,
         "standards":
         {
           "mass_2016": "HS-PS2-1",
@@ -3795,7 +3821,7 @@
       "projectile_motion":
       {
         "title": "Projectile Motion",
-        "number": 6,
+        "number": 7,
         "value":
         {
           "AP_physics_1": "outerCore",
