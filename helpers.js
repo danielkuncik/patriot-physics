@@ -987,11 +987,13 @@ hbs.registerHelper('displayDueDates', (courseLevel, year, gradeMap) => {
     return new hbs.SafeString(string)
 });
 
-hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
+hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
     const dueDates = dueDatesJSON[`${courseLevel}-${year}`];
     let string = "";
     const summerMessage = "Attempt By";
-    const normalMessage = "Can retake until";
+    const normalMessage = "Attempt By";
+    let num_C_quizzes = 0, num_B_quizzes = 0, num_A_quizzes = 0, num_100_quizzes = 0;
+    let cum_C_score = 0, cum_B_score = 0, cum_A_score = 0, cum_100_score = 0;
     if (dueDates) {
         Object.keys(dueDates).forEach((dueDateKey) => {
             const dateDisplay = displayDateFromString(dueDateKey);
@@ -1015,6 +1017,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                     const noQuiz = dueDates[dueDateKey][gradeExpectation][pod_id].noQuiz;
                     let displayObject;
                     if (idLibrary[pod_id].type === "pod") {
+
                         let superUnitKey = idLibrary[pod_id].superUnitKey;
                         let unitKey = idLibrary[pod_id].unitKey;
                         let podKey = idLibrary[pod_id].podKey;
@@ -1037,7 +1040,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                         let scoreDisplay, scoreColor;
                         if (score === 20) {
                             scoreDisplay = 'ACE';
-                            scoreColor = 'success'
+                            scoreColor = 'success';
                         } else if (score >= 13) {
                             scoreDisplay = `${score} out of 20`;
                             scoreColor = 'warning';
@@ -1054,7 +1057,29 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                         if (pending) {
                             scoreColor = 'muted';
                         }
-                        /// what to do if not logged in
+                        if (gradeExpectation === 'C') {
+                            if (!pending && score > 0) {
+                                num_C_quizzes++;
+                                cum_C_score += score;
+                            }
+                        } else if (gradeExpectation === 'B') {
+                            if (!pending && score > 0) {
+                                num_B_quizzes++;
+                                cum_B_score += score;
+                            }
+                        } else if (gradeExpectation === 'A') {
+                            if (!pending && score > 0) {
+                                num_A_quizzes++;
+                                cum_A_score += score;
+                            }
+                        } else if (gradeExpectation === '100') {
+                            if (!pending && score > 0) {
+                                num_100_quizzes++;
+                                cum_100_score += score;
+                            }
+                        }
+
+
 
                         let practiceDisplay, practiceColor;
                         if (practiceScore === 1) {
@@ -1099,15 +1124,18 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
                     }
                 });
 
-                let numberGradeExpectation;
-                if (gradeExpectation === 'C') {
-                    numberGradeExpectation = 'a 70 %';
-                } else if (gradeExpectation === 'B') {
-                    numberGradeExpectation = 'an 80 %';
-                } else if (gradeExpectation === 'A') {
-                    numberGradeExpectation = 'a 90 %';
-                }
                 if (obj.practicePages.length > 0 || obj.homework.length > 0 || obj.inClass.length > 0) {
+                    let numberGradeExpectation;
+                    if (gradeExpectation === 'C') {
+                        numberGradeExpectation = 'a 70 %';
+                    } else if (gradeExpectation === 'B') {
+                        numberGradeExpectation = 'an 80 %';
+                    } else if (gradeExpectation === 'A') {
+                        numberGradeExpectation = 'a 90 %';
+                    } else if (gradeExpectation === '100') {
+                        numberGradeExpectation = 'a 100 %';
+                    }
+
                     string = string + `<h3>Required to receive ${numberGradeExpectation} or higher</h3>`;
                     string = string + "<div class = 'ml-4 mb-4'>";
                     if (obj.practicePages.length > 0) {
@@ -1172,6 +1200,12 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, gradeMap) => {
     } else {
         string = '<p>error</p>';
     }
+    console.log(num_C_quizzes, num_B_quizzes, num_A_quizzes, num_100_quizzes);
+    console.log(cum_C_score, cum_B_score, cum_A_score, cum_100_score);
+    const C_avg = cum_C_score / num_C_quizzes / 20;
+    const B_avg = cum_B_score / num_B_quizzes / 20;
+    const A_avg = cum_A_score / num_A_quizzes / 20;
+    const hundred_avg = cum_100_score / num_100_quizzes / 20;
     string = string + "</div>";
     return new hbs.SafeString(string)
 });
