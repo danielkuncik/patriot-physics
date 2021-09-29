@@ -1200,13 +1200,60 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
     } else {
         string = '<p>error</p>';
     }
-    console.log(num_C_quizzes, num_B_quizzes, num_A_quizzes, num_100_quizzes);
-    console.log(cum_C_score, cum_B_score, cum_A_score, cum_100_score);
-    const C_avg = cum_C_score / num_C_quizzes / 20;
-    const B_avg = cum_B_score / num_B_quizzes / 20;
-    const A_avg = cum_A_score / num_A_quizzes / 20;
-    const hundred_avg = cum_100_score / num_100_quizzes / 20;
     string = string + "</div>";
+    const C_avg = Math.round(cum_C_score / num_C_quizzes * 5); // divided by 20 times 100
+    const B_avg = Math.round(cum_B_score / num_B_quizzes * 5);
+    const A_avg = Math.round(cum_A_score / num_A_quizzes * 5);
+    const hundred_avg = Math.round(cum_100_score / num_100_quizzes * 5);
+    let total_avg;
+    if (!isNaN(C_avg) && !isNaN(B_avg) && !isNaN(A_avg) && !isNaN(hundred_avg)) {
+        total_avg = 0.7 * C_avg + 0.1 * B_avg + 0.1 * A_avg + 0.1 * hundred_avg;
+    } else {
+        total_avg = NaN;
+    }
+
+    const C_avg_print = isNaN(C_avg) ? "not yet calculated" : `${C_avg} %`;
+    const B_avg_print = isNaN(B_avg) ? "not yet calculated" : `${B_avg} %`;
+    const A_avg_print = isNaN(A_avg) ? "not yet calculated" : `${A_avg} %`;
+    const hundred_avg_print = isNaN(hundred_avg) ? "not yet calculated" : `${hundred_avg} %`;
+    const total_avg_print = isNaN(total_avg) ? "not yet calculated" : `${total_avg} %`;
+
+    let newString = "<div clas = 'container'>";
+
+    newString = newString + "<div class='row'>";
+    newString = newString + "<div class = 'col-2 border border-dark'><strong>Quiz Level</strong></div>";
+    newString = newString + "<div class = 'col-2 border border-dark'><strong>Average</strong></div>";
+    newString = newString + "</div>";
+
+    newString = newString + "<div class='row'>";
+    newString = newString + "<div class = 'col-2 border border-dark'>70-quizzes</div>";
+    newString = newString + `<div class = 'col-2 border border-dark'>${C_avg_print}</div>`;
+    newString = newString + "</div>";
+
+    newString = newString + "<div class='row'>";
+    newString = newString + "<div class = 'col-2 border border-dark'>80-quizzes</div>";
+    newString = newString + `<div class = 'col-2 border border-dark'>${B_avg_print}</div>`;
+    newString = newString + "</div>";
+
+
+    newString = newString + "<div class='row'>";
+    newString = newString + "<div class = 'col-2 border border-dark'>90-quizzes</div>";
+    newString = newString + `<div class = 'col-2 border border-dark'>${A_avg_print}</div>`;
+    newString = newString + "</div>";
+
+    newString = newString + "<div class='row'>";
+    newString = newString + "<div class = 'col-2 border border-dark'>100-quizzes</div>";
+    newString = newString + `<div class = 'col-2 border border-dark'>${hundred_avg_print}</div>`;
+    newString = newString + "</div>";
+
+    newString = newString + "<div class='row'>";
+    newString = newString + "<div class = 'col-2 border border-dark'><strong>Total Average</strong></div>";
+    newString = newString + `<div class = 'col-2 border border-dark'><strong>${total_avg_print}</strong></div>`;
+    newString = newString + "</div>";
+
+
+    newString = newString + "</div>";
+    string = newString + string;
     return new hbs.SafeString(string)
 });
 
