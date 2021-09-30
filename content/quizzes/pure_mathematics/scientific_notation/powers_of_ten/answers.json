@@ -2,7 +2,7 @@
   "v1": {
     "1": {
       "question": "10^{-6}",
-      "answer": "0.000001"
+      "answer": "0.000001; must be written as a decimal"
     },
     "2": {
       "question": "10^8",
@@ -10,7 +10,7 @@
     },
     "3": {
       "question": "10^{-3}",
-      "answer": "0.001"
+      "answer": "0.001; must be written as a decimal"
     },
     "4": {
       "question": "10^0",
