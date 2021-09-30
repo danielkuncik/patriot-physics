@@ -1127,16 +1127,23 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                 if (obj.practicePages.length > 0 || obj.homework.length > 0 || obj.inClass.length > 0) {
                     let numberGradeExpectation;
                     if (gradeExpectation === 'C') {
-                        numberGradeExpectation = 'a 70 %';
+                        numberGradeExpectation = '70';
                     } else if (gradeExpectation === 'B') {
-                        numberGradeExpectation = 'an 80 %';
+                        numberGradeExpectation = '80';
                     } else if (gradeExpectation === 'A') {
-                        numberGradeExpectation = 'a 90 %';
+                        numberGradeExpectation = '90';
                     } else if (gradeExpectation === '100') {
-                        numberGradeExpectation = 'a 100 %';
+                        numberGradeExpectation = '100';
                     }
 
-                    string = string + `<h3>Required to receive ${numberGradeExpectation} or higher</h3>`;
+                    // possible other version
+                    //const grade_expectation_message = `Required to receive ${numberGradeExpectation} % or higher`;
+
+                    // current version
+                    const grade_expectation_message = `${numberGradeExpectation}-quizzes`;
+
+
+                    string = string + `<h3>${grade_expectation_message}</h3>`;
                     string = string + "<div class = 'ml-4 mb-4'>";
                     if (obj.practicePages.length > 0) {
                         string = string + '<h4>Practice Pages</h4>';
@@ -1212,11 +1219,20 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
         total_avg = NaN;
     }
 
-    const C_avg_print = isNaN(C_avg) ? "not yet calculated" : `${C_avg} %`;
-    const B_avg_print = isNaN(B_avg) ? "not yet calculated" : `${B_avg} %`;
-    const A_avg_print = isNaN(A_avg) ? "not yet calculated" : `${A_avg} %`;
-    const hundred_avg_print = isNaN(hundred_avg) ? "not yet calculated" : `${hundred_avg} %`;
-    const total_avg_print = isNaN(total_avg) ? "not yet calculated" : `${total_avg} %`;
+    // permenant solution
+    // const C_avg_print = isNaN(C_avg) ? "not yet calculated" : `${C_avg} %`;
+    // const B_avg_print = isNaN(B_avg) ? "not yet calculated" : `${B_avg} %`;
+    // const A_avg_print = isNaN(A_avg) ? "not yet calculated" : `${A_avg} %`;
+    // const hundred_avg_print = isNaN(hundred_avg) ? "not yet calculated" : `${hundred_avg} %`;
+    // const total_avg_print = isNaN(total_avg) ? "not yet calculated" : `${total_avg} %`;
+
+    // temporary solution while waiting to show calculations
+    const C_avg_print = "not yet calculated";
+    const B_avg_print = "not yet calculated";
+    const A_avg_print = "not yet calculated";
+    const hundred_avg_print = "not yet calculated";
+    const total_avg_print = "not yet calculated";
+
 
     let newString = "<div clas = 'container'>";
 
