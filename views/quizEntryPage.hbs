@@ -29,13 +29,23 @@
 </p>
 <ul>
     <li>
-        You are working independently.
+        <input type = 'checkbox' id = 'condition1'>
+        I am working independently. I am receiving no help.
     </li>
     <li>
-        You are working on a blank sheet of paper and not consulting any written notes.
+        <input type = 'checkbox' id = 'condition2'>
+        I am working on a blank sheet of paper and not consulting any written notes.
     </li>
     <li>
-        You will not look at the study page or any reference material, online or in print, while taking the quiz.
+        <input type = 'checkbox' id = 'condition3'>
+        I am not looking at the study page or any reference material, online or in print, while taking the quiz.
+    </li>
+    <li>
+        <input type = 'checkbox' id = 'condition4'>
+        I will take and submit the quiz in a single sitting.
+    </li>
+    <li>
+        <button class = 'btn btn-primary' id = 'agreementButton'>I agree</button>
     </li>
 </ul>
 
@@ -78,12 +88,33 @@
                     <input class = 'h-100' type = 'password' name = 'password' />
                 </div>
             {{/if}}
-            <div class = 'row text-center'>
-                <button type = 'submit' class = 'btn btn-secondary btn-xl'>TAKE QUIZ</button>
+            <div class = 'row text-center' id = 'quizEntryButtonSpace'>
+                <!-- space for button or message to appear-->
             </div>
         </form>
 </div>
 
+
+<script>
+    let quizEntryButton = $("<button type = 'submit' class = 'btn btn-secondary btn-xl'>TAKE QUIZ</button>");
+    let quizConditionsStatement = $("<p class= 'text-danger'>You must agree to the conditions above before taking the quiz.</p>");
+
+    $("#quizEntryButtonSpace").append(quizConditionsStatement);
+
+    $("#agreementButton").on('click',() => {
+        const cond_1 = $("#condition1").prop('checked');
+        const cond_2 = $("#condition2").prop('checked');
+        const cond_3 = $("#condition3").prop('checked');
+        const cond_4 = $("#condition4").prop('checked');
+
+        $("#quizEntryButtonSpace").empty();
+        if (cond_1 && cond_2 && cond_3 && cond_4) {
+            $("#quizEntryButtonSpace").append(quizEntryButton);
+        } else {
+            $("#quizEntryButtonSpace").append(quizConditionsStatement);
+        }
+    });
+</script>
 
 
 <a href = '{{backLink}}'>BACK</a>
