@@ -1016,6 +1016,11 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                     const inClassQuiz = dueDates[dueDateKey][gradeExpectation][pod_id].inClass;
                     const noQuiz = dueDates[dueDateKey][gradeExpectation][pod_id].noQuiz;
                     let displayObject;
+
+                    let dueDate = new Date(dueDateKey);
+                    let today = new Date();
+                    let pastDue = today > dueDate;
+
                     if (idLibrary[pod_id].type === "pod") {
 
                         let superUnitKey = idLibrary[pod_id].superUnitKey;
@@ -1058,22 +1063,22 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                             scoreColor = 'muted';
                         }
                         if (gradeExpectation === 'C') {
-                            if (!pending && score > 0) {
+                            if (!pending && (score > 0 || pastDue)) {
                                 num_C_quizzes++;
                                 cum_C_score += score;
                             }
                         } else if (gradeExpectation === 'B') {
-                            if (!pending && score > 0) {
+                            if (!pending && (score > 0 || pastDue)) {
                                 num_B_quizzes++;
                                 cum_B_score += score;
                             }
                         } else if (gradeExpectation === 'A') {
-                            if (!pending && score > 0) {
+                            if (!pending && (score > 0 || pastDue)) {
                                 num_A_quizzes++;
                                 cum_A_score += score;
                             }
                         } else if (gradeExpectation === '100') {
-                            if (!pending && score > 0) {
+                            if (!pending && (score > 0 || pastDue)) {
                                 num_100_quizzes++;
                                 cum_100_score += score;
                             }

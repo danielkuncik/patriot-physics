@@ -339,6 +339,15 @@
           "name": "Kinematic Graph Connections"
         }
       }
+    },
+    "10-9-2021": {
+      "A": {
+        "121809": {
+          "name": "accelerating lab",
+          "noQuiz": true,
+          "practice": true
+        }
+      }
     }
   }
 }
