@@ -1225,18 +1225,12 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
     }
 
     // permenant solution
-    // const C_avg_print = isNaN(C_avg) ? "not yet calculated" : `${C_avg} %`;
-    // const B_avg_print = isNaN(B_avg) ? "not yet calculated" : `${B_avg} %`;
-    // const A_avg_print = isNaN(A_avg) ? "not yet calculated" : `${A_avg} %`;
-    // const hundred_avg_print = isNaN(hundred_avg) ? "not yet calculated" : `${hundred_avg} %`;
-    // const total_avg_print = isNaN(total_avg) ? "not yet calculated" : `${total_avg} %`;
+    const C_avg_print = isNaN(C_avg) ? "not yet calculated" : `${C_avg} %`;
+    const B_avg_print = isNaN(B_avg) ? "not yet calculated" : `${B_avg} %`;
+    const A_avg_print = isNaN(A_avg) ? "not yet calculated" : `${A_avg} %`;
+    const hundred_avg_print = isNaN(hundred_avg) ? "not yet calculated" : `${hundred_avg} %`;
+    const total_avg_print = isNaN(total_avg) ? "not yet calculated" : `${total_avg} %`;
 
-    // temporary solution while waiting to show calculations
-    const C_avg_print = "not yet calculated";
-    const B_avg_print = "not yet calculated";
-    const A_avg_print = "not yet calculated";
-    const hundred_avg_print = "not yet calculated";
-    const total_avg_print = "not yet calculated";
 
 
     let newString = "<div clas = 'container'>";
