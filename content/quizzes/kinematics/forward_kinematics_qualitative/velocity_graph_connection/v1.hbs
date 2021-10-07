@@ -19,7 +19,7 @@
     kinematicFunctions.addConstantVelocityStep(6);
     kinematicFunctions.addAcceleratedStep(-1,4);
     kinematicFunctions.addAcceleratedStep(1,6);
-    kinematicFunctions.addAcceleratedStep(-1,6)
+    kinematicFunctions.addAcceleratedStep(-1,6);
 
     let graphs = kinematicFunctions.makeQualitativeGraphs(undefined, true);
     $("#velocityGraph").append(graphs.velocityGraph.drawCanvas(500,500));
