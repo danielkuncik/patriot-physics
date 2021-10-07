@@ -3020,14 +3020,28 @@
             "uuid": "eda5bafa-2b9a-46b8-a528-75528f8de985",
             "id": "eda5ba"
           },
+          "memorize_kinematic_equations_1":
+          {
+            "title": "Memorize the Kinematic Equations 1",
+            "level": 3,
+            "horizontal": 5,
+            "letter": "H",
+            "prerequisites": ["kinematic_equations_2"],
+            "mainTrack": true,
+            "objective": "Memorize the kinematic equations.",
+            "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems.",
+            "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086",
+            "id": "6949c4",
+            "memorization": true
+          },
           "quantitative_kinematic_graphs_2":
           {
             "title": "Quantitative Kinematic Graphs 2",
             "subtitle": "Connecting Position and Velocity Graphs",
             "level": 3,
-            "horizontal": 5,
+            "horizontal": 4,
             "letter": "F",
-            "prerequisites": ["kinematic_equations_2"],
+            "prerequisites": ["memorize_kinematic_equations_1"],
             "mainTrack": true,
             "objective": "Given a position-time graph showing stepwise motion with different constant velocities, draw a velocity-time graph; given a velocity-time graph showing stepwise motion with different constant velocities, draw a position-time graph; explain the process.",
             "content": "Physicists use the relationship amongst velocity and displacement in quantitative kinematic graphs to draw velocity-time graphs for a corresponding position-time graphs and vice versa.",
@@ -3039,7 +3053,7 @@
             "title": "Kinematic Equations 3",
             "subtitle": "Real World Problems",
             "level": 3,
-            "horizontal": 3.67,
+            "horizontal": 3,
             "letter": "G",
             "prerequisites": ["quantitative_kinematic_graphs_2"],
             "mainTrack": true,
@@ -3049,28 +3063,14 @@
             "id": "e9cb0a",
             "inClass_honors": true
           },
-          "memorize_kinematic_equations":
-          {
-            "title": "Memorize the Kinematic Equations (and other things)",
-            "level": 3,
-            "horizontal": 2.33,
-            "letter": "H",
-            "prerequisites": ["kinematic_equations_3"],
-            "mainTrack": true,
-            "objective": "Memorize the kinematic equations.",
-            "content": "By recalling the four kinematic equations with automaticity, a physicist can more easily approach much more challenging problems.",
-            "uuid": "6949c43d-5c65-47b5-a846-8821ba63b086",
-            "id": "6949c4",
-            "memorization": true
-          },
           "quantitative_kinematic_graphs_3":
           {
             "title": "Quantitative Kinematic Graphs 3",
             "subtitle": "Learning Information from Accelerating Kinematic Graphs",
             "level": 3,
-            "horizontal": 1,
+            "horizontal": 2,
             "letter": "I",
-            "prerequisites": ["memorize_kinematic_equations"],
+            "prerequisites": ["memorize_kinematic_equations_1"],
             "objective": "From a quantitative kinematic graph, gain information such as acceleration, initial and final velocity.",
             "content": "A physicist can learn kinematic quantities from a quantitative kinematic graph, and then relate them using the kinematic equations.",
             "uuid": "a6330e39-0a80-4928-bb85-d93db8e7263d",
@@ -3091,11 +3091,26 @@
             "id": "be3e15",
             "inClass_AP": true
           },
+          "memorize_kinematic_equations_2":
+          {
+            "title": "Memorize the Kinematic Equations 2",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["kinematic_equations_4"],
+            "mainTrack": true,
+            "objective": "Recall equations used for constant velocity and accelerated motion and show how they connect.",
+            "content": "The four kinematic equations are used for constant acceleration motion, and in the case of zero acceleration they reduce to the equation for constant velocity.",
+            "uuid": "bef6ec95-41e3-40f5-b927-fbedf02b323d",
+            "id": "bef6ec",
+            "memorization": true
+          },
+
           "kinematic_equations_as_functions":
           {
             "title": "The Kinematic Equations as Functions",
             "level": 4,
-            "horizontal": 6,
+            "horizontal": 7,
             "letter": "X",
             "prerequisites": ["kinematic_equations_4"],
             "objectives": "Write the kinematic equations as functions; explain this transition",
@@ -3105,7 +3120,7 @@
           "kinematic_equation_proportionality": {
             "title": "Kinematic Equation Proportionality",
             "level": 4,
-            "horizontal": 7,
+            "horizontal": 8,
             "letter": "XX",
             "prerequisites": [],
             "objective": "",
@@ -3117,7 +3132,7 @@
           {
             "title": "Quantitative Kinematic Graphs 4A",
             "level": 4,
-            "horizontal": 2,
+            "horizontal": 3,
             "letter": "K",
             "prerequisites": ["kinematic_equations_4"],
             "mainTrack": true,
@@ -3130,7 +3145,7 @@
           {
             "title": "Quantitative Kinematic Graphs 4B",
             "level": 4,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "L",
             "prerequisites": ["quantitative_kinematic_graphs_4A"],
             "mainTrack": true,
@@ -3144,7 +3159,7 @@
           {
             "title": "Quantitative Kinematic Graphs 4C",
             "level": 4,
-            "horizontal": 4,
+            "horizontal": 5,
             "letter": "M",
             "prerequisites": ["quantitative_kinematic_graphs_4B"],
             "objective": "Given a quantitative acceleration-time graph for single-step motion, draw correct quantitative position-time and velocity-time graphs.",
@@ -3156,7 +3171,7 @@
           {
             "title": "Kinematic Equations Symbolic",
             "level": 4,
-            "horizontal": 5,
+            "horizontal": 6,
             "letter": "N",
             "prerequisites": ["quantitative_kinematic_graphs_4C"],
             "mainTrack": true,
