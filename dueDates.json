@@ -116,15 +116,6 @@
         "64f606": {
           "name": "metric to scientific notation"
         },
-        "7d1b7e": {
-          "name": "scientific notation to metric"
-        },
-        "599c70": {
-          "name": "em vs mechanical waves 2"
-        },
-        "8a4fc7": {
-          "name": "wave categorization"
-        },
         "0d5708": {
           "name": "Drawing waves 2"
         }
@@ -158,9 +149,6 @@
         },
         "8f39c5": {
           "name": "Series and Parallel Circuits"
-        },
-        "4dd93e": {
-          "name": "Very basic atoms"
         },
         "df7407": {
           "name": "Circuit Definitions 1"
@@ -213,30 +201,6 @@
       },
       "B": {
 
-      },
-      "A": {
-
-      }
-    },
-    "9-22-2021": {
-      "C": {
-        "1aa185": {
-          "name": "speed and acceleration conversions"
-        },
-        "33ead4": {
-          "name": "numeric proportionality 1"
-        },
-        "2af5a4": {
-          "name": "graphical proportionality 1"
-        }
-      },
-      "B": {
-        "3bb84e": {
-          "name": "Four step conversions"
-        },
-        "20b47c": {
-          "name": "simplifying dimensions of quantities"
-        }
       },
       "A": {
 
@@ -327,16 +291,6 @@
           "name": "Kinematic Graph Connections"
         }
       },
-      "B": {
-        "e9cb0a": {
-          "name": "Kinematic Equations 3",
-          "inClass": true
-        },
-        "a6330e": {
-          "name": "Quant Graphs 3",
-          "inClass": true
-        }
-      },
       "A": {
         "02659f":{
           "name": "quant graphs 4a",
@@ -358,6 +312,39 @@
           "name": "accelerating lab",
           "noQuiz": true,
           "practice": true
+        }
+      }
+    },
+    "10-14-2021": {
+      "B": {
+        "e9cb0a": {
+          "name": "Kinematic Equations 3",
+          "inClass": true
+        },
+        "a6330e": {
+          "name": "Quant Graphs 3",
+          "inClass": true
+        },
+        "02659f": {
+          "name": "qnat graph 4A",
+          "inClass": true
+        },
+        "1287eb": {
+          "name": "velocity graph connection",
+          "inClass": true
+        }
+      },
+        "A": {
+          "b9e056": {
+            "name": "quant graphs 4c",
+            "inClass": true
+        }
+      }
+    },
+    "10-22-2021": {
+      "B": {
+        "20b47c": {
+          "name": "simplifying dimensions of quantities"
         }
       }
     }
