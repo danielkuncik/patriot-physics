@@ -46,11 +46,6 @@
           "name": "collisions 4"
         }
       },
-      "B": {
-        "64f606": {
-          "name": "metric to scientific"
-        }
-      },
       "A": {
 
       }
@@ -337,6 +332,11 @@
         },
         "d1847d": {
           "name": "wave equation"
+        }
+      },
+      "B": {
+        "64f606": {
+          "name": "metric to scientific"
         }
       }
     }
