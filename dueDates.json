@@ -14,18 +14,6 @@
         },
       "c9228a": {
         "name": "Second Physics Quiz"
-      },
-        "a08be5": {
-          "name": "Acceleration Formula"
-        },
-        "a131a7": {
-          "name": "a131a7"
-        },
-        "0882f6": {
-          "name": "basic gravity"
-        },
-        "6035a7": {
-          "name": "mass vs weight"
         }
       },
       "B": {
@@ -77,24 +65,6 @@
     },
     "9-10-2021": {
       "C": {
-        "79415b": {
-          "name": "electromagnetic vs mechanical waves"
-        },
-        "4a6e69": {
-          "name": "transverse vs longitudinal waves"
-        },
-        "9ac868": {
-          "name": "parts of a wave 1"
-        },
-        "83111d": {
-          "name": "drawing waves: wavelength"
-        },
-        "0ffd1c": {
-          "name": "drawing waves amplitude"
-        },
-        "d1847d": {
-          "name": "wave equation"
-        }
       },
       "B": {
 
@@ -113,9 +83,6 @@
     },
     "9-14-2021": {
       "C": {
-        "64f606": {
-          "name": "metric to scientific notation"
-        },
         "0d5708": {
           "name": "Drawing waves 2"
         }
@@ -335,6 +302,41 @@
         "bef6ec": {
           "name": "Memorize kinematic equations 2",
           "inClass": true
+        }
+      },
+      "C": {
+        "64f606": {
+          "name": "metric to scientific notation"
+        },
+        "a08be5": {
+          "name": "Acceleration Formula"
+        },
+        "a131a7": {
+          "name": "a131a7"
+        },
+        "0882f6": {
+          "name": "basic gravity"
+        },
+        "6035a7": {
+          "name": "mass vs weight"
+        },
+        "79415b": {
+          "name": "electromagnetic vs mechanical waves"
+        },
+        "4a6e69": {
+          "name": "transverse vs longitudinal waves"
+        },
+        "9ac868": {
+          "name": "parts of a wave 1"
+        },
+        "83111d": {
+          "name": "drawing waves: wavelength"
+        },
+        "0ffd1c": {
+          "name": "drawing waves amplitude"
+        },
+        "d1847d": {
+          "name": "wave equation"
         }
       }
     }
