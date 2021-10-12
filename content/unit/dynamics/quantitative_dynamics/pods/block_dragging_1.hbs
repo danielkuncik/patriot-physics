@@ -57,20 +57,74 @@ BARRY PARNAS:
     $$
 </p>
 
-<div id = 'gravityFormulaTable'></div>
 
+<div class="container">
+    <div class="row">
+        <div class = 'col-2 border border-dark'>
+            <strong>Symbol</strong>
+        </div>
+        <div class = 'col-2 border border-dark'>
+            <strong>Quantity</strong>
+        </div>
+        <div class = 'col-3 border border-dark'>
+            <strong>SI Unit</strong>
+        </div>
+        <div class = 'col-3 border border-dark'>
+            <strong>Notes</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark'>
+            \( F_{g} \)
+        </div>
+        <div class = 'col-2 border border-dark'>
+            Magnitude of kinetic friction
+        </div>
+        <div class = 'col-3 border border-dark'>
+            Newtons (N)
+        </div>
+        <div class = 'col-3 border border-dark'>
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark'>
+            \( m \)
+        </div>
+        <div class = 'col-2 border border-dark'>
+            mass
+        </div>
+        <div class = 'col-3 border border-dark'>
+            kilograms (kg)
+        </div>
+        <div class = 'col-3 border border-dark'>
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-2 border border-dark'>
+            \( g \)
+        </div>
+        <div class = 'col-2 border border-dark'>
+            gravitational field / free-fall acceleration
+        </div>
+        <div class = 'col-3 border border-dark'>
+            m/s^2
+        </div>
+        <div class = 'col-3 border border-dark'>
+            on the surface of earth, is equal to 9.81 m/s^2
+        </div>
+    </div>
+</div>
 
 <script>
     let gravityFormulaTable = new Table(4,4);
     gravityFormulaTable.addTopHeaders(['symbol','quantity','SI unit','note']);
     gravityFormulaTable.writeTextInRow(1,['\\( F_g \\)', 'Magnitude of Force of gravity','Newtons (N)']);
     gravityFormulaTable.writeTextInRow(2,['\\( m \\)', 'mass', 'kilograms (kg)']);
-    gravityFormulaTable.writeTextInRow(3,['\\( g \\)','free-fall acceleration',"m/s/s","on earth, always equal to 9.8 m/s/s"])
+    gravityFormulaTable.writeTextInRow(3,['\\( g \\)','free-fall acceleration / gravitational field',"m/s/s","on earth, always equal to 9.8 m/s/s"])
     $("#gravityFormulaTable").append(gravityFormulaTable.draw(500));
 </script>
 
 
-<div class = 'pageBreak'></div>
 <h4>
     Force 2: Normal Force
 </h4>
@@ -86,8 +140,11 @@ BARRY PARNAS:
     </li>
 </ul>
 
-<iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/56480488/?s=Y3MuKZ&amp;ref=embed" allowfullscreen></iframe>
+<div class="no-print">
+    <iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/56480488/?s=Y3MuKZ&amp;ref=embed" allowfullscreen></iframe>
+</div>
 
+<div class="pageBreak"></div>
 <ol class = 'questionList'>
     <li class = 'question mb-5'>
         A block is resting on a table.
