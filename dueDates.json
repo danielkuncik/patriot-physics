@@ -23,29 +23,6 @@
       }
     },
     "9-8-2021": {
-      "C": {
-        "54c21b": {
-          "name": "pythagorean theorem"
-        },
-        "9ab51d": {
-          "name": "trig functions 1"
-        },
-        "386543": {
-          "name": "momentum formula"
-        },
-        "1d1e60": {
-          "name": "collisions 1"
-        },
-        "38e07e": {
-          "name": "collisions 2"
-        },
-        "b656a7": {
-          "name": "collisions 3"
-        },
-        "93e3ce": {
-          "name": "collisions 4"
-        }
-      },
       "A": {
 
       }
@@ -297,6 +274,9 @@
         "bef6ec": {
           "name": "Memorize kinematic equations 2",
           "inClass": true
+        },
+        "64f606": {
+          "name": "metric to scientific"
         }
       },
       "C": {
@@ -333,10 +313,30 @@
         "d1847d": {
           "name": "wave equation"
         }
-      },
-      "B": {
-        "64f606": {
-          "name": "metric to scientific"
+      }
+    },
+    "10-25-2021": {
+      "C": {
+        "54c21b": {
+          "name": "pythagorean theorem"
+        },
+        "9ab51d": {
+          "name": "trig functions 1"
+        },
+        "386543": {
+          "name": "momentum formula"
+        },
+        "1d1e60": {
+          "name": "collisions 1"
+        },
+        "38e07e": {
+          "name": "collisions 2"
+        },
+        "b656a7": {
+          "name": "collisions 3"
+        },
+        "93e3ce": {
+          "name": "collisions 4"
         }
       }
     }
