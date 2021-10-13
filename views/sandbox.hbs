@@ -1,6 +1,113 @@
+<p>
+    2
+</p>
+
+<p class = 'directions'>
+    On the next page are 11 kinematic graphs.
+    Please categorize into four graphs them based on what type of motion they describe.
+    Each group should have exactly three graphs.
+    One of the graphs is used twice.
+</p>
+
+<ol>
+    <li class = 'mb-5'>
+        Category 1: Moving at a constant speed
+    </li>
+    <li class = 'mb-5'>
+        Category 2: Not Moving
+    </li>
+    <li class = 'mb-5'>
+        Category 3: Speeding Up
+    </li>
+    <li class = 'mb-5'>
+        Category 4: Slowing Down
+    </li>
+</ol>
+
+<div class = 'pageBreak'>
+</div>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramA'>
+            Diagram A<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramB'>
+            Diagram B<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramC'>
+            Diagram C<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramD'>
+            Diagram D<br>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramE'>
+            Diagram E<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramF'>
+            Diagram F<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramG'>
+            Diagram G<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramH'>
+            Diagram H<br>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramI'>
+            Diagram I<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramJ'>
+            Diagram J<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark' id = 'diagramK'>
+            Diagram K<br>
+        </div>
+        <div class = 'col-lg-3 col-md-6 col-sm-6 p-3 border borderDark'>
+        </div>
+    </div>
+</div>
 
 
 
+<script>
+    let positionGraph1 = makePositionGraphConstantVelocity();
+    let positionGraph2 = makePositionGraphNotMoving();
+    let positionGraph3 = makePositionGraphPositiveAcceleration();
+    let positionGraph4 = makePositionGraphNegativeAcceleration();
+
+    let velocityGraph1 = makeVelocityGraphConstantVelocity();
+    let velocityGraph2 = makeVelocityGraphNotMoving();
+    let velocityGraph3 = makeVelocityGraphPositiveAcceleration();
+    let velocityGraph4 = makeVelocityGraphNegativeAcceleration();
+
+    let accelerationGraph1 = makeAccelerationGraphZero();
+    let accelerationGraph2 = makeAccelerationGraphPositive();
+    let accelerationGraph3 = makeAccelerationGraphNegative();
+
+    let motionMap1 = makeMotionMapConstantVelocity();
+    let motionMap2 = makeMotionMapNotMoving();
+    let motionMap3 = makeMotionMapPositiveAcceleration();
+    let motionMap4 = makeMotionMapNegativeAcceleration();
+
+
+    $("#diagramA").append(positionGraph3.drawCanvas(200));
+    $("#diagramB").append(velocityGraph4.drawCanvas(200));
+    $("#diagramC").append(accelerationGraph3.drawCanvas(200));
+    $("#diagramD").append(velocityGraph2.drawCanvas(200));
+    $("#diagramE").append(accelerationGraph1.drawCanvas(200));
+    $("#diagramF").append(positionGraph4.drawCanvas(200));
+    $("#diagramG").append(velocityGraph3.drawCanvas(200));
+    $("#diagramH").append(positionGraph2.drawCanvas(200));
+    $("#diagramI").append(velocityGraph1.drawCanvas(200));
+    $("#diagramJ").append(accelerationGraph2.drawCanvas(200));
+    $("#diagramK").append(positionGraph1.drawCanvas(200));
+
+</script>
+<div class="pageBreak"></div>
 
 
 <p class = 'directions'>
