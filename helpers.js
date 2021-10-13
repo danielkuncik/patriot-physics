@@ -1003,7 +1003,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
             } else {
                 message = normalMessage;
             }
-            string = string + `<h2>${message} ${dateDisplay}</h2>`;
+            //string = string + `<h2>${message} ${dateDisplay}</h2>`;
             string = string + "<div class = 'ml-4 mb-4'>";
             // revise this to give more information
             Object.keys(dueDates[dueDateKey]).forEach((gradeExpectation) => {
@@ -1164,6 +1164,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                             }
 
                             string = string + `<a class = 'text-${displayObject.practiceColor}' href = '${displayObject.link}'>${text}</a>`;
+                            string = string + `: Submit Lab in Class on ${dateDisplay}<`;
                             string = string + "</li>";
                         });
                         string = string + "</ol>";
@@ -1182,6 +1183,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                                 text = text + '=> New Score Pending';
                             }
                             string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
+                            string = string + `:  ${message} ${dateDisplay}`;
                             string = string + "</li>";
                         });
                         string = string + "</ol>";
@@ -1199,6 +1201,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                             }
 
                             string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
+                            string = string + `:  In Class on: ${dateDisplay}`;
                             string = string + "</li>";
                         });
                         string = string + "</ol>";
