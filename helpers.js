@@ -1201,7 +1201,7 @@ hbs.registerHelper('displayDueDatesNew', (courseLevel, year, gradeMap) => {
                             }
 
                             string = string + `<a class = 'text-${displayObject.scoreColor}' href = '${displayObject.link}'>${text}</a>`;
-                            string = string + `:  In Class on: ${dateDisplay}`;
+                            string = string + `:  In Class on or before: ${dateDisplay}`;
                             string = string + "</li>";
                         });
                         string = string + "</ol>";
