@@ -6,6 +6,44 @@
   "A_level-2021": {
   },
   "AP-2022": {
+    "10-20-2021": {
+      "B": {
+        "4e97c3": {
+          "name": "story to graph selection 1",
+          "inClass": true
+        },
+        "e9cb0a": {
+          "name": "Kinematic Equations 3",
+          "inClass": true
+        },
+        "a6330e": {
+          "name": "Quant Graphs 3",
+          "inClass": true
+        },
+        "169d20": {
+          "name": "Dragging with kinetic friction",
+          "inClass": true
+        },
+        "cbf3cb": {
+          "name": "elevators 1",
+          "inClass": true
+        }
+      },
+      "A": {
+        "02659f":{
+          "name": "quant graphs 4a",
+          "inClass": true
+        },
+        "b9e056": {
+          "name": "quant graphs 4c",
+          "inClass": true
+        },
+        "f9807b": {
+          "name": "Dragging with static friction",
+          "inClass": true
+        }
+      }
+    },
     "9-3-2021": {
       "C": {
         "f6b8d9": {
@@ -307,47 +345,9 @@
         },
         "93e3ce": {
           "name": "collisions 4"
-        }
-      }
-    },
-    "10-26-2021": {
-      "B": {
-        "4e97c3": {
-          "name": "story to graph selection 1",
-          "inClass": true
-        },
-        "e9cb0a": {
-          "name": "Kinematic Equations 3",
-          "inClass": true
-        },
-        "a6330e": {
-          "name": "Quant Graphs 3",
-          "inClass": true
-        },
-        "169d20": {
-          "name": "Dragging with kinetic friction",
-          "inClass": true
-        },
-        "cbf3cb": {
-          "name": "elevators 1",
-          "inClass": true
-        }
-      },
-      "A": {
-        "02659f":{
-          "name": "quant graphs 4a",
-          "inClass": true
-        },
-        "b9e056": {
-          "name": "quant graphs 4c",
-          "inClass": true
         },
         "1287eb": {
           "name": "velocity graph connection",
-          "inClass": true
-        },
-        "f9807b": {
-          "name": "Dragging with static friction",
           "inClass": true
         }
       }
