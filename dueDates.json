@@ -6,106 +6,26 @@
   "A_level-2021": {
   },
   "AP-2022": {
-    "11-4-2021": {
-      "B": {
-        "4e97c3": {
-          "name": "story to graph selection 1",
-          "inClass": true
-        },
-        "e9cb0a": {
-          "name": "Kinematic Equations 3",
-          "inClass": true
-        },
-        "a6330e": {
-          "name": "Quant Graphs 3",
-          "inClass": true
-        },
-        "169d20": {
-          "name": "Dragging with kinetic friction",
-          "inClass": true
-        },
-        "cbf3cb": {
-          "name": "elevators 1",
-          "inClass": true
-        }
-      },
-      "A": {
-        "02659f":{
-          "name": "quant graphs 4a",
-          "inClass": true
-        },
-        "b9e056": {
-          "name": "quant graphs 4c",
-          "inClass": true
-        },
-        "f9807b": {
-          "name": "Dragging with static friction",
-          "inClass": true
-        }
-      }
-    },
-    "9-3-2021": {
+    "11-9-2021": {
       "C": {
         "f6b8d9": {
           "name": "First Physics Quiz",
           "practice": false
         },
-      "c9228a": {
-        "name": "Second Physics Quiz"
-        }
-      },
-      "B": {
-
-      },
-      "A": {
-      }
-    },
-    "9-8-2021": {
-      "A": {
-
-      }
-    },
-    "10-19-2021": {
-      "C": {
+        "c9228a": {
+          "name": "Second Physics Quiz"
+        },
         "72607f": {
           "name": "memorize metric prefixes",
           "inClass": true
-        }
-      }
-    },
-    "9-10-2021": {
-      "C": {
-      },
-      "B": {
-
-      },
-      "A": {
-
-      }
-    },
-    "9-13-2021": {
-      "C": {
+        },
         "263ad0": {
           "name": "very fast conversions",
           "inClass": true
-        }
-      }
-    },
-    "9-14-2021": {
-      "C": {
+        },
         "0d5708": {
           "name": "Drawing waves 2"
-        }
-      },
-      "B": {
-
-      },
-      "A": {
-
-      }
-    },
-    "11-6-2021": {
-      "C": {
+        },
         "86f07c": {
           "name": "scientific notation 1"
         },
@@ -132,28 +52,9 @@
         },
         "c3d2b9": {
           "name": "Energy Change in a Circuit"
-        }
-      },
-      "B": {
-
-      },
-      "A": {
-
-      }
-    },
-    "9-20-2021": {
-      "C": {
+        },
         "f9822f": {
           "name": "Conversion Factors 1"
-        },
-        "ee8486": {
-          "name": "Divide two numbers on a calc"
-        },
-        "f22165": {
-          "name": "Conversion Factors 2"
-        },
-        "6103f0": {
-          "name": "Dimensional Analysis 1"
         },
         "65b8b7": {
           "name": "ohms law"
@@ -166,32 +67,7 @@
         },
         "3950df": {
           "name": "analyze circuits 2"
-        }
-      },
-      "B": {
-
-      },
-      "A": {
-
-      }
-    },
-    "9-27-2021": {
-      "C": {
-
-      },
-      "B": {
-        "6949c4":
-        {
-          "name": "Memorize the Kinematic Equations",
-          "inClass": true
-        }
-      },
-      "A": {
-
-      }
-    },
-    "9-30-2021": {
-      "C": {
+        },
         "f7055b": {
           "name": "scientific notation 2"
         },
@@ -218,17 +94,7 @@
         },
         "8778d7": {
           "name": "newtons second law"
-        }
-      },
-      "B": {
-
-      },
-      "A": {
-
-      }
-    },
-    "10-27-2021": {
-      "C": {
+        },
         "232a8d": {
           "name": "Powers of Ten"
         },
@@ -258,36 +124,7 @@
         },
         "bc4f99": {
           "name": "Kinematic Graph Connections"
-        }
-      }
-    },
-    "10-12-2021": {
-      "A": {
-        "121809": {
-          "name": "accelerating lab",
-          "noQuiz": true,
-          "practice": true
-        }
-      }
-    },
-    "10-14-2021": {
-      "B": {
-      }
-    },
-    "10-22-2021": {
-      "B": {
-        "20b47c": {
-          "name": "simplifying dimensions of quantities"
         },
-        "bef6ec": {
-          "name": "Memorize kinematic equations 2",
-          "inClass": true
-        },
-        "64f606": {
-          "name": "metric to scientific"
-        }
-      },
-      "C": {
         "64f606": {
           "name": "metric to scientific notation"
         },
@@ -295,7 +132,7 @@
           "name": "Acceleration Formula"
         },
         "a131a7": {
-          "name": "a131a7"
+          "name": "finding acceleration from a free-body diagram"
         },
         "0882f6": {
           "name": "basic gravity"
@@ -320,11 +157,7 @@
         },
         "d1847d": {
           "name": "wave equation"
-        }
-      }
-    },
-    "11-5-2021": {
-      "C": {
+        },
         "54c21b": {
           "name": "pythagorean theorem"
         },
@@ -345,10 +178,63 @@
         },
         "93e3ce": {
           "name": "collisions 4"
+        }
+      },
+      "B": {
+        "bef6ec": {
+          "name": "Memorize kinematic equations 2",
+          "inClass": true
+        },
+        "64f606": {
+          "name": "metric to scientific"
+        },
+        "6949c4":
+        {
+          "name": "Memorize the Kinematic Equations",
+          "inClass": true
+        },
+        "4e97c3": {
+          "name": "story to graph selection 1",
+          "inClass": true
+        },
+        "e9cb0a": {
+          "name": "Kinematic Equations 3",
+          "inClass": true
+        },
+        "a6330e": {
+          "name": "Quant Graphs 3",
+          "inClass": true
+        },
+        "169d20": {
+          "name": "Dragging with kinetic friction",
+          "inClass": true
+        },
+        "cbf3cb": {
+          "name": "elevators 1",
+          "inClass": true
         },
         "1287eb": {
           "name": "velocity graph connection",
           "inClass": true
+        }
+      },
+      "A": {
+        "02659f":{
+          "name": "quant graphs 4a",
+          "inClass": true
+        },
+        "b9e056": {
+          "name": "quant graphs 4c",
+          "inClass": true
+        },
+        "f9807b": {
+          "name": "Dragging with static friction",
+          "inClass": true
+        },
+        "121809": {
+          "name": "accelerating lab",
+          "noQuiz": true,
+          "practice": true
         }
       }
     }
