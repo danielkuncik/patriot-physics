@@ -199,10 +199,6 @@
           "name": "Dragging with kinetic friction",
           "inClass": true
         },
-        "cbf3cb": {
-          "name": "elevators 1",
-          "inClass": true
-        },
         "1287eb": {
           "name": "velocity graph connection",
           "inClass": true
@@ -217,15 +213,22 @@
           "name": "quant graphs 4c",
           "inClass": true
         },
-        "f9807b": {
-          "name": "Dragging with static friction",
-          "inClass": true
-        },
+
         "121809": {
           "name": "accelerating lab",
           "noQuiz": true,
           "practice": true
         }
+      }
+    },
+    "11-10-2021": {
+      "f9807b": {
+        "name": "Dragging with static friction",
+        "inClass": true
+      },
+      "cbf3cb": {
+        "name": "elevators 1",
+        "inClass": true
       }
     }
   }
