@@ -222,13 +222,17 @@
       }
     },
     "11-10-2021": {
-      "f9807b": {
-        "name": "Dragging with static friction",
-        "inClass": true
+      "A": {
+        "f9807b": {
+          "name": "Dragging with static friction",
+          "inClass": true
+        }
       },
-      "cbf3cb": {
-        "name": "elevators 1",
-        "inClass": true
+    "B": {
+        "cbf3cb": {
+          "name": "elevators 1",
+          "inClass": true
+        }
       }
     }
   }
