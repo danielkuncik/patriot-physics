@@ -44,9 +44,6 @@
         "d76ce1": {
           "name": "identify circuit components"
         },
-        "8f39c5": {
-          "name": "Series and Parallel Circuits"
-        },
         "df7407": {
           "name": "Circuit Definitions 1"
         },
@@ -197,9 +194,7 @@
         },
 
         "121809": {
-          "name": "accelerating lab",
-          "noQuiz": true,
-          "practice": true
+          "name": "accelerating lab"
         }
       }
     },
