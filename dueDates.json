@@ -6,208 +6,60 @@
   "A_level-2021": {
   },
   "AP-2022": {
-    "11-9-2021": {
+    "12-3-2021": {
       "C": {
-        "f6b8d9": {
-          "name": "First Physics Quiz",
-          "practice": false
+        "8766aa": {
+          "name": "Energy Table 1"
         },
-        "c9228a": {
-          "name": "Second Physics Quiz"
+        "cd905e": {
+          "name": "energy formulas"
         },
-        "72607f": {
-          "name": "memorize metric prefixes",
-          "inClass": true
+        "168673": {
+          "name": "Energy Table 2"
         },
-        "263ad0": {
-          "name": "very fast conversions",
-          "inClass": true
+        "462ef7": {
+          "name": "kinetic and pot energy graphs"
         },
-        "0d5708": {
-          "name": "Drawing waves 2"
+        "b1e3aa": {
+          "name": "Work formula"
         },
-        "86f07c": {
-          "name": "scientific notation 1"
+        "35d382": {
+          "name": "Power formula"
         },
-        "f6715d": {
-          "name": "scientific notation 3"
+        "940c7a": {
+          "name": "Defining mechanical energy"
         },
-        "bd4cf2": {
-          "name": "numeric algebra 2"
+        "de238a": {
+          "name": "is work done"
         },
-        "543254": {
-          "name": "symbolic algebra 1"
+        "9826ee": {
+          "name": "the weightlifter problem"
         },
-        "92fa82": {
-          "name": "Qualitative vs. Quantitative Reasoning"
-        },
-        "d76ce1": {
-          "name": "identify circuit components"
-        },
-        "df7407": {
-          "name": "Circuit Definitions 1"
-        },
-        "65b8b7": {
-          "name": "ohms law"
-        },
-        "8e7ca2": {
-          "name": "power formula"
-        },
-        "f7055b": {
-          "name": "scientific notation 2"
-        },
-        "a3b36d": {
-          "name": "Kinematic Equations 1"
-        },
-        "eda5ba": {
-          "name": "Kinematic Equations 2"
-        },
-        "c64e40": {
-          "name": "Quant Kine Graphs 1"
-        },
-        "d6137d": {
-          "name": "circle math 1"
-        },
-        "1a4b0b": {
-          "name": "free-body diagrams 1"
-        },
-        "ba7882": {
-          "name": "Newton's Third Law 1"
-        },
-        "193942": {
-          "name": "Finding Net Force"
-        },
-        "8778d7": {
-          "name": "newtons second law"
-        },
-        "232a8d": {
-          "name": "Powers of Ten"
-        },
-        "d32054": {
-          "nane": "scientific notation on a calculator"
-        },
-        "921c30": {
-          "name": "Recognize Energy Types"
-        },
-        "c59587": {
-          "name": "sig figs 1"
-        },
-        "4563a8": {
-          "name": "sig figs 2"
-        },
-        "8d7e19": {
-          "name": "Position Graphs and Motion Maps"
-        },
-        "a58d59": {
-          "name": "Velocity and Acceleration Graphs"
-        },
-        "bc4f99": {
-          "name": "Kinematic Graph Connections"
-        },
-        "64f606": {
-          "name": "metric to scientific notation"
-        },
-        "a08be5": {
-          "name": "Acceleration Formula"
-        },
-        "a131a7": {
-          "name": "finding acceleration from a free-body diagram"
-        },
-        "0882f6": {
-          "name": "basic gravity"
-        },
-        "6035a7": {
-          "name": "mass vs weight"
-        },
-        "79415b": {
-          "name": "electromagnetic vs mechanical waves"
-        },
-        "4a6e69": {
-          "name": "transverse vs longitudinal waves"
-        },
-        "9ac868": {
-          "name": "parts of a wave 1"
-        },
-        "83111d": {
-          "name": "drawing waves: wavelength"
-        },
-        "0ffd1c": {
-          "name": "drawing waves amplitude"
-        },
-        "d1847d": {
-          "name": "wave equation"
-        },
-        "54c21b": {
-          "name": "pythagorean theorem"
-        },
-        "9ab51d": {
-          "name": "trig functions 1"
-        },
-        "386543": {
-          "name": "momentum formula"
-        },
-        "1d1e60": {
-          "name": "collisions 1"
-        },
-        "38e07e": {
-          "name": "collisions 2"
+        "dfe2d7": {
+          "name": "conservative vs. nonconservative force"
         }
       },
       "B": {
-        "64f606": {
-          "name": "metric to scientific"
-        },
-        "6949c4":
-        {
-          "name": "Memorize the Kinematic Equations",
+        "f4cd96": {
+          "name": "work energy th 1",
           "inClass": true
         },
-        "4e97c3": {
-          "name": "story to graph selection 1",
-          "inClass": true
-        },
-        "e9cb0a": {
-          "name": "Kinematic Equations 3",
-          "inClass": true
-        },
-        "a6330e": {
-          "name": "Quant Graphs 3",
-          "inClass": true
-        },
-        "169d20": {
-          "name": "Dragging with kinetic friction",
-          "inClass": true
-        },
-        "1287eb": {
-          "name": "velocity graph connection",
+        "7a8492": {
+          "name": "horizontal spring table",
           "inClass": true
         }
       },
       "A": {
-        "02659f":{
-          "name": "quant graphs 4a",
+        "a75cc5": {
+          "name": "symbolic energy 1",
           "inClass": true
-        },
-        "b9e056": {
-          "name": "quant graphs 4c",
-          "inClass": true
-        },
-
-        "121809": {
-          "name": "accelerating lab"
         }
       }
     },
-    "11-10-2021": {
+    "12-12-2021": {
       "A": {
-        "f9807b": {
-          "name": "Dragging with static friction",
-          "inClass": true
-        }
-      },
-    "B": {
-        "cbf3cb": {
-          "name": "elevators 1",
+        "045860": {
+          "name": "multiple viewpoints",
           "inClass": true
         }
       }
