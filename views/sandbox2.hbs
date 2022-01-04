@@ -1,65 +1,233 @@
-
-<p class="directions">
-    Solve the momentum problems below using the table provided.
-    If you prefer to solve the problems by deriving a formula than the tables,
-    you must <strong>explicitly</strong> write the formula you derived
-    and show how you used it for full credit.
-    No credit will be awarded for answers without explicitly shown work.
-</p>
-
-<p class="directions">
-    Also, please write the final answer after filling out each table.
-</p>
-
-<h5>
-    Problem 1:
-</h5>
 <p>
-    Car A has a mass of 200 kg and is moving at a speed of 5 m/s to the right.
-    Car B has a mass of 150 kg and is moving at a speed of 8 m/s to the left.
-    They crash into each other head-on.
-    After they collide, Car A bounces off with a speed of 1 m/s to the left.
-    Fill out the following table to figure out what car B does:
+    A block is attached to a spring resting horizontally on a frictionless surface.
+    The block has a mass of 5 kg. Assume the mass of the spring is negligible.
+    The spring has a spring constant of 20 N / m
+    and an equilibrium length of 60 cm.
+    (Note that you must use an <emph>SI</emph> unit in all physics problems.)
+    Somebody pulls the block backwards until the spring is 100 cm long,
+    and then lets go. (note that the block is initially at rest)
+    The block begins moving back and forth without friction.
 </p>
+<img src = '/spring_pics.jpg' height = '400px' width = 'auto'/>
 
-<div id = 'table1'></div>
+<br><br>
+Fill out the table below to analyze the energy of the block-spring system.
+Assume that the points occur in order.
+The second image above represents the first point on the table, point A.
+<div class="container">
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
 
-<p>
-    After filling out the table, please explicitly write the magnitude and direction of car B's velocity after the collision.
-</p>
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            Length (cm)
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            Length (m)
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            Speed (m/s)
+        </div>
+        <div class="col-2 p-2 border border-dark">
+            KE (J)
+        </div>
+        <div class="col-2 p-2 border border-dark">
+            EPE (J)
+        </div>
+        <div class="col-2 p-2 border border-dark">
+            Total Energy (J)
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            Direction the Block is Moving
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            A
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            100.
+        </div>
+        <div class="col-1 p-2 border border-dark">
 
-<div class="pageBreak"></div>
+        </div>
+        <div class="col-1 p-2 border border-dark">
 
-<h5>
-    Problem 2:
-</h5>
+        </div>
+        <div class="col-2 p-2 border border-dark">
 
-<p>
-    A truck with a mass of 500. kg is moving at a speed of 10.0 m/s
-    to the right.
-    It smashes into a small car with a mass of 200. kg moving
-    at a speed of 15.0 m/s to the left.
-    After the collision, the car crumbles and sticks to the truck.
-    Fill out the table below in order to determine the
-    final velocity (magnitude and direction) of the car and truck stuck together.
-</p>
+        </div>
+        <div class="col-2 p-2 border border-dark">
 
-<div id = 'table2'></div>
+        </div>
+        <div class="col-2 p-2 border border-dark">
 
-<div class="bigSpace"></div>
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            null
+        </div>
+    </div>
 
-<p>
-    After filling out the table, please write and circle the magnitude and direction of their velocity after the collision.
-</p>
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            B
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            80.0
+        </div>
+        <div class="col-1 p-2 border border-dark">
 
-<div class="bigSpace"></div>
+        </div>
+        <div class="col-1 p-2 border border-dark">
 
-<script>
-    let table1 = new MomentumTable();
-    $("#table1").append(table1.draw(500,500));
+        </div>
+        <div class="col-2 p-2 border border-dark">
 
-    /// ERROR: make table 2 'car and truck' instead of 'carA and car B'
-    let table2 = new MomentumTable();
-    table2.makeTotallyInelasticCollision();
-    $("#table2").append(table2.draw(500,500));
-</script>
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            LEFT
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            C
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            60.0
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            LEFT
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            D
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            40.0
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            LEFT
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            E
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            0.00
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            null
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            F
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            60.0
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            RIGHT
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1 p-2 border border-dark">
+            G
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            0.00
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-2 p-2 border border-dark">
+
+        </div>
+        <div class="col-1 p-2 border border-dark">
+            null
+        </div>
+    </div>
+
+</div>
