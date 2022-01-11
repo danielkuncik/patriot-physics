@@ -7,6 +7,36 @@
   },
   "AP-2022": {
     "12-10-2021": {
+      "B": {
+        "f4cd96": {
+          "name": "work energy th 1",
+          "inClass": true
+        },
+        "7a8492": {
+          "name": "horizontal spring table",
+          "inClass": true
+        }
+      },
+      "A": {
+        "a75cc5": {
+          "name": "symbolic energy 1",
+          "inClass": true
+        }
+      }
+    },
+    "12-12-2021": {
+      "A": {
+        "045860": {
+          "name": "multiple viewpoints",
+          "inClass": true
+        },
+        "1dbc4d": {
+          "name": "work done on a system",
+          "inClass": true
+        }
+      }
+    },
+    "1-16-2022": {
       "C": {
         "8766aa": {
           "name": "Energy Table 1"
@@ -37,34 +67,6 @@
         },
         "dfe2d7": {
           "name": "conservative vs. nonconservative force"
-        }
-      },
-      "B": {
-        "f4cd96": {
-          "name": "work energy th 1",
-          "inClass": true
-        },
-        "7a8492": {
-          "name": "horizontal spring table",
-          "inClass": true
-        }
-      },
-      "A": {
-        "a75cc5": {
-          "name": "symbolic energy 1",
-          "inClass": true
-        }
-      }
-    },
-    "12-12-2021": {
-      "A": {
-        "045860": {
-          "name": "multiple viewpoints",
-          "inClass": true
-        },
-        "1dbc4d": {
-          "name": "work done on a system",
-          "inClass": true
         }
       }
     }
