@@ -1,0 +1,14 @@
+{
+  "v1":{
+    "1": "The work done on a system is the change in energy of that system",
+    "2": {
+      "a": "W = 1/2 k (x_2 - x-0)^2 + m g x_2 sin(theta) - 1/2 k (x_1 - x_0)^2 - m g x_1 sin(theta)",
+      "b": "identify each term, state why terms are positive or negative",
+      "c": "A person pulling on the block and the kinetic friction acting on the block."
+    },
+    "3": {
+      "a": "W = 1/2 m v_2^2 + m g y_2 - 1/2 m v_1^2 - m g y_1",
+      "b": "identify each term, state why terms are positive or negative"
+    }
+  }
+}
