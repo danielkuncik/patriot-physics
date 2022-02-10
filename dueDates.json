@@ -6,64 +6,15 @@
   "A_level-2021": {
   },
   "AP-2022": {
-    "1-26-2022": {
+    "2-14-2022": {
       "B": {
-        "f4cd96": {
-          "name": "work energy th 1",
+        "7a17b0": {
+          "name": "Memorize kinematic equations 3",
           "inClass": true
         },
-        "7a8492": {
-          "name": "horizontal spring table",
+        "1872fe": {
+          "name": "cannon problems quant",
           "inClass": true
-        }
-      },
-      "A": {
-        "a75cc5": {
-          "name": "symbolic energy 1",
-          "inClass": true
-        }
-      }
-    },
-    "1-28-2022": {
-      "A": {
-        "045860": {
-          "name": "multiple viewpoints",
-          "inClass": true
-        },
-        "1dbc4d": {
-          "name": "work done on a system",
-          "inClass": true
-        }
-      }
-    },
-    "1-27-2022": {
-      "C": {
-        "8766aa": {
-          "name": "Energy Table 1"
-        },
-        "cd905e": {
-          "name": "energy formulas"
-        },
-        "168673": {
-          "name": "Energy Table 2"
-        },
-        "462ef7": {
-          "name": "kinetic and pot energy graphs"
-        },
-        "b1e3aa": {
-          "name": "Work formula"
-        },
-        "35d382": {
-          "name": "Power formula"
-        },
-        "940c7a": {
-          "name": "Defining mechanical energy"
-        },
-        "de238a": {
-          "name": "is work done"
-        },
-        "9826ee": {
-          "name": "the weightlifter problem"
         }
       }
     }
