@@ -4013,6 +4013,18 @@
             "uuid": "368b3456-231c-474c-9151-c82c9ed16e9d",
             "id": "368b34"
           },
+          "memorize_kinematic_equations_3":
+          {
+            "title": "Memorize Kinematic Equations 3",
+            "level": 3,
+            "horizontal": 5,
+            "letter": "Z",
+            "prerequisites": [],
+            "objective": "Memorize the Kinematic Equations as they apply to two dimensional motion and projectile motion.",
+            "content": "The four kinematic equations and constant velocity motion can be applied to each dimension; in projectil emotion a particle undergoes constant velocity motion in the horizontal and accelerated motion in the vertical dimension.",
+            "uuid": "7a17b0c3-3b1f-4b9f-b750-18924d5703f1",
+            "id": "7a17b0"
+          },
           "horizontal_launch_2":
           {
             "title": "Horizontal Launch 2",
