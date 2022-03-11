@@ -1,0 +1,4 @@
+
+A Measurement is a number and a number of significant figures [no unit]
+
+A magnitude is a measurement with a unit

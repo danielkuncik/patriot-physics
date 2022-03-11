@@ -203,7 +203,7 @@ function countSigFigs(numericalString) {
 // a number with significant figures accounted for
 // this class will really only be used in its subclasses: angle, temperature, and magnitude
 class Measurement {
-    constructor(stringOrFloat, numSigFigsIfFloat = Infinity, zeroLimit = 1e-15) {
+    constructor(stringOrFloat, numSigFigsIfFloat = Infinity, zeroLimit = 1e-50) {
         let obj;
         if (typeof(stringOrFloat) === 'string') { // process string
             if (stringOrFloat.length === 0) {
@@ -802,6 +802,7 @@ class Measurement {
         } else {
             newSigFigs = Math.min(this.getNumSigFigs(), otherMeasurement.getNumSigFigs());
         }
+        let test = new Measurement(this.getFloat() * otherMeasurement.getFloat(), newSigFigs, zeroLimit);
         return new Measurement(this.getFloat() * otherMeasurement.getFloat(), newSigFigs, zeroLimit)
     }
 

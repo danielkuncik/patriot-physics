@@ -12,6 +12,9 @@ constructor(stringOrFloat,numSigFigsIfFloat, exact) {
    [or not, think about whether this is a good idea....]
 }
 
+
+
+This appears to have been replaced by the "measurement' class
  */
 
 
@@ -536,27 +539,27 @@ class PhysicsNumber {
     }
 
     // testes if equal up to a certain number of sig figs
-    isEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            if (this.compareInfinities(anotherMagnitude) === '=') {
+    isEqualTo(anotherNumber, numSigFigs) {
+        if (this.compareInfinities(anotherNumber)) {
+            if (this.compareInfinities(anotherNumber) === '=') {
                 return true
             } else {
                 return false
             }
         } else {
-            return this.comparisonTest('=', anotherMagnitude, numSigFigs)
+            return this.comparisonTest('=', anotherNumber, numSigFigs)
         }
     }
 
-    isGreaterThan(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            if (this.compareInfinities(anotherMagnitude) === '>') {
+    isGreaterThan(anotherNumber, numSigFigs) {
+        if (this.compareInfinities(anotherNumber)) {
+            if (this.compareInfinities(anotherNumber) === '>') {
                 return true
             } else {
                 return false
             }
         } else {
-            return this.comparisonTest('>', anotherMagnitude, numSigFigs)
+            return this.comparisonTest('>', anotherNumber, numSigFigs)
         }
     }
     isLessThan(anotherMagnitude, numSigFigs) {
@@ -570,29 +573,29 @@ class PhysicsNumber {
             return this.comparisonTest('<', anotherMagnitude, numSigFigs)
         }
     }
-    isGreaterThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            let test = this.compareInfinities(anotherMagnitude);
+    isGreaterThanOrEqualTo(anotherNumber, numSigFigs) {
+        if (this.compareInfinities(anotherNumber)) {
+            let test = this.compareInfinities(anotherNumber);
             if (test === '>' || test ==='=') {
                 return true
             } else {
                 return false
             }
         } else {
-            return this.comparisonTest('>=', anotherMagnitude, numSigFigs)
+            return this.comparisonTest('>=', anotherNumber, numSigFigs)
         }
     }
 
-    isLessThanOrEqualTo(anotherMagnitude, numSigFigs) {
-        if (this.compareInfinities(anotherMagnitude)) {
-            let test = this.compareInfinities(anotherMagnitude);
+    isLessThanOrEqualTo(anotherNumber, numSigFigs) {
+        if (this.compareInfinities(anotherNumber)) {
+            let test = this.compareInfinities(anotherNumber);
             if (test === '<' || test ==='=') {
                 return true
             } else {
                 return false
             }
         } else {
-            return this.comparisonTest('<=', anotherMagnitude, numSigFigs)
+            return this.comparisonTest('<=', anotherNumber, numSigFigs)
         }
     }
 

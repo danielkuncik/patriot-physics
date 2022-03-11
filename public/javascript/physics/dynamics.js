@@ -46,7 +46,7 @@ class Mechanics() { /// a dynamics situation occuring at only one instant
     this.name = name;
   }
 
-  addActor() {
+  this.addActor() {
 
   }
 
