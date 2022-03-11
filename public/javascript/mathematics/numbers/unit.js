@@ -159,15 +159,15 @@ const unit = {
             },
         "minute": {
             "abbreviation": "min",
-            "conversionFactor": 1/60
+            "conversionFactor": 1/60.
         },
         "hour": {
             "abbreviation": "hr",
-            "conversionFactor": 1/3600
+            "conversionFactor": 1/3600.
         },
         "day": {
             "abbreviation": "day",
-            "conversionFactor": 1/86400
+            "conversionFactor": 1/86400.
         }
 
     },
@@ -292,7 +292,28 @@ const unit = {
 
 
 // start by coding it without the derivation
+
+function constructUnitFromName(name) {
+
+}
+
 class Unit {
+    constructor(dimensionObject, conversionFactor, name) {
+        // conversionFactor
+
+        this.dimensionObject = dimensionObject;
+        this.conversionFactor = conversionFactor;
+        this.name = name;
+    }
+
+    testIfName(){
+        /// tests if the unit in question has a cannonical name
+    }
+}
+
+
+
+class oldUnit {
     constructor(name, dimensionObject, conversionFactor,derivation) { // derivation is optional and is used to print the name of a unit in the event there is no official name, such as m/s or m/s^2
         this.name = name;
 
