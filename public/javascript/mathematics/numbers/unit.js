@@ -128,7 +128,7 @@ const metricPrefixes = {
     }
 };
 
-const unit = {
+const unitsOrganizedByDimension = {
     "length": {
         "meter":
             {
@@ -289,6 +289,14 @@ const unit = {
     }
 };
 
+let units = {};
+Object.keys(unitsOrganizedByDimension).forEach((dimension) => {
+    Object.keys(unitsOrganizedByDimension[dimension]).forEach((unitName) => {
+        let unit = unitsOrganizedByDimension[dimension][unitName];
+        units[unitName] = {dimension: dimension, conversionFactor: unit.conversionFactor}
+    });
+});
+// can i just use this to organize metric prefixes, abbreviations, and plurals?
 
 
 // start by coding it without the derivation
@@ -298,18 +306,19 @@ function constructUnitFromName(name) {
 }
 
 class Unit {
-    constructor(dimensionObject, conversionFactor, name) {
-        // conversionFactor
+    constructor(derivationOrName) {
+        this.isAunit = true;
+        if (typeof(derivationOrName) === 'string') {
 
-        this.dimensionObject = dimensionObject;
-        this.conversionFactor = conversionFactor;
-        this.name = name;
-    }
-
-    testIfName(){
-        /// tests if the unit in question has a cannonical name
+            if (Object.keys(units).indexOf(derivationOrName) >= 0) {
+                this.name = derivationOrName;
+            }
+        }
     }
 }
+
+let m = new Unit('meter');
+console.log(m);
 
 
 
@@ -556,3 +565,22 @@ function processUnitInput(input) { // need to write this!
     return undefined
 }
 
+
+
+/*
+ideas on 3-15-2021
+the unit objects should piggy back on the dimension objects,
+every unit just needs a dimension and a conversion factor,
+and the already working functions in the dimension object i created can do most of the heavy lifting
+
+
+things i need => a way to parse to test if there is a metric prefix
+a way to interpret whether a written name or abbreviation was entered
+a way to parse if a derivation was entered 'm/s' or 'm/s/s' or 'm/s^2' should all work
+
+this is mostly about parsing text
+ */
+
+function parseUnitName() {
+
+}

@@ -36,6 +36,7 @@
   },
   "velocity": {
     "base": false,
+    "alternate_name": "speed",
     "derivation": {
       "length": 1,
       "time": -1

@@ -19,6 +19,8 @@
     "Unit Tests" LOL!
 </p>
 <script src = './frontEndTesting.js'></script>
+<script src = '../mathematics/numbers/measurement.js'></script>
+<script src = '../mathematics/numbers/dimension.js'></script>
 <script src = '../mathematics/numbers/unit.js'></script>
 
 <div id = 'putItHere'></div>
@@ -28,13 +30,28 @@
     unitTests.addCategory('construction','Construction');
     unitTests.addCategory('construction','baseSIUnits','Constructing Base SI Units');
 
+    unitTests.addCategory('construction','metricSIUnits','Constructing Metric Versions of SI units');
+
+
     unitTests.addCategory('multiply','Multiply Units');
     unitTests.addSubCategory('multiply','multiply 1','Multiply 1');
 
-    unitTests.assertUnit(new Unit('meter'), {
+    console.log(new Unit('meter'));
+
+    unitTests.assertUnitName(new Unit('meter'), {
         "name": "meter",
-        "SI": true
+        "abbreviation": "m",
+        "SI": true,
+        "conversionFactor": new Measurement(1), // 1 with an infinite number of significant figures
     }, 'construction', 'baseSIUnits');
+
+    unitTests.assertUnitName(new Unit('kilometer'), {
+        "name": "kilometer",
+        "abbreviation": "km",
+        "SI": false,
+        "conversionFactor": new Measurement(1000), // 1000 with an infinite number of significant figures
+    }, 'construction', 'metricSIUnits');
+
 
     $("#putItHere").append(unitTests.printAllTests())
 </script>

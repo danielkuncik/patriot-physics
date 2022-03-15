@@ -1,4 +1,21 @@
 
 A Measurement is a number and a number of significant figures [no unit]
 
-A magnitude is a measurement with a unit
+A dimension is a base dimension or a dimension derived from it
+
+A unit has a dimension and a conversion factor
+
+A variable is a number referred to in physics, such as length, height, mass or velocity. it has a dimension and is either a vector or a scalar
+
+an equation is a relationship between variables, it is either universally true or true under conditions
+
+a quantity is a specific instance of a variable. it is a measurement, a unit, and a variable
+
+equations will determine relationships between different quantities
+
+a problem will be determiend by comparing various equations and quantities?
+problems should be questions and answers
+
+
+
+what about algebra???? my program should be able to do algebra
