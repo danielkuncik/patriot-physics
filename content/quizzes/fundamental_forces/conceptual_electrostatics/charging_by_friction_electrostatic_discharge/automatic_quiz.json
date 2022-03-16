@@ -1,0 +1,45 @@
+{
+  "questions": [
+    {
+      "type": "mcSingle",
+      "question": "A child slides down a plastic slide, gets up, touches a metal ladder, and feels a shock. Which of the following COULD explain this experience?",
+      "answers": [
+        {
+          "text": "As the child went down the slide, electrons entered their body. When they touched the metal ladder, those electrons flew off and created a show.",
+          "correct": true
+        },
+        {
+          "text": "As the child went down the slide, protons entered their body. When they touched the metal ladder, those protons flew off and created a show.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcMultiple",
+      "question": "A child slides down a plastic slide, gets up, touches a metal ladder, and feels a shock. If the child wanted to avoid the shock, what could they have done? Check all that apply.",
+      "answers": [
+        {
+          "text": "Waited and did not move for 20 seconds before touching the metal, allowing electrons to leave their body.",
+          "correct": true
+        },
+        {
+          "text": "Only go down the slide on rainy days.",
+          "correct": true
+        },
+        {
+          "text": "There is no way for the child to avoid being shocked.",
+          "correct": false
+        },
+        {
+          "text": "Make sure to move very fast while touching the metal.",
+          "correct": false
+        },
+        {
+          "text": "Touch an insulator before touching the metal.",
+          "correct": false
+        }
+      ]
+    }
+
+  ]
+}
