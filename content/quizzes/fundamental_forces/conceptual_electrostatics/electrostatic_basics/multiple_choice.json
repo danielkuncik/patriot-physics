@@ -1,0 +1,176 @@
+{
+  "questions": [
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "What electrostatic force exists between a proton and an electron?",
+      "answers": [
+        {
+          "text": "They attract",
+          "correct": true
+        },
+        {
+          "text": "They repel",
+          "correct": false
+        },
+        {
+          "text": "No electrostatic force exists",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "What electrostatic force exists between a proton and a neutron?",
+      "answers": [
+        {
+          "text": "They attract",
+          "correct": false
+        },
+        {
+          "text": "They repel",
+          "correct": false
+        },
+        {
+          "text": "No electrostatic force exists",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "What electrostatic force exists between an electron and a neutron?",
+    "answers": [
+      {
+        "text": "They attract",
+        "correct": false
+      },
+      {
+        "text": "They repel",
+        "correct": false
+      },
+      {
+        "text": "No electrostatic force exists",
+        "correct": true
+      }
+      ]
+    },
+    {
+      "question": "What electrostatic force exists between two protons?",
+      "reorderAnswers": false,
+      "answers": [
+        {
+          "text": "They attract",
+          "correct": false
+        },
+        {
+          "text": "They repel",
+          "correct": true
+        },
+        {
+          "text": "No electrostatic force exists",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "What electrostatic force exists between two electrons?",
+      "answers": [
+        {
+          "text": "They attract",
+          "correct": false
+        },
+        {
+          "text": "They repel",
+          "correct": true
+        },
+        {
+          "text": "No electrostatic force exists",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "question": "What electrostatic force exists between two neutrons?",
+      "answers": [
+        {
+          "text": "They attract",
+          "correct": false
+        },
+        {
+          "text": "They repel",
+          "correct": false
+        },
+        {
+          "text": "No electrostatic force exists",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "Is copper an insulator or a conductor?",
+      "answers": [
+        {
+          "text": "insulator",
+          "correct": false
+        },
+        {
+          "text": "conductor",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "Is wool an insulator or a conductor?",
+      "answers": [
+        {
+          "text": "insulator",
+          "correct": true
+        },
+        {
+          "text": "conductor",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "Is hair an insulator or a conductor?",
+      "answers": [
+        {
+          "text": "insulator",
+          "correct": true
+        },
+        {
+          "text": "conductor",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcSingle",
+      "reorderAnswers": false,
+      "question": "Is steel an insulator or a conductor?",
+      "answers": [
+        {
+          "text": "insulator",
+          "correct": false
+        },
+        {
+          "text": "conductor",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
