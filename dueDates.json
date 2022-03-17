@@ -17,6 +17,36 @@
           "inClass": true
         }
       }
+    },
+    "3-31-2022": {
+      "A": {
+        "c50747": {
+          "name": "two traffic light prob",
+          "inClass": true
+
+        },
+        "204ac1": {
+          "name": "vertical circles",
+          "inClass": true
+        },
+        "ca6426": {
+          "name": "the gravitron",
+          "inClass": true
+        },
+        "3a52bf": {
+          "name": "calculating net torque",
+          "inClass": true
+        },
+        "afc922": {
+          "name": "ice skater spin",
+          "inClass": true
+        },
+        "995d93": {
+          "name": "derive the kinemtic equtaions",
+          "inClass": true
+        }
+      }
+
     }
   }
 }
