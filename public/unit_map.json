@@ -10470,10 +10470,10 @@
             "uuid": "a702e59e-ff1f-44d6-98c9-928b1b3f6448",
             "id": "a702e5"
           },
-          "heat_formula_mixture":
+          "thermal_contact_3":
           {
-            "title": "Heat Formula 6",
-            "subtitle": "Mixtures",
+            "title": "Thermal Contact 3",
+            "subtitle": "Quantitative Mixtures",
             "level": 4,
             "horizontal": 3,
             "letter": "L",
@@ -10490,7 +10490,7 @@
             "level": 4,
             "horizontal": 2,
             "letter": "M",
-            "prerequisites": ["heat_formula_mixture"],
+            "prerequisites": ["thermal_contact_3"],
             "objective": "Determine the specific heat of some metal using a calorimeter and water.",
             "content": "Physicists can use a mixture of a substance and water in order to find the specific heat of the metal.",
             "uuid": "6859d9f9-1bc6-4edd-9ede-185f8bd0afaa",
