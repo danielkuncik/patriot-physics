@@ -1,0 +1,26 @@
+Multiple Choice Quiz on Short Circuits:
+
+
+
+1. (picture of badly wired swtich)
+This switch will:
+A. The bulb will alwasy be on, regardless of the switch
+B. The bulb will always be off, regardless of the switch.
+C. The bulb will be ON whne the switch is ON and off when the swtich is OFF. (wired correctly)
+D. The bulb will be OFF when the switch is ON and ON when teh switch si OFF (wired in reverse)
+
+
+This switch:
+
+A. is safely wired
+B. can potentially start a fire
+
+
+
+
+A short circuit is caused by:
+A. A path around the circuit with very low resistance
+B. A path around the circuit with very high voltage
+C. A path aroudn the circuit with very high resistance
+D. A path aroudn teh cricuit with very high current
+

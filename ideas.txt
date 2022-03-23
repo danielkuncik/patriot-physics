@@ -1,0 +1,42 @@
+Automatic Quiz Grading:
+
+
+I'm going to make a new path for
+
+/autoQuiz/{podID}
+This will bring up an automatically grading quiz, if it is available
+- if not available, it redirects to the home page
+
+
+Step 1
+- add a search to see if an automatic quiz exists
+- add a path to open the automatic quiz
+- the view page will be a stub for now, but make that stub
+
+Step 2
+- create a system of generating the quiz from a json file
+- for now, it will include only multiple choice questions in a form
+- create a submit path that uploads the answers to the back end, but then just console logs them and doesn't do anything
+
+Step 3
+- you should need a login to view the automatic quiz
+- when logged in, and generating the quiz, it will create redis keys with the correct answers
+- it should also create a redis key indicating the quiz is active, and preventing the user form doing anything until it is complete
+- when submitting the quiz, it will compare the answers submitted on the form to the answers
+- all answers are kept on the back end
+
+Step 4:
+- find a way to access them??
+- should i make them all accessible once they are available?
+
+
+
+THOUGHTS
+- what is the value of the 'written quiz' vs. the 'self-grading quiz'???
+- where do i want each???
+obviously, the written quiz is a superior test of understanding, but hand-grading every written quiz is cumbersome and unweildy
+self-graded quizzes are weaker tests of understanding but are more accurate
+- if i complete the physics engine, then I can use that to create much more versatile self-grading quizzes
+
+really, this is the way forward
+having written and graded quizzes is just too cumbersome
