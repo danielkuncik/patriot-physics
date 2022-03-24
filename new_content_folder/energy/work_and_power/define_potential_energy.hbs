@@ -1,0 +1,114 @@
+<p>
+    In this pod, we will create a formal, mathematical definition
+    of mechanical forms of potential energy.
+</p>
+
+
+<p class = 'definition'>
+    A system gains <strong>mechanical potential energy</strong>
+    whenever a <strong>internal, conservative force</strong>
+    does <strong>negative work</strong> on some particle with mass within the system.
+    The amount of energy gained is equal to the opposite of the negative work done.
+</p>
+
+
+<h4>
+    Example: Gravitational Potential Energy:
+</h4>
+
+<p>
+    Imagine a book on the floor that is lifted up and placed on a table of height \( h = \Delta y \).
+    During this time, the force of <strong>gravity</strong>
+    on the book has the direction down and the magnitude \( mg \).
+    Because the book is moving upward, and the direction of gravity, is down,
+    the work done by gravity is <emph>negative</emph>.
+    (Even though the applied force also does positive work on the book,
+    gravity still counts as doing negative work.)
+    The amount of force done by gravity is \( W = Fd = - ( mg ) \Delta y = -mg \Delta y \).
+    Gravity is also a <strong>conservative force</strong>,
+    because no matter what path the book takes from the floor to the table,
+    the work done by gravity is the same value.
+    According to the defintion above, the book-earth system
+    gains potential energy equal to \( -W \),
+    so \( \Delta PE = - W = - (-mg \Delta y) = mg \Delta y \),
+    or \( \Delta GPE = mg \Delta y \).
+    If you define the ground to be the zero-point height, at which \( h = 0 \) and \( GPE = 0 \), you have the formula
+    we recognize for gravitational potential energy:
+    \( GPE = mgh \).
+</p>
+
+<h4>
+    Elastic Potential Energy
+</h4>
+
+<p>
+    The formula for elastic potential energy can be derived only with an integral.
+    However, the formula can be understood conceptually using the formula above.
+</p>
+<p>
+    More coming soon!
+</p>
+<h4>
+    Universal Gravitational Potential Energy
+</h4>
+<p>
+    More coming soon!
+</p>
+<h4>
+    Electrostatic Potential Energy
+</h4>
+
+<p>
+    More coming soon!
+</p>
+
+<h5>
+    Implications
+</h5>
+<ul>
+    <li>
+        Potential energy is always held by a system, never an object alone.
+    </li>
+    <li>
+        Potential energy is always related to a <strong>conservative force</strong>.
+        <ul>
+            <li>
+                Gravitational potential energy is related to graivty.
+            </li>
+            <li>
+                Elastic potential energy is related to the elastic force.
+            </li>
+            <li>
+                Electrostatic potential energy is related to the electrostatic force.
+                This is the force that would be contained in a two positive charges close to
+                each other, with the potential to fly apart!
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<ol class="questionList">
+    <li class="question" data-answer_id = 'proof1'>
+        Assume the potential energy formula above.
+        Prove that, if the action that cause the potential energy to be gained
+        were <strong>reversed</strong> in the absence of any other forces, then it would always result in a quantity
+        of kinetic energy being gained equal to the potential energy that was lost.
+        Thus, the definition follows the <strong>conservation of energy</strong>.
+    </li>
+</ol>
+
+<h3>
+    Still under construction
+</h3>
+
+<ol class="answerList"></ol>
+
+<script>
+    let proof1_1 = "When potential energy was gained, a conservative force did negative work \\( -W \\) on some particle, in which \\( W \\) equals the amount of potential energy the system had, \\( \\Delta PE \\).";
+    let proof1_2 = "When this is reversed, that same force will do positive work \\( W \\) on the particle. Because the force is conservative, no energy is lost in this transition.";
+    let proof1_3 = "According to the work-energy theorem, when a positive work of \\( W \\) is done on the particle, it gains kinetic energy \\( \\Delta KE \\)";
+    let proof1_4 = "Thus, \\( W = \\Delta PE = \\Delta KE \\). QED.";
+
+    answerObjects['proof1'] = $(`<ul><li>${proof1_1}</li><li>${proof1_2}</li><li>${proof1_3}</li><li>${proof1_4}</li></ul>`);
+</script>

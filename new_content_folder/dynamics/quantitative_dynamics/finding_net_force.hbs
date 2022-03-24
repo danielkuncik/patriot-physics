@@ -1,0 +1,253 @@
+<p class = 'introduction'>
+    This unit is called
+    <strong>quantitative dynamics</strong>
+    because we will begin analyzing why objects move
+    the particular way that they do.
+    The key issue is to quantitatively analyze <strong>forces</strong>.
+</p>
+
+<h4>
+    Free-Body Diagrams and Vectors
+</h4>
+<p class = 'definition'>
+    A <strong>free-body diagram</strong> is a dot (or simple picture)
+    with arrows emanating from it.
+    The dot represents one object.
+    Each arrow represents one <strong>force</strong> acting on that object.
+    Here is an example of a quantitative free-body diagram:
+</p>
+
+<div id = 'exampleFBD'></div>
+
+<script>
+    $("#exampleFBD").append(fastFBD([['right',100],['left',60]]).drawCanvas(300,150));
+</script>
+<p>
+    This free-body diagram includes two forces:
+</p>
+<ul>
+    <li>
+        A force of 100 Newtons to the right.
+    </li>
+    <li>
+        A force of 60 Newtons to the left.
+    </li>
+</ul>
+
+<p>
+    Because force is a <strong>vector</strong>,
+    each force has both a <emph>magnitude</emph> and <emph>direction</emph>.
+    In a quantitative free-body diagram,
+    each force is represented by an arrow and a number.
+    The direction is given by the direction of the arrow,
+    and the magnitude is given by the number next to the arrow.
+    The unit for force is Newtons (N),
+    so each number has this unit.
+</p>
+
+<div class="no-print">
+    <iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/56480500/?s=La6F3G&amp;ref=embed" allowfullscreen></iframe>
+</div>
+
+<ol class = 'questionList'>
+    <li class = 'question' id = 'problem0' data-answer = 'Magnitude = 80 N; Direction = RIGHT'>
+        Write the magnitude and the direction of this force:
+        <br>
+    </li>
+    <li class = 'question' id = 'problem00' data-answer = 'Magnitude = 40 N; Direction = LEFT'>
+        Write the magnitude and the direction of this force:
+        <br>
+    </li>
+    <li class = 'question' data-answer = 'Newtons'>
+        What does the letter "N" stand for in these diagrams?
+    </li>
+    <li class = 'question' data-answer = 'A free-body diagram'>
+        What is the name of a diagram of all of the forces acting on an object,
+        each represented by an arrow?
+    </li>
+</ol>
+<script>
+    $("#problem0").append(fastFBD([['right',80]]).drawCanvas(300,150));
+    $("#problem00").append(fastFBD([['left',40]]).drawCanvas(300,150));
+</script>
+
+<h4>
+    Finding Net Force of Two Forces
+</h4>
+
+<p class = 'definition'>
+    To find the <strong>net force</strong>
+    acting on an object,
+    use the free-body diagrams.
+</p>
+
+<ul>
+    <li>
+        If two forces (arrows) are in the same direction,
+        ADD.
+    </li>
+    <li>
+        If two forces (arrows) are in opposite direction,
+        SUBTRACT.
+        The direction of net force is in the direction that had greater magnitude.
+    </li>
+</ul>
+
+<ol class = 'questionList'>
+    <li class = 'question' id = 'problem1' data-answer = '50 N right'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+    <li class = 'question' id = 'problem2' data-answer = '400 N right'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+    <li class = 'question' id = 'problem3' data-answer = '260 N left'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+    <li class = 'question' id = 'problem4' data-answer = '130 N left'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+</ol>
+
+<script>
+    $("#problem1").append(fastFBD([['right',200],['left',150]]).drawCanvas(300,150));
+    $("#problem2").append(fastFBD([['right',250],['right',150]]).drawCanvas(300,150));
+    $("#problem3").append(fastFBD([['left',140],['left',120]]).drawCanvas(300,150));
+    $("#problem4").append(fastFBD([['left',350],['right',220]]).drawCanvas(300,150));
+</script>
+
+<h4>
+    Finding Net Force of More than Two Forces
+</h4>
+
+<p>
+    To find the <strong>net force</strong> from a free body diagram with more than
+    two forces, follow these steps:
+</p>
+<ul>
+    <li>
+        Add all of the forces on the left side.
+    </li>
+    <li>
+        Add all of the forces on the right side.
+    </li>
+    <li>
+        Subtract the sums of each side.
+    </li>
+    <li>
+        The <emph>direction</emph> of net force is the direction
+        that had more force.
+    </li>
+</ul>
+
+<ol class = 'questionList'>
+    <li class = 'question' id = 'problem10'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+    <li class = 'question' id = 'problem11'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+    <li class = 'question' id = 'problem12'>
+        Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+        <br>
+    </li>
+</ol>
+
+<script>
+    $("#problem10").append(fastFBD([['left',450],['left',550],['right',350]]).drawCanvas(300,150));
+    $("#problem11").append(fastFBD([['left',77],['left',129],['right',87],['right',208]]).drawCanvas(300,150));
+    $("#problem12").append(fastFBD([
+            ['left',3],['left',7],['left',9],['left',5],
+            ['right',4],['right',6],['right',5],['right',8]
+            ]).drawCanvas(800));
+</script>
+
+<div class="pageBreak"></div>
+<h4>
+    Drawing a free-body diagram and finding net force.
+</h4>
+
+<p>
+    Sometimes,
+    a free-body diagram is not given to you in a problem,
+    but you have to draw your own free-body diagram first,
+    then find the net force acting on an object.
+    (In all problems below, please ignore any forces
+    not explicitly stated.)
+</p>
+
+<p>
+    Also know this:
+    If the net force is zero, then the net force has no direction!
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Two forces act on an object.
+        <ul>
+            <li>
+                It is pushed with a force of 50 N to the right.
+            </li>
+            <li>
+                Friction resists with a force of 20 N to the left.
+            </li>
+        </ul>
+        <ol class ='subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Draw a free-body diagram showing these two forces.
+            </li>
+            <li class = 'subQuestion'>
+                Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        A rocket ship is experiencing three forces.
+        <ul>
+            <li>
+                An upward thrust of 500 N.
+            </li>
+            <li>
+                A weight of 200 N. The direction of weight is always downward.
+            </li>
+            <li>
+                An air resistance of 20 N downward.
+            </li>
+        </ul>
+        <ol class ='subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Draw a free-body diagram showing these three forces.
+            </li>
+            <li class = 'subQuestion'>
+                Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        A book is lying on a table. There are two forces acting on the book.
+        <ul>
+            <li>
+                It has a weight of 102 N.
+                The direction of weight is always downward.
+            </li>
+            <li>
+                There is an upward normal force of 102 N.
+            </li>
+        </ul>
+        <ol class ='subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Draw a free-body diagram showing these three forces.
+            </li>
+            <li class = 'subQuestion'>
+                Find the net force (<emph>Magnitude</emph> and <emph>direction</emph>).
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<ol class = 'answerList'></ol>

@@ -1,0 +1,245 @@
+<p>
+    The previous two section looked at the impulse formula,
+    both mathematically and conceptually.
+    This section looks at it graphically.
+</p>
+
+<p>
+    Back when studying kinematics, <emph>kinematic graphs</emph>
+    were one of the most crucial topics.
+    Kinematic graphs described how position, velocity, and acceleration
+    changed over time.
+    They could be related to each other with qualitative patterns
+    or with a quantitative rule called the <strong>fundamental theorem of calculus</strong>.
+    Remember also that you didn't need to take a calculus class to understand the
+    <strong>fundamental theorem of calculus</strong>!
+</p>
+
+<p>
+    In this unit, on impulse, we will introduce the related concept of
+    <emph>dynamic graphs</emph>.
+    There are two main dynamic graphs: the <strong>momentum-time graph</strong>
+    and the <strong>net-force-time graph</strong>.
+</p>
+
+
+<h4>
+    Qualitative Analysis
+</h4>
+<p>
+    Qualitative Analysis:
+    Qualitatively, the shape of a momentum-time graph is the same as the shape
+    of a velocity-time graph.
+</p>
+
+<p>
+    Qualitatively, the shape of net-force-time graph is the same as the shape
+    of an acceleration-time graph.
+</p>
+
+<div id = 'qualitativeGraphTable'></div>
+
+<script>
+    let qualGraph = new Table(5, 6);
+    qualGraph.addTopHeaders(['','Position-Time Graph', 'Velocity-Time Graph', 'Momentum-Time Graph' ,'Acceleration-Time Graph', 'Net-Force-Time Graph']);
+    qualGraph.addSideHeaders(['', 'Moving at a constant velocity', 'Speeding up', 'Slowing down', 'Not moving']);
+
+    qualGraph.addDiagramToCell(1,1,makePositionGraphConstantVelocity());
+    qualGraph.addDiagramToCell(2,1,makePositionGraphPositiveAcceleration());
+    qualGraph.addDiagramToCell(3,1,makePositionGraphNegativeAcceleration());
+    qualGraph.addDiagramToCell(4,1,makePositionGraphNotMoving());
+
+    qualGraph.addDiagramToCell(1,2,makeVelocityGraphConstantVelocity());
+    qualGraph.addDiagramToCell(2,2,makeVelocityGraphPositiveAcceleration());
+    qualGraph.addDiagramToCell(3,2,makeVelocityGraphNegativeAcceleration());
+    qualGraph.addDiagramToCell(4,2,makeVelocityGraphNotMoving());
+
+    qualGraph.addDiagramToCell(1,3,makeMomentumGraphConstantVelocity());
+    qualGraph.addDiagramToCell(2,3,makeMomentumGraphPositiveAcceleration());
+    qualGraph.addDiagramToCell(3,3,makeMomentumGraphNegativeAcceleration());
+    qualGraph.addDiagramToCell(4,3,makeMomentumGraphNotMoving());
+
+    qualGraph.addDiagramToCell(1,4,makeAccelerationGraphZero());
+    qualGraph.addDiagramToCell(2,4,makeAccelerationGraphPositive());
+    qualGraph.addDiagramToCell(3,4,makeAccelerationGraphNegative());
+    qualGraph.addDiagramToCell(4,4,makeAccelerationGraphZero());
+
+    qualGraph.addDiagramToCell(1,5,makeNetForceGraphZero());
+    qualGraph.addDiagramToCell(2,5,makeNetForceGraphPositive());
+    qualGraph.addDiagramToCell(3,5,makeNetForceGraphNegative());
+    qualGraph.addDiagramToCell(4,5,makeNetForceGraphZero());
+
+
+    $("#qualitativeGraphTable").append(qualGraph.draw(1000,1000));
+</script>
+
+
+<h4>
+    Quantitative Analysis:
+</h4>
+
+<p>
+    Quantitatively, a momentum-time graph can be derived from a velocity-time graph
+    by multiplying the entire y-axis scale by the mass of an object.
+    A velocity-time graph can be derived from a momentum time graph
+    by dividing the entire y-axis scale by the mass of the object.
+    This relationship extends directly from the definition for momentum:
+    \( p = mv \).
+</p>
+
+<p>
+    Quantitatively, a net-force-time graph can be derived from an acceleration-time
+    graph by multiplying the entire y-axis scale by the mass of an object.
+    An acceleration-time graph can be derived from a net-force-time graph
+</p>
+
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following velocity-time graph
+                    of an 8 kg object,
+                    draw a corresponding momentum-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'velocityGraph1'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following velocity-time graph
+                    of an 12 kg object,
+                    draw a corresponding momentum-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'velocityGraph2'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following acceleration-time graph
+                    of an 5 kg object,
+                    draw a corresponding net-force-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'accelerationGraph1'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following acceleration-time graph
+                    of an 15 kg object,
+                    draw a corresponding net-force-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'accelerationGraph2'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following momentum-time graph
+                    of an 6 kg object,
+                    draw a corresponding velocity-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'momentumGraph1'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following momentum-time graph
+                    of an 9 kg object,
+                    draw a corresponding velocity-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'momentumGraph2'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following net-force-time graph
+                    of an 3 kg object,
+                    draw a corresponding acceleration-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'netForceGraph1'></div>
+            </div>
+        </div>
+    </li>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col-6-md'>
+                    Given the following net-force-time graph
+                    of an 20 kg object,
+                    draw a corresponding acceleration-time graph.
+                </div>
+                <div class = 'col-6-md' id = 'netForceGraph2'></div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+<script>
+    let velocityGraph1 = new QuantitativeGraph(0,10,0,20);
+    velocityGraph1.makeVelocityGraph();
+    velocityGraph1.addStepwiseLinearFunction([[0,0],[5,15],[10,0]]);
+    velocityGraph1.automaticReferenceArray(4);
+    $("#velocityGraph1").append(velocityGraph1.drawCanvas(300,300));
+
+    let velocityGraph2 = new QuantitativeGraph(0,20,0,50);
+    velocityGraph2.makeVelocityGraph();
+    velocityGraph2.addStepwiseLinearFunction([[0,0],[10,10],[20,30]]);
+    velocityGraph2.automaticReferenceArray(4,5);
+    $("#velocityGraph2").append(velocityGraph2.drawCanvas(300,300));
+
+    let accelerationGraph1 = new QuantitativeGraph(0,2,0,9);
+    accelerationGraph1.makeAccelerationGraph();
+    accelerationGraph1.addSegmentAndTwoPoints(0,3,2,3);
+    accelerationGraph1.automaticReferenceArray(4,3);
+    $("#accelerationGraph1").append(accelerationGraph1.drawCanvas(300,300));
+
+    let accelerationGraph2 = new QuantitativeGraph(0,10,-8,8);
+    accelerationGraph2.makeAccelerationGraph();
+    accelerationGraph2.addStepwiseLinearFunction([[0,-4],[2,-4],[2,6],[10,6]]);
+    accelerationGraph2.automaticReferenceArray(5,4);
+    $("#accelerationGraph2").append(accelerationGraph2.drawCanvas(300,300));
+
+    let momentumGraph1 = new QuantitativeGraph(0,60,0,60);
+    momentumGraph1.makeMomentumGraph();
+    momentumGraph1.addStepwiseLinearFunction([[0,20],[20,20],[20,40],[40,40],[40,60],[60,60]]);
+    momentumGraph1.automaticReferenceArray(3);
+    $("#momentumGraph1").append(momentumGraph1.drawCanvas(300,300));
+
+    let momentumGraph2 = new QuantitativeGraph(0,10,0,36);
+    momentumGraph2.makeMomentumGraph();
+    momentumGraph2.addSegmentAndTwoPoints(0,0,10,36);
+    momentumGraph2.automaticReferenceArray(2,4);
+    $("#momentumGraph2").append(momentumGraph2.drawCanvas(300,300));
+
+    let netForceGraph1 = new QuantitativeGraph(0,0.1,0,300);
+    netForceGraph1.makeNetForceGraph();
+    netForceGraph1.addStepwiseLinearFunction([[0,0],[0.05,300],[0.1,0]]);
+    netForceGraph1.automaticReferenceArray(2,5);
+    $("#netForceGraph1").append(netForceGraph1.drawCanvas(300,300));
+
+    let netForceGraph2 = new QuantitativeGraph(0,0.5,-100,100);
+    netForceGraph2.makeNetForceGraph();
+    netForceGraph2.addSegmentAndTwoPoints(0,-60,0.5,60);
+    netForceGraph2.automaticReferenceArray(2,10);
+    $("#netForceGraph2").append(netForceGraph2.drawCanvas(600,600));
+
+</script>

@@ -1,0 +1,372 @@
+
+<h4>
+    Angular Momentum Formula
+</h4>
+
+<p class="equation">
+    $$
+    L = I \omega
+    $$
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            <strong>Symbol</strong>
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            <strong>Quantity</strong>
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            <strong>SI Unit</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( L \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Angular Momentum
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            kilograms meters-squared radians per second-squared
+            (kg m<sup>2</sup> rad / s<sup>2</sup>)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( I \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Moment of Inertia
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            kilograms meters-squared
+            (kg m<sup>2</sup>)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( \omega \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Angular Velocity
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            radians per second-squared
+            (rad / s<sup>2</sup>)
+        </div>
+    </div>
+</div>
+
+<h5>
+    Questions
+</h5>
+
+<!--
+- 2, simply practicing the formula
+-2, finding angular velocity first
+-2, finding angular velocity and moment of inertia
+-->
+<ol class="questionList">
+    <li class="question">
+        What is the angular momentum of an object
+        with an angular velocity of 0.800 rad / sec
+        and a rotational inertia of 0.865 kg m<sup>2</sup>?
+        <br>
+        <div class="formulaSolvingTable"></div>
+    </li>
+    <li class="question">
+        What is the angular momentum of an object
+        with an angular velocity of 0.650 rad / sec
+        and a rotational inertia of 1.34 kg m<sup>2</sup>?
+        <br>
+        <div class="formulaSolvingTable"></div>
+    </li>
+    <li class="question">
+        An object with a rotational inertia of 1.24 kg m<sup>2</sup>
+        completes 3 rotations in a time of 4.00 s.
+        What is its angular momentum?
+        <br>
+        <div class="formulaSolvingTable"></div>
+    </li>
+    <li class="question">
+        A fast moving object with a rotational inertia of 0.238 kg m<sup>2</sup>
+        completes 8 rotations in a time of only 3.48 s.
+        What is its angular momentum?
+        <br>
+        <div class="formulaSolvingTable"></div>
+    </li>
+    <li class="question">
+        <div id = 'rod1'></div>
+        <br>
+        The rod above completes 2 rotations in 8.00 seconds.
+        Determine its angular momentum.
+    </li>
+    <li class="question">
+        <div id="rod2"></div>
+        The rod above completes 3 rotations in 6.43 seconds.
+        Determine its angular momentum.
+    </li>
+</ol>
+
+
+
+<script>
+    let rod1 = new RotatingRod(1,1);
+    rod1.addMass(0.4,400,'g',true);
+    rod1.addMass(-0.6,300,'g',true);
+
+    let rod2 = new RotatingRod(0,3);
+    rod2.addMass(1.5,600,'g',true);
+    rod2.addMass(3,200,'g',true);
+
+    $("#rod1").append(rod1.drawCanvas());
+    $("#rod2").append(rod2.drawCanvas());
+</script>
+<!---------------------------------------------------------------->
+<!---------------------------------------------------------------->
+
+<h4>
+    Rotational Kinetic Energy
+</h4>
+
+<p class="equation">
+    $$
+    K_r = \frac{1}{2} I \omega^2
+    $$
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            <strong>Symbol</strong>
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            <strong>Quantity</strong>
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            <strong>SI Unit</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( K_r \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Rotational Kinetic Energy
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Joules (J)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( I \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Moment of Inertia
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            kilograms meters-squared
+            (kg m<sup>2</sup>)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( \omega \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Angular Velocity
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            radians per second-squared
+            (rad / s<sup>2</sup>)
+        </div>
+    </div>
+</div>
+
+
+<h5>
+    Questions
+</h5>
+
+<ol class="questionList">
+    <li class="question">
+        What is the rotational kinetic energy
+        of a bar with a moment of inertia of 3.12 kg m<sup>2</sup>
+        and an angular velocity of 0.863 rad/s?
+    </li>
+    <li class="question">
+        What is the rotational kinetic energy
+        of a bar with a moment of inertia of 1.45 kg m<sup>2</sup>
+        and an angular velocity of 1.36 rad/s?
+    </li>
+    <li class="question">
+        A bar has a moment of inertia of 3.12 kg m<sup>2</sup>.
+        It rotates 5 times in 6.14 seconds.
+        What is its rotational kinetic energy?
+    </li>
+    <li class="question">
+        A bar has a moment of inertia of 2.34 kg m<sup>2</sup>.
+        It rotates 4 times in 1.46 seconds.
+        What is its rotational kinetic energy?
+    </li>
+    <li class="question">
+        <div id = 'rod3'></div>
+        <br>
+        The rod above completes 2 rotations in 9.14 seconds.
+        What is its rotational kinetic energy?
+    </li>
+    <li class="question">
+        <div id = 'rod4'></div>
+        <br>
+        The rod above completes 3 rotations in 5.18 seconds.
+        What is its rotational kinetic energy?
+    </li>
+</ol>
+
+<script>
+    let rod3 = new RotatingRod(2,0);
+    rod3.addMass(-2,500,'g',true);
+    rod3.addMass(-0.5,800,'g',true);
+
+    let rod4 = new RotatingRod(3,3);
+    rod4.addMass(-1.5,400,'g',true);
+    rod4.addMass(1,300,'g',true);
+    rod4.addMass(2,100,'g',true);
+
+
+    $("#rod3").append(rod3.drawCanvas());
+    $("#rod4").append(rod4.drawCanvas());
+</script>
+
+<!---------------------------------------------------------------->
+<!---------------------------------------------------------------->
+
+<h4>
+    Impulse Formula For Rotational Motion
+</h4>
+
+<p class="equation">
+    $$
+    \Sigma \tau \cdot \Delta t = \Delta L = L_f - L _i
+    $$
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            <strong>Symbol</strong>
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            <strong>Quantity</strong>
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            <strong>SI Unit</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( \Sigma \tau \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Net torque
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Newton-meters (N-m)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( \Delta t \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Change in time
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            seconds (s)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 pb-4 border border-dark">
+            \( \Delta L \)
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            Change in Angular Momentum
+        </div>
+        <div class="col-4 pb-4 border border-dark">
+            kilograms meters-squared radians per second-squared
+            (kg m<sup>2</sup> rad / s<sup>2</sup>)
+        </div>
+    </div>
+</div>
+
+
+<h5>
+    Questions
+</h5>
+
+<p>
+    COMING SOON!
+</p>
+
+<ol class="questionList"></ol>
+
+<!--
+-2: calculating impulse from torque
+-2: calculating impulse formula angular momentum
+-6: needing to find other things first (like torque, inertia, and angular velocity)
+-2: finding final angular velocity with other quantities
+-->
+
+
+<h4>
+    Direction of Angular Momentum:
+</h4>
+
+<p>
+    Angular momentum is a <strong>vector</strong>,
+    meaning that it has direction!
+    The direction of angular momentum \( L \) is the same as the direction of angular velocity \( \omega \).
+    To determine the angular momentum, follow these steps.
+</p>
+<ul class="principleList">
+    <li>
+        Wrap your right hand around the object that is rotating.
+    </li>
+    <li>
+        Make sure that your fingers are in the direction that it is rotating.
+    </li>
+    <li>
+        Your thumb is in the direction of the angular momentum.
+    </li>
+</ul>
+
+<h5>
+    Questions:
+</h5>
+<ol class="questionList">
+    <li class="question">
+        Determine the direction of the angular momentum of this football:
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dhPxt_-5DlE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+</ol>
+
+
+
+<h4>
+    More questions:
+</h4>
+<ol class="questionList">
+    <li class="question">
+        Determine the angular momentum of the earth.
+    </li>
+    <li class="question">
+        Determine the rotational kinetic energy of the earth.
+    </li>
+</ol>
+
+
+<ol class="answerList"></ol>

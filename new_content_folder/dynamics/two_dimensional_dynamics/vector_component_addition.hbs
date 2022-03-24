@@ -1,0 +1,104 @@
+<p>
+    Use vector components to <strong>add</strong>
+    the following vectors.
+</p>
+
+<ol>
+    <li>
+        Break the vectors into horizontal and vertical components.
+    </li>
+    <li>
+        Add the horizontal components.
+    </li>
+    <li>
+        Add the vertical components.
+    </li>
+    <li>
+        Now you have a horizontal component and a vertical component.
+        Convert them into magnitude-direction form if necessary. (polar form).
+    </li>
+</ol>
+
+<p class="directions">
+    Please write all answers to three significant figures of accuracy.
+</p>
+
+<ol class="questionList">
+    <li class="question border border-dark">
+        <div id = 'vectorAddition1'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( (21.2 \text{ N}) \hat{\imath} + (31.2 \text{ N}) \hat{\jmath} \)'>
+                Add the two vectors and write the answer in component form.
+            </li>
+            <li class="subQuestion" data-answer = ' 37.5 N at 58.8° above the positive x-axis'> <!-- check these answers; i got them using the previous answer-->
+                Add the two vectors and write the answer in magnitude-direction form.
+            </li>
+        </ol>
+    </li>
+    <li class="question border border-dark">
+        <div id = 'vectorAddition2'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( (-19.4 \text{ N}) \hat{\imath} + (14.7 \text{ N}) \hat{\jmath} \)'>
+                Add the two vectors and write the answer in component form.
+            </li>
+            <li class="subQuestion" data-answer = '24.3 N at 37.2° above the negative x-axis'>
+                Add the two vectors and write the answer in magnitude-direction form.
+            </li>
+        </ol>
+    </li>
+    <li class="question border border-dark">
+        <div id = 'vectorAddition3'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( (-39.6 \text{ N}) \hat{\imath} + (59.1 \text{ N}) \hat{\jmath} \)'>
+                Add the two vectors and write the answer in component form.
+            </li>
+            <li class="subQuestion" data-answer = '71.4 N at 56.2° above the negative x-axis'>
+                Add the two vectors and write the answer in magnitude-direction form.
+            </li>
+        </ol>
+    </li>
+    <li class="question border border-dark">
+        <div id = 'vectorAddition4'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion" data-answer = '\( (-16.4 \text{ N}) \hat{\imath} + (-12.3 \text{ N}) \hat{\jmath} \)'>
+                Add the two vectors and write the answer in component form.
+            </li>
+            <li class="subQuestion" data-answer = '20.5 N at 36.9° below the negative x-axis'>
+                Add the two vectors and write the answer in magnitude-direction form.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<ol class = 'answerList'></ol>
+
+<script>
+    let vector_1a = drawVector(10,90,'N');
+    let vector_1b = drawVector(30,45,'N');
+    vector_1a.merge(plusSign(),'right',2,true);
+    vector_1a.merge(vector_1b,'right',2,false);
+
+    let vector_2a = drawVector(20,120,'N');
+    let vector_2b = drawVector(40,220,'N');
+    vector_2a.merge(plusSign(),'right',2,true);
+    vector_2a.merge(vector_2b,'right',2,false);
+
+    let vector_3a = drawVector(50,180,'N');
+    let vector_3b = drawVector(60,80,'N');
+    vector_3a.merge(plusSign(),'right',2,true);
+    vector_3a.merge(vector_3b,'right',2,false);
+
+
+    let vector_4a = drawVector(30,320,'N');
+    let vector_4b = drawVector(40,170,'N');
+    vector_4a.merge(plusSign(),'right',2,true);
+    vector_4a.merge(vector_4b,'right',2,false);
+
+
+    $("#vectorAddition1").append(vector_1a.drawCanvas());
+    $("#vectorAddition2").append(vector_2a.drawCanvas());
+    $("#vectorAddition3").append(vector_3a.drawCanvas());
+    $("#vectorAddition4").append(vector_4a.drawCanvas());
+
+
+</script>

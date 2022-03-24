@@ -1,0 +1,147 @@
+<p>
+    (Note that I chose unrealistic values in order to make the math simpler
+    for this problem.)
+    A spring hanging vertically has a spring constant of 98 N/m
+    and a equilibrium length of 3 m.
+    A mass of 10 kg is attached to the end of the spring,
+    and it stretches to a length of 5 meters.
+</p>
+
+<ol>
+    <li data-answer = '196 J' >
+        Determine the elastic potential energy contained in the spring.
+    </li>
+    <li data-answer = '-490 J'>
+        Determine the gravitational potential energy in the mass-earth-spring system.
+        Consider the zero-height to be the top of the ceiling to which the spring is attached.
+        In this case, the gravitational potential energy will be negative,
+        but that is okay.
+    </li>
+    <li data-answer = '-294 J'>
+        What is the total energy of the mass-spring-earth system?
+    </li>
+    <li data-answer = '6 m'>
+        Somebody pulls the string down by and additional 1 meter and holds the mass stationary.
+        What is the new length of the spring?
+    </li>
+    <li data-answer = '441 J'>
+        Calculate the new elastic potential energy of
+        the mass-spring-earth system.
+    </li>
+    <li data-answer = '-588 J'>
+        Calculate the new gravitational potential energy of the mass-spring-earth system.
+    </li>
+    <li data-answer = '-147 J'>
+        Calculate the new total energy of the mass-spring earth system.
+    </li>
+    <li data-answer = '147 J; positive work'>
+        When the person pulled downward on the spring, how much work did they do on the system?
+        Did they do positive work (add energy) or negative work (take energy away)?
+    </li>
+    <li>
+        The person lets go of the spring and it begins oscillating upwards and downwards.
+        Assume that no work is done on the system as it oscillates.
+        Fill out the table below, describing one full oscillation of the mass:
+        Note that values will not necessarily reflect realistic values,
+        as they were chosen to make the math simpler.
+        <div id = 'energyTable1'></div>
+    </li>
+    <li>
+        Of the points you selected, at what point is the mass moving fastest?
+    </li>
+    <li>
+        At what points is the mass not moving?
+    </li>
+    <li>
+        When is the spring neither stretched nor compressed?
+    </li>
+</ol>
+
+<h4>
+    Answers
+</h4>
+<div id = 'answerTable1'></div>
+
+<script>
+    let energyTable1 = new EnergyTable(9, ['length','direction','speed','ke','gpe','epe','total_e']);
+    energyTable1.addInfoToColumn('length',[6,5,4,3,2,3,4,5,6]);
+    energyTable1.addInfoToColumn('direction',['null','up','up','up','null','down','down','down','null']);
+    $("#energyTable1").append(energyTable1.draw(800,400));
+
+    let answerTable1 = new EnergyTable(9, ['length','direction','speed','ke','gpe','epe','total_e']);
+    answerTable1.addInfoToColumn('length',[6,5,4,3,2,3,4,5,6]);
+    answerTable1.addInfoToColumn('direction',['null','up','up','up','null','down','down','down','null']);
+
+    answerTable1.addInfoToColumn('epe',[441,196,49,0,'49 (compressed)',0,49,196,441]);
+    answerTable1.addInfoToColumn('gpe',[-588,-490,-392,-294,-196,-294,-392,-490,-588]);
+    answerTable1.addInfoToColumn('total_e',[-147,-147,-147,-147,-147,-147,-147,-147,-147]);
+    answerTable1.addInfoToColumn('ke',[0,147,196,147,0,147,196,147,0]);
+    answerTable1.addInfoToColumn('speed',[0,5.4,6.2,5.4,0,5.4,6.2,5.4,0]);
+    $("#answerTable1").append(answerTable1.draw(800,400));
+</script>
+
+<h5>
+    Problem 4: Vertical Spring
+</h5>
+
+<h4>
+    Preparation
+</h4>
+
+<ol>
+    <li>
+        Gravity acts downward on the mass and its agent is the earth.
+        The spring force acts upward on the mass and its agent is the spring.
+        Both forces are internal to the mass-spring-earth system, meaning
+        they do no work on the system.
+    </li>
+    <li>
+        The magnitude of gravity is \( mg \).
+        The magnitude of the spring force is given by \( k \left| y_0 - y_{\text{eq}} \right| \).
+        Note that in this equation both \( y_0 \) and \( y_{\text{eq}} \) are negative values,
+        and that \( |y_0| > |y_{\text{eq}}| \)
+    </li>
+    <li>
+        Down is defined as the negative direction
+        and up is defined as the positive direction.
+        The net force at the equilibrium position is given by
+        <br>
+        \( \Sigma F = 0 = - mg - k \left( y_0 - y_{\text{eq}} \right)  \)
+        in which \( y_0 \) is defined as the equilibrium position of the mass
+        and \( y_{\text{eq}} \) is the equilibrium length of the spring.
+        Note that the force of gravity acts downward and the spring force acts upward,
+        but there is a negative sign in front of the spring force because the value
+        \( \left( y_0 - y_{\text{eq}} \right) \) will return a negative number.
+        <br>
+        \( y_0 = y_{\text{eq}} - \frac{mg}{k} \).
+    </li>
+</ol>
+<h4>
+    The Problem
+</h4>
+<ol>
+    <li>
+        <ol type = 'A'>
+            <li>
+                \( \text{Energy} =  m g y_{\text{max}} + \frac{1}{2} k \left( y_{\text{max}} - y_{\text{eq}} \right)^2  \)
+            </li>
+            <li>
+                \( \text{Energy} =   m g y_0 + \frac{1}{2} k \left( y_0 - y_{\text{eq}} \right)^2 + \frac{1}{2} m v_{\text{max}}^2 \)
+                <br>
+                \( \text{Energy} = m g y_{\text{eq}} - \frac{\left( mg \right)^2 }{k} + \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} =  m g y_{\text{min}} + \frac{1}{2} k \left( y_{\text{min}} - y_{\text{eq}} \right)^2  \)
+            </li>
+            <li>
+                \( \text{Energy} = m g y_{\text{eq}} - \frac{\left( mg \right)^2 }{k} + \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} =  m g y_{\text{max}} + \frac{1}{2} k \left( y_{\text{max}} - y_{\text{eq}} \right)^2  \)
+            </li>
+        </ol>
+    </li>
+    <li>
+
+    </li>
+</ol>

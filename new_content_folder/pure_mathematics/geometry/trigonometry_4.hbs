@@ -1,0 +1,72 @@
+
+<!--
+Put an explanation of how 'opposite' and 'adjacent' can be determined.
+-->
+
+
+<p class="directions">
+    For each triangle pictured, determine all of the unknown information.
+</p>
+
+<ol class="questionList">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4" id = 'triangle1'>
+                <!-- <li class="question" id = 'triangle1' data-answer_id = 'triangle1_answer'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-4" id = 'triangle2'>
+                <!-- <li class="question" id = 'triangle2' data-answer_id = 'triangle2_answer'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4" id = 'triangle3'>
+                <!-- <li class="question" id = 'triangle3' data-answer_id = 'triangle3_answer'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-4" id = 'triangle4'>
+                <!-- <li class="question" id = 'triangle4' data-answer_id = 'triangle4_answer'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <li class="question" id = 'triangle5'><br></li>
+            </div>
+            <div class="col-md-6 mb-4">
+                <li class="question" id = 'triangle6'><br></li>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <li class="question" id = 'triangle7'><br></li>
+            </div>
+            <div class="col-md-6 mb-4">
+                <li class="question" id = 'triangle8'><br></li>
+            </div>
+        </div>
+    </div>
+</ol>
+
+
+<ol class="answerList"></ol>
+
+
+<script>
+
+    unknownRightTriangleLegLeg(696,697).displayProblem('triangle1');
+    unknownRightTriangleHypotenuseLeg(180,144,true).displayProblem('triangle2');
+    unknownRightTriangleHypotenuseAngle(26.54,949).displayProblem('triangle3');
+    unknownRightTriangleLegAngle(900,18.5,true).displayProblem('triangle4');
+
+    //
+    // $("#triangle1").append(triangle1.problem.drawCanvas(300));
+    // addAnswerObject('triangle1_answer',triangle1.answer.drawCanvas(300));
+    //
+    // $("#triangle2").append(triangle2.problem.drawCanvas(300));
+    // addAnswerObject('triangle2_answer',triangle2.answer.drawCanvas(300));
+    //
+    // $("#triangle3").append(triangle3.problem.drawCanvas(300));
+    // addAnswerObject('triangle3_answer',triangle3.answer.drawCanvas(300));
+    //
+    // $("#triangle4").append(triangle4.problem.drawCanvas(300));
+    // addAnswerObject('triangle4_answer',triangle4.answer.drawCanvas(300));
+
+</script>

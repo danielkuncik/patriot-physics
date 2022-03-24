@@ -1,0 +1,79 @@
+<p>
+    In the previous pod,
+    we learned the main formula for
+    an electric circuit: Ohm's Law \( V = IR \).
+    In this pod, we will learn a second crucial formula
+    for comprehending electric circuits: The power Formula \(P = IV \).
+</p>
+
+
+<p class = 'equation' style = 'font-size:30px'>
+    $$
+    P = I V
+    $$
+</p>
+
+<div id = 'powerFormulaTable'></div>
+
+<script>
+    let powerFormulaTable = new Table(4,3);
+    powerFormulaTable.setMaxFontProportion(0.05);
+
+    powerFormulaTable.addTopHeaders(['Symbol','Quantity','SI Unit'])
+    powerFormulaTable.writeTextInRow(1,['\\( P \\)','Power','Watts (W)']);
+    powerFormulaTable.writeTextInRow(2,['\\( I \\)','Current','Amps (A)']);
+    powerFormulaTable.writeTextInRow(3,['\\( V \\)','Voltage','Volts (V)']);
+
+    $("#powerFormulaTable").append(powerFormulaTable.draw(400));
+</script>
+
+<iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/57620738/?s=ek5b6a&amp;ref=embed" allowfullscreen></iframe>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '60 Watts'>
+        I have a current of 5 Amps and I have a 12 Volt battery. What is my power?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '90 Watts'>
+        I have a current of 3 Amps and a 30 Volt battery. What is my power?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '0.833 Amps'>
+        I have a 100 Watt light bulb hooked up to an outlet, which means it has 120 Volts. What is its current?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '9.17 Amps'>
+        My vacuum cleaner uses 1100 Watts, and I hook it up to an outlet, which means it has 120 Volts. What is its current?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '150 Volts'>
+        I have a 300-Watt device, and I know there is 2 Amps of current going through it. How much voltage does it have?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '1.2 Watts'>
+        I hook up a 4-volt battery, and it produces a current of 0.3 Amps through my light bulb. How much power does the light bulb have?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '4.8 Watts (remember that there are two batteries)'>
+        I hook up two 4-volt batteries, and it produces a current of 0.6 Amps through my light bulb. How much power does my light bulb have?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+<!--
+add problems involving both formulas
+-->
+
+
+<h3>
+    Answers:
+</h3>
+
+<ol class = 'answerList'></ol>

@@ -1,0 +1,224 @@
+<p>
+    In previous sections, we have looked at pop-up problems
+    purely numerically,
+    by plugging values into equations to find other numbers.
+    In this section, we will qualitatively analyze pop-up problems
+    using kinematic graphs and free-body diagrams.
+</p>
+
+<h4>
+    Kinematic Analysis
+</h4>
+
+<p>
+    An object is thrown directly into the air.
+    It slows down at a rate of 9.8 m/s<sup>2</sup>
+    until it is momentarily stationary at the top of its journey.
+    Then, it speeds up at a rate of 9.8 m/s<sup>2</sup> on the way down.
+    If air resistance is ignored and it lands at precisely the same
+    point at which it was thrown, then it strikes the ground
+    with exactly the same speed it was thrown at.
+</p>
+
+<p>
+    The positive direction is defined at UPWARD. The negative direction is defined
+    as DOWNWARD.
+    The origin (zero point position) is defined as the point where the object began
+</p>
+
+<p>
+    The <strong>qualitative kinematic</strong> graphs of the motion of the ball look like this:
+</p>
+<ul>
+    <li id = 'positionGraph'></li>
+    <li id = 'velocityGraph'></li>
+    <li id = 'accelerationGraph'></li>
+</ul>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Look at the position-time graph.
+        <ol class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Mark the points at which the ball is moving upward.
+            </li>
+            <li class = 'subQuestion'>
+                Mark the points at which the ball is moving downward.
+            </li>
+            <li class = 'subQuestion'>
+                Mark the points at which the ball is at the top.
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        Look at the velocity-time graph.
+        <ol class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Mark the points at which the ball is moving upward.
+            </li>
+            <li class = 'subQuestion'>
+                Mark the points at which the ball is moving downward.
+            </li>
+            <li class = 'subQuestion'>
+                Mark the points at which the ball is at the top.
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        Look at the acceleration-time graph.
+        <ol class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Why is it a horizontal line?
+            </li>
+            <li class = 'subQuestion'>
+                Why is the line negative?
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<script>
+    let deltaT = 10;
+    let v0 = 9.8 * (deltaT / 2);
+    let a = -9.8;
+    let y0 = 0;
+
+    let positionFunction = (t) => {
+        return y0 + v0 * t + 0.5 * a * t**2
+    };
+    let velocityFunction = (t) => {
+        return v0 + a * t
+    };
+    let accelerationFunction = (t) => {
+        return a
+    };
+
+    //     constructor(yFunc, xMin, xMax, desiredAspectRatio, forcedYmin, forcedYmax) {
+
+    let positionGraph = new QualitativeGraph(positionFunction, 0, deltaT);
+    positionGraph.moveLabelsToSide();
+    positionGraph.turnIntoPositionGraph();
+    let velocityGraph = new QualitativeGraph(velocityFunction, 0, deltaT);
+    velocityGraph.moveLabelsToSide();
+    velocityGraph.turnIntoVelocityGraph();
+    let accelerationGraph = new QualitativeGraph(accelerationFunction, 0, deltaT,undefined,2 * a,0);
+    accelerationGraph.moveLabelsToSide();
+    accelerationGraph.turnIntoAccelerationGraph();
+    accelerationGraph.addZeroLabel();
+
+    $("#positionGraph").append(positionGraph.drawCanvas(300));
+    $("#velocityGraph").append(velocityGraph.drawCanvas(300));
+    $("#accelerationGraph").append(accelerationGraph.drawCanvas(300));
+</script>
+
+<h4>
+    Dynamic Analysis
+</h4>
+
+<h5>
+    Newton's Model:
+</h5>
+<ul>
+    <li>
+        If an object has a net force acting on it of zero,
+        then it is either not moving, or moving at a constant velocity.
+        (Newton's First Law)
+    </li>
+    <li>
+        If an object's velocity is in the <strong>same direction</strong>
+        as the net force acting on that object,
+        the object speeds up.
+        (Newton's Second Law)
+    </li>
+    <li>
+        If an object's velocity is in the <strong>opposite direction</strong>
+        as the net force acting on that object,
+        the object slows down.
+        (Newton's Second Law)
+    </li>
+</ul>
+
+<p>
+    When an object is thrown up, the object is in <strong>free-fall</strong>.
+    Even when the object is moving upward, it is in <strong>free-fall</strong>
+    as long as the only force acting on that object is gravity.
+    The free-body diagram of the object shows only the force
+    of gravity acting on that object:
+</p>
+<div id = 'fbd'></div>
+
+<p>
+    A ball is thrown straight up into the air, and then falls straight down.
+    Answer the following questions to relate this free-body diagram to the motion of the ball.
+    The method of these problems is expounded in more detail <a href = '/pod/fb8346'>here</a>.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'The velocity is up and the net force is down, so the ball is slowing down.'>
+        When the ball is on the way up,
+        connect the free-body diagram of the ball to its motion
+        using Newton's Model above.
+    </li>
+    <li class = 'question' data-answer = 'The velocity is down and the net force is up, so the ball is speeding up.'>
+        When the ball is on the way down,
+        connect the free-body diagram of the ball to its motion
+        using Newton's Model above.
+    </li>
+</ol>
+
+<script>
+    let fbd = freeFallFBD();
+    $("#fbd").append(fbd.drawCanvas(200,200));
+</script>
+
+<h4>
+    Questions
+</h4>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'The entire time!'>
+        A ball is thrown directly upward, and then falls down to the ground.
+        When, in its motion, is it in free-fall?
+    </li>
+    <li class = 'question'>
+        A person is standing on the edge of a ledge.
+        He throws a ball directly into the air,
+        but does not catch it. The ball falls off the ledge and
+        lands at a much lower point than it started.
+        <ol class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Draw a position-time graph of the ball in its motion.
+            </li>
+            <li class = 'subQuestion'>
+                Draw a velocity-time graph of the ball in its motion.
+            </li>
+            <li class = 'subQuestion'>
+                Draw an acceleration-time graph of the ball in its motion.
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        A person is standing facing the side fo a cliff.
+        He throws a ball directly into the air.
+        It rises up and then falls down, but lands on a ledge
+        higher than where it started.
+        <ol class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Draw a position-time graph of the ball in its motion.
+            </li>
+            <li class = 'subQuestion'>
+                Draw a velocity-time graph of the ball in its motion.
+            </li>
+            <li class = 'subQuestion'>
+                Draw an acceleration-time graph of the ball in its motion.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<h4>
+    Answers
+</h4>
+
+<ol class = 'answerList'></ol>

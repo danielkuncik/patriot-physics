@@ -1,0 +1,181 @@
+<p>
+    We learned the formula
+    for work as
+    $$
+    W = F d.
+    $$
+    However, how can we use this formula if the force
+    done is changing?
+    For example, in a spring, when you pull the spring farther back,
+    the force needed to keep pulling increases.
+    Or for another example, as a rocket ship moves farther from earth,
+    the force of gravity pulling it back downward becomes weaker.
+    How can you model the work done in these situations?
+    In fact, there is a mathematical relationship you can use
+    very similar to what we learned when studying <a href = '/unit/kinematics/forward_kinematics_quantitative'>kinematic graphs.</a>
+</p>
+
+<p class = 'definition'>
+    The work done over a particular displacement
+    \( \left( x_2 - x_1 \right) \)
+    is equal to the area under the curve
+    of a <strong>force-position graph</strong>
+    between \( x_1 \) and \( x_2 \).
+</p>
+
+<h4>
+    A review of area formulas:
+</h4>
+
+<ul class = 'principleList'>
+    <li>
+        The area of a rectangle is given by:
+        \( A = bh = \text{base } \cdot \text{ height}\).
+    </li>
+    <li>
+        The area of a triangle is given by:
+        \( A = \frac{1}{2} bh = \frac{1}{2} \cdot \text{base } \cdot \text{ height}\).
+    </li>
+    <li>
+        The area of a trapezoid is given by:
+        \( A = \left( \frac{b_1 + b_2}{2} \right) h = \left( \frac{\text{base}_1 + \text{base}_2}{2} \right) \cdot \text{height} \).
+    </li>
+</ul>
+
+
+<h4>
+    Determining Work From a Position-Time Graph
+</h4>
+
+<p class = 'directions'>
+    Determine the work done in each situation.
+</p>
+
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '300 Joules'>
+        Determine the work done between \( x = 0 \) and \( x = 15 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraph1'></div>
+    </li>
+    <li class="question" data-answer = '550 Joules'>
+        Determine the work done between \( x = 4 \text{ m} \) and \( x = 26 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraph2'></div>
+    </li>
+    <li class="question" data-answer = '300 m'>
+        Determine the work done between \( x = 0 \) and \( x = 12 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraph3'></div>
+    </li>
+
+    <li class = 'question' data-answer = '20 m'>
+        Determine the work done between \( x = 0 \) and \( x = 5 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTri2'></div>
+    </li>
+
+    <li class = 'question' data-answer = '900 m'>
+        Determine the work done between \( x = 0 \) and \( x = 60 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTri3' ></div>
+    </li>
+
+    <li class = 'question' data-answer = '7200 m'>
+        Determine the work done between \( x = 0 \) and \( x = 40 \text{ m} \).
+        <br>
+        <div id="forcePositionGraphTri4"></div>
+    </li>
+
+    <li class="question" data-answer = '220 m'>
+        Determine the work done between \( x = 0 \) and \( x = 16 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTrap1'></div>
+    </li>
+
+    <li class="question" data-answer = '1600 m'>
+        Determine the work done between \( x = 0 \) and \( x = 30 \text{ m} \).
+        <br>
+        <div id = 'forcePositionGraphTrap2'></div>
+    </li>
+</ol>
+
+
+<h4>
+    Drawing a Position-Time Graphs
+</h4>
+
+<p>
+    Coming soon!
+</p>
+
+<ol class = 'answerList'></ol>
+
+<script>
+    let forcePositionGraph1 = new QuantitativeGraph(0,20,0,30);
+    forcePositionGraph1.labelAxes('Position (m)','Force (N)');
+    forcePositionGraph1.automaticReferenceArray(4,3);
+    forcePositionGraph1.addStepwiseLinearFunction([[0,20],[15,20],[15,0],[20,0]]);
+
+    let forcePositionGraph2 = new QuantitativeGraph(0,30,0,75);
+    forcePositionGraph2.labelAxes('Position (m)','Force (N)');
+    forcePositionGraph2.addReferenceArray([4,8,12,22,26,30],[25,50,75]);
+    forcePositionGraph2.addStepwiseLinearFunction([[0,0],[4,0],[4,25],[26,25],[26,0],[30,0]]);
+
+    let forcePositionGraph3 = new QuantitativeGraph(0,15,0,50);
+    forcePositionGraph3.labelAxes('Position (m)','Force (N)');
+    forcePositionGraph3.automaticReferenceArray(5,2);
+    forcePositionGraph3.addStepwiseLinearFunction([[0,0],[12,50],[12,0],[15,0]]);
+
+    let forcePositionGraphTri2 = new QuantitativeGraph(0,6,0,8);
+    forcePositionGraphTri2.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTri2.automaticReferenceArray(6,2);
+    forcePositionGraphTri2.addStepwiseLinearFunction([[0,8],[5,0],[6,0]]);
+
+    let forcePositionGraphTri3 = new QuantitativeGraph(0,60,0,40);
+    forcePositionGraphTri3.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTri3.automaticReferenceArray(4,4);
+    forcePositionGraphTri3.addStepwiseLinearFunction([[0,0],[30,30],[60,0]]);
+
+    let forcePositionGraphTri4 = new QuantitativeGraph(0,50,0,90);
+    forcePositionGraphTri4.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTri4.automaticReferenceArray(5,3);
+    forcePositionGraphTri4.addStepwiseLinearFunction([[0,0],[30,90],[40,0],[50,0]]);
+
+    let forcePositionGraphTrap1 = new QuantitativeGraph(0,16,0,20);
+    forcePositionGraphTrap1.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTrap1.automaticReferenceArray(8,2);
+    forcePositionGraphTrap1.addStepwiseLinearFunction([[0,0],[10,20],[16,20],[16,0]]);
+
+    let forcePositionGraphTrap2 = new QuantitativeGraph(0,30,0,80);
+    forcePositionGraphTrap2.labelAxes('Position (m)','Force (N)');
+    forcePositionGraphTrap2.automaticReferenceArray(6,2);
+    forcePositionGraphTrap2.addStepwiseLinearFunction([[0,0],[10,80],[20,80],[30,0]]);
+
+
+    $("#forcePositionGraph1").append(forcePositionGraph1.drawCanvas());
+    $("#forcePositionGraph2").append(forcePositionGraph2.drawCanvas());
+    $("#forcePositionGraph3").append(forcePositionGraph3.drawCanvas());
+
+    $("#forcePositionGraphTri2").append(forcePositionGraphTri2.drawCanvas());
+
+    $("#forcePositionGraphTri3").append(forcePositionGraphTri3.drawCanvas());
+
+    $("#forcePositionGraphTri4").append(forcePositionGraphTri4.drawCanvas());
+
+    $("#forcePositionGraphTrap1").append(forcePositionGraphTrap1.drawCanvas());
+
+    $("#forcePositionGraphTrap2").append(forcePositionGraphTrap2.drawCanvas());
+</script>
+
+<h4>
+    Textbook Resources
+</h4>
+
+<ul>
+    <li>
+        Giancoli 7th Edition:
+        Section 6-2 on page 142
+        On pages 164-5, problems 13 and 14.
+    </li>
+</ul>

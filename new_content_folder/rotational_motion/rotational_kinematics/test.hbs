@@ -1,0 +1,15 @@
+<p>
+    This is a test. Nothing to see here.
+</p>
+
+<div id = 'putItHere'></div>
+
+<script>
+    let rotatingRod = new RotatingRod(3,3,0);
+    rotatingRod.addMass(-2,5);
+    rotatingRod.addForce(2,10,90);
+    rotatingRod.moveReferenceLineAbove();
+    rotatingRod.automaticReferenceArray(5);
+    rotatingRod.moveReferenceLineBelow();
+    $("#putItHere").append(rotatingRod.drawCanvas(600,300));
+</script>

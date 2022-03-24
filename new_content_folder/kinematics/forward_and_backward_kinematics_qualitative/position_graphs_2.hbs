@@ -1,0 +1,117 @@
+<p class = 'directions'>
+  A man is dancing around in a room.
+  Assume that he is always moving at a <em>constant velocity</em>.
+  For four different descriptions of motion,
+  select the position-time graph that best
+  describes the man's motion.
+</p>
+
+<ul>
+  <li>
+    The origin is defined as the center of the room.
+  </li>
+  <li>
+    The positive direction is to the right.
+    The negative direction is to the left.
+  </li>
+</ul>
+
+<ol class = 'questionList'>
+<div class = 'container'>
+  <div class = 'row'>
+    <div class = 'col-4 border border-dark'>
+      <li class = 'question' data-answer = 'D'>
+        The dancing man begins all the way to the left of the room.
+        He dances all the way to the right,
+        then back all the way to the left where he started.
+      </li>
+    </div>
+    <div class = 'col-4'></div>
+    <div class = 'col-4 border border-dark' id = 'position-1-A'>
+      <strong>A:</strong><br>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-4 border border-dark'>
+      <li class = 'question' data-answer ='C'>
+        The dancing man begins all the way to the <em>right</em>
+        of the room.
+        He dances all the way to the left,
+        then back all the way to the right where he started.
+      </li>
+    </div>
+    <div class = 'col-4'></div>
+    <div class = 'col-4 border border-dark' id = 'position-1-B'>
+      <strong>B:</strong><br>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-4 border border-dark'>
+      <li class = 'question' data-answer = 'A'>
+        The dancing man begins in the center of the room.
+        He dances all the way to the left,
+        then all the way to the right,
+        then back to the center.
+      </li>
+    </div>
+    <div class = 'col-4'></div>
+    <div class = 'col-4 border border-dark' id = 'position-1-C'>
+      <strong>C:</strong><br>
+    </div>
+  </div>
+  <div class = 'row'>
+    <div class = 'col-4 border border-dark'>
+      <li class = 'question' data-answer = 'B'>
+        The dancing man begins in the center of the room.
+        He dances all the way to the right,
+        then all the way to the left,
+        then back to the center.
+      </li>
+    </div>
+    <div class = 'col-4'></div>
+    <div class = 'col-4 border border-dark' id = 'position-1-D'>
+      <strong>D:</strong><br>
+    </div>
+  </div>
+</div>
+</ol>
+
+<ol class = 'answerList'></ol>
+
+<script>
+// D C A B
+
+  let function1 = new KinematicStepwiseFunctions(-10,1);
+  function1.addConstantVelocityStep(20);
+  function1.abruptVelocityChange(-1);
+  function1.addConstantVelocityStep(20);
+  graphs1 = function1.makeQualitativeGraphs("");
+  $("#position-1-D").append(graphs1.positionGraph.drawCanvas(150));
+
+  let function2 = new KinematicStepwiseFunctions(10,-1);
+  function2.addConstantVelocityStep(20);
+  function2.abruptVelocityChange(1);
+  function2.addConstantVelocityStep(20);
+  graphs2 = function2.makeQualitativeGraphs("");
+  $("#position-1-C").append(graphs2.positionGraph.drawCanvas(150));
+
+
+  let function3 = new KinematicStepwiseFunctions(0,-1);
+  function3.addConstantVelocityStep(10);
+  function3.abruptVelocityChange(1);
+  function3.addConstantVelocityStep(20);
+  function3.abruptVelocityChange(-1);
+  function3.addConstantVelocityStep(10);
+  graphs3 = function3.makeQualitativeGraphs("");
+  $("#position-1-A").append(graphs3.positionGraph.drawCanvas(150));
+
+  let function4 = new KinematicStepwiseFunctions(0,1);
+  function4.addConstantVelocityStep(10);
+  function4.abruptVelocityChange(-1);
+  function4.addConstantVelocityStep(20);
+  function4.abruptVelocityChange(1);
+  function4.addConstantVelocityStep(10);
+  graphs4 = function4.makeQualitativeGraphs("");
+  $("#position-1-B").append(graphs4.positionGraph.drawCanvas(150));
+
+</script>

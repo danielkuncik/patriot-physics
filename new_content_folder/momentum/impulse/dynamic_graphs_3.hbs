@@ -1,0 +1,55 @@
+<p>
+    In dynamics graphs 1,
+    we studied the relationship
+    between dynamic graphs (momentum and net force graphs)
+    and their corresponding kinematic graphs (velocity and acceleration graphs).
+    In dynamic graphs 2, we studied the relationship
+    between the two dynamic graphs themselves.
+    And in previous unit on quantitative kinematics,
+    we looked at the relationship between the three kinematic graphs.
+</p>
+
+<p>
+    In this section, our goal is to put it all together.
+    We will establish a full understanding of the relationship amongst
+    all five types of kinematic and dynamic graphs.
+</p>
+
+<!---
+Diagram of all 5 types of graphs!
+-->
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Given the following position-time graph
+        of an object with a mass of 5 kg,
+        complete all other kinematic and dynamic graphs.
+        <div id = 'positionGraph1'></div>
+    </li>
+    <li class = 'question'>
+        Given the following position-time graph
+        of an object with a mass of 6 kg,
+        complete all other kinematic and dynamic graphs.
+        <div id = 'positionGraph2'></div>
+    </li>
+    <li class = 'question'>
+        Given the following momentum-time graph
+        of an object with a mass of 8 kg,
+        complete all other kinematic and dynamic graphs.
+        <div id = 'momentumGraph1'></div>
+    </li>
+</ol>
+
+<script>
+    let positionGraph1 = makeParabolicPTgraph(6,72,4);
+    $("#positionGraph1").append(positionGraph1.drawCanvas(300));
+
+    let positionGraph2 = makeParabolicPTgraph(8,64,-2,16);
+    $("#positionGraph2").append(positionGraph2.drawCanvas(300));
+
+    let momentumGraph1 = new QuantitativeGraph(0,10,0,240);
+    momentumGraph1.makeMomentumGraph();
+    momentumGraph1.automaticReferenceArray(2,6);
+    momentumGraph1.addSegmentAndTwoPoints(0,160,10,240);
+    $("#momentumGraph1").append(momentumGraph1.drawCanvas(400));
+</script>

@@ -1,0 +1,320 @@
+<h5>
+    Some notes on these problems.
+</h5>
+<p>
+    These are very long problems because I want you to learn how to fully
+    and completely analyze a situation using the principles of energy.
+    Along with dynamics and kinematics,
+    energy is one of the key concepts physicists use to analyze the mechanical world.
+</p>
+<p>
+    Throughout the problems I included some notes about proper explanation and proper notation.
+    Please seek to always use and understand proper notation.
+    One key principle introduced is that a variable alone is considered a variable but a variable
+    with a subscript is a specific value of that variable.
+</p>
+
+<p>
+    Whenever using the conservation of energy, you are typcially makign up new equations.
+    It is important to <emph>always explicitly</emph> cite the physical principle used to invent the equation.
+    If you use the conservation of energy to derive new equations,
+    then always state "This equation is true because no work is done on the system and the total energy of the
+    system remains constant."
+</p>
+
+<p>
+    In this page, you will derive several new functions.
+    Whenever deriving a new function, the first thing you should do is check that it is dimensionally correct.
+    The second thing you should do is to test your function on known and/or obvious values
+    to make sure it returns the values you expect.
+    These checks are a part of this activity.
+</p>
+
+<div class = 'pageBreak'></div>
+<h3>
+    Problem 1: Falling Object
+</h3>
+<p>
+    A person drops an object move mass \( m \) from a cliff of height \( y_0 \) as depicted below.
+    Consider the height = 0 point to be the ground.
+</p>
+<img src = '/podAssets/energy/conservation_of_energy_quantitative/vertical_dropped.jpg' height = '300px' width = 'auto'/>
+<ol>
+    <li> (REPEAT!)
+        Write a symbolic formula for the <strong>Total Energy</strong>
+        of the object-earth system in terms of the variables stated at several different points:
+        <ol type = 'A'>
+            <li>
+                Immediately after the mass is dropped,
+                when its height is \( y_0 \) and it has no speed.
+            </li>
+            <li>
+                When the mass is halfway down its fall.
+                Its height is half the original height and its speed is
+                defined as
+                \( v_{\text{half}} \).
+            </li>
+            <li>
+                Immediately before the mass strikes the ground.
+                At this point, the height is 0 and its speed is \( v_{\text{max}} \).
+            </li>
+        </ol>
+    </li>
+    <li> (REPEAT!)
+        All of the values for total energy of the object-earth system determined above are equal
+        because no work is done on the system.
+        When inventing a new formula, it is absolutely crucial that you <emph>explicitly</emph> cite
+        the laws of science that make this formula valid.
+        To this end, please write a new equation that sets
+        all the values above equal and copy the statement "Because no work is done on the object-earth system"
+        next to your formula.
+    </li>
+    <li> (REPEAT!)
+        Use the equality determined above to identify new formulas for key quantities in this situation:
+        <ol type = 'a'>
+            <li>
+                Derive a formula for \( v_{\text{max}} \) in terms of \( y_0 \) and \( g \), the free-fall acceleration on the planet.
+                Prove that your formula is dimensionally correct.
+            </li>
+            <li>
+                Derive a formula for \( v_{\text{half}} \) in terms of \( y_0 \) and \( g \).
+                Prove that your formula is dimensionally correct.
+            </li>
+            <li>
+                Derive a relationship between \( v_{\text{max}} \) and \( v_{\text{half}} \).
+                Is the relationship you derived intuitive?
+            </li>
+        </ol>
+    </li>
+    <li>
+        Now, consider some random, undetermined point R in the path of the ball's fall.
+        At point r, the height of the ball is given by \( y \) and the speed by \( v \).
+        In problems above, subscripts were used to indicate specific values of \( y \) and \( v \),
+        but here no subscripts are used to indicate that \( y \) and \( v \) are variables.
+        Write an expression for the total energy of the object-earth system at point R.
+    </li>
+    <img src = '/podAssets/energy/conservation_of_energy_quantitative/vertical_dropped_r.jpg' height = '300px' width = 'auto'/>
+    <li>
+        Using the expression above, derive a formula for \( v \) in terms of \( y \), \( y_0 \), and \( g \).
+        Write your equation as $$ v(y) = ... $$
+        This notation indicates that you are solving for the speed \( v \) as a function of the vertical position \( y \)
+        and that \( y_0 \) and \( g \) are constant values within this function.
+    </li>
+    <li>
+        Prove that the function you determined for \( v(y) \) is dimensionally correct.
+    </li>
+    <li>
+        To test your function, plug in key values of \( y \) and see if you get the values you should.
+        <ul>
+            <li>
+                Find \( v \left( y = y_0 \right) \). Your function should return a value of 0.
+            </li>
+            <li>
+                Find \( v \left( y = y_0 / 2 \right) \). Your function should return the value of \( v_{\text{half}} \) determiend above.
+            </li>
+            <li>
+                Find \( v \left( y = 0 \right) \). Your function should return the value of \( v_{\text{max}} \) determined above.
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<!--
+add this question:
+someone drops a ball:
+when it is halfway down,
+is it half of its maximum speed, more than half of its maximum speed, or less than half of its maximum speed
+-->
+
+<div class = 'pageBreak'></div>
+
+<h3>
+    Problem 2: Object Thrown Directly Upward
+</h3>
+<p>
+    A person throws some ball of mass \( m \) vertically upward at a speed \( v_i \).
+    When he throws it, the ball is at a vertical position \( y_i \).
+    Ignore air resistance and assume that no work is done on the ball-earth system.
+    Please consider height = 0 to be the ground.
+</p>
+<img src = '/podAssets/energy/conservation_of_energy_quantitative/vertical_thrown_up.jpg' height = '300px' width = 'auto'/>
+<ol>
+    <li> (REPEAT!)
+        Write an expression for the total energy of the ball-earth system at
+        several different points in terms of the variables stated.
+        Note that the kinetic energy formula includes speed, not velocity,
+        because it does not depend upon the direction the ball is moving.
+        Thus, an ball moving up and an object moving down at the same speed have the same kinetic energy.
+        <ol type = 'A'>
+            <li>
+                When the ball is first let go.
+            </li>
+            <li>
+                When the ball is at its highest point.
+                At this point, it is momentarily stopped (speed = 0)
+                and its height is given by \( y_{\text{max}} \).
+            </li>
+            <li>
+                When the ball falls back past the point it was let go.
+                Frictionless projectile motion is always symetrical,
+                so at this point the speed is the same as the initial speed
+                and the height is the same as the initial height.
+                The only difference is that the object is now moving downward, not upward.
+            </li>
+            <li>
+                Immediately before the ball strikes the ground.
+                At this point, its vertical position is 0 and its speed is given by \( v_{\text{max}} \).
+            </li>
+        </ol>
+    </li>
+    <li> (REPEAT!)
+        Connect these expressions to create an equation
+        based on the conservation of energy.
+        State explicitly why this equation is true.
+        Remove any redundant peices of your equation.
+    </li>
+    <li> (REPEAT!)
+        Use the equation above to derive new formulas for key quantities:
+        <ol type = 'a'>
+            <li>
+                Determine a formula for \( y_{\text{max}} \) in terms of \( y_i \), \( v_i \),
+                and \( g \).
+                Prove your formula is dimensionally correct.
+            </li>
+            <li>
+                Determine a formula for \( v_{\text{max}} \) in terms of \( y_i \), \( v_i \), and \( g \).
+                Prove your formula is dimensionally correct.
+            </li>
+        </ol>
+    <li>
+        Now consider some random point R in the ball's flight.
+        At point R, the speed is given by \( v \) and the vertical position by \( y \).
+        Note that because these values do not have subscripts, they represent variable values, not specific values.
+        Write an expression for the total energy of the ball-earth system at point R
+    </li>
+    <img src = '/podAssets/energy/conservation_of_energy_quantitative/vertical_thrown_up_r.jpg' height = '300px' width = 'auto'/>
+    <li>
+        Use the expression above to derive a function \( v(y) \) for the speed in terms of vertical position.
+        Your function should include constant values \( y_i \), \( v_i \), and \( g \).
+        Prove your function is dimensionally correct.
+    </li>
+    <li>
+        Test your function on key known values:
+        <ul>
+            <li>
+                \( v \left( y = y_i \right) \) should return \( v =  v_i \).
+            </li>
+            <li>
+                \( v \left( y = y_{\text{max}} \right) \), where \( y_{\text{max}} \) was determined above,
+                should return \( v = 0 \).
+            </li>
+            <li>
+                \( v \left( y = 0 \right) \) should return \( v = v_{\text{max}} \),
+                where \( v_{\text{max}} \) was determined above.
+            </li>
+        </ul>
+    </li>
+</ol>
+
+
+<h3>
+    Answers
+</h3>
+
+<h5>
+    Problem 1: Falling Object
+</h5>
+<ol>
+    <li>
+        <ol type = 'A'>
+            <li>
+                \( \text{Energy} = m g y_0 \)
+            </li>
+            <li>
+                \( \text{Energy} = \frac{1}{2}m g y_0 + \frac{1}{2} m v_{\text{half}}^2 \)
+            </li>
+            <li>
+                \( \text{Energy} = \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+        </ol>
+    </li>
+    <li>
+        \( mg y_0 = \frac{1}{2}m g y_0 + \frac{1}{2} m v_{\text{half}}^2 = \frac{1}{2} m v_{\text{max}}^2 \)
+        <br>
+        This equation is true because no work is done on the object-earth system,
+        and so the total energy of the system is equal at all points.
+    </li>
+    <li>
+        <ol type = 'a'>
+            <li>
+                \( v_{\text{max}} = \sqrt{2 g y_0} \)
+            </li>
+            <li>
+                \( v_{\text{half}} = \sqrt{g y_0} \)
+            </li>
+            <li>
+                \( v_{\text{half}} = \frac{v_{\text{max}}}{\sqrt{2}} \) <br>
+                I personally do not find this relationship intuitive,
+                because the speed halfway down is greater than half the total speed.
+                But you can decide for yourself!
+            </li>
+        </ol>
+    </li>
+    <li>
+        \( \text{Energy} = \frac{1}{2} m v^2 + m g y \)
+    </li>
+    <li>
+        \( m g y_0 = \frac{1}{2} m v^2 + m g y  \)
+        <br>
+        \( v(y) = \sqrt{2 g \left( y_0 - y \right) } \)
+    </li>
+</ol>
+
+<h5>
+    Problem 2: Object Thrown Directly Upward
+</h5>
+
+<ol>
+    <li>
+        <ol type = 'A'>
+            <li>
+                \( \text{Energy} = \frac{1}{2} m v_i^2 + m g y_i \)
+            </li>
+            <li>
+                \( \text{Energy} =  m g y_{\text{max}} \)
+            </li>
+            <li>
+                \( \text{Energy} =  \frac{1}{2} m v_i^2 + m g y_i \)
+            </li>
+            <li>
+                \( \text{Energy} = \frac{1}{2} m v_{\text{max}}^2 \)
+            </li>
+        </ol>
+    </li>
+    <li>
+        \( \frac{1}{2} m v_i^2 + m g y_i =  m g y_{\text{max}} = \frac{1}{2} m v_{\text{max}}^2 \)
+        <br>
+        This equation is true because no work is done on the ball-earth system,
+        and thus the total energy of the system remains constant according to
+        the Law of Conservation of Energy.
+    </li>
+    <li>
+        <ol type = 'a'>
+            <li>
+                \( y_{\text{max}} = \frac{v_i^2}{2g} + y_i \)
+            </li>
+            <li>
+                \( v_{\text{max}} = \sqrt{v_i^2 + 2 g y_i} \)
+            </li>
+        </ol>
+    </li>
+    <li>
+        \( \text{Energy} = m g y + \frac{1}{2} m v^2 \)
+    </li>
+    <li>
+        \( m g y + \frac{1}{2} m v^2 = \frac{1}{2} m v_i^2 + m g y_i \)
+        <br>
+        \( v(y) = \sqrt{v_i^2 + 2g\left(y_i - y) \right)} \)
+    </li>
+</ol>
+

@@ -1,0 +1,299 @@
+<h3>
+    Algebraic Physics Problems
+</h3>
+
+<p>
+    Oftentimes in physics class, we solve to find an answer that is <i>numerical</i>.
+    We want a number giving a particular value, like the voltage or power of a circuit.
+    Other times, however, we want to find a new formula for a situation.
+    Finding a new formula lets us analyze a situation a whole different way.
+    We call this a <i>symbolic problem</i> or a <i>derivation</i>.
+    In this section, we will practice finding new formulas for electrical circuit values.
+</p>
+
+<h5>
+    "In terms of"
+</h5>
+
+<p>
+    We use the phrase "in terms of" often in symbolic problems.
+    When we say we want to find "\( A \) in terms of \( B \) and \( C \),"
+    that means we want to find an equation that begins with \( A = \),
+    and on the other side of the equations sign has some expression made of \( B \) and \( C \).
+</p>
+
+<p>
+    "\( A \) in terms of \( B \) and \( C \) means we find
+    $$
+    A = \{ \textrm{Expression with } B \textrm{ and } C \}
+    $$
+</p>
+
+<p>
+    "\( J \) in terms of \( K \), \( L \), and \( M \)" means we find
+    $$
+    J = \{ \textrm{Expression with } K \textrm{, } L \textrm{, and } M \}
+    $$
+</p>
+
+<iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/57853323/?s=s8il56&amp;ref=embed" allowfullscreen></iframe>
+
+<h5>
+    Solving Ohm's Law
+</h5>
+
+<p class = 'equation'>
+    $$ V = IR $$
+</p>
+
+<p>
+    In each of these problems, you need to solve Ohm's Law for one of the pieces.
+    Start with the formula Ohm's Law: \( V = IR \), and manipulate to find a new formula.
+</p>
+
+
+<ol>
+    <li>
+        Solve for <strong>current</strong> in terms of <i>voltage</i> and <i>resistance</i>.
+    </li>
+    <li>
+        Solve for <strong>resistance</strong> in terms of <i>voltage</i> and <i>current</i>.
+    </li>
+    <li>
+        Using the phrase "in terms of," how would you describe the formula Ohm's Law: \( V = IR \)?
+    </li>
+</ol>
+
+<h5>
+    Solving the Power Formula
+</h5>
+
+<p class = 'equation'>
+    $$ P = IV $$
+</p>
+
+<p>
+    In each of these problems, you need to solve the Power Formula for one of its peices.
+    Start with the power formula: \( P = IV \), and manipulate to find a new formula.
+</p>
+
+<ol start = '4'>
+    <li>
+        Solve for <strong>current</strong> in terms of <i>voltage</i> and <i>power</i>.
+    </li>
+    <li>
+        Solve for <strong>voltage</strong> in terms of <i>current</i> and <i>power</i>.
+    </li>
+    <li>
+        Using the phrase "in terms of," how would you describe the power formula \( P = IV \)?
+    </li>
+
+</ol>
+
+<h4>
+    Finding New Formulas
+</h4>
+
+<p>
+    In each of these problems, you will need to combine <i>both</i> of the formulas \( P = IV \) and \( V = IR \).
+    Specifically, you will need to substitute one formula into another formula.
+</p>
+
+<ol start = '7'>
+    <li>
+        Solve for <strong>power</strong> in terms of <i>current</i> and <i>resistance</i>.
+    </li>
+    <li>
+        Solve for <strong>power</strong> in terms of <i>voltage</i> and <i>resistance</i>.
+    </li>
+    <li>
+        Solve for <strong>voltage</strong> in terms of <i>power</i> and <i>resistance</i>.
+    </li>
+    <li>
+        Solve for <strong>current</strong> in terms of <i>power</i> and <i>resistance</i>.
+    </li>
+    <li>
+        Solve for <strong>resistance</strong> in terms of <i>power</i> and <i>current</i>.
+    </li>
+    <li>
+        Solve for <strong>resistance</strong> in terms of <i>power</i> and <i>voltage</i>.
+    </li>
+</ol>
+
+<div class = 'pageBreak'></div>
+<h4>
+    Answers:
+</h4>
+
+<ol>
+    <li>
+        \( I = \frac{V}{R} \)
+    </li>
+    <li>
+        \( R = \frac{V}{I} \)
+    </li>
+    <li>
+        Voltage in terms of current and resistance.
+    </li>
+    <li>
+        \( I = \frac{P}{V} \)
+    </li>
+    <li>
+        \( V = \frac{P}{I} \)
+    </li>
+    <li>
+        Power in terms of current and voltage.
+    </li>
+    <li>
+        \( P = I^2 R \)
+    </li>
+    <li>
+        \( P = \frac{V^2}{R} \)
+    </li>
+    <li>
+        \( V= \sqrt{PR} \)
+    </li>
+    <li>
+        \( I = \sqrt{\frac{P}{R}} \)
+    </li>
+    <li>
+        \( R = \frac{P}{I^2} \)
+    </li>
+    <li>
+        \( R = \frac{V^2}{P} \)
+    </li>
+</ol>
+
+<div class = 'randomProblemDiv'></div>
+
+
+<h3>
+    New Circuit Problems
+</h3>
+
+<p class="directions">
+    Use one of the new formulas you have derived to solve for each element of the circuit below.
+</p>
+<ol class = 'questionList'>
+    <li class = 'question' data-answer_id = 'problem9Answer'>
+        <div id = 'problem9Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+</ol>
+
+<script>
+    let problem9Circuit = makeParallelCircuit('196 W', ['14 W    56 Ohms',undefined,'4 A']);
+
+    $("#problem9Circuit").append(problem9Circuit.drawCanvas(400));
+    let answer9 = filledElectricCircuitTable([28,28,28,28],[2,1,4,7],[14,18,7,4],[56,28,112,196]);
+    answerObjects['problem9Answer'] = answer9.draw(200);
+
+</script>
+
+
+<script>
+
+  function generateIntegerCircuit(series) {
+    if (series === undefined) {
+      if (Math.rand() > 0.5) {
+        series = true;
+      } else {
+        series = false;
+      }
+    }
+    let numResistors = randInt(2,4);
+    let resistorArray = [], i;
+    for (i = 0; i < numResistors; i++) {
+      resistorArray.push({});
+    }
+
+    let problemObject;
+    let totalResistance, totalCurrent, totalVoltage, totalPower;
+    if (series) {
+      totalResistance = 0;
+      resistorArray.forEach((resistor) => {
+        resistor.resistance = randInt(2,6);
+        totalResistance += resistor.resistance;
+      });
+      totalCurrent = randInt(1,4);
+      totalVoltage = totalResistance * totalCurrent;
+      totalPower = toatlCurrent * totalVoltage;
+
+      resistorArray.forEach((resistor) => {
+        resistor.current = totalCurrent;
+        resistor.voltage = resistor.current * resistor.resistance;
+        resistor.power = resistor.current * resistor.voltage;
+      });
+
+      problemObject = {
+        series: series,
+        totalVoltage: totalVoltage,
+        totalCurrent: totalCurrent,
+        totalResistance: totalResistance;
+        totalPower: totalPower;
+        resistorArray: resistorArray
+      }
+    } else { // parallel
+      // more difficutl to randomly generate an integerproblem
+    }
+
+    return problemObject;
+  }
+
+  generateNonIntegerCircuit() {
+
+  }
+
+  function makeCircuitTable(numResistors, powerBoolean) {
+    let master = $("<div class = 'container'></div>");
+
+    if (numResistors === 2) {
+      // 4 columns: 3, 3, 3, 3
+      let row1 = $("<div class = 'row'></div>");
+
+      
+    } else if (numResistors === 3) {
+      // 5 columns: 3 2 2 2 3
+    } else if (numResistors === 4) {
+      // 6 columns: 2 2 2 2 2 2
+    }
+
+  }
+
+  displayCircuitProblem(problemObject) {
+    let circuitDiagram;
+    let simpleResistanceArray = [];
+    problemObject.resistorArray.forEach((resistor) => {
+      simpleResistanceArray.push(resistor.resistance);
+    });
+    if (problemObject.series) {
+      circuitDiagram = makeSimpleSeriesCircuit();
+    } else { // parallel
+      circuitDigram = makeSimpleParallelCircuit();
+    }
+
+    let master = $("<div class = 'container'></div>");
+
+    let row1 = $("<div class = 'row'></div>");
+    let col1 = $("<div class = 'col-12'></div>");
+    $(col1).append(circuitDigram.drawCanvas(400));
+    $(row1).append(col1);
+    $(master).append(row1);
+
+    let row2 = $("<div class = 'row'></div>");
+    let col21 = $("<div class = 'col-2'></div>");
+    let col2last $("<div class = 'col-3'>TOTAL</div>");
+    if (simpleResistanceArray.length === 2) {
+      let col22 =
+    } else if (simpleResistanceArray.length === 3) {
+
+    } else if (simpleResistanceArray.length === 4) {
+
+    }
+
+
+    return master
+  }
+
+</script>

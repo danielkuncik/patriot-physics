@@ -1,0 +1,232 @@
+<p class = 'formula'>
+    $$
+    EPE = \frac{1}{2} k \left( x - x_0 \right)^2
+    $$
+</p>
+
+<table>
+    <tr>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>SI Unit</th>
+    </tr>
+    <tr>
+        <td>\( EPE \)</td>
+        <td>Elastic Potential Energy</td>
+        <td>Joules (J)</td>
+    </tr>
+    <tr>
+        <td>\( k \)</td>
+        <td>Spring Constant</td>
+        <td>Newtons/meter (N/m)</td>
+    </tr>
+    <tr>
+        <td>\( x \)</td>
+        <td>Length of Spring</td>
+        <td>meters (m)</td>
+    </tr>
+    <tr>
+        <td>\( x_0 \)</td>
+        <td>Equilibrium Length of Spring</td>
+        <td>meters (m)</td>
+    </tr>
+</table>
+
+<p>
+    Every spring is defined by two crucial quantities,
+    its <strong>spring constant</strong>
+    and its <strong>equilibrium length</strong>.
+    The spring constant is a measure of how tight a spring is,
+    a higher spring constant indicating a very tough spring.
+    The equilibrium length is the length at which a spring
+    exerts no force and has not elastic potential energy.
+    If the spring is <emph>compressed</emph> to less than its equilibrium length
+    or <emph>stretched</emph> to greater than its equilibrium length,
+    it will exert a force and begin to possess elastic potential energy.
+</p>
+
+<div class = 'pageBreak'></div>
+<h5>
+    Problem 1:
+</h5>
+<p>
+    Consider a horizontal spring with a spring constant of 50 N/m and
+    an equilibrium length of 0.8 meters.
+    It is attached to a mass of 0.5 kg.
+    The mass of the spring is negligible (otherwise we would need to consider its kinetic energy),
+    and the surface is frictionless.
+</p>
+<div id = 'springUnstretched'></div>
+
+<p>
+    At this initial point, the mass-spring system has neither elastic potential nor kinetic energy.
+    However, somebody then arrives and stretches the spring until it has a length of 1.4 meters
+    and lets it go!
+    The spring begins oscillating back and forth. Analyze the energy of the spring-mass system
+    at several different points.
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springA' style = 'text-align: center'>A<br></div>
+        <div class = 'md-col-6' id = 'springB' style = 'text-align: center'>B<br></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springC' style = 'text-align: center'>C<br></div>
+        <div class = 'md-col-6' id = 'springD' style = 'text-align: center'>D<br></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springE' style = 'text-align: center'>E<br></div>
+        <div class = 'md-col-6' id = 'springF' style = 'text-align: center'>F<br></div>
+    </div>
+</div>
+
+<p>
+    Assuming that no work is done on the mass-spring system as it oscillates, fill out the table below to
+    analyze the mass-earth system.
+    In the table below, \( Δx \) refers to the difference between the length of the spring
+    and its equilibrium length \( \left( x - x_0 \right) \).
+    Note that when no velocity arrow is pictured, the mass is momentarily stationary.
+</p>
+
+<div id = 'springTable'></div>
+
+<div class="pageBreak"></div>
+<h5>
+    Problem 2:
+</h5>
+<p>
+    Consider a horizontal spring with a spring constant of 68 N/m and
+    an equilibrium length of 0.34 meters.
+    It is attached to a mass of 0.28 kg.
+    The mass of the spring is negligible (otherwise we would need to consider its kinetic energy),
+    and the surface is frictionless.
+</p>
+
+<div id = 'springUnstretched_2'></div>
+
+<p>
+    At this initial point, the mass-spring system has neither elastic potential nor kinetic energy.
+    However, somebody then arrives and hits the block so it begins to move with a speed of 2.493 m/s.
+    The spring begins oscillating back and forth. Analyze the energy of the spring-mass system
+    at several different points.
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springA_2' style = 'text-align: center'>A<br>
+            v  = 2.493 m/s
+        </div>
+        <div class = 'md-col-6' id = 'springB_2' style = 'text-align: center'>B<br></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springC_2' style = 'text-align: center'>C<br></div>
+        <div class = 'md-col-6' id = 'springD_2' style = 'text-align: center'>D<br></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'md-col-6' id = 'springE_2' style = 'text-align: center'>E<br>
+            v = 1.207 m/s
+        </div>
+        <div class = 'md-col-6' id = 'springF_2' style = 'text-align: center'>F<br></div>
+    </div>
+</div>
+
+<p>
+    Assuming that no work is done on the mass-spring system as it oscillates, fill out the table below to
+    analyze the mass-earth system.
+    In the table below, \( Δx \) refers to the difference between the length of the spring
+    and its equilibrium length \( \left( x - x_0 \right) \).
+    Note that when no velocity arrow is pictured, the mass is momentarily stationary.
+</p>
+
+<div id = 'springTable_2'></div>
+
+
+
+<div class = 'pageBreak'></div>
+<h4>
+    Answers
+</h4>
+<h5>
+    Problem 1:
+</h5>
+<div id = 'springTableAnswers'></div>
+<h5>
+    Problem 2:
+</h5>
+<div id = 'springTableAnswers_2'></div>
+
+<script>
+    let springUnstretched = new HorizontalSpringProblem(0.8, true);
+    $("#springUnstretched").append(springUnstretched.drawCanvas(0.8, '0.8 m'));
+
+    let springUnstretched_2 = new HorizontalSpringProblem(0.34, true);
+    $("#springUnstretched_2").append(springUnstretched_2.drawCanvas(0.34, '0.34 m'));
+
+
+    let springA = new HorizontalSpringProblem(0.8, true);
+    let springB = new HorizontalSpringProblem(0.8, true);
+    let springC = new HorizontalSpringProblem(0.8, true);
+    let springD = new HorizontalSpringProblem(0.8, true);
+    let springE = new HorizontalSpringProblem(0.8, true);
+    let springF = new HorizontalSpringProblem(0.8, true);
+
+
+    let springA_2 = new HorizontalSpringProblem(0.34, true);
+    let springB_2 = new HorizontalSpringProblem(0.34, true);
+    let springC_2 = new HorizontalSpringProblem(0.34, true);
+    let springD_2 = new HorizontalSpringProblem(0.34, true);
+    let springE_2 = new HorizontalSpringProblem(0.34, true);
+    let springF_2 = new HorizontalSpringProblem(0.34, true);
+
+
+    $("#springA").append(springA.drawCanvas(1.4, '1.4 m'));
+    $("#springB").append(springB.drawCanvas(0.8, '0.8 m', 'left', 'v', 1));
+    $("#springC").append(springC.drawCanvas(0.2, '0.2 m'));
+    $("#springD").append(springD.drawCanvas(0.8, '0.8 m', 'right', 'v', 1));
+    $("#springE").append(springE.drawCanvas(1.4, '1.4 m'));
+    $("#springF").append(springF.drawCanvas(1.0, '1.0 m', 'left', 'v', 0.94));
+
+
+    $("#springA_2").append(springA_2.drawCanvas(0.34, '0.34 m','right','v',2.493));
+    // v  = 2.493 m/s
+    $("#springB_2").append(springB_2.drawCanvas(0.16, '??'));
+    $("#springC_2").append(springC_2.drawCanvas(0.42, '0.42 m','left','v',1));
+    $("#springD_2").append(springD_2.drawCanvas(0.5, '??'));
+    $("#springE_2").append(springE_2.drawCanvas(0.20, '??','right','v',1.207));
+    // v = 1.207 m/s
+    $("#springF_2").append(springF_2.drawCanvas(.36, '0.36 m', 'left', 'v', 1));
+
+
+    let springTable = new EnergyTable(6, ['length','Δx (m)','speed','ke','epe','total_e']);
+    let springTableAnswers = new EnergyTable(6, ['length','Δx','speed','ke','epe','total_e']);
+    springTableAnswers.addInfoToRow('A',[1.4,0.6,0,0,9,9]);
+    springTableAnswers.addInfoToRow('B',[0.8,0,6,9,0,9]);
+    springTableAnswers.addInfoToRow('C',[0.2,-0.6,0,0,9,9]);
+    springTableAnswers.addInfoToRow('D',[0.8,0,6,9,0,9]);
+    springTableAnswers.addInfoToRow('E',[1.4,0.6,0,0,9,9]);
+    springTableAnswers.addInfoToRow('F',[1.0,0.2,5.66,8,1,9]);
+    $("#springTable").append(springTable.draw(600,300));
+    $("#springTableAnswers").append(springTableAnswers.draw(800,400));
+
+    let springTable_2 = new EnergyTable(6, ['length','Δx (m)','speed','ke','epe','total_e']);
+    let springTableAnswers_2 = new EnergyTable(6, ['length','Δx','speed','ke','epe','total_e']);
+    springTableAnswers_2.addInfoToRow('A',[0.34,0,2.493,0.8701,0,0.8701]);
+    springTableAnswers_2.addInfoToRow('B',[0.16,-0.16,0,'xx','xx',0.8701]);
+    springTableAnswers_2.addInfoToRow('C',[0.42,0.08,'xx','xx','xx',0.8701]);
+    springTableAnswers_2.addInfoToRow('D',[0.5,0.16,0,0,0.8701,0.8701]);
+    springTableAnswers_2.addInfoToRow('E',[0.20,-0.14,1.207,'xx','xx',0.8701]);
+    springTableAnswers_2.addInfoToRow('F',[0.36,0.02,'xx','xx','xx',0.8701]);
+    $("#springTable_2").append(springTable_2.draw(600,300));
+    $("#springTableAnswers_2").append(springTableAnswers_2.draw(800,400));
+
+</script>
+
+
+<h4>
+    Video Resources:
+</h4>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7ZnpsCV2GSY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p></p>

@@ -1,0 +1,294 @@
+
+<div class = 'container'>
+    <div class="row">
+        <div class="col-md-6" id = 'exampleTriangle'>
+        </div>
+        <div class="col-md-6">
+            <p>
+                We typically label angles by the Greek letter \( \theta \),
+                pronounced "theta."
+                Once we have singled out a particular angle,
+                each side has a new name:
+            </p>
+            <ul>
+                <li>
+                    A is the <strong>opposite</strong> of \( \theta \).
+                </li>
+                <li>
+                    B is the <strong>adjacent</strong> of \( \theta \).
+                </li>
+                <li>
+                    C is the <strong>hypotenuse</strong>.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class = 'col-md-6'>
+            <ul>
+                <li class = 'm-1'>
+                    \( \sin \theta = \frac{\text{opposite}}{\text{hypotenuse}} \)
+                </li>
+                <li class = 'm-1'>
+                    \( \cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}} \)
+                </li>
+                <li class = 'm-1'>
+                    \( \tan \theta = \frac{\text{opposite}}{\text{adjacent}} \)
+                </li>
+            </ul>
+        </div>
+        <div class = 'col-md-6'>
+            <p>
+                Whenever we know what an angle is, we can use the three <em>trigonometric functions</em>:
+                the sine, the cosine, and the tangent.
+                To remember these three formulas, we use the silly word "SOHCAHTOA,"
+                which stands for:
+                "Sine is opposite over hypotenuse; cosine is adjacent over hypotenuse; tangent is opposite over adjacent."
+            </p>
+        </div>
+    </div>
+</div>
+
+<!--
+a video here
+-->
+
+
+<script>
+    let exampleTrianglePad = new GeometryPad();
+    exampleTrianglePad.addRightTriangleTwoLegs(3,4);
+    exampleTrianglePad.labelSideOfTriangle('A','A');
+    exampleTrianglePad.labelSideOfTriangle('B','B');
+    exampleTrianglePad.labelSideOfTriangle('C','H');
+    exampleTrianglePad.labelUnknownAngleOfTriangle('A');
+    $("#exampleTriangle").append(exampleTrianglePad.drawCanvas(300));
+</script>
+
+<h4>
+    Problems
+</h4>
+<p class="directions">
+    In each case, use one of the <strong>trigonometric functions</strong> to solve for the unknown side.
+    For full credit, you must write the formula before using it.
+</p>
+
+<ol class="questionList">
+    <div class = 'container'>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle1'>
+                <!-- <li class="question" id = 'triangle1'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle2'>
+                <!-- <li class="question" data-answer = '36' id = 'triangle2'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle3'>
+                <!-- <li class="question" data-answer = '13' id = 'triangle3'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle4'>
+                <!-- <li class="question" data-answer = '12' id = 'triangle4'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle5'>
+                <!-- <li class="question" data-answer = '24' id = 'triangle5'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle6'>
+                <!-- <li class="question" data-answer = '4' id = 'triangle6'><br></li> -->
+            </div>
+
+        </div>
+    </div>
+</ol>
+
+<h4>
+    Variable in Denominator
+</h4>
+
+<p>
+    In some trigonometry problems, the unknown variable will be located in the denominator!
+    In this case, the most straightforward method is to first multiply both sides of the equation by the unknown variable,
+    then solve for it:
+</p>
+<h5>
+    Example:
+</h5>
+<p>
+    $$ \require{enclose}
+        48 = \frac{76}{X} \\
+        48  \cdot X = \frac{76}{\enclose{horizontalstrike}{X}} \cdot \enclose{horizontalstrike}{X} \\
+        48 \cdot X = 76 \\
+        X = \frac{76}{48} = 1.583
+    $$
+</p>
+
+<p class="directions">
+    Solve for \( x \) in each of the problems below.
+    Please give all answers to 4 significant figures of accuracy.
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = "\( x = 1.327 \)">
+        \(
+            49 = \frac{65}{x}
+        \)
+    </li>
+    <li class="question" data-answer = "\( x = 1.242 \)">
+        \(
+            66 = \frac{82}{x}
+        \)
+    </li>
+    <li class="question" data-answer = "\( x = 0.5952 \)">
+        \(
+            42 = \frac{25}{x}
+        \)
+    </li>
+</ol>
+
+<h4>
+    Trigonometry Problems with Variable in Denominator
+</h4>
+
+<ol class="questionList">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle7'>
+                <!-- <li class="question" id = 'triangle7' data-answer = '8'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle8'>
+                <!-- <li class="question" id = 'triangle8' data-answer = '29'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle9'>
+                <!-- <li class="question" id = 'triangle9' data-answer = '73'><br></li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle10'>
+                <!-- <li class="question" id = 'triangle10' data-answer = '25'><br></li> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5" id = 'triangle11'>
+                <!-- <li class="question" id = 'triangle11'><br>
+                    Coming SOON!
+                </li> -->
+            </div>
+            <div class="col-md-6 mb-5" id = 'triangle12'>
+                <!-- <li class="question" id = 'triangle12'><br>
+                    Coming SOON!
+                </li> -->
+            </div>
+        </div>
+    </div>
+</ol>
+
+<h4>
+    Saying the Names Right!
+</h4>
+
+<ul>
+    <li>
+        Whenever we use the sine function, we write the abbreviation \( \sin \),
+        but when reading this out loud you always say "sine!"
+    </li>
+    <li>
+        Whenever we use the cosine function, we write the abbreviation \( \cos \),
+        but when reading this out loud you always say "cosine!"
+    </li>
+    <li>
+        Whenever we use the tangent function, we write the abbreviation \( \tan \),
+        but when reading this out loud you always say "tangent!"
+    </li>
+</ul>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'The sine of 90 degrees is 1.'>
+        How do you read out loud the following equation:
+        \( \sin 90^{\circ} = 1 \).
+    </li>
+    <li class="question" data-answer = 'The cosine of 90 degrees is 0.'>
+        How do you read out loud the following equation:
+        \( \cos 90^{\circ} = 0 \).
+    </li>
+    <li class="question" data-answer = 'The tangent of 45 degrees is 1.'>
+        How do you read out loud the following equation:
+        \( \tan 45^{\circ} = 1 \).
+    </li>
+</ol>
+
+<h4>
+    Extra Practice
+</h4>
+<!-- replace with random problems!-->
+<p>
+    (Not required to receive full credit for this assignment.)
+</p>
+
+<ol class="questionList">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-2" id = 'triangle13'>
+<!--                <li class="question" id = 'triangle13'><br></li>-->
+            </div>
+            <div class="col-md-6 mb-2" id = 'triangle14'>
+<!--                <li class="question" id = 'triangle14'><br></li>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2" id = 'triangle15'>
+<!--                <li class="question" id = 'triangle15'><br></li>-->
+            </div>
+            <div class="col-md-6 mb-2" id = 'triangle16'>
+<!--                <li class="question" id = 'triangle16'><br></li>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2" id = 'triangle17'>
+<!--                <li class="question" id = 'triangle17'><br></li>-->
+            </div>
+            <div class="col-md-6 mb-2" id = 'triangle18'>
+<!--                <li class="question" id = 'triangle18'><br></li>-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2" id = 'triangle19'>
+<!--                <li class="question" id = 'triangle19'><br></li>-->
+            </div>
+            <div class="col-md-6 mb-2" id = 'triangle20'>
+<!--                <li class="question" id = 'triangle20'><br></li>-->
+            </div>
+        </div>
+    </div>
+</ol>
+
+
+<ol class="answerList"></ol>
+
+<script>
+    cosineProblem(13,67.38).displayProblem('triangle1');
+    sineProblem(85,25.06).displayProblem('triangle2');
+    cosineProblem(85,81.20).displayProblem('triangle3');
+    sineProblem(37,18.92).displayProblem('triangle4');
+    cosineProblem(25,16.26).displayProblem('triangle5');
+    tangentProblem(3,53.13, true).displayProblem('triangle6');
+
+    cotangentProblem(3,11.31).displayProblem('triangle7');
+    cosecantProblem(20,43.60).displayProblem('triangle8');
+    secantProblem(48,48.89, true).displayProblem('triangle9');
+    secantProblem(7,73.74).displayProblem('triangle10');
+
+// good
+    cotangentProblem(16,47).displayProblem('triangle11');
+    cosecantProblem(22,67).displayProblem('triangle12');
+
+    sineProblem(108,33.40).displayProblem('triangle13');
+    sineProblem(149,20.02).displayProblem('triangle14');
+    cosineProblem(157,32.77).displayProblem('triangle15');
+    cosineProblem(173,17.49).displayProblem('triangle16');
+    tangentProblem(133,49.55).displayProblem('triangle17');
+    tangentProblem(84,64.46).displayProblem('triangle18');
+    cosineProblem(169,52.87).displayProblem('triangle19');
+    sineProblem(149,43.2).displayProblem('triangle20');
+
+</script>

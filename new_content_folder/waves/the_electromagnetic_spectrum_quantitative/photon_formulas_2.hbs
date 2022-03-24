@@ -1,0 +1,333 @@
+
+<p class="introduction">
+    In a <a href = '/pod/4c74b0'>previous pod</a>, you learned the formulas that relate the frequency,
+    energy, and wavelength of a photon of light.
+    In this pod, you will continue using those formulas.
+    Two changes make this pod more difficult.
+    Firstly, not all photons presented are visible light, so you have a much wider range of order
+    of magnitudes to consider for each variable.
+    Secondly, each individual step is not listed.
+    You need to know, on your own, when to complete the requisite conversions,
+    when to use which formula, and when to refer to each constant.
+</p>
+
+<h2>
+    Reference Information
+</h2>
+
+<h4>
+    Table of Electromagnetic Waves
+</h4>
+
+<div class = 'container'>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'><strong>Type of Wave</strong></div>
+        <div class = 'col-8 border border-dark p-1'><strong>Wavelength</strong></div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Radio Wave</div>
+        <div class = 'col-8 border border-dark p-1'>greater than 1 meter</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Microwave</div>
+        <div class = 'col-8 border border-dark p-1'>between 1 millimeter and 1 meter</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Infrared Light</div>
+        <div class = 'col-8 border border-dark p-1'>between 700 nanometers and 1 millimeter</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-1 border border-dark p1'>
+            <p class = 'sidewaysText'>Visible Light</p> <!-- still working on this!!!! --->
+        </div>
+        <div class = 'col-10 border border-dark'>
+            <div class = 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:red'>Red</div>
+                <div class = 'col-10 border border-dark p-1'>between 635 nanometers and 700 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:orange'>Orange</div>
+                <div class = 'col-10 border border-dark p-1'>between 590 nanometers and 635 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:yellow'>Yellow</div>
+                <div class = 'col-10 border border-dark p-1'>between 560 nanometers and 590 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:green'>Green</div>
+                <div class = 'col-10 border border-dark p-1'>between 520 nanometers and 560 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:blue'>Blue</div>
+                <div class = 'col-10 border border-dark p-1'>between 450 nanometers and 520 nanometers</div>
+            </div>
+            <div class= 'row'>
+                <div class = 'col-2 border border-dark p-1' style = 'color:violet'>Violet</div>
+                <div class = 'col-10 border border-dark p-1'>between 400 nanometers and 450 nanometers</div>
+            </div>
+        </div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Ultraviolet Light</div>
+        <div class = 'col-8 border border-dark p-1'>between 10 nanometers and 400 nanometers</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>X-ray</div>
+        <div class = 'col-8 border border-dark p-1'>between 1 picometer and 10 nanometers</div>
+    </div>
+    <div class= 'row'>
+        <div class = 'col-3 border border-dark p-1'>Gamma Ray</div>
+        <div class = 'col-8 border border-dark p-1'>less than 1 picometer</div>
+    </div>
+</div>
+
+<h4>
+    Formulas
+</h4>
+
+<p class="equation">
+    $$
+    c = \lambda f
+    $$
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Symbol</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Quantity</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>SI Unit</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( c \)</div>
+        <div class= 'col-4 border border-dark p-2'>Speed of Light (3e8)</div>
+        <div class= 'col-4 border border-dark p-2'>m/s</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( \lambda \)</div>
+        <div class= 'col-4 border border-dark p-2'>wavelength</div>
+        <div class= 'col-4 border border-dark p-2'>meters</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( f \)</div>
+        <div class= 'col-4 border border-dark p-2'>frequency</div>
+        <div class= 'col-4 border border-dark p-2'>Hertz (1/s)</div>
+    </div>
+</div>
+
+<p>
+    Note that frequency is also sometimes denoted by the
+    Greek letter nu: \( \nu \).
+</p>
+
+<p class="equation">
+    $$
+    E = h f
+    $$
+</p>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Symbol</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>Quantity</div>
+        <div class= 'col-4 border border-dark p-2 font-weight-bold'>SI Unit</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( E \)</div>
+        <div class= 'col-4 border border-dark p-2'>Energy of Photon</div>
+        <div class= 'col-4 border border-dark p-2'>Joules (J)</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( h \)</div>
+        <div class= 'col-4 border border-dark p-2'>Planck's Constant (6.626e-34)</div>
+        <div class= 'col-4 border border-dark p-2'>Joule-seconds</div>
+    </div>
+    <div class = 'row'>
+        <div class= 'col-4 border border-dark p-2'>\( f \)</div>
+        <div class= 'col-4 border border-dark p-2'>frequency</div>
+        <div class= 'col-4 border border-dark p-2'>Hertz (1/s)</div>
+    </div>
+</div>
+
+
+
+<h4>
+    Constants
+</h4>
+
+<ul>
+    <li>
+        \( c = 3.00 \text{E}8 \)
+        The speed of light is <emph>always</emph> 300,000,000 m/s.
+    </li>
+    <li>
+        \( h = 6.626 \text{E} -34 \text{ J} \cdot \text{s} \)
+    </li>
+</ul>
+
+<h4>
+    SI units
+</h4>
+
+<ul>
+    <li>
+        Wavelength
+        <ul>
+            <li>
+                The SI unit for wavelength is <strong>meters</strong>.
+            </li>
+            <li>
+                You must convert wavelength to meters before using any formula.
+            </li>
+            <li>
+                When solving any formula for wavelength, the you solution will be in meters.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Frequency
+        <ul>
+            <li>
+                The SI unit for wavelength is <strong>Hertz</strong>.
+            </li>
+            <li>
+                You must convert frequency to Hertz before using any formula.
+            </li>
+            <li>
+                When solving any formula for frequency, the you solution will be in Hertz.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Energy
+        <ul>
+            <li>
+                The SI unit for wavelength is <strong>Joules</strong>.
+            </li>
+            <li>
+                You must convert energy to Joules before using any formula.
+            </li>
+            <li>
+                When solving any formula for energy, the you solution will be in Joules.
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h4>
+    Conversion Factors:
+</h4>
+<ul>
+    <li>
+        1 Joule = 6.242E18 electron-volts (eV)
+    </li>
+    <li>
+        <a href = '/pod/72607f'>Link to metric prefix reference</a>
+    </li>
+</ul>
+
+
+<h2>
+    Problems
+</h2>
+
+<p class="directions">
+    Each row contains one piece of information.
+    From this one piece, determine the missing information.
+    Record each item in the unit provided.
+    Write all work, including formulas and conversion factors.
+</p>
+
+<ol class="questionList">
+    <div class = 'container'>
+        <div class = 'row'>
+            <div class = 'col-2 border border-dark'><strong>Type of Wave</strong></div>
+            <div class = 'col-1 bg-secondary border border-dark'></div>
+            <div class = 'col-2 border border-dark'><strong>Wavelength</strong></div>
+            <div class = 'col-2 border border-dark'><strong>Frequency</strong></div>
+            <div class = 'col-2 border border-dark'><strong>Photon Energy</strong></div>
+            <div class = 'col-2 border border-dark'><strong>Speed</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Orange light; 630. nm; 476 THz; 1.97 eV; 3.00E8 m/s'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-1">630.<br>nanometers</div>
+            <div class="col-2 border border-dark pt-5">teraHertz</div>
+            <div class="col-2 border border-dark pt-5">electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Microwave; 60.0 cm; 500. MHz; 2.07 μeV; 3.00E8 m/s'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-5">centimeters</div>
+            <div class="col-2 border border-dark pt-1">500.<br>megahertz</div>
+            <div class="col-2 border border-dark pt-5">micro-electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Microwave; 3.75 mm; 80.0 GHz; 331 μeV; 3.00E8 m/s'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-5">millimeters</div>
+            <div class="col-2 border border-dark pt-1">80.0<br>gigaHertz</div>
+            <div class="col-2 border border-dark pt-5">micro-electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Ultraviolet; 15.0 nm; 20.0 PHz; 82.7 eV'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-1">15.0<br>nanometers</div>
+            <div class="col-2 border border-dark pt-5">petaHertz</div>
+            <div class="col-2 border border-dark pt-5">electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'X-Ray; 6.20 pm; 4840 PHz; 200. keV; 3.00E8 m/s'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-1">picometers</div>
+            <div class="col-2 border border-dark pt-5">petaHertz</div>
+            <div class="col-2 border border-dark pt-5">200.<br>kilo-electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Violet light; 420. nm; 714 THz; 2.95 eV; 3.00E8 m/s'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-1">420. nano<br>meters</div>
+            <div class="col-2 border border-dark pt-5">teraHertz</div>
+            <div class="col-2 border border-dark pt-5">electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Infrared; 10 μm; 30.0 THz; 124 meV; 3.00E8 m/s'></li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-5">micrometers</div>
+            <div class="col-2 border border-dark pt-5">teraHertz</div>
+            <div class="col-2 border border-dark pt-1">124<br>milli-electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question">Pick any FM radio station</li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-5">meters</div>
+            <div class="col-2 border border-dark pt-1">Between 87.5 and 108.0 megaHertz</div>
+            <div class="col-2 border border-dark pt-5">nano-electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question">Pick any AM Radio station</li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-5">meters</div>
+            <div class="col-2 border border-dark pt-5">between 550 and 1720 kHz</div>
+            <div class="col-2 border border-dark pt-5">nano-electron-volts</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-4"><li class="question" data-answer = 'Highest energy gamma ray burst ever recorded; 1E-18 m; 2E26 Hz; 1 TeV; 3.00E8 m/s'>Highest energy gamma ray burst ever recorded</li></div>
+            <div class="col-1 border border-dark bg-secondary"></div>
+            <div class="col-2 border border-dark pt-5">meters</div>
+            <div class="col-2 border border-dark pt-5">Hertz</div>
+            <div class="col-2 border border-dark pt-5">1 tera-electron-volt</div>
+            <div class="col-2 border border-dark pt-5">m/s</div>
+        </div>
+    </div>
+</ol>
+
+<ol class="answerList"></ol>

@@ -1,0 +1,149 @@
+<p>
+    Typically,	when	presented	with	problems	on	electrical	circuits,	the	known	information	is
+    the	voltage	of	the	battery	and	the	resistance	of	each	resistor,	because	these	pieces	of
+    information	can	easily	be	read	of	the	side	of	the	batteries	and	resistors.	However,	 it	will
+    help	you	better	understand	the	logical	rules of	electric	circuits	if	you	can	solve	problems
+    with	different	pieces	of	information.	For	each	of	the	following	circuits	with	a	battery	and
+    three	resistors,	solve	the	problem	below:
+</p>
+
+<p>
+    [Note:	This	is	largely	a	mathematical	exercise,	so	I	selected	numbers	that	would	make	the
+    math	work	out	in	integers	of	simple	decimals.	My	hope	is	that	you	can	do	this	without	a
+    calculator.	Because	I	wanted	to	pick	numbers	that	wouldn’t	require	a	calculator,	many	of
+    the	circuits	have	very	high	voltage	and	current,	and	if	they	were	built	in	real	life	would	be
+    extremely	dangerous! This	is	one	time	you	should	be	happy	to	get	a	math	problem	that’s
+    just	a	math	problem!]
+</p>
+
+<div class="no-print">
+    <iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/57621077/?s=cm0frd&amp;ref=embed" allowfullscreen></iframe>
+</div>
+
+
+<ol class = 'questionList'>
+    <!-- Series Circuits -->
+    <li class = 'question' data-answer_id = 'problem1Answer'>
+        <div id = 'problem1Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem2Answer'>
+        <div id = 'problem2Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem3Answer'>
+        <div id = 'problem3Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem4Answer'>
+        <div id = 'problem4Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem5Answer'>
+        <div id = 'problem5Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+
+    <div class="pageBreak"></div>
+    <!-- Parallel Circuits-->
+    <li class = 'question' data-answer_id = 'problem6Answer'>
+        <div id = 'problem6Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem7Answer'>
+        <div id = 'problem7Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem8Answer'>
+        <div id = 'problem8Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem10Answer'>
+        <div id = 'problem10Circuit'></div>
+        <br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer_id = 'problem9Answer'>
+        <div id = 'problem9Circuit'></div>
+        The total resistance is 2.5 Ω.
+        <br><br><br>
+        <div class = 'ThreeResistorTable'></div>
+    </li>
+
+</ol>
+
+
+<ol class = 'answerList'></ol>
+
+<script>
+    let ThreeResisitorTable = new ElectricCircuitTable(3,4);
+
+    let problem1Circuit = makeSeriesCircuit(undefined,[6,{"V":2, "I": 2},{"V": 4}]);
+    let problem2Circuit = makeSeriesCircuit(21,[undefined,{"V": 6, "R": 2}, {"V": 6}]);
+    let problem3Circuit = makeSeriesCircuit(22, [undefined, {"V": 14, "P":28},'6 V']);
+    let problem4Circuit = makeSeriesCircuit('12 Ω',[{"P": 1},{"V":3},{"V": 1, "R": 2}]);
+    let problem5Circuit = makeSeriesCircuit(12,[{"V":6},undefined,{"V":4,"P":16}]);
+
+    let problem6Circuit = makeParallelCircuit(undefined,['6 Ohms','18 V    54 W', '6 A']);
+    let problem7Circuit = makeParallelCircuit('3 A    5 Ω',['15 W','15 Ω','15 W']);
+    let problem8Circuit = makeParallelCircuit('11 A',['0.2 Ω','5 A    4 W',undefined]);
+    let problem9Circuit = makeParallelCircuit(undefined, [undefined,'0.05 W','0.05 A    10 Ω']);
+    let problem10Circuit = makeParallelCircuit('4 A',['1 A','1 A','32 W']);
+
+    $("#problem1Circuit").append(problem1Circuit.drawCanvas(400));
+    $("#problem2Circuit").append(problem2Circuit.drawCanvas(400));
+    $("#problem3Circuit").append(problem3Circuit.drawCanvas(400));
+    $("#problem4Circuit").append(problem4Circuit.drawCanvas(400));
+    $("#problem5Circuit").append(problem5Circuit.drawCanvas(400));
+
+    $("#problem6Circuit").append(problem6Circuit.drawCanvas(400));
+    $("#problem7Circuit").append(problem7Circuit.drawCanvas(400));
+    $("#problem8Circuit").append(problem8Circuit.drawCanvas(400));
+    $("#problem9Circuit").append(problem9Circuit.drawCanvas(400));
+    $("#problem10Circuit").append(problem10Circuit.drawCanvas(400));
+
+
+    $(".ThreeResistorTable").append(ThreeResisitorTable.draw(500,250));
+
+
+    let answer1 = filledElectricCircuitTable([12,2,4,18],[2,2,2,2],[6,1,2,9],[24,4,8,36]);
+    let answer2 = filledElectricCircuitTable([9,6,6,21],[3,3,3,3],[3,2,2,7],[27,18,18,63]);
+    let answer3 = filledElectricCircuitTable([2,14,6,22],[2,2,2,2],[1,7,3,11],[4,28,12,44]);
+    let answer4 = filledElectricCircuitTable([2,3,1,6],[0.5,0.5,0.5,0.5],[4,6,2,12],[1,1.5,0.5,3]);
+    let answer5 = filledElectricCircuitTable([6, 2, 4, 12],[4, 4, 4, 4],[1.5, 0.5, 1, 3],[24, 8, 16, 48]);
+
+    let answer6 = filledElectricCircuitTable([18,18,18,18],[3,3,6,12],[6,6,3,1.5],[54,54,108,216]);
+    let answer7 = filledElectricCircuitTable([15,15,15,15],[1,1,1,3],[15,15,15,5],[15,15,15,45]);
+    let answer8 = filledElectricCircuitTable([0.8, 0.8, 0.8, 0.8],[4, 5, 2, 11],[0.2, 0.16, 0.4, 0.073],[3.2, 4, 1.6, 8.8]);
+    let answer9 = filledElectricCircuitTable([0.5, 0.5, 0.5, 0.5],[0.05, 0.1, 0.05, 0.2],[10, 5, 10, 2.5],[0.025, 0.05, 0.025, 0.1]);
+    let answer10 = filledElectricCircuitTable([16,16,16,16],[1,1,2,4],[16,16,8,4],[16,16,32,64]);
+
+    answerObjects['problem1Answer'] = answer1.draw(200);
+    answerObjects['problem2Answer'] = answer2.draw(200);
+    answerObjects['problem3Answer'] = answer3.draw(200);
+    answerObjects['problem4Answer'] = answer4.draw(200);
+    answerObjects['problem5Answer'] = answer5.draw(200);
+    answerObjects['problem6Answer'] = answer6.draw(200);
+    answerObjects['problem7Answer'] = answer7.draw(200);
+    answerObjects['problem8Answer'] = answer8.draw(200);
+    answerObjects['problem9Answer'] = answer9.draw(200);
+    answerObjects['problem10Answer'] = answer10.draw(200);
+
+
+</script>

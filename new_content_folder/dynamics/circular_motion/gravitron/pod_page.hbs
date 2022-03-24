@@ -1,0 +1,185 @@
+
+<p>
+    A gravitron is an amusement park ride, in which people are inside a chamber.
+    The chamber begins spinning very fast,
+    and as it does, people stick to the wall!
+    In this pod, we will analyze the dynamics of the gravitron.
+</p>
+
+
+<h4>
+    Review of Concepts
+</h4>
+
+<p>
+    This pod is very heavy on dynamics!
+    You should review many of the previous pods on dynamics, especially
+    <a href = '/pod/2c9250'>elevator problems 2</a>, <a href = '/pod/f9807b'>static friction problems</a>
+    and <a href = '/pod/28bc86'>vertical friction problems</a>.
+    To recap some :
+</p>
+
+<ul class = 'principleList'>
+    <li>
+        You do not actually <emph>feel</emph> the force of gravity. You feel the normal force of the ground
+        pressing on you. In an elevator, you feel lighter and heavier as the elevator moves,
+        not because the gravity acting on you is changing (it's not),
+        but because the normal force acting on you is changing.
+    </li>
+    <li>
+        The normal force is a <emph>constraint force</emph>. Unlike other forces, that match a particular value
+        a constraint force will match a value necessary to match a particular acceleration.
+        Typically, you need to find the <emph>net force</emph> acting on an object first, and then use this knowledge to find the normal force.
+    </li>
+    <li>
+        Static friction is also a constraint force. It is a maximum value equal to the normal force
+        times the coefficient of static friction.
+        If the force or forces opposing static friction exceed this maximum value, then an object will begin moving.
+        If they do not, then the object will not move and static friction will have whatever magnitude is
+        necessary to prevent motion.
+    </li>
+</ul>
+
+
+<h4>
+    Qualitative Gravitron
+</h4>
+
+
+Three forces, the normal force, friction, and gravity, act on someone in a gravitron.
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'downward'>
+        In which direction does gravity act?
+    </li>
+    <li class = 'question' data-answer = 'Static friction. The people are sticking to the walls and are not slipping down.'>
+        Which type of friction acts on people in the gravitron, static or kinetic friction? How can you tell?
+    </li>
+    <li class="question" data-answer = 'Normal force is the centripetal force. The normal force acts perpendicular to the wall which in this case is towards the center of the circle.'>
+        Which force is the centripetal force? This is the force responsible for making people move in a circle? How can you tell?
+    </li>
+    <li class="question" data-answer = 'Static friction; it acts upward, opposing the force of gravity'>
+        Which force prevents people from falling down?
+    </li>
+    <li class="question" data-answer = 'The normal force is a constraint force, and so the normal force must be very high in order to keep people moving in a circle; max static friction equals the coefficient fo static friction times normal force, so it is much greater than it typically is.'>
+        The maximum static friction is much stronger than it would typically be. People are not normally able to stick to walls due to friction alone!
+        Why is it so strong?
+    </li>
+    <li class = 'question' data-answer = 'The normal force pressing people inward is very high. People experience normal force as a force pressing on them, which to the human mind feels like they are being pressed into.'>
+        The people are <emph>not</emph> being pressed into the walls! They only feel like they are. Why?
+        This is the same concept we used the <a href = '/pod/2c9250'>elevator problems</a>.
+    </li>
+</ol>
+
+
+<h4>
+    Quantitative Gravitron
+</h4>
+
+<p>
+    According to <a href = 'https://www.ride-extravaganza.com/intermediate/gravitron/'>this website on amusement park rides</a>,
+    a gravitron spins at 24 rpm (24 revolutions per minute)
+    (The website also says that it uses "centrifugal force," which is incorrect. It uses centripetal force. See below.)
+    From the videos, the gravitron appears to have a radius of approximately 4 meters.
+    Assume a child with a mass of 40 kg is riding the gravtron!
+</p>
+
+<p class = 'directions'>
+    Answer the quantitative questions below.
+    Whenever using a formula,
+    please write the formula out in its cannonical form
+    before plugging values into the formula.
+</p>
+
+<ol class="questionList">
+    <li class = 'question'>
+        Draw a free-body diagram of the person.
+        Three forces act on the person.
+    </li>
+    <li class = 'question'>
+        In a note next to your free-body diagram,
+        indicate the direction of each force in words.
+    </li>
+    <li class = 'question' data-answer = ''>
+        Determine the <a href ='/pod/f8dff9'>angular speed</a> in radians per second of the person.
+        Please use the <a href = '/pod/f9822f'>conversion factor method</a>.
+    </li>
+    <li class="question" data-answer = ''>
+        Determine the linear speed of the person in meters per second.
+    </li>
+    <li class = 'question'>
+        Determine the person's centripetal acceleration and centripetal force.
+        Please make sure you refer to formulas appropriately while doing so.
+    </li>
+    <li class = 'question'>
+        Convert the centripetal acceleration to unit of free-fall acceleration.
+        (These are called "g"s).
+    </li>
+    <li class = 'question'>
+        Determine the magnitude of gravity acting on the person.
+    </li>
+    <li class = 'question'>
+        Determine the magnitude of the normal force acting on the person.
+        Explain your answer.
+    </li>
+    <li class = 'question'>
+        Determine the maximum value of static friction acting on the person.
+    </li>
+    <li class = 'question'>
+        Does the person move? Explain why or why not.
+    </li>
+    <li class = 'question'>
+        Determine the actual magnitude of friction acting on the person.
+        Explain how you determined your answer.
+    </li>
+</ol>
+
+
+
+<h4>
+    Centripetal Force and Centrifugal Force
+</h4>
+
+<p>
+    There are two types of forces associated with circular motion: centripetal force and centrifugal force.
+    Centripetal force is the name for the force that causes something to move in a circle.
+    Centrifugal force is a "fictional force".
+    As explained above, when you are pulled in a circle by the gravitron, you are not being pressed into the walls,
+    in fact, the wall is pressing into you (this is the normal force).
+    But, this <emph>feels like</emph> you are being pressed into the wall by some other force.
+    That feeling of being pressed on is a "fictional force," called the <emph>centrifugal force</emph>.
+</p>
+
+
+<p>
+    For this class, that is all you need to know about centrifugal force.
+    If you take a class in Advanced Classical Mechanics in college, you will learn
+    to use Newton's Laws in a non-inertial reference frame (one that is accelerating)
+    and model the centrifugal force mathematically.
+</p>
+
+<h5>
+    A misconception!
+</h5>
+<p>
+    Many students believe that the reason you feel "pressed into" the wall has to do with Newton's Third Law.
+    They say that the wall presses you and the feeling of being pressed in is the reaction force.
+    This is incorrect.
+    The wall pressing on you creates a sensation that you are being pressed into the wall because
+    you are in a non-inertial reference frame.
+    The reaction force to this is you pressing on the wall, which you cannot feel because it is a force on the wall, not you.
+</p>
+
+
+<!--
+questions here
+-->
+
+
+
+<img src = 'https://imgs.xkcd.com/comics/centrifugal_force.png' height = '400px' width = 'auto' />
+<p>
+    This comic is from <a href = 'https://xkcd.com'>xkcd.com</a>.
+    This is one of their most famous comics.
+    If you don't understand the reference, you should brush up on the <a href = 'https://en.wikipedia.org/wiki/Goldfinger_(film)'>classic James Bond movies</a>.
+</p>

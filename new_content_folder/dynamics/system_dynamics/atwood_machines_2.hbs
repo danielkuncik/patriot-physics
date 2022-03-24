@@ -1,0 +1,129 @@
+<h4>
+    Qualitative Problems With Extra Mass
+</h4>
+
+
+<h4>
+    Quantitative Problems With Extra Mass
+</h4>
+
+<ol class="questionList">
+    <li class="question">
+        An Atwood machine has two masses on it.
+        Assume the Atwood machine is frictionless and the string is massless.
+        <br>
+        Mass 1= 0.700 kg [is on the LEFT side]
+        <br>
+        Mass 2 = 0.900 kg [is on the RIGHT side]
+        <br>
+        Mass 3 = 0.400 kg on a table between the two pulleys. The table is frictionless.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Draw a schematic of the Atwood Machine.
+                Label each mass.
+            </li>
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_1'>
+                Draw a qualitative free-body diagram of the Atwood Machine system.
+                This free-body diagram should have <emph>four</emph> external forces acting
+                on it, one clockwise, and the other counterclockwise.
+                You do not need to include internal forces (there are 4).
+                <script>
+                    let atwood_fbd_1 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_1.addSideFBD([['down','gravity'],['up','normal force']]);
+                    atwood_fbd_1.addClockwiseForce('Gravity-Right Mass',8.82);
+                    atwood_fbd_1.addCounterClockwiseForce('Gravity-Left Mass',6.86);
+                    addAnswerObject('atwood_fbd_1',atwood_fbd_1.drawCanvas());
+                </script>
+            </li>
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_2'>
+                Using a formula, make a quantitative free-body diagram
+                of the Atwood Machine system.
+                Identify which formula you use each time you use it.
+                <script>
+                    let atwood_fbd_2 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_2.addSideFBD([['down','3.92 N'],['up','3.92 N']]);
+                    atwood_fbd_2.addClockwiseForce('8.82 N',8.82);
+                    atwood_fbd_2.addCounterClockwiseForce('6.86 N',6.86);
+                    addAnswerObject('atwood_fbd_2',atwood_fbd_2.drawCanvas());
+                </script>
+            </li>
+            <li class="subQuestion" data-answer = '1.96 N clockwise'>
+                Determine the magnitude and direction of the
+                net force acting on the Atwood Machine system.
+                The net force will be either clockwise or
+                counterclockwise.
+            </li>
+            <li class="subQuestion" data-answer = '2.0 kg'>
+                Determine the total mass of the Atwood Machine system.
+                To find the total mass of a system,
+                add the mass of each part of that system.
+            </li>
+            <li class="subQuestion" data-answer = '0.980 m/s/s clockwise'>
+                Determine the magnitude and direction of the
+                acceleration of the Atwood Machine system.
+                The acceleration will be either clockwise or counterclockwise.
+            </li>
+            <li class="subQuestion" data-answer = 'The mass in the middle adds extra inertial mass. In the formula \( a = \frac{\Sigma F}{m} \), if the variable \( m \) is greater, the acceleration is less.'>
+                How does adding the mass in the middle
+                affect the acceleration of this machine?
+                Does it make it accelerate faster, slower,
+                or at the same rate.
+                Refer to specific formulas in determining your answer.
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        An Atwood machine has two masses on it.
+        Assume the Atwood machine is frictionless and the string is massless.
+        <br>
+        Mass 1= 2.90 kg [is on the LEFT side]
+        <br>
+        Mass 2 = 3.50 kg [is on the RIGHT side]
+        <br>
+        Mass 3 = 2.70 kg on a table between the two pulleys. The table is frictionless.
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Draw a schematic of the Atwood Machine.
+                Label each mass.
+            </li>
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_3'>
+                Draw a qualitative free-body diagram of the Atwood Machine system.
+                Include four external forces.
+                <script>
+                    let atwood_fbd_3 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_3.addSideFBD([['down','gravity'],['up','normal force']]);
+                    atwood_fbd_3.addClockwiseForce('Gravity-Right Mass',34.3);
+                    atwood_fbd_3.addCounterClockwiseForce('Gravity-Left Mass',28.42);
+                    addAnswerObject('atwood_fbd_3',atwood_fbd_3.drawCanvas());
+                </script>
+            </li>
+            <li class="subQuestion" data-answer_id = 'atwood_fbd_4'>
+                Using a formula, make a quantitative free-body diagram
+                of the Atwood Machine system.
+                Identify which formula you use.
+                <script>
+                    let atwood_fbd_4 = new AtwoodFreeBodyDiagram();
+                    atwood_fbd_4.addSideFBD([['down','26.46 N'],['up','26.46 N']]);
+                    atwood_fbd_4.addClockwiseForce('34.3 N',34.3);
+                    atwood_fbd_4.addCounterClockwiseForce('28.42 N',28.42);
+                    addAnswerObject('atwood_fbd_4',atwood_fbd_4.drawCanvas());
+                </script>
+            </li>
+            <li class="subQuestion" data-answer = '5.88 N clockwise'>
+                Determine the magnitude and direction of the
+                net force acting on the Atwood Machine system.
+            </li>
+            <li class="subQuestion" data-answer = '9.1 kg'>
+                Determine the total mass of the Atwood Machine system.
+            </li>
+            <li class="subQuestion" data-answer = '0.646 m/s/s clockwise'>
+                Determine the magnitude and direction of the
+                acceleration of the Atwood Machine system.
+            </li>
+        </ol>
+    </li>
+
+</ol>
+
+
+<ol class="answerList"></ol>

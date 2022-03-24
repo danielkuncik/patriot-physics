@@ -1,0 +1,242 @@
+<p>
+    In all of the sections thus far,
+    we have examined collisions quantitatively using
+    tables to organize our information.
+    As you might have expected, professional physicists use large equations
+    in order to quantitatively explain collisions.
+    A main goal of level 3 is to work from using tables to using equations.
+    However, it is crucial when using equations to not merely plug information
+    into a memorized equation but to be able to explain where an equation is derived from
+    and what each term of that equation means.
+    The goal of this section is to continue using tables in order to derive
+    equations, and to examine the individual terms of those equations.
+</p>
+
+
+<h4>
+    Standard Problems
+</h4>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '\( m_a v_{ai} + m_b v_{bi} = m_a v_{af} + m_b v_{bf} \)'>
+        <h5>
+            A General Collision
+        </h5>
+        <p>
+            Two cars have a collision.
+            Use the table below to develop a table that describes
+            the conservation of energy during this collision.
+        </p>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of \( m_a \) and a velocity of \( v_{ai} \).
+                    </li>
+                    <li>
+                        Car B has a mass of \( m_b \) and a velocity of \( v_{bi} \).
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car A has a velocity of \( v_{af} \).
+                    </li>
+                    <li>
+                        Car B has a velocity of \( v_{bf} \).
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            Fill out the table below using the algebraic values described.
+        </p>
+        <div id = 'generalCollisionTable'></div>
+        <script>
+            let generalCollisionTable = new MomentumTable();
+            generalCollisionTable.deleteUnits();
+            $("#generalCollisionTable").append(generalCollisionTable.draw(500,500));
+        </script>
+        <p>
+            Create an <emph>equation</emph> that describes the conservation of momentum
+            for the collision of the two cars.
+            Your equation should contain 4 terms and include six different variables:
+            \( m_a \), \( m_b \), \( v_{ai} \), \( v_{bi} \), \( v_{af} \), and \( v_{bf} \).
+        </p>
+        <p>
+            Briefly describe what each term of your conservation of momentum equation represents.
+        </p>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class="question" data-answer = '\( m_a v_{ai} + m_b v_{bi} = \left( m_a + m_b \right) v_f \)'>
+        <h5>
+            A Perfectly Inelastic Collision
+        </h5>
+        <p>
+            Two cars have a perfectly inelastic collision.
+            Use the table below in order to derive a formula for the conservation
+            of momentum during the collision.
+        </p>
+        <ul>
+            <li>
+                Before the collision...
+                <ul>
+                    <li>
+                        Car A has a mass of \( m_a \) and a velocity of \( v_{ai} \).
+                    </li>
+                    <li>
+                        Car B has a mass of \( m_b \) and a velocity of \( v_{bi} \).
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the collision...
+                <ul>
+                    <li>
+                        Car A and Car B are attached and have a velocity \( v_f \).
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            Fill out the table below using the algebraic values described.
+        </p>
+        <div id = 'inelasticCollisionTable'></div>
+        <script>
+            let inelasticCollisionTable = new MomentumTable();
+            inelasticCollisionTable.deleteUnits();
+            inelasticCollisionTable.makeTotallyInelasticCollision();
+            $("#inelasticCollisionTable").append(inelasticCollisionTable.draw(500,500));
+        </script>
+        <p>
+            Create an <emph>equation</emph> that describes the conservation of momentum
+            for the collision of the two cars.
+            Your equation should contain 3 terms and include 5 different variables:
+            \( m_a \), \( m_b \), \( v_{ai} \), \( v_{bi} \), and \( v_f \).
+        </p>
+        <p>
+            Briefly describe what each term of your conservation of momentum equation represents.
+        </p>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class="question" data-answer = '\( 0 = M_C v_{Cf} + m_b v_{bf} \)'>
+        <h5>
+            An explosion
+        </h5>
+        <p>
+            A cannon fires a cannonball and as a result, the cannon recoils.
+            Use the information and the table below to derive a
+            formula for the conservation of momentum in this situation.
+        </p>
+        <ul>
+            <li>
+                Before the explosion:
+                <ul>
+                    <li>
+                        The cannon has a mass of \( M_C \) and is stationary.
+                    </li>
+                    <li>
+                        The cannonball has a mass of \( m_b \) and is stationary.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the explosion:
+                <ul>
+                    <li>
+                        The cannon has a velocity of \( v_{Cf} \).
+                    </li>
+                    <li>
+                        The cannonball has a velocity of \( v_{bf} \).
+                    </li>
+                </ul>
+            </li>
+            <p>
+                Fill out the table below using the given algebraic variables:
+            </p>
+            <div id = 'explosionTable'></div>
+            <script>
+                let explosionTable = new MomentumTable();
+                explosionTable.deleteUnits();
+                explosionTable.setNameOfObjects('Cannon', 'Cannonball');
+                $("#explosionTable").append(explosionTable.draw(500,500));
+            </script>
+            <p>
+                Create an <emph>equation</emph> that describes the conservation of momentum
+                for the explosion.
+                Your equation should have only 2 terms and include the variables
+                \( M_C \), \( m_b \), \( v_{Cf} \), and \( v_{bf} \).
+            </p>
+            <p>
+                Briefly describe what each term of your equation represents.
+            </p>
+        </ul>
+    </li>
+    <div class="pageBreak"></div>
+</ol>
+
+<h4>
+    Dimensional Analysis of Momentum Formulas
+</h4>
+
+<p>
+    Coming soon!
+</p>
+
+<h4>
+    Non-Standard Situations
+</h4>
+<ol class="questionList">
+    <li class="question">
+        A cannon of mass \( m_1 \) is attached to the roof of a car of mass \( m_2 \).
+        Inside the cannon is a cannonball of mass \( m_3 \).
+        The car is driving at a velocity of \( v_{\text{i}} \).
+        The cannon fires and the cannonball moves at a velocity \( v_{3 \text{f}} \).
+        Assume that the cannon and car do not become detached,
+        and after the explosion they both move at the speed \( v_{2 \text{f}} \).
+
+        <ol class="subQuestionList">
+            <li class="subQuestion" data-answer = '\( \left( m_1 + m_2 + m_3 \right)v_i = \left( m_1 + m_2 \right) v_{2 \text{f}} + m_3 v_{3 \text{f}} \)'>
+                Derive a conservation of momentum formula that relates all of the variables introduced.
+            </li>
+            <li class="subQuestion" data-answer = '\( v_{2 \text{f}} = \frac{\left( m_1 + m_2 + m_3 \right)v_i - m_3 v_{3 \text{f}} }{\left( m_1 + m_2 \right)} \)'>
+                Solve your equation to determine a formula for the final speed of the car \( v_{2 \text{f}} \)
+                in terms of all of the other variables.
+                Demonstrate that your formula is dimensionally correct.
+            </li>
+        </ol>
+
+
+        (<strong>Something to think about</strong>:
+        There isn't any information in this problem or in your formula
+        about the direction that anything is moving. We don't know if the cannonball
+        was fired in the same direction the car was moving; we also don't know if the car
+        speed up, slowed down, or reversed direction.
+        All of this information would be contained in the positive and negative signs of the
+        velocity variables \( v_{\text{i}} \), \( v_{3 \text{f}} \), and \( v_{2 \text{f}} \).
+        The formula is identical regardless of the direction of each item.)
+    </li>
+
+    <li class="question" data-answer = '\( m_a v_{ai} + m_b v_{bi} = (m_a - m_p) v_{af} + m_b v_{bf} + m_p v_p \)'>
+        A car (A) of mass \( m_a \) moving at a velocity \( v_{ai} \) collides into another car (B)
+        of mass \( m_b \) moving at velocity \( v_{bi} \).
+        Following the collision, car A moves with velocity \( v_{af} \)
+        and car B moves with velocity \( v_{bf} \).
+        However, a piece of car A of mass \( m_p \) breaks off of car A and
+        begins moving at velocity \( v_p \).
+        Determine an equation with 5 terms that relates each of the 8 variables defined above.
+        <br><br>
+        Remember, once again, that directional information is not included in the formula.
+        We don't know if the collision was rear-end or head-on;
+        and we don't know if the piece fell forwards or backwards off of car A.
+        All this information would be recognized within the velocity variables,
+        not in the formula itself.
+    </li>
+</ol>
+
+
+
+<ol class="answerList"></ol>

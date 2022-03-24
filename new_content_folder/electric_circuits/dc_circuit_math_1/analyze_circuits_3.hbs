@@ -1,0 +1,289 @@
+<h4>
+    Series Circuit Inside of a Parallel Circuit
+</h4>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problem1Circuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problem1Graph'></div>
+    </div>
+    <div class = 'pageBreak'></div>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problem2Circuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problem2Graph'></div>
+    </div>
+</div>
+
+<div class = 'pageBreak'></div>
+<h3>
+    Parallel Circuit inside of a Series Circuit
+</h3>
+
+
+<h5>Formual For Equivalent Resistance of two resistors in parallel.</h5>
+<p class = 'equation'>
+    $$
+    \frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2}
+    $$
+</p>
+
+<h5>
+    Steps
+</h5>
+
+<ol>
+    <li>
+        Use the formula above in order to figure out the <i>equivalent resistance</i>
+        of the parallel element.
+    </li>
+    <li>
+        Draw an <i>equivalent circuit</i> in which the parallel element is replaced by
+        a single element with one resistor of the equivalent resistance.
+    </li>
+    <li>
+        Draw an electric potential diagram for the equivalent circuit.
+        It should look like a series circuit with two resistors.
+        Make sure to indicate the current on this diagram using arrows.
+    </li>
+    <li>
+        Move your circuit back to the original circuit.
+        Erase the equivalent resistance element on your electric potential diagram,
+        and replace it with a parallel element.
+        Indicate the current on each branch of the new parallel element.
+    </li>
+</ol>
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problem3Circuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problem3Graph'></div>
+    </div>
+    <div class = 'pageBreak'></div>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problem4Circuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problem4Graph'></div>
+    </div>
+</div>
+
+<ul class = 'extraLinks'>
+    <li>
+        <a href = '/contentFiles/analyze_circuits_3_extra_problems.pdf'>Extra Problems!</a>
+    </li>
+    <li>
+        <a href = '/contentFiles/analyze_circuits_3_answers.pdf'>Answers!</a>
+    </li>
+</ul>
+
+<script>
+    // #################################################################
+    // Problem 1
+
+    let problem1Circuit = new CircuitDiagram();
+    let RaLabel = {
+        "V": undefined,
+        "I": undefined,
+        "R": 10
+    };
+    let RbLabel = {
+        "V": undefined,
+        "I": undefined,
+        "R": 5
+    };
+    let RcLabel = {
+        "V": undefined,
+        "I": undefined,
+        "R": 15
+    };
+
+    problem1Circuit.nameAllResistors();
+    problem1Circuit.setFontSize(1);
+    problem1Circuit.addCellSimple('up',3,40);
+    problem1Circuit.addWire('up',7.5);
+    problem1Circuit.addWire('right',10);
+    problem1Circuit.addSeriesResistors('down',18,[RaLabel],3);
+    problem1Circuit.translateCursor('up',18);
+    problem1Circuit.addWire('right',10);
+    problem1Circuit.addSeriesResistors('down',18,[RbLabel, RcLabel],3);
+    problem1Circuit.addWire('left',20);
+    problem1Circuit.addWire('up',7.5);
+    $("#problem1Circuit").append(problem1Circuit.drawCanvas(500));
+   // addSeriesResistors(directionInput, length, resistorArray, lockedResistorLength) {
+
+
+    //
+    // FOURTH ELEMENT WAS THE
+    // // battery
+    // problem1Circuit.addElementWithCursor('wire',0,12);
+    // problem1Circuit.addElementWithCursor('battery',0,14,40);
+    // problem1Circuit.addElementWithCursor('wire',0,18);
+    //
+    // // branch 1
+    // problem1Circuit.addElementWithCursor('wire',8,18);
+    // problem1Circuit.addElementWithCursor('wire',8,10);
+    // problem1Circuit.addElementWithCursor('resistor',8,6,10,'A');
+    // problem1Circuit.addElementWithCursor('wire',8,0);
+    // problem1Circuit.addElementWithCursor('wire',0,0);
+    //
+    // // branch 2
+    // problem1Circuit.translateCursor(8,18);
+    // problem1Circuit.addElementWithCursor('wire',16,18);
+    // problem1Circuit.addElementWithCursor('wire',16,14);
+    // problem1Circuit.addElementWithCursor('resistor',16,11,5,'B');
+    // problem1Circuit.addElementWithCursor('wire',16,8);
+    // problem1Circuit.addElementWithCursor('resistor',16,5,15,'C');
+    // problem1Circuit.addElementWithCursor('wire',16,0);
+    // problem1Circuit.addElementWithCursor('wire',8,0);
+    //
+    // let problem1Graph = new QuantitativeGraph(0,20,0,40,2);
+    // problem1Graph.addReferenceArray([],[10,20,30,40]);
+    // problem1Graph.labelAxes('','Potential (V)');
+
+    $("#problem1Circuit").append(problem1Circuit.drawCanvas(600,600));
+    $("#problem1Graph").append(problem1Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
+
+    // #################################################################
+    // Problem 2
+    let problem2Circuit = new CircuitDiagram();
+
+    // battery
+    problem2Circuit.addElementWithCursor('wire',0,12);
+    problem2Circuit.addElementWithCursor('battery',0,14,40);
+    problem2Circuit.addElementWithCursor('wire',0,18);
+
+    // branch 1
+    problem2Circuit.addElementWithCursor('wire',8,18);
+    problem2Circuit.addElementWithCursor('wire',8,10);
+    problem2Circuit.addElementWithCursor('resistor',8,6,8,'A');
+    problem2Circuit.addElementWithCursor('wire',8,0);
+    problem2Circuit.addElementWithCursor('wire',0,0);
+
+    // branch 2
+    problem2Circuit.translateCursorRectangonal(8,18);
+    problem2Circuit.addElementWithCursor('wire',16,18);
+    problem2Circuit.addElementWithCursor('wire',16,14);
+    problem2Circuit.addElementWithCursor('resistor',16,11,4,'B');
+    problem2Circuit.addElementWithCursor('wire',16,8);
+    problem2Circuit.addElementWithCursor('resistor',16,5,6,'C');
+    problem2Circuit.addElementWithCursor('wire',16,0);
+    problem2Circuit.addElementWithCursor('wire',8,0);
+
+    let problem2Graph = new QuantitativeGraph(0,20,0,40,2);
+    problem2Graph.addReferenceArray([],[8,16,24,32,40]);
+    problem2Graph.labelAxes('','Potential (V)');
+
+    $("#problem2Circuit").append(problem2Circuit.drawCanvas(600,600));
+    $("#problem2Graph").append(problem2Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
+
+
+    // #################################################################
+    // Problem 3
+    let problem3Circuit = new CircuitDiagram();
+    problem3Circuit.addElementWithCursor('wire',0,3);
+    problem3Circuit.addElementWithCursor('battery',0,6,21);
+    problem3Circuit.addElementWithCursor('wire',0,10);
+    problem3Circuit.addElementWithCursor('wire',6,10);
+    problem3Circuit.addElementWithCursor('resistor',9,10,4,'A');
+    problem3Circuit.addElementWithCursor('wire',13,10);
+    problem3Circuit.addElementWithCursor('wire',13,8);
+
+    // branch 1
+    problem3Circuit.addElementWithCursor('wire',7,8);
+    problem3Circuit.addElementWithCursor('wire',7,6);
+    problem3Circuit.addElementWithCursor('resistor',7,3,9,'B');
+    problem3Circuit.addElementWithCursor('wire',7,1);
+    problem3Circuit.addElementWithCursor('wire',13,1);
+
+    // branch 2
+    problem3Circuit.moveCursor(13,8);
+    problem3Circuit.addElementWithCursor('wire',20,8);
+    problem3Circuit.addElementWithCursor('wire',20,6);
+    problem3Circuit.addElementWithCursor('resistor',20,3,9,'D');
+    problem3Circuit.addElementWithCursor('wire',20,1);
+    problem3Circuit.addElementWithCursor('wire',13,1);
+
+    // branch center
+    problem3Circuit.moveCursor(13,8);
+    problem3Circuit.addElementWithCursor('wire',13,6);
+    problem3Circuit.addElementWithCursor('resistor',13,3,9,'C');
+    problem3Circuit.addElementWithCursor('wire',13,1);
+
+    problem3Circuit.addElementWithCursor('wire',13,-1);
+    problem3Circuit.addElementWithCursor('wire',0,-1);
+    problem3Circuit.addElementWithCursor('wire',0,0);
+
+    let problem3Graph = new QuantitativeGraph(0,20,0,21,2);
+    problem3Graph.labelAxes('','Electric Potential (V)');
+    problem3Graph.addReferenceArray([],[7,14,21]);
+
+    $("#problem3Circuit").append(problem3Circuit.drawCanvas(500,500));
+    $("#problem3Graph").append(problem3Graph.drawCanvas(750,750)); // i think what's going on is that the limits aren't y-muliplied???
+
+    // #################################################################
+    // Problem 4
+    let problem4Circuit = new CircuitDiagram();
+    problem4Circuit.addElementWithCursor('wire',0,3);
+    problem4Circuit.addElementWithCursor('battery',0,6,12);
+    problem4Circuit.addElementWithCursor('wire',0,10);
+    problem4Circuit.addElementWithCursor('wire',6,10);
+    problem4Circuit.addElementWithCursor('resistor',9,10,4,'A');
+    problem4Circuit.addElementWithCursor('wire',13,10);
+    problem4Circuit.addElementWithCursor('wire',13,8);
+
+    // branch 1
+    problem4Circuit.addElementWithCursor('wire',10,8);
+    problem4Circuit.addElementWithCursor('wire',10,6);
+    problem4Circuit.addElementWithCursor('resistor',10,3,3,'B');
+    problem4Circuit.addElementWithCursor('wire',10,1);
+    problem4Circuit.addElementWithCursor('wire',13,1);
+
+    // branch 2
+    problem4Circuit.moveCursor(13,8);
+    problem4Circuit.addElementWithCursor('wire',16,8);
+    problem4Circuit.addElementWithCursor('wire',16,6);
+    problem4Circuit.addElementWithCursor('resistor',16,3,6,'C');
+    problem4Circuit.addElementWithCursor('wire',16,1);
+    problem4Circuit.addElementWithCursor('wire',13,1);
+
+    problem4Circuit.addElementWithCursor('wire',13,-1);
+    problem4Circuit.addElementWithCursor('wire',0,-1);
+    problem4Circuit.addElementWithCursor('wire',0,0);
+
+    let problem4Graph = new QuantitativeGraph(0,20,0,12,2);
+    problem4Graph.labelAxes('','Electric Potential (V)');
+    problem4Graph.addReferenceArray([],[4,8,12]);
+
+    $("#problem4Circuit").append(problem4Circuit.drawCanvas(600,600));
+    $("#problem4Graph").append(problem4Graph.drawCanvas(800,800)); // i think what's going on is that the limits aren't y-muliplied???
+
+
+
+
+</script>

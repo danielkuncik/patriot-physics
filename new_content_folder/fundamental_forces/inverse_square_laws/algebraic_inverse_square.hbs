@@ -1,0 +1,175 @@
+<p>
+    If you have completed all of the previous pods in this unit,
+    you are likely getting good at solving the inverse-square laws
+    numerically.
+    Of course, we want to be able to solve them algebraically as well!
+    But before we can accomplish that, we need to clear up some unfinished business
+    on the unit of the universal constants.
+</p>
+
+<h4>
+    Dimensional Analysis of the Inverse Square Laws:
+</h4>
+
+<p>
+    Newton's Law of Universal Gravitation is given by
+    $$
+    F_g = \frac{G m_1 m_2}{d^2}.
+    $$
+    The SI unit for force is Newtons (N).
+    The SI unit for mass is kilograms (kg).
+    The SI unit for distance is meters (m).
+    For this reason, in order for the formula to be dimensionally correct,
+    the SI unit for the Universal Gravitational Constant \( G \) must be
+    \( \text{N} \cdot \frac{\text{m}^2}{\text{kg}^2} \).
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Complete a dimensional analysis to show that, if the unit for \( G \) are
+        \( \text{N} \cdot \frac{\text{m}^2}{\text{kg}^2} \),
+        the formula above is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        Newtons can be written as \( \text{N} = \text{kg} \cdot \frac{\text{m}}{\text{s}^2} \).
+        Using this definition, write the unit for \( G \) in terms of meters, kilograms, and seconds.
+    </li>
+</ol>
+
+<p>
+    What do these units actually mean? They look like some sort of alphabet soup!
+    Scientists know that the force of gravity must be directly proportional to the
+    two masses attracting, and inversely proportional to the square of the distance
+    between their centers of mass.
+    <a href = '#' data-comment = 'link to proportionality unit'>Any proportionality equation requires a constant of
+    proportionality </a>.
+    In this case, that is played by the universal gravitational constant \( G \).
+    \( G \) isn't anything that you can see or touch.
+    It is just a number that makes the equation work.
+    And its unit is simply the unit that will make the formula work.
+    Don't over think it.
+</p>
+
+<p>
+    The exact same analysis applies to Coulombs Law:
+    $$
+    F_e = \frac{k q_1 q_2}{d^2}.
+    $$
+    The SI unit for charge \( q \) is Coulombs (C); the SI unit for distance \( d \) is meters (m);
+    the SI unit for electric force \( F_e \) is Newtons (N).
+    For the formula to work, the SI unit for the electrostatic constant \( k \) must be
+    \( \text{N} \cdot \frac{\text{m}^2}{\text{C}^2} \).
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Demonstrate that if the unit for the electrostatic constant is equal to
+        \( \text{N} \cdot \frac{\text{m}^2}{\text{C}^2} \),
+        then the formula above is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        Newtons can be written as \( \text{N} = \text{kg} \cdot \frac{\text{m}}{\text{s}^2} \).
+        Using this definition, write the unit for \( k \) in terms of meters, kilograms, seconds, and Coulombs.
+    </li>
+    <li class = 'question'>
+        If you want to get super-technical about it, Coulombs are not a base unit in the International System (SI).
+        The base unit that includes charge is the Ampere, in which 1 Ampere = 1 Coulomb / 1 second:
+        \( \left( \text{A} = \frac{\text{C}}{\text{s}}  \right) \).
+        Write the electrostatic constant in terms of meters, kilograms, seconds, and Coulombs (all base units in the International System).
+    </li>
+</ol>
+
+<p>
+    As with \( G \), the \( k \) is simply a value that makes the equation work.
+    It's unit does not make sense, but it makes the equation work.
+</p>
+
+<h4>
+    Algebraic Solutions of the Inverse Square Laws:
+</h4>
+
+<p>
+    Now that we are able to conduct the dimensional analysis correctly,
+    let's dive ahead into algebraic solutions for the formulas!
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Solve the Law of Universal Gravitation for one of the masses \( m_1 \).
+        Prove your solution is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        Solve the Law of Universal Gravitation for \( d \), the distance between the center of masses.
+        Prove your formula is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        Solve Coulombs Law for one of the charges \( q_1 \).
+        Prove your formula is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        Solve the Law of Universal Gravitation for \( d \), the distance between the center of charges.
+        Prove your formula is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        Solve the free-fall acceleration formula on a planet \( g = \frac{G M}{R^2} \) for the radius of the planet.
+        Prove your formula is dimensionally correct.
+    </li>
+    <li class = 'question'>
+        The density of a planet \( \rho \) is given by its mass divided by its volume.
+        Note that \( \rho \) is the Greek letter "rho."
+        The volume of a sphere is given by
+        \( V = \frac{4}{3}\pi r^3 \).
+        The SI unit of volume are \( \text{m}^3 \), and the SI unit are density are \( \frac{\text{kg}}{\text{m}^3} \).
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                Determine a formula for the density of a planet in terms of the mass of the planet \( M \)
+                and its radius \( R \).
+            </li>
+            <li class = 'subQuestion'>
+                Determine a formula for the mass of a planet \( M \) in terms of its radius \( R \) and density \( \rho \).
+            </li>
+            <li class = 'subQuestion'>
+                Determine a formula for the free-fall acceleration on a planet \( g \) in terms of its radius \( R \)
+                and its density \( \rho \).
+                Demonstrate that your formula is dimensionally correct.
+            </li>
+            <li class = 'subQuestion'>
+                Determine a formula for the free-fall acceleration on a planet \( g \) in terms of its mass \( M \)
+                and its volume \( V \).
+                Demonstrate that your formula is dimensionally correct.
+            </li>
+            <li class = 'subQuestion'>
+                Determine a formula for the free-fall acceleration on a planet \( g \) in terms of its mass \( M \)
+                and its density \( \rho \).
+                Demonstrate that your formula is dimensionally correct.
+            </li>
+        </ol>
+    </li>
+    <li class ='question'>
+        Determine formula for the distance \( d \) between two electrons that repel each other with a force of magnitude \( F_e \)
+        in terms of \( F_e \) and known constants.
+    </li>
+    <li class = 'question'>
+        The atomic number of a nucleus \( N \) indicates the number of protons in that nucleus.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion'>
+                Two identical nuclei of atomic number \( N \) are separated by a distance \( d \).
+                Determine a formula for \( F_e \), the magnitude of electrostatic repulsion between them,
+                in terms of \( N \), \( d \), and known constants.
+            </li>
+            <li class = 'subQuestion'>
+                Two identical nuclei separated by a distance \( d \)
+                repel each other with a force \( F_e \). Determine a formula for the atomic number
+                of the nuclei in terms of \( d \), \( F_e \), and known constants.
+                Prove your formula is dimensionally correct. Atomic number is dimensionless,
+                so your formula should return a value with no unit.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h3>
+    Answers:
+</h3>
+
+<ol class = 'answerList'></ol>

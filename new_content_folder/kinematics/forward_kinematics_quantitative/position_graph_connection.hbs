@@ -1,0 +1,81 @@
+<p>
+    In previous sections,
+    you connected position, velocity, and acceleration graphs
+    by analyzing the patterns in their motion and selecting from a list of options.
+    In the next three sections, problems will become
+    less guided as you need to draw your own kinematic graphs.
+</p>
+
+<iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/56410323/?s=TTxI0a&amp;ref=embed" allowfullscreen></iframe>
+
+<h4>
+    Number 1
+</h4>
+<p>
+    The following position-time graph describes
+    the motion of some person, animal, or thing.
+</p>
+
+<div id = 'number1'></div>
+
+<ol>
+    <li>
+        Write a story that relates to the motion in this position-time graph.
+    </li>
+    <li>
+        Draw a corresponding velocity-time graph.
+    </li>
+    <li>
+        Draw a corresponding acceleration-time graph.
+    </li>
+</ol>
+
+<h4>
+    Number 2
+</h4>
+<p>
+    The following position-time graph describes
+    the motion of some person, animal, or thing.
+</p>
+
+<div id = 'number2'></div>
+
+<ol>
+    <li>
+        Write a story that relates to the motion in this position-time graph.
+    </li>
+    <li>
+        Draw a corresponding velocity-time graph.
+    </li>
+    <li>
+        Draw a corresponding acceleration-time graph.
+    </li>
+</ol>
+
+<script>
+    let number1Func = new StepwiseFunctionObject(0,0);
+    number1Func.addCurvedStep((x) => {
+        return 8 - 0.5*(x - 4)**2
+    }, 4);
+    number1Func.addConstantStep(4);
+    number1Func.addLinearStepWithDelta(4,10);
+    let number1 = new QualitativeGraph(number1Func);
+    number1.moveLabelsToSide();
+    number1.labelAxes('time', 'position');
+    $("#number1").append(number1.drawCanvas(600,300));
+
+    let number2func = new StepwiseFunctionObject(0,0);
+    number2func.addLinearStepWithDelta(2,4);
+    number2func.addCurvedStep((x) => {
+        return 2 - 0.5 * (x - 2)**2
+    }, 2);
+    number2func.addCurvedStep((x) => {
+        return 0.5 * x * x
+    }, 2);
+
+    let number2 = new QualitativeGraph(number2func);
+    number2.moveLabelsToSide();
+    number2.labelAxes('time', 'position');
+    $("#number2").append(number2.drawCanvas(600,300));
+
+</script>

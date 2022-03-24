@@ -1,0 +1,139 @@
+<p class = 'definition'>
+    A <strong>significant figure</strong> is a digit in a number that you know to be accurate.
+</p>
+
+
+<h4>
+    How to count significant figures:
+</h4>
+<ul>
+    <li>
+        Count <emph>every</emph> digit after the first
+    </li>
+</ul>
+
+
+<p class = 'directions'>
+    For each value, determine how many significant figures there are:
+</p>
+<div class = 'addAnswerButton'></div>
+
+<ol class="questionList">
+    <div class = 'container'>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number1'></div>
+            <div class = 'col-md-6' id = 'number2'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number3'></div>
+            <div class = 'col-md-6' id = 'number4'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number5'></div>
+            <div class = 'col-md-6' id = 'number6'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number7'></div>
+            <div class = 'col-md-6' id = 'number8'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number9'></div>
+            <div class = 'col-md-6' id = 'number10'></div>
+        </div>
+    </div>
+</ol>
+<div class = 'addAnswerButton'></div>
+<script>
+    countingSigFigs('42').displayProblemAsInputOneAnswer('number1');
+    countingSigFigs('42.3').displayProblemAsInputOneAnswer('number2');
+    countingSigFigs('42.0').displayProblemAsInputOneAnswer('number3');
+    countingSigFigs('042.0').displayProblemAsInputOneAnswer('number4');
+    countingSigFigs('2.99e3').displayProblemAsInputOneAnswer('number5');
+    countingSigFigs('5.97219e24','kg').displayProblemAsInputOneAnswer('number6');
+    countingSigFigs('4.560e-3','kg').displayProblemAsInputOneAnswer('number7');
+    countingSigFigs('0.00540').displayProblemAsInputOneAnswer('number8');
+    countingSigFigs('0.0000004').displayProblemAsInputOneAnswer('number9');
+    countingSigFigs('0.00000040000').displayProblemAsInputOneAnswer('number10');
+</script>
+
+<h4>
+    An extra rule:
+</h4>
+<ul>
+    <li>
+        In a <emph>whole number</emph>, any zeros at the end of the number are not
+        significant, unless the number ends in a decimal point.
+    </li>
+</ul>
+
+<p>
+    Questions on the extra rule coming soon!
+</p>
+
+
+<h4>
+    The significance of zeroes
+</h4>
+
+<p>
+    Many students wonder why zeroes at the end of the number are
+    considered significant digits.
+    After all, in math class they teach you that 5, 5.0, 5.00, and 5.000
+    are all the same number.
+    However, in science class, these are <strong>NOT</strong> the same number!
+    The difference is that, in pure mathematics, numbers are only ideas,
+    theoretical objects whose existence can be deduced from basic axioms.
+    But in science class, numbers represent values that can actually be measured.
+    The number of significant figures, including the zeroes, indicates how
+    accurate that measurement is.
+</p>
+
+<p>
+    Imagine you are measuring some distance, and find it to be five meters long.
+    Yet, how you write that value is very different.
+</p>
+
+<ul>
+    <li>
+        If you write "5", you only know that the first digit is 5, and
+        don't know anything about any other digits.
+        The value could be anywhere from 4.5 to 5.4999,
+        because all of these numbers, when rounded, would yield 5.
+    </li>
+    <li>
+        If you write "5.0", you know that the tens digit is zero.
+        The value could be anywhere from 4.95 to 5.049999,
+        because all of these numbers, when rounded, would yield 5.0.
+    </li>
+    <li>
+        If you write "5.00", you know that the tens and hundreds digits are both zero.
+        The value could be from 4.995 to 5.0049999,
+        because all of these numbers, when rounded, would yield 5.00.
+    </li>
+</ul>
+
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Why are some zeroes significant figures?
+    </li>
+</ol>
+
+
+<h3>
+    Video Resources
+</h3>
+
+<h5>
+    Flipping Physics Video
+</h5>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mxbsgqFnNVY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+    This video does not include the rule about adding a decimal point at the end of a number.
+</p>
+
+<h4>
+    Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

@@ -1,0 +1,174 @@
+<p class = 'introduction'>
+  Scientific notation is based on multiplying values
+  but the powers of ten.
+  In order to use scientific notation correctly,
+  we need a thorough understanding of the powers of ten.
+</p>
+
+<h5>
+  Positive Powers of Ten
+</h5>
+
+<p class = 'definitionBox'>
+  Any number raised to a positive exponent is that number multiplied by iteself
+  as many times as the exponent.
+  For example
+  $$
+    5^4 = 5 \cdot 5 \cdot 5 \cdot 5 \cdot 5
+  $$
+</p>
+
+<p class = 'definitionBox'>
+  10 raised to any positive power is 10 times itself that many times.
+  A very quick way to do this is to simply add as many zeroes as
+  the value of the exponent:
+  $$
+    10^4 = 10000
+  $$
+  $$
+    10^6 = 1000000
+  $$
+</p>
+
+<p class = 'definitionBox'>
+  Any number raised to the power of 1 is equal to that number.
+  Thus, \( 10^1 = 10 \).
+</p>
+
+
+<h5>
+  Problems:
+</h5>
+
+<p class = 'directions'>
+  Evalute each power of ten
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = '\( 100000 \)'>
+    \( 10^5 = \)
+  </li>
+  <li class = 'question' data-answer = '\( 1000 \)'>
+    \( 10^3 = \)
+  </li>
+  <li class = 'question' data-answer = '\( 10 \)'>
+    \( 10^1 = \)
+  </li>
+</ol>
+
+<h5>
+  Negative Exponents
+</h5>
+
+<p class = 'definitionBox'>
+  Any number raised to a negative exponent is equal to 1 divided by the number
+  to the positive power. This is called the <strong>recipricol</strong>.
+  $$
+  5^{-6} = \frac{1}{5^5} = \frac{1}{5 \cdot 5 \cdot 5 \cdot 5 \cdot 5}
+  $$
+</p>
+
+<p class = 'definitionBox'>
+  Ten raised to a negative exponent is equal to one divided by 10
+  raised to a posititive power.
+  This is equal to a decimal value of several zeroes followed by 1.
+  $$
+    10^{-5} = \frac{1}{10^5} = \frac{1}{100000} = 0.00001
+  $$
+  The number of zeroes between the decimal and the 1 is equal to the
+  value of the exponent minus 1.
+  For example, \( 10^{-5} = 0.00001 \) has 4 zeroes between the decimal and the 1,
+  and
+  \( 10^{-7} = 0.0000001 \) has 6 zeroes between the decimal and the one.
+</p>
+<p class = 'definitionBox'>
+  $$
+    10^{-1} = \frac{1}{10} = 0.1
+  $$
+</p>
+
+<h5>
+  Problems:
+</h5>
+
+<p class = 'directions'>
+  Evaulate each power of ten as a decimal value.
+<p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = '\( 0.0001 \)'>
+    \( 10^{-4} = \)
+  </li>
+  <li class = 'question' data-answer = '\( 0.01 \)'>
+    \( 10^{-2} = \)
+  </li>
+  <li class = 'question' data-answer = '\( 0.00000001 \)'>
+    \( 10^{-8} = \)
+  </li>
+  <li class = 'question' data-answer = '\( 0.1 \)'>
+    \( 10^{-1} = \)
+  </li>
+</ol>
+
+<h5>
+  Powers of zero:
+</h5>
+
+<p class = 'defintionBox'>
+  Any value raised to the power of zero is equal to 1.
+  $$
+    5^0 = 1
+  $$
+  Thus,
+  $$
+    10^0 = 1
+  $$
+</p>
+
+<ol class = 'questionList'>
+  <li class ='question' data-answer = '\( 1 \)'>
+    \( 8^0 = \)
+  </li>
+  <li class ='question' data-answer = '\( 1 \)'>
+    \( 12345678.98765^0 = \)
+  </li>
+  <li class ='question' data-answer = '\( 1 \)'>
+    \( 10^0 = \)
+  </li>
+</ol>
+
+
+<h5>
+   The Full Spectrum:
+</h5>
+
+<p class = 'directions'>
+  Fill out the table below, comprising a full range of powers of ten
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answerID = 'tableAnswer' id = 'tableQuestion'></li>
+</ol>
+
+<script>
+  let tableQuestion = new Table(18,2);
+  tableQuestion.writeTextInColumn(0,[ 'Power',
+    '\\( 10^8 \\)',  '\\( 10^7 \\)',  '\\( 10^6 \\)',  '\\( 10^5 \\)',
+    '\\( 10^4 \\)',  '\\( 10^3 \\)',  '\\( 10^2 \\)',  '\\( 10^1 \\)',
+    '\\( 10^0 \\)',
+    '\\( 10^{-1} \\)',  '\\( 10^{-2} \\)',  '\\( 10^{-3} \\)',  '\\( 10^{-4} \\)',
+    '\\( 10^{-5} \\)',  '\\( 10^{-6} \\)',  '\\( 10^{-7} \\)',  '\\( 10^{-8} \\)'
+    ]);
+  tableQuestion.writeTextInColumn(1,['Value']);
+
+  $("#tableQuestion").append(tableQuestion.draw(150,500));
+
+
+</script>
+
+
+<h4>
+  Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

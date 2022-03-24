@@ -1,0 +1,306 @@
+<p>
+    In levels 1 and 2,
+    we have learned to use free-body diagrams and Newton's Second Law.
+    Here on level 3, we will use problems where you need to identify individual forces
+    using the principles of those forces.
+    For these problems, regarding a person inside of an elevator,
+    there are only two forces involved: gravity and normal force,
+    but you need to understand each force in order to use it.
+</p>
+
+<p>
+    You may have completed some of the <a href = '/pod/28a149'>block dragging</a>
+    problems already.
+    In these problems, the magnitude normal force is equal to the magnitude
+    of gravitational force of the block.
+    However, this is not always the case.
+    Rather, there is a procedure for finding the
+    magnitude of normal force that requires you to know the net force first.
+    In these problems, we will begin using that procedure.
+</p>
+
+
+<h4>
+    Forces Involved
+</h4>
+<!--
+include newton' second law separately
+-->
+<p>
+    For someone riding an elevator,
+    there are always <strong>two forces</strong> acting on them:
+    The force of gravity is acting downward and the normal force is acting upward.
+    Gravity, always has the same force, but the normal force acn be greater or lesser,
+    so it looks something like this:
+</p>
+<div id = 'exampleTable'></div>
+<script>
+    let exampleTable = new Table(1,3);
+    exampleTable.addDiagramToCell(0,0,fastFBD([['up','Normal',100],['down','gravity',100]]));
+    exampleTable.addDiagramToCell(0,1,fastFBD([['up','Normal',50],['down','gravity',100]]));
+    exampleTable.addDiagramToCell(0,2,fastFBD([['up','Normal',150],['down','gravity',100]]));
+
+    $("#exampleTable").append(exampleTable.draw(400));
+</script>
+<ul>
+    <li>
+        <h4>
+            The Force of Gravity
+        </h4>
+
+        <ul>
+            <li>
+                On earth, the <strong>direction</strong> of gravity is always <strong>down</strong>.
+            </li>
+            <li>
+                On earth, the <strong>magnitude</strong> of gravity is given by the formula \( F_g  = m g \).
+            </li>
+        </ul>
+
+        <p class = 'equation'>
+            $$
+            F_g = mg
+            $$
+        </p>
+
+        <div class="container">
+            <div class="row">
+                <div class = 'col-2 border border-dark'>
+                    <strong>Symbol</strong>
+                </div>
+                <div class = 'col-2 border border-dark'>
+                    <strong>Quantity</strong>
+                </div>
+                <div class = 'col-3 border border-dark'>
+                    <strong>SI Unit</strong>
+                </div>
+                <div class = 'col-3 border border-dark'>
+                    <strong>Notes</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class = 'col-2 border border-dark'>
+                    \( F_{g} \)
+                </div>
+                <div class = 'col-2 border border-dark'>
+                    Magnitude of kinetic friction
+                </div>
+                <div class = 'col-3 border border-dark'>
+                    Newtons (N)
+                </div>
+                <div class = 'col-3 border border-dark'>
+                </div>
+            </div>
+            <div class="row">
+                <div class = 'col-2 border border-dark'>
+                    \( m \)
+                </div>
+                <div class = 'col-2 border border-dark'>
+                    mass
+                </div>
+                <div class = 'col-3 border border-dark'>
+                    kilograms (kg)
+                </div>
+                <div class = 'col-3 border border-dark'>
+                </div>
+            </div>
+            <div class="row">
+                <div class = 'col-2 border border-dark'>
+                    \( g \)
+                </div>
+                <div class = 'col-2 border border-dark'>
+                    gravitational field / free-fall acceleration
+                </div>
+                <div class = 'col-3 border border-dark'>
+                    m/s^2
+                </div>
+                <div class = 'col-3 border border-dark'>
+                    on the surface of earth, is equal to 9.81 m/s^2
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <h4>
+            Normal Force
+        </h4>
+        In these problems, the <emph>direction</emph> of normal force is always <strong>up</strong>.
+        To find the <emph>magnitude</emph> of normal force,
+        there is no set formula. Instead, you need to follow a two-step process:
+        <ol>
+            <li>
+                First, find the net force.
+            </li>
+            <li>
+                Then, find the normal force using the process of
+                <a href = '/pod/acacfe'>finding the missing force</a>.
+            </li>
+        </ol>
+    </li>
+</ul>
+<div class="pageBreak"></div>
+
+<h4>
+    Other Principles
+</h4>
+<ol>
+    <li>
+        <p>
+            Newton's Second Law is crucial towards understanding these elevator problems.
+            Note that the <strong>direction</strong> of the net force
+            is always the same as the <strong>direction</strong> of the acceleration.
+        </p>
+        <p class = 'equation'>
+            $$
+            \Sigma F = m a
+            $$
+        </p>
+        <div id = 'newtonsSecondLawInfoTable'></div>
+    </li>
+    <li>
+        Newton's First Law states
+        that whenever an object is
+        not moving or <strong>moving at a constant velocity</strong>,
+        the net force acting on that object is zero.
+    </li>
+</ol>
+<!---
+Principles:
+- newton's second law
+- weight equation
+-->
+
+
+
+<script>
+    let gravityFormulaTable = new Table(4,4);
+    gravityFormulaTable.addTopHeaders(['symbol','quantity','SI unit','note']);
+    gravityFormulaTable.writeTextInRow(1,['\\( F_g \\)', 'Magnitude of Force of gravity','Newtons (N)']);
+    gravityFormulaTable.writeTextInRow(2,['\\( m \\)', 'mass', 'kilograms (kg)']);
+    gravityFormulaTable.writeTextInRow(3,['\\( g \\)','free-fall acceleration',"m/s/s","on earth, always equal to 9.8 m/s/s"])
+    $("#gravityFormulaTable").append(gravityFormulaTable.draw(500));
+
+    let newtonsSecondLawInfoTable = new Table(4,3);
+    newtonsSecondLawInfoTable.addTopHeaders(['symbol','quantity','SI unit']);
+    newtonsSecondLawInfoTable.writeTextInRow(1,['\\( \\Sigma F \\)','net force','Newtons (N)']);
+    newtonsSecondLawInfoTable.writeTextInRow(2,['\\( m \\)','mass','kilograms (kg)']);
+    newtonsSecondLawInfoTable.writeTextInRow(3,['\\( a \\)','acceleration','\\( \\frac{\\text{m}}{\\text{s}^2} \\)']);
+    $("#newtonsSecondLawInfoTable").append(newtonsSecondLawInfoTable.draw(400));
+</script>
+
+<iframe width="480" height="300" frameborder="0" src="https://www.educreations.com/lesson/embed/56590026/?s=gvnXGX&amp;ref=embed" allowfullscreen></iframe>
+
+<div class = 'pageBreak'></div>
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Esther is standing in an elevator.
+        Ester has a mass of 80.0 kg.
+        The elevator is moving downwards and is accelerating upwards
+        at a rate of 0.200 m/s<sup>2</sup>.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion' data-answer = '16 N upwards'>
+                What is the magnitude and direction of
+                net force acting on Esther?
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 785 N downwards; normal force = 801 N upwards'>
+                <div class = 'elevatorTable'></div>
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        Edgar is standing in an elevator.
+        Edgar has a mass of 70.0 kg.
+        The elevator is moving downwards and is accelerating downwards
+        at a rate of 0.400 m/s<sup>2</sup>.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion' data-answer = '28.0 N downwards'>
+                What is the magnitude and direction of
+                net force acting on Edgar?
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 687 N downwards; normal force = 659 N upwards'>
+                <div class = 'elevatorTable'></div>
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        Esther is standing in an elevator.
+        Esther has a mass of 64.0 kg.
+        The elevator is moving downwards and is accelerating downwards
+        at a rate of 0.900 m/s<sup>2</sup>.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion' data-answer = '57.6 N downwards'>
+                What is the magnitude and direction of
+                net force acting on Esther?
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 678 N downwards; normal force = 570 N upwards'>
+                <div class = 'elevatorTable'></div>
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        Ezekiel is in the elevator. Ezekiel has a mass of 68.0 kg.
+        The elevator is moving upwards and accelerating upwards
+        at a rate of 0.800 m/s<sup>2</sup>.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion' data-answer = '54.5 N upwards'>
+                What is the magnitude and direction of
+                net force acting on Ezekiel?
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 667 N downwards; normal force = 721 N upwards'>
+                <div class = 'elevatorTable'></div>
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        Eddie is standing in an elevator, and the elevator is not moving.
+        Eddie has a mass of 70.0 kg.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion' data-answer = 'a = 0 because the elevator is not moving'>
+                What is the net force acting on Eddie?
+                How do you know?
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 686 N downwards; normal force = 686 N upwards'>
+                <div class = 'elevatorTable'></div>
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        Evelyn is standing in an elevator.
+        It is moving upward at a constant velocity.
+        Evelyn has a mass of 60.0 kg.
+        <ol type = 'a' class = 'subQuestionList'>
+            <li class = 'subQuestion' data-answer = 'a = 0 because the elevator is moving at a constant velocity'>
+                What is the net force acting on Evelyn?
+                How do you know?
+            </li>
+            <li class = 'subQuestion' data-answer = 'gravity = 589 N downwards; normal force = 589 N upwards'>
+                <div class = 'elevatorTable'></div>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<ol class = 'answerList'></ol>
+
+<script>
+    let elevatorTable = new ForceTableQuantitative1D(2,true);
+    elevatorTable.nameForce(1,'gravity');
+    elevatorTable.nameForce(2,'normal force');
+
+    $(".elevatorTable").append(elevatorTable.draw(500));
+</script>
+
+<!--
+A small number of very easy find the missing force problems
+-->
+
+
+<!--
+a bunch (about 8) of the problems on completing free-body diagrams
+-->
+

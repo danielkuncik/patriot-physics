@@ -1,0 +1,63 @@
+<p class="introduction">
+    In this pod, we will first focus on drawing waves
+    with a particular wavelength.
+</p>
+
+<p class="directions">
+    For each of the questions below,
+    draw a wave with a particular wavelength.
+    Your wave should have at least three crests and troughs.
+</p>
+
+<h2 class = 'text-danger'>
+    This assignment must be completed on graph paper!
+    If you don't have any, use a ruler to turn lined paper into graph paper
+    or print out this page.
+</h2>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Draw a transverse wave with a wavelength of 3 boxes.
+        <br>
+        <div id = 'grid1'></div>
+    </li>
+    <li class = 'question'>
+        Draw a transverse wave with a wavelength of 2 boxes.
+        <br>
+        <div id = 'grid2'></div>
+    </li>
+    <li class = 'question'>
+        Draw a transverse wave with a wavelength of 5 boxes.
+        <br>
+        <div id = 'grid3'></div>
+    </li>
+    <li class = 'question'>
+        Draw a transverse wave with a wavelength of 9 boxes.
+        <br>
+        <div id = 'grid4'></div>
+    </li>
+    <li class = 'question'>
+        Draw a transverse wave with a wavelength of 1 box.
+        <br>
+        <div id = 'grid5'></div>
+    </li>
+</ol>
+
+
+<script>
+    let grid1 = new Grid(20,8);
+    let grid2 = new Grid(20,8);
+    let grid3 = new Grid(20,8);
+    let grid4 = new Grid(20,8);
+    let grid5 = new Grid(20,8);
+
+    $("#grid1").append(grid1.drawCanvas(600,300));
+    $("#grid2").append(grid2.drawCanvas(600,300));
+    $("#grid3").append(grid3.drawCanvas(600,300));
+    $("#grid4").append(grid4.drawCanvas(600,300));
+    $("#grid5").append(grid5.drawCanvas(600,300));
+
+    // placing one in each using a class did not work,
+    // probably because of the way that the ctx object
+    // works in a canvas
+</script>

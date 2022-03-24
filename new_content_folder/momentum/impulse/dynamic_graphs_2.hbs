@@ -1,0 +1,208 @@
+<p>
+    In Dynamic Graphs 1,
+    we introduced the two dynamic graphs,
+    the momentum-time graph and the net-force time graph,
+    and we related them to the corresponding kinematic graphs,
+    the velocity-time graph and the acceleration-time graph.
+    According to out formulas,
+    this transition only involved multiplying or dividing by inertial mass.
+</p>
+
+<p>
+    In this section we will look more closely at the relationship
+    between momentum-time graphs and net-force-time graphs.
+    This relationship is in fact <strong>Newton's Second Law</strong>,
+    which relates changes in momentum to the net force acting on some object.
+</p>
+
+<p>
+    Unsurprisingly, it is exactly the same relationship
+    as between velocity-time and acceleration-time graphs!
+</p>
+
+<ul>
+    <li>
+        The slope of the momentum-time graph at any given time \( t \)
+        is the net force at that time t, \( \Sigma F (t) \).
+    </li>
+    <li>
+        The area under the curve of the net-force-time graph
+        between two times \( t_1 \) and \( t_2 \)
+        is equal to the change in momentum \( \Delta p \)
+        between those two times.
+        This quantity is also called the <strong>impulse</strong> \( J \)
+        for that time interval.
+    </li>
+</ul>
+
+
+<h4>
+    A public service announcement on calculus.
+</h4>
+
+<p>
+    Many students taking calculus at the same time as physics
+    begin stating the following:
+</p>
+
+<ul>
+    <li>
+        Net force is the derivative of momentum.
+    </li>
+    <li>
+        Momentum is the integral of net force.
+    </li>
+</ul>
+
+<p>
+    Both of these statements are <emph>ill-defined</emph>.
+</p>
+
+<ul>
+    <li>
+        The derivative of the momentum-time function at any given time \( t_0 \)
+        is the net force at that time \( t_0 \), \( \Sigma F (t_0) \).
+        $$
+        \Sigma F (t_0) = \left. \frac{dp(t)}{dt} \right\vert_{t = t_0}
+        $$
+    </li>
+    <!-- https://tex.stackexchange.com/questions/8138/how-to-draw-a-vertical-line-of-desired-length-in-equations -->
+    <li>
+        The definite integral of a net-force-time function between two times
+        \( t_1 \) and \( t_2 \) is equal to the change in momentum \( \Delta p \)
+        between those two times.
+        This quantity is also called the <strong>impulse</strong> \( J \)
+        for that time interval.
+        $$
+            J = \int^{t_2}_{t_1} \Sigma F(t) dt = p(t_2) - p(t_1)
+        $$
+    </li>
+</ul>
+
+<p>
+    Notice that <strong>nothing fundamental</strong> changed from the statements above
+    that relied on only algebra and geometry.
+    The word "derivative" replaced "slope," the phrase "definite integral" replaced
+    the phrase "area under the curve," and the word "function" replaced "graph."
+</p>
+
+<p>
+    Calculus does not change the fundamental meaning of physics functions,
+    nor does it change the relationships between the functions.
+    In fact, the essence of calculus is still present whenever you relate these graphs,
+    even if you do so with only algebraic relationships!
+    For a physicist, derivatives and integrals are tools necessary to analyze
+    situations that cannot be analyzed with algebra.
+</p>
+
+<h4>
+    Problems
+</h4>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = 'col'>
+                    For the following momentum-time graph,
+                    create a net-force-time graph:
+                </div>
+                <div class = 'col-5' id = 'momentumGraph1'></div>
+                <div class = 'col-5' id = 'netForceGraph1'></div>
+            </div>
+        </div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        For the following momentum-time graph,
+        create a net-force-time graph:
+        <div id = 'momentumGraph2'></div>
+        <div id = 'netForceGraph2'></div>
+    </li>
+    <li class = 'question'>
+        For the following momentum-time graph,
+        create a net-force-time graph:
+        <div id = 'momentumGraph3'></div>
+        <div id = 'netForceGraph3'></div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question'>
+        For the following momentum-time graph,
+        create a net-force-time graph:
+        <div id = 'momentumGraph4'></div>
+        <div id = 'netForceGraph4'></div>
+    </li>
+    <li class = 'question'>
+        Determine the impulse acting on the following object:
+        <div id = 'netForceGraphX'></div>
+    </li>
+</ol>
+
+
+<script>
+    let momentumGraph1 = new QuantitativeGraph(0,5,0,20);
+    momentumGraph1.makeMomentumGraph();
+    momentumGraph1.addSegmentAndTwoPoints(0,0,5,20);
+    momentumGraph1.automaticReferenceArray(1,4);
+    $("#momentumGraph1").append(momentumGraph1.drawCanvas(300,300));
+
+    let netForceGraph1 = new QuantitativeGraph(0,5,-8,8);
+    netForceGraph1.makeNetForceGraph();
+    netForceGraph1.automaticReferenceArray(1,4);
+    $("#netForceGraph1").append(netForceGraph1.drawCanvas(300,300));
+
+    let momentumGraph2 = new QuantitativeGraph(0,4,0,80);
+    momentumGraph2.makeMomentumGraph();
+    momentumGraph2.addSegmentAndTwoPoints(0,60,4,0);
+    momentumGraph2.automaticReferenceArray(4);
+    $("#momentumGraph2").append(momentumGraph2.drawCanvas(300,300));
+
+    let netForceGraph2 = new QuantitativeGraph(0,4,-15,15);
+    netForceGraph2.makeNetForceGraph();
+    netForceGraph2.automaticReferenceArray(4,6);
+    $("#netForceGraph2").append(netForceGraph2.drawCanvas(300,300));
+
+    let momentumGraph3 = new QuantitativeGraph(0, 8, 0, 40);
+    momentumGraph3.makeMomentumGraph();
+    momentumGraph3.addStepwiseLinearFunction([[0,0],[2,10],[4,30],[6,40],[8,0]]);
+    momentumGraph3.automaticReferenceArray(4);
+    $("#momentumGraph3").append(momentumGraph3.drawCanvas(300,300));
+
+    let netForceGraph3 = new QuantitativeGraph(0,8,-20,20);
+    netForceGraph3.makeNetForceGraph();
+    netForceGraph3.automaticReferenceArray(4,8);
+    $("#netForceGraph3").append(netForceGraph3.drawCanvas(300,300));
+
+    let momentumGraph4 = new QuantitativeGraph(0,12,0,60);
+    momentumGraph4.makeMomentumGraph();
+    momentumGraph4.addStepwiseLinearFunction([[0,60],[3,0],[6,15],[9,45],[12,0]]);
+    momentumGraph4.automaticReferenceArray(4);
+    $("#momentumGraph4").append(momentumGraph4.drawCanvas(300,300));
+
+    let netForceGraph4 = new QuantitativeGraph(0,12,-20,20);
+    netForceGraph4.makeNetForceGraph();
+    netForceGraph4.automaticReferenceArray(4,8);
+    $("#netForceGraph4").append(netForceGraph4.drawCanvas(300,300));
+
+    let netForceGraphX = new QuantitativeGraph(0,0.5,0,200);
+    netForceGraphX.makeNetForceGraph();
+    netForceGraphX.automaticReferenceArray(2, 4);
+    netForceGraphX.addStepwiseLinearFunction([[0,0],[0.25,150],[0.5,0]]);
+    $("#netForceGraphX").append(netForceGraphX.drawCanvas(300));
+</script>
+
+<div class = 'pageBreak'></div>
+<h4>
+    Answers
+</h4>
+
+<ol class = 'answerList'>
+
+</ol>
+
+<!--
+Three momentum graphs: create a net force graph
+Thre net force graphs: create a momenutm graph
+some other graphs: askign fro the impulse...
+some grapsh...asking for the impulse
+-->

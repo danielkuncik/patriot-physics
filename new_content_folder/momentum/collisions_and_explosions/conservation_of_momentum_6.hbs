@@ -1,0 +1,177 @@
+
+<p class = 'introduction'>
+    In this section we will derive equations for the most common problems
+    on the conservation of momentum.
+    These equations can be especially helpful for confirming the conservation
+    of momentum experimentally.
+</p>
+
+
+<ol>
+    <li>
+        <h5>
+            Symbolic Explosion Problem
+        </h5>
+        A cannon of mass \( M_C \) is loaded with a cannonball of mass \( m_b \).
+        Initially, they are stationary.
+        The cannon fires the cannonball with a velocity \( v_b \),
+        and recoils with a velocity \( v_C \).
+        Define the direction the cannonball is fired as the positive direction.
+        <ol type = 'a'>
+            <li>
+                Derive an equation from the conservation of momentum
+                that relates the variables \( M_C \), \( m_b \), \( v_C \), and \( v_b \).
+                Do not solve the equation for any particular variable.
+                Describe what each term of the equation represents.
+            </li>
+            <li>
+                Solve for an formula for \( v_C \) in terms of
+                \( M_C \), \( m_b \), and \( v_b \).
+            </li>
+            <li>
+                Demonstrate the formula you derived is dimensionally correct.
+            </li>
+            <li>
+                The recoil velocity of the cannon should be in the opposite
+                direction as the velocity of the cannonball.
+                Demonstrate from your formula that this is the case.
+            </li>
+            <li>
+                Solve for a new equation that relates the ratio of the speeds
+                \( \left| \frac{v_C}{v_b} \right| \)
+                to the ratio of the masses \( \frac{M_C}{m_b} \).
+            </li>
+            <li>
+                What is the proportionality relationship between \( \left| \frac{v_C}{v_b} \right| \)
+                and \( \frac{M_C}{m_b} \)
+                and what is the constant of proportionality?
+            </li>
+        </ol>
+    </li>
+    <li>
+        <h5>
+            Symbolic Perfectly Inelastic Collision Problem
+        </h5>
+        A car of mass \( m_a \) is moving at some velocity \( v_{ai} \),
+        when it collides with a car of mass \( m_b \) moving at some velocity \( v_{bi} \).
+        The two cars stick together and begin moving at a velocity \( v_f \).
+        <ol type = 'a'>
+            <li>
+                Use the conservation of momentum to derive an equation that
+                relates the variables \( m_a \), \( m_b \), \( v_{ai} \), \( v_{bi} \), and \( v_f \).
+                Do not solve your equation for any particular variable.
+            </li>
+            <li>
+                The equation above should have three terms.
+                Describe what quantity each term represents.
+            </li>
+            <li>
+                The prompt for this problem did not contain any indication
+                about which direction the two cars were moving.
+                (Other than the implication they are moving in the same dimension.)
+                It could have been a rear-end collision or a head-on collision.
+                Explain how either condition is represented by the same formula.
+            </li>
+            <li>
+                Use the equation above to derive a formula for \( v_f \) in terms of
+                \( m_a \), \( m_b \), \( v_{ai} \), and \( v_{bi} \).
+                Prove your equation is dimensionally correct.
+            </li>
+            <li>
+                Assume that the collision is a head-on collision,
+                that is, the two cars were moving in opposite directions
+                before they collided.
+                Without loss of generality, assume that Car A was moving to the right
+                and Car B was moving to the left.
+                Write an IF-ELSE statement to determine which direct the cars move after
+                the collision.
+            </li>
+            <li>
+                Now assume that car B as <emph>stationary</emph> before the collision.
+                Modify your equation for \( v_f \) as necessary.
+            </li>
+            <li>
+                In the condition that car B was stationary,
+                what is the proportionality relationships between \( v_f \)
+                and \( v_{ai} \)?
+                [under the assumption that \( m_a \) and \( m_b \) are constant variables.]
+            </li>
+            <li>
+                In the condition that car B was stationary,
+                describe a proportionality relationship
+                between \( v_f \) and some ratio of masses.
+                [under the assumption that \( v_{ai} \) is a constant variable.]
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li>
+        <h5>
+            General Collision Symbolic Analysis
+        </h5>
+        (Coming Soon.)
+    </li>
+    <li>
+        <h5>
+            Symbolic Ballistic Pendulum
+        </h5>
+        <p>
+            A ballistic pendulum is a device for measuring the speed of a bullet.
+            A diagram and brief explanation is available <a href = 'http://hyperphysics.phy-astr.gsu.edu/hbase/balpen.html#c1'>here</a>.
+            A bullet moving at a speed \( v_1\) of mass \( m \) strikes a stationary heavy pendulum of mass \( M \) in its equilibrium position.
+            The collision is totally inelastic, that is, the bullet lodges into the pendulum.
+            Immediately after the collision, the bullet-pendulum system is moving at a speed \( v_2 \).
+            The bullet-pendulum system rises to some height \( y_f \), where it is briefly stationary before falling.
+            Free-fall acceleration \( g \) is also a known variable in this problem.
+        </p>
+        <p>
+            The ultimate goal is to gain a formula for the speed of the bullet \( v_1 \)
+            in terms of the mass of the bullet \( m \), the mass of the pendulum \( M \),
+            the height to which the pendulum-bullet system rises \( y_f \), and known constants.
+            All three are all <emph>measurable variables</emph>,
+            thus, with the formula we would have a system for measuring the speed of a bullet.
+        </p>
+        <p>
+            The following steps will help you get an answer.
+        </p>
+        <ul type = 'a'>
+            <li>
+                Write an equation based on the conservation of momentum
+                that relates the variables \( v_1 \), \( m \), \( M \), and \( v_2 \).
+            </li>
+            <li>
+                Write an equation for the total energy of the pendulum-bullet-earth system
+                immediately after the collision.
+                Assume the zero-point height is the initial height of the pendulum,
+                so at this point the system has only kinetic energy.
+            </li>
+            <li>
+                Write an equation for the total energy of the pendulum-bullet-earth system
+                after the pendulum has risen to a height \( y_f \).
+            </li>
+            <li>
+                Create an equation based on the conservation of energy
+                that relates the variables \( v_2 \), \( m \), \( M \), \( g \), and \( y_f \).
+            </li>
+            <li>
+                Combine the equations based on the conservation of momentum with the equation based on the
+                conservation of energy to determine a single formula for \( v_1 \) in terms of
+                \( m \), \( M \), \( y_f \), and \( g \).
+            </li>
+            <li>
+                Prove that your final answer is dimensionally correct.
+            </li>
+        </ul>
+    </li>
+</ol>
+
+
+<div class = 'pageBreak'></div>
+<h3>
+    Answers
+</h3>
+
+<p>
+    Answer for ballistic pendulum:
+    \( v_i = \frac{m + M}{m} \cdot \sqrt{2 g y_f} \)
+</p>

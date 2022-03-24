@@ -1,0 +1,402 @@
+<p>
+    This pod deals with the loaded word <strong>radiation</strong>.
+    We learn when it means something dangerous and when it means something
+    perfectly safe.
+</p>
+
+
+<h4>
+    The word "Radiation"
+</h4>
+
+<p>
+    When people see the word “radiation” they often think of something very dangerous.
+    But, in physics, “radiation” is not dangerous at all.
+    In fact, you are surrounded by completely safe radiation all the time!
+</p>
+
+<p class="definition">
+    In physics <strong>"radiation"</strong> is
+    a synonym for <strong>electromagnetic wave</strong>.
+    It can mean any wave:
+    radio, micro, infrared, visible light, ultraviolet, X-Ray, or gamma ray.
+    It is also often called <strong>electromagnetic radiation</strong>.
+</p>
+
+<p>
+    The word "radiation" comes from the same root as the word "radius",
+    as in the radius of a circle.
+    If you have some source of electromagnetic waves,
+    such as a light bulb, it sends electromagnetic waves out in every single direction,
+    just like the radii come out in every direction from the center of a circle or sphere.
+</p>
+
+
+<p class="directions">
+    For each statement, chose true or false:
+</p>
+<ol class="questionList">
+    <li class="question" data-answer = 'false'>
+        All radiation is dangerous.
+    </li>
+    <li class="question" data-answer = 'true'>
+        Light is radiation.
+    </li>
+    <li class="question" data-answer = 'true'>
+        There is radiation around you right now.
+    </li>
+</ol>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'visible light; radio waves from your wifi; microwaves from your cellphone.'>
+        What are some examples of radiation that
+        is surrounding you right now?
+    </li>
+</ol>
+
+
+<h4>
+    Ionizing Radiation vs. Non-Ionizing Radiation
+</h4>
+
+<p class="definition">
+    All electromagnetic radiation comes in tiny pieces
+    called <strong>photons</strong>.
+    Each photon has a very specific amount of energy.
+    For example, a photon of red light has 1.8 electron Volts of energy.
+</p>
+
+<p class="definition">
+    An <strong>ion</strong> is an atom that does not have
+    a neutral change. It is called an ion because it has
+    either gained or lost an electron.
+</p>
+
+<p>
+    Imagine that a photon of light strieks an atom.
+    If the photon has enough energy, then it will knock
+    one of the electrons in the atom out of the atom.
+    We say that the photon <emph>ionized</emph>
+    the atom.
+</p>
+
+
+<p>
+    The simplest atom is hydrogen and has only one proton and one electron.
+    It takes 13.6 electron volts of energy to knock the electron out of the hydrogen atom.
+    Thus, all electromagnetic photons with an energy greater than 13.6 electron Volts are called <strong>ionizing radiation</strong>.
+    All electromagnetic waves with an energy less than 13.6 electron Volts are called <strong>non-ionizing radiation</strong>.
+</p>
+
+<p>
+    A photon with precisely 13.6 electron volts, the first photon that is considered <emph>ionizing</emph>,
+    comes in the ultraviolet region of the electromagnetic spectrum.
+</p>
+
+<div id = 'dangerousRadiationDiagram'></div>
+<script>
+    let dangerousRadiationDiagram = new DiagramF();
+    dangerousRadiationDiagram.addText('Radio Waves',new PointF(0,14),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Microwaves',new PointF(0,12),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Infrared Waves',new PointF(0,10),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Visible Light',new PointF(0,8),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Ultraviolet Light',new PointF(0,6),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('X-Ray',new PointF(0,4),1.5,0,'upperRight');
+    dangerousRadiationDiagram.addText('Gamma Ray',new PointF(0,2),1.5,0,'upperRight');
+
+    const length = 12;
+    const betweenPieces = 0.5;
+    const verticalPosition = 5.5;
+    dangerousRadiationDiagram.addSegment(new PointF(betweenPieces,verticalPosition), new PointF(betweenPieces + length,verticalPosition));
+
+    dangerousRadiationDiagram.addText('13.6 eV',new PointF(2 * betweenPieces + length, verticalPosition), 1.2,0,'centerLeft');
+
+    let arrowPoint1A = new PointF(betweenPieces + length / 5, verticalPosition + betweenPieces);
+    let arrowPoint1B = new PointF(betweenPieces + length / 5, 14);
+    let arrowPoint2A = new PointF(betweenPieces + length / 5, verticalPosition - betweenPieces);
+    let arrowPoint2B = new PointF(betweenPieces + length / 5, 0.5);
+    dangerousRadiationDiagram.addArrow(arrowPoint1A, arrowPoint1B);
+    dangerousRadiationDiagram.labelLineAbove(arrowPoint1A,arrowPoint1B,'Lesser Energy',betweenPieces / 2,0.8);
+    dangerousRadiationDiagram.addArrow(arrowPoint2A, arrowPoint2B);
+    dangerousRadiationDiagram.labelLineAbove(arrowPoint2A,arrowPoint2B,'Greater Energy',betweenPieces / 2,0.8);
+
+
+    dangerousRadiationDiagram.addText('Non-Ionizing', new PointF(betweenPieces + length / 3,10),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Radiation', new PointF(betweenPieces + length / 3,8),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Ionizing', new PointF(betweenPieces + length / 3,3),1.5,0,'centerLeft');
+    dangerousRadiationDiagram.addText('Radiation', new PointF(betweenPieces + length / 3,1),1.5,0,'centerLeft');
+
+
+    $("#dangerousRadiationDiagram").append(dangerousRadiationDiagram.drawCanvas());
+</script>
+
+
+<p class="directions">
+    For each electromagnetic wave, state if it is:
+    <br>a) ionizing radiation
+    <br>b) non-ionizing radiation
+    <br>c) partly ionizing radiation and partly non-ionizing radiation
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Infrared
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Microwaves
+    </li>
+    <li class="question" data-answer = 'ionizing radiation'>
+        Gamma Rays
+    </li>
+    <li class="question" data-answer = 'partly ionizing radiation and partly non-ionizing radiation'>
+        Ultraviolet Rays
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Radio waves
+    </li>
+    <li class="question" data-answer = 'ionizing radiation'>
+        X-Rays
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Visible Light
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        A photon with 12 electron Volts of energy.
+    </li>
+    <li class="question" data-answer = 'ionizing radiation'>
+        A photon with 14 electron volts of energy.
+    </li>
+</ol>
+
+<p class="directions">
+    For each electromagnetic wave, state if it is:
+    <br>a) ionizing radiation
+    <br>b) non-ionizing radiation
+    <br>c) partly ionizing radiation and partly non-ionizing radiation
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Light from a light bulb
+    </li>
+    <li class="question" data-answer = 'partly ionizing and partly non-ionizing radiation'>
+        Light form the sun (Light from the sun is primarily infrared, visible, and ultraviolet radiation)
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        A signal from a radio transmitter
+    </li>
+    <li class="question" data-answer = 'ionizing radiation'>
+        A pulse from an X-Ray machine
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Radiation used in a microwave oven
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Radiation used by a wifi signal
+    </li>
+    <li class="question" data-answer = 'non-ionizing radiation'>
+        Radiation from a remote control (infrared)
+    </li>
+    <li class="question" data-answer = 'ionizing radiation'>
+        Radiation emitted by a gamma ray burst
+    </li>
+</ol>
+
+<p>
+    In physics, as stated above, the word “radiation” does not mean something dangerous, but rather means any electromagnetic wave.
+    There is both non-dangerous radiation and dangerous radiation.
+    The dangerous radiation is the ionizing radiation and the non-dangerous radiation is the non-ionizing radiation.
+</p>
+
+<p>
+    <strong>Cancer</strong> and other diseases can be caused
+    by exposure to ionizing radiation.
+</p>
+
+<h5>
+    What are the main sources of ionizing radiation?
+</h5>
+
+<ul>
+    <li>
+        The sun (high energy ultraviolet light)
+    </li>
+    <li>
+        Radon (a gas that seeps out of the ground into
+        people’s basements and emits high energy
+        radiation)
+    </li>
+</ul>
+
+<p>
+    <a href = 'https://www.nj.gov/dep/rpp/llrw/download/fact03.pdf'>Link to Information on ionizing radiation</a>
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'C.'>
+        You may have a broken bone!
+        Your doctor recommends an X-Ray to see if you have a broken bone.
+        Which of the following is most true:
+        <ol type = 'A'>
+            <li>
+                There is no risk of an X-Ray camera because it emits
+                non-izoning radiation.
+            </li>
+            <li>
+                The X-Ray camera emits extremely dangerous ionizing radiation.
+            </li>
+            <li>
+                The X-Ray camera does emit ionizing radiation,
+                but ionizing radiation,
+                but the heath risk of a single pulse of ionizing radiation
+                is much much less than the health risk of an undiagnosed broken bone.
+                It is appropriate to receive an X-Ray when your doctor recommends it, but not frivolously.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h4>
+    Gamma Rays: Very Dangerous:
+</h4>
+
+<p>
+    The three types of ionizing radiation are high energy ultraviolet rays, X-Rays,
+    and gamma rays. However, gamma rays photons, because they have the highest
+    energy of any photon, are much more dangerous.
+    The risk is not that they will simply knock electrons out of atoms
+    and disrupt your cells, but that they will completely eradicate human cells entirely!
+    They have enough energy to break apart the chemical bonds that hold your molecules together.
+    If there were ever a massive amount of gamma rays (such as in a gamma ray burst),
+    it would be like the guns fired by aliens in a sci-fi movie, and simply vaporize everything in their path.
+</p>
+
+<h4>
+    Are microwave ovens dangerous:
+</h4>
+
+<p>
+    Many people believe that a microwave oven sends
+    out “dangerous radiation” into the kitchen, or even into your food.
+    A microwave oven works because microwaves
+    have precisely the correct amount of energy to
+    vibrate water molecules very fast.
+    Because nearly all food involves water,
+    microwaves give a much more efficient way to heat
+    food than the more traditional method of using infrared
+    waves (heat from your oven).
+    But are the microwaves made by the oven dangerous?
+    Well, they are certainly non-ionizing radiation,
+    and have even less energy than visible light! So, no.
+    If you search online, you will find plenty of
+    weird side effects of heating with a microwave you can read about.
+    You will need to decide about that for yourself.
+    But, the important thing to know for physics class is this:
+    microwave ovens produce non-ionization radiation,
+    so there is no reason to assume they’d be dangerous.
+</p>
+
+<p class="directions">
+    For each option, select true or false:
+</p>
+<ol class="questionList">
+    <li class="question" data-answer = 'false'>
+        Microwaves are ionizing radiation.
+    </li>
+    <li class="question" data-answer = 'false'>
+        Standing next to a microwave oven when heating up a pizza means that very dangerous radiation is moving through your body.
+    </li>
+    <li class="question" data-answer = 'false'>
+        When you heat up food in a microwave oven, the microwaves go into your food and make it poisonous.
+    </li>
+    <li class="question" data-answer = 'true'>
+        Microwaves work because they cause water molecules to vibrate very fast.
+    </li>
+</ol>
+
+<h4>
+    Are Cell Phones Dangerous:
+</h4>
+
+<p>
+    Cell Phones use microwaves to communicate.
+    Therefore, everything just stated about microwave ovens
+    is also true about cell phones:
+    Cell phones emit non-ionizing radiation unlikely to cause any damage.
+    However, there is one potential cause for concern:
+    Microwaves, though they do not damage DNA or cells, do heat up water very effectively, and
+    your body is made primarily of water.
+    Thus, a cell phone held near any part of your body (particularly your brain)
+    for a long period of time can cause that body part to increase slightly in temperature.
+    This could have potentially cause negative health effects.
+    Scientists are continuing to study this risk.
+    There is still disagreement. Clearly, the risk is not enormous, otherwise it would be obvious.
+    You can make your own determination about the potential risk of cellphones,
+    but for physics class, it is crucial to understand that
+    any potential risk of cell phones comes from heating of water in your
+    body and NOT from high energy electromagnetic radiation.
+</p>
+
+<p class="directions">
+    For each statement, select true or false.
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = 'false'>
+        Cell phones produce ionizing radiation.
+    </li>
+    <li class="question" data-answer = 'true'>
+        Cell phones produce radiation with less energy than visible light.
+    </li>
+    <li class="question" data-answer = 'true'>
+        Cell phones can potentially heat up your body.
+    </li>
+    <li class="question" data-answer = 'true'>
+        There is a potential, though not definite, health risk of constant cell phone use.
+        This risk comes from heating, not high energy radiation.
+    </li>
+</ol>
+
+<h4>
+    Radiation and COVID-19
+</h4>
+
+<p>
+    There is a potential that ultraviolet radiation could damage COVID-19 cells.
+    Ultraviolet radiation IS ionizing radiation, and has the potential
+    to damage the DNA the coronavirus and stop it from spreading.
+    However, scientists have not totally confirmed this fact,
+    and because ultraviolet radiation has other negative healt effects on the body,
+    this is probably not the best way to attempt to combat the virus.
+</p>
+<a href = 'https://www.digitaltrends.com/news/can-uv-light-kill-coronavirus/'>Article on this</a>
+
+
+<p>
+    Some articles online have been suggesting putting your mail in the microwave
+    in order to kill potential coronavirus on your mail.
+    First of all, it isn’t very likely there is coronavirus on your mail,
+    but separate from that, let’s evaluate the physics of this idea:
+</p>
+<p>
+    a) Can microwaves kill cells?
+    NO! Microwaves are non-ionizing radiation. For they same reason they are not dangerous to you, they are not dangerous to coronavirus cells.
+</p>
+<p>
+    b) What do microwaves do? They HEAT UP THINGS.
+</p>
+<p>
+    c) Can heating up your mail kill coronavirus on your mail?
+    Potentially, yes it could. But you know what else heating up your mail will do?
+    START A FIRE!!!
+</p>
+<p>
+    In conclusion, don't put your mail in the microwave.
+</p>
+
+
+<!---
+
+Someone screams: I"m hitting you with radiation!
+then points a flashlight at you
+-->

@@ -1,0 +1,283 @@
+<p>
+    Breaking a wave down to its geometric parts is essential for explaining how waves function.
+    In this pod, we will consider the parts of a traveling, transverse wave,
+    the most common type of wave people know.
+</p>
+
+<h4>
+    Crests and Troughs:
+</h4>
+
+<p class = 'definition'>
+    The top of a wave is called a <strong>crest</strong>
+    and the bottom of a wave is called a <strong>trough</strong>.
+</p>
+<div id = 'crestTroughWave'></div>
+<script>
+    let crestTroughWave = new Wave(4);
+    crestTroughWave.pointToCrests('crest');
+    crestTroughWave.pointToTroughs('trough');
+    $("#crestTroughWave").append(crestTroughWave.drawCanvas(500));
+</script>
+
+<h4>
+    Wavelength and Amplitude
+</h4>
+
+<p class = 'definition'>
+    The distance between any two crests is called the <strong>wavelength</strong>.
+    A wavelength is also the distance between the
+</p>
+<div id = 'wavelengthWave'></div>
+<script>
+    let wavelengthWave = new Wave(3,undefined,undefined,0);
+    wavelengthWave.labelSingleWavelengthTop(1,'wavelength');
+    wavelengthWave.labelSingleWavelengthBottom(1,'wavelength');
+    $("#wavelengthWave").append(wavelengthWave.drawCanvas(500));
+</script>
+
+<p class = 'definition'>
+    The distance from the middle of the wave to the top of the
+    wave is called the <strong>amplitude</strong>.
+    An amplitude is also the distance from the middle of the wave
+    to the bottom of the wave.
+</p>
+<div id = 'amplitudeWave'></div>
+
+<script>
+    let amplitudeWave = new Wave(3,undefined,undefined,0);
+    amplitudeWave.pointAmplitudeOnCrest(1,'amplitude');
+    amplitudeWave.pointAmplitudeOnTrough(1,'amplitude');
+    amplitudeWave.addCenterLine(false);
+    $("#amplitudeWave").append(amplitudeWave.drawCanvas(500));
+</script>
+
+
+<p class = 'definition'>
+    The <strong>amplitude</strong> is NOT the height of a wave from top to bottom.
+    The total height of the wave is <strong>two amplitudes</strong>.
+</p>
+
+<h4>
+    Practice:
+</h4>
+
+
+<p class = 'definition'>
+    In each image of wave, an arrow points out some feature.
+    Select the answer that best describes that feature.
+    Each answer choice is used TWICE.
+</p>
+
+<ol class = 'questionList'>
+    <div class = 'container'>
+        <li class = 'question' data-answer = 'C. Wavelength'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage1'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'D. Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage2'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'E. Twice the Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage3'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'A. Crest'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage4'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'C. Wavelength'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage5'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'B. Trough'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage6'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'D. Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage7'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'E. Twice the Amplitude'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage8'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'B. Trough'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage9'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+        <li class = 'question' data-answer = 'A. Crest'>
+            <div class = 'row mb-5'>
+                <div class = 'col-6' id = 'waveImage10'></div>
+                <div class = 'col-6 waveImageOptions'></div>
+            </div>
+        </li>
+    </div>
+</ol>
+
+<p class = 'directions'>
+    Match each word to its definition.
+</p>
+
+<ol class = 'questionList'>
+    <div class = 'container'>
+        <div class = 'row mb-4'>
+            <div class = 'col-4'>
+                <li class = 'question' data-answer = 'Z'>
+                    Wavelength
+                </li>
+            </div>
+            <div class = 'col-4'></div>
+            <div class = 'col-4'>
+                W: Top of a wave.
+            </div>
+        </div>
+        <div class = 'row mb-4'>
+            <div class = 'col-4'>
+                <li class = 'question' data-answer = 'X'>
+                    Amplitude
+                </li>
+            </div>
+            <div class = 'col-4'></div>
+            <div class = 'col-4'>
+                X: Distance from between the middle of a wave
+                and the crest
+            </div>
+        </div>
+        <div class = 'row mb-4'>
+            <div class = 'col-4'>
+                <li class = 'question' data-answer = 'W'>
+                    Crest
+                </li>
+            </div>
+            <div class = 'col-4'></div>
+            <div class = 'col-4'>
+                Y: Bottom of a wave
+            </div>
+        </div>
+        <div class = 'row mb-4'>
+            <div class = 'col-4'>
+                <li class = 'question' data-answer = 'Y'>
+                    Trough
+                </li>
+            </div>
+            <div class = 'col-4'></div>
+            <div class = 'col-4'>
+                Z: Distance between two crests of a wave
+            </div>
+        </div>
+    </div>
+</ol>
+
+<p class = 'directions'>
+    Fill in the blank
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = 'trough'>
+        The bottom of a wave is called the _______________.
+    </li>
+    <li class = 'question' data-answer = 'amplitude'>
+        A taller wave has a greater _______________.
+    </li>
+    <li class = 'question' data-answer = 'wavelength'>
+        When I measure the distance between one crest and another crest, I am measuring the _______________.
+    </li>
+    <li class = 'question' data-answer = 'crest'>
+        The top of the wave is called the _______________.
+    </li>
+</ol>
+
+<p class = 'directions'>
+    Complete the following drawings
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Draw a transverse wave. Label the <emph>crests</emph> and <emph>troughs</emph>.
+    </li>
+    <li class = 'question'>
+        Draw a transverse wave. Label two different ways to measure the <emph>wavelength</emph>.
+    </li>
+    <li class = 'question'>
+        Draw a transverse wave. Label two different ways to measure the <emph>amplitude</emph>.
+    </li>
+</ol>
+
+<script>
+    let waveImageOptions = $("<ol type = 'A'></ol>");
+    $(waveImageOptions).append($("<li>crest</li>"));
+    $(waveImageOptions).append($("<li>trough</li>"));
+    $(waveImageOptions).append($("<li>wavelength</li>"));
+    $(waveImageOptions).append($("<li>amplitude</li>"));
+    $(waveImageOptions).append($("<li>twice the amplitude</li>"));
+    $(".waveImageOptions").append(waveImageOptions);
+
+    let waveImage1 = new Wave();
+    waveImage1.labelSingleWavelengthTop(2);
+
+    let waveImage2 = new Wave();
+    waveImage2.pointAmplitudeOnTrough(2);
+
+    let waveImage3 = new Wave();
+    waveImage3.pointFullHeightOfWave('crest',1);
+
+    let waveImage4 = new Wave();
+    waveImage4.pointToOneCrest(3);
+
+    let waveImage5 = new Wave();
+    waveImage5.labelSingleWavelengthBottom(1);
+
+    let waveImage6 = new Wave();
+    waveImage6.pointToOneTrough(2);
+
+    let waveImage7 = new Wave();
+    waveImage7.pointAmplitudeOnCrest(1);
+
+    let waveImage8 = new Wave();
+    waveImage8.pointFullHeightOfWave('trough',3);
+
+    let waveImage9 = new Wave();
+    waveImage9.pointToOneTrough(0);
+
+    let waveImage10 = new Wave();
+    waveImage10.pointToOneCrest(1);
+
+    $("#waveImage1").append(waveImage1.drawCanvas(300));
+    $("#waveImage2").append(waveImage2.drawCanvas(300));
+    $("#waveImage3").append(waveImage3.drawCanvas(300));
+    $("#waveImage4").append(waveImage4.drawCanvas(300));
+    $("#waveImage5").append(waveImage5.drawCanvas(300));
+    $("#waveImage6").append(waveImage6.drawCanvas(300));
+    $("#waveImage7").append(waveImage7.drawCanvas(300));
+    $("#waveImage8").append(waveImage8.drawCanvas(300));
+    $("#waveImage9").append(waveImage9.drawCanvas(300));
+    $("#waveImage10").append(waveImage10.drawCanvas(300));
+
+</script>
+
+
+<h4>
+    Answers:
+</h4>
+
+<ol class = 'answerList'></ol>

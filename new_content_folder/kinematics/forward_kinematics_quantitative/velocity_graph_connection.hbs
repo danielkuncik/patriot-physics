@@ -1,0 +1,81 @@
+<p>
+    In the previous section,
+    you used an image of a position-time graph to
+    write a story and draw other kinematic graphs.
+    In this section, you will do the same starting
+    with a velocity-time graph.
+</p>
+
+
+<h4>
+    Number 1
+</h4>
+
+<p>
+    The following velocity-time graph describes
+    some person's or animal's or object's motion/
+</p>
+
+<div id = 'number1'></div>
+
+
+<ol type = 'A'>
+    <li>
+        Write a brief story explaining
+        what this graph could represent.
+    </li>
+    <li>
+        Draw a qualitative position-time graph
+        that describes the same motion as the velocity-time graph.
+        Assume the initial position is zero.
+    </li>
+    <li>
+        Draw a qualitative acceleration-time graph
+        that describes the same motion as the velocity-time graph.
+    </li>
+</ol>
+
+
+<h4>
+    Number 2
+</h4>
+
+<div id = 'number2'></div>
+
+
+<ol type = 'A'>
+    <li>
+        Write a brief story explaining
+        what this graph could represent.
+    </li>
+    <li>
+        Draw a qualitative position-time graph
+        that describes the same motion as the velocity-time graph.
+        Assume the initial position is zero.
+    </li>
+    <li>
+        Draw a qualitative acceleration-time graph
+        that describes the same motion as the velocity-time graph.
+    </li>
+</ol>
+
+
+<script>
+    let number1Func = new StepwiseFunctionObject(0,0);
+    number1Func.addLinearStep(5,5);
+    number1Func.addConstantStep(5);
+    number1Func.addLinearStep(5,0);
+    let number1 = new QualitativeGraph(number1Func,0,15,2,0,10);
+    number1.labelAxes('time','velocity');
+    number1.moveLabelsToSide();
+    $("#number1").append(number1.drawCanvas(600,300));
+
+    let number2Func = new StepwiseFunctionObject(0,5);
+    number2Func.addLinearStep(5,0);
+    number2Func.addConstantStep(5);
+    number2Func.addLinearStep(5,5);
+    let number2 = new QualitativeGraph(number2Func,0,15,2,0,10);
+    number2.labelAxes('time','velocity');
+    number2.moveLabelsToSide();
+    $("#number2").append(number2.drawCanvas(600,300));
+</script>

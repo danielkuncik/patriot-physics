@@ -1,0 +1,169 @@
+<p>
+    This entire unit has considered inverse square laws.
+    But it begs the question, how did the original scientists (Newton and Coulomb)
+    discover these formulas?
+    It is intuitive that the force of gravitation should be directly proportional
+    to the mass, but why is it inversely proportional to distance squared?
+    In fact, Newton had an intuition that the inverse square law was the correct relationship.
+    Based on this intuition, he calculated what results would follow.
+    But why did he have that intuition in the first place?
+</p>
+
+<p>
+    Isaac Newton had spent much of his youth experimenting and studying light.
+    It is possible he thought of his inverse square law by examining light.
+    We will draw a comparison.
+</p>
+
+<p>
+    Imagine a light bulb in the middle of a completely dark space.
+    The only light in the space comes directly from that bulb.
+</p>
+
+<p class = 'directions'>
+    Answer each of the questions below.
+    It begins with some basic questions about the nature of light,
+    and then moves into the topics that explain an inverse square law.
+</p>
+
+
+<h4>
+    Warm Up, practice with light:
+</h4>
+<ol>
+    <li>
+        Assume the light bulb has a power of 5 Watts.
+        Determine the total amount of energy (in Joules)
+        that the light bulb emits in one minute.
+    </li>
+    <li>
+        If the light bulb has a power of 40 Watts,
+        determine the total amount of energy (in Joules)
+        that the light bulb emits in five minutes.
+    </li>
+    <li>
+        The light bulb emits this light in tiny pieces of light called photons.
+        For visible light, assume each photon of light has an energy of \( 4.8 \times 10^{-19} \text{Joules} \).
+        (For a much more detailed consideration of this issue,
+        see the unit on <a href = '/unit/waves/the_electromagnetic_spectrum_quantitative'>The Electromagnetic Spectrum: Quantitative</a>.)
+        Determine how many photons that a 5 watt light bulb emits in one minute.
+    </li>
+    <li>
+        Determine how many photons that a 40 watt light bulb emits in five minutes.
+    </li>
+    <li>
+        Determine how long it takes the light from the bulb to travel a distance of 2 meters.
+        [This will be a very short time.]
+    </li>
+    <li>
+        Determine how long it takes the light from the bulb to travel a distance of 4 meters.
+    </li>
+    <li>
+        Imagine that is a sphere surrounding the light with a radius of 2 meters.
+        Determine the surface area of this sphere.
+    </li>
+    <li>
+        Imagine that is a sphere surrounding the light with a radius of 4 meters.
+        Determine the surface area of this sphere.
+    </li>
+</ol>
+
+<h4>
+    Light Intensity
+</h4>
+
+<p>
+    A 5 watt light bulb is alone in a dark field.
+    Imagine that a sphere surrounds the light bulb.
+    Every second, 5 Joules of light energy leave the light bulb.
+    This energy is contained in \( 1.04 \times 10^{19} \) photons of light
+    which come out from the bulb every second.
+    There is an imaginary sphere surrounding the bulb, 2 meters from it.
+    Only \( 6.67 \times 10^{-9} \) seconds after leaving the bulb,
+    each photon reaches this sphere.
+    However, by that time, they are more spread out than they were when they were at the bulb!
+</p>
+
+<ol>
+    <li>
+        Determine the amount of energy that passes through the 2 m sphere in a second.
+        (This is not a trick question at all! It's extremely easy. All of the energy that
+        left the light bulb goes through the 2 m sphere.)
+    </li>
+    <li>
+        To determine how much the light spreads out,
+        determine the energy passing through the sphere in a second
+        divided by the area of the sphere.
+    </li>
+    <li>
+        After another \( 6.67 \times 10^{-9} \) seconds,
+        the light has reached the 4 meter sphere.
+        Determine the total amount of energy that passes through this sphere in a second.
+        (This isn't a trick question! Again, it's very very easy.)
+    </li>
+    <li>
+        Determine the energy passing through the sphere in a second
+        divided by the area of the sphere.
+    </li>
+    <li>
+        Extend this analysis by filling out the following table:
+        <div id = 'lightTable'></div>
+    </li>
+</ol>
+
+<script>
+    let lightTable = new Table(6,4);
+    lightTable.addTopHeaders(['radius of sphere (m)','energy per second (power)','surface area','energy per second per area']);
+    lightTable.setMaxFontProportion(0.05);
+    lightTable.writeTextInColumn(0,['radius of sphere (m)',1,2,4,8,16]);
+    $("#lightTable").append(lightTable.draw(500));
+</script>
+
+<h4>
+    Light Intensity
+</h4>
+
+<p>
+    coming soon!
+</p>
+
+
+<h4>
+    Connection to Gravitation
+</h4>
+
+
+<p>
+    What does this analysis have to do with gravity?
+    Just like the intensity of light, the magnitude of gravitational force
+    is inversely proportional to the square of the distance from the source of that gravity,
+    according to the formula
+    $$
+    F_g = \frac{G m_1 m_2}{d^2}.
+    $$
+    Imagine that one of the masses is the source of gravity and the other is receiving the gravity.
+    For example, think of the sun as the source of gravity and all its planets as receivers.
+    You can even think of gravitational waves traveling from one thing to another which are similar to the photons,
+    although truly understanding gravitational waves is a far more advanced topic.
+    Just like the energy of the light bulb spreads out as you were farther from the bulb, the force from the sun spreads out,
+    so that Mercury gets stronger gravity than Venus, which receives stronger gravity than earth, which receives stronger
+    gravity than Mars.
+    [Of course, we know from Newton's Third Law that this give-receiver relationship goes both ways,
+    each planet exerts and equal magnitude of gravitational force on the sun. Here, the analogy with the light breaks down.]
+</p>
+
+<p>
+    Electrostatic force
+    coming soon!
+</p>
+
+
+<h4>
+    Enrichment
+</h4>
+
+<p>
+    Read the story of how Isaac Newton discovered the inverse square law,
+    proved it, and eventually published it in
+    Edward Dolnick's <emph>The Clockwork Universe</emph>.
+</p>

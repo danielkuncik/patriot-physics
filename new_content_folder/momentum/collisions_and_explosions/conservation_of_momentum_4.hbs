@@ -1,0 +1,140 @@
+<!--
+Explosions
+-->
+
+<p>
+    We have been using the conservation of momentum
+    to model two objects in a collision.
+    However, it can also be used to model <emph>explosions</emph>.
+    When two objects explode,
+    typically, the total momentum before the explosion is 0,
+    and after the explosion the two objects move apart in different directions.
+</p>
+
+
+<!--
+Make the first four problems very straightfoward,
+and the next several problems more literally
+-->
+
+<p class = 'definition'>
+    Whenever a gun or cannon is fired, it will be pushed backwards
+    by the explosion.
+    This is called the <strong>recoil</strong>.
+    The speed at which it recoils is called the <strong>recoil velocity</strong>.
+</p>
+
+<p>
+    In each of the problems 1 - 6,
+    the cannon and cannonball are not moving before the explosion.
+    After the explosion, the cannonball moves forward and the cannon moves backwards.
+    Define the positive direction as forwards and the negative direction as backwards.
+    This means that the cannonball has POSITIVE velocity and momentum
+    and the cannon has NEGATIVE velocity and momentum after the explosion.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '20 m/s'>
+        A cannon has a mass of 300 kg.
+        It's operators load a cannonball with a mass of 30 kg.
+        The cannon and the cannonball are stationary,
+        when suddenly the cannon is fired!
+        If the cannonball moves forward, with a velocity of 200 m/s,
+        fill out the table below
+        to figure out the speed at which the cannon recoils.
+        <div class="basicExplosionTable"></div>
+    </li>
+    <li class = 'question' data-answer = '5 m/s' >
+        A cannon has a mass of 400 kg.
+        It's operators load a cannonball with a mass of 20 kg.
+        The cannon and the cannonball are stationary,
+        when suddenly the cannon is fired!
+        If the cannonball moves forward, with a velocity of 100 m/s,
+        fill out the table below
+        to figure out the speed at which the cannon recoils.
+        <div class="basicExplosionTable"></div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question' data-answer = '75 m/s'>
+        A cannon with a mass of 100 kg fires
+        a cannonball with a mass of 20 kg.
+        The cannon recoils with a speed of 15 m/s.
+        With what speed was the cannonball fired?
+        <div class="basicExplosionTable"></div>
+    </li>
+    <li class = 'question' data-answer = '160 m/s'>
+        A cannon with a mass of 200 kg fires
+        a cannonball with a mass of 5 kg.
+        The cannon recoils with a speed of 4 m/s.
+        With what speed was the cannonball fired?
+        <div class="basicExplosionTable"></div>
+    </li>
+    <li class = 'question' data-answer = '40 kg'>
+        A cannon of unknown mass fires a 2 kg
+        cannonball.
+        The cannonball moves forwards with a speed of 100 m/s,
+        and the cannon recoils backwards with a speed of 5 m/s.
+        What is the mass of the cannon?
+        <div class="basicExplosionTable"></div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question' data-answer = '10 kg'>
+        A cannon with a mass of 400 kg fires a cannonball of unknown mass.
+        The cannonball moves forwards with a speed of 80 m/s
+        and the cannon moves backwards with a speed of 2 m/s.
+        What is the mass of the cannonball?
+        <div class="basicExplosionTable"></div>
+    </li>
+    <p>
+        In problems 7 and 8, the the cannon was moving before the explosion.
+        The recoil from its shot may make it speed up,
+        or slow down, or even reverse direction!
+    </p>
+    <li class = 'question' data-answer = '18 m/s backwards'>
+        It is a period of civil war in a galaxy far far away.
+
+        A flying space cannon is flying forwards at a speed of 20 m/s.
+        The space cannon has a mass of 100 kg when it is not loaded, and the
+        cannonball loaded inside has a mass of 10 kg.
+        It fires the cannonball <emph>forwards</emph> with a speed of 400 m/s.
+        After firing, what is the magnitude and direction of the velocity of the space cannon?
+        <div class="basicExplosionTable"></div>
+    </li>
+    <div class = 'pageBreak'></div>
+    <li class = 'question' data-answer = '73.75 m/s forwards'>
+        A flying space cannon is flying forwards at a speed of 10 m/s.
+        The space cannon has a mass of 160 kg when it is not loaded,
+        and the cannonball loaded inside has a mass of 20 kg.
+        It fires a cannonball <emph>backwards</emph> (the speed it is not flying)
+        with a speed of 500 m/s.
+        After firing, what is the magnitude and direction of the velocity of the space cannon?
+        <div class="basicExplosionTable"></div>
+    </li>
+</ol>
+
+<script>
+    let basicExplosionTable = new MomentumTable();
+    basicExplosionTable.setNameOfObjects('cannon', 'cannonball');
+    basicExplosionTable.makeExplosionTable();
+    $(".basicExplosionTable").append(basicExplosionTable.draw(300,300));
+</script>
+
+<div class = 'pageBreak'></div>
+<h4>
+    Answers
+</h4>
+<ol class = 'answerList'>
+
+</ol>
+
+<div class = 'pageBreak'></div>
+<h4>
+    Resources
+</h4>
+
+<p>
+    This flipping physics video goes through the conceptual issues behind the conservation of momentum
+    with explosions, and a provides mathematical proof of the conservation of momentum from Newton's Second Law.
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Kf0bBxmNeec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

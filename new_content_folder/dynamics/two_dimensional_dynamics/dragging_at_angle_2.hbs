@@ -1,0 +1,399 @@
+<p class="introduction">
+    In a previous pod, we looked at dragging a block
+    at an angle on a frictionless surface or a surface
+    with kinetic friction.
+    In this pod, we will consider a surface with <strong>static friction</strong>.
+    As with a box pulled horizontally under static friction,
+    analyzing this situation involves a conditional:
+    you first need to determine if the block moves or not,
+    and other factors will change based on that result.
+</p>
+
+
+<h3>
+    Part 1: Review: Pulling a box horizontally with static friction
+</h3>
+
+<h5>
+    Forces
+</h5>
+<ul>
+    <li>
+        Gravity:
+        <ul>
+            <li>
+                Magnitude: \( F_g = m g \)
+            </li>
+            <li>
+                Direction: Downwards
+            </li>
+        </ul>
+    </li>
+    <li>
+        Normal Force:
+        <ul>
+            <li>
+                Magnitude: Whatever is necessary to balance other forces
+            </li>
+            <li>
+                Direction: Perpendicular to the surface (upwards in this case)
+            </li>
+        </ul>
+    </li>
+    <li>
+        Applied Force:
+        <ul>
+            <li>
+                Magnitude: Given
+            </li>
+            <li>
+                Direction: Given
+            </li>
+        </ul>
+    </li>
+    <ul>
+        Static Friction: applied if box moves
+        <li>
+            Magnitude: Whatever is necessary to balance other horizontal forces.
+        </li>
+        <li>
+            Direction: Whatever is necessary to balance other horizontal forces.
+        </li>
+    </ul>
+    <li>
+        Kinetic Friction:
+        (Applied if box moves)
+        <ul>
+            <li>
+                Magnitude: \( F_{fr} = \mu_k F_N \)
+            </li>
+            <li>
+                Direction: Opposite direction of motion of the block
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h5>
+    Determining if a block moves:
+</h5>
+
+<ol>
+    <li>
+        Determine the magnitude of gravitational forces and normal force.
+    </li>
+    <li>
+        Determine the <emph>maximum value of static friction</emph> which is given by
+        \( F_{fr} \leq \mu_s F_N \)
+    </li>
+    <li>
+        If the applied force exceeds the maximum static friction, the block begins moving.
+        Otherwise, it does not.
+    </li>
+    <li>
+        If the box moves, kinetic friction acts on the block.
+        If the box does not move, static friction acts on the block.
+        Make sure to know that \( \mu_s F_N \) is NOT the magnitude of static friction,
+        it is the maximum magnitude. The magnitude of static friction is what is necessary to prevent motion.
+    </li>
+</ol>
+
+<div class="pageBreak"></div>
+
+
+<p class = 'directions'>
+    For full credit you must
+    write formulas before you use them,
+    show trigonometry and geometry you used in finding your answer,
+    properly label quantities, and include units.
+</p>
+
+
+<ol class="questionList">
+    <li class="question">
+        A block with a mass of 5.00 kg is pulled horizontally with an applied force of 13.0 Newtons.
+        The coefficient of kinetic friction between the box and the ground is 0.200;
+        The coefficient of static friction between the box and the ground is 0.300.
+        <div id = 'problemA'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Determine whether the block moves.
+                Write all formulas used and defend your choice in 1-2 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe all the forces acting on the block.
+                Make sure to indicate whether friction is static or kinetic in the table.
+                <div id = 'tableA'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li class="question">
+        A blocks with a mass of 4.50 kg is pulled horizontally with an applied force of 16.0 Newtons.
+        The coefficient of kinetic friction between the box and the ground is 0.200;
+        The coefficient of static friction between the box and the ground is 0.350.
+        <div id = 'problemB'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class="subQuestion">
+                Determine whether the block moves.
+                Write all formulas used and defend your choice in 1-2 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe all the forces acting on the block.
+                Make sure to indicate whether friction is static or kinetic in the table.
+                <div id = 'tableB'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<script>
+    let problemA = new BlockProblem();
+    problemA.addBlock();
+    problemA.addHorizontalAppliedForce();
+    let problemB = new BlockProblem();
+    problemB.addBlock();
+    problemB.addHorizontalAppliedForce();
+
+    $("#problemA").append(problemA.drawCanvas(300));
+    $("#problemB").append(problemB.drawCanvas(300));
+
+
+    let horizontalTable = new forceTableQuantitative2D(2,2);
+    $("#tableA").append(horizontalTable.draw());
+    $("#tableB").append(horizontalTable.draw());
+
+</script>
+
+<div class="pageBreak"></div>
+
+<h3>
+    New Problems: Pulling an Object at an Angle with Static Friction
+</h3>
+
+<p>
+    When a box is pulled at an angle, there are three conditions:
+    the box could not move, the box could move horizontally,
+    or the box could be pulled upward off the ground!
+    See the flowchart below:
+</p>
+
+<img src = '/podAssets/dynamics/two_dimensional_dynamics/dragging_at_angle_2_flowchart.png' height = '600px' width ='auto' />
+
+<p class="directions">
+    For full credit on each of these problems, you must clearly and carefully show your work.
+    Imagine that you are not only trying to give the correct answer, but convince someone who doesn’t believe you that you have the correct answer.
+    <br>
+    Whenever you use a formula,
+    you must write the formula before plugging values in.
+    After plugging values in, write those values before completing
+    any numerical operations.
+    <br>
+    Free-body Diagrams should be created with the following conditions:
+    <ul>
+        <li>
+            Each force should be clearly labeled.
+        </li>
+        <li>
+            Components should be drawn separately from the free-body diagrams.
+        </li>
+        <li>
+            The length of each arrow should correlate roughly to the relative magnitude of each force.
+        </li>
+    </ul>
+</p>
+
+<div class="pageBreak"></div>
+
+<ol class="questionList">
+    <li class="question">
+        <p>
+            A box is dragged at an angle along a flat surface,
+            as showing in the diagram below.
+            The coefficient of static friction between the box and the floor is 0.6.
+            The coefficient of kinetic friction between the box and the floor is 0.3.
+        </p>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/dragging_at_angle_2_a.png' height = '250px' width ='auto' />
+        <ol class="subQuestionList" type = "a">
+            <li class="subQuestion">
+                Draw a qualitative free-body diagram of the block.
+                Label each force.
+                Do not break any forces into components on this diagram.
+            </li>
+            <li class="subQuestion">
+                Determine what happens to the box:
+                <ol type = 'A'>
+                    <li>
+                        The box does not move.
+                    </li>
+                    <li>
+                        The box begins to accelerate.
+                    </li>
+                    <li>
+                        The box is lifted upward.
+                    </li>
+                </ol>
+            </li>
+            <li class="subQuestion">
+                Explain how you determined your answer in 2 - 3 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table1'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li class="question">
+        <p>
+            A box is dragged at an angle along a flat surface,
+            as showing in the diagram below.
+            The coefficient of static friction between the box and the floor is 0.55.
+            The coefficient of kinetic friction between the box and the floor is 0.4.
+        </p>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/dragging_at_angle_2_b.png' height = '250px' width ='auto' />
+        <ol class="subQuestionList" type = "a">
+            <li class="subQuestion">
+                Draw a qualitative free-body diagram of the block.
+                Label each force.
+                Do not break any forces into components on this diagram.
+            </li>
+            <li class="subQuestion">
+                Determine what happens to the box:
+                <ol type = 'A'>
+                    <li>
+                        The box does not move.
+                    </li>
+                    <li>
+                        The box begins to accelerate.
+                    </li>
+                    <li>
+                        The box is lifted upward.
+                    </li>
+                </ol>
+            </li>
+            <li class="subQuestion">
+                Explain how you determined your answer in 2 - 3 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table2'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li class="question">
+        <p>
+            A box is dragged at an angle along a flat surface,
+            as showing in the diagram below.
+            The coefficient of static friction between the box and the floor is 0.5.
+            The coefficient of kinetic friction between the box and the floor is 0.2.
+        </p>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/dragging_at_angle_2_c.png' height = '250px' width ='auto' />
+        <ol class="subQuestionList" type = "a">
+            <li class="subQuestion">
+                Draw a qualitative free-body diagram of the block.
+                Label each force.
+                Do not break any forces into components on this diagram.
+            </li>
+            <li class="subQuestion">
+                Determine what happens to the box:
+                <ol type = 'A'>
+                    <li>
+                        The box does not move.
+                    </li>
+                    <li>
+                        The box begins to accelerate.
+                    </li>
+                    <li>
+                        The box is lifted upward.
+                    </li>
+                </ol>
+            </li>
+            <li class="subQuestion">
+                Explain how you determined your answer in 2 - 3 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table3'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li class="question">
+        <p>
+            A box is dragged at an angle along a flat surface,
+            as showing in the diagram below.
+            The coefficient of static friction between the box and the floor is 0.6.
+            The coefficient of kinetic friction between the box and the floor is 0.4.
+        </p>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/dragging_at_angle_2_d.png' height = '250px' width ='auto' />
+        <ol class="subQuestionList" type = "a">
+            <li class="subQuestion">
+                Draw a qualitative free-body diagram of the block.
+                Label each force.
+                Do not break any forces into components on this diagram.
+            </li>
+            <li class="subQuestion">
+                Determine what happens to the box:
+                <ol type = 'A'>
+                    <li>
+                        The box does not move.
+                    </li>
+                    <li>
+                        The box begins to accelerate.
+                    </li>
+                    <li>
+                        The box is lifted upward.
+                    </li>
+                </ol>
+            </li>
+            <li class="subQuestion">
+                Explain how you determined your answer in 2 - 3 sentences.
+            </li>
+            <li class="subQuestion">
+                Fill out the table below to describe the forces acting on the block.
+                If friction acts on the block, make sure to indicate if it is static
+                or kinetic friction.
+                <div id = 'table4'></div>
+            </li>
+            <li class="subQuestion">
+                Determine the net force acting on the block and the acceleration of the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<script>
+    let frictionTable = new forceTableQuantitative2D(2,3);
+
+    $("#table1").append(frictionTable.draw());
+    $("#table2").append(frictionTable.draw());
+    $("#table3").append(frictionTable.draw());
+    $("#table4").append(frictionTable.draw());
+</script>
+
+<h2 class="no-print">
+    <a href = '/extraFiles/dragging_2_answers.pdf'>ANSWERS</a>
+</h2>

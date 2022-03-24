@@ -1,0 +1,170 @@
+<h4>
+    The Wave Equation
+</h4>
+
+<p class = 'equation'>
+    $$
+    v = \lambda f
+    $$
+</p>
+
+
+<div id = 'waveEquationTable'></div>
+
+<ul>
+    <li>
+        Note that <strong>wavelength</strong> is represented by the Greek letter
+        <emph>lambda</emph> or \( \lambda \).
+    </li>
+</ul>
+
+<p class = 'directions'>
+    Fill out the tables below to practice using the formula above.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = ''>
+        Catherine shakes a slinky with a frequency of 4 Hz. The waves have a speed of 5 m/s. What is the wavelength?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = ''>
+        Bobby is very fast and shakes a rope 18 times a second. The wavelength of each wave is .4 m. What is the speed of waves in the rope?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = ''>
+        Henry creates waves with a wavelength of .55 m, and a speed of 3 m/s. What is the frequency of these waves?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = ''>
+        I have a wave with a frequency of 15 Hz, and a speed of 4 m/s. What is the wavelength?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+<h4>
+    Two-Step Problems:
+</h4>
+
+<p class = 'directions'>
+    Use two formulas together to solve the following problems:
+    $$
+    d = vt \; \; \; \; \; \; \; \; \; \; v = \lambda f
+    $$
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        Howard creates waves with a frequency of 4 Hz and a wavelength of 0.33 m.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                How fast do the waves move?
+            </li>
+            <li class = 'subQuestion'>
+                How far do the waves move in 5 seconds?
+            </li>
+        </ol>
+    </li>
+    <li class = 'question'>
+        Timothy creates waves with a frequency of 6 Hz and a wavelength of 0.8 m.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                How fast do the waves move?
+            </li>
+            <li class = 'subQuestion'>
+                How far do the waves move in 12 seconds?
+            </li>
+        </ol>
+    </li>
+    <li class ='question'>
+        Bobby creates a wave with a wavelength of 2 meters.
+        It moves a distance of 100 meters in a time of 5 seconds.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                What is the speed of the waves?
+            </li>
+            <li class = 'subQuestion'>
+                What is the frequency of the waves?
+            </li>
+        </ol>
+    </li>
+    <li class ='question'>
+        Susan creates a wave with a frequency of 55 Hz.
+        It moves a distance of 200 meters in a time of 0.6 seconds.
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                What is the speed of the waves?
+            </li>
+            <li class = 'subQuestion'>
+                What is the wavelength of the waves?
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<h4>
+    Using other formulas for frequency
+</h4>
+
+<p>
+    The <strong>frequency</strong> of a wave is defined as the number of waves per second.
+    You can use this definition to write a new formula for frequency of wave:
+    $$
+    \text{frequency} = \frac{\text{number of waves}}{\text{time}}
+    $$
+</p>
+
+<ol class="questionList">
+    <li class="question">
+        If there are 6 waves in 3 seconds, what is the frequency of the waves?
+    </li>
+    <li class="question">
+        If there are 15 waves in 5 seconds, what is the frequency of the waves?
+    </li>
+    <li class="question">
+        If there are 12 waves in 5.42 seconds, what is the frequency of the waves?
+    </li>
+    <li class="question">
+        There are 3 waves in 7.25 seconds, and the wavelength of the waves is 0.89 meters.
+        <ol class="subQuestionList">
+            <li class="subQuestion">
+                What is the frequency of the waves?
+            </li>
+            <li class="subQuestion">
+                What is the speed of the waves?
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        There are 5 waves in 8.25 seconds, and the speed of the waves is 2.2 m/s.
+        <ol class="subQuestionList">
+            <li class="subQuestion">
+                What is the frequency of the waves?
+            </li>
+            <li class="subQuestion">
+                What is the wavelength of the waves?
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h4>
+    Answers:
+</h4>
+<ol class = 'answerList'></ol>
+
+<script>
+    let waveEquationTable = new Table(4,3);
+    waveEquationTable.addTopHeaders(['Symbol','Quantity','Unit']);
+    waveEquationTable.setRowProportions([1,2,2,2]);
+    waveEquationTable.writeTextInRow(1,['\\( v \\)','velocity','meters per second (m/s)']);
+    waveEquationTable.writeTextInRow(2,['\\( \\lambda \\)','wavelength','meters']);
+    waveEquationTable.writeTextInRow(3,['\\( f \\)','frequency','Hertz (Hz) or \\( \\frac{1}{\\text{s}} \\)']);
+
+    $("#waveEquationTable").append(waveEquationTable.draw(300));
+</script>

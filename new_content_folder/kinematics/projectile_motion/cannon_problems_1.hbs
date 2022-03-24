@@ -1,0 +1,165 @@
+<p>
+  This pod will deal with cannons that fire a shot
+  that lands on exactly the same level.
+  The problems bring together the concepts of the pop-up and horizontal
+  launch problems,
+  and they are among the most classic physics problems!
+</p>
+
+
+<h4>
+  Review of vector components
+</h4>
+
+
+<p class = 'directions'>
+  Please answer all questions to 3 significant figures of accuracy.
+</p>
+
+<h4>
+  Basic cannon Problem
+</h4>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    A cannon is aimed at an angle of 30 degrees.
+    It fires a cannonball with a speed of 20 m/s.
+    The cannonball rises and falls and then
+    lands at precisely the vertical level it was fired at.
+    <ol class = 'subQuestionList' type = 'a'>
+      <li class = 'subQuestion' data-answer = '\( v_{xi} = 17.32 \text{ m/s} \);  \( v_{yi} = 10 \text{ m/s} \)'>
+        First, break the initial velocity
+        of the cannonball into horizontal and
+        vertical components using
+        <a href = '/pod/d93632'>this method</a>.
+      </li>
+      <li class = 'subQuestion'>
+        Similarly to a <a href = '/pod/e5600f'>horizontal launch problem</a>,
+        we will break the motion into two components.
+        In the horizontal dimension, the object moves at a constant speed forward.
+        In the vertical dimension, the object is initially moving upward
+        and then falls downward to the same point, similarly to a
+        <a href = '/pod/dcf39c'>pop-up problem</a>.
+        Fill out the table below, which describes the quantities involved in this problem:
+        <div class = 'cannonLaunchTable'></div>
+      </li>
+      <li class = 'subQuestion' data-answer = '2.04 s'>
+        Determine the total time that the cannonball is in the air.
+      </li>
+      <li class = 'subQuestion' data-answer = '35.35 m'>
+        Determine the range of the cannonball, that is, the horizontal displacement
+        of the cannonball before it strikes the ground.
+      </li>
+    </ol>
+  </li>
+  <li class = 'question'>
+    We will repeat a similar question with different values.
+    A cannon is aimed at an angle of 20 degrees.
+    It fires a cannonball with a speed of 15 m/s.
+    The cannonball falls to the same vertical position from where it was fired.
+    <ol class = 'subQuestionList'>
+      <li class = 'subQuestion' data-answer = '\( v_{xi} = 14.1 \text{ m/s} \);  \( v_{yi} = 5.13 \text{ m/s} \)'>
+        Break the initial velocity of the cannon
+        into horizontal and vertical components.
+      </li>
+      <li class = 'subQuestion'>
+        Fill out the table below, which describes the quantities involved.
+        <div class = 'cannonLaunchTable'></div>
+      </li>
+      <li class = 'subQuestion' data-answer = '1.05 s'>
+        Determine the total time that the cannonball is in the air.
+      </li>
+      <li class = 'subQuestion' data-answer = '14.8 m'>
+        Determine the horizontal range of the cannonball.
+      </li>
+    </ol>
+  </li>
+  <li class = 'question'>
+    A cannon is aimed at an angle of 85 degrees.
+    It fires a cannonball with a speed of 40 m/s.
+    The cannonball falls to the same vertical position from where it was fired.
+    <ol class = 'subQuestionList'>
+      <li class = 'subQuestion' data-answer = '\( v_{xi} = 3.49 \text{ m/s} \); \( v_{yi} = 39.8 \text{ m/s} \)'>
+        Break the initial velocity of the cannon
+        into horizontal and vertical components.
+      </li>
+      <li class = 'subQuestion'>
+        Fill out the table below, which describes the quantities involved.
+        <div class = 'cannonLaunchTable'></div>
+      </li>
+      <li class = 'subQuestion' data-answer = '8.13 s'>
+        Determine the total time that the cannonball is in the air.
+      </li>
+      <li class = 'subQuestion' data-answer = '28.4 m'>
+        Determine the horizontal range of the cannonball.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+<p class = 'directions'>
+    Use \( g = 9.81 \frac{\text{m}}{\text{s}^2} \)Answer the following questions to three significant figures of accuracy.
+</p>
+
+<ol class = 'questionList'>
+  <li class = 'question' data-answer = '40.8 m'>
+    A cannon is at an angle of 45.0 degrees above the horizontal
+    and fires a shot with an initial velocity of 20.0 m/s.
+    If the cannonball lands on the same level it was fired at,
+    determine the horizontal range of the cannonball.
+  </li>
+  <li class = 'question' data-answer = '75.1 m'>
+    A cannon is at an angle of 35.0 degrees above the horizontal
+    and fires a shot with an initial velocity of 28.0 m/s.
+    If the cannonball lands on the same level it was fired at,
+    determine the horizontal range of the cannonball.
+  </li>
+  <li class = 'question' data-answer = '7.81 m'>
+    A cannon is at an angle of 65.0 degrees above the horizontal
+    and fires a shot with an initial velocity of 10.0 m/s.
+    If the cannonball lands on the same level it was fired at,
+    determine the horizontal range of the cannonball.
+  </li>
+</ol>
+
+<h4>
+  Answers:
+</h4>
+
+<ol class = 'answerList'></ol>
+
+
+<script>
+  let cannonLaunchTable = new Table(5,3);
+  cannonLaunchTable.setMaxFontProportion(0.05);
+  cannonLaunchTable.setColumnProportions([1,2,2]);
+  cannonLaunchTable.setRowProportions([1,3,4,4,5]);
+
+  cannonLaunchTable.addTopHeaders(['','Horizontal', 'Vertical']);
+  cannonLaunchTable.shadeUpperLeftCorner();
+  cannonLaunchTable.writeTextInRow(1,['Motion','moving forward at a constant velocity','accelerating downward at a rate of 9.8 m/s/s']);
+
+  cannonLaunchTable.writeTextInCell(2,0,'Formulas');
+  cannonLaunchTable.addListToCell(2,1,[constantVelocityEquation('x', true)]);
+  cannonLaunchTable.addListToCell(2,2,kinematicEquations('y',true));
+
+  cannonLaunchTable.writeTextInCell(3,0,'Quantities');
+  cannonLaunchTable.addListToCell(3,1,[
+    '\\( \\Delta x =  \\)',
+    '\\( v_x = \\)',
+    '\\( \\Delta t = \\)'
+  ]);
+  cannonLaunchTable.addListToCell(3,2,[
+    '\\( \\Delta y = \\)',
+    '\\( v_{yi} = \\)',
+    '\\( v_{yf} = \\)',
+    '\\( a_y = \\)',
+    '\\( \\Delta t = \\)'
+  ]);
+
+  cannonLaunchTable.writeTextInCell(4,0,'Complete Problem Here:');
+
+
+  $(".cannonLaunchTable").append(cannonLaunchTable.draw(600,800));
+</script>

@@ -1,0 +1,289 @@
+
+<img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_a.png' height = '200px' width ='auto' />
+<p class="introduction">
+    A block of mass \( m \) is on a ramp of angle \( \theta \).
+    To correctly analyze this situation, we will use a <strong>rotated axis</strong>
+    to break are forces into components.
+    This will make the math significantly easier, because
+    most of our forces will not need to be broken into components.
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>
+                Coordinate Axis
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 border border-dark">
+            When you typically define a coordinate axis,
+            the x-axis is horizontal and the y-axis is vertical, like this:
+            <br>
+            <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_b.png' height = '200px' width ='auto' />
+        </div>
+        <div class="col-md-6 border border-dark">
+            But when solving ramp problems,
+            we will rotate the axis so that the x-axis is parallel
+            to the surface of the ramp,
+            and the y-axis is perpendicular to the surface of the ramp.
+            <br>
+            <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_c.png' height = '200px' width ='auto' />
+        </div>
+    </div>
+    <div class="row mb-5"></div>
+    <div class="row mb-5"></div>
+    <h5>
+        In more detail:
+    </h5>
+    <div class="row mb-4">
+        <div class="col-md-6 border border-dark">
+            <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_d.png' height = '200px' width ='auto' />
+        </div>
+        <div class="col-md-6 border border-dark">
+            <ul>
+                <li>
+                    The x-axis is parallel to the surface of the ramp.
+                </li>
+                <li>
+                    The y-axis is perpendicular tot he surface of the ramp
+                </li>
+                <li>
+                    +x is downward (you can flip this depending on your situation)
+                </li>
+                <li>
+                    +y is upward.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pageBreak"></div>
+    <div class = 'row'>
+        <div class="col-12">
+            <h4>
+                Forces Acting on the Block
+            </h4>
+            In a frictionless ramp,
+            only two forces act on the block:
+            <strong>gravity</strong>  and  <strong>normal force</strong>.
+        </div>
+        <br>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_e.png' height = '200px' width ='auto' />
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Gravity:</h5>
+            <ul>
+                <li>
+                    Gravity always acts downward
+                </li>
+                <li>
+                    Gravity does not line up with either axis,
+                    so it must be broken into components.
+                </li>
+                <li>
+                    The magnitude of gravity is always equal to \( mg \), \( F_g = mg \).
+                </li>
+            </ul>
+        </div>
+        <div class = "col-md-6">
+            <h5>
+                Normal Force
+            </h5>
+            <ul>
+                <li>
+                    Normal force always acts perpendicular and upward from the ramp.
+                </li>
+                <li>
+                    Normal force acts in the +Y direction.
+                    It does not need to be broken into components!
+                </li>
+                <li>
+                    Normal force is a <emph>constraint force</emph>.
+                    The magnitude of normal force will match whatever value is
+                    necessary to prevent the object from moving the y-dimension,
+                    or such that \( \Sigma F_y = 0 \).
+                    Typically, its magnitude is equal to the y-component of
+                    gravity.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h5>Direction of Gravity:</h5>
+            <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_x.png' height = '200px' width ='auto' />
+            <br>
+            <p>
+                How do we analyze the direction of gravity in the new coordinate system?
+                In the diagram above, we can see that diagram is split between
+                the X and Y axes, so we must break it into components.
+                We typically know the value of the angle \( \theta \),
+                which is often called the <emph>angle of incline</emph>.
+                We can also use the
+                and we use the fact that the sum of the three angles of a triangle
+                is always equal to 180°.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="pageBreak"></div>
+<h4>
+    Questions:
+</h4>
+<ol class="questionList">
+    <li class="question">
+        <br>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_g.png' height = '200px' width ='auto' />
+        <br>
+        A block with a mass of 4 kg is on a frictionless ramp
+        with an angle of incline equal to 20°.
+
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class="subQuestion">
+                Set up a coordinate axis based on the direction of the ramp.
+            </li>
+            <li class="subQuestion" data-answer_id = 'fbd1'>
+                Draw a free-body diagram including only two forces.
+                <script>
+                    let fbd1 = fastFBD([['down','gravity'],[110,'normal']]);
+                    addAnswerObject('fbd1',fbd1.drawCanvas(150));
+                </script>
+            </li>
+            <li class="subQuestion">
+                Break gravity into components,
+                and fill out the following tables:
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5 border border-dark">
+                            X-Forces
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary"></div>
+                        <div class="col-5 border border-dark">
+                            Y-Forces
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary">
+
+                        </div>
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-3 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="subQuestion">
+                Determine the magnitude and sign of  \( \Sigma F_x \).
+            </li>
+            <li class="subQuestion" data-answer = '3.36 m/s/s down the ramp'>
+                Determine the magnitude and direction of the
+                <strong>acceleration</strong> of the block.
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        <br>
+        <img src = '/podAssets/dynamics/two_dimensional_dynamics/ramp_problems_1_h.png' height = '200px' width ='auto' />
+        <br>
+        A block with a mass of 8 kg is on a frictionless ramp
+        with an angle of incline equal to 50°.
+
+        <ol type = 'a' class="subQuestionList">
+            <li class="subQuestion">
+                Set up a coordinate axis based on the direction of the ramp.
+            </li>
+            <li class="subQuestion" data-answer_id = 'fbd2'>
+                Draw a free-body diagram including only two forces.
+                <script>
+                    let fbd2 = fastFBD([['down','gravity'],[140,'normal']]);
+                    addAnswerObject('fbd2',fbd2.drawCanvas(150));
+                </script>
+            </li>
+            <li class="subQuestion">
+                Break gravity into components,
+                and fill out the following tables:
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5 border border-dark">
+                            X-Forces
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary"></div>
+                        <div class="col-5 border border-dark">
+                            Y-Forces
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                        <div class="col-2 border border-dark bg-secondary">
+
+                        </div>
+                        <div class="col-2 border border-dark">
+                            Force
+                        </div>
+                        <div class="col-3 border border-dark">
+                            Magnitude and Sign
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-3 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5 bg-secondary"></div>
+                        <div class="col-2 border border-dark pb-5"></div>
+                        <div class="col-3 border border-dark pb-5"></div>
+                    </div>
+                </div>
+
+            </li>
+            <li class="subQuestion">
+                Determine the magnitude and sign of  \( \Sigma F_x \).
+            </li>
+            <li class="subQuestion" data-answer = '7.51 m/s/s down the ramp'>
+                Determine the magnitude and direction of the
+                <strong>acceleration</strong> of the block.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<ol class="answerList"></ol>

@@ -1,0 +1,139 @@
+<p>
+  It is very helpful, especially if you plan on taking more STEM courses,
+  to memorize what each metric prefix means.
+  For this class, you are expected to measure all prefixes from 10<sup>-15</sup>
+  to 10<sup>15</sup>.
+</p>
+
+
+<script>
+  let metricTable = new Table(16,3);
+
+  metricTable.addTopHeaders(['Prefix','Abbreviation','Means']);
+
+  metricTable.writeTextInRow(1,['peta','P','\\( 10^{15} \\)']);
+  metricTable.writeTextInRow(2,['tera','T','\\( 10^{12} \\)']);
+  metricTable.writeTextInRow(3,['giga','G','\\( 10^{9} \\)']);
+  metricTable.writeTextInRow(4,['mega','M','\\( 10^{6} \\)']);
+  metricTable.writeTextInRow(5,['kilo','k','\\( 10^{3} \\)']);
+  metricTable.writeTextInRow(6,['hecto','h','\\( 10^{2} \\)']);
+  metricTable.writeTextInRow(7,['deca','da','\\( 10^{1} \\)']);
+
+  metricTable.writeTextInRow(9,['deci','d','\\( 10^{-1} \\)']);
+  metricTable.writeTextInRow(10,['centi','c','\\( 10^{-2} \\)']);
+  metricTable.writeTextInRow(11,['milli','m','\\( 10^{-3} \\)']);
+  metricTable.writeTextInRow(12,['micro','\\( \\mu \\)', '\\( 10^{-6} \\)']);
+  metricTable.writeTextInRow(13,['nano','n','\\( 10^{-9} \\)']);
+  metricTable.writeTextInRow(14,['pico','p','\\( 10^{-12} \\)']);
+  metricTable.writeTextInRow(15,['femto','f','\\( 10^{-15} \\)']);
+
+  $("#metricTable").append(metricTable.draw(800));
+
+</script>
+
+
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'><strong>Prefix</strong></div>
+        <div class = 'col-2 p-2 border border-dark'><strong>Abbreviation</strong></div>
+        <div class = 'col-4 p-2 border border-dark'><strong>Multiplier</strong></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>peta</div>
+        <div class = 'col-2 p-2 border border-dark'>P</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>15</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>tera</div>
+        <div class = 'col-2 p-2 border border-dark'>T</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>12</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>giga</div>
+        <div class = 'col-2 p-2 border border-dark'>G</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>9</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>mega</div>
+        <div class = 'col-2 p-2 border border-dark'>M</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>6</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>kilo</div>
+        <div class = 'col-2 p-2 border border-dark'>k</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>3</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>hecto</div>
+        <div class = 'col-2 p-2 border border-dark'>h</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>2</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>deca</div>
+        <div class = 'col-2 p-2 border border-dark'>da</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>1</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark bg-secondary'></div>
+        <div class = 'col-2 p-2 border border-dark bg-secondary'></div>
+        <div class = 'col-4 p-2 border border-dark bg-secondary'></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>deci</div>
+        <div class = 'col-2 p-2 border border-dark'>d</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-1</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>centi</div>
+        <div class = 'col-2 p-2 border border-dark'>c</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-2</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>milli</div>
+        <div class = 'col-2 p-2 border border-dark'>m</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-3</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>micro</div>
+        <div class = 'col-2 p-2 border border-dark'>μ</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-6</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>nano</div>
+        <div class = 'col-2 p-2 border border-dark'>n</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-9</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>pico</div>
+        <div class = 'col-2 p-2 border border-dark'>p</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-12</sup></div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-2 p-2 border border-dark'>femto</div>
+        <div class = 'col-2 p-2 border border-dark'>f</div>
+        <div class = 'col-4 p-2 border border-dark'>10<sup>-15</sup></div>
+    </div>
+</div>
+
+
+<h2 class = 'm-4'>
+    Resources
+</h2>
+
+
+<h4 class = 'm-4'>
+    <a href = 'https://quizlet.com/_9goiuu?x=1jqt&i=bnvto'>Quizlet Page on Metric Prefixes</a>
+</h4>
+
+<h4 class = 'm-4'>
+    <a href = 'https://create.kahoot.it/share/metric-prefixes/88efc6ea-689d-4849-a62b-ae8886024a34'>Kahoot on Metric Prefixes</a>
+</h4>
+
+
+<h5>
+    Silly Mnemonic Device for some Metric Prefixes
+</h5>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YkMzRjR35DA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+

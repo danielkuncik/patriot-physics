@@ -1,0 +1,250 @@
+
+
+<p class="directions">
+    The graph pictured shows a velocity-time graph of some object over
+    20 seconds of time.
+    At each time indicated, determine which of the following statements best describes
+    the motion of the object:
+</p>
+<ol type = 'A'>
+    <li>
+        Speeding up
+    </li>
+    <li>
+        Slowing down
+    </li>
+    <li>
+        Moving at a constant speed
+    </li>
+    <li>
+        Momentarily stopped
+    </li>
+</ol>
+<ol class="questionList">
+    <li class="question" data-answer = 'A'>
+        1 second
+    </li>
+    <li class="question" data-answer = 'C'>
+        4 seconds
+    </li>
+    <li class="question" data-answer = 'B'>
+        6 seconds
+    </li>
+    <li class="question" data-answer = 'D'>
+        8 seconds
+    </li>
+    <li class="question" data-answer = 'A'>
+        9 seconds
+    </li>
+    <li class="question" data-answer = 'C'>
+        12 seconds
+    </li>
+    <li class="question" data-answer = 'A'>
+        13.5 seconds
+    </li>
+    <li class="question" data-answer = 'C'>
+        15 seconds
+    </li>
+    <li class="question" data-answer = 'B'>
+        19 seconds
+    </li>
+    <li class="question" data-answer = '8 seconds '>
+        At what time in the motion of the object does it reverse direction?
+    </li>
+</ol>
+
+
+<ol class = 'questionList'>
+  <li class ='question' id = 'problem1'>
+    Determine the displacement of the following object:<br>
+  </li>
+
+  <li class = 'question'>
+    An object moves with initial position 0, initial velocity 5 m/s
+    in the positive direction,
+    and an acceleration of 2 m/s^2 in the negative direction,
+    for a time of 12 seconds.
+    - draw all three kinematic graphs
+    - on the velocity-time graph, identify periods of increasing speed, decreasing speed,
+    and a momentary stop...connect these to corresponding positions on the position-time graph
+  </li>
+  <li class = 'question'>
+    An object moves with initial position 0, initial velocity 5 m/s
+    in the positive direction,
+    and an acceleration of 2 m/s^2 in the positive direction,
+    for a time of 12 seconds.
+    - draw all three kinematic graphs
+    - there should be no 'turn around' explain why
+  </li>
+</ol>
+
+<h4>
+    THE NEW WAY
+</h4>
+<ol class = 'questionList'>
+    <li class="question">
+        <div id = 'problem100'></div>
+        <ol class="subQuestionList" type = 'a'>
+            <li class = 'subQuestion'>
+                Find the initial velocity.
+            </li>
+            <li class="subQuestion">
+                Find the acceleration.
+            </li>
+            <li class="subQuestion">
+                Find the final velocity.
+            </li>
+            <li class="subQuestion">
+                Draw a corresponding velocity-time graph.
+            </li>
+            <li class="subQuestion">
+                Draw a corresponding acceleration-time graph.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+
+<script>
+    let problem100 = new KinematicsProblem(22,10,-1);
+    let positionGraph100 = problem100.makePositionGraph(2, 'minimal');
+    // positionGraph100.automaticReferenceArray(12,8);
+    ///positionGraph100.addReferenceArray([5,10,15,22],[25,50]);
+    $("#problem100").append(positionGraph100.drawCanvas(400,200));
+    /*
+    need to think of a way to add reference?
+    pretty successful overall
+     */
+</script>
+
+
+<script>
+    // OLDER STUFF ON THE WAY
+
+  function makeLinearVelocityGraph(problemObject) {
+    let initial_velocity = problemObject.initial_velocity;
+    let acceleration = problemObject.acceleration;
+    let time_interval = problemObject.time_interval;
+    let xMin = 0;
+    let xMax = time_interval;
+    let vMin, vMax;
+    if (acceleration > 0) {
+      vMin = initial_velocity;
+      vMax = initial_velocity + acceleration*time_interval;
+    } else if (acceleration < 0) {
+      vMax = initial_velocity;
+      vMin = initial_velocity + acceleration*time_interval;
+    } else if (acceleration === 0) {
+      vMin = initial_velocity;
+      vMax = initial_velocity;
+    }
+    let yMin, yMax;
+    if (vMin === vMax) {
+      if (vMin < 0) {
+        yMax = 0;
+        yMin = vMin * randInt(1,3);
+      } else if (vMin > 0) {
+        yMin = 0;
+        yMax = vMin * randInt(1,3);
+      } else if (vMin === 0) {
+        yMin = -1;
+        yMax = 1;
+      }
+    } else {
+      if (vMin >= 0 && vMax > 0) {
+        yMin = 0;
+        yMax = vMax;
+      } else if (vMin < 0 && vMax <= 0) {
+        yMax = 0;
+        yMin = vMin;
+      } else if (vMin < 0 && vMax > 0) {
+        yMin = vMin;
+        yMax = vMax;
+      }
+    }
+
+    let myGraph = new QuantitativeGraph(xMin, xMax, yMin, yMax);
+    myGraph.makeVelocityGraph();
+    myGraph.addSegmentAndTwoPoints(xMin, vMin, xMax, vMax);
+    myGraph.addReferenceArray([0,xMax / 2, xMax],[0,vMin, (vMax + vMin) / 2 ,vMax]); // make this look more elegant?
+    return myGraph
+  }
+
+  function solveVelocityGraphProblem(problemObject) {
+    let displacement = problemObject.initial_velocity * problemObject.time_interval + 0.5 * problemObject.acceleration * problemObject.time_interval**2;
+    return {
+      answer1: problemObject.acceleration,
+      answer2: displacement
+    }
+  }
+
+  function generateVelocityGraphProblem() {
+    return {
+      initial_velocity: randInt(-10,10),
+      acceleration: randInt(-3,3),
+      time_interval: randInt(1,20)
+    }
+  }
+
+  function displayRandomVelocityGraphProblem() {
+    const problemObject = generateVelocityGraphProblem();
+    const answerObject = solveVelocityGraphProblem(problemObject);
+    // redundant!! have one object!
+
+    let thisProblem = new AutomaticProblem('velocityGraph');
+
+    let master = $("<div class = 'container'></div>");
+    let row1 = $("<div class = 'row'></div>");
+    let row2 = $("<div class = 'row'></div>");
+    let row3 = $("<div class = 'row'></div>");
+    let row4 = $("<div class = 'row'></div>");
+
+
+    $(row1).append($(`<div class = 'col-12'>The graph below represents an object in motion.</div>`));
+
+    let col1 = $(`<div class = 'col-12'></div>`);
+    $(col1).append(makeLinearVelocityGraph(problemObject).drawCanvas(200));
+    $(row2).append(col1);
+
+    // sometimes it is a horitonal line! egad!
+
+    let col2 = $(`<div class = 'col-md-6 border border-dark'>What is the acceleration in m/s/s?</div>`);
+    $(col2).append(thisProblem.addNumericalInput(answerObject.answer1));
+    let col3 = $(`<div class = 'col-md-6 border border-dark'>What is the displacement in meters?</div>`);
+    $(col3).append(thisProblem.addNumericalInput(answerObject.answer2));
+    $(row3).append(col2);
+    $(row3).append(col3);
+
+    let col4 = $("<div class = 'col-12'></div>");
+    $(col4).append(thisProblem.addAnswerButton());
+    $(row4).append(col4);
+
+    $(master).append(row1);
+    $(master).append(row2);
+    $(master).append(row3);
+    $(master).append(row4);
+
+    return master
+  }
+
+  let problem1 = makeLinearVelocityGraph({
+    initial_velocity: 3,
+    acceleration: 2,
+    time_interval: 4
+  });
+
+  function pushGenerateButton() {
+    let container = displayRandomVelocityGraphProblem();
+    $("#randomProblemDiv").empty();
+    $("#randomProblemDiv").append(container);
+  }
+
+  $("#problem1").append(problem1.drawCanvas(150));
+</script>
+
+<h4>
+  Random Problem:
+</h4>
+<input type = 'button' value = 'Generate New Problem' onclick = 'pushGenerateButton()' />
+<div id = 'randomProblemDiv'></div>
+<!-- make this automatic -->

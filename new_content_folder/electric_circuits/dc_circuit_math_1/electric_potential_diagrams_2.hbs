@@ -1,0 +1,186 @@
+
+
+
+<p class = 'directions'>
+    For each of the following electric potential diagrams, use information from the graph,
+    the junction rule,
+    and Ohm's law in order to fill in all missing information.
+    Then, draw a circuit that corresponds to this electric potential graph.
+    On your circuit, label the voltage of the battery and the resistance of each resistor.
+    You do not need to do anything else after drawing the circuit.
+</p>
+
+<ol class = 'questionList'>
+    <li class = 'question'>
+        <div id = 'problem1'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem2'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem3'></div>
+        <p>
+            Note: In this circuit, resistors Rb, Rc, and Rd all have the same current!
+        </p>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem4'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem5'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem6'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem7'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem8'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem9'></div>
+    </li>
+    <li class = 'question'>
+        <div id = 'problem10'></div>
+    </li>
+</ol>
+
+<script>
+    let problem1 = new ElectricPotentialGraph();
+    problem1.addBattery(9);
+    problem1.setReferenceArray([3,9]);
+    problem1.addWire();
+    problem1.addResistor(6,2,true);
+    problem1.addWire();
+    problem1.addWire();
+    problem1.addWire();
+    problem1.addResistor(3,undefined,true);
+
+    problem1.moveCursor(3,9);
+    problem1.addWire();
+    problem1.addWire();
+    problem1.addResistor(6,1,true);
+
+
+//    addDownwardSteps(stepArray, current, infoLinesBoolean) {
+//    addBranch(stepArray, current, infoLinesBoolean, oneCurrentBoolean, extraHorizontalSteps, verticalPositionIfNotTop) {
+
+    let problem2 = new ElectricPotentialGraph();
+    problem2.addBattery(12);
+    problem2.addWire(4);
+    problem2.addDownwardSteps([8,4],undefined,true);
+    problem2.addBranch([12],2,true,true,2);
+    problem2.setReferenceArray([4,8,12]);
+
+    let problem3 = new ElectricPotentialGraph();
+    problem3.addBattery(10,1);
+    problem3.addWire(1);
+    problem3.addResistor(5, undefined, true);
+    problem3.addWire();
+    problem3.addResistor(3, undefined, true);
+    problem3.addMultipleWires(3);
+    problem3.addBranch([3],undefined,true,undefined,1,5);
+    problem3.addMultipleWires(3);
+    problem3.addBranch([3],undefined,true,undefined,1,5);
+    problem3.addWire();
+    problem3.addResistor(2,undefined,true);
+
+    problem3.setReferenceArray([2,5,10]);
+
+    let problem4 = new ElectricPotentialGraph();
+    problem4.setReferenceArray([1,2,3,4,5,6,7,8,9,10,11,12]);
+    problem4.addBattery(12,7);
+    problem4.addMultipleWires(2);
+    problem4.addDownwardSteps([6,6],2,true);
+    problem4.addBranch([2,3,2,5],undefined,true,undefined,2);
+
+
+    let problem5 = new ElectricPotentialGraph();
+    problem5.setReferenceArray([2,6]);
+    problem5.addBattery(6);
+    problem5.addWire(6);
+    problem5.addWire();
+    problem5.addResistor(4,undefined,true,{'R': 2});
+    problem5.addMultipleWires(4);
+    problem5.moveToEndOfTopRow();
+    problem5.addMultipleWires(4);
+    problem5.addResistor(4,undefined,true,{'I': 2});
+    problem5.addMultipleWires(4);
+    problem5.moveToEndOfTopRow();
+    problem5.addMultipleWires(4);
+    problem5.addResistor(4,undefined,true);
+    problem5.addMultipleWires(4);
+    problem5.addResistor(2,undefined,true);
+    // this one will require some different coding operations
+
+    let problem6 = new ElectricPotentialGraph();
+    problem6.addBattery(12);
+    problem6.addWire();
+    problem6.addDownwardSteps([4,8],2,true);
+    problem6.moveToEndOfTopRow();
+    problem6.addMultipleWires(3);
+    problem6.addDownwardSteps([10,2],1,true);
+    problem6.setReferenceArray([2,8,12]);
+
+    let problem7 = new ElectricPotentialGraph();
+    problem7.setReferenceArray([1,2,3,4,5,6,7,8,9,10]);
+    problem7.addBattery(10);
+    problem7.addWire(3);
+    problem7.addDownwardSteps([2,4,4],2,true,true);
+    problem7.moveToEndOfTopRow();
+    problem7.addMultipleWires(4);
+    problem7.addDownwardSteps([6,4],undefined,true);
+
+    let problem8 = new ElectricPotentialGraph();
+    problem8.setReferenceArray([3,6,24]);
+    problem8.addBattery(24);
+    problem8.addWire(6);
+    problem8.addResistor(18,undefined,true);
+    problem8.addWire();
+    problem8.addResistor(6,undefined,true,{'I': 2});
+    problem8.moveToEndOfRow(6);
+    problem8.addMultipleWires(3);
+    problem8.addResistor(6,undefined,true);
+    problem8.moveToEndOfRow(6);
+    problem8.addMultipleWires(4);
+    problem8.addResistor(6,undefined,true,{"R":2});
+
+
+    // begin without guidance problems
+    let problem9 = new ElectricPotentialGraph();
+    problem9.addBattery(20,8);
+    problem9.setReferenceArray([2,4,6,8,10,12,14,16,18,20]);
+    problem9.addWire();
+    problem9.addDownwardSteps([6,4,10]);
+    problem9.addBranch([2,14,4],5,false,true,3);
+
+    let problem10 = new ElectricPotentialGraph();
+    problem10.addBattery(8);
+    problem10.addWire(5);
+    problem10.addDownwardSteps([2,3,3]);
+    problem10.addBranch([4,4],4,false,true,2);
+    problem10.setReferenceArray([1,2,3,4,5,6,7,8]);
+
+
+    // with guidance
+    $("#problem1").append(problem1.drawCanvas(500));
+    $("#problem2").append(problem2.drawCanvas(500));
+    $("#problem3").append(problem3.drawCanvas(500));
+    $("#problem4").append(problem4.drawCanvas(1000));
+    $("#problem5").append(problem5.drawCanvas(800));
+    $("#problem6").append(problem6.drawCanvas(800));
+    $("#problem7").append(problem7.drawCanvas(800));
+    $("#problem8").append(problem8.drawCanvas(800));
+
+
+    // without guidance
+    $("#problem9").append(problem9.drawCanvas(800));
+    $("#problem10").append(problem10.drawCanvas(800));
+
+
+</script>
+
+<br><br><br><br><br>
+<a href = '/contentFiles/handwritten_electric_potential_diagrams.pdf'>EXTRA PROBLEMS</a>
+<br><br><br><br><br>

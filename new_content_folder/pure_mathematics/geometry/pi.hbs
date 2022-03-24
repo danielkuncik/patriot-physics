@@ -1,0 +1,154 @@
+<!--
+
+What do i want to put here?
+
+What does pi mean?
+
+pi to a particular number of digits
+
+[memorize pi to ten digits]
+
+why is pi important?
+
+-->
+
+<script>
+    function radiusDiagram(angleInRadians) {
+        let radiusDiagram = new DiagramF();
+        radiusDiagram.addBlackCircle(origin,.5);
+        radiusDiagram.addCircle(origin,10);
+        const outsidePoint = constructPointWithMagnitudeF(10,angleInRadians);
+        radiusDiagram.addSegment(origin,outsidePoint);
+        radiusDiagram.labelLineAbove(origin,outsidePoint,'radius');
+        return radiusDiagram
+    }
+
+    function diameterDiagram(angleInRadians) {
+        let diameterDiagram = new DiagramF();
+        diameterDiagram.addBlackCircle(origin,.5);
+        diameterDiagram.addCircle(origin,10);
+        const pointA = constructPointWithMagnitudeF(10,angleInRadians);
+        const pointB = constructPointWithMagnitudeF(10,angleInRadians + Math.PI);
+        diameterDiagram.addSegment(pointA,pointB);
+        diameterDiagram.labelLineAbove(pointA,pointB,'diameter',0.7,1.5);
+        return diameterDiagram
+    }
+</script>
+
+
+<p class="definition" data-word = 'circle'>
+    A <strong>circle</strong> is defined as all the points that are the same distance
+    from a single point, called the <strong>center</strong>.
+</p>
+<p class="definition" data-word = 'radius'>
+    The <strong>radius</strong> of a circle is the distance from the center of the circle to the outside.
+</p>
+
+<div id = 'radiusDiagram'></div>
+<!--
+have many diagrams of the radius?
+-->
+
+<script>
+    $("#radiusDiagram").append(radiusDiagram(Math.PI/4).drawCanvas(300));
+</script>
+
+<p class="definition" data-word = 'diameter'>
+    The <strong>diameter</strong> of a circle is the distance across the circle, going through the center.
+    <br>
+    The diameter is always twice the radius: \( d = 2 r \).
+</p>
+
+<div id = 'diameterDiagram'></div>
+<script>
+    $("#diameterDiagram").append(diameterDiagram(.4).drawCanvas(300));
+</script>
+
+<p class="definition" data-word = 'circumference'>
+    The <strong>circumference</strong> of a circle is the distance around the outside of the circle.
+</p>
+
+<p class = 'definition'>
+    The number \( \pi \), pronounced "pi"
+    represents the <em>circumference</em> of a circle
+    divided by the <em>radius</em> of a circle.
+</p>
+
+
+<!--
+make sure to include pi as a number and an equation
+-->
+
+<h4>
+    More facts about pi
+</h4>
+<ul>
+    <li>
+        \( pi \) is actually a lower case Greek letter.
+        It represents the sound "p" in both Ancient and Modern Greek.
+    </li>
+    <li>
+        Pi-day is celebrated every year on March 14th, (because pi is equal to 3.14).
+        (But in physics, we also have gravity day (September 8th) and speed of light day (March 8th).)
+    </li>
+</ul>
+
+<h4>
+    Miniquiz Preview
+</h4>
+<p>
+    The miniquiz for this pod is very quick memorization. The questions and answers are:
+</p>
+
+<ol>
+    <li class = 'mb-3'>
+        <ul>
+            <li>
+                <strong>Question:</strong>
+                Write the number \( pi \) to at least 9 significant digits.
+            </li>
+            <li>
+                <strong>Answer:</strong>
+                \(
+                    \pi = 3.141592653
+                \)
+            </li>
+        </ul>
+    </li>
+    <li class = 'mb-3'>
+        <ul>
+            <li>
+                <strong>Question:</strong>
+                Write the official definition of pi as a sentence.
+            </li>
+            <li>
+                <strong>Answer:</strong>
+                \( \pi \) is equal to the circumference of a circle divided by the diameter.
+            </li>
+        </ul>
+    </li>
+    <li class = 'mb-3'>
+        <ul>
+            <li>
+                <strong>Question:</strong>
+                Write the official definition of pi as an equation.
+            </li>
+            <li>
+                <strong>Answer:</strong>
+                \( \pi = \frac{\text{circumference}}{\text{diameter}} \)
+            </li>
+        </ul>
+    </li>
+</ol>
+
+
+
+
+<h4>
+    Resources:
+</h4>
+<ul>
+    <li>
+        <a href = 'https://www.piday.org/million/'>One million digits of pi!</a>
+    </li>
+</ul>

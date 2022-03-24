@@ -1,0 +1,84 @@
+<p class="introduction">
+    In <a href = '/pod/83111d'>Drawing Waves 1A</a>,
+    you learned how to draw a wave with a particular wavelength.
+    In <a href = '/pod/0ffd1c'>Drawing Waves 1B</a>,
+    you learned how to draw a wave with a particular amplitude.
+    In this pod, we will combine these two methods,
+    to draw a wave with a wavelength and amplitude given.
+</p>
+
+<p class="directions">
+    For each of the waves below,
+    draw a wave with the specific wavelength and amplitude stated.
+    Draw at least three wavelengths (three crests and three troughs).
+</p>
+
+<h2 class = 'text-danger'>
+    This assignment must be completed on graph paper!
+    If you don't have any, use a ruler to turn lined paper into graph paper
+    or print out this page.
+</h2>
+
+<ol class="questionList">
+    <li class="question">
+        <ul>
+            <li>Wavelength = 3 squares</li>
+            <li>Amplitude = 2 squares</li>
+        </ul>
+        <div id="grid1"></div>
+    </li>
+    <li class="question">
+        <ul>
+            <li>Wavelength = 4 squares</li>
+            <li>Amplitude = 3 squares</li>
+        </ul>
+        <div id="grid2"></div>
+    </li>
+    <li class="question">
+        <ul>
+            <li>Wavelength = 2 squares</li>
+            <li>Amplitude = 2 squares</li>
+        </ul>
+        <div id="grid3"></div>
+    </li>
+    <li class="question">
+        <ul>
+            <li>Wavelength = 7 squares</li>
+            <li>Amplitude = 2 squares</li>
+        </ul>
+        <div id="grid4"></div>
+    </li>
+    <li class="question">
+        <ul>
+            <li>Wavelength = 2 squares</li>
+            <li>Amplitude = 4 squares</li>
+        </ul>
+        <div id="grid5"></div>
+    </li>
+    <li class="question">
+        <ul>
+            <li>Wavelength = 8 squares</li>
+            <li>Amplitude = 4 squares</li>
+        </ul>
+        <div id="grid6"></div>
+    </li>
+</ol>
+
+
+<script>
+    let grid1 = new Grid(20,8);
+    let grid2 = new Grid(20,8);
+    let grid3 = new Grid(20,8);
+    let grid4 = new Grid(20,8);
+    let grid5 = new Grid(20,8);
+    let grid6 = new Grid(20,8);
+
+
+    $("#grid1").append(grid1.drawCanvas(600,300));
+    $("#grid2").append(grid2.drawCanvas(600,300));
+    $("#grid3").append(grid3.drawCanvas(600,300));
+    $("#grid4").append(grid4.drawCanvas(600,300));
+    $("#grid5").append(grid5.drawCanvas(600,300));
+    $("#grid6").append(grid6.drawCanvas(600,300));
+
+</script>
