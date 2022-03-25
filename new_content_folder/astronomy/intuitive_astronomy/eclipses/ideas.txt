@@ -1,0 +1,9 @@
+
+ALl of th 8 planets move in:
+-perfect circles (elipses with eccentricity zero)
+-near circles (ellipese with a very low eccentricity)
+- high eccentricity ellipses
+
+
+Comets move in
+- high eccentricity ellipses

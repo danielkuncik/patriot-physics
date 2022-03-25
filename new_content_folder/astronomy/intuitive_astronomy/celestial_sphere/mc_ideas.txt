@@ -1,0 +1,44 @@
+The celestial sphere is composed of objects in the night sky that:
+- move randomly locations each night
+- stay in the same location each night
+- move throughout each night, but stay in the same location relative to each other
+- move throughout the night, but stay int he same location relative to the sun
+
+
+The term "celestial" is derived from the Latin word for:
+- heaven
+- hell
+- ruler
+- country
+
+
+The star polaris moves very very little each night. this is because
+
+
+The stars of the celestial sphere appear to mvoe in circles.
+Ancieny european astronomers knew this.
+To the best of our knowledge, their explanation was:
+- circles are considered the perfect shape, and the heavens are perfect
+- the stars are orbitting the earth
+- the earth is turning and the stars move relative to us
+-
+
+Which of those explanations it he correct answer?
+
+
+
+The stars move in circles around:
+- a the earth
+- the sun
+- the star polaris
+- the point of maximum gravitational field
+
+
+
+An object that moves into different locations of the celestial sphere each night was called a
+- planetus
+
+
+
+Why do the planets appear to move within the celestial spere, but the stars do not?
+[]i actually gotta thinik this one through]

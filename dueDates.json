@@ -7,6 +7,8 @@
   },
   "AP-2022": {
     "2-14-2022": {
+    },
+    "3-31-2022": {
       "B": {
         "7a17b0": {
           "name": "Memorize kinematic equations 3",
@@ -16,9 +18,7 @@
           "name": "cannon problems quant",
           "inClass": true
         }
-      }
-    },
-    "3-31-2022": {
+      },
       "A": {
         "c50747": {
           "name": "two traffic light prob",
