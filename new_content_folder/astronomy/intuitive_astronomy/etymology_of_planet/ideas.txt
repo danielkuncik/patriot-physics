@@ -1,8 +1,12 @@
 
-What does the work (planetus) mean in (latin)?
+What does the Greek word planetes mean?
+- wanderer
+- sphere
+- large mass
+- orbit
 
 
-The original definition of a planet givne by the ancient greeks and romans was:
+The ancient greek definition of a planet givne by the ancient greeks and romans was:
 - an object that appears in a differnet poitn in the celestial spehre each night
 - a large sphereical mass orbitting the sun
 - [more]
@@ -39,4 +43,37 @@ Why did people initially classify Ceres as a planet?
 
 Ceres is:
 - the god of the harvest
+
+
+
+The Ancient Greek's Definition of a planet was
+- an object that appaers in a different spot within the celestial sphere each night
+- an object that is problems
+
+
+How many planets did the ancient Greeks have?
+-5
+-6
+-8
+-9
+
+Which of the following is NOT a planet in the ancient Greek definition?
+- Earth
+- Pluto
+- Mars
+- Jupiter
+
+
+
+For each of the following astronomers, determine their job
+
+Ptolomey; Copernicus; Galileo; Tycho Brae; Kepler; Halley; Clyde Turnbough; Mike Brown
+- created a map of the universe in whichall objects move in circles within circles around the earth
+- first european to posit a theory in which objects orbit the sun rather than the earth
+- discovered four moons of jupiter and effectively argued for a heliocentric universe
+- created a long record of locations of stars and planets that was the best in its day
+- created mathematical rules, one being that all planets move in ellipses rather than circles
+- predicted that a comet would return at a particular time
+- discovered Pluto
+- discovered Eris and several similar Pluto-like objects (now called Kuiper Belt objects)
 

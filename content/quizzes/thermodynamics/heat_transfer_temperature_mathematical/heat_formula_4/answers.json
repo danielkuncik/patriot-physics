@@ -2,11 +2,11 @@
   "v1": {
     "1": {
       "a": "graph with two steps",
-      "b": "9.034 Joules"
+      "b": "9.0e4 Joules"
     },
     "2": {
       "a": "graph with 5 steps",
-      "b": ""
+      "b": "2.59e6 J"
     }
   }
 }
