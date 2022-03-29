@@ -84,8 +84,9 @@ display_units_entry_page = (req,res) => {
 
 display_super_unit_page = (req,res) => {
     let superUnit = unitMap[req.superUnitKey];
-    const pageString = 'unit/' + req.superUnitKey + '/' + req.superUnitKey + '_super_unit_page.hbs';
-    res.render(pageString, {
+    const filePath = `${req.superUnitKey}/super_unit_page.hbs`;
+    //const pageString = 'unit/' + req.superUnitKey + '/' + req.superUnitKey + '_super_unit_page.hbs';
+    res.render(filePath, {
         layout: 'superUnitPageLayout.hbs',
         selectedSuperUnitKey: req.superUnitKey,
         title: superUnit.title,
@@ -102,8 +103,9 @@ display_super_unit_page = (req,res) => {
 display_unit_page = (req, res) => {
     let unitCluster = unitMap[req.superUnitKey];
     let unit = unitCluster.units[req.unitKey];
-    const pageString = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/' + req.unitKey + '_unit_page.hbs';
-    res.render(pageString, {
+    const filePath = `${req.superUnitKey}/${req.unitKey}/unit_page.hbs`;
+    //const pageString = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/' + req.unitKey + '_unit_page.hbs';
+    res.render(filePath, {
         layout: 'unitPageLayout.hbs',
         title: unit.title,
         selectedUnitClusterKey: req.superUnitKey,
@@ -147,9 +149,10 @@ display_pod_page = (req, res) => {
     if (pod.subtitle) {
         title = title + `: ${pod.subtitle}`;
     }
-    const pod_string = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs'
+    const filePath = `${req.superUnitKey}/${req.unitKey}/${req.podKey}/pod_page.hbs`;
+    //const pod_string = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs'
     if (format === 'hbs') {
-        res.render(pod_string, {
+        res.render(filePath, {
             layout: "podPageLayout.hbs",
             quizAvailable: req.quizAvailable,
             unitName: unitMap[req.superUnitKey].units[req.unitKey].title,

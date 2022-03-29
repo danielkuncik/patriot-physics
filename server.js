@@ -152,7 +152,7 @@ app.use(bodyParser.json());
 
 
 app.set('view engine', 'hbs');
-app.set('views', [__dirname + '/views',__dirname + '/oldContent']);
+app.set('views', [__dirname + '/views',__dirname + '/oldContent', __dirname + '/content']);
 app.engine('hbs', hbs.express4({
    // extname: 'hbs',
     defaultView: 'default.hbs',
