@@ -10,7 +10,7 @@ function filesInDirectory(directoryName) {
 }
 
 
-const contentDirectory = `${__dirname}/content`;
+const contentDirectory = `${__dirname}/oldContent`;
 const unitsDirectory = `${contentDirectory}/unit`;
 
 

@@ -152,11 +152,11 @@ app.use(bodyParser.json());
 
 
 app.set('view engine', 'hbs');
-app.set('views', [__dirname + '/views',__dirname + '/content']);
+app.set('views', [__dirname + '/views',__dirname + '/oldContent']);
 app.engine('hbs', hbs.express4({
    // extname: 'hbs',
     defaultView: 'default.hbs',
-    partialsDir: [__dirname + '/views/partials',__dirname + '/content/information/styleGuide',__dirname + '/content/unit/energy/conceptual_conservation_of_energy/pods/energyBooks'],
+    partialsDir: [__dirname + '/views/partials',__dirname + '/oldContent/information/styleGuide',__dirname + '/oldContent/unit/energy/conceptual_conservation_of_energy/pods/energyBooks'],
     layoutsDir: __dirname + '/views/layouts'
 }));
 app.use(express.static(__dirname + '/public'));
@@ -233,7 +233,7 @@ app.post('/logout',(req, res) => {
 
 //
 // app.get('/styleGuide/:styleKey', (req, res) => {
-//     const filepath = __dirname + '/content/information/styleGuide/' + req.params.styleKey;
+//     const filepath = __dirname + '/oldContent/information/styleGuide/' + req.params.styleKey;
 //     res.sendFile(filepath);
 // });
 
@@ -409,7 +409,7 @@ app.get('/pod/:id',[ (req, res, next) => {
 
 /// accessing pod assets
 app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
-    let filepath = __dirname + '/content/unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/assets/' + req.params.assetName;
+    let filepath = __dirname + '/oldContent/unit/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/pods/assets/' + req.params.assetName;
     res.sendFile(filepath);
 });
 
@@ -419,7 +419,7 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
 
 
 app.get('/quizAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
-    let filepath = __dirname + '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetName;
+    let filepath = __dirname + '/oldContent/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetName;
     res.sendFile(filepath);
 });
 
@@ -431,7 +431,7 @@ app.get('/gradeScale', [db.check_if_logged_in, disp.display_scale_page]);
 
 
 app.get('/joke/:jokeName', (req, res) => {
-    let filePath = __dirname + '/content/jokes/memedPictures/' + req.params.jokeName + '.jpg';
+    let filePath = __dirname + '/oldContent/jokes/memedPictures/' + req.params.jokeName + '.jpg';
     res.sendFile(filePath);
 });
 

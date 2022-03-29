@@ -5,7 +5,6 @@ const fs = require('fs');
 const hbs = require('express-hbs');
 
 
-const quizPassword = 'antarctica';
 const gradeScale = require(__dirname + '/gradingScale.json');
 
 
@@ -85,7 +84,8 @@ display_units_entry_page = (req,res) => {
 
 display_super_unit_page = (req,res) => {
     let superUnit = unitMap[req.superUnitKey];
-    res.render('unit/' + req.superUnitKey + '/' + req.superUnitKey + '_super_unit_page.hbs', {
+    const pageString = 'unit/' + req.superUnitKey + '/' + req.superUnitKey + '_super_unit_page.hbs';
+    res.render(pageString, {
         layout: 'superUnitPageLayout.hbs',
         selectedSuperUnitKey: req.superUnitKey,
         title: superUnit.title,
@@ -102,7 +102,8 @@ display_super_unit_page = (req,res) => {
 display_unit_page = (req, res) => {
     let unitCluster = unitMap[req.superUnitKey];
     let unit = unitCluster.units[req.unitKey];
-    res.render('unit/' + req.superUnitKey + '/' + req.unitKey + '/' + req.unitKey + '_unit_page.hbs', {
+    const pageString = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/' + req.unitKey + '_unit_page.hbs';
+    res.render(pageString, {
         layout: 'unitPageLayout.hbs',
         title: unit.title,
         selectedUnitClusterKey: req.superUnitKey,
@@ -134,6 +135,7 @@ function getUnitNumberString(superUnitNumber, unitNumber) {
     return unitNumberString
 }
 
+
 display_pod_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
     const unit = superUnit.units[req.unitKey];
@@ -145,8 +147,9 @@ display_pod_page = (req, res) => {
     if (pod.subtitle) {
         title = title + `: ${pod.subtitle}`;
     }
+    const pod_string = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs'
     if (format === 'hbs') {
-        res.render('unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs', {
+        res.render(pod_string, {
             layout: "podPageLayout.hbs",
             quizAvailable: req.quizAvailable,
             unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
@@ -187,7 +190,7 @@ display_pod_page = (req, res) => {
             scoreObject: req.scoreObject
         });
     } else if (format === 'pdf') {
-        let filePath = '/content/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
+        let filePath = '/oldContent/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
         fs.readFile(__dirname + filePath , function (err,data){
             res.contentType("application/pdf");
             res.send(data);
@@ -195,6 +198,122 @@ display_pod_page = (req, res) => {
     }
 
 };
+
+const display_quiz = (req, res) => {
+    // all this should be worked out in advance!!
+    let available = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
+    if (!available) {
+        res.redirect('/');
+    }
+    if (!req.user) {
+        res.redirect('/login');
+    }
+    let alreadyPassed;
+    if (req.gradeMap) {
+        alreadyPassed = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score === 20;
+    }
+    const inClass = req.passwordAccessRequired;
+    // version and uuid should be looked up already now
+    let versionNumber = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
+    const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
+    const letter = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter;
+    const podTitle = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].title;
+    const title = `Miniquiz: ${unitNumber}-${letter}: ${podTitle}`;
+    const quizString = 'quizzes/' + req.superUnitKey + '/' + req.unitKey + '/' + req.podKey + '/v' + String(versionNumber) +'.hbs';
+    res.render(quizString, {
+        layout: 'quizPageLayout.hbs',
+        selectedUnitClusterKey: req.superUnitKey,
+        selectedUnitKey: req.unitKey,
+        selectedPodKey: req.podKey,
+        letter: unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter,
+        title: title,
+        pod_uuid: req.params.uuid,
+        unitNumber: unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number,
+        backLink: `/pod/${req.params.id}`,
+        unitTitle: unitMap[req.superUnitKey].units[req.unitKey].title,
+        unitClusterTitle: unitMap[req.superUnitKey].title,
+        level: unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].level,
+        version: versionNumber,
+        user: req.user,
+        userName: req.user.name,
+        section: req.section,
+        sectionName: req.section.name,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap,
+        totalAttempts: req.totalAttemps,
+        inClass: inClass,
+        alreadyPassed: alreadyPassed,
+        submitOnline: !inClass && !alreadyPassed,
+        submitPaper: inClass && !alreadyPassed,
+        noSubmission: alreadyPassed,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash'),
+        id: req.params.id
+    });
+
+    // all quizzes open
+    // let section;
+    // if (req.section) {
+    //     section = req.section.name;
+    // } else {
+    //     section = false;
+    // }
+    // let enteredPassword = req.body.password;
+    // if (quizAccess(section, level, enteredPassword)) {
+    //     if (req.params.podKey === 'all') {
+    //         res.render('allQuizzesInAUnit.hbs', {
+    //             layout: 'default',
+    //             selectedUnitClusterKey: req.params.unitClusterKey,
+    //             selectedUnitKey: req.params.unitKey,
+    //             user: req.user,
+    //             section: req.section,
+    //             overallLevel: req.overallLevel,
+    //             gradeMap: req.gradeMap
+    //         })
+    //     } else {
+    //         let versionNumber = availableContent[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].numberOfVersions;
+    //         let versionType = 'hbs'; // all quizzes will be hbs from now on
+    //         if (versionType === 'hbs') {
+    //             res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.hbs', {
+    //                 layout: 'quizPageLayout.hbs',
+    //                 selectedUnitClusterKey: req.params.unitClusterKey,
+    //                 selectedUnitKey: req.params.unitKey,
+    //                 letter: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].letter,
+    //                 title: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].title,
+    //                 unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].unit[req.params.unitKey].number,
+    //                 unitTitle: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].title,
+    //                 unitClusterTitle: unitMap[req.params.unitClusterKey].title,
+    //                 level: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].level,
+    //                 version: versionNumber,
+    //                 user: req.user,
+    //                 section: req.section,
+    //                 overallLevel: req.overallLevel,
+    //                 gradeMap: req.gradeMap
+    //             });
+    //         } else if (versionType === 'pdf') {
+    //             let filePath = '/oldContent/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.pdf';
+    //             fs.readFile(__dirname + filePath , function (err,data){
+    //                 res.contentType("application/pdf");
+    //                 res.send(data);
+    //             });
+    //         }
+    //     }
+    // } else {
+    //     let action = `/quizzes/${req.params.unitClusterKey}/${req.params.unitKey}/${req.params.podKey}`;
+    //     res.render('quizPasswordPage.hbs', {
+    //         layout: 'default',
+    //         selectedUnitClusterKey: req.params.unitClusterKey,
+    //         selectedUnitKey: req.params.unitKey,
+    //         selectedPodKey: req.params.podKey,
+    //         user: req.user,
+    //         section: req.section,
+    //         action: action,
+    //         overallLevel: req.overallLevel,
+    //         gradeMap: req.gradeMap
+    //     });
+    // }
+};
+
 
 const display_practice_submission_page = (req, res) => {
     const superUnit = unitMap[req.superUnitKey];
@@ -262,7 +381,7 @@ display_problemSet_list_page = (req, res) => {
 };
 
 display_lab_page = (req, res) => {
-    res.render(__dirname + '/content/labs/' + req.params.labKey + '.hbs', {
+    res.render(__dirname + '/oldContent/labs/' + req.params.labKey + '.hbs', {
         layout: 'default',
         title: 'Lab',
         user: req.user,
@@ -276,7 +395,7 @@ display_lab_page = (req, res) => {
 };
 
 display_info_page = (req, res) => {
-    res.render(__dirname + '/content/information/' + req.params.infoKey + '.hbs', {
+    res.render(__dirname + '/oldContent/information/' + req.params.infoKey + '.hbs', {
         layout: 'default',
         title: 'Lab',
         user: req.user,
@@ -307,7 +426,7 @@ display_scale_page = (req, res) => {
 
 
 display_problemSet_page = (req, res) => {
-    res.render(__dirname + '/content/problemSets/' + req.params.problemSetKey + '.hbs', {
+    res.render(__dirname + '/oldContent/problemSets/' + req.params.problemSetKey + '.hbs', {
         layout: 'default',
         title: 'Problem Set',
         user: req.user,
@@ -393,119 +512,6 @@ const display_quiz_new = (req, res) => {
 
 };
 
-const display_quiz = (req, res) => {
-    // all this should be worked out in advance!!
-    let available = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
-    if (!available) {
-        res.redirect('/');
-    }
-    if (!req.user) {
-        res.redirect('/login');
-    }
-    let alreadyPassed;
-    if (req.gradeMap) {
-        alreadyPassed = req.gradeMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].score === 20;
-    }
-    const inClass = req.passwordAccessRequired;
-    // version and uuid should be looked up already now
-    let versionNumber = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
-    const unitNumber = getUnitNumberString(unitMap[req.superUnitKey].number, unitMap[req.superUnitKey].units[req.unitKey].number);
-    const letter = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter;
-    const podTitle = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].title;
-    const title = `Miniquiz: ${unitNumber}-${letter}: ${podTitle}`;
-    res.render('quizzes/' + req.superUnitKey + '/' + req.unitKey + '/' + req.podKey + '/v' + String(versionNumber) +'.hbs', {
-        layout: 'quizPageLayout.hbs',
-        selectedUnitClusterKey: req.superUnitKey,
-        selectedUnitKey: req.unitKey,
-        selectedPodKey: req.podKey,
-        letter: unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter,
-        title: title,
-        pod_uuid: req.params.uuid,
-        unitNumber: unitMap[req.superUnitKey].number * 100 + unitMap[req.superUnitKey].units[req.unitKey].number,
-        backLink: `/pod/${req.params.id}`,
-        unitTitle: unitMap[req.superUnitKey].units[req.unitKey].title,
-        unitClusterTitle: unitMap[req.superUnitKey].title,
-        level: unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].level,
-        version: versionNumber,
-        user: req.user,
-        userName: req.user.name,
-        section: req.section,
-        sectionName: req.section.name,
-        overallLevel: req.overallLevel,
-        gradeMap: req.gradeMap,
-        totalAttempts: req.totalAttemps,
-        inClass: inClass,
-        alreadyPassed: alreadyPassed,
-        submitOnline: !inClass && !alreadyPassed,
-        submitPaper: inClass && !alreadyPassed,
-        noSubmission: alreadyPassed,
-        successFlash: req.flash('successFlash'),
-        dangerFlash: req.flash('dangerFlash'),
-        id: req.params.id
-    });
-
-    // all quizzes open
-    // let section;
-    // if (req.section) {
-    //     section = req.section.name;
-    // } else {
-    //     section = false;
-    // }
-    // let enteredPassword = req.body.password;
-    // if (quizAccess(section, level, enteredPassword)) {
-    //     if (req.params.podKey === 'all') {
-    //         res.render('allQuizzesInAUnit.hbs', {
-    //             layout: 'default',
-    //             selectedUnitClusterKey: req.params.unitClusterKey,
-    //             selectedUnitKey: req.params.unitKey,
-    //             user: req.user,
-    //             section: req.section,
-    //             overallLevel: req.overallLevel,
-    //             gradeMap: req.gradeMap
-    //         })
-    //     } else {
-    //         let versionNumber = availableContent[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].numberOfVersions;
-    //         let versionType = 'hbs'; // all quizzes will be hbs from now on
-    //         if (versionType === 'hbs') {
-    //             res.render('quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.hbs', {
-    //                 layout: 'quizPageLayout.hbs',
-    //                 selectedUnitClusterKey: req.params.unitClusterKey,
-    //                 selectedUnitKey: req.params.unitKey,
-    //                 letter: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].letter,
-    //                 title: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].title,
-    //                 unitNumber: unitMap[req.params.unitClusterKey].number * 100 + unitMap[req.params.unitClusterKey].unit[req.params.unitKey].number,
-    //                 unitTitle: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].title,
-    //                 unitClusterTitle: unitMap[req.params.unitClusterKey].title,
-    //                 level: unitMap[req.params.unitClusterKey].unit[req.params.unitKey].pods[req.params.podKey].level,
-    //                 version: versionNumber,
-    //                 user: req.user,
-    //                 section: req.section,
-    //                 overallLevel: req.overallLevel,
-    //                 gradeMap: req.gradeMap
-    //             });
-    //         } else if (versionType === 'pdf') {
-    //             let filePath = '/content/quizzes/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/v' + String(versionNumber) +'.pdf';
-    //             fs.readFile(__dirname + filePath , function (err,data){
-    //                 res.contentType("application/pdf");
-    //                 res.send(data);
-    //             });
-    //         }
-    //     }
-    // } else {
-    //     let action = `/quizzes/${req.params.unitClusterKey}/${req.params.unitKey}/${req.params.podKey}`;
-    //     res.render('quizPasswordPage.hbs', {
-    //         layout: 'default',
-    //         selectedUnitClusterKey: req.params.unitClusterKey,
-    //         selectedUnitKey: req.params.unitKey,
-    //         selectedPodKey: req.params.podKey,
-    //         user: req.user,
-    //         section: req.section,
-    //         action: action,
-    //         overallLevel: req.overallLevel,
-    //         gradeMap: req.gradeMap
-    //     });
-    // }
-};
 
 
 module.exports = {
