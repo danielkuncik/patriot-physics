@@ -1,0 +1,160 @@
+<p>
+    The fundamental theorem of calculus.
+</p>
+
+<!--
+<div id = 'putGraphsHere'></div>
+-->
+
+<p>
+    The <strong>slope</strong> of a position-time graph at time \( t \) is the velocity \( v(t) \) at time \( t \).
+</p>
+
+<p>
+    The <strong>slope</strong> of a velocity-time graph at time \( t \) is the acceleration \( a(t) \) at time \( t \).
+</p>
+
+<p>
+    The <strong>area under the curve</strong> of a velocity-time graph over a time interval \( \Delta t \) is the
+    change in position \( \Delta x \) over that interval.
+    This quantity is also referred to as the <emph>displacement</emph> over that interval.
+</p>
+
+<p>
+    The <strong>area under the curve</strong> of an acceleration-time over during a time interval \( \Delta t \) is the
+    change in velocity \( \Delta v \) over that interval.
+</p>
+
+<p>
+    In the quiz on this topic, you will need to <i>argue</i> and <i>demonstrate</i> that these principles are true
+    by using what you know about kinematics. The quiz is open ended. You may use an algebraic problem,
+    a numerical problem, a conceptual argument, or all of these together.
+</p>
+
+
+<script>
+    let positionTimeGraph = new QuantitativeGraph(0, 5, -5, 5);
+    positionTimeGraph.labelAxes('time (s)', 'position (m)');
+
+    let velocityTimeGraph = new QuantitativeGraph(0,5,-5,5);
+    velocityTimeGraph.labelAxes('time (s)', 'velocity (m/s)');
+
+    let accelerationTimeGraph = new QuantitativeGraph(0, 5, -5, 5);
+    accelerationTimeGraph.labelAxes('time (s)', 'acceleration (m/s/s)');
+
+
+
+//     labelLineAbove(point1, point2, text, textDisplacement, relativeFontSize) {
+//     labelLineBelow(point1, point2, text, textDisplacement, relativeFontSize) {
+
+    let arrows = new DiagramF();
+    let pointA = new PointF(0,1);
+    let pointB = new PointF(3,1);
+    arrows.addArrow(pointA, pointB);
+    arrows.labelLineAbove(pointA, pointB, 'slope'); // this needs to be a better function
+    let pointC = new PointF(3,0);
+    let pointD = origin;
+    arrows.addArrow(pointC, pointD);
+    arrows.labelLineBelow(pointC, pointD, 'area under curve');
+
+
+    positionTimeGraph.merge(arrows, 'right', 0.5);
+    positionTimeGraph.merge(velocityTimeGraph, 'right', 0.5);
+// merge with duplicate of 'arrows'
+    positionTimeGraph.merge(accelerationTimeGraph, 'right', 0.5);
+
+
+    $("#putGraphsHere").append(positionTimeGraph.drawCanvas(900,300));
+
+    // well, it is a work in progress
+
+    // i think the problem may be that the labels are not considered part of the range of my graph!
+
+</script>
+
+<h4>
+    Calculus Language
+</h4>
+
+<p>
+    In a calculus course, you learn about two mathematical processes called <strong>differentiation</strong>
+    and <strong>integration</strong> that help to make the function above.
+    Using the terminology of calculus, the correct way to state the principles above is:
+</p>
+<p>
+    The <strong>derivative</strong> of a position-time function at time \( t \) is the velocity \( v(t) \) at time \( t \).
+</p>
+
+<p>
+    The <strong>derivative</strong> of a velocity-time function at time \( t \) is the acceleration \( a(t) \) at time \( t \).
+</p>
+
+<p>
+    The <strong>definite integral</strong> of a velocity-time function over a time interval \( \Delta t \) is the
+    change in position \( \Delta x \) over that interval.
+    This quantity is also referred to as the <emph>displacement</emph> over that interval.
+</p>
+
+<p>
+    The <strong>definite integral</strong> of an acceleration-time function over a time interval \( \Delta t \) is the
+    change in velocity \( \Delta v \) over that interval.
+</p>
+
+<p>
+    Notice that absolutely <emph>nothing</emph> about the statements changed other than a few words:
+    "slope" was replaced with "derivative,"
+    "area under the curve" was replaced with "definite integral,"
+    and "graph" was replaced with "function."
+    That's it. Nothing else changed.
+</p>
+
+<p>
+    I recommend that you don't think of differentiation and integration as central to kinematics,
+    even though that is how it is often presented,
+    but think of them as tools necessary to use the principles of kinematics
+    described above.
+</p>
+
+
+<h4>
+    Public Service Announcement on Calculus
+</h4>
+
+<p>
+    Many students who are taking calculus together with physics (and even some who aren't!)
+    begin saying the following things:
+</p>
+
+<p>
+    1: Velocity is the derivative of position.
+</p>
+<p>
+    2: Position is the integral of velocity.
+</p>
+
+<p>
+    Statement 1 is not incorrect, but is somewhat ill-defined.
+    It is much more appropriate to make the statement above.
+</p>
+<p>
+    Statement 2 is extremely ill-defined.
+    Technically, every "integral" is either a definite integral
+    or an indefinite integral (anti-derivative),
+    and the term "integral" alone should never be used to refer to a function.
+</p>
+
+<p>
+    Please don't say those things.
+    Instead, say a mathematically precise statement that give a clear
+    and thorough explanation of the relationship between position and velocity.
+</p>
+
+<p>
+    The <strong>derivative</strong> of a position-time function at time \( t \) is the velocity \( v(t) \) at time \( t \).
+</p>
+
+<p>
+    The <strong>definite integral</strong> of a velocity-time function over a time interval \( \Delta t \) is the
+    change in position \( \Delta x \) over that interval.
+    This quantity is also referred to as the <emph>displacement</emph> over that interval.
+</p>

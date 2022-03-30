@@ -1,0 +1,258 @@
+$$
+\require{enclose}
+$$
+
+<h3>
+  Reference Information
+</h3>
+
+<div id = kinematicEquationsTable></div>
+
+<script>
+    $("#kinematicEquationsTable").append(makeKinematicEquationsTable().draw(300));
+</script>
+<h3>
+  Dimensional Analysis
+</h3>
+
+<p>
+  Dimensional analysis is a method of treating
+  the units in a problem as though they are numbers.
+  Understanding dimensional analysis is key to understanding
+  how physics equations work, but it is a very good practical tool for helping
+  to solve problems. Most students know about how dimensional analysis
+  can be used to solve conversion problems.
+  However, it are also a very powerful tool for algebraic problems.
+  In this class, you are <emph>required</emph> to demonstrate that you have
+  correctly solved a problem using dimensional analysis.
+</p>
+
+<h5>
+  Steps
+</h5>
+
+<ol>
+  <li>
+    Start by thinking of the equation as a collection of separate terms
+    being added together.
+  </li>
+  <li>
+    Replace each variable with the SI unit for that variable.
+    Ignore numbers such as "2" or "1/2."
+  </li>
+  <li>
+    Apply exponents, then multiply and divide all variables.
+  </li>
+  <li>
+    Any terms that are added or subtracted must be the same unit.
+  </li>
+  <li>
+    At the end, if all terms are the same unit, the equation is dimensionally correct.
+  </li>
+</ol>
+
+<ol class = 'questionList'>
+  <li class = 'question'>
+    There are <strong>three</strong>
+    terms in the Definition of Acceleration.
+    Demonstrate that the Definition of Acceleration is dimensionally
+    correct by showing that each of the three terms has the same unit
+    (m/s).
+  </li>
+  <li class = 'question'>
+    There are <strong>three</strong>
+    terms in the King of Kinematic Equations.
+    Demonstrate that the King of Kinematic Equations is dimensionally
+    correct by showing that each of the three terms has the same unit
+    (meters).
+  </li>
+  <li class = 'question'>
+    There are <strong>three</strong>
+    terms in the No-Time Equation.
+    Demonstrate that the No-Time Equation is dimensionally
+    correct by showing that each of the three terms has the same unit
+    (m^2/s^2).
+  </li>
+  <li class = 'question'>
+    The Average velocity equation is more complicated:
+    <ol class = 'subQuestionList' type = 'a'>
+      <li class = 'subQuestion'>
+        Replace each variable in the equation with its SI unit.
+      </li>
+      <li class = 'subQuestion'>
+        Does your equation have a section that looks like "m/s - m/s"?
+        Any two variables with the same unit may be combined.
+        Therefore, two variables with units of m/s may be subtracted,
+        and they make another variable with units of m/s.
+        So, replace the therm "m/s - m/s" with a single "m/s".
+        (And whatever you do, don't make it a zero!)
+      </li>
+      <li class = 'subQuestion'>
+        Now, show the equation is dimensionally correct.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+<h3>
+  Practice
+</h3>
+
+<p class = 'directions'>
+  For each of the situations below,
+  solve the equation for the one variable in terms of others.
+  Then, complete a dimensional analysis to demonstrate your answer is correct.
+</p>
+
+<ol class = 'questionList'>
+
+  <li class = 'question' data-answer = '\( v_i = v_f - a \cdot \Delta t \)'>
+    Solve for <strong>initial velocity</strong>
+    in terms of <emph>final velocity</emph>,
+    <emph>acceleration</emph>,
+    and <emph>time interval</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( \Delta t = \frac{v_f - v_i}{a} \)'>
+    Solve for <strong>time interval</strong>
+    in terms of <emph>final velocity</emph>,
+    <emph>initial velocity</emph>,
+    and <emph>acceleration</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( a = \frac{2 \left( \Delta x - v_i \cdot \Delta t \right) }{\left( \Delta t \right)^2 } \)'>
+    Solve for <strong>acceleration</strong>
+    in terms of <emph>time interval</emph>,
+    <emph>initial velocity</emph>,
+    and <emph>displacement</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( v_i = \frac{\Delta x - \frac{1}{2} a \left( \Delta t \right)^2 }{\Delta t} = \frac{2 \Delta x - a \cdot \left( \Delta t \right)^2 }{ 2 \Delta t } \)'>
+    Solve for <strong>initial velocity</strong>
+    in terms of <emph>time interval</emph>,
+    <emph>acceleration</emph>,
+    and <emph>displacement</emph>.
+  </li>
+
+<li class = 'question' data-answer = '\( \Delta t = \frac{2 \cdot \Delta x}{v_i + v_f } \)'>
+    Solve for <strong>time interval</strong>
+    in terms of <emph>initial velocity</emph>,
+    <emph>final velocity</emph>,
+    and <emph>displacement</emph>.
+</li>
+
+  <li class = 'question' data-answer = '\( v_i = \frac{2 \cdot \Delta x}{\Delta t} - v_f \)'>
+    Solve for <strong>initial velocity</strong>
+    in terms of <emph>time interval</emph>,
+    <emph>final velocity</emph>,
+    and <emph>displacement</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( v_f = \frac{2 \cdot \Delta x}{\Delta t} - v_i \)'>
+    Solve for <strong>final velocity</strong>
+    in terms of <emph>initial velocity</emph>,
+    <emph>time interval</emph>,
+    and <emph>displacement</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( v_i = \sqrt{v_f^2 - 2 a \cdot \Delta x}\)'>
+    Solve for <strong>initial velocity</strong>
+    in terms of <emph>final velocity</emph>,
+    <emph>acceleration</emph>,
+    and <emph>displacement</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( a = \frac{v_f^2 - v_i^2}{2 \cdot \Delta x} \)'>
+    Solve for <strong>acceleration</strong>
+    in terms of <emph>initial velocity</emph>,
+    <emph>final velocity</emph>,
+    and <emph>displacement</emph>.
+  </li>
+
+  <li class = 'question' data-answer = '\( \Delta x = \frac{v_f^2 - v_i^2}{2 a} \)'>
+    Solve for <strong>displacement</strong>
+    in terms of <emph>initial velocity</emph>,
+    <emph>final velocity</emph>,
+    and <emph>acceleration</emph>.
+  </li>
+
+  <li class = 'question' >
+    <ol class = 'subQuestionList' type = 'a'>
+      <li class = 'subQuestion' data-answer = '\( \)'>
+        Solve for <strong>time interval</strong>
+        in terms of <emph>displacement</emph>,
+        <emph>initial velocity</emph>,
+        and <emph>acceleration</emph>.
+        This derivation will involve using the quadratic equation.
+      </li>
+      <li class = 'subQuestion' data-answer = '\( \)'>
+        Simplify your formula using one of the other
+        kinematic equations.
+      </li>
+    </ol>
+  </li>
+
+</ol>
+
+
+<h3>
+    The Fifth Kinematic Equation
+</h3>
+
+<img src = '/podAssets/kinematics/forward_kinematics_quantitative/yoda.jpg' height = '200px' width = 'auto'/>
+
+<p>
+    We have always used the four kinematic equations, but there is actually one more!
+    In this section, we will logically deduce what it should be.
+</p>
+
+<ol class = 'questionList'>
+    <li class="question">
+        <ol class = 'subQuestionList' type = 'a'>
+            <li class = 'subQuestion'>
+                List the four kinematic equations.
+            </li>
+            <li class = 'subQuestion'>
+                List the five kinematic quantities, the five quantities in the kinematic equations.
+            </li>
+            <li class = 'subQuestion'>
+                Each of the four kinematic equations is missing one of the five quantities.
+                Determine for each equation which quantity it is missing.
+            </li>
+            <li class="subQuestion" data-answer = '\( \Delta x = v_f \cdot \Delta t - \frac{1}{2} a \left( \Delta t \right)^2 \)'>
+                From parts a) - c) logically deduce which quantities should be included in the fifth kinematic
+                equation. Then, combine two existing equations to determine the fifth.
+            </li>
+            <li class="subQuestion" data-answer = '\( \text{m} = \frac{\text{m}}{\enclose{horizontalstrike}{\text{s}}} \cdot \enclose{horizontalstrike}{\text{s}} - \frac{\text{m}}{\enclose{horizontalstrike}{\text{s}^2}} \cdot \enclose{horizontalstrike}{\text{s}^2} \)'>
+                Demonstrate that the fifth kinematic equation you derived is dimensionally correct
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<p class="directions">
+    Use the fifth kinematic equation to answer each of the questions below.
+    For each equation derived, demonstrate that it is dimensionally correct.
+</p>
+<ol class="questionList">
+    <li class="question">
+        Derive an equation for final velocity in terms of time interval, displacement, and acceleration.
+        Demonstrate that your equation is dimensionally correct.
+    </li>
+    <li class="question">
+        Derive an equation for time interval in terms of final velocity, displacement, and acceleration.
+        Demonstrate that your equation is dimensionally correct.
+    </li>
+    <li class="question">
+        Derive an equation for displacement in terms of final velocity, time interval, and acceleration.
+        Demonstrate that your equation is dimensionally correct.
+    </li>
+    <li class="question">
+        Derive an equation for acceleration in terms of final velocity, time interval, and displacement.
+        Demonstrate that your equation is dimensionally correct.
+    </li>
+</ol>
+
+
+<ol class = 'answerList'></ol>

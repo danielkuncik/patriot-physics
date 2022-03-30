@@ -1,0 +1,91 @@
+<p>
+    In this pod, we will learn the formula
+    distance = speed * time.
+    It is arguably the simplest formula in physics,
+    but you will find that nearly all other formulas
+    are based, in some way, on this one.
+    Therefore, you must learn it well.
+</p>
+
+<p class = 'equation'>
+    $$
+    d = v t
+    $$
+</p>
+
+<div id = speedFormulaTable></div>
+
+<p>
+    <strong>Note:</strong>
+    Even though the symbol \( v \)
+    seems to stand for velocity, in this case, it stands
+    for speed. Both speed and velocity have the symbol \( v \),
+    and we will learn the distance, in much detail, later.
+</p>
+
+<script>
+    let speedFormulaTable = new Table(4,3);
+    speedFormulaTable.addTopHeaders(['Symbol','Quantity','SI Unit']);
+    speedFormulaTable.writeTextInRow(1,['\\( d \\)','distance','meters (m)']);
+    speedFormulaTable.writeTextInRow(2,['\\( v \\)','average speed','meters per second (m/s)']);
+    speedFormulaTable.writeTextInRow(3,['\\( t \\)','time','seconds (s)']);
+    speedFormulaTable.setRowProportions([1,2,2,2]);
+
+    $("#speedFormulaTable").append(speedFormulaTable.draw(400));
+</script>
+
+<ol class = 'questionList'>
+    <li class = 'question' data-answer = '3 m/s'>
+        You walk a distance of 6 meters down the hall in a time of 2 seconds.
+        What is your speed?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer = '4 m/s'>
+        You walk a distance of 12 m in a time of 3 s. What is your speed?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '9 m/s'>
+        You drive a distance of 180 m in a time of 20 s.
+        What is your speed?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '30 m'>
+        You move a speed of 3 m/s in a time of 10 seconds.
+        What is your distance?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer = '80 m'>
+        You move a speed of 4 m/s in a time of 20 s.
+        What is your distance?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '5 s'>
+        You drive a distance of 200 m at a speed of 40 m/s.
+        How much time does it take?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <li class = 'question' data-answer = '8 s'>
+        You moe a distance of 32 m with a speed of 4 m/s.
+        How much time does it take?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+    <div class="pageBreak"></div>
+    <li class = 'question' data-answer = '7 m/s'>
+        You move a distance of 105 m in a time of 15 s.
+        What is your speed?
+        <br>
+        <div class = 'formulaSolvingTable'></div>
+    </li>
+</ol>
+
+
+<ol class = 'answerList'></ol>
