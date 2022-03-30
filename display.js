@@ -222,8 +222,9 @@ const display_quiz = (req, res) => {
     const letter = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].letter;
     const podTitle = unitMap[req.superUnitKey].units[req.unitKey].pods[req.podKey].title;
     const title = `Miniquiz: ${unitNumber}-${letter}: ${podTitle}`;
-    const quizString = 'quizzes/' + req.superUnitKey + '/' + req.unitKey + '/' + req.podKey + '/v' + String(versionNumber) +'.hbs';
-    res.render(quizString, {
+    const filePath = `${req.superUnitKey}/${req.unitKey}/${req.podKey}/quizzes/v${versionNumber}.hbs`;
+   // const quizString = 'quizzes/' + req.superUnitKey + '/' + req.unitKey + '/' + req.podKey + '/v' + String(versionNumber) +'.hbs';
+    res.render(filePath, {
         layout: 'quizPageLayout.hbs',
         selectedUnitClusterKey: req.superUnitKey,
         selectedUnitKey: req.unitKey,
