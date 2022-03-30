@@ -419,12 +419,10 @@ app.get('/asset/:podID/:assetName', (req, res) => {
     if (!idLibraryObject || idLibraryObject.type !== 'pod') {
         // do nothing???
     } else {
-        req.superUnitKey = idLibraryObject.superUnitKey;
-        req.unitKey = idLibraryObject.unitKey;
-        req.podKey = idLibraryObject.podKey;
-        /// currently assets are organized by units, but they should be organized by pod!
-        const filepath = __dirname + '/content/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/assets/' + req.params.assetName;
-        // const filepath = __dirname + '/content/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' +  req.params.podKey + '/assets/' + req.params.assetName;
+        const superUnitKey = idLibraryObject.superUnitKey;
+        const unitKey = idLibraryObject.unitKey;
+        const podKey = idLibraryObject.podKey;
+        const filepath = `${__dirname}/content/${superUnitKey}/${unitKey}/${podKey}/assets/${req.params.assetName}`;
         res.sendFile(filepath);
     }
 });
