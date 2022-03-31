@@ -82,6 +82,10 @@ Object.keys(unitMap).forEach((superUnitKey) => {
                         if (count > 0) {
                             availableContent[superUnitKey].units[unitKey].pods[podKey].writtenQuizzes = true;
                             availableContent[superUnitKey].units[unitKey].pods[podKey].numberOfVersions = count;
+                            // this is redundant????
+                        } else {
+                            availableContent[superUnitKey].units[unitKey].pods[podKey].writtenQuizzes = false;
+                            availableContent[superUnitKey].units[unitKey].pods[podKey].numberOfVersions = 0;
                         }
                     }
                 } else {
