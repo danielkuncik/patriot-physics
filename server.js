@@ -346,7 +346,7 @@ const checkQuizAccess = (req, res, next) => {
     req.superUnitKey = keys.superUnitKey;
     req.unitKey = keys.unitKey;
     req.podKey = keys.podKey;
-    req.quizAvailable = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
+    req.quizAvailable = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].writtenQuizzes;
     if (req.user && req.courseLevel && req.year) {
         const id = req.params.id;
         let dueDateObject = dueDatesWithoutGradeMarkers[`${req.courseLevel}-${req.year}`];
@@ -555,10 +555,10 @@ app.get('/miniquiz/:unitClusterKey/:unitKey/:podKey', [db.check_if_logged_in, di
 // }
 
 function look_up_quiz_answers(req, res, next) {
-    req.version = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberOfVersions;
+    req.version = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].numberWrittenQuizzes;
 
     // draft, see if this works later
-    const answersAvailable = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].answersAvailable;
+    const answersAvailable = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].writtenAnswersAvailable;
     if (answersAvailable) {
         const answerFile = require(__dirname + `/content/quizzes/${req.superUnitKey}/${req.unitKey}/${req.podKey}/answers.json`);
         req.answerText = JSON.stringify(answerFile[`v${req.version}`]);
