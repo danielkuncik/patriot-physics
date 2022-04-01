@@ -1,0 +1,125 @@
+The celestial sphere:
+- An imaginary globe with the earth at its center that shows the stars and all other bodies in space (celestial bodies) in their relative position.
+- The word “celestial” is derived from the Latin “caelum” for “heaven”
+
+Constellations:
+Shapes that appear in the stars.
+Can be used to organize the night sky.
+Many cultures across the world have identified their own constellations.
+Ancient Sumerian and Greek constellations (Orion, Cygnus, Ursa Major, Ursa Minor) are the most well known and referred to by astronomers for the Northern Hemisphere.
+The International Astronomical Union currently breaks the sky into 88 regions based upon different constellations.
+
+Ancient Greek definition of a planet:
+- An object that appears in a different spot on the celestial sphere each night (as opposed to the stars, which stay in the same position on the celestial sphere).
+The ancient Greeks recognized seven planets.
+This included the planets that are today are called Mercury, Venus, Mars, Jupiter, and Saturn.
+The Ancient Greeks also considered the moon and the sun to be planets, because they move across the celestial sphere.
+The Greek word “planetes” means “traveler” or “wanderer”, and refers to an object that wanders across the celestial sphere.
+
+Retrograde Motion:
+- When a planet appears to reverse its direction in its motion across the celestial sphere.
+
+Ptolemaic Universe:
+- A cosmology [map of the universe] credited to the Greek Philosopher Ptolomey
+All objects orbit around the earth in circles.
+Retrograde motion is explained by planets moving in circles within circles, thus sometimes moving backwards in their smaller circle while continuing their path forwards in the large circle
+
+Copernican Universe:
+A cosmology credited to the Polish astronomer Copernicus, published in 1543
+All objects orbit the sun (it was originally thought they orbit in circles, although now we know it is an ellipse)
+Improved by the mathematician Galileo Galilee
+
+Galilean Moons:
+Four moons of Jupiter discovered by the Italian astronomer and mathematician Galileo Galilee
+Named Io, Callisto, Europa, and Ganymede
+The first objects that were unequivocally orbiting an object besides earth (in this case, Jupiter)
+Further dented the fundamental concept of the Ptolemaic universe that all bodies must orbit the earth.
+
+Renaissance “Definition” of Planet:
+The definition of planet used from the acceptance of the Copernican Universe
+A “planet” was “defined” as a large spherical mass orbiting the sun
+This definition was unclear and imprecise, as later discoveries in the 19th, 20th, and 21st century demonstrated
+
+Tycho Brae
+Danish nobleman
+Created large record of astronomical information
+Shortly after his death, the astronomy Johannes Kepler came into possession of this information and used it to develop his three laws
+
+Johannes Kepler:
+German mathematician
+Came into possession of Tycho BRae’s astronomical records
+Developed three laws of planetary motion
+These laws were developed as intermediataries towards larger goals which he did not achieve.
+
+Kepler’s First Law:
+In Kepler’s Time: The six planets move in elliptical orbits with the sun at one of the two foci.
+Since Kepler’s death: All orbits of a smaller body around a body with much higher mass are elliptical with teh larger body at one of the two foci
+
+Kepler’s Second Law:
+The area swept by any planet in any two lengths
+Functionally, it means that planets move faster when close to the sun and slower when farther away
+
+Kepler’s Third Law:
+- This is a mathematical formula not relevant to the topic at hand
+
+
+Ellipse:
+a conic section
+All poitns for whom the combined distance from any two points (calle dthe foci) is identical
+
+Isaac Newton:
+English mathematician
+Invented calculus and determined three laws of motion and the law of universal gravitation
+Used his laws to prove Kepler’s Three Laws
+
+Ceres:
+A large spherical mass in the asteroid belt, largest body in the asteroid belt
+Discovered in 1801
+Was considered a planet when first discovered
+Like other planets, was the Roman name of an Olympian God (The god of the Harvest, Demeter in Greek)
+Was reclassified as a large asteroid shortly thereafter as more asteroid belt objects were discovered
+Today is classified as a dwarf planet
+
+Pluto:
+A spherical mass in the Kuiper Belt
+Discovered in 1930 by Clyde Tombaugh
+Was considered a planet and given the Roman name of an Olympian God (The King of the Underworld, Hades in Greek)
+Had a much smaller mass than other planets, is much farther away from the sun, has a much more elliptical orbit, and a much longer period of revolution
+Has a moon Charon
+Today is classified as a dwarf planet
+
+Kuiper Belt:
+Region of the solar system beyond Neptune, containing many dwarf planets and icy masses
+Many Pluto-like objects were discovered in the Kuiper Belt in the 1990s and early 2000s, prompting astronomers to reconsider Pluto’s status.
+Pluto is the most well known Kuiper Belt object; Eris is another important Kuiper belt object.
+
+
+Eris:
+spherical Kuiper belt object with a mass larger than Pluto
+Discovered in 2005 by Mike Brown
+It’s discovery, along with many other Kuiper Belt objects, led to a controversy on the true definition of a planet
+
+International Astronomical Union Meeting of 2006
+meeting to officially define a planet
+Before this meeting, the term “planet” had no rigorous definition
+Received major international press coverage
+The accepted definition included 8 planets, Eris, Pluto, Ceres, and all discovered Kuiper belt objects were classified as dwarf planets
+Meeting in August 2006 in Prague
+
+Current Planet Definition:
+There are three requirements to be a planet:
+A) A planet is in orbit around the sun
+B) A planet has sufficient mass for its self-gravity to overcome rigid body forces sot hat it assumes a hydrostatic equilibrium (nearly round) shape. [This is a very academic, rigorous  way of saying planets need to be big, massive, and round.]
+C) Has cleared out the neighborhood around its orbit.
+Requirement (C) nullifies all objects in the Asteroid Belt (Ceres) and the Kuiper Belt (Pluto and Eris)
+
+Dwarf Planet Definition:
+- A dwarf planet must have requirements (A) and (B) of a planet met, must not be a satellite (a moon of another planet), but do NOT have to satisfy requirement (C). Large, spherical bodies int he Asteroid Belt (Ceres) and Kuiper Belt (Pluto and Eris) are classified as dwarf planets.
+
+Resources:
+https://solarsystem.nasa.gov/planets/in-depth/
+
+The Clockwork Universe by Edward Dolnick
+
+How I Killed Pluto and Why it Had it Coming, by Mike Brown
+

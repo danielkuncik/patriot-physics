@@ -1,79 +1,126 @@
 
 What does the Greek word planetes mean?
-- wanderer
-- sphere
-- large mass
-- orbit
+A. wanderer
+B. sphere
+C. large mass
+D. orbit
 
 
-The ancient greek definition of a planet givne by the ancient greeks and romans was:
-- an object that appears in a differnet poitn in the celestial spehre each night
-- a large sphereical mass orbitting the sun
-- [more]
+The ancient greek definition of a planet given by the ancient greeks and romans was:
+A. An object that appears in a different points in the celestial sphere
+B. A large spherical mass orbiting the sun
+C. A large spherical mass moving in an ellipse around the earth
+D. Any large mass in space.
 
 
-Pluto was a suspicious inclusion on the list of planets because (check all that apply)
-- it's mass is much lower than other planets
-- it has no moons
-- the eccentricity of its orbit is muhc greater than other planets
-- it is much farther away from the sun than other planets
+Retrograde Motion refers to what phenomenon:
+A. A planet moving across the sky appears turn backwards
+B. A planet slows down, stops, and reverses direction
+C. A planet begins slowing down
+D. The earth slows down, stops, and reverses direction
+
+
+The explanation for retrograde motion in the Ptolomeic universe was:
+A. Planets are moving in a small circles within a larger circle.
+B. The earth changed direction while orbiting.
+C. The sun changed the direction it is spinning.
+D. The planet slowed down, stopped, and reversed direction due to the force of gravity.
+
+
+The explanation for retrograde motion in the Copernican universe is:
+A. Planets are moving in a small circles within a larger circle.
+B. The earth changed direction while orbiting.
+C. The sun changed the direction it is spinning.
+D. The planet slowed down, stopped, and reversed direction due to the force of gravity.
+
+
+For most of history, people believed the planets must move in circles. Kepler discovered that:
+A. They did indeed move in circles
+B. The move in ellipses, not circles, but the ellipses are nearly circular.
+C. The move in ellipses, not circles, and the ellipses are highly eccentric (non-circular).
+D. They move in a square, not a circle
+
+From the Renaissance to the 2006 IAU meeting, the term "planet" had a very unclear definition.
+The closest thing to a definition was:
+A. An object that appears in a different points in the celestial sphere
+B. A large spherical mass orbiting the sun
+C. A large spherical mass orbiting the earth
+D. Any large mass in space.
+
+
+Galileo discovered four new spheres (called moons) orbiting:
+A. Mercury
+B. Venus
+C. Earth
+D. Jupiter
+
+One significance of the discovery of the four Galilean moons of _________ was that:
+A. They showed an object could orbit a body other than earth.
+B. They showed everything in space is a sphere.
+C. They showed that everything in space orbits the sun.
+D. They showed that our moon orbits the earth.
+
+Pluto was a suspicious inclusion on the list of planets because (check ALL that apply)
+A. it's mass is much lower than other planets
+B. it has no moons
+C. the eccentricity of its orbit is much greater than other planets
+D. it is much farther away from the sun than other planets
 
 The impetus for writing a new definition of a planet was:
-- many many objects that could eb potentially classfied as planets were discovered in a very short time
--
+A. Many many objects that could be potentially classified as planets had been discovered in a very short time
+B. Ceres had been discovered recently and needed to be classified.
+C. Pluto was the head of the IAU's least favorite Disney character.
+D. Astronomers needed to decide if comets were planets.
 
 
-From the mid 1600s century, when people clasfied the earth as a planet, until the ____ meeting in 2006, what was the definiton of a planet?
-- no precise definiotno f a plnaet existsed during this time
-- a large sphereical mass orbitting the sun
-- an object that appears in a differnet poitn in the celestial spehre each night
 
 
-Ceres is an object that was briefly considered a planet when it was first discovered inthe 19th century.
+Ceres is an object that was briefly considered a planet when it was first discovered in the 19th century.
 It no longer fits the definition of a planet. Ceres is:
-- A large sphereical object in the asteroid belt
-- an object that is outside the solar system
-- A large non-spherical object in the
+A. A large spherical object in the asteroid belt
+B. An object that is outside the solar system
+C. A large non-spherical object in the asteroid belt.
+D. A large spherical object in the Kuiper belt.
 
 Why did people initially classify Ceres as a planet?
-- it is large, spherical, and orbits the sun
-- it has several moons
-- it is made of rock
-
-
-Ceres is:
-- the god of the harvest
+A. It is large, spherical, and orbits the sun
+B. It has several moons
+C. It is made of rock
+D. It is near other planets.
 
 
 
-The Ancient Greek's Definition of a planet was
-- an object that appaers in a different spot within the celestial sphere each night
-- an object that is problems
+How many planets did the ancient Greeks have, (including things today not considered planets?
+A. 5
+B. 6
+C. 7
+D. 8
+E. 9
+
+Which of the following is NOT a planet in the ancient Greek definition (Assume the Greeks had been able to discover everything on the list.)?
+A. Earth
+B. Pluto
+C. Mars
+D. Jupiter
+E. Neptune
 
 
-How many planets did the ancient Greeks have?
--5
--6
--8
--9
-
-Which of the following is NOT a planet in the ancient Greek definition?
-- Earth
-- Pluto
-- Mars
-- Jupiter
+Pluto was eventually reclassified as a "dwarf planet" because:
+A. It is too small
+B. It has no moons
+C. It is too far away from the sun
+D. It is in the Kuiper Belt
 
 
+For each of the following astronomers, determine their contribution [1/5 point each]
 
-For each of the following astronomers, determine their job
-
-Ptolomey; Copernicus; Galileo; Tycho Brae; Kepler; Halley; Clyde Turnbough; Mike Brown
-- created a map of the universe in whichall objects move in circles within circles around the earth
-- first european to posit a theory in which objects orbit the sun rather than the earth
-- discovered four moons of jupiter and effectively argued for a heliocentric universe
-- created a long record of locations of stars and planets that was the best in its day
-- created mathematical rules, one being that all planets move in ellipses rather than circles
-- predicted that a comet would return at a particular time
-- discovered Pluto
-- discovered Eris and several similar Pluto-like objects (now called Kuiper Belt objects)
+Ptolomey; Nicolaus Copernicus; Galileo Galilee; Tycho Brae; Johannes Kepler; Isaac Newton; Clyde Turnbough; Mike Brown
+- Created a map of the universe in which all objects move around the earth
+- Created a theory that objects move in circles around the sun, rather than the earth
+- Discovered four moons of __[omitted]___ and effectively argued for a heliocentric universe
+- Created a long record of locations of stars and planets that was the best available in the 17th century
+- Mathematically analyzed the records of planets to determine three laws of planetary motion.
+- Developed a theory of gravity and laws of motion which could then prove the laws of planetary motion developed by his predecessor.
+- Discovered Pluto
+- Discovered Eris and several similar Pluto-like objects (now called Kuiper Belt objects)
 
