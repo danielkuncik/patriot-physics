@@ -15,7 +15,7 @@ const unitsDirectory = `${contentDirectory}/unit`;
 
 
 /// check which super unit, unit and pod pages are available
-const availableSuperUnits = filesInDirectory(unitsDirectory);
+const availableSuperUnits = filesInDirectory(contentDirectory);
 Object.keys(unitMap).forEach((superUnitKey) => {
     availableContent[superUnitKey] = {
         available: undefined,
@@ -44,7 +44,7 @@ Object.keys(unitMap).forEach((superUnitKey) => {
         let availablePods;
         if (availableUnitFolders.includes(unitKey)) {
             let filesInUnitFolder = filesInDirectory(`${contentDirectory}/${superUnitKey}/${unitKey}`);
-            if (filesInUnitFolder.includes('pods') && filesInUnitFolder.includes(`unit_page.hbs`)) {
+            if (filesInUnitFolder.includes(`unit_page.hbs`)) {
                 availableContent[superUnitKey].units[unitKey].available = true;
                 availablePods = filesInUnitFolder;
             } else {

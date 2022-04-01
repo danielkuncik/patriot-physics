@@ -150,56 +150,46 @@ display_pod_page = (req, res) => {
         title = title + `: ${pod.subtitle}`;
     }
     const filePath = `${req.superUnitKey}/${req.unitKey}/${req.podKey}/pod_page.hbs`;
-    //const pod_string = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.hbs'
-    if (format === 'hbs') {
-        res.render(filePath, {
-            layout: "podPageLayout.hbs",
-            quizAvailable: req.quizAvailable,
-            unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
-            title: title,
-            level: pod.level,
-            superUnitKey: req.superUnitKey,
-            unitKey: req.unitKey,
-            podKey: req.podKey,
-            objective: pod.objective,
-            content: pod.content,
-            backLink: `/unit/${unit.id}`,
-            //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
-            letter: pod.letter,
-            unitNumber: unitNumber,
-            unitClusterName: unitMap[req.superUnitKey].title,
-            user: req.user,
-            loggedIn: loggedIn,
-            notLoggedIn: !loggedIn,
-            section: req.section,
-            overallLevel: req.overallLevel,
-            gradeMap: req.gradeMap,
-            previousAttempts: req.previousAttempts,
-            previousPracticeSubmissions: req.previousPracticeSubmissions,
-            ungradedQuizzes: req.ungradedQuizzes,
-            totalAttempts: req.totalAttemps,
-            practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`,
-            dueDateObject: req.dueObject,
-            gradeObject: req.gradeObject,
-            specificGradeMap: req.specificGradeMap,
-            quizRequirementObject: req.quizRequirements,
-            practiceRequirementObject: req.practiceObject,
-            uuid: req.pod_uuid,
-            id: req.params.id,
-            flash: req.flashMessage ? req.flashMessage : '',
-            practiceComments: req.practiceComments,
-            successFlash: req.flash('successFlash'),
-            dangerFlash: req.flash('dangerFlash'),
-            scoreObject: req.scoreObject
+    res.render(filePath, {
+        layout: "podPageLayout.hbs",
+        quizAvailable: req.quizAvailable,
+        unitName: unitMap[req.superUnitKey].units[req.unitKey].title,
+        title: title,
+        level: pod.level,
+        superUnitKey: req.superUnitKey,
+        unitKey: req.unitKey,
+        podKey: req.podKey,
+        objective: pod.objective,
+        content: pod.content,
+        backLink: `/unit/${unit.id}`,
+        //    assetPath: '/podAssets/' + req.params.unitClusterKey + '/' + req.params.unitKey + '/' + req.params.podKey + '/',
+        letter: pod.letter,
+        unitNumber: unitNumber,
+        unitClusterName: unitMap[req.superUnitKey].title,
+        user: req.user,
+        loggedIn: loggedIn,
+        notLoggedIn: !loggedIn,
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap,
+        previousAttempts: req.previousAttempts,
+        previousPracticeSubmissions: req.previousPracticeSubmissions,
+        ungradedQuizzes: req.ungradedQuizzes,
+        totalAttempts: req.totalAttemps,
+        practiceSubmissionLink: `/practiceSubmission/${req.pod_uuid}`,
+        dueDateObject: req.dueObject,
+        gradeObject: req.gradeObject,
+        specificGradeMap: req.specificGradeMap,
+        quizRequirementObject: req.quizRequirements,
+        practiceRequirementObject: req.practiceObject,
+        uuid: req.pod_uuid,
+        id: req.params.id,
+        flash: req.flashMessage ? req.flashMessage : '',
+        practiceComments: req.practiceComments,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash'),
+        scoreObject: req.scoreObject
         });
-    } else if (format === 'pdf') {
-        let filePath = '/oldContent/unit/' + req.superUnitKey + '/' + req.unitKey + '/pods/' + req.podKey + '.pdf';
-        fs.readFile(__dirname + filePath , function (err,data){
-            res.contentType("application/pdf");
-            res.send(data);
-        });
-    }
-
 };
 
 const display_quiz = (req, res) => {
