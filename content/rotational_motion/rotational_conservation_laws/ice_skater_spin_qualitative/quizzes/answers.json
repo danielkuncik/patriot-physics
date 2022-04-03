@@ -1,0 +1,10 @@
+{
+  "v1": {
+    "1": "I = mr^2",
+    "2": "L = I omega",
+    "3": "Angular momentum is conserved when the net external torque on an object is zero.",
+    "4": "The robot will spin more slowly (angular velocity will decrease)",
+    "5": "As the robot brings its arms out, its mass moves farther away from its axis of rotation, increasing rotational inertia. Because rotational inertia and angular velocity are inversely proportional, angular velocity will decrease.",
+    "6": "You will see the same effect very slightly, because the rotational inertia will change very little if the arms have low mass."
+  }
+}
