@@ -34,13 +34,14 @@ C. The sun changed the direction it is spinning.
 D. The planet slowed down, stopped, and reversed direction due to the force of gravity.
 
 
-For most of history, people believed the planets must move in circles. Kepler discovered that:
+For most of history, people believed the planets Mercury, Venus, Mars, Jupiter, and Saturn must move in circles.
+Kepler discovered that:
 A. They did indeed move in circles
 B. The move in ellipses, not circles, but the ellipses are nearly circular.
 C. The move in ellipses, not circles, and the ellipses are highly eccentric (non-circular).
 D. They move in a square, not a circle
 
-From the Renaissance to the 2006 IAU meeting, the term "planet" had a very unclear definition.
+From the Renaissance to the 2006 IAU meeting, the term "planet" was not precisely defined.
 The closest thing to a definition was:
 A. An object that appears in a different points in the celestial sphere
 B. A large spherical mass orbiting the sun
@@ -60,11 +61,15 @@ B. They showed everything in space is a sphere.
 C. They showed that everything in space orbits the sun.
 D. They showed that our moon orbits the earth.
 
-Pluto was a suspicious inclusion on the list of planets because (check ALL that apply)
+[not reordered answers?]
+Pluto was a suspicious inclusion on the list of planets because
 A. it's mass is much lower than other planets
-B. it has no moons
-C. the eccentricity of its orbit is much greater than other planets
-D. it is much farther away from the sun than other planets
+B. the eccentricity of its orbit is much greater than other planets
+C. it is much farther away from the sun than other planets
+D. it has no moons
+E. A and B
+F. A, B, and C
+G. A, B, C, and D
 
 The impetus for writing a new definition of a planet was:
 A. Many many objects that could be potentially classified as planets had been discovered in a very short time
@@ -103,6 +108,8 @@ B. Pluto
 C. Mars
 D. Jupiter
 E. Neptune
+
+[i should include one that includes the stars]
 
 
 Pluto was eventually reclassified as a "dwarf planet" because:

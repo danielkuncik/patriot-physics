@@ -1,0 +1,47 @@
+
+
+What is the formula for angular momentum?
+
+
+What is the formula for the rotational inertia of a point mass?
+
+Is the angular momentum conserved in this situation?
+- yes, becuase angular momentum is always conserved
+- yes, because the net torque acting on the robot is zero
+- no, because the rotational inertia of the robot changes
+- no, because the angular velocity of the robot changes
+
+
+When the robots raises his arms, what happesn to rotational inertia
+- it stays the same, because the robot's mass does not change
+- it increases, because the robot is stronger
+- it
+[more, including the correct answer]
+
+What is observed when the robot lifts his arms
+- nothing, (other than the arms lifting)
+- the robot appears to spin slower
+- the robot appears to spin faster
+- [another]
+
+
+What is the relationship between angular velocity and rotational inertia in this situation?
+- direct
+- inverse
+- direct square
+- they have no relationship
+- inverse square
+
+
+
+
+The second robot experiences:
+
+A. very little effect, because the arms have no mass
+B. exactly the same effec,t ebcause angular momentum is still conserved
+C. the same effect, becuase the rotatioanl inertia still increases
+D. the opposite effect,
+
+
+
+[ i need some more]
