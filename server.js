@@ -17,7 +17,6 @@ const disp = require('./display.js');
 const port = process.env.PORT || 3000;
 
 const { availableContent } = require('./findAvailableContent.js');
-console.log(availableContent["pure_mathematics"].units["scientific_notation"]);
 
 const multer = require("multer");
 const cloudinary = require("cloudinary");
