@@ -512,7 +512,7 @@ app.get('/quizAccess/:id', [db.check_if_logged_in, (req, res, next) => {
     if (req.quizRequirements.inClass || req.quizRequirements.overdue) {
         req.passwordAccessRequired = true;
     }
-    // consider more options...such as overdue etc.
+    //consider more options...such as overdue etc.
     next();
 }, disp.display_quiz_entry_page]);
 

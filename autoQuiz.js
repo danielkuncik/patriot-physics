@@ -65,11 +65,6 @@ const quizJSON = {
     ]
 };
 
-// returns a JSON of questions and answers
-function makeQuiz(quizJSON) {
-
-}
-
 
 /// it should create a redis of correct answers
 
@@ -86,7 +81,6 @@ function makeQuestion(questionJSON, frontEndAnswer = false, podID, userID, quest
     answerClient.set(`${userID}-${podID}-${questionNumber}`, answer);
 }
 
-function makeMultipleChoiceQuestion(JSON)
 
 /// printed or online?
 class question {
