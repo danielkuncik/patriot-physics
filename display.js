@@ -194,7 +194,7 @@ display_pod_page = (req, res) => {
 
 const display_quiz = (req, res) => {
     // all this should be worked out in advance!!
-    let available = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].quizzes;
+    let available = availableContent[req.superUnitKey].units[req.unitKey].pods[req.podKey].writtenQuizzes;
     if (!available) {
         res.redirect('/');
     }
