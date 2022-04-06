@@ -1,0 +1,45 @@
+How many days are in the year 2032?
+
+
+
+How many seconds are in the year 2032 [assuming no leap seconds]?
+
+
+What is the angular velocity of the earth in its revolution?
+
+
+The earth rotates counterclockwise as viewed from above the north pole.
+What is the direction of the earth's angular velocity?
+- the direction of an arrow pointing from the north pole to the center of the earth
+- the direction of an arrow pointing from the south pole to the center of the earth
+- the direction of an arrow pointing from the center of the earth to the intersection of the equator
+and the prime meridian
+- the direction of an arrow pointing from the center of the earth to the interaction
+of the equator and in the international date line
+
+
+
+If the earth were slowing down**, what would be the direction of its angular acceleration?
+- the direction of an arrow pointing from the north pole to the center of the earth
+- the direction of an arrow pointing from the south pole to the center of the earth
+- the direction of an arrow pointing from the center of the earth to the intersection of the equator
+and the prime meridian
+- the direction of an arrow pointing from the center of the earth to the interaction
+of the equator and in the international date line
+
+
+Some years have a single leap second, others do not.
+Leap seconds are not added regularly, but are determined by an international body
+of earth scientists.
+How many significant figures are appropriate for the answer to this problem?
+
+
+
+A mars day has a length of one earth day, plus 37 minutes.
+A mars year is 687 earth days.
+Imagine that a wizard wanted to slow mars to a length of one earth day plus 60 minutes
+over the course of a single mars year.
+What would be the magnitude of the angular acceleration of Mars during this time?
+[Note we will represented the answer as a positive number, the direction of angular acceleration would be opposite
+the direction of Mars's angular velocity.]
+Write the answer to 3 significant figures of accuracy.
