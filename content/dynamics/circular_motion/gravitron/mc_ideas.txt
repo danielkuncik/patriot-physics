@@ -1,0 +1,34 @@
+What is the correct free-body diagram of the person in the gravitron?
+
+
+
+What is the direction of the normal force acting on the person?
+- towards the center of the circle, because that is the direction perpendicular to the surface of the wall
+- upwards, because that is always the direction of th enormal force on a planet
+- upwards, because the normal force is always in the direction opposite the force of gravity
+- outwards from the center of the circle, because the person is beign pressed into the wall
+
+
+What is the direction of the gravitational force acting on the person?
+- towards the center of the circle
+- upwards
+- outwards from the center of the circle
+- downwards
+
+
+What is the direction of the frictional force
+- downwards, to supplement gravity
+- upwards, to resist motion
+inwards, because it is the centripetal force
+outwards, to keep the person from falling off the ride
+
+Which type of frictional force is applied
+- kinetic, because the person is moving in a circle
+- static, because the person is not sliding
+- kinetic, because the person is moving
+
+
+if the person is not falling down, what is the magnitude of the friction force?
+- equal to the magnitude of the normal force times the coefficient of friction
+equal the the gravitational force
+- equal to the centripetal force
