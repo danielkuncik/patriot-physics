@@ -10,14 +10,7 @@
     },
     "4-8-2022": {
       "B": {
-        "7a17b0": {
-          "name": "Memorize kinematic equations 3",
-          "inClass": true
-        },
-        "1872fe": {
-          "name": "cannon problems quant",
-          "inClass": true
-        }
+
       },
       "A": {
         "c50747": {
@@ -43,6 +36,18 @@
         },
         "995d93": {
           "name": "derive the kinemtic equtaions",
+          "inClass": true
+        },
+        "7a17b0": {
+          "name": "Memorize kinematic equations 3",
+          "inClass": true
+        },
+        "1872fe": {
+          "name": "cannon problems quant",
+          "inClass": true
+        },
+        "60cac5": {
+          "name": "mass of the sun",
           "inClass": true
         }
       }
