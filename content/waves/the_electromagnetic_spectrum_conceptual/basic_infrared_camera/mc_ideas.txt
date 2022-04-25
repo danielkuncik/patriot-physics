@@ -1,0 +1,27 @@
+
+
+Infrared cameras allow humans to "see heat." What does this really mean?
+
+A. They detect waves that are given off more intensely by warmer objects.
+B. They detect the motion of molecules, which is faster for warmer objects.
+C. They are an array of tiny thermometers that measure temperature in each direction.
+D.
+
+Most infrared cameras are calibrated the following way, from coldest to warmest.
+black - blue - yellow - orange - red - white
+
+
+Four cats are a very similar size and shape, but have fur that is pure white, pure black, brown, and yellow-ish.
+Can you detect the difference amongst these cats with an infrared camera?
+A. Yes, the infrared camera will detect the color difference
+B. No, they all have similar temperature and give off similar amounts of infrared light.
+
+Infrared cameras are frequently used to improve home energy efficiency by:
+A. detecting areas where there is a potentially poor heat insulation
+B.
+
+
+
+Infrared cameras are frequently used by law enforcement because:
+A. humans are still warmer than their environment, even if there is little visible light around
+B.
