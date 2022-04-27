@@ -1,0 +1,129 @@
+{
+  "reorder": true,
+  "questions": [
+    {
+      "text": "What is the speed of an electromagnetic wave?",
+      "type": "mc",
+      "reorder": true,
+      "answerChoices": [
+        {
+          "text": "300,000,000 m/s",
+          "correct": true
+        },
+        {
+          "text": "300 m/s"
+        },
+        {
+          "text": "3 m/s"
+        },
+        {
+          "text": "3,000,000 m/s"
+        }
+      ]
+    },
+    {
+      "text": "A space with no matter is called:",
+      "answerChoices": [
+        {
+          "text": "a vacuum",
+          "correct": true
+        },
+        {
+          "text": "a plasma"
+        },
+        {
+          "text": "dark matter"
+        },
+        {
+          "text": "aether"
+        }
+      ]
+    },
+    {
+      "text": "How does the speed of different electromagnetic waves compare?",
+      "answerChoices": [
+        {
+          "text": "all electromagnetic waves move at the same speed",
+          "correct": true
+        },
+        {
+          "text": "waves with a higher frequency move at a faster speed"
+        },
+        {
+          "text": "waves with a lower frequency move at a slower speed"
+        }
+      ]
+    },
+    {
+      "text": "All electromagnetic waves are:",
+      "answerChoices": [
+        {
+          "text": "transverse",
+          "correct": true
+        },
+        {
+          "text": "longitudinal"
+        }
+      ]
+    },
+    {
+      "text": "A tiny piece of an electromagnetic wave is called a:",
+      "answerChoices": [
+        {
+          "text": "photon",
+          "correct": true
+        },
+        {
+          "text": "light shot",
+          "correct": false
+        },
+        {
+          "text": "light beam"
+        },
+        {
+          "text": "torpedo"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following statements is true?",
+      "answerChoices": [
+        {
+          "text": "Electromagnetic waves can move through a vacuum; mechanical waves cannot.",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic waves and mechanical waves can both move through a vacuum."
+        },
+        {
+          "text": "Mechanical waves can move through a vacuum; electromagnetic waves cannot."
+        },
+        {
+          "text": "Neither electromagnetic waves not mechanical waves can move through a vacuum."
+        }
+      ]
+    },
+    {
+      "text": "Which of the following are a vacuum, or at least very close?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "The space between planets"
+        },
+        {
+          "text": "a chamber in which the air has been sucked out by a pump"
+        },
+        {
+          "text": "the space between you and the person sitting next to you in class"
+        },
+        {
+          "text": "A and B",
+          "correct": true
+        },
+        {
+          "text": "A, B, and C"
+        }
+      ]
+    }
+  ]
+}
