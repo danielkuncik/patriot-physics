@@ -1,0 +1,17 @@
+
+<h4 class = 'no-print'>
+    QUIZ Generator
+</h4>
+<div id = 'putItHere'></div>
+
+<script>
+    const quizID = "a95408";
+
+    $.getJSON(`/autoquiz/${quizID}`, (data) => {
+        const quizJSONfile = data;
+
+        const quizTotal = makeWrittenQuiz(quizJSONfile, 'Electromagnetic Waves Quiz', 4);
+        $("#putItHere").append(quizTotal);
+    });
+
+</script>

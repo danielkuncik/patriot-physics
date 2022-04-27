@@ -317,10 +317,6 @@ class Unit {
     }
 }
 
-let m = new Unit('meter');
-console.log(m);
-
-
 
 class oldUnit {
     constructor(name, dimensionObject, conversionFactor,derivation) { // derivation is optional and is used to print the name of a unit in the event there is no official name, such as m/s or m/s^2

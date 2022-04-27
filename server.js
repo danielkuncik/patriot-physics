@@ -627,6 +627,18 @@ app.post('/submitPractice/:id', [(req, res, next) => {
     res.redirect(`/pod/${req.params.id}`)}
 ]);
 
+app.get('/quizGenerator', (req, res) => {
+    res.render('quizGenerator.hbs', {
+        layout: "default",
+        title: "Quiz Generator"
+    })
+});
+
+app.get('/autoquiz/:id', (req, res) => {
+    const selectionObject = idLibrary[req.params.id];
+    const filePath = `${__dirname}/content/${selectionObject.superUnitKey}/${selectionObject.unitKey}/${selectionObject.podKey}/quizzes/autoquiz.json`;
+    res.sendFile(filePath);
+});
 
 
 app.listen(port, () => console.log(`app running on port ${port}`));
