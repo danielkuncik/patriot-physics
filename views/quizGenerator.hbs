@@ -6,6 +6,8 @@
 
 <script>
     const quizID = "a95408";
+    // next step: take this and make it so it is run by a button on the page
+    // step after that: make it so that more than one pod can be combined into one quiz
 
     $.getJSON(`/autoquiz/${quizID}`, (data) => {
         const quizJSONfile = data;
