@@ -1,0 +1,114 @@
+{
+  "reorder": true,
+  "directions": "Convert each of the values into proper scientific notation.",
+  "questions": [
+    {
+      "text": "29 kilometers",
+      "answerChoices": [
+        {
+          "text_math": "2.9 \\cdot 10^{4}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "142 μm",
+      "answerChoices": [
+        {
+          "text_math": "1.42 \\cdot 10^{-4}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "539 picometers",
+      "answerChoices": [
+        {
+          "text_math": "5.39 \\cdot 10^{-10}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "23.4 nanometers",
+      "answerChoices": [
+        {
+          "text_math": "2.34 \\cdot 10^{-8}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "0.65 megameters",
+      "answerChoices": [
+        {
+          "text_math": "6.5 \\cdot 10^{5}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "0.44 millimeters",
+      "answerChoices": [
+        {
+          "text_math": "4.4 \\cdot 10^{-4}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    }
+  ]
+}

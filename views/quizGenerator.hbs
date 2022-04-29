@@ -5,15 +5,21 @@
 <div id = 'putItHere'></div>
 
 <script>
-    const quizID = "a95408";
+    // Set the global configs to synchronous
+    $.ajaxSetup({
+        async: false
+    });
+
+    const quiz_ID_array = ["72607f","64f606","a95408"]; // metric prefixes, metric to scientific, em wave basics
     // next step: take this and make it so it is run by a button on the page
     // step after that: make it so that more than one pod can be combined into one quiz
 
-    $.getJSON(`/autoquiz/${quizID}`, (data) => {
-        const quizJSONfile = data;
-
-        const quizTotal = makeWrittenQuiz(quizJSONfile, 'Electromagnetic Waves Quiz', 4);
-        $("#putItHere").append(quizTotal);
+    let data_array = [];
+    quiz_ID_array.forEach((quiz_ID) => {
+        $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
+            data_array.push(data);
+        });
     });
+    $("#putItHere").append(generateWrittenQuiz(data_array, "EM wave quiz", 4));
 
 </script>

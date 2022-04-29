@@ -1,5 +1,6 @@
 {
   "reorder": true,
+  "directions": "Answer each question regarding the nature of electromagnetic waves.",
   "questions": [
     {
       "text": "What is the speed of an electromagnetic wave?",

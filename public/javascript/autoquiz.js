@@ -19,17 +19,35 @@ function shuffle(array) {
 
     return array;
 }
+// i really gotta make this into an object!!!!
+// and then have methods to produce a written quiz or an automated quiz
+
+// right now, all these functions are hard wired to produce only written quizzes  :( :( :(
+
+class quiz {
+    constructor(quizJSONData, title, numberOfVersions = 1, randomizeAll) {
+
+    }
+
+
+    generateWrittenQuiz() {
+
+    }
+}
 
 // figure out how to put in a title, in the json or outside of it???
-function makeWrittenQuiz(quizJSON, title, numberOfVersions = 1) {
+function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, randomizeAll) {
+    const quizJSON = quizJSONData.isArray ? quizJSONData : [quizJSONData];
     let j;
     let questions = [];
     let answers = [];
     for (j = 0; j < numberOfVersions; j++) {
-        let nextVersion = makeWrittenQuizVersion(quizJSON);
+        let thisQuiz = combineQuizzes(quizJSONData, randomizeAll);
+        let nextVersion = makeWrittenQuizVersion(thisQuiz);
         questions.push(nextVersion.questionList);
         answers.push(nextVersion.answerList);
     }
+    /// there should be a way to quickly adapt this to an automated quiz....but it'd need to be on the back end
     let divObject = $("<div></div>");
 
     let q;
@@ -48,6 +66,42 @@ function makeWrittenQuiz(quizJSON, title, numberOfVersions = 1) {
     return divObject
 }
 
+// i need to reorder for each version
+
+/// the directions might be tough to include in this
+/// if randomize all, directions of each section will be lost for certain...
+function combineQuizzes(quizArray, randomizeAll = false) {
+    let questionList = [];
+    let sections = [];
+    let combinedQuizJSON = {
+        directions: {},//{} needs to be an object
+        reorder: randomizeAll,
+    };
+    let questionIamOn = 0;
+    quizArray.forEach((quizData) => {
+        if (quizData.reorder !== false) {
+            shuffle(quizData.questions);
+        }
+        if (quizData.directions) {
+            let theseDirections = {};
+            theseDirections.text = quizData.directions;
+            theseDirections.preMessage = `Directions for questions ${questionIamOn + 1} &#8211 ${questionIamOn + quizData.questions.length + 1}`;
+            combinedQuizJSON.directions[String(questionIamOn)] = theseDirections;
+        }
+        questionList = questionList.concat(quizData.questions);
+        questionIamOn += quizData.questions.length;
+    });
+
+    combinedQuizJSON.questions = questionList;
+    return combinedQuizJSON;
+}
+
+function printDirections(directionsJSON) {
+    let output = $(`<h3><strong>${directionsJSON.preMessage}: </strong>${directionsJSON.text}</h3>`);
+    return output
+}
+
+
 // should i include making an answer sheet
 
 // add a title or something?
@@ -58,12 +112,17 @@ function makeWrittenQuizVersion(quizJSON) {
     let questionList = $("<ol></ol>");
     let answerList = $("<ol></ol>");
 
-    quizJSON.questions.forEach((question) => {
+    let k;
+    for (k = 0; k < quizJSON.questions.length; k++) {
+        if (quizJSON.directions[String(k)]) {
+            $(questionList).append(printDirections(quizJSON.directions[String(k)]));
+        }
+        const question = quizJSON.questions[k];
         let questionObject = makeWrittenQuestion(question);
         questionList.append(questionObject.divObject);
         answerList.append($(`<li>${questionObject.correctAnswer}</li>`));
-    });
 
+    }
     return {
         questionList: questionList,
         answerList: answerList
@@ -81,8 +140,7 @@ function makeMCquestion(questionJSON) {
         shuffle(questionJSON.answerChoices);
     }
     /// should put in something that finds an error if there are more than one
-    let divObject = $("<li></li>");
-    divObject.append(`<p>${questionJSON.text}</p>`);
+    let divObject = $(makeQuizListItem(questionJSON));
 
     let choicesObject = $("<ol type = 'A'></ol>");
     let correctAnswer;
@@ -96,12 +154,25 @@ function makeMCquestion(questionJSON) {
                 console.log("ERROR: More than 1 correct answer!")
             }
         }
-        choicesObject.append($(`<li>${choice.text}</li>`));
+        choicesObject.append(makeQuizListItem(choice));
     }
-
     divObject.append(choicesObject);
     return {
         divObject: divObject,
         correctAnswer: correctAnswer
     }
+}
+
+
+
+function makeQuizListItem(JSON) {
+    let output = $("<li></li>");
+
+    if (JSON.text) {
+        output.append(JSON.text);
+    } else if (JSON.text_math) {
+        output.append(`\\(${JSON.text_math}\\)`);
+    }
+
+    return output
 }
