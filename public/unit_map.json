@@ -8706,9 +8706,10 @@
             "uuid": "ddf3042b-77f1-4563-85ae-8f305f062a84",
             "id": "ddf304"
           },
-          "choosing_color_by_wavelength":
+          "classify_electromagnetic_waves_1":
           {
-            "title": "Choosing Colors by Wavelength",
+            "title": "Classify Electromagnetic Waves 1",
+            "subtitle": "Color",
             "level": 1,
             "horizontal": 3,
             "letter": "C",
@@ -8724,34 +8725,47 @@
             "level": 2,
             "horizontal": 3,
             "letter": "D",
-            "prerequisites": ["choosing_color_by_wavelength"],
+            "prerequisites": ["classify_electromagnetic_waves_1"],
             "objective": "Memorize the Electromagnetic Spectrum and colors as a single spectrum in order from longest to shortest wavelength; relate different waves using the terms wavelength, frequency, and energy (short answer).",
             "content": "The electromagnetic spectrum can be broken into six invisible waves and six visible colors; these categories have different wavelength, frequency, and energy; all electromagnetic waves have the same speed.",
             "uuid": "cf1f0144-0682-4e15-a3e1-00d119f0171a",
             "id": "cf1f01"
           },
-          "classify_electromagnetic_wave_by_wavelength_1":
-          {
-            "title": "Classify Electromagnetic Wave by Wavelength 1",
-            "subtitle": "Scientific Notation",
+          "classify_electromagnetic_waves_2": {
+            "title": "Classify Electromagnetic Waves 2",
+            "subtitle": "Visible and Invisible Waves",
             "level": 2,
             "horizontal": 2,
-            "letter": "E",
+            "letter": "X",
             "prerequisites": ["electromagnetic_spectrum_2"],
+            "objective": "Given a wave of a particular wavelength, determine whether this wave is visible or invisible, and if invisible whether it is an ultraviolet or an infrared wave.",
+            "content": "Electromagnetic waves of wavelength between 400 nm and 700 nm are visible; those with longer or shorter wavelengths are invisible",
+            "limits": "Only visible light, infrared light, and ultraviolet light will be included in this pod.",
+            "uuid": "44fb5d0e-4886-4ab8-8fbf-c9195720bc6e",
+            "id": "44fb5d"
+          },
+          "classify_electromagnetic_waves_3":
+          {
+            "title": "Classify Electromagnetic Waves 3",
+            "subtitle": "Scientific Notation",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "E",
+            "prerequisites": ["classify_electromagnetic_waves_2"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "All values are given in SI scientific notation and not in metric units",
             "content": "Any electromagnetic wave is categorized into a particular type by its wavelength; wavelength can span from over one meter to 10^-12 m, so a through knowledge of scientific notation is necessary to properly categorize waves.",
             "uuid": "6267c7c8-0b48-46da-940a-5dff739561c6",
             "id": "6267c7"
           },
-          "classify_electromagnetic_wave_by_wavelength_2":
+          "classify_electromagnetic_waves_4":
           {
-            "title": "Classify Electromagnetic Wave by Wavelength 2",
+            "title": "Classify Electromagnetic Wave by Wavelength 4",
             "subtitle": "Metric Units",
             "level": 3,
-            "horizontal": 2,
+            "horizontal": 3,
             "letter": "F",
-            "prerequisites": ["classify_electromagnetic_wave_by_wavelength_1"],
+            "prerequisites": ["classify_electromagnetic_waves_3"],
             "objective": "Given a wave of a particular wavelength of any order of magnitude, determine what type of electromagnetic wave is represented.",
             "limits": "Includes values in metric units.",
             "content": "The wavelength of an electromagnetic wave can is frequently expressed in metric units; by understanding these metric units a physicist can better classify electromagnetic waves.",
@@ -8762,9 +8776,9 @@
           {
             "title": "Photon Formulas 1",
             "level": 3,
-            "horizontal": 3,
+            "horizontal": 4,
             "letter": "G",
-            "prerequisites": ["classify_electromagnetic_wave_by_wavelength_2"],
+            "prerequisites": ["classify_electromagnetic_waves_4"],
             "objective": "Quantitatively relate wavelength, frequency, and photon energy of a wave; problems presented step by step",
             "content": "Physicists use two key formulas to relate the wavelength, frequency, and energy of an electromagnetic photon.",
             "uuid": "4c74b097-4a1b-4073-a61c-9431e4604d18",
@@ -8774,7 +8788,7 @@
           {
             "title": "Electromagnetic Wave Proportionality",
             "level": 3,
-            "horizontal": 4,
+            "horizontal": 5,
             "letter": "H",
             "prerequisites": ["photon_formulas_1"],
             "objective": "Relate wavelength, frequency, and energy of waves using proportionality rules.",

@@ -1,3 +1,19 @@
+
+/*
+4-29-2022
+
+where i am going with this:
+
+- make a quiz into an object
+- make a general store of questions, that are organized and not reordered
+- 'generate quiz version' should make a new version of the quiz that reorders questions, all questions are saved along
+with the general store
+- then make functions for generate written quiz (with num versions as an input), generate autoquiz (front end), and generate autoquiz (back end)
+
+- generate auto quiz back end would create redis keys for all answers (can it coexist with front end javascript??)
+
+
+ */
 const numberToLetter_X = [
     "A","B","C","D","E","F","G","H","I","J",'K',"L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
 ];
