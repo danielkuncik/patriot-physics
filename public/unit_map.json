@@ -8923,13 +8923,25 @@
             "uuid": "947c4549-ec68-4ef3-b752-674908de50c0",
             "id": "947c45"
           },
+          "color_vision_virtual_lab":
+          {
+            "title": "Color Vision Virtual Lab",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "Y",
+            "prerequisites": ["additive_color"],
+            "objective": "Demonstrate how light combines in your eye by using a virtual simulation program.",
+            "content": "The colors of white light combine in our eye to let us experience many other colors.",
+            "uuid": "806c6713-887d-4755-b678-bb6a2b24150e",
+            "id": "806c67"
+          },
           "long_vs_short_wavelength":
           {
             "title": "Long vs. Short Wavelength",
             "level": 2,
-            "horizontal": 4,
+            "horizontal": 5,
             "letter": "D",
-            "prerequisites": ["additive_color"],
+            "prerequisites": ["color_vision_virtual_lab"],
             "objective": "Identify long and short wavelength electromagnetic waves and explain difference in how they would interact.",
             "content": "As a rule of thumb, electromagnetic waves of long wavelength are 'tougher' and more able to move through materials unhindered; electromagnetic waves of short wavelength are 'weaker' and are more likely to be absorbed or scattered.",
             "uuid": "4a5bfac4-bb5f-4ac4-8ed6-241690d021ce",
@@ -8939,7 +8951,7 @@
           {
             "title": "Infrared Camera Advanced",
             "level": 2,
-            "horizontal": 5,
+            "horizontal": 6,
             "letter": "E",
             "prerequisites": ["long_vs_short_wavelength"],
             "objective": "Explain how different objects emit different wavelengths",
