@@ -13,20 +13,78 @@
     a wavelength between 400 nanometers and 700 nanometers.
 </p>
 
-<div id = 'wavelengthColorTable'></div>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            <h4>Color</h4>
+        </div>
+        <div class = 'col-3 border border-dark'>
+            <h4>Wavelength Range</h4>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            Red
+        </div>
+        <div class = 'col-3 border border-dark'>
+            635 nm &#8211 700 nm
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            Orange
+        </div>
+        <div class = 'col-3 border border-dark'>
+            590 nm &#8211 635 nm
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            Yellow
+        </div>
+        <div class = 'col-3 border border-dark'>
+            560 nm &#8211 590 nm
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            Green
+        </div>
+        <div class = 'col-3 border border-dark'>
+            520 nm &#8211 560 nm
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            Blue
+        </div>
+        <div class = 'col-3 border border-dark'>
+            450 nm &#8211 520 nm
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-3 border border-dark'>
+            Violet
+        </div>
+        <div class = 'col-3 border border-dark'>
+            400 nm &#8211 450 nm
+        </div>
+    </div>
+</div>
+
 
 <script>
-    let wavelengthColorTable = new Table (7,2);
-    wavelengthColorTable.addTopHeaders(['Color','Wavelength']);
-    wavelengthColorTable.writeTextInRow(1,['Red','635 nm - 700 nm']);
-    wavelengthColorTable.writeTextInRow(2,['Orange','590 nm - 635 nm']);
-    wavelengthColorTable.writeTextInRow(3,['Yellow','560 nm - 590 nm']);
-    wavelengthColorTable.writeTextInRow(4,['Green','520 nm - 560 nm']);
-    wavelengthColorTable.writeTextInRow(5,['Blue','450 nm - 520 nm']);
-    wavelengthColorTable.writeTextInRow(6,['Violet','400 nm - 450 nm']);
-
-
-    $("#wavelengthColorTable").append(wavelengthColorTable.draw(200,400));
+    // let wavelengthColorTable = new Table (7,2);
+    // wavelengthColorTable.addTopHeaders(['Color','Wavelength']);
+    // wavelengthColorTable.writeTextInRow(1,['Red','635 nm - 700 nm']);
+    // wavelengthColorTable.writeTextInRow(2,['Orange','590 nm - 635 nm']);
+    // wavelengthColorTable.writeTextInRow(3,['Yellow','560 nm - 590 nm']);
+    // wavelengthColorTable.writeTextInRow(4,['Green','520 nm - 560 nm']);
+    // wavelengthColorTable.writeTextInRow(5,['Blue','450 nm - 520 nm']);
+    // wavelengthColorTable.writeTextInRow(6,['Violet','400 nm - 450 nm']);
+    //
+    //
+    // $("#wavelengthColorTable").append(wavelengthColorTable.draw(200,400));
 </script>
 
 

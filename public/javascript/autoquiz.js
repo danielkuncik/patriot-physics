@@ -35,20 +35,171 @@ function shuffle(array) {
 
     return array;
 }
+
+function findMinIndexOfArray(array) {
+    let minIndex = 0;
+    let min = array[0];
+    let i;
+    for (i = 1 ; i < array.length; i++) {
+        if (array[i] < min) {
+            minIndex = i;
+            min = array[i];
+        }
+    }
+    return minIndex
+}
+
+function generateOrderedSequence(max) {
+    let k;
+    let output = [];
+    for (k = 0; k < max; k++) {
+        output.push(k);
+    }
+    return k
+}
+
+function generateRandomSequence(max) {
+    let dummyArray = [];
+    let outputArray = [];
+    let i;
+    for (i = 0; i < max; i++) {
+        dummyArray.push(Math.random());
+    }
+    let j;
+    for (j = 0; j < max; j++) {
+        let minIndex = findMinIndexOfArray(dummyArray);
+        outputArray.push(minIndex);
+        dummyArray[minIndex] = 5;
+    }
+    return outputArray
+}
+
+
+// I want a function that shuffles an array without messing with the original
+function makeNewShuffledArray(array) {
+    let newArray = [];
+    let newOrder = generateRandomSequence(array.length);
+    let k;
+    for (k = 0; k < array.length; k++) {
+        newArray.push(array[newOrder[k]]);
+    }
+    return newArray
+}
+
 // i really gotta make this into an object!!!!
 // and then have methods to produce a written quiz or an automated quiz
 
 // right now, all these functions are hard wired to produce only written quizzes  :( :( :(
 
-class quiz {
-    constructor(quizJSONData, title, numberOfVersions = 1, randomizeAll) {
 
+// this object will create a automatically generated quiz for a single pod
+class Quiz {
+    constructor(id) { /// does not automatically produce new versions
+        this.versions = [];
+        $.getJSON(`/autoquiz/${id}`, (data) => {
+            this.masterData = data;
+            this.title = "pod title"; // it should access the pod title???
+            // find a way in the SERVER to add the pod title to the JSON data that is sent
+        });
     }
 
-
-    generateWrittenQuiz() {
-
+    // randomizes questions to generate a new verison of the quiz
+    generateVersion() {
+        this.versions.push(new QuizVersion(this.masterData));
     }
+
+}
+
+
+// i wish i could make this private, accesible only within the Quiz class
+/// it is inefficient to restore all this data......but......should i try to fix this???
+class QuizVersion {
+    constructor(masterData) {
+        this.directions = masterData.directions;
+        this.mainImage = masterData.image;
+        this.reorder = masterData.reorder !== false; /// reordering questions is default, unless explicitly stated not to
+        this.numQuestions = masterData.questions.length;
+
+        this.questionOrder = this.reorder ? generateRandomSequence(this.numQuestions) : generateOrderedSequence(this.numQuestions);
+
+        let q;
+        for (q = 0; q < this.numQuestions; q++) {
+            const index = this.questionOrder[q];
+            this.addQuestion(masterData.questions[index]);
+        }
+        this.answers = this.makeAnswerSheet();
+    }
+
+    // DO I WANT TO ADDRESS THE INEFFICIENCY OF SAVING ALL OF THIS MULTIPLE TIMES??? MAYBE NOT????
+    /// not like I"m going to be running this program 1000s of times at once
+    addQuestion(questionObject, questionType) {
+        this.questions.push(new Question(questionObject, questionType));
+    }
+
+    makeAnswerSheet() {
+        let answers = [];
+        let a;
+        for (a = 0; a < this.numQuestions; a++) {
+            answers.push(this.questions[a].correctAnswer)
+        }
+        return answers
+    }
+
+    // generates a written form of this version of the quiz
+    generateWritten(firstQuestion = 1) {
+        let questions = $("<div></div>");
+        let answers = $(`<ol start = ${firstQuestion}></ol>`);
+        // here is where i will put alot of the work i've done already
+
+        return {
+            questions: questions,
+            answers: answers
+        }
+    }
+
+}
+
+class Question {
+    constructor(questionObject, type = 'MC') { // default type is multiple choice
+        this.mainText = questionObject.text;
+        this.mathText = questionObject["text_math"];
+        this.image = questionObject.image;
+        this.type = type;
+    }
+}
+
+// how do i deal with multiple choice with multiple correct answers???
+// (i should be able to make questions where there MAY be multiple correct, but only one actually is correct
+class MultipleChoiceQuestion extends Question {
+    constructor(questionObject) {
+        super(questionObject, "MC");
+        this.reorder = questionObject.reorder !== false; // reorder answer choices unless explicitly stated not to
+        this.answerChoices = this.reorder ? makeNewShuffledArray(questionObject.answerChoices) : questionObject.answerChoices;
+        this.multipleCorrectType = questionObject.multipleCorrectType;
+        this.correctAnswer = this.findCorrectAnswer();
+    }
+
+    findCorrectAnswer() {
+        let q, corrects = [];
+        for (q = 0; q < this.answerChoices.length; q++) {
+            if (this.answerChoices[q].correct) {
+                corrects.push(numberToLetter_X[q]);
+            }
+        }
+        if (corrects.length > 0 && !this.multipleCorrectType) {
+            console.log("ERROR: More than one correct answer!!!")
+        }
+        if (!this.multipleCorrectType) {
+            return corrects[0]
+        } else {
+            return corrects
+        }
+    }
+}
+
+// etc. etc.
+class NumericalQuestion extends Question {
+
 }
 
 // figure out how to put in a title, in the json or outside of it???
@@ -106,7 +257,7 @@ function combineQuizzes(quizArray, randomizeAll = false) {
         if (quizData.directions) {
             let theseDirections = {};
             theseDirections.text = quizData.directions;
-            theseDirections.preMessage = `Directions for questions ${questionIamOn + 1} &#8211 ${questionIamOn + quizData.questions.length + 1}`;
+            theseDirections.preMessage = `Directions for questions ${questionIamOn + 1} &#8211 ${questionIamOn + quizData.questions.length}`;
             combinedQuizJSON.directions[String(questionIamOn)] = theseDirections;
         }
         if (quizData.image) {
@@ -208,9 +359,10 @@ function makeMCquestion(questionJSON) {
 
 
 function makeQuizListItem(JSON, bigSpace) {
-    const objectClass =  bigSpace ? 'mb-5' : 'mb-2 mt-2';
-    const pageBreak = bigSpace ? 'style = "page-break-inside:avoid"' : "";
-    let output = $(`<li class = '${objectClass}' ${pageBreak}></li>`);
+    const fontSize = 32;
+    const objectClass =  bigSpace ? 'm-5 p-5' : 'mb-2 mt-2';
+    const styleTag = bigSpace ? `page-break-inside:avoid;font-size:${fontSize}px` : `font-size:${fontSize}px`;
+    let output = $(`<li class = '${objectClass}' style = '${styleTag}'></li>`);
 
     if (JSON.text) {
         output.append(JSON.text);
