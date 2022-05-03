@@ -92,6 +92,8 @@ function combineQuizzes(quizArray, randomizeAll = false) {
     let combinedQuizJSON = {
         directions: {},//{} needs to be an object
         reorder: randomizeAll,
+        images: {},
+        pageBreaks: []
     };
     let questionIamOn = 0;
     quizArray.forEach((quizData) => {
@@ -104,8 +106,16 @@ function combineQuizzes(quizArray, randomizeAll = false) {
             theseDirections.preMessage = `Directions for questions ${questionIamOn + 1} &#8211 ${questionIamOn + quizData.questions.length + 1}`;
             combinedQuizJSON.directions[String(questionIamOn)] = theseDirections;
         }
+        if (quizData.image) {
+            let thisImage = {};
+            thisImage.link = `/asset/${quizData.id}/${quizData.image.name}`;
+            thisImage.width = quizData.image.width;
+            thisImage.height = quizData.image.height;
+            combinedQuizJSON.images[String(questionIamOn)] = thisImage;
+        }
         questionList = questionList.concat(quizData.questions);
         questionIamOn += quizData.questions.length;
+        combinedQuizJSON.pageBreaks.push(questionIamOn - 1);
     });
 
     combinedQuizJSON.questions = questionList;
@@ -116,6 +126,15 @@ function printDirections(directionsJSON) {
     let output = $(`<h3><strong>${directionsJSON.preMessage}: </strong>${directionsJSON.text}</h3>`);
     return output
 }
+
+function addImage(imageJSON) {// i need to make height and width adjustable
+    const name = imageJSON.link;
+    const width = imageJSON.width ? imageJSON.width : '300px';
+    const height = imageJSON.height? imageJSON.height : 'auto';
+    const output = $(`<img src = '${name}' width = '${width}' height = '${height}' />`);
+    return output
+}
+
 
 
 // should i include making an answer sheet
@@ -130,14 +149,19 @@ function makeWrittenQuizVersion(quizJSON) {
 
     let k;
     for (k = 0; k < quizJSON.questions.length; k++) {
-        if (quizJSON.directions[String(k)]) {
-            $(questionList).append(printDirections(quizJSON.directions[String(k)]));
+        if (quizJSON.directions[k]) {
+            $(questionList).append(printDirections(quizJSON.directions[k]));
+        }
+        if (quizJSON.images[k]) {
+            $(questionList).append(addImage(quizJSON.images[k]))
         }
         const question = quizJSON.questions[k];
         let questionObject = makeWrittenQuestion(question);
         questionList.append(questionObject.divObject);
         answerList.append($(`<li>${questionObject.correctAnswer}</li>`));
-
+        if (quizJSON.pageBreaks.includes(k)) {
+            questionList.append("<div class = 'pageBreak'></div>");
+        }
     }
     return {
         questionList: questionList,

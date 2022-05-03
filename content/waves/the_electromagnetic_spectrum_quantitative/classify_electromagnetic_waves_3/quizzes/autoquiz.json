@@ -1,6 +1,9 @@
 {
   "reorder": true,
   "directions": "For a photon of the wavelength indicated, determine which of the seven types of electromagnetic wave it would be.",
+  "image": {
+    "name": "seven_types.png"
+  },
   "questions": [
     {
       "text_math": "\\lambda = 5.60 \\cdot 10^{-7} \\text{ meters}",

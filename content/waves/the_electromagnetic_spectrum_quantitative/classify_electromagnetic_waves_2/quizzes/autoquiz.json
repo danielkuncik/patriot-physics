@@ -1,6 +1,10 @@
 {
   "directions": "For each wavelength given, determine if this wavelength represents infrared light, visible light, or ultraviolet light.",
   "reorder": true,
+  "image": {
+    "name": "three_types.png",
+    "width": "500px"
+  },
   "questions": [
     {
       "text_math": "\\text{Wavelength} = 4.6 \\cdot 10^{-5} \\text{ meters}",

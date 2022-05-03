@@ -275,6 +275,9 @@
     {
       "text_math": "\\lambda = 23 \\text{ picometers}",
       "reorder": false,
+      "image": {
+        "name": "twelve_types.png"
+      },
       "answerChoices": [
         {
           "text": "Radio Wave",

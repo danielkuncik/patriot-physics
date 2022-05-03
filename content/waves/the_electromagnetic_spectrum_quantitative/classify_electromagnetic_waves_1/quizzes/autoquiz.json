@@ -1,6 +1,9 @@
 {
   "reorder": true,
   "directions": "For each wavelength given, determine the color of that wavelength.",
+  "image": {
+    "name": "color_wavelength_table.png"
+  },
   "questions": [
     {
       "text": "Wavelength = 412 nanometers",
