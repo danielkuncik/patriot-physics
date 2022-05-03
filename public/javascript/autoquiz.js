@@ -126,7 +126,7 @@ function combineQuizzes(quizArray, randomizeAll = false) {
 }
 
 function printDirections(directionsJSON) {
-    let output = $(`<h3><strong>${directionsJSON.preMessage}: </strong>${directionsJSON.text}</h3>`);
+    let output = $(`<h3 class = 'mb-5'><strong>${directionsJSON.preMessage}: </strong>${directionsJSON.text}</h3>`);
     return output
 }
 
@@ -134,7 +134,7 @@ function addImage(imageJSON) {// i need to make height and width adjustable
     const link = imageJSON.link;
     const width = imageJSON.width ? imageJSON.width : '300px';
     const height = imageJSON.height? imageJSON.height : 'auto';
-    return $(`<img src = '${link}' width = '${width}' height = '${height}' />`);
+    return $(`<img class = 'mb-5' src = '${link}' width = '${width}' height = '${height}' />`);
 }
 
 
@@ -182,7 +182,7 @@ function makeMCquestion(questionJSON) {
         shuffle(questionJSON.answerChoices);
     }
     /// should put in something that finds an error if there are more than one
-    let divObject = $(makeQuizListItem(questionJSON));
+    let divObject = $(makeQuizListItem(questionJSON, true));
 
     let choicesObject = $("<ol type = 'A'></ol>");
     let correctAnswer;
@@ -207,8 +207,10 @@ function makeMCquestion(questionJSON) {
 
 
 
-function makeQuizListItem(JSON) {
-    let output = $("<li></li>");
+function makeQuizListItem(JSON, bigSpace) {
+    const objectClass =  bigSpace ? 'mb-5' : 'mb-2 mt-2';
+    const pageBreak = bigSpace ? 'style = "page-break-inside:avoid"' : "";
+    let output = $(`<li class = '${objectClass}' ${pageBreak}></li>`);
 
     if (JSON.text) {
         output.append(JSON.text);
