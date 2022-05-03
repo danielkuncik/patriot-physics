@@ -2,7 +2,9 @@
   "reorder": true,
   "directions": "For each wavelength given, determine the color of that wavelength.",
   "image": {
-    "name": "color_wavelength_table.png"
+    "name": "color_wavelength_table.png",
+    "height": "500px",
+    "width": "auto"
   },
   "questions": [
     {
