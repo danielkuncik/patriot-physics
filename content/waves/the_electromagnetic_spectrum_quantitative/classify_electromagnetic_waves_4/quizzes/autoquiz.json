@@ -1,9 +1,9 @@
 {
+  "directions": "For each wave of a particular wavelength, determine which type of electromagnetic wave it is. If the light is visible light, determine its color.",
   "reorder": true,
-  "directions": "For a photon of the wavelength indicated, determine which of the seven types of electromagnetic wave it would be.",
   "questions": [
     {
-      "text_math": "\\lambda = 5.60 \\cdot 10^{-7} \\text{ meters}",
+      "text_math": " \\lambda = 350 \\text{ micrometers}",
       "reorder": false,
       "answerChoices": [
         {
@@ -16,112 +16,30 @@
         },
         {
           "text": "Infrared Light",
-          "correct": false
-        },
-        {
-          "text": "Visible Light",
           "correct": true
         },
         {
-          "text": "Ultraviolet Light",
+          "text": "Red Light",
           "correct": false
         },
         {
-          "text": "X-Ray",
+          "text": "Orange Light",
           "correct": false
         },
         {
-          "text": "Gamma Ray",
-          "correct": false
-        }
-      ]
-    },
-    {
-      "text_math": "\\lambda = 2.4 \\cdot 10^{-3} \\text{ meters}",
-      "reorder": false,
-      "answerChoices": [
-        {
-          "text": "Radio Wave",
+          "text": "Yellow Light",
           "correct": false
         },
         {
-          "text": "Microwave",
-          "correct": true
-        },
-        {
-          "text": "Infrared Light",
+          "text": "Green Light",
           "correct": false
         },
         {
-          "text": "Visible Light",
+          "text": "Blue Light",
           "correct": false
         },
         {
-          "text": "Ultraviolet Light",
-          "correct": false
-        },
-        {
-          "text": "X-Ray",
-          "correct": false
-        },
-        {
-          "text": "Gamma Ray",
-          "correct": false
-        }
-      ]
-    },
-    {
-      "text_math": "\\lambda = 8.5 \\cdot 10^{-13} \\text{ meters}",
-      "reorder": false,
-      "answerChoices": [
-        {
-          "text": "Radio Wave",
-          "correct": false
-        },
-        {
-          "text": "Microwave",
-          "correct": false
-        },
-        {
-          "text": "Infrared Light",
-          "correct": false
-        },
-        {
-          "text": "Visible Light",
-          "correct": false
-        },
-        {
-          "text": "Ultraviolet Light",
-          "correct": false
-        },
-        {
-          "text": "X-Ray",
-          "correct": false
-        },
-        {
-          "text": "Gamma Ray",
-          "correct": true
-        }
-      ]
-    },
-    {
-      "text_math": "\\lambda = 1.3 \\text{ meters}",
-      "reorder": false,
-      "answerChoices": [
-        {
-          "text": "Radio Wave",
-          "correct": true
-        },
-        {
-          "text": "Microwave",
-          "correct": false
-        },
-        {
-          "text": "Infrared Light",
-          "correct": false
-        },
-        {
-          "text": "Visible Light",
+          "text": "Violet Light",
           "correct": false
         },
         {
@@ -139,7 +57,7 @@
       ]
     },
     {
-      "text_math": "\\lambda = 9.4 \\cdot 10^{-7} \\text{ meters}",
+      "text_math": "\\lambda = 610 \\text{ nanometers}",
       "reorder": false,
       "answerChoices": [
         {
@@ -152,10 +70,30 @@
         },
         {
           "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Red Light",
+          "correct": false
+        },
+        {
+          "text": "Orange Light",
           "correct": true
         },
         {
-          "text": "Visible Light",
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": false
+        },
+        {
+          "text": "Violet Light",
           "correct": false
         },
         {
@@ -173,7 +111,61 @@
       ]
     },
     {
-      "text_math": "\\lambda = 2.0 \\cdot 10^{-7} \\text{ meters}",
+      "text_math": "\\lambda = 1.2 \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Radio Wave",
+          "correct": true
+        },
+        {
+          "text": "Microwave",
+          "correct": false
+        },
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Red Light",
+          "correct": false
+        },
+        {
+          "text": "Orange Light",
+          "correct": false
+        },
+        {
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": false
+        },
+        {
+          "text": "Violet Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
+        },
+        {
+          "text": "X-Ray",
+          "correct": false
+        },
+        {
+          "text": "Gamma Ray",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text_math": "\\lambda = 510 \\text{ nanometers}",
       "reorder": false,
       "answerChoices": [
         {
@@ -189,7 +181,81 @@
           "correct": false
         },
         {
-          "text": "Visible Light",
+          "text": "Red Light",
+          "correct": false
+        },
+        {
+          "text": "Orange Light",
+          "correct": false
+        },
+        {
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": true
+        },
+        {
+          "text": "Violet Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
+        },
+        {
+          "text": "X-Ray",
+          "correct": false
+        },
+        {
+          "text": "Gamma Ray",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text_math": "\\lambda = 120 \\text{ nanometers}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Radio Wave",
+          "correct": false
+        },
+        {
+          "text": "Microwave",
+          "correct": false
+        },
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Red Light",
+          "correct": false
+        },
+        {
+          "text": "Orange Light",
+          "correct": false
+        },
+        {
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": false
+        },
+        {
+          "text": "Violet Light",
           "correct": false
         },
         {
@@ -207,7 +273,7 @@
       ]
     },
     {
-      "text_math": "\\lambda = 4.5 \\cdot 10^{-12} \\text{ meters}",
+      "text_math": "\\lambda = 23 \\text{ picometers}",
       "reorder": false,
       "answerChoices": [
         {
@@ -223,7 +289,27 @@
           "correct": false
         },
         {
-          "text": "Visible Light",
+          "text": "Red Light",
+          "correct": false
+        },
+        {
+          "text": "Orange Light",
+          "correct": false
+        },
+        {
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": false
+        },
+        {
+          "text": "Violet Light",
           "correct": false
         },
         {
@@ -241,7 +327,7 @@
       ]
     },
     {
-      "text_math": "\\lambda = 5.4 \\cdot 10^{-8} \\text{ meters}",
+      "text_math": "\\lambda = 56 \\text{ femtometers}",
       "reorder": false,
       "answerChoices": [
         {
@@ -257,12 +343,86 @@
           "correct": false
         },
         {
-          "text": "Visible Light",
+          "text": "Red Light",
+          "correct": false
+        },
+        {
+          "text": "Orange Light",
+          "correct": false
+        },
+        {
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": false
+        },
+        {
+          "text": "Violet Light",
           "correct": false
         },
         {
           "text": "Ultraviolet Light",
+          "correct": false
+        },
+        {
+          "text": "X-Ray",
+          "correct": false
+        },
+        {
+          "text": "Gamma Ray",
           "correct": true
+        }
+      ]
+    },
+    {
+      "text_math": "\\lambda = 640 \\text{ nanometers}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Radio Wave",
+          "correct": false
+        },
+        {
+          "text": "Microwave",
+          "correct": false
+        },
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Red Light",
+          "correct": true
+        },
+        {
+          "text": "Orange Light",
+          "correct": false
+        },
+        {
+          "text": "Yellow Light",
+          "correct": false
+        },
+        {
+          "text": "Green Light",
+          "correct": false
+        },
+        {
+          "text": "Blue Light",
+          "correct": false
+        },
+        {
+          "text": "Violet Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
         },
         {
           "text": "X-Ray",

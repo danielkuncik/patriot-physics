@@ -1,0 +1,114 @@
+{
+  "directions": "For each wavelength given, determine if this wavelength represents infrared light, visible light, or ultraviolet light.",
+  "reorder": true,
+  "questions": [
+    {
+      "text_math": "\\text{Wavelength} = 4.6 \\cdot 10^{-5} \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Infrared Light",
+          "correct": true
+        },
+        {
+          "text": "Visible Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text_math": "\\text{Wavelength} = 8.8 \\cdot 10^{-4} \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Infrared Light",
+          "correct": true
+        },
+        {
+          "text": "Visible Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text_math": "\\text{Wavelength} = 5.67 \\cdot 10^{-7} \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Visible Light",
+          "correct": true
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text_math": "\\text{Wavelength} = 4.59 \\cdot 10^{-7} \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Visible Light",
+          "correct": true
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text_math": "\\text{Wavelength} = 2.5 \\cdot 10^{-8} \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Visible Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text_math": "\\text{Wavelength} = 2.45 \\cdot 10^{-7} \\text{ meters}",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Infrared Light",
+          "correct": false
+        },
+        {
+          "text": "Visible Light",
+          "correct": false
+        },
+        {
+          "text": "Ultraviolet Light",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
