@@ -2,7 +2,9 @@
   "reorder": true,
   "directions": "For a photon of the wavelength indicated, determine which of the seven types of electromagnetic wave it would be.",
   "image": {
-    "name": "seven_types.png"
+    "name": "seven_types.png",
+    "height": "500px",
+    "width": "auto"
   },
   "questions": [
     {

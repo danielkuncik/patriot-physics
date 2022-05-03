@@ -2,7 +2,9 @@
 <h4 class = 'no-print'>
     QUIZ Generator
 </h4>
-<div id = 'putItHere'></div>
+<div id = 'A_quiz_spot'></div>
+<div class="pageBreak"></div>
+<div id = 'honors_quiz_spot'></div>
 
 <script>
     // Set the global configs to synchronous
@@ -10,20 +12,31 @@
         async: false
     });
 
-    // const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];
-    // const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
+    const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];
+    const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
 
-    const quiz_ID_array = ["b645cf","44fb5d"]; // metric prefixes, metric to scientific, em wave basics
     // next step: take this and make it so it is run by a button on the page
     // step after that: make it so that more than one pod can be combined into one quiz
 
-    let data_array = [];
-    quiz_ID_array.forEach((quiz_ID) => {
+    let A_array = [];
+    A_quiz_may_2022.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
-            data_array.push(data);
+            A_array.push(data);
         });
     });
-    $("#putItHere").append(generateWrittenQuiz(data_array, "EM wave quiz", 4));
+    $("#A_quiz_spot").append(generateWrittenQuiz(A_array, "Physics A Electromagnetic Wave Quiz: May 2022", 4));
+
+
+
+    let honors_array = [];
+    honors_quiz_may_2022.forEach((quiz_ID) => {
+        $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
+            data.id = quiz_ID;
+            honors_array.push(data);
+        });
+    });
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Electromagnetic Wave Quiz: May 2022", 4));
+
 
 </script>

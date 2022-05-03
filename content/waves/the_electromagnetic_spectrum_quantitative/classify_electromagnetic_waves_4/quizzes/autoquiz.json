@@ -1,6 +1,11 @@
 {
   "directions": "For each wave of a particular wavelength, determine which type of electromagnetic wave it is. If the light is visible light, determine its color.",
   "reorder": true,
+  "image": {
+    "name": "twelve_types.png",
+    "height": "700px",
+    "width": "auto"
+  },
   "questions": [
     {
       "text_math": " \\lambda = 350 \\text{ micrometers}",
@@ -275,9 +280,6 @@
     {
       "text_math": "\\lambda = 23 \\text{ picometers}",
       "reorder": false,
-      "image": {
-        "name": "twelve_types.png"
-      },
       "answerChoices": [
         {
           "text": "Radio Wave",

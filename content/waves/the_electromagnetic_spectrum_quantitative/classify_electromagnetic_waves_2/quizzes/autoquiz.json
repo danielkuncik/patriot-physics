@@ -3,7 +3,8 @@
   "reorder": true,
   "image": {
     "name": "three_types.png",
-    "width": "500px"
+    "height": "300px",
+    "width": "auto"
   },
   "questions": [
     {

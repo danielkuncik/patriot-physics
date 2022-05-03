@@ -68,15 +68,18 @@ function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, randomiz
 
     let q;
     for (q = 0; q < numberOfVersions; q++) {
-        divObject.append(`<h3>${title} Version ${q + 1}</h3>`);
+        divObject.append(`<h1>${title}</h1>`);
+        divObject.append(`<h2>Version ${q + 1}</h2>`);
+        divObject.append("<div class = 'pageBreak'></div>");
         divObject.append(questions[q]);
         divObject.append("<div class = 'pageBreak'></div>");
     }
 
     let a;
     for (a = 0; a < numberOfVersions; a++) {
-        divObject.append(`<h4>Answers for version ${a + 1}</h4>`);
+        divObject.append(`<h4>Answers for ${title} Version ${a + 1}</h4>`);
         divObject.append(answers[a]);
+        divObject.append("<div class = 'pageBreak'></div>");
     }
 
     return divObject
@@ -128,11 +131,10 @@ function printDirections(directionsJSON) {
 }
 
 function addImage(imageJSON) {// i need to make height and width adjustable
-    const name = imageJSON.link;
+    const link = imageJSON.link;
     const width = imageJSON.width ? imageJSON.width : '300px';
     const height = imageJSON.height? imageJSON.height : 'auto';
-    const output = $(`<img src = '${name}' width = '${width}' height = '${height}' />`);
-    return output
+    return $(`<img src = '${link}' width = '${width}' height = '${height}' />`);
 }
 
 

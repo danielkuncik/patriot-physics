@@ -1,0 +1,110 @@
+{
+  "reorder": true,
+  "directions": "Answer each question regarding comparisons between different types of electromagnetic wave.",
+  "questions": [
+    {
+      "text": "As wavelength of an electromagnetic wave becomes shorter, explain what happens to the frequency of the wave:",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Frequency becomes higher.",
+          "correct": true
+        },
+        {
+          "text": "Frequency becomes lower."
+        },
+        {
+          "text": "Frequency does not change."
+        }
+      ]
+    },
+    {
+      "text": "As wavelength of an electromagnetic wave becomes longer, explain what happens to the frequency of the wave:",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Frequency becomes higher."
+        },
+        {
+          "text": "Frequency becomes lower.",
+          "correct": true
+        },
+        {
+          "text": "Frequency does not change."
+        }
+      ]
+    },
+    {
+      "text": "Compare green light and yellow light",
+      "answerChoices": [
+        {
+          "text": "Green light has a higher frequency, and yellow light has a longer wavelength",
+          "correct": true
+        },
+        {
+          "text": "Green light has a lower frequency, and yellow light has a shorter wavelength"
+        },
+        {
+          "text": "Green light has a higher frequency, and yellow light has a higher speed."
+        },
+        {
+          "text": "Green light has a longer wavelength, and yellow light has a higher frequency."
+        }
+      ]
+    },
+    {
+      "text": "Compare infrared waves and radio waves",
+      "answerChoices": [
+        {
+          "text": "Infrared waves have a higher frequency, and radio waves have a longer wavelength.",
+          "correct": true
+        },
+        {
+          "text": "Infrared waves have a lower frequency, and radio waves have a shorter wavelength"
+        },
+        {
+          "text": "Infrared waves have a lower frequency, and radio wave have a longer wavelength"
+        },
+        {
+          "text": "Infrared waves and radio waves have the same wavelength."
+        }
+      ]
+    },
+    {
+      "text": "Compare gamma rays and X-Rays",
+      "answerChoices": [
+        {
+          "text": "Gamma rays have a shorter wavelength, and X-Rays have a lower frequency.",
+          "correct": true
+        },
+        {
+          "text": "Gamma rays have a longer wavelength, and X-Rays have a higher frequency"
+        },
+        {
+          "text": "Gamma rays have a higher speed, and X-Rays have a lower frequency."
+        },
+        {
+          "text": "Gamma rays have a lower speed, and X-Rays have a longer wavelength."
+        }
+      ]
+    },
+    {
+      "text": "The most dangerous type of electromagnetic wave has the highest frequency. Which type of wave is this?",
+      "answerChoices": [
+        {
+          "text": "X-Ray"
+        },
+        {
+          "text": "gamma ray",
+          "correct": true
+        },
+        {
+          "text": "ultraviolet"
+        },
+        {
+          "text": "microwave"
+        }
+      ]
+    }
+  ]
+}
