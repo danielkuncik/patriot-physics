@@ -311,7 +311,10 @@ function makeWrittenQuizVersion(quizJSON) {
         const question = quizJSON.questions[k];
         let questionObject = makeWrittenQuestion(question);
         questionList.append(questionObject.divObject);
-        answerList.append($(`<li>${questionObject.correctAnswer}</li>`));
+        answerList.append($(`<li style = 'font-size:32px' class = 'm-4'>${questionObject.correctAnswer}</li>`));
+        if ((k + 1) % 5 === 0) {
+            answerList.append("<div class = 'mediumSpace'></div>")
+        }
         if (quizJSON.pageBreaks.includes(k)) {
             questionList.append("<div class = 'pageBreak'></div>");
         }
