@@ -55,11 +55,11 @@
         },
         {
           "text": "Green",
-          "correct": true
+          "correct": false
         },
         {
           "text": "Blue",
-          "correct": false
+          "correct": true
         },
         {
           "text": "Violet",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "text": "Wavelength = 468 nanometers",
+      "text": "Wavelength = 508 nanometers",
       "reorder": false,
       "answerChoices": [
         {
@@ -150,6 +150,36 @@
         {
           "text": "Blue",
           "correct": true
+        },
+        {
+          "text": "Violet",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text": "Wavelength = 533 nanometers",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Red",
+          "correct": false
+        },
+        {
+          "text": "Orange",
+          "correct": false
+        },
+        {
+          "text": "Yellow",
+          "correct": false
+        },
+        {
+          "text": "Green",
+          "correct": true
+        },
+        {
+          "text": "Blue",
+          "correct": false
         },
         {
           "text": "Violet",
