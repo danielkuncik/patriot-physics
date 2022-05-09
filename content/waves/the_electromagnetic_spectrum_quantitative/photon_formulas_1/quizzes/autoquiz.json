@@ -1,0 +1,352 @@
+{
+  "Directions": "Determine all the quantities given in the units requested.",
+  "reorder": false,
+  "questions": [
+    {
+      "newSection": true,
+      "text": "A photon has a wavelength of 650. nanometers. What color is this light?",
+      "answerChoices": [
+        {
+          "text": "red",
+          "correct": true
+        },
+        {
+          "text": "orange"
+        },
+        {
+          "text": "yellow"
+        },
+        {
+          "text": "green"
+        },
+        {
+          "text": "blue"
+        },
+        {
+          "text": "violet"
+        }
+      ]
+    },
+    {
+      "reorder": false,
+      "text": "Determine the wavelength in meters.",
+      "answerChoices": [
+        {
+          "text_math": "6.50 \\cdot 10^{-7} \\, \\text{m}",
+          "correct": true
+        },
+        {
+          "text_math": "6.50 \\cdot 10^{-6} \\, \\text{m}"
+        },
+        {
+          "text_math": "6.50 \\cdot 10^{-8} \\, \\text{m}"
+        },
+        {
+          "text_math": "6.50 \\cdot 10^{-9} \\, \\text{m}"
+        }
+      ]
+    },
+    {
+      "text": "Determine the frequency in Hertz.",
+      "answerChoices": [
+        {
+          "text_math": "4.62 \\cdot 10^{14} \\, \\text{Hz}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the frequency in teraHertz.",
+      "answerChoices": [
+        {
+          "text": "462 tHz",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the energy in Joules.",
+      "answerChoices": [
+        {
+          "text_math": "2.89 \\cdot 10^{-19} \\, \\text{J}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the energy in eV.",
+      "answerChoices": [
+        {
+          "text": "1.80 eV",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "newSection": true,
+      "text": "A photon has a frequency of 520. teraHertz. Determine the frequency in Hertz.",
+      "answerChoices": [
+        {
+          "text_math": "5.20 \\cdot 10^{14} \\, \\text{Hz}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the wavelength in meters.",
+      "answerChoices": [
+        {
+          "text_math": "5.77 \\cdot 10^{-7} \\, \\text{m}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the wavelength in nanometers.",
+      "answerChoices": [
+        {
+          "text": "577 nanometers",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "What color is the light?",
+      "answerChoices": [
+        {
+          "text": "red"
+        },
+        {
+          "text": "orange"
+        },
+        {
+          "text": "yellow",
+          "correct": true
+        },
+        {
+          "text": "green"
+        },
+        {
+          "text": "blue"
+        },
+        {
+          "text": "violet"
+        }
+      ]
+    },
+    {
+      "text": "Determine the energy in Joules.",
+      "answerChoices": [
+        {
+          "text_math": "3.26 \\cdot 10^{-19} \\, \\text{J}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the energy in electronVolts.",
+      "answerChoices": [
+        {
+          "text": "2.02 eV",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "newSection": true,
+      "text": "A photon has an energy of 2.30 electronVolts. Determine the energy in Joules.",
+      "answerChoices": [
+        {
+          "text": "3.70 \\cdot 10^{-19} \\, \\text{J}",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the frequency in hertz.",
+      "answerChoices": [
+        {
+          "text": "5.91 \\cdot 10^{14} \\, \\text{Hz}",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the frequency in teraHertz.",
+      "answerChoices": [
+        {
+          "text": "591 tHz",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the wavelength in meters.",
+      "answerChoices": [
+        {
+          "text_math": "5.08 \\cdot 10^{-7} \\, \\text{m}",
+          "correct": true
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        },
+        {
+          "text_math": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the wavelength in nanometers.",
+      "answerChoices": [
+        {
+          "text": "508 nm",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "What color is this light?",
+      "answerChoices": [
+        {
+          "text": "red"
+        },
+        {
+          "text": "orange"
+        },
+        {
+          "text": "yellow"
+        },
+        {
+          "text": "green",
+          "correct": true
+        },
+        {
+          "text": "blue"
+        },
+        {
+          "text": "violet"
+        }
+      ]
+    }
+  ]
+}

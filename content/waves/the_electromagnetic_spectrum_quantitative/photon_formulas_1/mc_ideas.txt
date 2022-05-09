@@ -1,0 +1,48 @@
+A light wave photon has a wavelength of ______ nanometers.
+
+1. What color is this light
+
+2. Determine the wavelength in meters
+
+3. Determine the frequency in Hertz
+
+4. Determine the frequency in teraHertz
+
+5. Determine the energy in Joules
+
+6. Determine the energy in eV
+
+
+
+A light wave photon has a frequency of _____ teraHertz.
+
+7. Determine the frequency in Hertz.
+
+8. Determine the wavelength in meters.
+
+9. Determine the wavelength in nanometers.
+
+10. What color is the light?
+
+
+11. Determine the energy in Joules.
+true
+
+12. Determine the energy in electronVolts.
+
+
+
+A photon has an energy of _____ electronVolts.
+
+
+13. Determine the energy in Joules
+
+14. Determine the frequency in hertz.
+
+15. Determine the frequency in teraHertz.
+
+16. Determine the wavelength in meters.
+
+17. Determine the wavelength in nanometers.
+
+18. What color is this light?
