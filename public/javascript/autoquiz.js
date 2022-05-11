@@ -360,17 +360,17 @@ function makeMCquestion(questionJSON) {
 }
 
 
-
-function makeQuizListItem(JSON, bigSpace) {
+function makeQuizListItem(JSON, mainQuestion) { // main question is true if it is the main question, otherwise it is an answer choice
+    const extraSpace = mainQuestion ? "&nbsp;" : "&nbsp; &nbsp; &nbsp;"; // adds more extra space to answer choices
     const fontSize = 32;
-    const objectClass =  bigSpace ? 'm-5 p-5' : 'mb-2 mt-2';
-    const styleTag = bigSpace ? `page-break-inside:avoid;font-size:${fontSize}px` : `font-size:${fontSize}px`;
+    const objectClass =  mainQuestion ? 'm-5 p-5' : 'mb-2 mt-2';
+    const styleTag = mainQuestion ? `page-break-inside:avoid;font-size:${fontSize}px` : `font-size:${fontSize}px`;
     let output = $(`<li class = '${objectClass}' style = '${styleTag}'></li>`);
 
     if (JSON.text) {
-        output.append(JSON.text);
+        output.append(`${extraSpace}${JSON.text}`);
     } else if (JSON.text_math) {
-        output.append(`\\(${JSON.text_math}\\)`);
+        output.append(`${extraSpace}\\(${JSON.text_math}\\)`);
     }
 
     return output

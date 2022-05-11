@@ -54,13 +54,25 @@
           "correct": true
         },
         {
-          "text_math": ""
+          "text_math": "4.62 \\cdot 10^{15} \\, \\text{Hz}"
         },
         {
-          "text_math": ""
+          "text_math": "4.62 \\cdot 10^{16} \\, \\text{Hz}"
         },
         {
-          "text_math": ""
+          "text_math": "4.62 \\cdot 10^{13} \\, \\text{Hz}"
+        },
+        {
+          "text_math": "195 \\, \\text{Hz}"
+        },
+        {
+          "text_math": "1.95 \\cdot 10{-14} \\, \\text{Hz}"
+        },
+        {
+          "text_math": "1.95 \\cdot 10{-15} \\, \\text{Hz}"
+        },
+        {
+          "text_math": "1.95 \\cdot 10{-16} \\, \\text{Hz}"
         }
       ]
     },
@@ -72,13 +84,25 @@
           "correct": true
         },
         {
-          "text": ""
+          "text": "46.2 tHz"
         },
         {
-          "text": ""
+          "text": "4.62 tHz"
         },
         {
-          "text": ""
+          "text": "0.462 tHz"
+        },
+        {
+          "text": "195 tHz"
+        },
+        {
+          "text": "1.95 tHz"
+        },
+        {
+          "text": "19.5 tHz"
+        },
+        {
+          "text": "0.195 tHz"
         }
       ]
     },
@@ -86,17 +110,35 @@
       "text": "Determine the energy in Joules.",
       "answerChoices": [
         {
-          "text_math": "2.89 \\cdot 10^{-19} \\, \\text{J}",
+          "text_math": "3.05 \\cdot 10^{-19} \\, \\text{J}",
           "correct": true
         },
         {
-          "text_math": ""
+          "text_math": "3.05 \\cdot 10^{-18} \\, \\text{J}"
         },
         {
-          "text_math": ""
+          "text_math": "3.05 \\cdot 10^{-17} \\, \\text{J}"
         },
         {
-          "text_math": ""
+          "text_math": "3.05 \\cdot 10^{-16} \\, \\text{J}"
+        },
+        {
+          "text_math": "6.97 \\cdot 10^{47} \\, \\text{J}"
+        },
+        {
+          "text_math": "6.97 \\cdot 10^{-20} \\, \\text{J}"
+        },
+        {
+          "text_math": "6.97 \\cdot 10^{-21} \\, \\text{J}"
+        },
+        {
+          "text_math": "1.29 \\cdot 10^{-19} \\, \\text{J}"
+        },
+        {
+          "text_math": "1.29 \\cdot 10^{-20} \\, \\text{J}"
+        },
+        {
+          "text_math": "1.29 \\cdot 10^{-18} \\, \\text{J}"
         }
       ]
     },
@@ -104,17 +146,50 @@
       "text": "Determine the energy in eV.",
       "answerChoices": [
         {
-          "text": "1.80 eV",
+          "text": "1.90 eV",
           "correct": true
         },
         {
-          "text": ""
+          "text": "19.0 eV"
         },
         {
-          "text": ""
+          "text": "190. eV"
         },
         {
-          "text": ""
+          "text": "0.190 eV"
+        },
+        {
+          "text_math": "4.89 \\cdot 10^{-38} \\, \\text{eV}"
+        },
+        {
+          "text_math": "4.89 \\cdot 10^{-39} \\, \\text{eV}"
+        },
+        {
+          "text_math": "4.89 \\cdot 10^{-40} \\, \\text{eV}"
+        },
+        {
+          "text": "4.89 eV"
+        },
+        {
+          "text": "48.9 eV"
+        },
+        {
+          "text": "4.35 eV"
+        },
+        {
+          "text": "43.5 eV"
+        },
+        {
+          "text": "435 eV"
+        },
+        {
+          "text": "2.07 eV"
+        },
+        {
+          "text": "0.207 eV"
+        },
+        {
+          "text_math": "2.07 \\cdot 10^{-2} \\, \\text{eV}"
         }
       ]
     },
