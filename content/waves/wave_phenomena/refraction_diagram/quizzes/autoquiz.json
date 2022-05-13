@@ -1,0 +1,28 @@
+{
+  "directions": "Each question includes a written definition or a diagram. Determine which wave phenomenon best describes each definition or diagram.",
+  "questions": [
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Refraction"
+        }
+      ]
+    }
+  ]
+}

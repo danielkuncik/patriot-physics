@@ -8497,16 +8497,27 @@
         },
         "pods":
         {
-          "wave_phenomena_basics":
+          "wave_phenomena_basics_1":
           {
-            "title": "Wave Phenomena Basics",
+            "title": "Wave Phenomena Basics 1",
+            "subtitle": "Defining Wave Phenomena",
+            "level": 1,
+            "objective": "Identify basic definitions of and basic diagrams illustrating wave phenomena such as reflection, refraction, interference, scattering, diffraction, and absorption",
+            "content": "Crucial wave phenomena can be defined diagrammed to be better understood.",
+            "uuid": "e0c317ee-a318-443e-a350-3123848e81ef",
+            "id": "e0c317"
+          },
+          "wave_phenomena_basics_2":
+          {
+            "title": "Wave Phenomena Basics 2",
+            "subtitle": "Real-World Wave Phenomena",
             "level": 1,
             "objective": "Identify real-world examples of reflection, refraction, interference, scattering, diffraction, and absorption of waves.",
-            "content": "When a wave crosses from one medium to another, it can undergo a phenomenon such as reflection, refraction, interference, scattering, diffraction, or absorption.",
+            "content": "Waves undergo several important phenomena, most often when passing between one medium and another.",
             "uuid": "4ffcb6d3-cb40-4c97-a873-b4f90839b2f0",
             "id": "4ffcb6"
           },
-          "reflection_diagram_1":
+          "reflection_diagram":
           {
             "title": "Reflection Diagram 1: Identification",
             "level": 1,
@@ -8524,7 +8535,7 @@
             "uuid": "c6e1f160-2d52-4df0-88b4-f8dffa9dce86",
             "id": "c6e1f1"
           },
-          "refraction_diagrams_1":
+          "refraction_diagram":
           {
             "title": "Refraction Diagrams 1: Identification",
             "level": 1,
@@ -8533,7 +8544,7 @@
             "uuid": "85096381-f8ff-4000-a04d-870b50efa7fa",
             "id": "850963"
           },
-          "refraction_diagrams_2":
+          "refraction_diagram_2":
           {
             "title": "Refraction Diagrams 2: From Memory",
             "level": 2,

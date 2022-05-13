@@ -1,0 +1,46 @@
+{
+  "directions": "",
+  "questions": [
+    {
+      "text": "Which of the following phenomena is responsible for seeing your image in a mirror?",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Refraction"
+        }
+      ]
+    },
+    {
+      "text": "On a very warm day, looking into the distance you see the space in front of you slightly distorted. What is happening?",
+      "answerChoices": [
+        {
+          "text": "Light is bending as it moves between air of different temperatures.",
+          "correct": true
+        },
+        {
+          "text": "The temperature is so high that your eye is able to see waves of heat."
+        },
+        {
+          "text": "You are perceiving infrared waves given off by the sun."
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

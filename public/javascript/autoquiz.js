@@ -203,12 +203,13 @@ class NumericalQuestion extends Question {
 }
 
 // figure out how to put in a title, in the json or outside of it???
-function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, randomizeAll) {
+function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, firstVersion  = 1, randomizeAll) {
     const quizJSON = quizJSONData.isArray ? quizJSONData : [quizJSONData];
     let j;
     let questions = [];
     let answers = [];
-    for (j = 0; j < numberOfVersions; j++) {
+    for (j = firstVersion; j < numberOfVersions + firstVersion; j++) {
+        console.log(firstVersion, numberOfVersions + firstVersion, j);
         let thisQuiz = combineQuizzes(quizJSONData, randomizeAll);
         let nextVersion = makeWrittenQuizVersion(thisQuiz);
         questions.push(nextVersion.questionList);
@@ -218,18 +219,18 @@ function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, randomiz
     let divObject = $("<div></div>");
 
     let q;
-    for (q = 0; q < numberOfVersions; q++) {
+    for (q = firstVersion; q < numberOfVersions + firstVersion; q++) {
         divObject.append(`<h1>${title}</h1>`);
-        divObject.append(`<h2>Version ${q + 1}</h2>`);
+        divObject.append(`<h2>Version ${q}</h2>`);
         divObject.append("<div class = 'pageBreak'></div>");
-        divObject.append(questions[q]);
+        divObject.append(questions[q - firstVersion]);
         divObject.append("<div class = 'pageBreak'></div>");
     }
 
     let a;
-    for (a = 0; a < numberOfVersions; a++) {
-        divObject.append(`<h4>Answers for ${title} Version ${a + 1}</h4>`);
-        divObject.append(answers[a]);
+    for (a = firstVersion; a < numberOfVersions + firstVersion; a++) {
+        divObject.append(`<h4>Answers for ${title} Version ${a}</h4>`);
+        divObject.append(answers[a - firstVersion]);
         divObject.append("<div class = 'pageBreak'></div>");
     }
 
