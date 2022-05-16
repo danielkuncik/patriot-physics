@@ -8,85 +8,6 @@
 
 <div class="pageBreak"></div>
 
-<h2>
-    Reference Information
-</h2>
-<div class = 'container m-5'>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            <h4>Color</h4>
-        </div>
-        <div class = 'col-3 border border-dark'>
-            <h4>Wavelength Range</h4>
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            Red
-        </div>
-        <div class = 'col-3 border border-dark'>
-            635 nm &#8211 700 nm
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            Orange
-        </div>
-        <div class = 'col-3 border border-dark'>
-            590 nm &#8211 635 nm
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            Yellow
-        </div>
-        <div class = 'col-3 border border-dark'>
-            560 nm &#8211 590 nm
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            Green
-        </div>
-        <div class = 'col-3 border border-dark'>
-            520 nm &#8211 560 nm
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            Blue
-        </div>
-        <div class = 'col-3 border border-dark'>
-            450 nm &#8211 520 nm
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-3 border border-dark'>
-            Violet
-        </div>
-        <div class = 'col-3 border border-dark'>
-            400 nm &#8211 450 nm
-        </div>
-    </div>
-</div>
-
-<ul>
-    <li class = 'm-3'>
-        \( c = \lambda f \)
-    </li>
-    <li class = 'm-3'>
-        \( E = H f \)
-    </li>
-    <li class = 'm-3'>
-        The Speed of Light = 300,000,000 m/s = \( 3.00 \cdot 10^{8} \, \text{m/s} \)
-    </li>
-    <li class = 'm-3'>
-        Planck's Constant = \( 6.626 \cdot 10^{-34} \, \text{J} \cdot \text{s} \)
-    </li>
-    <li class = 'm-3'>
-        1 Joules = \( 6.242 \cdot 10^{18} \, \text{eV} \)
-    </li>
-</ul>
 
 <script>
     // Set the global configs to synchronous
@@ -97,6 +18,7 @@
     const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];
     const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
     const honors_quiz_may_2022_2 = ["4c74b0"];
+    const A_quiz_may_2022_2 = ["4ffcb6"];
 
     // next step: take this and make it so it is run by a button on the page
     // step after that: make it so that more than one pod can be combined into one quiz
@@ -113,13 +35,13 @@
 
 
     let honors_array = [];
-    honors_quiz_may_2022_2.forEach((quiz_ID) => {
+    A_quiz_may_2022_2.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Photon Math Quiz: May 2022", 4, 10));
+    $("#A_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Wave Phenomena Quiz: May 2022", 2, 20));
 
 
 </script>
