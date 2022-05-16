@@ -5,6 +5,126 @@
       "text": "Which of the following phenomena is responsible for seeing your image in a mirror?",
       "answerChoices": [
         {
+          "text": "Reflection",
+          "correct": true
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is responsible for seeing a sound echo?",
+      "answerChoices": [
+        {
+          "text": "Reflection",
+          "correct": true
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction"
+        }
+      ]
+    },
+    {
+      "text": "On a sunny day, you feel warmer in black clothing than white clothing because this phenomenon is occurring:",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption",
+          "correct": true
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction"
+        }
+      ]
+    },
+    {
+      "text": "The sky is blue due to this phenomenon:",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering",
+          "correct": true
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction"
+        }
+      ]
+    },
+    {
+      "text": "The ocean is blue due to this phenomenon:",
+      "answerChoices": [
+        {
+          "text": "Reflection",
+          "correct": true
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction"
+        }
+      ]
+    },
+    {
+      "text": "When you notice a water wave curve around a barrier, it is this phenomenon:",
+      "answerChoices": [
+        {
           "text": "Reflection"
         },
         {
@@ -20,7 +140,80 @@
           "text": "Interference"
         },
         {
+          "text": "Diffraction",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "This phenomenon allows you to hear someone in another room and not in a direct line of sign with you:",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
           "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "This phenomenon occurs when two waves overlap and momentarily make a larger wave.",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
+          "text": "Refraction"
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference",
+          "correct": true
+        },
+        {
+          "text": "Diffraction"
+        }
+      ]
+    },
+    {
+      "text": "This phenomenon causes objects that are partly inside water and partly outside water to appear bent or broken when they are not.",
+      "answerChoices": [
+        {
+          "text": "Reflection"
+        },
+        {
+          "text": "Refraction",
+          "correct": true
+        },
+        {
+          "text": "Absorption"
+        },
+        {
+          "text": "Scattering"
+        },
+        {
+          "text": "Interference"
+        },
+        {
+          "text": "Diffraction"
         }
       ]
     },
@@ -38,7 +231,7 @@
           "text": "You are perceiving infrared waves given off by the sun."
         },
         {
-          "text": ""
+          "text": "The high temperature is affecting your brain causing you to see distorted images."
         }
       ]
     }
