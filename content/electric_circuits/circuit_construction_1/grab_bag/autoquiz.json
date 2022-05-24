@@ -1,0 +1,104 @@
+{
+  "note": "These are questions on electric circuits waiting for a home in some pod",
+  "questions": [
+    {
+      "text": "The resistance of an ammeter is _______",
+      "questionList": [
+        {
+          "text": "Nearly zero",
+          "correct": true
+        },
+        {
+          "text": "Extremely High"
+        },
+        {
+          "text": "Approximately 100 Ohms"
+        },
+        {
+          "text": "Approximately 100 kOhms"
+        },
+        {
+          "text": "An ammeter does not have a measurable resistance."
+        }
+      ]
+    },
+    {
+      "text": "The resistance of a voltmeter is _______",
+      "questionList": [
+        {
+          "text": "Nearly zero"
+        },
+        {
+          "text": "Extremely High",
+          "correct": true
+        },
+        {
+          "text": "Approximately 100 Ohms"
+        },
+        {
+          "text": "Approximately 100 kOhms"
+        },
+        {
+          "text": "A voltmeter does not have a measurable resistance."
+        }
+      ]
+    },
+    {
+      "text": "A student connects a multimeter to measure the voltage across a 1000 Ohm resistor connected to a single D battery. After determining a valid measurement (1.5 volts), he applies Ohm's Law and determiens the current should be 0.0015 A. But when he switches the ammeter to measure current, he finds a current of 15 A! Which of the following statements is true?",
+      "note": "add two photos to this problem....",
+      "questionList": [
+        {
+          "text": "The student measured the current correctly; either the resistor or the multimeter must be defective."
+        },
+        {
+          "text": "The student needs to change how the meter is connected in order to receive an accurate measurement for current."
+        },
+        {
+          "text": "The student measured current the accurately but applied Ohm's Law incorrectly."
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "A student applies Ohms law to a circuit with a single battery connected to an ammeter with no resistor. She concludes that the current will be infinite. When a student connects an ammeter in such a way, she finds a current of 10 A, which means the resistnace must be ____. Where is most of this resistance coming from?",
+      "note": "needs a rewrite",
+      "questionList": [
+        {
+          "text": "The the battery"
+        },
+        {
+          "text": "The wire"
+        },
+        {
+          "text": "The ammeter"
+        },
+        {
+          "text": "The air around the circuit"
+        },
+        {
+          "text": "She is connecting the ammeter incorrectly."
+        }
+      ]
+    },
+    {
+      "text": "A (not too bright) physics student connects three car batteries in series for a total voltage of approximately 36 Volts. He then concludes that, because the current from a wall outlet is 120 Volts and the current from the batteries is 36 Volts, it is safe to use and proceeds to connect it to a relatively weak resistor. Very bad things result. What is the student not considering?",
+      "questionList": [
+        {
+          "text": "The chemicals in car batteries make them more dangerous than other devices."
+        },
+        {
+          "text": "The wall outlet gives Alternating current and the batteries produce a Direct Current; DC current is more dangerous at lower magnitudes tha AC current",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

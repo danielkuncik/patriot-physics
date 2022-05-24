@@ -91,29 +91,102 @@ function makeNewShuffledArray(array) {
 
 // right now, all these functions are hard wired to produce only written quizzes  :( :( :(
 
+// makes a test for multiple pods
+// a TEST is composed of multiple quizzes
+class Test {
+    constructor(idArray) {
+        if (typeof(idArray) === string) {
+            idArray = [idArray];
+        }
+        this.idArray = idArray;
+        this.quizArray = [];
+        this.versions = [];
+        idArray.forEach((id) => {
+            this.quizArray.push(new Quiz(id));
+        });
+    }
+
+
+    // i want to do this without making too much data???
+    generateVersion(scrambleQuizzes = false, scrambleAll = false) {
+
+    }
+}
+
 
 // this object will create a automatically generated quiz for a single pod
 class Quiz {
     constructor(id) { /// does not automatically produce new versions
-        this.versions = [];
+        this.id = id;
         $.getJSON(`/autoquiz/${id}`, (data) => {
-            this.masterData = data;
+            //this.masterData = data;
+            this.questions = [];
+            data.questions.forEach((questionData) => {
+                if (questionData.type === "MC" || questionData.type === undefined) {
+                    this.questions.push(new MultipleChoiceQuestion(questionData));
+                }
+            });
+            this.directions = data.directions;
             this.title = "pod title"; // it should access the pod title???
             // find a way in the SERVER to add the pod title to the JSON data that is sent
         });
+
+    }
+}
+
+class Question {
+    constructor(questionObject, type = 'MC', id) { // default type is multiple choice
+        this.mainText = questionObject.text;
+        this.mathText = questionObject["text_math"];
+        this.image = questionObject.image;
+        this.type = type;
+    }
+}
+
+// how do i deal with multiple choice with multiple correct answers???
+// (i should be able to make questions where there MAY be multiple correct, but only one actually is correct
+class MultipleChoiceQuestion extends Question {
+    constructor(questionObject) {
+        super(questionObject, "MC");
+        this.reorder = questionObject.reorder !== false; // reorder answer choices unless explicitly stated not to
+        this.answerChoices = this.reorder ? makeNewShuffledArray(questionObject.answerChoices) : questionObject.answerChoices;
+        this.multipleCorrectType = questionObject.multipleCorrectType;
+        this.correctAnswer = this.findCorrectAnswer();
     }
 
-    // randomizes questions to generate a new verison of the quiz
-    generateVersion() {
-        this.versions.push(new QuizVersion(this.masterData));
+    findCorrectAnswer() {
+        let q, corrects = [];
+        for (q = 0; q < this.answerChoices.length; q++) {
+            if (this.answerChoices[q].correct) {
+                corrects.push(numberToLetter_X[q]);
+            }
+        }
+        if (corrects.length > 0 && !this.multipleCorrectType) {
+            console.log("ERROR: More than one correct answer!!!")
+        }
+        if (!this.multipleCorrectType) {
+            return corrects[0]
+        } else {
+            return corrects
+        }
     }
+}
+
+class AnswerChoice {
+    constructor() {
+
+    }
+}
+
+// etc. etc.
+class NumericalQuestion extends Question {
 
 }
 
 
 // i wish i could make this private, accesible only within the Quiz class
 /// it is inefficient to restore all this data......but......should i try to fix this???
-class QuizVersion {
+class TestVersion {
     constructor(masterData) {
         this.directions = masterData.directions;
         this.mainImage = masterData.image;
@@ -159,48 +232,6 @@ class QuizVersion {
 
 }
 
-class Question {
-    constructor(questionObject, type = 'MC') { // default type is multiple choice
-        this.mainText = questionObject.text;
-        this.mathText = questionObject["text_math"];
-        this.image = questionObject.image;
-        this.type = type;
-    }
-}
-
-// how do i deal with multiple choice with multiple correct answers???
-// (i should be able to make questions where there MAY be multiple correct, but only one actually is correct
-class MultipleChoiceQuestion extends Question {
-    constructor(questionObject) {
-        super(questionObject, "MC");
-        this.reorder = questionObject.reorder !== false; // reorder answer choices unless explicitly stated not to
-        this.answerChoices = this.reorder ? makeNewShuffledArray(questionObject.answerChoices) : questionObject.answerChoices;
-        this.multipleCorrectType = questionObject.multipleCorrectType;
-        this.correctAnswer = this.findCorrectAnswer();
-    }
-
-    findCorrectAnswer() {
-        let q, corrects = [];
-        for (q = 0; q < this.answerChoices.length; q++) {
-            if (this.answerChoices[q].correct) {
-                corrects.push(numberToLetter_X[q]);
-            }
-        }
-        if (corrects.length > 0 && !this.multipleCorrectType) {
-            console.log("ERROR: More than one correct answer!!!")
-        }
-        if (!this.multipleCorrectType) {
-            return corrects[0]
-        } else {
-            return corrects
-        }
-    }
-}
-
-// etc. etc.
-class NumericalQuestion extends Question {
-
-}
 
 // figure out how to put in a title, in the json or outside of it???
 function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, firstVersion  = 1, randomizeAll) {
@@ -257,7 +288,7 @@ function combineQuizzes(quizArray, randomizeAll = false) {
         }
         if (quizData.directions) {
             let theseDirections = {};
-            theseDirections.text = quizData.directions;
+            theseDirections.text = quizData.directions ? quizData.directions : "Select the best possible choice for each prompt or question.";
             theseDirections.preMessage = `Directions for questions ${questionIamOn + 1} &#8211 ${questionIamOn + quizData.questions.length}`;
             combinedQuizJSON.directions[String(questionIamOn)] = theseDirections;
         }
@@ -282,11 +313,17 @@ function printDirections(directionsJSON) {
     return output
 }
 
-function addImage(imageJSON) {// i need to make height and width adjustable
-    const link = imageJSON.link;
-    const width = imageJSON.width ? imageJSON.width : '300px';
-    const height = imageJSON.height? imageJSON.height : 'auto';
-    return $(`<img class = 'mb-5' src = '${link}' width = '${width}' height = '${height}' />`);
+function addImage(imageData) {// i need to make height and width adjustable
+    if (typeof imageData === string) {
+        imageData = {
+            link: imageData
+        }
+    }
+    const link = imageData.link; // need to replace
+    const width = imageData.width ? imageData.width : '300px';
+    const height = imageData.height? imageData.height : 'auto';
+    const margin = imageData.margin ? imageData.margin: 5;
+    return $(`<img class = 'mb-${margin}' src = '${link}' width = '${width}' height = '${height}' />`);
 }
 
 
@@ -372,6 +409,8 @@ function makeQuizListItem(JSON, mainQuestion) { // main question is true if it i
         output.append(`${extraSpace}${JSON.text}`);
     } else if (JSON.text_math) {
         output.append(`${extraSpace}\\(${JSON.text_math}\\)`);
+    } else if (JSON.image) {
+        output.append(addImage(JSON.image));
     }
 
     return output

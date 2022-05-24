@@ -1,0 +1,242 @@
+{
+  "reference": "Color Chart here",
+  "notes": "One more with picking the color, two more connecting color to number",
+  "questions": [
+    {
+      "text": "A resistor's first three bands are Orange-Orange-Brown. What is the reported resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "330 Ohms",
+          "correct": true
+        },
+        {
+          "text": "33 Ohms"
+        },
+        {
+          "text": "3.3 Ohms"
+        },
+        {
+          "text": "3300 Ohms"
+        },
+        {
+          "text": "33 kOhms"
+        },
+        {
+          "text": "220 Ohms"
+        },
+        {
+          "text": "22 Ohms"
+        },
+        {
+          "text": "2.2 Ohms"
+        },
+        {
+          "text": "2200 Ohms"
+        },
+        {
+          "text": "22 kOhms"
+        }
+
+      ]
+    },
+    {
+      "text": "The first three bands on a resistor are Yellow-Green-Orange. What is the resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "450 Ohms"
+        },
+        {
+          "text": "45 Ohms"
+        },
+        {
+          "text": "4.5 Ohms"
+        },
+        {
+          "text": "4500 Ohms"
+        },
+        {
+          "text": "45 kOhms",
+          "correct": true
+        },
+        {
+          "text": "540 Ohms"
+        },
+        {
+          "text": "54 Ohms"
+        },
+        {
+          "text": "5.4 Ohms"
+        },
+        {
+          "text": "5400 Ohms"
+        },
+        {
+          "text": "54 kOhms"
+        }]
+    },
+    {
+      "text": "A resistor's first three color bands are Orange-Green-Green. What is the reported resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "3.5 MΩ",
+          "correct": true
+        },
+        {
+          "text": "35 MΩ"
+        },
+        {
+          "text": "350 MΩ"
+        },
+        {
+          "text": "350 kΩ"
+        },
+        {
+          "text": "35 kΩ"
+        },
+        {
+          "text": "3.5 kΩ"
+        },
+        {
+          "text": "3.5 GΩ"
+        }
+      ]
+    },
+    {
+      "text": "One more problem pickign resistance"
+    },
+    {
+      "text": "A resistor has a resistance of 500 Ohms (Green-Black-Yellow), and the fourth band is gold. According to the manufacturer, what range is possible for the resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "475 Ohms - 525 Ohms",
+          "correct": true
+        },
+        {
+          "text": "450 Ohms - 550 Ohms"
+        },
+        {
+          "text": "490 Ohms - 510 Ohms"
+        },
+        {
+          "text": "400 Ohms - 600 Ohms"
+        }
+        {
+          "text": "The resistance should be exactly 500 Ohms."
+        }
+      ]
+    },
+    {
+      "text": "A resistor has a resistance of 8 kOhms (Gray-Black-Red), and the fourth band is silver. According to the manufacturer, what range is possible for the resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "7200 Ohms - 8800 Ohms",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "The resistance should be exactly 8 kOhms"
+        }
+      ]
+    },
+    {
+      "text": "Each resistor has four color bands. How do you tell in which order to read the bands?",
+      "answerChoices": [
+        {
+          "text": "There is a little bit more space between the third and fourth bands.",
+          "correct": true
+        },
+        {
+          "text": "There is a little bit more space before the first and second bands."
+        },
+        {
+          "text": "The fourth band is always silver or gold."
+        },
+        {
+          "text": "You just guess."
+        },
+        {
+          "text": "The resistance of the resistor is different depending on which way you place it in the circuit, and the bands are arranged accordingly."
+        }
+      ]
+    },
+    {
+      "text": "You want a resistor with a resistance of 15 Ohms. What color bands should you look for?",
+      "answerChoices": [
+        {
+          "text": "Brown-Green-Black",
+          "correct": true
+        },
+        {
+          "text": "Black-Brown-Green"
+        },
+        {
+          "text": "Black-Green-Brown"
+        },
+        {
+          "text": "Brown-Black-Green"
+        },
+        {
+          "text": "Green-Brown-Black"
+        },
+        {
+          "text": "Green-Black-Brown"
+        },
+        {
+          "text": "Brown-Green-Red"
+        },
+        {
+          "text": "Brown-Red-Green"
+        },
+        {
+          "text": "Red-Brown-Green"
+        },
+        {
+          "text": "Red-Green-Brown"
+        },
+        {
+          "text": "Green-Brown-Red"
+        },
+        {
+          "text": "Green-Red-Brown"
+        }
+      ]
+    },
+    {
+      "text": "You have an analog ammeter whose scale goes up to 1 μA, and you want to find an excuse to use it, just for kicks. If connected to two D batteries (1.5 volts each), which of the following resistors would allow this ammeter to work correctly?",
+      "note": "Maybe should be moved to a more advanced quiz?",
+      "note2": "add photo",
+      "answerChoices": [
+        {
+          "text": "Yellow-Black-Orange"
+        },
+        {
+          "text": "Yellow-Black-Yellow"
+        },
+        {
+          "text": "Yellow-Black-Green",
+          "correct": true
+        },
+        {
+          "text": "Yellow-Black-Blue"
+        },
+        {
+          "text": "Yellow-Black-Violet"
+        },
+        {
+          "text": "Yellow-Black-Gray"
+        },
+        {
+          "text": "Yellow-Black-White"
+        },
+        {
+          "text": "Yellow-Black-Orange"
+        }
+      ]
+    }
+  ]
+}

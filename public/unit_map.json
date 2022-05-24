@@ -36,6 +36,22 @@
             "content": "Each physics quiz is accompanied by a 'Practice Page' that contains the content on that quiz.",
             "uuid": "c9228a32-6d74-4af2-9b13-5be80de1b32b",
             "id": "c9228a"
+          },
+          "final_A": {
+            "title": "A Final",
+            "level": 2,
+            "horizontal": 4,
+            "prerequisites": [],
+            "uuid": "d1fae3fb-26a8-4ae0-8056-0a56335456e2",
+            "id": "d1fae3"
+          },
+          "final_honors": {
+            "title": "Honors Final",
+            "level": 2,
+            "horizontal": 3,
+            "prerequisites": [],
+            "uuid": "5c9f7a7b-1fe7-4de7-b825-c8e049c019f2",
+            "id": "5c9f7a"
           }
         }
       }

@@ -1,0 +1,75 @@
+{
+"questions": [
+  {
+    "text": "The 'current wars' of the 1890s refers to what historical event?",
+    "questionList": [
+      {
+        "text": "An argument between two engineers over whether AC or DC current should be used in the electric grid."
+      },
+      {
+        "text": "A war between circus directors and rampaging elephants. The circus directors won, but only barely."
+      },
+      {
+        "text": "A heated debate over whether the direction of the current in the Hudson river could be redirected."
+      },
+      {
+        "text": ""
+      }
+    ]
+  },
+  {
+    "text": "Nikola Tesla was born in the territory of what modern country (It was part of the Hapsburg Empire at the time he was born, but is today an independent country):",
+    "questionList": [
+      {
+        "text": "Croatia",
+        "correct": true
+      },
+      {
+        "text": "Slovenia"
+      },
+      {
+        "text": "Italy"
+      },
+      {
+        "text": "North Macedonia"
+      },
+      {
+        "text": "Albania"
+      }
+    ]
+  },
+  {
+    "text": "Thomas Edison's Menlo Park laboratory is in what state?",
+    "answerChoices":[
+      {
+        "text": "New Jersey",
+        "correct": true
+      },
+      {
+        "text": "New York"
+      },
+      {
+        "text": "Massachusetts"
+      },
+      {
+        "text": "Connecticut"
+      },
+      {
+        "text": "California"
+      }
+    ]
+  },
+  {
+    "text": "There are a bunch of videos on YouTube of an elephant being shocked to death, claiming that Did Thomas Edison did it to prove a point about AC and DC current. Is this accurate",
+    "answerChoices": [
+      {
+        "text": "There isn't no hard evidence Edison had anything to do with the electrocution of the elephant. It's an urban legend.",
+        "correct": true
+      },
+      {
+        "text": "Yes. Would YouTube lie?"
+      }
+    ]
+  }
+]
+}

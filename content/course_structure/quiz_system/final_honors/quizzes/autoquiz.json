@@ -1,0 +1,167 @@
+{
+  "directions": "Select the best option for each question",
+  "questions": [
+    {
+      "text": "Which of the following characteristics is the same for any electromagnetic wave traveling through empty space?",
+      "answerChoices": [
+        {
+          "text": "speed",
+          "correct": true
+        },
+        {
+          "text": "frequency"
+        },
+        {
+          "text": "period"
+        },
+        {
+          "text": "wavelength"
+        }
+      ]
+    },
+    {
+      "text": "Two U.S. quarters, initially at the same temperature, are heated with a flame. One of the quarters was made before 1965 and is composed of silver. The other quarter was made after 1965 and is composed mostly of copper. What information is needed to determine which quarter will heat up faster?",
+      "answerChoices": [
+        {
+          "text": "The specific heat of the metals and the mass of each coin.",
+          "correct": true
+        },
+        {
+          "text": "THe initial temperature of the coins and the mass of each coin."
+        },
+        {
+          "text": "The temperature of the flame and the specific heats of the metals."
+        },
+        {
+          "text": "The initial temperature of the coins and the tempearture of the flame."
+        }
+      ]
+    },
+    {
+      "text": "A fan enables a computer's processor to run for long periods of time without overheating. Which of the following forms of heat energy transfer does this example best represent?",
+      "answerChoices": [
+        {
+          "text": "condensation"
+        },
+        {
+          "text": "convection",
+          "correct": true
+        },
+        {
+          "text": "evaporation"
+        },
+        {
+          "text": "radiation"
+        }
+      ]
+    },
+    {
+      "text": "A small steel rod is placed in 5 L of water. The initial temperature of the steel rod is 120 degrees Celsius, and the initial temperature of the water is 10 degrees Celsius. When does heat stop flowing between the steel rod and the water?",
+      "answerChoices": [
+        {
+          "text": "when the steep rod reaches 65 degrees Celsius"
+        },
+        {
+          "text": "when the water reaches its boiling point"
+        },
+        {
+          "text": "when the steel rod reaches 10 degrees Celsius and the water reaches 120 degrees Celsius. "
+        },
+        {
+          "text": "when the steel rod and the water reach the same temperature",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Which of the following describes properties that distinguish red light from violet light?",
+      "answerChoices": [
+        {
+          "text": "Red light has a longer wavelength and a lower frequency.",
+          "correct": true
+        },
+        {
+          "text": "Red light has a longer wavelength and a higher frequency."
+        },
+        {
+          "text": "Red light has a shorter wavelength and a lower frequency."
+        },
+        {
+          "text": "Red light has a shorter wavelength and a higher frequency."
+        }
+      ]
+    },
+    {
+      "text": "A book is dropped and falls to the floor. Which of the following describes the force between the book and the floor when the book hits the floor?",
+      "answerChoices": [
+        {
+          "text": "The book exerts a force on the floor, but the floor does not exert a force on the book. "
+        },
+        {
+          "text": "The book does not exert a force on the floor, but the floor exerts a fore on the book."
+        },
+        {
+          "text": "The force exerted by the book on the floor is greater in magnitude than the force exerted by the floor on the book."
+        },
+        {
+          "text": "The force exerted by the book on the floor is equal in magnitude of the force exerted by the floor on the book.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Electromagnetic radiation is used in many forms of communication. Electromagnetic waves with relatively long wavelengths are often used to transmit signals because these waves travel easily around objects. Which types of electromagnetic radiation is best for transmitting signals around objects?",
+      "answerChoices": [
+        {
+          "text": "gamma rays"
+        },
+        {
+          "text": "radio waves",
+          "correct": true
+        },
+        {
+          "text": "ultraviolet rays"
+        },
+        {
+          "text": "X-rays"
+        }
+      ]
+    },
+    {
+      "text": "What is the frequency of a wave with a wavelength of 4.56 x 10^{-7} meters?",
+      "answerChoices": [
+        {
+          "text_math": "6.58 \\cdot 10^{14} \\, \\text{Hz}",
+          "correct": true
+        },
+        {
+          "text_math": "2.97 \\cdot 10^{14} \\, \\text{Hz}"
+        },
+        {
+          "text_math": "1.52 \\cdot 10^{-15} \\, \\text{Hz}"
+        },
+        {
+          "text_math": "5.67 \\cdot 10^{-15} \\, \\text{Hz}"
+        }
+      ]
+    },
+    {
+      "text": "What is the energy of a wave with a frequency of 2.78 x 10^{14} Hertz?",
+      "answerChoices": [
+        {
+          "text_math": "1.84 \\cdot 10^{-19} \\, \\text{J}",
+          "correct": true
+        },
+        {
+          "text_math": "2.38 \\cdot 10^{-20} \\, \\text{J}"
+        },
+        {
+          "text_math": "8.34 \\cdot 10^{22} \\, \\text{J}"
+        },
+        {
+          "text_math": "1.08 \\cdot 10^{-6} \\, \\text{J}"
+        }
+      ]
+    }
+  ]
+}
