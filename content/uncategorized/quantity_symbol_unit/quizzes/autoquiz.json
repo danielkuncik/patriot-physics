@@ -1,0 +1,23 @@
+{
+  "directions": "Select the best answer for each question. Note that many questions have more than one possible answer, but of the choices offered, only one is correct.",
+  "questions": [
+    {
+      "text": "The letter 't' can stand for the quantity 'time' in physics. What can we call 't' ?",
+      "answerChoices": [
+        {
+          "text": "t is the symbol for time",
+          "correct": true
+        },
+        {
+          "text": "t is the vector of time"
+        },
+        {
+          "text": "t is the unit of time"
+        },
+        {
+          "text": "None of the choices provided is correct"
+        }
+      ]
+    }
+  ]
+}

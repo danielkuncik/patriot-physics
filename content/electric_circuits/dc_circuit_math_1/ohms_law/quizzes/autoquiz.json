@@ -1,0 +1,109 @@
+{
+  "questions": [
+    {
+      "text": "I have a voltage of 28.0 V and a current of 4.00 Amps. What is my resistance?",
+      "answerChoices": [
+        {
+          "text": "7.00 Ohms",
+          "correct": true
+        },
+        {
+          "text": "0.143 Ohms"
+        },
+        {
+          "text": "112 Ohms"
+        },
+        {
+          "text": "32.0 Ohms"
+        }
+      ]
+    },
+    {
+      "text": "I have a current of 3.0 Amps and a resistance of 15 Ohms. What is my voltage?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "What is the current of the following circuit?",
+      "note": "add a circuit diagram here",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "I have a voltage of 12.0 Volts and a resistance of 2.00 Ohms. What is my current?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "The correct symbol for current is:",
+      "answerChoices": [
+        {
+          "text": "I",
+          "correct": true
+        },
+        {
+          "text": "C"
+        },
+        {
+          "text": "A"
+        },
+        {
+          "text": "V"
+        }
+      ]
+    },
+    {
+      "text": "The abbreviation for the unit Ohm's is:",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

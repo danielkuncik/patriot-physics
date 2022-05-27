@@ -128,74 +128,6 @@
       ]
     },
     {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
       "text": "A television produces two types of waves: light and sound. Which of the following statements describes a property of both light and sound?",
       "note": "A only",
       "answerChoices": [
@@ -215,11 +147,11 @@
       ]
     },
     {
-      "text": "Which of the following descibes a difference between electromagnetic and mechanical waves?",
+      "text": "Which of the following describes a difference between electromagnetic and mechanical waves?",
       "note": "A only",
       "answerChoices": [
         {
-          "text": "ONly mechanical waves have long wavelengths?."
+          "text": "Only mechanical waves have long wavelengths?."
         },
         {
           "text": "Only mechanical waves require a medium to travel.",

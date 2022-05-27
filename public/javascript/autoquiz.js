@@ -409,7 +409,8 @@ function makeQuizListItem(JSON, mainQuestion) { // main question is true if it i
         output.append(`${extraSpace}${JSON.text}`);
     } else if (JSON.text_math) {
         output.append(`${extraSpace}\\(${JSON.text_math}\\)`);
-    } else if (JSON.image) {
+    }
+    if (JSON.image) {
         output.append(addImage(JSON.image));
     }
 
