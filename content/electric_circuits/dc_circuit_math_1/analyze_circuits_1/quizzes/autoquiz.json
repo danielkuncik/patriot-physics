@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "text": "What is the voltage across resistor B?",
+      "image": {
+        "name": "problem1.png"
+      },
+      "answerChoices": [
+        {
+          "text": "6 V",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "What is the current through resistor C?"
+    },
+    {
+      "text": "What is the total current of the circuit (the current through the battery)?"
+    },
+    {
+      "text": "What is the power emitted by resistor A?"
+    },
+    {
+      "text": "What is the power emitted by resistor B?"
+    },
+    {
+      "text": "What is the total resistance of the circuit?"
+    }
+  ]
+}

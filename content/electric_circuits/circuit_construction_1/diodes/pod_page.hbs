@@ -1,0 +1,212 @@
+
+<h3>
+    What is a diode?
+</h3>
+
+<ul>
+    <li>
+        A diode is a device that only allows current to flow in a single direction.
+    </li>
+    <li>
+        If the diode is connected one way, it provides almost no resistance.
+        if it is reversed, it provides a very high resistance.
+    </li>
+    <li>
+        The most well known type of diode is a <strong>light emitting diode (LED)</strong>,
+        which makes a small light of a specific wavelength (color) if current moves through it.
+    </li>
+</ul>
+
+<!-- diode symbol -->
+
+<h3>
+    Using an Light-Emitting Diode (LED)
+</h3>
+
+<ul>
+    <li>
+        Look carefully at the two metal prongs on the diode.
+        One is slightly longer than the other.
+        For the diode to light...
+        <ul>
+            <li>
+                The <emph>longer</emph> end of the diode must be pointed towards the <emph>positive</emph> end of the battery (the anode).
+            </li>
+            <li>
+                The <emph>negative</emph> end of the diode must be pointed towards the <emph>negative</emph> end of the battery (the cathode).
+            </li>
+        </ul>
+    </li>
+    <li>
+        The LED, when lit, provides almost not resistance.
+        Therefore, if the diode is connected to the battery alone and is lit,
+        you have a <emph>short circuit</emph> and the battery could potentially overheat.
+        To counteract this, you should <strong>ALWAYS</strong> connect the LED <emph>in series with a resistor</emph>.
+        <ul>
+            <li>
+                If using about 3 DC volts, for the best results, use a resistor with a resistance less than 100 Ω.
+                If you use a higher resistance resistor, the current may be too low to
+                get a strong light from the diode.
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+<h3>
+    Lab #1: Introduction
+</h3>
+
+<h4>
+    Materials
+</h4>
+<ul>
+    <li>
+        Two D-batteries with holders
+    </li>
+    <li>
+        Light emitting diode
+    </li>
+    <li>
+        Resistor with a resistance between 20 Ω and 100 Ω.
+    </li>
+    <li>
+        Multimeter
+    </li>
+    <li>
+        Breadboard
+    </li>
+    <li>
+        Necessary wires
+    </li>
+</ul>
+
+<ol>
+    <li>
+        Connect the battery, the diode, and the resistor in series on the breadboard.
+        Make sure the diode is oriented correctly, with
+        the longer prong towards the positive end of the battery.
+        <!-- diagram -->
+    </li>
+    <li>
+        The diode should light!
+    </li>
+    <li>
+        Measure the power of the LED. To do so, measure the potential difference
+        across the diode using a voltmeter, measure teh current of the
+        circuit, and use the formula \( P = IV \).
+        Note that:
+        <ul>
+            <li>
+                Power is the rate at which the LED converts the chemical potential
+                energy of the battery into electromagnetic (light) energy.
+            </li>
+            <li>
+                The current is identical at all points of the circuit,
+                because the circuit is in series.
+            </li>
+            <li>
+                You cannot determine the resistance of the diode
+                by using Ohm's Law ( \( V = IR \) )
+                because it is not an Ohmic resistor,
+                and does not follow Ohm's Law.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Confirm that the diode is offering near-zero resistance.
+        We cannot measure the resistance of the by using Ohm's Law
+        ( \( V = IR \) )
+        because it is not an Ohmic resistor,
+        meaning does not follow Ohm's Law.
+        However, we can confirm the resistance is very low by
+        using Ohm's Law to calculate what we would expect the
+        current to be if only the resistor and batteries were present,
+        then comparing this to the actualy current (measured with an ammeter).
+    </li>
+    <li>
+        Flip around the diode. It should not light.
+    </li>
+    <li>
+        Measure the current through the diode and the voltage drop f teh diode
+        in order to measure its resistance. You should get a very high value.
+        (The resistance may be too high to make these measurements accurately.
+        As an alternative, simply demonstrate that the current is much much less
+        than would be expected if only the resistor were in the circuit.)
+    </li>
+</ol>
+
+
+<h3>
+    Lab #2: Open-Ended Investigation
+</h3>
+
+<h4>
+    Materials
+</h4>
+<ul>
+    <li>
+        Two D-batteries with holders
+    </li>
+    <li>
+        Light emitting diode
+    </li>
+    <li>
+        Several Resistors
+    </li>
+    <li>
+        Breadboard
+    </li>
+    <li>
+        Necessary Wires
+    </li>
+</ul>
+
+<p>
+    See how the brightness of the diode is related to the resistance it is connected in
+    series with. Try connecting it with resistors of different resistances,
+    or with multiple resistors in series.
+    Figure out how to change the brightness from bright to dim, and figure otu what resistance
+    is too high for the diode to light.
+</p>
+
+<h3>
+    Lab #3: Construction
+</h3>
+
+<h4>
+    Materials
+</h4>
+<ul>
+    <li>
+        Two D-batteries with holders
+    </li>
+    <li>
+        Multiple Light-Emitting Diodes (preferably different colors)
+    </li>
+    <li>
+        Several Resistors
+    </li>
+    <li>
+        Breadboard
+    </li>
+    <li>
+        Necessary Wires
+    </li>
+</ul>
+
+
+<p>
+    Construct a device made of multiple LEDs in parallel with each other.
+    Each LED should be in series with a separate resistor but in parallel with other LEDs.
+    For the best results, try LEDs of different colors!
+    YOu can also use different resistors to make each a different brightness.
+    <!--diagram -->
+</p>
+
+<p>
+    Using the breadboard correctly makes this very easy.
+    Connect the battery to each of the two bus strips, and connect
+    each resistor-LED pair on the horizontal lines between the bus strips.
+    <!-- photo of how breadboard is used. , marked spoiler?-->
+</p>

@@ -1,8 +1,25 @@
+<p class = 'directions'>
+    Use principles of electrical circuits to find the voltage, current, resistance, and power
+    of each circuit written and the total circuit.
+</p>
+
+<ol>
+    <li class = 'physicsQuestion'><br>
+        <div id = 'problem-C1'></div>
+    </li>
+    <div class = 'smallSpace'></div>
+    <li class = 'physicsQuestion'><br>
+        <div id = 'problem-C2'></div>
+    </li>
+    <div class = 'smallSpace'></div>
+    <li class = 'physicsQuestion'><br>
+        <div id = 'problem-C3'></div>
+    </li>
+</ol>
 
 <script>
-    testID = "a95408"; // electromagnetic wave basics
-
-    let myQuiz = new Quiz(testID);
-
-    console.log(myQuiz);
+    // function makeCircuitProblem(type, voltage, resistorArray, powerRowBoolean) {
+    $("#problem-C1").append(makeCircuitProblem('parallel',18,[6,3,9]));
+    $("#problem-C2").append(makeCircuitProblem('series',20,[4,5,1]));
+    $("#problem-C3").append(makeCircuitProblem('parallel',21,[3,7,3]));
 </script>

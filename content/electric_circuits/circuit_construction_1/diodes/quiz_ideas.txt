@@ -1,0 +1,35 @@
+
+=> include a resistor color chart on the quiz
+
+Pictures of broken circuits they need to troubleshoot  [7 questions]
+- diode connected incorrectly [long prong towards positive end]
+- no resistor
+- too large a resistor (identify by colors)
+- correctly wired circuit
+- breadboard connected incorrectly
+- resistor and LED in parallel
+
+Choices Options:
+- The LED will light correctly. [have pictures in which the LED lights correctly]
+- The LED will not light because the resistor used is a poor choice
+- No current will flow because the breadboard is connected incorrectly and the circuit is not complete? [make sure this is unambiguous]
+- The LED will light, but the circuit is a short circuit [two of these, one with no resistor and one with a resistor in parallel]
+- The LED will not light because it is oriented incorrectly
+
+
+Questions about the official circuit diagram symbols.
+
+
+- there should be a few breadboard arrangement questions, because that is a big part of the lab
+
+
+Conceptual questions:
+Other than making a fun light, what is the purpose of a diode?
+- a diode ensures that current travels only one way
+
+
+How does the  an LED differ a lightbulb? [add this to the pod page as well]
+- a light bulb emits all wavelenghts [white light], an LED emits a single wavelength
+- An incandescent light bulb becomes warm, an LED does not
+- an incandescent light bulb provides resistance, an LED does not
+- an incandescent light bulb is non-polar, and LED is polar [i think that is the correct terminology, check to make sure)
