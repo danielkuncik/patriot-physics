@@ -1,19 +1,35 @@
 {
   "questions": [
       {
-        "text": "Which of the four diagrams below correctly shows how the parts of the breadboard are connected?",
+        "text": "Which of the four diagrams below best shows how the holes of the breadboard shown below are connected?",
+        "image": {
+          "name": ""
+        },
         "answerChoices": [
           {
-            "image": ""
+            "image": {
+              "name": "breadboard_diagram_1.png",
+              "height": "150px"
+            },
+            "correct": true
           },
           {
-            "image": ""
+            "image": {
+              "name": "breadboard_diagram_2.png",
+              "height": "150px"
+            }
           },
           {
-            "image": ""
+            "image": {
+              "name": "breadboard_diagram_3.png",
+              "height": "150px"
+            }
           },
           {
-            "image": ""
+            "image": {
+              "name": "breadboard_diagram_4.png",
+              "height": "150px"
+            }
           }
         ]
       },

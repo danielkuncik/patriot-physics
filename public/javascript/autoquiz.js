@@ -326,7 +326,6 @@ function addImage(imageData, id) {// i need to make height and width adjustable
     const width = imageData.width ? imageData.width : '300px';
     const height = imageData.height? imageData.height : 'auto';
     const margin = imageData.margin ? imageData.margin: 5;
-    console.log(link);
     return $(`<img class = 'mb-${margin}' src = '${link}' width = '${width}' height = '${height}' />`);
 }
 

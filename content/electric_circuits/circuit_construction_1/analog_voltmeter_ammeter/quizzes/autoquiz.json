@@ -109,6 +109,24 @@
           "correct": true
         }
       ]
+    },
+    {
+      "text": "An electronics student wants to measure the resistance of a the resistor. He sets up a voltmeter and ammeter correctly. The results are shown below. Based on these measurements, what is the resistance of the resistor?",
+      "image": {
+        "name": ""
+      },
+      "answerChoices": [
+
+      ]
+    },
+    {
+      "text": "An electronics student wants to measure the resistance of a resistor. She sets up a voltmeter and ammeter correctly. The results are shown below. Based on these measurements, what is the resistance of the resistor?",
+      "image": {
+        "name": ""
+      },
+      "answerChoices": [
+
+      ]
     }
   ]
 }

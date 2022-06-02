@@ -9477,6 +9477,17 @@
             "uuid": "c3f650b8-0c68-4fd8-b8e8-21edcf1036a2",
             "id": "c3f650"
           },
+          "breadboards":
+          {
+            "title": "Breadboards",
+            "level": 3,
+            "horizontal": -1,
+            "prerequisite": [],
+            "objective": "Properly connect a breadboard to make simple series and parallel circuits.",
+            "content": "A breadboard is a device used to make a large, complex electric circuit in a very small space quickly.",
+            "uuid": "c68c28d4-dcc3-42f4-9434-bf8cdb315841",
+            "id": "c68c28"
+          },
           "combined_challenges":
           {
             "title": "Combined Challenges",

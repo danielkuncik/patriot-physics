@@ -19,7 +19,7 @@
     const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
     const honors_quiz_may_2022_2 = ["4c74b0"];
     const A_quiz_may_2022_2 = ["4ffcb6"];
-    const A_quiz_june_2022 = ["02a2e8"];
+    const Quiz_june_2022 = ["02a2e8","c68c28"];
     const A_final = ["d1fae3"];
     const honors_final = ["5c9f7a"];
 
@@ -27,7 +27,7 @@
     // step after that: make it so that more than one pod can be combined into one quiz
 
     let A_array = [];
-    A_quiz_june_2022.forEach((quiz_ID) => {
+    Quiz_june_2022.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             A_array.push(data);
