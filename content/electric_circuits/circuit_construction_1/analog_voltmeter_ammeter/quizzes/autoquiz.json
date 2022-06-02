@@ -1,0 +1,30 @@
+{
+  "questions": [
+    {
+      "text": "Someone is attempting to measure the voltage across a resistor and the current through that resistor.\nWhich of the following diagrams below shows a correctly connected ammeter and voltmeter?",
+      "answerChoices": [
+        {
+          "image": {
+            "name": "mc_1a.png"
+          }
+        },
+        {
+          "image": {
+            "name": "mc_1b.png"
+          },
+          "correct": true
+        },
+        {
+          "image": {
+            "name": "mc_1c.png"
+          }
+        },
+        {
+          "image": {
+            "name": "mc_1d.png"
+          }
+        }
+      ]
+    }
+  ]
+}

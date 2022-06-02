@@ -9453,6 +9453,17 @@
             "uuid": "56404cbb-c573-4f4c-b7e7-d401198ae1c4",
             "id": "56404c"
           },
+          "analog_voltmeter_ammeter": {
+            "title": "Analog Voltmeters and Ammeters",
+            "level": 2,
+            "horizontal": -1,
+            "letter": "Q",
+            "prerequisites": [],
+            "objective": "Correctly select and connect analog voltmeters and ammeters to measure the resistance of a single resistor.",
+            "content": "Voltmeters and ammeters are devices that measure voltage and current respectively; each must be connected in the correct way to measure properly.",
+            "uuid": "02a2e897-e78a-4ea0-b11d-8f0ff1c9d436",
+            "id": "02a2e8"
+          },
           "reading_resistors_1":
           {
             "title": "Reading Resistors",

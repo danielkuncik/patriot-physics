@@ -1,0 +1,35 @@
+
+
+Photos of ammeter that is not working
+
+A person builds the following circuit in an attempt to measure the CURRENT through the resistor indicated,
+but it does not seem to be working properly. What does the builder need to do to fix the setup
+
+What does the circuit builder need to do to fix this setup?
+- the setup is a short circuit, take it down immediately and reconnect the elements correctly
+- the ammeter needs to be replaced by an ammeter with a higher maximum value
+- the ammeter needs to be replaced by an ammeter with a lower maximum value
+- reverse the direction of the ammeter
+
+
+Photo of an ammeter in parallel with a current greater than 1 A.
+- Is this working correctly?
+- yes, the current measured is X amps
+- no! that current is way to high, the circuit must be wired incorrectly
+-
+
+
+A picture of an ammeter with a measurement in mA and a voltmeter
+What is your best measurement of the resistance indicated below?
+
+A picture of an ammeter with a measurement of less than 1A and a voltmeter
+What is your best measurement of the resistance indicated below?
+
+
+A voltmeter set up in series:
+- and some things about it????
+
+
+
+Someone is attempting to measure the voltage across a resistor and the current through that resistor.
+Which of the following diagrams below shows a correctly connected ammeter and voltmeter?

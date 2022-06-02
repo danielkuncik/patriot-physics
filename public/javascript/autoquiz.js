@@ -187,7 +187,7 @@ class NumericalQuestion extends Question {
 // i wish i could make this private, accesible only within the Quiz class
 /// it is inefficient to restore all this data......but......should i try to fix this???
 class TestVersion {
-    constructor(masterData) {
+    constructor(masterData, id) {
         this.directions = masterData.directions;
         this.mainImage = masterData.image;
         this.reorder = masterData.reorder !== false; /// reordering questions is default, unless explicitly stated not to
@@ -240,7 +240,6 @@ function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, firstVer
     let questions = [];
     let answers = [];
     for (j = firstVersion; j < numberOfVersions + firstVersion; j++) {
-        console.log(firstVersion, numberOfVersions + firstVersion, j);
         let thisQuiz = combineQuizzes(quizJSONData, randomizeAll);
         let nextVersion = makeWrittenQuizVersion(thisQuiz);
         questions.push(nextVersion.questionList);
@@ -248,6 +247,7 @@ function generateWrittenQuiz(quizJSONData, title, numberOfVersions = 1, firstVer
     }
     /// there should be a way to quickly adapt this to an automated quiz....but it'd need to be on the back end
     let divObject = $("<div></div>");
+
 
     let q;
     for (q = firstVersion; q < numberOfVersions + firstVersion; q++) {
@@ -292,13 +292,16 @@ function combineQuizzes(quizArray, randomizeAll = false) {
             theseDirections.preMessage = `Directions for questions ${questionIamOn + 1} &#8211 ${questionIamOn + quizData.questions.length}`;
             combinedQuizJSON.directions[String(questionIamOn)] = theseDirections;
         }
-        if (quizData.image) {
+        if (quizData.image) { // revise this!
             let thisImage = {};
             thisImage.link = `/asset/${quizData.id}/${quizData.image.name}`;
             thisImage.width = quizData.image.width;
             thisImage.height = quizData.image.height;
             combinedQuizJSON.images[String(questionIamOn)] = thisImage;
         }
+        quizData.questions.forEach((question) => {
+            question.id = quizData.id;
+        });
         questionList = questionList.concat(quizData.questions);
         questionIamOn += quizData.questions.length;
         combinedQuizJSON.pageBreaks.push(questionIamOn - 1);
@@ -313,13 +316,13 @@ function printDirections(directionsJSON) {
     return output
 }
 
-function addImage(imageData) {// i need to make height and width adjustable
-    if (typeof imageData === string) {
+function addImage(imageData, id) {// i need to make height and width adjustable
+    if (typeof imageData === "string") {
         imageData = {
-            link: imageData
+            name: imageData
         }
     }
-    const link = imageData.link; // need to replace
+    const link = `asset/${id}/${imageData.name}`; // need to replace
     const width = imageData.width ? imageData.width : '300px';
     const height = imageData.height? imageData.height : 'auto';
     const margin = imageData.margin ? imageData.margin: 5;
@@ -331,7 +334,7 @@ function addImage(imageData) {// i need to make height and width adjustable
 // should i include making an answer sheet
 
 // add a title or something?
-function makeWrittenQuizVersion(quizJSON) {
+function makeWrittenQuizVersion(quizJSON, id) {
     if (quizJSON.reorder) {
         shuffle(quizJSON.questions);
     }
@@ -344,10 +347,10 @@ function makeWrittenQuizVersion(quizJSON) {
             $(questionList).append(printDirections(quizJSON.directions[k]));
         }
         if (quizJSON.images[k]) {
-            $(questionList).append(addImage(quizJSON.images[k]))
+            $(questionList).append(addImage(quizJSON.images[k]), id)
         }
         const question = quizJSON.questions[k];
-        let questionObject = makeWrittenQuestion(question);
+        let questionObject = makeWrittenQuestion(question, id);
         questionList.append(questionObject.divObject);
         answerList.append($(`<li style = 'font-size:32px' class = 'm-4'>${questionObject.correctAnswer}</li>`));
         if ((k + 1) % 5 === 0) {
@@ -363,13 +366,13 @@ function makeWrittenQuizVersion(quizJSON) {
     }
 }
 
-function makeWrittenQuestion(questionJSON) {
+function makeWrittenQuestion(questionJSON, id) {
     if (questionJSON.type === 'mc' || questionJSON.type === undefined) {
-        return makeMCquestion(questionJSON)
+        return makeMCquestion(questionJSON, id)
     }
 }
 
-function makeMCquestion(questionJSON) {
+function makeMCquestion(questionJSON, id) {
     if (questionJSON.reorder !== false) { // default is to reorder, undefined will reorder
         shuffle(questionJSON.answerChoices);
     }
@@ -388,7 +391,7 @@ function makeMCquestion(questionJSON) {
                 console.log("ERROR: More than 1 correct answer!")
             }
         }
-        choicesObject.append(makeQuizListItem(choice));
+        choicesObject.append(makeQuizListItem(choice, false, questionJSON.id));
     }
     divObject.append(choicesObject);
     return {
@@ -398,7 +401,7 @@ function makeMCquestion(questionJSON) {
 }
 
 
-function makeQuizListItem(JSON, mainQuestion) { // main question is true if it is the main question, otherwise it is an answer choice
+function makeQuizListItem(JSON, mainQuestion, id) { // main question is true if it is the main question, otherwise it is an answer choice
     const extraSpace = mainQuestion ? "&nbsp;" : "&nbsp; &nbsp; &nbsp;"; // adds more extra space to answer choices
     const fontSize = 32;
     const objectClass =  mainQuestion ? 'm-5 p-5' : 'mb-2 mt-2';
@@ -411,7 +414,7 @@ function makeQuizListItem(JSON, mainQuestion) { // main question is true if it i
         output.append(`${extraSpace}\\(${JSON.text_math}\\)`);
     }
     if (JSON.image) {
-        output.append(addImage(JSON.image));
+        output.append(addImage(JSON.image, id));
     }
 
     return output
