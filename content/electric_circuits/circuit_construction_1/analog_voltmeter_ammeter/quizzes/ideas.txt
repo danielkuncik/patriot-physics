@@ -9,7 +9,7 @@ What does the circuit builder need to do to fix this setup?
 - the setup is a short circuit, take it down immediately and reconnect the elements correctly
 - the ammeter needs to be replaced by an ammeter with a higher maximum value
 - the ammeter needs to be replaced by an ammeter with a lower maximum value
-- reverse the direction of the ammeter
+- reverse the probes on the ammeter (other problems may follow, but this is the first step)
 
 
 Photo of an ammeter in parallel with a current greater than 1 A.
