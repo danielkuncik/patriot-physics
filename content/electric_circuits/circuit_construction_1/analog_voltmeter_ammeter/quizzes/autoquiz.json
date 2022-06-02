@@ -25,6 +25,90 @@
           }
         }
       ]
+    },
+    {
+      "text": "An electronics student is attempting to measure the current through a resistor, but the setup he built is not working correctly. What does he need to change?",
+      "image": {
+        "name": "bad_ammeter_1.png"
+      },
+      "answerChoices": [
+        {
+          "text": "Replace the ammeter with another ammeter that has a lower maximum value."
+        },
+        {
+          "text": "Replace the ammeter with another ammeter that has a higher maximum value."
+        },
+        {
+          "text": "First, reverse the probes on the back of the ammeter, then check for other issues.",
+          "correct": true
+        },
+        {
+          "text": "The circuit, as built, will begin to overhead the battery. The student should disconnect it immediately and reconnect the ammeter differently."
+        }
+      ]
+    },
+    {
+      "text": "An electronics student is attempting to measure the current through a resistor, but the setup she built is not working correctly. What does she need to change?",
+      "image": {
+        "name": "bad_ammeter_2.png"
+      },
+      "answerChoices": [
+        {
+          "text": "Replace the ammeter with another ammeter that has a lower maximum value."
+        },
+        {
+          "text": "Replace the ammeter with another ammeter that has a higher maximum value.",
+          "correct": true
+        },
+        {
+          "text": "First, reverse the probes on the back of the ammeter, then check for other issues."
+        },
+        {
+          "text": "The circuit, as built, will begin to overhead the battery. The student should disconnect it immediately and reconnect the ammeter differently."
+        }
+      ]
+    },
+    {
+      "text": "An electronics student is attempting to measure the current through a resistor, but the setup they built is not working correctly. What do they need to change?",
+      "image": {
+        "name": "bad_ammeter_3.png"
+      },
+      "answerChoices": [
+        {
+          "text": "Replace the ammeter with another ammeter that has a lower maximum value.",
+          "correct": true
+        },
+        {
+          "text": "Replace the ammeter with another ammeter that has a higher maximum value."
+        },
+        {
+          "text": "First, reverse the probes on the back of the ammeter, then check for other issues."
+        },
+        {
+          "text": "The circuit, as built, will begin to overhead the battery. The student should disconnect it immediately and reconnect the ammeter differently."
+        }
+      ]
+    },
+    {
+      "text": "An electronics student is attempting to measure the current through a resistor, but the setup they built is not working correctly. What do they need to change?",
+      "image": {
+        "name": "bad_ammeter_4.png"
+      },
+      "answerChoices": [
+        {
+          "text": "Replace the ammeter with another ammeter that has a lower maximum value."
+        },
+        {
+          "text": "Replace the ammeter with another ammeter that has a higher maximum value."
+        },
+        {
+          "text": "First, reverse the probes on the back of the ammeter, then check for other issues."
+        },
+        {
+          "text": "The circuit, as built, will begin to overhead the battery. The student should disconnect it immediately and then reconnect the ammeter differently.",
+          "correct": true
+        }
+      ]
     }
   ]
 }

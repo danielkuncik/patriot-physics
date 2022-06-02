@@ -1,0 +1,13 @@
+
+- 4 drawn photos, you must pick the one that shows how a breadboard is correctly wired
+
+
+
+- a setup with an open switch
+When the switch is closed, what will happen?
+- The light bulbs will not light and no current will flow.
+- The light bulbs will not light, but the battery will begin to get warm.
+- The light bulbs will light. If one is removed, the others will stay on.
+- The light bulbs will light. If one is removed, the others will turn off.
+
+[include 2 each of series and parallel]
