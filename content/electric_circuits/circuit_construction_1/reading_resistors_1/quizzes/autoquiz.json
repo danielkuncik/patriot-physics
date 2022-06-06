@@ -1,6 +1,4 @@
 {
-  "reference": "Color Chart here",
-  "notes": "One more with picking the color, two more connecting color to number",
   "questions": [
     {
       "text": "A resistor's first three bands are Orange-Orange-Brown. What is the reported resistance of the resistor?",
@@ -102,9 +100,6 @@
       ]
     },
     {
-      "text": "One more problem pickign resistance"
-    },
-    {
       "text": "A resistor has a resistance of 500 Ohms (Green-Black-Yellow), and the fourth band is gold. According to the manufacturer, what range is possible for the resistance of the resistor?",
       "answerChoices": [
         {
@@ -119,27 +114,9 @@
         },
         {
           "text": "400 Ohms - 600 Ohms"
-        }
+        },
         {
           "text": "The resistance should be exactly 500 Ohms."
-        }
-      ]
-    },
-    {
-      "text": "A resistor has a resistance of 8 kOhms (Gray-Black-Red), and the fourth band is silver. According to the manufacturer, what range is possible for the resistance of the resistor?",
-      "answerChoices": [
-        {
-          "text": "7200 Ohms - 8800 Ohms",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": "The resistance should be exactly 8 kOhms"
         }
       ]
     },
@@ -203,38 +180,6 @@
         },
         {
           "text": "Green-Red-Brown"
-        }
-      ]
-    },
-    {
-      "text": "You find the ammeter pictured below in the back of a closet. Just for fun, you decide you want to use it. You two D batteries (1.5 volts each) to a resistor and connect the ammeter correctly. Which of the following resistors will cause a current that can be measured accurately by the ammeter pictured?",
-      "note": "Maybe should be moved to a more advanced quiz?",
-      "note2": "add photo",
-      "answerChoices": [
-        {
-          "text": "Yellow-Black-Orange"
-        },
-        {
-          "text": "Yellow-Black-Yellow"
-        },
-        {
-          "text": "Yellow-Black-Green",
-          "correct": true
-        },
-        {
-          "text": "Yellow-Black-Blue"
-        },
-        {
-          "text": "Yellow-Black-Violet"
-        },
-        {
-          "text": "Yellow-Black-Gray"
-        },
-        {
-          "text": "Yellow-Black-White"
-        },
-        {
-          "text": "Yellow-Black-Orange"
         }
       ]
     }

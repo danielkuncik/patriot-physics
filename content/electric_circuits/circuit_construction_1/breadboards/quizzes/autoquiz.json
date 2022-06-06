@@ -1,10 +1,8 @@
 {
+  "reorder": false,
   "questions": [
       {
         "text": "Which of the four diagrams below best shows how the holes of the breadboard shown below are connected?",
-        "image": {
-          "name": ""
-        },
         "answerChoices": [
           {
             "image": {
@@ -36,7 +34,32 @@
     {
       "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
       "image": {
-        "name": ""
+        "name": "breadboard_example_1.png",
+        "height": "500px",
+        "width": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "The light bulbs will not light and no current will flow."
+        },
+        {
+          "text": "The light bulbs will not light, and the batteries will begin to get warm."
+        },
+        {
+          "text": "The light bulbs will light. If one bulb is removed, the other will stay on.",
+          "correct": true
+        },
+        {
+          "text": "The light bulbs will light. If one bulb is removed, the other will turn off."
+        }
+      ]
+    },
+    {
+      "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
+      "image": {
+        "name": "breadboard_example_2.png",
+        "height": "500px",
+        "width": "auto"
       },
       "answerChoices": [
         {
@@ -49,21 +72,25 @@
           "text": "The light bulbs will light. If one bulb is removed, the other will stay on."
         },
         {
-          "text": "The light bulbs will light. If one bulb is removed, the other will turn off."
+          "text": "The light bulbs will light. If one bulb is removed, the other will turn off.",
+          "correct": true
         }
       ]
     },
     {
-      "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
+      "text": "The photo below shows an electric circuit with an open switch. Two photos below show detail on how the light bulb is connected. When the switch is closed, what will happen?",
       "image": {
-        "name": ""
+        "name": "breadboard_example_3.png",
+        "height": "500px",
+        "width": "auto"
       },
       "answerChoices": [
         {
           "text": "The light bulbs will not light and no current will flow."
         },
         {
-          "text": "The light bulbs will not light, and the batteries will begin to get warm."
+          "text": "The light bulbs will not light, and the batteries will begin to get warm.",
+          "correct": true
         },
         {
           "text": "The light bulbs will light. If one bulb is removed, the other will stay on."
@@ -76,91 +103,14 @@
     {
       "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
       "image": {
-        "name": ""
+        "name": "breadboard_example_4.png",
+        "height": "500px",
+        "width": "auto"
       },
       "answerChoices": [
         {
-          "text": "The light bulbs will not light and no current will flow."
-        },
-        {
-          "text": "The light bulbs will not light, and the batteries will begin to get warm."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will stay on."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will turn off."
-        }
-      ]
-    },
-    {
-      "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
-      "image": {
-        "name": ""
-      },
-      "answerChoices": [
-        {
-          "text": "The light bulbs will not light and no current will flow."
-        },
-        {
-          "text": "The light bulbs will not light, and the batteries will begin to get warm."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will stay on."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will turn off."
-        }
-      ]
-    },
-    {
-      "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
-      "image": {
-        "name": ""
-      },
-      "answerChoices": [
-        {
-          "text": "The light bulbs will not light and no current will flow."
-        },
-        {
-          "text": "The light bulbs will not light, and the batteries will begin to get warm."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will stay on."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will turn off."
-        }
-      ]
-    },
-    {
-      "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
-      "image": {
-        "name": ""
-      },
-      "answerChoices": [
-        {
-          "text": "The light bulbs will not light and no current will flow."
-        },
-        {
-          "text": "The light bulbs will not light, and the batteries will begin to get warm."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will stay on."
-        },
-        {
-          "text": "The light bulbs will light. If one bulb is removed, the other will turn off."
-        }
-      ]
-    },
-    {
-      "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
-      "image": {
-        "name": ""
-      },
-      "answerChoices": [
-        {
-          "text": "The light bulbs will not light and no current will flow."
+          "text": "The light bulbs will not light and no current will flow.",
+          "correct": true
         },
         {
           "text": "The light bulbs will not light, and the batteries will begin to get warm."

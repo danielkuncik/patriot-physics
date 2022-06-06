@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "text": "You find the ammeter pictured below in the back of a closet. Just for fun, you decide you want to use it. You two D batteries (1.5 volts each) to a resistor and connect the ammeter correctly. Which of the following resistors will cause a current that can be measured accurately by the ammeter pictured?",
+      "image": "ammeter_photo.jpg",
+      "answerChoices": [
+        {
+          "text": "Red-Black-Orange"
+        },
+        {
+          "text": "Brown-Brown-Yellow",
+          "correct": true
+        },
+        {
+          "text": "Blue-Violet-Green"
+        },
+        {
+          "text": "Orange-Red-Blue"
+        },
+        {
+          "text": "Yellow-Green-Violet"
+        },
+        {
+          "text": "Brown-Orange-Gray"
+        },
+        {
+          "text": "Orange-Blue-White"
+        }
+      ]
+    }
+  ]
+}

@@ -29,7 +29,9 @@
     {
       "text": "An electronics student is attempting to measure the current through a resistor, but the setup he built is not working correctly. What does he need to change?",
       "image": {
-        "name": "bad_ammeter_1.png"
+        "name": "bad_ammeter_1.png",
+        "height": "400px",
+        "width": "auto"
       },
       "answerChoices": [
         {
@@ -50,7 +52,9 @@
     {
       "text": "An electronics student is attempting to measure the current through a resistor, but the setup she built is not working correctly. What does she need to change?",
       "image": {
-        "name": "bad_ammeter_2.png"
+        "name": "bad_ammeter_2.png",
+        "height": "400px",
+        "width": "auto"
       },
       "answerChoices": [
         {
@@ -71,7 +75,9 @@
     {
       "text": "An electronics student is attempting to measure the current through a resistor, but the setup they built is not working correctly. What do they need to change?",
       "image": {
-        "name": "bad_ammeter_3.png"
+        "name": "bad_ammeter_3.png",
+        "height": "400px",
+        "width": "auto"
       },
       "answerChoices": [
         {
@@ -92,7 +98,9 @@
     {
       "text": "An electronics student is attempting to measure the current through a resistor, but the setup they built is not working correctly. What do they need to change?",
       "image": {
-        "name": "bad_ammeter_4.png"
+        "name": "bad_ammeter_4.png",
+        "height": "400px",
+        "width": "auto"
       },
       "answerChoices": [
         {
@@ -111,21 +119,121 @@
       ]
     },
     {
-      "text": "An electronics student wants to measure the resistance of a the resistor. He sets up a voltmeter and ammeter correctly. The results are shown below. Based on these measurements, what is the resistance of the resistor?",
+      "text": "An electronics student wants to measure the resistance of a the resistor. He sets up a voltmeter and ammeter correctly. The results are shown below. Based on these measurements, which choice is the best estimate of the resistance of the resistor?",
       "image": {
-        "name": ""
+        "name": "readable_meter_1.png",
+        "height": "400px",
+        "width": "auto"
       },
       "answerChoices": [
-
+        {
+          "text": "13000 Ω",
+          "correct": true
+        },
+        {
+          "text": "13 Ω"
+        },
+        {
+          "text": "130 Ω"
+        },
+        {
+          "text": "1300 Ω"
+        },
+        {
+          "text": "1.3 Ω"
+        },
+        {
+          "text": "69 Ω"
+        },
+        {
+          "text": "690 Ω"
+        },
+        {
+          "text": "6900 Ω"
+        },
+        {
+          "text": "69000 Ω"
+        },
+        {
+          "text": "7 Ω"
+        },
+        {
+          "text": ".7 Ω"
+        },
+        {
+          "text": ".07 Ω"
+        },
+        {
+          "text": ".007 Ω"
+        },
+        {
+          "text": ".0007 Ω"
+        }
       ]
     },
     {
       "text": "An electronics student wants to measure the resistance of a resistor. She sets up a voltmeter and ammeter correctly. The results are shown below. Based on these measurements, what is the resistance of the resistor?",
       "image": {
-        "name": ""
+        "name": "readable_meter_2.png",
+        "height": "400px",
+        "width": "auto"
       },
       "answerChoices": [
-
+        {
+          "text": "125 Ω",
+          "correct": true
+        },
+        {
+          "text": "12.5 Ω"
+        },
+        {
+          "text": "1.25 Ω"
+        },
+        {
+          "text": ".125 Ω"
+        },
+        {
+          "text": "1250 Ω"
+        },
+        {
+          "text": "12500 Ω"
+        },
+        {
+          "text": "8 Ω"
+        },
+        {
+          "text": "80 Ω"
+        },
+        {
+          "text": "800 Ω"
+        },
+        {
+          "text": "8000 Ω"
+        },
+        {
+          "text": ".8 Ω"
+        },
+        {
+          "text": ".08 Ω"
+        },
+        {
+          "text": "32 Ω"
+        },
+        {
+          "text": "3.2 Ω"
+        },
+        {
+          "text": ".32 Ω"
+        },
+        {
+          "text": ".032 Ω"
+        },
+        {
+          "text": "320 Ω"
+        },
+        {
+          "text": "3200 Ω"
+        }
       ]
     }
   ]

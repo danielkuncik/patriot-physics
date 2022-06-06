@@ -1,0 +1,19 @@
+,
+{
+"text": "A resistor has a resistance of 8 kOhms (Gray-Black-Red), and the fourth band is silver. According to the manufacturer, what range is possible for the resistance of the resistor?",
+"answerChoices": [
+{
+"text": "7200 Ohms - 8800 Ohms",
+"correct": true
+},
+{
+"text": ""
+},
+{
+"text": ""
+},
+{
+"text": "The resistance should be exactly 8 kOhms"
+}
+]
+},

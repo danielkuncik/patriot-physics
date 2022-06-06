@@ -373,6 +373,7 @@ function makeWrittenQuestion(questionJSON, id) {
 }
 
 function makeMCquestion(questionJSON, id) {
+    console.log(questionJSON);
     if (questionJSON.reorder !== false) { // default is to reorder, undefined will reorder
         shuffle(questionJSON.answerChoices);
     }
@@ -414,6 +415,9 @@ function makeQuizListItem(JSON, mainQuestion, id) { // main question is true if 
         output.append(`${extraSpace}\\(${JSON.text_math}\\)`);
     }
     if (JSON.image) {
+        if (JSON.text || JSON.text_math) {
+            output.append($("<br>"));
+        }
         output.append(addImage(JSON.image, id));
     }
 
