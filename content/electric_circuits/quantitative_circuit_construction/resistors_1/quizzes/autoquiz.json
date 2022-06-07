@@ -5,35 +5,35 @@
       "text": "A resistor's first three bands are Orange-Orange-Brown. What is the reported resistance of the resistor?",
       "answerChoices": [
         {
-          "text": "330 Ohms",
+          "text": "330 Ω",
           "correct": true
         },
         {
-          "text": "33 Ohms"
+          "text": "33 Ω"
         },
         {
-          "text": "3.3 Ohms"
+          "text": "3.3 Ω"
         },
         {
-          "text": "3300 Ohms"
+          "text": "3300 Ω"
         },
         {
-          "text": "33 kOhms"
+          "text": "33 kΩ"
         },
         {
-          "text": "220 Ohms"
+          "text": "220 Ω"
         },
         {
-          "text": "22 Ohms"
+          "text": "22 Ω"
         },
         {
-          "text": "2.2 Ohms"
+          "text": "2.2 Ω"
         },
         {
-          "text": "2200 Ohms"
+          "text": "2200 Ω"
         },
         {
-          "text": "22 kOhms"
+          "text": "22 kΩ"
         }
 
       ]
@@ -42,35 +42,35 @@
       "text": "The first three bands on a resistor are Yellow-Green-Orange. What is the resistance of the resistor?",
       "answerChoices": [
         {
-          "text": "450 Ohms"
+          "text": "450 Ω"
         },
         {
-          "text": "45 Ohms"
+          "text": "45 Ω"
         },
         {
-          "text": "4.5 Ohms"
+          "text": "4.5 Ω"
         },
         {
-          "text": "4500 Ohms"
+          "text": "4500 Ω"
         },
         {
-          "text": "45 kOhms",
+          "text": "45 kΩ",
           "correct": true
         },
         {
-          "text": "540 Ohms"
+          "text": "540 Ω"
         },
         {
-          "text": "54 Ohms"
+          "text": "54 Ω"
         },
         {
-          "text": "5.4 Ohms"
+          "text": "5.4 Ω"
         },
         {
-          "text": "5400 Ohms"
+          "text": "5400 Ω"
         },
         {
-          "text": "54 kOhms"
+          "text": "54 kΩ"
         }]
     },
     {

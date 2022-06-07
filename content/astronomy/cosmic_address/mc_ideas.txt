@@ -1,0 +1,82 @@
+Level 1:
+
+For each of the following item, identify its location within the universe, relative to each
+A. on earth
+B. not on earth,, but in the earth-moon system
+C. not in the earth-moon system, but in the solar system
+D. not in the solar system, but in the milky way galaxy
+E. not in the milky way galaxy, but in the known universe
+
+{about 8 like this}
+- The eiffel tower
+- the international space station
+- the satellite used to direct your 5G signal
+- The asteroid Ceres
+- Pluto
+- Vega (the closest star)
+- The closest balck hole
+- The andromeda galaxy
+- A galaxy far far away
+
+
+Definitions
+in a proper cosmic address, each step must be perfectly defined.
+It must be 100 % clear, no ambiguity, wther an object is inside of that particular area
+what is the official definition of each of these things?
+
+The solar system
+- the sun, plus all objects orbiting the sun
+- all objects near the sun
+- all objects within 5 parsecs of the sun
+- the eight planets and their moons
+
+
+The earth system [maybe i should name this something more]
+- the earth, plus all objects orbitting it
+- the sun, plus all objects orbitting the sun
+- the earth and the moon alone
+
+
+
+Level 2: Cosmic Address Rules
+
+- each level must be completely contained within the level above it
+- no level can be completely contiguous with another
+- each level must be perfectly defined
+
+Each of the following setups may have an error, if there is an error,
+
+A normal address DOES NOT meet the requirements of a cosmic address.
+What change would make it work?
+
+135 marion Road
+Mattapoisett, MA 02---
+
+B. THe number should appear after the road name
+A. The zip code should appear before the town name
+C. The state should appear before the town name
+
+
+Mattapoisett
+The tri-town
+towns in MA that ahve coastline
+Massachusetts
+The UNiveted States
+
+
+- The entire "tri-town" is not conatined within "towns in MA that have coastline"
+- there is no error
+- The "tri-town" is not clearly defined
+- The line "towns in MA that have coastline" is not clearly defined
+
+
+The ORRHS campus
+Mattapoisett
+massachsuetts
+The United States
+
+the ORRHS campus is ill-defined
+- the ORRHS campus is not completely defined within mattapoisett
+- there is no error
+
+

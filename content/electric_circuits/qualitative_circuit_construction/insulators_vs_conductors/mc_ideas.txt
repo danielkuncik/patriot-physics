@@ -1,0 +1,19 @@
+
+- several questions with some sort of thing in between the circuit
+
+
+
+
+Condcutors are typically made of 'metal'
+
+
+A 'snap circuit' is designed to turn on if the circuits snap together
+However, is it absolutely necessary
+- yes, it must be used as designed
+- no, as long as the metal pieces of each wire are touching, current can flow
+[others?]
+[this could be a photo question
+
+
+photos of a circuit with some sort fo thing stuck in (like a paper clip or a rubber band)
+when the switch closes,will the light bulb light?

@@ -1,0 +1,19 @@
+
+- Diagrams of series and parallel circuits
+
+
+The circuit below is called a: [x 2]
+- series circuit
+- parallel circuit
+- simple circuit
+- complex circuit
+
+
+Photograph of a circuit [x 4]
+when the switch is closed
+- both light bulbs will light and if one is removed, the other will remain on
+- both light bulbs will light, but if one is removed, the other will turn off
+- only one light bulb will light
+- neither light bulb will light
+
+

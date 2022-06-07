@@ -1,0 +1,41 @@
+
+In a typical electric circuit, what does the mathematical quantity "current" represent?
+- positive charge moving, which is caused by electrons flowing in the direction opposite the current
+- negative charge moving, caused by electrons moving in the direction of the current.
+- negative charge moving, which is caused by protons flowing in the direction opposite the current
+- positive charge moving, caused by protons moving in the direction of the current.
+
+Why are electrons negative and protons positive?
+- the first person to seriously study electricity dictated that negative charges moved. For extra credit, please deliver to Mr. Kuncik a large stack of portraits of this individual.
+
+
+Current has to flow all the way from the battery to a light bulb,
+but when a switch is closed, the light bulb lights instantly. Why?
+- The electrons arrive from the battery at the speed of light.
+- The battery pushes electrons that are already located in the light bulb's filament.
+- The electrons are moving very fast, but not at light speed. If the wire was longer, you would see a delay.
+-
+
+True or false: The electric wire is negatively charged when a current flows through it.
+Chose the BEST option that has the correct answer and a correct explanation.
+[2 parts, a theory part and an observation part]
+
+-False: we can tell the wire is uncharged because it does not exhibit the same phenomena as charged objects
+-True: If you touch a wire, you are shocked, so it must be negatively charged.
+-True: The wire is negatively charged, but you can't tell because it is a very weak current. You could better observe the charge on a large transmission wire.
+
+
+-True: electrons are moving through the wire, so it must be negatively charged
+-False: The wire is not charged because the battery sends both protons and electrons through the wire.
+-False: The wire is not charged because the electrons that create the current were already in the wire.
+[2 correct answers]
+[too much in one question??/ should i split it into two, one that deals with observation and the other that deals with theory]
+
+
+Birds can land on a transmission wire and not be fried. Why?
+[add photo]
+- When landing on a single wire, the birds do not complete a circuit.
+- Transformers regulate voltage and current in transmission wires so that birds are safe
+- The birds feet act as insulators.
+- Birds have a natural resistance to electricity, other animals would be fried.
+- The wires have alternating current, which is safe. If it was direct current, the bird would be fried.
