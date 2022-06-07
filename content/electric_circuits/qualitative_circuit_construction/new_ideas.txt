@@ -1,0 +1,18 @@
+New Ideas =>
+
+I think that i need to split this unit into
+'qualitative circuit construction'
+and
+'quantitative circuit construction'
+
+
+New ideas for 'qualitative circuit construction'
+- qualitative diodes
+- using a dc power supply?
+[how could i bring this up to higher levels???]
+
+New ideas for 'quantitative circuit construction'
+= measuring internal resistance
+resistors 3 => achieving a desired value of current
+- quantitative LEDs => the diode has a specified voltage and no resistance, you add a resistor to set the current (and therefore power) that you want
+- connecting voltmeters and ammeters to measure current or voltage in specific parts of a circuit

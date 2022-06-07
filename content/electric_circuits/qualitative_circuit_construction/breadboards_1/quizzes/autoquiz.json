@@ -1,0 +1,40 @@
+{
+  "notes": "Add 'will the bulb light or not' questions.",
+  "questions": [
+    {
+      "text": "Which of the four diagrams below best shows how the holes of the breadboard shown below are connected?",
+      "image": {
+        "name": "blank_breadboard.jpg",
+        "height": "300px",
+        "width": "auto"
+      },
+      "answerChoices": [
+        {
+          "image": {
+            "name": "breadboard_diagram_1.png",
+            "height": "150px"
+          },
+          "correct": true
+        },
+        {
+          "image": {
+            "name": "breadboard_diagram_2.png",
+            "height": "150px"
+          }
+        },
+        {
+          "image": {
+            "name": "breadboard_diagram_3.png",
+            "height": "150px"
+          }
+        },
+        {
+          "image": {
+            "name": "breadboard_diagram_4.png",
+            "height": "150px"
+          }
+        }
+      ]
+    }
+  ]
+}

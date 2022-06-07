@@ -1,36 +1,6 @@
 {
   "reorder": false,
   "questions": [
-      {
-        "text": "Which of the four diagrams below best shows how the holes of the breadboard shown below are connected?",
-        "answerChoices": [
-          {
-            "image": {
-              "name": "breadboard_diagram_1.png",
-              "height": "150px"
-            },
-            "correct": true
-          },
-          {
-            "image": {
-              "name": "breadboard_diagram_2.png",
-              "height": "150px"
-            }
-          },
-          {
-            "image": {
-              "name": "breadboard_diagram_3.png",
-              "height": "150px"
-            }
-          },
-          {
-            "image": {
-              "name": "breadboard_diagram_4.png",
-              "height": "150px"
-            }
-          }
-        ]
-      },
     {
       "text": "The photo below shows an electric circuit with an open switch. When the switch is closed, what will happen?",
       "image": {

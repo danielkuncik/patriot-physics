@@ -1,0 +1,44 @@
+{
+  "note": "add another question on getting a particular current, or perhaps make that its own category?",
+  "questions": [
+    {
+      "text": "A resistor has a resistance of 500 Ohms (Green-Black-Yellow), and the fourth band is gold. According to the manufacturer, what range is possible for the resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "475 Ohms - 525 Ohms",
+          "correct": true
+        },
+        {
+          "text": "450 Ohms - 550 Ohms"
+        },
+        {
+          "text": "490 Ohms - 510 Ohms"
+        },
+        {
+          "text": "400 Ohms - 600 Ohms"
+        },
+        {
+          "text": "The resistance should be exactly 500 Ohms."
+        }
+      ]
+    },
+    {
+      "text": "A resistor has a resistance of 8 kOhms (Gray-Black-Red), and the fourth band is silver. According to the manufacturer, what range is possible for the resistance of the resistor?",
+      "answerChoices": [
+        {
+          "text": "7200 Ohms - 8800 Ohms",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "The resistance should be exactly 8 kOhms"
+        }
+      ]
+    }
+  ]
+}

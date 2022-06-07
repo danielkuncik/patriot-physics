@@ -9307,31 +9307,25 @@
     "number": 10,
     "uuid": "5d1a8af0-389d-401a-aedd-812a951709d4",
     "id": "5d1a8a",
-    "units":
-    {
-      "circuit_construction_1":
-      {
+    "units": {
+      "qualitative_circuit_construction": {
         "title": "Circuit Construction 1",
+        "subtitle": "Qualitative Circuit Construction => Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
         "number": 1,
-        "value":
-        {
+        "value": {
           "AP_physics_1": "mantle",
           "honors_physics": "innerCore",
           "physics_A": "innerCore"
         },
-        "subtitle": "Batteries, Light Bulbs, Wires, Resistors, Switches, Fuses",
         "uuid": "573b386d-2eb3-448f-82a1-3ffb8a248a4a",
         "id": "573b38",
-        "standards":
-        {
+        "standards": {
           "mass_2016": "",
           "NGSS": "",
           "AP_Physics_1": ""
         },
-        "pods":
-        {
-          "simplest_circuit":
-          {
+        "pods": {
+          "simplest_circuit": {
             "title": "The Simplest Circuit",
             "level": 1,
             "horizontal": 1,
@@ -9342,26 +9336,28 @@
             "uuid": "708240cf-4dd0-4e59-a687-3955e46df2e2",
             "id": "708240"
           },
-          "circuit_diagrams_1":
-          {
+          "circuit_diagrams_1": {
             "title": "Circuit Diagrams 1",
             "subtitle": "Identifying Circuit Components",
             "level": 1,
             "horizontal": 2,
             "letter": "B",
-            "prerequisites": ["simplest_circuit"],
+            "prerequisites": [
+              "simplest_circuit"
+            ],
             "objective": "Identify the circuit diagram symbols of batteries, light bulbs, wires, switches, resistors, and fuses",
             "content": "Circuit diagrams are a standardized way of representing circuits; each element of a circuit is represented by a standardized symbol.",
             "uuid": "d76ce11e-4419-401e-8341-e917d2ba9bb1",
             "id": "d76ce1"
           },
-          "series_vs_parallel":
-          {
+          "series_vs_parallel": {
             "title": "Series and Parallel Circuits ",
             "level": 1,
             "horizontal": 3,
             "letter": "C",
-            "prerequisites": ["circuit_diagrams_1"],
+            "prerequisites": [
+              "circuit_diagrams_1"
+            ],
             "objective": "Build and draw simple series and parallel circuits correctly; understand advantages and disadvantages of each.",
             "content": "A series circuit contains one path for current and a parallel circuit contains multiple paths for current; the number of lines in a symbol for batteries indicates the number of cells in a pack.",
             "uuid": "8f39c5cf-bd20-488b-9ad9-d70f634bc48a",
@@ -9369,272 +9365,202 @@
           },
           "insulators_vs_conductors": {
             "title": "Insulators vs Conductors",
-            "level":  1,
-            "horizontal": 10,
-            "letter": "X",
-            "prerequisites": [],
+            "level": 1,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": [
+              "series_vs_parallel"
+            ],
             "objective": "Recognize materials that are insulators and conductors, build circuits using non-traditional materials as wires; Block a circuit with an insulator that can be removed (the mouse detector).",
             "content": "Metal materials conduct electric current while non-metal materials do not; almost all metal materials can be substituted for traditional wires in an electric circuit.",
             "uuid": "53134309-8e56-4855-adad-7858398d8c33",
             "id": "531343"
           },
-          "short_circuits":
-          {
+          "short_circuits": {
             "title": "Short Circuits",
-            "level": 1,
-            "horizontal": 4,
-            "letter": "D",
-            "prerequisites": ["series_vs_parallel"],
+            "level": 2,
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": [
+              "insulators_vs_conductors"
+            ],
             "objective": "Identify and avoid building short circuits",
             "content": "A short circuit provides a path with no resistance; short circuits will overheat due to high current and will properly work resistors such as light bulbs.",
             "uuid": "87757744-3366-4fdc-a97f-af98e51ee9a7",
             "id": "877577"
           },
-          "switches_1":
-          {
+          "switches_1": {
             "title": "Switches 1",
             "subtitle": "Connecting a Switch",
             "level": 2,
-            "horizontal": 5,
-            "letter": "E",
-            "prerequisites": ["short_circuits"],
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": [
+              "short_circuits"
+            ],
             "objective": "Connect a switch that works correctly and does not produce a short circuit.",
             "content": "A switch must be connected in series with an element to properly control that element.",
             "uuid": "36d08c9b-5cdc-4f85-a2b0-b14597abea41",
             "id": "36d08c"
           },
-          "dimness_brightness_challenges":
-          {
+          "dimness_brightness_challenges": {
             "title": "Dimness and Brightness Challenges",
             "level": 2,
-            "horizontal": 4,
-            "letter": "F",
-            "prerequisites": ["switches_1"],
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": [
+              "switches_1"
+            ],
             "objective": "Create circuits with multiple light bulbs of different brightness by putting some bulbs in series and some in parallel.",
             "content": "Adding light bulbs in series dims all bulbs; light bulbs added in parallel are all bright.",
             "uuid": "899c86ec-437b-4ecb-baf4-25bb14441c8b",
             "id": "899c86"
           },
-          "switch_challenges":
-          {
+          "switch_challenges": {
             "title": "Switch Challenges",
             "level": 2,
-            "horizontal": 3,
-            "letter": "G",
-            "prerequisites": ["dimness_brightness_challenges"],
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": [
+              "dimness_brightness_challenges"
+            ],
             "objective": "Create complex circuits with multiple switches and light bulbs and predict accurately what each switch will control.",
             "content": "Switches control only circuit elements with which they are in series",
             "example": "Connect three light bulbs and three switches; switch A controls one light bulb; switch B controls two light bulbs; switch C controls all three light bulbs.",
             "uuid": "3655d76a-8fa7-4c5c-b6d5-b7a221bba6fb",
             "id": "3655d7"
           },
-          "fuses":
-          {
+          "fuses": {
             "title": "Fuses",
             "level": 2,
-            "horizontal": 2,
-            "letter": "H",
-            "prerequisites": ["switch_challenges"],
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": [
+              "switch_challenges"
+            ],
             "objective": "Add a fuse to a circuit; explain the value of a fuse; identify the proper location to add a fuse to a circuit.",
             "content": "A fuse burns out if current is too high, breaking a circuit and protecting other elements; fuses should be added where they protect the entire circuit.",
             "uuid": "716b1e22-333e-4f6b-b9ae-f1a2c3584502",
             "id": "716b1e"
           },
-          "breadboards_1":
-          {
+          "breadboards_1": {
             "title": "Breadboards 1",
             "subtitle": "Understanding a Breadboard",
+            "note": "There appears to be a double here!",
             "level": 2,
-            "horizontal": 1,
-            "letter": "I",
-            "prerequisites": ["fuses"],
+            "horizontal": 0,
+            "letter": "J",
+            "prerequisites": [
+              "fuses"
+            ],
             "objective": "Understand how a breadboard is connected, make a single bulb light on a breadboard.",
             "content": "A breadboard is a device made of holes connected by wires in a pattern; a breadboard allows physicists to quickly build complex circuits",
             "uuid": "56404cbb-c573-4f4c-b7e7-d401198ae1c4",
             "id": "56404c"
           },
-          "analog_voltmeter_ammeter": {
-            "title": "Analog Voltmeters and Ammeters",
-            "level": 2,
-            "horizontal": -1,
-            "letter": "Q",
-            "prerequisites": [],
-            "objective": "Correctly select and connect analog voltmeters and ammeters to measure the resistance of a single resistor.",
-            "content": "Voltmeters and ammeters are devices that measure voltage and current respectively; each must be connected in the correct way to measure properly.",
-            "uuid": "02a2e897-e78a-4ea0-b11d-8f0ff1c9d436",
-            "id": "02a2e8"
-          },
-          "reading_resistors_1":
-          {
-            "title": "Reading Resistors",
-            "level": 2,
-            "horizontal": 0,
-            "letter": "J",
-            "prerequisites": ["breadboards_1"],
-            "objective": "Identify the resistance of a resistor from the color bands on the resistor",
-            "content": "The resistance of a resistor is indicated by the bands of color on that resistor.",
-            "limits": "Includes only the first 3 bands",
-            "uuid": "c3f650b8-0c68-4fd8-b8e8-21edcf1036a2",
-            "id": "c3f650"
-          },
-          "breadboards":
-          {
-            "title": "Breadboards",
-            "level": 3,
-            "horizontal": -1,
-            "prerequisite": [],
-            "objective": "Properly connect a breadboard to make simple series and parallel circuits.",
-            "content": "A breadboard is a device used to make a large, complex electric circuit in a very small space quickly.",
-            "uuid": "c68c28d4-dcc3-42f4-9434-bf8cdb315841",
-            "id": "c68c28"
-          },
-          "combined_challenges":
-          {
+          "combined_challenges": {
             "title": "Combined Challenges",
             "level": 3,
-            "horizontal": 0,
+            "horizontal": 1,
             "letter": "K",
-            "prerequisites": ["reading_resistors_1"],
+            "prerequisites": [
+              "breadboards_1"
+            ],
             "objective": "Create circuits of switches, fuses, and light bulbs of varying brightness in which each switch controls specified light bulbs.",
             "content": "Combining the positioning of bulbs, fuses, and switches can make complex circuits out of simple parts",
             "note": "Based on the circuit that veronica asked me about in taunton.",
             "uuid": "379c6cb5-71ea-4dce-81dc-a15ee14f7efb",
             "id": "379c6c"
           },
-          "voltmeters_ammeters_1":
-          {
-            "title": "Voltmeters and Ammeters 1",
-            "subtitle": "Connecting Analog Voltmeters and Ammeters",
-            "level": 3,
-            "horizontal": 1,
-            "letter": "L",
-            "prerequisites": ["combined_challenges"],
-            "objective": "Properly connect voltmeters in parallel and ammeters in series",
-            "content": "Voltmeters are always connected in parallel with the item they measure; ammeters are always connected in series with the item they measure.",
-            "uuid": "06b52cbf-5ba3-4c6c-b2ce-c7806468fae6",
-            "id": "06b52c"
-          },
-          "voltmeters_ammeters_2":
-          {
-            "title": "Voltmeters and Ammeters 2",
-            "subtitle": "Identify Correct Analog Voltmeters and Ammeters by Range",
-            "level": 3,
-            "horizontal": 2,
-            "letter": "M",
-            "prerequisites": ["voltmeters_ammeters_1"],
-            "objective": "From a selection, identify which analog voltmeter or ammeter has the correct range for a particular circuit.",
-            "content": "Each meter measures a particular order of magnitude of voltage or current, and a physicists must properly predict which would be used based on understanding the battery and resistor in a circuit.",
-            "uuid": "7488df73-398e-4127-9cd7-4eca840d8cd1",
-            "id": "7488df"
-          },
-          "voltmeters_ammeters_3":
-          {
-            "title": "Voltmeters and Ammeters 3",
-            "subtitle": "Using a Multimeter",
-            "level": 3,
-            "horizontal": 3,
-            "letter": "N",
-            "prerequisites": ["voltmeters_ammeters_2"],
-            "objective": "Properly use a multimeter as a voltmeter and/or an ammeter.",
-            "content": "A multimeter is a device that can be used as a voltmeter or ammeter by turning a knob; the multimeter must still be connected differently when it is connected in different ways.",
-            "uuid": "56c436a5-e262-4cb9-8fdf-a4b9d6c0ff7a",
-            "id": "56c436"
-          },
-          "breadboards_2":
-          {
+          "breadboards_2": {
             "title": "Breadboards 2",
             "subtitle": "Series and Parallel Circuits on a Breadboard",
             "level": 3,
-            "horizontal": 4,
-            "letter": "O",
-            "prerequisites": ["voltmeters_ammeters_3"],
+            "horizontal": 2,
+            "letter": "L",
+            "prerequisites": [
+              "combined_challenges"
+            ],
             "objective": "Properly create series and parallel circuits on a breadboard",
-            "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits.",
+            "content": "Knowledge of the connections of a breadboard allows physicists to build more complex circuits.",
             "uuid": "392819ef-8717-4320-a6a6-8bf33fa6f028",
             "id": "392819"
           },
-          "different_switches":
-          {
+          "different_switches": {
             "title": "Different Switches",
             "level": 4,
-            "horizontal": 4,
-            "letter": "P",
-            "prerequisites": ["breadboards_2"],
+            "horizontal": 3,
+            "letter": "M",
+            "prerequisites": [
+              "breadboards_2"
+            ],
             "objective": "Identifying and use switches that are single or double pull and single or double throw.",
             "content": "Switches of single or double pull and single or double pull have different effects on a circuit",
             "uuid": "85e02f1e-c873-4497-8d2e-c0c1694dbd08",
             "id": "85e02f"
           },
-          "reading_resistors_2":
-          {
-            "title": "Reading Resistors 2",
-            "subtitle": "The Fourth Band",
-            "level": 4,
-            "horizontal": 3,
-            "letter": "Q",
-            "prerequisites": ["different_switches"],
-            "objective": "Explain and use the fourth color band on a resistor",
-            "content": "The fourth band of a resistor shows how accurate the other three bands are.",
-            "uuid": "8d91a676-df71-49ab-8c41-2d0ca6cc71d7",
-            "id": "8d91a6"
-          },
-          "breadboards_3":
-          {
+          "breadboards_3": {
             "title": "Breadboards 3",
             "subtitle": "Combined Circuits",
             "level": 4,
             "horizontal": 2,
-            "letter": "R",
-            "prerequisites": ["reading_resistors_2"],
+            "letter": "N",
+            "prerequisites": [
+              "different_switches"
+            ],
             "objective": "Create combined series and parallel circuits off light bulbs and fuses on a breadboard",
             "content": "Intimate knowledge of the connections of a breadboard allows physicists to build more complex circuits",
             "uuid": "00566ef3-2c57-457d-82bc-3d6d40e1271c",
             "id": "00566e"
           },
-          "breadboards_4":
-          {
+          "breadboards_4": {
             "title": "Breadboards 4",
             "subtitle": "Switches on a Breadboard",
             "level": 4,
             "horizontal": 1,
-            "letter": "S",
-            "prerequisites": ["breadboards_3"],
+            "letter": "O",
+            "prerequisites": [
+              "breadboards_3"
+            ],
             "objective": "Incorporating different types of switches on a breadboard.",
             "content": "Breadboards allow different types of switches to be incorporated into a circuit.",
             "uuid": "e2f61701-47fa-4d1e-b806-3abac32fa5b4",
             "id": "e2f617"
           },
-          "breadboards_5":
-          {
+          "breadboards_5": {
             "title": "Breadboards 5",
             "level": 5,
-            "horizontal": 1,
-            "letter": "T",
-            "prerequisites": ["breadboards_4"],
+            "horizontal": 2,
+            "letter": "P",
+            "prerequisites": [
+              "breadboards_4"
+            ],
             "objective": "Creating combined series/parallel circuits on a breadboard of resistors of different magnitude in order to achieve and measure particular current and voltage goals.",
             "content": "Combining series and parallel resistors allows a physicist to control the current in different areas of a circuit.",
             "uuid": "ef418b86-5b5a-4d1e-9f87-45eb05b9ce57",
             "id": "ef418b"
           },
-          "breadboards_6":
-          {
+          "breadboards_6": {
             "title": "Breadboards 6",
             "level": 5,
-            "horizontal": 2,
-            "letter": "U",
-            "prerequisites": ["breadboards_5"],
+            "horizontal": 1,
+            "letter": "Q",
+            "prerequisites": [
+              "breadboards_5"
+            ],
             "objective": "Incorporating different types of switches into the circuits from breadboards 5",
             "content": "Breadboards allow different types of switches to be incorporated into a circuit, adding to its complexity.",
             "uuid": "2796d344-fc55-4f99-898a-7cc2dbf9005a",
             "id": "2796d3"
           },
-          "advanced_circuit_design":
-          {
+          "advanced_circuit_design": {
             "title": "Advanced Circuit Design",
             "level": 6,
             "horizontal": 2,
-            "letter": "V",
-            "prerequisites": ["breadboards_6"],
+            "letter": "R",
+            "prerequisites": [
+              "breadboards_6"
+            ],
             "objective": "Given vague parameters and goals for a particular circuit, build a circuit that accomplishes the goals within the parameters.",
             "content": "An intimate knowledge of the mathematical rules of circuits allows a physicist to build a circuit with particular specifications.",
             "uuid": "684666b5-9ce5-44bf-a1d2-c3f857eb01da",
@@ -9642,12 +9568,10 @@
           }
         }
       },
-      "voltage_and_current_concepts":
-      {
+      "voltage_and_current_concepts": {
         "title": "Voltage and Current Concepts",
         "number": 2,
-        "value":
-        {
+        "value": {
           "AP_physics_1": "mantle",
           "honors_physics": "outerCore",
           "physics_A": "outerCore"
@@ -9655,16 +9579,13 @@
         "uuid": "1683b193-3c12-46a6-9e24-ba51c5c74a7a",
         "id": "1683b1",
         "note": "8-21-19 i feel like parallel circuit concepts and short circuit concepts belong in a different quiz ladder, and there need to be more quiz ladders on circuits certainly",
-        "standards":
-        {
+        "standards": {
           "mass_2016": "",
           "NGSS": "",
           "AP_Physics_1": ""
         },
-        "pods":
-        {
-          "very_basic_atoms":
-          {
+        "pods": {
+          "very_basic_atoms": {
             "title": "Very Basic Atoms",
             "level": 1,
             "horizontal": 2,
@@ -9675,213 +9596,230 @@
             "uuid": "4dd93e3d-4d21-447f-ad73-c921b8084cc1",
             "id": "4dd93e"
           },
-          "circuit_definitions_1":
-          {
+          "circuit_definitions_1": {
             "title": "Circuit Definitions 1: Multiple Choice",
             "level": 1,
             "horizontal": 3,
             "letter": "B",
-            "prerequisites": ["very_basic_atoms"],
+            "prerequisites": [
+              "very_basic_atoms"
+            ],
             "objective": "Recognize the definitions and properties of voltage, current, resistance, and power.",
             "content": "Voltage is the force that pushes charge around an electric circuit; current is the motion of charge around a circuit; resistance is how difficult it is for charge to move around the circuit; power is the rate at which energy changes form.",
             "uuid": "df740723-6c09-4089-b31f-d5ec76dac494",
             "id": "df7407"
           },
-          "energy_change_in_circuit":
-          {
+          "energy_change_in_circuit": {
             "title": "Energy Change in a Circuit",
             "level": 2,
             "horizontal": 4,
             "letter": "D",
-            "prerequisites": ["insulators_conductors"],
+            "prerequisites": [
+              "insulators_conductors"
+            ],
             "objective": "Describe how energy changes in an electric circuit consisting of only a battery, a light bulb, and a wire.",
             "content": "In an electric circuit, the electrochemical potential energy of a battery becomes electrical energy moving through wires, which then becomes other forms of energy when it reaches a light bulb or resistor.",
             "uuid": "c3d2b9a4-e293-4b22-85f5-b2cfc29066f2",
             "id": "c3d2b9"
           },
-          "circuit_definitions_2":
-          {
+          "circuit_definitions_2": {
             "title": "Circuit Definitions 2: Open Response",
             "level": 2,
             "horizontal": 3,
             "letter": "E",
-            "prerequisites": ["energy_change_in_circuit"],
+            "prerequisites": [
+              "energy_change_in_circuit"
+            ],
             "objective": "Memorize the definitions and properties of voltage, current, resistance, and power.",
             "content": "Voltage is the force that pushes charge around an electric circuit; current is the motion of charge around a circuit; resistance is how difficult it is for charge to move around the circuit; power is the rate at which energy changes form.",
             "uuid": "84327931-2346-4c9d-b844-e3828f333fd6",
             "id": "843279"
           },
-          "organization_atoms":
-          {
+          "organization_atoms": {
             "title": "Organization of Atoms",
             "level": 2,
             "horizontal": 2,
             "letter": "F",
-            "prerequisites": ["circuit_definitions_2"],
+            "prerequisites": [
+              "circuit_definitions_2"
+            ],
             "objective": "Draw how atoms are organized in insulators and conductors; relate this organization to how circuits operate within an electric circuit; explain why electrons and not protons and neutrons move in an electric circuit.",
             "content": "In a conductor, valence electrons are shared among a grid of nuclei, allowing charge to flow; in an insulator, valence electrons are held in particular places, making it impossible for charge to flow.",
             "uuid": "4653ff1c-b3bd-41d6-98c9-e7486b10ae57",
             "id": "4653ff"
           },
-          "advanced_current_1":
-          {
+          "advanced_current_1": {
             "title": "Advanced Current 1",
             "subtitle": "How do Electrons Move?",
             "level": 3,
             "horizontal": 2,
             "letter": "G",
-            "prerequisites": ["organization_atoms"],
+            "prerequisites": [
+              "organization_atoms"
+            ],
             "objective": "Differentiate between two theories of electron motion, one in which electrons all come from the battery and one in which they remain in the wire, select the theory, argue that electrons move slowly through a circuit",
             "content": "Electrons do not move the whole way around the circuit, but electrons already in a circuit are pushed by the battery.",
             "uuid": "fc56da19-2632-411e-9f81-f68db75f504d",
             "id": "fc56da"
           },
-          "advanced_voltage_1":
-          {
+          "advanced_voltage_1": {
             "title": "Advanced Voltage 1",
             "subtitle": "The Potato Battery",
             "level": 3,
             "horizontal": 3,
             "letter": "H",
-            "prerequisites": ["advanced_current_1"],
+            "prerequisites": [
+              "advanced_current_1"
+            ],
             "objective": "Explain by referring to chemical principles why a potato battery lights a clock; explain why a bulb lights instantly when connected to a battery.",
             "content": "A battery consists of an anode and a cathode connected by a wire and an electrolyte; the anode loses electrons and is oxidized while the cathode gains electrons and is reduced.",
             "uuid": "f7c85c91-82d5-487e-81cb-818f1aa6330e",
             "id": "f7c85c"
           },
-          "advanced_current_2":
-          {
+          "advanced_current_2": {
             "title": "Advanced Current 2",
             "subtitle": "Implications of How Electrons Move",
             "level": 3,
             "horizontal": 4,
             "letter": "I",
-            "prerequisites": ["advanced_voltage_1"],
+            "prerequisites": [
+              "advanced_voltage_1"
+            ],
             "objective": "Refer to concepts of how electrons move to explain how current changes in circuits with switches and resistors",
             "content": "A switch immiedately stops and starts all current in a circuit.",
             "note": "Address misconception that closer light bulbs will be brighter.",
             "uuid": "9f3e1de7-19a0-4c45-8785-604f51cf9411",
             "id": "9f3e1d"
           },
-          "advanced_current_3":
-          {
+          "advanced_current_3": {
             "title": "Advanced Current 3",
             "subtitle": "Conventional Current",
             "level": 3,
             "horizontal": 5,
             "letter": "J",
-            "prerequisites": ["advanced_current_2"],
+            "prerequisites": [
+              "advanced_current_2"
+            ],
             "objective": "Untangle the conundrum that, mathematically, current flows the opposite way that electrons actually move.",
             "content": "Current represents positive charge motion in the direction opposite that which negative charges move.",
             "uuid": "150d8b6c-0306-40df-81b1-c51acfdcd45d",
             "id": "150d8b"
           },
-          "advanced_current_4":
-          {
+          "advanced_current_4": {
             "title": "Advanced Current 4",
             "subtitle": "Electron Drift and Charge of a Wire",
             "level": 4,
             "horizontal": 5,
             "letter": "K",
-            "prerequisites": ["advanced_current_3"],
+            "prerequisites": [
+              "advanced_current_3"
+            ],
             "objective": "Describe how electrons combine fast random motion with slow drift under and electric field; describe how an electric wire has a neutral charge.",
             "content": "Electrons do not flow through a circuit but drift very slowly while also moving randomly; electric wires are not charged when current flows through them.",
             "uuid": "214790e5-0994-4f8c-a142-466bafbb3e9f",
             "id": "214790"
           },
-          "advanced_current_5":
-          {
+          "advanced_current_5": {
             "title": "Advanced Current 5",
             "subtitle": "Summation of Charge Motion",
             "level": 4,
             "horizontal": 4,
             "letter": "L",
-            "prerequisites": ["advanced_current_4"],
+            "prerequisites": [
+              "advanced_current_4"
+            ],
             "objective": "Describe current and the summation of motion of many charges, relate current to the total number of free-charges in a wire; differentaite between free and not-free electrons in a wire.",
             "content": "slow motion of countless electrons produces an electric current",
             "uuid": "17934d7e-a57e-49b8-a59d-c687d5b780ae",
             "id": "17934d"
           },
-          "advanced_voltage_2":
-          {
+          "advanced_voltage_2": {
             "title": "Advanced Voltage 2",
             "subtitle": "Battery Chemistry",
             "level": 4,
             "horizontal": 3,
             "letter": "M",
-            "prerequisites": ["advanced_current_5"],
+            "prerequisites": [
+              "advanced_current_5"
+            ],
             "objective": "Relate specific batteries to half-reactions and explain how electric current flows through the electrolyte",
             "content": "A battery consists of a chemical reaction that involves electron exchange; half of this reaction occurs at the anode and the other half at the cathode; while negative charges move through the wire positive charges move through the electrolyte, creating a complete circuit of positive charge flow.",
             "uuid": "578da189-8e46-4041-8dd8-e20e815baf20",
             "id": "578da1"
           },
-          "advanced_current_6":
-          {
+          "advanced_current_6": {
             "title": "Advanced Current 6: Electricity without Electrons",
             "level": 4,
             "horizontal": 2,
             "letter": "N",
-            "prerequisites": ["advanced_voltage_2"],
+            "prerequisites": [
+              "advanced_voltage_2"
+            ],
             "objective": "Describe how current can flow in bodies with charged particles other than water, such as a solution of ions.",
             "content": "Any charged particle can be responsible for electric current, not only electrons.",
             "uuid": "9d4d0c34-e3c5-49b4-b9c0-662ee436c88b",
             "id": "9d4d0c"
           },
-          "rigorous_definition_current":
-          {
+          "rigorous_definition_current": {
             "title": "The Rigorous Definition of Current",
             "level": 5,
             "horizontal": 2,
             "letter": "O",
-            "prerequisites": ["advanced_current_6"],
+            "prerequisites": [
+              "advanced_current_6"
+            ],
             "objective": "Describe current at a point as charge per time through that point; explain an equation that relates electron drift velocity to current.",
             "content": "Current is defined at a given point and is equal to the magnitude of (positive) charge passing that point divided by the time intrval.",
             "uuid": "512c0b83-9cbd-4a34-b6a7-f7fc6c889993",
             "id": "512c0b"
           },
-          "rigorous_definition_voltage":
-          {
+          "rigorous_definition_voltage": {
             "title": "The Rigorous Definition of Voltage",
             "level": 5,
             "horizontal": 3,
             "letter": "P",
-            "prerequisites": ["rigorous_definition_current"],
+            "prerequisites": [
+              "rigorous_definition_current"
+            ],
             "objective": "Describe Potential Difference between two points across a resistor as energy per charge.",
             "content": "Voltage (potential difference) is defined as the energy gained or dissipated by a (positive) unit charge between two points.",
             "uuid": "419bdf9b-70a3-471b-ab83-c35545b270a4",
             "id": "419bdf"
           },
-          "rigorous_batteries":
-          {
+          "rigorous_batteries": {
             "title": "Rigorous Batteries",
             "level": 5,
             "horizontal": 4,
             "letter": "Q",
-            "prerequisites": ["rigorous_definition_voltage"],
+            "prerequisites": [
+              "rigorous_definition_voltage"
+            ],
             "objective": "Apply rigorous definitions of current and voltage to a battery",
             "content": "A battery provides electrons on one end, absorbs electrons on the other, and adds a positive potential difference between cathode and anode.",
             "uuid": "b5eae1f2-0d39-4ea3-89a0-375ee327cac9",
             "id": "b5eae1"
           },
-          "rigorous_definition_power":
-          {
+          "rigorous_definition_power": {
             "title": "Rigorous Definition of Power",
             "level": 5,
             "horizontal": 5,
             "letter": "R",
-            "prerequisites": ["rigorous_batteries"],
+            "prerequisites": [
+              "rigorous_batteries"
+            ],
             "objective": "Describe power as energy inputted or outputted into a circuit per unit time and explain how the power formula is consistent with definitions of current and potential difference.",
             "content": "Power of a circuit represents the energy inputted or outputted per unit time; power is equal to current times voltage.",
             "uuid": "a8120217-37e1-4639-8ff5-0d5cad12b691",
             "id": "a81202"
           },
-          "advanced_current_x":
-          {
+          "advanced_current_x": {
             "title": "Advanced Current 4: Current Model",
             "level": 6,
             "horizontal": 5,
             "letter": "S",
-            "prerequisites": ["rigorous_definition_power"],
+            "prerequisites": [
+              "rigorous_definition_power"
+            ],
             "objective": "Design a physical model, such as a diagram, a video, or a skit, that accurately describes the motion of electrons on a complex circuit with mulitple resistors and switches in series and parallel.",
             "content": "A circuit consists of exchange of electrons and positive charges through pushing randomly moving charged particles in a wire, while simultaneously outputting energy for some useful task.",
             "uuid": "3b95fead-b8e9-4aec-b861-b0239e10676e",
@@ -9889,12 +9827,10 @@
           }
         }
       },
-      "dc_circuit_math_1":
-      {
+      "dc_circuit_math_1": {
         "title": "DC Circuit Math 1: Batteries and Resistors",
         "number": 3,
-        "value":
-        {
+        "value": {
           "AP_physics_1": "innerCore",
           "honors_physics": "innerCore",
           "physics_A": "outerCore"
@@ -9902,16 +9838,13 @@
         "limits": "Only contains circuits including batteries and resistors",
         "uuid": "e0d6f429-2f42-4e44-b0d8-6231da3c5f7c",
         "id": "e0d6f4",
-        "standards":
-        {
+        "standards": {
           "mass_2016": "",
           "NGSS": "",
           "AP_Physics_1": ""
         },
-        "pods":
-        {
-          "ohms_law":
-          {
+        "pods": {
+          "ohms_law": {
             "title": "Ohm's Law",
             "level": 1,
             "horizontal": 1,
@@ -9922,117 +9855,126 @@
             "uuid": "65b8b752-7ee6-421f-aede-b40ec100bfe7",
             "id": "65b8b7"
           },
-          "power_formula":
-          {
+          "power_formula": {
             "title": "The Power Formula",
             "level": 1,
             "horizontal": 4,
             "letter": "B",
-            "prerequisites": ["ohms_law"],
+            "prerequisites": [
+              "ohms_law"
+            ],
             "objective": "Use both the power formula and Ohm's Law to solve for power or other quantities.",
             "content": "Power is equal to current times voltage; this formula can be combined with Ohm's Law.",
             "uuid": "8e7ca231-51f9-4990-9849-c8b6472ec77a",
             "id": "8e7ca2"
           },
-          "analyze_circuits_1":
-          {
+          "analyze_circuits_1": {
             "title": "Analyze Circuits 1",
             "level": 2,
             "horizontal": 4,
             "letter": "C",
-            "prerequisites": ["power_formula"],
+            "prerequisites": [
+              "power_formula"
+            ],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from the voltage of the battery and the resistance of each resistor.",
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit.",
             "uuid": "875ae026-5f4b-4fa0-8d76-61e2b5420bbf",
             "id": "875ae0",
             "inClass_honors": true
           },
-          "analyze_circuits_2":
-          {
+          "analyze_circuits_2": {
             "title": "Analyze Circuits 2",
             "level": 2,
             "horizontal": 2,
             "letter": "D",
-            "prerequisites": ["analyze_circuits_1"],
+            "prerequisites": [
+              "analyze_circuits_1"
+            ],
             "objective": "Use a table to find the voltage, current, resistance, and power of a simple series or parallel circuit; begin from any information.",
             "content": "Set rules and formulas can find the voltage, current, resistance, and power of each element of a series or parallel circuit, and you can logically deduce the information you need from different sets of initial information.",
             "uuid": "3950df90-a5f0-45f6-bbc0-760a7865445c",
             "id": "3950df",
             "inClass_honors": false
           },
-          "algebraic_circuits_1":
-          {
+          "algebraic_circuits_1": {
             "title": "Algebraic Circuits 1",
             "subtitle": "New Circuit Formulas",
             "level": 3,
             "horizontal": 2,
             "letter": "E",
-            "prerequisites": ["analyze_circuits_2"],
+            "prerequisites": [
+              "analyze_circuits_2"
+            ],
             "objective": "Know dimensions of voltage, current, resistance, and power; algebraically manipulate and solve Ohm's Law and the Power formula separately and together",
             "content": "Ohm's Law and the Power Formula can be manipulated to create new formulas.",
             "uuid": "063a8922-ee36-4a0a-81b7-511136db2f3d",
             "id": "063a89",
             "inClass_honors": true
           },
-          "electric_potential_diagrams_1":
-          {
+          "electric_potential_diagrams_1": {
             "title": "Electric Potential Diagrams 1",
             "level": 3,
             "horizontal": 3.5,
             "letter": "F",
-            "prerequisites": ["algebraic_circuits_1"],
+            "prerequisites": [
+              "algebraic_circuits_1"
+            ],
             "objective": "Draw graphs depicting how electric potential within a circuit changes across each element for simple series and parallel circuits.",
             "content": "Voltage can be depicted as changes in electric potential across a circuit; magnitude of current can also be depicted on an electric potential graph.",
             "uuid": "12ce06a8-26a6-4090-ad1d-301c26b9facb",
             "id": "12ce06"
           },
-          "analyze_circuits_3":
-          {
+          "analyze_circuits_3": {
             "title": "Analyze Circuits 3: One-Step Accordion Circuits",
             "level": 3,
             "horizontal": 5,
             "letter": "G",
-            "prerequisites": ["electric_potential_diagrams_1"],
+            "prerequisites": [
+              "electric_potential_diagrams_1"
+            ],
             "objective": "Solve circuits with series components inside of parallel components or parallel sections in series.",
             "content": "Combinations of series and parallel resistor elements can be combined and taken apart to make a circuit.",
             "uuid": "1db03943-b301-48f3-85e4-5b22c257aa23",
             "id": "1db039",
-            "inClass_AP":  true
+            "inClass_AP": true
           },
-          "electric_potential_diagrams_2":
-          {
+          "electric_potential_diagrams_2": {
             "title": "Electric Potential Diagrams 2",
             "level": 3,
             "horizontal": 6,
             "letter": "H",
-            "prerequisites": ["analyze_circuits_3"],
+            "prerequisites": [
+              "analyze_circuits_3"
+            ],
             "objective": "Given an electric potential diagram of a circuit, draw a circuit that could potentially be the correct circuit.",
             "content": "The elements within a circuit can be determined from an electric potential diagram of that circuit.",
             "uuid": "2535cab6-6aa2-431d-ad16-fd996e6ec602",
             "id": "2535ca",
             "inClass_AP": true
           },
-          "algebraic_circuits_2":
-          {
+          "algebraic_circuits_2": {
             "title": "Algebraic Circuits 2",
             "subtitle": "Solving Series and Parallel Circuits Algebraically",
             "level": 4,
             "horizontal": 4,
             "letter": "I",
-            "prerequisites": ["electric_potential_diagrams_2"],
+            "prerequisites": [
+              "electric_potential_diagrams_2"
+            ],
             "objective": "Algebraically determine voltage, current, resistance, and power of a circuit with only series and parallel elements; derive the formula for total resistance in a parallel circuit.",
             "uuid": "aeb8f097-8f62-4bd0-936d-57187ae61ef5",
             "id": "aeb8f0",
             "inClass_AP": true
           },
-          "analyze_circuits_4":
-          {
+          "analyze_circuits_4": {
             "title": "Analyze Circuits 4",
             "subtitle": "Demonstrating Kirchoff's Laws",
             "level": 4,
             "horizontal": 3,
             "letter": "J",
-            "prerequisites": ["algebraic_circuits_2"],
+            "prerequisites": [
+              "algebraic_circuits_2"
+            ],
             "objective": "For circuits with multiple layers of series and parallel elements within each other, determine the voltage, current, resistance, and power of each element and draw a diagram illustrating the electric potential of the circuit, and describe how the circuit diagram drawn illustrates Kirchoff's Laws.",
             "uuid": "9fc2d88a-9543-4483-81ba-dc034245f93f",
             "id": "9fc2d8",
@@ -10048,50 +9990,189 @@
             "uuid": "ce65de11-ce62-4eed-95ab-c08dd33b2648",
             "id": "ce65de"
           },
-          "dc_circuit_dimensional_analysis":
-          {
+          "dc_circuit_dimensional_analysis": {
             "title": "DC Circuit Dimensional Analysis",
             "level": 4,
             "horizontal": 2,
             "letter": "K",
-            "prerequisites": ["analyze_circuits_4"],
+            "prerequisites": [
+              "analyze_circuits_4"
+            ],
             "objective": "Determine and explain the units of all DC circuit quantities; prove various formulas are dimensionally correct.",
             "uuid": "e7244ff6-c4a0-4ab4-a2aa-8e5c82980360",
             "id": "e7244f"
           },
-          "algebraic_circuits_3":
-          {
+          "algebraic_circuits_3": {
             "title": "Algebraic Circuits 3",
             "subtitle": "Solving Accordion Circuits Algebraically and Dimensional Analysis with Circuits",
             "level": 5,
             "horizontal": 3,
             "letter": "L",
-            "prerequisites": ["dc_circuit_dimensional_analysis"],
+            "prerequisites": [
+              "dc_circuit_dimensional_analysis"
+            ],
             "objective": "Algebraically solve circuits with series and parallel elements inside each other; demonstrate that the answers are dimensionally correct.",
             "uuid": "58b3ed44-b195-4957-bfa5-e5d15d950986",
             "id": "58b3ed"
           },
-          "mathematically_rigorous_circuit_model":
-          {
+          "mathematically_rigorous_circuit_model": {
             "title": "Mathematically Rigorous Circuit Model",
             "level": 5,
             "horizontal": 4,
             "letter": "M",
-            "prerequisites": ["algebraic_circuits_3"],
+            "prerequisites": [
+              "algebraic_circuits_3"
+            ],
             "objective": "Define and use mathematically rigorous definitions of potential difference, current, resistance, and power; use Kirchoff's Laws to demonstrate basic circuit rules.",
             "uuid": "bb23956f-ab8e-41fc-97ff-0468ec948926",
             "id": "bb2395"
           },
-          "resistor_only_design":
-          {
+          "resistor_only_design": {
             "title": "DC Circuit Design: Resistors Only",
             "level": 6,
             "horizontal": 3,
             "letter": "N",
-            "prerequisites": ["mathematically_rigorous_circuit_model"],
+            "prerequisites": [
+              "mathematically_rigorous_circuit_model"
+            ],
             "objective": "Given a particular design goal, combine a set of resistors to accomplish this goal.",
             "uuid": "be0f2fd2-999d-490c-a3d8-6123746fc72e",
             "id": "be0f2f"
+          }
+        }
+      },
+      "quantitative_circuit_construction": {
+        "title": "Circuit Construction 2",
+        "subtitle": "Quantitative Circuit Construction",
+        "number": 4,
+        "uuid": "ac5bb43d-99d3-4192-be45-159756ff40a6",
+        "id": "ac5bb4",
+        "pods": {
+          "voltmeter_ammeter_1": {
+            "title": "Voltmeters and Ammeters 1",
+            "subtitle": "Analog Voltmeters and Ammeters",
+            "level": 1,
+            "horizontal": 1,
+            "letter": "A",
+            "prerequisites": [],
+            "objective": "Correctly select and connect analog voltmeters and ammeters to measure the resistance of a single resistor.",
+            "content": "Voltmeters and ammeters are devices that measure voltage and current respectively; each must be connected in the correct way to measure properly.",
+            "uuid": "02a2e897-e78a-4ea0-b11d-8f0ff1c9d436",
+            "id": "02a2e8"
+          },
+          "resistors_1": {
+            "title": "Resistors 1",
+            "subtitle": "Reading Resistors",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "B",
+            "prerequisites": [
+              "voltmeter_ammeter_1"
+            ],
+            "objective": "Identify the resistance of a resistor from the color bands on the resistor",
+            "content": "The resistance of a resistor is indicated by the bands of color on that resistor.",
+            "limits": "Includes only the first 3 bands",
+            "uuid": "c3f650b8-0c68-4fd8-b8e8-21edcf1036a2",
+            "id": "c3f650"
+          },
+          "resistors_2": {
+            "title": "Resistors 2",
+            "subtitle": "Resistor Uncertainty",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "C",
+            "prerequisites": [
+              "resistors_1"
+            ],
+            "objective": "Explain and use the fourth color band on a resistor",
+            "content": "The fourth band of a resistor shows how accurate the other three bands are.",
+            "uuid": "8d91a676-df71-49ab-8c41-2d0ca6cc71d7",
+            "id": "8d91a6"
+          },
+          "voltmeters_ammeters_2": {
+            "title": "Voltmeters and Ammeters 2",
+            "subtitle": "Identify Correct Analog Voltmeters and Ammeters by Range",
+            "level": 2,
+            "horizontal": 4,
+            "letter": "D",
+            "prerequisites": [
+              "resistors_2"
+            ],
+            "objective": "From a selection, identify which analog voltmeter or ammeter has the correct range for a particular circuit.",
+            "content": "Each meter measures a particular order of magnitude of voltage or current, and a physicists must properly predict which would be used based on understanding the battery and resistor in a circuit.",
+            "uuid": "7488df73-398e-4127-9cd7-4eca840d8cd1",
+            "id": "7488df"
+          },
+          "voltmeters_ammeters_3": {
+            "title": "Voltmeters and Ammeters 3",
+            "subtitle": "Using a Multimeter",
+            "level": 2,
+            "horizontal": 5,
+            "letter": "E",
+            "prerequisites": [
+              "voltmeters_ammeters_2"
+            ],
+            "objective": "Properly use a multimeter as a voltmeter and/or an ammeter.",
+            "content": "A multimeter is a device that can be used as a voltmeter or ammeter by turning a knob; the multimeter must still be connected differently when it is connected in different ways.",
+            "uuid": "56c436a5-e262-4cb9-8fdf-a4b9d6c0ff7a",
+            "id": "56c436"
+          },
+          "voltmeters_ammeters_4": {
+            "title": "Voltmeters and Ammeters 4",
+            "subtitle": "Measuring Individual Resistors",
+            "level": 3,
+            "horizontal": 4,
+            "letter": "F",
+            "prerequisites": ["voltmeters_ammeters_3"],
+            "objective": "Use a voltmeter or ammeter to measure the potential difference across or current through a specific resistor in a complex circuit.",
+            "content": "Voltmeters and ammeters measure different values based on their location in a circuit."
+          },
+          "confirming_kirchoff_1": {
+            "title": "Confirming Kirchoff's Laws 1",
+            "subtitle": "Simple Circuit",
+            "level": 3,
+            "horizontal": 3,
+            "letter": "G",
+            "prerequisites": ["voltmeters_ammeters_4"],
+            "objective": "Demonstrate that the loop law and junction law are followed in simple series and parallel circuits.",
+            "content": "Kirchoff's Loop and Junction Laws dictate the basic rules of series and parallel circuits.",
+            "uuid": "e20b0417-0b48-45fd-b855-f7ab6c30d6ef",
+            "id": "e20b04"
+          },
+          "internal_resistance": {
+            "title": "Measuring Internal Resistance",
+            "level": 3,
+            "horizontal": 2,
+            "letter": "H",
+            "prerequisites": ["confirming_kirchoff_1"],
+            "objective": "Use meters and Ohm's Law to measure the resistance added by a battery",
+            "content": "Each battery adds a small amount of resistance to a circuit which must be considered in analyzing that circuit.",
+            "uuid": "165f7900-fe04-4cbb-a8fc-c737af0171b4",
+            "id": "165f79"
+          },
+          "resistors_3": {
+            "title": "Resistors 3",
+            "subtitle": "Setting Current",
+            "level": 3,
+            "horizontal": 1,
+            "letter": "I",
+            "prerequisites": ["internal_resistance"],
+            "objective": "Select a resistor based upon color bands to achieve a desired level of current",
+            "content": "Resistors are used to set the current of a circuit; Ohm's Law and Kirchoff's Laws can be used to select which resistor you want",
+            "uuid": "b2564f8c-02ce-42f7-87f6-aa57be3296da",
+            "id": "b2564f"
+          },
+          "confirming_kirchoff_2": {
+            "title": "Confirming Kirchoff's Laws 2",
+            "subtitle": "Complex Circuits",
+            "level": 4,
+            "horizontal": 2,
+            "letter": "J",
+            "prerequisites": ["resistors_3"],
+            "objective": "Demonstrate that the loop law and junction law are followed in circuits that combine series and parallel elements.",
+            "content": "Kirchoff's Loop and Junction Laws dictate the basic rules of all circuits.",
+            "uuid": "18da2249-bcb6-4fa7-b8ae-736513cf047b",
+            "id": "18da22"
           }
         }
       }
@@ -10734,7 +10815,6 @@
     "units":
     {}
   },
-
   "atomic_physics":
   {
     "title": "Atomic Physics",
