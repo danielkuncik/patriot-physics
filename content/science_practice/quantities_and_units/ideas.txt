@@ -1,0 +1,35 @@
+I need to make a lesson on quantities and units,
+what are quantities,
+what are units?
+
+=> this is a co-unit with dimensional analysis!
+
+Some topics that should be considered=
+
+- what are examples of quantities, and what is a quantitiy
+- what are examples of units, and what is a unit
+
+
+This is an uber-theoretical piece! [a unit on units!, very meta
+the meta-est problem]
+
+pods:
+- what is a quantity
+- what is a unit
+- SI units and the SI unit system
+- the 'great tribe of quantities'
+- constructing units from SI units
+[should conversions go up top and dimensional analysis come down here?]
+
+
+
+What really is a unit?
+- a unit comes from the latin word ____ meaning 1
+- if you have 1 of your quantity, then this is the amount you will have
+
+
+Think of this
+6 feet = 6 * foot
+
+
+How do I assess this?

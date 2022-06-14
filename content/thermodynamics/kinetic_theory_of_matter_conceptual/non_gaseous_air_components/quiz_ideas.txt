@@ -1,0 +1,47 @@
+What questions could go here?
+
+
+Provided you are in a well ventilated room, are the vapors coming off of dry ice safe to breath?
+- yes, the vapors are already a component of air
+
+
+If you are not in a well ventilated room, are the vapors coming off of dry ice safe to breath
+- no, while not toxic, they can change the composition of the air
+
+
+What is the advantage of dry ice over wet ice in pacakaging?
+- it doesn't make a mess, duh
+
+
+You have a cup full dry ice, and more ice forms aroudn the outside. What is this?
+- dry ice that has seeped through the cracks
+- wet ice formed from water vapor in the air
+
+
+
+When liquid nitrogen runs out and disappears, what is it doing?
+- boiling
+
+
+What are liquid nitrogen, oxygen, and helium used for?
+- cooling things down, duh
+
+
+You pour liquid nitrogen into a bowl, what does it look like?
+- it looks like boiling water (it's not water though, of course)
+
+
+Your friend wants to take liquid nitrogen home in a plastic water bottle. He says that if he pours it into the bottle and seals
+the the top, it'll stop boiling and he can take it home.
+What should you tell him?
+["reorder": false]
+- You are correct, that will work perfectly.
+- Not only will it work, it will be like an ice pack you can use to soothe an injury, but more effective.
+- Unfortunately, I don't think the liquid nitrogen will hold, but there's no harm in tryning!
+- Great idea...if you want to lose an eye.
+
+
+What happens if you put an open bowl of liquid nitrogen in your freezer?
+- it freezes into solid nitrogen
+- it stays the same as liquid nitrogen
+- it still boils away, just a little more slowly than outside the freezer

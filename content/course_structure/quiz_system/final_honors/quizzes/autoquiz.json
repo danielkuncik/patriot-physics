@@ -162,6 +162,42 @@
           "text_math": "1.08 \\cdot 10^{-6} \\, \\text{J}"
         }
       ]
+    },
+    {
+      "text": "What is the proper way of connecting an ammeter and voltmeter to measure teh current through and voltage across, respectively, some circuit element?",
+      "answerChoices": [
+        {
+          "text": "The ammeter is connected in series with the element and the voltmeter is connected in parallel with the element.",
+          "correct": true
+        },
+        {
+          "text": "The ammeter is connected in parallel with the element and the voltmeter is connected in series with the element."
+        },
+        {
+          "text": "Both the ammeter and voltmeter are connected in parallel with the element."
+        },
+        {
+          "text": "Both the ammeter and voltmeter are connected in series with the element."
+        }
+      ]
+    },
+    {
+      "text": "How do you read the resistance of a resistor found in an electrical cabinet?",
+      "answerChoices": [
+        {
+          "text": "There are bands of color across the resistor that correspond to certain numbers.",
+          "correct": true
+        },
+        {
+          "text": "The numerical value of each resistor is printed on it."
+        },
+        {
+          "text": "There isn't any way to tell once you take them out of the package. You simply must organize your resistors very carefully."
+        },
+        {
+          "text": "The size of the resistor corresponds to different values of resistance."
+        }
+      ]
     }
   ]
 }

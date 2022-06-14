@@ -1,0 +1,148 @@
+{
+  "questions": [
+    {
+      "text": "Which of the following is the most abundant component of air, making up approximately 78 % of air molecules?",
+      "answerChoice": [
+        {
+          "text": "Nitrogen",
+          "correct": true
+        },
+        {
+          "text": "Oxygen"
+        },
+        {
+          "text": "Argon"
+        },
+        {
+          "text": "Water"
+        },
+        {
+          "text": "Carbon Dioxide"
+        },
+        {
+          "text": "Helium"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is the second most abundant component of air, making up approximately 21 % of air particles?",
+      "answerChoice": [
+        {
+          "text": "Nitrogen"
+        },
+        {
+          "text": "Oxygen",
+          "correct": true
+        },
+        {
+          "text": "Argon"
+        },
+        {
+          "text": "Water"
+        },
+        {
+          "text": "Carbon Dioxide"
+        },
+        {
+          "text": "Helium"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is a variable component of the air, existing in different quantities based on geography and climate?",
+      "answerChoice": [
+        {
+          "text": "Nitrogen"
+        },
+        {
+          "text": "Oxygen"
+        },
+        {
+          "text": "Argon"
+        },
+        {
+          "text": "Water",
+          "correct": true
+        },
+        {
+          "text": "Carbon Dioxide"
+        },
+        {
+          "text": "Helium"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following makes up about 1 % of air molecules?",
+      "answerChoice": [
+        {
+          "text": "Nitrogen"
+        },
+        {
+          "text": "Oxygen"
+        },
+        {
+          "text": "Argon",
+          "correct": true
+        },
+        {
+          "text": "Water"
+        },
+        {
+          "text": "Carbon Dioxide"
+        },
+        {
+          "text": "Helium"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following, though it makes up less than 1% of air molecules, plays a large role in ecology because it is used by plants to grown their structures?",
+      "answerChoice": [
+        {
+          "text": "Nitrogen"
+        },
+        {
+          "text": "Oxygen"
+        },
+        {
+          "text": "Argon"
+        },
+        {
+          "text": "Water"
+        },
+        {
+          "text": "Carbon Dioxide",
+          "correct": true
+        },
+        {
+          "text": "Helium"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is found in negligible quantities in the air we breath?",
+      "answerChoice": [
+        {
+          "text": "Nitrogen"
+        },
+        {
+          "text": "Oxygen"
+        },
+        {
+          "text": "Argon"
+        },
+        {
+          "text": "Water"
+        },
+        {
+          "text": "Carbon Dioxide"
+        },
+        {
+          "text": "Helium",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
