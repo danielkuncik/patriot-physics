@@ -34,7 +34,7 @@
     // });
 
     let A_array = [];
-    honors_final.forEach((quiz_ID) => {
+    A_final.forEach((quiz_ID) => {
         console.log(quiz_ID);
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             console.log('here');
@@ -42,19 +42,18 @@
             A_array.push(data);
         });
     });
-    setTimeout(() => {console.log("Hello world")}, 5000);
-    $("#A_quiz_spot").append(generateWrittenQuiz(A_array, "Honors Physics Final Exam: June 2022", 1, 50));
+    $("#A_quiz_spot").append(generateWrittenQuiz(A_array, "Physics A Final Exam: June 2022", 2, 60));
 
 
 
-    // let honors_array = [];
-    // Quiz_june_2022_Honors.forEach((quiz_ID) => {
-    //     $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
-    //         data.id = quiz_ID;
-    //         honors_array.push(data);
-    //     });
-    // });
-    // $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Quiz: June 2022", 3, 41));
+    let honors_array = [];
+    honors_final.forEach((quiz_ID) => {
+        $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
+            data.id = quiz_ID;
+            honors_array.push(data);
+        });
+    });
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Final Exam: June 2022", 2, 70));
 
 
 </script>

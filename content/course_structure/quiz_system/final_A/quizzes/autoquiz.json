@@ -33,7 +33,7 @@
           "text": "The temperature of the flame and the specific heats of the metals."
         },
         {
-          "text": "The initial temperature of the coins and the tempearture of the flame."
+          "text": "The initial temperature of the coins and the temperature of the flame."
         }
       ]
     },
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "text": "Which of the following phenomena best explains wjy light changes direction whe it asses through an eyeglass lens?",
+      "text": "Which of the following phenomena best explains why light changes direction when it passes through an eyeglass lens?",
       "note": "A only",
       "answerChoices": [
         {
@@ -181,6 +181,24 @@
         {
           "text": "refraction",
           "correct": true
+        }
+      ]
+    },
+    {
+      "text": "The orbit of the each planet around the sun has what shape?",
+      "answerChoices": [
+        {
+          "text": "An ellipse",
+          "correct": true
+        },
+        {
+          "text": "A circle"
+        },
+        {
+          "text": "A hyperbola"
+        },
+        {
+          "text": "A parabola"
         }
       ]
     }

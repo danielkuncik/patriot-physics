@@ -1,0 +1,20 @@
+Level 1:
+What is a quantity
+What is a unit
+Vectors and scalars (move it in here)
+Dimensional analysis 1 [simplifying units]
+
+Level 2:
+What is the SI unit system
+Dimensional Analysis 2
+
+
+Level 3:
+Applying dimensional analysis rules (testing if an equation is dimensionally correct)
+Memorizing the dimensions of common units (
+SI unit system 2 (more advanced SI unit system concepts)
+
+
+Level 4:
+Applying dimensional analysis rules 2 (testing if an euqatio is dimensionally correct with little mistakes within parentheses etc.)
+Memorizing all units by dimension

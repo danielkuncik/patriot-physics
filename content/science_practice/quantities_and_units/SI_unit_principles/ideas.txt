@@ -1,0 +1,11 @@
+
+
+
+Say that, while your teacher is teaching you a problem, they mention you should use the unit "meters per second squared" for acceleration. What does this statement mean?
+- m/s^2 is the one and only acceptable unit for acceleraiton
+- m/s^2 is the unit that should be used in formulas, but not the only unit
+
+
+The letters "SI" stand for:
+
+

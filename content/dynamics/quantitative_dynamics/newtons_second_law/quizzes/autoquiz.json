@@ -1,0 +1,48 @@
+{
+  "questions": [
+    {
+      "text": "The symbol Σ represents which Greek letter?",
+      "answerChoices": [
+        {
+          "text": "uppercase sigma",
+          "correct": true
+        },
+        {
+          "text": "uppercase alpha"
+        },
+        {
+          "text": "uppercase delta"
+        },
+        {
+          "text": "uppercase omega"
+        },
+        {
+          "text": "uppercase omicron"
+        },
+        {
+          "text": "lowercase sigma"
+        },
+        {
+          "text": "lowercase alpha"
+        },
+        {
+          "text": "lowercase delta"
+        },
+        {
+          "text": "lowercase omega"
+        },
+        {
+          "text": "lowercase omicron"
+        }
+      ]
+    },
+    {
+      "text": "In science and mathematics, the symbol Σ indicates what operation?",
+      "answerChoices": [
+        {
+          "text": "combing a set of items together"
+        }
+      ]
+    }
+  ]
+}

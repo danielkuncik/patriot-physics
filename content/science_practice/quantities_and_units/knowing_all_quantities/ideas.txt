@@ -1,0 +1,29 @@
+The goal of this pod is to know all physics quantities in an organized way
+
+this is an advanced pod
+
+concepts:
+
+1. all quantities can be organized into dimensions
+2. there are seven base dimensions, other dimensions are derived from the seven base dimensions
+2. all quantities of a single dimension all have the same possible units and the same SI unit
+3. there are seven base SI units, each corresponding to a single dimension. the SI unit for each dimension is derived from the base SI units in the same way that the dimension itself is derived from base dimensions.
+3. each quantity is either a vector or a scalar, within a single dimension different quantities may be either vectors or scalars
+4. vectors can be broken into components, in which each component is a scalar quantitiy of the same dimesion
+
+
+length
+- position
+- length
+- height (vertical component of position)
+- change in position (called displacement)
+- change in height
+
+
+area
+
+
+volume
+
+
+

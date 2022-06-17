@@ -33,3 +33,12 @@ Think of this
 
 
 How do I assess this?
+
+
+
+In a physics problem, I typically advise you NOT to write the units when solving an equation
+in order to make it simpler.
+Why are yuo able to do this and still get a correct answer?
+- Units are not a part of an equation, only a completed answer
+- Because this is an simper course, in a more advanced course you would need to write the units
+- Units are a part of the equation, but if you always use the SI units they always work out correctly without effort.

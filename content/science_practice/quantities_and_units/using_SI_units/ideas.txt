@@ -1,0 +1,15 @@
+This pod will roughly contain the following information
+
+
+1. each quantity has many units
+2. for each quantity, there is a single unit called the SI unit
+3. SI stands for international sysmte (in french)
+4. whenever you plug a value into a formula, you must first ensure that value is in the correct SI unit
+5. whatever value you get out of solving a formula will be in the SI unit
+
+
+
+
+
+
+Bei

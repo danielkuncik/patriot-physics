@@ -33,7 +33,7 @@
           "text": "The temperature of the flame and the specific heats of the metals."
         },
         {
-          "text": "The initial temperature of the coins and the tempearture of the flame."
+          "text": "The initial temperature of the coins and the temperature of the flame."
         }
       ]
     },
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "text": "What is the frequency of a wave with a wavelength of 4.56 x 10^{-7} meters?",
+      "text": "What is the frequency of a wave with a wavelength of \\( 4.56 \\cdot 10^{-7} \\) meters?",
       "answerChoices": [
         {
           "text_math": "6.58 \\cdot 10^{14} \\, \\text{Hz}",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "text": "What is the energy of a wave with a frequency of 2.78 x 10^{14} Hertz?",
+      "text": "What is the energy of a wave with a frequency of \\( 2.78 \\cdot 10^{14} \\) Hertz?",
       "answerChoices": [
         {
           "text_math": "1.84 \\cdot 10^{-19} \\, \\text{J}",
@@ -164,7 +164,7 @@
       ]
     },
     {
-      "text": "What is the proper way of connecting an ammeter and voltmeter to measure teh current through and voltage across, respectively, some circuit element?",
+      "text": "What is the proper way of connecting an ammeter and voltmeter to measure the current through and voltage across, respectively, some circuit element?",
       "answerChoices": [
         {
           "text": "The ammeter is connected in series with the element and the voltmeter is connected in parallel with the element.",
@@ -196,6 +196,24 @@
         },
         {
           "text": "The size of the resistor corresponds to different values of resistance."
+        }
+      ]
+    },
+    {
+      "text": "The orbit of the each planet around the sun has what shape?",
+      "answerChoices": [
+        {
+          "text": "An ellipse",
+          "correct": true
+        },
+        {
+          "text": "A circle"
+        },
+        {
+          "text": "A hyperbola"
+        },
+        {
+          "text": "A parabola"
         }
       ]
     }
