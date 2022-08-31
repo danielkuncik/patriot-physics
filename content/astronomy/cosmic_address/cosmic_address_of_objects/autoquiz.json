@@ -1,0 +1,303 @@
+{
+  "directions": "Determine the location of each object relative to earth's cosmic address.",
+  "questions": [
+    {
+      "text": "What is the location of the Nile River?",
+
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth.",
+          "correct": true
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "What is the location of The James Webb Space Telescope?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "What is the location of Neptune?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "Ceres is a dwarf planet that is the largest object in the asteroid belt. What is the location of Ceres?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "What is the location of ____?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "What is the location of ____?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "Comet Hale-Bopp was visible in 1997 and will return in approximately 4385. What is the location of comet Hale-Bopp?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "Vega is a star in the constellation Lyra and is among the brightest stars in the sky. What is the location of Vega?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "The Horsehead Nebula is a cloud of space dust near the stars in the constellation Orion. What is the location of the Horsehead Nebula?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "As of September 2022, the closest black hole to earth is called The Unicorn and is about 1500 Light Years away. What is the location of The Unicorn?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    },
+    {
+      "text": "As of September 2022, one of the farthest away objects ever observed is a galaxy called HD1 that us 13.5 billion light years away. What is the location of HD1?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "The Large Magellanic Cloud is one of the galaxies closest to earth. What is the location of the Large Magellanic Cloud?",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "On Earth."
+        },
+        {
+          "text": "Not on Earth, but in the Earth-Moon System."
+        },
+        {
+          "text": "Not in the Earth-Moon System, but in the Solar System."
+        },
+        {
+          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+        },
+        {
+          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster.",
+          "correct": true
+        },
+        {
+          "text": "Not in the Laniakea Supercluster, but in the Universe"
+        }
+      ]
+    }
+  ]
+}

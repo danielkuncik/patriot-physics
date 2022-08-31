@@ -1,0 +1,29 @@
+{
+  "directions": "For each definition stated, determine what it should be called.",
+  "questions": [
+    {
+      "text": "What word is described by this definition:",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth"
+        },
+        {
+          "text": "The earth-moon system"
+        },
+        {
+          "text": "The solar system"
+        },
+        {
+          "text": "The milky way galaxy"
+        },
+        {
+          "text": "The Laniakea Supercluster"
+        },
+        {
+          "text": "The Universe"
+        }
+      ]
+    }
+  ]
+}

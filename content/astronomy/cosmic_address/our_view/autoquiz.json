@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "text": "In the night sky, you can see a band across the center called the “milky way.” You can also see many individual white dots, called “stars.” Which statement correctly describes these observations. You also know that the milky way is a galaxy made of billions of stars. Which of the following statements correctly explains these observations?",
+      "answerChoices": [
+        {
+          "text": "The purple band is light from the billions of stars of the milky way blended together. A small minority of these stars are close enough to earth to be visible as bright dots.",
+          "correct": true
+        },
+        {
+          "text": "The purple band is light from the billions of stars of the milky way blended together. The bright dots are stars that are not in the milky way."
+        },
+        {
+          "text": "You can only see stars close to earth. The purple band is light emitted from the supermassive black hole at the center of the milky way galaxy."
+        },
+        {
+          "text": "The commonly held belief that the purple band is the “milky way” is false. It is composed of ambient light left over from the big bang. All of the stars of the milky way are visible as white dots."
+        }
+      ]
+    }
+  ]
+}
