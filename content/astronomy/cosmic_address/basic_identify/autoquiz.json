@@ -2,7 +2,82 @@
   "directions": "For each definition stated, determine what it should be called.",
   "questions": [
     {
-      "text": "What word is described by this definition:",
+      "text": "What term is best described by this definition: Rocky sphere.",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth",
+          "correct": true
+        },
+        {
+          "text": "The earth-moon system"
+        },
+        {
+          "text": "The solar system"
+        },
+        {
+          "text": "The milky way galaxy"
+        },
+        {
+          "text": "The Laniakea Supercluster"
+        },
+        {
+          "text": "The Universe"
+        }
+      ]
+    },
+    {
+      "text": "What term is best described by this definition: The earth and all objects in orbit of the earth.",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth"
+        },
+        {
+          "text": "The earth-moon system",
+          "correct": true
+        },
+        {
+          "text": "The solar system"
+        },
+        {
+          "text": "The milky way galaxy"
+        },
+        {
+          "text": "The Laniakea Supercluster"
+        },
+        {
+          "text": "The Universe"
+        }
+      ]
+    },
+    {
+      "text": "What term is best described by this definition: The sun and all objects in orbit of the sun.",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth"
+        },
+        {
+          "text": "The earth-moon system"
+        },
+        {
+          "text": "The solar system",
+          "correct": true
+        },
+        {
+          "text": "The milky way galaxy"
+        },
+        {
+          "text": "The Laniakea Supercluster"
+        },
+        {
+          "text": "The Universe"
+        }
+      ]
+    },
+    {
+      "text": "What term is best described by this definition: Billions of stars including the sun arranged in a spiral pattern surrounding a supermassive black hole.",
       "reorder": false,
       "answerChoices": [
         {
@@ -13,6 +88,82 @@
         },
         {
           "text": "The solar system"
+        },
+        {
+          "text": "The milky way galaxy",
+          "correct": true
+        },
+        {
+          "text": "The Laniakea Supercluster"
+        },
+        {
+          "text": "The Universe"
+        }
+      ]
+    },
+    {
+      "text": "Which term is best described by this definition: Thousands of galaxies gravitational attracted to a particular point.",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth"
+        },
+        {
+          "text": "The earth-moon system"
+        },
+        {
+          "text": "The solar system"
+        },
+        {
+          "text": "The milky way galaxy"
+        },
+        {
+          "text": "The Laniakea Supercluster",
+          "correct": true
+        },
+        {
+          "text": "The Universe"
+        }
+      ]
+    },
+    {
+      "text": "What term is best described by this definition: infinite expanse of space, matter, and energy.",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth"
+        },
+        {
+          "text": "The earth-moon system"
+        },
+        {
+          "text": "The solar system"
+        },
+        {
+          "text": "The milky way galaxy"
+        },
+        {
+          "text": "The Laniakea Supercluster"
+        },
+        {
+          "text": "The Universe",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "What term is best described by this definition: a disc of matter orbiting one point contained within a large sphere called the Oort cloud.",
+      "reorder": false,
+      "answerChoices": [
+        {
+          "text": "Earth"
+        },
+        {
+          "text": "The earth-moon system"
+        },
+        {
+          "text": "The solar system",
+          "correct": true
         },
         {
           "text": "The milky way galaxy"
