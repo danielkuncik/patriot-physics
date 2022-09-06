@@ -1,0 +1,310 @@
+{
+  "questions": [
+    {
+      "text": "What does the Greek word planetes mean?",
+      "answerChoices": [
+        {
+          "text": "wanderer",
+          "correct": true
+        },
+        {
+          "text": "large mass"
+        },
+        {
+          "text": "orbit"
+        },
+        {
+          "text": "sphere"
+        }
+      ]
+    },
+    {
+      "text": "The ancient Greek definition of a planet was:",
+      "answerChoices": [
+        {
+          "text": "An object that appears at different points in the celestial sphere.",
+          "correct": true
+        },
+        {
+          "text": "A large spherical mass orbiting the sun"
+        },
+        {
+          "text": "A large spherical mass moving in an ellipse around the earth"
+        },
+        {
+          "text": "Any large mass in space"
+        }
+      ]
+    },
+    {
+      "text": "Retrograde Motion refers to what phenomenon?",
+      "answerChoices": [
+        {
+          "text": "A planet slows down and stops moving."
+        },
+        {
+          "text": "The earth slows down, stops, and reverses direction."
+        },
+        {
+          "text": "A planet moving across the sky appears turn backwards.",
+          "correct": true
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "The explanation for retrograde motion in the Ptolomeic universe was",
+      "answerChoices": [
+        {
+          "text": "Planets are moving in small circles within a larger circle",
+          "correct": true
+        },
+        {
+          "text": "The planet slowed down, stopped, and reversed direction due to the force of gravity."
+        },
+        {
+          "text": "The earth changed direction while orbiting."
+        },
+        {
+          "text": "The sun changed the direction it is spinning."
+        }
+      ]
+    },
+    {
+      "text": "The explanation for retrograde motion in the Copernican universe is:",
+      "answerChoices": [
+        {
+          "text": "The earth changed direction while orbiting.",
+          "correct": true
+        },
+        {
+          "text": "The sun changed the direction it is spinning."
+        },
+        {
+          "text": "The planet slowed down, stopped, and reversed direction due to the force of gravity."
+        },
+        {
+          "text": "Planets are moving in small circles within a larger circle."
+        }
+      ]
+    },
+    {
+      "text": "For most of history, people believed the planets must move in circles. Kepler discovered that:",
+      "answerChoices": [
+        {
+          "text": "They move in ellipses, not circles, but the ellipses are nearly circular.",
+          "correct": true
+        },
+        {
+          "text": "They move in ellipses, not circles, and the ellipses are highly eccentric (non-circular)."
+        },
+        {
+          "text": "They move in a square, not a circle."
+        },
+        {
+          "text": "They did indeed move in circles."
+        }
+      ]
+    },
+    {
+      "text": "From the Renaissance to the 2006 IAU meeting, the term \"planet\" had a very unclear definition. The closest thing to a definition was:",
+      "answerChoices": [
+        {
+          "text": "A large spherical mass orbiting the sun",
+          "correct": true
+        },
+        {
+          "text": "A large spherical mass orbiting the earth"
+        },
+        {
+          "text": "An object that appears in a different points in the celestial sphere"
+        },
+        {
+          "text": "Any large mass in space"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

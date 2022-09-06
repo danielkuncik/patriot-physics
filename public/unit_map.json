@@ -11354,59 +11354,157 @@
         "id": "3d0fa9",
         "pods": {
           "our_cosmic_address": {
+            "title": "Our Cosmic Address",
+            "level": 1,
+            "horizontal": 2,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "uuid": "72066561-d900-4490-a082-90218766b000",
             "id": "720665"
           },
           "classify_within_cosmic_address": {
+            "title": "Classifying Objects Within Our Cosmic Address",
+            "level": 1,
+            "horizontal": 3,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "uuid": "c89b8a55-76ef-4d08-bcd6-d5a461ac6840",
             "id": "c89b8a"
           },
           "cosmic_address_of_other_objects": {
+            "title": "Cosmic Address of Other Objects",
+            "level": 1,
+            "horizontal": 4,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "uuid": "fe91d822-59ab-4fb7-872b-9d3fe8475794",
             "id": "fe91d8"
           },
           "our_view": {
+            "title": "Determining Cosmic Address from our View of the Night Sky",
+            "level": 1,
+            "horizontal": 5,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "concept": "connect our cosmic address to the actual view that we see",
             "uuid": "bf2efb26-706e-47b1-86b8-8405f75bf9bf",
             "id": "bf2efb"
           },
           "definition_of_planet": {
+            "title": "Definition of a Planet",
+            "level": 1,
+            "horizontal": 6,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "uuid": "30ccce6b-dae0-4d7d-8d87-41c8e9dde920",
             "id": "30ccce"
           },
           "greek_constellations": {
+            "title": "Greek Constellations",
+            "level": 1,
+            "horizontal": 7,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "uuid": "c04227fb-0c8e-4639-99b3-5293511ce9f7",
             "id": "c04227"
           },
           "comets": {
+            "title": "Comets",
+            "level": 1,
+            "horizontal": 8,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
             "uuid": "f6027dfd-fb98-4665-bb96-0cff9b43c348",
             "id": "f6027d"
           },
           "eclipses": {
+            "title": "Eclipses",
+            "level": 1,
+            "horizontal": 9,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "df85d2a3-baf4-4b2b-9150-5f7dcb00ee8a",
             "id": "df85d2"
           },
           "the_copernican_revolution": {
+            "title": "The Copernican Revolution",
+            "level": 1,
+            "horizontal": 10,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "202caea2-ea69-4ea6-ad68-227dc140d21a",
             "id": "202cae"
           },
           "non_greek_constellations": {
+            "title": "Non-Greek Constellations",
+            "level": 2,
+            "horizontal": 10,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "d653517d-251c-44b4-abc6-d030f3dd616b",
             "id": "d65351"
           },
           "telescopes_and_programs_1": {
+            "title": "Telescopes and Programs 1",
+            "level": 2,
+            "horizontal": 9,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "10ca28c1-5620-4af4-b3a5-2910d003ee99",
             "id": "10ca28"
           },
           "telescopes_and_programs_2": {
+            "title": "Telescopes and Programs 2",
+            "level": 2,
+            "horizontal": 8,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "7805990f-be6a-4b4b-bf0a-2d35a7b0fc45",
             "id": "780599"
           },
           "telescopes_and_programs_3": {
+            "title": "Telescopes and Programs 3",
+            "level": 2,
+            "horizontal": 7,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "2b54bf6f-ae61-4f03-a44a-08ee48919421",
             "id": "2b54bf"
           },
           "astrology": {
+            "title": "Astrology",
+            "level": 2,
+            "horizontal": 6,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "letter": "",
             "uuid": "71e78221-f823-4c1a-b90d-f9edeed45fb7",
             "id": "71e782"
           }
