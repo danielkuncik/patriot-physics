@@ -298,6 +298,27 @@
           "text": "Not in the Laniakea Supercluster, but in the Universe"
         }
       ]
+    },
+    {
+      "text": "A scientist discovers a new asteroid roughly in the area of the Oort Cloud. What determines whether this asteroid should be considered an object in the solar system?",
+      "answerChoices": [
+        {
+          "text": "Whether or not the asteroid orbits the sun.",
+          "correct": true
+        },
+        {
+          "text": "How far the asteroid is from the sun."
+        },
+        {
+          "text": "How far the asteroid is from the earth."
+        },
+        {
+          "text": "The size of the asteroid."
+        },
+        {
+          "text": "Whether or not the asteroid orbits the earth."
+        }
+      ]
     }
   ]
 }

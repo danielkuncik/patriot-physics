@@ -506,6 +506,24 @@ const display_quiz_new = (req, res) => {
 
 };
 
+const display_sub_plans = (req, res) => {
+    res.render('subPlans.hbs', {
+        layout: 'default',
+        title: 'Mr. Kuncik Sub Plans',
+        user: req.user,
+        section: req.section,
+        overallLevel: req.overallLevel,
+        gradeMap: req.gradeMap,
+        courseLevel: req.courseLevel,
+        year: req.year,
+        totalAttempts: req.totalAttemps,
+        flashMessage: req.body.flashMessage,
+        // flash: req.flash,
+        successFlash: req.flash('successFlash'),
+        dangerFlash: req.flash('dangerFlash'),
+        scoreObject: req.scoreObject
+    })
+};
 
 
 module.exports = {
@@ -525,5 +543,6 @@ module.exports = {
     display_quiz_new,
     display_practice_submission_page,
     display_info_page,
-    display_scale_page
+    display_scale_page,
+    display_sub_plans
 };
