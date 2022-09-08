@@ -275,6 +275,18 @@ hbs.registerHelper('individualPodLink',(superUnitKey, unitKey, podKey, gradeMap,
     return new hbs.SafeString(item)
 });
 
+hbs.registerHelper('podLink',(id, gradeMap, extraMessage) => {
+    const idLibraryItem = idLibrary[id];
+    if (idLibraryItem && idLibraryItem.type === 'pod') {
+        let item = makePodListItem(idLibraryItem.superUnitKey, idLibraryItem.unitKey, idLibraryItem.podKey, gradeMap, true, extraMessage);
+        return new hbs.SafeString(item);
+    } else {
+        return new hbs.SafeString(`<li>pod ${id} not found</li>`);
+    }
+});
+// make a list helper
+
+
 hbs.registerHelper('listOfPods', (superUnitKey, unitKey, gradeMap) => {
     let list = "<ul class = 'podList'>";
     levelList = {1:[],2:[],3:[],4:[],5:[],6:[]};
