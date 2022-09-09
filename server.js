@@ -640,7 +640,7 @@ app.get('/autoquiz/:id', (req, res) => {
     res.sendFile(filePath);
 });
 
-app.get('/sub_plans',disp.display_sub_plans)
+app.get('/sub_plans',disp.display_sub_plans);
 
 
 app.listen(port, () => console.log(`app running on port ${port}`));
