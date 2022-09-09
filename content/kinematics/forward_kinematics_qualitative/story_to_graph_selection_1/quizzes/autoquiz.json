@@ -1,0 +1,293 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the POSITION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_ptA.png"
+        },
+        {
+          "image": "stgs_ptB.png"
+        },
+        {
+          "image": "stgs_ptC.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_ptD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the VELOCITY-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_vtA.png"
+        },
+        {
+          "image": "stgs_vtB.png"
+        },
+        {
+          "image": "stgs_vtC.png"
+        },
+        {
+          "image": "stgs_vtD.png",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the ACCELERATION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_atA.png"
+        },
+        {
+          "image": "stgs_atB.png"
+        },
+        {
+          "image": "stgs_atC.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_atD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the MOTION MAP that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_mmA.png"
+        },
+        {
+          "image": "stgs_mmB.png"
+        },
+        {
+          "image": "stgs_mmC.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_mmD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the POSITION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_ptA.png"
+        },
+        {
+          "image": "stgs_ptB.png"
+        },
+        {
+          "image": "stgs_ptC.png"
+        },
+        {
+          "image": "stgs_ptD.png",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the VELOCITY-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_vtA.png"
+        },
+        {
+          "image": "stgs_vtB.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_vtC.png"
+        },
+        {
+          "image": "stgs_vtD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the ACCELERATION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_atA.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_atB.png"
+        },
+        {
+          "image": "stgs_atC.png"
+        },
+        {
+          "image": "stgs_atD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the MOTION MAP that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_mmA.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_mmB.png"
+        },
+        {
+          "image": "stgs_mmC.png"
+        },
+        {
+          "image": "stgs_mmD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the POSITION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_ptA.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_ptB.png"
+        },
+        {
+          "image": "stgs_ptC.png"
+        },
+        {
+          "image": "stgs_ptD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the VELOCITY-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_vtA.png"
+        },
+        {
+          "image": "stgs_vtB.png"
+        },
+        {
+          "image": "stgs_vtC.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_vtD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the ACCELERATION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_atA.png"
+        },
+        {
+          "image": "stgs_atB.png"
+        },
+        {
+          "image": "stgs_atC.png"
+        },
+        {
+          "image": "stgs_atD.png",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the MOTION MAP that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_mmA.png"
+        },
+        {
+          "image": "stgs_mmB.png"
+        },
+        {
+          "image": "stgs_mmC.png"
+        },
+        {
+          "image": "stgs_mmD.png",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the POSITION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_ptA.png"
+        },
+        {
+          "image": "stgs_ptB.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_ptC.png"
+        },
+        {
+          "image": "stgs_ptD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the VELOCITY-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_vtA.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_vtB.png"
+        },
+        {
+          "image": "stgs_vtC.png"
+        },
+        {
+          "image": "stgs_vtD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the ACCELERATION-TIME graph that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_atA.png"
+        },
+        {
+          "image": "stgs_atB.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_atC.png"
+        },
+        {
+          "image": "stgs_atD.png"
+        }
+      ]
+    },
+    {
+      "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the MOTION MAP that best reflects this motion.",
+      "answerChoices": [
+        {
+          "image": "stgs_mmA.png"
+        },
+        {
+          "image": "stgs_mmB.png",
+          "correct": true
+        },
+        {
+          "image": "stgs_mmC.png"
+        },
+        {
+          "image": "stgs_mmD.png"
+        }
+      ]
+    }
+  ]
+}
