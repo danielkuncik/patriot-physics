@@ -65,7 +65,7 @@ Object.keys(unitMap).forEach((superUnitKey) => {
             };
             if (availablePods.includes(`${podKey}`)) {
                 let podFolderFiles = filesInDirectory(`${contentDirectory}/${superUnitKey}/${unitKey}/${podKey}`);
-                if (podFolderFiles.includes('assets.hbs')) {
+                if (podFolderFiles.includes('pod_page.hbs')) {
                     availableContent[superUnitKey].units[unitKey].pods[podKey].available = true;
 
                     /// count quizzes here
