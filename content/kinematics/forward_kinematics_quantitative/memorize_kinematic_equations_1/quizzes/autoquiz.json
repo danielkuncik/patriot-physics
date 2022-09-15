@@ -1,0 +1,13 @@
+{
+  "questions": [
+    {
+      "text": "Which of the following is a correctly written kinematic equation?",
+      "answerChoices": [
+        {
+          "text": "\\( v_f = v_i + a \\cdot \\Delta t  \\)",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
