@@ -415,7 +415,10 @@ app.get('/podAssets/:unitClusterKey/:unitKey/:assetName', (req, res) => {
 
 
 app.get('/asset/:podID/:assetName', (req, res) => {
-    const idLibraryObject = idLibrary[req.params.podID];
+    const myArray = req.headers.referer.split('/');
+    const thisPodID = myArray[myArray.length - 1];
+    let id = req.params.podID === 'this' ? thisPodID : req.params.podID;
+    const idLibraryObject = idLibrary[id];
     if (!idLibraryObject || idLibraryObject.type !== 'pod') {
         // do nothing???
     } else {
