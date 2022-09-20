@@ -1,0 +1,141 @@
+{
+  "questions": [
+    {
+      "text": "I have a final velocity of 50.0 m/s. I had an initial velocity of 17.0 m/s. I have an acceleration of 3.00 m/s/s. How much time did it take?",
+      "answerChoices": [
+        {
+          "text": "11.0 s",
+          "correct": true
+        }, {
+          "text": "12.0 s"
+        }, {
+          "text": "13.0 s"
+        }, {
+          "text": "10.0 s"
+        }, {
+          "text": "9.00 s"
+        }, {
+          "text": "8.00 s"
+        }, {
+          "text": "7.00 s"
+        }, {
+          "text": "6.00 s"
+        }
+      ]
+    },    {
+      "text": "I accelerate from 2.00 m/s to 20.0 m/s and travel a displacement of 120. m. What is my acceleration?",
+      "answerChoices": [
+        {
+          "text": "1.65 m/s/s",
+          "correct": true
+        }, {
+          "text": "1.70 m/s/s"
+        }, {
+          "text": "1.60 m/s/s"
+        }, {
+          "text": "1.55 m/s/s"
+        }, {
+          "text": "1.50 m/s/s"
+        }, {
+          "text": "1.45 m/s/s"
+        }, {
+          "text": "1.40 m/s/s"
+        }, {
+          "text": "1.35 m/s/s"
+        }
+      ]
+    },
+    {
+      "text": "I begin at rest and travel a displacement of 200. m while accelerating at a rate of 1.50 m/s/s. How much time does it take?",
+      "answerChoices": [
+        {
+          "text": "16.3 s",
+          "correct": true
+        }, {
+          "text": "16.0 s"
+        }, {
+          "text": "16.6 s"
+        }, {
+          "text": "16.9 s"
+        }, {
+          "text": "17.2 s"
+        }, {
+          "text": "17.5 s"
+        }, {
+          "text": "17.8 s"
+        }, {
+          "text": "18.1 s"
+        }
+      ]
+    },
+    {
+      "text": "I have an initial velocity of 4 m/s, a final velocity of 9 m/s, and a displacement of 5 meters. What is my time?",
+      "answerChoices": [
+        {
+          "text": "0.769 s",
+          "correct": true
+        }, {
+          "text": "0.759 s"
+        }, {
+          "text": "0.749 s"
+        }, {
+          "text": "0.739 s"
+        }, {
+          "text": "0.779 s"
+        }, {
+          "text": "0.789 s"
+        }, {
+          "text": "0.799 s"
+        }, {
+          "text": "0.809 s"
+        }
+      ]
+    },
+    {
+      "text": "I have an initial velocity of 0, an acceleration of 12 m/s/s, and a displacement of 240,000 m. How much time did it take?",
+      "answerChoices": [
+        {
+          "text": "200 s",
+          "correct": true
+        }, {
+          "text": "250 s"
+        }, {
+          "text": "300 s"
+        }, {
+          "text": "350 s"
+        }, {
+          "text": "400 s"
+        }, {
+          "text": "450 s"
+        }, {
+          "text": "500 s"
+        }, {
+          "text": "550 s"
+        }
+      ]
+    },
+    {
+      "text": "I have an initial velocity of 5 m/s, a time of 8 s, and a displacement of 80 m. What is my final velocity?",
+      "answerChoices": [
+        {
+          "text": "15 m/s",
+          "correct": true
+        }, {
+          "text": "16 m/s"
+        }, {
+          "text": "17 m/s"
+        }, {
+          "text": "14 m/s"
+        }, {
+          "text": "13 m/s"
+        }, {
+          "text": "12 m/s"
+        }, {
+          "text": "11 m/s"
+        }, {
+          "text": "10 m/s"
+        }
+      ]
+    }
+  ]
+}

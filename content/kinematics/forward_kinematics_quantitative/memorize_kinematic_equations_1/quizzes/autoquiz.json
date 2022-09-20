@@ -6,6 +6,99 @@
         {
           "text": "\\( v_f = v_i + a \\cdot \\Delta t  \\)",
           "correct": true
+        },
+        {
+          "text": "\\( v_f = v_i - a \\cdot \\Delta t  \\)"
+        },
+        {
+          "text": "\\( v_f = v_i + a \\cdot \\Delta x  \\)"
+        },
+        {
+          "text": "\\( v_f = v_i - a \\cdot \\Delta x  \\)"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is a correctly written kinematic equation?",
+      "answerChoices": [
+        {
+          "text": "\\( \\Delta x = v_i \\cdot \\Delta t + \\frac{1}{2} a \\cdot ( \\Delta t  )^2 \\)",
+          "correct": true
+        },
+        {
+          "text": "\\( \\Delta x = v_i \\cdot \\Delta t - \\frac{1}{2} a \\cdot ( \\Delta t  )^2 \\)"
+        },
+        {
+          "text": "\\( \\Delta x = v_f \\cdot \\Delta t + \\frac{1}{2} a \\cdot ( \\Delta t  )^2 \\)"
+        },
+        {
+          "text": "\\( \\Delta x = v_f \\cdot \\Delta t - \\frac{1}{2} a \\cdot ( \\Delta t  )^2 \\)"
+        },
+        {
+          "text": "\\( \\Delta t = v_i \\cdot \\Delta x + \\frac{1}{2} a \\cdot ( \\Delta x  )^2 \\)"
+        },
+        {
+          "text": "\\( \\Delta t = v_i \\cdot \\Delta x - \\frac{1}{2} a \\cdot ( \\Delta x  )^2 \\)"
+        },
+        {
+          "text": "\\( \\Delta t = v_f \\cdot \\Delta x + \\frac{1}{2} a \\cdot ( \\Delta x  )^2 \\)"
+        },
+        {
+          "text": "\\( \\Delta t = v_f \\cdot \\Delta x - \\frac{1}{2} a \\cdot ( \\Delta x  )^2 \\)"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is a correctly written kinematic equation?",
+      "answerChoices": [
+        {
+          "text": "\\( \\Delta x = \\left( \\frac{v_i + v_f}{2} \\right) \\Delta t \\)",
+          "correct": true
+        },
+        {
+          "text": "\\( \\Delta x = \\left( \\frac{v_i - v_f}{2} \\right) \\Delta t \\)"
+        },
+        {
+          "text": "\\( \\Delta x = \\left( \\frac{v_f - v_i}{2} \\right) \\Delta t \\)"
+        },
+        {
+          "text": "\\( \\Delta t = \\left( \\frac{v_i + v_f}{2} \\right) \\Delta x \\)"
+        },
+        {
+          "text": "\\( \\Delta t = \\left( \\frac{v_i - v_f}{2} \\right) \\Delta x \\)"
+        },
+        {
+          "text": "\\( \\Delta t = \\left( \\frac{v_f - v_i}{2} \\right) \\Delta x \\)"
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is a correctly written kinematic equation?",
+      "answerChoices": [
+        {
+          "text": "\\( v_f^2 = v_i^2 + 2 a \\cdot \\Delta x  \\)",
+          "correct": true
+        },
+        {
+          "text": "\\( v_i^2 = v_f^2 + 2 a \\cdot \\Delta x  \\)"
+        },
+        {
+          "text": "\\( v_f^2 = v_i^2 + 2 a \\cdot \\Delta t  \\)"
+        },
+        {
+          "text": "\\( v_i^2 = v_f^2 + 2 a \\cdot \\Delta t  \\)"
+        },
+        {
+          "text": "\\( v_f^2 = v_i^2 + \\frac{1}{2} a \\cdot \\Delta x  \\)"
+        },
+        {
+          "text": "\\( v_i^2 = v_f^2 + \\frac{1}{2} a \\cdot \\Delta x  \\)"
+        },
+        {
+          "text": "\\( v_f^2 = v_i^2 + \\frac{1}{2} a \\cdot \\Delta t  \\)"
+        },
+        {
+          "text": "\\( v_i^2 = v_f^2 + \\frac{1}{2} a \\cdot \\Delta t  \\)"
         }
       ]
     }

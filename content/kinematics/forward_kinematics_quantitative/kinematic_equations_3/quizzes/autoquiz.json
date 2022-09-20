@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "text": "A car is moving with a velocity of 5.45 m/s. The driver presses the gas for 6.03 seconds during which time the car moves 47.4 meters. What was the average acceleration of the car during that time?",
+      "answerChoices": [
+        {
+          "text": "0.100 m/s/s"
+        }, {
+          "text": "0.200 m/s/s"
+        },        {
+          "text": "0.300 m/s/s"
+        },        {
+          "text": "0.400 m/s/s"
+        },        {
+          "text": "0.500 m/s/s"
+        },        {
+          "text": "0.600 m/s/s"
+        },        {
+          "text": "0.700 m/s/s"
+        }, {
+          "text": "0.800 m/s/s",
+          "correct": true
+        },        {
+          "text": "0.900 m/s/s"
+        }
+      ]
+    },
+    {
+      "text": "How fast will a marble dropped at rest from a 12.78 m roof be moving at the moment it strikes the ground? Ignore the effects of air resistance.",
+      "note": "make harder",
+      "answerChoices": [
+        {
+          "text": "15.8 m/s",
+          "correct": true
+        }, {
+          "text": "13.3 m/s"
+        },{
+          "text": "17.4"
+        },{
+          "text": "19.8 m/s"
+        },{
+          "text": "21.4 m/s"
+        },{
+          "text": "23.2 m/s"
+        }
+      ]
+    },
+    {
+      "text": "Imagine a magic rocket squirrel can fly through space with an acceleration of .025 m/s/s. How long would it take the magic rocket squirrel to accelerate from 3.21 m/s to 6.85 m/s?",
+      "answerChoices": [
+        {
+          "text": "146 s",
+          "correct": true
+        }, {
+          "text": "2.12 s"
+        },{
+          "text": "2.56 s"
+        },{
+          "text": "2.87 s"
+        },{
+          "text": "151 s"
+        },{
+          "text": "141 s"
+        },{
+          "text": "143 s"
+        }
+      ]
+    },
+    {
+      "text": "A car accelerates at a constant rate from 4.86 m/s to 18.5 m/s and travels 86.78 m while doing so. How long did it take?",
+      "note": "replace soon with something harder!",
+      "answerChoices": [
+        {
+          "text": "7.43 s",
+          "correct": true
+        }, {
+          "text": "9.19 s"
+        }, {
+          "text": "4.25 s"
+        }, {
+          "text": "2.56 s"
+        }, {
+          "text": "6.26 s"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "Determine the final velocity of the object shown. Note that the graph is flat at t = 0.",
+      "image": "quiz_graph_1.png",
+      "answerChoices": [
+        {
+          "text": "60 m/s",
+          "correct": true
+        }, {
+          "text": "10 m/s"
+        }, {
+          "text": "20 m/s"
+        }, {
+          "text": "30 m/s"
+        }, {
+          "text": "40 m/s"
+        }, {
+          "text": "50 m/s"
+        }, {
+          "text": "70 m/s"
+        }, {
+          "text": "80 m/s"
+        }, {
+          "text": "90 m/s"
+        }
+      ]
+    },
+    {
+      "text": "Determine the displacement of the object.",
+      "image": "quiz_graph_2.png",
+      "answerChoices": [
+        {
+          "text": "25 m",
+          "correct": true
+        }, {
+          "text": "30 m"
+        }, {
+          "text": "35 m"
+        }, {
+          "text": "40 m"
+        }, {
+          "text": "20 m"
+        }, {
+          "text": "15 m"
+        }, {
+          "text": "10 m"
+        }, {
+          "text": "5 m"
+        }
+      ]
+    },
+    {
+      "text": "Determine the acceleration of the object.",
+      "image": "quiz_graph_2.png",
+      "answerChoices": [
+        {
+          "text": "-0.125 m/s/s",
+          "correct": true
+        }, {
+          "text": "-0.150 m/s/s"
+        }, {
+          "text": "-0.175 m/s/s"
+        }, {
+          "text": "-0.100 m/s/s"
+        }, {
+          "text": "-0.0750 m/s/s"
+        }, {
+          "text": "0.125 m/s/s"
+        }, {
+          "text": "0.150 m/s/s"
+        }, {
+          "text": "0.175 m/s/s"
+        }, {
+          "text": "0.100 m/s/s"
+        }, {
+          "text": "0.0750 m/s/s"
+        }
+      ]
+    },
+    {
+      "text": "The following object has an initial velocity of 8 m/s. Determine the final velocity of the object.",
+      "image": "quiz_graph_3.png",
+      "answerChoices": [
+        {
+          "text": "6.5 m/s",
+          "correct": true
+        }, {
+          "text": "6.0 m"
+        }, {
+          "text": "5.5 m"
+        }, {
+          "text": "5.0 m"
+        }, {
+          "text": "4.5 m"
+        }, {
+          "text": "4.0 m"
+        }, {
+          "text": "3.5 m"
+        },{
+          "text": "3.0 m"
+        },{
+          "text": "2.5 m"
+        }
+      ]
+    },
+    {
+      "text": "The following object has an initial velocity of 8 m/s. Determine the displacement of the object.",
+      "image": "quiz_graph_3.png",
+      "answerChoices": [
+        {
+          "text": "3.625 m",
+          "correct": true
+        }, {
+          "text": "3.600 m"
+        }, {
+          "text": "3.575 m"
+        }, {
+          "text": "3.650 m"
+        }, {
+          "text": "3.675 m"
+        }, {
+          "text": "3.700 m"
+        }, {
+          "text": "3.725 m"
+        },{
+          "text": "3.750 m"
+        },{
+          "text": "3.775 m"
+        },{
+          "text": "3.800 m"
+        }
+      ]
+    }
+  ]
+}

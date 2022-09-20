@@ -28,7 +28,7 @@
       ]
     },
     {
-      "text": "What is the location of The James Webb Space Telescope?",
+      "text": "The James Webb Space Telescope was put into earth's orbit to achieve better photographs than are possible on earth. What is the location of The James Webb Space Telescope?",
       "reorder": false,
       "answerChoices": [
         {
@@ -63,7 +63,8 @@
           "text": "Not on Earth, but in the Earth-Moon System."
         },
         {
-          "text": "Not in the Earth-Moon System, but in the Solar System."
+          "text": "Not in the Earth-Moon System, but in the Solar System.",
+          "correct": true
         },
         {
           "text": "Not in the Solar System, but in the Milky Way Galaxy."
@@ -102,7 +103,7 @@
       ]
     },
     {
-      "text": "What is the location of ____?",
+      "text": "What is the location of a galaxy that is not attracted to the same great attractor as the Milky Way is?",
       "reorder": false,
       "answerChoices": [
         {
@@ -121,32 +122,8 @@
           "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
         },
         {
-          "text": "Not in the Laniakea Supercluster, but in the Universe"
-        }
-      ]
-    },
-    {
-      "text": "What is the location of ____?",
-      "reorder": false,
-      "answerChoices": [
-        {
-          "text": "On Earth."
-        },
-        {
-          "text": "Not on Earth, but in the Earth-Moon System."
-        },
-        {
-          "text": "Not in the Earth-Moon System, but in the Solar System.",
+          "text": "Not in the Laniakea Supercluster, but in the Universe",
           "correct": true
-        },
-        {
-          "text": "Not in the Solar System, but in the Milky Way Galaxy."
-        },
-        {
-          "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
-        },
-        {
-          "text": "Not in the Laniakea Supercluster, but in the Universe"
         }
       ]
     },
@@ -214,7 +191,8 @@
           "text": "Not in the Earth-Moon System, but in the Solar System."
         },
         {
-          "text": "Not in the Solar System, but in the Milky Way Galaxy."
+          "text": "Not in the Solar System, but in the Milky Way Galaxy.",
+          "correct": true
         },
         {
           "text": "Not in the Milky Way Galaxy, but in the Laniakea Supercluster."
@@ -275,7 +253,7 @@
       ]
     },
     {
-      "text": "The Large Magellanic Cloud is one of the galaxies closest to earth. What is the location of the Large Magellanic Cloud?",
+      "text": "The Andromeda Galaxy is one of the galaxies closest to earth. What is the location of the Andromeda Galaxy?",
       "reorder": false,
       "answerChoices": [
         {
@@ -300,7 +278,7 @@
       ]
     },
     {
-      "text": "A scientist discovers a new asteroid roughly in the area of the Oort Cloud. What determines whether this asteroid should be considered an object in the solar system?",
+      "text": "A scientist discovers a new asteroid roughly in the area of the Oort Cloud. According to the definition presented in this class, what determines whether this asteroid should be considered an object in the solar system?",
       "answerChoices": [
         {
           "text": "Whether or not the asteroid orbits the sun.",

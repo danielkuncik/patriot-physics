@@ -121,7 +121,8 @@ class Quiz {
         $.getJSON(`/autoquiz/${id}`, (data) => {
             //this.masterData = data;
             this.questions = [];
-            data.questions.forEach((questionData) => {
+            const questionList = data.questions ? data.questions : []; // returns no list if data undefined
+            questionList.forEach((questionData) => {
                 if (questionData.type === "MC" || questionData.type === undefined) {
                     this.questions.push(new MultipleChoiceQuestion(questionData));
                 }
@@ -131,6 +132,7 @@ class Quiz {
             // find a way in the SERVER to add the pod title to the JSON data that is sent
         });
 
+        // make an answer sheet?
     }
 }
 
@@ -283,8 +285,9 @@ function combineQuizzes(quizArray, randomizeAll = false) {
     };
     let questionIamOn = 0;
     quizArray.forEach((quizData) => {
+        let thisQuestionList = quizData.questions ? quizData.questions : [];
         if (quizData.reorder !== false) {
-            shuffle(quizData.questions);
+            shuffle(thisQuestionList);
         }
         if (quizData.directions) {
             let theseDirections = {};
@@ -299,11 +302,12 @@ function combineQuizzes(quizArray, randomizeAll = false) {
             thisImage.height = quizData.image.height;
             combinedQuizJSON.images[String(questionIamOn)] = thisImage;
         }
-        quizData.questions.forEach((question) => {
+        console.log(thisQuestionList);
+        thisQuestionList.forEach((question) => {
             question.id = quizData.id;
         });
-        questionList = questionList.concat(quizData.questions);
-        questionIamOn += quizData.questions.length;
+        questionList = questionList.concat(thisQuestionList);
+        questionIamOn += questionList.length;
         combinedQuizJSON.pageBreaks.push(questionIamOn - 1);
     });
 
@@ -342,6 +346,11 @@ function makeWrittenQuizVersion(quizJSON, id) {
     let answerList = $("<ol></ol>");
 
     let k;
+    // if (quizJSON.questions === undefined) {
+    //     quizJSON.questions = [];
+    // }
+    // console.log(quizJSON.questions.length);
+    console.log(quizJSON);
     for (k = 0; k < quizJSON.questions.length; k++) {
         if (quizJSON.directions[k]) {
             $(questionList).append(printDirections(quizJSON.directions[k]));
@@ -373,7 +382,6 @@ function makeWrittenQuestion(questionJSON, id) {
 }
 
 function makeMCquestion(questionJSON, id) {
-    console.log(questionJSON);
     if (questionJSON.reorder !== false) { // default is to reorder, undefined will reorder
         shuffle(questionJSON.answerChoices);
     }
