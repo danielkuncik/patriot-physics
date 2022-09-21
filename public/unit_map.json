@@ -4493,6 +4493,17 @@
             "uuid": "bdd2d8bd-3725-409c-bf56-6aca566409cd",
             "id": "bdd2d8"
           },
+          "using_force_meter": {
+            "title": "Using a force meter",
+            "level": 1,
+            "horizontal": 6,
+            "letter": "Z",
+            "prerequisites": [],
+            "objective": "Use a spring scale to measure force of simple interactions.",
+            "content": "A spring scale is used as a device to measure force.",
+            "uuid": "5c77aaec-4494-44f1-a067-adc6b4fa49b8",
+            "id": "5c77aa"
+          },
           "doing_nothing": {
             "title": "The Dynamics of Doing Nothing",
             "level": 2,
