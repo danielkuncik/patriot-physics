@@ -3273,6 +3273,39 @@
             "content": "When an object is accelerating at a constant rate, it follows each kinematic equation; this can be demonstrated using a linearized graph of position to time-squared",
             "uuid": "121809d9-ed59-49a1-9002-36bef7cecbdd",
             "id": "121809"
+          },
+          "measure_free_fall_acceleration_1": {
+            "title": "Measuring Free-Fall Acceleration",
+            "level": 2,
+            "letter": "H",
+            "horizontal": 3,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "76c15093-51cf-42bd-81b1-52ed3ee65b66",
+            "id": "76c150"
+          },
+          "accelerating_car_1": {
+            "title": "Accelerating Car 1",
+            "level": 2,
+            "letter": "G",
+            "horizontal": 4,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "19e13bd5-68a9-4a01-b735-a4926d230580",
+            "id": "19e13b"
+          },
+          "constant_velocity_car_1": {
+            "title": "Constant Velocity Car 1",
+            "level": 1,
+            "letter": "K",
+            "horizontal": 4,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "b81411d8-e707-4dcb-ac31-4700f4ef8f46",
+            "id": "b81411"
           }
         }
       },
@@ -4493,6 +4526,17 @@
             "uuid": "bdd2d8bd-3725-409c-bf56-6aca566409cd",
             "id": "bdd2d8"
           },
+          "calculating_mass": {
+            "title": "Calculating Mass",
+            "level": 2,
+            "horizontal": 6,
+            "letter": "W",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "b678c9b9-ccf7-4ed1-8dc8-37eba5f2d9bf",
+            "id": "b678c9"
+          },
           "using_force_meter": {
             "title": "Using a force meter",
             "level": 1,
@@ -4539,6 +4583,17 @@
             "content": "A physicist sometimes must find a particular force to find the net force acting on a block.",
             "uuid": "acacfeba-cd88-4fe9-95d2-db97278c3eb4",
             "id": "acacfe"
+          },
+          "determine_mu_k": {
+            "title": "Calculating Coefficient of Kinetic Friction",
+            "level": 2,
+            "letter": "V",
+            "horizontal": 7,
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "c3ca38df-b972-4d03-ac7f-8b6fd2ab9d2d",
+            "id": "c3ca38"
           },
           "block_dragging_2":
           {

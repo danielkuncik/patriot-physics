@@ -1,0 +1,70 @@
+{
+  "questions": [
+    {
+      "text": "Consider the entire sphere of the earth. Imagine your best friend is directly opposite you on the sphere. What is the direction of the gravitational force the earth exerts on them n relation to the force it exerts on you?",
+      "answerChoices": [
+        {
+          "text": "The same direction"
+        },
+        {
+          "text": "Opposite",
+          "correct": true
+        },
+        {
+          "text": "Perpendicular"
+        },
+        {
+          "text": "The directions are not related"
+        }
+      ]
+    },
+    {
+      "text": "Which statement best explains why a penguin in Antarctica does not fall off the earth, even though they are on the bottom of the earth?",
+      "answerChoices": [
+        {
+          "text": "They are gravitationally attracted to the center of the earth."
+        }
+      ]
+
+    },
+    {
+      "text": "Where is the top of the world?",
+      "answerChoices": [
+        {
+          "text": "It's all a matter of point of view.",
+          "correct": true
+        },
+        {
+          "text": "The North Pole"
+        },
+        {
+          "text": "Magnetic North."
+        },
+        {
+          "text": "The South Pole"
+        },
+        {
+          "text": "The intersection of the Equator and the Prime Meridian."
+        }
+      ]
+    },
+    {
+      "text": "The direction we call 'downwards' is actually:",
+      "answerChoices": [
+        {
+          "text": "Towards the center of the earth",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Which of the following statements BEST describes why the words 'up' and 'down' are not the best words to describe the directions they describe on planet earth?",
+      "answerChoices": [
+        {
+          "text": "They do not best reflect the spherical nature of the earth.",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

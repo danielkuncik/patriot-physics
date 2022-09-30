@@ -1,0 +1,3 @@
+- a numerical problem calculating free-fall acceleration on another planet
+
+- a few conceptual problems?

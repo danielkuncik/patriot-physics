@@ -5,17 +5,33 @@
       "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the POSITION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_ptA.png"
+          "image": {
+            "name": "stgs1_ptA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptB.png"
+          "image": {
+            "name": "stgs1_ptB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptC.png",
+          "image": {
+            "name": "stgs1_ptC.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_ptD.png"
+          "image": {
+            "name": "stgs1_ptD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -23,16 +39,32 @@
       "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the VELOCITY-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_vtA.png"
+          "image": {
+            "name": "stgs1_vtA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtB.png"
+          "image": {
+            "name": "stgs1_vtB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtC.png"
+          "image": {
+            "name": "stgs1_vtC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtD.png",
+          "image": {
+            "name": "stgs1_vtD.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         }
       ]
@@ -41,17 +73,33 @@
       "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the ACCELERATION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_atA.png"
+          "image": {
+            "name": "stgs1_atA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atB.png"
+          "image": {
+            "name": "stgs1_atB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atC.png",
+          "image": {
+            "name": "stgs1_atC.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_atD.png"
+          "image": {
+            "name": "stgs1_atD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -59,17 +107,33 @@
       "text": "A biker is biking at a constant speed. He sees his friend, slowly stops, and talks to his friend for awhile. Select the MOTION MAP that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_mmA.png"
+          "image": {
+            "name": "stgs1_mmA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmB.png"
+          "image": {
+            "name": "stgs1_mmB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmC.png",
+          "image": {
+            "name": "stgs1_mmC.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_mmD.png"
+          "image": {
+            "name": "stgs1_mmD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -77,16 +141,32 @@
       "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the POSITION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_ptA.png"
+          "image": {
+            "name": "stgs1_ptA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptB.png"
+          "image": {
+            "name": "stgs1_ptB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptC.png"
+          "image": {
+            "name": "stgs1_ptC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptD.png",
+          "image": {
+            "name": "stgs1_ptD.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         }
       ]
@@ -95,17 +175,33 @@
       "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the VELOCITY-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_vtA.png"
+          "image": {
+            "name": "stgs1_vtA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtB.png",
+          "image": {
+            "name": "stgs1_vtB.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_vtC.png"
+          "image": {
+            "name": "stgs1_vtC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtD.png"
+          "image": {
+            "name": "stgs1_vtD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -113,17 +209,33 @@
       "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the ACCELERATION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_atA.png",
+          "image": {
+            "name": "stgs1_atA.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_atB.png"
+          "image": {
+            "name": "stgs1_atB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atC.png"
+          "image": {
+            "name": "stgs1_atC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atD.png"
+          "image": {
+            "name": "stgs1_atD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -131,17 +243,33 @@
       "text": "A biker is biking at a constant velocity when he strikes a wall and abruptly stops. Select the MOTION MAP that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_mmA.png",
+          "image": {
+            "name": "stgs1_mmA.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_mmB.png"
+          "image": {
+            "name": "stgs1_mmB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmC.png"
+          "image": {
+            "name": "stgs1_mmC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmD.png"
+          "image": {
+            "name": "stgs1_mmD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -149,17 +277,33 @@
       "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the POSITION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_ptA.png",
+          "image": {
+            "name": "stgs1_ptA.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_ptB.png"
+          "image": {
+            "name": "stgs1_ptB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptC.png"
+          "image": {
+            "name": "stgs1_ptC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptD.png"
+          "image": {
+            "name": "stgs1_ptD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -167,17 +311,33 @@
       "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the VELOCITY-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_vtA.png"
+          "image": {
+            "name": "stgs1_vtA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtB.png"
+          "image": {
+            "name": "stgs1_vtB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtC.png",
+          "image": {
+            "name": "stgs1_vtC.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_vtD.png"
+          "image": {
+            "name": "stgs1_vtD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -185,16 +345,32 @@
       "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the ACCELERATION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_atA.png"
+          "image": {
+            "name": "stgs1_atA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atB.png"
+          "image": {
+            "name": "stgs1_atB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atC.png"
+          "image": {
+            "name": "stgs1_atC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atD.png",
+          "image": {
+            "name": "stgs1_atD.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         }
       ]
@@ -203,16 +379,32 @@
       "text": "A biker speeds up while going down a hill, then immediately starts going up a hill and slows down. Select the MOTION MAP that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_mmA.png"
+          "image": {
+            "name": "stgs1_mmA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmB.png"
+          "image": {
+            "name": "stgs1_mmB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmC.png"
+          "image": {
+            "name": "stgs1_mmC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmD.png",
+          "image": {
+            "name": "stgs1_mmD.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         }
       ]
@@ -221,17 +413,33 @@
       "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the POSITION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_ptA.png"
+          "image": {
+            "name": "stgs1_ptA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptB.png",
+          "image": {
+            "name": "stgs1_ptB.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_ptC.png"
+          "image": {
+            "name": "stgs1_ptC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_ptD.png"
+          "image": {
+            "name": "stgs1_ptD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -239,17 +447,33 @@
       "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the VELOCITY-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_vtA.png",
+          "image": {
+            "name": "stgs1_vtA.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_vtB.png"
+          "image": {
+            "name": "stgs1_vtB.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtC.png"
+          "image": {
+            "name": "stgs1_vtC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_vtD.png"
+          "image": {
+            "name": "stgs1_vtD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -257,17 +481,33 @@
       "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the ACCELERATION-TIME graph that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_atA.png"
+          "image": {
+            "name": "stgs1_atA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atB.png",
+          "image": {
+            "name": "stgs1_atB.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_atC.png"
+          "image": {
+            "name": "stgs1_atC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_atD.png"
+          "image": {
+            "name": "stgs1_atD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -275,17 +515,33 @@
       "text": "A biker speeds up going down a hill, then bikes at a constant speed on a flat surface, and then slowly comes to a stop at an intersection. Select the MOTION MAP that best reflects this motion.",
       "answerChoices": [
         {
-          "image": "stgs1_mmA.png"
+          "image": {
+            "name": "stgs1_mmA.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmB.png",
+          "image": {
+            "name": "stgs1_mmB.png",
+            "height": "200px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "stgs1_mmC.png"
+          "image": {
+            "name": "stgs1_mmC.png",
+            "height": "200px",
+            "width": "auto"
+          }
         },
         {
-          "image": "stgs1_mmD.png"
+          "image": {
+            "name": "stgs1_mmD.png",
+            "height": "200px",
+            "width": "auto"
+          }
         }
       ]
     }

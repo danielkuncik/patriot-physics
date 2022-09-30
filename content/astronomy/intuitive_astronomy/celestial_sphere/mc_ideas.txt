@@ -2,7 +2,7 @@ The celestial sphere is composed of objects in the night sky that:
 - move randomly locations each night
 - stay in the same location each night
 - move throughout each night, but stay in the same location relative to each other
-- move throughout the night, but stay int he same location relative to the sun
+- move throughout the night, but stay in the same location relative to the sun
 
 
 The term "celestial" is derived from the Latin word for:
@@ -12,8 +12,9 @@ The term "celestial" is derived from the Latin word for:
 - country
 
 
-The star polaris moves very very little each night. this is because
-
+The star polaris, visible in the northern hemisphere moves very very little each night. this is because
+- the north pole of earth points directly at it
+- it is held is place by a web of black holes
 
 The stars of the celestial sphere appear to mvoe in circles.
 Ancieny european astronomers knew this.

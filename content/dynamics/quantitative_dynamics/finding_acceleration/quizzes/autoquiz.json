@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {
+      "text": "The object represented by the free-body diagram below has a mass of 25 kg. What is its acceleration?",
+      "image": "free_body_diagram_three.png",
+      "answerChoices": [
+        {
+          "text": "3 m/s/s",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
