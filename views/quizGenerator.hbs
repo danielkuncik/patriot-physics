@@ -18,6 +18,9 @@
     const AP_sept_2022 = ["6949c4","e9cb0a","a6330e","169d20","4e97c3","ba74c4","1287eb","5612bd","720665"];
     const Honors_sept_2022 = ["6949c4","eda5ba","e9cb0a","bc4f99","720665","c89b8a"];
 
+    const AP_oct_2022 = [];
+    const Honors_oct_2022 = ["a6330e","4e97c3","a131a7","acacfe","ba7882"];
+
     // const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];
     // const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
     // const honors_quiz_may_2022_2 = ["4c74b0"];
@@ -50,13 +53,13 @@
 
 
     let honors_array = [];
-    Honors_sept_2022.forEach((quiz_ID) => {
+    Honors_oct_2022.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Quiz: September 2022", 4, 40));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Quiz: October 2022", 4, 50));
 
 
 </script>

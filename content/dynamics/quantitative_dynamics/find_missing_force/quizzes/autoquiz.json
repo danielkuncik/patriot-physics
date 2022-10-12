@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "text": "The free-body diagram below shows two forces. When a third force is added, the net force on the object is 200 N to the left. Determine the magnitude and direction of the added force.",
+      "image": "problem_1.png",
+      "answerChoices": [
+        {
+          "text": "150 N left",
+          "correct": true
+        },
+        {
+          "text": "100 N left"
+        },
+        {
+          "text": "50 N left"
+        },
+        {
+          "text": "150 N right"
+        },
+        {
+          "text": "100 N right"
+        },
+        {
+          "text": "50 N right"
+        }
+      ]
+    },
+    {
+      "text": "The free-body diagram below shows two forces. When a third force is added, the net force on the object is 125 N up. Determine the magnitude and direction of the added force.",
+      "image": "problem_2.png",
+      "answerChoices": [
+        {
+          "text": "152 N up",
+          "correct": true
+        },
+        {
+          "text": "202 N down"
+        },
+        {
+          "text": "252 N down"
+        },
+        {
+          "text": "302 N down"
+        },
+        {
+          "text": "152 N down"
+        },
+        {
+          "text": "202 N up"
+        },
+        {
+          "text": "252 N up"
+        },
+        {
+          "text": "302 N up"
+        }
+
+      ]
+    },
+    {
+      "text": "The free-body diagram below shows three forces. When a fourth force is added, the net force on the object is 100 N to the left. Determine the magnitude and direction of the added force.",
+      "image": "problem_3.png",
+      "answerChoices": [
+        {
+          "text": "380 N left",
+          "correct": true
+        },
+        {
+          "text": "340 N left"
+        },
+        {
+          "text": "300 N left"
+        },
+        {
+          "text": "420 N left"
+        },
+        {
+          "text": "380 N right"
+        },
+        {
+          "text": "340 N right"
+        },
+        {
+          "text": "300 N right"
+        },
+        {
+          "text": "420 N right"
+        }
+      ]
+    },
+    {
+      "text": "The free-body diagram below shows three forces. When a fourth force is added, the net force on the object is 175 N down. Determine the magnitude and direction of the added force.",
+      "image": "problem_4.png",
+      "answerChoices": [
+        {
+          "text": "196 N down",
+          "correct": true
+        },
+        {
+          "text": "186 N down"
+        },
+        {
+          "text": "206 N down"
+        },
+        {
+          "text": "216 N down"
+        },
+        {
+          "text": "196 N up"
+        },
+        {
+          "text": "186 N up"
+        },
+        {
+          "text": "206 N up"
+        },
+        {
+          "text": "216 N up"
+        }
+      ]
+    }
+
+  ]
+}

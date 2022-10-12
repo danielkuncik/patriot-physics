@@ -1,0 +1,4 @@
+elevator paradox question:
+
+A. The elevator overshoots it target
+B. The person is moving upward but  is getting slower.

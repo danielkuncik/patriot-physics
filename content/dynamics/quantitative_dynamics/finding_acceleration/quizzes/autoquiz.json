@@ -1,12 +1,124 @@
 {
   "questions": [
     {
-      "text": "The object represented by the free-body diagram below has a mass of 25 kg. What is its acceleration?",
+      "text": "The object represented by the free-body diagram below has a mass of 25 kg. What is the magnitude of its acceleration?",
       "image": "free_body_diagram_three.png",
       "answerChoices": [
         {
-          "text": "3 m/s/s",
+          "text": "4 m/s/s",
           "correct": true
+        },
+        {
+          "text": "2 m/s/s"
+        },
+        {
+          "text": "3 m/s/s"
+        },
+        {
+          "text": "5 m/s/s"
+        },
+        {
+          "text": "6 m/s/s"
+        }
+      ]
+    },
+    {
+      "text": "A super-fast toy car is driving forward, and three forces act on the car. The toy car has a mass of 3 kg. The thrust on the car is 80. N forward. The air resistance on the car is 30. N backwards. The friction acting on the car is 14 N backwards. What is the magnitude of acceleration of the car?",
+      "answerChoices": [
+        {
+          "text": "12 m/s/s",
+          "correct": true
+        },
+        {
+          "text": "4 m/s/s"
+        },
+        {
+          "text": "8 m/s/s"
+        },
+        {
+          "text": "6 m/s/s"
+        },
+        {
+          "text": "10 m/s/s"
+        },
+        {
+          "text": "14 m/s/s"
+        },
+        {
+          "text": "1 m/s/s"
+        }
+      ]
+    },
+    {
+      "text": "The following free-body diagram illustrates the forces acting on an object. The mass of the object is 6 kg. What is the acceleration of the object?",
+      "image": "problem_1.png",
+      "answerChoices": [
+        {
+          "text": "3 m/s/s RIGHT",
+          "correct": true
+        },
+        {
+          "text": "2 m/s/s RIGHT"
+        },
+        {
+          "text": "7 m/s/s RIGHT"
+        },
+        {
+          "text": "5 m/s/s RIGHT"
+        },
+        {
+          "text": "6 m/s/s RIGHT"
+        },
+        {
+          "text": "3 m/s/s LEFT"
+        },
+        {
+          "text": "2 m/s/s LEFT"
+        },
+        {
+          "text": "7 m/s/s LEFT"
+        },
+        {
+          "text": "5 m/s/s LEFT"
+        },
+        {
+          "text": "6 m/s/s LEFT"
+        }
+      ]
+    },
+    {
+      "text": "A super-fast toy car is driving forward, and three forces act on the car. The thrust on the car is 60. N forward. The air resistance on the car is 20. N backwards. The friction acting on the car is 6.0 N backwards. The toy car has a mass of 4.0 kg. What is the acceleration of the car?",
+      "answerChoices": [
+        {
+          "text": "8.5 m/s/s FORWARDS",
+          "correct": true
+        },
+        {
+          "text": "7.3 m/s/s FORWARDS"
+        },
+        {
+          "text": "9.6 m/s/s FORWARDS"
+        },
+        {
+          "text": "10.5 m/s/s FORWARDS"
+        },
+        {
+          "text": "11.2 m/s/s FORWARDS"
+        },
+        {
+          "text": "8.5 m/s/s BACKWARDS"
+        },
+        {
+          "text": "7.3 m/s/s BACKWARDS"
+        },
+        {
+          "text": "9.6 m/s/s BACKWARDS"
+        },
+        {
+          "text": "10.5 m/s/s BACKWARDS"
+        },
+        {
+          "text": "11.2 m/s/s BACKWARDS"
         }
       ]
     }

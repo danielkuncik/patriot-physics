@@ -1,0 +1,17 @@
+
+A person throws a ball directly upwards into the air.
+Which of the following statements is true regarding the force that this person exerts on the ball?
+- The force exists only when the person is touching the ball.
+- The force exists only when the ball is moving upward. It disappears when the ball begins falling.
+- The force exists as long as the ball is moving. It disappears when the ball stops.
+- The force must be equal to gravity to make the ball move.
+- The person exerts no force on the ball. The ball moves because normal force and gravity are equal.
+
+
+An object is moving to the right.
+What direction is the net force on the object?
+- There is no way to determine the net force.
+- The net force must be to the right.
+- The net force must be zero.
+- The net force must be to the left.
+- The net force is either to the right or is zero.

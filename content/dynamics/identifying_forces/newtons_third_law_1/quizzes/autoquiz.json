@@ -1,0 +1,73 @@
+{
+  "questions": [
+    {
+      "text": "Newton's Third Law is frequently stated as...",
+      "answerChoices": [
+        {
+          "text": "For every action there is an equal and opposite reaction",
+          "correct": true
+        },
+        {
+          "text": "An object in motion remains in motion unless acted upon by a net outside force."
+        },
+        {
+          "text": "Force is equal to mass times acceleration."
+        },
+        {
+          "text": "All objects with mass are attracted to all other objects with mass."
+        }
+      ]
+    },
+    {
+      "text": "A baseball player swings his bat and exerts a force of 400 Newtons to the right on the ball.  Which of the following is the force that the ball exerts on the bat?",
+      "answerChoices":[
+        {
+          "text": "400 Newtons LEFT",
+          "correct": true
+        },
+        {
+          "text": "300 Newtons LEFT"
+        },
+        {
+          "text": "200 Newtons LEFT"
+        },
+        {
+          "text": "400 Newtons RIGHT"
+        },
+        {
+          "text": "300 Newtons RIGHT"
+        },
+        {
+          "text": "200 Newtons RIGHT"
+        },
+        {
+          "text": "The ball exerts no force on the bat."
+        }
+      ]
+    },
+    {
+      "text": "Once upon a time in space, giant aliens built a ship larger than an aircraft carrier. Tiny aliens built a ship smaller than a toy car. Inadvertently, flying between planets, the two ships collide. Which of the following statements is true?",
+      "answerChoices": [
+        {
+          "text": "Both spaceships exert the same force on each other.",
+          "correct": true
+        },
+        {
+          "text": "The large spaceship exerts more force on the tiny spaceship than the tiny spaceship exerts on the large spaceship."
+        },
+        {
+          "text": "The tiny spaceship exerts more force on the large spaceship than the large spaceship exerts on the tiny spaceship."
+        },
+        {
+          "text": "The large spaceship exerts a force on the tiny spaceship, but the tiny spaceship exerts no force on the large spaceship."
+        },
+        {
+          "text": "The tiny spaceship exerts a force on the large spaceship, but the large spaceship exerts no force on the tiny spaceship."
+        },
+        {
+          "text": "Neither spaceship exerts any force on the other."
+        }
+      ]
+    }
+  ]
+}
