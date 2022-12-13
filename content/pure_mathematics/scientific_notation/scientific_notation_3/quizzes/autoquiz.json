@@ -1,0 +1,95 @@
+{
+  "directions": "Put each of the numbers below in correct scientific notation. Some may already be in correct scientific notation.",
+  "questions": [
+    {
+      "text": "\\( 23.56 \\cdot 10^{20} \\)",
+      "answerChoices": [
+        {
+          "text": "\\( 2.356 \\cdot 10^{21} \\)",
+          "correct": "true"
+        },
+        {
+          "text": "\\( 23.56 \\cdot 10^{20} \\) (already in scientific notation)"
+        },
+        {
+          "text": "\\( 2.356 \\cdot 10^{22} \\)"
+        },
+        {
+          "text": "\\( 2.356 \\cdot 10^{23} \\)"
+        },
+        {
+          "text": "\\( 2.356 \\cdot 10^{19} \\)"
+        },
+        {
+          "text": "\\( 2.356 \\cdot 10^{18} \\)"
+        },
+        {
+          "text": "\\( 235.6 \\cdot 10^{22} \\)"
+        }
+      ]
+    },
+    {
+      "text": "\\( 0.0025 \\cdot 10^{12} \\)",
+      "answerChoices": [
+        {
+          "text": "\\( 2.5 \\cdot 10^{9} \\)",
+          "correct": "true"
+        },
+        {
+          "text": "\\( 0.0025 \\cdot 10^{12} \\) (already in scientific notation)"
+        },
+        {
+          "text": "\\( 2.5 \\cdot 10^{11} \\)"
+        },
+        {
+          "text": "\\( 2.5 \\cdot 10^{10} \\)"
+        },
+        {
+          "text": "\\( 25 \\cdot 10^{10} \\)"
+        }
+      ]
+    },
+    {
+      "text": "\\( 124 \\cdot 10^{-15} \\)",
+      "answerChoices": [
+        {
+          "text": "\\( 1.24 \\cdot 10^{-13} \\)",
+          "correct": "true"
+        },
+        {
+          "text": "\\( 124 \\cdot 10^{-15} \\) (already in scientific notation)"
+        },
+        {
+          "text": "\\( 1.24 \\cdot 10^{-14} \\)"
+        },
+        {
+          "text": "\\( 1.24 \\cdot 10^{-15} \\)"
+        },
+        {
+          "text": "\\( 1.24 \\cdot 10^{-12} \\)"
+        },
+        {
+          "text": "\\( 12.4 \\cdot 10^{-12} \\)"
+        }
+      ]
+    },
+    {
+      "text": "\\( 1.56 \\cdot 10^{-9} \\)",
+      "answerChoices": [
+        {
+          "text": "\\( 1.56 \\cdot 10^{-9} \\) (already in scientific notation)",
+          "correct": "true"
+        },
+        {
+          "text": "\\( 15.6 \\cdot 10^{-8} \\)"
+        },
+        {
+          "text": "\\( 156 \\cdot 10^{-7} \\)"
+        },
+        {
+          "text": "\\( 0.156 \\cdot 10^{-6} \\)"
+        }
+      ]
+    }
+  ]
+}

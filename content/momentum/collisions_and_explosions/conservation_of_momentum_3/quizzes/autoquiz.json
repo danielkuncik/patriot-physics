@@ -1,0 +1,133 @@
+{
+  "directions": "You may use the tables provided to help answer the question below, but you do not need to.",
+  "questions": [
+    {
+      "image": {
+        "name": "basic_momentum_table.png",
+        "height": "300px",
+        "width": "auto"
+      },
+      "text": "Car A has a mass of 200 kg and is moving at a speed of 5 m/s to the right. Car B has a mass of 150 kg and is moving at a speed of 8 m/s to the left. They crash into each other head-on. After they collide, Car A bounces off with a speed of 1 m/s to the left. What does car B do?",
+      "answerChoices": [
+        {
+          "text": "Car B stops moving",
+          "correct": true
+        },
+        {
+          "text": "Car B moves at 0.5 m/s to the right"
+        },
+        {
+          "text": "Car B moves at 1.0 m/s to the right"
+        },
+        {
+          "text": "Car B moves at 0.5 m/s to the left"
+        },
+        {
+          "text": "Car B moves at 1.0 m/s to the left"
+        }
+      ]
+    },
+    {
+      "image": {
+      "name": "basic_momentum_table.png",
+      "height": "300px",
+      "width": "auto"
+      },
+      "text": "Car A has a mass of 100. kg and is moving at a speed of 7 m/s to the right. Car B has a mass of 200. kg and is moving at a speed of 4 m/s to the left. They crash into each other head-on. After they collide, Car A bounces off with a speed of 0.5 m/s to the left. Figure out what car B does:",
+      "answerChoices": [
+        {
+          "text": "Car B moves at 0.25 m/s to the right."
+        },
+        {
+          "text": "Car B moves at 0.25 m/s to the left.",
+          "correct": true
+        },
+        {
+          "text": "Car B moves at 0.75 m/s to the right."
+        },
+        {
+          "text": "Car B moves at 0.75 m/s to the left."
+        },
+        {
+          "text": "Car B moves at 1.0 m/s to the right."
+        },
+        {
+          "text": "Car B moves at 1.0 m/s to the left."
+        },
+        {
+          "text": "Car B stops moving"
+        }
+      ]
+    },
+    {
+      "image": {
+        "name": "inelastic_momentum_table.png",
+        "height": "300px",
+        "width": "auto"
+      },
+      "text": " A truck with a mass of 500. kg is moving at a speed of 10.0 m/s to the right. It smashes into a small car with a mass of 200. kg moving at a speed of 15.0 m/s to the left. After the collision, the car crumbles and sticks to the truck. Determine the final velocity (magnitude and direction) of the car and truck stuck together.",
+      "answerChoices": [
+        {
+          "text": "2.86 m/s right",
+          "correct": true
+        },
+        {
+          "text": "2.34 m/s right"
+        },
+        {
+          "text": "3.12 m/s right"
+        },
+        {
+          "text": "3.59 m/s right"
+        },
+        {
+          "text": "2.86 m/s left"
+        },
+        {
+          "text": "2.34 m/s left"
+        },
+        {
+          "text": "3.12 m/s left"
+        },
+        {
+          "text": "3.59 m/s left"
+        }
+      ]
+    },
+    {
+      "image": {
+      "name": "basic_momentum_table.png",
+      "height": "300px",
+      "width": "auto"
+      },
+      "text": "A cat drives a bumper car with a mass of 500 kg is moving at 12 m/s. A dog is driving a 600 kg at 10 m/s in the opposite direction. Afterwards, the cat's bumper car bounces backwards with a speed of 15 m/s. Determine the velocity of the dog's bumper car.",
+      "answerChoices": [
+        {
+          "text": "12.5 m/s in the original direction of the cat",
+          "correct": true
+        },
+        {
+          "text": " 13.0 m/s in the original direction of the cat"
+        },
+        {
+          "text": " 13.5 m/s in the original direction of the cat"
+        },
+        {
+          "text": " 14.0 m/s in the original direction of the cat"
+        },
+        {
+          "text": "12.5 m/s in the original direction of the dog"
+        },
+        {
+          "text": " 13.0 m/s in the original direction of the dog"
+        },
+        {
+          "text": " 13.5 m/s in the original direction of the dog"
+        },
+        {
+          "text": " 14.0 m/s in the original direction of the dog"
+        }
+      ]
+    }
+  ]
+}

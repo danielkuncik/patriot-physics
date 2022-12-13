@@ -1,0 +1,86 @@
+{
+  "directions": "Write the value of each expression given in standard notation.",
+  "questions": [
+    {
+      "text": "\\( 4.63 \\cdot 10^{-5} \\)",
+      "answerChoices": [
+        {
+          "text": "0.0000463",
+          "correct": "true"
+        },
+        {
+          "text": "0.000463"
+        },
+        {
+          "text": "0.00463"
+        },
+        {
+          "text": "46300"
+        },
+        {
+          "text": "463000"
+        },
+        {
+          "text": "4630"
+        }
+      ]
+    },
+    {
+      "text": "\\( 4.82 \\cdot 10^{-2} \\)",
+      "answerChoices": [
+        {
+          "text": "0.0482",
+          "correct": "true"
+        },
+        {
+          "text": "0.482"
+        },
+        {
+          "text": "482"
+        },
+        {
+          "text": "48.2"
+        }
+      ]
+    },
+    {
+      "text": " \\( 2.5 \\cdot 10^{9} \\)",
+      "answerChoices": [
+        {
+          "text": "2500000000",
+          "correct": "true"
+        },
+        {
+          "text": "250000000000"
+        },
+        {
+          "text": "250000000"
+        },
+        {
+          "text": "25000000"
+        }
+      ]
+    },
+    {
+      "text": "\\( 8.6 \\cdot 10^{1} \\)",
+      "answerChoices": [
+        {
+          "text": "86",
+          "correct": "true"
+        },
+        {
+          "text": "8.6"
+        },
+        {
+          "text": "0.86"
+        },
+        {
+          "text": "0.086"
+        },
+        {
+          "text": "860"
+        }
+      ]
+    }
+  ]
+}

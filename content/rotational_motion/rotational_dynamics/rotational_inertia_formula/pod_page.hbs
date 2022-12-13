@@ -129,8 +129,8 @@
         In the following rod, the 100 gram
         mass contributes MORE rotational inertia
         than the 200 gram mass, even though
-        it has half as much inertia on its own!
-        Explain why?
+        it has half as much inertial mass on its own!
+        Explain why.
         <div id = 'problem18'></div>
     </li>
 </ol>
@@ -180,7 +180,7 @@
 
     let problem18 = new RotatingRod(0,200,0,'cm');
     problem18.addMass(100,200,'g',true);
-    problem18.addMass(200,200,'g',true);
+    problem18.addMass(200,100,'g',true);
 
     $("#problem11").append(problem11.drawCanvas(600,300));
     $("#problem12").append(problem12.drawCanvas(600,300));
