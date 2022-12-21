@@ -1,0 +1,394 @@
+<!--
+There should be a separate pod specifically on the concepts behind this pod,
+an advanced version of the previous thermal contact pods
+-->
+<p class="introduction">
+    Previously, we have solved problems based on knowing the heat energy added to a substance \( Q \).
+    We have either solved to find this variable, or, knowing this variable, determined other information.
+    However, most situations in which the temperature or state of a substance changes,
+    involve mixing objects of different temperature.
+    In these situations, you cannot measure \( Q \) directly. Instead, you analyze the situation
+    from studying final and initial temperatures.
+    That is the type of problem we are approaching now.
+</p>
+
+<h4>
+    Part 1: Review of the Heat Equation
+</h4>
+
+<div class="memorizeBox">
+    <p class="equation">
+        $$
+        Q = m C (T_f - T_i )
+        $$
+    </p>
+
+    <div class = 'container'>
+        <div class="row">
+            <div class="col-2 border border-dark p-2"><strong>Symbol</strong></div>
+            <div class="col-3 border border-dark p-2"><strong>Quantity</strong></div>
+            <div class="col-3 border border-dark p-2"><strong>SI Unit</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-2">\( Q \)</div>
+            <div class="col-3 border border-dark p-2">Heat energy added</div>
+            <div class="col-3 border border-dark p-2">Joules (J)</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-2">\( m \)</div>
+            <div class="col-3 border border-dark p-2">mass</div>
+            <div class="col-3 border border-dark p-2">kilograms (kg)</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-2">\( C \)</div>
+            <div class="col-3 border border-dark p-2">Specific Heat</div>
+            <div class="col-3 border border-dark p-2">J / (kg degree Celsius)</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-2">\( T_f \)</div>
+            <div class="col-3 border border-dark p-2">Final Temperature</div>
+            <div class="col-3 border border-dark p-2">degree Celsius or Kelvin</div>
+        </div>
+        <div class="row">
+            <div class="col-2 border border-dark p-2">\( T_i \)</div>
+            <div class="col-3 border border-dark p-2">Initial Temperature</div>
+            <div class="col-3 border border-dark p-2">degree Celsius of Kelvin</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="mediumSpace"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Material</div>
+        <div class="col-3 border border-dark p-2">Specific Heat (J / kg degree Celsius)</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Water</div>
+        <div class="col-3 border border-dark p-2">4184</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Oil</div>
+        <div class="col-3 border border-dark p-2">1900.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Wood</div>
+        <div class="col-3 border border-dark p-2">1800.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Aluminum</div>
+        <div class="col-3 border border-dark p-2">900.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Concrete</div>
+        <div class="col-3 border border-dark p-2">880.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Glass</div>
+        <div class="col-3 border border-dark p-2">800.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Steel</div>
+        <div class="col-3 border border-dark p-2">470.</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Silver</div>
+        <div class="col-3 border border-dark p-2">235</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Gold</div>
+        <div class="col-3 border border-dark p-2">129</div>
+    </div>
+</div>
+
+<div class="pageBreak"></div>
+
+<h5>
+    Questions to Review the Heat Equation
+</h5>
+<ol class="questionList">
+    <li class="question" data-answer = '516 Joules'>
+        You have 0.400 kg of gold. It moves from a temperature of 15.0 degrees Celsius to a temperature of 30.0 degrees Celsius.
+        How much heat energy was added?
+    </li>
+    <li class="question" data-answer = '2.27 kg'>
+        You have a mass of concrete. You add ten thousand Joules of heat energy and its temperature changes from an initial temperature
+        of 20.0 degrees Celsius to a temperature of 25.0 degrees Celsius. What is the mass of the concrete? (Please answer to three significant figures of accuracy.)
+    </li>
+    <li class="question" data-answer = '125 J / (kg degree Celsius)'>
+        You have a mystery metal with a mass of 0.800 kg.
+        You add 200. Joules of heat energy,
+        and the temperature rises from 10.0 degrees Celsius to 12.0 degrees Celsius.
+        What is the specific heat of this mystery metal?
+        (Note that this is not necessarily one of the metals on the chart above.)
+    </li>
+    <li class="question" data-answer = '13.1 degrees Celsius'>
+        You have 2.00 kg of glass at a temperature of 10.0 degrees Celsius.
+        What is the final temperature if you add five thousand Joules of heat energy.
+        (Please answer to three significant figures of accuracy.)
+    </li>
+    <li class="question" data-answer = '9.44 degrees Celsius'>
+        You have 0.800 kg of wood at a temperature at 15.0 degrees Celsius.
+        What is the final temperature if you REMOVE eight thousand Joules of heat energy?
+        (Please answer to three significant figures of accuracy.)
+    </li>
+    <li class="question" data-answer = '17.8 degrees Celsius'>
+        You have 10.0 kg of water.
+        When you add nine thousand Joules of heat energy,
+        the temperature rises to 18.0 degrees Celsius.
+        What was the temperature initially?
+        (Please answer to three significant figures of accuracy.
+    </li>
+    <li class="question" data-answer = '40.6 degrees Celsius.'>
+        You have 6.00 kg of water.
+        When you REMOVE 15,000. Joules of heat energy,
+        the temperature of the water falls to 40.0 degrees Celsius.
+        What was the temperature initially?
+    </li>
+</ol>
+<!--
+
+<h4>
+    Part 2: Algebra Practice
+</h4>
+
+<p>
+    Here include some simple algebra practice based on the formula above.
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = ''>
+        Very Simple
+    </li>
+    <li class="question" data-answer = ''>
+        Very Simple
+    </li>
+    <li class="question" data-answer = ''>
+        Big Numbers
+    </li>
+    <li class="question" data-answer = ''>
+        Big Numbers
+    </li>
+    <li class="question" data-answer = ''>
+        Big Numbers and Decimals
+    </li>
+    <li class="question" data-answer = ''>
+        Big Numbers and Decimals
+    </li>
+</ol>
+-->
+<div class="pageBreak"></div>
+<h4>
+    Part 3: Walk-through question
+</h4>
+<ol class="questionList">
+    <li class="question">
+        You place a piece of steel with a mass of 0.500 kg into a bowl
+        of water with a mass of 2.00 kg.
+        The steel has an initial temperature of 30.0 degrees Celsius
+        and the water has an initial temperature of 20.0 degrees Celsius.
+        Assume no energy is lost form the system.
+        Both objects must have the same final temperature (That is the zeroth law of Thermodynamics.
+        Our ultimate goal is to determine this final temperature.
+        <ol class="subQuestionList" type = 'A'>
+            <li class="subQuestion" data-answer ="Heat flows from the steel to the water.">
+                Explain how heat energy flows (from what to what?)
+            </li>
+            <li class="subQuestion" data-answer = "The temperature of the steel decreases.">
+                What happens to the temperature of the steel?
+            </li>
+            <li class="subQuestion" data-answer = "The temperature of the water increases.">
+                What happens to the temperature of the water?
+            </li>
+            <h5>
+                Explanation:
+            </h5>
+            <p>
+                According to Newton's First Law of Thermodynamics (The Conservation of energy),
+                if no energy enters of leaves the system, as is stated above,
+                the total energy of the system of the water and steel must remain constant.
+                Because the variable \( Q \) represents the energy that enters a particular
+                object, we have the formula:
+                $$
+                Q_w + Q_s = 0
+                $$
+                In this formula \( Q_w \) is the heat that enters the water
+                and \( Q_s \) is the heat that enters the steel.
+                Note that, for this formula to be satisfied, one of the variables (\(Q_q \)) must
+                be positive and the other ( \( Q_s \) ) must be negative.
+            </p>
+            <p>
+
+            </p>
+            <p>
+                The next step is to fill in the equation above with relevant variables,
+                based on the formula for Q:
+                $$
+                Q = m C (T_f - T_i)
+                $$
+                According to the 0th Law of Thermodynamics, the two substances
+                must end with the same final temperature.
+                Thus, the final temperature of the water \( T_fw \) and the final
+                temperature of the steel \( T_fs \) can be represented by a single
+                variable \( T_f \), the final temperature of the mixture.
+                $$
+                Q_w = m_w C_w ( T_f - T_{iw} )
+                \\
+                Q_w = m_s C_s ( T_f - T_{is} )
+                $$
+            </p>
+            <ul>
+                <li>
+                    \( m_w = \) mass of the water
+                </li>
+                <li>
+                    \( C_w = \) specific heat of the water
+                </li>
+                <li>
+                    \( T_{iw} = \) initial temperature of the water
+                </li>
+                <li>
+                    \( m_s = \) mass of the steel
+                </li>
+                <li>
+                    \( C_s = \) specific heat of the steel
+                </li>
+                <li>
+                    \( T_{is} = \) initial temperature of the steel
+                </li>
+                <li>
+                    \( T_f = \) final temperature of the mixture
+                </li>
+            </ul>
+            <div class="pageBreak"></div>
+            <p>
+                Finally, our formula can be combined to create the following common formula:
+                $$
+                Q_w + Q_s = 0
+                \\
+                m_w C_w ( T_f - T_{iw} ) + m_s C_s ( T_f - T_{is} ) = 0
+                $$
+                This is the equation we must solve.
+                The variable includes seven variables. Six are known,
+                and the one unkown variable is \( T_f \), the final temperature of the mixture.
+            </p>
+            <p>
+                Here is a space for you to write down the values of known variables:
+            </p>
+            <ul>
+                <li>
+                    \( m_w = \)
+                </li>
+                <li>
+                    \( C_w = \)
+                </li>
+                <li>
+                    \( T_{iw} = \)
+                </li>
+                <li>
+                    \( m_s = \)
+                </li>
+                <li>
+                    \( C_s = \)
+                </li>
+                <li>
+                    \( T_{is} = \)
+                </li>
+            </ul>
+            <li class="subQuestion" data-answer = '\( 2 \cdot 4184 \cdot ( T_f - 20) + 0.5 \cdot 470 \cdot (T_f - 30) = 0 \)'>
+                Plug in the known above to create an equation for the final temperature \( T_f \)
+            </li>
+            <li class="subQuestion" data-answer = '20.27316 degrees Celsius'>
+                Solve the equation above to determine the final temperature of the mixture. Write you answer with 7 significant figures of accuracy.
+            </li>
+            <li class="subQuestion" data-answer = '20.3 degrees Celsius'>
+                Round your answer for the final temperature of the mixture to 3 significant figures of accuracy.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<div class="pageBreak"></div>
+<h4>
+    Part 4: Less walked-through versions:
+</h4>
+
+<ol class="questionList">
+    <li class="question">
+        You place a piece of steel with a mass of 0.800 kg into a bowl
+        with 3.00 kg of water. The steel has an initial temperature of 80.0 degrees Celsius
+        and the water has an initial temperature of 10.0 degrees Celsius.
+        Assume no energy enters of leaves the system
+        <ol class="subQuestionList">
+            <li class="subQuestion" data-answer = '\( m_w C_w ( T_f - T_{iw} ) + m_s C_s ( T_f - T_{is} ) = 0 \)'>
+                The 1st Law of Thermodynamics states that if
+                no energy enters of leaves
+                the system, then the total heat energy
+                entering each object must be zero,
+                thus given by the equation \( Q_w + Q_s = 0 \).
+                Based on that equation,
+                write an equation that relates relevant known variables,
+                properly labeled, to the final temperature of the mixture \( T_f \).
+            </li>
+            <li class="subQuestion" data-answer = '\( 3 \cdot 4184 \cdot ( T_f - 10 ) + 0.8 \cdot 470 \cdot ( T_f - 80 ) = 0 \)'>
+                Plug the appropriate values into the question written above.
+            </li>
+            <li class="subQuestion" data-answer = '12.0 degrees Celsius'>
+                Solve the equation above for the final temperature of the mixture \( T_f \).
+                Please write your solution to three significant figures of accuracy.
+            </li>
+        </ol>
+    </li>
+    <li class="question">
+        You place a piece of gold with a mass of 0.300 kg into a bowl
+        with 5.00 kg of water. The gold has an initial temperature of 400.0 degrees Celsius
+        and the water has an initial temperature of 20.0 degrees Celsius.
+        Assume no energy enters of leaves the system
+        <ol class="subQuestionList">
+            <li class="subQuestion" data-answer = '\( m_w C_w ( T_f - T_{iw} ) + m_g C_g ( T_f - T_{ig} ) = 0 \)'>
+                The 1st Law of Thermodynamics states that if
+                no energy enters of leaves
+                the system, then the total heat energy
+                entering each object must be zero,
+                thus given by the equation \( Q_w + Q_s = 0 \).
+                Based on that equation,
+                write an equation that relates relevant known variables,
+                properly labeled, to the final temperature of the mixture \( T_f \).
+            </li>
+            <li class="subQuestion" data-answer = '\( 5 \cdot 4184 \cdot ( T_f - 20 ) + 0.3 \cdot 129 \cdot ( T_f - 400 ) = 0 \)'>
+                Plug the appropriate values into the question written above.
+            </li>
+            <li class="subQuestion" data-answer = '20.7 degrees Celsius'>
+                Solve the equation above for the final temperature of the mixture \( T_f \).
+                Please write your solution to three significant figures of accuracy.
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<div class="pageBreak"></div>
+
+<h4>
+    Part 5: No Guidance Problems
+</h4>
+<p>
+    Note that some of these problems involve unit conversion!
+</p>
+
+<ol class="questionList">
+    <li class="question" data-answer = '27 degrees Celsius'>
+        When 350 grams of aluminum at 200. degrees Celsius is added to 2.0 kilograms of water
+        at 20. degrees Celsius, what will be the final temperature of the mixture?
+        Please answer to 2 significant figures of accuracy.
+    </li>
+</ol>
+
+<!--
+we require more minerals!
+
+and by minerals, I mean physics problems
+-->
+
+<ol class="answerList"></ol>

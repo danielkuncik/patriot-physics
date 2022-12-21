@@ -14,7 +14,50 @@
 <p>
     Note that mass is in units of 10^18 kilograms.
 </p>
-<div id = 'moonsOfJupiterTable'></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 border border-dark p-2"><strong>Moon</strong></div>
+        <div class="col-3 border border-dark p-2"><strong>Mass</strong> (10^18 kg)</div>
+        <div class="col-3 border border-dark p-2"><strong>Radius of Rotation</strong> (km)</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Ophelia</div>
+        <div class="col-3 border border-dark p-2">0.053</div>
+        <div class="col-3 border border-dark p-2">49770</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Juliet</div>
+        <div class="col-3 border border-dark p-2">0.056</div>
+        <div class="col-3 border border-dark p-2">64350</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Rosalind</div>
+        <div class="col-3 border border-dark p-2">0.25</div>
+        <div class="col-3 border border-dark p-2">69940</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Bianca</div>
+        <div class="col-3 border border-dark p-2">0.092</div>
+        <div class="col-3 border border-dark p-2">59170</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Desdemona</div>
+        <div class="col-3 border border-dark p-2">0.18</div>
+        <div class="col-3 border border-dark p-2">62680</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Titania</div>
+        <div class="col-3 border border-dark p-2">3527</div>
+        <div class="col-3 border border-dark p-2">435910</div>
+    </div>
+    <div class="row">
+        <div class="col-3 border border-dark p-2">Oberon</div>
+        <div class="col-3 border border-dark p-2">3014</div>
+        <div class="col-3 border border-dark p-2">583520</div>
+    </div>
+</div>
+
 <p>Source: <a href = 'https://en.wikipedia.org/wiki/Moons_of_Uranus'>Wikipedia: Moons of Uranus</a>
 (Yes, it's okay to look up factual information on Wikipedia.</p>
 <p>
@@ -23,9 +66,8 @@
 </p>
 <ol>
     <li>
-        Copy, from memory, Newton's Third Law.
-        Please copy a mathematically rigorous version of the law,
-        in which each of the words in the statement are precisely defined.
+        PLease copy: "Newton's Third Law states that when A exerts a force on B,
+        B exerts a force on A with equal magnitude and opposite direction.
     </li>
     <li>
         <ol type = 'a'>
@@ -46,19 +88,3 @@
     </li>
 </ol>
 
-
-<script>
-    let moonsOfJupiterTable = new Table(8,3);
-    moonsOfJupiterTable.addTopHeaders(['Moon','Mass (x 10^18 kg)','Radius of Rotation (km)']);
-    moonsOfJupiterTable.setMaxFontProportion(0.05);
-
-    moonsOfJupiterTable.writeTextInRow(1,['Ophelia','0.053','49770']);
-    moonsOfJupiterTable.writeTextInRow(2,['Juliet','0.056','64350']);
-    moonsOfJupiterTable.writeTextInRow(3,['Rosalind','0.25','69940']);
-    moonsOfJupiterTable.writeTextInRow(4,['Bianca','0.092','59170']);
-    moonsOfJupiterTable.writeTextInRow(5,['Desdemona','0.18','62680']);
-    moonsOfJupiterTable.writeTextInRow(6,['Titania','3527','435910']);
-    moonsOfJupiterTable.writeTextInRow(7,['Oberon','3014','583520']);
-
-    $("#moonsOfJupiterTable").append(moonsOfJupiterTable.draw(600));
-</script>

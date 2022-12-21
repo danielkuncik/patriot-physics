@@ -16,14 +16,12 @@
 </h3>
 
 <div class = 'jumbotron text-center'>
-    <h1 class = 'display-1'>
+    <h3 class = 'display-1'>
         Practice Page
-    </h1>
-    <h2>
-        <span class = 'display-1'>Not </span>
-        <span class = 'display-2'>the </span>
-        <span class = 'display-3'>quiz</span>
-    </h2>
+    </h3>
+    <h5>
+        Not a quiz
+    </h5>
 </div>
 
 <div class = 'jumbotron no-print'>
@@ -74,7 +72,9 @@
     <li>
         Level: {{level}}
     </li>
+    <div id = 'levelNote'></div>
 </ul>
+
 <div class = 'no-print'>
     <h4>
         <a href = '{{backLink}}'>BACK to Ladder {{unitName}}</a>
@@ -162,6 +162,14 @@
     </div>
 </div>
 
+<script>
+    const level = {{level}}; // no prob here
+    const message = "When Level is 4 or above, please answer all questions on a separate page!";
+    if (level >= 4) {
+        $("#levelNote").append($(`<li><strong>${message}</strong></li>`));
+        $(".questionList").prepend($(`<p><strong>${message}</strong></p>`));
+    }
+</script>
 
 <footer>
     {{>footer}}
