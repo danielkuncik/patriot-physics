@@ -6712,7 +6712,7 @@
           "ballistic_pendulum":
           {
             "title": "Ballistic Pendulum",
-            "level":  3,
+            "level":  4,
             "horizontal": 6,
             "letter": "Y",
             "prerequisites": [],
