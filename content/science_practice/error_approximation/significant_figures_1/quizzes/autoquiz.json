@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "text": "0.00567",
+      "answerChoices": [
+        {
+          "text": "3",
+          "correct": true
+        },
+        {"text": "2"},
+        {"text": "4"},
+        {"text": "5"},
+        {"text": "6"}
+      ]
+    },
+    {
+      "text": "0.094000",
+      "answerChoices": [
+        {
+          "text": "5",
+          "correct": true
+        },
+        {"text": "2"},
+        {"text": "3"},
+        {"text": "4"},
+        {"text": "6"}
+      ]
+    },
+    {
+      "text": "12",
+      "answerChoices": [
+        {
+          "text": "2",
+          "correct": true
+        },
+        {"text": "1"},
+        {"text": "0"},
+        {"text": "3"}
+      ]
+    },
+    {
+      "text": "\\( 1.468 \\cdot 10^8 \\)",
+      "answerChoices": [
+        {
+          "text": "4",
+          "correct": true
+        },
+        {"text": "1"},
+        {"text": "2"},
+        {"text": "3"},
+        {"text": "5"},
+        {"text": "7"}
+      ]
+    },
+    {
+      "text": "1.60e9",
+      "answerChoices": [
+        {
+          "text": "3",
+          "correct": true
+        },
+        {"text": "1"},
+        {"text": "2"},
+        {"text": "4"}
+      ]
+    },
+    {
+      "text": "1200",
+      "answerChoices": [
+        {
+          "text": "2",
+          "correct": true
+        },
+        {"text": "1"},
+        {"text": "3"},
+        {"text": "4"}
+      ]
+    },
+    {
+      "text": "2400.",
+      "answerChoices": [
+        {
+          "text": "4",
+          "correct": true
+        },
+        {"text": "1"},
+        {"text": "2"},
+        {"text": "3"}
+      ]
+    }
+
+
+  ]
+}

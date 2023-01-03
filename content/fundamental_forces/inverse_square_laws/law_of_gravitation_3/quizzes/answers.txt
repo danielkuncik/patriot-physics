@@ -1,0 +1,18 @@
+1.: Copy Newton's Third Law
+"Newton's Third Law states that whenever A exerts a force on B, B exerts a force on A with equal magnitude and opposite direction."
+
+2a. Force of gravitation between person and planet
+v1: m = 45 kg; Neptune => 507 N (620. N in the 2022 version)
+v2: m = 55 kg; Venus => 487 N
+v3: m - 65 kg; Mercury => 240 N
+
+2b. Draw diagram of person and planet showing forces
+
+2c. Explain why the diagram is consistent with Newtons' Third Law.
+
+2d. Explain which force is irrelevant.
+
+(c and d swapped in 2022 version)
+
+
+3. Explain the relevance of the radius of the planets by referring to the formula

@@ -66,9 +66,43 @@
     </li>
 </ul>
 
-<p>
-    Questions on the extra rule coming soon!
-</p>
+<ol class="questionList">
+    <div class = 'container'>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number11'></div>
+            <div class = 'col-md-6' id = 'number12'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number13'></div>
+            <div class = 'col-md-6' id = 'number14'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number15'></div>
+            <div class = 'col-md-6' id = 'number16'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number17'></div>
+            <div class = 'col-md-6' id = 'number18'></div>
+        </div>
+        <div class="row">
+            <div class = 'col-md-6' id = 'number19'></div>
+            <div class = 'col-md-6' id = 'number20'></div>
+        </div>
+    </div>
+</ol>
+
+<script>
+    countingSigFigs('100').displayProblemAsInputOneAnswer('number11');
+    countingSigFigs('1800').displayProblemAsInputOneAnswer('number12');
+    countingSigFigs('1800.').displayProblemAsInputOneAnswer('number13');
+    countingSigFigs('230').displayProblemAsInputOneAnswer('number14');
+    countingSigFigs('10').displayProblemAsInputOneAnswer('number15');
+    countingSigFigs('10.','kg').displayProblemAsInputOneAnswer('number16');
+    countingSigFigs('6000000').displayProblemAsInputOneAnswer('number17'); // i should be able to write something like '6 million' here!
+    countingSigFigs('5500000').displayProblemAsInputOneAnswer('number18');
+    countingSigFigs('3300').displayProblemAsInputOneAnswer('number19');
+    countingSigFigs('123450').displayProblemAsInputOneAnswer('number20');
+</script>
 
 
 <h4>
