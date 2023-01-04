@@ -1,0 +1,11 @@
+1. copy newton's third law
+
+2a. find for or gravity between uranus and one of its moons
+v1: rosalind   2.96e17 N
+v2: titania    1.07e20 N
+v3: ophelia    1.24e17 N
+
+2b. drawing a diagram
+
+
+2c. describe how the diagram is consistent with newton's third law

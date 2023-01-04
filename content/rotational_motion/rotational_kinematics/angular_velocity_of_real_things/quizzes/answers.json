@@ -2,5 +2,13 @@
   "v1": {
     "1": "1.757E-4 rad / s",
     "2": "The Mars rover wheels have a greater angular velocity than Mars. Mars takes over 24 hours to rotate once, the rover wheels take a matter of seconds."
+  },
+  "v2": {
+    "1": "1.084e-4 rad/s",
+    "2": "The spinning ballet dancer, because she completes a rotation in a second, whereas it takes almost 12 hours for Saturn to compete a rotation."
+  },
+  "v3": {
+    "1": "1.495e-6 rad/s",
+    "2": "Mercury's rotation is faster because it takes about 48 days to complete a circle, whereas its revolution takes about 87 days."
   }
 }
