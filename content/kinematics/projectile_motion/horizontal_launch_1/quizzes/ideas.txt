@@ -1,0 +1,23 @@
+2 problems solving for horizontal distance
+
+1 problem solving for vertical distance
+
+1 problem solving for final vertical speed
+
+
+Directions:
+In all problems, you may neglect air resistance.
+
+
+A car drives horizontally at a speed of 23.5 m/s off of a cliff
+that is 18.2 m tall.
+How far will the car land from the edge of the cliff?
+
+
+A super slow car drives horizontally at a speed of 0.155 m/s off of a very scary cliff
+that is 230. m tall.
+How far will the car land from the edge of the cliff?
+
+A car drives horizontally at a speed of xx off a cliff
+and lands a distance xx from the side of the cliff.
+How tall was the cliff.
