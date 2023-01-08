@@ -1,0 +1,149 @@
+{
+  "directions": "For all questions below, please ignore air resistance and calculate answers to three significant figures of accuracy.",
+  "questions": [
+    {
+      "text": "An object is thrown upward into the air with a speed of 5.68 m/s. How much time will pass before the object reaches the top of its arc?",
+      "answerChoices": [
+        {
+          "text": "0.269 s"
+        },
+        {
+          "text": "0.394 s"
+        },
+        {
+          "text": "0.483 3"
+        },
+        {
+          "text": "0.579 s",
+          "correct": true
+        },
+        {
+          "text": "0.675 s"
+        },
+        {
+          "text": "0.714 s"
+        }
+      ]
+    },
+    {
+      "text": "An object is thrown directly upward with a speed of 12.5 m/s. It falls and lands at the same height it was launched from. How much time does the object spend in the air?",
+      "answerChoices": [
+        {
+          "text": "1.52 s"
+        },
+        {
+          "text": "1.75 s"
+        },
+        {
+          "text": "2.08 s"
+        },
+        {
+          "text": "2.34 s"
+        },
+        {
+          "text": "2.55 s",
+          "correct": true
+        },
+        {
+          "text": "2.92 s"
+        }
+      ]
+    },
+    {
+      "text": "An object is thrown directly upward with a speed of 6.89 m/s. How high does it rise above the point where it was thrown?",
+      "answerChoices": [
+        {
+          "text": "2.42 m",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "An object is thrown directly upwrad with a speed of 8.45 m/s. If it strikes the ground int he same location where it was launched from, with what speed does it strike the ground?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "8.45 m/s",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "How fast must you throw an object directly upward if you want it to reach precisely 7.00 meters above where it was thrown?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "11.7 m/s",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "How fast must you throw and object directly upward if you want it to spend exactly 3.00 seconds in the air? Assume the object lands at exactly the same vertical height that it was thrown from.",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": "14.7 m/s",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}
