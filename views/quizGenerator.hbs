@@ -1,71 +1,78 @@
 
-<!--<h4 class = 'no-print'>-->
-<!--    QUIZ Generator-->
-<!--</h4>-->
-<!--<div id = 'AP_quiz_spot'></div>-->
-<!--<div class="pageBreak"></div>-->
-<!--<div id = 'honors_quiz_spot'></div>-->
+<h4 class = 'no-print'>
+    QUIZ Generator
+</h4>
+<div id = 'AP_quiz_spot'></div>
+<div class="pageBreak"></div>
+<div id = 'honors_quiz_spot'></div>
 
-<!--<div class="pageBreak"></div>-->
-
-
-<!--<script>-->
-<!--    // Set the global configs to synchronous-->
-<!--    $.ajaxSetup({-->
-<!--        async: false-->
-<!--    });-->
-
-<!--    const AP_sept_2022 = ["6949c4","e9cb0a","a6330e","169d20","4e97c3","ba74c4","1287eb","5612bd","720665"];-->
-<!--    const Honors_sept_2022 = ["6949c4","eda5ba","e9cb0a","bc4f99","720665","c89b8a"];-->
-
-<!--    const AP_oct_2022 = [];-->
-<!--    const Honors_oct_2022 = ["a6330e","4e97c3","a131a7","acacfe","ba7882"];-->
-
-<!--    const Honors_nov_2022 = ["38e07e","b656a7"];-->
-<!--    const Honors_dec_2022_1 = ["86f07c","f7055b","f6715d"];-->
-<!--    const Honors_dec_2022_2 = ["263ad0","c59587","4563a8"];-->
-
-<!--    const Honors_jan_2023 = ["4563a8","82f477","8b26b3","c34542","7369b3","aa3a0e","bb51aa","a73a78","e83146"];-->
-
-<!--    // const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];-->
-<!--    // const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];-->
-<!--    // const honors_quiz_may_2022_2 = ["4c74b0"];-->
-<!--    // const A_quiz_may_2022_2 = ["4ffcb6"];-->
-<!--    // const Quiz_june_2022_A = ["02a2e8","c68c28","c3f650"];-->
-<!--    // const Quiz_june_2022_Honors = ["02a2e8","c68c28","c3f650","8d91a6"];-->
-
-<!--    // const A_final = ["d1fae3"];-->
-<!--    // const honors_final = ["5c9f7a"];-->
-
-<!--    // next step: take this and make it so it is run by a button on the page-->
-<!--    // step after that: make it so that more than one pod can be combined into one quiz-->
-<!--    //-->
-<!--    // $.getJSON(`/autoquiz/02a2e8`, (data) => {-->
-<!--    //     console.log('hereX');-->
-<!--    //     console.log(data);-->
-<!--    // });-->
-<!--    //-->
-<!--    // let AP_array = [];-->
-<!--    // AP_sept_2022.forEach((quiz_ID) => {-->
-<!--    //     console.log(quiz_ID);-->
-<!--    //     $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {-->
-<!--    //         console.log('here');-->
-<!--    //         data.id = quiz_ID;-->
-<!--    //         AP_array.push(data);-->
-<!--    //     });-->
-<!--    // });-->
-<!--    //$("#AP_quiz_spot").append(generateWrittenQuiz(AP_array, "AP Physics Quiz: September 2022", 3, 30));-->
+<div class="pageBreak"></div>
 
 
+<script>
+    // Set the global configs to synchronous
+    $.ajaxSetup({
+        async: false
+    });
 
-<!--    let honors_array = [];-->
-<!--    Honors_jan_2023.forEach((quiz_ID) => {-->
-<!--        $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {-->
-<!--            data.id = quiz_ID;-->
-<!--            honors_array.push(data);-->
-<!--        });-->
-<!--    });-->
-<!--    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Quiz: December 2022 #1", 4, 80));-->
+    const AP_sept_2022 = ["6949c4","e9cb0a","a6330e","169d20","4e97c3","ba74c4","1287eb","5612bd","720665"];
+    const Honors_sept_2022 = ["6949c4","eda5ba","e9cb0a","bc4f99","720665","c89b8a"];
+
+    const AP_oct_2022 = [];
+    const Honors_oct_2022 = ["a6330e","4e97c3","a131a7","acacfe","ba7882"];
+
+    const Honors_nov_2022 = ["38e07e","b656a7"];
+    const Honors_dec_2022_1 = ["86f07c","f7055b","f6715d"];
+    const Honors_dec_2022_2 = ["263ad0","c59587","4563a8"];
+
+    // 4563a8 sig figs 2
+    // 7369b3 states of matter 1
+    // aa3a0e thermal contact 2
+    // a73a78 air composition
+    // 82f477 heat formula 3
+    // 8b26b3 heat formula 4
+    // c34542 thermal contact 3
+    const Honors_jan_2023 = ["7369b3","aa3a0e","a73a78","82f477","8b26b3","c34542"];
+
+    // const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];
+    // const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
+    // const honors_quiz_may_2022_2 = ["4c74b0"];
+    // const A_quiz_may_2022_2 = ["4ffcb6"];
+    // const Quiz_june_2022_A = ["02a2e8","c68c28","c3f650"];
+    // const Quiz_june_2022_Honors = ["02a2e8","c68c28","c3f650","8d91a6"];
+
+    // const A_final = ["d1fae3"];
+    // const honors_final = ["5c9f7a"];
+
+    // next step: take this and make it so it is run by a button on the page
+    // step after that: make it so that more than one pod can be combined into one quiz
+    //
+    // $.getJSON(`/autoquiz/02a2e8`, (data) => {
+    //     console.log('hereX');
+    //     console.log(data);
+    // });
+    //
+    // let AP_array = [];
+    // AP_sept_2022.forEach((quiz_ID) => {
+    //     console.log(quiz_ID);
+    //     $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
+    //         console.log('here');
+    //         data.id = quiz_ID;
+    //         AP_array.push(data);
+    //     });
+    // });
+    //$("#AP_quiz_spot").append(generateWrittenQuiz(AP_array, "AP Physics Quiz: September 2022", 3, 30));
 
 
-<!--</script>-->
+
+    let honors_array = [];
+    Honors_jan_2023.forEach((quiz_ID) => {
+        $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
+            data.id = quiz_ID;
+            honors_array.push(data);
+        });
+    });
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Test: January 2023", 4, 80));
+
+
+</script>

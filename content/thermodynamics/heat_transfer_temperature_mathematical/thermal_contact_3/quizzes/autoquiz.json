@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "text": "When 600. grams of iron at 300. degrees Celsius is added to 4.00 kilograms of water at 20.0 degrees Celsius, what will be the final temperature of the mixture?",
+      "answerChoices": [
+        {
+          "text": "24.5°C",
+          "correct": true
+        },
+        {
+          "text": "24.1°C"
+        },
+        {
+          "text": "24.9°C"
+        },
+        {
+          "text": "25.3°C"
+        },
+        {
+          "text": "25.8°C"
+        }
+      ]
+    },
+    {
+      "text": "You add 500. grams of an unknown metal at 500. degrees Celsius to 1.00 kilograms of water at 10.0 degrees Celsius. The resultant mixture has a final temperature of 48.32 degrees Celsius. What is most likely the material in question?",
+      "answerChoices": [
+        {
+          "text": "Copper",
+          "correct": true
+        },
+        {
+          "text": "Steel"
+        },
+        {
+          "text": "Gold"
+        },
+        {
+          "text": "Silver"
+        },
+        {
+          "text": "Aluminum"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "questions": [
+    {
+      "text": "What is the name of a phase transition between a solid and a gas.",
+      "answerChoices": [
+        {
+          "text": "Sublimation",
+          "correct": true
+        },
+        {
+          "text": "Deposition"
+        },
+        {
+          "text": "Boiling"
+        },
+        {
+          "text": "Melting"
+        },
+        {
+          "text": "Ionization"
+        }
+      ]
+    },
+    {
+      "text": "How do molecules move in a solid?",
+      "answerChoices": [
+        {
+          "text": "They vibrate only.",
+          "correct": true
+        },
+        {
+          "text": "They move freely."
+        },
+        {
+          "text": "They move relative to each other but cannot easily leave each other."
+        }
+      ]
+    },
+    {
+      "text": "How do molecules move in a liquid?",
+      "answerChoices": [
+          {
+            "text": "They vibrate only."
+          },
+          {
+            "text": "They move freely."
+          },
+          {
+            "text": "They move relative to each other but cannot easily leave each other.",
+            "correct": true
+          }
+        ]
+    },
+        {
+          "text": "How do molecules move in a gas?",
+          "answerChoices": [
+            {
+              "text": "They vibrate only."
+            },
+            {
+              "text": "They move freely.",
+              "correct": true
+            },
+            {
+              "text": "They move relative to each other but cannot easily leave each other."
+            }
+          ]
+     },
+    {
+      "text": "Which state of matter will take the shape of its container but not its size?",
+      "answerChoices": [
+        {
+          "text": "liquid",
+          "correct": true
+        },
+        {
+          "text": "solid"
+        },
+        {
+          "text": "gas"
+        }
+      ]
+    }
+  ]
+}

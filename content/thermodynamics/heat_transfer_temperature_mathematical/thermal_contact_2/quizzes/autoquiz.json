@@ -1,0 +1,128 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "For some reason, a fish is caught on land! The fish has a temperature of 45°F. The air outside has a temperature of 65°F. What is going to happen?",
+      "answerChoices": [
+        {
+          "text": "Heat will flow from the air to the fish until they have the same temperature.",
+          "correct": true
+        },
+        {
+          "text": "Heat will flow from the fish to the air until they have the same temperature."
+        },
+        {
+          "text": "Heat will flow from the air to the fish, but they will end with the different temperatures."
+        },
+        {
+          "text": "Heat will flow from the fish to the air, but they will end with different temperatures."
+        },
+        {
+          "text": "Heat energy will not flow."
+        }
+      ]
+    },
+    {
+      "text": "Which of these will most likely be the final temperature of the fish?",
+      "answerChoices": [
+        {
+          "text": "65°F",
+          "correct": true
+        },
+        {
+          "text": "45°F"
+        },
+        {
+          "text": "55°F"
+        },
+        {
+          "text": "75°F"
+        },
+        {
+          "text": "35°F"
+        }
+      ]
+    },
+    {
+      "text": "Two potions are mixed. The red potion has a temperature of 50°C, and the blue potion has a temperature of 10°C. They have very similar masses and specific heats. What will most likely be the final temperature of the mixture?",
+      "answerChoices": [
+        {
+          "text": "30°C",
+          "correct": true
+        },
+        {
+          "text": "10°C"
+        },
+        {
+          "text": "12°C"
+        },
+        {
+          "text": "48°C"
+        },
+        {
+          "text": "50°C"
+        }
+      ]
+    },
+    {
+      "text": "A few rocks with a temperature of 80°C are added to a cup of water with a temperature of 20°C. The rocks have a specific heat similar to that of most metals, and have about 10% the mass of the water. Which of the following will most likely be the final temperature of the mixture? You can figure this out using conceptual reasoning instead of a formula.",
+      "answerChoices": [
+        {
+          "text": "22°C",
+          "correct": true
+        },
+        {
+          "text": "49°C"
+        },
+        {
+          "text": "68°C"
+        },
+        {
+          "text": "78°C"
+        }
+      ]
+    },
+    {
+      "text": "How does heat flow between two objects of different temperature in thermal contact.?",
+      "answerChoices": [
+        {
+          "text": "From the warmer object to the cooler object until they reach the same temperature.",
+          "correct": true
+        },
+        {
+          "text": "From the cooler object to the warmer object until they reach the same temperature."
+        },
+        {
+          "text": "From the warmer object to the cooler object, but they will not reach the same temperature."
+        },
+        {
+          "text": "From the cooler object to the warmer object, but they will not reach the same temperature."
+        },
+        {
+          "text": "Heat does not flow between two objects of different temperature in thermal contact."
+        }
+      ]
+    },
+    {
+      "text": "The term 'thermal equilibrium' refers to:",
+      "answerChoices": [
+        {
+          "text": "A point when two objects have the same temperature.",
+          "correct": true
+        },
+        {
+          "text": "A point when two objects temperatures have been averaged."
+        },
+        {
+          "text": "A point when the specific heat times the mass is times temperature squared is equal to Q."
+        },
+        {
+          "text": "The average of the heat of fusion and the heat of vaporization."
+        },
+        {
+          "text": "When heat energy is equal to the kinetic energy plus the gravitational potential energy of an object."
+        }
+      ]
+    }
+  ]
+}
