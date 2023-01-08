@@ -2,7 +2,7 @@
   "questions": [
     {
       "text": "Which of the following is the most abundant component of air, making up approximately 78 % of air molecules?",
-      "answerChoice": [
+      "answerChoices": [
         {
           "text": "Nitrogen",
           "correct": true
@@ -26,7 +26,7 @@
     },
     {
       "text": "Which of the following is the second most abundant component of air, making up approximately 21 % of air particles?",
-      "answerChoice": [
+      "answerChoices": [
         {
           "text": "Nitrogen"
         },
@@ -50,7 +50,7 @@
     },
     {
       "text": "Which of the following is a variable component of the air, existing in different quantities based on geography and climate?",
-      "answerChoice": [
+      "answerChoices": [
         {
           "text": "Nitrogen"
         },
@@ -74,7 +74,7 @@
     },
     {
       "text": "Which of the following makes up about 1 % of air molecules?",
-      "answerChoice": [
+      "answerChoices": [
         {
           "text": "Nitrogen"
         },
@@ -98,7 +98,7 @@
     },
     {
       "text": "Which of the following, though it makes up less than 1% of air molecules, plays a large role in ecology because it is used by plants to grown their structures?",
-      "answerChoice": [
+      "answerChoices": [
         {
           "text": "Nitrogen"
         },
@@ -122,7 +122,7 @@
     },
     {
       "text": "Which of the following is found in negligible quantities in the air we breath?",
-      "answerChoice": [
+      "answerChoices": [
         {
           "text": "Nitrogen"
         },

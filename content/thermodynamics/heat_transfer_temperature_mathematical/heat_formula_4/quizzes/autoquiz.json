@@ -1,0 +1,70 @@
+{
+  "questions": [
+    {
+      "text": "How much heat energy is required to heat 780 grams of -60°C ice into steam at 150°C?",
+      "answerChoices": [
+        {
+          "text": "2.53e6 Joules",
+          "correct": true
+        },
+        {
+          "text": "2.43e6 Joules"
+        },
+        {
+          "text": "2.65e6 Joules"
+        },
+        {
+          "text": "2.39e6 Joules"
+        },
+        {
+          "text": "2.53e7 Joules"
+        },
+        {
+          "text": "2.43e7 Joules"
+        },
+        {
+          "text": "2.65e7 Joules"
+        },
+        {
+          "text": "2.39e7 Joules"
+        },
+        {
+          "text": "2.53e5 Joules"
+        },
+        {
+          "text": "2.43e5 Joules"
+        },
+        {
+          "text": "2.65e5 Joules"
+        },
+        {
+          "text": "2.39e5 Joules"
+        }
+      ]
+    },
+    {
+      "text": "How much heat energy is necessary to melt 550 grams of gold at 20°C? The melting point of gold is 1064°C.",
+      "answerChoices": [
+        {
+          "text": "1.06e5 Joules",
+          "correct": true
+        },
+        {
+          "text": "9.87e4 Joules"
+        },
+        {
+          "text": "8.65e4 Joules"
+        },
+        {
+          "text": "1.06e6 Joules"
+        },
+        {
+          "text": "9.87e5 Joules"
+        },
+        {
+          "text": "8.65e5 Joules"
+        }
+      ]
+    }
+  ]
+}

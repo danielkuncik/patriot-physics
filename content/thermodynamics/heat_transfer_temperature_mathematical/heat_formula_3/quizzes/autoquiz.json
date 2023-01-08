@@ -1,0 +1,100 @@
+{
+  "questions": [
+    {
+      "text": "I have 0.480 kg of water at a temperature of 20 degrees Celsius. If I add 30,000 Joules of heat energy, what will be the final temperature of the water?",
+      "answerChoices": [
+        {
+          "text": "28.3°C"
+        },
+        {
+          "text": "30.2°C"
+        },
+        {
+          "text": "32.7°C"
+        },
+        {
+          "text": "34.9°C",
+          "correct": true
+        },
+        {
+          "text": "36.8°C"
+        },
+        {
+          "text": "38.6°C"
+        }
+      ]
+    },
+    {
+      "text": "I have 0.300 kg of copper at 300 degrees Celsius. If I remove 15,000 Joules of heat energy, what will be the final energy of the copper?",
+      "answerChoices": [
+        {
+          "text": "193°C"
+        },
+        {
+          "text": "202°C"
+        },
+        {
+          "text": "209°C"
+        },
+        {
+          "text": "217°C"
+        },
+        {
+          "text": "224°C"
+        },
+        {
+          "text": "230.°C",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "I have 0.670 kg of Aluminum. After I add 8,000 Joules of heat energy, the temperature of the Aluminum is  82.5°C. What was the initial temperature of the Aluminum?",
+      "answerChoices": [
+        {
+          "text": "57.8°C"
+        },
+        {
+          "text": "60.2°C"
+        },
+        {
+          "text": "62.8°C"
+        },
+        {
+          "text": "66.4°C"
+        },
+        {
+          "text": "69.3°C",
+          "correct": true
+        },
+        {
+          "text": "73.3°C"
+        }
+      ]
+    },
+    {
+      "text": "I have 5500 grams of water. If I remove a million Joules of heat energy to the water, it has a temperature of 9°C. What was the initial temperature of the water?",
+      "answerChoices": [
+        {
+          "text": "50.3°C"
+        },
+        {
+          "text": "51.6°C"
+        },
+        {
+          "text": "52.5°C",
+          "correct": true
+        },
+        {
+          "text": "53.8°C"
+        },
+        {
+          "text": "54.5°C"
+        },
+        {
+          "text": "55.3°C"
+        }
+      ]
+    }
+  ]
+}
