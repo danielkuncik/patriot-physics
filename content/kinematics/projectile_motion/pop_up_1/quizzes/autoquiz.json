@@ -57,19 +57,19 @@
           "correct": true
         },
         {
-          "text": ""
+          "text": "2.66 m"
         },
         {
-          "text": ""
+          "text": "2.78 m"
         },
         {
-          "text": ""
+          "text": "2.53 m"
         },
         {
-          "text": ""
+          "text": "2.89 m"
         },
         {
-          "text": ""
+          "text": "3.01 m"
         }
       ]
     },
@@ -77,19 +77,19 @@
       "text": "An object is thrown directly upwrad with a speed of 8.45 m/s. If it strikes the ground int he same location where it was launched from, with what speed does it strike the ground?",
       "answerChoices": [
         {
-          "text": ""
+          "text": "7.95 m"
         },
         {
-          "text": ""
+          "text": "8.09 m"
         },
         {
-          "text": ""
+          "text": "8.15 m"
         },
         {
-          "text": ""
+          "text": "8.24 m"
         },
         {
-          "text": ""
+          "text": "8.32 m"
         },
         {
           "text": "8.45 m/s",
@@ -101,23 +101,23 @@
       "text": "How fast must you throw an object directly upward if you want it to reach precisely 7.00 meters above where it was thrown?",
       "answerChoices": [
         {
-          "text": ""
+          "text": "11.1 m/s"
         },
         {
-          "text": ""
+          "text": "11.4 m/s"
         },
         {
           "text": "11.7 m/s",
           "correct": true
         },
         {
-          "text": ""
+          "text": "12.1 m/s"
         },
         {
-          "text": ""
+          "text": "12.5 m/s"
         },
         {
-          "text": ""
+          "text": "12.8 m/s"
         }
       ]
     },
@@ -125,23 +125,23 @@
       "text": "How fast must you throw and object directly upward if you want it to spend exactly 3.00 seconds in the air? Assume the object lands at exactly the same vertical height that it was thrown from.",
       "answerChoices": [
         {
-          "text": ""
+          "text": "13.6 m/s"
         },
         {
           "text": "14.7 m/s",
           "correct": true
         },
         {
-          "text": ""
+          "text": "15.5 m/s"
         },
         {
-          "text": ""
+          "text": "16.9 m/s"
         },
         {
-          "text": ""
+          "text": "18.1 m/s"
         },
         {
-          "text": ""
+          "text": "19.2 m/s"
         }
       ]
     }

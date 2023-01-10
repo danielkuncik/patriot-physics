@@ -1,0 +1,126 @@
+{
+  "directions": "In all problems, you may neglect air resistance. Please solve each problem to 3 significant figures of accuracy.",
+  "note": "my last idea is not yet included, i need to adjust to practice page first",
+  "questions": [
+    {
+      "text": "A car drives horizontally at a speed of 23.5 m/s off of a cliff that is 18.2 m tall. How far will the car land from the edge of the cliff?",
+      "answerChoices": [
+        {
+          "text": "45.3 m",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "A super slow car drives horizontally at a speed of 0.155 m/s off of a very scary cliff that is 230. m tall nHow far will the car land from the edge of the cliff?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "1.06 m",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "A car drives horizontally at a speed of 20.3 m/s off a cliff and lands a distance 95.8 m from the side of the cliff. How tall was the cliff?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "109 m",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "A car drives off a cliff that was 34.8 meters tall and falls a distance of 87.8 m from the edge. How fast was it moving when it drove off the cliff?",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": "33.0 m/s",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "(not counted towards your final score) A car drives horizontally off a cliff that is 30.0 m tall with a speed of 15.0 m/s. With what speed does it strike the ground?",
+      "answerChoices": [
+        {
+          "text": "25.9 m/s"
+        },
+        {
+          "text": "26.6 m/s"
+        },
+        {
+          "text": "27.1 m/s"
+        },
+        {
+          "text": "27.8 m/s"
+        },
+        {
+          "text": "28.5 m/s",
+          "correct": true
+        },
+        {
+          "text": "29.6 m/s"
+        }
+      ]
+    }
+  ]
+}
