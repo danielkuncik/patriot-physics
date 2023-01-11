@@ -69,13 +69,13 @@
 
 
     let honors_array = [];
-    Honors_jan_2023.forEach((quiz_ID) => {
+    AP_jan_2023.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physic Quiz: January 2023", 4, 80));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physic Quiz: January 2023", 2, 100));
 
 
 </script>
