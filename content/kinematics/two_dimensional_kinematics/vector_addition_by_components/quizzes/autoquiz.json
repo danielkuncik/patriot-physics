@@ -1,0 +1,33 @@
+{
+  "questions": [
+    {
+      "text": "Add the following two vectors and express the solution in magnitude-direction form.",
+      "image": "quiz_1.png",
+      "answerChoices": [
+        {
+          "text": "23.3 m at 79.2° north of east",
+          "correct": true
+        },
+        {
+          "text": "23.3 m at 79.2° east of north",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "text": "Add the following two vectors and express the solution in magnitude-direction form.",
+      "image": "quiz_2.png",
+      "answerChoices": [
+        {
+          "text": "38.8 m at 49.1° south of west",
+          "correct": true
+        },
+        {
+          "text": "38.8 m at 49.1° west of south",
+          "correct": false
+        }
+
+      ]
+    }
+  ]
+}

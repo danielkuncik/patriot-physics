@@ -1,0 +1,9 @@
+
+
+v2
+(m_a + m_b + m_c) v_i = m_a v_af + m_b vb_f + m_c v _cf
+
+I'm slightly concerned that v2 is easier than the other two
+
+v3
+ma vai + mb vbi = (.2 ma + mb) vf

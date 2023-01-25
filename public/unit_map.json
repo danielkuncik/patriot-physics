@@ -4675,6 +4675,19 @@
             "id": "2c9250",
             "inClass_AP": false
           },
+          "kinetic_friction_lab": {
+            "title": "Kinetic Friction Lab",
+            "subtitle": "Confirming Kinetic Friction Formula in simple cases and rigorously calculating mu_k",
+            "level": 4,
+            "horizontal": 8,
+            "letter": "Y",
+            "prerequisites": [""],
+            "objective": "Confirm that kinetic friction works as calculated for simple horizontal situations and calculate mu_k using not a formula alone but a linear graph.",
+            "content": "For an object pulled horizontally on a flat surface at a constant velocity, the relationship between applied force and mass can be used to analyze the effect of kinetic friction.",
+            "uuid": "e747eca1-3549-4500-9642-3b8bba60a038",
+            "id": "e747ec"
+
+          },
           "block_dragging_4":
           {
             "title": "Block Dragging 4",
