@@ -3,3 +3,6 @@ v3:
 1. 91 cm
 
 2. 1.91 kg
+
+I am concerned that v3 is harder than the other 2,
+perhaps replace question looking for mass with an easier question.
