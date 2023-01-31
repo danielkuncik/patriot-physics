@@ -1,0 +1,29 @@
+This pod will discuss the conceptual reasoning behind problems involving blocks.
+
+
+1. A student receives the following problem.
+"A 2 kg block is moving to the right on a surface. It is being pulled to the right with a force of 10 N. The coefficient of kinetic friction between the block and the surface is 0.2. Determine the acceleration of the block."
+The student does the following first:
+F_g = m * g = 2 * 9.81 = 19.62 N
+F_N = 19.62 N
+Did the student determine normal force correctly?
+A. Yes, normal force is always equal to gravity.
+B. Yes, normal force is equal to gravity in this situation.
+D. No, the normal force is not equal to gravity.
+E. The teacher miswrote the question, more information is needed to find the normal force.
+
+
+2. "A 2 kg block is on a frictionless surface. It is being pulled to the right with a force of 10 N. Determine the acceleration of the block."
+Which of the following statements is true regarding the velocity of the block?
+A. The block's velocity is irrelevant to the problem. (correct)
+B. The problem cannot be accurately solved because the teacher did not include enough information on the block's velocity.
+C. The block is moving at a constant velocity.
+D. The block is moving to the right.
+
+3. "A 2 kg block is moving on a surface. It is being pulled to the right with a force of 10 N. The coefficient of kinetic friction between the block and the surface is 0.2. Determine the acceleration of the block." (very hard!)
+Which of the following statements is true regarding the velocity of the block?
+A. The block's velocity is irrelevant to the problem.
+B. The problem cannot be accurately solved because the teacher did not include enough information on the block's velocity. (correct)
+C. The block is moving at a constant velocity.
+D. The block is moving to the right.
+
