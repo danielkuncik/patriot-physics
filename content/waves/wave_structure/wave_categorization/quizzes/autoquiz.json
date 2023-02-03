@@ -1,0 +1,201 @@
+{
+  "directions": "For each type of wave listed below, determine two categories into which it falls. Note that not every possible answer choice will be used.",
+  "questions": [
+    {
+      "text": "A Sound Wave",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Mechanical and Longitudinal",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "An Ultrasonic Wave (NOT an ultraviolet wave)",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Mechanical and Longitudinal",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "A microwave",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Mechanical and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Transverse",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "An X-Ray wave",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Mechanical and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Transverse",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "An S-Wave made in an earthquake (source: https://byjus.com/physics/s-waves/)",
+      "image": "S-wave.png",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse",
+          "correct": true
+        },
+        {
+          "text": "Mechanical and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "A P-Wave made in an earthquake (Source: https://byjus.com/physics/s-waves/)",
+      "image": "P-wave.png",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Mechanical and Longitudinal",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "The following wave in a slinky (source: https://sites.google.com/site/sciencerocksgoldaward/experiments/slinky-wave)",
+      "image": "slinky_1,png",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Mechanical and Longitudinal",
+          "correct": true
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    },
+    {
+      "text": "The following wave made in a slinky (source: https://sites.google.com/site/sciencerocksgoldaward/experiments/slinky-wave)",
+      "image": "slinky_2.png",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Transverse",
+          "correct": true
+        },
+        {
+          "text": "Mechanical and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Longitudinal"
+        },
+        {
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
+        }
+      ]
+    }
+  ]
+}

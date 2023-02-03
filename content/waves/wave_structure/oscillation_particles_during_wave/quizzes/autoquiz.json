@@ -1,0 +1,96 @@
+{
+  "questions": [
+    {
+      "text": "As a (simple) mechanical wave passes through a medium, what does each particle do?",
+      "answerChoices": [
+        {
+          "text": "It moves and returns to its original spot.",
+          "correct": true
+        },
+        {
+          "text": "It does not move."
+        },
+        {
+          "text": "It travels in the direction of the wave and does not return."
+        },
+        {
+          "text": "It travels opposite the direction of the wave and does not return."
+        }
+      ]
+    },
+    {
+      "text": "As a transverse wave passes through a medium, each particle oscillates in a direction __________ to the motion of the wave.",
+      "answerChoices": [
+        {
+          "text": "perpendicular",
+          "correct": true
+        },
+        {
+          "text": "parallel"
+        },
+        {
+          "text": "at a 45° angle"
+        },
+        {
+          "text": "at a 60° angle"
+        }
+      ]
+    },
+    {
+      "text": "As a longitudinal wave passes through a medium, each particle oscillates in a direction __________ to the motion of the wave.",
+      "answerChoices": [
+        {
+          "text": "perpendicular"
+        },
+        {
+          "text": "parallel",
+          "correct": true
+        },
+        {
+          "text": "at a 45° angle"
+        },
+        {
+          "text": "at a 60° angle"
+        }
+      ]
+    },
+    {
+      "text": "The diagram below shows a wave and a particle of matter moving as it passes. Which statement is true about this wave.",
+      "image": "problem_2_quiz.png",
+      "answerChoices": [
+        {
+          "text": "The wave is transverse.",
+          "correct": true
+        },
+        {
+          "text": "The wave is longitudinal."
+        },
+        {
+          "text": "The wave is electromagnetic."
+        },
+        {
+          "text": "The diagram is incorrect and does not properly illustrate a wave."
+        }
+      ]
+    },
+    {
+      "text": "The diagram below shows a wave and a particle of matter moving as it passes. Which statement is true about this wave.",
+      "image": "problem_1_quiz.png",
+      "answerChoices": [
+        {
+          "text": "The wave is transverse."
+        },
+        {
+          "text": "The wave is longitudinal.",
+          "correct": true
+        },
+        {
+          "text": "The wave is electromagnetic."
+        },
+        {
+          "text": "The diagram is incorrect and does not properly illustrate a wave."
+        }
+      ]
+    }
+  ]
+}

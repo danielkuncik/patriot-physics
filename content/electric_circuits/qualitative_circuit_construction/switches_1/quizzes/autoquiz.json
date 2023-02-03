@@ -1,0 +1,138 @@
+{
+  "directions": "The following questions show circuits built with no batteries included. Your task is determine how the switch would behave if batteries were added.",
+  "questions": [
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_1.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb."
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs."
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on.",
+          "correct": true
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all."
+        }
+      ]
+    },
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_2.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb."
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs."
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on.",
+          "correct": true
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all."
+        }
+      ]
+    },
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_3.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb."
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs."
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on.",
+          "correct": true
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all."
+        }
+      ]
+    },
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_4.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb.",
+          "correct": true
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs."
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on."
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all."
+        }
+      ]
+    },
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_5.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb."
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs."
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on."
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_6.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb."
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs.",
+          "correct": true
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on."
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all."
+        }
+      ]
+    },
+    {
+      "text": "How would the following switch behave if batteries were added to the circuit?",
+      "image": "quiz_7.png",
+      "answerChoices": [
+        {
+          "text": "The switch would operate correctly and control one light bulb."
+        },
+        {
+          "text": "The switch would operate correctly and control two light bulbs."
+        },
+        {
+          "text": "The switch would operate incorrectly and create a short circuit when turned on."
+        },
+        {
+          "text": "The switch would operate incorrectly and have no effect at all.",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
