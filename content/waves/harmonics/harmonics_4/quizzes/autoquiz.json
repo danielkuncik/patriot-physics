@@ -1,0 +1,98 @@
+{
+  "directions": "All of these problems concern harmonics created on a string with a node at each end.",
+  "questions": [
+    {
+      "text": "If the 4th harmonic has a wavelength of 12 cm, what is the wavelength of the 8th harmonic?",
+      "answerChoices": [
+        {
+          "text": "6 cm",
+          "correct": true
+        },
+        {
+          "text": "3 cm"
+        },
+        {
+          "text": "2 cm"
+        },
+        {
+          "text": "8 cm"
+        },
+        {
+          "text": "24 cm"
+        }
+      ]
+    },
+    {
+      "text": "If the 9th harmonic has a wavelength of 4 cm what is the wavelength of the 1st harmonic?",
+      "answerChoices": [
+        {
+          "text": "36 cm",
+          "correct": true
+        },
+        {
+          "text": "72 cm"
+        },
+        {
+          "text": "18 cm"
+        },
+        {
+          "text": "8 cm"
+        },
+        {
+          "text": "9 cm"
+        }
+      ]
+    },
+    {
+      "text": "If the 6th harmonic has a wavelength of 5 cm and a speed of 300 cm/s, what is the frequency of the 5th harmonic?",
+      "answerChoices": [
+        {
+          "text": "50 Hz",
+          "correct": true
+        },
+        {
+          "text": "10 Hz"
+        },
+        {
+          "text": "20 Hz"
+        },
+        {
+          "text": "30 Hz"
+        },
+        {
+          "text": "40 Hz"
+        },
+        {
+          "text": "60 Hz"
+        },
+        {
+          "text": "70 Hz"
+        }
+      ]
+    },
+    {
+      "text": "If the 1st harmonic has a frequency of 20 Hz and a speed of 480 cm/s, what is the wavelength of the 12th harmonic?",
+      "answerChoices": [
+        {
+          "text": "2 cm",
+          "correct": true
+        },
+        {
+          "text": "1 cm"
+        },
+        {
+          "text": "3 cm"
+        },
+        {
+          "text": "4 cm"
+        },
+        {
+          "text": "5 cm"
+        },
+        {
+          "text": "6 cm"
+        }
+      ]
+    }
+  ]
+}

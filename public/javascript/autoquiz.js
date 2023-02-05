@@ -127,7 +127,7 @@ class Quiz {
                     this.questions.push(new MultipleChoiceQuestion(questionData));
                 }
             });
-            this.directions = data.directions;
+            this.directions = data.directions ? data.directions : "For each question or prompt select the best answer.";
             this.title = "pod title"; // it should access the pod title???
             // find a way in the SERVER to add the pod title to the JSON data that is sent
         });

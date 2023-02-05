@@ -24,6 +24,7 @@
     const Honors_nov_2022 = ["38e07e","b656a7"];
     const Honors_dec_2022_1 = ["86f07c","f7055b","f6715d"];
     const Honors_dec_2022_2 = ["263ad0","c59587","4563a8"];
+    const Honors_feb_2023 = ["79415b","4a6e69","1d4dd1","8a4fc7","5762f5","535893","41d96a","aae95b","c7fc1a","1d2d49"];
 
 
     const AP_jan_2023 = ["dcf39c"];
@@ -69,13 +70,13 @@
 
 
     let honors_array = [];
-    AP_jan_2023.forEach((quiz_ID) => {
+    Honors_feb_2023.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physic Quiz: January 2023", 2, 100));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physic Quiz: February 2023", 4, 1));
 
 
 </script>
