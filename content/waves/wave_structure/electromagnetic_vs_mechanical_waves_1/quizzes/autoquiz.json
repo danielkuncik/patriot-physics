@@ -2,170 +2,86 @@
   "directions": "Determine if each wave described is electromagnetic or mechanical.",
   "questions": [
     {
-      "text": "",
+      "text": "A radio wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "electromagnetic",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "mechanical"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A seismic wave (a wave through a rock during an earthquake",
       "answerChoices": [
         {
-          "text": "",
+          "text": "mechanical",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "electromagnetic"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A green light wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "electromagnetic",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "mechanical"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A water wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "mechanical",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "electromagnetic"
         }
       ]
     },
     {
-      "text": "",
+      "text": "An infrared wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "electromagnetic",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "mechanical"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A sound wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "electromagnetic",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "mechanical"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A wave in a slinky",
       "answerChoices": [
         {
-          "text": "",
+          "text": "mechanical",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "electromagnetic"
         }
       ]
     }

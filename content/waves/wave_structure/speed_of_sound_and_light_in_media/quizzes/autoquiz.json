@@ -1,0 +1,91 @@
+{
+  "questions": [
+    {
+      "text": "Sound moves fastest through which of the following media?",
+      "answerChoices": [
+        {
+          "text": "steel",
+          "correct": true
+        },
+        {
+          "text": "air"
+        },
+        {
+          "text": "water"
+        },
+        {
+          "text": "ketchup"
+        }
+      ]
+    },
+    {
+      "text": "Sound moves slowest through which of the following media?",
+      "answerChoices": [
+        {
+          "text": "steel"
+        },
+        {
+          "text": "air",
+          "correct": true
+        },
+        {
+          "text": "water"
+        },
+        {
+          "text": "ketchup"
+        }
+      ]
+    },
+    {
+      "text": "Light moves fastest through which of the following media?",
+      "answerChoices": [
+        {
+          "text": "air",
+          "correct": true
+        },
+        {
+          "text": "glass"
+        },
+        {
+          "text": "water"
+        },
+        {
+          "text": "diamond"
+        }
+      ]
+    },
+    {
+      "text": "Light moves slowest through which of the following media?",
+      "answerChoices": [
+        {
+          "text": "air"
+        },
+        {
+          "text": "glass"
+        },
+        {
+          "text": "water"
+        },
+        {
+          "text": "diamond",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "What is the effect of the temperature of air on the speed of sound in air?",
+      "answerChoices": [
+        {
+          "text": "Sound moves faster in cooler air because the air molecules are closer together.",
+          "correct": true
+        },
+        {
+          "text": "Sound moves faster in warmer air because the molecules are moving faster."
+        },
+        {
+          "text": "The temperature of air does not affect the speed of sound."
+        }
+      ]
+    }
+  ]
+}

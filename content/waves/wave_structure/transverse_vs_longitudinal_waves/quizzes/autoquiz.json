@@ -2,170 +2,86 @@
   "directions": "Determine if each wave described is transverse or longitudinal.",
   "questions": [
     {
-      "text": "",
+      "image": "longitudinal_slinky_wave.png",
       "answerChoices": [
         {
-          "text": "",
+          "text": "longitudinal",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "transverse"
         }
       ]
     },
     {
-      "text": "",
+      "image": "transverse_slinky_wave.png",
       "answerChoices": [
         {
-          "text": "",
+          "text": "transverse",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "longitudinal"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A sound wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "longitudinal",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "transverse"
         }
       ]
     },
     {
-      "text": "",
+      "text": "An ultrasonic wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "longitudinal",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "transverse"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A wave of yellow light",
       "answerChoices": [
         {
-          "text": "",
+          "text": "transverse",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "longitudinal"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A compressed pulse moving down a slinky",
       "answerChoices": [
         {
-          "text": "",
+          "text": "longitudinal",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "transverse"
         }
       ]
     },
     {
-      "text": "",
+      "text": "A X-Ray wave",
       "answerChoices": [
         {
-          "text": "",
+          "text": "transverse",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "longitudinal"
         }
       ]
     }

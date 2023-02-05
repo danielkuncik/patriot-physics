@@ -1,170 +1,184 @@
 {
+  "note": "I don't have time now, (2-5-23), but I think it would be good to include some more on very high harmonics.",
   "questions": [
     {
-      "text": "",
+      "text": "Which of the following images would describe the 4th harmonic of waves on a string.",
       "answerChoices": [
         {
-          "text": "",
+          "image": "quiz_34.png",
           "correct": true
         },
         {
-          "text": ""
+          "image": "quiz_9.png"
         },
         {
-          "text": ""
+          "image": "quiz_64.png"
         },
         {
-          "text": ""
+          "image": "quiz_93.png"
         },
         {
-          "text": ""
+          "image": "quiz_102.png"
+        },
+        {
+          "image": "quiz_102.png"
         }
       ]
     },
     {
-      "text": "",
+      "text": "Which of the following images would describe the 5th harmonic of waves on a string.",
       "answerChoices": [
         {
-          "text": "",
+          "image": "quiz_34.png",
           "correct": true
         },
         {
-          "text": ""
+          "image": "quiz_9.png"
         },
         {
-          "text": ""
+          "image": "quiz_64.png"
         },
         {
-          "text": ""
+          "image": "quiz_93.png"
         },
         {
-          "text": ""
+          "image": "quiz_102.png"
+        },
+        {
+          "image": "quiz_102.png",
+          "correct": true
         }
       ]
     },
     {
-      "text": "",
+      "text": "The image below describes what harmonic of a wave on a string?",
+      "image": "quiz_23.png",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Third",
           "correct": true
         },
         {
-          "text": ""
+          "text": "First"
         },
         {
-          "text": ""
+          "text": "Second"
         },
         {
-          "text": ""
+          "text": "Fourth"
         },
         {
-          "text": ""
+          "text": "Fifth"
+        },
+        {
+          "text": "Sixth"
         }
       ]
     },
     {
-      "text": "",
+      "text": "The image below describes what harmonic of a wave on a string?",
+      "image": "quiz_93.png",
       "answerChoices": [
         {
-          "text": "",
+          "text": "1st",
           "correct": true
         },
         {
-          "text": ""
+          "text": "2nd"
         },
         {
-          "text": ""
+          "text": "3rd"
         },
         {
-          "text": ""
+          "text": "4th"
         },
         {
-          "text": ""
+          "text": "5th"
+        },
+        {
+          "text": "6th"
         }
       ]
     },
     {
-      "text": "",
+      "text": "The image below shows the harmonic standing wave on a string. What categories best categorize this wave?",
+      "image": "quiz_64.png",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Mechanical and Transverse",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Mechanical and Longitudinal"
         },
         {
-          "text": ""
+          "text": "Electromagnetic and Transverse"
         },
         {
-          "text": ""
+          "text": "Electromagnetic and Longitudinal"
         },
         {
-          "text": ""
+          "text": "Electromagnetic and Mechanical"
+        },
+        {
+          "text": "Longitudinal and Transverse"
         }
       ]
     },
     {
-      "text": "",
+      "text": "In a harmonic, a point which is not moving at all is referred to as a _________.",
       "answerChoices": [
         {
-          "text": "",
+          "text": "node",
           "correct": true
         },
         {
-          "text": ""
+          "text": "antinode"
         },
         {
-          "text": ""
+          "text": "crest"
         },
         {
-          "text": ""
+          "text": "trough"
         },
         {
-          "text": ""
+          "text": "wavelength"
         }
       ]
     },
     {
-      "text": "",
+      "text": "In a harmonic, the points which move the most are called __________.",
       "answerChoices": [
         {
-          "text": "",
+          "text": "nodes"
+        },
+        {
+          "text": "antinodes",
           "correct": true
         },
         {
-          "text": ""
+          "text": "crests"
         },
         {
-          "text": ""
+          "text": "troughs"
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "amplitudes"
         }
       ]
     },
     {
-      "text": "",
+      "text": "Which of the following statement regarding harmonics is true?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Each subsequent harmonic fits more wavelengths onto the same string.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Higher harmonics are made on longer strings than lower harmonics."
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "Lower harmonics are made on longer strings than higher harmonics."
         }
       ]
     }
