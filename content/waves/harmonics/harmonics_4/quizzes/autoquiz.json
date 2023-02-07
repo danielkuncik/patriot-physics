@@ -1,8 +1,8 @@
 {
-  "directions": "All of these problems concern harmonics created on a string with a node at each end.",
+  "directions_x": "All of these problems concern harmonics created on a string with a node at each end.",
   "questions": [
     {
-      "text": "If the 4th harmonic has a wavelength of 12 cm, what is the wavelength of the 8th harmonic?",
+      "text": "The next four problems concern harmonics created on a string with a node at each end. If the 4th harmonic has a wavelength of 12 cm, what is the wavelength of the 8th harmonic?",
       "answerChoices": [
         {
           "text": "6 cm",

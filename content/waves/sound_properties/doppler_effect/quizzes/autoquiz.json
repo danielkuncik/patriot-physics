@@ -1,172 +1,77 @@
 {
+  "note": "This one isn't done, but I've done all I can for tonight (2-5-23), improve this pod and the quiz next year please.",
   "questions": [
     {
-      "text": "Which of the following diagrams show(s) a situation where a sound wave will appear to have a HIGHER frequency than it was created at:",
+      "text": "In which of the following situations would a sound wave appear to have a HIGHER frequency than it was created at. Chose the best possible answer",
       "reorder": false,
       "answerChoices": [
         {
-          "text": "",
+          "text": "A noisy car is moving fast toward an observer."
+        },
+        {
+          "text": "A noisy car is moving fast away from an observer."
+        },
+        {
+          "text": "An observer is moving quickly towards a stationary source of a sound."
+        },
+        {
+          "text": "An observer is moving quickly away from a stationary source of a sound."
+        },
+        {
+          "text": "A source of sound is close to an observer."
+        },
+        {
+          "text": "A source of sound is far away from an observer."
+        },
+        {
+          "text": "A and C",
           "correct": true
         },
         {
-          "text": ""
+          "text": "B and D"
         },
         {
-          "text": ""
+          "text": "A, C, and E"
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "B, D, and F"
         }
       ]
     },
     {
-      "text": "Which of the following diagrams show(s) a situation where a sound wave will appear to have a LOWER frequency than it was created at:",
+      "text": "In which of the following situations would a sound wave appear to have a LOWER frequency than it was created at. Chose the best possible answer",
       "reorder": false,
       "answerChoices": [
         {
-          "text": "",
+          "text": "A noisy car is moving fast toward an observer."
+        },
+        {
+          "text": "A noisy car is moving fast away from an observer."
+        },
+        {
+          "text": "An observer is moving quickly towards a stationary source of a sound."
+        },
+        {
+          "text": "An observer is moving quickly away from a stationary source of a sound."
+        },
+        {
+          "text": "A source of sound is close to an observer."
+        },
+        {
+          "text": "A source of sound is far away from an observer."
+        },
+        {
+          "text": "A and C"
+        },
+        {
+          "text": "B and D",
           "correct": true
         },
         {
-          "text": ""
+          "text": "A, C, and E"
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "B, D, and F"
         }
       ]
     }

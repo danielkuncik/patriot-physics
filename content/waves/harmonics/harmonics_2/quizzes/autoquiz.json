@@ -1,170 +1,113 @@
 {
+  "reorder": false,
   "questions": [
     {
-      "text": "",
+      "text": "The next 5 questions concern harmonics made on a particular string. The string has a length of 0.600 meters, and waves on this string have a speed of 5.00 m/s. You can use the table below to help you find your answer, but you are not required to fill out this table. What is the wavelength of th 6th harmonic?",
+      "image": {
+        "name": "table.png",
+        "height": "500px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
-          "text": "",
+          "text": "0.200 m",
           "correct": true
         },
         {
-          "text": ""
+          "text": "0.600 m"
         },
         {
-          "text": ""
+          "text": "0.400 m"
         },
         {
-          "text": ""
+          "text": "0.300 m"
         },
         {
-          "text": ""
+          "text": "0.100 m"
         }
       ]
     },
     {
-      "text": "",
+      "text": "What is the wavelength of the first harmonic?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "1.20 m",
           "correct": true
         },
         {
-          "text": ""
+          "text": "0.600 m"
         },
         {
-          "text": ""
+          "text": "0.300 m"
         },
         {
-          "text": ""
+          "text": "0.400 m"
         },
         {
-          "text": ""
+          "text": "0.200 m"
         }
       ]
     },
     {
-      "text": "",
+      "text": "What is the speed of waves for the 5th harmonic?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "5.00 m/s",
           "correct": true
         },
         {
-          "text": ""
+          "text": "2.00 m/s"
         },
         {
-          "text": ""
+          "text": "4.00 m/s"
         },
         {
-          "text": ""
+          "text": "6.00 m/s"
         },
         {
-          "text": ""
+          "text": "8.00 m/s"
         }
       ]
     },
     {
-      "text": "",
+      "text": "What frequency is necessary to create the 8th harmonic?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "33.3 Hz",
           "correct": true
         },
         {
-          "text": ""
+          "text": "50 Hz"
         },
         {
-          "text": ""
+          "text": "40 Hz"
         },
         {
-          "text": ""
+          "text": "30 Hz"
         },
         {
-          "text": ""
+          "text": "16.7 Hz"
         }
       ]
     },
     {
-      "text": "",
+      "text": "What frequency is necessary to create the 2nd harmonic?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "8.33 Hz",
           "correct": true
         },
         {
-          "text": ""
+          "text": "4.17 Hz"
         },
         {
-          "text": ""
+          "text": "12.5 Hz"
         },
         {
-          "text": ""
+          "text": "16.7 Hz"
         },
         {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "20.7 Hz"
         }
       ]
     }

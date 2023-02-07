@@ -1,8 +1,8 @@
 {
-  "directions": "For each type of wave listed below, determine two categories into which it falls. Note that not every possible answer choice will be used.",
+  "directions_not": "For each type of wave listed below, determine two categories into which it falls. Note that not every possible answer choice will be used.",
   "questions": [
     {
-      "text": "A Sound Wave",
+      "text": "For the next 8 questions, you will be presented with a particular wave, and you must determine two categories to which it belongs. Note that not all answer choices will be used. First: a Sound Wave",
       "answerChoices": [
         {
           "text": "Mechanical and Transverse"
@@ -149,7 +149,7 @@
     },
     {
       "text": "The following wave in a slinky (source: https://sites.google.com/site/sciencerocksgoldaward/experiments/slinky-wave)",
-      "image": "slinky_1,png",
+      "image": "slinky_1.png",
       "answerChoices": [
         {
           "text": "Mechanical and Transverse"
