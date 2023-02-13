@@ -1,0 +1,110 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "The next 2 problems refer to the following block: A 0.6 kilogram block is on a ramp with an angle of incline of 23 degrees. The block is moving down the ramp. The coefficient of kinetic friction between the block and the ramp is 0.16. Determine the magnitude and direction of the force of friction on the block.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the magnitude and direction of the acceleration of the block.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "(Block that is slowing down.) Determine the magnitude of acceleration of the block, and determine whether the block is speeding up or slowing down.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "(Next two problems, Block that is moving upwards) Determine the magnitude and direction of the force of friction.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine the magnitude and direction of the acceleration of the block.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}
