@@ -1,40 +1,159 @@
 {
+  "reorder": false,
   "questions": [
     {
-      "text": "What is the voltage across resistor B?",
+      "text": "The next 4 questions regard the circuit shown below. You are encouraged to fill out the table provided to aid in answering the questions, but you do not need to. What is the current through resistor C?",
       "image": {
-        "name": "problem1.png"
+        "name": "quiz_problem_1.png",
+        "width": "500px",
+        "height": "auto"
       },
       "answerChoices": [
         {
-          "text": "6 V",
+          "text": "2 A",
           "correct": true
         },
         {
-          "text": ""
+          "text": "9 A"
         },
         {
-          "text": ""
+          "text": "3 A"
         },
         {
-          "text": ""
+          "text": "11 A"
         }
       ]
     },
     {
-      "text": "What is the current through resistor C?"
+      "text": "What is the total current of the circuit (the current through the battery)?",
+      "answerChoices": [
+        {
+          "text": "11 A",
+          "correct": true
+        },
+        {
+          "text": "9 A"
+        },
+        {
+          "text": "6 A"
+        },
+        {
+          "text": "1 A"
+        }
+      ]
     },
     {
-      "text": "What is the total current of the circuit (the current through the battery)?"
+      "text": "What is the power emitted by resistor B?",
+      "answerChoices": [
+        {
+          "text": "108 W",
+          "correct": true
+        },
+        {
+          "text": "18 W"
+        },
+        {
+          "text": "162 W"
+        },
+        {
+          "text": "6 W"
+        }
+      ]
     },
     {
-      "text": "What is the power emitted by resistor A?"
+      "text": "What is the total resistance of the circuit?",
+      "answerChoices": [
+        {
+          "text": "1.64 Ω",
+          "correct": true
+        },
+        {
+          "text": "18 Ω"
+        },
+        {
+          "text": "12 Ω"
+        },
+        {
+          "text": "2.48 Ω"
+        }
+      ]
     },
     {
-      "text": "What is the power emitted by resistor B?"
+      "text": "The next 4 questions regard the circuit shown below. You are encouraged to fill out the table provided to aid in answering the questions, but you do not need to. What is the total current of the circuit?",
+      "image": {
+        "name": "quiz_problem_2.png",
+        "width": "500px",
+        "height": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "2 A",
+          "correct": true
+        },
+        {
+          "text": "1 A"
+        },
+        {
+          "text": "4 A"
+        },
+        {
+          "text": "20 A"
+        }
+      ]
     },
     {
-      "text": "What is the total resistance of the circuit?"
+      "text": "What is the voltage across resistor B?",
+      "answerChoices": [
+        {
+          "text": "10 V",
+          "correct": true
+        },
+        {
+          "text": "5 V"
+        },
+        {
+          "text": "2 V"
+        },
+        {
+          "text": "20 V"
+        }
+      ]
+    },
+    {
+      "text": "What is the power emitted by resistor A?",
+      "answerChoices": [
+        {
+          "text": "16 W",
+          "correct": true
+        },
+        {
+          "text": "8 W"
+        },
+        {
+          "text": "4 W"
+        },
+        {
+          "text": "10 W"
+        }
+      ]
+    },
+    {
+      "text": "What is the power emitted by the circuit in total?",
+      "answerChoices": [
+        {
+          "text": "40 W",
+          "correct": true
+        },
+        {
+          "text": "220 W"
+        },
+        {
+          "text": "180 W"
+        },
+        {
+          "text": "20 W"
+        }
+      ]
     }
   ]
 }

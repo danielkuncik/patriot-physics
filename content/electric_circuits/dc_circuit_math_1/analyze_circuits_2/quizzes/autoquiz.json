@@ -1,0 +1,169 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "The next 2 questions are based on the circuit shown below. You may fill out the table to help you answer the questions, but you do not have to. What is the total resistance of the circuit?",
+      "image": {
+        "name": "quiz_1.png",
+        "width": "500px",
+        "height": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "10 Ω",
+          "correct": true
+        },
+        {
+          "text": "4 Ω"
+        },
+        {
+          "text": "6 Ω"
+        },
+        {
+          "text": "8 Ω"
+        }
+      ]
+    },
+    {
+      "text": "What is the power emitted by resistor C?",
+      "answerChoices": [
+        {
+          "text": "8 W",
+          "correct": true
+        },
+        {
+          "text": "10 W"
+        },
+        {
+          "text": "12 W"
+        },
+        {
+          "text": "6 W"
+        }
+      ]
+    },
+    {
+      "text": "The next 2 questions are based on the circuit shown below. You may fill out the table to help you answer the questions, but you do not have to. What is the power emitted by resistor B?",
+      "image": {
+        "name": "quiz_2.png",
+        "width": "500px",
+        "height": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "32 W",
+          "correct": true
+        },
+        {
+          "text": "28 W"
+        },
+        {
+          "text": "24 W"
+        },
+        {
+          "text": "36 W"
+        }
+      ]
+    },
+    {
+      "text": "What is the total resistance of the circuit?",
+      "answerChoices": [
+        {
+          "text": "2.29 Ω",
+          "correct": true
+        },
+        {
+          "text": "28 Ω"
+        },
+        {
+          "text": "14 Ω"
+        },
+        {
+          "text": "3.45 Ω"
+        }
+      ]
+    },
+    {
+      "text": "The next 2 questions are based on the circuit shown below. You may fill out the table to help you answer the questions, but you do not have to. What is the total resistance of the circuit?",
+      "image": {
+        "name": "quiz_3.png",
+        "width": "500px",
+        "height": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "5 Ω",
+          "correct": true
+        },
+        {
+          "text": "3 Ω"
+        },
+        {
+          "text": "7 Ω"
+        },
+        {
+          "text": "6 Ω"
+        }
+      ]
+    },
+    {
+      "text": "What is the total power emitted by the circuit?",
+      "answerChoices": [
+        {
+          "text": "45 W",
+          "correct": true
+        },
+        {
+          "text": "18 W"
+        },
+        {
+          "text": "90 W"
+        },
+        {
+          "text": "9 W"
+        }
+      ]
+    },
+    {
+      "text": "The next 2 questions are based on the circuit shown below. You may fill out the table to help you answer the questions, but you do not have to. What is the power emitted by resistor B?",
+      "image": {
+        "name": "quiz_4.png",
+        "width": "500px",
+        "height": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "80 W",
+          "correct": true
+        },
+        {
+          "text": "60 W"
+        },
+        {
+          "text": "40 W"
+        },
+        {
+          "text": "50 W"
+        }
+      ]
+    },
+    {
+      "text": "What is the resistance of resistor C?",
+      "answerChoices": [
+        {
+          "text": "4 Ω",
+          "correct": true
+        },
+        {
+          "text": "2 Ω"
+        },
+        {
+          "text": "5 Ω"
+        },
+        {
+          "text": "6 Ω"
+        }
+      ]
+    }
+  ]
+}
