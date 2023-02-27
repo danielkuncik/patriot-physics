@@ -1,4 +1,6 @@
 
+/// direction is comign out opposite of what it is supposed to!
+// clockwise and coutnerclockwise
 
 class CircularMotionDiagram extends DiagramF {
     constructor(direction, radius, numberOfDirectionIndicators, firstDirectionIndicator) {
