@@ -29,8 +29,7 @@
       "text": "Which of the following images would describe the 5th harmonic of waves on a string.",
       "answerChoices": [
         {
-          "image": "quiz_34.png",
-          "correct": true
+          "image": "quiz_34.png"
         },
         {
           "image": "quiz_9.png"

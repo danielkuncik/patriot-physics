@@ -1,0 +1,172 @@
+{
+  "questions": [
+    {
+      "text": "Which of the following is the BEST definition of the centripetal force on an object moving in a circle. (If you feel more than one of the answer choices is a valid definition, select the best definition.",
+      "answerChoices": [
+        {
+          "text": "The sum of all forces pointing towards the center of the circle.",
+          "correct": true
+        },
+        {
+          "text": "A force that always acts towards the center of the circle."
+        },
+        {
+          "text": "A force that is always equal to gravity."
+        },
+        {
+          "text": "A name given to the force that is pointing towards the center of the circle."
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "What is the BEST description of the formula \\( F_c = \\frac{m v^2}{r} \\). (If you feel that more than one answer is a valid definition, select the BEST definition.)",
+      "answerChoices": [
+        {
+          "text": "This formula gives the magnitude of centripetal force necessary for an object to move in a circle at a constant speed.",
+          "correct": true
+        },
+        {
+          "text": "This formula gives the centripetal force on any object that is moving in a circle."
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

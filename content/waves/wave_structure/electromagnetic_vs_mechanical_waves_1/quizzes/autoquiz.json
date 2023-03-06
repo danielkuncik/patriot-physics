@@ -65,11 +65,11 @@
       "text": "A sound wave",
       "answerChoices": [
         {
-          "text": "electromagnetic",
-          "correct": true
+          "text": "electromagnetic"
         },
         {
-          "text": "mechanical"
+          "text": "mechanical",
+          "correct": true
         }
       ]
     },
