@@ -209,6 +209,24 @@
           "text": "3200 Ω"
         }
       ]
+    },
+    {
+      "text": "Which of the following images illustrates the correct way to connect a voltmeter and a ammeter to measure the properties of a resistor?",
+      "answerChoices": [
+        {
+          "image": "mc_1a.png"
+        },
+        {
+          "image": "mc_1b.png",
+          "correct": true
+        },
+        {
+          "image": "mc_1c.png"
+        },
+        {
+          "image": "mc_1d.png"
+        }
+      ]
     }
   ]
 }

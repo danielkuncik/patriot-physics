@@ -1,65 +1,109 @@
 <p class = 'directions'>
-    Use principles of electrical circuits to find the voltage, current, resistance, and power
-    of each circuit written and the total circuit. Note that the information given is not
-    identical for each circuit.
+    Draw an equivalent circuit of the circuit given.
+    Using information from the equivalent circuit and relevant laws,
+    draw a graph of electric potential for your circuit.
+    On your graph, label each upward or downward slope and indicate the current on each segment.
 </p>
 
-<ol>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D1'></div>
-    </li>
-    <div class = 'mediumSpace'></div>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D2'></div>
-    </li>
+<div class = 'container'>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problem1Circuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+                You <emph>must</emph> draw an equivalent circuit for full credit.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problem1Graph'></div>
+    </div>
     <div class = 'pageBreak'></div>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D3'></div>
-    </li>
-    <div class = 'mediumSpace'></div>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D4'></div>
-    </li>
-</ol>
+    <div class = 'row'>
+        <div class = 'col-md-6' id = 'problem2Circuit'></div>
+        <div class = 'col-md-6'>
+            <p>
+                Draw equivalent circuit here.
+                You <emph>must</emph> draw an equivalent circuit for full credit.
+            </p>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class = 'col-12' id = 'problem2Graph'></div>
+    </div>
+</div>
+
 
 <script>
-    // function makeCircuitProblem(type, voltage, resistorArray, powerRowBoolean, note) {
-    $("#problem-D1").append(makeCircuitProblem('series',4,['I = 0.5 A', 4, 'V = 1.5 V']));
-    $("#problem-D2").append(makeCircuitProblem('series',undefined,['P = 16 W    V = 8 V', 4, 2], true,));
-    $("#problem-D3").append(makeCircuitProblem('parallel',undefined,['P = 16 W',8,'P = 64 W     I = 4 A']));
-    $("#problem-D4").append(makeCircuitProblem('parallel',undefined,['V = 20 V','I = 7 A',5], true, 'Total Current = 15 A'));
+    // #################################################################
+    // Problem 1
 
-</script>
+    let problem1Circuit = new CircuitDiagram();
 
+    // battery
+    problem1Circuit.addElementWithCursor('wire',0,12);
+    problem1Circuit.addElementWithCursor('battery',0,14,20);
+    problem1Circuit.addElementWithCursor('wire',0,18);
 
-<p class = 'directions'>
-    Use principles of electrical circuits to find the voltage, current, resistance, and power
-    of each circuit written and the total circuit. Note that the information given is not
-    identical for each circuit.
-</p>
+    // branch 1
+    problem1Circuit.addElementWithCursor('wire',8,18);
+    problem1Circuit.addElementWithCursor('wire',8,10);
+    problem1Circuit.addElementWithCursor('resistor',8,6,10,'A');
+    problem1Circuit.addElementWithCursor('wire',8,0);
+    problem1Circuit.addElementWithCursor('wire',0,0);
 
-<ol>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D5'></div>
-    </li>
-    <div class = 'mediumSpace'></div>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D6'></div>
-    </li>
-    <div class = 'pageBreak'></div>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D7'></div>
-    </li>
-    <div class = 'mediumSpace'></div>
-    <li class = 'physicsQuestion'><br>
-        <div id = 'problem-D8'></div>
-    </li>
-</ol>
+    // branch 2
+    problem1Circuit.moveCursor(8,18);
+    problem1Circuit.addElementWithCursor('wire',16,18);
+    problem1Circuit.addElementWithCursor('wire',16,14);
+    problem1Circuit.addElementWithCursor('resistor',16,11,2,'B');
+    problem1Circuit.addElementWithCursor('wire',16,8);
+    problem1Circuit.addElementWithCursor('resistor',16,5,3,'C');
+    problem1Circuit.addElementWithCursor('wire',16,0);
+    problem1Circuit.addElementWithCursor('wire',8,0);
 
-<script>
-    // function makeCircuitProblem(type, voltage, resistorArray, powerRowBoolean, note) {
-    $("#problem-D5").append(makeCircuitProblem('series',undefined,['I = 3 A    P = 9 W', 2, 'V = 6 V']));
-    $("#problem-D6").append(makeCircuitProblem('series',undefined,[0.5,'I = 4 A'], true, 'Total Power = 32 W' ));
-    $("#problem-D7").append(makeCircuitProblem('parallel',undefined,['I = 4 A     P = 48 W',4,'P = 24 W']));
-    $("#problem-D8").append(makeCircuitProblem('parallel',undefined,['V = 20 V    I = 4 A','',5], true, 'Total Current = 13 A'));
+    let problem1Graph = new QuantitativeGraph(0,20,0,20,2);
+    problem1Graph.addReferenceArray([],[4,8,12,16,20]);
+    problem1Graph.labelAxes('','Potential (V)');
+
+    $("#problem1Circuit").append(problem1Circuit.drawCanvas(600,600));
+    $("#problem1Graph").append(problem1Graph.drawCanvas(900,900)); // i think what's going on is that the limits aren't y-muliplied???
+
+    // #################################################################
+    // Problem 2
+    let problem2Circuit = new CircuitDiagram();
+    problem2Circuit.addElementWithCursor('wire',0,3);
+    problem2Circuit.addElementWithCursor('battery',0,6,20);
+    problem2Circuit.addElementWithCursor('wire',0,10);
+    problem2Circuit.addElementWithCursor('wire',6,10);
+    problem2Circuit.addElementWithCursor('resistor',9,10,3,'A');
+    problem2Circuit.addElementWithCursor('wire',13,10);
+    problem2Circuit.addElementWithCursor('wire',13,8);
+
+    // branch 1
+    problem2Circuit.addElementWithCursor('wire',7,8);
+    problem2Circuit.addElementWithCursor('wire',7,6);
+    problem2Circuit.addElementWithCursor('resistor',7,3,4,'B');
+    problem2Circuit.addElementWithCursor('wire',7,1);
+    problem2Circuit.addElementWithCursor('wire',13,1);
+
+    // branch 2
+    problem2Circuit.moveCursor(13,8);
+    problem2Circuit.addElementWithCursor('wire',20,8);
+    problem2Circuit.addElementWithCursor('wire',20,6);
+    problem2Circuit.addElementWithCursor('resistor',20,3,4,'D');
+    problem2Circuit.addElementWithCursor('wire',20,1);
+    problem2Circuit.addElementWithCursor('wire',13,1);
+
+    problem2Circuit.addElementWithCursor('wire',13,-1);
+    problem2Circuit.addElementWithCursor('wire',0,-1);
+    problem2Circuit.addElementWithCursor('wire',0,0);
+
+    let problem2Graph = new QuantitativeGraph(0,20,0,21,2);
+    problem2Graph.labelAxes('','Electric Potential (V)');
+    problem2Graph.addReferenceArray([],[4,8,12,16,20]);
+
+    $("#problem2Circuit").append(problem2Circuit.drawCanvas(600,600));
+    $("#problem2Graph").append(problem2Graph.drawCanvas(900,900)); // i think what's going on is that the limits aren't y-muliplied???
+
 </script>

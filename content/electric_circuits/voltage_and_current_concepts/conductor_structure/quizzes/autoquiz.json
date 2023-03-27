@@ -1,0 +1,43 @@
+{
+  "questions": [
+    {
+      "text": "Which of the following best describes the distribution of valence electrons in an electrical conductor?",
+      "answerChoices": [
+        {
+          "text": "Valence electrons are freely shared amongst the various protons.",
+          "correct": true
+        },
+        {
+          "text": "Each valence electron is shared between exactly two atoms."
+        },
+        {
+          "text": "There are no valence electrons in an electrical conductor."
+        },
+        {
+          "text": "Each atom holds its valence electrons individually."
+        },
+        {
+          "text": "Valence electrons are arranged in a grid pattern."
+        }
+      ]
+    },
+    {
+      "text": "Which of the following statements best describes the distribution of nuclei in an electrical conductor?",
+      "answerChoices": [
+        {
+          "text": "Nuclei are fixed in place in a grid pattern.",
+          "correct": true
+        },
+        {
+          "text": "Nuclei move freely."
+        },
+        {
+          "text": "Nuclei are fixed in place in a random pattern."
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

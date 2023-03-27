@@ -1,0 +1,86 @@
+{
+  "questions": [
+    {
+      "text": "Determine the circuit that best corresponds with the electric potential graph pictured.",
+      "image": "quiz_1.png",
+      "answerChoices": [
+        {
+          "image": "quiz_1a.png"
+        },
+        {
+          "image": "quiz_1b.png"
+        },
+        {
+          "image": "quiz_1c.png",
+          "correct": true
+        },
+        {
+          "image": "quiz_1d.png"
+        }
+      ]
+    },
+    {
+      "text": "Determine which circuit best corresponds with the electric potential graph pictured?",
+      "image": "quiz_2.png",
+      "answerChoices": [
+        {
+          "image": "quiz_2a.png",
+          "correct": true
+        },
+        {
+          "image": "quiz_2b.png"
+        },
+        {
+          "image": "quiz_2c.png"
+        },
+        {
+          "image": "quiz_2d.png"
+        }
+      ]
+    },
+    {
+      "text": "Determine which circuit best corresponds to the electric potential graph pictured.",
+      "image": "quiz_3.png",
+      "answerChoices": [
+        {
+          "image": "quiz_3a.png",
+          "correct": true
+        },
+        {
+          "image": "quiz_3b.png"
+        },
+        {
+          "image": "quiz_3c.png"
+        },
+        {
+          "image": "quiz_3d.png"
+        }
+      ]
+    },
+    {
+      "text": "What is the resistance of resistor C?",
+      "image": "quiz_4.png",
+      "answerChoices": [
+        {
+          "text": "5 Ω"
+        },
+        {
+          "text": "10 Ω"
+        },
+        {
+          "text": "15 Ω"
+        },
+        {
+          "text": "20 Ω",
+          "correct": true
+        },
+        {
+          "text": "40 Ω"
+        },
+        {
+          "text": "50 Ω"
+        }
+      ]
+    }
+  ]
+}

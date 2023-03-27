@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "image": "Picture of a Simple Circuit of a battery and a light bulb",
+      "text": "Approximately how long will it take a single electron to mvoe from the anode to the cathode of the battery of this circuit?",
+      "answerChoices": [
+        {
+          "text": "nearly instantaneously"
+        },
+        {
+          "text": "About 10 seconds"
+        },
+        {
+          "text": "About 30 minutes"
+        },
+        {
+          "text": "Multiple hours"
+        }
+      ]
+    }
+  ]
+}

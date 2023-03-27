@@ -1,0 +1,17 @@
+1.
+a = g ( sin (theta) - mu_k * cos(theta) )
+
+
+2.
+differences =>
+kinetic friction is now down the ramp, in the same direction as Fg_x
+
+a = g ( sin (theta) + mu_k * cos(theta) )
+
+- The block is slowing down because its acceleration/net force and velocity are in opposite directions
+
+
+Draw a free-body diagram and determine the direction of acceleration.
+Determine the magnitude of acceleration.
+Determine if the block is speeding up, slowing down, or moving at a constant speed and describe briefly how your know.
+Give a brief description of a time that this might be the case.

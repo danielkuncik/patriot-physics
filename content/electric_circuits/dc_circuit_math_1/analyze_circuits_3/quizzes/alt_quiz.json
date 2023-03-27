@@ -1,0 +1,65 @@
+{
+  "note": "I added some conceptual questions, but also include plenty of numerical questions",
+  "note2": "perhaps move the conceptual questions to another quiz",
+  "questions": [
+    {
+      "text": "To combine resistors in series, you must...",
+      "answerChoices": [
+        {
+          "text": "add the resistances.",
+          "correct": true
+        },
+        {
+          "text": "add the reciprocals of the resistances."
+        },
+        {
+          "text": "add the resistances, and take the reciprocal of the result."
+        },
+        {
+          "text": "add the reciprocals of the resistances, and take the reciprocal of the result."
+        },
+        {
+          "text": "Resistors in series cannot be combined."
+        }
+      ]
+    },
+    {
+      "text": "To combine resistors in parallel, you must...",
+      "answerChoices": [
+        {
+          "text": "add the resistances."
+        },
+        {
+          "text": "add the reciprocals of the resistances."
+        },
+        {
+          "text": "add the resistances, and take the reciprocal of the result."
+        },
+        {
+          "text": "add the reciprocals of the resistances, and take the reciprocal of the result.",
+          "correct": true
+        },
+        {
+          "text": "Resistors in parallel cannot be combined."
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "Resistors in parallel cannot be combined"
+        }
+      ]
+    }
+  ]
+}

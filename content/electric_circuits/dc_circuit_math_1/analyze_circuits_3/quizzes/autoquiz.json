@@ -1,63 +1,163 @@
 {
-  "note": "I added some conceptual questions, but also include plenty of numerical questions",
-  "note2": "perhaps move the conceptual questions to another quiz",
+  "reorder": false,
   "questions": [
     {
-      "text": "To combine resistors in series, you must...",
+      "text": "The next two questions involve the circuit below. What is the potential difference across resistor A?",
+      "image": "quizCircuit1.png",
       "answerChoices": [
         {
-          "text": "add the resistances.",
+          "text": "4 V",
           "correct": true
         },
         {
-          "text": "add the reciprocals of the resistances."
+          "text": "2 V"
         },
         {
-          "text": "add the resistances, and take the reciprocal of the result."
+          "text": "3 V"
         },
         {
-          "text": "add the reciprocals of the resistances, and take the reciprocal of the result."
+          "text": "5 V"
         },
         {
-          "text": "Resistors in series cannot be combined."
+          "text": "1 V"
         }
       ]
     },
     {
-      "text": "To combine resistors in parallel, you must...",
+      "text": "What is the current through resistor B?",
       "answerChoices": [
         {
-          "text": "add the resistances."
-        },
-        {
-          "text": "add the reciprocals of the resistances."
-        },
-        {
-          "text": "add the resistances, and take the reciprocal of the result."
-        },
-        {
-          "text": "add the reciprocals of the resistances, and take the reciprocal of the result.",
+          "text": "0.5 A",
           "correct": true
         },
         {
-          "text": "Resistors in parallel cannot be combined."
+          "text": "0.1 A"
+        },
+        {
+          "text": "1.0 A"
+        },
+        {
+          "text": "1.5 A"
+        },
+        {
+          "text": "2 A"
+        },
+        {
+          "text": "10 A"
         }
       ]
     },
     {
-      "text": "",
+      "text": "The next two questions involve the circuit pictured below. What is the total current of the circuit?",
+      "image": "quizCircuit2.png",
       "answerChoices": [
         {
-          "text": ""
+          "text": "2 A"
         },
         {
-          "text": ""
+          "text": "2.5 A"
         },
         {
-          "text": ""
+          "text": "3.0 A"
         },
         {
-          "text": "Resistors in parallel cannot be combined"
+          "text": "3.5 A",
+          "correct": true
+        },
+        {
+          "text": "4.0 A"
+        }
+      ]
+    },
+    {
+      "text": "What is the potential difference across resistor A?",
+      "answerChoices": [
+        {
+          "text": "2 V"
+        },
+        {
+          "text": "4 V",
+          "correct": true
+        },
+        {
+          "text": "6 V"
+        },
+        {
+          "text": "8 V"
+        }
+      ]
+    },
+    {
+      "text": "The next two questions involve the circuit pictured below. What is the potential difference across resistor B?",
+      "image": "quizCircuit3.png",
+      "answerChoices": [
+        {
+          "text": "2 V",
+          "correct": true
+        },
+        {
+          "text": "4 V"
+        },
+        {
+          "text": "6 V"
+        },
+        {
+          "text": "8 V"
+        }
+      ]
+    },
+    {
+      "text": "What is the current through resistor A?",
+      "answerChoices": [
+        {
+          "text": "0.25 A"
+        },
+        {
+          "text": "0.50 A",
+          "correct": true
+        },
+        {
+          "text": "0.67 A"
+        },
+        {
+          "text": "1.0 A"
+        }
+      ]
+    },
+    {
+      "text": "The next two questions involve the circuit pictured below. What is the potential difference across resistor A?",
+      "image": "quizCircuit4.png",
+      "answerChoices": [
+        {
+          "text": "5 V"
+        },
+        {
+          "text": "10 V"
+        },
+        {
+          "text": "15 V"
+        },
+        {
+          "text": "20 V",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "What is the current through resistor B?",
+      "answerChoices": [
+        {
+          "text": "0.5 A"
+        },
+        {
+          "text": "1.0 A",
+          "correct": true
+        },
+        {
+          "text": "1.5 A"
+        },
+        {
+          "text": "2.0 A"
         }
       ]
     }

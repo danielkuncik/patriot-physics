@@ -1,0 +1,12 @@
+v1 #3 =
+
+v = sqrt(2gh + v_x^2)
+
+
+v2 #3 =
+
+t = sqrt(2h/g)
+
+
+
+v = sqrt(2gh + g * delta_x^2 / 2 h)
