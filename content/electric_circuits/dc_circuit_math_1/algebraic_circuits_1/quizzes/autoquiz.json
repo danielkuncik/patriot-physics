@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "text": "Derive an equation for power in terms of current and resistance.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Derive an equation for power in terms of potential difference and resistance.",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    }
+  ]
+}
