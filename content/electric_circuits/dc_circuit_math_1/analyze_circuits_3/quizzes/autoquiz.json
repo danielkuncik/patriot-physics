@@ -3,7 +3,11 @@
   "questions": [
     {
       "text": "The next two questions involve the circuit below. What is the potential difference across resistor A?",
-      "image": "quizCircuit1.png",
+      "image": {
+        "name": "quizCircuit1.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "4 V",
@@ -49,7 +53,11 @@
     },
     {
       "text": "The next two questions involve the circuit pictured below. What is the total current of the circuit?",
-      "image": "quizCircuit2.png",
+      "image": {
+        "name": "quizCircuit2.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "2 A"
@@ -89,7 +97,11 @@
     },
     {
       "text": "The next two questions involve the circuit pictured below. What is the potential difference across resistor B?",
-      "image": "quizCircuit3.png",
+      "image": {
+        "name": "quizCircuit3.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "2 V",
@@ -113,8 +125,11 @@
           "text": "0.25 A"
         },
         {
-          "text": "0.50 A",
+          "text": "0.33 A",
           "correct": true
+        },
+        {
+          "text": "0.50 A"
         },
         {
           "text": "0.67 A"
@@ -126,7 +141,11 @@
     },
     {
       "text": "The next two questions involve the circuit pictured below. What is the potential difference across resistor A?",
-      "image": "quizCircuit4.png",
+      "image": {
+        "name": "quizCircuit4.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "5 V"

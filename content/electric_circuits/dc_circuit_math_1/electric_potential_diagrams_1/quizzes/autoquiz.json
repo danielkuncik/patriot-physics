@@ -2,7 +2,11 @@
   "questions": [
     {
       "text": "Determine the circuit that best corresponds with the electric potential graph pictured.",
-      "image": "quiz_1.png",
+      "image": {
+        "name": "quiz_1.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "image": "quiz_1a.png"
@@ -21,7 +25,11 @@
     },
     {
       "text": "Determine which circuit best corresponds with the electric potential graph pictured?",
-      "image": "quiz_2.png",
+      "image": {
+        "name": "quiz_2.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "image": "quiz_2a.png",
@@ -40,7 +48,11 @@
     },
     {
       "text": "Determine which circuit best corresponds to the electric potential graph pictured.",
-      "image": "quiz_3.png",
+      "image": {
+        "name": "quiz_3.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "image": "quiz_3a.png",
@@ -59,7 +71,11 @@
     },
     {
       "text": "What is the resistance of resistor C?",
-      "image": "quiz_4.png",
+      "image": {
+        "name": "quiz_4.png",
+        "height": "400px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "5 Ω"
