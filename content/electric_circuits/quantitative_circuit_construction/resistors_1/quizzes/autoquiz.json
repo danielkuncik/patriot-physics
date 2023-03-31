@@ -104,11 +104,11 @@
       "text": "Each resistor has four color bands. How do you usually tell in which order to read the bands?",
       "answerChoices": [
         {
-          "text": "There is a little bit more space between the third and fourth bands.",
+          "text": "There is usually a little bit more space between the third and fourth bands. Also, the fourth band is often gold or silver.",
           "correct": true
         },
         {
-          "text": "There is a little bit more space before the first and second bands."
+          "text": "There is usually a little bit more space before the first and second bands. Also, the first band is often gold or silver."
         },
         {
           "text": "You just guess."

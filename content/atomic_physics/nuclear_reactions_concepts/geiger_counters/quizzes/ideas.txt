@@ -1,0 +1,19 @@
+A geiger counter measures:
+
+
+
+When you take out a geiger counter and turn it on, you hear a few intermediate pings every second or so.
+What is this measuring?
+- ambient nuclear radiation
+
+
+When you put a geiger counter next to an old "fiestaware" plate, it begins pinging very aggresively. Why?
+- The fiestaware plate contains materials that are undergoing nuclear decay
+
+- the fiestaware plate contains materials that are undergoing chemical reactions
+
+- The fiestaware plate is giving off X-rays and gamma rays.
+
+
+A geiger counter in the chernobyl zone pings more frequently than in a classroom in Massachusetts. WHy?
+- There is more material undergoign nuclear decay ambient in the chernobyl zone

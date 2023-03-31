@@ -104,11 +104,11 @@
       },
       "answerChoices": [
         {
-          "text": "2 V",
-          "correct": true
+          "text": "2 V"
         },
         {
-          "text": "4 V"
+          "text": "4 V",
+          "correct": true
         },
         {
           "text": "6 V"
