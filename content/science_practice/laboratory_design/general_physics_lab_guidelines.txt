@@ -1,0 +1,42 @@
+General Physics Lab Guidelines
+
+1. From basic principles, derive an equation or situation that describes a specific situation. This is your hypothesis. Please show and explain the derivation.
+
+2. Describe briefly how you can create the situation represented by the problem with real stuff. Pictures would be good here.
+
+3. Identify an independent variable, a dependent variable, and as many controlled variables as necessary. This analysis should be based on your hypothesis.
+3a. If either your independent or dependent variable cannot be measured directly, describe briefly how it can be measured.
+
+4. Determine the proportionality relationship between the independent and dependent variables predicted by your hypothesis.
+
+5. Collect data on the and put it in a table. Follow these data collection guidelines:
+- Collect at least 18 total data points
+- Show at least 6 different values of the independent variable.
+- To show proper range, ensure that the greatest value of the independent variable is at least 4 times its least value.
+- Do not average data points. instead, represent each measurement as its own datum.
+
+6. if the hypothesis does not predict a direct proportionality, transform data as necessary
+
+7. Create a graph of the transformed data with independent variable on the horizontal and dependent variable on the vertical. Follow these guidelines:
+- Carefully label each axis with variable and unit.
+- Make sure the graph is large, at least 6 by 6 inches.
+- Use an appropriate scale to relate the points.
+- Draw a scatterplot and do not connect points.
+
+8. Determine in what range the data are consistent with the hypothesis.
+If there is a range in which they are inconsistent with the hypothesis, state this as well.
+(Make sure you remember that “data” is a plural noun!)
+
+9. Indicate any outliers. Explain a possible reason why these outliers exist. Remember that outliers may exist because the hypothesis is not true outside of some range.
+
+10. Draw a line of best fit for a range in which the points form a line. Determine the slope of this line by hand.
+(As a policy for this class, you can omit outliers when determining your best fit line. If you chose to go forward in science, you will need to establish defined policies for handling outliers before conducting an analysis.)
+10a. Determine whether your hypothesis predicts the best fit line would go through the origin. If yours does not, give a possible reason why not.
+(optionally, you can also use a computer calculation of slope via linear regression to calculate the slope of yoru best fit line.
+
+
+11. From your hypothesis, determine the physical significance of the slope of this line. You should be able to use the slope to calculate some value that is interesting. Check that the numbers you determined are realistic, if they are not revisit your calculations and perhaps your conclusion.
+11a. If you are calculating a known value, such as earth’s gravitational field, calculate percent error.
+
+Optional step: If you needed to transform your data to test the hypothesis, you can also create a scatterplot of untransformed data and write a brief analysis of it.
+
