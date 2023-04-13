@@ -35,7 +35,8 @@ If there is a range in which they are inconsistent with the hypothesis, state th
 (optionally, you can also use a computer calculation of slope via linear regression to calculate the slope of yoru best fit line.
 
 
-11. From your hypothesis, determine the physical significance of the slope of this line. You should be able to use the slope to calculate some value that is interesting. Check that the numbers you determined are realistic, if they are not revisit your calculations and perhaps your conclusion.
+11. From your hypothesis, determine the physical significance of the slope of this line. You should be able to use the slope to calculate some value that is interesting.
+Check that the numbers you determined are realistic, if they are not revisit your calculations and perhaps your conclusion.
 11a. If you are calculating a known value, such as earth’s gravitational field, calculate percent error.
 
 Optional step: If you needed to transform your data to test the hypothesis, you can also create a scatterplot of untransformed data and write a brief analysis of it.
