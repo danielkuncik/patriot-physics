@@ -1,0 +1,149 @@
+{
+  "directions_x": "Convert each value to the metric unit that presents that value as the smallest number greater than 1.",
+  "questions": [
+    {
+      "text": "3.46 x 10^12 meters is equal to what value:",
+      "answerChoices": [
+        {
+          "text": "3.46 terameters",
+          "correct": true
+        },
+        {
+          "text": "3.46 petameters"
+        },
+        {
+          "text": "34.6 terameters"
+        },
+        {
+          "text": "34.6 petameters"
+        },
+        {
+          "text": "346 terameters"
+        },
+        {
+          "text": "356 petaameters"
+        }
+      ]
+    },
+    {
+      "text": "6.89 x 10^8 meters is equal to what value:",
+      "answerChoices": [
+        {
+          "text": "689 megameters",
+          "correct": true
+        },
+        {
+          "text": "68.9 megameters"
+        },
+        {
+          "text": "6.89 metameters"
+        },
+        {
+          "text": "689 gigameters"
+        },
+        {
+          "text": "68.9 gigameters"
+        },
+        {
+          "text": "6.89 gigameters"
+        }
+      ]
+    },
+    {
+      "text": "7.98 x 10^10 meters is equal to what value?",
+      "answerChoices": [
+        {
+          "text": "79.8 gigameters",
+          "correct": true
+        },
+        {
+          "text": "798 gigameters"
+        },
+        {
+          "text": "7.98 gigameters"
+        },
+        {
+          "text": "7.98 megameters"
+        },
+        {
+          "text": "79.8 megameters"
+        },
+        {
+          "text": "798 megameters"
+        }
+      ]
+    },
+    {
+      "text": "1.64 x 10^-8 meters is equal to what value?",
+      "answerChoices": [
+        {
+          "text": "16.4 nanometers",
+          "correct": true
+        },
+        {
+          "text": "1.64 nanometers"
+        },
+        {
+          "text": "164 nanometers"
+        },
+        {
+          "text": "164 micrometers"
+        },
+        {
+          "text": "16.4 micrometers"
+        },
+        {
+          "text": "1.64 micrometers"
+        }
+      ]
+    },
+    {
+      "text": "8.54 x 10^-13 meters is equal to what value?",
+      "answerChoices": [
+        {
+          "text": "845 femtometers",
+          "correct": true
+        },
+        {
+          "text": "85.4 femtometers"
+        },
+        {
+          "text": "8.54 femtometers"
+        },
+        {
+          "text": "845 picometers"
+        },
+        {
+          "text": "84.5 picometers"
+        },
+        {
+          "text": "8.45 picometers"
+        }
+      ]
+    },
+    {
+      "text": "5.67 x 10^-4 meters is equal to what value?",
+      "answerChoices": [
+        {
+          "text": "56.7 millimeters",
+          "correct": true
+        },
+        {
+          "text": "5.67 millimeters"
+        },
+        {
+          "text": "567 millimeters"
+        },
+        {
+          "text": "5.67 μmeters"
+        },
+        {
+          "text": "56.7 μmeters"
+        },
+        {
+          "text": "567 μmeters"
+        }
+      ]
+    }
+  ]
+}
