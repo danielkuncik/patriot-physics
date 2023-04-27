@@ -67,20 +67,23 @@
       "text": "Convert 6 meters to kilometers.",
       "answerChoices": [
         {
-          "text": "",
+          "text": "0.006 kilometers",
           "correct": true
         },
         {
-          "text": ""
+          "text": "0.060 kilometers"
         },
         {
-          "text": ""
+          "text": "0.600 kilometers"
         },
         {
-          "text": ""
+          "text": "60 kilometers"
         },
         {
-          "text": ""
+          "text": "600 kilometers"
+        },
+        {
+          "text": "6000 kilometers"
         }
       ]
     },
@@ -88,20 +91,17 @@
       "text": "Convert 0.4 kilometers to meters.",
       "answerChoices": [
         {
-          "text": "",
+          "text": "400 meters",
           "correct": true
         },
         {
-          "text": ""
+          "text": "40 meters"
         },
         {
-          "text": ""
+          "text": "4 meters"
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "4000 meters"
         }
       ]
     },
@@ -130,20 +130,20 @@
       "text": "Convert 3.812 seconds to milliseconds.",
       "answerChoices": [
         {
-          "text": "3812 s",
+          "text": "3812 ms",
           "correct": true
         },
         {
-          "text": "38.12 s"
+          "text": "38.12 ms"
         },
         {
-          "text": "38120 2"
+          "text": "38120 ms"
         },
         {
-          "text": "0.003812 s"
+          "text": "0.003812 ms"
         },
         {
-          "text": "0.03812 s"
+          "text": "0.03812 ms"
         }
       ]
     }

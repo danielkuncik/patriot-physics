@@ -42,6 +42,8 @@
 
     const Honors_march_2023 = ["36d08c","c3f650","7488df","12ce06","1db039"];
 
+    const Honors_april_2023 = ["72607f","263ad0","64f606","7d1b7e"];
+
     // const A_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d"];
     // const honors_quiz_may_2022 = ["72607f","64f606","a95408","ddf304","b645cf","44fb5d","6267c7","c74889"];
     // const honors_quiz_may_2022_2 = ["4c74b0"];
@@ -74,13 +76,13 @@
 
 
     let honors_array = [];
-    Honors_march_2023.forEach((quiz_ID) => {
+    Honors_april_2023.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Quiz March 2023", 4, 80));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Quiz April 2023", 4, 220));
 
 
 </script>

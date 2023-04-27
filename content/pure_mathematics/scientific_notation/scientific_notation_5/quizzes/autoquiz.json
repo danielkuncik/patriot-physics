@@ -2,7 +2,7 @@
   "directions_x": "Convert each value to the metric unit that presents that value as the smallest number greater than 1.",
   "questions": [
     {
-      "text": "3.46 x 10^12 meters is equal to what value:",
+      "text": "\\( 3.46 \\cdot 10^{12} \\) meters is equal to what value?",
       "answerChoices": [
         {
           "text": "3.46 terameters",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "text": "6.89 x 10^8 meters is equal to what value:",
+      "text": "\\( 6.89 \\cdot 10^8 \\) meters is equal to what value?",
       "answerChoices": [
         {
           "text": "689 megameters",
@@ -36,7 +36,7 @@
           "text": "68.9 megameters"
         },
         {
-          "text": "6.89 metameters"
+          "text": "6.89 megameters"
         },
         {
           "text": "689 gigameters"
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "text": "7.98 x 10^10 meters is equal to what value?",
+      "text": "\\( 7.98 \\cdot 10^{10} \\) meters is equal to what value?",
       "answerChoices": [
         {
           "text": "79.8 gigameters",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "text": "1.64 x 10^-8 meters is equal to what value?",
+      "text": "\\( 1.64 \\cdot 10^{-8} \\) meters is equal to what value?",
       "answerChoices": [
         {
           "text": "16.4 nanometers",
@@ -98,10 +98,10 @@
       ]
     },
     {
-      "text": "8.54 x 10^-13 meters is equal to what value?",
+      "text": "\\( 8.54 \\cdot 10^{-13} \\) meters is equal to what value?",
       "answerChoices": [
         {
-          "text": "845 femtometers",
+          "text": "854 femtometers",
           "correct": true
         },
         {
@@ -111,18 +111,18 @@
           "text": "8.54 femtometers"
         },
         {
-          "text": "845 picometers"
+          "text": "854 picometers"
         },
         {
-          "text": "84.5 picometers"
+          "text": "85.4 picometers"
         },
         {
-          "text": "8.45 picometers"
+          "text": "8.54 picometers"
         }
       ]
     },
     {
-      "text": "5.67 x 10^-4 meters is equal to what value?",
+      "text": "\\( 5.67 \\cdot 10^{-4} \\) meters is equal to what value?",
       "answerChoices": [
         {
           "text": "56.7 millimeters",
