@@ -1,0 +1,202 @@
+{
+  "idea": "6 questions, wavelength => energy, wavelength => frequency, energy => frequency, energy => wavelength, frequency => wavelength, frequency => energy",
+  "idea_2": "Make these pick-2s or pick-3s, where students need to select true peicees of information from a list",
+  "directions_x": "Each of these problems will ask you to select more than one choice. For credit, you must select each correct statement. You will not receive partial credit for selecting only one correct statement.",
+  "questions": [
+    {
+      "text": "A near infrared photon has a wavelength of 1200 nanometers. Select three correct statements. You must select all three to receive credit.",
+      "answerChoices": [
+        {
+          "text": "The photon is an infrared wave.",
+          "correct": true
+        },
+        {
+          "text": "The photon is a radio wave"
+        },
+        {
+          "text": "The photon is a microwave."
+        },
+        {
+          "text": "The frequency is 250 teraHertz",
+          "correct": true
+        },
+        {
+          "text": "The frequency of the wave is 340 teraHertz"
+        },
+        {
+          "text": "The frequency is 250 gigaHertz"
+        },
+        {
+          "text": "The frequency of the wave is 340 gigaHertz"
+        },
+        {
+          "text": "The energy of the wave is 1.04 electronVolts.",
+          "correct": true
+        },
+        {
+          "text": "The energy of the wave is 104 milli-electronVolts."
+        },
+        {
+          "text": "The energy of the wave is 2.26 electronVolts."
+        },
+        {
+          "text": "The energy of the wave is 226 milli-electronVolts."
+        },
+        {
+          "text": "The energy of the wave is 1.91 electronVolts."
+        },
+        {
+          "text": "The energy of the wave is 191 milli-electronVolts."
+        }
+      ]
+    },
+    {
+      "text": "A photon has an energy of 6.0 Mega electron Volts. Select three correct statements. You must select all three correct statements to receive credit.",
+      "answerChoices": [
+        {
+          "text": "The photon is a gamma ray.",
+          "correct": true
+        },
+        {
+          "text": "The photon is an X-Ray"
+        },
+        {
+          "text": "The photon is an ultraviolet light wave."
+        },
+        {
+          "text": "The wavelength is 207 femtometers.",
+          "correct": true
+        },
+        {
+          "text": "The wavelength is 298 femtometers."
+        },
+        {
+          "text": "The wavelength is 252 femtometers."
+        },
+        {
+          "text": "The wavelength is 20.7 femtometers."
+        },
+        {
+          "text": "The wavelength is 29.8 femtometers."
+        },
+        {
+          "text": "The wavelength is 25.2 femtometers."
+        },
+        {
+          "text": "The frequency is 1450000 petaHertz",
+          "correct": true
+        },
+        {
+          "text": "The frequency is 145000 petaHertz"
+        },
+        {
+          "text": "The frequency is 14500 petaHertz"
+        },
+        {
+          "text": "The frequency is 2350000 petaHertz"
+        },
+        {
+          "text": "The frequency is 235000 petaHertz"
+        },
+        {
+          "text": "The frequency is 23500 petaHertz"
+        }
+
+      ]
+    },
+    {
+      "text": "An photon has a frequency of 98.5 Mega hertz. Select three correct statements. You must select all three correct statements to receive credit.",
+      "answerChoices": [
+        {
+          "text": "The photon is a radio wave",
+          "correct": true
+        },
+        {
+          "text": "The photon is a microwave"
+        },
+        {
+          "text": "The photon is an infrared wave."
+        },
+        {
+          "text": "The energy is 408 nanoElectronVolts",
+          "correct": true
+        },
+        {
+          "text": "The energy is 408 microElectronVolts"
+        },
+        {
+          "text": "The energy is 562 nanoElectronVolts"
+        },
+        {
+          "text": "The energy is 562 microElectronVolts"
+        },
+        {
+          "text": "The energy is 474 nanoElectronVolts"
+        },
+        {
+          "text": "The energy is 474 microElectronVolts"
+        },
+        {
+          "text": "The wavelength if 3.05 meters",
+          "correct": true
+        },
+        {
+          "text": "The wavelength if 30.5 centimeters"
+        },
+        {
+          "text": "The wavelength if 2.55 meters"
+        },
+        {
+          "text": "The wavelength if 25.5 centimeters"
+        },
+        {
+          "text": "The wavelength if 4.13 meters"
+        },
+        {
+          "text": "The wavelength if 41.3 centimeters"
+        }
+      ]
+    },
+    {
+      "text": "Consider a photon that is the highest energy photon a human is capable of seeing. Select three correct statements. You select all three for full credit.",
+      "answerChoices": [
+        {
+          "text": "The speed of the wave is 300 million m/s",
+          "correct": true
+        },
+        {
+          "text": "The speed of the wave is 3 billion m/s"
+        },
+        {
+          "text": "The speed of the wave is 30 million m/s"
+        },
+        {
+          "text": "The energy of the wave is approximately 3.01 electronVolts.",
+          "correct": true
+        },
+        {
+          "text": "The energy of the wave is approximately 2.85 electronVolts."
+        },
+        {
+          "text": "The energy of the wave is approximately 3.38 electronVolts."
+        },
+        {
+          "text": "The energy of the wave is approximately 3.67 electronVolts."
+        },
+        {
+          "text": "The frequency of the wave ia approximately 750 teraHertz.",
+          "correct": true
+        },
+        {
+          "text": "The frequency of the wave ia approximately 790 teraHertz."
+        },
+        {
+          "text": "The frequency of the wave ia approximately 720 teraHertz."
+        },
+        {
+          "text": "The frequency of the wave ia approximately 680 teraHertz."
+        }
+      ]
+    }
+  ]
+}

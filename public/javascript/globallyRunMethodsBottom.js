@@ -99,6 +99,7 @@ createQuestionAndAnswerList();
 
 
 // append all items in the answerID object into the lesson
+// put the title here
 $("ol.answerList").prepend($("<h4 class = 'answerHeader'>Answers:</h4>"))
 
 /// for any <p class = 'directions>

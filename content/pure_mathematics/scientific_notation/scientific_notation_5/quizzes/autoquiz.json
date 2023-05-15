@@ -125,8 +125,7 @@
       "text": "\\( 5.67 \\cdot 10^{-4} \\) meters is equal to what value?",
       "answerChoices": [
         {
-          "text": "56.7 millimeters",
-          "correct": true
+          "text": "56.7 millimeters"
         },
         {
           "text": "5.67 millimeters"
@@ -141,7 +140,8 @@
           "text": "56.7 μmeters"
         },
         {
-          "text": "567 μmeters"
+          "text": "567 μmeters",
+          "correct": true
         }
       ]
     }

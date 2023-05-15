@@ -164,7 +164,7 @@ class MultipleChoiceQuestion extends Question {
             }
         }
         if (corrects.length > 0 && !this.multipleCorrectType) {
-            console.log("ERROR: More than one correct answer!!!")
+            console.log("NOTE: More than one correct answer!!!")
         }
         if (!this.multipleCorrectType) {
             return corrects[0]
@@ -397,7 +397,7 @@ function makeMCquestion(questionJSON, id) {
             if (!correctAnswer) {
                 correctAnswer = numberToLetter_X[i];
             } else {
-                console.log("ERROR: More than 1 correct answer!")
+                console.log("NOTE: More than 1 correct answer!")
             }
         }
         choicesObject.append(makeQuizListItem(choice, false, questionJSON.id));
