@@ -1,10 +1,10 @@
 {
-  "Directions": "Determine all the quantities given in the units requested. If the answer you determine is not precisely one of the choices, chose the one you think is best.",
+  "directions_x": "Determine all the quantities given in the units requested. If the answer you determine is not precisely one of the choices, chose the one you think is best.",
   "reorder": false,
   "questions": [
     {
       "newSection": true,
-      "text": "Questions 1 - 6 deal with a particular photon. This photon has a wavelength of 650. nanometers. What color is this light?",
+      "text": "The next six questions deal with a particular photon. This photon has a wavelength of 650. nanometers. What color is this light?",
       "answerChoices": [
         {
           "text": "red",
@@ -195,7 +195,7 @@
     },
     {
       "newSection": true,
-      "text": "Questions 7 - 12 deal with a particular photon. This photon has a frequency of 520. teraHertz. Determine the frequency in Hertz.",
+      "text": "The next six questions deal with a particular photon. This photon has a frequency of 520. teraHertz. Determine the frequency in Hertz.",
       "answerChoices": [
         {
           "text_math": "5.20 \\cdot 10^{14} \\, \\text{Hz}",
@@ -409,7 +409,7 @@
     },
     {
       "newSection": true,
-      "text": "Questions 13 - 18 deal with a particular photon. This photon has an energy of 2.30 electronVolts. Determine the energy in Joules.",
+      "text": "The next six questions deal with a particular photon. This photon has an energy of 2.30 electronVolts. Determine the energy in Joules.",
       "answerChoices": [
         {
           "text_math": "3.68 \\cdot 10^{-19} \\, \\text{J}",

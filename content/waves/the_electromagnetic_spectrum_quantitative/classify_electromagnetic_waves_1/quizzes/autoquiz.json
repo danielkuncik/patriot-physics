@@ -38,36 +38,6 @@
       ]
     },
     {
-      "text": "Wavelength = 508 nanometers",
-      "reorder": false,
-      "answerChoices": [
-        {
-          "text": "Red",
-          "correct": false
-        },
-        {
-          "text": "Orange",
-          "correct": false
-        },
-        {
-          "text": "Yellow",
-          "correct": false
-        },
-        {
-          "text": "Green",
-          "correct": false
-        },
-        {
-          "text": "Blue",
-          "correct": true
-        },
-        {
-          "text": "Violet",
-          "correct": false
-        }
-      ]
-    },
-    {
       "text": "Wavelength = 570 nanometers",
       "reorder": false,
       "answerChoices": [
