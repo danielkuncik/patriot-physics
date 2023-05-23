@@ -38,6 +38,8 @@
     // 82f477 heat formula 3
     // 8b26b3 heat formula 4
     // c34542 thermal contact 3
+    const Honors_final = ["5c9f7a"];
+
     const Honors_jan_2023 = ["7369b3","aa3a0e","a73a78","82f477","8b26b3","c34542"];
 
     const Honors_march_2023 = ["36d08c","c3f650","7488df","12ce06","1db039"];
@@ -78,13 +80,13 @@
 
 
     let honors_array = [];
-    Honors_may_2023.forEach((quiz_ID) => {
+    Honors_final.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics May 2023", 4, 320));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Senior Final May 2023", 1, 501));
 
 
 </script>

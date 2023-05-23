@@ -200,32 +200,32 @@
       ]
     },
     {
-      "text": "What type of wave is a compressed pulse moving down a slinky",
+      "text": "The orbit of the each planet around the sun has what shape?",
       "answerChoices": [
         {
-          "text": "longitudinal",
+          "text": "An ellipse",
           "correct": true
         },
         {
-          "text": "transverse"
+          "text": "A circle"
+        },
+        {
+          "text": "A hyperbola"
+        },
+        {
+          "text": "A parabola"
         }
       ]
     },
     {
-      "text": "Compare gamma rays and X-Rays",
+      "text": "All electromagnetic waves are:",
       "answerChoices": [
         {
-          "text": "Gamma rays have a shorter wavelength, and X-Rays have a lower frequency.",
+          "text": "transverse",
           "correct": true
         },
         {
-          "text": "Gamma rays have a longer wavelength, and X-Rays have a higher frequency"
-        },
-        {
-          "text": "Gamma rays have a higher speed, and X-Rays have a lower frequency."
-        },
-        {
-          "text": "Gamma rays have a lower speed, and X-Rays have a longer wavelength."
+          "text": "longitudinal"
         }
       ]
     }
