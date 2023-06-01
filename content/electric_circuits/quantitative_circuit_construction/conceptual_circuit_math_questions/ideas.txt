@@ -1,0 +1,24 @@
+I really want a pod (probably level 3, that asks conceptual questions related to electric circuit math?)
+
+
+
+A battery is connected to a ressitor.
+The person intends to add a second resistor in _parallel_.
+how will this affect the ressitance of the circuit
+
+a. the resistance will increase because another resistor was added
+b. the resistor will stay the same because the resistors are in parallel
+c. the resistance will decrease because another path was added for current to travel
+d. the resistance will .....
+
+(or just, to have the answer minus the explanations?)
+
+
+electric circuit designers typically have a large collection of many resistors of many different resistances. why?
+a. selecting a resistor allows the designer to determine what current will flow under a specified voltage.
+
+
+
+
+
+

@@ -18,6 +18,9 @@
     const AP_sept_2022 = ["6949c4","e9cb0a","a6330e","169d20","4e97c3","ba74c4","1287eb","5612bd","720665"];
     const Honors_sept_2022 = ["6949c4","eda5ba","e9cb0a","bc4f99","720665","c89b8a"];
 
+
+    const AP_may_2022 = ["875ae0","3950df"];
+
     const AP_oct_2022 = [];
     const Honors_oct_2022 = ["a6330e","4e97c3","a131a7","acacfe","ba7882"];
 
@@ -80,13 +83,13 @@
 
 
     let honors_array = [];
-    Honors_final.forEach((quiz_ID) => {
+    AP_may_2022.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Honors Physics Senior Final May 2023", 1, 501));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "AP Physics Quiz May 2023", 4, 600));
 
 
 </script>

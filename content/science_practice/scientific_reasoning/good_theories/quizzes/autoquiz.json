@@ -1,2 +1,28 @@
 {
+  "questions": [
+    {
+      "text": "Which of the following statements BEST explains why Copernicus's sun-centered model of the Universe is considered a superior theory to Ptolomey's",
+      "answerChoices": [
+        {
+          "text": "Copernicus's model can predict the location of planets without needing to assume that planets move in circles within circles.",
+          "correct": true
+        },
+        {
+          "text": "Copernicus's model is 100% correct."
+        },
+        {
+          "text": "Ptolomey's model is incapable of predicting the location of planets each night."
+        }
+      ]
+    },
+    {
+      "text": "The statement 'A theory is a good theory if it fits observed data' is an INCOMPLETE statement. What is missing?",
+      "answerChoices": [
+        {
+          "text": "A theory should make the predictions while making the minimum number of base assumptions.",
+          "correct": true
+        }
+      ]
+    }
+  ]
 }
