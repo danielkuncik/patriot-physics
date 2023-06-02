@@ -8,6 +8,7 @@ This javascript file contains method that are run as a part of every page
 // whenever I want to ask questions in a file, put them in <ol class = 'questionList'>
 // each question should be in an li tag: <li data-answer = 'answer here'>
 // and at the end of the file place <ol class = 'answerList'>
+
 function createQuestionAndAnswerList() {
     if (questionListAlreadyCreated) {
         return undefined

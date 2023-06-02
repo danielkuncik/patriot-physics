@@ -5,6 +5,18 @@ let answerObjects = {};
 function addAnswerObject(id, object) {
     answerObjects[id] = object;
 }
+//
+function addAnswerImage(id, src, height = 'auto', width = 'auto') {
+  let imageObject = {
+    "image": true,
+    "src": src,
+    "height": height,
+    "width": width
+  };
+  const answerImageString = `<img src = '${src}' height = '${height}' width = '${width}' >`;
+  const answerObject = $(answerImageString);
+  addAnswerObject(id, answerObject);
+}
 
 function addAnswer(id, answer) {
     $(`#${id}`).attr('data-answer',answer);
@@ -32,6 +44,9 @@ function appendProblem(id, problemObject, width = 300, height = 300) {
     const answerID = `${id}_ans`;
     $(`#${id}`).attr('data-answer_id',answerID);
     addAnswerObject(answerId, answer.drawCanvas(width, height));
+  } else if (typeof(answer) === 'object' && answer.image) {
+    console.log('image');
+    console.log(answer);
   }
 }
 
