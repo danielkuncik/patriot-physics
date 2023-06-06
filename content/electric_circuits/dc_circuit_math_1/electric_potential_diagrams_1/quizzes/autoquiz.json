@@ -9,17 +9,33 @@
       },
       "answerChoices": [
         {
-          "image": "quiz_1a.png"
+          "image": {
+            "name": "quiz_1a.png",
+            "height": "100px",
+            "width": "auto"
+          }
         },
         {
-          "image": "quiz_1b.png"
+          "image": {
+            "name": "quiz_1b.png",
+            "height": "150px",
+            "width": "auto"
+          }
         },
         {
-          "image": "quiz_1c.png",
+          "image": {
+            "name": "quiz_1c.png",
+            "height": "150px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "quiz_1d.png"
+          "image": {
+            "name": "quiz_1d.png",
+            "height": "100px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -32,17 +48,33 @@
       },
       "answerChoices": [
         {
-          "image": "quiz_2a.png",
+          "image": {
+            "name": "quiz_2a.png",
+            "height": "150px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "quiz_2b.png"
+          "image": {
+            "name": "quiz_2b.png",
+            "height": "150px",
+            "width": "auto"
+          }
         },
         {
-          "image": "quiz_2c.png"
+          "image": {
+            "name": "quiz_2c.png",
+            "height": "100px",
+            "width": "auto"
+          }
         },
         {
-          "image": "quiz_2d.png"
+          "image": {
+            "name": "quiz_2d.png",
+            "height": "100px",
+            "width": "auto"
+          }
         }
       ]
     },
@@ -55,17 +87,33 @@
       },
       "answerChoices": [
         {
-          "image": "quiz_3a.png",
+          "image": {
+            "name": "quiz_3a.png",
+            "height": "100px",
+            "width": "auto"
+          },
           "correct": true
         },
         {
-          "image": "quiz_3b.png"
+          "image": {
+            "name": "quiz_3b.png",
+            "height": "150px",
+            "width": "auto"
+          }
         },
         {
-          "image": "quiz_3c.png"
+          "image": {
+            "name": "quiz_3c.png",
+            "height": "150px",
+            "width": "auto"
+          }
         },
         {
-          "image": "quiz_3d.png"
+          "image": {
+            "name": "quiz_3d.png",
+            "height": "100px",
+            "width": "auto"
+          }
         }
       ]
     },
