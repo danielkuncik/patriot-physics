@@ -10,16 +10,7 @@
       },
       "answerChoices": [
         {
-          "text": "1 Ω"
-        },
-        {
-          "text": "2 Ω"
-        },
-        {
-          "text": "1.5 Ω"
-        },
-        {
-          "text": "3 Ω",
+          "text": "20 Ω",
           "correct": true
         }
       ]
@@ -28,20 +19,8 @@
       "text": "What is the resistance of the resistor represented by the downhill at point B?",
       "answerChoices": [
         {
-          "text": "2 Ω"
-        },
-        {
-          "text": "3 Ω"
-        },
-        {
-          "text": "4 Ω"
-        },
-        {
-          "text": "5 Ω",
+          "text": "30 Ω",
           "correct": true
-        },
-        {
-          "text": "6 Ω"
         }
       ]
     },

@@ -228,6 +228,42 @@
           "text": "Gamma rays have a lower speed, and X-Rays have a longer wavelength."
         }
       ]
+    },
+    {
+      "text": "Which of the following statements accurately describes the orbit of a planet?",
+      "answerChoices": [
+        {
+          "text": "Planets move in a circle with the sun at the center/"
+        },
+        {
+          "text": "Planets move in an ellipse with the sun at the center."
+        },
+        {
+          "text": "Planets move in an ellipse with the sun at one focus.",
+          "correct": true
+        },
+        {
+          "text": "Planets move in a circle with the sun slightly off-center."
+        }
+      ]
+    },
+    {
+      "text": "Which of the following is the OLDEST definition of a planet?",
+      "answerChoices": [
+        {
+          "text": "Any object that moves around the sun."
+        },
+        {
+          "text": "Any large sphere that moves in a circle around the sun"
+        },
+        {
+          "text": "Any large sphere that moves in a circle around the earth."
+        },
+        {
+          "text": "A point of light that does not remain in the same position relative to background stars.",
+          "correct": true
+        }
+      ]
     }
   ]
 }

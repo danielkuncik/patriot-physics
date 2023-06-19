@@ -85,13 +85,13 @@
 
 
     let honors_array = [];
-    AP_june_2023.forEach((quiz_ID) => {
+    Honors_final.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "AP Physics Quiz June 2023", 4, 700));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics Honors Final Exam June 2023", 4, 800));
 
 
 </script>
