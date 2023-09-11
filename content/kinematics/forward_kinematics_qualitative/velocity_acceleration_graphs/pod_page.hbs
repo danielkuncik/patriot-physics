@@ -260,21 +260,21 @@
 
 <script>
     let velocityGraph1 = makeVelocityGraphConstantVelocity();
-    $("#velocityGraph1").append(velocityGraph1.drawCanvas(300,300));
+    $("#velocityGraph1").append(velocityGraph1.drawCanvas(250));
 
     let velocityGraph2 = makeVelocityGraphPositiveAcceleration();
-    $("#velocityGraph2").append(velocityGraph2.drawCanvas(300,300));
+    $("#velocityGraph2").append(velocityGraph2.drawCanvas(250));
 
     let velocityGraph3 = makeVelocityGraphNegativeAcceleration();
-    $("#velocityGraph3").append(velocityGraph3.drawCanvas(300,300));
+    $("#velocityGraph3").append(velocityGraph3.drawCanvas(250));
 
     let velocityGraph4 = makeVelocityGraphNotMoving();
-    $("#velocityGraph4").append(velocityGraph4.drawCanvas(300,300));
+    $("#velocityGraph4").append(velocityGraph4.drawCanvas(250));
 
-    $("#velocityQuestionA").append(velocityGraph2.drawCanvas(150));
-    $("#velocityQuestionB").append(velocityGraph4.drawCanvas(150)); // BUG when using velocity graph 4 twice
-    $("#velocityQuestionC").append(velocityGraph3.drawCanvas(150));
-    $("#velocityQuestionD").append(velocityGraph1.drawCanvas(150));
+    $("#velocityQuestionA").append(velocityGraph2.drawCanvas(200));
+    $("#velocityQuestionB").append(velocityGraph4.drawCanvas(200)); // BUG when using velocity graph 4 twice
+    $("#velocityQuestionC").append(velocityGraph3.drawCanvas(200));
+    $("#velocityQuestionD").append(velocityGraph1.drawCanvas(200));
 
     let accelerationGraph1 = makeAccelerationGraphZero();
     $("#accelerationGraph1").append(accelerationGraph1.drawCanvas(250));
@@ -288,18 +288,18 @@
     let accelerationGraph4 = makeAccelerationGraphZero();
     $("#accelerationGraph4").append(accelerationGraph4.drawCanvas(250));
 
-    $("#accelerationQuestionA").append(accelerationGraph1.drawCanvas(150));
-    $("#accelerationQuestionB").append(accelerationGraph3.drawCanvas(150));
-    $("#accelerationQuestionC").append(accelerationGraph2.drawCanvas(150));
+    $("#accelerationQuestionA").append(accelerationGraph1.drawCanvas(250));
+    $("#accelerationQuestionB").append(accelerationGraph3.drawCanvas(250));
+    $("#accelerationQuestionC").append(accelerationGraph2.drawCanvas(250));
 
 
-    $("#velocityGraphConnectionA").append(velocityGraph4.drawCanvas(150));
-    $("#velocityGraphConnectionB").append(velocityGraph1.drawCanvas(150));
-    $("#velocityGraphConnectionC").append(velocityGraph2.drawCanvas(150));
-    $("#velocityGraphConnectionD").append(velocityGraph3.drawCanvas(150));
+    $("#velocityGraphConnectionA").append(velocityGraph4.drawCanvas(200));
+    $("#velocityGraphConnectionB").append(velocityGraph1.drawCanvas(200));
+    $("#velocityGraphConnectionC").append(velocityGraph2.drawCanvas(200));
+    $("#velocityGraphConnectionD").append(velocityGraph3.drawCanvas(200));
 
-    $("#accelerationConnectionA").append(accelerationGraph3.drawCanvas(150));
-    $("#accelerationConnectionB").append(accelerationGraph2.drawCanvas(150));
-    $("#accelerationConnectionC").append(accelerationGraph1.drawCanvas(150));
+    $("#accelerationConnectionA").append(accelerationGraph3.drawCanvas(250));
+    $("#accelerationConnectionB").append(accelerationGraph2.drawCanvas(250));
+    $("#accelerationConnectionC").append(accelerationGraph1.drawCanvas(250));
 
 </script>

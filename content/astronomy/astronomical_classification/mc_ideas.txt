@@ -80,3 +80,10 @@ the ORRHS campus is ill-defined
 - there is no error
 
 
+During the night on earth, you can see various constellations of stars, such as cygnus, orion, and ursa major.
+If you traveled to Mars, how would these constellations appear?
+- Distorted, because you are closer to some stars and farther from others
+- Completely different, because you are in a different part of the universe
+- Mostly the same, because the distance between earth and mars is much less than the distance betweeen stars.
+- You cannot see stars on mars.
+

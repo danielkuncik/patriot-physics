@@ -33,7 +33,7 @@
     </li>
 </ul>
 
-
+<div class="pageBreak"></div>
 <h4 class = 'sectionHeader'>
     Motion Maps
 </h4>
@@ -310,32 +310,32 @@
 
 
     let positionGraph1 = makePositionGraphConstantVelocity();
-    $("#positionGraph1").append(positionGraph1.drawCanvas(300,300));
+    $("#positionGraph1").append(positionGraph1.drawCanvas(250));
 
     let positionGraph2 = makePositionGraphPositiveAcceleration();
-    $("#positionGraph2").append(positionGraph2.drawCanvas(300,300));
+    $("#positionGraph2").append(positionGraph2.drawCanvas(250));
 
     let positionGraph3 = makePositionGraphNegativeAcceleration();
-    $("#positionGraph3").append(positionGraph3.drawCanvas(300,300));
+    $("#positionGraph3").append(positionGraph3.drawCanvas(250));
 
     let positionGraph4 = makePositionGraphNotMoving();
-    $("#positionGraph4").append(positionGraph4.drawCanvas(300,300));
+    $("#positionGraph4").append(positionGraph4.drawCanvas(250));
 
-    $("#positionGraphQuestionA").append(positionGraph3.drawCanvas(150));
-    $("#positionGraphQuestionB").append(positionGraph2.drawCanvas(150));
-    $("#positionGraphQuestionC").append(positionGraph4.drawCanvas(150));
-    $("#positionGraphQuestionD").append(positionGraph1.drawCanvas(150));
+    $("#positionGraphQuestionA").append(positionGraph3.drawCanvas(200));
+    $("#positionGraphQuestionB").append(positionGraph2.drawCanvas(200));
+    $("#positionGraphQuestionC").append(positionGraph4.drawCanvas(200));
+    $("#positionGraphQuestionD").append(positionGraph1.drawCanvas(200));
 
 // 3 4 1 2
 // 4 3 2 1
-    $("#connectionPositionGraphA").append(positionGraph4.drawCanvas(150));
-    $("#connectionPositionGraphB").append(positionGraph3.drawCanvas(150));
-    $("#connectionPositionGraphC").append(positionGraph2.drawCanvas(150));
-    $("#connectionPositionGraphD").append(positionGraph1.drawCanvas(150));
+    $("#connectionPositionGraphA").append(positionGraph4.drawCanvas(200));
+    $("#connectionPositionGraphB").append(positionGraph3.drawCanvas(200));
+    $("#connectionPositionGraphC").append(positionGraph2.drawCanvas(200));
+    $("#connectionPositionGraphD").append(positionGraph1.drawCanvas(200));
 
-    $("#connectionMotionMapA").append(motionMap3.drawCanvas(150));
-    $("#connectionMotionMapB").append(motionMap4.drawCanvas(150));
-    $("#connectionMotionMapC").append(motionMap1.drawCanvas(150));
-    $("#connectionMotionMapD").append(motionMap2.drawCanvas(150));
+    $("#connectionMotionMapA").append(motionMap3.drawCanvas(200));
+    $("#connectionMotionMapB").append(motionMap4.drawCanvas(200));
+    $("#connectionMotionMapC").append(motionMap1.drawCanvas(200));
+    $("#connectionMotionMapD").append(motionMap2.drawCanvas(200));
 
 </script>
