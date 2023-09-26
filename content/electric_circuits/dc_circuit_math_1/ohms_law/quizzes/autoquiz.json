@@ -22,34 +22,36 @@
       "text": "I have a current of 3.0 Amps and a resistance of 15 Ohms. What is my voltage?",
       "answerChoices": [
         {
-          "text": ""
+          "text": "45 V",
+          "correct": true
         },
         {
-          "text": ""
+          "text": "5 V"
         },
         {
-          "text": ""
+          "text": "0.20 V"
         },
         {
-          "text": ""
+          "text": "18 V"
         }
       ]
     },
     {
       "text": "What is the current of the following circuit?",
-      "note": "add a circuit diagram here",
+      "image": "quiz_circuit.png",
       "answerChoices": [
         {
-          "text": ""
+          "text": "1.3 A",
+          "correct": true
         },
         {
-          "text": ""
+          "text": "1.0 A"
         },
         {
-          "text": ""
+          "text": "2.0 A"
         },
         {
-          "text": ""
+          "text": "1.8 A"
         }
       ]
     },
@@ -57,16 +59,17 @@
       "text": "I have a voltage of 12.0 Volts and a resistance of 2.00 Ohms. What is my current?",
       "answerChoices": [
         {
-          "text": ""
+          "text": "6.00 A",
+          "correct": true
         },
         {
-          "text": ""
+          "text": "4.00 A"
         },
         {
-          "text": ""
+          "text": "24.0 A"
         },
         {
-          "text": ""
+          "text": "0.167 A"
         }
       ]
     },
@@ -92,16 +95,17 @@
       "text": "The abbreviation for the unit Ohm's is:",
       "answerChoices": [
         {
-          "text": ""
+          "text": "Ω",
+          "correct": true
         },
         {
-          "text": ""
+          "text": "O"
         },
         {
-          "text": ""
+          "text": "M"
         },
         {
-          "text": ""
+          "text": "V"
         }
       ]
     }

@@ -1,0 +1,35 @@
+Significant figures concepts
+(and/or math vs. physics)
+
+A studnet is givne the following problem:
+"An object moves 10.0 m in a time of 30.0 seconds. Calculate its average velocity."
+They do the following calculation:
+"aveage velocity is displacement divided by time = 10 / 30 = 1/3"
+
+What is the BEST way for them to report their answer?
+
+A. 1/3  m/s, it is the most accurate
+B. .3 (with a line over it) m/s, it is accurate, but uses decimals
+C. 0.333  m/s, because it presents only the digits whihc the student can confidently say are accurate.
+D. 0.3 m/s, because it is rounded to one decimal place
+E. 0.33333333 m/s, it gets the message across best
+
+
+In math class, most students are told to write answers in the most exact way possible, and to include radicals and transcendental numbesr (pi and e) in their answers:
+In physics,
+
+A. in the most exact way possible, because physics is actually a branch of mathematics
+B. as decimals, because math represent concepts, whereas physics answers represent measureable quantities
+
+
+
+which of the following BEST states the relationship between math and physics:
+
+A. physics is a branch of applied math
+B. physics is a branch of science that uses many tools of mathematics
+
+
+
+which of the following is a key difference between math and science as modes of human thought?
+
+A. mathematicians can explore any problem they find interesting; scientists must use mathematical tools related to observable quantities.

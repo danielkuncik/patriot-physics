@@ -1,140 +1,52 @@
 <p class="directions">
-    Information on the five most massive moons of Uranus is given int he table below.
-    Use this information to answer the questions given
-</p>
-
-<div class="container">
-    <div class="row">
-        <div class="col-2 p-2 border border-dark">
-            <strong>Moon</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            <strong>Period of Orbit (earth days)</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            <strong>Semi-Major Axis* (km)</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            <strong>Mass (10^18 kg)</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            <strong>Eccentricity**</strong>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 p-2 border border-dark">
-            <strong>Miranda</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            1.413
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            129000
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            64
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            0.0013
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 p-2 border border-dark">
-            <strong>Titania</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            8.705
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            436000
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            34
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            0.0011
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 p-2 border border-dark">
-            <strong>Oberon</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            13.463
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            584000
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            30.8
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            0.0014
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 p-2 border border-dark">
-            <strong>Ariel</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            2.520
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            191000
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            12.5
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            0.0012
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 p-2 border border-dark">
-            <strong>Umbriel</strong>
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            4.144
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            266000
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            12.8
-        </div>
-        <div class="col-2 p-2 border border-dark">
-            0.0039
-        </div>
-    </div>
-
-</div>
-<p>
-    * This is the longest distance between the moon and Uranus.
-    The semi-major axis of earth's orbit is approximately 93 million miles.
-</p>
-<p>
-    ** Eccentricity is a measure of how circular or elongated an elliptical orbit is.
-    A low value of eccentricity means an orbit is nearly circular.
-    The eccentricity of earth's orbit is about 0.0167.
+    Convert each of the following vectors into component form.
+    Please show your work and represent your answer in an appropriate notation.
+    Write all answers with three significant figures of accuracy.
+    Use the conventional definitions of the X and Y axis.
 </p>
 
 <ol>
     <li>
-        By using the information in the table above, calculate the mass of Uranus.
+        <br>
+        <div id = 'vectorProblem1'></div>
     </li>
     <li>
-        Two formulas are necessary to answer the question above.
-        Explain briefly why each of the two
-        formulas is valid in this situation.
-    </li>
-    <li>
-        Of the pieces of information in the table, other than eccentricity,
-        one piece of information is unnecessary.
-        Briefly explain why.
+        <br>
+        <div id = 'vectorProblem2'></div>
     </li>
 </ol>
+
+<p class="directions">
+    Convert each of the following vectors into magnitude-direction form.
+    Please show your work and represent your answer in an appropriate notation.
+</p>
+
+
+<ol start = '3'>
+    <li>
+        <br>
+        <div id = 'vectorProblem3'></div>
+    </li>
+    <li>
+        <br>
+        <div id = 'vectorProblem4'></div>
+    </li>
+</ol>
+
+
+<script>
+    let vectorProblem1 = drawVector(50,130,'');
+    let vectorProblem2 = drawVector(40,325,'');
+
+    let vectorProblem3 = drawVector(20,0,'');
+    vectorProblem3.merge(drawVector(23,90,''),'right');
+
+    let vectorProblem4 = drawVector(60,180,'');
+    vectorProblem4.merge(drawVector(50,270,''),'left');
+
+    $("#vectorProblem1").append(vectorProblem1.drawCanvas(300));
+    $("#vectorProblem2").append(vectorProblem2.drawCanvas(300));
+    $("#vectorProblem3").append(vectorProblem3.drawCanvas(300));
+    $("#vectorProblem4").append(vectorProblem4.drawCanvas(300));
+
+</script>
