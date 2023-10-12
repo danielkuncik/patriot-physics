@@ -1,0 +1,113 @@
+{
+  "directions_note": "    Write which type of energy is <strong>best</strong> described by each prompt.\n    If more than one type of energy could describe the prompt,\n    select the single type that most specifically describes the prompt.\n    Please answer each question by writing the LETTER associated with your answer choice.\n",
+  "questions": [
+    {
+      "text": "Determine the energy type that BEST describes this situation: A sledder is on the top of a hill, ready to sled down!",
+      "answerChoices": [
+        {
+          "text": "Chemical Potential Energy"
+        },
+        {
+          "text": "Gravitational Potential Energy",
+          "correct": true
+        },
+        {
+          "text": "Elastic Potential Energy"
+        },
+        {
+          "text": "Kinetic Energy"
+        }
+      ]
+    },
+    {
+      "text": "Chose that energy type BEST illustrated by the prompt: A loaf of bread.",
+      "answerChoices": [
+        {
+          "text": "Electrical Energy"
+        },
+        {
+          "text": "Electromagnetic Wave Energy"
+        },
+        {
+          "text": "Kinetic Energy"
+        },
+        {
+          "text": "Chemical Potential Energy",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Chose the type of energy BEST described by the prompt: Moving Electrons.",
+      "answerChoices": [
+        {
+          "text": "Electrical Energy",
+          "correct": true
+        },
+        {
+          "text": "Mechanical Wave Energy"
+        },
+        {
+          "text": "Chemical Potential Energy"
+        },
+        {
+          "text": "Gravitational Potential Energy"
+        }
+      ]
+    },
+    {
+      "text": "Chose the type of energy BEST described by this prompt: the random motion of molecules",
+      "answerChoices": [
+        {
+          "text": "Electrical Energy"
+        },
+        {
+          "text": "Mechanical Wave Energy"
+        },
+        {
+          "text": "Electrochemical Potential Energy"
+        },
+        {
+          "text": "Thermal Energy",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Chose the type of energy BEST represented by the prompt: Energy contained in all mass",
+      "answerChoices": [
+        {
+          "text": "Kinetic Energy"
+        },
+        {
+          "text":"Elastic Potential Energy"
+        },
+        {
+          "text": "Mechanical Wave Energy"
+        },
+        {
+          "text": "Nuclear Energy",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Chose the type of energy BEST described by the prompt: The screams of an annoying little kid.",
+      "answerChoices": [
+        {
+          "text": "Electromagnetic Wave Energy"
+        },
+        {
+          "text": "Nuclear Energy"
+        },
+        {
+          "text": "Mechanical Wave Energy",
+          "correct": true
+        },
+        {
+          "text": "Electrochemical Potential Energy"
+        }
+      ]
+    }
+  ]
+}

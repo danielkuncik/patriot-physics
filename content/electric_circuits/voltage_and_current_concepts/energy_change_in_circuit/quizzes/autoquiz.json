@@ -1,0 +1,42 @@
+{
+  "note": "The next three problems deal with the following circuit:",
+  "questions": [
+    {
+      "text":"Which type of energy is put into the circuit in question?",
+      "image": "simple_circuit.png",
+      "answerChoices": [
+        {
+          "text": "Electrochemical Potential Energy"
+        },
+        {
+          "text": "Thermal Energy"
+        },
+        {
+          "text": "Electromagnetic Energy"
+        },
+        {
+          "text": "Gravitational potential Energy"
+        }
+      ]
+    },
+    {
+      "text": "What two forms of energy are come out of this circuit?",
+      "image": "simple_circuit.png",
+      "answerChoices": [
+        {
+          "text": "Electromagnetic energy and thermal energy",
+          "correct": true
+        },
+        {
+          "text": "Electrical Energy and Mechanical Energy"
+        },
+        {
+          "text": "Chemical Potential Energy and Mechanical Wave Energy"
+        },
+        {
+          "text": "Kinetic Energy and Potential Energy"
+        }
+      ]
+    }
+  ]
+}

@@ -9747,8 +9747,8 @@
             "uuid": "84327931-2346-4c9d-b844-e3828f333fd6",
             "id": "843279"
           },
-          "organization_atoms": {
-            "title": "Organization of Atoms",
+          "conductor_structure": {
+            "title": "Atomic Structure of Conductors",
             "level": 2,
             "horizontal": 2,
             "letter": "F",

@@ -1,0 +1,130 @@
+{
+  "questions": [
+    {
+      "text": "What quantity is provided by a battery in a circuit?",
+      "answerChoices": [
+        {
+          "text": "Voltage",
+          "correct": true
+        },
+        {
+          "text": "Current"
+        },
+        {
+          "text": "Resistance"
+        },
+        {
+          "text": "Power"
+        }
+      ]
+    },
+    {
+      "text": "What word refers to the strength with which electrons are pushed around a circuit?",
+      "answerChoices": [
+        {
+          "text": "Voltage",
+          "correct": true
+        },
+        {
+          "text": "Current"
+        },
+        {
+          "text": "Resistance"
+        },
+        {
+          "text": "Power"
+        }
+      ]
+    },
+    {
+      "text": "A circuit with a very, very low amount of this quantity is called a 'short circuit.'",
+      "answerChoices": [
+        {
+          "text": "Voltage"
+        },
+        {
+          "text": "Current"
+        },
+        {
+          "text": "Resistance",
+          "correct": true
+        },
+        {
+          "text": "Power"
+        }
+      ]
+    },
+    {
+      "text": "What word refers to how fast a charge moves past a point in the circuit?",
+      "answerChoices": [
+        {
+          "text": "Voltage"
+        },
+        {
+          "text": "Current",
+          "correct": true
+        },
+        {
+          "text": "Resistance"
+        },
+        {
+          "text": "Power"
+        }
+      ]
+    },
+    {
+      "text": "What word refers to the rate at which energy changes in a circuit?",
+      "answerChoices": [
+        {
+          "text": "Voltage"
+        },
+        {
+          "text": "Current"
+        },
+        {
+          "text": "Resistance"
+        },
+        {
+          "text": "Power",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "What quantity is provided by a light bulb in a circuit?",
+      "answerChoices": [
+        {
+          "text": "Voltage"
+        },
+        {
+          "text": "Current"
+        },
+        {
+          "text": "Resistance",
+          "correct": true
+        },
+        {
+          "text": "Power"
+        }
+      ]
+    },
+    {
+      "text": "In a circuit consisting of a battery and a single light bulb, which quantity is related to how bright the light bulb is?",
+      "answerChoices": [
+        {
+          "text": "Voltage"
+        },
+        {
+          "text": "Current"
+        },
+        {
+          "text": "Resistance"
+        },
+        {
+          "text": "Power",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

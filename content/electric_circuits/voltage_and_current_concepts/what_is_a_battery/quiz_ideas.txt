@@ -5,7 +5,6 @@
 - metallic reaction
 - ionic reaction
 
-
 2. Which of the following correctly describes the cathode and anode?
 - The cathode is reduced, gaining electrons; The anode is oxidized, losing electrons. (correct)
 - The cathode is oxidized, gaining electrons; The anode is reduced, losing electrons.

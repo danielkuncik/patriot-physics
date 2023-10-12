@@ -16,4 +16,6 @@ when the switch is closed
 - only one light bulb will light
 - neither light bulb will light
 
+Which of the circuits pictured will likely have brighter light bulbs
+
 

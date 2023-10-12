@@ -1,52 +1,65 @@
-<p class="directions">
-    Convert each of the following vectors into component form.
-    Please show your work and represent your answer in an appropriate notation.
-    Write all answers with three significant figures of accuracy.
-    Use the conventional definitions of the X and Y axis.
+<p class= 'directions'>
+    For each circuit presented, determine the voltage, current, resistance, and power
+    of each element of the circuit. Then create a great of electric potential that describes the circuit.
+    For full credit, your graph must comply with each direction stated.
 </p>
 
 <ol>
-    <li>
+    <li class = 'physicsQuestion'><br>
+        <h5>Requirements</h5>
+        <ul>
+            <li>Create a graph that shows how electric potential changes as current crosses each element.</li>
+            <li>
+                Each upward or downward slope on your graph must be <strong>labeled</strong> with the name of the element.
+                That is, for full credit you <strong>must</strong> write "battery," "resistor 1," "resistor 2," "resistor 3"
+                next to each downward and upward slope.
+            </li>
+            <li>
+                All resistors, particularly those in series, must be presented on the graph in the correct order that the circuit travels.
+            </li>
+            <li>
+                An arrow must indicate the direction of electric current on your diagram.
+            </li>
+        </ul>
+        <div id = 'F1-circuit'></div>
         <br>
-        <div id = 'vectorProblem1'></div>
+        <div id = 'F1-graph'></div>
     </li>
-    <li>
+    <div class = 'pageBreak'></div>
+    <li class = 'physicsQuestion'><br>
+        <h5>Requirements</h5>
+        <ul>
+            <li>
+                Create a graph that shows how electric potential changes as current crosses each element.
+            </li>
+            <li>
+                Each upward or downward slope on your graph must be <strong>labeled</strong> with the name of the element.
+                That is, for full credit you <strong>must</strong> write "battery," "resistor 1," "resistor 2," "resistor 3"
+                next to each downward and upward slope.
+            </li>
+            <li>
+                Each segment of your graph must be labeled with an arrow indicating the current within that segment of the circuit.
+                Your arrow must point in the correct direction.
+            </li>
+        </ul>
+        <div id = 'F2-circuit'></div>
         <br>
-        <div id = 'vectorProblem2'></div>
+        <div id = 'F2-graph'></div>
     </li>
 </ol>
-
-<p class="directions">
-    Convert each of the following vectors into magnitude-direction form.
-    Please show your work and represent your answer in an appropriate notation.
-</p>
-
-
-<ol start = '3'>
-    <li>
-        <br>
-        <div id = 'vectorProblem3'></div>
-    </li>
-    <li>
-        <br>
-        <div id = 'vectorProblem4'></div>
-    </li>
-</ol>
-
 
 <script>
-    let vectorProblem1 = drawVector(50,130,'');
-    let vectorProblem2 = drawVector(40,325,'');
+    $("#F1-circuit").append(makeCircuitProblem('series',20,[2,5,3], false));
 
-    let vectorProblem3 = drawVector(20,0,'');
-    vectorProblem3.merge(drawVector(23,90,''),'right');
+    let F1graph = new QuantitativeGraph(0,10,0,20,2);
+    F1graph.labelAxes('','electric potential (V)');
+    F1graph.addReferenceArray([],[2,4,6,8,10,12,14,16,18,20]);
+    $("#F1-graph").append(F1graph.drawCanvas(1700,850));
 
-    let vectorProblem4 = drawVector(60,180,'');
-    vectorProblem4.merge(drawVector(50,270,''),'left');
+    $("#F2-circuit").append(makeCircuitProblem('parallel',18,[2,9,3], false));
 
-    $("#vectorProblem1").append(vectorProblem1.drawCanvas(300));
-    $("#vectorProblem2").append(vectorProblem2.drawCanvas(300));
-    $("#vectorProblem3").append(vectorProblem3.drawCanvas(300));
-    $("#vectorProblem4").append(vectorProblem4.drawCanvas(300));
-
+    let F2graph = new QuantitativeGraph(0,10,0,18,2);
+    F2graph.labelAxes('', 'electric potential (V)');
+    F2graph.addReferenceArray([],[6,12,18]);
+    $("#F2-graph").append(F2graph.drawCanvas(1800,900));
 </script>

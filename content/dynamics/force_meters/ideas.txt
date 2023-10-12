@@ -1,0 +1,28 @@
+An entire ladder on how to use force meters, and on things that can be learned by using force meters
+
+
+
+- a pod on how to select the correct meter for the job
+
+- a pod on reasonable assessments of forces
+
+(eg. lifting your backpack should take about how much force?
+A. 0.5 N
+B. 30 N
+C. 400 N
+D. 8000 N
+)
+
+- a pod on how force meters actually work
+(a level 2, on how the spring scales work??)
+
+
+- balances vs. spring scales
+
+- force meters in an elevator (a higher level)
+
+- force meters in circular motion
+
+- building your own force meter
+
+- force meters on accelrating objects (if you are pulling on an object taht accelerates, how does it actually feel?)
