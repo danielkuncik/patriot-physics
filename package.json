@@ -24,7 +24,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
-    "express-hbs": "^2.3.4",
+    "express-hbs": "^2.4.2",
     "express-session": "^1.17.0",
     "handlebars": "^4.7.6",
     "mixin-deep": "^2.0.1",
