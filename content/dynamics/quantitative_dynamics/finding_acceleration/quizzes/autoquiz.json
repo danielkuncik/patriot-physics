@@ -2,7 +2,11 @@
   "questions": [
     {
       "text": "The object represented by the free-body diagram below has a mass of 25 kg. What is the magnitude of its acceleration?",
-      "image": "free_body_diagram_three.png",
+      "image": {
+        "name": "quiz_free_body_diagram_one.png",
+        "height": "300px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "4 m/s/s",
@@ -51,7 +55,11 @@
     },
     {
       "text": "The following free-body diagram illustrates the forces acting on an object. The mass of the object is 6 kg. What is the acceleration of the object?",
-      "image": "problem_1.png",
+      "image": {
+        "name": "quiz_free_body_diagram_two.png",
+        "height": "300px",
+        "width": "auto"
+      },
       "answerChoices": [
         {
           "text": "3 m/s/s RIGHT",

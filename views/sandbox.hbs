@@ -1,65 +1,159 @@
-<p class= 'directions'>
-    For each circuit presented, determine the voltage, current, resistance, and power
-    of each element of the circuit. Then create a great of electric potential that describes the circuit.
-    For full credit, your graph must comply with each direction stated.
+<p class = 'directions'>
+    Whenever using an equation, write the equation out before plugging any numbers in.
 </p>
 
 <ol>
-    <li class = 'physicsQuestion'><br>
-        <h5>Requirements</h5>
-        <ul>
-            <li>Create a graph that shows how electric potential changes as current crosses each element.</li>
+    <li>
+        A block with a mass of 12.0 kg is dragged on a flat surface with a force of 14.0 N,
+        represented by <i>F</i> in the diagram below.
+        The coefficient of kinetic friction between the block and the ground
+        is given by \( \mu_k \) and is unknown.
+        The block is moving at a <strong>constant velocity</strong>.
+        <ol type = 'a'>
             <li>
-                Each upward or downward slope on your graph must be <strong>labeled</strong> with the name of the element.
-                That is, for full credit you <strong>must</strong> write "battery," "resistor 1," "resistor 2," "resistor 3"
-                next to each downward and upward slope.
+                Determine the net force acting on the block.
+                Defend your answer by referring explicitly to a law of physics.
+            </li>
+            <div class = 'bigSpace'></div>
+            <li>
+                Draw a free-body diagram for the block.
+                Please name each force,
+                and determine the correct magnitude of each force.
+                <br>
+                <div class = 'mediumSpace'></div>
+                <img src = '/contentFiles/dynamicsQuizImages/basic_dragging_block.png' width = '300px' height = 'auto'>
+                <div class = 'mediumSpace'></div>
             </li>
             <li>
-                All resistors, particularly those in series, must be presented on the graph in the correct order that the circuit travels.
+                With an equation or in words, defend your choice for the value of the normal force.
             </li>
             <li>
-                An arrow must indicate the direction of electric current on your diagram.
+                Using the information above, determine the coefficient of kinetic
+                friction \( \mu_k \).
             </li>
-        </ul>
-        <div id = 'F1-circuit'></div>
-        <br>
-        <div id = 'F1-graph'></div>
+        </ol>
     </li>
     <div class = 'pageBreak'></div>
-    <li class = 'physicsQuestion'><br>
-        <h5>Requirements</h5>
-        <ul>
+    <li>
+        A block with a mass of 4.50 kg is dragged on a flat surface with a force of 16.0 N,
+        represented by <emph>F</emph> in the diagram below.
+        The coefficient of kinetic friction between the block and the ground is 0.170.
+        The block is <emph>NOT</emph> being dragged at a constant velocity to the right. It is accelerating.
+        <ol type = 'a'>
+
             <li>
-                Create a graph that shows how electric potential changes as current crosses each element.
+                Draw a free-body diagram on the picture below.
+                Four forces act on the block.
+                Please name each force and determine the correct magnitude and direction of each force.
+                <br>
+                <div class = 'mediumSpace'></div>
+                <img src = '/contentFiles/dynamicsQuizImages/basic_dragging_block.png' width = '300px' height = 'auto'>
+                <div class = 'mediumSpace'></div>
             </li>
             <li>
-                Each upward or downward slope on your graph must be <strong>labeled</strong> with the name of the element.
-                That is, for full credit you <strong>must</strong> write "battery," "resistor 1," "resistor 2," "resistor 3"
-                next to each downward and upward slope.
+                Determine the magnitude <strong>and direction</strong> of the net force acting on the block.
+                <div class = 'bigSpace'></div>
             </li>
             <li>
-                Each segment of your graph must be labeled with an arrow indicating the current within that segment of the circuit.
-                Your arrow must point in the correct direction.
+                Determine the magnitude <strong>and direction</strong> of the acceleration of the block.
             </li>
-        </ul>
-        <div id = 'F2-circuit'></div>
-        <br>
-        <div id = 'F2-graph'></div>
+        </ol>
     </li>
+    <li>
+        (I took out #3. It was redundant.)
+    </li>
+    <!--    <div class = 'pageBreak'></div>-->
+    <!--    <li>-->
+    <!--        A block with a mass of 8.00 kg is dragged on a flat surface with a force of 9.00 N,-->
+    <!--        represented by <i>F</i> in the diagram below.-->
+    <!--        The coefficient of kinetic friction between the block and the ground-->
+    <!--        is given by \( \mu_k \) and is unknown.-->
+    <!--        The block is moving at a <strong>constant velocity</strong>.-->
+    <!--        <ol type = 'a'>-->
+    <!--            <li>-->
+    <!--                Determine the net force acting on the block,-->
+    <!--                and explain how you found your answer.-->
+    <!--            </li>-->
+    <!--            <div class = 'bigSpace'></div>-->
+    <!--            <li>-->
+    <!--                Draw a free-body diagram for the block.-->
+    <!--                Please name each force,-->
+    <!--                and determine the correct magnitude of each force.-->
+    <!--                <br>-->
+    <!--                <div class = 'mediumSpace'></div>-->
+    <!--                <img src = '/contentFiles/dynamicsQuizImages/basic_dragging_block.png' width = '300px' height = 'auto'>-->
+    <!--                <div class = 'mediumSpace'></div>-->
+    <!--            </li>-->
+    <!--            <li>-->
+    <!--                Using the information above, determine the coefficient of kinetic-->
+    <!--                friction \( \mu_k \).-->
+    <!--            </li>-->
+    <!--        </ol>-->
+    <!--    </li>-->
+    <!--    <div class = 'bigSpace'></div>-->
 </ol>
 
-<script>
-    $("#F1-circuit").append(makeCircuitProblem('series',20,[2,5,3], false));
+<div class="pageBreak"></div>
 
-    let F1graph = new QuantitativeGraph(0,10,0,20,2);
-    F1graph.labelAxes('','electric potential (V)');
-    F1graph.addReferenceArray([],[2,4,6,8,10,12,14,16,18,20]);
-    $("#F1-graph").append(F1graph.drawCanvas(1700,850));
+<p class = 'directions'>
+    Whenever using an equation, write the equation out before plugging any numbers in.
+</p>
 
-    $("#F2-circuit").append(makeCircuitProblem('parallel',18,[2,9,3], false));
-
-    let F2graph = new QuantitativeGraph(0,10,0,18,2);
-    F2graph.labelAxes('', 'electric potential (V)');
-    F2graph.addReferenceArray([],[6,12,18]);
-    $("#F2-graph").append(F2graph.drawCanvas(1800,900));
-</script>
+<ol>
+    <li>
+        A block as a mass of 8.80 kg and is not moving.
+        Somebody begins pulling the block with a force of 54.0 N to the right.
+        The coefficient of <emph>kinetic</emph> friction between the block and the surface is 0.480.
+        The coefficient of <emph>static</emph> friction between the block and the surface is 0.670.
+        <ol type = 'a'>
+            <li>
+                Draw a <strong>qual</strong>itative free-body diagram of this situation.
+                Identify the frictional force merely as friction, neither static nor kinetic.
+            </li>
+            <div class = 'bigSpace'></div>
+            <li>
+                Determine if the block moves. Explain how you determined this in 1 - 2 sentences.
+            </li>
+            <div class = 'mediumSpace'></div>
+            <li>
+                Complete the <strong>quant</strong>itative free-body diagram of this situation.
+                Explain how you determined the magnitude of friction in 1 - 2 sentences.
+            </li>
+            <div class = 'bigSpace'></div>
+            <li>
+                Determine the magnitude of acceleration of the block. If you use a formula to do so,
+                make sure you write it down.
+            </li>
+        </ol>
+    </li>
+    <div class = 'pageBreak'></div>
+    <div class = 'bigSpace no-print'></div>
+    <div class = 'bigSpace no-print'></div>
+    <li>
+        A block as a mass of 6.50 kg and is not moving.
+        Somebody begins pulling the block with a force of 44.0 N to the right.
+        The coefficient of <emph>kinetic</emph> friction between the block and the surface is 0.470.
+        The coefficient of <emph>static</emph> friction between the block and the surface is 0.660.
+        <ol type = 'a'>
+            <li>
+                Draw a <strong>qual</strong>itative free-body diagram of this situation.
+                Identify the frictional force merely as friction, neither static nor kinetic.
+            </li>
+            <div class = 'bigSpace'></div>
+            <li>
+                Determine if the block moves. Explain how you determined this in 1 - 2 sentences.
+            </li>
+            <div class = 'mediumSpace'></div>
+            <li>
+                Complete the <strong>quant</strong>itative free-body diagram of this situation.
+                Explain how you determined the magnitude of friction in 1 - 2 sentences.
+            </li>
+            <div class = 'bigSpace'></div>
+            <li>
+                Determine the magnitude of acceleration of the block. If you use a formula to do so,
+                make sure you write it down.
+            </li>
+        </ol>
+    </li>
+    <div class = 'bigSpace'></div>
+</ol>

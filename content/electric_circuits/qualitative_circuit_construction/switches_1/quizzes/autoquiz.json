@@ -1,4 +1,5 @@
 {
+  "reorder": false,
   "directions": "The following questions show circuits built with no batteries included. Your task is determine how the switch would behave if batteries were added.",
   "questions": [
     {

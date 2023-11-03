@@ -1,0 +1,14 @@
+
+Newton's Third Law states that every force is accompanied by a reaction force:
+If I punch a punching bag with 300 N of force, the reaction-force exerts 300 N on my hand.
+Which of the following is true:
+A. the reaction force occurs about half a second after I punch the bag
+B. the reaction force occurs about 2 microseconds after I punch the bag
+C. the reaction force occurs about 1 nanosecond after I punch the bag
+D. the reaction force occurs simultaneously
+
+
+Some physicists and physics teachers believe that forces should not be called "action-reaction pairs"
+but "interaction pairs." Why might this wording be more accurate?
+A. The phrase "action-reaction pair" implies one force causes the other, when in fact they exist as a simultaneous pair.
+B.

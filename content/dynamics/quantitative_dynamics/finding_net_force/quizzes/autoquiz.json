@@ -1,0 +1,62 @@
+{
+  "questions": [
+    {
+      "text": "Determine the magnitude and direction of the net force for the free-body diagram pictured.",
+      "image": {
+        "name": "quiz_free_body_diagram_one.png",
+        "height": "300px",
+        "width": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "650 N right",
+          "correct": true
+        },
+        {
+          "text": "450 N right"
+        },
+        {
+          "text": "550 N right"
+        },
+        {
+          "text": "450 N left"
+        },
+        {
+          "text": "550 N left"
+        },
+        {
+          "text": "650 N left"
+        }
+      ]
+    },
+    {
+      "text": "Determine the magnitude and direction of the net force for the free-body diagram pictured.",
+      "image": {
+        "name": "quiz_free_body_diagram_two.png",
+        "height": "300px",
+        "width": "auto"
+      },
+      "answerChoices": [
+        {
+          "text": "12 N right",
+          "correct": true
+        },
+        {
+          "text": "13 N right"
+        },
+        {
+          "text": "11 N right"
+        },
+        {
+          "text": "13 N left"
+        },
+        {
+          "text": "11 N left"
+        },
+        {
+          "text": "12 N left"
+        }
+      ]
+    }
+  ]
+}
