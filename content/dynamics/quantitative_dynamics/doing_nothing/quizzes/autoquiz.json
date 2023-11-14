@@ -1,0 +1,96 @@
+{
+  "directions": "A box of mass 6.0 kg is at rest on a table. The table is located on earth. The box is static, meaning that its velocity and acceleration are both zero in all dimensions. The following questions ask about the physics of the box.",
+  "reorder": "false",
+  "questions": [
+    {
+      "text": "What is the magnitude of gravity on the box?",
+      "answerChoices": [
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "6.0 N"
+        },
+        {
+          "text": "58.8 N",
+          "correct": true
+        },
+        {
+          "text": "There is not enough information to determine the answer."
+        }
+      ]
+    },
+    {
+      "text": "What is the direction of normal force on the box?",
+      "answerChoices": [
+        {
+          "text": "upwards",
+          "correct": true
+        },
+        {
+          "text": "downwards"
+        },
+        {
+          "text": "leftwards"
+        },
+        {
+          "text": "rightwards"
+        }
+      ]
+    },
+    {
+      "text": "The magnitudes of gravity and normal force are equal. Why? If more than one answer is factually accurate, chose that answer that is most _specific_. (Note that the _best_ possible answer may not be listed. Pick the best of the answers listed.)",
+      "answerChoices": [
+        {
+          "text": "Because this fact is always true"
+        },
+        {
+          "text": "Because the block is static"
+        },
+        {
+          "text": "Because the block is static in the vertical dimension",
+          "correct": true
+        },
+        {
+          "text": "Because the block is static in the horizontal dimensions"
+        }
+      ]
+    },
+    {
+      "text": "What is the cause of the force of gravity?",
+      "answerChoices": [
+        {
+          "text": "Gravity pulls every object downwards."
+        },
+        {
+          "text": "The mass of the box is attracted to the mass of the earth.",
+          "correct": true
+        },
+        {
+          "text": "The atoms of the earth are pressing into the atoms of the box."
+        },
+        {
+          "text": "The air is pushing downward on the box."
+        }
+      ]
+    },
+    {
+      "text": "What is the cause of the normal force?",
+      "answerChoices": [
+        {
+          "text": "The normal force always holds an object upward."
+        },
+        {
+          "text": "The mass of the box is attracted to the mass of the table."
+        },
+        {
+          "text": "The atoms of the table are pressing into the atoms of the box.",
+          "correct": true
+        },
+        {
+          "text": "The air is pushing upward on the box."
+        }
+      ]
+    }
+  ]
+}

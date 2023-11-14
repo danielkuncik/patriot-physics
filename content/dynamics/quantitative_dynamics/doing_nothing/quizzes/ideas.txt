@@ -1,0 +1,37 @@
+A box of mass 6.0 kg is at rest on a table. The table is located on earth. The box is static, meaning that its velocity and acceleration are both zero in all dimensions. The following questions ask about the physics of the box.
+
+1.
+What is the magnitude of gravity on the box?
+A. 9.8 N
+B. 6.0 N
+C. 59 N
+D. There is not enough information to determine the answer.
+
+
+2.
+What is the direction of normal force on the box?
+A. upwards
+B. downwards
+C. leftwards
+D. rightwards
+
+3.
+The magnitudes of gravity and normal force are equal. Why? If more than one answer is factually accurate, chose that answer that is most _specific_. (Note that the _best_ possible answer may not be listed. Pick the best of the answers listed.)
+A. Because this fact is always true
+B. Because the block is static
+C. Because the block is static in the vertical dimension
+D. Because the block is static in the horizontal dimensions.
+
+4.
+What is the cause of the force of gravity?
+A. Gravity always pulls objects downward.
+B. The mass of the box is attracted to the mass of the earth.
+C. The atoms of the box are pressing into the atoms of the earth.
+D. The air is pushing downward on the box.
+
+5.
+What is the cause of the normal force?
+A. The normal force always holds an object upward.
+B. The mass of the box is attracted to the mass of the table.
+C. The atoms of the box are pressing into the atoms of the table.
+D. The air is pushing upward on the box.
