@@ -94,14 +94,20 @@
 
     let honors_10_30_23 = ["193942","8778d7","a131a7"];
 
+    let honors_11_17_23 = ["169d20"];
+
+    let physics_a_11_17_23 = ["a95408","ddf304","b645cf"];
+
+    let ap_11_17 = ["204ac1"]
+
     let honors_array = [];
-    honors_10_30_23.forEach((quiz_ID) => {
+    ap_11_17.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics Honors 10-30-23", 4, 600));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A 11-17-23", 1, 900));
 
 
 </script>

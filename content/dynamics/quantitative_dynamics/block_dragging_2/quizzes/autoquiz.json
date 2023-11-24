@@ -1,3 +1,203 @@
 {
-
+  "reorder": false,
+  "questions": [
+    {
+      "text": "What Greek letter is represented by the symbol \"μ\"?",
+      "answerChoices": [
+        {
+          "text": "Lower case mu",
+          "correct": true
+        },
+        {
+          "text": "Upper case sigma"
+        },
+        {
+          "text": "Upper case omega"
+        },
+        {
+          "text": "Upper case mu"
+        },
+        {
+          "text": "Lower case sigma"
+        },
+        {
+          "text": "Lower case omega"
+        }
+      ]
+    },
+    {
+      "text": "The next 4 questions deal with the block below. A block with a mass of 12.0 kg is dragged on a flat surface AT A CONSTANT VELOCITY with an applied force of 14.0 N in the direction it is moving. The coefficient of kinetic friction between the block and the ground is unknown. Determine the magnitude of the force of gravity on the block",
+      "answerChoices": [
+        {
+          "text": "118 N",
+          "correct": true
+        },
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "14.0 N"
+        },
+        {
+          "text": "78.6 N"
+        }
+      ]
+    },
+    {
+      "text": "What is the magnitude of net force acting on the block?",
+      "answerChoices": [
+        {
+          "text": "0 N",
+          "correct": true
+        },
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "14.0 N"
+        },
+        {
+          "text": "118 N"
+        },
+        {
+          "text": "It is not possible to determine the net force from the information given."
+        }
+      ]
+    },
+    {
+      "text": "What is the magnitude of the force of friction on the block?",
+      "answerChoices": [
+        {
+          "text": "14.0 N",
+          "correct": true
+        },
+        {
+          "text": "0 N"
+        },
+        {
+          "text": "118 N"
+        },
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "It is not possible to determine the force of friction from the information given."
+        }
+      ]
+    },
+    {
+      "text": "What is the coefficient of kinetic friction between this block and the surface?",
+      "answerChoices": [
+        {
+          "text": "0.120",
+          "correct": true
+        },
+        {
+          "text": "0.200"
+        },
+        {
+          "text": "0.250"
+        },
+        {
+          "text": "0.320"
+        }
+      ]
+    },
+    {
+      "text": "The next four questions deal with a block being dragged on a surface. It mass is 4.50 kg. And someone is dragging it with a force of 16.0 N in the direction it is moving. The coefficient of kinetic friction between the block and the ground is 0.170. The block is NOT moving at a constant velocity. What is the magnitude of the normal force on the block?",
+      "answerChoices": [
+        {
+          "text": "44.1 N",
+          "correct": true
+        },
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "0 N"
+        },
+        {
+          "text": "16.0 N"
+        },
+        {
+          "text": "35.6 N"
+        },
+        {
+          "text": "28.4 N"
+        }
+      ]
+    },
+    {
+      "text": "What is the magnitude of the force of friction on the block?",
+      "answerChoices": [
+        {
+          "text": "7.50 N",
+          "correct": true
+        },
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "0 N"
+        },
+        {
+          "text": "16.0 N"
+        },
+        {
+          "text": "6.50 N"
+        },
+        {
+          "text": "8.00 N"
+        }
+      ]
+    },
+    {
+      "text": "What is the magnitude of the net force acting on the block?",
+      "answerChoices": [
+        {
+          "text": "8.50 N",
+          "correct": true
+        },
+        {
+          "text": "9.8 N"
+        },
+        {
+          "text": "0 N"
+        },
+        {
+          "text": "16.0 N"
+        },
+        {
+          "text": "7.10 N"
+        },
+        {
+          "text": "8.20 N"
+        },
+        {
+          "text": "9.30 N"
+        }
+      ]
+    },
+    {
+      "text": "What is the magnitude of the acceleration of the block?",
+      "answerChoices": [
+        {
+          "text": "1.89 m/s/s",
+          "correct": true
+        },
+        {
+          "text": "9.8 m/s/s"
+        },
+        {
+          "text": "1.45 m/s/s"
+        },
+        {
+          "text": "2.56 m/s/s"
+        },
+        {
+          "text": "3.42 m/s/s"
+        }
+      ]
+    }
+  ]
 }

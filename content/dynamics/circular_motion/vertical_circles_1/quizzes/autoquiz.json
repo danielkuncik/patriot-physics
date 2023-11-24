@@ -1,23 +1,35 @@
 {
   "questions": [
     {
-      "text": "Which of the following is the BEST definition of the centripetal force on an object moving in a circle. (If you feel more than one of the answer choices is a valid definition, select the best definition.",
+      "text": "One classic physics formula is: F_c = m v^2 / r. Which of the following statements below BEST describes what this formula actually means:",
       "answerChoices": [
         {
-          "text": "The sum of all forces pointing towards the center of the circle.",
+          "text": "For an object to move in a circle at a constant speed, the vector sum of all forces pointing TOWARDS THE CENTER of the circle must equal m v^2 /r.",
           "correct": true
         },
         {
-          "text": "A force that always acts towards the center of the circle."
+          "text": "Whenever an object begins moving in a circle, a force of magnitude m v^2 / r and direction TOWARDS THE CENTER of the circle appears."
         },
         {
-          "text": "A force that is always equal to gravity."
+          "text": "When an object is moving in a circle, there must be a single force acting on it TOWARDS THE CENTER of the circle with magnitude m v^2 /r."
         },
         {
-          "text": "A name given to the force that is pointing towards the center of the circle."
+          "text": "For an object to move in a circle at a constant speed, the vector sum of all forces pointing AWAY FROM THE CENTER of the circle must equal m v^2 /r."
         },
         {
-          "text": ""
+          "text": "Whenever an object begins moving in a circle, a force of magnitude m v^2 / r and direction AWAY FROM THE CENTER of the circle appears."
+        },
+        {
+          "text": "When an object is moving in a circle, there must be a single force acting on it AWAY FROM THE CENTER of the circle with magnitude m v^2 /r."
+        },
+        {
+          "text": "For an object to move in a circle at a constant speed, the vector sum of all forces pointing TANGENTIALLY must equal m v^2 /r."
+        },
+        {
+          "text": "Whenever an object begins moving in a circle, a force of magnitude m v^2 / r and direction TANGENTIALLY appears."
+        },
+        {
+          "text": "When an object is moving in a circle, there must be a single force acting on it TANGENTIALLY with magnitude m v^2 /r."
         }
       ]
     },
