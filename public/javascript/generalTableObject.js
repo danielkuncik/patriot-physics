@@ -413,8 +413,10 @@ class Table {
             maxFontSize = undefined;
         }
 
-        let rowProportions = makeArraySumToOne(this.rowProportionArray);
+       let rowProportions = makeArraySumToOne(this.rowProportionArray);
         let columnProportions = makeArraySumToOne(this.columnProportionArray);
+
+
 
         let table = $("<table></table>");
         let i, j, thisRow, thisCell, rowspan, colspan, cellWidth, cellHeight, rowHeight, fontSize, cellProperties;
@@ -502,5 +504,7 @@ class Table {
             $(table).append(thisRow);
         }
         return table;
+
     }
+
 }

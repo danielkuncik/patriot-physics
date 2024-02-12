@@ -309,7 +309,7 @@ class ForceTableQuantitative1D extends Table {
 
 class forceTableQuantitative2D extends Table {
     constructor(numHorizontalForces, numVerticalForces) {
-        let numColumns = 5;
+        let numColumns = 7;
         let maxForces;
         if (numHorizontalForces >= numVerticalForces) {
             maxForces = numHorizontalForces;
@@ -325,46 +325,56 @@ class forceTableQuantitative2D extends Table {
         super.mergeRight(0,0);
         super.mergeRight(0,0);
         super.mergeRight(0,0);
+        super.mergeRight(0,0);
 
 
         super.mergeRight(1,0);
-        super.mergeRight(1,3);
+        super.mergeRight(1,0);
+        super.mergeRight(1,4);
+        super.mergeRight(1,4);
 
         super.writeTextInCell(1,0,'Horizontal');
-        super.writeTextInCell(1,3,'Vertical');
+        super.writeTextInCell(1,4,'Vertical');
         super.writeTextInCell(0,0,'free-body diagram');
 
         super.writeTextInCell(2,0,'force');
-        super.writeTextInCell(2,1,'magnitude');
+        super.writeTextInCell(2,1,'sign');
+        super.writeTextInCell(2,2,'magnitude');
 
-        super.writeTextInCell(2,3,'force');
-        super.writeTextInCell(2,4,'magnitude');
 
-        super.setColumnProportions([5,5,1,5,5]);
+        super.writeTextInCell(2,4,'force');
+        super.writeTextInCell(2,5,'sign');
+        super.writeTextInCell(2,6,'magnitude');
 
-        super.mergeBelow(1,2);
+
+
+        super.setColumnProportions([5,3,5,1,5,3,5]);
+
+        super.mergeBelow(1,3);
 
         let rowProportionArray = [4,1,1];
         let k;
         for (k = 0; k < maxForces; k++) {
             rowProportionArray.push(2);
-            super.mergeBelow(1,2);
+            super.mergeBelow(1,3);
         }
 
-        super.shadeCell(1,2);
+        super.shadeCell(1,3);
         super.setRowProportions(rowProportionArray);
 
         // shading unecessary cells
         if (numHorizontalForces > numVerticalForces) {
             let q;
             for (q = 3 + numVerticalForces; q < this.numRows; q++) {
-                super.mergeRight(q, 3);
-                super.shadeCell(q,3);
+                super.mergeRight(q, 4);
+                super.mergeRight(q, 4);
+                super.shadeCell(q,4);
             }
             /// a problem in the merging function prevents me from merging all of them!
         } else if (numVerticalForces > numHorizontalForces) {
             let q;
             for (q = 3 + numHorizontalForces; q < this.numRows; q++) {
+                super.mergeRight(q, 0);
                 super.mergeRight(q, 0);
                 super.shadeCell(q, 0);
             }

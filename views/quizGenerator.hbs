@@ -102,14 +102,18 @@
 
     let physics_1_1_10 = ["eda5ba","e9cb0a"];
 
+    const honors_2_6_24 = ["79415b","4a6e69","1d4dd1","8a4fc7","5762f5","c7fc1a","28e677","1d2d49"];
+
+    const physics_a_2_8_24 = ["1a4b0b","d14075","193942","8778d7","a131a7","28a149","169d20"];
+
     let honors_array = [];
-    physics_1_1_10.forEach((quiz_ID) => {
+    physics_a_2_8_24.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A 11-17-23", 2, 100));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A 2-8-23", 3, 1000));
 
 
 </script>
