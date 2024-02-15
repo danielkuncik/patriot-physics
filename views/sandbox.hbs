@@ -1,273 +1,80 @@
-<h2>Physics A: Quantitative Dynamics Quiz: February 2024 (Open Response Portion)</h2>
-
-<h3>Name ___________________ </h3>
-
-<div class="pageBreak"></div>
-
 <p class="directions">
-    Match each prompt to the correct free-body diagram.
+    Every time you use a formula, write the formula
+    before putting any values in.
+    Every time you put values into a formula,
+    write the values before completing any operations.
+    Write vector components separately from a free-body diagrams.
 </p>
 
-<div class = 'container'>
-    <div class = 'row'>
-        <div class = 'col-md-6 m-1'>
-            1. A person resting in bed
-        </div>
-        <div class = 'col-md-6 m-1'>
-            2. A box being pushed across a floor with friction
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 m-1'>
-            3. An object that is falling down
-        </div>
-        <div class = 'col-md-6 m-1'>
-            4. And box being <em>pulled</em> by
-            a rope across a frictionless surface
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-12 m-4 text-center'>
-            <h5>
-                Choices for questions 1&#8212;4
-            </h5>
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 text-center' id = 'fbd_A'></div>
-        <div class = 'col-md-6 text-center' id = 'fbd_B'></div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 text-center' id = 'fbd_C'></div>
-        <div class = 'col-md-6 text-center' id = 'fbd_D'></div>
-    </div>
-    <div class = 'row p-3 bg-secondary'></div>
-    <div class = 'row'>
-        <div class = 'col-md-6 m-1'>
-            5. Somebody hanging from a very powerful spring
-        </div>
-        <div class = 'col-md-6 m-1'>
-            6. A plane flying
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 m-1'>
-            7. A buoy floating in the water
-        </div>
-        <div class = 'col-md-6 m-1'>
-            8. A boxer standing on a mat and taking a punch
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-12 m-4 text-center'>
-            <h5>
-                Choices for 5&#8212;8
-            </h5>
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 text-center' id = 'fbd_E'></div>
-        <div class = 'col-md-6 text-center' id = 'fbd_F'></div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 text-center' id = 'fbd_G'></div>
-        <div class = 'col-md-6 text-center' id = 'fbd_H'></div>
-    </div>
-
-</div>
+<h4>
+    Please answer in the space below the questions!
+</h4>
 
 
-<script>
-    $("#fbd_A").append(fastFBD([['down','gravity']]).drawCanvas(300));
-    $("#fbd_B").append(fastFBD([['down','gravity'],['up','normal']]).drawCanvas(300));
-    $("#fbd_C").append(fastFBD([['down','gravity'],['up','normal'],['right','applied'],['left','friction']]).drawCanvas(300));
-    $("#fbd_D").append(fastFBD([['down','gravity'],['up','normal'],['right','tension']]).drawCanvas(300));
-
-    $("#fbd_E").append(fastFBD([['down','gravity'],['up','elastic force']]).drawCanvas(300));
-    $("#fbd_F").append(fastFBD([['down','gravity'],['up','buoyancy']]).drawCanvas(300));
-    $("#fbd_G").append(fastFBD([['down','gravity'],['up','normal'],['left','contact']]).drawCanvas(300));
-    $("#fbd_H").append(fastFBD([['down','gravity'],['right','thrust'],['left','drag'],['up','lift']]).drawCanvas(300));
-
-</script>
-
-
-<div class="pageBreak"></div>
-
-<p class = 'directions'>
-    For each of the following situations,
-    draw a free-body diagram.
-    Within your free-body diagram,
-    identify each force by:
-    a) what type of force it is
-    b) its direction
-    c) its agent
-    d) its object.
-</p>
-
-<div class = 'container'>
-    <div class = 'row'>
-        <div class = 'col-12'>
-            <h5>
-                One:
-            </h5>
-            Paul the Pusher pushes a box across the floor to the left.
-            The floor is <emph>not</emph> frictionless. Indicate which type of frictional force exists: static or kinetic.
-            Draw a free-body diagram of the box with four forces and fill out the accompanying table.
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 border border-dark'>
-            <strong>Free-Body Diagram</strong>
-            <br><br><br><br><br><br><br><br><br>
-        </div>
-        <div class = 'col-md-6 border border-dark'>
-            <div class = 'row'> <!-- nested table -->
-                <div class = 'col-3 border border-dark'>
-                    Type Of Force
-                </div>
-                <div class = 'col-3 border border-dark'>
-                    Direction
-                </div>
-                <div class = 'col-3 border border-dark'>
-                    Agent
-                </div>
-                <div class = 'col-3 border border-dark'>
-                    Object
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class = 'row bg-secondary p-3 mt-3 mb-3'></div>
-    <div class = 'row'>
-        <div class = 'col-12'>
-            <h5>
-                Two:
-            </h5>
-            Dasha the Daring is hanging from a rope that is pulling it upward.
-            While the rope is pulling Dasha upward, her friends
-            are pulling her downward.
-            All this is taking place on earth.
-            Draw a free-body diagram of Dasha three forces and fill out the accompanying table.
-        </div>
-    </div>
-    <div class = 'row'>
-        <div class = 'col-md-6 border border-dark'>
-            <strong>Free-Body Diagram</strong>
-            <br><br><br><br><br><br><br><br>
-        </div>
-        <div class = 'col-md-6 border border-dark'>
-            <div class = 'row'> <!-- nested table -->
-                <div class = 'col-3 border border-dark'>
-                    Type Of Force
-                </div>
-                <div class = 'col-3 border border-dark'>
-                    Direction
-                </div>
-                <div class = 'col-3 border border-dark'>
-                    Agent
-                </div>
-                <div class = 'col-3 border border-dark'>
-                    Object
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-            <div class = 'row'>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-                <div class = 'col-3 border border-dark p-4'>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<ol>
+    <li>
+        <br>
+        <img src = '/images/dragging_at_an_angle_1_quiz_a.png' height = '200px' width = 'auto' />
+        <br>
+        A block of mass 2 kg is moving on a surface
+        with a coefficient of kinetic friction of 0.18.
+        Somebody pulls the block with a force of 6 Newtons
+        at an angle of 20 degrees to the horizontal.
+        <ol type = 'a'>
+            <li>
+                Draw a qualitative free-body diagram of the block.
+                Label each force. Do not break vectors into components.
+            </li>
+            <li>
+                Break the applied force into components.
+                Please write these components separately from your
+                free-body diagram.
+            </li>
+            <li>
+                Determine the magnitude of all forces
+                acting on the block and create a quantitative free-body diagram.
+            </li>
+            <li>
+                Explain briefly, in 1 -2 sentences,
+                why the magnitude of the normal force is not equal to the
+                magnitude of gravity.
+            </li>
+            <li>
+                Determine the magnitude and direction
+                of the acceleration on the block.
+            </li>
+        </ol>
+    </li>
+    <div class="pageBreak"></div>
+    <li>
+        <br>
+        <img src = '/images/dragging_at_an_angle_1_quiz_b.png' height = '200px' width = 'auto' />
+        <br>
+        A block of mass 3 kg is moving on a surface
+        with an unknown coefficient of kinetic friction.
+        Somebody pulls the block with a force of 4 Newtons
+        at an angle of 75 degrees to the horizontal.
+        The block moves at a constant velocity.
+        <ol type = 'a'>
+            <li>
+                Draw a qualitative free-body diagram of the block.
+                Label each force. Do not break vectors into components.
+            </li>
+            <li>
+                Break the applied force into components.
+                Please write these components separately from your
+                free-body diagram.
+            </li>
+            <li>
+                Determine the magnitude of all forces
+                acting on the block and create a quantitative free-body diagram.
+                In 1-2 sentences, describe how you determined
+                the magnitude of the frictional force.
+            </li>
+            <li>
+                Determine coefficient of kinetic friction
+                between the block and the surface.
+            </li>
+        </ol>
+    </li>
+</ol>

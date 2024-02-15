@@ -339,16 +339,16 @@ class forceTableQuantitative2D extends Table {
 
         super.writeTextInCell(2,0,'force');
         super.writeTextInCell(2,1,'sign');
-        super.writeTextInCell(2,2,'magnitude');
+        super.writeTextInCell(2,2,'magnitude (N)');
 
 
         super.writeTextInCell(2,4,'force');
         super.writeTextInCell(2,5,'sign');
-        super.writeTextInCell(2,6,'magnitude');
+        super.writeTextInCell(2,6,'magnitude (N)');
 
 
 
-        super.setColumnProportions([5,3,5,1,5,3,5]);
+        super.setColumnProportions([4,3,6,1,4,3,6]);
 
         super.mergeBelow(1,3);
 
