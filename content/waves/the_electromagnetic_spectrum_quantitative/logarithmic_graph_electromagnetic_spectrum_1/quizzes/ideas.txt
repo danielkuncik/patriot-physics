@@ -1,0 +1,7 @@
+Some multiple choice ideas
+
+- picture of the full graph, and the question is 'what is the measurement below this graph?'
+it is "log base 10 of wavelength in meters"
+
+- picture of the visible light area only, and the question, 'what is the measurement below this graph?'
+the answer is "wavelength in nanometers"

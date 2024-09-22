@@ -7,25 +7,26 @@
 
 
 <script>
-  let metricTable = new Table(16,3);
+  let metricTable = new Table(17,3);
 
   metricTable.addTopHeaders(['Prefix','Abbreviation','Means']);
 
-  metricTable.writeTextInRow(1,['peta','P','\\( 10^{15} \\)']);
-  metricTable.writeTextInRow(2,['tera','T','\\( 10^{12} \\)']);
-  metricTable.writeTextInRow(3,['giga','G','\\( 10^{9} \\)']);
-  metricTable.writeTextInRow(4,['mega','M','\\( 10^{6} \\)']);
-  metricTable.writeTextInRow(5,['kilo','k','\\( 10^{3} \\)']);
-  metricTable.writeTextInRow(6,['hecto','h','\\( 10^{2} \\)']);
-  metricTable.writeTextInRow(7,['deca','da','\\( 10^{1} \\)']);
+  metricTable.writeTextInRow(1,['exa','E','\\( 10^{18} \\)']);
+  metricTable.writeTextInRow(2,['peta','P','\\( 10^{15} \\)']);
+  metricTable.writeTextInRow(3,['tera','T','\\( 10^{12} \\)']);
+  metricTable.writeTextInRow(4,['giga','G','\\( 10^{9} \\)']);
+  metricTable.writeTextInRow(5,['mega','M','\\( 10^{6} \\)']);
+  metricTable.writeTextInRow(6,['kilo','k','\\( 10^{3} \\)']);
+  metricTable.writeTextInRow(7,['hecto','h','\\( 10^{2} \\)']);
+  metricTable.writeTextInRow(8,['deca','da','\\( 10^{1} \\)']);
 
-  metricTable.writeTextInRow(9,['deci','d','\\( 10^{-1} \\)']);
-  metricTable.writeTextInRow(10,['centi','c','\\( 10^{-2} \\)']);
-  metricTable.writeTextInRow(11,['milli','m','\\( 10^{-3} \\)']);
-  metricTable.writeTextInRow(12,['micro','\\( \\mu \\)', '\\( 10^{-6} \\)']);
-  metricTable.writeTextInRow(13,['nano','n','\\( 10^{-9} \\)']);
-  metricTable.writeTextInRow(14,['pico','p','\\( 10^{-12} \\)']);
-  metricTable.writeTextInRow(15,['femto','f','\\( 10^{-15} \\)']);
+  metricTable.writeTextInRow(10,['deci','d','\\( 10^{-1} \\)']);
+  metricTable.writeTextInRow(11,['centi','c','\\( 10^{-2} \\)']);
+  metricTable.writeTextInRow(12,['milli','m','\\( 10^{-3} \\)']);
+  metricTable.writeTextInRow(13,['micro','\\( \\mu \\)', '\\( 10^{-6} \\)']);
+  metricTable.writeTextInRow(14,['nano','n','\\( 10^{-9} \\)']);
+  metricTable.writeTextInRow(15,['pico','p','\\( 10^{-12} \\)']);
+  metricTable.writeTextInRow(16,['femto','f','\\( 10^{-15} \\)']);
 
   $("#metricTable").append(metricTable.draw(800));
 
@@ -37,6 +38,11 @@
             <div class = 'col-2 p-2 border border-dark'><strong>Prefix</strong></div>
             <div class = 'col-2 p-2 border border-dark'><strong>Abbreviation</strong></div>
             <div class = 'col-4 p-2 border border-dark'><strong>Multiplier</strong></div>
+        </div>
+        <div class = 'row'>
+            <div class = 'col-2 p-2 border border-dark'>exa</div>
+            <div class = 'col-2 p-2 border border-dark'>E</div>
+            <div class = 'col-4 p-2 border border-dark'>10<sup>18</sup></div>
         </div>
         <div class = 'row'>
             <div class = 'col-2 p-2 border border-dark'>peta</div>
@@ -126,15 +132,17 @@
     <a href = 'https://quizlet.com/_9goiuu?x=1jqt&i=bnvto'>Quizlet Page on Metric Prefixes</a>
 </h4>
 
+
 <h4 class = 'm-4'>
     <a href = 'https://create.kahoot.it/share/metric-prefixes/88efc6ea-689d-4849-a62b-ae8886024a34'>Kahoot on Metric Prefixes</a>
 </h4>
 
 
-<h5>
-    Silly Mnemonic Device for some Metric Prefixes
-</h5>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YkMzRjR35DA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="no-print">
+    <h5>
+        Silly Mnemonic Device for some Metric Prefixes
+    </h5>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YkMzRjR35DA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 

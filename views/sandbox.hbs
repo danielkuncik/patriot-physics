@@ -1,80 +1,85 @@
-<p class="directions">
-    Every time you use a formula, write the formula
-    before putting any values in.
-    Every time you put values into a formula,
-    write the values before completing any operations.
-    Write vector components separately from a free-body diagrams.
-</p>
-
-<h4>
-    Please answer in the space below the questions!
-</h4>
-
+<div id = 'positionGraph'></div>
 
 <ol>
     <li>
-        <br>
-        <img src = '/images/dragging_at_an_angle_1_quiz_a.png' height = '200px' width = 'auto' />
-        <br>
-        A block of mass 2 kg is moving on a surface
-        with a coefficient of kinetic friction of 0.18.
-        Somebody pulls the block with a force of 6 Newtons
-        at an angle of 20 degrees to the horizontal.
-        <ol type = 'a'>
-            <li>
-                Draw a qualitative free-body diagram of the block.
-                Label each force. Do not break vectors into components.
-            </li>
-            <li>
-                Break the applied force into components.
-                Please write these components separately from your
-                free-body diagram.
-            </li>
-            <li>
-                Determine the magnitude of all forces
-                acting on the block and create a quantitative free-body diagram.
-            </li>
-            <li>
-                Explain briefly, in 1 -2 sentences,
-                why the magnitude of the normal force is not equal to the
-                magnitude of gravity.
-            </li>
-            <li>
-                Determine the magnitude and direction
-                of the acceleration on the block.
-            </li>
-        </ol>
+        Write a story that includes something moving with
+        this particular position-time graph.
     </li>
-    <div class="pageBreak"></div>
     <li>
-        <br>
-        <img src = '/images/dragging_at_an_angle_1_quiz_b.png' height = '200px' width = 'auto' />
-        <br>
-        A block of mass 3 kg is moving on a surface
-        with an unknown coefficient of kinetic friction.
-        Somebody pulls the block with a force of 4 Newtons
-        at an angle of 75 degrees to the horizontal.
-        The block moves at a constant velocity.
-        <ol type = 'a'>
-            <li>
-                Draw a qualitative free-body diagram of the block.
-                Label each force. Do not break vectors into components.
-            </li>
-            <li>
-                Break the applied force into components.
-                Please write these components separately from your
-                free-body diagram.
-            </li>
-            <li>
-                Determine the magnitude of all forces
-                acting on the block and create a quantitative free-body diagram.
-                In 1-2 sentences, describe how you determined
-                the magnitude of the frictional force.
-            </li>
-            <li>
-                Determine coefficient of kinetic friction
-                between the block and the surface.
-            </li>
-        </ol>
+        Draw a corresponding velocity-time graph.
+    </li>
+    <li>
+        Draw a corresponding acceleration-time graph.
     </li>
 </ol>
+
+
+<script>
+    let kinematicFunction = new KinematicStepwiseFunctions(0,0,1);
+    kinematicFunction.addAcceleratedStep(1,5);
+    kinematicFunction.addConstantVelocityStep(3);
+    kinematicFunction.addAcceleratedStep(-1,4);
+    kinematicFunction.addConstantVelocityStep(5);
+
+    let graphs = kinematicFunction.makeQualitativeGraphs(undefined, true);
+    $("#positionGraph").append(graphs.positionGraph.drawCanvas(500,500));
+</script>
+<div class="pageBreak"></div>
+<div id = 'velocityGraph'></div>
+
+<ol>
+    <li>
+        Write a story about something that
+        could have this particular velocity-time graph.
+    </li>
+    <li>
+        Draw a corresponding position-time graph,
+        assuming that initial position = 0.
+    </li>
+    <li>
+        Draw a corresponding acceleration-time graph.
+    </li>
+</ol>
+
+<script>
+    let kinematicFunctions = new KinematicStepwiseFunctions(0,4,0);
+    kinematicFunctions.addConstantVelocityStep(6);
+    kinematicFunctions.addAcceleratedStep(-1,4);
+    kinematicFunctions.addAcceleratedStep(1,6);
+    kinematicFunctions.addAcceleratedStep(-1,6);
+
+    let graphs2 = kinematicFunctions.makeQualitativeGraphs(undefined, true);
+    $("#velocityGraph").append(graphs2.velocityGraph.drawCanvas(500,500));
+</script>
+<div class="pageBreak"></div>
+<img src =  '/images/acceleration_quiz.jpeg' height = '300px' width = 'auto'/>
+<ol>
+    <li>
+        Write a story about something that
+        begins at rest and moves with this acceleration-time graph.
+    </li>
+    <li>
+        Assuming that initial velocity = 0,
+        draw a corresponding velocity-time graph.
+    </li>
+    <li>
+        Assuming that initial position = 0,
+        draw a corresponding position-time graph.
+    </li>
+</ol>
+
+<script>
+    // there are lots of problems here!
+    let kinematicFunctions = new KinematicStepwiseFunctions(0,0,3);
+    kinematicFunctions.addAcceleratedStep(3,2);
+    kinematicFunctions.addConstantVelocityStep(3);
+    kinematicFunctions.addAcceleratedStep(-3,3);
+    kinematicFunctions.addAcceleratedStep(3,3);
+    kinematicFunctions.addConstantVelocityStep(2);
+    kinematicFunctions.addAcceleratedStep(3,3);
+
+
+    let graphs = kinematicFunctions.makeQualitativeGraphs(undefined, true, 2);
+    console.log(graphs3);
+    $("#accelerationGraph").append(graphs3.accelerationTime.drawCanvas(800,400));
+</script>

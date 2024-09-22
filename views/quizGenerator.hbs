@@ -106,14 +106,25 @@
 
     const physics_a_2_8_24 = ["1a4b0b","d14075","193942","8778d7","a131a7","28a149","169d20"];
 
+    const physics_a_3_5_24 = ["386543","1d1e60","38e07e","b656a7","93e3ce"];
+
+    const physics_h_3_21 = ["a95408","ddf304","b645cf","cf1f01","44fb5d","6267c7","c74889","4c74b0"];
+
+    const physics_a_4_4 = ["7369b3","df4b44","a73a78","bb51aa","80cac9","2c3d67","38952d","e83146","aa3a0e","82f477","8b26b3"];
+
+    const honors_5_7_24 = ["7369b3","df4b44","a73a78","bb51aa","80cac9","2c3d67","38952d","e83146","aa3a0e","82f477","8b26b3","c34542"];
+
+    const physics_a_5_13 = ["f6715d"];
+
+    const ap_9_11_24 = ["4e97c3"];
     let honors_array = [];
-    physics_a_2_8_24.forEach((quiz_ID) => {
+    ap_9_11_24.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A 2-8-23", 3, 1000));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "AP Physics 9-11-24", 4, 200));
 
 
 </script>

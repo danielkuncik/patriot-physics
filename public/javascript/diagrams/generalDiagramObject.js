@@ -852,6 +852,12 @@ class DiagramF {
         return newSegment
     }
 
+    addSegmentQuick(x1,y1,x2,y2) {
+        let pointA = this.addNewPoint(x1,y1);
+        let pointB = this.addNewPoint(x2,y2);
+        return this.addSegment(pointA, pointB);
+    }
+
     // adds a segment object that already exists, independent of this particular diagram object
     addExistingSegment(segmentObject) {
         let pointA = this.addExistingPoint(segmentObject.point1);

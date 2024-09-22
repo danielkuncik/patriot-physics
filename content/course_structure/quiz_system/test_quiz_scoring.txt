@@ -1,0 +1,20 @@
+
+
+Physics A
+All level 1 questions => 73
+All Level 1 and 2 questions => 88
+All Level 1, 2, and 3 questions => 100
+
+
+Physics Honors
+All level 1 questions => 65
+All level 1 and 2 questions => 75
+All level 1, 2, and 3 questions => 88
+All level 1, 2, 3, 4, and 5 questions => 100
+
+AP Physics
+All level 1 and 2 questions => 60
+All level 1, 2, and 3 questions => 75
+All level 1, 2, 3, and 4 questions => 85
+All level 1, 2, 3, 4, and 5 questions => 100
+
