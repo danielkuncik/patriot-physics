@@ -6,7 +6,8 @@
       "image": "simple_circuit.png",
       "answerChoices": [
         {
-          "text": "Electrochemical Potential Energy"
+          "text": "Electrochemical Potential Energy",
+          "correct": true
         },
         {
           "text": "Thermal Energy"

@@ -1,7 +1,23 @@
 {
   "questions": [
     {
-      "text": "A person is standing on the surface of earth. What is"
+      "text": "A person is standing on the surface of earth. A gravitational force is pulling towards the center of the earth. What is the agent of that force? Chose the BEST response",
+      "answersChoices": [
+        {
+          "text": "The Earth",
+          "correct": true
+        },
+        {
+          "text": "The ground below that person's feet"
+        },
+        {
+          "text": "Gravity itself is the agent."
+        },
+        {
+          "text": "The earth's gravity"
+        }
+      ]
+
     }
   ]
 }

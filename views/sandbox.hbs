@@ -1,85 +1,60 @@
-<div id = 'positionGraph'></div>
+
+<p class = 'directions'>
+    For each situation involved,
+    draw an energy transfer diagram with at least the number of steps indicated.
+    You may include more steps if you like,
+    but if you have an incorrect step, you will be penalized.
+</p>
 
 <ol>
     <li>
-        Write a story that includes something moving with
-        this particular position-time graph.
+        Somebody eats an apple and then goes running.
+        Begin with the apple and end with the person running.
+        (2 steps)
     </li>
     <li>
-        Draw a corresponding velocity-time graph.
+        A piece of wood catches on fire.
+        Begin with the wood and end with <emph>two</emph>
+        forms of energy represented by the fire.
+        (2 steps)
     </li>
     <li>
-        Draw a corresponding acceleration-time graph.
+        <p>
+            A pitching machine operated by an electric motor throws a ball directly
+            upward into the air.
+            Begin with electric current and end with the ball high up in the air.
+        </p>
+        <p>
+            Make sure you accurately describe how a pitching machine throws the ball.
+            The machine works because a ball is pushed by a very fast spinning wheel.
+            See the photo below, though unlike in the photo, in this problem
+            the machine is pointed directly upward.
+        </p>
+        <img src = 'https://upload.wikimedia.org/wikipedia/commons/2/24/Pitching_machine.jpg' height = '300px' width = 'auto'/>
+        <p class = 'imageCredit'>
+            https://upload.wikimedia.org/wikipedia/commons/2/24/Pitching_machine.jpg
+        </p>
+        (4 steps)
     </li>
 </ol>
 
-
-<script>
-    let kinematicFunction = new KinematicStepwiseFunctions(0,0,1);
-    kinematicFunction.addAcceleratedStep(1,5);
-    kinematicFunction.addConstantVelocityStep(3);
-    kinematicFunction.addAcceleratedStep(-1,4);
-    kinematicFunction.addConstantVelocityStep(5);
-
-    let graphs = kinematicFunction.makeQualitativeGraphs(undefined, true);
-    $("#positionGraph").append(graphs.positionGraph.drawCanvas(500,500));
-</script>
 <div class="pageBreak"></div>
-<div id = 'velocityGraph'></div>
+
+<p class = 'directions'>
+    For each situation, draw an energy transfer diagram.
+    Your energy transfer diagram should include a type of energy,
+    and should indicate what object or situation 'holds' that energy.
+    Your energy transfer diagram should begin with <strong>sunlight</strong>
+    and end at the point indicated.
+    Fore full credit, you must indicate between types of kinetic energy.
+</p>
 
 <ol>
     <li>
-        Write a story about something that
-        could have this particular velocity-time graph.
-    </li>
-    <li>
-        Draw a corresponding position-time graph,
-        assuming that initial position = 0.
-    </li>
-    <li>
-        Draw a corresponding acceleration-time graph.
+        Somebody eats a bowl of rice,
+        then fires a bow and arrow directly upwards into the air.
+        Begin with sunlight and end with the arrow
+        at the top of its arc.
+        (minimum 5 steps)
     </li>
 </ol>
-
-<script>
-    let kinematicFunctions = new KinematicStepwiseFunctions(0,4,0);
-    kinematicFunctions.addConstantVelocityStep(6);
-    kinematicFunctions.addAcceleratedStep(-1,4);
-    kinematicFunctions.addAcceleratedStep(1,6);
-    kinematicFunctions.addAcceleratedStep(-1,6);
-
-    let graphs2 = kinematicFunctions.makeQualitativeGraphs(undefined, true);
-    $("#velocityGraph").append(graphs2.velocityGraph.drawCanvas(500,500));
-</script>
-<div class="pageBreak"></div>
-<img src =  '/images/acceleration_quiz.jpeg' height = '300px' width = 'auto'/>
-<ol>
-    <li>
-        Write a story about something that
-        begins at rest and moves with this acceleration-time graph.
-    </li>
-    <li>
-        Assuming that initial velocity = 0,
-        draw a corresponding velocity-time graph.
-    </li>
-    <li>
-        Assuming that initial position = 0,
-        draw a corresponding position-time graph.
-    </li>
-</ol>
-
-<script>
-    // there are lots of problems here!
-    let kinematicFunctions = new KinematicStepwiseFunctions(0,0,3);
-    kinematicFunctions.addAcceleratedStep(3,2);
-    kinematicFunctions.addConstantVelocityStep(3);
-    kinematicFunctions.addAcceleratedStep(-3,3);
-    kinematicFunctions.addAcceleratedStep(3,3);
-    kinematicFunctions.addConstantVelocityStep(2);
-    kinematicFunctions.addAcceleratedStep(3,3);
-
-
-    let graphs = kinematicFunctions.makeQualitativeGraphs(undefined, true, 2);
-    console.log(graphs3);
-    $("#accelerationGraph").append(graphs3.accelerationTime.drawCanvas(800,400));
-</script>
