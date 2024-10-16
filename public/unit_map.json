@@ -4666,6 +4666,18 @@
             "uuid": "f70801f8-b5f5-4579-b647-22a904967948",
             "id": "f70801"
           },
+          "riding_the_elevator":
+          {
+            "title": "Riding the Elevator",
+            "level": 2,
+            "horizontal": 8,
+            "letter": "Z",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "c013b84c-d493-4605-9f41-57553d6fc9ba",
+            "id": "c013b8"
+          },
           "elevators_1":
           {
             "title": "Elevators 1",
