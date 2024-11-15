@@ -4678,6 +4678,19 @@
             "uuid": "c013b84c-d493-4605-9f41-57553d6fc9ba",
             "id": "c013b8"
           },
+          "elevator_vectors":
+          {
+            "title": "Elevator Vectors",
+            "subtitle": "Understanding the Vectors of Elevator Motion",
+            "level":  3,
+            "horizontal": "8",
+            "letter": "Q",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "c17fb55b-ad1f-4cdb-83fc-f86aade3effa",
+            "id": "c17fb5"
+          },
           "elevators_1":
           {
             "title": "Elevators 1",
@@ -4776,7 +4789,7 @@
             "level": 5,
             "horizontal": 6,
             "letter": "N",
-            "prerequisites": ["elevators_2"],
+            "prerequisites": ["friction_algebra"],
             "objective": "Draw kinematic graphs representing a person moving in a hypothetical elevator, draw free-body diagrams representing the forces on that person at a particular time, defend the free-body diagrams, and describe what the person will feel using the free-body diagram.",
             "uuid": "b4b9c673-ff4d-4148-9180-b956822ff67f",
             "id": "b4b9c6"

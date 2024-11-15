@@ -1,0 +1,49 @@
+
+1. Student A is strong enough to push a book across a table.
+Then, student B comes along and presses downward on the book.
+With student B pressing downward, student A is NOT strong enough to push the book.
+Why not?
+
+A. Student B pressing downwards increased the normal force between the book and the table, increasing the frictional force on the book.
+B. Student B pressing downwards increased the inertia of the book.
+C. Student B pressing downwards increased the coefficients of friction on the book, making it harder to push.
+D.
+
+2. A student sees the following problem...
+...
+
+The student completes the problem and finds the frictional force is xxx.
+They are confused to see the frictional force is _greater_ than the applied force.
+What is happening?
+A. The student solved the problem incorrectly.
+B. The teacher who wrote the problems used numbers that are impossible.
+C. The block is slowing down rather than speeding up.
+D. The block is moving at a constant velocity.
+
+
+3. Block problems typically involve some number of these five forces: gravity, normal force, applied force, kinetic friction, static friction.
+A 'constraint force' is a force which adjusts its value to limit the motion of an object.
+Which two of the forces listed are constraint forces?
+(note: applied force _could_ be viewed as a constraint force, based on the goals of the person who is applying the force.)
+A. normal force and static friction
+B. normal force and kinetic friction
+C. normal force and gravity
+D. gravity and static friction
+E. gravity and kinetic friction
+F. static and kinetic friction
+
+
+4. In most problems about pushing blocks, the applied force and the KINETIC friction force act in opposite directions.
+However, they could act in the same direction. In which of the situations below do they act in the same direction?
+A. A heavy box is sliding across ice and a person is trying to stop it.
+
+5. In most problems about pushing blocks, the applied force and the STATIC friction force act in opposite directions.
+However, they could act in the same direction. In which of the situations below do they act in the same direction?
+A. Someone is trying to prevent a heavy box from sliding down a ramp.
+
+6. A person is climbing up a rock using hiking boots. Which frictional force acts on the person's boots?
+A. kinetic friction, because the person is moving.
+B. static friction, because, even though the person is moving, they are not sliding.
+
+
+

@@ -1,0 +1,81 @@
+The following rules determine the elevator:
+
+Velocity:
+The vector will point the direction that the elevator is traveling.
+
+Acceleration:
+The elevator is speeding up => points in the SAME direction as velocity
+The elevator is slowing down => points in the OPPOSITE direction as velocity.
+The elevator is moving at a constant velocity => acceleration is zero
+
+Net force on the person:
+The vector will always be in the same direction as acceleration.
+(By Newton’s Second Law!)
+
+
+Free-Body Diagram:
+The Free-Body Diagram contains two vectors: gravity downwards and normal force upwards.
+
+Force of Gravity on the person:
+This will be downward and have the same magnitude, regardless of situation.
+
+Normal Force on the person:
+The direction will always be upwards. The magnitude will be such that Normal Force + Gravity = Net force.
+
+
+Feeling:
+The feeling of the person will be:
+If normal force is less than gravity => weightlessness
+If normal force is greater than gravity => heaviness
+If normal force equals gravity => typical
+
+Equivalently:
+Net force is downwards => weightlessness
+Net force is upwards => heaviness
+Net force is zero (constant velocity) => typical
+
+
+Note that at points A and D are intuitive: the feelings of the person match what is actually happening, whereas points C and E are counterintuitive; the feelings of the person are the opposite of what is happening.
+
+
+<div id = 'diagramA'></div>
+<div class="bigSpace"></div>
+<div id = 'diagramA'></div>
+<div class="bigSpace"></div>
+<div id = 'diagramA'></div>
+<div class="bigSpace"></div>
+<div id = 'diagramA'></div>
+<div class="bigSpace"></div>
+<div id = 'diagramA'></div>
+<div class="bigSpace"></div>
+<div id = 'diagramA'></div>
+<div class="bigSpace"></div>
+
+
+<script>
+    diagramA = new DiagramF();
+    diagramB = new DiagramF();
+    diagramC = new DiagramF();
+    diagramD = new DiagramF();
+    diagramE = new DiagramF();
+    diagramF = new DiagramF();
+
+    //function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfReference, textAboveOrBelow) {
+//    labelLine(point1, point2, textAbove, textBelow, textDisplacement, relativeFontSize, textPosition) {
+//    addArrow(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
+//    addCircle(centerPoint, radius) {
+
+
+
+    diagramA.addLabeledArrowQuick(1,2,1,4,"v");
+    diagramA.addLabeledArrowQuick(2,3.5,2,2.5,'a');
+
+
+    $("#diagramA").append(diagramA.drawCanvas(500));
+    $("#diagramB").append(diagramA.drawCanvas(500));
+    $("#diagramC").append(diagramA.drawCanvas(500));
+    $("#diagramD").append(diagramA.drawCanvas(500));
+    $("#diagramE").append(diagramA.drawCanvas(500));
+    $("#diagramF").append(diagramA.drawCanvas(500));
+
+</script>

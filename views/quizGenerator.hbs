@@ -121,14 +121,23 @@
     const ap_9_25_24 = ["e9cb0a","a6330e"];
     let honors_array = [];
     const honors_9_25_24 = ["921c30","63741b"];
-    const physics_a_9_25_24 = ["df7407","c3d2b9","65b8b7","8e7ca2","875ae0","3950df","12ce06"];
-    physics_a_9_25_24.forEach((quiz_ID) => {
+    const physics_a_9_25_24 = ["df7407","c3d2b9","65b8b7","8e7ca2","875ae0","3950df","12ce06","a58d59"];
+
+    const physics_a_10_24_24 = ["a08be5","a3b36d","eda5ba","e9cb0a","4e97c3"]; // quant kine graphs 1, quant kine agraphs 3, position graphs motion maps, celocity acc graphs, kinematic graph connections, story to graph selection 1
+
+    const honors_10_24_24 = ["a3b36d","eda5ba","e9cb0a","a6330e","4e97c3"]; // quant kine graphs 1, kine eq 4, kinematic graph connections, position graph connections
+
+    // quantitative kinematics graphs 1
+
+    const test = ["c013b8"];
+
+    test.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A 9-25-24", 2, 500));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Test", 1, 1000));
 
 
 </script>

@@ -1,3 +1,4 @@
+// quantitative vectors only here
 function drawVector(magnitude, directionInDegrees, unit, referenceLine, sideOfReference, textAboveOrBelow) {
     if (referenceLine === undefined) {
         if (directionInDegrees >= 0 && directionInDegrees <= 45) {

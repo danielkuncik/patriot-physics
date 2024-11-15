@@ -1,5 +1,6 @@
 // the goal here is to recreate the physics Diagram generation file
-// but with classes more carefully defined
+//
+//  with classes more carefully defined
 
 
 /*
@@ -955,6 +956,18 @@ class DiagramF {
 
         return mainSegment;
     };
+
+    addLabeledArrowQuick(x1,y1,x2,y2,label) {
+        let pointA = this.addNewPoint(x1,y1);
+        let pointB = this.addNewPoint(x2,y2);
+        this.labelLine(pointA, pointB, label);
+        return this.addArrow(pointA, pointB);
+
+        // start = new this.addNewPoint(x1, y1);
+        //end = new this.addNewPoint(x2, y2);
+        //this.addArrow(start, end);
+        //this.labelLine(start, end, label)
+    }
 
     addTwoHeadedArrow(point1, point2, arrowheadLength, arrowheadAngleInDegrees) {
 

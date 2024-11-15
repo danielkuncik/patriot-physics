@@ -198,6 +198,26 @@
           "text": "3.42 m/s/s"
         }
       ]
+    },
+    {
+      "text": "The previous set of questions dealt with a block being dragged by a horizontal force on a surface. In each of these problems, the magnitudes of the force of gravity and the normal force on the block were equal. Why was this true?",
+      "answerChoices":[
+        {
+          "text": "The block is not accelerating in the vertical dimension, and normal force and gravity were the only two vertical forces.",
+          "correct": true
+        },
+        {
+          "text": "Normal force and gravity are always equal."
+        },
+        {
+          "text": "Normal force and gravity are a Newton's Third Law Pair of equal and opposite reactions."
+        },
+        {
+          "text": "The statement is false: Normal force and gravity are not actually equal in these problems."
+        }
+      ]
+
+
     }
   ]
 }

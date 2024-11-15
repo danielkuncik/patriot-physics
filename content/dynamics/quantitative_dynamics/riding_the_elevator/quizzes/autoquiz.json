@@ -1,0 +1,152 @@
+{
+  "reorder": true,
+  "questions": [
+    {
+      "text": "You enter an elevator that goes down and then back up, as shown in the diagram. While the elevator moves, you feel various forces acting on your body: sometimes you feel like you are falling, and sometimes you feel like the ground is pressing you. What is the source of these sensations?",
+      "image": "elevator_image.png",
+      "answerChoices": [
+        {
+          "text": "Changes in the magnitude of normal force as the elevator moves.",
+          "correct": true
+        },
+        {
+          "text": "Changes the magnitude of gravity as the elevator moves."
+        },
+        {
+          "text": "Changes in the magnitude of both gravity and normal force as the elevator moves."
+        },
+        {
+          "text": "Gravity and normal force are always equal, therefore, something besides these two forces must cause the sensations you feel."
+        }
+      ]
+    },
+    {
+      "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like you are falling downwards, and the elevator is actually moving downwards?",
+      "image": "elevator_image.png",
+      "answerChoices": [
+        {
+          "text": "point A",
+          "correct": true
+        },
+        {
+          "text": "points B and E"
+        },
+        {
+          "text": "point C"
+        },
+        {
+          "text": "point D"
+        },
+        {
+          "text": "point F"
+        }
+      ]
+    },
+    {
+      "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like you are falling downwards, but the elevator is actually moving UPWARDS?",
+      "image": "elevator_image.png",
+      "answerChoices": [
+        {
+          "text": "point A"
+        },
+        {
+          "text": "points B and E"
+        },
+        {
+          "text": "point C"
+        },
+        {
+          "text": "point D"
+        },
+        {
+          "text": "point F",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like the ground is pressing your upwards, and the elevator is actually moving upwards?",
+      "image": "elevator_image.png",
+      "answerChoices": [
+        {
+          "text": "point A"
+        },
+        {
+          "text": "points B and E"
+        },
+        {
+          "text": "point C"
+        },
+        {
+          "text": "point D",
+          "correct": true
+        },
+        {
+          "text": "point F"
+        }
+      ]
+    },
+    {
+      "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like the ground is pressing your upwards, but the elevator is actually moving DOWNWARDS?",
+      "image": "elevator_image.png",
+      "answerChoices": [
+        {
+          "text": "point A"
+        },
+        {
+          "text": "points B and E"
+        },
+        {
+          "text": "point C"
+        },
+        {
+          "text": "point D",
+          "correct": true
+        },
+        {
+          "text": "point F"
+        }
+      ]
+    },
+    {
+      "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel not feel any significant sensations?",
+      "image": "elevator_image.png",
+      "answerChoices": [
+        {
+          "text": "point A"
+        },
+        {
+          "text": "points B and E",
+          "correct": true
+        },
+        {
+          "text": "point C"
+        },
+        {
+          "text": "point D"
+        },
+        {
+          "text": "point F"
+        }
+      ]
+    },
+    {
+      "text": "Sometimes, when riding the elevator, you feel like you are falling, whether or not you are. What is the name of this sensation?",
+      "answerChoices": [
+        {
+          "text": "weightlessness",
+          "correct": true
+        },
+        {
+          "text": "weightfullness"
+        },
+        {
+          "text": "gravity reduction"
+        },
+        {
+          "text": "free fall"
+        }
+      ]
+    }
+  ]
+}
