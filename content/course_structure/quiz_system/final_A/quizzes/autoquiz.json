@@ -1,4 +1,5 @@
 {
+  "reorder": false,
   "directions": "Select the best option for each question",
   "questions": [
     {
@@ -38,7 +39,7 @@
       ]
     },
     {
-      "text": "A fan enables a computer's processor to run for long periods of time without overheating. Which of the following forms of heat energy transfer does this example best represent?",
+      "text": "A construction worker ensures that the air conditioner is located on the ceiling so that the cool air it pushes out falls and fills the room. Which type of heat transfer does this best represent?",
       "answerChoices": [
         {
           "text": "condensation"
@@ -110,7 +111,7 @@
       ]
     },
     {
-      "text": "Electromagnetic radiation is used in many forms of communication. Electromagnetic waves with relatively long wavelengths are often used to transmit signals because these waves travel easily around objects. Which types of electromagnetic radiation is best for transmitting signals around objects?",
+      "text": "Electromagnetic radiation is used in many forms of communication. Electromagnetic waves with relatively LONG WAVELENGTHS are often used to transmit signals because these waves travel easily around objects. Which types of electromagnetic radiation is best for transmitting signals around objects?",
       "answerChoices": [
         {
           "text": "gamma rays"
@@ -201,6 +202,266 @@
           "text": "A parabola"
         }
       ]
+    },
+    {
+      "text": "The next two questions deal with the electric circuit below. First: What is the total current?",
+      "image": {
+        "name": "circuit_2.png",
+        "width": "500px"
+      },
+      "answerChoices": [
+        {
+            "text": "2 Amps",
+          "correct": true
+        },
+        {
+          "text": "1 Amp"
+        },
+        {
+          "text": "4 Amps"
+        },
+        {
+          "text": "5 Amps"
+        }
+      ]
+    },
+    {
+      "text": "What is the voltage across resistor B?",
+      "answerChoices":
+      [
+        {
+          "text": "5 Amps"
+        },
+        {
+          "text": "10 Amps",
+          "correct": true
+        },
+        {
+          "text": "15 Amps"
+        },
+        {
+          "text": "20 Amps"
+        }
+      ]
+    },
+    {
+      "text": "The next two questions deal with the electric circuit below. What is the current through resistor A?",
+      "image": {
+        "name": "circuit_1.png",
+        "width": "500px"
+      },
+      "answerChoices": [
+        {
+          "text": "1 Amp"
+        },
+        {
+          "text": "2 Amps"
+        },
+        {
+          "text": "3 Amps",
+          "correct": true
+        },
+        {
+          "text": "4 Amps"
+        }
+      ]
+    },
+    {
+      "text": "What is the total resistance?",
+      "answerChoices":
+              [
+                {
+                  "text": "1.6 Ohms",
+                  "correct": true
+                },
+                {
+                  "text": "11 Ohms"
+                },
+                {
+                  "text": "2 Ohms"
+                },
+                {
+                  "text": "3.2 Ohms"
+                }
+              ]
+    },
+    {
+      "text": "If each of the graphs below represent graphs of position-time, which one best reflects an object that is speeding up?",
+      "answerChoices": [
+        {
+          "image": {
+            "name": "graph_1.png",
+            "height": "250px"
+          }
+        },
+        {
+          "image": {
+            "name": "graph_2.png",
+            "height": "250px"
+          }
+        },
+        {
+          "image": {
+            "name": "graph_3.png",
+            "height": "250px"
+          }
+        },
+        {
+          "image": {
+            "name": "graph_4.png",
+            "height": "250px"
+          },
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "If each of the graphs below represent graphs of position-time, which one best reflects an object that is slowing down?",
+      "answerChoices": [
+        {
+          "image": {
+            "name": "graph_1.png",
+            "height": "250px"
+          }
+        },
+        {
+          "image": {
+            "name": "graph_2.png",
+            "height": "250px"
+          }
+        },
+        {
+          "image": {
+            "name": "graph_3.png",
+            "height": "250px"
+          },
+          "correct": true
+        },
+        {
+          "image": {
+            "name": "graph_4.png",
+            "height": "250px"
+          }
+        }
+      ]
+    },
+    {
+      "text": "Consider the following nuclear reaction. What element is the daughter nucleus?",
+      "image":
+      {
+        "name": "nuclear_reaction_1.png",
+        "width": "800px"
+      },
+      "answerChoices": [
+        {
+          "text": "Polonium",
+          "correct": true
+        },
+        {
+          "text": "Astatine"
+        },
+        {
+          "text": "Francium"
+        },
+        {
+          "text": "Radium"
+        }
+      ]
+    },
+    {
+      "text": "Consider the following nuclear reaction. What element is the daughter nucleus?",
+      "image":
+      {
+        "name": "nuclear_reaction_2.png",
+        "width": "800px"
+      },
+      "answerChoices": [
+        {
+          "text": "Calcium",
+          "correct": true
+        },
+        {
+          "text": "Scandium"
+        },
+        {
+          "text": "Argon"
+        },
+        {
+          "text": "Chlorine"
+        }
+      ]
+    },
+    {
+      "text": "For the next two questions, consider the free-body diagram below. If the mass of the object is 4 kg, what is the magnitude of its acceleration?",
+      "image": {
+        "name": "fbd.png",
+        "width": "600px"
+      },
+      "answerChoices": [
+        {
+          "text": "0.5 m/s/s"
+        },
+        {
+          "text": "1.0 m/s/s"
+        },
+        {
+          "text": "1.5 m/s/s",
+          "correct": true
+        },
+        {
+          "text": "2.0 m/s/s"
+        }
+
+      ]
+    },
+    {
+      "text": "What is the direction of its acceleration?",
+      "answerChoices": [
+        {
+          "text": "up"
+        },
+        {
+          "text": "down",
+          "correct": true
+        },
+        {
+          "text": "right"
+        },
+        {
+          "text": "left"
+        }
+      ]
+    },
+    {
+    "text": "Car A has a mass of 100. kg and is moving at a speed of 7 m/s to the right. Car B has a mass of 200. kg and is moving at a speed of 4 m/s to the left. They crash into each other head-on. After they collide, Car A bounces off with a speed of 0.5 m/s to the left. Figure out what car B does:",
+    "image": {
+      "name": "basic_momentum_table.png",
+      "width": "800px"
+    },
+    "answerChoices": [
+      {
+        "text": "Car B moves at 0.25 m/s to the right."
+      },
+      {
+        "text": "Car B moves at 0.25 m/s to the left.",
+        "correct": true
+      },
+      {
+        "text": "Car B moves at 0.75 m/s to the right."
+      },
+      {
+        "text": "Car B moves at 0.75 m/s to the left."
+      },
+      {
+        "text": "Car B moves at 1.0 m/s to the right."
+      },
+      {
+        "text": "Car B moves at 1.0 m/s to the left."
+      },
+      {
+        "text": "Car B stops moving"
+      }
+    ]
     }
   ]
 }

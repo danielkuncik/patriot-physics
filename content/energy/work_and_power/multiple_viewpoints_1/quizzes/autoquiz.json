@@ -1,0 +1,183 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "A book is dropped from a ledge. Consider the point when the book is falling and has not yet hit the ground. The system is defined to include the BOOK ONLY. What would a free-body diagram of forces external to the system look like?",
+      "answerChoices": [
+        {
+          "text": "The force of gravity downwards.",
+          "correct": true
+        },
+        {
+          "text": "The force of gravity downwards and the normal force upwards"
+        },
+        {
+          "text": "No forces."
+        }
+      ]
+    },
+    {
+      "text": "A book is dropped from a ledge. Consider the point when the book is falling and has not yet hit the ground. The system is defined to include the BOOK ONLY. Which statement best describes the energy of the system during this motion?",
+      "answerChoices": [
+        {
+          "text": "No work is done on the system and within the system potential energy is converted to kinetic energy."
+        },
+        {
+          "text": "No work is done on the system and within the system kinetic energy is converted to potential energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its kinetic energy.",
+          "correct": true
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its kinetic energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its potential energy."
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its potential energy."
+        },
+        {
+          "text": "No work is done on the system and no energy is exchanged within the system."
+        }
+      ]
+    },
+    {
+      "text": "Consider a baseball hit directly upwards, from the moment it is no longer touching the bat until the moment it reaches its highest point. The system is defined to be the BALL AND THE EARTH. What would a free-body diagram of forces external to the system look like?",
+      "answerChoices": [
+        {
+          "text": "The force of gravity downwards."
+        },
+        {
+          "text": "The force of gravity downwards and the normal force upwards"
+        },
+        {
+          "text": "No forces.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "Consider a baseball hit directly upwards, from the moment it is no longer touching the bat until the moment it reaches its highest point. The system is defined to be the BALL AND THE EARTH. Which statement best describes the energy of the system during this motion?",
+      "answerChoices": [
+        {
+          "text": "No work is done on the system and within the system potential energy is converted to kinetic energy."
+        },
+        {
+          "text": "No work is done on the system and within the system kinetic energy is converted to potential energy.",
+          "correct": true
+        },
+        {
+          "text": "Positive work is done on the system, increasing its kinetic energy."
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its kinetic energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its potential energy."
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its potential energy."
+        },
+        {
+          "text": "No work is done on the system and no energy is exchanged within the system."
+        }
+      ]
+    },
+    {
+      "text": "Consider a rock lifted by a giant at a constant velocity. The system is defined to be the ROCK AND THE EARTH, but does not include the giant. What does a free-body diagram of forces external to the system look like?",
+      "answerChoices": [
+        {
+          "text": "The applied force upwards only.",
+          "correct": true
+        },
+        {
+          "text": "The force of gravity downwards and the applied force upwards"
+        },
+        {
+          "text": "No forces."
+        },
+        {
+          "text": "The force of gravity downwards only."
+        }
+      ]
+    },
+    {
+      "text": "Consider a rock lifted by a giant at a constant velocity. The system is defined to be the ROCK AND THE EARTH, but does not include the giant. Which statement best describes the energy transfer of the system?",
+      "answerChoices": [
+        {
+          "text": "No work is done on the system and within the system potential energy is converted to kinetic energy."
+        },
+        {
+          "text": "No work is done on the system and within the system kinetic energy is converted to potential energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its kinetic energy."
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its kinetic energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its potential energy.",
+          "correct": true
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its potential energy."
+        },
+        {
+          "text": "No work is done on the system and no energy is exchanged within the system."
+        }
+      ]
+    },
+    {
+      "text": "Consider a rock lowered down by a giant at a constant velocity. The system is defined to be the ROCK ONLY, and does not include the earth or the giant. What does a free-body diagram of forces external to the system look like?",
+      "answerChoices": [
+          {
+            "text": "The applied force upwards only."
+          },
+          {
+            "text": "The force of gravity downwards and the applied force upwards",
+            "correct": true
+          },
+          {
+            "text": "No forces."
+          },
+          {
+            "text": "The force of gravity downwards only."
+          },
+          {
+            "text": "The applied force and gravitational force, both downwards."
+          }
+      ]
+    },
+    {
+      "text": "Consider a rock lowered down by a giant at a constant velocity. The system is defined to be the ROCK ONLY, and does not include the earth or the giant. Which statement best describes the energy transfer of the system?",
+      "answerChoices": [
+        {
+          "text": "No work is done on the system and within the system potential energy is converted to kinetic energy."
+        },
+        {
+          "text": "No work is done on the system and within the system kinetic energy is converted to potential energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its kinetic energy."
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its kinetic energy."
+        },
+        {
+          "text": "Positive work is done on the system, increasing its potential energy."
+        },
+        {
+          "text": "Negative work is done on the system, decreasing its potential energy."
+        },
+        {
+          "text": "No work is done on the system and no energy is exchanged within the system.",
+          "correct": true
+        }
+      ]
+
+    }
+  ]
+}

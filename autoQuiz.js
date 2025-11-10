@@ -91,7 +91,7 @@ class question {
         // multiple choice with a single correct answer
         if (this.type === 'mc') {
             let answerArray = questionJSON.answers;
-            if (!questionJSON.answerLock) {
+            if (questionJSON.reorder !== false) {
                 answerArray.shuffle();
             }
             let correct, i;

@@ -1,0 +1,51 @@
+
+The formula F_g = mg
+
+in this formula, which item is called "gravity"? (pick the best answer)
+
+F_g
+m
+g
+
+
+The variable "g" denotes two different quantities that have the same value here. What two quantities?
+What two things?
+- mass and weight
+- free-fall acceleration and gravitational field
+- gravitational field and weight
+- free fall acceleration and mass
+
+
+The symbol "mu" is a greek letter, which one
+
+
+
+
+
+In all of these problems, gravity has the direction "downwards."
+When is this true?
+- always
+- in all problems on the surface of the earth
+- whenever the object in question is on a horizontal surface
+- only in problems about blocks on tables
+
+
+In all of these problems, g has the value 9.8 (in SI units). when is this true
+-always
+-in any problems on earth's surface
+- whenever the object in question is on a horizontal surface
+- only in problems about blocks on tables
+
+
+In all of these problems, normal force is upwards
+when is this true?
+- always
+- in all problems on the earth's surface
+- whenever the object in question is on a horizontal surface
+- only in problems about blocks on tables
+
+In all of these problems, normal force is equal in magnitude to gravity. WHen is this true
+- always
+- in all problems on earth's surface
+- whenever the object in question is on a horizontal surface
+- only in these problems, because of specific conditions relevant to these problems

@@ -3,7 +3,11 @@
   "questions": [
     {
       "text": "You enter an elevator that goes down and then back up, as shown in the diagram. While the elevator moves, you feel various forces acting on your body: sometimes you feel like you are falling, and sometimes you feel like the ground is pressing you. What is the source of these sensations?",
-      "image": "elevator_image.png",
+      "image": {
+        "name": "elevator_image.png",
+        "width": "400px",
+        "height": "auto"
+      },
       "answerChoices": [
         {
           "text": "Changes in the magnitude of normal force as the elevator moves.",
@@ -22,7 +26,12 @@
     },
     {
       "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like you are falling downwards, and the elevator is actually moving downwards?",
-      "image": "elevator_image.png",
+      "image": {
+        "name": "elevator_image.png",
+        "width": "600px",
+        "height": "auto"
+      },
+      "reorder": false,
       "answerChoices": [
         {
           "text": "point A",
@@ -38,13 +47,21 @@
           "text": "point D"
         },
         {
+          "text": "-------"
+        },
+        {
           "text": "point F"
         }
       ]
     },
     {
       "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like you are falling downwards, but the elevator is actually moving UPWARDS?",
-      "image": "elevator_image.png",
+      "image": {
+        "name": "elevator_image.png",
+        "width": "600px",
+        "height": "auto"
+      },
+      "reorder": false,
       "answerChoices": [
         {
           "text": "point A"
@@ -59,6 +76,9 @@
           "text": "point D"
         },
         {
+          "text": "-------"
+        },
+        {
           "text": "point F",
           "correct": true
         }
@@ -66,7 +86,12 @@
     },
     {
       "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like the ground is pressing your upwards, and the elevator is actually moving upwards?",
-      "image": "elevator_image.png",
+      "image": {
+        "name": "elevator_image.png",
+        "width": "600px",
+        "height": "auto"
+      },
+      "reorder": false,
       "answerChoices": [
         {
           "text": "point A"
@@ -80,6 +105,9 @@
         {
           "text": "point D",
           "correct": true
+        },
+        {
+          "text": "-------"
         },
         {
           "text": "point F"
@@ -88,7 +116,12 @@
     },
     {
       "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel like the ground is pressing your upwards, but the elevator is actually moving DOWNWARDS?",
-      "image": "elevator_image.png",
+      "image": {
+        "name": "elevator_image.png",
+        "width": "600px",
+        "height": "auto"
+      },
+      "reorder": false,
       "answerChoices": [
         {
           "text": "point A"
@@ -97,11 +130,14 @@
           "text": "points B and E"
         },
         {
-          "text": "point C"
+          "text": "point C",
+          "correct": true
         },
         {
-          "text": "point D",
-          "correct": true
+          "text": "point D"
+        },
+        {
+          "text": "-------"
         },
         {
           "text": "point F"
@@ -110,7 +146,12 @@
     },
     {
       "text": "You ride the elevator down and then up as shown in the diagram. At what point(s) do you feel not feel any significant sensations?",
-      "image": "elevator_image.png",
+      "image": {
+        "name": "elevator_image.png",
+        "width": "600px",
+        "height": "auto"
+      },
+      "reorder": false,
       "answerChoices": [
         {
           "text": "point A"
@@ -124,6 +165,9 @@
         },
         {
           "text": "point D"
+        },
+        {
+          "text": "-------"
         },
         {
           "text": "point F"

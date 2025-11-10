@@ -1,0 +1,128 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "The next 7 questions deal with the following situation: A person enters an elevator on the 4th floor and takes it up to the 10th floor. During this trip, what is the direction of their velocity vector?",
+      "answerChoices": [
+        {
+          "text": "upwards",
+          "correct": true
+        },
+        {
+          "text": "downwards"
+        },
+        {
+          "text": "The velocity is zero."
+        }
+      ]
+    },
+    {
+      "text": "When the elevator begins moving, what is the direction of the peron's acceleration vector?",
+      "answerChoices": [
+        {
+          "text": "upwards",
+          "correct": true
+        },
+        {
+          "text": "downwards"
+        },
+        {
+          "text": "The acceleration here is zero"
+        }
+      ]
+    },
+    {
+      "text": "As the elevator moves, which statement best describes how the force of gravity on the person changes?",
+      "answerChoices": [
+        {
+          "text": "The force of gravity remains constant as the elevator moves.",
+          "correct": true
+        },
+        {
+          "text": "When the person feels lighter, the force of gravity is weaker."
+        },
+        {
+          "text": "When the person feels heavier, the force of gravity is stronger."
+        },
+        {
+          "text": "When the person feels heavier, counterintuitively, the force of gravity is weaker."
+        }
+      ]
+    },
+    {
+      "text": "While the elevator is moving upwards at a constant speed, which statement best describes the rider's free-body diagram?",
+      "answerChoices": [
+        {
+          "text": "The magnitudes of the force of gravity and normal force are equal.",
+          "correct": true
+        },
+        {
+          "text": "The normal force is stronger than the force of gravity."
+        },
+        {
+          "text": "The normal force is weaker than the force of gravity."
+        },
+        {
+          "text": "The normal force and the force of gravity are in the same direction."
+        }
+      ]
+    },
+    {
+      "text": "When the elevator reaches the 10th floor and begins to stop, what is the direction of the person's net force vector?",
+      "answerChoices": [
+        {
+          "text": "upwards"
+        },
+        {
+          "text": "downwards",
+          "correct": true
+        },
+        {
+          "text": "The net force is zero."
+        }
+      ]
+    },
+    {
+      "text": "When the elevator reaches the 10th floor and begins to stop, which statement best describes the rider's free-body diagram?",
+      "answerChoices": [
+        {
+          "text": "The magnitudes of the force of gravity and normal force are equal."
+        },
+        {
+          "text": "The normal force is stronger than the force of gravity."
+        },
+        {
+          "text": "The normal force is weaker than the force of gravity.",
+          "correct": true
+        },
+        {
+          "text": "The normal force and the force of gravity are in the same direction."
+        }
+      ]
+    },
+    {
+      "text": "At the end of the motion of the elevator, the person feels like they are gently falling for a moment. What is the cause of this sensation?",
+      "answerChoices":[
+        {
+          "text": "The elevator overshot the 10th floor and needed to go back down."
+        },
+        {
+          "text": "For a short time, the floor is pressed less strongly into the rider's feet.",
+          "correct": true
+        },
+        {
+          "text": "For a short time, the floor is pressed more strongly into the rider's feet."
+        },
+        {
+          "text": "The gravity in the elevator became stronger for a short time."
+        },
+        {
+          "text": "The gravity in the elevator became weaker for a short time."
+        },
+        {
+          "text": "The sensation is an illusion caused by being in a small, enclosed space that is not connected to the motion of the elevator."
+        }
+      ]
+    }
+  ]
+}

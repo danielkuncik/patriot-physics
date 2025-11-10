@@ -131,13 +131,52 @@
 
     const test = ["c013b8"];
 
-    test.forEach((quiz_ID) => {
+
+    const honors_11_25_24 = ["ba7882","c3654d","193942","a131a7","28a149","c013b8","169d20","c17fb5"];
+    const ap_11_25_24 = ["045860"];
+    const physics_a_11_25_24 = ["1a4b0b","ba7882","d14075","c3654d","193942","5c77aa","8778d7","a131a7","28a149","c013b8","169d20"];
+
+    const honors_1_10_25 = ["1d1e60","38e07e","b656a7","93e3ce"];
+
+    const elevator_test = ["c013b8","c17fb5"];
+    const honors_2_12_25 = ["79415b","4a6e69","9ac868","d1847d","1d4dd1","8a4fc7","535893","6a9477","1d2d49","41d96a"];
+    const physics_a_2_12_25 = ["79415b","4a6e69","9ac868","d1847d","1d4dd1","8a4fc7","535893","41d96a"];
+
+    const physics_a_3_25_25 = [];
+    const physics_honors_3_25_25 = ["c3d2b9","df7407","875ae0","3950df","1db039","12ce06"];
+
+    const physics_honors_5_9__25 = ["4c74b0"];
+
+    const physics_a_final = ["d1fae3"];
+    const physics_honors_final = ["5c9f7a"];
+
+    const ap_9_2_25 = ["86f07c","f7055b","f6715d"];
+
+    const honors_9_12_25 =["86f07c","f7055b","f6715d","8d7e19","a58d59",
+        "4e97c3","a3b36d","eda5ba","9ab9a0"];
+
+    const ap_9_12_25 = ["8d7e19","a58d59",
+        "4e97c3","a3b36d","eda5ba","e9cb0a"];
+
+    const phys_a_22_25 = ["a3b36d","36d08c","875ae0","3950df"];
+
+    const phys_honors_10_29 = ["28a149","169d20"];
+
+    const phys_honors_10_31 = ["193942","8778d7","a131a7","28a149","169d20"];
+
+    const phys_a_11_4 = ["193942","8778d7","a131a7"];
+
+    const phys_a_midterm = ["01b5c4"];
+
+    const phys_honors_midterm = ["5f2a0a"];
+
+    phys_honors_midterm.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Test", 1, 1000));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Quiz: 11-4-25", 2, 700));
 
 
 </script>

@@ -1,0 +1,125 @@
+{
+  "questions": [
+    {
+      "text": "Which value best approximates the force needed to lift a backpack containing three high school math textbooks?",
+      "answerChoices": [
+        {
+          "text": "0.2 N"
+        },
+        {
+          "text": "8 Newtons"
+        },
+        {
+          "text": "55 Newtons",
+          "correct": true
+        },
+        {
+          "text": "612 Newtons"
+        }
+      ]
+    },
+    {
+      "text": "Which value best approximates the force needed to lift a feather?",
+      "answerChoices": [
+        {
+          "text": "0.2 N",
+          "correct": true
+        },
+        {
+          "text": "8 Newtons"
+        },
+        {
+          "text": "55 Newtons"
+        },
+        {
+          "text": "612 Newtons"
+        }
+      ]
+    },
+    {
+      "text": "Which value best approximates the force needed to turn a doorknob?",
+      "answerChoices": [
+        {
+          "text": "0.2 N"
+        },
+        {
+          "text": "6 Newtons",
+          "correct": true
+        },
+        {
+          "text": "55 Newtons"
+        },
+
+        {
+          "text": "612 Newtons"
+        }
+      ]
+    },
+    {
+      "text": "Which value best approximates the weight of an adult human?",
+      "answerChoices": [
+        {
+          "text": "0.2 N"
+        },
+        {
+          "text": "8 Newtons"
+        },
+        {
+          "text": "55 Newtons"
+        },
+        {
+          "text": "612 Newtons",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "You are measuring a force with a force-meter that has a maximum value of 20 Newtons. It records a value of 1 Newton. Which would be the BEST next step to take?",
+      "answerChoices": [
+        {
+          "text": "Write 1 Newton down and your measurement."
+        },
+        {
+          "text": "Use a force meter with a higher maximum value."
+        },
+        {
+          "text": "Use a force meter with a lower maximum value for better accuracy.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "You are measuring a force with a force-meter that has a maximum value of 5 Newtons. It hits its maximum value. Which would be the BEST next step to take?",
+      "answerChoices": [
+        {
+          "text": "Write 5 Newtons down and your measurement."
+        },
+        {
+          "text": "Use a force meter with a higher maximum value.",
+          "correct": true
+        },
+        {
+          "text": "Use a force meter with a lower maximum value for better accuracy."
+        }
+      ]
+    },
+    {
+      "text": "You are lifting a backpack to record a force. The highest maximum force meters you have has a maximum of 20 Newtons, but those max out when lifting the backpack. How should you proceed?",
+      "answerChoices": [
+        {
+          "text": "Write 20 Newtons and your measurement."
+        },
+        {
+          "text": "Write a note saying it is impossible to measure the force accurately."
+        },
+        {
+          "text": "Use more than one 20 N force meter in parallel (each one gripping the backpack independently)?",
+          "correct": true
+        },
+        {
+          "text": "Use more than one 20 N force meter in series (each one gripping the next force meter in a chain)?"
+        }
+      ]
+    }
+  ]
+}

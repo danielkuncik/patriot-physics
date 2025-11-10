@@ -1,6 +1,4 @@
 
-/// direction is comign out opposite of what it is supposed to!
-// clockwise and coutnerclockwise
 
 class CircularMotionDiagram extends DiagramF {
     constructor(direction, radius, numberOfDirectionIndicators, firstDirectionIndicator) {
@@ -37,9 +35,9 @@ class CircularMotionDiagram extends DiagramF {
     getPointingAngle(positionInRadians) {
         let pointingAngle = positionInRadians;
         if (this.direction === 'clockwise') {
-            pointingAngle += Math.PI / 2;
-        } else if (this.direction === "counterclockwise") {
             pointingAngle -= Math.PI / 2;
+        } else if (this.direction === "counterclockwise") {
+            pointingAngle += Math.PI / 2;
         }
         return pointingAngle
     }

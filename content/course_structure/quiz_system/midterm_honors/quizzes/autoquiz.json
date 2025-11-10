@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "text": "What is the capital of Massachusetts?",
+      "answerChoices": [
+        {
+          "text": "Boston",
+          "correct": true
+        },
+        {
+          "text": "Worcester"
+        },
+        {
+          "text": "Fall River"
+        },
+        {
+          "text": "New Bedford"
+        }
+      ]
+    }
+  ]
+}

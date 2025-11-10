@@ -1,0 +1,110 @@
+{
+  "reorder": false,
+  "questions": [
+    {
+      "text": "A large amount of hydrogen gas, attracted by gravity, undergoing thermonuclear fusion, releasing huge amounts of energy.",
+      "answerChoices": [
+        {
+          "text": "Star",
+          "correct": true
+        },
+        {
+          "text": "Planet"
+        },
+        {
+          "text": "Dwarf Planet"
+        },
+        {
+          "text": "Galaxy"
+        },
+        {
+          "text": "Star System"
+        }
+      ]
+    },
+    {
+      "text": "Spherical structure orbiting a star, with little other mass within its orbit.",
+      "answerChoices": [
+        {
+          "text": "Star"
+        },
+        {
+          "text": "Planet",
+          "correct": true
+        },
+        {
+          "text": "Dwarf Planet"
+        },
+        {
+          "text": "Galaxy"
+        },
+        {
+          "text": "Star System"
+        }
+      ]
+    },
+    {
+      "text": "Spherical structure orbiting a star, but in a location containing other significant masses.",
+      "answerChoices": [
+        {
+          "text": "Star"
+        },
+        {
+          "text": "Planet"
+        },
+        {
+          "text": "Dwarf Planet",
+          "correct": true
+        },
+        {
+          "text": "Galaxy"
+        },
+        {
+          "text": "Star System"
+        }
+      ]
+    },
+    {
+      "text": "Billions of stars collected together; believed to have a supermassive black hole at the center.",
+      "answerChoices": [
+        {
+          "text": "Star"
+        },
+        {
+          "text": "Planet"
+        },
+        {
+          "text": "Dwarf Planet"
+        },
+        {
+          "text": "Galaxy",
+          "correct": true
+        },
+        {
+          "text": "Star System"
+        }
+      ]
+    },
+    {
+      "text": "A star and all masses orbiting it.",
+      "answerChoices": [
+        {
+          "text": "Star"
+        },
+        {
+          "text": "Planet"
+        },
+        {
+          "text": "Dwarf Planet"
+        },
+        {
+          "text": "Galaxy"
+        },
+        {
+          "text": "Star System",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}
