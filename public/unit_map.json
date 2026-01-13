@@ -66,10 +66,18 @@
           "midterm_honors": {
             "title": "Honors Physics Midterm",
             "level": 2,
-            "horizontal": 1,
+            "horizontal": 2,
             "prerequisites": [],
             "uuid": "5f2a0a66-e07e-44fe-af0b-c868bce74444",
             "id": "5f2a0a"
+          },
+          "midterm_ap": {
+            "title": "AP Physics Midterm",
+            "level": 2,
+            "horizontal": 5,
+            "prerequisites": [],
+            "uuid": "acde0138-c67e-4616-a5c8-a6e405f4f628",
+            "id": "acde01"
           }
         }
       },

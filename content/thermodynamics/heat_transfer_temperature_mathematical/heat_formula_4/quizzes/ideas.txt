@@ -1,0 +1,16 @@
+The formula Q = m C delta T gives
+
+
+-heat energy necessary to melt and object
+-heat energy necessary to boil and object
+-heat energy necessary to increase an object's temperature
+-the heat energy inside an object
+
+
+
+The formula Q = m H_f
+
+
+The formula Q = m H_v
+
+

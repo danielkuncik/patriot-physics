@@ -19,10 +19,46 @@
       ]
     },
     {
-      "text": "A car at the top of a roller coaster is at rest. It drops from a height of 16 m to a height of 4 m. At that point, what is its speed? (Note: You may use any mass you choose.)",
+      "text": "A car at the top of a roller coaster has a speed of \\( v_i \\). It drops from a height of \\( y_i \\) to a height of \\( y_f \\). Determine a formula for its speed at the bottom \\( v_f \\) in terms of \\( v_i \\), \\( y_i \\), \\( y_f \\), and \\( g \\)",
       "answerChoices": [
         {
-          "text": "15.3 m/s",
+          "text": "\\( \\sqrt{2g (y_f - y_i) + v_i^2 } \\)",
+          "correct": true
+        },
+        {
+          "text": "\\( \\sqrt{2g (y_f - y_i)} + v_i \\)"
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Determine a formula for an object's initial velocity in terms of its acceleration, its displacement, and the time interval that passed.",
+      "answerChoices": [
+        {
+          "text": "\\( \\frac{\\Delta x}{\\Delta t} - \\frac{1}{2} a \\Delta t \\)",
+          "correct": true
+        },
+        {
+          "text": "\\( \\frac{\\Delta x}{\\Delta t} + \\frac{1}{2} a \\Delta t \\)"
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Some problem asks students to solve for the velocity of an object. Which of the following answers COULD be correct?",
+      "answerChoices": [
+        {
+          "text": "\\( \\frac{mg}{KE \\cdot \\Delta t} \\)",
           "correct": true
         },
         {
@@ -37,104 +73,14 @@
       ]
     },
     {
-      "text": "A car has a final velocity of 24 m/s and an acceleration of 3 m/s. A time interval of 6 seconds passes. What was its initial velocity?",
+      "text": "A block of mass \\( m \\) is oscillating on a spring of spring constant \\( k \\). If at some point it has displacement \\( \\Delta x \\) and speed \\( v_a \\), determine a formula for the block's maximum speed \\( v_{\\text{max}} \\)",
       "answerChoices": [
         {
-          "text": "6 m/s",
+          "text": "\\( \\sqrt{ \\frac{k}{m} (\\Delta x)^2 + v_a^2} \\)",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
-        }
-      ]
-    },
-    {
-      "text": "",
-      "answerChoices": [
-        {
-          "text": "",
-          "correct": true
-        },
-        {
-          "text": ""
+          "text": "\\( \\sqrt{ \\frac{k}{m} } (\\Delta x) + v_a \\)"
         },
         {
           "text": ""

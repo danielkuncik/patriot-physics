@@ -1,20 +1,383 @@
 {
   "questions": [
     {
-      "text": "What is the capital of Massachusetts?",
+      "text": "A car at the top of a roller coaster has a speed of 12 m/s. It drops from a height of 14 m to a height of 6 m. At that point, what is its speed? (Note: You may use any mass you choose.)",
       "answerChoices": [
         {
-          "text": "Boston",
+          "text": "17.3 m/s",
           "correct": true
         },
         {
-          "text": "Worcester"
+          "text": "16.8 m/s"
         },
         {
-          "text": "Fall River"
+          "text": "16.2 m/s"
         },
         {
-          "text": "New Bedford"
+          "text": "15.7 m/s"
+        }
+      ]
+    },
+    {
+      "text": "A block with a mass of 0.4 kg is oscillating on a spring with a spring of 12 N/m and equilibrium length of 0.5 m. At some point, the spring has a length of 0.3 and the block is moving at a speed of 1.8 m/s. What is the maximum speed of the block?",
+      "answerChoices": [
+        {
+          "text": "2.1 m/s",
+          "correct": true
+        },
+        {
+          "text": "1.8 m/s"
+        },
+        {
+          "text": "2.5 m/s"
+        },
+        {
+          "text": "2.9 m/s"
+        }
+      ]
+    },
+    {
+      "text": "A ball on earth is dropped at rest from a height of 4.3 meters. How long does it take to reach the ground?",
+      "answerChoices": [
+        {
+          "text": "0.94 s",
+          "correct": true
+        },
+        {
+          "text": "1.23 s"
+        },
+        {
+          "text": "0.82 s"
+        },
+        {
+          "text": "0.68 s"
+        }
+      ]
+    },
+    {
+      "text": "A ball on earth is thrown downwards with a speed of 5.30 m/s from a height of 1.80 meters. At what speed does it strike the ground?",
+      "answerChoices": [
+        {
+          "text": "7.96 m/s",
+          "correct": true
+        },
+        {
+          "text": "7.45 m/s"
+        },
+        {
+          "text": "7.02 m/s"
+        },
+        {
+          "text": "6.86 m/s"
+        }
+      ]
+    },
+    {
+      "text": "A sound wave is...",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Longitudinal",
+          "correct": true
+        },
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Transverse and Longitudinal"
+        }
+      ]
+    },
+    {
+      "text": "How much heat is necessary to melt 2 kg of ice? You may assume the ice is already at its melting point.",
+      "answerChoices": [
+        {
+          "text": "6.68 x 10^5 Joules",
+          "correct": true
+        },
+        {
+          "text": "9.24 x 10^5 Joules"
+        },
+        {
+          "text": "1.27 x 10^6 Joules"
+        },
+        {
+          "text": "8.54 x 10^4 Joules"
+        }
+      ]
+    },
+    {
+      "text": "A 0.8 kg block is pulled with a force of 5 Newtons across a surface with a coefficient of kinetic friction of 0.15. What is the magnitude of its acceleration? Assume the block is already moving.",
+      "answerChoices": [
+        {
+          "text": "4.78 m/s/s",
+          "correct": true
+        },
+        {
+          "text": "5.23 m/s/s"
+        },
+        {
+          "text": "4.24 m/s/s"
+        },
+        {
+          "text": "3.89 m/s/s"
+        }
+      ]
+    },
+    {
+      "text": "The free-body diagram below shows an object with a mass of 40 kg. What is the magnitude and direction of its acceleration?",
+      "image": {
+        "name": "fbd_1.png",
+        "width": 400
+      },
+      "answerChoices": [
+        {
+          "text": "2.5 m/s/s LEFT",
+          "correct": true
+        },
+        {
+          "text": "2.0 m/s/s LEFT"
+        },
+        {
+          "text": "1.5 m/s/s LEFT"
+        },
+        {
+          "text": "2.5 m/s/s RIGHT"
+        },
+        {
+          "text": "2.0 m/s/s RIGHT"
+        },
+        {
+          "text": "1.5 m/s/s RIGHT"
+        }
+      ]
+    },
+    {
+      "text": "The free body diagram below shows an object with a mass of 5 kg and an acceleration of 1.2 m/s/s to the RIGHT. What is the magnitude of the missing force?",
+      "image": {
+        "name": "fbd_2.png",
+        "width": 400
+      },
+      "answerChoices": [
+        {
+          "text": "16 N",
+          "correct": true
+        },
+        {
+          "text": "12 N"
+        },
+        {
+          "text": "14 N "
+        },
+        {
+          "text": "18 N"
+        }
+      ]
+    },
+    {
+      "text": "The graph below is a position-time graph. Which description does it best represent?",
+      "image": {
+        "name": "xt_graph.png",
+        "width": 500
+      },
+      "answerChoices": [
+        {
+          "text": "A biker who is already moving fast starts moving faster to catch up with her friend. When she reaches her, she continues biking at a constant velocity.",
+          "correct": true
+        },
+        {
+          "text": "A biker who begins at rest starts moving faster to catch up with her friend. When she reaches her, she continues biking at a constant velocity."
+        },
+        {
+          "text": "A biker who begins at rest starts moving faster to catch up with her friend. When she reaches her, she begins slowing down."
+        },
+        {
+          "text": "A biker who is already moving starts moving faster to catch up with her friend. When she reaches her, she begins slowing down."
+        }
+      ]
+    },
+    {
+      "text": "The graph below is a velocity-time graph. Which description does it best represent?",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "The graph below is an acceleration-time graph. Which description does it best represent?",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "A blacksmith takes a piece of iron out of furnace and places it into a bucket of water at room temperature. It stays there for a long time Explain how heat flows in this situation.",
+      "answerChoices": [
+        {
+          "text": "Heat will move from the iron to the water until they have the same temperature.",
+          "correct": true
+        },
+        {
+          "text": "Heat will move from the water to the iron until the have the same temperature."
+        },
+        {
+          "text": "Heat will move from the iron to the water, and they will end on different temperatures."
+        },
+        {
+          "text": "Heat will move from the water to the iron, and they wil end on different temperatures"
+        },
+        {
+          "text": "Heat does not move in this situation."
+        }
+      ]
+    },
+    {
+      "text": "The graph below shows some material being heated and several quantities. The mass of the material is 3.5 kg. How much heat energy is used in total? (Note that not all information given is necessary.)",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "",
+      "answerChoices": [
+        {
+          "text": "",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
         }
       ]
     }

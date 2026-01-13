@@ -1,0 +1,44 @@
+In the formula Q= mc delta T, the variable Q represents....
+- the thermal energy in some object
+- the thermal energy added to some object in a process
+- the kinetic energy of some object
+- the temperature of an object
+- the change in temperature of an object in some process.
+
+True or false?
+Q can be a negative value
+
+False: an object cannot have negative thermal energy
+true: this represents when thermal energy is removed from an object
+false: an object cannot lose thermal energy
+true:
+
+
+
+True or false: m can be a negative value
+
+
+
+
+
+The variable C depends on:
+-what material the object in question is made of
+-
+
+
+Q has the same SI unit as:
+
+- kinetic energy and gravitational potential energy
+- force
+- acceleration
+- velocity
+- mass
+
+
+Which of the following is greater:
+#1 The amount of thermal energy needed to bring a pot of water to boil OR #2 the kinetic energy of a sprinter running the 100 m dash?
+- number 1 is many thousands of joules more. (greater order of magnitude)
+- number 1, but just by a little, less than a thousand joules
+- they are about the same
+- number 2, but just by a little
+- number 2, is many thousands of joules more (greter order of magnitude)

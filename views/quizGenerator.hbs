@@ -170,13 +170,20 @@
 
     const phys_honors_midterm = ["5f2a0a"];
 
+    const ap_phys_midterm =["acde01"];
+
+    const honors_12_9 = ["82f477","aa3a0e","7369b3","a73a78"];
+
+    const phys_a_12_17 = ["aa3a0e","7369b3","a73a78","79415b","4a6e69","1d4dd1","8a4fc7","41d96a","535893"];
+
+
     phys_honors_midterm.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Quiz: 11-4-25", 2, 700));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics Honors Midterm: 1-14-26", 1, 100));
 
 
 </script>

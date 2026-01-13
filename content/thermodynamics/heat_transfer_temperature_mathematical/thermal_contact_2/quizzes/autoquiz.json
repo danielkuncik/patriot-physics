@@ -11,7 +11,7 @@
         {
           "text": "Heat will flow from the fish to the air until they have the same temperature."
         },
-        {
+        {rrerw
           "text": "Heat will flow from the air to the fish, but they will end with the different temperatures."
         },
         {
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "text": "How does heat flow between two objects of different temperature in thermal contact.?",
+      "text": "How does heat flow between two objects of different temperature in thermal contact?",
       "answerChoices": [
         {
           "text": "From the warmer object to the cooler object until they reach the same temperature.",
