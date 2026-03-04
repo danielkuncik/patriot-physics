@@ -20,6 +20,22 @@
 </ul>
 {{{printUnitLevel selectedUnitClusterKey selectedUnitKey gradeMap}}}
 <div>
+    <h3>Enduring Understandings:</h3> <ul id = "enduringUnderstandings"></ul>
+    <h3>Essential Questions:</h3> <ul id = "essentialQuestions"></ul>
+    <script>
+        function makeListOfEnduringUnderstandings(list_as_string, id){
+            const list = list_as_string.split("XXX");
+            const output = "#" + id;
+            for (let i = 0; i < list.length; i++) {
+                let str = "<li>" + list[i] + "</li>";
+                $(output).append(str);
+            }
+        }
+        makeListOfEnduringUnderstandings("{{enduringUnderstandings}}","enduringUnderstandings");
+        makeListOfEnduringUnderstandings("{{essentialQuestions}}", "essentialQuestions")
+    </script>
+</div>
+<div>
     {{{body}}}
 </div>
 <div class = 'container m-2'>

@@ -8,18 +8,18 @@
           "correct": true
         },
         {
-          "text": "16.8 m/s"
+          "text": "15.7 m/s"
         },
         {
           "text": "16.2 m/s"
         },
         {
-          "text": "15.7 m/s"
+          "text": "16.8 m/s"
         }
       ]
     },
     {
-      "text": "A block with a mass of 0.4 kg is oscillating on a spring with a spring of 12 N/m and equilibrium length of 0.5 m. At some point, the spring has a length of 0.3 and the block is moving at a speed of 1.8 m/s. What is the maximum speed of the block?",
+      "text": "A block with a mass of 0.4 kg is oscillating on a spring with a spring constant of 12 N/m and equilibrium length of 0.5 m. At some point, the spring has a length of 0.3 and the block is moving at a speed of 1.8 m/s. What is the maximum speed of the block?",
       "answerChoices": [
         {
           "text": "2.1 m/s",
@@ -91,7 +91,11 @@
       ]
     },
     {
-      "text": "How much heat is necessary to melt 2 kg of ice? You may assume the ice is already at its melting point.",
+      "text": "How much heat is necessary to melt 2 kg of ice? The temperature of the ice is 0 degrees Celsius.",
+      "image": {
+        "name": "heat_data.png",
+        "width": 600
+      },
       "answerChoices": [
         {
           "text": "6.68 x 10^5 Joules",
@@ -179,7 +183,7 @@
     {
       "text": "The graph below is a position-time graph. Which description does it best represent?",
       "image": {
-        "name": "xt_graph.png",
+        "name": "xt_graph_honors.png",
         "width": 500
       },
       "answerChoices": [
@@ -200,37 +204,57 @@
     },
     {
       "text": "The graph below is a velocity-time graph. Which description does it best represent?",
+      "image": {
+        "name": "vt_graph_honors.png",
+        "width": 500
+      },
       "answerChoices": [
         {
-          "text": "",
+          "text": "A car is waiting at a stop sign. The driver begins moving, and then sees an animal in the road and stops quickly.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "A car is waiting at a stop sign. The driver begins moving, and then sees a red light in the distance and stops slowly."
         },
         {
-          "text": ""
+          "text": "A car is driving quickly down the road at a constant speed. The driver sees an animal in the road and stops quickly."
         },
         {
-          "text": ""
+          "text": "A car is driving quickly down the road at a constant speed. The driver sees a red light in the distance and stops slowly."
         }
       ]
     },
     {
-      "text": "The graph below is an acceleration-time graph. Which description does it best represent?",
+      "text": "A driver is waiting at a red light. The light turns green, and he begins driving. When he reaches 35 mph, he continues at a constant speed for some time. Eventually, he sees another red light and slows to a stop. Which acceleration-time graph below BEST describes this motion. (Assume all motion is in the positive-direction.)",
       "answerChoices": [
         {
           "text": "",
+          "image": {
+            "name": "at_graph_1.png",
+            "width": 400
+          },
           "correct": true
         },
         {
-          "text": ""
+          "text": "",
+          "image": {
+            "name": "at_graph_2.png",
+            "width": 400
+          }
         },
         {
-          "text": ""
+          "text": "",
+          "image": {
+            "name": "at_graph_3.png",
+            "width": 400
+          }
         },
         {
-          "text": ""
+          "text": "",
+          "image": {
+            "name": "at_graph_4.png",
+            "width": 400
+          }
         }
       ]
     },
@@ -257,127 +281,196 @@
     },
     {
       "text": "The graph below shows some material being heated and several quantities. The mass of the material is 3.5 kg. How much heat energy is used in total? (Note that not all information given is necessary.)",
+      "image": {
+        "name": "heat_graph_honors.png",
+        "width": 1500
+      },
       "answerChoices": [
         {
-          "text": "",
+          "text": "9.6 x 10^4 Joules",
           "correct": true
         },
         {
-          "text": ""
+          "text": "9.3 x 10^4 Joules"
         },
         {
-          "text": ""
+          "text": "1.2 x 10^5 Joules"
         },
         {
-          "text": ""
+          "text": "9.0 x 10^4 Joules"
         }
       ]
     },
     {
-      "text": "",
+      "text": "Which of the following is a difference between electromagnetic and mechanical waves?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Electromagnetic waves can move through a vacuum; mechanical waves cannot.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Most but not all mechanical waves are faster than electromagnetic waves."
         },
         {
-          "text": ""
+          "text": "All electromagnetic waves are transverse; all mechanical waves are longitudinal."
         },
         {
-          "text": ""
+          "text": "Heat can only move in a mechanical waves, not an electromagnetic wave."
         }
       ]
     },
     {
-      "text": "",
+      "text": "Visible light is a...",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Electromagnetic wave.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Mechanical wave."
         },
         {
-          "text": ""
+          "text": "Heat wave"
         },
         {
-          "text": ""
+          "text": "Seismic wave"
+        },
+        {
+          "text": "Potential Energy Wave"
         }
       ]
     },
     {
-      "text": "",
+      "text": "In physics formulas, a lowercase 'g' refers to...",
       "answerChoices": [
         {
-          "text": "",
+          "text": "gravitational field",
           "correct": true
         },
         {
-          "text": ""
+          "text": "gravity"
         },
         {
-          "text": ""
+          "text": "weight"
         },
         {
-          "text": ""
+          "text": "mass"
         }
       ]
     },
     {
-      "text": "",
+      "text": "The free-body diagram below represents an object with a mass of 4 kg. If the object begins with a velocity of 10 m/s to the right, how far will it travel in 6 seconds?",
+      "image": {
+        "name": "fbd_3.png",
+        "width": 500
+      },
       "answerChoices": [
         {
-          "text": "",
+          "text": "132 m",
           "correct": true
         },
         {
-          "text": ""
+          "text": "124 m"
         },
         {
-          "text": ""
+          "text": "140 m"
         },
         {
-          "text": ""
+          "text": "148 m"
         }
       ]
     },
     {
-      "text": "",
+      "text": "An person standing still on a floor experiences two forces: gravity and the normal force. The normal force represents what?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "The upward force of the floor holding them up.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "A reaction to gravity that is always equal to gravity."
         },
         {
-          "text": ""
+          "text": "The force of the earth attracting the person."
         },
         {
-          "text": ""
+          "text": "The force of the air holding the person up."
         }
       ]
     },
     {
-      "text": "",
+      "text": "Which of the following is the BEST definition of force of gravity?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "A force that attracts every mass to every other mass.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "A force that always pulls things downwards."
         },
         {
-          "text": ""
+          "text": "A force that always pulls things towards the center of a planet."
         },
         {
-          "text": ""
+          "text": "Mass times 9.8."
+        }
+      ]
+    },
+    {
+      "text": "I add 21,000 Joules to 3 kg of an unknown metal. Its temperature increases from 30 degrees Celsius to 40 degrees Celsius. What is most likely the metal?",
+      "image": {
+        "name": "specific_heat_chart.png",
+        "width": 700
+      },
+      "answerChoices": [
+        {
+          "text": "copper",
+          "correct": true
+        },
+        {
+          "text": "aluminum"
+        },
+        {
+          "text": "iron"
+        },
+        {
+          "text": "gold"
+        }
+      ]
+    },
+    {
+      "text": "What is the type of heat transfer by which the sun heats the earth?",
+      "answerChoices": [
+        {
+          "text": "radiation",
+          "correct": true
+        },
+        {
+          "text": "conduction"
+        },
+        {
+          "text": "convection"
+        },
+        {
+          "text": "evaporation"
+        }
+      ]
+    },
+    {
+      "text": "What is the most common element in the air that we breath?",
+      "answerChoices": [
+        {
+          "text": "nitrogen",
+          "correct": true
+        },
+        {
+          "text": "hydrogen"
+        },
+        {
+          "text": "argon"
+        },
+        {
+          "text": "helium"
         }
       ]
     }

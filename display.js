@@ -100,6 +100,15 @@ display_super_unit_page = (req,res) => {
     })
 };
 
+function convert_list_to_XXX_list(list) {
+    let output = "";
+    for (let i = 0; i < list.length  - 1; i++) {
+        output += list[i] + "XXX";
+    }
+    output += list[list.length - 1];
+    return output
+}
+
 display_unit_page = (req, res) => {
     let unitCluster = unitMap[req.superUnitKey];
     let unit = unitCluster.units[req.unitKey];
@@ -117,6 +126,8 @@ display_unit_page = (req, res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         totalAttempts: req.totalAttemps,
+        enduringUnderstandings: convert_list_to_XXX_list(unit.enduring_understandings),
+        essentialQuestions: convert_list_to_XXX_list(unit.essential_questions),
         backLink: `/superUnit/${unitCluster.id}`,
         successFlash: req.flash('successFlash'),
         dangerFlash: req.flash('dangerFlash')

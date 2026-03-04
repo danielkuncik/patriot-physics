@@ -1947,6 +1947,14 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "enduring_understandings": [
+          "Nearly all processes that we experience or affect us involve energy changing between one form and another.",
+          "Almost all energy present on earth can be traced back to sunlight, which can be traced back to the gravitational potential energy of groups of space-dust, which can be traced (according to currently accepted theories) to energy that was appeared during the Big Bang."
+        ],
+        "essential_questions": [
+          "What are examples of how energy changes in our ordinary life?",
+          "Where did all of the energy in the universe come from? (The Big Bang)"
+        ],
         "pods":
         {
           "energy_transfer_1":
@@ -2098,6 +2106,8 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "enduring_understandings": "",
+        "essential_questions": "",
         "pods":
         {
           "your_address_in_cosmos":
@@ -2253,6 +2263,8 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "enduring_understandings": "",
+        "essential_questions": "",
         "pods":
         {
           "energy_table_1":
@@ -2549,6 +2561,8 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "enduring_understandings": "",
+        "essential_questions": "",
         "pods":
         {
           "work_formula":
@@ -2774,6 +2788,8 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "enduring_understandings": "",
+        "essential_questions": "",
         "display": false,
         "pods": {}
       },
@@ -2797,6 +2813,8 @@
           "NGSS": "",
           "AP_Physics_1": ""
         },
+        "enduring_understandings": "",
+        "essential_questions": "",
         "pods": {}
       }
     }

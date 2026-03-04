@@ -1,24 +1,6 @@
 {
   "questions": [
     {
-      "text": "What is the capital of Massachusetts?",
-      "answerChoices": [
-        {
-          "text": "Boston",
-          "correct": true
-        },
-        {
-          "text": "Worcester"
-        },
-        {
-          "text": "Fall River"
-        },
-        {
-          "text": "New Bedford"
-        }
-      ]
-    },
-    {
       "text": "A car at the top of a roller coaster is at rest. It drops from a height of 16 m to a height of 4 m. At that point, what is its speed? (Note: You may use any mass you choose.)",
       "answerChoices": [
         {
@@ -26,13 +8,13 @@
           "correct": true
         },
         {
-          "text": ""
+          "text": "14.5 m/s"
         },
         {
-          "text": ""
+          "text": "13.9 m/s"
         },
         {
-          "text": ""
+          "text": "15.9 m/s"
         }
       ]
     },
@@ -44,229 +26,360 @@
           "correct": true
         },
         {
-          "text": ""
+          "text": "3 m/s"
         },
         {
-          "text": ""
+          "text": "4 m/s"
         },
         {
-          "text": ""
+          "text": "5 m/s"
         }
       ]
     },
     {
-      "text": "",
+      "text": "I add 21,000 Joules to 3 kg of an unknown metal. Its temperature increases from 30 degrees Celsius to 40 degrees Celsius. What is most likely the metal?",
+      "image": {
+        "name": "specific_heat_chart.png",
+        "width": 700
+      },
       "answerChoices": [
         {
-          "text": "",
+          "text": "copper",
           "correct": true
         },
         {
-          "text": ""
+          "text": "aluminum"
         },
         {
-          "text": ""
+          "text": "iron"
         },
         {
-          "text": ""
+          "text": "gold"
         }
       ]
     },
     {
-      "text": "",
+      "text": "An ultraviolet wave is...",
       "answerChoices": [
         {
-          "text": "",
+          "text": "electromagnetic",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "mechanical"
         }
       ]
     },
     {
-      "text": "",
+      "text": "An ultrasonic wave is...",
       "answerChoices": [
         {
-          "text": "",
+          "text": "mechanical",
           "correct": true
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "electromagnetic"
         }
       ]
     },
     {
-      "text": "",
+      "text": "When a transverse wave crosses through a material, how do the particles move?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Each particle oscillates along an axis PERPENDICULAR to the motion of the wave.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Each particle oscillates along an axis PARALLEL to the motion of the wave."
         },
         {
-          "text": ""
+          "text": "Each particle travels IN the direction of the wave."
         },
         {
-          "text": ""
+          "text": "Each particle travels OPPOSITE the direction of the wave.."
         }
       ]
     },
     {
-      "text": "",
+      "text": "When a longitudinal wave crosses through a material, how do the particles move?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Each particle oscillates along an axis PERPENDICULAR to the motion of the wave."
+        },
+        {
+          "text": "Each particle oscillates along an axis PARALLEL to the motion of the wave.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Each particle travels IN the direction of the wave."
         },
         {
-          "text": ""
-        },
-        {
-          "text": ""
+          "text": "Each particle travels OPPOSITE the direction of the wave.."
         }
       ]
     },
     {
-      "text": "",
+      "text": "Which of the following is the BEST definition of force of gravity?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "A force that attracts every mass to every other mass.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "A force that always pulls things downwards."
         },
         {
-          "text": ""
+          "text": "A force that always pulls things towards the center of a planet."
         },
         {
-          "text": ""
+          "text": "Mass times 9.8."
         }
       ]
     },
     {
-      "text": "",
+      "text": "An person standing still on a floor experiences two forces: gravity and the normal force. The normal force represents what?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "The upward force of the floor holding them up.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "A reaction to gravity that is always equal to gravity."
         },
         {
-          "text": ""
+          "text": "The force of the earth attracting the person."
         },
         {
-          "text": ""
+          "text": "The force of the air holding the person up."
         }
       ]
     },
     {
-      "text": "",
+      "text": "In physics formulas, a lowercase 'g' refers to...",
       "answerChoices": [
         {
-          "text": "",
+          "text": "gravitational field",
           "correct": true
         },
         {
-          "text": ""
+          "text": "gravity"
         },
         {
-          "text": ""
+          "text": "weight"
         },
         {
-          "text": ""
+          "text": "mass"
         }
       ]
     },
     {
-      "text": "",
+      "text": "Visible light is a(n)...",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Electromagnetic wave.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Mechanical wave."
         },
         {
-          "text": ""
+          "text": "Heat wave"
         },
         {
-          "text": ""
+          "text": "Seismic wave"
+        },
+        {
+          "text": "Potential Energy Wave"
         }
       ]
     },
     {
-      "text": "",
+      "text": "Which of the following is a difference between electromagnetic and mechanical waves?",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Electromagnetic waves can move through a vacuum; mechanical waves cannot.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Most but not all mechanical waves are faster than electromagnetic waves."
         },
         {
-          "text": ""
+          "text": "All electromagnetic waves are transverse; all mechanical waves are longitudinal."
         },
         {
-          "text": ""
+          "text": "Heat can only move in a mechanical waves, not an electromagnetic wave."
         }
       ]
     },
     {
-      "text": "",
+      "text": "A blacksmith takes a piece of iron out of furnace and places it into a bucket of water at room temperature. It stays there for a long time Explain how heat flows in this situation.",
       "answerChoices": [
         {
-          "text": "",
+          "text": "Heat will move from the iron to the water until they have the same temperature.",
           "correct": true
         },
         {
-          "text": ""
+          "text": "Heat will move from the water to the iron until the have the same temperature."
         },
         {
-          "text": ""
+          "text": "Heat will move from the iron to the water, and they will end on different temperatures."
         },
         {
-          "text": ""
+          "text": "Heat will move from the water to the iron, and they wil end on different temperatures"
+        },
+        {
+          "text": "Heat does not move in this situation."
         }
       ]
     },
     {
-      "text": "",
+      "text": "The free body diagram below shows an object with a mass of 5 kg and an acceleration of 1.2 m/s/s to the RIGHT. What is the magnitude of the missing force?",
+      "image": {
+        "name": "fbd_2.png",
+        "width": 400
+      },
       "answerChoices": [
         {
-          "text": "",
+          "text": "16 N",
           "correct": true
         },
         {
-          "text": ""
+          "text": "12 N"
         },
         {
-          "text": ""
+          "text": "14 N "
         },
         {
-          "text": ""
+          "text": "18 N"
+        }
+      ]
+    },
+    {
+      "text": "How much heat is necessary to melt 2 kg of ice? The temperature of the ice is 0 degrees Celsius.",
+      "image": {
+        "name": "heat_data.png",
+        "width": 600
+      },
+      "answerChoices": [
+        {
+          "text": "6.68 x 10^5 Joules",
+          "correct": true
+        },
+        {
+          "text": "9.24 x 10^5 Joules"
+        },
+        {
+          "text": "1.27 x 10^6 Joules"
+        },
+        {
+          "text": "8.54 x 10^4 Joules"
+        }
+      ]
+    },
+    {
+      "text": "A sound wave is...",
+      "answerChoices": [
+        {
+          "text": "Mechanical and Longitudinal",
+          "correct": true
+        },
+        {
+          "text": "Mechanical and Transverse"
+        },
+        {
+          "text": "Electromagnetic and Transverse"
+        },
+        {
+          "text": "Transverse and Longitudinal"
+        }
+      ]
+    },
+
+    {
+      "text": "In the circuit below, which switch will control two light bulbs?",
+      "reorder": false,
+      "image": {
+        "name": "circuit_1.png",
+        "width": 400
+      },
+      "answerChoices": [
+        {
+          "text": "A"
+        },
+        {
+          "text": "B"
+        },
+        {
+          "text": "C",
+          "correct": true
+        },
+        {
+          "text": "D"
+        },
+        {
+          "text": "E"
+        },
+        {
+          "text": "none of the switches control two light bulbs"
+        }
+      ]
+    },
+    {
+      "text": "In the circuit below, will the light bulb light?",
+      "image": {
+        "name": "circuit_2.png",
+        "width": 400
+      },
+
+      "answerChoices": [
+        {
+          "text": "No, because the circuit is a short circuit.",
+          "correct": true
+        },
+        {
+          "text": "Yes, because it is connected to both sides of the battery."
+        },
+        {
+          "text": "No, it is not connected to both sides of the battery."
+        },
+        {
+          "text": "Yes, because the circuit is a short circuit."
+        }
+      ]
+    },
+    {
+      "text": "What is the type of heat transfer by which the sun heats the earth?",
+      "answerChoices": [
+        {
+          "text": "radiation",
+          "correct": true
+        },
+        {
+          "text": "conduction"
+        },
+        {
+          "text": "convection"
+        },
+        {
+          "text": "evaporation"
+        }
+      ]
+    },
+    {
+      "text": "What is the most common element in the air that we breath?",
+      "answerChoices": [
+        {
+          "text": "nitrogen",
+          "correct": true
+        },
+        {
+          "text": "hydrogen"
+        },
+        {
+          "text": "argon"
+        },
+        {
+          "text": "helium"
         }
       ]
     }
