@@ -113,6 +113,8 @@ display_unit_page = (req, res) => {
     let unitCluster = unitMap[req.superUnitKey];
     let unit = unitCluster.units[req.unitKey];
     const filePath = `${req.superUnitKey}/${req.unitKey}/unit_page.hbs`;
+    let enduringUnderstandings = unit.enduring_understandings ? convert_list_to_XXX_list(unit.enduring_understandings) : "Coming Soon";
+    let essentialQuestions = unit.essential_questions ? convert_list_to_XXX_list(unit.essential_questions) : "Coming soon";
     //const pageString = 'unit/' + req.superUnitKey + '/' + req.unitKey + '/' + req.unitKey + '_unit_page.hbs';
     res.render(filePath, {
         layout: 'unitPageLayout.hbs',
@@ -126,8 +128,8 @@ display_unit_page = (req, res) => {
         overallLevel: req.overallLevel,
         gradeMap: req.gradeMap,
         totalAttempts: req.totalAttemps,
-        enduringUnderstandings: convert_list_to_XXX_list(unit.enduring_understandings),
-        essentialQuestions: convert_list_to_XXX_list(unit.essential_questions),
+        enduringUnderstandings: enduringUnderstandings,
+        essentialQuestions: essentialQuestions,
         backLink: `/superUnit/${unitCluster.id}`,
         successFlash: req.flash('successFlash'),
         dangerFlash: req.flash('dangerFlash')
