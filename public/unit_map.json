@@ -78,6 +78,14 @@
             "prerequisites": [],
             "uuid": "acde0138-c67e-4616-a5c8-a6e405f4f628",
             "id": "acde01"
+          },
+          "honors_electricity_quiz": {
+            "title": "Electric Circuits Honors",
+            "level": 3,
+            "horizontal": 1,
+            "prerequisites":  [],
+            "uuid": "035eb458-f473-4be7-a195-26c57a40775e",
+            "id": "035eb4"
           }
         }
       },

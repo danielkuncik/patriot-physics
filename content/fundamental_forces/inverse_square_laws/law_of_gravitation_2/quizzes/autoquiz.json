@@ -1,0 +1,25 @@
+{
+  "questions":[
+    {
+      "text": "A person is standing on the surface of the earth, and you want to use Newton's Law of Gravitation to determine the magnitude of gravitational force between that person and the earth. In this instance, what is the represented by the variable \"d\" (also sometimes written as \"r\")?",
+      "answerChoices": [
+        {
+          "text": "The distance between the center of mass of the person and the center of mass of the earth.",
+          "correct": true
+        },
+        {
+          "text": "The distance between that person and the bedrock."
+        },
+        {
+          "text": "That person's altitude above sea-level."
+        },
+        {
+          "text": "The height of the person."
+        },
+        {
+          "text": "Half of the height of the person (which is the distance between that person's center of mass and the ground.)"
+        }
+      ]
+    }
+  ]
+}

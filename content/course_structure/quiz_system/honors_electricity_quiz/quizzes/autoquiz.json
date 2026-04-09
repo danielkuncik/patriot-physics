@@ -1,0 +1,114 @@
+{
+  "questions": [
+    {
+      "text":"Which of the following best explains why copper is an electrical conductor but rubber is not?",
+      "answerChoices": [
+        {
+          "text": "In copper, valence electrons are shared amongst all nuclei, but in rubber valence electrons are held by specific nuclei.",
+          "correct": true
+        },
+        {
+          "text": "In rubber, valence electrons are shared amongst all nuclei, but in copper valence electrons are held by specific nuclei."
+        },
+        {
+          "text": "In both copper and rubber, valence electrons are shared amongst all nuclei, but they have more freedom to move in copper."
+        },
+        {
+          "text": "In both copper and rubber, valence electrons are held by specific nuclei, but they are held more strongly in rubber."
+        }
+      ]
+    },
+    {
+      "text":"For the circuit pictured below, which is the best estimate of the time it will take a single electron to move around the entire circuit from the positive end of the battery to the negative end?",
+      "image": "simple_circuit.jpg",
+      "answerChoices": [
+        {
+          "text": "Several hours",
+          "correct": true
+        },
+        {
+          "text": "A nanosecond"
+        },
+        {
+          "text": "A few minutes"
+        },
+        {
+          "text": "A few seconds"
+        }
+      ]
+    },
+    {
+      "text":"When a circuit is connected, the light bulb turns on immediately. Which statement below best explains why?",
+      "answerChoices": [
+        {
+          "text": "The battery pushes electrons already present in the light bulb's filament.",
+          "correct": true
+        },
+        {
+          "text": "The electrons move at the speed of light, so they reach the light bulb immediately."
+        },
+        {
+          "text": "It actually takes about two seconds for the bulb to turn on, but your brain tricks you because it has seen so many light bulbs turn on."
+        },
+        {
+          "text": "It takes a couple of minutes for the electrons to reach the light bulb, but the light bulb has some energy stored from the last time it was one."
+        }
+      ]
+    },
+    {
+      "text":"In the circuit pictured below, which direction are the electrons moving, and which direction does the current (as it is mathematically defined) flow?",
+      "image": "simple_circuit.jpg",
+      "answerChoices": [
+        {
+          "text": "The electrons move counterclockwise and the current moves clockwise."
+        },
+        {
+          "text": "The current moves counterclockwise and the electrons move clockwise.",
+          "correct": true
+        },
+        {
+          "text": "Both the electrons and the current move counterclockwise."
+        },
+        {
+          "text": "Both the current and the electrons move clockwise."
+        }
+      ]
+    },
+    {
+      "text":"Consider an electrical wire connected to a battery in which a current is flowing. Is it positively charged, negatively charged, or neutral and why?",
+      "answerChoices": [
+        {
+          "text": "It is neutral because the battery supplies voltage, not charge.",
+          "correct": true
+        },
+        {
+          "text": "It must be negative because it is full of electrons supplied by the battery."
+        },
+        {
+          "text": "It begins negative, because one side of the battery supplies electrons, but it becomes positive as the other side of the battery consumes them."
+        },
+        {
+          "text": "The charge of the electrical wire is unpredictable because electrons are in random motion."
+        }
+      ]
+    },
+    {
+      "text":"Electrons in a circuit are often depicted moving in a straight line. This is a good, but not a perfect illustration of how electrons move.",
+      "answerChoices": [
+        {
+          "text": "They are moving randomly while slowly drifting in a single direction.",
+          "correct": true
+        },
+        {
+          "text": "The are jumping from one atom to another in quick bursts of energy."
+        },
+        {
+          "text": "They are bouncing off the walls of the circuit as they fly around it very fast."
+        },
+        {
+          "text": "Only electrons supplied by the battery move. Most of the electrons in the wire are not moving."
+        }
+      ]
+    }
+  ]
+}

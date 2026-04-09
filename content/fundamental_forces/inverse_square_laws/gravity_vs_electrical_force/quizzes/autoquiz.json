@@ -1,0 +1,41 @@
+{
+  "reorder": false
+  "questions": [
+    {
+      "text": "Consider a Hydrogen-1 atom consisting of one proton and one electron. Assume its radius is about 1 angstrom (10^-10 meters). The two particles experience gravitational force and electrostatic force, both attractive. What is the approximate ratio of the magnitude of gravitational force to the magnitude of electrostatic force.",
+      "answerChoices": [
+        {
+          "text": "correct",
+          "correct": true
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "text": "Based on the above analysis, what can you conclude about the above situation?",
+      "answerChoices": [
+        {
+          "text": "In determining the structure of the atom, the gravitational force is negligible.",
+          "correct": true
+        },
+        {
+          "text": "In determining the structure of the atom, the electrostatic force is negligible."
+        },
+        {
+          "text": "In determining the structure of teh atom, both forces must be considered."
+        },
+        {
+          "text": "Both forces are negligible; a third force is the crucial force is determining the structure of the atom."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "questions": [
+    {
+      "text": "A 3.75 kg bowling ball is located 0.850 meters from an 900.kg spaceship. Determine the magnitude of the force of gravity between the bowling ball and the spaceship.",
+      "answerChoices": [
+        {
+          "text": "3.12E-11 Newtons",
+          "correct": true
+        },
+        {
+          "text": "4.64E-11 Newtons"
+        },
+        {
+          "text": "3.12E-10 Newtons"
+        },
+        {
+          "text": "4.64E-10 Newtons"
+        }
+      ]
+    },
+    {
+      "text": "Naiad is a moon of Neptune. It is 4.8E7 meters from Neptune. Its mass is 1.2E17 kg. Neptune has a mass of 1.02E26 kg. Determine the magnitude of gravitational force between Naiad and Neptune.",
+      "answerChoices": [
+        {
+          "text": "3.54E17 Newtons",
+          "correct": true
+        },
+        {
+          "text": "6.34E17 Newtons"
+        },
+        {
+          "text": "1.27E16 Newtons"
+        },
+        {
+          "text": "4.78E16 Newtons"
+        },
+        {
+          "text": "2.56E18 Newtons"
+        }
+      ]
+    }
+  ]
+}

@@ -176,14 +176,19 @@
 
     const phys_a_12_17 = ["aa3a0e","7369b3","a73a78","79415b","4a6e69","1d4dd1","8a4fc7","41d96a","535893"];
 
+    const phys_honors_3_24 = ["c3d2b9","877577","56404c","392819","c3f650","02a2e8","7488df","3950df","12ce06","1db039","2535ca","035eb4"];
 
-    phys_a_midterm.forEach((quiz_ID) => {
+    let electrobasics = "93f7fa";
+            let chargingbyfriction = "ca2a46";
+    const phys_a_4_1_26 = ["1d1e60","38e07e","b656a7","8f39c5","379c6c","392819","cbdc87",chargingbyfriction,"1db039"];
+
+    phys_a_4_1_26.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Midterm: 1-14-26", 3, 200));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Test: 4-1-26", 1, 505));
 
 
 </script>

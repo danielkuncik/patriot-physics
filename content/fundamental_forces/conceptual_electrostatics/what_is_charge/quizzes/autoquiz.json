@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "text":"An object has a negative charge. How must it have gotten this charge?",
+      "answerChoices": [
+        {
+          "text": "It gained electrons from another object.",
+          "correct": true
+        },
+        {
+          "text": "It lost electrons to another object."
+        },
+        {
+          "text": "It gained protons from another object."
+        },
+        {
+          "text": "It lost protons to another object."
+        }
+      ]
+    },
+    {
+      "text":"An object has a positive charge. How must it have gotten this charge?",
+      "answerChoices": [
+        {
+          "text": "It gained electrons from another object."
+        },
+        {
+          "text": "It lost electrons to another object.",
+          "correct": true
+        },
+        {
+          "text": "It gained protons from another object."
+        },
+        {
+          "text": "It lost protons to another object."
+        }
+      ]
+    },
+    {
+      "text": "An object is considered neutral if:",
+      "answerChoices": [
+        {
+          "text": "It has the same number as positive and negative charges."
+        }
+      ]
+    },
+    {
+      "text": "An object is considered polarized if...",
+      "note": "move to electrostatic induction...",
+      "answerChoices": [
+        {
+          "text": "Its net charge is neutral, but one end has more positive charge and the other end is more negatively charged."
+        }
+      ]
+    },
+    {
+      "text": "In the typical image of an atom, there are electrons surrounding protons and neutrons. Why are there electrons?",
+      "answerChoices": [
+        {
+          "text": "They are attracted to the protons in the nucleus",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "text": "In the macroscopic world (the real world), how can you typically determine an object is charged?",
+      "answerChoices": [
+        {
+          "text": "It will be tingly to the touch.",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

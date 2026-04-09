@@ -3,8 +3,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "What electrostatic force exists between a proton and an electron?",
-      "answers": [
+      "text": "What electrostatic force exists between a proton and an electron?",
+      "answerChoices": [
         {
           "text": "They attract",
           "correct": true
@@ -22,8 +22,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "What electrostatic force exists between a proton and a neutron?",
-      "answers": [
+      "text": "What electrostatic force exists between a proton and a neutron?",
+      "answerChoices": [
         {
           "text": "They attract",
           "correct": false
@@ -41,8 +41,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "What electrostatic force exists between an electron and a neutron?",
-    "answers": [
+      "text": "What electrostatic force exists between an electron and a neutron?",
+    "answerChoices": [
       {
         "text": "They attract",
         "correct": false
@@ -58,9 +58,9 @@
       ]
     },
     {
-      "question": "What electrostatic force exists between two protons?",
+      "text": "What electrostatic force exists between two protons?",
       "reorderAnswers": false,
-      "answers": [
+      "answerChoices": [
         {
           "text": "They attract",
           "correct": false
@@ -78,8 +78,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "What electrostatic force exists between two electrons?",
-      "answers": [
+      "text": "What electrostatic force exists between two electrons?",
+      "answerChoices": [
         {
           "text": "They attract",
           "correct": false
@@ -96,8 +96,8 @@
     },
     {
       "type": "mcSingle",
-      "question": "What electrostatic force exists between two neutrons?",
-      "answers": [
+      "text": "What electrostatic force exists between two neutrons?",
+      "answerChoices": [
         {
           "text": "They attract",
           "correct": false
@@ -115,8 +115,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "Is copper an insulator or a conductor?",
-      "answers": [
+      "text": "Is copper an insulator or a conductor?",
+      "answerChoices": [
         {
           "text": "insulator",
           "correct": false
@@ -130,8 +130,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "Is wool an insulator or a conductor?",
-      "answers": [
+      "text": "Is wool an insulator or a conductor?",
+      "answerChoices": [
         {
           "text": "insulator",
           "correct": true
@@ -145,8 +145,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "Is hair an insulator or a conductor?",
-      "answers": [
+      "text": "Is hair an insulator or a conductor?",
+      "answerChoices": [
         {
           "text": "insulator",
           "correct": true
@@ -160,8 +160,8 @@
     {
       "type": "mcSingle",
       "reorderAnswers": false,
-      "question": "Is steel an insulator or a conductor?",
-      "answers": [
+      "text": "Is steel an insulator or a conductor?",
+      "answerChoices": [
         {
           "text": "insulator",
           "correct": false
