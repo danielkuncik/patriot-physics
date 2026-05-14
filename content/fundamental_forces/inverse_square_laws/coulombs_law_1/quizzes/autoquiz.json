@@ -1,0 +1,60 @@
+{
+  "notes": "Must come with reference page including",
+  "questions": [
+    {
+      "text": "Piece of plastic has a charge of negative 0.0006 Coulombs is brought near a sweater with a charge of positive 0.0008 Coulombs. They are 0.8 meters apart. Determine the magnitude of force between them, and determine if that force is attractive or repulsive.",
+      "answerChoices": [
+        {
+          "text": "6750 Newtons; attractive",
+          "correct": true
+        },
+        {
+          "text": "7820 Newtons; attractive"
+        },
+        {
+          "text": "8120 Newtons; attractive"
+        },
+        {
+          "text": "6750 Newtons; repulsive"
+        },
+        {
+          "text": "7820 Newtons; repulsive"
+        },
+        {
+          "text": "8120 Newtons; repulsive"
+        }
+      ]
+    },
+    {
+      "text": "Within an atom, two electrons are separated by a distance of 2 Angstrom. Determine the magnitude of force between them, and determine if that force is attractive or repulsive.",
+      "answerChoices": [
+        {
+          "text": "5.8E-9 Newtons; repulsive",
+          "correct": true
+        },
+        {
+          "text": "6.4E-9 Newtons; repulsive"
+        },
+        {
+          "text": "6.4E-10 Newtons; repulsive"
+        },
+        {
+          "text": "5.8E-10 Newtons; repulsive"
+        },
+        {
+          "text": "5.8E-9 Newtons; attractive"
+        },
+        {
+          "text": "6.4E-9 Newtons; attractive"
+        },
+        {
+          "text": "6.4E-10 Newtons; attractive"
+        },
+        {
+          "text": "5.8E-10 Newtons; attractive"
+        }
+
+      ]
+    }
+  ]
+}

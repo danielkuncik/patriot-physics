@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "text": "According to the 2006 definition, Ceres is a dwarf planet and not a planet because...",
+      "answerChoices": [
+        {
+          "text": "it is located in the asteroid belt.",
+          "correct": true
+        },
+        {
+          "text": "it is not big enough."
+        },
+        {
+          "text": "it does not have a moon."
+        },
+        {
+          "text": "its orbit is too high eccentricity."
+        }
+      ]
+    },
+    {
+      "text": "Pluto is located in an area called the...",
+      "answerChoices": [
+        {
+          "text": "Kuiper belt.",
+          "correct": true
+        },
+        {
+          "text": "asteroid belt."
+        },
+        {
+          "text": "Oort cloud."
+        },
+        {
+          "text": "Newtonian orbital zone."
+        }
+      ]
+    }
+  ]
+}

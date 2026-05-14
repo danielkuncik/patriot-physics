@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "text": "The word 'planet' is descended from the Greek word for:",
+      "answerChoices": [
+        {
+          "text": "wanderer",
+          "correct": true
+        },
+        {
+          "text": "sphere"
+        },
+        {
+          "text": "large mass"
+        },
+        {
+          "text": "orbit"
+        }
+      ]
+    },
+    {
+      "text": "To the Ancient Greeks, what differentiated planets from stars?",
+      "answerChoices": [
+        {
+          "text": "The planets do not always appear within the same constellation.",
+          "correct": true
+        },
+        {
+          "text": "Only planets move throughout the night, stars do not."
+        },
+        {
+          "text": "Some stars are visible only some nights; every planets is visible every night."
+        },
+        {
+          "text": "Some planets are only visible some nights; every star is visible every night."
+        }
+      ]
+    },
+    {
+      "text": "The explanation of retrograde motion the Ptolemaic Universe is...",
+      "answerChoices": [
+        {
+          "text": "planets are moving in circles inside of circles.",
+          "correct": true
+        },
+        {
+          "text": "the earth changed direction, leading to an apparent change in the direction of a planet."
+        },
+        {
+          "text": "the direction of gravity reversed for that planet."
+        },
+        {
+          "text": "the rotation of the planet reversed."
+        }
+      ]
+    },
+    {
+      "text": "What is the retrograde motion of a planet?",
+      "answerChoices": [
+        {
+          "text": "A planet appears to reverse direction in its course across the night sky.",
+          "correct": true
+        },
+        {
+          "text": "The planet appears to speed up in its course across the night sky."
+        },
+        {
+          "text": "The planet appears to slow down in its course across the night sky."
+        },
+        {
+          "text": "The planet appears to stop in its course across the night sky."
+        }
+      ]
+    },
+    {
+      "text": "Assuming the Ancient Greeks could have discovered everything in the night sky, which of the following would _not_ be a planet under their conception?",
+      "answerChoices": [
+        {
+          "text": "Earth",
+          "correct": true
+        },
+        {
+          "text": "Pluto"
+        },
+        {
+          "text": "Neptune"
+        },
+        {
+          "text": "Jupiter"
+        }
+      ]
+    }
+  ]
+}

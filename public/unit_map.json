@@ -11834,8 +11834,8 @@
             "uuid": "bf2efb26-706e-47b1-86b8-8405f75bf9bf",
             "id": "bf2efb"
           },
-          "definition_of_planet": {
-            "title": "Definition of a Planet",
+          "planets_ancient": {
+            "title": "What is a Planet: Ancient Era",
             "level": 1,
             "horizontal": 6,
             "letter": "",
@@ -11845,10 +11845,32 @@
             "uuid": "30ccce6b-dae0-4d7d-8d87-41c8e9dde920",
             "id": "30ccce"
           },
+          "planets_renaissance": {
+            "title": "What is a Planet: Renaissance Era",
+            "level": 1,
+            "horizontal": 7,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "f29cedb4-2b29-43dc-91b3-c49f475f6939",
+            "id": "f29ced"
+          },
+          "planets_modern": {
+            "title": "What is a Planet: Modern Era",
+            "level": 1,
+            "horizontal": 8,
+            "letter": "",
+            "prerequisites": [],
+            "objective": "",
+            "content": "",
+            "uuid": "42d90055-f0eb-4d16-a3ae-ea06ef4072ca",
+            "id": "42d900"
+          },
           "greek_constellations": {
             "title": "Greek Constellations",
             "level": 1,
-            "horizontal": 7,
+            "horizontal": 9,
             "letter": "",
             "prerequisites": [],
             "objective": "",
@@ -11859,7 +11881,7 @@
           "comets": {
             "title": "Comets",
             "level": 1,
-            "horizontal": 8,
+            "horizontal": 10,
             "letter": "",
             "prerequisites": [],
             "objective": "",
@@ -11870,7 +11892,7 @@
           "eclipses": {
             "title": "Eclipses",
             "level": 1,
-            "horizontal": 9,
+            "horizontal": 11,
             "prerequisites": [],
             "objective": "",
             "content": "",
@@ -11881,7 +11903,7 @@
           "the_copernican_revolution": {
             "title": "The Copernican Revolution",
             "level": 1,
-            "horizontal": 10,
+            "horizontal": 12,
             "prerequisites": [],
             "objective": "",
             "content": "",

@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "text": "The explanation of retrograde motion the Copernican Universe is...",
+      "answerChoices": [
+        {
+          "text": "planets are moving in circles inside of circles."
+        },
+        {
+          "text": "the earth changed direction, leading to an apparent change in the direction of a planet.",
+          "correct": true
+        },
+        {
+          "text": "the direction of gravity reversed for that planet."
+        },
+        {
+          "text": "the rotation of the planet reversed."
+        }
+      ]
+    },
+    {
+      "text": "Kepler's First Law states that planets move...",
+      "answerChoices": [
+        {
+          "text": "in ellipses with the sun at one focus.",
+          "correct": true
+        },
+        {
+          "text": "in ellipses with the sun at the center."
+        },
+        {
+          "text": "in a circle with the sun at the center."
+        },
+        {
+          "text": "in a circle with the earth at the center."
+        }
+      ]
+    },
+    {
+      "text": "Conceptually, what is the eccentricity of an ellipse?",
+      "answerChoices": [
+        {
+          "text": "A low eccentricity ellipse is close to a circle; a high eccentricity ellipse is close to an oval.",
+          "correct": true
+        },
+        {
+          "text": "A low eccentricity ellipse is close to an oval; a high eccentricity ellipse is close to an circle."
+        },
+        {
+          "text": "A low eccentricity ellipse is concave; a high eccentricity ellipse is convex."
+        },
+        {
+          "text": "A low eccentricity ellipse is always curved; a high eccentricity ellipse has flat portions. "
+        }
+      ]
+    },
+    {
+      "text": "What was Isaac Newton's contribution to the understanding of planets?",
+      "answerChoices": [
+        {
+          "text": "The orbit of planets derives from fundamental laws that also explain the motion of objects on earth.",
+          "correct": true
+        },
+        {
+          "text": "Planets move in ellipses, not circles."
+        },
+        {
+          "text": "Planets orbit the sun, not the earth."
+        },
+        {
+          "text": "Planets were created by coalescing space dust."
+        }
+      ]
+    }
+  ]
+}

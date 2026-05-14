@@ -1,20 +1,21 @@
 {
+  "notes": "Provide a reference sheet with this quiz",
   "questions": [
     {
       "text": "A 3.75 kg bowling ball is located 0.850 meters from an 900.kg spaceship. Determine the magnitude of the force of gravity between the bowling ball and the spaceship.",
       "answerChoices": [
         {
-          "text": "3.12E-11 Newtons",
+          "text": "3.12E-7 Newtons",
           "correct": true
         },
         {
-          "text": "4.64E-11 Newtons"
+          "text": "4.64E-7 Newtons"
         },
         {
-          "text": "3.12E-10 Newtons"
+          "text": "3.12E-6 Newtons"
         },
         {
-          "text": "4.64E-10 Newtons"
+          "text": "4.64E-6 Newtons"
         }
       ]
     },
@@ -36,6 +37,30 @@
         },
         {
           "text": "2.56E18 Newtons"
+        }
+      ]
+    },
+    {
+      "text": "What is the magnitude of force between Saturn and the Sun? Is that force attractive or repulsive?",
+      "answerChoices": [
+        {
+          "text": "3.7E22 Newtons; attractive",
+          "correct": "true"
+        },
+        {
+          "text": "1.25E22 Newtons; attractive"
+        },
+        {
+          "text": "5.64E22 Newtons; attractive"
+        },
+        {
+          "text": "3.7E22 Newtons; repulsive"
+        },
+        {
+          "text": "1.25E22 Newtons; repulsive"
+        },
+        {
+          "text": "5.64E22 Newtons; repulsive"
         }
       ]
     }

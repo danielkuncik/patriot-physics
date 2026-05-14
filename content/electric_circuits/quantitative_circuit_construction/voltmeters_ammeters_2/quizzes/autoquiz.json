@@ -224,6 +224,32 @@
           "image": "mc_1d.png"
         }
       ]
+    },
+    {
+      "text": "A student connects a resistor that is Blue-Black-Red to two D batteries. Each D battery adds 1.5 Volts. Which of the following ammeters is most likely to give an accurate reading of the current through this resistor? (Assume that all ammeters pictured work correctly.",
+      "answerChoices": [
+        {
+          "image": {
+            "name": "1mA_ammeter.jpeg"
+          },
+          "correct": true
+        },
+        {
+          "image": {
+            "name": "100mA_ammeter.jpeg"
+          }
+        },
+        {
+          "image": {
+            "name": "500mA_ammeter.jpeg"
+          }
+        },
+        {
+          "image": {
+            "name": "2A_ammeter.jpeg"
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "text": "A single electron is located 14 Angstrom from an Iron-56 nucleus. What is the magnitude of force between them? Is the force attractive or repulsive?",
+      "answerChoices": [
+        {
+          "text": "3.1E-19 Newtons; attractive",
+          "correct": true
+        },
+        {
+          "text": "1.2E-19 Newtons; attractive"
+        },
+        {
+          "text": "8.3E-18 Newtons; attractive"
+        },
+        {
+          "text": "3.1E-19 Newtons; repulsive"
+        },
+        {
+          "text": "1.2E-19 Newtons; repulsive"
+        },
+        {
+          "text": "8.3E-18 Newtons; repulsive"
+        }
+      ]
+    },
+    {
+      "text": "Object A has a mass of 0.03 kg and a charge of positive 0.04 C. Object B has a mass of 0.02 kg and a charge of positive 0.05 C. They are separated by a distance of 0.6 meters. Determine the magnitude of the electrostatic force between them and whether it is attractive or repulsive.",
+      "answerChoices": [
+        {
+          "text": "5.0E9; attractive"
+        },
+        {
+          "text": "1.5E9 N; attractive"
+        },
+        {
+          "text": "1.1E-11N; attractive"
+        },
+        {
+          "text": "3.7E-11; attractive"
+        },
+        {
+          "text": "5.0E9; repulsive",
+          "correct": true
+        },
+        {
+          "text": "1.5E9 N; repulsive"
+        },
+        {
+          "text": "1.1E-11N; repulsive"
+        },
+        {
+          "text": "3.7E-11; repulsive"
+        }
+
+      ]
+    }
+  ]
+}

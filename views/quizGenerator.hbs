@@ -182,13 +182,18 @@
             let chargingbyfriction = "ca2a46";
     const phys_a_4_1_26 = ["1d1e60","38e07e","b656a7","8f39c5","379c6c","392819","cbdc87",chargingbyfriction,"1db039"];
 
-    phys_a_4_1_26.forEach((quiz_ID) => {
+    const honors_5_8_26 = ["cbdc87","d6eede","5aa052","30ccce","f29ced","42d900"];
+    const names = ['cooulmbs law 1', 'planets ancient', 'planets renaissance', 'planets modern'];
+    const phys_a_5_12_26 = ["cbdc87","d6eede","30ccce","f29ced","42d900"];
+
+    const test_5_14 = ["7488df"];
+    test_5_14.forEach((quiz_ID) => {
         $.getJSON(`/autoquiz/${quiz_ID}`, (data) => {
             data.id = quiz_ID;
             honors_array.push(data);
         });
     });
-    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Test: 4-1-26", 1, 505));
+    $("#honors_quiz_spot").append(generateWrittenQuiz(honors_array, "Physics A Test: 5-12-26", 3, 701));
 
 
 </script>
